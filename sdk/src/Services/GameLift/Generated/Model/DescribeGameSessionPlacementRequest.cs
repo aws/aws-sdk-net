@@ -42,8 +42,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// This operation is not designed to be continually called to track game session status.
     /// This practice can cause you to exceed your API limit, which results in errors. Instead,
-    /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
-    /// receive notifications from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
+    /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
+    /// from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
     /// should only be used for games in development with low game session usage. 
     /// </para>
     /// </summary>

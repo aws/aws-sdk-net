@@ -117,11 +117,136 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         #endregion
         
+        #region  CreateLicenseServerEndpoint
+
+
+        /// <summary>
+        /// Creates a network endpoint for the Remote Desktop Services (RDS) license server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseServerEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseServerEndpoint service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/CreateLicenseServerEndpoint">REST API Reference for CreateLicenseServerEndpoint Operation</seealso>
+        CreateLicenseServerEndpointResponse CreateLicenseServerEndpoint(CreateLicenseServerEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLicenseServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseServerEndpoint operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLicenseServerEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/CreateLicenseServerEndpoint">REST API Reference for CreateLicenseServerEndpoint Operation</seealso>
+        IAsyncResult BeginCreateLicenseServerEndpoint(CreateLicenseServerEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLicenseServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLicenseServerEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateLicenseServerEndpointResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/CreateLicenseServerEndpoint">REST API Reference for CreateLicenseServerEndpoint Operation</seealso>
+        CreateLicenseServerEndpointResponse EndCreateLicenseServerEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLicenseServerEndpoint
+
+
+        /// <summary>
+        /// Deletes a <c>LicenseServerEndpoint</c> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseServerEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicenseServerEndpoint service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/DeleteLicenseServerEndpoint">REST API Reference for DeleteLicenseServerEndpoint Operation</seealso>
+        DeleteLicenseServerEndpointResponse DeleteLicenseServerEndpoint(DeleteLicenseServerEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLicenseServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseServerEndpoint operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLicenseServerEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/DeleteLicenseServerEndpoint">REST API Reference for DeleteLicenseServerEndpoint Operation</seealso>
+        IAsyncResult BeginDeleteLicenseServerEndpoint(DeleteLicenseServerEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLicenseServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLicenseServerEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteLicenseServerEndpointResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/DeleteLicenseServerEndpoint">REST API Reference for DeleteLicenseServerEndpoint Operation</seealso>
+        DeleteLicenseServerEndpointResponse EndDeleteLicenseServerEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeregisterIdentityProvider
 
 
         /// <summary>
-        /// Deregisters the identity provider from providing user-based subscriptions.
+        /// Deregisters the Active Directory identity provider from License Manager user-based
+        /// subscriptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterIdentityProvider service method.</param>
         /// 
@@ -245,7 +370,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
 
         /// <summary>
-        /// Lists the identity providers for user-based subscriptions.
+        /// Lists the Active Directory identity providers for user-based subscriptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
         /// 
@@ -365,6 +490,65 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         #endregion
         
+        #region  ListLicenseServerEndpoints
+
+
+        /// <summary>
+        /// List the Remote Desktop Services (RDS) License Server endpoints
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseServerEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseServerEndpoints service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListLicenseServerEndpoints">REST API Reference for ListLicenseServerEndpoints Operation</seealso>
+        ListLicenseServerEndpointsResponse ListLicenseServerEndpoints(ListLicenseServerEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLicenseServerEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseServerEndpoints operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLicenseServerEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListLicenseServerEndpoints">REST API Reference for ListLicenseServerEndpoints Operation</seealso>
+        IAsyncResult BeginListLicenseServerEndpoints(ListLicenseServerEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLicenseServerEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLicenseServerEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListLicenseServerEndpointsResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListLicenseServerEndpoints">REST API Reference for ListLicenseServerEndpoints Operation</seealso>
+        ListLicenseServerEndpointsResponse EndListLicenseServerEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListProductSubscriptions
 
 
@@ -424,6 +608,55 @@ namespace Amazon.LicenseManagerUserSubscriptions
         /// <returns>Returns a  ListProductSubscriptionsResult from LicenseManagerUserSubscriptions.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListProductSubscriptions">REST API Reference for ListProductSubscriptions Operation</seealso>
         ListProductSubscriptionsResponse EndListProductSubscriptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns the list of tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -681,6 +914,101 @@ namespace Amazon.LicenseManagerUserSubscriptions
         /// <returns>Returns a  StopProductSubscriptionResult from LicenseManagerUserSubscriptions.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/StopProductSubscription">REST API Reference for StopProductSubscription Operation</seealso>
         StopProductSubscriptionResponse EndStopProductSubscription(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonLicenseManagerUserSubscriptionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from LicenseManagerUserSubscriptions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

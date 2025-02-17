@@ -70,18 +70,53 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
+    /// Using regular expressions in filter patterns is supported. For these filters, there
+    /// is a quotas of quota of two regular expression patterns within a single filter pattern.
+    /// There is also a quota of five regular expression patterns per log group. For more
+    /// information about using regular expressions in filter patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+    /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+    /// and Live Tail</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
     /// function, you must also have the <c>iam:PassRole</c> permission.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
     {
+        private bool? _applyOnTransformedLogs;
         private string _destinationArn;
         private Distribution _distribution;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property ApplyOnTransformedLogs. 
+        /// <para>
+        /// This parameter is valid only for log groups that have an active log transformer. For
+        /// more information about log transformers, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the log group uses either a log-group level or account-level transformer, and you
+        /// specify <c>true</c>, the subscription filter will be applied on the transformed version
+        /// of the log events instead of the original ingested log events.
+        /// </para>
+        /// </summary>
+        public bool ApplyOnTransformedLogs
+        {
+            get { return this._applyOnTransformedLogs.GetValueOrDefault(); }
+            set { this._applyOnTransformedLogs = value; }
+        }
+
+        // Check to see if ApplyOnTransformedLogs property is set
+        internal bool IsSetApplyOnTransformedLogs()
+        {
+            return this._applyOnTransformedLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationArn. 

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the sesv2-2019-09-27.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 
@@ -73,6 +74,15 @@ namespace Amazon.SimpleEmailV2.Endpoints
         { 
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
+        }
+
+        /// <summary>
+        /// EndpointId parameter
+        /// </summary>
+        public string EndpointId 
+        { 
+            get { return (string)this["EndpointId"]; }
+            set { this["EndpointId"] = value; } 
         }
     }
 }

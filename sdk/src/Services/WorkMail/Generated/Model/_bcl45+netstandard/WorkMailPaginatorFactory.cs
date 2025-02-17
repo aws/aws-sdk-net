@@ -125,6 +125,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListPersonalAccessTokens operation
+        ///</summary>
+        public IListPersonalAccessTokensPaginator ListPersonalAccessTokens(ListPersonalAccessTokensRequest request) 
+        {
+            return new ListPersonalAccessTokensPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResourceDelegates operation
         ///</summary>
         public IListResourceDelegatesPaginator ListResourceDelegates(ListResourceDelegatesRequest request) 

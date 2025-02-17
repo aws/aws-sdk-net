@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
     /// account may not support the ability to configure custom chat durations. For more information,
-    /// contact Amazon Web Services Support. 
+    /// contact Amazon Web ServicesSupport. 
     /// </para>
     ///  
     /// <para>
@@ -84,6 +84,7 @@ namespace Amazon.Connect.Model
         private int? _chatDurationInMinutes;
         private string _clientToken;
         private string _contactFlowId;
+        private string _customerId;
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
@@ -164,10 +165,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for initiating the chat. To see the ContactFlowId in the
-        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact
-        /// Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: 
+        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
+        /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
+        /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
+        /// bold: 
         /// </para>
         ///  
         /// <para>
@@ -186,6 +187,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactFlowId()
         {
             return this._contactFlowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// The customer's identification number. For example, the <c>CustomerId</c> may be a
+        /// customer number from your CRM.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
         }
 
         /// <summary>

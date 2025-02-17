@@ -30,12 +30,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Details about a Kinesis data stream used as the source for a Firehose delivery stream.
+    /// Details about a Kinesis data stream used as the source for a Firehose stream.
     /// </summary>
     public partial class SourceDescription
     {
+        private DatabaseSourceDescription _databaseSourceDescription;
+        private DirectPutSourceDescription _directPutSourceDescription;
         private KinesisStreamSourceDescription _kinesisStreamSourceDescription;
         private MSKSourceDescription _mskSourceDescription;
+
+        /// <summary>
+        /// Gets and sets the property DatabaseSourceDescription. 
+        /// <para>
+        /// Details about a database used as the source for a Firehose stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public DatabaseSourceDescription DatabaseSourceDescription
+        {
+            get { return this._databaseSourceDescription; }
+            set { this._databaseSourceDescription = value; }
+        }
+
+        // Check to see if DatabaseSourceDescription property is set
+        internal bool IsSetDatabaseSourceDescription()
+        {
+            return this._databaseSourceDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DirectPutSourceDescription. 
+        /// <para>
+        /// Details about Direct PUT used as the source for a Firehose stream. 
+        /// </para>
+        /// </summary>
+        public DirectPutSourceDescription DirectPutSourceDescription
+        {
+            get { return this._directPutSourceDescription; }
+            set { this._directPutSourceDescription = value; }
+        }
+
+        // Check to see if DirectPutSourceDescription property is set
+        internal bool IsSetDirectPutSourceDescription()
+        {
+            return this._directPutSourceDescription != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KinesisStreamSourceDescription. 

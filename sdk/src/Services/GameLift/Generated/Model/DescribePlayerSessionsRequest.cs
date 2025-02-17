@@ -87,7 +87,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the game session to retrieve player sessions for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=512)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }

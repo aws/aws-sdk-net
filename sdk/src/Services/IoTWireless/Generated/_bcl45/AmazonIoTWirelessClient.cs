@@ -4314,7 +4314,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Fetches the log-level override, if any, for a given resource-ID and resource-type.
-        /// It can be used for a wireless device or a wireless gateway.
+        /// It can be used for a wireless device, wireless gateway or fuota task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
         /// 
@@ -4347,7 +4347,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Fetches the log-level override, if any, for a given resource-ID and resource-type.
-        /// It can be used for a wireless device or a wireless gateway.
+        /// It can be used for a wireless device, wireless gateway or fuota task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">
@@ -6575,8 +6575,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Removes the log-level overrides for all resources; both wireless devices and wireless
-        /// gateways.
+        /// Removes the log-level overrides for all resources; wireless devices, wireless gateways,
+        /// and fuota tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
         /// 
@@ -6608,8 +6608,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Removes the log-level overrides for all resources; both wireless devices and wireless
-        /// gateways.
+        /// Removes the log-level overrides for all resources; wireless devices, wireless gateways,
+        /// and fuota tasks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetAllResourceLogLevels service method.</param>
         /// <param name="cancellationToken">
@@ -6649,7 +6649,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Removes the log-level override, if any, for a specific resource-ID and resource-type.
-        /// It can be used for a wireless device or a wireless gateway.
+        /// It can be used for a wireless device, a wireless gateway, or a fuota task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
         /// 
@@ -6682,7 +6682,7 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Removes the log-level override, if any, for a specific resource-ID and resource-type.
-        /// It can be used for a wireless device or a wireless gateway.
+        /// It can be used for a wireless device, a wireless gateway, or a fuota task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetResourceLogLevel service method.</param>
         /// <param name="cancellationToken">

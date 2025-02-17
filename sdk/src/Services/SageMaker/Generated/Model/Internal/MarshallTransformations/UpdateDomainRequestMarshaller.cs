@@ -131,6 +131,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTagPropagation())
+                {
+                    context.Writer.WritePropertyName("TagPropagation");
+                    context.Writer.Write(publicRequest.TagPropagation);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

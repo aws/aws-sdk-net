@@ -1371,6 +1371,10 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
         /// The request was throttled. Try again in a few minutes.
         /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
         public virtual DeleteFirewallRuleResponse DeleteFirewallRule(DeleteFirewallRuleRequest request)
         {

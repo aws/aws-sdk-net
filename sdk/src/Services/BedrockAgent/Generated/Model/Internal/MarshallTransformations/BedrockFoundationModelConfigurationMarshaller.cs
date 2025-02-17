@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelArn);
             }
 
+            if(requestObject.IsSetParsingModality())
+            {
+                context.Writer.WritePropertyName("parsingModality");
+                context.Writer.Write(requestObject.ParsingModality);
+            }
+
             if(requestObject.IsSetParsingPrompt())
             {
                 context.Writer.WritePropertyName("parsingPrompt");

@@ -109,6 +109,7 @@ namespace Amazon.BedrockAgent.Model
         /// A definition of the nodes and connections between nodes in the flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public FlowDefinition Definition
         {
             get { return this._definition; }

@@ -90,6 +90,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientRequestToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computeConfig", targetDepth))
+                {
+                    var unmarshaller = ComputeConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.ComputeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectorConfig", targetDepth))
                 {
                     var unmarshaller = ConnectorConfigResponseUnmarshaller.Instance;
@@ -162,6 +168,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("remoteNetworkConfig", targetDepth))
+                {
+                    var unmarshaller = RemoteNetworkConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.RemoteNetworkConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourcesVpcConfig", targetDepth))
                 {
                     var unmarshaller = VpcConfigResponseUnmarshaller.Instance;
@@ -180,6 +192,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storageConfig", targetDepth))
+                {
+                    var unmarshaller = StorageConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.StorageConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -196,6 +214,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("zonalShiftConfig", targetDepth))
+                {
+                    var unmarshaller = ZonalShiftConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.ZonalShiftConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

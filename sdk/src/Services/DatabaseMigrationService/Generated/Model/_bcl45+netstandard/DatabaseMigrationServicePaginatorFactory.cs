@@ -61,6 +61,14 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDataMigrations operation
+        ///</summary>
+        public IDescribeDataMigrationsPaginator DescribeDataMigrations(DescribeDataMigrationsRequest request) 
+        {
+            return new DescribeDataMigrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDataProviders operation
         ///</summary>
         public IDescribeDataProvidersPaginator DescribeDataProviders(DescribeDataProvidersRequest request) 

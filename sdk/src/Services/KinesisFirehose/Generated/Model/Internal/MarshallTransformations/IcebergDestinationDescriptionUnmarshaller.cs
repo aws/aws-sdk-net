@@ -66,6 +66,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppendOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AppendOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BufferingHints", targetDepth))
                 {
                     var unmarshaller = BufferingHintsUnmarshaller.Instance;
@@ -118,6 +124,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SchemaEvolutionConfiguration", targetDepth))
+                {
+                    var unmarshaller = SchemaEvolutionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SchemaEvolutionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableCreationConfiguration", targetDepth))
+                {
+                    var unmarshaller = TableCreationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TableCreationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

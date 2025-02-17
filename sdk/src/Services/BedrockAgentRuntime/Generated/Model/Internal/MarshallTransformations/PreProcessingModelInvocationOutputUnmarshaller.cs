@@ -66,10 +66,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parsedResponse", targetDepth))
                 {
                     var unmarshaller = PreProcessingParsedResponseUnmarshaller.Instance;
                     unmarshalledObject.ParsedResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rawResponse", targetDepth))
+                {
+                    var unmarshaller = RawResponseUnmarshaller.Instance;
+                    unmarshalledObject.RawResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("traceId", targetDepth))

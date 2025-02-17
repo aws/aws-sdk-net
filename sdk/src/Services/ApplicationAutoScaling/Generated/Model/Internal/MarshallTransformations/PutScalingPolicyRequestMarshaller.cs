@@ -81,6 +81,17 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PolicyType);
                 }
 
+                if(publicRequest.IsSetPredictiveScalingPolicyConfiguration())
+                {
+                    context.Writer.WritePropertyName("PredictiveScalingPolicyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PredictiveScalingPolicyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PredictiveScalingPolicyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourceId())
                 {
                     context.Writer.WritePropertyName("ResourceId");

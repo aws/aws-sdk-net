@@ -78,6 +78,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContextualGroundingPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("invocationMetrics", targetDepth))
+                {
+                    var unmarshaller = GuardrailInvocationMetricsUnmarshaller.Instance;
+                    unmarshalledObject.InvocationMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sensitiveInformationPolicy", targetDepth))
                 {
                     var unmarshaller = GuardrailSensitiveInformationPolicyAssessmentUnmarshaller.Instance;

@@ -60,6 +60,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxUnavailablePercentage);
             }
 
+            if(requestObject.IsSetUpdateStrategy())
+            {
+                context.Writer.WritePropertyName("updateStrategy");
+                context.Writer.Write(requestObject.UpdateStrategy);
+            }
+
         }
 
         /// <summary>

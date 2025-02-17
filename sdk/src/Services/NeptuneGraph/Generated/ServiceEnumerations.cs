@@ -167,6 +167,126 @@ namespace Amazon.NeptuneGraph
 
 
     /// <summary>
+    /// Constants used for properties of type ExportFormat.
+    /// </summary>
+    public class ExportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for ExportFormat
+        /// </summary>
+        public static readonly ExportFormat CSV = new ExportFormat("CSV");
+        /// <summary>
+        /// Constant PARQUET for ExportFormat
+        /// </summary>
+        public static readonly ExportFormat PARQUET = new ExportFormat("PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportFormat FindValue(string value)
+        {
+            return FindValue<ExportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportTaskStatus.
+    /// </summary>
+    public class ExportTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus CANCELLED = new ExportTaskStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus CANCELLING = new ExportTaskStatus("CANCELLING");
+        /// <summary>
+        /// Constant DELETED for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus DELETED = new ExportTaskStatus("DELETED");
+        /// <summary>
+        /// Constant EXPORTING for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus EXPORTING = new ExportTaskStatus("EXPORTING");
+        /// <summary>
+        /// Constant FAILED for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus FAILED = new ExportTaskStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZING for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus INITIALIZING = new ExportTaskStatus("INITIALIZING");
+        /// <summary>
+        /// Constant SUCCEEDED for ExportTaskStatus
+        /// </summary>
+        public static readonly ExportTaskStatus SUCCEEDED = new ExportTaskStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportTaskStatus FindValue(string value)
+        {
+            return FindValue<ExportTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Format.
     /// </summary>
     public class Format : ConstantClass
@@ -184,6 +304,10 @@ namespace Amazon.NeptuneGraph
         /// Constant OPEN_CYPHER for Format
         /// </summary>
         public static readonly Format OPEN_CYPHER = new Format("OPEN_CYPHER");
+        /// <summary>
+        /// Constant PARQUET for Format
+        /// </summary>
+        public static readonly Format PARQUET = new Format("PARQUET");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -363,6 +487,10 @@ namespace Amazon.NeptuneGraph
         /// </summary>
         public static readonly ImportTaskStatus CANCELLING = new ImportTaskStatus("CANCELLING");
         /// <summary>
+        /// Constant DELETED for ImportTaskStatus
+        /// </summary>
+        public static readonly ImportTaskStatus DELETED = new ImportTaskStatus("DELETED");
+        /// <summary>
         /// Constant EXPORTING for ImportTaskStatus
         /// </summary>
         public static readonly ImportTaskStatus EXPORTING = new ImportTaskStatus("EXPORTING");
@@ -420,6 +548,102 @@ namespace Amazon.NeptuneGraph
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImportTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiValueHandlingType.
+    /// </summary>
+    public class MultiValueHandlingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PICK_FIRST for MultiValueHandlingType
+        /// </summary>
+        public static readonly MultiValueHandlingType PICK_FIRST = new MultiValueHandlingType("PICK_FIRST");
+        /// <summary>
+        /// Constant TO_LIST for MultiValueHandlingType
+        /// </summary>
+        public static readonly MultiValueHandlingType TO_LIST = new MultiValueHandlingType("TO_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiValueHandlingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiValueHandlingType FindValue(string value)
+        {
+            return FindValue<MultiValueHandlingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiValueHandlingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParquetType.
+    /// </summary>
+    public class ParquetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COLUMNAR for ParquetType
+        /// </summary>
+        public static readonly ParquetType COLUMNAR = new ParquetType("COLUMNAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParquetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParquetType FindValue(string value)
+        {
+            return FindValue<ParquetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParquetType(string value)
         {
             return FindValue(value);
         }

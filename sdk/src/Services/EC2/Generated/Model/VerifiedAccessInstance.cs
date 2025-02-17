@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VerifiedAccessInstance
     {
+        private VerifiedAccessInstanceCustomSubDomain _cidrEndpointsCustomSubDomain;
         private string _creationTime;
         private string _description;
         private bool? _fipsEnabled;
@@ -41,6 +42,24 @@ namespace Amazon.EC2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _verifiedAccessInstanceId;
         private List<VerifiedAccessTrustProviderCondensed> _verifiedAccessTrustProviders = AWSConfigs.InitializeCollections ? new List<VerifiedAccessTrustProviderCondensed>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CidrEndpointsCustomSubDomain. 
+        /// <para>
+        /// The custom subdomain.
+        /// </para>
+        /// </summary>
+        public VerifiedAccessInstanceCustomSubDomain CidrEndpointsCustomSubDomain
+        {
+            get { return this._cidrEndpointsCustomSubDomain; }
+            set { this._cidrEndpointsCustomSubDomain = value; }
+        }
+
+        // Check to see if CidrEndpointsCustomSubDomain property is set
+        internal bool IsSetCidrEndpointsCustomSubDomain()
+        {
+            return this._cidrEndpointsCustomSubDomain != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

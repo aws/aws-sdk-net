@@ -42,11 +42,10 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property SecurityGroup. 
         /// <para>
         /// Specifies the security groups associated with the stream. These security groups must
-        /// all be in the same VPC. You can specify as many as five security groups. If you do
-        /// not specify a security group, the default security group for the VPC is used.
+        /// all be in the same VPC. You can specify as many as five security groups.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> SecurityGroup
         {
             get { return this._securityGroup; }
@@ -66,7 +65,7 @@ namespace Amazon.Pipes.Model
         /// same VPC. You can specify as many as 16 subnets.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=16)]
+        [AWSProperty(Min=1, Max=16)]
         public List<string> Subnets
         {
             get { return this._subnets; }

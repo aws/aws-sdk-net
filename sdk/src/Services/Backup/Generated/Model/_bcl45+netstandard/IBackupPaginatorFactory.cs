@@ -77,6 +77,11 @@ namespace Amazon.Backup.Model
         IListFrameworksPaginator ListFrameworks(ListFrameworksRequest request);
 
         /// <summary>
+        /// Paginator for ListIndexedRecoveryPoints operation
+        ///</summary>
+        IListIndexedRecoveryPointsPaginator ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request);
+
+        /// <summary>
         /// Paginator for ListLegalHolds operation
         ///</summary>
         IListLegalHoldsPaginator ListLegalHolds(ListLegalHoldsRequest request);

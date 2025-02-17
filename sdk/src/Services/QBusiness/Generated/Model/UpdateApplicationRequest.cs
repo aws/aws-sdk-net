@@ -32,11 +32,27 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
     /// Updates an existing Amazon Q Business application.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Q Business applications may securely transmit data for processing across Amazon
+    /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+    /// region inference in Amazon Q Business</a>.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// An Amazon Q Apps service-linked role will be created if it's absent in the Amazon
+    /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">Using
+    /// service-linked roles for Q Apps</a>. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
         private AttachmentsConfiguration _attachmentsConfiguration;
+        private AutoSubscriptionConfiguration _autoSubscriptionConfiguration;
         private string _description;
         private string _displayName;
         private string _identityCenterInstanceArn;
@@ -79,6 +95,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttachmentsConfiguration()
         {
             return this._attachmentsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoSubscriptionConfiguration. 
+        /// <para>
+        /// An option to enable updating the default subscription type assigned to an Amazon Q
+        /// Business application using IAM identity federation for user management.
+        /// </para>
+        /// </summary>
+        public AutoSubscriptionConfiguration AutoSubscriptionConfiguration
+        {
+            get { return this._autoSubscriptionConfiguration; }
+            set { this._autoSubscriptionConfiguration = value; }
+        }
+
+        // Check to see if AutoSubscriptionConfiguration property is set
+        internal bool IsSetAutoSubscriptionConfiguration()
+        {
+            return this._autoSubscriptionConfiguration != null;
         }
 
         /// <summary>

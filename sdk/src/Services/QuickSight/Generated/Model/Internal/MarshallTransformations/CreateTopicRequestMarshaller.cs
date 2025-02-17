@@ -70,6 +70,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFolderArns())
+                {
+                    context.Writer.WritePropertyName("FolderArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                    {
+                            context.Writer.Write(publicRequestFolderArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

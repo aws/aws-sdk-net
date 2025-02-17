@@ -73,6 +73,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssetScopes())
+                {
+                    context.Writer.WritePropertyName("assetScopes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssetScopesListValue in publicRequest.AssetScopes)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AcceptedAssetScopeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssetScopesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDecisionComment())
                 {
                     context.Writer.WritePropertyName("decisionComment");

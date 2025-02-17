@@ -103,6 +103,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultStorageClass);
                 }
 
+                if(publicRequest.IsSetEncryptionType())
+                {
+                    context.Writer.WritePropertyName("EncryptionType");
+                    context.Writer.Write(publicRequest.EncryptionType);
+                }
+
                 if(publicRequest.IsSetFileShareARN())
                 {
                     context.Writer.WritePropertyName("FileShareARN");

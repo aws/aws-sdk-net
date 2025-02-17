@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQuery
     {
+        private ComputeConfiguration _computeConfiguration;
         private DateTime? _createTime;
         private DifferentialPrivacyParameters _differentialPrivacy;
         private ProtectedQueryError _error;
@@ -45,6 +46,24 @@ namespace Amazon.CleanRooms.Model
         private ProtectedQuerySQLParameters _sqlParameters;
         private ProtectedQueryStatistics _statistics;
         private ProtectedQueryStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        ///  The compute configuration for the protected query.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration
+        {
+            get { return this._computeConfiguration; }
+            set { this._computeConfiguration = value; }
+        }
+
+        // Check to see if ComputeConfiguration property is set
+        internal bool IsSetComputeConfiguration()
+        {
+            return this._computeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTime. 

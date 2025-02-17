@@ -107,6 +107,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobRunId);
                 }
 
+                if(publicRequest.IsSetJobRunQueuingEnabled())
+                {
+                    context.Writer.WritePropertyName("JobRunQueuingEnabled");
+                    context.Writer.Write(publicRequest.JobRunQueuingEnabled);
+                }
+
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");

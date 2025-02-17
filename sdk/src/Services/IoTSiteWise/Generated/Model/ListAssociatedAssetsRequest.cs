@@ -39,11 +39,11 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// List child assets associated to a parent asset by a hierarchy that you specify.
+    ///  <c>CHILD</c> - List all child assets associated to the asset.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// List an asset's parent asset.
+    ///  <c>PARENT</c> - List the asset's parent asset.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -80,13 +80,15 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property HierarchyId. 
         /// <para>
-        /// The ID of the hierarchy by which child assets are associated to the asset. (This can
-        /// be either the actual ID in UUID format, or else <c>externalId:</c> followed by the
-        /// external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a hierarchy
-        /// ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
-        /// or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
-        /// operations. This parameter is required if you choose <c>CHILD</c> for <c>traversalDirection</c>.
+        /// (Optional) If you don't provide a <c>hierarchyId</c>, all the immediate assets in
+        /// the <c>traversalDirection</c> will be returned. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  The ID of the hierarchy by which child assets are associated to the asset. (This
+        /// can be either the actual ID in UUID format, or else <c>externalId:</c> followed by
+        /// the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
         /// </para>
         ///  
         /// <para>
@@ -156,8 +158,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>CHILD</c> – The list includes all child assets associated to the asset. The <c>hierarchyId</c>
-        /// parameter is required if you choose <c>CHILD</c>.
+        ///  <c>CHILD</c> – The list includes all child assets associated to the asset.
         /// </para>
         ///  </li> <li> 
         /// <para>

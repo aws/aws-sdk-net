@@ -34,11 +34,51 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class JupyterLabAppSettings
     {
+        private AppLifecycleManagement _appLifecycleManagement;
+        private string _builtInLifecycleConfigArn;
         private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
         private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
         private EmrSettings _emrSettings;
         private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AppLifecycleManagement. 
+        /// <para>
+        /// Indicates whether idle shutdown is activated for JupyterLab applications.
+        /// </para>
+        /// </summary>
+        public AppLifecycleManagement AppLifecycleManagement
+        {
+            get { return this._appLifecycleManagement; }
+            set { this._appLifecycleManagement = value; }
+        }
+
+        // Check to see if AppLifecycleManagement property is set
+        internal bool IsSetAppLifecycleManagement()
+        {
+            return this._appLifecycleManagement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuiltInLifecycleConfigArn. 
+        /// <para>
+        /// The lifecycle configuration that runs before the default lifecycle configuration.
+        /// It can override changes made in the default lifecycle configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string BuiltInLifecycleConfigArn
+        {
+            get { return this._builtInLifecycleConfigArn; }
+            set { this._builtInLifecycleConfigArn = value; }
+        }
+
+        // Check to see if BuiltInLifecycleConfigArn property is set
+        internal bool IsSetBuiltInLifecycleConfigArn()
+        {
+            return this._builtInLifecycleConfigArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CodeRepositories. 

@@ -37,6 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _allocationId;
         private string _iPv6Address;
         private string _privateIPv4Address;
+        private string _sourceNatIpv6Prefix;
         private string _subnetId;
 
         /// <summary>
@@ -92,6 +93,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetPrivateIPv4Address()
         {
             return this._privateIPv4Address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceNatIpv6Prefix. 
+        /// <para>
+        /// [Network Load Balancers with UDP listeners] The IPv6 prefix to use for source NAT.
+        /// Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or <c>auto_assigned</c>
+        /// to use an IPv6 prefix selected at random from the subnet CIDR block.
+        /// </para>
+        /// </summary>
+        public string SourceNatIpv6Prefix
+        {
+            get { return this._sourceNatIpv6Prefix; }
+            set { this._sourceNatIpv6Prefix = value; }
+        }
+
+        // Check to see if SourceNatIpv6Prefix property is set
+        internal bool IsSetSourceNatIpv6Prefix()
+        {
+            return this._sourceNatIpv6Prefix != null;
         }
 
         /// <summary>

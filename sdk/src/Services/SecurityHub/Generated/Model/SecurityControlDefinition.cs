@@ -150,10 +150,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SecurityControlId. 
         /// <para>
         ///  The unique identifier of a security control across standards. Values for this field
-        /// typically consist of an Amazon Web Service name and a number (for example, APIGateway.3).
-        /// This parameter differs from <c>SecurityControlArn</c>, which is a unique Amazon Resource
-        /// Name (ARN) assigned to a control. The ARN references the security control ID (for
-        /// example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).
+        /// typically consist of an Amazon Web Services service name and a number (for example,
+        /// APIGateway.3). This parameter differs from <c>SecurityControlArn</c>, which is a unique
+        /// Amazon Resource Name (ARN) assigned to a control. The ARN references the security
+        /// control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3).
         /// 
         /// </para>
         /// </summary>

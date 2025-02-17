@@ -32,8 +32,9 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the GetTransformer operation.
     /// Retrieves the details for the transformer specified by the transformer ID. A transformer
-    /// describes how to process the incoming EDI documents and extract the necessary information
-    /// to the output file.
+    /// can take an EDI file as input and transform it into a JSON-or XML-formatted document.
+    /// Alternatively, a transformer can take a JSON-or XML-formatted document as input and
+    /// transform it into an EDI file.
     /// </summary>
     public partial class GetTransformerRequest : AmazonB2biRequest
     {

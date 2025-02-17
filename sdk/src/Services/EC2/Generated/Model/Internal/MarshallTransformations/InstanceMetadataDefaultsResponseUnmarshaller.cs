@@ -79,6 +79,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceMetadataTags = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("managedBy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ManagedBy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("managedExceptionMessage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ManagedExceptionMessage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

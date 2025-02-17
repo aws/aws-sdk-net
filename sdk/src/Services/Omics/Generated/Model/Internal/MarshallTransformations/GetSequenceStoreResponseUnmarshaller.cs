@@ -94,6 +94,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("propagatedSetLevelTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.PropagatedSetLevelTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Access", targetDepth))
                 {
                     var unmarshaller = SequenceStoreS3AccessUnmarshaller.Instance;
@@ -104,6 +110,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SseConfigUnmarshaller.Instance;
                     response.SseConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

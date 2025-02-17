@@ -170,6 +170,7 @@ namespace Amazon.GameLift.Model
         /// associated with the GameLift fleet that this game session is running on. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -188,6 +189,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the fleet that the game session is running on.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -224,9 +226,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process with a request to start a new game session
-        /// (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>).
+        /// data is passed to a game server process with a request to start a new game session.
+        /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a game session</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -371,7 +373,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionCreationPolicy. 
         /// <para>
-        /// Indicates whether or not the game session is accepting new players.
+        /// Indicates whether the game session is accepting new players.
         /// </para>
         /// </summary>
         public PlayerSessionCreationPolicy PlayerSessionCreationPolicy
@@ -428,10 +430,24 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// Provides additional information about game session status. <c>INTERRUPTED</c> indicates
-        /// that the game session was hosted on a spot instance that was reclaimed, causing the
-        /// active game session to be terminated.
+        /// Provides additional information about game session status. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INTERRUPTED</c> -- The game session was hosted on an EC2 Spot instance that was
+        /// reclaimed, causing the active game session to be stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRIGGERED_ON_PROCESS_TERMINATE</c> – The game session was stopped by calling <c>TerminateGameSession</c>
+        /// with the termination mode <c>TRIGGER_ON_PROCESS_TERMINATE</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FORCE_TERMINATED</c> – The game session was stopped by calling <c>TerminateGameSession</c>
+        /// with the termination mode <c>FORCE_TERMINATE</c>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public GameSessionStatusReason StatusReason
         {

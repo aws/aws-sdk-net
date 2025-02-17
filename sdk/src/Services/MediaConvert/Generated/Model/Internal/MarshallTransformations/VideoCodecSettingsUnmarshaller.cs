@@ -90,6 +90,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gifSettings", targetDepth))
+                {
+                    var unmarshaller = GifSettingsUnmarshaller.Instance;
+                    unmarshalledObject.GifSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("h264Settings", targetDepth))
                 {
                     var unmarshaller = H264SettingsUnmarshaller.Instance;

@@ -233,7 +233,7 @@ namespace SDKDocGenerator
                     }
                     // keep items as the root for content, but a further subfolder of the root namespace
                     // will be added for the artifacts
-                    var artifactManifest = new GenerationManifest(assembly, Options.ComputedContentFolder, availablePlatforms, Options, true);
+                    var artifactManifest = new GenerationManifest(assembly, Options.ComputedContentFolder, availablePlatforms, Options);
                     manifests.Add(artifactManifest);
                 }
             }

@@ -64,6 +64,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEvaluatorModelConfig())
+            {
+                context.Writer.WritePropertyName("evaluatorModelConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluatorModelConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.EvaluatorModelConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

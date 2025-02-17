@@ -78,8 +78,22 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of table optimizer. Currently, the only valid value is <c>compaction</c>.
+        /// The type of table optimizer. The valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>compaction</c>: for managing compaction with a table optimizer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>retention</c>: for managing the retention of snapshot with a table optimizer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>orphan_file_deletion</c>: for managing the deletion of orphan files with a table
+        /// optimizer.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TableOptimizerType Type
         {

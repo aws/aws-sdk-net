@@ -35,12 +35,32 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVerifiedAccessEndpointRequest : AmazonEC2Request
     {
+        private ModifyVerifiedAccessEndpointCidrOptions _cidrOptions;
         private string _clientToken;
         private string _description;
         private ModifyVerifiedAccessEndpointLoadBalancerOptions _loadBalancerOptions;
         private ModifyVerifiedAccessEndpointEniOptions _networkInterfaceOptions;
+        private ModifyVerifiedAccessEndpointRdsOptions _rdsOptions;
         private string _verifiedAccessEndpointId;
         private string _verifiedAccessGroupId;
+
+        /// <summary>
+        /// Gets and sets the property CidrOptions. 
+        /// <para>
+        /// The CIDR options.
+        /// </para>
+        /// </summary>
+        public ModifyVerifiedAccessEndpointCidrOptions CidrOptions
+        {
+            get { return this._cidrOptions; }
+            set { this._cidrOptions = value; }
+        }
+
+        // Check to see if CidrOptions property is set
+        internal bool IsSetCidrOptions()
+        {
+            return this._cidrOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -114,6 +134,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceOptions()
         {
             return this._networkInterfaceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsOptions. 
+        /// <para>
+        /// The RDS options.
+        /// </para>
+        /// </summary>
+        public ModifyVerifiedAccessEndpointRdsOptions RdsOptions
+        {
+            get { return this._rdsOptions; }
+            set { this._rdsOptions = value; }
+        }
+
+        // Check to see if RdsOptions property is set
+        internal bool IsSetRdsOptions()
+        {
+            return this._rdsOptions != null;
         }
 
         /// <summary>

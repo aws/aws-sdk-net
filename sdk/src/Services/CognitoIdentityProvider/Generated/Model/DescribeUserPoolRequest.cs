@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUserPool operation.
-    /// Returns the configuration information and metadata of the specified user pool.
+    /// Given a user pool ID, returns configuration information. This operation is useful
+    /// when you want to inspect an existing user pool and programmatically replicate the
+    /// configuration to another user pool.
     /// 
     ///  <note> 
     /// <para>
@@ -62,7 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool you want to describe.
+        /// The ID of the user pool you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

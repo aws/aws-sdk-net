@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
         private string _addonVersion;
         private List<string> _architecture = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Compatibility> _compatibilities = AWSConfigs.InitializeCollections ? new List<Compatibility>() : null;
+        private List<string> _computeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _requiresConfiguration;
         private bool? _requiresIamPermissions;
 
@@ -92,6 +93,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetCompatibilities()
         {
             return this._compatibilities != null && (this._compatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeTypes. 
+        /// <para>
+        /// Indicates the compute type of the addon version.
+        /// </para>
+        /// </summary>
+        public List<string> ComputeTypes
+        {
+            get { return this._computeTypes; }
+            set { this._computeTypes = value; }
+        }
+
+        // Check to see if ComputeTypes property is set
+        internal bool IsSetComputeTypes()
+        {
+            return this._computeTypes != null && (this._computeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

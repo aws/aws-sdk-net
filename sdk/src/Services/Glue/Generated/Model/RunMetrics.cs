@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Metrics for the optimizer run.
+    /// 
+    ///  
+    /// <para>
+    /// This structure is deprecated. See the individual metric members for compaction, retention,
+    /// and orphan file deletion.
+    /// </para>
     /// </summary>
     public partial class RunMetrics
     {

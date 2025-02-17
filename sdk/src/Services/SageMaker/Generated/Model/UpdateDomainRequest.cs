@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TagPropagation _tagPropagation;
 
         /// <summary>
         /// Gets and sets the property AppNetworkAccessType. 
@@ -50,8 +51,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
-        /// which allows direct internet access.
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker
+        /// AI, which allows direct internet access.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -102,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultSpaceSettings. 
         /// <para>
-        /// The default settings used to create a space within the domain.
+        /// The default settings for shared spaces that users create in the domain.
         /// </para>
         /// </summary>
         public DefaultSpaceSettings DefaultSpaceSettings
@@ -194,6 +195,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagation. 
+        /// <para>
+        /// Indicates whether custom tag propagation is supported for the domain. Defaults to
+        /// <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public TagPropagation TagPropagation
+        {
+            get { return this._tagPropagation; }
+            set { this._tagPropagation = value; }
+        }
+
+        // Check to see if TagPropagation property is set
+        internal bool IsSetTagPropagation()
+        {
+            return this._tagPropagation != null;
         }
 
     }

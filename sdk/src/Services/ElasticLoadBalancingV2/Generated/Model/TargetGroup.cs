@@ -189,9 +189,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for this target group. The possible values are <c>ipv4</c>
-        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
-        /// defaults to <c>ipv4</c>.
+        /// The IP address type. The default value is <c>ipv4</c>.
         /// </para>
         /// </summary>
         public TargetGroupIpAddressTypeEnum IpAddressType

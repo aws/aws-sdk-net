@@ -65,6 +65,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDomainsRequireAdminConsent())
+            {
+                context.Writer.WritePropertyName("DomainsRequireAdminConsent");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDomainsRequireAdminConsentListValue in requestObject.DomainsRequireAdminConsent)
+                {
+                        context.Writer.Write(requestObjectDomainsRequireAdminConsentListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceIdentifier())
             {
                 context.Writer.WritePropertyName("ResourceIdentifier");

@@ -309,6 +309,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant DefaultMessageFeedbackEnabled for ConfigurationSetFilterName
+        /// </summary>
+        public static readonly ConfigurationSetFilterName DefaultMessageFeedbackEnabled = new ConfigurationSetFilterName("default-message-feedback-enabled");
+        /// <summary>
         /// Constant DefaultMessageType for ConfigurationSetFilterName
         /// </summary>
         public static readonly ConfigurationSetFilterName DefaultMessageType = new ConfigurationSetFilterName("default-message-type");
@@ -382,6 +386,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION = new ConflictExceptionReason("DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION");
+        /// <summary>
+        /// Constant DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE = new ConflictExceptionReason("DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE");
         /// <summary>
         /// Constant DESTINATION_PHONE_NUMBER_NOT_VERIFIED for ConflictExceptionReason
         /// </summary>
@@ -706,6 +714,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant TEXT_PENDING for EventType
         /// </summary>
         public static readonly EventType TEXT_PENDING = new EventType("TEXT_PENDING");
+        /// <summary>
+        /// Constant TEXT_PROTECT_BLOCKED for EventType
+        /// </summary>
+        public static readonly EventType TEXT_PROTECT_BLOCKED = new EventType("TEXT_PROTECT_BLOCKED");
         /// <summary>
         /// Constant TEXT_QUEUED for EventType
         /// </summary>
@@ -1109,6 +1121,56 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type MessageFeedbackStatus.
+    /// </summary>
+    public class MessageFeedbackStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for MessageFeedbackStatus
+        /// </summary>
+        public static readonly MessageFeedbackStatus FAILED = new MessageFeedbackStatus("FAILED");
+        /// <summary>
+        /// Constant RECEIVED for MessageFeedbackStatus
+        /// </summary>
+        public static readonly MessageFeedbackStatus RECEIVED = new MessageFeedbackStatus("RECEIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageFeedbackStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageFeedbackStatus FindValue(string value)
+        {
+            return FindValue<MessageFeedbackStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageFeedbackStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MessageType.
     /// </summary>
     public class MessageType : ConstantClass
@@ -1376,6 +1438,56 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OptedOutFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Owner.
+    /// </summary>
+    public class Owner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SELF for Owner
+        /// </summary>
+        public static readonly Owner SELF = new Owner("SELF");
+        /// <summary>
+        /// Constant SHARED for Owner
+        /// </summary>
+        public static readonly Owner SHARED = new Owner("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Owner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Owner FindValue(string value)
+        {
+            return FindValue<Owner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Owner(string value)
         {
             return FindValue(value);
         }
@@ -1686,6 +1798,126 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProtectConfigurationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectConfigurationRuleOverrideAction.
+    /// </summary>
+    public class ProtectConfigurationRuleOverrideAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for ProtectConfigurationRuleOverrideAction
+        /// </summary>
+        public static readonly ProtectConfigurationRuleOverrideAction ALLOW = new ProtectConfigurationRuleOverrideAction("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for ProtectConfigurationRuleOverrideAction
+        /// </summary>
+        public static readonly ProtectConfigurationRuleOverrideAction BLOCK = new ProtectConfigurationRuleOverrideAction("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectConfigurationRuleOverrideAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectConfigurationRuleOverrideAction FindValue(string value)
+        {
+            return FindValue<ProtectConfigurationRuleOverrideAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectConfigurationRuleOverrideAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectConfigurationRuleSetNumberOverrideFilterName.
+    /// </summary>
+    public class ProtectConfigurationRuleSetNumberOverrideFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Action for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName Action = new ProtectConfigurationRuleSetNumberOverrideFilterName("action");
+        /// <summary>
+        /// Constant CreatedAfter for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName CreatedAfter = new ProtectConfigurationRuleSetNumberOverrideFilterName("created-after");
+        /// <summary>
+        /// Constant CreatedBefore for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName CreatedBefore = new ProtectConfigurationRuleSetNumberOverrideFilterName("created-before");
+        /// <summary>
+        /// Constant DestinationPhoneNumberBeginsWith for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName DestinationPhoneNumberBeginsWith = new ProtectConfigurationRuleSetNumberOverrideFilterName("destination-phone-number-begins-with");
+        /// <summary>
+        /// Constant ExpiresAfter for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName ExpiresAfter = new ProtectConfigurationRuleSetNumberOverrideFilterName("expires-after");
+        /// <summary>
+        /// Constant ExpiresBefore for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName ExpiresBefore = new ProtectConfigurationRuleSetNumberOverrideFilterName("expires-before");
+        /// <summary>
+        /// Constant IsoCountryCode for ProtectConfigurationRuleSetNumberOverrideFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationRuleSetNumberOverrideFilterName IsoCountryCode = new ProtectConfigurationRuleSetNumberOverrideFilterName("iso-country-code");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectConfigurationRuleSetNumberOverrideFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectConfigurationRuleSetNumberOverrideFilterName FindValue(string value)
+        {
+            return FindValue<ProtectConfigurationRuleSetNumberOverrideFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectConfigurationRuleSetNumberOverrideFilterName(string value)
         {
             return FindValue(value);
         }
@@ -2023,6 +2255,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly RegistrationStatus PROVISIONING = new RegistrationStatus("PROVISIONING");
         /// <summary>
+        /// Constant REQUIRES_AUTHENTICATION for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus REQUIRES_AUTHENTICATION = new RegistrationStatus("REQUIRES_AUTHENTICATION");
+        /// <summary>
         /// Constant REQUIRES_UPDATES for RegistrationStatus
         /// </summary>
         public static readonly RegistrationStatus REQUIRES_UPDATES = new RegistrationStatus("REQUIRES_UPDATES");
@@ -2193,6 +2429,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly RegistrationVersionStatus DRAFT = new RegistrationVersionStatus("DRAFT");
         /// <summary>
+        /// Constant REQUIRES_AUTHENTICATION for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus REQUIRES_AUTHENTICATION = new RegistrationVersionStatus("REQUIRES_AUTHENTICATION");
+        /// <summary>
         /// Constant REVIEWING for RegistrationVersionStatus
         /// </summary>
         public static readonly RegistrationVersionStatus REVIEWING = new RegistrationVersionStatus("REVIEWING");
@@ -2321,6 +2561,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ResourceType Keyword = new ResourceType("keyword");
         /// <summary>
+        /// Constant Message for ResourceType
+        /// </summary>
+        public static readonly ResourceType Message = new ResourceType("message");
+        /// <summary>
         /// Constant OptedOutNumber for ResourceType
         /// </summary>
         public static readonly ResourceType OptedOutNumber = new ResourceType("opted-out-number");
@@ -2332,6 +2576,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant PhoneNumber for ResourceType
         /// </summary>
         public static readonly ResourceType PhoneNumber = new ResourceType("phone-number");
+        /// <summary>
+        /// Constant Policy for ResourceType
+        /// </summary>
+        public static readonly ResourceType Policy = new ResourceType("policy");
         /// <summary>
         /// Constant Pool for ResourceType
         /// </summary>
@@ -2796,6 +3044,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant UNKNOWN_REGISTRATION_VERSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_VERSION = new ValidationExceptionReason("UNKNOWN_REGISTRATION_VERSION");
+        /// <summary>
+        /// Constant UNSPECIFIED_PARAMETER_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNSPECIFIED_PARAMETER_NOT_SUPPORTED = new ValidationExceptionReason("UNSPECIFIED_PARAMETER_NOT_SUPPORTED");
         /// <summary>
         /// Constant VERIFICATION_CODE_MISMATCH for ValidationExceptionReason
         /// </summary>

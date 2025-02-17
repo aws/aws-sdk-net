@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetBotName())
                 request.Parameters.Add("botName", StringUtils.FromString(publicRequest.BotName));
             
+            if (publicRequest.IsSetClientToken())
+                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            else            
+                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
+                
+            
             if (publicRequest.IsSetLexRegion())
                 request.Parameters.Add("lexRegion", StringUtils.FromString(publicRequest.LexRegion));
             request.ResourcePath = "/instance/{InstanceId}/lex-bot";

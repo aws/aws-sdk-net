@@ -51,9 +51,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private static void UnmarshallResult(XmlUnmarshallerContext context,ListBucketsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListBucketsResponse response)
         {
-            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -76,7 +75,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Owner", targetDepth))
                     {
                         response.Owner = OwnerUnmarshaller.Instance.Unmarshall(context);
-                            
+                        continue;
+                    }
+                    if (context.TestExpression("ContinuationToken", targetDepth))
+                    {
+                        response.ContinuationToken = StringUnmarshaller.Instance.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Prefix", targetDepth))
+                    {
+                        response.Prefix = StringUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
                 }
@@ -85,8 +93,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-                            
-
 
             return;
         }

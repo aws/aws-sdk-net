@@ -101,6 +101,14 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobParameterDefinitions operation
+        ///</summary>
+        public IListJobParameterDefinitionsPaginator ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request) 
+        {
+            return new ListJobParameterDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
@@ -114,6 +122,14 @@ namespace Amazon.Deadline.Model
         public IListLicenseEndpointsPaginator ListLicenseEndpoints(ListLicenseEndpointsRequest request) 
         {
             return new ListLicenseEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLimits operation
+        ///</summary>
+        public IListLimitsPaginator ListLimits(ListLimitsRequest request) 
+        {
+            return new ListLimitsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -146,6 +162,14 @@ namespace Amazon.Deadline.Model
         public IListQueueFleetAssociationsPaginator ListQueueFleetAssociations(ListQueueFleetAssociationsRequest request) 
         {
             return new ListQueueFleetAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQueueLimitAssociations operation
+        ///</summary>
+        public IListQueueLimitAssociationsPaginator ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request) 
+        {
+            return new ListQueueLimitAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

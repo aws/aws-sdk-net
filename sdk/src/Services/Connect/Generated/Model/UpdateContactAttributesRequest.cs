@@ -70,8 +70,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// When the attributes for a contact exceed 32 KB, the contact is routed down the Error
-        /// branch of the flow. As a mitigation, consider the following options:
+        /// In the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Set
+        /// contact attributes</a> block, when the attributes for a contact exceed 32 KB, the
+        /// contact is routed down the Error branch of the flow. As a mitigation, consider the
+        /// following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KeepAlivePeriodInSeconds);
             }
 
+            if(requestObject.IsSetTrainingPlanArn())
+            {
+                context.Writer.WritePropertyName("TrainingPlanArn");
+                context.Writer.Write(requestObject.TrainingPlanArn);
+            }
+
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");

@@ -37,11 +37,51 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for GetSimilarProfiles operation
+        ///</summary>
+        public IGetSimilarProfilesPaginator GetSimilarProfiles(GetSimilarProfilesRequest request) 
+        {
+            return new GetSimilarProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
         public IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request) 
         {
             return new ListEventStreamsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventTriggers operation
+        ///</summary>
+        public IListEventTriggersPaginator ListEventTriggers(ListEventTriggersRequest request) 
+        {
+            return new ListEventTriggersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListObjectTypeAttributes operation
+        ///</summary>
+        public IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request) 
+        {
+            return new ListObjectTypeAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRuleBasedMatches operation
+        ///</summary>
+        public IListRuleBasedMatchesPaginator ListRuleBasedMatches(ListRuleBasedMatchesRequest request) 
+        {
+            return new ListRuleBasedMatchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSegmentDefinitions operation
+        ///</summary>
+        public IListSegmentDefinitionsPaginator ListSegmentDefinitions(ListSegmentDefinitionsRequest request) 
+        {
+            return new ListSegmentDefinitionsPaginator(this.client, request);
         }
     }
 }

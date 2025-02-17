@@ -63,6 +63,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             
+            if (publicRequest.IsSetConnectionIdentifier())
+                request.Parameters.Add("connectionIdentifier", StringUtils.FromString(publicRequest.ConnectionIdentifier));
+            
             if (publicRequest.IsSetEnvironmentIdentifier())
                 request.Parameters.Add("environmentIdentifier", StringUtils.FromString(publicRequest.EnvironmentIdentifier));
             

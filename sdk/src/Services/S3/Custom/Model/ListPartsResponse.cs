@@ -41,6 +41,7 @@ namespace Amazon.S3.Model
         private DateTime? abortDate;
         private string abortRuleId;
         private RequestCharged requestCharged;
+        private ChecksumType checksumType;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -346,6 +347,32 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumType.
+        /// <para>
+        /// The checksum type, which determines how part-level checksums are combined to 
+        /// create an object-level checksum for multipart objects. You can use this header 
+        /// response to verify that the checksum type that is received is the same checksum 
+        /// type that was specified in the <c>CreateMultipartUpload</c> request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this.checksumType; }
+            set { this.checksumType = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ChecksumType is set.
+        /// </summary>
+        /// <returns>true, if ChecksumType property is set.</returns>
+        internal bool IsSetChecksumType()
+        {
+            return checksumType != null;
         }
     }
 }

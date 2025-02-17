@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The key value store entity cannot be deleted while it is in use.
+    /// The entity cannot be deleted while it is in use.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

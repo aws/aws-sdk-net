@@ -67,6 +67,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDisallowIngestNullNaN())
+                {
+                    context.Writer.WritePropertyName("disallowIngestNullNaN");
+                    context.Writer.Write(publicRequest.DisallowIngestNullNaN);
+                }
+
                 if(publicRequest.IsSetDisassociatedDataStorage())
                 {
                     context.Writer.WritePropertyName("disassociatedDataStorage");

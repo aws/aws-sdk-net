@@ -52,6 +52,11 @@ namespace Amazon.LakeFormation.Model
         IListLakeFormationOptInsPaginator ListLakeFormationOptIns(ListLakeFormationOptInsRequest request);
 
         /// <summary>
+        /// Paginator for ListLFTagExpressions operation
+        ///</summary>
+        IListLFTagExpressionsPaginator ListLFTagExpressions(ListLFTagExpressionsRequest request);
+
+        /// <summary>
         /// Paginator for ListLFTags operation
         ///</summary>
         IListLFTagsPaginator ListLFTags(ListLFTagsRequest request);

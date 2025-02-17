@@ -105,6 +105,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOutboundEmailConfig())
+                {
+                    context.Writer.WritePropertyName("OutboundEmailConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutboundEmailConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutboundEmailConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQuickConnectIds())
                 {
                     context.Writer.WritePropertyName("QuickConnectIds");

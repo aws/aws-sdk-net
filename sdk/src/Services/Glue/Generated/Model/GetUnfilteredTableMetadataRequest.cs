@@ -192,7 +192,7 @@ namespace Amazon.Glue.Model
         /// Specified only if the base tables belong to a different Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Region
         {
             get { return this._region; }

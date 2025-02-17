@@ -38,6 +38,7 @@ namespace Amazon.CodePipeline.Model
         private string _externalExecutionId;
         private string _externalExecutionSummary;
         private string _externalExecutionUrl;
+        private string _logStreamARN;
 
         /// <summary>
         /// Gets and sets the property ErrorDetails.
@@ -108,6 +109,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetExternalExecutionUrl()
         {
             return this._externalExecutionUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogStreamARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the log stream for the action compute.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=250)]
+        public string LogStreamARN
+        {
+            get { return this._logStreamARN; }
+            set { this._logStreamARN = value; }
+        }
+
+        // Check to see if LogStreamARN property is set
+        internal bool IsSetLogStreamARN()
+        {
+            return this._logStreamARN != null;
         }
 
     }

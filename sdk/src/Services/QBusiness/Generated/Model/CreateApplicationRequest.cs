@@ -39,20 +39,38 @@ namespace Amazon.QBusiness.Model
     /// are also available in Amazon Q Business Lite. For information on what's included in
     /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
     /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
-    /// tiers to users.
+    /// tiers to users. 
+    /// </para>
+    ///  
+    /// <para>
+    /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+    /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+    /// Using service-linked roles for Q Apps</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you create an application, Amazon Q Business may securely transmit data for processing
+    /// from your selected Amazon Web Services region, but within your geography. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+    /// region inference in Amazon Q Business</a>.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonQBusinessRequest
     {
         private AttachmentsConfiguration _attachmentsConfiguration;
+        private List<string> _clientIdsForOIDC = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _description;
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _iamIdentityProviderArn;
         private string _identityCenterInstanceArn;
+        private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
+        private QuickSightConfiguration _quickSightConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -72,6 +90,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttachmentsConfiguration()
         {
             return this._attachmentsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientIdsForOIDC. 
+        /// <para>
+        /// The OIDC client ID for a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public List<string> ClientIdsForOIDC
+        {
+            get { return this._clientIdsForOIDC; }
+            set { this._clientIdsForOIDC = value; }
+        }
+
+        // Check to see if ClientIdsForOIDC property is set
+        internal bool IsSetClientIdsForOIDC()
+        {
+            return this._clientIdsForOIDC != null && (this._clientIdsForOIDC.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,6 +188,26 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamIdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business
+        /// application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamIdentityProviderArn
+        {
+            get { return this._iamIdentityProviderArn; }
+            set { this._iamIdentityProviderArn = value; }
+        }
+
+        // Check to see if IamIdentityProviderArn property is set
+        internal bool IsSetIamIdentityProviderArn()
+        {
+            return this._iamIdentityProviderArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterInstanceArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either
@@ -169,6 +225,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityType. 
+        /// <para>
+        /// The authentication type being used by a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IdentityType IdentityType
+        {
+            get { return this._identityType; }
+            set { this._identityType = value; }
+        }
+
+        // Check to see if IdentityType property is set
+        internal bool IsSetIdentityType()
+        {
+            return this._identityType != null;
         }
 
         /// <summary>
@@ -210,10 +284,33 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickSightConfiguration. 
+        /// <para>
+        /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
+        /// QuickSight for authentication. This configuration is required if your application
+        /// uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
+        /// an Amazon QuickSight integrated application</a>.
+        /// </para>
+        /// </summary>
+        public QuickSightConfiguration QuickSightConfiguration
+        {
+            get { return this._quickSightConfiguration; }
+            set { this._quickSightConfiguration = value; }
+        }
+
+        // Check to see if QuickSightConfiguration property is set
+        internal bool IsSetQuickSightConfiguration()
+        {
+            return this._quickSightConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon
-        /// CloudWatch logs and metrics.
+        /// CloudWatch logs and metrics. If this property is not specified, Amazon Q Business
+        /// will create a <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles.html#slr-permissions">service
+        /// linked role (SLR)</a> and use it as the application's role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

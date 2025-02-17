@@ -32,7 +32,7 @@ namespace Amazon.WAFV2
     /// <summary>
     /// <para>Interface for accessing WAFV2</para>
     ///
-    /// WAF <note> 
+    /// WAF  <note> 
     /// <para>
     /// This is the latest version of the <b>WAF</b> API, released in November, 2019. The
     /// names of the entities that you use to access this API, like endpoints and namespaces,
@@ -43,27 +43,26 @@ namespace Amazon.WAFV2
     ///  
     /// <para>
     /// If you used WAF prior to this release, you can't use this WAFV2 API to access any
-    /// WAF resources that you created before. You can access your old rules, web ACLs, and
-    /// other WAF resources only through the WAF Classic APIs. The WAF Classic APIs have retained
-    /// the prior names, endpoints, and namespaces. 
+    /// WAF resources that you created before. WAF Classic support will end on September 30,
+    /// 2025. 
     /// </para>
     ///  
     /// <para>
-    /// For information, including how to migrate your WAF resources to this version, see
-    /// the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+    /// For information about WAF, including how to migrate your WAF Classic resources to
+    /// this version, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
     /// Developer Guide</a>. 
     /// </para>
     ///  </note> 
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
-    /// that are forwarded to an Amazon CloudFront distribution, Amazon API Gateway REST API,
-    /// Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App Runner
-    /// service, or Amazon Web Services Verified Access instance. WAF also lets you control
-    /// access to your content, to protect the Amazon Web Services resource that WAF is monitoring.
-    /// Based on conditions that you specify, such as the IP addresses that requests originate
-    /// from or the values of query strings, the protected resource responds to requests with
-    /// either the requested content, an HTTP 403 status code (Forbidden), or with a custom
-    /// response. 
+    /// that are forwarded to a protected resource. Protected resource types include Amazon
+    /// CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync
+    /// GraphQL API, Amazon Cognito user pool, App Runner service, and Amazon Web Services
+    /// Verified Access instance. WAF also lets you control access to your content, to protect
+    /// the Amazon Web Services resource that WAF is monitoring. Based on conditions that
+    /// you specify, such as the IP addresses that requests originate from or the values of
+    /// query strings, the protected resource responds to requests with either the requested
+    /// content, an HTTP 403 status code (Forbidden), or with a custom response. 
     /// </para>
     ///  
     /// <para>
@@ -79,15 +78,15 @@ namespace Amazon.WAFV2
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For regional applications, you can use any of the endpoints in the list. A regional
-    /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or
-    /// an Amazon Web Services Verified Access instance. 
+    /// For regional resources, you can use any of the endpoints in the list. A regional application
+    /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
+    /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+    /// Services Verified Access instance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Amazon CloudFront applications, you must use the API endpoint listed for US East
-    /// (N. Virginia): us-east-1.
+    /// For Amazon CloudFront, you must use the API endpoint listed for US East (N. Virginia):
+    /// us-east-1.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -95,31 +94,6 @@ namespace Amazon.WAFV2
     /// tailored to the programming language or platform that you're using. For more information,
     /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// We currently provide two versions of the WAF API: this API and the prior versions,
-    /// the classic WAF APIs. This new API provides the same functionality as the older versions,
-    /// with the following major improvements:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// You use one API for both global and regional applications. Where you need to distinguish
-    /// the scope, you specify a <c>Scope</c> parameter and set it to <c>CLOUDFRONT</c> or
-    /// <c>REGIONAL</c>. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You can define a web ACL or rule group with a single call, and update it with a single
-    /// call. You define all rule specifications in JSON format, and pass them to your rule
-    /// group or web ACL calls.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The limits WAF places on the use of rules more closely reflects the cost of running
-    /// each type of rule. Rule groups include capacity settings, so you know the maximum
-    /// cost of a rule group when you use it.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonWAFV2 : IAmazonService, IDisposable
     {
@@ -130,17 +104,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates a web ACL with a regional application resource, to protect the resource.
-        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service,
-        /// or an Amazon Web Services Verified Access instance. 
+        /// Associates a web ACL with a resource, to protect the resource. 
         /// 
         ///  
         /// <para>
-        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To associate a web ACL, in the CloudFront call <c>UpdateDistribution</c>,
-        /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
-        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// Use this for all resource types except for Amazon CloudFront distributions. For Amazon
+        /// CloudFront, call <c>UpdateDistribution</c> for the distribution and provide the Amazon
+        /// Resource Name (ARN) of the web ACL in the web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         ///  
@@ -235,8 +205,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         AssociateWebACLResponse AssociateWebACL(AssociateWebACLRequest request);
@@ -244,17 +214,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Associates a web ACL with a regional application resource, to protect the resource.
-        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service,
-        /// or an Amazon Web Services Verified Access instance. 
+        /// Associates a web ACL with a resource, to protect the resource. 
         /// 
         ///  
         /// <para>
-        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To associate a web ACL, in the CloudFront call <c>UpdateDistribution</c>,
-        /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
-        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// Use this for all resource types except for Amazon CloudFront distributions. For Amazon
+        /// CloudFront, call <c>UpdateDistribution</c> for the distribution and provide the Amazon
+        /// Resource Name (ARN) of the web ACL in the web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         ///  
@@ -352,8 +318,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         Task<AssociateWebACLResponse> AssociateWebACLAsync(AssociateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -443,8 +409,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">REST API Reference for CheckCapacity Operation</seealso>
         CheckCapacityResponse CheckCapacity(CheckCapacityRequest request);
@@ -534,8 +500,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">REST API Reference for CheckCapacity Operation</seealso>
         Task<CheckCapacityResponse> CheckCapacityAsync(CheckCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1040,8 +1006,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request);
@@ -1134,8 +1100,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1156,10 +1122,9 @@ namespace Amazon.WAFV2
         /// a default action to take (allow, block) for any request that does not match any of
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
-        /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
-        /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
-        /// instance. 
+        /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
+        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1261,8 +1226,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         CreateWebACLResponse CreateWebACL(CreateWebACLRequest request);
@@ -1280,10 +1245,9 @@ namespace Amazon.WAFV2
         /// a default action to take (allow, block) for any request that does not match any of
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
-        /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
-        /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
-        /// instance. 
+        /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
+        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1388,8 +1352,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1526,13 +1490,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
-        /// ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager from the specified <a>WebACL</a>.
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> and <c>RetrofittedByFirewallManager</c>
+        /// are both false in the web ACL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallManagerRuleGroups service method.</param>
@@ -1587,13 +1551,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
-        /// ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager from the specified <a>WebACL</a>.
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> and <c>RetrofittedByFirewallManager</c>
+        /// are both false in the web ACL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallManagerRuleGroups service method.</param>
@@ -2288,8 +2252,8 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the web ACL.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2302,13 +2266,13 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional resources, call <a>ListResourcesForWebACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For Amazon CloudFront distributions, use the CloudFront call <c>ListDistributionsByWebACLId</c>.
         /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For all other resources, call <a>ListResourcesForWebACL</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -2316,13 +2280,13 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional resources, call <a>DisassociateWebACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
         /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For all other resources, call <a>DisassociateWebACL</a>.
         /// </para>
         ///  </li> </ul> </li> </ul> </note>
         /// </summary>
@@ -2393,8 +2357,8 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the web ACL.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2407,13 +2371,13 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional resources, call <a>ListResourcesForWebACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For Amazon CloudFront distributions, use the CloudFront call <c>ListDistributionsByWebACLId</c>.
         /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For all other resources, call <a>ListResourcesForWebACL</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -2421,13 +2385,13 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional resources, call <a>DisassociateWebACL</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
         /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For all other resources, call <a>DisassociateWebACL</a>.
         /// </para>
         ///  </li> </ul> </li> </ul> </note>
         /// </summary>
@@ -2810,17 +2774,14 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates the specified regional application resource from any existing web ACL
-        /// association. A resource can have at most one web ACL association. A regional application
-        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
-        /// Services Verified Access instance. 
+        /// Disassociates the specified resource from its web ACL association, if it has one.
+        /// 
         /// 
         ///  
         /// <para>
-        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
-        /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// Use this for all resource types except for Amazon CloudFront distributions. For Amazon
+        /// CloudFront, call <c>UpdateDistribution</c> for the distribution and provide an empty
+        /// web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  
@@ -2881,17 +2842,14 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Disassociates the specified regional application resource from any existing web ACL
-        /// association. A resource can have at most one web ACL association. A regional application
-        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
-        /// Services Verified Access instance. 
+        /// Disassociates the specified resource from its web ACL association, if it has one.
+        /// 
         /// 
         ///  
         /// <para>
-        /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
-        /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
-        /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// Use this for all resource types except for Amazon CloudFront distributions. For Amazon
+        /// CloudFront, call <c>UpdateDistribution</c> for the distribution and provide an empty
+        /// web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
         /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  
@@ -4447,8 +4405,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         GetWebACLForResourceResponse GetWebACLForResource(GetWebACLForResourceRequest request);
@@ -4530,8 +4488,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         Task<GetWebACLForResourceResponse> GetWebACLForResourceAsync(GetWebACLForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5366,8 +5324,8 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-        /// that are associated with the specified web ACL. 
+        /// Retrieves an array of the Amazon Resource Names (ARNs) for the resources that are
+        /// associated with the specified web ACL. 
         /// 
         ///  
         /// <para>
@@ -5433,8 +5391,8 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
-        /// that are associated with the specified web ACL. 
+        /// Retrieves an array of the Amazon Resource Names (ARNs) for the resources that are
+        /// associated with the specified web ACL. 
         /// 
         ///  
         /// <para>
@@ -5835,6 +5793,11 @@ namespace Amazon.WAFV2
         /// Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL,
         /// according to the configuration provided. 
         /// 
+        ///  
+        /// <para>
+        /// If you configure data protection for the web ACL, the protection applies to the data
+        /// that WAF sends to the logs. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation completely replaces any mutable specifications that you already have
@@ -5977,6 +5940,11 @@ namespace Amazon.WAFV2
         /// Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL,
         /// according to the configuration provided. 
         /// 
+        ///  
+        /// <para>
+        /// If you configure data protection for the web ACL, the protection applies to the data
+        /// that WAF sends to the logs. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation completely replaces any mutable specifications that you already have
@@ -6288,12 +6256,12 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Attaches an IAM policy to the specified resource. Use this to share a rule group across
-        /// accounts.
+        /// Use this to share a rule group with other accounts.
         /// 
         ///  
         /// <para>
-        /// You must be the owner of the rule group to perform this operation.
+        /// This action attaches an IAM policy to the specified resource. You must be the owner
+        /// of the rule group to perform this operation.
         /// </para>
         ///  
         /// <para>
@@ -6312,7 +6280,13 @@ namespace Amazon.WAFV2
         /// <para>
         /// The user making the request must be the owner of the rule group.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a rule group has been shared with your account, you can access it through the call
+        /// <c>GetRuleGroup</c>, and you can reference it in <c>CreateWebACL</c> and <c>UpdateWebACL</c>.
+        /// Rule groups that are shared with you don't appear in your WAF console rule groups
+        /// listing. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
         /// 
@@ -6393,12 +6367,12 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Attaches an IAM policy to the specified resource. Use this to share a rule group across
-        /// accounts.
+        /// Use this to share a rule group with other accounts.
         /// 
         ///  
         /// <para>
-        /// You must be the owner of the rule group to perform this operation.
+        /// This action attaches an IAM policy to the specified resource. You must be the owner
+        /// of the rule group to perform this operation.
         /// </para>
         ///  
         /// <para>
@@ -6417,7 +6391,13 @@ namespace Amazon.WAFV2
         /// <para>
         /// The user making the request must be the owner of the rule group.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a rule group has been shared with your account, you can access it through the call
+        /// <c>GetRuleGroup</c>, and you can reference it in <c>CreateWebACL</c> and <c>UpdateWebACL</c>.
+        /// Rule groups that are shared with you don't appear in your WAF console rule groups
+        /// listing. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -7579,8 +7559,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request);
@@ -7742,8 +7722,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         Task<UpdateRuleGroupResponse> UpdateRuleGroupAsync(UpdateRuleGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7786,10 +7766,9 @@ namespace Amazon.WAFV2
         /// a default action to take (allow, block) for any request that does not match any of
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
-        /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
-        /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
-        /// instance. 
+        /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
+        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -7920,8 +7899,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request);
@@ -7961,10 +7940,9 @@ namespace Amazon.WAFV2
         /// a default action to take (allow, block) for any request that does not match any of
         /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
-        /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
-        /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
-        /// instance. 
+        /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
+        /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -8098,8 +8076,8 @@ namespace Amazon.WAFV2
         /// WAF couldn’t retrieve a resource that you specified for this operation. If you've
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
-        /// to propagate. Verify the resources that you are specifying in your request parameters
-        /// and then retry the operation.
+        /// to propagate. Verify the resource specifications in your request parameters and then
+        /// retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         Task<UpdateWebACLResponse> UpdateWebACLAsync(UpdateWebACLRequest request, CancellationToken cancellationToken = default(CancellationToken));

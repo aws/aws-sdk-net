@@ -37,6 +37,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private DateTime? _creationTime;
         private int? _maxCapacity;
         private int? _minCapacity;
+        private int? _predictedCapacity;
         private string _resourceId;
         private string _roleARN;
         private ScalableDimension _scalableDimension;
@@ -99,6 +100,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetMinCapacity()
         {
             return this._minCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictedCapacity. 
+        /// <para>
+        ///  The predicted capacity of the scalable target. 
+        /// </para>
+        /// </summary>
+        public int PredictedCapacity
+        {
+            get { return this._predictedCapacity.GetValueOrDefault(); }
+            set { this._predictedCapacity = value; }
+        }
+
+        // Check to see if PredictedCapacity property is set
+        internal bool IsSetPredictedCapacity()
+        {
+            return this._predictedCapacity.HasValue; 
         }
 
         /// <summary>

@@ -44,6 +44,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
+    /// This operation doesn't reset an existing TOTP MFA for a user. To register a new TOTP
+    /// factor for a user, make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa-totp.html">TOTP
+    /// software token MFA</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// Authorize this action with a signed-in user's access token. It must include the scope
     /// <c>aws.cognito.signin.user.admin</c>.
     /// </para>
@@ -60,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class SetUserMFAPreferenceRequest : AmazonCognitoIdentityProviderRequest
     {
         private string _accessToken;
+        private EmailMfaSettingsType _emailMfaSettings;
         private SMSMfaSettingsType _smsMfaSettings;
         private SoftwareTokenMfaSettingsType _softwareTokenMfaSettings;
 
@@ -84,9 +92,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EmailMfaSettings. 
+        /// <para>
+        /// User preferences for email message MFA. Activates or deactivates email MFA and sets
+        /// it as the preferred MFA method when multiple methods are available. To activate this
+        /// setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        public EmailMfaSettingsType EmailMfaSettings
+        {
+            get { return this._emailMfaSettings; }
+            set { this._emailMfaSettings = value; }
+        }
+
+        // Check to see if EmailMfaSettings property is set
+        internal bool IsSetEmailMfaSettings()
+        {
+            return this._emailMfaSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SMSMfaSettings. 
         /// <para>
-        /// The SMS text message multi-factor authentication (MFA) settings.
+        /// User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it
+        /// as the preferred MFA method when multiple methods are available.
         /// </para>
         /// </summary>
         public SMSMfaSettingsType SMSMfaSettings
@@ -104,7 +134,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaSettings. 
         /// <para>
-        /// The time-based one-time password (TOTP) software token MFA settings.
+        /// User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates
+        /// TOTP MFA and sets it as the preferred MFA method when multiple methods are available.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaSettingsType SoftwareTokenMfaSettings

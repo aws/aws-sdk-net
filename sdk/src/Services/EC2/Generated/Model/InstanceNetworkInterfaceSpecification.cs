@@ -239,7 +239,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>interface</c> | <c>efa</c> 
+        /// If you specify <c>efa-only</c>, do not assign any IP addresses to the network interface.
+        /// EFA-only network interfaces do not support IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>interface</c> | <c>efa</c> | <c>efa-only</c> 
         /// </para>
         /// </summary>
         public string InterfaceType
@@ -486,10 +491,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary private IPv4 addresses. You can't specify this option and
-        /// specify more than one private IP address using the private IP addresses option. You
-        /// cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
-        /// request.
+        /// The number of secondary private IPv4 addresses. You can’t specify this parameter and
+        /// also specify a secondary private IP address using the <c>PrivateIpAddress</c> parameter.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

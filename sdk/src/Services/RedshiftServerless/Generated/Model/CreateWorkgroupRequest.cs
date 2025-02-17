@@ -32,6 +32,31 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Container for the parameters to the CreateWorkgroup operation.
     /// Creates an workgroup in Amazon Redshift Serverless.
+    /// 
+    ///  
+    /// <para>
+    /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+    /// you own in a Region from reaching or being reached from the internet through internet
+    /// gateways and egress-only internet gateways. If a workgroup is in an account with VPC
+    /// BPA turned on, the following capabilities are blocked: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Creating a public access workgroup
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Modifying a private workgroup to public
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+    /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateWorkgroupRequest : AmazonRedshiftServerlessRequest
     {
@@ -42,6 +67,7 @@ namespace Amazon.RedshiftServerless.Model
         private int? _maxCapacity;
         private string _namespaceName;
         private int? _port;
+        private PerformanceTarget _pricePerformanceTarget;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -183,6 +209,24 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricePerformanceTarget. 
+        /// <para>
+        /// An object that represents the price performance target settings for the workgroup.
+        /// </para>
+        /// </summary>
+        public PerformanceTarget PricePerformanceTarget
+        {
+            get { return this._pricePerformanceTarget; }
+            set { this._pricePerformanceTarget = value; }
+        }
+
+        // Check to see if PricePerformanceTarget property is set
+        internal bool IsSetPricePerformanceTarget()
+        {
+            return this._pricePerformanceTarget != null;
         }
 
         /// <summary>

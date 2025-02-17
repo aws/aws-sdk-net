@@ -121,7 +121,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of table optimizer. Currently, the only valid value is <c>compaction</c>.
+        /// The type of table optimizer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

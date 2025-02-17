@@ -138,7 +138,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1011)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1280)]
         public string QueryString
         {
             get { return this._queryString; }

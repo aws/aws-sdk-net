@@ -53,6 +53,14 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListHarvestJobs operation
+        ///</summary>
+        public IListHarvestJobsPaginator ListHarvestJobs(ListHarvestJobsRequest request) 
+        {
+            return new ListHarvestJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOriginEndpoints operation
         ///</summary>
         public IListOriginEndpointsPaginator ListOriginEndpoints(ListOriginEndpointsRequest request) 

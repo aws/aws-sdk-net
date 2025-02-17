@@ -150,6 +150,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pricePerformanceTarget", targetDepth))
+                {
+                    var unmarshaller = PerformanceTargetUnmarshaller.Instance;
+                    unmarshalledObject.PricePerformanceTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

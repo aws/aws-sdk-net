@@ -152,7 +152,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SecurityControlId. 
         /// <para>
         ///  The unique identifier of a security control across standards. Values for this field
-        /// typically consist of an Amazon Web Service name and a number, such as APIGateway.3.
+        /// typically consist of an Amazon Web Services service name and a number, such as APIGateway.3.
         /// 
         /// </para>
         /// </summary>
@@ -232,9 +232,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         ///  Identifies whether customizable properties of a security control are reflected in
-        /// Security Hub findings. A status of <c>READY</c> indicates findings include the current
-        /// parameter values. A status of <c>UPDATING</c> indicates that all findings may not
-        /// include the current parameter values. 
+        /// Security Hub findings. A status of <c>READY</c> indicates that Security Hub uses the
+        /// current control parameter values when running security checks of the control. A status
+        /// of <c>UPDATING</c> indicates that all security checks might not use the current parameter
+        /// values. 
         /// </para>
         /// </summary>
         public UpdateStatus UpdateStatus

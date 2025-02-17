@@ -30,14 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// A remote location where a multi-location fleet can deploy game servers for game hosting.
-    /// 
-    /// </para>
     /// </summary>
     public partial class LocationConfiguration
     {
@@ -46,7 +39,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// An Amazon Web Services Region code, such as <c>us-west-2</c>. 
+        /// An Amazon Web Services Region code, such as <c>us-west-2</c>. For a list of supported
+        /// Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

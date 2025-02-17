@@ -47,6 +47,12 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The display names of a list of fleets.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field can store any content. Escape or encode this content before displaying
+        /// it on a webpage or any other system that might interpret the content of this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string DisplayName

@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminRemoveUserFromGroup operation.
-    /// Removes the specified user from the specified group.
+    /// Given a username and a group name. removes them from the group. User pool groups are
+    /// identifiers that you can reference from the contents of ID and access tokens, and
+    /// set preferred IAM roles for identity-pool authentication. For more information, see
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
+    /// groups to a user pool</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -64,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The group name.
+        /// The name of the group that you want to remove the user from, for example <c>MyTestGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -105,7 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool that contains the group and the user that you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

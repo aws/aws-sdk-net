@@ -33,7 +33,7 @@ namespace Amazon.Inspector2.Model
     /// Container for the parameters to the StopCisSession operation.
     /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
     /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
-    /// to start a CIS scan session for the scan ID supplied by the service.
+    /// to stop a CIS scan session for the scan ID supplied by the service.
     /// </summary>
     public partial class StopCisSessionRequest : AmazonInspector2Request
     {

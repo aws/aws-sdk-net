@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Use this operation to remove tags on a resource
+    /// Use this operation to remove tags on a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMemoryDBRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which the tags are to be removed
+        /// The Amazon Resource Name (ARN) of the resource to which the tags are to be removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The list of keys of the tags that are to be removed
+        /// The list of keys of the tags that are to be removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

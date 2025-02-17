@@ -131,6 +131,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
                 }
 
+                if(publicRequest.IsSetPolicy())
+                {
+                    context.Writer.WritePropertyName("policy");
+                    context.Writer.Write(publicRequest.Policy);
+                }
+
                 if(publicRequest.IsSetRegionalCertificateArn())
                 {
                     context.Writer.WritePropertyName("regionalCertificateArn");

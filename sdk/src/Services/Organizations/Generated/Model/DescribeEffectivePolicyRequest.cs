@@ -38,8 +38,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation applies only to policy types <i>other</i> than service control policies
-    /// (SCPs).
+    /// This operation applies only to management policies. It does not apply to authorization
+    /// policies: service control policies (SCPs) and resource control policies (RCPs).
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html">DECLARATIVE_POLICY_EC2</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -75,6 +75,16 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html">CHATBOT_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
         /// 
         /// </para>
         ///  </li> </ul>

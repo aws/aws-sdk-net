@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-    /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// The deployment controller to use for the service.
     /// </summary>
     public partial class DeploymentController
     {
@@ -52,7 +51,13 @@ namespace Amazon.ECS.Model
         /// version of the container with the latest version. The number of containers Amazon
         /// ECS adds or removes from the service during a rolling update is controlled by adjusting
         /// the minimum and maximum number of healthy tasks allowed during a service deployment,
-        /// as specified in the <a>DeploymentConfiguration</a>.
+        /// as specified in the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentConfiguration.html">DeploymentConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about rolling deployments, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Deploy
+        /// Amazon ECS services by replacing tasks</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </dd> <dt>CODE_DEPLOY</dt> <dd> 
         /// <para>
@@ -60,11 +65,23 @@ namespace Amazon.ECS.Model
         /// model powered by CodeDeploy, which allows you to verify a new deployment of a service
         /// before sending production traffic to it.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about blue/green deployments, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Validate
+        /// the state of an Amazon ECS service before deployment </a> in the <i>Amazon Elastic
+        /// Container Service Developer Guide</i>.
+        /// </para>
         ///  </dd> <dt>EXTERNAL</dt> <dd> 
         /// <para>
         /// The external (<c>EXTERNAL</c>) deployment type enables you to use any third-party
         /// deployment controller for full control over the deployment process for an Amazon ECS
         /// service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about external deployments, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-external.html">Deploy
+        /// Amazon ECS services using a third-party controller </a> in the <i>Amazon Elastic Container
+        /// Service Developer Guide</i>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

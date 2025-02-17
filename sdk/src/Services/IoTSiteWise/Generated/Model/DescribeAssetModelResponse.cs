@@ -47,6 +47,8 @@ namespace Amazon.IoTSiteWise.Model
         private List<AssetModelProperty> _assetModelProperties = AWSConfigs.InitializeCollections ? new List<AssetModelProperty>() : null;
         private AssetModelStatus _assetModelStatus;
         private AssetModelType _assetModelType;
+        private string _assetModelVersion;
+        private string _eTag;
 
         /// <summary>
         /// Gets and sets the property AssetModelArn. 
@@ -316,6 +318,51 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelType()
         {
             return this._assetModelType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelVersion. 
+        /// <para>
+        /// The version of the asset model. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/model-active-version.html">
+        /// Asset model versions</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public string AssetModelVersion
+        {
+            get { return this._assetModelVersion; }
+            set { this._assetModelVersion = value; }
+        }
+
+        // Check to see if AssetModelVersion property is set
+        internal bool IsSetAssetModelVersion()
+        {
+            return this._assetModelVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The entity tag (ETag) is a hash of the retrieved version of the asset model. It's
+        /// used to make concurrent updates safely to the resource. See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
+        /// locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">
+        /// Optimistic locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
     }

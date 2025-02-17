@@ -54,6 +54,7 @@ namespace Amazon.SageMaker.Model
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TagPropagation _tagPropagation;
         private string _url;
         private string _vpcId;
 
@@ -64,8 +65,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
-        /// which allows direct internet access
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker
+        /// AI, which allows direct internet access
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,7 +146,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultSpaceSettings. 
         /// <para>
-        /// The default settings used to create a space.
+        /// The default settings for shared spaces that users create in the domain.
         /// </para>
         /// </summary>
         public DefaultSpaceSettings DefaultSpaceSettings
@@ -373,7 +374,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SingleSignOnApplicationArn. 
         /// <para>
-        /// The ARN of the application managed by SageMaker in IAM Identity Center. This value
+        /// The ARN of the application managed by SageMaker AI in IAM Identity Center. This value
         /// is only returned for domains created after October 1, 2023.
         /// </para>
         /// </summary>
@@ -443,6 +444,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagation. 
+        /// <para>
+        /// Indicates whether custom tag propagation is supported for the domain.
+        /// </para>
+        /// </summary>
+        public TagPropagation TagPropagation
+        {
+            get { return this._tagPropagation; }
+            set { this._tagPropagation = value; }
+        }
+
+        // Check to see if TagPropagation property is set
+        internal bool IsSetTagPropagation()
+        {
+            return this._tagPropagation != null;
         }
 
         /// <summary>

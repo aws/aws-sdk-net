@@ -50,8 +50,28 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class FlowValidation
     {
+        private FlowValidationDetails _details;
         private string _message;
         private FlowValidationSeverity _severity;
+        private FlowValidationType _type;
+
+        /// <summary>
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// Specific details about the validation issue encountered in the flow.
+        /// </para>
+        /// </summary>
+        public FlowValidationDetails Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -89,6 +109,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetSeverity()
         {
             return this._severity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of validation issue encountered in the flow.
+        /// </para>
+        /// </summary>
+        public FlowValidationType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

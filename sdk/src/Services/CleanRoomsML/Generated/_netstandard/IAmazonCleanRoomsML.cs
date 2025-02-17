@@ -65,6 +65,66 @@ namespace Amazon.CleanRoomsML
         ICleanRoomsMLPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  CancelTrainedModel
+
+
+
+        /// <summary>
+        /// Submits a request to cancel the trained model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
+        Task<CancelTrainedModelResponse> CancelTrainedModelAsync(CancelTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelTrainedModelInferenceJob
+
+
+
+        /// <summary>
+        /// Submits a request to cancel a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModelInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
+        Task<CancelTrainedModelInferenceJobResponse> CancelTrainedModelInferenceJobAsync(CancelTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateAudienceModel
 
 
@@ -131,6 +191,138 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredAudienceModel">REST API Reference for CreateConfiguredAudienceModel Operation</seealso>
         Task<CreateConfiguredAudienceModelResponse> CreateConfiguredAudienceModelAsync(CreateConfiguredAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateConfiguredModelAlgorithm
+
+
+
+        /// <summary>
+        /// Creates a configured model algorithm using a container image stored in an ECR repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
+        Task<CreateConfiguredModelAlgorithmResponse> CreateConfiguredModelAlgorithmAsync(CreateConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateConfiguredModelAlgorithmAssociation
+
+
+
+        /// <summary>
+        /// Associates a configured model algorithm to a collaboration for use by any member of
+        /// the collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithmAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
+        Task<CreateConfiguredModelAlgorithmAssociationResponse> CreateConfiguredModelAlgorithmAssociationAsync(CreateConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateMLInputChannel
+
+
+
+        /// <summary>
+        /// Provides the information to create an ML input channel. An ML input channel is the
+        /// result of a query that can be used for ML modeling.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMLInputChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
+        Task<CreateMLInputChannelResponse> CreateMLInputChannelAsync(CreateMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTrainedModel
+
+
+
+        /// <summary>
+        /// Creates a trained model from an associated configured model algorithm using data from
+        /// any member of the collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
+        Task<CreateTrainedModelResponse> CreateTrainedModelAsync(CreateTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -285,6 +477,153 @@ namespace Amazon.CleanRoomsML
 
         #endregion
                 
+        #region  DeleteConfiguredModelAlgorithm
+
+
+
+        /// <summary>
+        /// Deletes a configured model algorithm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
+        Task<DeleteConfiguredModelAlgorithmResponse> DeleteConfiguredModelAlgorithmAsync(DeleteConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteConfiguredModelAlgorithmAssociation
+
+
+
+        /// <summary>
+        /// Deletes a configured model algorithm association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithmAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
+        Task<DeleteConfiguredModelAlgorithmAssociationResponse> DeleteConfiguredModelAlgorithmAssociationAsync(DeleteConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteMLConfiguration
+
+
+
+        /// <summary>
+        /// Deletes a ML modeling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
+        Task<DeleteMLConfigurationResponse> DeleteMLConfigurationAsync(DeleteMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteMLInputChannelData
+
+
+
+        /// <summary>
+        /// Provides the information necessary to delete an ML input channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLInputChannelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMLInputChannelData service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
+        Task<DeleteMLInputChannelDataResponse> DeleteMLInputChannelDataAsync(DeleteMLInputChannelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTrainedModelOutput
+
+
+
+        /// <summary>
+        /// Deletes the output of a trained model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainedModelOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrainedModelOutput service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
+        Task<DeleteTrainedModelOutputResponse> DeleteTrainedModelOutputAsync(DeleteTrainedModelOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTrainingDataset
 
 
@@ -372,6 +711,87 @@ namespace Amazon.CleanRoomsML
 
         #endregion
                 
+        #region  GetCollaborationConfiguredModelAlgorithmAssociation
+
+
+
+        /// <summary>
+        /// Returns information about the configured model algorithm association in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationConfiguredModelAlgorithmAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
+        Task<GetCollaborationConfiguredModelAlgorithmAssociationResponse> GetCollaborationConfiguredModelAlgorithmAssociationAsync(GetCollaborationConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCollaborationMLInputChannel
+
+
+
+        /// <summary>
+        /// Returns information about a specific ML input channel in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationMLInputChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
+        Task<GetCollaborationMLInputChannelResponse> GetCollaborationMLInputChannelAsync(GetCollaborationMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCollaborationTrainedModel
+
+
+
+        /// <summary>
+        /// Returns information about a trained model in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationTrainedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
+        Task<GetCollaborationTrainedModelResponse> GetCollaborationTrainedModelAsync(GetCollaborationTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetConfiguredAudienceModel
 
 
@@ -423,6 +843,168 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModelPolicy">REST API Reference for GetConfiguredAudienceModelPolicy Operation</seealso>
         Task<GetConfiguredAudienceModelPolicyResponse> GetConfiguredAudienceModelPolicyAsync(GetConfiguredAudienceModelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConfiguredModelAlgorithm
+
+
+
+        /// <summary>
+        /// Returns information about a configured model algorithm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
+        Task<GetConfiguredModelAlgorithmResponse> GetConfiguredModelAlgorithmAsync(GetConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConfiguredModelAlgorithmAssociation
+
+
+
+        /// <summary>
+        /// Returns information about a configured model algorithm association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithmAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
+        Task<GetConfiguredModelAlgorithmAssociationResponse> GetConfiguredModelAlgorithmAssociationAsync(GetConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetMLConfiguration
+
+
+
+        /// <summary>
+        /// Returns information about a specific ML configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
+        Task<GetMLConfigurationResponse> GetMLConfigurationAsync(GetMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetMLInputChannel
+
+
+
+        /// <summary>
+        /// Returns information about an ML input channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLInputChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
+        Task<GetMLInputChannelResponse> GetMLInputChannelAsync(GetMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrainedModel
+
+
+
+        /// <summary>
+        /// Returns information about a trained model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
+        Task<GetTrainedModelResponse> GetTrainedModelAsync(GetTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTrainedModelInferenceJob
+
+
+
+        /// <summary>
+        /// Returns information about a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModelInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
+        Task<GetTrainedModelInferenceJobResponse> GetTrainedModelInferenceJobAsync(GetTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -525,6 +1107,126 @@ namespace Amazon.CleanRoomsML
 
         #endregion
                 
+        #region  ListCollaborationConfiguredModelAlgorithmAssociations
+
+
+
+        /// <summary>
+        /// Returns a list of the configured model algorithm associations in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationConfiguredModelAlgorithmAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationConfiguredModelAlgorithmAssociations service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
+        Task<ListCollaborationConfiguredModelAlgorithmAssociationsResponse> ListCollaborationConfiguredModelAlgorithmAssociationsAsync(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCollaborationMLInputChannels
+
+
+
+        /// <summary>
+        /// Returns a list of the ML input channels in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationMLInputChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationMLInputChannels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
+        Task<ListCollaborationMLInputChannelsResponse> ListCollaborationMLInputChannelsAsync(ListCollaborationMLInputChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCollaborationTrainedModelExportJobs
+
+
+
+        /// <summary>
+        /// Returns a list of the export jobs for a trained model in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModelExportJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
+        Task<ListCollaborationTrainedModelExportJobsResponse> ListCollaborationTrainedModelExportJobsAsync(ListCollaborationTrainedModelExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCollaborationTrainedModelInferenceJobs
+
+
+
+        /// <summary>
+        /// Returns a list of trained model inference jobs in a specified collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModelInferenceJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
+        Task<ListCollaborationTrainedModelInferenceJobsResponse> ListCollaborationTrainedModelInferenceJobsAsync(ListCollaborationTrainedModelInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCollaborationTrainedModels
+
+
+
+        /// <summary>
+        /// Returns a list of the trained models in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
+        Task<ListCollaborationTrainedModelsResponse> ListCollaborationTrainedModelsAsync(ListCollaborationTrainedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListConfiguredAudienceModels
 
 
@@ -546,6 +1248,78 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">REST API Reference for ListConfiguredAudienceModels Operation</seealso>
         Task<ListConfiguredAudienceModelsResponse> ListConfiguredAudienceModelsAsync(ListConfiguredAudienceModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListConfiguredModelAlgorithmAssociations
+
+
+
+        /// <summary>
+        /// Returns a list of configured model algorithm associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithmAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfiguredModelAlgorithmAssociations service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
+        Task<ListConfiguredModelAlgorithmAssociationsResponse> ListConfiguredModelAlgorithmAssociationsAsync(ListConfiguredModelAlgorithmAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListConfiguredModelAlgorithms
+
+
+
+        /// <summary>
+        /// Returns a list of configured model algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfiguredModelAlgorithms service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
+        Task<ListConfiguredModelAlgorithmsResponse> ListConfiguredModelAlgorithmsAsync(ListConfiguredModelAlgorithmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListMLInputChannels
+
+
+
+        /// <summary>
+        /// Returns a list of ML input channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMLInputChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMLInputChannels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
+        Task<ListMLInputChannelsResponse> ListMLInputChannelsAsync(ListMLInputChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -573,6 +1347,54 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrainedModelInferenceJobs
+
+
+
+        /// <summary>
+        /// Returns a list of trained model inference jobs that match the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModelInferenceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrainedModelInferenceJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
+        Task<ListTrainedModelInferenceJobsResponse> ListTrainedModelInferenceJobsAsync(ListTrainedModelInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTrainedModels
+
+
+
+        /// <summary>
+        /// Returns a list of trained models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrainedModels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
+        Task<ListTrainedModelsResponse> ListTrainedModelsAsync(ListTrainedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -624,6 +1446,30 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutConfiguredAudienceModelPolicy">REST API Reference for PutConfiguredAudienceModelPolicy Operation</seealso>
         Task<PutConfiguredAudienceModelPolicyResponse> PutConfiguredAudienceModelPolicyAsync(PutConfiguredAudienceModelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutMLConfiguration
+
+
+
+        /// <summary>
+        /// Assigns information about an ML configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMLConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
+        Task<PutMLConfigurationResponse> PutMLConfigurationAsync(PutMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -690,6 +1536,69 @@ namespace Amazon.CleanRoomsML
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceGenerationJob">REST API Reference for StartAudienceGenerationJob Operation</seealso>
         Task<StartAudienceGenerationJobResponse> StartAudienceGenerationJobAsync(StartAudienceGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartTrainedModelExportJob
+
+
+
+        /// <summary>
+        /// Provides the information necessary to start a trained model export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTrainedModelExportJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
+        Task<StartTrainedModelExportJobResponse> StartTrainedModelExportJobAsync(StartTrainedModelExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartTrainedModelInferenceJob
+
+
+
+        /// <summary>
+        /// Defines the information necessary to begin a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelInferenceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
+        Task<StartTrainedModelInferenceJobResponse> StartTrainedModelInferenceJobAsync(StartTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -66,16 +66,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuthenticationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Catalog", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Catalog = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseAccessControlRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseAccessControlRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Host", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Host = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OAuthParameters", targetDepth))
+                {
+                    var unmarshaller = OAuthParametersUnmarshaller.Instance;
+                    unmarshalledObject.OAuthParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Port", targetDepth))

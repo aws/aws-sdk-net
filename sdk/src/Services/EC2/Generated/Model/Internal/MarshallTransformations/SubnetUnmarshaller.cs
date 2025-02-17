@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailableIpAddressCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("blockPublicAccessStates", targetDepth))
+                    {
+                        var unmarshaller = BlockPublicAccessStatesUnmarshaller.Instance;
+                        unmarshalledObject.BlockPublicAccessStates = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("cidrBlock", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -31,15 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleetLocations operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
+    /// Adds remote locations to an EC2 and begins populating the new locations with instances.
+    /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
+    /// settings.
     /// 
-    ///  
-    /// <para>
-    /// Adds remote locations to an EC2 or container fleet and begins populating the new locations
-    /// with instances. The new instances conform to the fleet's instance type, auto-scaling,
-    /// and other configuration settings.
-    /// </para>
     ///  <note> 
     /// <para>
     /// You can't add remote locations to a fleet that resides in an Amazon Web Services Region
@@ -69,8 +64,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location
-    /// fleets</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-editing.html#fleets-update-locations">Update
+    /// fleet locations</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+    /// Amazon GameLift service locations</a> for managed hosting.
     /// </para>
     /// </summary>
     public partial class CreateFleetLocationsRequest : AmazonGameLiftRequest
@@ -85,7 +85,7 @@ namespace Amazon.GameLift.Model
         /// ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

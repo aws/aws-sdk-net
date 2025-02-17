@@ -44,7 +44,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify an opted out number that isn't valid, an error is returned.
+    /// If you specify an opted out number that isn't valid, an exception is returned.
     /// </para>
     /// </summary>
     public partial class DescribeOptedOutNumbersRequest : AmazonPinpointSMSVoiceV2Request
@@ -118,6 +118,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// An array of phone numbers to search for in the OptOutList.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify an opted out number that isn't valid, an exception is returned.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> OptedOutNumbers
@@ -138,6 +142,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The OptOutListName or OptOutListArn of the OptOutList. You can use <a>DescribeOptOutLists</a>
         /// to find the values for OptOutListName and OptOutListArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OptOutListName

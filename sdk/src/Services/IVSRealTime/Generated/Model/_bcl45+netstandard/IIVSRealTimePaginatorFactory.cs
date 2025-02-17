@@ -37,6 +37,11 @@ namespace Amazon.IVSRealTime.Model
         IListEncoderConfigurationsPaginator ListEncoderConfigurations(ListEncoderConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListIngestConfigurations operation
+        ///</summary>
+        IListIngestConfigurationsPaginator ListIngestConfigurations(ListIngestConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListParticipantEvents operation
         ///</summary>
         IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request);

@@ -32,11 +32,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
     /// Updates the runtime configuration for the specified fleet. The runtime configuration
-    /// tells Amazon GameLift how to launch server processes on computes in the fleet. For
-    /// managed EC2 fleets, it determines what server processes to run on each fleet instance.
-    /// For container fleets, it describes what server processes to run in each replica container
-    /// group. You can update a fleet's runtime configuration at any time after the fleet
-    /// is created; it does not need to be in <c>ACTIVE</c> status.
+    /// tells Amazon GameLift how to launch server processes on computes in managed EC2 and
+    /// Anywhere fleets. You can update a fleet's runtime configuration at any time after
+    /// the fleet is created; it does not need to be in <c>ACTIVE</c> status.
     /// 
     ///  
     /// <para>
@@ -73,7 +71,7 @@ namespace Amazon.GameLift.Model
         /// either the fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

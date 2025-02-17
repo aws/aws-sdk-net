@@ -46,9 +46,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _queryString;
         private long? _redshiftPid;
         private long? _redshiftQueryId;
+        private ResultFormatString _resultFormat;
         private long? _resultRows;
         private long? _resultSize;
         private string _secretArn;
+        private string _sessionId;
         private StatusString _status;
         private List<SubStatementData> _subStatements = AWSConfigs.InitializeCollections ? new List<SubStatementData>() : null;
         private DateTime? _updatedAt;
@@ -278,6 +280,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResultRows. 
         /// <para>
         /// Either the number of rows returned from the SQL statement or the number of rows affected.
@@ -333,6 +353,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The session identifier of the query.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

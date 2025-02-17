@@ -37,6 +37,10 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
+        private BrowserExtensionConfiguration _browserExtensionConfiguration;
+        private CustomizationConfiguration _customizationConfiguration;
+        private IdentityProviderConfiguration _identityProviderConfiguration;
+        private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private string _subtitle;
@@ -80,6 +84,96 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAuthenticationConfiguration()
         {
             return this._authenticationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserExtensionConfiguration. 
+        /// <para>
+        /// The browser extension configuration for an Amazon Q Business web experience.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  For Amazon Q Business application using external OIDC-compliant identity providers
+        /// (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs
+        /// to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure
+        /// external OIDC identity provider for your browser extensions.</a>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public BrowserExtensionConfiguration BrowserExtensionConfiguration
+        {
+            get { return this._browserExtensionConfiguration; }
+            set { this._browserExtensionConfiguration = value; }
+        }
+
+        // Check to see if BrowserExtensionConfiguration property is set
+        internal bool IsSetBrowserExtensionConfiguration()
+        {
+            return this._browserExtensionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfiguration. 
+        /// <para>
+        /// Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomizationConfiguration CustomizationConfiguration
+        {
+            get { return this._customizationConfiguration; }
+            set { this._customizationConfiguration = value; }
+        }
+
+        // Check to see if CustomizationConfiguration property is set
+        internal bool IsSetCustomizationConfiguration()
+        {
+            return this._customizationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// Information about the identity provider (IdP) used to authenticate end users of an
+        /// Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public IdentityProviderConfiguration IdentityProviderConfiguration
+        {
+            get { return this._identityProviderConfiguration; }
+            set { this._identityProviderConfiguration = value; }
+        }
+
+        // Check to see if IdentityProviderConfiguration property is set
+        internal bool IsSetIdentityProviderConfiguration()
+        {
+            return this._identityProviderConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origins. 
+        /// <para>
+        /// Updates the website domain origins that are allowed to embed the Amazon Q Business
+        /// web experience. <pre><c> The &lt;i&gt;domain origin&lt;/i&gt; refers to the &lt;i&gt;base
+        /// URL&lt;/i&gt; for accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;),
+        /// the domain name, and the port number (if specified).&lt;/p&gt; &lt;note&gt; &lt;ul&gt;
+        /// &lt;li&gt; &lt;p&gt;Any values except &lt;code&gt;null&lt;/code&gt; submitted as part
+        /// of this update will replace all previous values.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+        /// &lt;p&gt;You must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For
+        /// example, &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt;
+        /// &lt;/ul&gt; &lt;/note&gt; </c></pre>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Origins
+        {
+            get { return this._origins; }
+            set { this._origins = value; }
+        }
+
+        // Check to see if Origins property is set
+        internal bool IsSetOrigins()
+        {
+            return this._origins != null && (this._origins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

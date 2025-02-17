@@ -67,6 +67,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCacheBehavior())
+                {
+                    context.Writer.WritePropertyName("cacheBehavior");
+                    context.Writer.Write(publicRequest.CacheBehavior);
+                }
+
+                if(publicRequest.IsSetCacheId())
+                {
+                    context.Writer.WritePropertyName("cacheId");
+                    context.Writer.Write(publicRequest.CacheId);
+                }
+
                 if(publicRequest.IsSetLogLevel())
                 {
                     context.Writer.WritePropertyName("logLevel");

@@ -135,6 +135,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.VpcEndpointOwner = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("vpcEndpointRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcEndpointRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpcEndpointState", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

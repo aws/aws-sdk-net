@@ -57,6 +57,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>service-region</c> - The Region of the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>tag</c>:&lt;key&gt; - The key/value combination of a tag assigned to the resource.
         /// Use the tag key in the filter name and the tag value as the filter value. For example,
         /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
@@ -84,7 +88,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>vpc-endpoint-type</c> - The type of VPC endpoint (<c>Interface</c> | <c>Gateway</c>
-        /// | <c>GatewayLoadBalancer</c>).
+        /// | <c>GatewayLoadBalancer</c> | <c>Resource</c> | <c>ServiceNetwork</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

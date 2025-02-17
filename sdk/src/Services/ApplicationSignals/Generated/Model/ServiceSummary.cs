@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This structure contains information about one of your services that was discoverd
+    /// This structure contains information about one of your services that was discovered
     /// by Application Signals
     /// </summary>
     public partial class ServiceSummary
@@ -96,7 +96,7 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Applciation attributes contain information about the application.
+        /// Application attributes contain information about the application.
         /// </para>
         ///  <ul> <li> 
         /// <para>

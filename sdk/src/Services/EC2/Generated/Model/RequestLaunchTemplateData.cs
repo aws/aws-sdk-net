@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model
         private LaunchTemplateInstanceMetadataOptionsRequest _metadataOptions;
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>() : null;
+        private LaunchTemplateNetworkPerformanceOptionsRequest _networkPerformanceOptions;
+        private OperatorRequest _operator;
         private LaunchTemplatePlacementRequest _placement;
         private LaunchTemplatePrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _ramDiskId;
@@ -171,11 +173,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the
-        /// Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after
-        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>,
-        /// you can terminate the instance by running the shutdown command from the instance.
+        /// Indicates whether termination protection is enabled for the instance. The default
+        /// is <c>false</c>, which means that you can terminate the instance using the Amazon
+        /// EC2 console, command line tools, or API. You can enable termination protection when
+        /// you launch an instance, while the instance is running, or while the instance is stopped.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -237,7 +238,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// Gets and sets the property ElasticInferenceAccelerators. <note> 
+        /// <para>
+        /// Amazon Elastic Inference is no longer available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An elastic inference accelerator to associate with the instance. Elastic inference
         /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
@@ -338,7 +343,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI in the format <c>ami-17characters00000</c>.
+        /// The ID of the AMI in the format <c>ami-0ac394d6a3example</c>.
         /// </para>
         ///  
         /// <para>
@@ -505,9 +510,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
-        /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
-        /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Specify
+        /// attributes for instance type selection for EC2 Fleet or Spot Fleet</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
         /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -685,6 +689,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains launch template settings to boost network performance for the type of workload
+        /// that runs on your instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateNetworkPerformanceOptionsRequest NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the launch template.
+        /// </para>
+        /// </summary>
+        public OperatorRequest Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

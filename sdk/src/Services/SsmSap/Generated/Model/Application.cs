@@ -36,6 +36,7 @@ namespace Amazon.SsmSap.Model
     {
         private string _appRegistryArn;
         private string _arn;
+        private List<string> _associatedApplicationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _components = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ApplicationDiscoveryStatus _discoveryStatus;
         private string _id;
@@ -81,6 +82,24 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AssociatedApplicationArns. 
+        /// <para>
+        /// The Amazon Resource Names of the associated AWS Systems Manager for SAP applications.
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedApplicationArns
+        {
+            get { return this._associatedApplicationArns; }
+            set { this._associatedApplicationArns = value; }
+        }
+
+        // Check to see if AssociatedApplicationArns property is set
+        internal bool IsSetAssociatedApplicationArns()
+        {
+            return this._associatedApplicationArns != null && (this._associatedApplicationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
         /// The components of the application.
@@ -122,6 +141,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public string Id
         {
             get { return this._id; }

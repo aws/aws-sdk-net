@@ -54,6 +54,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DlClass);
             }
 
+            if(requestObject.IsSetParticipatingGateways())
+            {
+                context.Writer.WritePropertyName("ParticipatingGateways");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParticipatingGatewaysMulticastMarshaller.Instance;
+                marshaller.Marshall(requestObject.ParticipatingGateways, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRfRegion())
             {
                 context.Writer.WritePropertyName("RfRegion");

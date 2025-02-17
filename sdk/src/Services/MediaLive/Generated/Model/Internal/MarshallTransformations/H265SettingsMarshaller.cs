@@ -95,6 +95,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDeblocking())
+            {
+                context.Writer.WritePropertyName("deblocking");
+                context.Writer.Write(requestObject.Deblocking);
+            }
+
             if(requestObject.IsSetFilterSettings())
             {
                 context.Writer.WritePropertyName("filterSettings");
@@ -177,6 +183,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("minIInterval");
                 context.Writer.Write(requestObject.MinIInterval);
+            }
+
+            if(requestObject.IsSetMinQp())
+            {
+                context.Writer.WritePropertyName("minQp");
+                context.Writer.Write(requestObject.MinQp);
             }
 
             if(requestObject.IsSetMvOverPictureBoundaries())

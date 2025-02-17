@@ -2954,6 +2954,82 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  GetMarketplaceResource
+
+        /// <summary>
+        /// Verify the subscription and perform resource dependency checks on the requested Amazon
+        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// the response contains fields to download the components and their artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
+        /// 
+        /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        public virtual GetMarketplaceResourceResponse GetMarketplaceResource(GetMarketplaceResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
+
+            return Invoke<GetMarketplaceResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMarketplaceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMarketplaceResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        public virtual IAsyncResult BeginGetMarketplaceResource(GetMarketplaceResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMarketplaceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMarketplaceResource.</param>
+        /// 
+        /// <returns>Returns a  GetMarketplaceResourceResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        public virtual GetMarketplaceResourceResponse EndGetMarketplaceResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMarketplaceResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetWorkflow
 
         /// <summary>
@@ -3267,6 +3343,78 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ImportDiskImage
+
+        /// <summary>
+        /// Import a Windows operating system image from a verified Microsoft ISO disk file. The
+        /// following disk images are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Windows 11 Enterprise
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDiskImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportDiskImage service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
+        public virtual ImportDiskImageResponse ImportDiskImage(ImportDiskImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportDiskImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportDiskImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportDiskImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDiskImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDiskImage operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDiskImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
+        public virtual IAsyncResult BeginImportDiskImage(ImportDiskImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportDiskImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportDiskImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportDiskImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDiskImage.</param>
+        /// 
+        /// <returns>Returns a  ImportDiskImageResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
+        public virtual ImportDiskImageResponse EndImportDiskImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportDiskImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportVmImage
 
         /// <summary>
@@ -3346,21 +3494,8 @@ namespace Amazon.Imagebuilder
         #region  ListComponentBuildVersions
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
-        /// You can assign values for the first three, and can filter on all of them.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
-        /// </para>
-        ///  </note>
+        /// Returns the list of component build versions for the specified component version Amazon
+        /// Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentBuildVersions service method.</param>
         /// 

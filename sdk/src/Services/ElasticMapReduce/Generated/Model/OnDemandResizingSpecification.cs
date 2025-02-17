@@ -35,7 +35,43 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class OnDemandResizingSpecification
     {
+        private OnDemandProvisioningAllocationStrategy _allocationStrategy;
+        private OnDemandCapacityReservationOptions _capacityReservationOptions;
         private int? _timeoutDurationMinutes;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        /// Specifies the allocation strategy to use to launch On-Demand instances during a resize.
+        /// The default is <c>lowest-price</c>.
+        /// </para>
+        /// </summary>
+        public OnDemandProvisioningAllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationOptions.
+        /// </summary>
+        public OnDemandCapacityReservationOptions CapacityReservationOptions
+        {
+            get { return this._capacityReservationOptions; }
+            set { this._capacityReservationOptions = value; }
+        }
+
+        // Check to see if CapacityReservationOptions property is set
+        internal bool IsSetCapacityReservationOptions()
+        {
+            return this._capacityReservationOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TimeoutDurationMinutes. 
@@ -48,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Min=0)]
         public int TimeoutDurationMinutes
         {
             get { return this._timeoutDurationMinutes.GetValueOrDefault(); }

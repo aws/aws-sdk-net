@@ -31,8 +31,8 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Object specifying a stream’s audio configuration, as set up by the broadcaster (usually
-    /// in an encoder). This is part of the <a>IngestConfiguration</a> object and used for
-    /// monitoring stream health.
+    /// in an encoder). This is part of the <a>IngestConfigurations</a> object and the deprecated
+    /// <a>IngestConfiguration</a> object. It is used for monitoring stream health.
     /// </summary>
     public partial class AudioConfiguration
     {
@@ -40,6 +40,7 @@ namespace Amazon.IVS.Model
         private string _codec;
         private long? _sampleRate;
         private long? _targetBitrate;
+        private string _track;
 
         /// <summary>
         /// Gets and sets the property Channels. 
@@ -111,6 +112,25 @@ namespace Amazon.IVS.Model
         internal bool IsSetTargetBitrate()
         {
             return this._targetBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Track. 
+        /// <para>
+        /// Name of the audio track (if the stream has an audio track). If multitrack is not enabled,
+        /// this is track0 (the sole track).
+        /// </para>
+        /// </summary>
+        public string Track
+        {
+            get { return this._track; }
+            set { this._track = value; }
+        }
+
+        // Check to see if Track property is set
+        internal bool IsSetTrack()
+        {
+            return this._track != null;
         }
 
     }

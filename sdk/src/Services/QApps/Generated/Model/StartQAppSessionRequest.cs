@@ -46,6 +46,7 @@ namespace Amazon.QApps.Model
         private int? _appVersion;
         private List<CardValue> _initialValues = AWSConfigs.InitializeCollections ? new List<CardValue>() : null;
         private string _instanceId;
+        private string _sessionId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -122,6 +123,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetInstanceId()
         {
             return !string.IsNullOrEmpty(this._instanceId);
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier of the a Q App session.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

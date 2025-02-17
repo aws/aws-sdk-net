@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// You are trying to perform an action that conflicts with the current status of your
-    /// resource. Fix any inconsistences with your resources and try again.
+    /// resource. Fix any inconsistencies with your resources and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

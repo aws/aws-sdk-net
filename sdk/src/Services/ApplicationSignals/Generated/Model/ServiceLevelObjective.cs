@@ -41,11 +41,14 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ServiceLevelObjective
     {
         private string _arn;
+        private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private DateTime? _createdTime;
         private string _description;
+        private EvaluationType _evaluationType;
         private Goal _goal;
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private RequestBasedServiceLevelIndicator _requestBasedSli;
         private ServiceLevelIndicator _sli;
 
         /// <summary>
@@ -65,6 +68,27 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BurnRateConfigurations. 
+        /// <para>
+        /// Each object in this array defines the length of the look-back window used to calculate
+        /// one burn rate metric for this SLO. The burn rate measures how fast the service is
+        /// consuming the error budget, relative to the attainment goal of the SLO.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BurnRateConfiguration> BurnRateConfigurations
+        {
+            get { return this._burnRateConfigurations; }
+            set { this._burnRateConfigurations = value; }
+        }
+
+        // Check to see if BurnRateConfigurations property is set
+        internal bool IsSetBurnRateConfigurations()
+        {
+            return this._burnRateConfigurations != null && (this._burnRateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,6 +128,24 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Displays whether this is a period-based SLO or a request-based SLO.
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
         }
 
         /// <summary>
@@ -162,12 +204,31 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sli. 
+        /// Gets and sets the property RequestBasedSli. 
         /// <para>
-        /// A structure containing information about the performance metric that this SLO monitors.
+        /// A structure containing information about the performance metric that this SLO monitors,
+        /// if this is a request-based SLO.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public RequestBasedServiceLevelIndicator RequestBasedSli
+        {
+            get { return this._requestBasedSli; }
+            set { this._requestBasedSli = value; }
+        }
+
+        // Check to see if RequestBasedSli property is set
+        internal bool IsSetRequestBasedSli()
+        {
+            return this._requestBasedSli != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sli. 
+        /// <para>
+        /// A structure containing information about the performance metric that this SLO monitors,
+        /// if this is a period-based SLO.
+        /// </para>
+        /// </summary>
         public ServiceLevelIndicator Sli
         {
             get { return this._sli; }

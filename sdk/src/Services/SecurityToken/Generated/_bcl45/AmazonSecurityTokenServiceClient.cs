@@ -275,8 +275,8 @@ namespace Amazon.SecurityToken
         /// secret access key, and a security token. Typically, you use <c>AssumeRole</c> within
         /// your account or for cross-account access. For a comparison of <c>AssumeRole</c> with
         /// other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -291,17 +291,17 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
-        /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
-        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
-        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
-        /// to this operation returns new temporary credentials. The resulting session's permissions
-        /// are the intersection of the role's identity-based policy and the session policies.
-        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
-        /// calls to access resources in the account that owns the role. You cannot use session
-        /// policies to grant more permissions than those allowed by the identity-based policy
-        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// (Optional) You can pass inline or managed session policies to this operation. You
+        /// can pass a single JSON policy document to use as an inline session policy. You can
+        /// also specify up to 10 managed policy Amazon Resource Names (ARNs) to use as managed
+        /// session policies. The plaintext that you use for both inline and managed session policies
+        /// can't exceed 2,048 characters. Passing policies to this operation returns new temporary
+        /// credentials. The resulting session's permissions are the intersection of the role's
+        /// identity-based policy and the session policies. You can use the role's temporary credentials
+        /// in subsequent Amazon Web Services API calls to access resources in the account that
+        /// owns the role. You cannot use session policies to grant more permissions than those
+        /// allowed by the identity-based policy of the role that is being assumed. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -430,8 +430,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
@@ -450,8 +449,8 @@ namespace Amazon.SecurityToken
         /// secret access key, and a security token. Typically, you use <c>AssumeRole</c> within
         /// your account or for cross-account access. For a comparison of <c>AssumeRole</c> with
         /// other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -466,17 +465,17 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  
         /// <para>
-        /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
-        /// policies</a> to this operation. You can pass a single JSON policy document to use
-        /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
-        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
-        /// inline and managed session policies can't exceed 2,048 characters. Passing policies
-        /// to this operation returns new temporary credentials. The resulting session's permissions
-        /// are the intersection of the role's identity-based policy and the session policies.
-        /// You can use the role's temporary credentials in subsequent Amazon Web Services API
-        /// calls to access resources in the account that owns the role. You cannot use session
-        /// policies to grant more permissions than those allowed by the identity-based policy
-        /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// (Optional) You can pass inline or managed session policies to this operation. You
+        /// can pass a single JSON policy document to use as an inline session policy. You can
+        /// also specify up to 10 managed policy Amazon Resource Names (ARNs) to use as managed
+        /// session policies. The plaintext that you use for both inline and managed session policies
+        /// can't exceed 2,048 characters. Passing policies to this operation returns new temporary
+        /// credentials. The resulting session's permissions are the intersection of the role's
+        /// identity-based policy and the session policies. You can use the role's temporary credentials
+        /// in subsequent Amazon Web Services API calls to access resources in the account that
+        /// owns the role. You cannot use session policies to grant more permissions than those
+        /// allowed by the identity-based policy of the role that is being assumed. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -608,8 +607,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -632,8 +630,8 @@ namespace Amazon.SecurityToken
         /// an enterprise identity store or directory to role-based Amazon Web Services access
         /// without user-specific credentials or configuration. For a comparison of <c>AssumeRoleWithSAML</c>
         /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -840,8 +838,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
@@ -860,8 +857,8 @@ namespace Amazon.SecurityToken
         /// an enterprise identity store or directory to role-based Amazon Web Services access
         /// without user-specific credentials or configuration. For a comparison of <c>AssumeRoleWithSAML</c>
         /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -1071,8 +1068,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1120,8 +1116,8 @@ namespace Amazon.SecurityToken
         /// the identity of the caller is validated by using a token from the web identity provider.
         /// For a comparison of <c>AssumeRoleWithWebIdentity</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1140,13 +1136,12 @@ namespace Amazon.SecurityToken
         /// to specify the duration of your session. You can provide a value from 900 seconds
         /// (15 minutes) up to the maximum session duration setting for the role. This setting
         /// can have a value from 1 hour to 12 hours. To learn how to view the maximum value for
-        /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
-        /// The maximum session duration limit applies when you use the <c>AssumeRole*</c> API
-        /// operations or the <c>assume-role*</c> CLI commands. However the limit does not apply
-        /// when you use those operations to create a console URL. For more information, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-        /// Roles</a> in the <i>IAM User Guide</i>. 
+        /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-settings.html#id_roles_update-session-duration">Update
+        /// the maximum session duration for a role </a> in the <i>IAM User Guide</i>. The maximum
+        /// session duration limit applies when you use the <c>AssumeRole*</c> API operations
+        /// or the <c>assume-role*</c> CLI commands. However the limit does not apply when you
+        /// use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+        /// IAM Roles</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -1240,7 +1235,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about how to use web identity federation and the <c>AssumeRoleWithWebIdentity</c>
+        /// For more information about how to use OIDC federation and the <c>AssumeRoleWithWebIdentity</c>
         /// API, see the following resources: 
         /// </para>
         ///  <ul> <li> 
@@ -1251,25 +1246,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
-        /// Web Identity Federation Playground</a>. Walk through the process of authenticating
-        /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
-        /// and then using those credentials to make a request to Amazon Web Services. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a href="http://aws.amazon.com/sdkforios/">Amazon Web Services SDK for iOS Developer
         /// Guide</a> and <a href="http://aws.amazon.com/sdkforandroid/">Amazon Web Services SDK
         /// for Android Developer Guide</a>. These toolkits contain sample apps that show how
         /// to invoke the identity providers. The toolkits then show how to use the information
         /// from these providers to get and use temporary security credentials. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
-        /// Identity Federation with Mobile Applications</a>. This article discusses web identity
-        /// federation and shows an example of how to use web identity federation to get access
-        /// to content in Amazon S3. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1324,8 +1305,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
@@ -1369,8 +1349,8 @@ namespace Amazon.SecurityToken
         /// the identity of the caller is validated by using a token from the web identity provider.
         /// For a comparison of <c>AssumeRoleWithWebIdentity</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1389,13 +1369,12 @@ namespace Amazon.SecurityToken
         /// to specify the duration of your session. You can provide a value from 900 seconds
         /// (15 minutes) up to the maximum session duration setting for the role. This setting
         /// can have a value from 1 hour to 12 hours. To learn how to view the maximum value for
-        /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
-        /// The maximum session duration limit applies when you use the <c>AssumeRole*</c> API
-        /// operations or the <c>assume-role*</c> CLI commands. However the limit does not apply
-        /// when you use those operations to create a console URL. For more information, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-        /// Roles</a> in the <i>IAM User Guide</i>. 
+        /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-settings.html#id_roles_update-session-duration">Update
+        /// the maximum session duration for a role </a> in the <i>IAM User Guide</i>. The maximum
+        /// session duration limit applies when you use the <c>AssumeRole*</c> API operations
+        /// or the <c>assume-role*</c> CLI commands. However the limit does not apply when you
+        /// use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+        /// IAM Roles</a> in the <i>IAM User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -1489,7 +1468,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about how to use web identity federation and the <c>AssumeRoleWithWebIdentity</c>
+        /// For more information about how to use OIDC federation and the <c>AssumeRoleWithWebIdentity</c>
         /// API, see the following resources: 
         /// </para>
         ///  <ul> <li> 
@@ -1500,25 +1479,11 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
-        /// Web Identity Federation Playground</a>. Walk through the process of authenticating
-        /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
-        /// and then using those credentials to make a request to Amazon Web Services. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a href="http://aws.amazon.com/sdkforios/">Amazon Web Services SDK for iOS Developer
         /// Guide</a> and <a href="http://aws.amazon.com/sdkforandroid/">Amazon Web Services SDK
         /// for Android Developer Guide</a>. These toolkits contain sample apps that show how
         /// to invoke the identity providers. The toolkits then show how to use the information
         /// from these providers to get and use temporary security credentials. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
-        /// Identity Federation with Mobile Applications</a>. This article discusses web identity
-        /// federation and shows an example of how to use web identity federation to get access
-        /// to content in Amazon S3. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1576,8 +1541,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1587,6 +1551,105 @@ namespace Amazon.SecurityToken
             options.ResponseUnmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssumeRoleWithWebIdentityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssumeRoot
+
+
+        /// <summary>
+        /// Returns a set of short term credentials you can use to perform privileged tasks on
+        /// a member account in your organization.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can launch a privileged session, you must have centralized root access
+        /// in your organization. For steps to enable this feature, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize
+        /// root access for member accounts</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The STS global endpoint is not supported for AssumeRoot. You must send this request
+        /// to a Regional STS endpoint. For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html#sts-endpoints">Endpoints</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can track AssumeRoot in CloudTrail logs to determine what actions were performed
+        /// in a session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
+        /// privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssumeRoot service method.</param>
+        /// 
+        /// <returns>The response from the AssumeRoot service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.ExpiredTokenException">
+        /// The web identity token that was passed is expired or is not valid. Get a new identity
+        /// token from the identity provider and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// generate credentials. The account administrator must use the IAM console to activate
+        /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoot">REST API Reference for AssumeRoot Operation</seealso>
+        public virtual AssumeRootResponse AssumeRoot(AssumeRootRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRootRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRootResponseUnmarshaller.Instance;
+
+            return Invoke<AssumeRootResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a set of short term credentials you can use to perform privileged tasks on
+        /// a member account in your organization.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can launch a privileged session, you must have centralized root access
+        /// in your organization. For steps to enable this feature, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize
+        /// root access for member accounts</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The STS global endpoint is not supported for AssumeRoot. You must send this request
+        /// to a Regional STS endpoint. For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html#sts-endpoints">Endpoints</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can track AssumeRoot in CloudTrail logs to determine what actions were performed
+        /// in a session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
+        /// privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssumeRoot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssumeRoot service method, as returned by SecurityTokenService.</returns>
+        /// <exception cref="Amazon.SecurityToken.Model.ExpiredTokenException">
+        /// The web identity token that was passed is expired or is not valid. Get a new identity
+        /// token from the identity provider and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityToken.Model.RegionDisabledException">
+        /// STS is not activated in the requested region for the account that is being asked to
+        /// generate credentials. The account administrator must use the IAM console to activate
+        /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoot">REST API Reference for AssumeRoot Operation</seealso>
+        public virtual Task<AssumeRootResponse> AssumeRootAsync(AssumeRootRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssumeRootRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssumeRootResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssumeRootResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1653,7 +1716,8 @@ namespace Amazon.SecurityToken
         /// <returns>The response from the DecodeAuthorizationMessage service method, as returned by SecurityTokenService.</returns>
         /// <exception cref="Amazon.SecurityToken.Model.InvalidAuthorizationMessageException">
         /// The error returned if the message passed to <c>DecodeAuthorizationMessage</c> was
-        /// invalid. This can happen if the token contains invalid characters, such as linebreaks.
+        /// invalid. This can happen if the token contains invalid characters, such as line breaks,
+        /// or if the message has expired.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
@@ -1728,7 +1792,8 @@ namespace Amazon.SecurityToken
         /// <returns>The response from the DecodeAuthorizationMessage service method, as returned by SecurityTokenService.</returns>
         /// <exception cref="Amazon.SecurityToken.Model.InvalidAuthorizationMessageException">
         /// The error returned if the message passed to <c>DecodeAuthorizationMessage</c> was
-        /// invalid. This can happen if the token contains invalid characters, such as linebreaks.
+        /// invalid. This can happen if the token contains invalid characters, such as line breaks,
+        /// or if the message has expired.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1918,8 +1983,8 @@ namespace Amazon.SecurityToken
         /// those credentials can be safeguarded, usually in a server-based application. For a
         /// comparison of <c>GetFederationToken</c> with the other API operations that produce
         /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2060,8 +2125,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
@@ -2087,8 +2151,8 @@ namespace Amazon.SecurityToken
         /// those credentials can be safeguarded, usually in a server-based application. For a
         /// comparison of <c>GetFederationToken</c> with the other API operations that produce
         /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2232,8 +2296,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2264,8 +2327,8 @@ namespace Amazon.SecurityToken
         /// require MFA authentication. An incorrect MFA code causes the API to return an access
         /// denied error. For a comparison of <c>GetSessionToken</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2334,8 +2397,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual GetSessionTokenResponse GetSessionToken()
@@ -2358,8 +2420,8 @@ namespace Amazon.SecurityToken
         /// require MFA authentication. An incorrect MFA code causes the API to return an access
         /// denied error. For a comparison of <c>GetSessionToken</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2429,8 +2491,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
@@ -2457,8 +2518,8 @@ namespace Amazon.SecurityToken
         /// require MFA authentication. An incorrect MFA code causes the API to return an access
         /// denied error. For a comparison of <c>GetSessionToken</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2530,8 +2591,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual Task<GetSessionTokenResponse> GetSessionTokenAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2553,8 +2613,8 @@ namespace Amazon.SecurityToken
         /// require MFA authentication. An incorrect MFA code causes the API to return an access
         /// denied error. For a comparison of <c>GetSessionToken</c> with the other API operations
         /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-        /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+        /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+        /// STS credentials</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2627,8 +2687,7 @@ namespace Amazon.SecurityToken
         /// STS is not activated in the requested region for the account that is being asked to
         /// generate credentials. The account administrator must use the IAM console to activate
         /// STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
-        /// <i>IAM User Guide</i>.
+        /// and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

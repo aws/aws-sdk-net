@@ -112,6 +112,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFolders())
+            {
+                context.Writer.WritePropertyName("Folders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFoldersListValue in requestObject.Folders)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetBundleImportJobFolderOverrideParametersMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFoldersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRefreshSchedules())
             {
                 context.Writer.WritePropertyName("RefreshSchedules");

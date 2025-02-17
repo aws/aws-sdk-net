@@ -1229,6 +1229,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
+            request.SignedAt = signedAt;
             var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
             // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string

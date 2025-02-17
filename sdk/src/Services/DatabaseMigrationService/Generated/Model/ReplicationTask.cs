@@ -444,7 +444,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>"Stop Reason NORMAL"</c> 
+        ///  <c>"Stop Reason NORMAL"</c> – The task completed successfully with no additional
+        /// information returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -456,7 +457,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>"Stop Reason FULL_LOAD_ONLY_FINISHED"</c> 
+        ///  <c>"Stop Reason FULL_LOAD_ONLY_FINISHED"</c> – The task completed the full load phase.
+        /// DMS applied cached changes if you set <c>StopTaskCachedChangesApplied</c> to <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

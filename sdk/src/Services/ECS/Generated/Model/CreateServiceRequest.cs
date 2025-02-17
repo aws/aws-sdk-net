@@ -34,13 +34,17 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
     /// ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, see the <a>UpdateService</a> action.
+    /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
     /// 
     ///  <note> 
     /// <para>
     /// On March 21, 2024, a change was made to resolve the task definition revision before
     /// authorization. When a task definition revision is not specified, authorization will
     /// occur using the latest revision of a task definition.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Amazon Elastic Inference (EI) is no longer available to customers.
     /// </para>
     ///  </note> 
     /// <para>
@@ -91,10 +95,9 @@ namespace Amazon.ECS.Model
     /// <para>
     /// You can optionally specify a deployment configuration for your service. The deployment
     /// is initiated by changing properties. For example, the deployment might be initiated
-    /// by the task definition or by your desired count of a service. This is done with an
-    /// <a>UpdateService</a> operation. The default value for a replica service for <c>minimumHealthyPercent</c>
-    /// is 100%. The default value for a daemon service for <c>minimumHealthyPercent</c> is
-    /// 0%.
+    /// by the task definition or by your desired count of a service. You can use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+    /// The default value for a replica service for <c>minimumHealthyPercent</c> is 100%.
+    /// The default value for a daemon service for <c>minimumHealthyPercent</c> is 0%.
     /// </para>
     ///  
     /// <para>
@@ -140,8 +143,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When creating a service that uses the <c>EXTERNAL</c> deployment controller, you can
     /// specify only parameters that aren't controlled at the task set level. The only required
-    /// parameter is the service name. You control your services using the <a>CreateTaskSet</a>
-    /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// parameter is the service name. You control your services using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -151,19 +154,10 @@ namespace Amazon.ECS.Model
     /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
     /// 
     /// </para>
-    ///  
-    /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
-    /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clientToken;
         private string _cluster;
@@ -188,6 +182,31 @@ namespace Amazon.ECS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
         private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
+        private List<VpcLatticeConfiguration> _vpcLatticeConfigurations = AWSConfigs.InitializeCollections ? new List<VpcLatticeConfiguration>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
+        /// Service Developer Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -202,7 +221,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+        /// A capacity provider strategy can contain a maximum of 20 capacity providers.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -368,24 +387,18 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is
-        /// only used when your service is configured to use a load balancer. If your service
-        /// has a load balancer defined and you don't specify a health check grace period value,
-        /// the default value of <c>0</c> is used.
+        /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
+        /// first started. If you don't specify a health check grace period value, the default
+        /// value of <c>0</c> is used. If you don't use any of the health checks, then <c>healthCheckGracePeriodSeconds</c>
+        /// is unused.
         /// </para>
         ///  
         /// <para>
-        /// If you do not use an Elastic Load Balancing, we recommend that you use the <c>startPeriod</c>
-        /// in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
-        /// check</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If your service's tasks take a while to start and respond to Elastic Load Balancing
-        /// health checks, you can specify a health check grace period of up to 2,147,483,647
-        /// seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores
-        /// health check status. This grace period can prevent the service scheduler from marking
-        /// tasks as unhealthy and stopping them before they have time to come up.
+        /// If your service's tasks take a while to start and respond to health checks, you can
+        /// specify a health check grace period of up to 2,147,483,647 seconds (about 69 years).
+        /// During that time, the Amazon ECS service scheduler ignores health check status. This
+        /// grace period can prevent the service scheduler from marking tasks as unhealthy and
+        /// stopping them before they have time to come up.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -899,6 +912,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetVolumeConfigurations()
         {
             return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLatticeConfigurations. 
+        /// <para>
+        /// The VPC Lattice configuration for the service being created.
+        /// </para>
+        /// </summary>
+        public List<VpcLatticeConfiguration> VpcLatticeConfigurations
+        {
+            get { return this._vpcLatticeConfigurations; }
+            set { this._vpcLatticeConfigurations = value; }
+        }
+
+        // Check to see if VpcLatticeConfigurations property is set
+        internal bool IsSetVpcLatticeConfigurations()
+        {
+            return this._vpcLatticeConfigurations != null && (this._vpcLatticeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

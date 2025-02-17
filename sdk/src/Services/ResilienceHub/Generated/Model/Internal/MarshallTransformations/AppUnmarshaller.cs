@@ -78,6 +78,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssessmentSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsApplicationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsApplicationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("complianceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

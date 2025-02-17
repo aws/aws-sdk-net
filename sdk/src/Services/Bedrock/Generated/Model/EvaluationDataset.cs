@@ -62,7 +62,7 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Used to specify supported built-in prompt datasets. Valid values are <c>Builtin.Bold</c>,
         /// <c>Builtin.BoolQ</c>, <c>Builtin.NaturalQuestions</c>, <c>Builtin.Gigaword</c>, <c>Builtin.RealToxicityPrompts</c>,
-        /// <c>Builtin.TriviaQa</c>, <c>Builtin.T-Rex</c>, <c>Builtin.WomensEcommerceClothingReviews</c>
+        /// <c>Builtin.TriviaQA</c>, <c>Builtin.T-Rex</c>, <c>Builtin.WomensEcommerceClothingReviews</c>
         /// and <c>Builtin.Wikitext2</c>.
         /// </para>
         /// </summary>

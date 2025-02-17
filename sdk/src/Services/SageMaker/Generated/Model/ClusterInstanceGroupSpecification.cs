@@ -40,7 +40,10 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private VpcConfig _overrideVpcConfig;
         private int? _threadsPerCore;
+        private string _trainingPlanArn;
 
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
@@ -68,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0, Max=6758)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -159,6 +162,66 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnStartDeepHealthChecks. 
+        /// <para>
+        /// A flag indicating whether deep health checks should be performed when the cluster
+        /// instance group is created or updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OnStartDeepHealthChecks
+        {
+            get { return this._onStartDeepHealthChecks; }
+            set { this._onStartDeepHealthChecks = value; }
+        }
+
+        // Check to see if OnStartDeepHealthChecks property is set
+        internal bool IsSetOnStartDeepHealthChecks()
+        {
+            return this._onStartDeepHealthChecks != null && (this._onStartDeepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideVpcConfig. 
+        /// <para>
+        /// To configure multi-AZ deployments, customize the VPC configuration at the instance
+        /// group level. You can specify different subnets and security groups across different
+        /// AZs in the instance group specification to override a SageMaker HyperPod cluster's
+        /// default VPC configuration. For more information about deploying a cluster in multiple
+        /// AZs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones">Setting
+        /// up SageMaker HyperPod clusters across multiple AZs</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing
+        /// enabled in your instance group VPC configuration, the nodes automatically use IPv6
+        /// addressing for network communication.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about adding IPv6 support for your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
+        /// support for your VPC</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about creating a new VPC for use with IPv6, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Create
+        /// a VPC</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
         /// Specifies the value for <b>Threads per core</b>. For instance types that support multithreading,
@@ -180,6 +243,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to use for this cluster instance
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
     }

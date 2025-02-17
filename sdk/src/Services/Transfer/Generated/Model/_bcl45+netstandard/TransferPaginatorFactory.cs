@@ -77,6 +77,14 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListFileTransferResults operation
+        ///</summary>
+        public IListFileTransferResultsPaginator ListFileTransferResults(ListFileTransferResultsRequest request) 
+        {
+            return new ListFileTransferResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
         public IListProfilesPaginator ListProfiles(ListProfilesRequest request) 
@@ -114,6 +122,14 @@ namespace Amazon.Transfer.Model
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
         {
             return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWebApps operation
+        ///</summary>
+        public IListWebAppsPaginator ListWebApps(ListWebAppsRequest request) 
+        {
+            return new ListWebAppsPaginator(this.client, request);
         }
 
         /// <summary>

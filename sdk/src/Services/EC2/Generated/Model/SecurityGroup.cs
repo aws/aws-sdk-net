@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private List<IpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private List<IpPermission> _ipPermissionsEgress = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private string _ownerId;
+        private string _securityGroupArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
@@ -149,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupArn. 
+        /// <para>
+        /// The ARN of the security group.
+        /// </para>
+        /// </summary>
+        public string SecurityGroupArn
+        {
+            get { return this._securityGroupArn; }
+            set { this._securityGroupArn = value; }
+        }
+
+        // Check to see if SecurityGroupArn property is set
+        internal bool IsSetSecurityGroupArn()
+        {
+            return this._securityGroupArn != null;
         }
 
         /// <summary>

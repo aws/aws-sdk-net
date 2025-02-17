@@ -108,10 +108,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParameterDeclarations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryExecutionOptions", targetDepth))
+                {
+                    var unmarshaller = QueryExecutionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.QueryExecutionOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sheets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SheetDefinition, SheetDefinitionUnmarshaller>(SheetDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Sheets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StaticFiles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<StaticFile, StaticFileUnmarshaller>(StaticFileUnmarshaller.Instance);
+                    unmarshalledObject.StaticFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

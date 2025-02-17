@@ -57,17 +57,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the CancelQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -91,17 +90,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the CancelQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -124,23 +122,22 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the CreateScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ConflictException">
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -163,23 +160,22 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the CreateScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ConflictException">
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -199,20 +195,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DeleteScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -232,20 +227,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DeleteScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -271,17 +265,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeAccountSettings service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
         DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request);
@@ -304,17 +297,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeAccountSettings service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
         Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -358,11 +350,10 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeEndpoints service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -409,11 +400,10 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeEndpoints service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -433,20 +423,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -466,20 +455,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the DescribeScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -493,26 +481,34 @@ namespace Amazon.TimestreamQuery
 
 
         /// <summary>
-        /// You can use this API to run a scheduled query manually.
+        /// You can use this API to run a scheduled query manually. 
+        /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed as part of an Amazon SNS notification. <c>QueryInsights</c>
+        /// helps with performance tuning of your query. For more information about <c>QueryInsights</c>,
+        /// see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+        /// query insights to optimize queries in Amazon Timestream</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteScheduledQuery service method.</param>
         /// 
         /// <returns>The response from the ExecuteScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -523,7 +519,16 @@ namespace Amazon.TimestreamQuery
 
 
         /// <summary>
-        /// You can use this API to run a scheduled query manually.
+        /// You can use this API to run a scheduled query manually. 
+        /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed as part of an Amazon SNS notification. <c>QueryInsights</c>
+        /// helps with performance tuning of your query. For more information about <c>QueryInsights</c>,
+        /// see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+        /// query insights to optimize queries in Amazon Timestream</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteScheduledQuery service method.</param>
         /// <param name="cancellationToken">
@@ -532,20 +537,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the ExecuteScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -566,17 +570,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the ListScheduledQueries service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -597,17 +600,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the ListScheduledQueries service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -627,13 +629,13 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -653,13 +655,13 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -681,17 +683,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the PrepareQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -713,17 +714,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the PrepareQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -738,10 +738,27 @@ namespace Amazon.TimestreamQuery
 
         /// <summary>
         /// <c>Query</c> is a synchronous operation that enables you to run a query against your
-        /// Amazon Timestream data. <c>Query</c> will time out after 60 seconds. You must update
-        /// the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
-        /// sample</a> for details. 
+        /// Amazon Timestream data.
         /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed. <c>QueryInsights</c> helps with performance tuning
+        /// of your query. For more information about <c>QueryInsights</c>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+        /// query insights to optimize queries in Amazon Timestream</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of <c>Query</c> API requests you're allowed to make with <c>QueryInsights</c>
+        /// enabled is 1 query per second (QPS). If you exceed this query rate, it might result
+        /// in throttling.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <c>Query</c> will time out after 60 seconds. You must update the default timeout
+        /// in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+        /// sample</a> for details. 
+        /// </para>
         ///  
         /// <para>
         /// Your query request will fail in the following cases:
@@ -779,23 +796,22 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the Query service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ConflictException">
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.QueryExecutionException">
         /// Timestream was unable to run the query successfully.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -807,10 +823,27 @@ namespace Amazon.TimestreamQuery
 
         /// <summary>
         /// <c>Query</c> is a synchronous operation that enables you to run a query against your
-        /// Amazon Timestream data. <c>Query</c> will time out after 60 seconds. You must update
-        /// the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
-        /// sample</a> for details. 
+        /// Amazon Timestream data.
         /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed. <c>QueryInsights</c> helps with performance tuning
+        /// of your query. For more information about <c>QueryInsights</c>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+        /// query insights to optimize queries in Amazon Timestream</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of <c>Query</c> API requests you're allowed to make with <c>QueryInsights</c>
+        /// enabled is 1 query per second (QPS). If you exceed this query rate, it might result
+        /// in throttling.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <c>Query</c> will time out after 60 seconds. You must update the default timeout
+        /// in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+        /// sample</a> for details. 
+        /// </para>
         ///  
         /// <para>
         /// Your query request will fail in the following cases:
@@ -851,23 +884,22 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the Query service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ConflictException">
         /// Unable to poll results for a cancelled query.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.QueryExecutionException">
         /// Timestream was unable to run the query successfully.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -889,7 +921,7 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the TagResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
@@ -898,7 +930,7 @@ namespace Amazon.TimestreamQuery
         /// You have exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -920,7 +952,7 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the TagResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
@@ -929,7 +961,7 @@ namespace Amazon.TimestreamQuery
         /// You have exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -949,13 +981,13 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UntagResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -975,13 +1007,13 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UntagResource service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -1010,17 +1042,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UpdateAccountSettings service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -1049,17 +1080,16 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UpdateAccountSettings service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -1079,20 +1109,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UpdateScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.
@@ -1112,20 +1141,19 @@ namespace Amazon.TimestreamQuery
         /// 
         /// <returns>The response from the UpdateScheduledQuery service method, as returned by TimestreamQuery.</returns>
         /// <exception cref="Amazon.TimestreamQuery.Model.AccessDeniedException">
-        /// You are not authorized to perform this action.
+        /// You do not have the necessary permissions to access the account settings.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InternalServerException">
-        /// The service was unable to fully process this request because of an internal server
-        /// error.
+        /// An internal server error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.InvalidEndpointException">
-        /// The requested endpoint was not valid.
+        /// The requested endpoint is invalid.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ResourceNotFoundException">
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ThrottlingException">
-        /// The request was denied due to request throttling.
+        /// The request was throttled due to excessive requests.
         /// </exception>
         /// <exception cref="Amazon.TimestreamQuery.Model.ValidationException">
         /// Invalid or malformed request.

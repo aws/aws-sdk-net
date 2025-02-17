@@ -54,6 +54,17 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CardId);
             }
 
+            if(requestObject.IsSetSubmissionMutation())
+            {
+                context.Writer.WritePropertyName("submissionMutation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SubmissionMutationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubmissionMutation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

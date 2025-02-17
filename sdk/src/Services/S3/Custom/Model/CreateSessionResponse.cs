@@ -28,9 +28,13 @@ namespace Amazon.S3.Model
     public partial class CreateSessionResponse : AmazonWebServiceResponse
     {
         private SessionCredentials _credentials;
+        private ServerSideEncryptionMethod _serverSideEncryption;
+        private string _serverSideEncryptionKeyManagementServiceKeyId;
+        private string _serverSideEncryptionKeyManagementServiceEncryptionContext;
+        private bool? _bucketKeyEnabled;
 
         /// <summary>
-        /// Gets and sets the property Credentials.
+        /// The established temporary security credentials for the created session.
         /// </summary>
         [AWSProperty(Required = true)]
         public SessionCredentials Credentials
@@ -45,5 +49,77 @@ namespace Amazon.S3.Model
             return this._credentials != null;
         }
 
+        /// <summary>
+        /// The server-side encryption algorithm used when you store objects in the directory bucket.
+        /// </summary>
+        public ServerSideEncryptionMethod ServerSideEncryption
+        {
+            get { return this._serverSideEncryption; }
+            set { this._serverSideEncryption = value; }
+        }
+
+        // Check to see if ServerSideEncryption property is set
+        internal bool IsSetServerSideEncryptionMethod()
+        {
+            return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;
+        }
+
+        /// <summary>
+        /// If you specify <c>x-amz-server-side-encryption</c> with <c>aws:kms</c>, this header indicates the ID of the 
+        /// KMS symmetric encryption customer managed key that was used for object encryption.
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string SSEKMSKeyId
+        {
+            get { return this._serverSideEncryptionKeyManagementServiceKeyId; }
+            set { this._serverSideEncryptionKeyManagementServiceKeyId = value; }
+        }
+
+        /// <summary>
+        /// Checks if SSEKMSKeyId property is set.
+        /// </summary>
+        internal bool IsSetSSEKMSKeyId()
+        {
+            return !string.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// <para>
+        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
+        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs. 
+        /// This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for future <c>GetObject</c> operations on this object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string SSEKMSEncryptionContext
+        {
+            get { return this._serverSideEncryptionKeyManagementServiceEncryptionContext; }
+            set { this._serverSideEncryptionKeyManagementServiceEncryptionContext = value; }
+        }
+
+        /// <summary>
+        /// Checks if SSEKMSEncryptionContext property is set.
+        /// </summary>
+        internal bool IsSetSSEKMSEncryptionContext()
+        {
+            return !string.IsNullOrEmpty(this._serverSideEncryptionKeyManagementServiceEncryptionContext);
+        }
+
+        /// <summary>
+        /// Indicates whether to use an S3 Bucket Key for server-side encryption with KMS keys (SSE-KMS).
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this._bucketKeyEnabled.GetValueOrDefault(); }
+            set { this._bucketKeyEnabled = value; }
+        }
+
+        /// <summary>
+        /// Checks if BucketKeyEnabled property is set.
+        /// </summary>
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return this._bucketKeyEnabled.HasValue;
+        }
     }
 }

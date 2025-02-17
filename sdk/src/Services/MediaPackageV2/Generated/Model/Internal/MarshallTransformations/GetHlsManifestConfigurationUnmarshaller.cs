@@ -102,6 +102,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScteHls = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartTag", targetDepth))
+                {
+                    var unmarshaller = StartTagUnmarshaller.Instance;
+                    unmarshalledObject.StartTag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

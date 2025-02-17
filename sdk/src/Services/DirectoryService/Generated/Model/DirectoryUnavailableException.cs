@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The specified directory is unavailable or could not be found.
+    /// The specified directory is unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

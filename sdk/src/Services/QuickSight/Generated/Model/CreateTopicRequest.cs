@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class CreateTopicRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
+        private List<string> _folderArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TopicDetails _topic;
         private string _topicId;
@@ -57,6 +58,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FolderArns. 
+        /// <para>
+        /// The Folder ARN of the folder that you want the topic to reside in.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> FolderArns
+        {
+            get { return this._folderArns; }
+            set { this._folderArns = value; }
+        }
+
+        // Check to see if FolderArns property is set
+        internal bool IsSetFolderArns()
+        {
+            return this._folderArns != null && (this._folderArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

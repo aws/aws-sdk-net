@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImageVersion operation.
-    /// Updates the properties of a SageMaker image version.
+    /// Updates the properties of a SageMaker AI image version.
     /// </summary>
     public partial class UpdateImageVersionRequest : AmazonSageMakerRequest
     {
@@ -143,19 +143,20 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// Indicates SageMaker job type compatibility.
+        /// Indicates SageMaker AI job type compatibility.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>TRAINING</c>: The image version is compatible with SageMaker training jobs.
+        ///  <c>TRAINING</c>: The image version is compatible with SageMaker AI training jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INFERENCE</c>: The image version is compatible with SageMaker inference jobs.
+        ///  <c>INFERENCE</c>: The image version is compatible with SageMaker AI inference jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOTEBOOK_KERNEL</c>: The image version is compatible with SageMaker notebook kernels.
+        ///  <c>NOTEBOOK_KERNEL</c>: The image version is compatible with SageMaker AI notebook
+        /// kernels.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -66,10 +66,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("inputModalities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InputModalities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputStrength", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputStrength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputModalities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.OutputModalities = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outputStrength", targetDepth))

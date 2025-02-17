@@ -43,7 +43,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the resource.
+        /// The ID or ARN of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=200)]

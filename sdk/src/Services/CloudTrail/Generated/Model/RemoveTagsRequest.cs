@@ -31,7 +31,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTags operation.
-    /// Removes the specified tags from a trail, event data store, or channel.
+    /// Removes the specified tags from a trail, event data store, dashboard, or channel.
     /// </summary>
     public partial class RemoveTagsRequest : AmazonCloudTrailRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Specifies the ARN of the trail, event data store, or channel from which tags should
-        /// be removed.
+        /// Specifies the ARN of the trail, event data store, dashboard, or channel from which
+        /// tags should be removed.
         /// </para>
         ///  
         /// <para>
@@ -52,6 +52,11 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// Example event data store ARN format: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example dashboard ARN format: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  

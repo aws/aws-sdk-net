@@ -264,6 +264,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepeatPps = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("saliencyAwareEncoding", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SaliencyAwareEncoding = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scanTypeConversionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -322,6 +328,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnregisteredSeiTimecode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("writeMp4PackagingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WriteMp4PackagingType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

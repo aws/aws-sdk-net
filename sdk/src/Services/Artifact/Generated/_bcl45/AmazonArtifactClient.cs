@@ -590,6 +590,71 @@ namespace Amazon.Artifact
 
         #endregion
         
+        #region  ListCustomerAgreements
+
+
+        /// <summary>
+        /// List active customer-agreements applicable to calling identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAgreements service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomerAgreements service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
+        public virtual ListCustomerAgreementsResponse ListCustomerAgreements(ListCustomerAgreementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomerAgreementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List active customer-agreements applicable to calling identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAgreements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomerAgreements service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
+        public virtual Task<ListCustomerAgreementsResponse> ListCustomerAgreementsAsync(ListCustomerAgreementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCustomerAgreementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListReports
 
 

@@ -66,6 +66,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("citationSpan", targetDepth))
+                {
+                    var unmarshaller = CitationSpanUnmarshaller.Instance;
+                    unmarshalledObject.CitationSpan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

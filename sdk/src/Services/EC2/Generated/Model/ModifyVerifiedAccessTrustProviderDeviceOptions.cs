@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PublicSigningKeyUrl. 
         /// <para>
         ///  The URL Amazon Web Services Verified Access will use to verify the authenticity of
-        /// the device tokens. 
+        /// the device tokens.
         /// </para>
         /// </summary>
         public string PublicSigningKeyUrl

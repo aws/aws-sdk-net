@@ -99,10 +99,38 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOnStartDeepHealthChecks())
+            {
+                context.Writer.WritePropertyName("OnStartDeepHealthChecks");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOnStartDeepHealthChecksListValue in requestObject.OnStartDeepHealthChecks)
+                {
+                        context.Writer.Write(requestObjectOnStartDeepHealthChecksListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetOverrideVpcConfig())
+            {
+                context.Writer.WritePropertyName("OverrideVpcConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.OverrideVpcConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");
                 context.Writer.Write(requestObject.ThreadsPerCore);
+            }
+
+            if(requestObject.IsSetTrainingPlanArn())
+            {
+                context.Writer.WritePropertyName("TrainingPlanArn");
+                context.Writer.Write(requestObject.TrainingPlanArn);
             }
 
         }

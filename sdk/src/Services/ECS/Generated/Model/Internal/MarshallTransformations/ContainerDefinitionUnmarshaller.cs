@@ -258,6 +258,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("restartPolicy", targetDepth))
+                {
+                    var unmarshaller = ContainerRestartPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RestartPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("secrets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
@@ -292,6 +298,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionConsistency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionConsistency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumesFrom", targetDepth))

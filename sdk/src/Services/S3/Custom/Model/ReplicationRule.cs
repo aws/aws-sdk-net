@@ -175,10 +175,14 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// Optional configuration to replicate existing source bucket objects. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">
-        /// Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.
+        /// Optional configuration to replicate existing source bucket objects.
         /// </para>
+        /// 
+        /// <note>
+        /// <para>This parameter is no longer supported. To replicate existing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html">Replicating 
+        /// existing objects with S3 Batch Replication</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </note>
         /// </summary>
         public ExistingObjectReplication ExistingObjectReplication
         {

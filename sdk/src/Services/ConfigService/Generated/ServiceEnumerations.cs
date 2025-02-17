@@ -179,6 +179,52 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type AggregatorFilterType.
+    /// </summary>
+    public class AggregatorFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCLUDE for AggregatorFilterType
+        /// </summary>
+        public static readonly AggregatorFilterType INCLUDE = new AggregatorFilterType("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatorFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatorFilterType FindValue(string value)
+        {
+            return FindValue<AggregatorFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatorFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChronologicalOrder.
     /// </summary>
     public class ChronologicalOrder : ConstantClass
@@ -450,6 +496,52 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationItemStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationRecorderFilterName.
+    /// </summary>
+    public class ConfigurationRecorderFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RecordingScope for ConfigurationRecorderFilterName
+        /// </summary>
+        public static readonly ConfigurationRecorderFilterName RecordingScope = new ConfigurationRecorderFilterName("recordingScope");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationRecorderFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationRecorderFilterName FindValue(string value)
+        {
+            return FindValue<ConfigurationRecorderFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationRecorderFilterName(string value)
         {
             return FindValue(value);
         }
@@ -1323,6 +1415,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly RecorderStatus Failure = new RecorderStatus("Failure");
         /// <summary>
+        /// Constant NotApplicable for RecorderStatus
+        /// </summary>
+        public static readonly RecorderStatus NotApplicable = new RecorderStatus("NotApplicable");
+        /// <summary>
         /// Constant Pending for RecorderStatus
         /// </summary>
         public static readonly RecorderStatus Pending = new RecorderStatus("Pending");
@@ -1410,6 +1506,56 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordingFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordingScope.
+    /// </summary>
+    public class RecordingScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL for RecordingScope
+        /// </summary>
+        public static readonly RecordingScope INTERNAL = new RecordingScope("INTERNAL");
+        /// <summary>
+        /// Constant PAID for RecordingScope
+        /// </summary>
+        public static readonly RecordingScope PAID = new RecordingScope("PAID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingScope FindValue(string value)
+        {
+            return FindValue<RecordingScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingScope(string value)
         {
             return FindValue(value);
         }

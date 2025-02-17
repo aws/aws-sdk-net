@@ -55,6 +55,21 @@ namespace AWSSDK.Extensions.CrtIntegration
         public uint Crc32C(byte[] source, uint previous) => Crc.crc32c(source, previous);
 
         /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <returns>Crc64NVME hash as a base64-encoded string</returns>
+        public string Crc64NVME(byte[] source) => ConvertUlongChecksumToBase64(Crc.crc64nvme(source));
+        
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <param name="previous">Previous value of a rolling checksum</param>
+        /// <returns>Updated Crc64NVME hash as 64-bit integer</returns>
+        public ulong Crc64NVME(byte[] source, ulong previous) => Crc.crc64nvme(source, previous);
+
+        /// <summary>
         /// Converts the 32-bit checksum from CRT into a base-64 string
         /// </summary>
         /// <param name="checksum">32-bit checksum</param>
@@ -62,7 +77,22 @@ namespace AWSSDK.Extensions.CrtIntegration
         private string ConvertUintChecksumToBase64(uint checksum)
         {
             var bytes = BitConverter.GetBytes(checksum);
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bytes);
+            }
 
+            return Convert.ToBase64String(bytes);
+        }
+
+        /// <summary>
+        /// Converts the 64-bit checksum from CRT into a base-64 string
+        /// </summary>
+        /// <param name="checksum">64-bit checksum</param>
+        /// <returns>Checksum as a base64-encoded string</returns>
+        private string ConvertUlongChecksumToBase64(ulong checksum)
+        {
+            var bytes = BitConverter.GetBytes(checksum);
             if (BitConverter.IsLittleEndian)
             {
                 Array.Reverse(bytes);

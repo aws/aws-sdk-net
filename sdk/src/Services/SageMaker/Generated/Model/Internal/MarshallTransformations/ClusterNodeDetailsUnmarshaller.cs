@@ -108,6 +108,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LifeCycleConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideVpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.OverrideVpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Placement", targetDepth))
                 {
                     var unmarshaller = ClusterInstancePlacementUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivatePrimaryIp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivatePrimaryIpv6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivatePrimaryIpv6 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))

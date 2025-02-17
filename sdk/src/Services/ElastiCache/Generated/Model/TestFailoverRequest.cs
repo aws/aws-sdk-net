@@ -62,9 +62,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If calling this operation multiple times on different shards in the same Redis OSS
-    /// (cluster mode enabled) replication group, the first node replacement must complete
-    /// before a subsequent call can be made.
+    /// If calling this operation multiple times on different shards in the same Valkey or
+    /// Redis OSS (cluster mode enabled) replication group, the first node replacement must
+    /// complete before a subsequent call can be made.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+    ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ECEvents.Viewing.html">Viewing
     /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
     /// </para>
     ///  </li> <li> 
@@ -111,7 +111,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+    /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html#auto-failover-test">Testing
     /// Multi-AZ </a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     /// </summary>

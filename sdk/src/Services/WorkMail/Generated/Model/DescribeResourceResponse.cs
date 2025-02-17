@@ -69,7 +69,7 @@ namespace Amazon.WorkMail.Model
         /// Description of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Description
         {
             get { return this._description; }

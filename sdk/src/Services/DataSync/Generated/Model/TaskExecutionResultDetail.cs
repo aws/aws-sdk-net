@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Describes the detailed result of a <c>TaskExecution</c> operation. This result includes
-    /// the time in milliseconds spent in each phase, the status of the task execution, and
-    /// the errors encountered.
+    /// Provides detailed information about the result of your DataSync task execution.
     /// </summary>
     public partial class TaskExecutionResultDetail
     {
@@ -49,8 +47,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Errors that DataSync encountered during execution of the task. You can use this error
-        /// code to help troubleshoot issues.
+        /// An error that DataSync encountered during your task execution. You can use this information
+        /// to help <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">troubleshoot
+        /// issues</a>.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -68,8 +67,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ErrorDetail. 
         /// <para>
-        /// Detailed description of an error that was encountered during the task execution. You
-        /// can use this information to help troubleshoot issues. 
+        /// The detailed description of an error that DataSync encountered during your task execution.
+        /// You can use this information to help <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">troubleshoot
+        /// issues</a>. 
         /// </para>
         /// </summary>
         public string ErrorDetail
@@ -87,7 +87,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property PrepareDuration. 
         /// <para>
-        /// The total time in milliseconds that DataSync spent in the PREPARING phase. 
+        /// The time in milliseconds that your task execution was in the <c>PREPARING</c> step.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Enhanced mode tasks, the value is always <c>0</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-datasync-prepares">How
+        /// DataSync prepares your data transfer</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -106,7 +114,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property PrepareStatus. 
         /// <para>
-        /// The status of the PREPARING phase.
+        /// The status of the <c>PREPARING</c> step for your task execution. For more information,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
         /// </para>
         /// </summary>
         public PhaseStatus PrepareStatus
@@ -124,8 +134,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TotalDuration. 
         /// <para>
-        /// The total time in milliseconds that DataSync took to transfer the file from the source
-        /// to the destination location.
+        /// The time in milliseconds that your task execution ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -144,7 +153,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferDuration. 
         /// <para>
-        /// The total time in milliseconds that DataSync spent in the TRANSFERRING phase.
+        /// The time in milliseconds that your task execution was in the <c>TRANSFERRING</c> step.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Enhanced mode tasks, the value is always <c>0</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-datasync-transfers">How
+        /// DataSync transfers your data</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -163,7 +180,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferStatus. 
         /// <para>
-        /// The status of the TRANSFERRING phase.
+        /// The status of the <c>TRANSFERRING</c> step for your task execution. For more information,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
         /// </para>
         /// </summary>
         public PhaseStatus TransferStatus
@@ -181,7 +200,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VerifyDuration. 
         /// <para>
-        /// The total time in milliseconds that DataSync spent in the VERIFYING phase.
+        /// The time in milliseconds that your task execution was in the <c>VERIFYING</c> step.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Enhanced mode tasks, the value is always <c>0</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-verifying-works">How
+        /// DataSync verifies your data's integrity</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -200,7 +227,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VerifyStatus. 
         /// <para>
-        /// The status of the VERIFYING phase.
+        /// The status of the <c>VERIFYING</c> step for your task execution. For more information,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
         /// </para>
         /// </summary>
         public PhaseStatus VerifyStatus

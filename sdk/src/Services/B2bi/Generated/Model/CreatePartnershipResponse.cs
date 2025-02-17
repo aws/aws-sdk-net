@@ -35,6 +35,7 @@ namespace Amazon.B2bi.Model
     public partial class CreatePartnershipResponse : AmazonWebServiceResponse
     {
         private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private CapabilityOptions _capabilityOptions;
         private DateTime? _createdAt;
         private string _email;
         private string _name;
@@ -60,6 +61,24 @@ namespace Amazon.B2bi.Model
         internal bool IsSetCapabilities()
         {
             return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapabilityOptions. 
+        /// <para>
+        /// Returns the structure that contains the details for the associated capabilities.
+        /// </para>
+        /// </summary>
+        public CapabilityOptions CapabilityOptions
+        {
+            get { return this._capabilityOptions; }
+            set { this._capabilityOptions = value; }
+        }
+
+        // Check to see if CapabilityOptions property is set
+        internal bool IsSetCapabilityOptions()
+        {
+            return this._capabilityOptions != null;
         }
 
         /// <summary>

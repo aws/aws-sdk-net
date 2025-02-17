@@ -121,6 +121,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDataProtectionConfig())
+                {
+                    context.Writer.WritePropertyName("DataProtectionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataProtectionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataProtectionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultAction())
                 {
                     context.Writer.WritePropertyName("DefaultAction");

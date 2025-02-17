@@ -40,8 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons
-        /// are supported.
+        /// The type of comparison. Currently, "less than" (LT), "less than equal" (LTE), and
+        /// "greater than" (GT) comparisons are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

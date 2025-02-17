@@ -34,10 +34,33 @@ namespace Amazon.QApps.Model
     /// </summary>
     public partial class GetQAppSessionResponse : AmazonWebServiceResponse
     {
+        private int? _appVersion;
         private Dictionary<string, CardStatus> _cardStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, CardStatus>() : null;
+        private int? _latestPublishedAppVersion;
         private string _sessionArn;
         private string _sessionId;
+        private string _sessionName;
         private ExecutionStatus _status;
+        private bool? _userIsHost;
+
+        /// <summary>
+        /// Gets and sets the property AppVersion. 
+        /// <para>
+        /// The version of the Q App used for the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int AppVersion
+        {
+            get { return this._appVersion.GetValueOrDefault(); }
+            set { this._appVersion = value; }
+        }
+
+        // Check to see if AppVersion property is set
+        internal bool IsSetAppVersion()
+        {
+            return this._appVersion.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CardStatus. 
@@ -56,6 +79,25 @@ namespace Amazon.QApps.Model
         internal bool IsSetCardStatus()
         {
             return this._cardStatus != null && (this._cardStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestPublishedAppVersion. 
+        /// <para>
+        /// The latest published version of the Q App used for the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int LatestPublishedAppVersion
+        {
+            get { return this._latestPublishedAppVersion.GetValueOrDefault(); }
+            set { this._latestPublishedAppVersion = value; }
+        }
+
+        // Check to see if LatestPublishedAppVersion property is set
+        internal bool IsSetLatestPublishedAppVersion()
+        {
+            return this._latestPublishedAppVersion.HasValue; 
         }
 
         /// <summary>
@@ -97,6 +139,25 @@ namespace Amazon.QApps.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionName. 
+        /// <para>
+        /// The name of the Q App session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string SessionName
+        {
+            get { return this._sessionName; }
+            set { this._sessionName = value; }
+        }
+
+        // Check to see if SessionName property is set
+        internal bool IsSetSessionName()
+        {
+            return this._sessionName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the Q App session.
@@ -113,6 +174,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserIsHost. 
+        /// <para>
+        /// Indicates whether the current user is the owner of the Q App data collection session.
+        /// </para>
+        /// </summary>
+        public bool UserIsHost
+        {
+            get { return this._userIsHost.GetValueOrDefault(); }
+            set { this._userIsHost = value; }
+        }
+
+        // Check to see if UserIsHost property is set
+        internal bool IsSetUserIsHost()
+        {
+            return this._userIsHost.HasValue; 
         }
 
     }

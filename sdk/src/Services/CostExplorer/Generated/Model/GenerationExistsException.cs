@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A request to generate a recommendation is already in progress.
+    /// A request to generate a recommendation or analysis is already in progress.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminListDevices operation.
-    /// Lists devices, as an administrator.
+    /// Lists a user's registered devices. Remembered devices are used in authentication services
+    /// where you offer a "Remember me" option for users who you want to permit to sign in
+    /// without MFA from a trusted device. Users can bypass MFA while your application performs
+    /// device SRP authentication on the back end. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+    /// with devices</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -65,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The limit of the devices request.
+        /// The maximum number of devices that you want Amazon Cognito to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -129,7 +133,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where the device owner is a user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

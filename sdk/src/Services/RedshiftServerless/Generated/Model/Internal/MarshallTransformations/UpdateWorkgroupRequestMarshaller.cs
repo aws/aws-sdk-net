@@ -115,6 +115,17 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Port);
                 }
 
+                if(publicRequest.IsSetPricePerformanceTarget())
+                {
+                    context.Writer.WritePropertyName("pricePerformanceTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceTargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PricePerformanceTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");

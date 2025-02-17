@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the rekognition-2016-06-27.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

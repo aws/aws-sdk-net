@@ -42,6 +42,12 @@ namespace Amazon.Chatbot.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeSlackUserIdentitiesResponse> Responses => new PaginatedResponse<DescribeSlackUserIdentitiesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the SlackUserIdentities
+        /// </summary>
+        public IPaginatedEnumerable<SlackUserIdentity> SlackUserIdentities => 
+            new PaginatedResultKeyResponse<DescribeSlackUserIdentitiesResponse, SlackUserIdentity>(this, (i) => i.SlackUserIdentities ?? new List<SlackUserIdentity>());
+
         internal DescribeSlackUserIdentitiesPaginator(IAmazonChatbot client, DescribeSlackUserIdentitiesRequest request)
         {
             this._client = client;

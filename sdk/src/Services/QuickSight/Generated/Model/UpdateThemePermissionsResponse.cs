@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// The resulting list of resource permissions for the theme.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> Permissions
         {
             get { return this._permissions; }

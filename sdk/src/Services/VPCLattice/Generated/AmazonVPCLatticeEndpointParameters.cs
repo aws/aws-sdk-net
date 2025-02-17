@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the vpc-lattice-2022-11-30.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

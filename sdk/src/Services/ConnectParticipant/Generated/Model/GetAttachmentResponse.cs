@@ -34,8 +34,28 @@ namespace Amazon.ConnectParticipant.Model
     /// </summary>
     public partial class GetAttachmentResponse : AmazonWebServiceResponse
     {
+        private long? _attachmentSizeInBytes;
         private string _url;
         private string _urlExpiry;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentSizeInBytes. 
+        /// <para>
+        /// The size of the attachment in bytes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public long AttachmentSizeInBytes
+        {
+            get { return this._attachmentSizeInBytes.GetValueOrDefault(); }
+            set { this._attachmentSizeInBytes = value; }
+        }
+
+        // Check to see if AttachmentSizeInBytes property is set
+        internal bool IsSetAttachmentSizeInBytes()
+        {
+            return this._attachmentSizeInBytes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Url. 

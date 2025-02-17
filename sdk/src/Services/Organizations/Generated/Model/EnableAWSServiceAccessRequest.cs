@@ -31,11 +31,12 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableAWSServiceAccess operation.
-    /// Enables the integration of an Amazon Web Services service (the service that is specified
-    /// by <c>ServicePrincipal</c>) with Organizations. When you enable integration, you allow
-    /// the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
-    /// role</a> in all the accounts in your organization. This allows the service to perform
-    /// operations on your behalf in your organization and its accounts.
+    /// Provides an Amazon Web Services service (the service that is specified by <c>ServicePrincipal</c>)
+    /// with permissions to view the structure of an organization, create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+    /// role</a> in all the accounts in the organization, and allow the service to perform
+    /// operations on behalf of the organization and its accounts. Establishing these permissions
+    /// can be a first step in enabling the integration of an Amazon Web Services service
+    /// with Organizations.
     /// 
     ///  <important> 
     /// <para>

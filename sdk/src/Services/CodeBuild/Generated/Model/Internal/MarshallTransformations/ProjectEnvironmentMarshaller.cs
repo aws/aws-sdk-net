@@ -54,6 +54,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Certificate);
             }
 
+            if(requestObject.IsSetComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("computeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ComputeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetComputeType())
             {
                 context.Writer.WritePropertyName("computeType");

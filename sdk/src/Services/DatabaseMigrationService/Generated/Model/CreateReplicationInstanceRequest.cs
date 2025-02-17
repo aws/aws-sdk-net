@@ -58,6 +58,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _availabilityZone;
         private string _dnsNameServers;
         private string _engineVersion;
+        private KerberosAuthenticationSettings _kerberosAuthenticationSettings;
         private string _kmsKeyId;
         private bool? _multiAZ;
         private string _networkType;
@@ -176,6 +177,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KerberosAuthenticationSettings. 
+        /// <para>
+        /// Specifies the settings required for kerberos authentication when creating the replication
+        /// instance.
+        /// </para>
+        /// </summary>
+        public KerberosAuthenticationSettings KerberosAuthenticationSettings
+        {
+            get { return this._kerberosAuthenticationSettings; }
+            set { this._kerberosAuthenticationSettings = value; }
+        }
+
+        // Check to see if KerberosAuthenticationSettings property is set
+        internal bool IsSetKerberosAuthenticationSettings()
+        {
+            return this._kerberosAuthenticationSettings != null;
         }
 
         /// <summary>
@@ -317,7 +337,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// the best size for a replication instance</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=30)]
         public string ReplicationInstanceClass
         {
             get { return this._replicationInstanceClass; }

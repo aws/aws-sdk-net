@@ -59,8 +59,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon SageMaker returns this token. To retrieve the
-        /// next set of model quality monitoring job definitions, use it in the next request.
+        /// If the response is truncated, Amazon SageMaker AI returns this token. To retrieve
+        /// the next set of model quality monitoring job definitions, use it in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

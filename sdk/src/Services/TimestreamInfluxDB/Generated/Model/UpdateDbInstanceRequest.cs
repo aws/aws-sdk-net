@@ -35,9 +35,51 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// </summary>
     public partial class UpdateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
     {
+        private int? _allocatedStorage;
+        private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
+        private DbStorageType _dbStorageType;
+        private DeploymentType _deploymentType;
         private string _identifier;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
+        private int? _port;
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage to allocate for your DB storage type (in gibibytes).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=16384)]
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbInstanceType. 
+        /// <para>
+        /// The Timestream for InfluxDB DB instance type to run InfluxDB on.
+        /// </para>
+        /// </summary>
+        public DbInstanceType DbInstanceType
+        {
+            get { return this._dbInstanceType; }
+            set { this._dbInstanceType = value; }
+        }
+
+        // Check to see if DbInstanceType property is set
+        internal bool IsSetDbInstanceType()
+        {
+            return this._dbInstanceType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DbParameterGroupIdentifier. 
@@ -58,6 +100,43 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetDbParameterGroupIdentifier()
         {
             return this._dbParameterGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbStorageType. 
+        /// <para>
+        /// The Timestream for InfluxDB DB storage type that InfluxDB stores data on.
+        /// </para>
+        /// </summary>
+        public DbStorageType DbStorageType
+        {
+            get { return this._dbStorageType; }
+            set { this._dbStorageType = value; }
+        }
+
+        // Check to see if DbStorageType property is set
+        internal bool IsSetDbStorageType()
+        {
+            return this._dbStorageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// Specifies whether the DB instance will be deployed as a standalone instance or with
+        /// a Multi-AZ standby for high availability.
+        /// </para>
+        /// </summary>
+        public DeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
         }
 
         /// <summary>
@@ -95,6 +174,41 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetLogDeliveryConfiguration()
         {
             return this._logDeliveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which InfluxDB accepts connections.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the Port value, your database restarts immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 1024-65535
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 8086
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
     }

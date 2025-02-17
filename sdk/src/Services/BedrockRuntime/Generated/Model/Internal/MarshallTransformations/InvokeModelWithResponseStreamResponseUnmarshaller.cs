@@ -51,6 +51,8 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             response.Body = new ResponseStream(context.Stream);
             if (context.ResponseData.IsHeaderPresent("X-Amzn-Bedrock-Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("X-Amzn-Bedrock-Content-Type");
+            if (context.ResponseData.IsHeaderPresent("X-Amzn-Bedrock-PerformanceConfig-Latency"))
+                response.PerformanceConfigLatency = context.ResponseData.GetHeaderValue("X-Amzn-Bedrock-PerformanceConfig-Latency");
 
             return response;
         }

@@ -35,9 +35,9 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// If finding aggregation is enabled, then when you call <c>GetFindings</c> from the
-    /// aggregation Region, the results include all of the matching findings from both the
-    /// aggregation Region and the linked Regions.
+    /// If cross-Region aggregation is enabled, then when you call <c>GetFindings</c> from
+    /// the home Region, the results include all of the matching findings from both the home
+    /// Region and linked Regions.
     /// </para>
     /// </summary>
     public partial class GetFindingsRequest : AmazonSecurityHubRequest

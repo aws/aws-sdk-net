@@ -47,6 +47,14 @@ namespace Amazon.EC2.Model
     /// terminated, specifying the ID of the image will eventually return an error indicating
     /// that the AMI ID cannot be found.
     /// </para>
+    ///  
+    /// <para>
+    /// When Allowed AMIs is set to <c>enabled</c>, only allowed images are returned in the
+    /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
+    /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
+    /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
+    /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+    /// </para>
     ///  <important> 
     /// <para>
     /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -169,6 +177,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>image-allowed</c> - A Boolean that indicates whether the image meets the criteria
+        /// specified for Allowed AMIs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>image-id</c> - The ID of the image.
         /// </para>
         ///  </li> <li> 
@@ -193,10 +206,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>owner-alias</c> - The owner alias (<c>amazon</c> | <c>aws-marketplace</c>). The
-        /// valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web
-        /// Services account alias that can be set using the IAM console. We recommend that you
-        /// use the <b>Owner</b> request parameter instead of this filter.
+        ///  <c>owner-alias</c> - The owner alias (<c>amazon</c> | <c>aws-backup-vault</c> | <c>aws-marketplace</c>).
+        /// The valid aliases are defined in an Amazon-maintained list. This is not the Amazon
+        /// Web Services account alias that can be set using the IAM console. We recommend that
+        /// you use the <b>Owner</b> request parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -230,6 +243,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>source-image-id</c> - The ID of the source AMI from which the AMI was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>source-image-region</c> - The Region of the source AMI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>source-instance-id</c> - The ID of the instance that the AMI was created from
         /// if the AMI was created using CreateImage. This filter is applicable only if the AMI
         /// was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
@@ -253,7 +274,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>tag</c>:&lt;key&gt; - The key/value combination of a tag assigned to the resource.
+        ///  <c>tag:&lt;key&gt;</c> - The key/value combination of a tag assigned to the resource.
         /// Use the tag key in the filter name and the tag value as the filter value. For example,
         /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
         /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
@@ -396,9 +417,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Owners. 
         /// <para>
         /// Scopes the results to images with the specified owners. You can specify a combination
-        /// of Amazon Web Services account IDs, <c>self</c>, <c>amazon</c>, and <c>aws-marketplace</c>.
-        /// If you omit this parameter, the results include all images for which you have launch
-        /// permissions, regardless of ownership.
+        /// of Amazon Web Services account IDs, <c>self</c>, <c>amazon</c>, <c>aws-backup-vault</c>,
+        /// and <c>aws-marketplace</c>. If you omit this parameter, the results include all images
+        /// for which you have launch permissions, regardless of ownership.
         /// </para>
         /// </summary>
         public List<string> Owners

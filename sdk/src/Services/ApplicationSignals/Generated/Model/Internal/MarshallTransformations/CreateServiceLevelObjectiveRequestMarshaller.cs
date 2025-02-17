@@ -67,6 +67,22 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBurnRateConfigurations())
+                {
+                    context.Writer.WritePropertyName("BurnRateConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBurnRateConfigurationsListValue in publicRequest.BurnRateConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BurnRateConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBurnRateConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -88,6 +104,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetRequestBasedSliConfig())
+                {
+                    context.Writer.WritePropertyName("RequestBasedSliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSliConfig())

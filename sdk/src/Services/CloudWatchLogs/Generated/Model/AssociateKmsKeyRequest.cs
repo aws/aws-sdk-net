@@ -42,7 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+    /// Specify the <c>logGroupName</c> parameter to cause log events ingested into that log
     /// group to be encrypted with that key. Only the log events ingested after the key is
     /// associated are encrypted with that key.
     /// </para>

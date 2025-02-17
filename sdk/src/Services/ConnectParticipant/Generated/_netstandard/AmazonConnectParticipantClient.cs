@@ -39,11 +39,23 @@ namespace Amazon.ConnectParticipant
     /// <summary>
     /// <para>Implementation for accessing ConnectParticipant</para>
     ///
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html">Participant
+    /// Service actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html">Participant
+    /// Service data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables
     /// companies of any size to deliver superior customer service at a lower cost. Amazon
     /// Connect communications capabilities make it easy for companies to deliver personalized
     /// interactions across communication channels, including chat. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Use the Amazon Connect Participant Service to manage participants (for example, agents,
@@ -280,6 +292,60 @@ namespace Amazon.ConnectParticipant
         #endregion
 
 
+        #region  CancelParticipantAuthentication
+
+        internal virtual CancelParticipantAuthenticationResponse CancelParticipantAuthentication(CancelParticipantAuthenticationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelParticipantAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelParticipantAuthenticationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelParticipantAuthenticationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the authentication session. The opted out branch of the Authenticate Customer
+        /// flow block will be taken.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The current supported channel is chat. This API is not supported for Apple Messages
+        /// for Business, WhatsApp, or SMS chats.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelParticipantAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelParticipantAuthentication service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CancelParticipantAuthentication">REST API Reference for CancelParticipantAuthentication Operation</seealso>
+        public virtual Task<CancelParticipantAuthenticationResponse> CancelParticipantAuthenticationAsync(CancelParticipantAuthenticationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelParticipantAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelParticipantAuthenticationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelParticipantAuthenticationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CompleteAttachmentUpload
 
         internal virtual CompleteAttachmentUploadResponse CompleteAttachmentUpload(CompleteAttachmentUploadRequest request)
@@ -298,6 +364,11 @@ namespace Amazon.ConnectParticipant
         /// provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment
         /// with that identifier is already being uploaded.
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -361,6 +432,11 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Creates the participant's connection. 
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ParticipantToken</c> is used for invoking this API instead of <c>ConnectionToken</c>.
@@ -456,6 +532,12 @@ namespace Amazon.ConnectParticipant
 
         /// <summary>
         /// Retrieves the view for the specified view token.
+        /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeView service method.</param>
         /// <param name="cancellationToken">
@@ -506,6 +588,11 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Disconnects a participant. 
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -563,6 +650,11 @@ namespace Amazon.ConnectParticipant
         /// Provides a pre-signed URL for download of a completed attachment. This is an asynchronous
         /// API for use with active contacts.
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -603,6 +695,70 @@ namespace Amazon.ConnectParticipant
 
         #endregion
         
+        #region  GetAuthenticationUrl
+
+        internal virtual GetAuthenticationUrlResponse GetAuthenticationUrl(GetAuthenticationUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthenticationUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthenticationUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetAuthenticationUrlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the AuthenticationUrl for the current authentication session for the AuthenticateCustomer
+        /// flow block. 
+        /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// This API can only be called within one minute of receiving the authenticationInitiated
+        /// event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The current supported channel is chat. This API is not supported for Apple Messages
+        /// for Business, WhatsApp, or SMS chats.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAuthenticationUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAuthenticationUrl service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAuthenticationUrl">REST API Reference for GetAuthenticationUrl Operation</seealso>
+        public virtual Task<GetAuthenticationUrlResponse> GetAuthenticationUrlAsync(GetAuthenticationUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAuthenticationUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAuthenticationUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAuthenticationUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTranscript
 
         internal virtual GetTranscriptResponse GetTranscript(GetTranscriptRequest request)
@@ -622,6 +778,11 @@ namespace Amazon.ConnectParticipant
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
         /// persistent chat</a>. 
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  
         /// <para>
         /// If you have a process that consumes events in the transcript of an chat that has ended,
@@ -715,6 +876,11 @@ namespace Amazon.ConnectParticipant
         /// participants in the chat. Using the SendEvent API for message receipts when a supervisor
         /// is barged-in will result in a conflict exception.
         /// </para>
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -775,6 +941,11 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Sends a message.
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -832,6 +1003,11 @@ namespace Amazon.ConnectParticipant
         /// Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
         /// S3.
         /// 
+        ///  
+        /// <para>
+        /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.

@@ -46,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         private int? _maxResults;
         private string _nextToken;
         private string _queryDefinitionNamePrefix;
+        private QueryLanguage _queryLanguage;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -100,6 +101,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetQueryDefinitionNamePrefix()
         {
             return this._queryDefinitionNamePrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryLanguage. 
+        /// <para>
+        /// The query language used for this query. For more information about the query languages
+        /// that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+        /// query languages</a>.
+        /// </para>
+        /// </summary>
+        public QueryLanguage QueryLanguage
+        {
+            get { return this._queryLanguage; }
+            set { this._queryLanguage = value; }
+        }
+
+        // Check to see if QueryLanguage property is set
+        internal bool IsSetQueryLanguage()
+        {
+            return this._queryLanguage != null;
         }
 
     }

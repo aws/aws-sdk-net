@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Detection
     {
         private Anomaly _anomaly;
+        private Sequence _sequence;
 
         /// <summary>
         /// Gets and sets the property Anomaly. 
@@ -52,6 +53,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAnomaly()
         {
             return this._anomaly != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sequence. 
+        /// <para>
+        /// The details about the attack sequence.
+        /// </para>
+        /// </summary>
+        public Sequence Sequence
+        {
+            get { return this._sequence; }
+            set { this._sequence = value; }
+        }
+
+        // Check to see if Sequence property is set
+        internal bool IsSetSequence()
+        {
+            return this._sequence != null;
         }
 
     }

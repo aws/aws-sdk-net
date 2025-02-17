@@ -34,10 +34,30 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class LakeFormationOptInsInfo
     {
+        private Condition _condition;
         private DateTime? _lastModified;
         private string _lastUpdatedBy;
         private DataLakePrincipal _principal;
         private Resource _resource;
+
+        /// <summary>
+        /// Gets and sets the property Condition. 
+        /// <para>
+        /// A Lake Formation condition, which applies to permissions and opt-ins that contain
+        /// an expression.
+        /// </para>
+        /// </summary>
+        public Condition Condition
+        {
+            get { return this._condition; }
+            set { this._condition = value; }
+        }
+
+        // Check to see if Condition property is set
+        internal bool IsSetCondition()
+        {
+            return this._condition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastModified. 

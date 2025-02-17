@@ -1,4 +1,6 @@
+using Castle.Core.Internal;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace AWSSDK_NetStandard.UnitTests
@@ -8,7 +10,9 @@ namespace AWSSDK_NetStandard.UnitTests
         public static Stream GetAssemblyResourceStream(string resourceName)
         {
             Assembly assembly = typeof(Utils).GetTypeInfo().Assembly;
-            return assembly.GetManifestResourceStream(resourceName);
+            var names = assembly.GetManifestResourceNames();
+            var fullResourceName = names.First((name) => name.EndsWith(resourceName));
+            return assembly.GetManifestResourceStream(fullResourceName);
         }
     }
 }

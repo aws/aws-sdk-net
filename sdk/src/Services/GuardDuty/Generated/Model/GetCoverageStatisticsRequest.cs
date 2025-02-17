@@ -45,7 +45,13 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the GuardDuty detector associated to the coverage statistics.
+        /// The unique ID of the GuardDuty detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -64,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// Represents the criteria used to filter the coverage statistics
+        /// Represents the criteria used to filter the coverage statistics.
         /// </para>
         /// </summary>
         public CoverageFilterCriteria FilterCriteria

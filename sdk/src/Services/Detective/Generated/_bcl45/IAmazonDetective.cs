@@ -136,7 +136,7 @@ namespace Amazon.Detective
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// All API actions are logged as CloudTrail events. See <a href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging
+    /// All API actions are logged as CloudTrail events. See <a href="https://docs.aws.amazon.com/detective/latest/userguide/logging-using-cloudtrail.html">Logging
     /// Detective API Calls with CloudTrail</a>.
     /// </para>
     ///  <note> 
@@ -2164,7 +2164,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Starts a data source packages for the behavior graph.
+        /// Starts a data source package for the Detective behavior graph.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
         /// 
@@ -2204,7 +2204,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Starts a data source packages for the behavior graph.
+        /// Starts a data source package for the Detective behavior graph.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
         /// <param name="cancellationToken">

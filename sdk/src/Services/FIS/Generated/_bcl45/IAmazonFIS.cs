@@ -450,6 +450,40 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetSafetyLever
+
+
+        /// <summary>
+        /// Gets information about the specified safety lever.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever service method.</param>
+        /// 
+        /// <returns>The response from the GetSafetyLever service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        GetSafetyLeverResponse GetSafetyLever(GetSafetyLeverRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the specified safety lever.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSafetyLever service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        Task<GetSafetyLeverResponse> GetSafetyLeverAsync(GetSafetyLeverRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTargetAccountConfiguration
 
 
@@ -1007,6 +1041,52 @@ namespace Amazon.FIS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplate">REST API Reference for UpdateExperimentTemplate Operation</seealso>
         Task<UpdateExperimentTemplateResponse> UpdateExperimentTemplateAsync(UpdateExperimentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSafetyLeverState
+
+
+        /// <summary>
+        /// Updates the specified safety lever state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSafetyLeverState service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        UpdateSafetyLeverStateResponse UpdateSafetyLeverState(UpdateSafetyLeverStateRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified safety lever state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSafetyLeverState service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        Task<UpdateSafetyLeverStateResponse> UpdateSafetyLeverStateAsync(UpdateSafetyLeverStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

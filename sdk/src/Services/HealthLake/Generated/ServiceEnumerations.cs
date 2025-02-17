@@ -35,6 +35,10 @@ namespace Amazon.HealthLake
         /// </summary>
         public static readonly AuthorizationStrategy AWS_AUTH = new AuthorizationStrategy("AWS_AUTH");
         /// <summary>
+        /// Constant SMART_ON_FHIR for AuthorizationStrategy
+        /// </summary>
+        public static readonly AuthorizationStrategy SMART_ON_FHIR = new AuthorizationStrategy("SMART_ON_FHIR");
+        /// <summary>
         /// Constant SMART_ON_FHIR_V1 for AuthorizationStrategy
         /// </summary>
         public static readonly AuthorizationStrategy SMART_ON_FHIR_V1 = new AuthorizationStrategy("SMART_ON_FHIR_V1");
@@ -320,6 +324,10 @@ namespace Amazon.HealthLake
         /// Constant IN_PROGRESS for JobStatus
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for JobStatus
+        /// </summary>
+        public static readonly JobStatus QUEUED = new JobStatus("QUEUED");
         /// <summary>
         /// Constant SUBMITTED for JobStatus
         /// </summary>

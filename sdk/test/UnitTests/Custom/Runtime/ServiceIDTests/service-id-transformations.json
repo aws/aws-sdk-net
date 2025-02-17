@@ -285,11 +285,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_CODEPIPELINE"
   },
   {
-    "service_id": "CodeStar",
-    "services_section_name": "codestar",
-    "service_envvar_name": "AWS_ENDPOINT_URL_CODESTAR"
-  },
-  {
     "service_id": "CodeStar connections",
     "services_section_name": "codestar_connections",
     "service_envvar_name": "AWS_ENDPOINT_URL_CODESTAR_CONNECTIONS"
@@ -705,16 +700,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_IOT_JOBS_DATA_PLANE"
   },
   {
-    "service_id": "IoT 1Click Devices Service",
-    "services_section_name": "iot_1click_devices_service",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IOT_1CLICK_DEVICES_SERVICE"
-  },
-  {
-    "service_id": "IoT 1Click Projects",
-    "services_section_name": "iot_1click_projects",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IOT_1CLICK_PROJECTS"
-  },
-  {
     "service_id": "IoTAnalytics",
     "services_section_name": "iotanalytics",
     "service_envvar_name": "AWS_ENDPOINT_URL_IOTANALYTICS"
@@ -1053,11 +1038,6 @@
     "service_id": "NetworkManager",
     "services_section_name": "networkmanager",
     "service_envvar_name": "AWS_ENDPOINT_URL_NETWORKMANAGER"
-  },
-  {
-    "service_id": "nimble",
-    "services_section_name": "nimble",
-    "service_envvar_name": "AWS_ENDPOINT_URL_NIMBLE"
   },
   {
     "service_id": "OpenSearch",
@@ -1533,11 +1513,6 @@
     "service_id": "WorkDocs",
     "services_section_name": "workdocs",
     "service_envvar_name": "AWS_ENDPOINT_URL_WORKDOCS"
-  },
-  {
-    "service_id": "WorkLink",
-    "services_section_name": "worklink",
-    "service_envvar_name": "AWS_ENDPOINT_URL_WORKLINK"
   },
   {
     "service_id": "WorkMail",

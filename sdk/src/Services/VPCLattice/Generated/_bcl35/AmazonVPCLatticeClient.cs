@@ -511,6 +511,159 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  CreateResourceConfiguration
+
+        /// <summary>
+        /// Creates a resource configuration. A resource configuration defines a specific resource.
+        /// You can associate a resource configuration with a service network or a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
+        public virtual CreateResourceConfigurationResponse CreateResourceConfiguration(CreateResourceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceConfiguration operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateResourceConfiguration(CreateResourceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateResourceConfigurationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
+        public virtual CreateResourceConfigurationResponse EndCreateResourceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateResourceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateResourceGateway
+
+        /// <summary>
+        /// Creates a resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
+        public virtual CreateResourceGatewayResponse CreateResourceGateway(CreateResourceGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
+        public virtual IAsyncResult BeginCreateResourceGateway(CreateResourceGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateResourceGatewayResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
+        public virtual CreateResourceGatewayResponse EndCreateResourceGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateResourceGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateRule
 
         /// <summary>
@@ -756,10 +909,89 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  CreateServiceNetworkResourceAssociation
+
+        /// <summary>
+        /// Associates the specified service network with the specified resource configuration.
+        /// This allows the resource configuration to receive connections through the service
+        /// network, including through a service network VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
+        public virtual CreateServiceNetworkResourceAssociationResponse CreateServiceNetworkResourceAssociation(CreateServiceNetworkResourceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceNetworkResourceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceNetworkResourceAssociation operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceNetworkResourceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateServiceNetworkResourceAssociation(CreateServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceNetworkResourceAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceNetworkResourceAssociationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
+        public virtual CreateServiceNetworkResourceAssociationResponse EndCreateServiceNetworkResourceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceNetworkResourceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateServiceNetworkServiceAssociation
 
         /// <summary>
-        /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+        /// Associates the specified service with the specified service network. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
         /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// 
         ///  
@@ -1245,6 +1477,221 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteResourceConfiguration
+
+        /// <summary>
+        /// Deletes the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
+        public virtual DeleteResourceConfigurationResponse DeleteResourceConfiguration(DeleteResourceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceConfiguration operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourceConfiguration(DeleteResourceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceConfigurationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
+        public virtual DeleteResourceConfigurationResponse EndDeleteResourceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceEndpointAssociation
+
+        /// <summary>
+        /// Disassociates the resource configuration from the resource VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceEndpointAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceEndpointAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
+        public virtual DeleteResourceEndpointAssociationResponse DeleteResourceEndpointAssociation(DeleteResourceEndpointAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceEndpointAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceEndpointAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceEndpointAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceEndpointAssociation operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceEndpointAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourceEndpointAssociation(DeleteResourceEndpointAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceEndpointAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceEndpointAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceEndpointAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceEndpointAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceEndpointAssociationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
+        public virtual DeleteResourceEndpointAssociationResponse EndDeleteResourceEndpointAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourceEndpointAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceGateway
+
+        /// <summary>
+        /// Deletes the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
+        public virtual DeleteResourceGatewayResponse DeleteResourceGateway(DeleteResourceGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceGateway operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourceGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourceGateway(DeleteResourceGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourceGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourceGatewayResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
+        public virtual DeleteResourceGatewayResponse EndDeleteResourceGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourceGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
         /// <summary>
@@ -1550,11 +1997,84 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  DeleteServiceNetworkResourceAssociation
+
+        /// <summary>
+        /// Deletes the association between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
+        public virtual DeleteServiceNetworkResourceAssociationResponse DeleteServiceNetworkResourceAssociation(DeleteServiceNetworkResourceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceNetworkResourceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkResourceAssociation operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceNetworkResourceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServiceNetworkResourceAssociation(DeleteServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceNetworkResourceAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceNetworkResourceAssociationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
+        public virtual DeleteServiceNetworkResourceAssociationResponse EndDeleteServiceNetworkResourceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServiceNetworkResourceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteServiceNetworkServiceAssociation
 
         /// <summary>
-        /// Deletes the association between a specified service and the specific service network.
-        /// This operation fails if an association is still in progress.
+        /// Deletes the association between a service and a service network. This operation fails
+        /// if an association is still in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceNetworkServiceAssociation service method.</param>
         /// 
@@ -2049,11 +2569,149 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetResourceConfiguration
+
+        /// <summary>
+        /// Retrieves information about the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
+        public virtual GetResourceConfigurationResponse GetResourceConfiguration(GetResourceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceConfiguration operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceConfiguration(GetResourceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetResourceConfigurationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
+        public virtual GetResourceConfigurationResponse EndGetResourceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourceGateway
+
+        /// <summary>
+        /// Retrieves information about the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
+        public virtual GetResourceGatewayResponse GetResourceGateway(GetResourceGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceGateway operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceGateway(GetResourceGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceGateway.</param>
+        /// 
+        /// <returns>Returns a  GetResourceGatewayResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
+        public virtual GetResourceGatewayResponse EndGetResourceGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetResourcePolicy
 
         /// <summary>
-        /// Retrieves information about the resource policy. The resource policy is an IAM policy
-        /// created on behalf of the resource owner when they share a resource.
+        /// Retrieves information about the specified resource policy. The resource policy is
+        /// an IAM policy created on behalf of the resource owner when they share a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -2122,8 +2780,8 @@ namespace Amazon.VPCLattice
         #region  GetRule
 
         /// <summary>
-        /// Retrieves information about listener rules. You can also retrieve information about
-        /// the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
+        /// Retrieves information about the specified listener rules. You can also retrieve information
+        /// about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener
         /// rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
@@ -2328,6 +2986,76 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  GetServiceNetworkResourceAssociation
+
+        /// <summary>
+        /// Retrieves information about the specified association between a service network and
+        /// a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceNetworkResourceAssociation service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
+        public virtual GetServiceNetworkResourceAssociationResponse GetServiceNetworkResourceAssociation(GetServiceNetworkResourceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceNetworkResourceAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkResourceAssociation operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceNetworkResourceAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceNetworkResourceAssociation(GetServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceNetworkResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceNetworkResourceAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceNetworkResourceAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetServiceNetworkResourceAssociationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
+        public virtual GetServiceNetworkResourceAssociationResponse EndGetServiceNetworkResourceAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceNetworkResourceAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetServiceNetworkServiceAssociation
 
         /// <summary>
@@ -2401,7 +3129,8 @@ namespace Amazon.VPCLattice
         #region  GetServiceNetworkVpcAssociation
 
         /// <summary>
-        /// Retrieves information about the association between a service network and a VPC.
+        /// Retrieves information about the specified association between a service network and
+        /// a VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceNetworkVpcAssociation service method.</param>
         /// 
@@ -2539,7 +3268,7 @@ namespace Amazon.VPCLattice
         #region  ListAccessLogSubscriptions
 
         /// <summary>
-        /// Lists all access log subscriptions for the specified service network or service.
+        /// Lists the access log subscriptions for the specified service network or service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessLogSubscriptions service method.</param>
         /// 
@@ -2671,10 +3400,208 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  ListResourceConfigurations
+
+        /// <summary>
+        /// Lists the resource configurations owned by or shared with this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceConfigurations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
+        public virtual ListResourceConfigurationsResponse ListResourceConfigurations(ListResourceConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceConfigurations operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListResourceConfigurations(ListResourceConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListResourceConfigurationsResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
+        public virtual ListResourceConfigurationsResponse EndListResourceConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceEndpointAssociations
+
+        /// <summary>
+        /// Lists the associations for the specified VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEndpointAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
+        public virtual ListResourceEndpointAssociationsResponse ListResourceEndpointAssociations(ListResourceEndpointAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceEndpointAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceEndpointAssociations operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceEndpointAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListResourceEndpointAssociations(ListResourceEndpointAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceEndpointAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListResourceEndpointAssociationsResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
+        public virtual ListResourceEndpointAssociationsResponse EndListResourceEndpointAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceEndpointAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceGateways
+
+        /// <summary>
+        /// Lists the resource gateways that you own or that were shared with you.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGateways service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceGateways service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
+        public virtual ListResourceGatewaysResponse ListResourceGateways(ListResourceGatewaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceGatewaysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceGateways operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
+        public virtual IAsyncResult BeginListResourceGateways(ListResourceGatewaysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceGatewaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceGatewaysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceGateways.</param>
+        /// 
+        /// <returns>Returns a  ListResourceGatewaysResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
+        public virtual ListResourceGatewaysResponse EndListResourceGateways(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceGatewaysResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRules
 
         /// <summary>
-        /// Lists the rules for the listener.
+        /// Lists the rules for the specified listener.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
         /// 
@@ -2740,11 +3667,77 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  ListServiceNetworkResourceAssociations
+
+        /// <summary>
+        /// Lists the associations between a service network and a resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkResourceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkResourceAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
+        public virtual ListServiceNetworkResourceAssociationsResponse ListServiceNetworkResourceAssociations(ListServiceNetworkResourceAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceNetworkResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceNetworkResourceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceNetworkResourceAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceNetworkResourceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkResourceAssociations operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceNetworkResourceAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListServiceNetworkResourceAssociations(ListServiceNetworkResourceAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceNetworkResourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceNetworkResourceAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceNetworkResourceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceNetworkResourceAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListServiceNetworkResourceAssociationsResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
+        public virtual ListServiceNetworkResourceAssociationsResponse EndListServiceNetworkResourceAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceNetworkResourceAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListServiceNetworks
 
         /// <summary>
-        /// Lists the service networks owned by the caller account or shared with the caller account.
-        /// Also includes the account ID in the ARN to show which account owns the service network.
+        /// Lists the service networks owned by or shared with this account. The account ID in
+        /// the ARN shows which account owns the service network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworks service method.</param>
         /// 
@@ -2810,17 +3803,16 @@ namespace Amazon.VPCLattice
         #region  ListServiceNetworkServiceAssociations
 
         /// <summary>
-        /// Lists the associations between the service network and the service. You can filter
-        /// the list either by service or service network. You must provide either the service
-        /// network identifier or the service identifier.
+        /// Lists the associations between a service network and a service. You can filter the
+        /// list either by service or service network. You must provide either the service network
+        /// identifier or the service identifier.
         /// 
         ///  
         /// <para>
-        /// Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
-        /// such as when a service network is associated with a VPC or when a service is associated
-        /// with a service network. If the association is for a resource that is shared with another
-        /// account, the association includes the local account ID as the prefix in the ARN for
-        /// each account the resource is shared with.
+        /// Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such
+        /// as when a service network is associated with a VPC or when a service is associated
+        /// with a service network. If the association is for a resource is shared with another
+        /// account, the association includes the local account ID as the prefix in the ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkServiceAssociations service method.</param>
@@ -2887,9 +3879,9 @@ namespace Amazon.VPCLattice
         #region  ListServiceNetworkVpcAssociations
 
         /// <summary>
-        /// Lists the service network and VPC associations. You can filter the list either by
-        /// VPC or service network. You must provide either the service network identifier or
-        /// the VPC identifier.
+        /// Lists the associations between a service network and a VPC. You can filter the list
+        /// either by VPC or service network. You must provide either the ID of the service network
+        /// identifier or the ID of the VPC.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcAssociations service method.</param>
         /// 
@@ -2948,6 +3940,72 @@ namespace Amazon.VPCLattice
         public virtual ListServiceNetworkVpcAssociationsResponse EndListServiceNetworkVpcAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListServiceNetworkVpcAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListServiceNetworkVpcEndpointAssociations
+
+        /// <summary>
+        /// Lists the associations between a service network and a VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcEndpointAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceNetworkVpcEndpointAssociations service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
+        public virtual ListServiceNetworkVpcEndpointAssociationsResponse ListServiceNetworkVpcEndpointAssociations(ListServiceNetworkVpcEndpointAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceNetworkVpcEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceNetworkVpcEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceNetworkVpcEndpointAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceNetworkVpcEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceNetworkVpcEndpointAssociations operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceNetworkVpcEndpointAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListServiceNetworkVpcEndpointAssociations(ListServiceNetworkVpcEndpointAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceNetworkVpcEndpointAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceNetworkVpcEndpointAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceNetworkVpcEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceNetworkVpcEndpointAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListServiceNetworkVpcEndpointAssociationsResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
+        public virtual ListServiceNetworkVpcEndpointAssociationsResponse EndListServiceNetworkVpcEndpointAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceNetworkVpcEndpointAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3675,6 +4733,9 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
@@ -3727,11 +4788,152 @@ namespace Amazon.VPCLattice
 
         #endregion
         
+        #region  UpdateResourceConfiguration
+
+        /// <summary>
+        /// Updates the specified resource configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceConfiguration service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
+        public virtual UpdateResourceConfigurationResponse UpdateResourceConfiguration(UpdateResourceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceConfiguration operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceConfiguration(UpdateResourceConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceConfigurationResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
+        public virtual UpdateResourceConfigurationResponse EndUpdateResourceConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceGateway
+
+        /// <summary>
+        /// Updates the specified resource gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceGateway service method, as returned by VPCLattice.</returns>
+        /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
+        public virtual UpdateResourceGatewayResponse UpdateResourceGateway(UpdateResourceGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceGatewayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceGateway operation on AmazonVPCLatticeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceGateway(UpdateResourceGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceGateway.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceGatewayResult from VPCLattice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
+        public virtual UpdateResourceGatewayResponse EndUpdateResourceGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateRule
 
         /// <summary>
-        /// Updates a rule for the listener. You can't modify a default listener rule. To modify
-        /// a default listener rule, use <c>UpdateListener</c>.
+        /// Updates a specified rule for the listener. You can't modify a default listener rule.
+        /// To modify a default listener rule, use <c>UpdateListener</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
         /// 
@@ -3748,6 +4950,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3821,6 +5026,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3951,10 +5159,10 @@ namespace Amazon.VPCLattice
 
         /// <summary>
         /// Updates the service network and VPC association. If you add a security group to the
-        /// service network and VPC association, the association must continue to always have
-        /// at least one security group. You can add or edit security groups at any time. However,
-        /// to remove all security groups, you must first delete the association and recreate
-        /// it without security groups.
+        /// service network and VPC association, the association must continue to have at least
+        /// one security group. You can add or edit security groups at any time. However, to remove
+        /// all security groups, you must first delete the association and then recreate it without
+        /// security groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceNetworkVpcAssociation service method.</param>
         /// 
@@ -4044,6 +5252,9 @@ namespace Amazon.VPCLattice
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.

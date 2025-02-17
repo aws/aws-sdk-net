@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the StartQuery operation.
-    /// Schedules a query of a log group using CloudWatch Logs Insights. You specify the log
-    /// group and time range to query and the query string to use.
+    /// Starts a query of one or more log groups using CloudWatch Logs Insights. You specify
+    /// the log groups and time range to query and the query string to use.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,27 @@ namespace Amazon.CloudWatchLogs.Model
     /// to retrieve the results of a query, using the <c>queryId</c> that <c>StartQuery</c>
     /// returns. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// To specify the log groups to query, a <c>StartQuery</c> operation must include one
+    /// of the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Either exactly one of the following parameters: <c>logGroupName</c>, <c>logGroupNames</c>,
+    /// or <c>logGroupIdentifiers</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
+    /// for the query. The <c>SOURCE</c> command can select log groups based on log group
+    /// name prefix, account ID, and log class. 
+    /// </para>
     ///  
+    /// <para>
+    /// For more information about the <c>SOURCE</c> command, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html">SOURCE</a>.
+    /// </para>
+    ///  </li> </ul> </note> 
     /// <para>
     /// If you have associated a KMS key with the query results in this account, then <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
     /// uses that key to encrypt the results when it stores them. If no key is associated
@@ -79,6 +99,7 @@ namespace Amazon.CloudWatchLogs.Model
         private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _logGroupName;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private QueryLanguage _queryLanguage;
         private string _queryString;
         private long? _startTime;
 
@@ -108,7 +129,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The maximum number of log events to return in the query. If the query string uses
         /// the <c>fields</c> command, only the specified fields and their values are returned.
-        /// The default is 1000.
+        /// The default is 10,000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -138,12 +159,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an ARN, the ARN can't end with an asterisk (*).
+        /// If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i>
+        /// Don't include an * at the end.
         /// </para>
         ///  
         /// <para>
         /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
-        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. 
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here. 
         /// </para>
         /// </summary>
         public List<string> LogGroupIdentifiers
@@ -166,7 +190,9 @@ namespace Amazon.CloudWatchLogs.Model
         ///  <note> 
         /// <para>
         /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
-        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. 
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here.
         /// </para>
         ///  </note>
         /// </summary>
@@ -191,7 +217,9 @@ namespace Amazon.CloudWatchLogs.Model
         ///  <note> 
         /// <para>
         /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
-        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. 
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here.
         /// </para>
         ///  </note>
         /// </summary>
@@ -205,6 +233,27 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupNames()
         {
             return this._logGroupNames != null && (this._logGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryLanguage. 
+        /// <para>
+        /// Specify the query language to use for this query. The options are Logs Insights QL,
+        /// OpenSearch PPL, and OpenSearch SQL. For more information about the query languages
+        /// that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+        /// query languages</a>.
+        /// </para>
+        /// </summary>
+        public QueryLanguage QueryLanguage
+        {
+            get { return this._queryLanguage; }
+            set { this._queryLanguage = value; }
+        }
+
+        // Check to see if QueryLanguage property is set
+        internal bool IsSetQueryLanguage()
+        {
+            return this._queryLanguage != null;
         }
 
         /// <summary>

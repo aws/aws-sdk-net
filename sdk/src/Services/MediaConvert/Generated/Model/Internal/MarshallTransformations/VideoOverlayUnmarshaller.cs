@@ -72,16 +72,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTimecode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("initialPosition", targetDepth))
+                {
+                    var unmarshaller = VideoOverlayPositionUnmarshaller.Instance;
+                    unmarshalledObject.InitialPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("input", targetDepth))
                 {
                     var unmarshaller = VideoOverlayInputUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("playback", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Playback = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTimecode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("transitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VideoOverlayTransition, VideoOverlayTransitionUnmarshaller>(VideoOverlayTransitionUnmarshaller.Instance);
+                    unmarshalledObject.Transitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

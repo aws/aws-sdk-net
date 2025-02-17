@@ -84,6 +84,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfDevicesRequested = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParticipatingGateways", targetDepth))
+                {
+                    var unmarshaller = ParticipatingGatewaysMulticastUnmarshaller.Instance;
+                    unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RfRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

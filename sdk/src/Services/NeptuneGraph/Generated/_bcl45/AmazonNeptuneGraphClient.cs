@@ -267,6 +267,77 @@ namespace Amazon.NeptuneGraph
         #endregion
 
 
+        #region  CancelExportTask
+
+
+        /// <summary>
+        /// Cancel the specified export task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
+        public virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelExportTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancel the specified export task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
+        public virtual Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelExportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelImportTask
 
 
@@ -1065,6 +1136,71 @@ namespace Amazon.NeptuneGraph
 
         #endregion
         
+        #region  GetExportTask
+
+
+        /// <summary>
+        /// Retrieves a specified export task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportTask service method.</param>
+        /// 
+        /// <returns>The response from the GetExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetExportTask">REST API Reference for GetExportTask Operation</seealso>
+        public virtual GetExportTaskResponse GetExportTask(GetExportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a specified export task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetExportTask">REST API Reference for GetExportTask Operation</seealso>
+        public virtual Task<GetExportTaskResponse> GetExportTaskAsync(GetExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGraph
 
 
@@ -1479,6 +1615,71 @@ namespace Amazon.NeptuneGraph
             options.ResponseUnmarshaller = GetQueryResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetQueryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExportTasks
+
+
+        /// <summary>
+        /// Retrieves a list of export tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListExportTasks service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListExportTasks">REST API Reference for ListExportTasks Operation</seealso>
+        public virtual ListExportTasksResponse ListExportTasks(ListExportTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of export tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExportTasks service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListExportTasks">REST API Reference for ListExportTasks Operation</seealso>
+        public virtual Task<ListExportTasksResponse> ListExportTasksAsync(ListExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExportTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2011,6 +2212,79 @@ namespace Amazon.NeptuneGraph
             options.ResponseUnmarshaller = RestoreGraphFromSnapshotResponseUnmarshaller.Instance;
             
             return InvokeAsync<RestoreGraphFromSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExportTask
+
+
+        /// <summary>
+        /// Export data from an existing Neptune Analytics graph to Amazon S3. The graph state
+        /// should be <c>AVAILABLE</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
+        public virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Export data from an existing Neptune Analytics graph to Amazon S3. The graph state
+        /// should be <c>AVAILABLE</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
+        public virtual Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartExportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion

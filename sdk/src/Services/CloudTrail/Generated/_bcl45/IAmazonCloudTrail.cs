@@ -75,13 +75,13 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Adds one or more tags to a trail, event data store, or channel, up to a limit of 50.
-        /// Overwrites an existing tag's value when a new value is specified for an existing tag
-        /// key. Tag key names must be unique; you cannot have two keys with the same name but
-        /// different values. If you specify a key without a value, the tag will be created with
-        /// the specified key and a value of null. You can tag a trail or event data store that
-        /// applies to all Amazon Web Services Regions only from the Region in which the trail
-        /// or event data store was created (also known as its home Region).
+        /// Adds one or more tags to a trail, event data store, dashboard, or channel, up to a
+        /// limit of 50. Overwrites an existing tag's value when a new value is specified for
+        /// an existing tag key. Tag key names must be unique; you cannot have two keys with the
+        /// same name but different values. If you specify a key without a value, the tag will
+        /// be created with the specified key and a value of null. You can tag a trail or event
+        /// data store that applies to all Amazon Web Services Regions only from the Region in
+        /// which the trail or event data store was created (also known as its home Region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -103,6 +103,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -180,8 +185,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -192,13 +197,13 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Adds one or more tags to a trail, event data store, or channel, up to a limit of 50.
-        /// Overwrites an existing tag's value when a new value is specified for an existing tag
-        /// key. Tag key names must be unique; you cannot have two keys with the same name but
-        /// different values. If you specify a key without a value, the tag will be created with
-        /// the specified key and a value of null. You can tag a trail or event data store that
-        /// applies to all Amazon Web Services Regions only from the Region in which the trail
-        /// or event data store was created (also known as its home Region).
+        /// Adds one or more tags to a trail, event data store, dashboard, or channel, up to a
+        /// limit of 50. Overwrites an existing tag's value when a new value is specified for
+        /// an existing tag key. Tag key names must be unique; you cannot have two keys with the
+        /// same name but different values. If you specify a key without a value, the tag will
+        /// be created with the specified key and a value of null. You can tag a trail or event
+        /// data store that applies to all Amazon Web Services Regions only from the Region in
+        /// which the trail or event data store was created (also known as its home Region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// <param name="cancellationToken">
@@ -227,6 +232,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -300,8 +310,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -464,8 +474,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -520,14 +530,198 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDashboard
+
+
+        /// <summary>
+        /// Creates a custom dashboard or the Highlights dashboard. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Custom dashboards</b> - Custom dashboards allow you to query events in any event
+        /// data store type. You can add up to 10 widgets to a custom dashboard. You can manually
+        /// refresh a custom dashboard, or you can set a refresh schedule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Highlights dashboard</b> - You can create the Highlights dashboard to see a summary
+        /// of key user activities and API usage across all your event data stores. CloudTrail
+        /// Lake manages the Highlights dashboard and refreshes the dashboard every 6 hours. To
+        /// create the Highlights dashboard, you must set and enable a refresh schedule.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  CloudTrail runs queries to populate the dashboard's widgets during a manual or scheduled
+        /// refresh. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
+        /// operation to refresh the dashboard on your behalf. To provide permissions, run the
+        /// <c>PutResourcePolicy</c> operation to attach a resource-based policy to the dashboard.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+        /// Resource-based policy example for a dashboard</a> in the <i>CloudTrail User Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about dashboards, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-dashboard.html">CloudTrail
+        /// Lake dashboards</a> in the <i>CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
+        /// 
+        /// <returns>The response from the CreateDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidQueryStatementException">
+        /// The query that was submitted has validation errors, or uses incorrect syntax or unsupported
+        /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+        /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
+        /// This exception is thrown when the specified tag key or values are not valid. It can
+        /// also occur if there are duplicate tags or too many tags on the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
+        CreateDashboardResponse CreateDashboard(CreateDashboardRequest request);
+
+
+
+        /// <summary>
+        /// Creates a custom dashboard or the Highlights dashboard. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Custom dashboards</b> - Custom dashboards allow you to query events in any event
+        /// data store type. You can add up to 10 widgets to a custom dashboard. You can manually
+        /// refresh a custom dashboard, or you can set a refresh schedule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Highlights dashboard</b> - You can create the Highlights dashboard to see a summary
+        /// of key user activities and API usage across all your event data stores. CloudTrail
+        /// Lake manages the Highlights dashboard and refreshes the dashboard every 6 hours. To
+        /// create the Highlights dashboard, you must set and enable a refresh schedule.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  CloudTrail runs queries to populate the dashboard's widgets during a manual or scheduled
+        /// refresh. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
+        /// operation to refresh the dashboard on your behalf. To provide permissions, run the
+        /// <c>PutResourcePolicy</c> operation to attach a resource-based policy to the dashboard.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+        /// Resource-based policy example for a dashboard</a> in the <i>CloudTrail User Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about dashboards, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-dashboard.html">CloudTrail
+        /// Lake dashboards</a> in the <i>CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDashboard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidQueryStatementException">
+        /// The query that was submitted has validation errors, or uses incorrect syntax or unsupported
+        /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+        /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
+        /// This exception is thrown when the specified tag key or values are not valid. It can
+        /// also occur if there are duplicate tags or too many tags on the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
+        Task<CreateDashboardResponse> CreateDashboardAsync(CreateDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -565,8 +759,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <c>PutEventSelectors</c> operation is called with
@@ -689,8 +890,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <c>PutEventSelectors</c> operation is called with
@@ -816,8 +1024,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -924,8 +1139,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
         /// This exception is thrown when the request rate exceeds the limit.
@@ -981,8 +1196,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -1089,8 +1311,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
-        /// The number of tags per trail, event data store, or channel has exceeded the permitted
-        /// amount. Currently, the limit is 50.
+        /// The number of tags per trail, event data store, dashboard, or channel has exceeded
+        /// the permitted amount. Currently, the limit is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ThrottlingException">
         /// This exception is thrown when the request rate exceeds the limit.
@@ -1158,6 +1380,60 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDashboard
+
+
+        /// <summary>
+        /// Deletes the specified dashboard. You cannot delete a dashboard that has termination
+        /// protection enabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboard service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
+        DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified dashboard. You cannot delete a dashboard that has termination
+        /// protection enabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDashboard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
+        Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1337,18 +1613,40 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes the resource-based policy attached to the CloudTrail channel.
+        /// Deletes the resource-based policy attached to the CloudTrail event data store, dashboard,
+        /// or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
@@ -1368,7 +1666,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes the resource-based policy attached to the CloudTrail channel.
+        /// Deletes the resource-based policy attached to the CloudTrail event data store, dashboard,
+        /// or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1376,13 +1675,34 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
@@ -1423,6 +1743,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -1524,6 +1849,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -1741,8 +2071,10 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        /// You must specify either a <c>QueryID</c> or a <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
-        /// parameter returns information about the last query run for the alias.
+        /// You must specify either <c>QueryId</c> or <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
+        /// parameter returns information about the last query run for the alias. You can provide
+        /// <c>RefreshId</c> along with <c>QueryAlias</c> to view the query results of a dashboard
+        /// query for the specified <c>RefreshId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuery service method.</param>
@@ -1786,8 +2118,10 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        /// You must specify either a <c>QueryID</c> or a <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
-        /// parameter returns information about the last query run for the alias.
+        /// You must specify either <c>QueryId</c> or <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
+        /// parameter returns information about the last query run for the alias. You can provide
+        /// <c>RefreshId</c> along with <c>QueryAlias</c> to view the query results of a dashboard
+        /// query for the specified <c>RefreshId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuery service method.</param>
@@ -1847,6 +2181,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -1915,6 +2254,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -1989,6 +2333,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -2057,6 +2406,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -2468,6 +2822,142 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GenerateQuery
+
+
+        /// <summary>
+        /// Generates a query from a natural language prompt. This operation uses generative
+        /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
+        /// prompt. 
+        /// 
+        ///  
+        /// <para>
+        /// The prompt can be a question or a statement about the event data in your event data
+        /// store. For example, you can enter prompts like "What are my top errors in the past
+        /// month?" and “Give me a list of users that used SNS.”
+        /// </para>
+        ///  
+        /// <para>
+        /// The prompt must be in English. For information about limitations, permissions, and
+        /// supported Regions, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+        /// CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i>
+        /// user guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not include any personally identifying, confidential, or sensitive information
+        /// in your prompts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses generative AI large language models (LLMs); we recommend double-checking
+        /// the LLM response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.GenerateResponseException">
+        /// This exception is thrown when a valid query could not be generated for the provided
+        /// prompt.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        GenerateQueryResponse GenerateQuery(GenerateQueryRequest request);
+
+
+
+        /// <summary>
+        /// Generates a query from a natural language prompt. This operation uses generative
+        /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
+        /// prompt. 
+        /// 
+        ///  
+        /// <para>
+        /// The prompt can be a question or a statement about the event data in your event data
+        /// store. For example, you can enter prompts like "What are my top errors in the past
+        /// month?" and “Give me a list of users that used SNS.”
+        /// </para>
+        ///  
+        /// <para>
+        /// The prompt must be in English. For information about limitations, permissions, and
+        /// supported Regions, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+        /// CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i>
+        /// user guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not include any personally identifying, confidential, or sensitive information
+        /// in your prompts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses generative AI large language models (LLMs); we recommend double-checking
+        /// the LLM response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.GenerateResponseException">
+        /// This exception is thrown when a valid query could not be generated for the provided
+        /// prompt.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        Task<GenerateQueryResponse> GenerateQueryAsync(GenerateQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetChannel
 
 
@@ -2517,6 +3007,46 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
         Task<GetChannelResponse> GetChannelAsync(GetChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDashboard
+
+
+        /// <summary>
+        /// Returns the specified dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
+        /// 
+        /// <returns>The response from the GetDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        GetDashboardResponse GetDashboard(GetDashboardRequest request);
+
+
+
+        /// <summary>
+        /// Returns the specified dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
+        Task<GetDashboardResponse> GetDashboardAsync(GetDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2600,11 +3130,16 @@ namespace Amazon.CloudTrail
         ///  <ul> <li> 
         /// <para>
         /// If your event selector includes read-only events, write-only events, or all events.
-        /// This applies to both management events and data events.
+        /// This applies to management events, data events, and network activity events.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If your event selector includes management events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your event selector includes network activity events, the event sources for which
+        /// you are logging network activity events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2613,8 +3148,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about logging management and data events, see the following topics
-        /// in the <i>CloudTrail User Guide</i>:
+        /// For more information about logging management, data, and network activity events,
+        /// see the following topics in the <i>CloudTrail User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2625,6 +3160,11 @@ namespace Amazon.CloudTrail
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
         /// data events</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+        /// network activity events</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2642,6 +3182,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -2703,11 +3248,16 @@ namespace Amazon.CloudTrail
         ///  <ul> <li> 
         /// <para>
         /// If your event selector includes read-only events, write-only events, or all events.
-        /// This applies to both management events and data events.
+        /// This applies to management events, data events, and network activity events.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If your event selector includes management events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your event selector includes network activity events, the event sources for which
+        /// you are logging network activity events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2716,8 +3266,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about logging management and data events, see the following topics
-        /// in the <i>CloudTrail User Guide</i>:
+        /// For more information about logging management, data, and network activity events,
+        /// see the following topics in the <i>CloudTrail User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2728,6 +3278,11 @@ namespace Amazon.CloudTrail
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
         /// data events</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+        /// network activity events</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2748,6 +3303,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -2873,8 +3433,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
@@ -2891,6 +3451,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -2974,8 +3539,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInsightSelectors service method.</param>
@@ -2995,6 +3560,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -3083,8 +3653,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
         /// This exception is thrown if the limit specified is not valid.
@@ -3135,8 +3712,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
         /// This exception is thrown if the limit specified is not valid.
@@ -3171,7 +3755,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Retrieves the JSON text of the resource-based policy document attached to the CloudTrail
-        /// channel.
+        /// event data store, dashboard, or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -3181,8 +3765,23 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
@@ -3203,7 +3802,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Retrieves the JSON text of the resource-based policy document attached to the CloudTrail
-        /// channel.
+        /// event data store, dashboard, or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3216,8 +3815,23 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
@@ -3256,6 +3870,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -3326,6 +3945,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -3403,6 +4027,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -3472,6 +4101,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -3567,6 +4201,40 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
         Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDashboards
+
+
+        /// <summary>
+        /// Returns information about all dashboards in the account, in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
+        /// 
+        /// <returns>The response from the ListDashboards service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        ListDashboardsResponse ListDashboards(ListDashboardsRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about all dashboards in the account, in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDashboards service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
+        Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4052,8 +4720,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the specified trails, event data stores, or channels in the current
-        /// Region.
+        /// Lists the tags for the specified trails, event data stores, dashboards, or channels
+        /// in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -4072,6 +4740,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -4143,8 +4816,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the specified trails, event data stores, or channels in the current
-        /// Region.
+        /// Lists the tags for the specified trails, event data stores, dashboards, or channels
+        /// in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -4166,6 +4839,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -4502,15 +5180,46 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Configures an event selector or advanced event selectors for your trail. Use event
-        /// selectors or advanced event selectors to specify management and data event settings
-        /// for your trail. If you want your trail to log Insights events, be sure the event selector
-        /// enables logging of the Insights event types you want configured for your trail. For
-        /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created
-        /// without specific event selectors are configured to log all read and write management
-        /// events, and no data events.
+        /// Configures event selectors (also referred to as <i>basic event selectors</i>) or advanced
+        /// event selectors for your trail. You can use either <c>AdvancedEventSelectors</c> or
+        /// <c>EventSelectors</c>, but not both. If you apply <c>AdvancedEventSelectors</c> to
+        /// a trail, any existing <c>EventSelectors</c> are overwritten.
         /// 
+        ///  
+        /// <para>
+        /// You can use <c>AdvancedEventSelectors</c> to log management events, data events for
+        /// all resource types, and network activity events.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>EventSelectors</c> to log management events and data events for the
+        /// following resource types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS::DynamoDB::Table</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Lambda::Function</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::S3::Object</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't use <c>EventSelectors</c> to log network activity events.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want your trail to log Insights events, be sure the event selector or advanced
+        /// event selector enables logging of the Insights event types you want configured for
+        /// your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>. By default, trails
+        /// created without specific event selectors are configured to log all read and write
+        /// management events, and no data events or network activity events.
+        /// </para>
         ///  
         /// <para>
         /// When an event occurs in your account, CloudTrail evaluates the event selectors or
@@ -4524,7 +5233,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// You create an event selector for a trail and specify that you want write-only events.
+        /// You create an event selector for a trail and specify that you want to log write-only
+        /// events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4552,20 +5262,17 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
+        /// You can configure up to five event selectors for each trail.
         /// </para>
         ///  
         /// <para>
         /// You can add advanced event selectors, and conditions for your advanced event selectors,
-        /// up to a maximum of 500 values for all conditions and selectors on a trail. You can
-        /// use either <c>AdvancedEventSelectors</c> or <c>EventSelectors</c>, but not both. If
-        /// you apply <c>AdvancedEventSelectors</c> to a trail, any existing <c>EventSelectors</c>
-        /// are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events</a> in the <i>CloudTrail User Guide</i>.
+        /// up to a maximum of 500 values for all conditions and selectors on a trail. For more
+        /// information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+        /// network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -4582,6 +5289,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -4698,15 +5410,46 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Configures an event selector or advanced event selectors for your trail. Use event
-        /// selectors or advanced event selectors to specify management and data event settings
-        /// for your trail. If you want your trail to log Insights events, be sure the event selector
-        /// enables logging of the Insights event types you want configured for your trail. For
-        /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created
-        /// without specific event selectors are configured to log all read and write management
-        /// events, and no data events.
+        /// Configures event selectors (also referred to as <i>basic event selectors</i>) or advanced
+        /// event selectors for your trail. You can use either <c>AdvancedEventSelectors</c> or
+        /// <c>EventSelectors</c>, but not both. If you apply <c>AdvancedEventSelectors</c> to
+        /// a trail, any existing <c>EventSelectors</c> are overwritten.
         /// 
+        ///  
+        /// <para>
+        /// You can use <c>AdvancedEventSelectors</c> to log management events, data events for
+        /// all resource types, and network activity events.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>EventSelectors</c> to log management events and data events for the
+        /// following resource types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS::DynamoDB::Table</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Lambda::Function</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::S3::Object</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't use <c>EventSelectors</c> to log network activity events.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want your trail to log Insights events, be sure the event selector or advanced
+        /// event selector enables logging of the Insights event types you want configured for
+        /// your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>. By default, trails
+        /// created without specific event selectors are configured to log all read and write
+        /// management events, and no data events or network activity events.
+        /// </para>
         ///  
         /// <para>
         /// When an event occurs in your account, CloudTrail evaluates the event selectors or
@@ -4720,7 +5463,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// You create an event selector for a trail and specify that you want write-only events.
+        /// You create an event selector for a trail and specify that you want to log write-only
+        /// events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4748,20 +5492,17 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
+        /// You can configure up to five event selectors for each trail.
         /// </para>
         ///  
         /// <para>
         /// You can add advanced event selectors, and conditions for your advanced event selectors,
-        /// up to a maximum of 500 values for all conditions and selectors on a trail. You can
-        /// use either <c>AdvancedEventSelectors</c> or <c>EventSelectors</c>, but not both. If
-        /// you apply <c>AdvancedEventSelectors</c> to a trail, any existing <c>EventSelectors</c>
-        /// are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events</a> in the <i>CloudTrail User Guide</i>.
+        /// up to a maximum of 500 values for all conditions and selectors on a trail. For more
+        /// information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+        /// network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+        /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -4781,6 +5522,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -4930,8 +5676,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
@@ -4952,13 +5698,25 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -5086,8 +5844,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-        /// CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+        /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
@@ -5111,13 +5869,25 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -5218,48 +5988,48 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Attaches a resource-based permission policy to a CloudTrail channel that is used
-        /// for an integration with an event source outside of Amazon Web Services. For more information
-        /// about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
+        /// Attaches a resource-based permission policy to a CloudTrail event data store, dashboard,
+        /// or channel. For more information about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
         /// resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
         /// <returns>The response from the PutResourcePolicy service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourcePolicyNotValidException">
         /// This exception is thrown when the resouce-based policy has syntax errors, or contains
-        /// a principal that is not valid. 
-        /// 
-        ///  
-        /// <para>
-        /// The following are requirements for the resource policy:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  Contains only one action: cloudtrail-data:PutAuditEvents 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Contains at least one statement. The policy can have a maximum of 20 statements.
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Each statement contains at least one principal. A statement can have a maximum of
-        /// 50 principals. 
-        /// </para>
-        ///  </li> </ul>
+        /// a principal that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceTypeNotSupportedException">
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
@@ -5273,9 +6043,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Attaches a resource-based permission policy to a CloudTrail channel that is used
-        /// for an integration with an event source outside of Amazon Web Services. For more information
-        /// about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
+        /// Attaches a resource-based permission policy to a CloudTrail event data store, dashboard,
+        /// or channel. For more information about resource-based policies, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
         /// resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -5284,40 +6053,41 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the PutResourcePolicy service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceARNNotValidException">
         /// This exception is thrown when the provided resource does not exist, or the ARN format
-        /// of the resource is not valid. The following is the valid format for a resource ARN:
-        /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
+        /// of the resource is not valid. 
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
         /// This exception is thrown when the specified resource is not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourcePolicyNotValidException">
         /// This exception is thrown when the resouce-based policy has syntax errors, or contains
-        /// a principal that is not valid. 
-        /// 
-        ///  
-        /// <para>
-        /// The following are requirements for the resource policy:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  Contains only one action: cloudtrail-data:PutAuditEvents 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Contains at least one statement. The policy can have a maximum of 20 statements.
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Each statement contains at least one principal. A statement can have a maximum of
-        /// 50 principals. 
-        /// </para>
-        ///  </li> </ul>
+        /// a principal that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ResourceTypeNotSupportedException">
         /// This exception is thrown when the specified resource type is not supported by CloudTrail.
@@ -5478,7 +6248,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Removes the specified tags from a trail, event data store, or channel.
+        /// Removes the specified tags from a trail, event data store, dashboard, or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
@@ -5504,9 +6274,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
@@ -5579,7 +6360,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Removes the specified tags from a trail, event data store, or channel.
+        /// Removes the specified tags from a trail, event data store, dashboard, or channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// <param name="cancellationToken">
@@ -5608,9 +6389,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
@@ -5826,6 +6618,138 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  SearchSampleQueries
+
+
+        /// <summary>
+        /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+        /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchSampleQueries service method.</param>
+        /// 
+        /// <returns>The response from the SearchSampleQueries service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">REST API Reference for SearchSampleQueries Operation</seealso>
+        SearchSampleQueriesResponse SearchSampleQueries(SearchSampleQueriesRequest request);
+
+
+
+        /// <summary>
+        /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+        /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchSampleQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchSampleQueries service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">REST API Reference for SearchSampleQueries Operation</seealso>
+        Task<SearchSampleQueriesResponse> SearchSampleQueriesAsync(SearchSampleQueriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartDashboardRefresh
+
+
+        /// <summary>
+        /// Starts a refresh of the specified dashboard. 
+        /// 
+        ///  
+        /// <para>
+        ///  Each time a dashboard is refreshed, CloudTrail runs queries to populate the dashboard's
+        /// widgets. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDashboardRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartDashboardRefresh service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartDashboardRefresh">REST API Reference for StartDashboardRefresh Operation</seealso>
+        StartDashboardRefreshResponse StartDashboardRefresh(StartDashboardRefreshRequest request);
+
+
+
+        /// <summary>
+        /// Starts a refresh of the specified dashboard. 
+        /// 
+        ///  
+        /// <para>
+        ///  Each time a dashboard is refreshed, CloudTrail runs queries to populate the dashboard's
+        /// widgets. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDashboardRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDashboardRefresh service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartDashboardRefresh">REST API Reference for StartDashboardRefresh Operation</seealso>
+        Task<StartDashboardRefreshResponse> StartDashboardRefreshAsync(StartDashboardRefreshRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartEventDataStoreIngestion
 
 
@@ -5833,7 +6757,7 @@ namespace Amazon.CloudTrail
         /// Starts the ingestion of live events on an event data store specified as either an
         /// ARN or the ID portion of the ARN. To start ingestion, the event data store <c>Status</c>
         /// must be <c>STOPPED_INGESTION</c> and the <c>eventCategory</c> must be <c>Management</c>,
-        /// <c>Data</c>, or <c>ConfigurationItem</c>.
+        /// <c>Data</c>, <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
         /// 
@@ -5886,7 +6810,7 @@ namespace Amazon.CloudTrail
         /// Starts the ingestion of live events on an event data store specified as either an
         /// ARN or the ID portion of the ARN. To start ingestion, the event data store <c>Status</c>
         /// must be <c>STOPPED_INGESTION</c> and the <c>eventCategory</c> must be <c>Management</c>,
-        /// <c>Data</c>, or <c>ConfigurationItem</c>.
+        /// <c>Data</c>, <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
         /// <param name="cancellationToken">
@@ -5992,8 +6916,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
         /// This exception is thrown when event categories of specified event data stores are
@@ -6073,8 +7004,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
         /// This exception is thrown when event categories of specified event data stores are
@@ -6124,6 +7062,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -6227,6 +7170,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -6336,8 +7284,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -6409,8 +7364,15 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -6459,7 +7421,7 @@ namespace Amazon.CloudTrail
         /// Stops the ingestion of live events on an event data store specified as either an ARN
         /// or the ID portion of the ARN. To stop ingestion, the event data store <c>Status</c>
         /// must be <c>ENABLED</c> and the <c>eventCategory</c> must be <c>Management</c>, <c>Data</c>,
-        /// or <c>ConfigurationItem</c>.
+        /// <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
         /// 
@@ -6512,7 +7474,7 @@ namespace Amazon.CloudTrail
         /// Stops the ingestion of live events on an event data store specified as either an ARN
         /// or the ID portion of the ARN. To stop ingestion, the event data store <c>Status</c>
         /// must be <c>ENABLED</c> and the <c>eventCategory</c> must be <c>Management</c>, <c>Data</c>,
-        /// or <c>ConfigurationItem</c>.
+        /// <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
         /// <param name="cancellationToken">
@@ -6646,6 +7608,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -6747,6 +7714,11 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
         /// 
         /// </para>
         ///  
@@ -6918,6 +7890,152 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  UpdateDashboard
+
+
+        /// <summary>
+        /// Updates the specified dashboard. 
+        /// 
+        ///  
+        /// <para>
+        ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
+        /// operation to refresh the dashboard on your behalf. To provide permissions, run the
+        /// <c>PutResourcePolicy</c> operation to attach a resource-based policy to the dashboard.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+        /// Resource-based policy example for a dashboard</a> in the <i>CloudTrail User Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  CloudTrail runs queries to populate the dashboard's widgets during a manual or scheduled
+        /// refresh. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboard service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidQueryStatementException">
+        /// The query that was submitted has validation errors, or uses incorrect syntax or unsupported
+        /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+        /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
+        UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified dashboard. 
+        /// 
+        ///  
+        /// <para>
+        ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
+        /// operation to refresh the dashboard on your behalf. To provide permissions, run the
+        /// <c>PutResourcePolicy</c> operation to attach a resource-based policy to the dashboard.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+        /// Resource-based policy example for a dashboard</a> in the <i>CloudTrail User Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  CloudTrail runs queries to populate the dashboard's widgets during a manual or scheduled
+        /// refresh. CloudTrail must be granted permissions to run the <c>StartQuery</c> operation
+        /// on your behalf. To provide permissions, run the <c>PutResourcePolicy</c> operation
+        /// to attach a resource-based policy to each event data store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+        /// Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail User
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDashboard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDashboard service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidQueryStatementException">
+        /// The query that was submitted has validation errors, or uses incorrect syntax or unsupported
+        /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+        /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ResourceNotFoundException">
+        /// This exception is thrown when the specified resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when the quota is exceeded. For information about CloudTrail
+        /// quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ct.html#limits_cloudtrail">Service
+        /// quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
+        Task<UpdateDashboardResponse> UpdateDashboardAsync(UpdateDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateEventDataStore
 
 
@@ -6933,8 +8051,8 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
-        /// or excludes management or data events in your event data store. For more information
-        /// about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+        /// or excludes management, data, or network activity events in your event data store.
+        /// For more information about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
         /// </para>
         ///  
         /// <para>
@@ -6976,8 +8094,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <c>PutEventSelectors</c> operation is called with
@@ -7093,8 +8218,8 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
-        /// or excludes management or data events in your event data store. For more information
-        /// about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+        /// or excludes management, data, or network activity events in your event data store.
+        /// For more information about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
         /// </para>
         ///  
         /// <para>
@@ -7139,8 +8264,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <c>PutEventSelectors</c> operation is called with
@@ -7280,6 +8412,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -7304,8 +8441,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -7497,6 +8641,11 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
+        /// The following is the format of a dashboard ARN: <c>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
@@ -7521,8 +8670,15 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
-        /// sufficient permissions for the operation.
+        /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
+        /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
+        /// S3 bucket or KMS key does not have sufficient permissions for the operation.
+        /// 
+        ///  
+        /// <para>
+        /// For all other operations, this exception is thrown when the policy for the KMS key
+        /// does not have sufficient permissions for the operation.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.

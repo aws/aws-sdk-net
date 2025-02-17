@@ -36,6 +36,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     {
         private string _failureMessage;
         private IdentityProvider _identityProvider;
+        private string _identityProviderArn;
         private string _product;
         private Settings _settings;
         private string _status;
@@ -61,7 +62,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// An object that specifies details for the identity provider.
+        /// The <c>IdentityProvider</c> resource contains information about an identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,6 +76,24 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetIdentityProvider()
         {
             return this._identityProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity provider.
+        /// </para>
+        /// </summary>
+        public string IdentityProviderArn
+        {
+            get { return this._identityProviderArn; }
+            set { this._identityProviderArn = value; }
+        }
+
+        // Check to see if IdentityProviderArn property is set
+        internal bool IsSetIdentityProviderArn()
+        {
+            return this._identityProviderArn != null;
         }
 
         /// <summary>
@@ -99,8 +118,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// An object that details the registered identity provider’s product related configuration
-        /// settings such as the subnets to provision VPC endpoints.
+        /// The <c>Settings</c> resource contains details about the registered identity provider’s
+        /// product related configuration settings, such as the subnets to provision VPC endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +138,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of an identity provider.
+        /// The status of the identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

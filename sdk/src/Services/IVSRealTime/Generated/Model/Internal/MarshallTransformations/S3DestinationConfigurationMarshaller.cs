@@ -76,6 +76,22 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StorageConfigurationArn);
             }
 
+            if(requestObject.IsSetThumbnailConfigurations())
+            {
+                context.Writer.WritePropertyName("thumbnailConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectThumbnailConfigurationsListValue in requestObject.ThumbnailConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CompositionThumbnailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectThumbnailConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

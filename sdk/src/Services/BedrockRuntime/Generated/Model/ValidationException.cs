@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Input validation failed. Check your request parameters and retry the request.
+    /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+    /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+    /// in the Amazon Bedrock User Guide
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

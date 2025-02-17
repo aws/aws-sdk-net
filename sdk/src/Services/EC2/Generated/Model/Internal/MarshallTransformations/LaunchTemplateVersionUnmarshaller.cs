@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("operator", targetDepth))
+                    {
+                        var unmarshaller = OperatorResponseUnmarshaller.Instance;
+                        unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("versionDescription", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

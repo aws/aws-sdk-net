@@ -44,7 +44,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The transaction counter that is provided by the terminal during transaction processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=4)]
+        [AWSProperty(Required=true, Min=4, Max=4)]
         public string ApplicationTransactionCounter
         {
             get { return this._applicationTransactionCounter; }

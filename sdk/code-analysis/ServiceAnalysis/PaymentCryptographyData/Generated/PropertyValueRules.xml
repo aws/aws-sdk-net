@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DecryptDataRequest.CipherText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
@@ -26,7 +26,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DecryptDataResponse.PlainText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
@@ -38,13 +38,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.EncryptDataRequest.PlainText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4064</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.EncryptDataResponse.CipherText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
@@ -131,6 +131,84 @@
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeRequest.MessageData</property>
+    <min>16</min>
+    <max>1024</max>
+    <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeRequest.NewEncryptedPinBlock</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeRequest.NewPinPekIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeRequest.SecureMessagingConfidentialityKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeRequest.SecureMessagingIntegrityKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.EncryptedPinBlock</property>
+    <min>16</min>
+    <max>32</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.Mac</property>
+    <min>8</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.NewPinPekArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.NewPinPekKeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.SecureMessagingConfidentialityKeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.SecureMessagingConfidentialityKeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.SecureMessagingIntegrityKeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateMacEmvPinChangeResponse.SecureMessagingIntegrityKeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GeneratePinDataRequest.EncryptionKeyIdentifier</property>
     <min>7</min>
     <max>322</max>
@@ -185,7 +263,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.ReEncryptDataRequest.CipherText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
@@ -203,7 +281,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.ReEncryptDataResponse.CipherText</property>
-    <min>16</min>
+    <min>2</min>
     <max>4096</max>
     <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
@@ -410,6 +488,30 @@
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.AmexAttributes.ApplicationTransactionCounter</property>
+    <min>4</min>
+    <max>4</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.AmexAttributes.AuthorizationRequestKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.AmexAttributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.AmexAttributes.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.AmexCardSecurityCodeVersion1.CardExpiryDate</property>
     <min>4</min>
     <max>4</max>
@@ -480,6 +582,18 @@
     <min>1</min>
     <max>16</max>
     <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.CurrentPinAttributes.CurrentEncryptedPinBlock</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.CurrentPinAttributes.CurrentPinPekIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.DiscoverDynamicCardVerificationCode.ApplicationTransactionCounter</property>
@@ -569,6 +683,60 @@
     <property>Amazon.PaymentCryptographyData.Model.DynamicCardVerificationValue.ServiceCode</property>
     <min>3</min>
     <max>3</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EcdhDerivationAttributes.CertificateAuthorityPublicKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EcdhDerivationAttributes.PublicKeyCertificate</property>
+    <min>1</min>
+    <max>32768</max>
+    <pattern>[^\[;\]&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EcdhDerivationAttributes.SharedInformation</property>
+    <min>2</min>
+    <max>2048</max>
+    <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.Emv2000Attributes.ApplicationTransactionCounter</property>
+    <min>4</min>
+    <max>4</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.Emv2000Attributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.Emv2000Attributes.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvCommonAttributes.ApplicationCryptogram</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvCommonAttributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvCommonAttributes.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -722,6 +890,24 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.MasterCardAttributes.ApplicationCryptogram</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.MasterCardAttributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.MasterCardAttributes.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.PinData.PinOffset</property>
     <min>4</min>
     <max>12</max>
@@ -753,13 +939,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyDerivationValue.ApplicationTransactionCounter</property>
-    <min>2</min>
+    <min>4</min>
     <max>4</max>
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyEmv2000.ApplicationTransactionCounter</property>
-    <min>2</min>
+    <min>4</min>
     <max>4</max>
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
@@ -777,7 +963,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyEmvCommon.ApplicationTransactionCounter</property>
-    <min>2</min>
+    <min>4</min>
     <max>4</max>
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
@@ -795,7 +981,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyMastercard.ApplicationTransactionCounter</property>
-    <min>2</min>
+    <min>4</min>
     <max>4</max>
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
@@ -837,6 +1023,54 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.TranslationPinDataIsoFormat034.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAmexDerivationOutputs.AuthorizationRequestKeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAmexDerivationOutputs.AuthorizationRequestKeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAmexDerivationOutputs.CurrentPinPekArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAmexDerivationOutputs.CurrentPinPekKeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAttributes.ApplicationTransactionCounter</property>
+    <min>4</min>
+    <max>4</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAttributes.AuthorizationRequestKeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAttributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.VisaAttributes.PrimaryAccountNumber</property>
     <min>12</min>
     <max>19</max>
     <pattern>[0-9]+</pattern>

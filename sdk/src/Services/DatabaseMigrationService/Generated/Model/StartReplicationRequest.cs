@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _cdcStartPosition;
         private DateTime? _cdcStartTime;
         private string _cdcStopPosition;
+        private string _premigrationAssessmentSettings;
         private string _replicationConfigArn;
         private string _startReplicationType;
 
@@ -109,6 +110,61 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PremigrationAssessmentSettings. 
+        /// <para>
+        /// User-defined settings for the premigration assessment. The possible values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ResultLocationFinder</c>: The folder within an Amazon Amazon S3 bucket where you
+        /// want DMS to store the results of this assessment run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResultEncryptionMode</c>: The supported values are <c>SSE_KMS</c> and <c>SSE_S3</c>.
+        /// If these values are not provided, then the files are not encrypted at rest. For more
+        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating
+        /// Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResultKmsKeyArn</c>: The ARN of a customer KMS encryption key that you specify
+        /// when you set <c>ResultEncryptionMode</c> to <c>SSE_KMS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IncludeOnly</c>: A space-separated list of names for specific individual assessments
+        /// that you want to include. These names come from the default list of individual assessments
+        /// that Database Migration Service supports for the associated migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Exclude</c>: A space-separated list of names for specific individual assessments
+        /// that you want to exclude. These names come from the default list of individual assessments
+        /// that Database Migration Service supports for the associated migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FailOnAssessmentFailure</c>: A configurable setting you can set to <c>true</c>
+        /// (the default setting) or <c>false</c>. Use this setting to to stop the replication
+        /// from starting automatically if the assessment fails. This can help you evaluate the
+        /// issue that is preventing the replication from running successfully.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PremigrationAssessmentSettings
+        {
+            get { return this._premigrationAssessmentSettings; }
+            set { this._premigrationAssessmentSettings = value; }
+        }
+
+        // Check to see if PremigrationAssessmentSettings property is set
+        internal bool IsSetPremigrationAssessmentSettings()
+        {
+            return this._premigrationAssessmentSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationConfigArn. 
         /// <para>
         /// The Amazon Resource Name of the replication for which to start replication.
@@ -131,6 +187,29 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property StartReplicationType. 
         /// <para>
         /// The replication type.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the replication type is <c>full-load</c> or <c>full-load-and-cdc</c>, the only
+        /// valid value for the first run of the replication is <c>start-replication</c>. This
+        /// option will start the replication.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use <a>ReloadTables</a> to reload specific tables that failed during
+        /// replication instead of restarting the replication.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>resume-processing</c> option isn't applicable for a full-load replication,
+        /// because you can't resume partially loaded tables during the full load phase.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a <c>full-load-and-cdc</c> replication, DMS migrates table data, and then applies
+        /// data changes that occur on the source. To load all the tables again, and start capturing
+        /// source changes, use <c>reload-target</c>. Otherwise use <c>resume-processing</c>,
+        /// to replicate the changes from the last stop position.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

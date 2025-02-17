@@ -37,6 +37,7 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _baselineIdentifier;
         private string _baselineVersion;
+        private string _parentIdentifier;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
 
@@ -94,6 +95,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetBaselineVersion()
         {
             return this._baselineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifier. 
+        /// <para>
+        /// An ARN that represents an object returned by <c>ListEnabledBaseline</c>, to describe
+        /// an enabled baseline.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ParentIdentifier
+        {
+            get { return this._parentIdentifier; }
+            set { this._parentIdentifier = value; }
+        }
+
+        // Check to see if ParentIdentifier property is set
+        internal bool IsSetParentIdentifier()
+        {
+            return this._parentIdentifier != null;
         }
 
         /// <summary>

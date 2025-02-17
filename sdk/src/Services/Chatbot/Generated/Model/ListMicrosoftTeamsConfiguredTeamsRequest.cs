@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMicrosoftTeamsConfiguredTeams operation.
-    /// Lists all authorized MS teams for AWS Account
+    /// Lists all authorized Microsoft Teams for an AWS Account
     /// </summary>
     public partial class ListMicrosoftTeamsConfiguredTeamsRequest : AmazonChatbotRequest
     {
@@ -39,9 +39,12 @@ namespace Amazon.Chatbot.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of results to include in
-        /// the response. If more results exist than the specified MaxResults value, a token is
-        /// included in the response so that the remaining results can be retrieved.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to include in the response. If more results exist than
+        /// the specified MaxResults value, a token is included in the response so that the remaining
+        /// results can be retrieved.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -57,10 +60,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken

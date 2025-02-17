@@ -268,9 +268,17 @@ namespace Amazon.XRay
         #region  BatchGetTraces
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// You cannot find traces through this API if Transaction Search is enabled since trace
+        /// is not indexed in X-Ray.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieves a list of traces specified by ID. Each trace is a collection of segment
         /// documents that originates from a single request. Use <c>GetTraceSummaries</c> to get
         /// a list of trace IDs.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTraces service method.</param>
         /// 
@@ -323,6 +331,72 @@ namespace Amazon.XRay
         public virtual BatchGetTracesResponse EndBatchGetTraces(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetTracesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CancelTraceRetrieval
+
+        /// <summary>
+        /// Cancels an ongoing trace retrieval job initiated by <c>StartTraceRetrieval</c> using
+        /// the provided <c>RetrievalToken</c>. A successful cancellation will return an HTTP
+        /// 200 response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTraceRetrieval service method.</param>
+        /// 
+        /// <returns>The response from the CancelTraceRetrieval service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CancelTraceRetrieval">REST API Reference for CancelTraceRetrieval Operation</seealso>
+        public virtual CancelTraceRetrievalResponse CancelTraceRetrieval(CancelTraceRetrievalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelTraceRetrievalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelTraceRetrievalResponseUnmarshaller.Instance;
+
+            return Invoke<CancelTraceRetrievalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelTraceRetrieval operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelTraceRetrieval operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelTraceRetrieval
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CancelTraceRetrieval">REST API Reference for CancelTraceRetrieval Operation</seealso>
+        public virtual IAsyncResult BeginCancelTraceRetrieval(CancelTraceRetrievalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelTraceRetrievalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelTraceRetrievalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelTraceRetrieval operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelTraceRetrieval.</param>
+        /// 
+        /// <returns>Returns a  CancelTraceRetrievalResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CancelTraceRetrieval">REST API Reference for CancelTraceRetrieval Operation</seealso>
+        public virtual CancelTraceRetrievalResponse EndCancelTraceRetrieval(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelTraceRetrievalResponse>(asyncResult);
         }
 
         #endregion
@@ -821,6 +895,74 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetIndexingRules
+
+        /// <summary>
+        /// Retrieves all indexing rules.
+        /// 
+        ///  
+        /// <para>
+        /// Indexing rules are used to determine the server-side sampling rate for spans ingested
+        /// through the CloudWatchLogs destination and indexed by X-Ray. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Search</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexingRules service method.</param>
+        /// 
+        /// <returns>The response from the GetIndexingRules service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetIndexingRules">REST API Reference for GetIndexingRules Operation</seealso>
+        public virtual GetIndexingRulesResponse GetIndexingRules(GetIndexingRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIndexingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<GetIndexingRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIndexingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIndexingRules operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIndexingRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetIndexingRules">REST API Reference for GetIndexingRules Operation</seealso>
+        public virtual IAsyncResult BeginGetIndexingRules(GetIndexingRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIndexingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexingRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIndexingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIndexingRules.</param>
+        /// 
+        /// <returns>Returns a  GetIndexingRulesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetIndexingRules">REST API Reference for GetIndexingRules Operation</seealso>
+        public virtual GetIndexingRulesResponse EndGetIndexingRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIndexingRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetInsight
 
         /// <summary>
@@ -1064,6 +1206,96 @@ namespace Amazon.XRay
         public virtual GetInsightSummariesResponse EndGetInsightSummaries(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInsightSummariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRetrievedTracesGraph
+
+        /// <summary>
+        /// Retrieves a service graph for traces based on the specified <c>RetrievalToken</c>
+        /// from the CloudWatch log group generated by Transaction Search. This API does not initiate
+        /// a retrieval job. You must first execute <c>StartTraceRetrieval</c> to obtain the required
+        /// <c>RetrievalToken</c>. 
+        /// 
+        ///  
+        /// <para>
+        /// The trace graph describes services that process incoming requests and any downstream
+        /// services they call, which may include Amazon Web Services resources, external APIs,
+        /// or databases.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response is empty until the <c>RetrievalStatus</c> is <i>COMPLETE</i>. Retry the
+        /// request after the status changes from <i>RUNNING</i> or <i>SCHEDULED</i> to <i>COMPLETE</i>
+        /// to access the full service graph.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When CloudWatch log is the destination, this API can support cross-account observability
+        /// and service graph retrieval across linked accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For retrieving graphs from X-Ray directly as opposed to the Transaction-Search Log
+        /// group, see <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html">GetTraceGraph</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRetrievedTracesGraph service method.</param>
+        /// 
+        /// <returns>The response from the GetRetrievedTracesGraph service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetRetrievedTracesGraph">REST API Reference for GetRetrievedTracesGraph Operation</seealso>
+        public virtual GetRetrievedTracesGraphResponse GetRetrievedTracesGraph(GetRetrievedTracesGraphRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRetrievedTracesGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRetrievedTracesGraphResponseUnmarshaller.Instance;
+
+            return Invoke<GetRetrievedTracesGraphResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRetrievedTracesGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRetrievedTracesGraph operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRetrievedTracesGraph
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetRetrievedTracesGraph">REST API Reference for GetRetrievedTracesGraph Operation</seealso>
+        public virtual IAsyncResult BeginGetRetrievedTracesGraph(GetRetrievedTracesGraphRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRetrievedTracesGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRetrievedTracesGraphResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRetrievedTracesGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRetrievedTracesGraph.</param>
+        /// 
+        /// <returns>Returns a  GetRetrievedTracesGraphResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetRetrievedTracesGraph">REST API Reference for GetRetrievedTracesGraph Operation</seealso>
+        public virtual GetRetrievedTracesGraphResponse EndGetRetrievedTracesGraph(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRetrievedTracesGraphResponse>(asyncResult);
         }
 
         #endregion
@@ -1432,6 +1664,69 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetTraceSegmentDestination
+
+        /// <summary>
+        /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry</i>
+        /// API. The Transaction Search feature requires a CloudWatchLogs destination. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTraceSegmentDestination service method.</param>
+        /// 
+        /// <returns>The response from the GetTraceSegmentDestination service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSegmentDestination">REST API Reference for GetTraceSegmentDestination Operation</seealso>
+        public virtual GetTraceSegmentDestinationResponse GetTraceSegmentDestination(GetTraceSegmentDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceSegmentDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceSegmentDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTraceSegmentDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTraceSegmentDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTraceSegmentDestination operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTraceSegmentDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSegmentDestination">REST API Reference for GetTraceSegmentDestination Operation</seealso>
+        public virtual IAsyncResult BeginGetTraceSegmentDestination(GetTraceSegmentDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTraceSegmentDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTraceSegmentDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTraceSegmentDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTraceSegmentDestination.</param>
+        /// 
+        /// <returns>Returns a  GetTraceSegmentDestinationResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSegmentDestination">REST API Reference for GetTraceSegmentDestination Operation</seealso>
+        public virtual GetTraceSegmentDestinationResponse EndGetTraceSegmentDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTraceSegmentDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTraceSummaries
 
         /// <summary>
@@ -1460,8 +1755,8 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// For a full list of indexed fields and keywords that you can use in filter expressions,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-        /// Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-console.html#xray-console-filters">Use
+        /// filter expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSummaries service method.</param>
@@ -1575,6 +1870,97 @@ namespace Amazon.XRay
         public virtual ListResourcePoliciesResponse EndListResourcePolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListResourcePoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRetrievedTraces
+
+        /// <summary>
+        /// Retrieves a list of traces for a given <c>RetrievalToken</c> from the CloudWatch
+        /// log group generated by Transaction Search. For information on what each trace returns,
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This API does not initiate a retrieval job. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
+        /// which generates the required <c>RetrievalToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When the <c>RetrievalStatus</c> is not <i>COMPLETE</i>, the API will return an empty
+        /// response. Retry the request once the retrieval has completed to access the full list
+        /// of traces.
+        /// </para>
+        ///  
+        /// <para>
+        /// For cross-account observability, this API can retrieve traces from linked accounts
+        /// when CloudWatch log is the destination across relevant accounts. For more details,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group,
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievedTraces service method.</param>
+        /// 
+        /// <returns>The response from the ListRetrievedTraces service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListRetrievedTraces">REST API Reference for ListRetrievedTraces Operation</seealso>
+        public virtual ListRetrievedTracesResponse ListRetrievedTraces(ListRetrievedTracesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetrievedTracesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetrievedTracesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRetrievedTracesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRetrievedTraces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRetrievedTraces operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRetrievedTraces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListRetrievedTraces">REST API Reference for ListRetrievedTraces Operation</seealso>
+        public virtual IAsyncResult BeginListRetrievedTraces(ListRetrievedTracesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRetrievedTracesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRetrievedTracesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRetrievedTraces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRetrievedTraces.</param>
+        /// 
+        /// <returns>Returns a  ListRetrievedTracesResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListRetrievedTraces">REST API Reference for ListRetrievedTraces Operation</seealso>
+        public virtual ListRetrievedTracesResponse EndListRetrievedTraces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRetrievedTracesResponse>(asyncResult);
         }
 
         #endregion
@@ -1847,15 +2233,13 @@ namespace Amazon.XRay
         #region  PutTraceSegments
 
         /// <summary>
-        /// Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray
-        /// SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads
-        /// them in batches. A segment document can be a completed segment, an in-progress segment,
-        /// or an array of subsegments.
+        /// Uploads segment documents to Amazon Web Services X-Ray. A segment document can be
+        /// a completed segment, an in-progress segment, or an array of subsegments.
         /// 
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments.html">Amazon
         /// Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer
         /// Guide</i>.
         /// </para>
@@ -1899,7 +2283,8 @@ namespace Amazon.XRay
         ///  </li> </ul> 
         /// <para>
         /// A <c>trace_id</c> consists of three numbers separated by hyphens. For example, 1-58406520-a006649127e371903a2de979.
-        /// This includes:
+        /// For trace IDs created by an X-Ray SDK, or by Amazon Web Services services integrated
+        /// with X-Ray, a trace ID includes:
         /// </para>
         ///  
         /// <para>
@@ -1919,7 +2304,16 @@ namespace Amazon.XRay
         /// <para>
         /// A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Trace IDs created via OpenTelemetry have a different format based on the <a href="https://www.w3.org/TR/trace-context/">W3C
+        /// Trace Context specification</a>. A W3C trace ID must be formatted in the X-Ray trace
+        /// ID format when sending to X-Ray. For example, a W3C trace ID <c>4efaaf4d1e8720b39541901950019ee5</c>
+        /// should be formatted as <c>1-4efaaf4d-1e8720b39541901950019ee5</c> when sending to
+        /// X-Ray. While X-Ray trace IDs include the original request timestamp in Unix epoch
+        /// time, this is not required or validated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTraceSegments service method.</param>
         /// 
@@ -1972,6 +2366,92 @@ namespace Amazon.XRay
         public virtual PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult)
         {
             return EndInvoke<PutTraceSegmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartTraceRetrieval
+
+        /// <summary>
+        /// Initiates a trace retrieval process using the specified time range and for the give
+        /// trace IDs on Transaction Search generated by the CloudWatch log group. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Search</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// API returns a <c>RetrievalToken</c>, which can be used with <c>ListRetrievedTraces</c>
+        /// or <c>GetRetrievedTracesGraph</c> to fetch results. Retrievals will time out after
+        /// 60 minutes. To execute long time ranges, consider segmenting into multiple retrievals.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+        /// cross-account observability</a>, you can use this operation in a monitoring account
+        /// to retrieve data from a linked source account, as long as both accounts have transaction
+        /// search enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group,
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTraceRetrieval service method.</param>
+        /// 
+        /// <returns>The response from the StartTraceRetrieval service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/StartTraceRetrieval">REST API Reference for StartTraceRetrieval Operation</seealso>
+        public virtual StartTraceRetrievalResponse StartTraceRetrieval(StartTraceRetrievalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTraceRetrievalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTraceRetrievalResponseUnmarshaller.Instance;
+
+            return Invoke<StartTraceRetrievalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTraceRetrieval operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTraceRetrieval operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTraceRetrieval
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/StartTraceRetrieval">REST API Reference for StartTraceRetrieval Operation</seealso>
+        public virtual IAsyncResult BeginStartTraceRetrieval(StartTraceRetrievalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTraceRetrievalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTraceRetrievalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTraceRetrieval operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTraceRetrieval.</param>
+        /// 
+        /// <returns>Returns a  StartTraceRetrievalResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/StartTraceRetrieval">REST API Reference for StartTraceRetrieval Operation</seealso>
+        public virtual StartTraceRetrievalResponse EndStartTraceRetrieval(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTraceRetrievalResponse>(asyncResult);
         }
 
         #endregion
@@ -2168,6 +2648,77 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  UpdateIndexingRule
+
+        /// <summary>
+        /// Modifies an indexing rule’s configuration. 
+        /// 
+        ///  
+        /// <para>
+        /// Indexing rules are used for determining the sampling rate for spans indexed from CloudWatch
+        /// Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Search</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndexingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateIndexingRule">REST API Reference for UpdateIndexingRule Operation</seealso>
+        public virtual UpdateIndexingRuleResponse UpdateIndexingRule(UpdateIndexingRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIndexingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIndexingRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIndexingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexingRule operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIndexingRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateIndexingRule">REST API Reference for UpdateIndexingRule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIndexingRule(UpdateIndexingRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIndexingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexingRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIndexingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIndexingRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateIndexingRuleResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateIndexingRule">REST API Reference for UpdateIndexingRule Operation</seealso>
+        public virtual UpdateIndexingRuleResponse EndUpdateIndexingRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIndexingRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateSamplingRule
 
         /// <summary>
@@ -2224,6 +2775,69 @@ namespace Amazon.XRay
         public virtual UpdateSamplingRuleResponse EndUpdateSamplingRule(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSamplingRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTraceSegmentDestination
+
+        /// <summary>
+        /// Modifies the destination of data sent to <c>PutTraceSegments</c>. The Transaction
+        /// Search feature requires the CloudWatchLogs destination. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Search</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTraceSegmentDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTraceSegmentDestination service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateTraceSegmentDestination">REST API Reference for UpdateTraceSegmentDestination Operation</seealso>
+        public virtual UpdateTraceSegmentDestinationResponse UpdateTraceSegmentDestination(UpdateTraceSegmentDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTraceSegmentDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTraceSegmentDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTraceSegmentDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTraceSegmentDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTraceSegmentDestination operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTraceSegmentDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateTraceSegmentDestination">REST API Reference for UpdateTraceSegmentDestination Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTraceSegmentDestination(UpdateTraceSegmentDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTraceSegmentDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTraceSegmentDestinationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTraceSegmentDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTraceSegmentDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateTraceSegmentDestinationResult from XRay.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateTraceSegmentDestination">REST API Reference for UpdateTraceSegmentDestination Operation</seealso>
+        public virtual UpdateTraceSegmentDestinationResponse EndUpdateTraceSegmentDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTraceSegmentDestinationResponse>(asyncResult);
         }
 
         #endregion

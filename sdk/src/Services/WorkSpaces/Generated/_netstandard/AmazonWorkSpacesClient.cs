@@ -1189,8 +1189,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
-        /// is the default protocol for those bundles.
+        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>DCV</c>
+        /// (formerly WSP) is the default protocol for those bundles.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4206,8 +4206,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
-        /// state of <c>STOPPED</c>.
+        /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> or <c>Manual</c>
+        /// and a state of <c>STOPPED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
@@ -4307,8 +4307,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot stop a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
-        /// state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
+        /// You cannot stop a WorkSpace unless it has a running mode of <c>AutoStop</c> or <c>Manual</c>
+        /// and a state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>

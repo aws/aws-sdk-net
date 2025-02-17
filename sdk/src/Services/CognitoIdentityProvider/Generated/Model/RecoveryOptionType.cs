@@ -30,7 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A map containing a priority as a key, and recovery method name as a value.
+    /// A recovery option for a user. The <c>AccountRecoverySettingType</c> data type is an
+    /// array of this object. Each <c>RecoveryOptionType</c> has a priority property that
+    /// determines whether it is a primary or secondary option.
+    /// 
+    ///  
+    /// <para>
+    /// For example, if <c>verified_email</c> has a priority of <c>1</c> and <c>verified_phone_number</c>
+    /// has a priority of <c>2</c>, your user pool sends account-recovery messages to a verified
+    /// email address but falls back to an SMS message if the user has a verified phone number.
+    /// The <c>admin_only</c> option prevents self-service account recovery.
+    /// </para>
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class RecoveryOptionType
     {
@@ -40,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The recovery method for a user.
+        /// The recovery method that this object sets a recovery option for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +75,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// A positive integer specifying priority of a method with 1 being the highest priority.
+        /// Your priority preference for using the specified attribute in account recovery. The
+        /// highest priority is <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]

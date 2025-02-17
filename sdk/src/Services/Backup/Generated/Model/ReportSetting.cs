@@ -46,6 +46,10 @@ namespace Amazon.Backup.Model
         /// <para>
         /// These are the accounts to be included in the report.
         /// </para>
+        ///  
+        /// <para>
+        /// Use string value of <c>ROOT</c> to include all organizational units.
+        /// </para>
         /// </summary>
         public List<string> Accounts
         {
@@ -117,6 +121,10 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// These are the Regions to be included in the report.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the wildcard as the string value to include all Regions.
         /// </para>
         /// </summary>
         public List<string> Regions

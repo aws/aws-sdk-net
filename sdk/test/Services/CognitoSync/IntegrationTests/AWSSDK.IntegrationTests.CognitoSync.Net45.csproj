@@ -6,7 +6,6 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTests.CognitoSync.Net45</AssemblyName>
     <PackageId>AWSSDK.IntegrationTests.CognitoSync.Net45</PackageId>
-    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

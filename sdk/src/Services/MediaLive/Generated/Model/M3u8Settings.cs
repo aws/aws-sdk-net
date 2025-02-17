@@ -308,8 +308,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataBehavior. When set to passthrough, timed metadata
-        /// is passed through from input to output.
+        /// Gets and sets the property TimedMetadataBehavior. Set to PASSTHROUGH to enable ID3
+        /// metadata insertion. To include metadata, you configure other parameters in the output
+        /// group or individual outputs, or you add an ID3 action to the channel schedule.
         /// </summary>
         public M3u8TimedMetadataBehavior TimedMetadataBehavior
         {

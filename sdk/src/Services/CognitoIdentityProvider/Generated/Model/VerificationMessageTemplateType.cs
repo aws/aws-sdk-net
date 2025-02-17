@@ -30,7 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The template for verification messages.
+    /// The template for the verification message that your user pool delivers to users who
+    /// set an email address or phone number attribute.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class VerificationMessageTemplateType
     {
@@ -44,7 +52,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DefaultEmailOption. 
         /// <para>
-        /// The default email option.
+        /// The configuration of verification emails to contain a clickable link or a verification
+        /// code.
+        /// </para>
+        ///  
+        /// <para>
+        /// For link, your template body must contain link text in the format <c>{##Click here##}</c>.
+        /// "Click here" in the example is a customizable string. For code, your template body
+        /// must contain a code placeholder in the format <c>{####}</c>.
         /// </para>
         /// </summary>
         public DefaultEmailOptionType DefaultEmailOption

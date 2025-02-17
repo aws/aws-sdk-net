@@ -52,7 +52,18 @@ namespace Amazon.EC2.Model
     /// <para>
     /// ReferencedGroupId
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <note> 
+    /// <para>
+    ///  Amazon Web Services <a href="https://en.wikipedia.org/wiki/Canonicalization">canonicalizes</a>
+    /// IPv4 and IPv6 CIDRs. For example, if you specify 100.68.0.18/18 for the CIDR block,
+    /// Amazon Web Services canonicalizes the CIDR block to 100.68.0.0/18. Any subsequent
+    /// DescribeSecurityGroups and DescribeSecurityGroupRules calls will return the canonicalized
+    /// form of the CIDR block. Additionally, if you attempt to add another rule with the
+    /// non-canonical form of the CIDR (such as 100.68.0.18/18) and there is already a rule
+    /// for the canonicalized form of the CIDR block (such as 100.68.0.0/18), the API throws
+    /// an duplicate rule error.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// When you modify a rule, you cannot change the rule type. For example, if the rule
     /// uses an IPv4 address range, you must use <c>CidrIpv4</c> to specify a new IPv4 address

@@ -55,7 +55,14 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When the status of any component on the core device becomes <c>BROKEN</c> 
+    /// For Greengrass nucleus 2.12.2 and earlier, the core device sends status updates when
+    /// the status of any component on the core device becomes <c>ERRORED</c> or <c>BROKEN</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Greengrass nucleus 2.12.3 and later, the core device sends status updates when
+    /// the status of any component on the core device becomes <c>ERRORED</c>, <c>BROKEN</c>,
+    /// <c>RUNNING</c>, or <c>FINISHED</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,6 +80,7 @@ namespace Amazon.GreengrassV2.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _runtime;
         private CoreDeviceStatus _status;
         private string _thingGroupArn;
 
@@ -111,6 +119,34 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// The runtime to be used by the core device. The runtime can be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>aws_nucleus_classic</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws_nucleus_lite</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

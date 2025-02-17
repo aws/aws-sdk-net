@@ -36,9 +36,12 @@ namespace Amazon.Omics.Model
     {
         private Accelerators _accelerators;
         private string _arn;
+        private CacheBehavior _cacheBehavior;
+        private string _cacheId;
         private DateTime? _creationTime;
         private string _definition;
         private string _digest;
+        private string _engineVersion;
         private string _failureReason;
         private string _id;
         private RunLogLevel _logLevel;
@@ -105,6 +108,44 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CacheBehavior. 
+        /// <para>
+        /// The run cache behavior for the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public CacheBehavior CacheBehavior
+        {
+            get { return this._cacheBehavior; }
+            set { this._cacheBehavior = value; }
+        }
+
+        // Check to see if CacheBehavior property is set
+        internal bool IsSetCacheBehavior()
+        {
+            return this._cacheBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheId. 
+        /// <para>
+        /// The run cache associated with the run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string CacheId
+        {
+            get { return this._cacheId; }
+            set { this._cacheId = value; }
+        }
+
+        // Check to see if CacheId property is set
+        internal bool IsSetCacheId()
+        {
+            return this._cacheId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// When the run was created.
@@ -158,6 +199,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetDigest()
         {
             return this._digest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The workflow engine version.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

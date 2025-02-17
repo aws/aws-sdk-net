@@ -41,6 +41,8 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
+        private ClusterNodeRecovery _nodeRecovery;
+        private ClusterOrchestrator _orchestrator;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcConfig _vpcConfig;
 
@@ -69,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// The instance groups to be created in the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<ClusterInstanceGroupSpecification> InstanceGroups
         {
             get { return this._instanceGroups; }
@@ -80,6 +82,47 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeRecovery. 
+        /// <para>
+        /// The node recovery mode for the SageMaker HyperPod cluster. When set to <c>Automatic</c>,
+        /// SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are
+        /// detected. When set to <c>None</c>, cluster administrators will need to manually manage
+        /// any faulty cluster instances.
+        /// </para>
+        /// </summary>
+        public ClusterNodeRecovery NodeRecovery
+        {
+            get { return this._nodeRecovery; }
+            set { this._nodeRecovery = value; }
+        }
+
+        // Check to see if NodeRecovery property is set
+        internal bool IsSetNodeRecovery()
+        {
+            return this._nodeRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Orchestrator. 
+        /// <para>
+        /// The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the
+        /// only supported value is <c>"eks"</c>, which is to use an Amazon Elastic Kubernetes
+        /// Service (EKS) cluster as the orchestrator.
+        /// </para>
+        /// </summary>
+        public ClusterOrchestrator Orchestrator
+        {
+            get { return this._orchestrator; }
+            set { this._orchestrator = value; }
+        }
+
+        // Check to see if Orchestrator property is set
+        internal bool IsSetOrchestrator()
+        {
+            return this._orchestrator != null;
         }
 
         /// <summary>
@@ -106,7 +149,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig.
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon
+        /// SageMaker HyperPod cluster. You can control access to and from your resources by configuring
+        /// your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give
+        /// SageMaker access to resources in your Amazon VPC</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing
+        /// enabled in your VPC configuration, the cluster automatically uses IPv6 addressing
+        /// for network communication.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about adding IPv6 support for your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
+        /// support for your VPC</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about creating a new VPC for use with IPv6, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Create
+        /// a VPC</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfig VpcConfig
         {

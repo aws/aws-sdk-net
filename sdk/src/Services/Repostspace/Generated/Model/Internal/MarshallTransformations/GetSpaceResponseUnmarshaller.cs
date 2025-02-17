@@ -118,6 +118,12 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                     response.RandomDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("roles", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    response.Roles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("spaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -72,6 +72,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Anomaly = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sequence", targetDepth))
+                {
+                    var unmarshaller = SequenceUnmarshaller.Instance;
+                    unmarshalledObject.Sequence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

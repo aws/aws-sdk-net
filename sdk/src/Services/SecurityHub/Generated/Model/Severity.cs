@@ -79,7 +79,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you provide <c>Normalized</c> and do not provide <c>Label</c>, then <c>Label</c>
+        /// If you provide <c>Normalized</c> and don't provide <c>Label</c>, then <c>Label</c>
         /// is set automatically as follows. 
         /// </para>
         ///  <ul> <li> 
@@ -128,7 +128,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If you provide <c>Label</c> and do not provide <c>Normalized</c>, then <c>Normalized</c>
+        /// If you provide <c>Label</c> and don't provide <c>Normalized</c>, then <c>Normalized</c>
         /// is set automatically as follows.
         /// </para>
         ///  <ul> <li> 

@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
     {
         private string _clientToken;
         private string _domainIdentifier;
+        private List<FormInput> _metadataForms = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
         private string _requestReason;
         private List<SubscribedListingInput> _subscribedListings = AWSConfigs.InitializeCollections ? new List<SubscribedListingInput>() : null;
         private List<SubscribedPrincipalInput> _subscribedPrincipals = AWSConfigs.InitializeCollections ? new List<SubscribedPrincipalInput>() : null;
@@ -77,6 +78,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataForms. 
+        /// <para>
+        /// The metadata form included in the subscription request.
+        /// </para>
+        /// </summary>
+        public List<FormInput> MetadataForms
+        {
+            get { return this._metadataForms; }
+            set { this._metadataForms = value; }
+        }
+
+        // Check to see if MetadataForms property is set
+        internal bool IsSetMetadataForms()
+        {
+            return this._metadataForms != null && (this._metadataForms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

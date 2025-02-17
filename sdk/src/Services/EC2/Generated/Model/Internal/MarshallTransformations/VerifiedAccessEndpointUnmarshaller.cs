@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("cidrOptions", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointCidrOptionsUnmarshaller.Instance;
+                        unmarshalledObject.CidrOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("creationTime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -125,6 +131,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = VerifiedAccessEndpointEniOptionsUnmarshaller.Instance;
                         unmarshalledObject.NetworkInterfaceOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rdsOptions", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointRdsOptionsUnmarshaller.Instance;
+                        unmarshalledObject.RdsOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))

@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private string _arn;
+        private string _associatedAttackSequenceArn;
         private double? _confidence;
         private string _createdAt;
         private string _description;
@@ -87,6 +88,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedAttackSequenceArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) associated with the attack sequence finding.
+        /// </para>
+        /// </summary>
+        public string AssociatedAttackSequenceArn
+        {
+            get { return this._associatedAttackSequenceArn; }
+            set { this._associatedAttackSequenceArn = value; }
+        }
+
+        // Check to see if AssociatedAttackSequenceArn property is set
+        internal bool IsSetAssociatedAttackSequenceArn()
+        {
+            return this._associatedAttackSequenceArn != null;
         }
 
         /// <summary>

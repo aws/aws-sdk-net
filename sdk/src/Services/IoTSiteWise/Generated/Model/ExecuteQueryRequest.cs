@@ -36,9 +36,30 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ExecuteQueryRequest : AmazonIoTSiteWiseRequest
     {
+        private string _clientToken;
         private int? _maxResults;
         private string _nextToken;
         private string _queryStatement;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique case-sensitive identifier that you can provide to ensure the idempotency
+        /// of the request. Don't reuse this client token if a new idempotent request is required.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

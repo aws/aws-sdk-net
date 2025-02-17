@@ -87,6 +87,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGifSettings())
+            {
+                context.Writer.WritePropertyName("gifSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GifSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.GifSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetH264Settings())
             {
                 context.Writer.WritePropertyName("h264Settings");

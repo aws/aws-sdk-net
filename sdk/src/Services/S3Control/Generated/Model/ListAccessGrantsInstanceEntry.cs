@@ -37,7 +37,9 @@ namespace Amazon.S3Control.Model
         private string _accessGrantsInstanceArn;
         private string _accessGrantsInstanceId;
         private DateTime? _createdAt;
+        private string _identityCenterApplicationArn;
         private string _identityCenterArn;
+        private string _identityCenterInstanceArn;
 
         /// <summary>
         /// Gets and sets the property AccessGrantsInstanceArn. 
@@ -97,6 +99,29 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityCenterApplicationArn. 
+        /// <para>
+        /// If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity
+        /// Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity
+        /// Center instance application; a subresource of the original Identity Center instance.
+        /// S3 Access Grants creates this Identity Center application for the specific S3 Access
+        /// Grants instance. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterApplicationArn
+        {
+            get { return this._identityCenterApplicationArn; }
+            set { this._identityCenterApplicationArn = value; }
+        }
+
+        // Check to see if IdentityCenterApplicationArn property is set
+        internal bool IsSetIdentityCenterApplicationArn()
+        {
+            return this._identityCenterApplicationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterArn. 
         /// <para>
         /// If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity
@@ -106,6 +131,7 @@ namespace Amazon.S3Control.Model
         /// Grants instance. 
         /// </para>
         /// </summary>
+        [Obsolete("IdentityCenterArn has been deprecated. Use IdentityCenterInstanceArn or IdentityCenterApplicationArn.")]
         [AWSProperty(Min=10, Max=1224)]
         public string IdentityCenterArn
         {
@@ -117,6 +143,29 @@ namespace Amazon.S3Control.Model
         internal bool IsSetIdentityCenterArn()
         {
             return this._identityCenterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance
+        /// that you are associating with your S3 Access Grants instance. An IAM Identity Center
+        /// instance is your corporate identity directory that you added to the IAM Identity Center.
+        /// You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a>
+        /// API operation to retrieve a list of your Identity Center instances and their ARNs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterInstanceArn
+        {
+            get { return this._identityCenterInstanceArn; }
+            set { this._identityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IdentityCenterInstanceArn property is set
+        internal bool IsSetIdentityCenterInstanceArn()
+        {
+            return this._identityCenterInstanceArn != null;
         }
 
     }

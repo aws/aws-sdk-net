@@ -61,8 +61,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
-        /// <c>BatchImportFindings</c> </a> (by an integrated Amazon Web Service or third party
-        /// partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+        /// <c>BatchImportFindings</c> </a> (by an integrated Amazon Web Services service or third
+        /// party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
         /// <c>BatchUpdateFindings</c> </a> (by a Security Hub customer). 
         /// </para>
         /// </summary>

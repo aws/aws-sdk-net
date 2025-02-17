@@ -30,15 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// An Amazon Pinpoint analytics endpoint.
+    /// Information that your application adds to authentication requests. Applies an endpoint
+    /// ID to the analytics data that your user pool sends to Amazon Pinpoint.
     /// 
     ///  
     /// <para>
-    /// An endpoint uniquely identifies a mobile device, email address, or phone number that
-    /// can receive messages from Amazon Pinpoint analytics. For more information about Amazon
-    /// Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon
-    /// Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using
+    /// An endpoint ID uniquely identifies a mobile device, email address or phone number
+    /// that can receive messages from Amazon Pinpoint analytics. For more information about
+    /// Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with
+    /// Amazon Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using
     /// Amazon Pinpoint analytics with Amazon Cognito user pools</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This data type is a request parameter of authentication operations like <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
     /// </para>
     /// </summary>
     public partial class AnalyticsMetadataType
@@ -48,7 +56,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsEndpointId. 
         /// <para>
-        /// The endpoint ID.
+        /// The endpoint ID. Information that you want to pass to Amazon Pinpoint about where
+        /// to send notifications.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

@@ -78,6 +78,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsTimedMetadataSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("id3SegmentTaggingSettings", targetDepth))
+                {
+                    var unmarshaller = Id3SegmentTaggingScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Id3SegmentTaggingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputPrepareSettings", targetDepth))
                 {
                     var unmarshaller = InputPrepareScheduleActionSettingsUnmarshaller.Instance;
@@ -154,6 +160,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller.Instance;
                     unmarshalledObject.StaticImageOutputDeactivateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataSettings", targetDepth))
+                {
+                    var unmarshaller = TimedMetadataScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

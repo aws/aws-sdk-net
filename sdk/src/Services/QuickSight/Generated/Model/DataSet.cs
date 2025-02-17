@@ -48,6 +48,7 @@ namespace Amazon.QuickSight.Model
         private Dictionary<string, LogicalTable> _logicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, LogicalTable>() : null;
         private string _name;
         private List<OutputColumn> _outputColumns = AWSConfigs.InitializeCollections ? new List<OutputColumn>() : null;
+        private PerformanceConfiguration _performanceConfiguration;
         private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
@@ -312,6 +313,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetOutputColumns()
         {
             return this._outputColumns != null && (this._outputColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfiguration. 
+        /// <para>
+        /// The performance optimization configuration of a dataset.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfiguration
+        {
+            get { return this._performanceConfiguration; }
+            set { this._performanceConfiguration = value; }
+        }
+
+        // Check to see if PerformanceConfiguration property is set
+        internal bool IsSetPerformanceConfiguration()
+        {
+            return this._performanceConfiguration != null;
         }
 
         /// <summary>

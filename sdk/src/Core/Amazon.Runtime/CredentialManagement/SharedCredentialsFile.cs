@@ -70,6 +70,9 @@ namespace Amazon.Runtime.CredentialManagement
         private const string DisableRequestCompressionField = "disable_request_compression";
         private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
         private const string ClientAppIdField = "sdk_ua_app_id";
+        private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
+        private const string RequestChecksumCalculationField = "request_checksum_calculation";
+        private const string ResponseChecksumValidationField = "response_checksum_validation";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -103,6 +106,9 @@ namespace Amazon.Runtime.CredentialManagement
             DisableRequestCompressionField,
             RequestMinCompressionSizeBytesField,
             ClientAppIdField,
+            AccountIdEndpointModeField,
+            RequestChecksumCalculationField,
+            ResponseChecksumValidationField,
         };
 
         /// <summary>
@@ -439,8 +445,16 @@ namespace Amazon.Runtime.CredentialManagement
             if (profile.RequestMinCompressionSizeBytes != null)
                 reservedProperties[RequestMinCompressionSizeBytesField] = profile.RequestMinCompressionSizeBytes.ToString().ToLowerInvariant();
 
+            if (profile.RequestChecksumCalculation != null)
+                reservedProperties[RequestChecksumCalculationField] = profile.RequestChecksumCalculation.ToString().ToLowerInvariant();
+
+            if (profile.ResponseChecksumValidation != null)
+                reservedProperties[ResponseChecksumValidationField] = profile.ResponseChecksumValidation.ToString().ToLowerInvariant();
+
             if (profile.ClientAppId != null)
                 reservedProperties[ClientAppIdField] = profile.ClientAppId;
+            if (profile.AccountIdEndpointMode != null)
+                reservedProperties[AccountIdEndpointModeField] = profile.AccountIdEndpointMode.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -937,7 +951,81 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                 }
 
-                profile = new CredentialProfile(profileName, profileOptions)
+                AccountIdEndpointMode? accountIdEndpointMode = null;
+                if (reservedProperties.TryGetValue(AccountIdEndpointModeField, out var accountIdEndpointModeString))
+                {
+#if BCL35
+                    try
+                    {
+                        accountIdEndpointMode = (AccountIdEndpointMode)Enum.Parse(typeof(AccountIdEndpointMode), accountIdEndpointModeString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else
+                    if (!Enum.TryParse<AccountIdEndpointMode>(accountIdEndpointModeString, true, out var accountIdEndpointModeTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string  preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    accountIdEndpointMode = accountIdEndpointModeTemp;
+#endif
+                }
+
+                RequestChecksumCalculation? requestChecksumCalculation = null;
+                if (reservedProperties.TryGetValue(RequestChecksumCalculationField, out var requestChecksumCalculationString))
+                {
+#if BCL35
+                    try
+                    {
+                        requestChecksumCalculation = (RequestChecksumCalculation)Enum.Parse(typeof(RequestChecksumCalculation), requestChecksumCalculationString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", requestChecksumCalculationString, RequestChecksumCalculationField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else
+                    if (!Enum.TryParse<RequestChecksumCalculation>(requestChecksumCalculationString, true, out var requestChecksumCalculationTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", requestChecksumCalculationString, RequestChecksumCalculationField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    requestChecksumCalculation = requestChecksumCalculationTemp;
+#endif
+                }
+
+                ResponseChecksumValidation? responseChecksumValidation = null;
+                if (reservedProperties.TryGetValue(ResponseChecksumValidationField, out var responseChecksumValidationString))
+                {
+#if BCL35
+                    try
+                    {
+                        responseChecksumValidation = (ResponseChecksumValidation)Enum.Parse(typeof(ResponseChecksumValidation), responseChecksumValidationString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", responseChecksumValidationString, ResponseChecksumValidationField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else
+                    if (!Enum.TryParse<ResponseChecksumValidation>(responseChecksumValidationString, true, out var responseChecksumValidationTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string WHEN_SUPPORTED or WHEN_REQUIRED is expected.", responseChecksumValidationString, ResponseChecksumValidationField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    responseChecksumValidation = responseChecksumValidationTemp;
+#endif
+                }
+                    profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
@@ -962,7 +1050,10 @@ namespace Amazon.Runtime.CredentialManagement
                     EndpointUrl = endpointUrlString,
                     DisableRequestCompression = disableRequestCompression,
                     RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes,
-                    ClientAppId = clientAppId
+                    ClientAppId = clientAppId,
+                    AccountIdEndpointMode = accountIdEndpointMode,
+                    RequestChecksumCalculation = requestChecksumCalculation,
+                    ResponseChecksumValidation = responseChecksumValidation,
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

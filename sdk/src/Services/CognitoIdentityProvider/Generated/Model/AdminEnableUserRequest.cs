@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminEnableUser operation.
-    /// Enables the specified user as an administrator. Works on any user.
+    /// Activate sign-in for a user profile that previously had sign-in access disabled.
     /// 
     ///  <note> 
     /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to enable the user.
+        /// The ID of the user pool where you want to activate sign-in for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

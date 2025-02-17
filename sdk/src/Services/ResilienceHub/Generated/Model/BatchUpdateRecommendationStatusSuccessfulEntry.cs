@@ -34,11 +34,30 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class BatchUpdateRecommendationStatusSuccessfulEntry
     {
+        private string _appComponentId;
         private string _entryId;
         private bool? _excluded;
         private ExcludeRecommendationReason _excludeReason;
         private UpdateRecommendationStatusItem _item;
         private string _referenceId;
+
+        /// <summary>
+        /// Gets and sets the property AppComponentId. 
+        /// <para>
+        /// Indicates the identifier of an AppComponent.
+        /// </para>
+        /// </summary>
+        public string AppComponentId
+        {
+            get { return this._appComponentId; }
+            set { this._appComponentId = value; }
+        }
+
+        // Check to see if AppComponentId property is set
+        internal bool IsSetAppComponentId()
+        {
+            return this._appComponentId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EntryId. 
@@ -107,7 +126,6 @@ namespace Amazon.ResilienceHub.Model
         /// The operational recommendation item.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public UpdateRecommendationStatusItem Item
         {
             get { return this._item; }

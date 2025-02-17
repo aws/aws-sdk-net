@@ -70,10 +70,22 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Implementation", targetDepth))
+                {
+                    var unmarshaller = ImplementationDetailsUnmarshaller.Instance;
+                    response.Implementation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Parameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ControlParameter, ControlParameterUnmarshaller>(ControlParameterUnmarshaller.Instance);
+                    response.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegionConfiguration", targetDepth))

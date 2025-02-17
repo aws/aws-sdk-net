@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.BatchGetInvoiceProfile(Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest)" />
+            <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileRequest" />
+            <member name="T:Amazon.Invoicing.Model.BatchGetInvoiceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="BatchGetInvoiceProfile"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateInvoiceUnit(Amazon.Invoicing.Model.CreateInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.CreateInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateInvoiceUnit"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteInvoiceUnit"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetInvoiceUnit as of current time"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetInvoiceUnit(Amazon.Invoicing.Model.GetInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.GetInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetInvoiceUnit as of specified time"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceUnits without filters as of current time"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceUnits with filters as of specified time"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceUnits with pagination - first page"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListInvoiceUnits(Amazon.Invoicing.Model.ListInvoiceUnitsRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListInvoiceUnitsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListInvoiceUnits with pagination - second page"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListTagsForResource"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.TagResourceRequest" />
+            <member name="T:Amazon.Invoicing.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="TagResource"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UntagResource(Amazon.Invoicing.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Invoicing.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UntagResource"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateInvoiceUnit with all updatable fields"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateInvoiceUnit(Amazon.Invoicing.Model.UpdateInvoiceUnitRequest)" />
+            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitRequest" />
+            <member name="T:Amazon.Invoicing.Model.UpdateInvoiceUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateInvoiceUnit with specific fields"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

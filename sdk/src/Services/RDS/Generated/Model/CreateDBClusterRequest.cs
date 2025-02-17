@@ -64,7 +64,9 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _characterSetName;
+        private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _databaseName;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
@@ -147,7 +149,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB cluster
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -320,6 +322,35 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClusterScalabilityType. 
+        /// <para>
+        /// Specifies the scalability mode of the Aurora DB cluster. When set to <c>limitless</c>,
+        /// the cluster operates as an Aurora Limitless Database. When set to <c>standard</c>
+        /// (the default), the cluster uses normal DB instance creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify this setting after you create the DB cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ClusterScalabilityType ClusterScalabilityType
+        {
+            get { return this._clusterScalabilityType; }
+            set { this._clusterScalabilityType = value; }
+        }
+
+        // Check to see if ClusterScalabilityType property is set
+        internal bool IsSetClusterScalabilityType()
+        {
+            return this._clusterScalabilityType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
         /// Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster.
@@ -340,6 +371,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this value to <c>advanced</c>, you must also set the <c>PerformanceInsightsEnabled</c>
+        /// parameter to <c>true</c> and the <c>PerformanceInsightsRetentionPeriod</c> parameter
+        /// to 465.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>
@@ -626,11 +685,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// Aurora MySQL - <c>audit | error | general | instance | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// Aurora PostgreSQL - <c>instance | postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -711,18 +770,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// RDS Data API is supported with the following DB clusters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Aurora PostgreSQL Serverless v2 and provisioned
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora PostgreSQL and Aurora MySQL Serverless v1
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
         /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
@@ -752,11 +799,13 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">IAM
+        /// database authentication for MariaDB, MySQL, and PostgreSQL</a> in the <i>Amazon RDS
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Aurora DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -781,6 +830,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid for: Aurora DB clusters only
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is no longer used. Instead use the <c>ClusterScalabilityType</c> setting.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool EnableLimitlessDatabase
         {
@@ -829,7 +883,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -915,7 +969,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora (PostgreSQL only) - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
         /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
         /// </para>
         ///  </li> <li> 
@@ -1379,7 +1433,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>
@@ -1417,7 +1471,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -1511,7 +1565,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1533,7 +1587,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         ///  
         /// <para>

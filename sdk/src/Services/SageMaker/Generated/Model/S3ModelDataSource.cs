@@ -35,7 +35,10 @@ namespace Amazon.SageMaker.Model
     public partial class S3ModelDataSource
     {
         private ModelCompressionType _compressionType;
+        private string _eTag;
         private InferenceHubAccessConfig _hubAccessConfig;
+        private string _manifestEtag;
+        private string _manifestS3Uri;
         private ModelAccessConfig _modelAccessConfig;
         private S3ModelDataType _s3DataType;
         private string _s3Uri;
@@ -139,6 +142,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The ETag associated with S3 URI.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HubAccessConfig. 
         /// <para>
         /// Configuration information for hub access.
@@ -154,6 +175,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubAccessConfig()
         {
             return this._hubAccessConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestEtag. 
+        /// <para>
+        /// The ETag associated with Manifest S3 URI.
+        /// </para>
+        /// </summary>
+        public string ManifestEtag
+        {
+            get { return this._manifestEtag; }
+            set { this._manifestEtag = value; }
+        }
+
+        // Check to see if ManifestEtag property is set
+        internal bool IsSetManifestEtag()
+        {
+            return this._manifestEtag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestS3Uri. 
+        /// <para>
+        /// The Amazon S3 URI of the manifest file. The manifest file is a CSV file that stores
+        /// the artifact locations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string ManifestS3Uri
+        {
+            get { return this._manifestS3Uri; }
+            set { this._manifestS3Uri = value; }
+        }
+
+        // Check to see if ManifestS3Uri property is set
+        internal bool IsSetManifestS3Uri()
+        {
+            return this._manifestS3Uri != null;
         }
 
         /// <summary>

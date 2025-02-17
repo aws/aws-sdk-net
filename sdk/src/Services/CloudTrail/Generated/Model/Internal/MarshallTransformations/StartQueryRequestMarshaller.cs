@@ -75,6 +75,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeliveryS3Uri);
                 }
 
+                if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+                {
+                    context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                    context.Writer.Write(publicRequest.EventDataStoreOwnerAccountId);
+                }
+
                 if(publicRequest.IsSetQueryAlias())
                 {
                     context.Writer.WritePropertyName("QueryAlias");

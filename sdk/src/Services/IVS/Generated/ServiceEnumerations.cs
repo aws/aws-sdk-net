@@ -133,6 +133,160 @@ namespace Amazon.IVS
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerFormat.
+    /// </summary>
+    public class ContainerFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRAGMENTED_MP4 for ContainerFormat
+        /// </summary>
+        public static readonly ContainerFormat FRAGMENTED_MP4 = new ContainerFormat("FRAGMENTED_MP4");
+        /// <summary>
+        /// Constant TS for ContainerFormat
+        /// </summary>
+        public static readonly ContainerFormat TS = new ContainerFormat("TS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFormat FindValue(string value)
+        {
+            return FindValue<ContainerFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultitrackMaximumResolution.
+    /// </summary>
+    public class MultitrackMaximumResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_HD for MultitrackMaximumResolution
+        /// </summary>
+        public static readonly MultitrackMaximumResolution FULL_HD = new MultitrackMaximumResolution("FULL_HD");
+        /// <summary>
+        /// Constant HD for MultitrackMaximumResolution
+        /// </summary>
+        public static readonly MultitrackMaximumResolution HD = new MultitrackMaximumResolution("HD");
+        /// <summary>
+        /// Constant SD for MultitrackMaximumResolution
+        /// </summary>
+        public static readonly MultitrackMaximumResolution SD = new MultitrackMaximumResolution("SD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultitrackMaximumResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultitrackMaximumResolution FindValue(string value)
+        {
+            return FindValue<MultitrackMaximumResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultitrackMaximumResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultitrackPolicy.
+    /// </summary>
+    public class MultitrackPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for MultitrackPolicy
+        /// </summary>
+        public static readonly MultitrackPolicy ALLOW = new MultitrackPolicy("ALLOW");
+        /// <summary>
+        /// Constant REQUIRE for MultitrackPolicy
+        /// </summary>
+        public static readonly MultitrackPolicy REQUIRE = new MultitrackPolicy("REQUIRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultitrackPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultitrackPolicy FindValue(string value)
+        {
+            return FindValue<MultitrackPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultitrackPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordingConfigurationState.
     /// </summary>
     public class RecordingConfigurationState : ConstantClass

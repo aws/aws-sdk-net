@@ -76,6 +76,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainUnitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainUnitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("environmentDeploymentDetails", targetDepth))
+                {
+                    var unmarshaller = EnvironmentDeploymentDetailsUnmarshaller.Instance;
+                    response.EnvironmentDeploymentDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureReasons", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ProjectDeletionError, ProjectDeletionErrorUnmarshaller>(ProjectDeletionErrorUnmarshaller.Instance);
@@ -106,10 +118,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("projectProfileId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProjectProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("projectStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProjectStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnvironmentConfigurationUserParameter, EnvironmentConfigurationUserParameterUnmarshaller>(EnvironmentConfigurationUserParameterUnmarshaller.Instance);
+                    response.UserParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

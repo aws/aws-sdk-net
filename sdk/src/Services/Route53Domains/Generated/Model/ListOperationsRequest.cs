@@ -176,7 +176,7 @@ namespace Amazon.Route53Domains.Model
         ///  An arrays of the domains operation types. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=21)]
         public List<string> Type
         {
             get { return this._type; }

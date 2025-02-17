@@ -102,6 +102,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomResponseBodies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataProtectionConfig", targetDepth))
+                {
+                    var unmarshaller = DataProtectionConfigUnmarshaller.Instance;
+                    unmarshalledObject.DataProtectionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultAction", targetDepth))
                 {
                     var unmarshaller = DefaultActionUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
                     unmarshalledObject.PreProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetrofittedByFirewallManager", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RetrofittedByFirewallManager = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))

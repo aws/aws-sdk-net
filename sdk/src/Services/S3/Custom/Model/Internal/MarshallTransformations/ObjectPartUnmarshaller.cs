@@ -64,6 +64,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ChecksumCRC32C = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumCRC64NVME", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumCRC64NVME = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChecksumSHA1", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

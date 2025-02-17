@@ -34,7 +34,26 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </summary>
     public partial class WrappedKeyMaterial
     {
+        private EcdhDerivationAttributes _diffieHellmanSymmetricKey;
         private string _tr31KeyBlock;
+
+        /// <summary>
+        /// Gets and sets the property DiffieHellmanSymmetricKey. 
+        /// <para>
+        /// The parameter information for deriving a ECDH shared key.
+        /// </para>
+        /// </summary>
+        public EcdhDerivationAttributes DiffieHellmanSymmetricKey
+        {
+            get { return this._diffieHellmanSymmetricKey; }
+            set { this._diffieHellmanSymmetricKey = value; }
+        }
+
+        // Check to see if DiffieHellmanSymmetricKey property is set
+        internal bool IsSetDiffieHellmanSymmetricKey()
+        {
+            return this._diffieHellmanSymmetricKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tr31KeyBlock. 

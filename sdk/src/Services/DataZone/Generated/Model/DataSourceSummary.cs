@@ -34,8 +34,10 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class DataSourceSummary
     {
+        private string _connectionId;
         private DateTime? _createdAt;
         private string _dataSourceId;
+        private string _description;
         private string _domainId;
         private EnableSetting _enableSetting;
         private string _environmentId;
@@ -48,6 +50,24 @@ namespace Amazon.DataZone.Model
         private DataSourceStatus _status;
         private string _type;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The connection ID that's part of the data source summary.
+        /// </para>
+        /// </summary>
+        public string ConnectionId
+        {
+            get { return this._connectionId; }
+            set { this._connectionId = value; }
+        }
+
+        // Check to see if ConnectionId property is set
+        internal bool IsSetConnectionId()
+        {
+            return this._connectionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -84,6 +104,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDataSourceId()
         {
             return this._dataSourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The data source description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -129,7 +168,6 @@ namespace Amazon.DataZone.Model
         /// The ID of the environment in which the data source exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

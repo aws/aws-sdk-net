@@ -1541,6 +1541,12 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchDeleteDocumentResponseFailedDocument.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchDeleteDocumentResponseFailedDocument.ErrorMessage</property>
     <min>1</min>
     <max>2048</max>
@@ -1564,6 +1570,12 @@
     <pattern>^[a-zA-Z-0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchGetDocumentStatusResponseError.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BatchGetDocumentStatusResponseError.DocumentId</property>
     <min>1</min>
     <max>2048</max>
@@ -1573,6 +1585,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BatchPutDocumentResponseFailedDocument.DataSourceId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.BatchPutDocumentResponseFailedDocument.ErrorMessage</property>

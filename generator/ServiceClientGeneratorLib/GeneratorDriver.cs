@@ -819,7 +819,6 @@ namespace ServiceClientGenerator
         /// </summary>
         public static List<string> UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options, string serviceTestFilesRoot, ServiceConfiguration serviceConfiguration)
         {
-            Console.WriteLine("Updating unit test project files.");
             string unitTestRoot = Utils.PathCombineAlt(serviceTestFilesRoot, "UnitTests");
             var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations, serviceConfiguration.ServiceFolderName);
             

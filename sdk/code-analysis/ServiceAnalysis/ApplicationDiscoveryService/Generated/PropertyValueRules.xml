@@ -16,6 +16,12 @@
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationRequest.Wave</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.CreateApplicationResponse.ConfigurationId</property>
     <max>10000</max>
     <pattern>[\s\S]*</pattern>
@@ -109,6 +115,12 @@
     <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.Name</property>
     <max>127</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationDiscoveryService.Model.UpdateApplicationRequest.Wave</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^($|[^\s\x00]( *[^\s\x00])*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationDiscoveryService.Model.AgentConfigurationStatus.AgentId</property>

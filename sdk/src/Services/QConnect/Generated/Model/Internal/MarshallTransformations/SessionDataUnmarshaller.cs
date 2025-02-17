@@ -66,6 +66,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("aiAgentConfiguration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, AIAgentConfigurationData, StringUnmarshaller, AIAgentConfigurationDataUnmarshaller>(StringUnmarshaller.Instance, AIAgentConfigurationDataUnmarshaller.Instance);
+                    unmarshalledObject.AiAgentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

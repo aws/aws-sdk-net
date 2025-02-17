@@ -57,10 +57,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AcceleratorType. 
         /// <para>
-        /// The size of the Elastic Inference (EI) instance to use for the production variant.
-        /// EI instances provide on-demand GPU computing for inference. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
-        /// Inference in Amazon SageMaker</a>.
+        /// This parameter is no longer supported. Elastic Inference (EI) is no longer available.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter was used to specify the size of the EI instance to use for the production
+        /// variant.
         /// </para>
         /// </summary>
         public ProductionVariantAcceleratorType AcceleratorType
@@ -165,12 +167,39 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CUDA version: 12.2
+        /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-2-1</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 535.54.03
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CUDA driver version: 12.2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Supported instance types: ml.g4dn.*, ml.g5.*, ml.g6.*, ml.p3.*, ml.p4d.*, ml.p4de.*,
-        /// ml.p5.*
+        /// CUDA Container Toolkit with disabled CUDA-compat mounting
+        /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-3-1</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 550.144.01
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUDA version: 12.4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Container Toolkit with disabled CUDA-compat mounting
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>

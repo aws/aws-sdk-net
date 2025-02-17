@@ -101,6 +101,33 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelManifestArn);
                 }
 
+                if(publicRequest.IsSetStateTemplatesToAdd())
+                {
+                    context.Writer.WritePropertyName("stateTemplatesToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStateTemplatesToAddListValue in publicRequest.StateTemplatesToAdd)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = StateTemplateAssociationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestStateTemplatesToAddListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetStateTemplatesToRemove())
+                {
+                    context.Writer.WritePropertyName("stateTemplatesToRemove");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStateTemplatesToRemoveListValue in publicRequest.StateTemplatesToRemove)
+                    {
+                            context.Writer.Write(publicRequestStateTemplatesToRemoveListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetVehicleName())
                 {
                     context.Writer.WritePropertyName("vehicleName");

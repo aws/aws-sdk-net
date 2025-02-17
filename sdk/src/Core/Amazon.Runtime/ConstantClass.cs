@@ -33,6 +33,9 @@ namespace Amazon.Runtime
     /// <summary>
     /// Base class for constant class that holds the value that will be sent to AWS for the static constants.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)]
+#endif
     public class ConstantClass
     {
         static readonly object staticFieldsLock = new object();

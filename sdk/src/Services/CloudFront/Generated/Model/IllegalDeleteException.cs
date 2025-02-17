@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// You cannot delete a managed policy.
+    /// Deletion is not allowed for this entity.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

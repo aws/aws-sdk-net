@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.CloudWatch;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
@@ -43,6 +44,9 @@ namespace AWSSDK.UnitTests
         [DataRow(CoreChecksumAlgorithm.CRC32C, "", "AAAAAA==")]
         [DataRow(CoreChecksumAlgorithm.CRC32C, "abc", "Nks/tw==")]
         [DataRow(CoreChecksumAlgorithm.CRC32C, "Hello world", "crUfeA==")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "", "AAAAAAAAAAA=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "abc", "BeXKuz/B+us=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "Hello world", "OOJZ0D8xKts=")]
         [DataTestMethod]
         public void CalculateChecksumTest(CoreChecksumAlgorithm algorithm, string content, string expectedBase64Checksum)
         {
@@ -56,32 +60,68 @@ namespace AWSSDK.UnitTests
         /// an algorithm is provided, and whether a precalculated checksum is provided
         /// to verify that the correct checksum is calculated for the request.
         /// </summary>
-        [TestMethod]
-        [DataRow(false, CoreChecksumAlgorithm.NONE, "", "")]   // Checksum not required and not selected, so no checksum
-        [DataRow(true, CoreChecksumAlgorithm.CRC32, "", "x-amz-checksum-crc32")]   // Checksum required, checksum specified, so calculated
-        [DataRow(false, CoreChecksumAlgorithm.CRC32, "", "x-amz-checksum-crc32")]   // Checksum not required, checksum specified so calculated anyway
-        [DataRow(true, CoreChecksumAlgorithm.NONE, "", "Content-MD5")]   // Checksum required, no checksum specified, so fallback to MD5
-        [DataRow(true, CoreChecksumAlgorithm.NONE, "x-amz-checksum-crc32", "x-amz-checksum-crc32")]   // Checksum required, but already set
-        [DataRow(true, CoreChecksumAlgorithm.SHA256, "x-amz-checksum-crc32", "x-amz-checksum-crc32")]   // Checksum specified but another was set, still calculate it anyway.
-        public void TestRequestChecksumSelection(bool fallbackToMD5, CoreChecksumAlgorithm checksumAlgorithm, string originalHeaderKey, string expectedHeaderKey)
+        [DataTestMethod]
+
+        // MD5 fallback test cases
+        [DataRow(false, true, CoreChecksumAlgorithm.NONE, null, "", "Content-MD5")]
+        [DataRow(false, true, CoreChecksumAlgorithm.NONE, null, "Content-MD5", "Content-MD5")]
+
+        // Checksum required and not specified, default to CRC32
+        [DataRow(true, false, CoreChecksumAlgorithm.NONE, RequestChecksumCalculation.WHEN_REQUIRED, "", "x-amz-checksum-crc32")]
+        [DataRow(true, false, CoreChecksumAlgorithm.NONE, RequestChecksumCalculation.WHEN_SUPPORTED, "", "x-amz-checksum-crc32")]
+
+        // Checksum required and specified using different value than default
+        [DataRow(true, false, CoreChecksumAlgorithm.CRC32C, RequestChecksumCalculation.WHEN_REQUIRED, "", "x-amz-checksum-crc32c")]
+        [DataRow(true, false, CoreChecksumAlgorithm.SHA256, RequestChecksumCalculation.WHEN_SUPPORTED, "", "x-amz-checksum-sha256")]
+
+        // Checksum specified but another value was already set (pre-calculated header takes precedence)
+        [DataRow(true, false, CoreChecksumAlgorithm.CRC32, RequestChecksumCalculation.WHEN_REQUIRED, "x-amz-checksum-crc32", "x-amz-checksum-crc32")]
+        [DataRow(false, false, CoreChecksumAlgorithm.SHA256, RequestChecksumCalculation.WHEN_SUPPORTED, "x-amz-checksum-crc32", "x-amz-checksum-crc32")]
+
+        // Checksum not required but config set to when supported, calculated anyway
+        [DataRow(false, false, CoreChecksumAlgorithm.NONE, RequestChecksumCalculation.WHEN_SUPPORTED, "", "x-amz-checksum-crc32")]
+
+        // Checksum not required and config set to when required only, no checksum calculated
+        [DataRow(false, false, CoreChecksumAlgorithm.NONE, RequestChecksumCalculation.WHEN_REQUIRED, "", "")]
+        public void TestRequestChecksumSelection(
+            bool isRequestChecksumRequired,
+            bool fallbackToMD5,
+            CoreChecksumAlgorithm checksumAlgorithm,
+            RequestChecksumCalculation requestChecksumCalculation,
+            string originalHeaderKey,
+            string expectedHeaderKey
+        )
         {
+            var sdkAlgorithmHeaderName = "x-amz-sdk-checksum-algorithm";
+
             var mock = new Mock<IRequest>();
             var headers = new Dictionary<string, string>();
             var request = mock.Object;
             mock.SetupGet(x => x.Headers).Returns(headers);
             mock.SetupGet(x => x.Content).Returns(Encoding.ASCII.GetBytes("foo"));
+            mock.SetupGet(x => x.ChecksumData).Returns(new ChecksumData(checksumAlgorithm.ToString(), MD5Checksum: false, fallbackToMD5, isRequestChecksumRequired, headerName: sdkAlgorithmHeaderName));
 
             if (!string.IsNullOrEmpty(originalHeaderKey))
             {
                 headers.Add(originalHeaderKey, "foo");
             }
 
-            ChecksumUtils.SetRequestChecksum(request, checksumAlgorithm.ToString(), fallbackToMD5);
+            ChecksumUtils.SetRequestChecksumV2(request, new AmazonCloudWatchConfig
+            {
+                RequestChecksumCalculation = requestChecksumCalculation
+            });
 
             if (!string.IsNullOrEmpty(expectedHeaderKey))
             {
                 Assert.IsTrue(request.Headers.ContainsKey(expectedHeaderKey));
                 Assert.IsFalse(string.IsNullOrEmpty(request.Headers[expectedHeaderKey]));
+
+                if (!fallbackToMD5 && string.IsNullOrEmpty(originalHeaderKey))
+                {
+                    var expectedValue = checksumAlgorithm == CoreChecksumAlgorithm.NONE ? ChecksumUtils.DefaultAlgorithm.ToString() : checksumAlgorithm.ToString();
+                    Assert.IsTrue(request.Headers.ContainsKey(sdkAlgorithmHeaderName));
+                    Assert.AreEqual(expectedValue, request.Headers[sdkAlgorithmHeaderName]);
+                }
             }
             else
             {
@@ -154,10 +194,10 @@ namespace AWSSDK.UnitTests
             var responseData = new WebResponseData();
             responseData.Headers = new Dictionary<string, string>
             {
-                { "x-amz-checksum-crc64", "checksum" }
+                { "x-amz-checksum-nonsupported", "checksum" }
             };
 
-            // CRC64 is not currently supported by the SDK
+            // Validation is skipped if the SDK doesn't support the returned checksum.
             Assert.AreEqual(CoreChecksumAlgorithm.NONE,
                 ChecksumUtils.SelectChecksumForResponseValidation(operationSupportedChecksums, responseData));
         }

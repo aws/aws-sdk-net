@@ -73,10 +73,15 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKey = this._request.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._request.ServerSideEncryptionCustomerProvidedKeyMD5,
                 TagSet = this._request.TagSet,
+#pragma warning disable CS0618 // Type or member is obsolete
                 CalculateContentMD5Header = this._request.CalculateContentMD5Header,
+#pragma warning restore CS0618 // Type or member is obsolete
                 ObjectLockLegalHoldStatus = this._request.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._request.ObjectLockMode,
                 DisablePayloadSigning = this._request.DisablePayloadSigning,
+                RequestPayer = this._request.RequestPayer,
+                DisableDefaultChecksumValidation = this._request.DisableDefaultChecksumValidation,
+                ChecksumAlgorithm = this._request.ChecksumAlgorithm,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)
 #endif

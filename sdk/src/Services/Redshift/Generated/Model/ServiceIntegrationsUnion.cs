@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class ServiceIntegrationsUnion
     {
         private List<LakeFormationScopeUnion> _lakeFormation = AWSConfigs.InitializeCollections ? new List<LakeFormationScopeUnion>() : null;
+        private List<S3AccessGrantsScopeUnion> _s3AccessGrants = AWSConfigs.InitializeCollections ? new List<S3AccessGrantsScopeUnion>() : null;
 
         /// <summary>
         /// Gets and sets the property LakeFormation. 
@@ -52,6 +53,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetLakeFormation()
         {
             return this._lakeFormation != null && (this._lakeFormation.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3AccessGrants. 
+        /// <para>
+        /// A list of scopes set up for S3 Access Grants integration.
+        /// </para>
+        /// </summary>
+        public List<S3AccessGrantsScopeUnion> S3AccessGrants
+        {
+            get { return this._s3AccessGrants; }
+            set { this._s3AccessGrants = value; }
+        }
+
+        // Check to see if S3AccessGrants property is set
+        internal bool IsSetS3AccessGrants()
+        {
+            return this._s3AccessGrants != null && (this._s3AccessGrants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

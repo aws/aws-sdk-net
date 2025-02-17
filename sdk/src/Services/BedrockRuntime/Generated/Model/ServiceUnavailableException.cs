@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The service isn't currently available. Try again later.
+    /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+    /// in the Amazon Bedrock User Guide
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

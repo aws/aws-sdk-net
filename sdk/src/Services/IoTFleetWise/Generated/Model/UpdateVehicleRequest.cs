@@ -39,6 +39,8 @@ namespace Amazon.IoTFleetWise.Model
         private UpdateMode _attributeUpdateMode;
         private string _decoderManifestArn;
         private string _modelManifestArn;
+        private List<StateTemplateAssociation> _stateTemplatesToAdd = AWSConfigs.InitializeCollections ? new List<StateTemplateAssociation>() : null;
+        private List<string> _stateTemplatesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vehicleName;
 
         /// <summary>
@@ -121,6 +123,44 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetModelManifestArn()
         {
             return this._modelManifestArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTemplatesToAdd. 
+        /// <para>
+        /// Associate state templates with the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<StateTemplateAssociation> StateTemplatesToAdd
+        {
+            get { return this._stateTemplatesToAdd; }
+            set { this._stateTemplatesToAdd = value; }
+        }
+
+        // Check to see if StateTemplatesToAdd property is set
+        internal bool IsSetStateTemplatesToAdd()
+        {
+            return this._stateTemplatesToAdd != null && (this._stateTemplatesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateTemplatesToRemove. 
+        /// <para>
+        /// Remove state templates from the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> StateTemplatesToRemove
+        {
+            get { return this._stateTemplatesToRemove; }
+            set { this._stateTemplatesToRemove = value; }
+        }
+
+        // Check to see if StateTemplatesToRemove property is set
+        internal bool IsSetStateTemplatesToRemove()
+        {
+            return this._stateTemplatesToRemove != null && (this._stateTemplatesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

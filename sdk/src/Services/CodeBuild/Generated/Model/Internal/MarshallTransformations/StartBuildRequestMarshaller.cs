@@ -80,6 +80,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAutoRetryLimitOverride())
+                {
+                    context.Writer.WritePropertyName("autoRetryLimitOverride");
+                    context.Writer.Write(publicRequest.AutoRetryLimitOverride);
+                }
+
                 if(publicRequest.IsSetBuildspecOverride())
                 {
                     context.Writer.WritePropertyName("buildspecOverride");

@@ -36,6 +36,7 @@ namespace Amazon.AppStream.Model
     {
         private StorageConnectorType _connectorType;
         private List<string> _domains = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _domainsRequireAdminConsent = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceIdentifier;
 
         /// <summary>
@@ -74,6 +75,27 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDomains()
         {
             return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainsRequireAdminConsent. 
+        /// <para>
+        /// The OneDrive for Business domains where you require admin consent when users try to
+        /// link their OneDrive account to AppStream 2.0. The attribute can only be specified
+        /// when ConnectorType=ONE_DRIVE.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> DomainsRequireAdminConsent
+        {
+            get { return this._domainsRequireAdminConsent; }
+            set { this._domainsRequireAdminConsent = value; }
+        }
+
+        // Check to see if DomainsRequireAdminConsent property is set
+        internal bool IsSetDomainsRequireAdminConsent()
+        {
+            return this._domainsRequireAdminConsent != null && (this._domainsRequireAdminConsent.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

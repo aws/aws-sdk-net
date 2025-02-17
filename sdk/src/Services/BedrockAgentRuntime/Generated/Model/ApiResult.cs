@@ -47,7 +47,9 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class ApiResult
     {
         private string _actionGroup;
+        private string _agentId;
         private string _apiPath;
+        private ConfirmationState _confirmationState;
         private string _httpMethod;
         private int? _httpStatusCode;
         private Dictionary<string, ContentBody> _responseBody = AWSConfigs.InitializeCollections ? new Dictionary<string, ContentBody>() : null;
@@ -73,6 +75,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The agent's ID.
+        /// </para>
+        /// </summary>
+        public string AgentId
+        {
+            get { return this._agentId; }
+            set { this._agentId = value; }
+        }
+
+        // Check to see if AgentId property is set
+        internal bool IsSetAgentId()
+        {
+            return this._agentId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApiPath. 
         /// <para>
         /// The path to the API operation.
@@ -89,6 +109,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetApiPath()
         {
             return this._apiPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationState. 
+        /// <para>
+        /// Controls the API operations or functions to invoke based on the user confirmation.
+        /// </para>
+        /// </summary>
+        public ConfirmationState ConfirmationState
+        {
+            get { return this._confirmationState; }
+            set { this._confirmationState = value; }
+        }
+
+        // Check to see if ConfirmationState property is set
+        internal bool IsSetConfirmationState()
+        {
+            return this._confirmationState != null;
         }
 
         /// <summary>

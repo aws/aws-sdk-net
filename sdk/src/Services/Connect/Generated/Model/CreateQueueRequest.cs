@@ -31,12 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQueue operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Creates a new queue for the specified Amazon Connect instance.
-    /// </para>
+    /// 
     ///  <important> <ul> <li> 
     /// <para>
     /// If the phone number is claimed to a traffic distribution group that was created in
@@ -71,6 +67,7 @@ namespace Amazon.Connect.Model
         private int? _maxContacts;
         private string _name;
         private OutboundCallerConfig _outboundCallerConfig;
+        private OutboundEmailConfig _outboundEmailConfig;
         private List<string> _quickConnectIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -186,6 +183,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetOutboundCallerConfig()
         {
             return this._outboundCallerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundEmailConfig. 
+        /// <para>
+        /// The outbound email address ID for a specified queue.
+        /// </para>
+        /// </summary>
+        public OutboundEmailConfig OutboundEmailConfig
+        {
+            get { return this._outboundEmailConfig; }
+            set { this._outboundEmailConfig = value; }
+        }
+
+        // Check to see if OutboundEmailConfig property is set
+        internal bool IsSetOutboundEmailConfig()
+        {
+            return this._outboundEmailConfig != null;
         }
 
         /// <summary>

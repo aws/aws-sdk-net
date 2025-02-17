@@ -153,6 +153,7 @@
     <property>Amazon.B2bi.Model.CreateTransformerRequest.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.CreateTransformerRequest.SampleDocument</property>
@@ -168,6 +169,7 @@
     <property>Amazon.B2bi.Model.CreateTransformerResponse.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.CreateTransformerResponse.SampleDocument</property>
@@ -208,6 +210,21 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.GenerateMappingRequest.InputFileContent</property>
+    <min>0</min>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.GenerateMappingRequest.OutputFileContent</property>
+    <min>0</min>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.GenerateMappingResponse.MappingAccuracy</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.GetCapabilityRequest.CapabilityId</property>
@@ -336,6 +353,7 @@
     <property>Amazon.B2bi.Model.GetTransformerResponse.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.GetTransformerResponse.SampleDocument</property>
@@ -621,6 +639,7 @@
     <property>Amazon.B2bi.Model.UpdateTransformerRequest.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.UpdateTransformerRequest.SampleDocument</property>
@@ -642,6 +661,7 @@
     <property>Amazon.B2bi.Model.UpdateTransformerResponse.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.UpdateTransformerResponse.SampleDocument</property>
@@ -675,6 +695,16 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.InputFileSource.FileContent</property>
+    <min>1</min>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.Mapping.Template</property>
+    <min>0</min>
+    <max>350000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.PartnershipSummary.Name</property>
@@ -731,6 +761,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.B2bi.Model.SampleDocumentKeys.Input</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.SampleDocumentKeys.Output</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.SampleDocuments.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.B2bi.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -749,6 +794,7 @@
     <property>Amazon.B2bi.Model.TransformerSummary.Name</property>
     <min>1</min>
     <max>254</max>
+    <pattern>[a-zA-Z0-9_-]{1,512}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.TransformerSummary.SampleDocument</property>
@@ -760,5 +806,82 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12Delimiters.ComponentSeparator</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[!&amp;'()*+,\-./:;?=%@\[\]_{}|&lt;&gt;~^`"]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12Delimiters.DataElementSeparator</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[!&amp;'()*+,\-./:;?=%@\[\]_{}|&lt;&gt;~^`"]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12Delimiters.SegmentTerminator</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[!&amp;'()*+,\-./:;?=%@\[\]_{}|&lt;&gt;~^`"]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12FunctionalGroupHeaders.ApplicationReceiverCode</property>
+    <min>2</min>
+    <max>15</max>
+    <pattern>[a-zA-Z0-9 ]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12FunctionalGroupHeaders.ApplicationSenderCode</property>
+    <min>2</min>
+    <max>15</max>
+    <pattern>[a-zA-Z0-9 ]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12FunctionalGroupHeaders.ResponsibleAgencyCode</property>
+    <min>1</min>
+    <max>2</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.AcknowledgmentRequestedCode</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.ReceiverId</property>
+    <min>15</min>
+    <max>15</max>
+    <pattern>[a-zA-Z0-9 ]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.ReceiverIdQualifier</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.RepetitionSeparator</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.SenderId</property>
+    <min>15</min>
+    <max>15</max>
+    <pattern>[a-zA-Z0-9 ]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.SenderIdQualifier</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.B2bi.Model.X12InterchangeControlHeaders.UsageIndicatorCode</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
   </property-value-rule>
 </property-value-rules>

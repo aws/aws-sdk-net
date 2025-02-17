@@ -147,26 +147,6 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH_JSON_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CALABASH_PRETTY_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CALABASH_STANDARD_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CALABASH_JAVA_XML_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// AUTOMATION_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// APPIUM_SERVER_OUTPUT
         /// </para>
         ///  </li> <li> 
@@ -184,14 +164,6 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// APPIUM_PYTHON_XML_OUTPUT
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EXPLORER_EVENT_LOG
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EXPLORER_SUMMARY_LOG
         /// </para>
         ///  </li> <li> 
         /// <para>

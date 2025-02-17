@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<TargetLocation> _targetLocations = AWSConfigs.InitializeCollections ? new List<TargetLocation>() : null;
+        private string _targetLocationsURL;
         private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
         private string _targetParameterName;
         private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
@@ -133,6 +134,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of targets allowed to run this task in parallel. You can specify
         /// a number, such as 10, or a percentage, such as 10%. The default value is <c>10</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If both this parameter and the <c>TargetLocation:TargetsMaxConcurrency</c> are supplied,
+        /// <c>TargetLocation:TargetsMaxConcurrency</c> takes precedence.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
@@ -165,6 +171,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set max-concurrency to
         /// 1 so the executions proceed one at a time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter and the <c>TargetLocation:TargetsMaxErrors</c> parameter are both
+        /// supplied, <c>TargetLocation:TargetsMaxErrors</c> takes precedence.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -238,7 +249,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing automation, use the <a>AddTagsToResource</a> operation.
+        /// The <c>Array Members</c> maximum value is reported as 1000. This number includes capacity
+        /// reserved for internal operations. When calling the <c>StartAutomationExecution</c>
+        /// action, you can specify a maximum of 5 tags. You can, however, use the <a>AddTagsToResource</a>
+        /// action to add up to a total of 50 tags to an existing automation configuration.
         /// </para>
         ///  </note>
         /// </summary>
@@ -262,8 +276,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// accounts where you want to run the automation. Use this operation to start an automation
         /// in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts.
         /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-        /// Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services
-        /// accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. 
+        /// automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -277,6 +291,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetLocations()
         {
             return this._targetLocations != null && (this._targetLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocationsURL. 
+        /// <para>
+        /// Specify a publicly accessible URL for a file that contains the <c>TargetLocations</c>
+        /// body. Currently, only files in presigned Amazon S3 buckets are supported. 
+        /// </para>
+        /// </summary>
+        public string TargetLocationsURL
+        {
+            get { return this._targetLocationsURL; }
+            set { this._targetLocationsURL = value; }
+        }
+
+        // Check to see if TargetLocationsURL property is set
+        internal bool IsSetTargetLocationsURL()
+        {
+            return this._targetLocationsURL != null;
         }
 
         /// <summary>
@@ -323,6 +356,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Targets. 
         /// <para>
         /// A key-value mapping to target resources. Required if you specify TargetParameterName.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both this parameter and the <c>TargetLocation:Targets</c> parameter are supplied,
+        /// <c>TargetLocation:Targets</c> takes precedence.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

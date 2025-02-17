@@ -54,6 +54,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MulticastIp);
             }
 
+            if(requestObject.IsSetMulticastSourceSettings())
+            {
+                context.Writer.WritePropertyName("multicastSourceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MulticastSourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MulticastSourceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkName())
             {
                 context.Writer.WritePropertyName("networkName");

@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CollaborationSummary
     {
+        private AnalyticsEngine _analyticsEngine;
         private string _arn;
         private DateTime? _createTime;
         private string _creatorAccountId;
@@ -44,6 +45,24 @@ namespace Amazon.CleanRooms.Model
         private MemberStatus _memberStatus;
         private string _name;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsEngine. 
+        /// <para>
+        ///  The analytics engine.
+        /// </para>
+        /// </summary>
+        public AnalyticsEngine AnalyticsEngine
+        {
+            get { return this._analyticsEngine; }
+            set { this._analyticsEngine = value; }
+        }
+
+        // Check to see if AnalyticsEngine property is set
+        internal bool IsSetAnalyticsEngine()
+        {
+            return this._analyticsEngine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

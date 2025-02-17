@@ -357,7 +357,7 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Cancels an existing Amazon FSx for Lustre data repository task if that task is in
-        /// either the <c>PENDING</c> or <c>EXECUTING</c> state. When you cancel am export task,
+        /// either the <c>PENDING</c> or <c>EXECUTING</c> state. When you cancel an export task,
         /// Amazon FSx does the following.
         /// 
         ///  <ul> <li> 
@@ -410,7 +410,7 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Cancels an existing Amazon FSx for Lustre data repository task if that task is in
-        /// either the <c>PENDING</c> or <c>EXECUTING</c> state. When you cancel am export task,
+        /// either the <c>PENDING</c> or <c>EXECUTING</c> state. When you cancel an export task,
         /// Amazon FSx does the following.
         /// 
         ///  <ul> <li> 
@@ -1248,7 +1248,7 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
+        /// Creates a new, empty Amazon File Cache resource with an assigned ID, and an initial
         /// lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
@@ -1317,7 +1317,7 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
+        /// Creates a new, empty Amazon File Cache resource with an assigned ID, and an initial
         /// lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
@@ -4692,6 +4692,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>FileSystemTypeVersion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>LogConfiguration</c> 
         /// </para>
         ///  </li> <li> 
@@ -4789,6 +4793,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <c>DiskIopsConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReadCacheConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4915,6 +4923,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>FileSystemTypeVersion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>LogConfiguration</c> 
         /// </para>
         ///  </li> <li> 
@@ -5012,6 +5024,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <c>DiskIopsConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReadCacheConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

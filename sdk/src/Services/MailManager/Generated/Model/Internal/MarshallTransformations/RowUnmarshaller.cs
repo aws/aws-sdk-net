@@ -84,6 +84,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Envelope", targetDepth))
+                {
+                    var unmarshaller = EnvelopeUnmarshaller.Instance;
+                    unmarshalledObject.Envelope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("From", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.HasAttachments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IngressPointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IngressPointId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InReplyTo", targetDepth))
@@ -118,6 +130,18 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReceivedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SenderHostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SenderHostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SenderIpAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Subject", targetDepth))

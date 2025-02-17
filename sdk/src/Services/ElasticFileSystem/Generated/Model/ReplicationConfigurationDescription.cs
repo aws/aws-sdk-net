@@ -39,6 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         private string _originalSourceFileSystemArn;
         private string _sourceFileSystemArn;
         private string _sourceFileSystemId;
+        private string _sourceFileSystemOwnerId;
         private string _sourceFileSystemRegion;
 
         /// <summary>
@@ -136,6 +137,25 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetSourceFileSystemId()
         {
             return this._sourceFileSystemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFileSystemOwnerId. 
+        /// <para>
+        /// ID of the Amazon Web Services account in which the source file system resides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=14)]
+        public string SourceFileSystemOwnerId
+        {
+            get { return this._sourceFileSystemOwnerId; }
+            set { this._sourceFileSystemOwnerId = value; }
+        }
+
+        // Check to see if SourceFileSystemOwnerId property is set
+        internal bool IsSetSourceFileSystemOwnerId()
+        {
+            return this._sourceFileSystemOwnerId != null;
         }
 
         /// <summary>

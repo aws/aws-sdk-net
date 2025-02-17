@@ -268,8 +268,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstancesWithUnreportedNotApplicablePatches. 
         /// <para>
         /// The number of managed nodes with <c>NotApplicable</c> patches beyond the supported
-        /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon
-        /// Web Services Systems Manager.
+        /// limit, which aren't reported by name to Inventory. Inventory is a tool in Amazon Web
+        /// Services Systems Manager.
         /// </para>
         /// </summary>
         public int InstancesWithUnreportedNotApplicablePatches

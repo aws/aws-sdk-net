@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// that defines the condition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<FlowCondition> Conditions
         {
             get { return this._conditions; }

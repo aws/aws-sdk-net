@@ -702,6 +702,78 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  ExportIdleRecommendations
+
+        internal virtual ExportIdleRecommendationsResponse ExportIdleRecommendations(ExportIdleRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportIdleRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportIdleRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ExportIdleRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Export optimization recommendations for your idle resources. 
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are exported in a comma-separated values (CSV) file, and its metadata
+        /// in a JavaScript Object Notation (JSON) file, to an existing Amazon Simple Storage
+        /// Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+        /// Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one idle resource export job in progress per Amazon Web Services
+        /// Region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportIdleRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportIdleRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportIdleRecommendations">REST API Reference for ExportIdleRecommendations Operation</seealso>
+        public virtual Task<ExportIdleRecommendationsResponse> ExportIdleRecommendationsAsync(ExportIdleRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportIdleRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportIdleRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportIdleRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportLambdaFunctionRecommendations
 
         internal virtual ExportLambdaFunctionRecommendationsResponse ExportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request)
@@ -1496,6 +1568,68 @@ namespace Amazon.ComputeOptimizer
             options.ResponseUnmarshaller = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEnrollmentStatusesForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIdleRecommendations
+
+        internal virtual GetIdleRecommendationsResponse GetIdleRecommendations(GetIdleRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdleRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdleRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdleRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns idle resource recommendations. Compute Optimizer generates recommendations
+        /// for idle resources that meet a specific set of requirements. For more information,
+        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Resource
+        /// requirements</a> in the <i>Compute Optimizer User Guide</i>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdleRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdleRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetIdleRecommendations">REST API Reference for GetIdleRecommendations Operation</seealso>
+        public virtual Task<GetIdleRecommendationsResponse> GetIdleRecommendationsAsync(GetIdleRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdleRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdleRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdleRecommendationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

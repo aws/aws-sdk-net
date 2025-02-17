@@ -13,7 +13,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
     {
         public void CloudFrontCreateFunction()
         {
-            #region to-create-a-function-1699737558249
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.CreateFunction(new CreateFunctionRequest 
@@ -41,14 +41,14 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontCreateKeyValueStore()
         {
-            #region to-create-a-key-value-store-1699751722467
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.CreateKeyValueStore(new CreateKeyValueStoreRequest 
             {
                 Comment = "my-key-valuestore-comment",
                 ImportSource = new ImportSource {
-                    SourceARN = "arn:aws:s3:::my-bucket/validJSON.json",
+                    SourceARN = "arn:aws:s3:::amzn-s3-demo-bucket/validJSON.json",
                     SourceType = "S3"
                 },
                 Name = "my-keyvaluestore-name"
@@ -61,9 +61,39 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
             #endregion
         }
 
+        public void CloudFrontCreateVpcOrigin()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.CreateVpcOrigin(new CreateVpcOriginRequest 
+            {
+                VpcOriginEndpointConfig = new VpcOriginEndpointConfig {
+                    Arn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-alb-us-west-2/e6aa5c7d26415c6d",
+                    HTTPPort = 80,
+                    HTTPSPort = 443,
+                    Name = "my-vpcorigin-name",
+                    OriginProtocolPolicy = "match-viewer",
+                    OriginSslProtocols = new OriginSslProtocols {
+                        Items = new List<string> {
+                            "TLSv1.1",
+                            "TLSv1.2"
+                        },
+                        Quantity = 2
+                    }
+                }
+            });
+
+            string eTag = response.ETag;
+            string location = response.Location;
+            VpcOrigin vpcOrigin = response.VpcOrigin;
+
+            #endregion
+        }
+
         public void CloudFrontDeleteKeyValueStore()
         {
-            #region to-delete-a-key-value-store-1699751759648
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.DeleteKeyValueStore(new DeleteKeyValueStoreRequest 
@@ -76,9 +106,26 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
             #endregion
         }
 
+        public void CloudFrontDeleteVpcOrigin()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.DeleteVpcOrigin(new DeleteVpcOriginRequest 
+            {
+                Id = "vo_BQwjxxQxjCaBcQLzJUFkDM",
+                IfMatch = "E1F83G8C2ARO7P"
+            });
+
+            string eTag = response.ETag;
+            VpcOrigin vpcOrigin = response.VpcOrigin;
+
+            #endregion
+        }
+
         public void CloudFrontDescribeKeyValueStore()
         {
-            #region to-describe-a-key-value-store-1699751788152
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.DescribeKeyValueStore(new DescribeKeyValueStoreRequest 
@@ -92,15 +139,44 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
             #endregion
         }
 
+        public void CloudFrontGetVpcOrigin()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.GetVpcOrigin(new GetVpcOriginRequest 
+            {
+                Id = "vo_BQwjxxQxjCaBcQLzJUFkDM"
+            });
+
+            string eTag = response.ETag;
+            VpcOrigin vpcOrigin = response.VpcOrigin;
+
+            #endregion
+        }
+
+        public void CloudFrontListDistributionsByVpcOriginId()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.ListDistributionsByVpcOriginId(new ListDistributionsByVpcOriginIdRequest 
+            {
+                VpcOriginId = "vo_BQwjxxQxjCaBcQLzJUFkDM"
+            });
+
+            DistributionIdList distributionIdList = response.DistributionIdList;
+
+            #endregion
+        }
+
         public void CloudFrontListKeyValueStores()
         {
-            #region to-get-a-list-of-key-value-store-1699751799198
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.ListKeyValueStores(new ListKeyValueStoresRequest 
             {
-                Marker = "",
-                MaxItems = "100",
                 Status = "READY"
             });
 
@@ -109,9 +185,23 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
             #endregion
         }
 
+        public void CloudFrontListVpcOrigins()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.ListVpcOrigins(new ListVpcOriginsRequest 
+            {
+            });
+
+            VpcOriginList vpcOriginList = response.VpcOriginList;
+
+            #endregion
+        }
+
         public void CloudFrontUpdateFunction()
         {
-            #region to-update-a-function-1699751865053
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.UpdateFunction(new UpdateFunctionRequest 
@@ -139,7 +229,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateKeyValueStore()
         {
-            #region to-update-a-key-value-store-1699751822090
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.UpdateKeyValueStore(new UpdateKeyValueStoreRequest 
@@ -151,6 +241,37 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
             string eTag = response.ETag;
             KeyValueStore keyValueStore = response.KeyValueStore;
+
+            #endregion
+        }
+
+        public void CloudFrontUpdateVpcOrigin()
+        {
+            #region example-1
+
+            var client = new AmazonCloudFrontClient();
+            var response = client.UpdateVpcOrigin(new UpdateVpcOriginRequest 
+            {
+                Id = "vo_BQwjxxQxjCaBcQLzJUFkDM",
+                IfMatch = "ETVPDKIKX0DER",
+                VpcOriginEndpointConfig = new VpcOriginEndpointConfig {
+                    Arn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-alb-us-west-2/e6aa5c7d26415c6d",
+                    HTTPPort = 80,
+                    HTTPSPort = 443,
+                    Name = "my-vpcorigin-name",
+                    OriginProtocolPolicy = "match-viewer",
+                    OriginSslProtocols = new OriginSslProtocols {
+                        Items = new List<string> {
+                            "TLSv1.1",
+                            "TLSv1.2"
+                        },
+                        Quantity = 2
+                    }
+                }
+            });
+
+            string eTag = response.ETag;
+            VpcOrigin vpcOrigin = response.VpcOrigin;
 
             #endregion
         }

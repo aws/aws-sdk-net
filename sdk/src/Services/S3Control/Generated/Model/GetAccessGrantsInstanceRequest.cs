@@ -38,7 +38,12 @@ namespace Amazon.S3Control.Model
     /// You must have the <c>s3:GetAccessGrantsInstance</c> permission to use this operation.
     /// 
     /// </para>
-    ///  </dd> </dl>
+    ///  </dd> </dl> <note> 
+    /// <para>
+    ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
+    /// only call the API from the account that owns the S3 Access Grants instance.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetAccessGrantsInstanceRequest : AmazonS3ControlRequest
     {
@@ -47,7 +52,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that is making this request.
+        /// The Amazon Web Services account ID of the S3 Access Grants instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

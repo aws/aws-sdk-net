@@ -224,6 +224,65 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  CreateApi
+
+
+        /// <summary>
+        /// Creates an <c>Api</c> object. Use this operation to create an AppSync API with your
+        /// preferred configuration, such as an Event API that provides real-time message publishing
+        /// and message subscriptions over WebSockets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApi service method.</param>
+        /// 
+        /// <returns>The response from the CreateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApi">REST API Reference for CreateApi Operation</seealso>
+        CreateApiResponse CreateApi(CreateApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApi">REST API Reference for CreateApi Operation</seealso>
+        IAsyncResult BeginCreateApi(CreateApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApi.</param>
+        /// 
+        /// <returns>Returns a  CreateApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApi">REST API Reference for CreateApi Operation</seealso>
+        CreateApiResponse EndCreateApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateApiCache
 
 
@@ -343,6 +402,72 @@ namespace Amazon.AppSync
         /// <returns>Returns a  CreateApiKeyResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         CreateApiKeyResponse EndCreateApiKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateChannelNamespace
+
+
+        /// <summary>
+        /// Creates a <c>ChannelNamespace</c> for an <c>Api</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannelNamespace service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConflictException">
+        /// A conflict with a previous successful update is detected. This typically occurs when
+        /// the previous update did not have time to propagate before the next update was made.
+        /// A retry (with appropriate backoff logic) is the recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateChannelNamespace">REST API Reference for CreateChannelNamespace Operation</seealso>
+        CreateChannelNamespaceResponse CreateChannelNamespace(CreateChannelNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannelNamespace operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateChannelNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateChannelNamespace">REST API Reference for CreateChannelNamespace Operation</seealso>
+        IAsyncResult BeginCreateChannelNamespace(CreateChannelNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateChannelNamespace.</param>
+        /// 
+        /// <returns>Returns a  CreateChannelNamespaceResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateChannelNamespace">REST API Reference for CreateChannelNamespace Operation</seealso>
+        CreateChannelNamespaceResponse EndCreateChannelNamespace(IAsyncResult asyncResult);
 
         #endregion
         
@@ -700,6 +825,67 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DeleteApi
+
+
+        /// <summary>
+        /// Deletes an <c>Api</c> object
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApi service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
+        DeleteApiResponse DeleteApi(DeleteApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
+        IAsyncResult BeginDeleteApi(DeleteApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApi.</param>
+        /// 
+        /// <returns>Returns a  DeleteApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
+        DeleteApiResponse EndDeleteApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteApiCache
 
 
@@ -809,6 +995,67 @@ namespace Amazon.AppSync
         /// <returns>Returns a  DeleteApiKeyResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         DeleteApiKeyResponse EndDeleteApiKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteChannelNamespace
+
+
+        /// <summary>
+        /// Deletes a <c>ChannelNamespace</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannelNamespace service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteChannelNamespace">REST API Reference for DeleteChannelNamespace Operation</seealso>
+        DeleteChannelNamespaceResponse DeleteChannelNamespace(DeleteChannelNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannelNamespace operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChannelNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteChannelNamespace">REST API Reference for DeleteChannelNamespace Operation</seealso>
+        IAsyncResult BeginDeleteChannelNamespace(DeleteChannelNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChannelNamespace.</param>
+        /// 
+        /// <returns>Returns a  DeleteChannelNamespaceResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteChannelNamespace">REST API Reference for DeleteChannelNamespace Operation</seealso>
+        DeleteChannelNamespaceResponse EndDeleteChannelNamespace(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1515,6 +1762,63 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetApi
+
+
+        /// <summary>
+        /// Retrieves an <c>Api</c> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApi service method.</param>
+        /// 
+        /// <returns>The response from the GetApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApi">REST API Reference for GetApi Operation</seealso>
+        GetApiResponse GetApi(GetApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApi">REST API Reference for GetApi Operation</seealso>
+        IAsyncResult BeginGetApi(GetApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApi.</param>
+        /// 
+        /// <returns>Returns a  GetApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApi">REST API Reference for GetApi Operation</seealso>
+        GetApiResponse EndGetApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetApiAssociation
 
 
@@ -1624,6 +1928,63 @@ namespace Amazon.AppSync
         /// <returns>Returns a  GetApiCacheResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
         GetApiCacheResponse EndGetApiCache(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetChannelNamespace
+
+
+        /// <summary>
+        /// Retrieves the channel namespace for a specified <c>Api</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelNamespace service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelNamespace service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetChannelNamespace">REST API Reference for GetChannelNamespace Operation</seealso>
+        GetChannelNamespaceResponse GetChannelNamespace(GetChannelNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelNamespace operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannelNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetChannelNamespace">REST API Reference for GetChannelNamespace Operation</seealso>
+        IAsyncResult BeginGetChannelNamespace(GetChannelNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannelNamespace.</param>
+        /// 
+        /// <returns>Returns a  GetChannelNamespaceResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetChannelNamespace">REST API Reference for GetChannelNamespace Operation</seealso>
+        GetChannelNamespaceResponse EndGetChannelNamespace(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2287,6 +2648,122 @@ namespace Amazon.AppSync
         /// <returns>Returns a  ListApiKeysResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         ListApiKeysResponse EndListApiKeys(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListApis
+
+
+        /// <summary>
+        /// Lists the APIs in your AppSync account.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ListApis</c> returns only the high level API details. For more detailed information
+        /// about an API, use <c>GetApi</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApis service method.</param>
+        /// 
+        /// <returns>The response from the ListApis service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApis">REST API Reference for ListApis Operation</seealso>
+        ListApisResponse ListApis(ListApisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApis operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApis">REST API Reference for ListApis Operation</seealso>
+        IAsyncResult BeginListApis(ListApisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListApis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApis.</param>
+        /// 
+        /// <returns>Returns a  ListApisResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApis">REST API Reference for ListApis Operation</seealso>
+        ListApisResponse EndListApis(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannelNamespaces
+
+
+        /// <summary>
+        /// Lists the channel namespaces for a specified <c>Api</c>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>ListChannelNamespaces</c> returns only high level details for the channel namespace.
+        /// To retrieve code handlers, use <c>GetChannelNamespace</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListChannelNamespaces service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListChannelNamespaces">REST API Reference for ListChannelNamespaces Operation</seealso>
+        ListChannelNamespacesResponse ListChannelNamespaces(ListChannelNamespacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannelNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannelNamespaces operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannelNamespaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListChannelNamespaces">REST API Reference for ListChannelNamespaces Operation</seealso>
+        IAsyncResult BeginListChannelNamespaces(ListChannelNamespacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannelNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannelNamespaces.</param>
+        /// 
+        /// <returns>Returns a  ListChannelNamespacesResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListChannelNamespaces">REST API Reference for ListChannelNamespaces Operation</seealso>
+        ListChannelNamespacesResponse EndListChannelNamespaces(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3253,6 +3730,67 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  UpdateApi
+
+
+        /// <summary>
+        /// Updates an <c>Api</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApi service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
+        UpdateApiResponse UpdateApi(UpdateApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
+        IAsyncResult BeginUpdateApi(UpdateApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApi.</param>
+        /// 
+        /// <returns>Returns a  UpdateApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
+        UpdateApiResponse EndUpdateApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateApiCache
 
 
@@ -3369,6 +3907,67 @@ namespace Amazon.AppSync
         /// <returns>Returns a  UpdateApiKeyResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         UpdateApiKeyResponse EndUpdateApiKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateChannelNamespace
+
+
+        /// <summary>
+        /// Updates a <c>ChannelNamespace</c> associated with an <c>Api</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelNamespace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannelNamespace service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateChannelNamespace">REST API Reference for UpdateChannelNamespace Operation</seealso>
+        UpdateChannelNamespaceResponse UpdateChannelNamespace(UpdateChannelNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannelNamespace operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChannelNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateChannelNamespace">REST API Reference for UpdateChannelNamespace Operation</seealso>
+        IAsyncResult BeginUpdateChannelNamespace(UpdateChannelNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChannelNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChannelNamespace.</param>
+        /// 
+        /// <returns>Returns a  UpdateChannelNamespaceResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateChannelNamespace">REST API Reference for UpdateChannelNamespace Operation</seealso>
+        UpdateChannelNamespaceResponse EndUpdateChannelNamespace(IAsyncResult asyncResult);
 
         #endregion
         

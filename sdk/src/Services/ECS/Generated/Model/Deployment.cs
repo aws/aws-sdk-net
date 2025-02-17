@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         private string _taskDefinition;
         private DateTime? _updatedAt;
         private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
+        private List<VpcLatticeConfiguration> _vpcLatticeConfigurations = AWSConfigs.InitializeCollections ? new List<VpcLatticeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -288,7 +289,7 @@ namespace Amazon.ECS.Model
         /// transitions to a <c>COMPLETED</c> state. If the service fails to reach a steady state
         /// and circuit breaker is turned on, the deployment transitions to a <c>FAILED</c> state.
         /// A deployment in <c>FAILED</c> state doesn't launch any new tasks. For more information,
-        /// see <a>DeploymentCircuitBreaker</a>.
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.
         /// </para>
         /// </summary>
         public DeploymentRolloutState RolloutState
@@ -479,6 +480,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetVolumeConfigurations()
         {
             return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLatticeConfigurations. 
+        /// <para>
+        /// The VPC Lattice configuration for the service deployment.
+        /// </para>
+        /// </summary>
+        public List<VpcLatticeConfiguration> VpcLatticeConfigurations
+        {
+            get { return this._vpcLatticeConfigurations; }
+            set { this._vpcLatticeConfigurations = value; }
+        }
+
+        // Check to see if VpcLatticeConfigurations property is set
+        internal bool IsSetVpcLatticeConfigurations()
+        {
+            return this._vpcLatticeConfigurations != null && (this._vpcLatticeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

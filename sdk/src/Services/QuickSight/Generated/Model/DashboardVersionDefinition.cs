@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         private AssetOptions _options;
         private List<ParameterDeclaration> _parameterDeclarations = AWSConfigs.InitializeCollections ? new List<ParameterDeclaration>() : null;
         private List<SheetDefinition> _sheets = AWSConfigs.InitializeCollections ? new List<SheetDefinition>() : null;
+        private List<StaticFile> _staticFiles = AWSConfigs.InitializeCollections ? new List<StaticFile>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisDefaults.
@@ -202,6 +203,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSheets()
         {
             return this._sheets != null && (this._sheets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticFiles. 
+        /// <para>
+        /// The static files for the definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<StaticFile> StaticFiles
+        {
+            get { return this._staticFiles; }
+            set { this._staticFiles = value; }
+        }
+
+        // Check to see if StaticFiles property is set
+        internal bool IsSetStaticFiles()
+        {
+            return this._staticFiles != null && (this._staticFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

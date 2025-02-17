@@ -62,7 +62,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            
+            if (publicRequest.IsSetBeforeSubstitution())
+                request.Parameters.Add("beforeSubstitution", StringUtils.FromBool(publicRequest.BeforeSubstitution));
             request.ResourcePath = "/jobs/{jobId}/job-document";
+            request.UseQueryString = true;
 
             return request;
         }

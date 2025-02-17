@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private bool? _dryRun;
         private string _identifier;
+        private string _requestId;
 
         /// <summary>
         /// Gets and sets the property DryRun.
@@ -68,6 +69,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestId. An ID that you assign to a create request. This
+        /// ID ensures idempotency when creating resources.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
         }
 
     }

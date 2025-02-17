@@ -37,6 +37,20 @@ namespace AWSSDK.Runtime.Internal.Util
         private static readonly object _lock = new object();
         private static volatile IChecksumProvider _instance;
 
+        /// <summary>
+        /// Returns whether the CRT checksum implementation is available for the .NET SDK to use.
+        /// </summary>
+        public static bool IsCrtAvailable()
+        {
+            try
+            {
+                return Instance != null;
+            }
+            catch (AWSCommonRuntimeException)
+            {
+                return false;
+            }
+        }
 
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
@@ -133,6 +147,27 @@ namespace AWSSDK.Runtime.Internal.Util
         public static uint Crc32C(byte[] source, uint previous)
         {
             return Instance.Crc32C(source, previous);
+        }
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <returns>CRC64NVME hash as a base64-encoded string</returns>
+        public static string Crc64NVME(byte[] source)
+        {
+            return Instance.Crc64NVME(source);
+        }
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <param name="previous">Previous value of a rolling checksum</param>
+        /// <returns>Updated CRC64NVME hash as 64-bit integer</returns>
+        public static ulong Crc64NVME(byte[] source, ulong previous)
+        {
+            return Instance.Crc64NVME(source, previous);
         }
     }
 }

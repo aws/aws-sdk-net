@@ -1565,7 +1565,10 @@
         "us-isob-east-1",
         "ap-southeast-4",
         "il-central-1",
-        "ca-west-1"
+        "ca-west-1",
+        "ap-southeast-5",
+        "mx-central-1",
+        "ap-southeast-7"
       ],
       "max":64,
       "min":1
@@ -4084,7 +4087,11 @@
         "SPF",
         "AAAA",
         "CAA",
-        "DS"
+        "DS",
+        "TLSA",
+        "SSHFP",
+        "SVCB",
+        "HTTPS"
       ]
     },
     "RecordData":{
@@ -4212,7 +4219,10 @@
         "eu-south-2",
         "ap-southeast-4",
         "il-central-1",
-        "ca-west-1"
+        "ca-west-1",
+        "ap-southeast-5",
+        "mx-central-1",
+        "ap-southeast-7"
       ],
       "max":64,
       "min":1
@@ -4828,12 +4838,16 @@
         "sa-east-1",
         "ca-central-1",
         "cn-north-1",
+        "cn-northwest-1",
         "af-south-1",
         "eu-south-1",
         "eu-south-2",
         "ap-southeast-4",
         "il-central-1",
-        "ca-west-1"
+        "ca-west-1",
+        "ap-southeast-5",
+        "mx-central-1",
+        "ap-southeast-7"
       ],
       "max":64,
       "min":1

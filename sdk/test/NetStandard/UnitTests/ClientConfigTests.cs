@@ -67,6 +67,9 @@ namespace UnitTests
             "RequestMinCompressionSizeBytes",
             "ClientAppId",
             "TelemetryProvider",
+            "AccountIdEndpointMode",
+            "RequestChecksumCalculation",
+            "ResponseChecksumValidation",
         };
 
         [Fact]
@@ -89,6 +92,11 @@ namespace UnitTests
         }
 
 #if NET8_0_OR_GREATER
+        private class TestS3Request : AmazonWebServiceRequest{
+            public string BucketName {get; set;}
+            public string Key {get; set;}
+        };
+
         [Fact]
         [Trait("Category", "Core")]
         public void DisableDangerousDisablePathAndQueryCanonicalizationTest()
@@ -96,7 +104,7 @@ namespace UnitTests
             AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = true;
             try
             {
-                var internalRequest = new DefaultRequest(new Amazon.S3.Model.GetObjectRequest
+                var internalRequest = new DefaultRequest(new TestS3Request
                 {
                     BucketName = "TheBucket",
                     Key = "foo/../bar.txt"

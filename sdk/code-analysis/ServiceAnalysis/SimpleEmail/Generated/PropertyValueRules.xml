@@ -35,4 +35,20 @@
     <property>Amazon.SimpleEmail.Model.BulkEmailDestination.ReplacementTemplateData</property>
     <max>262144</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.ConnectAction.IAMRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w-]+:iam::[0-9]+:role(\u002F)([\u0021-\u007E]+\u002F)?([\w+=,.@-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.ConnectAction.InstanceARN</property>
+    <pattern>arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9-]{1}:[0-9]{1,20}:instance/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.S3Action.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w-]+:iam::[0-9]+:role(\u002F)([\u0021-\u007E]+\u002F)?([\w+=,.@-]+)</pattern>
+  </property-value-rule>
 </property-value-rules>

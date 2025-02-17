@@ -40,7 +40,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         private List<SqlParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _queryString;
         private List<string> _queryStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ResultFormatString _resultFormat;
         private string _secretArn;
+        private string _sessionId;
         private string _statementName;
         private StatusString _status;
         private DateTime? _updatedAt;
@@ -158,6 +160,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) of the secret that enables access to the database.
@@ -174,6 +194,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The session identifier of the query.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
         }
 
         /// <summary>

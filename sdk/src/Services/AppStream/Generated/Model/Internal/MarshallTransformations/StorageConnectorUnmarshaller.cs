@@ -78,6 +78,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Domains = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainsRequireAdminConsent", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DomainsRequireAdminConsent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

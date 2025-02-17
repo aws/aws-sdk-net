@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFaq operation.
-    /// Gets information about an FAQ list.
+    /// Gets information about a FAQ.
     /// </summary>
     public partial class DescribeFaqRequest : AmazonKendraRequest
     {

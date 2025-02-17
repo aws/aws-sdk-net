@@ -34,7 +34,26 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryStatistics
     {
+        private BilledResourceUtilization _billedResourceUtilization;
         private long? _totalDurationInMillis;
+
+        /// <summary>
+        /// Gets and sets the property BilledResourceUtilization. 
+        /// <para>
+        ///  The billed resource utilization.
+        /// </para>
+        /// </summary>
+        public BilledResourceUtilization BilledResourceUtilization
+        {
+            get { return this._billedResourceUtilization; }
+            set { this._billedResourceUtilization = value; }
+        }
+
+        // Check to see if BilledResourceUtilization property is set
+        internal bool IsSetBilledResourceUtilization()
+        {
+            return this._billedResourceUtilization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TotalDurationInMillis. 

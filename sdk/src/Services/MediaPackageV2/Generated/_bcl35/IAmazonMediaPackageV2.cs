@@ -76,6 +76,67 @@ namespace Amazon.MediaPackageV2
 
 
         
+        #region  CancelHarvestJob
+
+
+        /// <summary>
+        /// Cancels an in-progress harvest job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelHarvestJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
+        CancelHarvestJobResponse CancelHarvestJob(CancelHarvestJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelHarvestJob operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelHarvestJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
+        IAsyncResult BeginCancelHarvestJob(CancelHarvestJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelHarvestJob.</param>
+        /// 
+        /// <returns>Returns a  CancelHarvestJobResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
+        CancelHarvestJobResponse EndCancelHarvestJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateChannel
 
 
@@ -211,6 +272,71 @@ namespace Amazon.MediaPackageV2
         /// <returns>Returns a  CreateChannelGroupResult from MediaPackageV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateChannelGroup">REST API Reference for CreateChannelGroup Operation</seealso>
         CreateChannelGroupResponse EndCreateChannelGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateHarvestJob
+
+
+        /// <summary>
+        /// Creates a new harvest job to export content from a MediaPackage v2 channel to an S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarvestJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        CreateHarvestJobResponse CreateHarvestJob(CreateHarvestJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarvestJob operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHarvestJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        IAsyncResult BeginCreateHarvestJob(CreateHarvestJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHarvestJob.</param>
+        /// 
+        /// <returns>Returns a  CreateHarvestJobResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        CreateHarvestJobResponse EndCreateHarvestJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -753,6 +879,64 @@ namespace Amazon.MediaPackageV2
 
         #endregion
         
+        #region  GetHarvestJob
+
+
+        /// <summary>
+        /// Retrieves the details of a specific harvest job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarvestJob service method.</param>
+        /// 
+        /// <returns>The response from the GetHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
+        GetHarvestJobResponse GetHarvestJob(GetHarvestJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHarvestJob operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHarvestJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
+        IAsyncResult BeginGetHarvestJob(GetHarvestJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHarvestJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHarvestJob.</param>
+        /// 
+        /// <returns>Returns a  GetHarvestJobResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
+        GetHarvestJobResponse EndGetHarvestJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetOriginEndpoint
 
 
@@ -984,6 +1168,64 @@ namespace Amazon.MediaPackageV2
         /// <returns>Returns a  ListChannelsResult from MediaPackageV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannels">REST API Reference for ListChannels Operation</seealso>
         ListChannelsResponse EndListChannels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListHarvestJobs
+
+
+        /// <summary>
+        /// Retrieves a list of harvest jobs that match the specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarvestJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListHarvestJobs service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        ListHarvestJobsResponse ListHarvestJobs(ListHarvestJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHarvestJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHarvestJobs operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHarvestJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        IAsyncResult BeginListHarvestJobs(ListHarvestJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHarvestJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHarvestJobs.</param>
+        /// 
+        /// <returns>Returns a  ListHarvestJobsResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        ListHarvestJobsResponse EndListHarvestJobs(IAsyncResult asyncResult);
 
         #endregion
         

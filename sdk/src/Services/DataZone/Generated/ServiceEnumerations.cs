@@ -75,6 +75,60 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType BASIC = new AuthenticationType("BASIC");
+        /// <summary>
+        /// Constant CUSTOM for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType CUSTOM = new AuthenticationType("CUSTOM");
+        /// <summary>
+        /// Constant OAUTH2 for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType OAUTH2 = new AuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthType.
     /// </summary>
     public class AuthType : ConstantClass
@@ -175,6 +229,60 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeEnvironments.
+    /// </summary>
+    public class ComputeEnvironments : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATHENA for ComputeEnvironments
+        /// </summary>
+        public static readonly ComputeEnvironments ATHENA = new ComputeEnvironments("ATHENA");
+        /// <summary>
+        /// Constant PYTHON for ComputeEnvironments
+        /// </summary>
+        public static readonly ComputeEnvironments PYTHON = new ComputeEnvironments("PYTHON");
+        /// <summary>
+        /// Constant SPARK for ComputeEnvironments
+        /// </summary>
+        public static readonly ComputeEnvironments SPARK = new ComputeEnvironments("SPARK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeEnvironments(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeEnvironments FindValue(string value)
+        {
+            return FindValue<ComputeEnvironments>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeEnvironments(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigurableActionTypeAuthorization.
     /// </summary>
     public class ConfigurableActionTypeAuthorization : ConstantClass
@@ -218,6 +326,198 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurableActionTypeAuthorization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus CREATE_FAILED = new ConnectionStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus CREATING = new ConnectionStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus DELETE_FAILED = new ConnectionStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus DELETED = new ConnectionStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus DELETING = new ConnectionStatus("DELETING");
+        /// <summary>
+        /// Constant READY for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus READY = new ConnectionStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus UPDATE_FAILED = new ConnectionStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus UPDATING = new ConnectionStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATHENA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ATHENA = new ConnectionType("ATHENA");
+        /// <summary>
+        /// Constant BIGQUERY for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType BIGQUERY = new ConnectionType("BIGQUERY");
+        /// <summary>
+        /// Constant DATABRICKS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DATABRICKS = new ConnectionType("DATABRICKS");
+        /// <summary>
+        /// Constant DOCUMENTDB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DOCUMENTDB = new ConnectionType("DOCUMENTDB");
+        /// <summary>
+        /// Constant DYNAMODB for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType DYNAMODB = new ConnectionType("DYNAMODB");
+        /// <summary>
+        /// Constant HYPERPOD for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType HYPERPOD = new ConnectionType("HYPERPOD");
+        /// <summary>
+        /// Constant IAM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType IAM = new ConnectionType("IAM");
+        /// <summary>
+        /// Constant MYSQL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MYSQL = new ConnectionType("MYSQL");
+        /// <summary>
+        /// Constant OPENSEARCH for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType OPENSEARCH = new ConnectionType("OPENSEARCH");
+        /// <summary>
+        /// Constant ORACLE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType ORACLE = new ConnectionType("ORACLE");
+        /// <summary>
+        /// Constant POSTGRESQL for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType POSTGRESQL = new ConnectionType("POSTGRESQL");
+        /// <summary>
+        /// Constant REDSHIFT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType REDSHIFT = new ConnectionType("REDSHIFT");
+        /// <summary>
+        /// Constant SAPHANA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SAPHANA = new ConnectionType("SAPHANA");
+        /// <summary>
+        /// Constant SNOWFLAKE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SNOWFLAKE = new ConnectionType("SNOWFLAKE");
+        /// <summary>
+        /// Constant SPARK for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SPARK = new ConnectionType("SPARK");
+        /// <summary>
+        /// Constant SQLSERVER for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType SQLSERVER = new ConnectionType("SQLSERVER");
+        /// <summary>
+        /// Constant TERADATA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType TERADATA = new ConnectionType("TERADATA");
+        /// <summary>
+        /// Constant VERTICA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VERTICA = new ConnectionType("VERTICA");
+        /// <summary>
+        /// Constant WORKFLOWS_MWAA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WORKFLOWS_MWAA = new ConnectionType("WORKFLOWS_MWAA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
         {
             return FindValue(value);
         }
@@ -655,6 +955,102 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type DataZoneEntityType.
+    /// </summary>
+    public class DataZoneEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for DataZoneEntityType
+        /// </summary>
+        public static readonly DataZoneEntityType DOMAIN_UNIT = new DataZoneEntityType("DOMAIN_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataZoneEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataZoneEntityType FindValue(string value)
+        {
+            return FindValue<DataZoneEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataZoneEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentMode.
+    /// </summary>
+    public class DeploymentMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_CREATE for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode ON_CREATE = new DeploymentMode("ON_CREATE");
+        /// <summary>
+        /// Constant ON_DEMAND for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode ON_DEMAND = new DeploymentMode("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentMode FindValue(string value)
+        {
+            return FindValue<DeploymentMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -826,6 +1222,102 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainUnitDesignation.
+    /// </summary>
+    public class DomainUnitDesignation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OWNER for DomainUnitDesignation
+        /// </summary>
+        public static readonly DomainUnitDesignation OWNER = new DomainUnitDesignation("OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainUnitDesignation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainUnitDesignation FindValue(string value)
+        {
+            return FindValue<DomainUnitDesignation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainUnitDesignation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainVersion.
+    /// </summary>
+    public class DomainVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V1 for DomainVersion
+        /// </summary>
+        public static readonly DomainVersion V1 = new DomainVersion("V1");
+        /// <summary>
+        /// Constant V2 for DomainVersion
+        /// </summary>
+        public static readonly DomainVersion V2 = new DomainVersion("V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainVersion FindValue(string value)
+        {
+            return FindValue<DomainVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainVersion(string value)
         {
             return FindValue(value);
         }
@@ -1327,6 +1819,150 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type GlueConnectionType.
+    /// </summary>
+    public class GlueConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIGQUERY for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType BIGQUERY = new GlueConnectionType("BIGQUERY");
+        /// <summary>
+        /// Constant DOCUMENTDB for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType DOCUMENTDB = new GlueConnectionType("DOCUMENTDB");
+        /// <summary>
+        /// Constant DYNAMODB for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType DYNAMODB = new GlueConnectionType("DYNAMODB");
+        /// <summary>
+        /// Constant MYSQL for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType MYSQL = new GlueConnectionType("MYSQL");
+        /// <summary>
+        /// Constant OPENSEARCH for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType OPENSEARCH = new GlueConnectionType("OPENSEARCH");
+        /// <summary>
+        /// Constant ORACLE for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType ORACLE = new GlueConnectionType("ORACLE");
+        /// <summary>
+        /// Constant POSTGRESQL for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType POSTGRESQL = new GlueConnectionType("POSTGRESQL");
+        /// <summary>
+        /// Constant REDSHIFT for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType REDSHIFT = new GlueConnectionType("REDSHIFT");
+        /// <summary>
+        /// Constant SAPHANA for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType SAPHANA = new GlueConnectionType("SAPHANA");
+        /// <summary>
+        /// Constant SNOWFLAKE for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType SNOWFLAKE = new GlueConnectionType("SNOWFLAKE");
+        /// <summary>
+        /// Constant SQLSERVER for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType SQLSERVER = new GlueConnectionType("SQLSERVER");
+        /// <summary>
+        /// Constant TERADATA for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType TERADATA = new GlueConnectionType("TERADATA");
+        /// <summary>
+        /// Constant VERTICA for GlueConnectionType
+        /// </summary>
+        public static readonly GlueConnectionType VERTICA = new GlueConnectionType("VERTICA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlueConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlueConnectionType FindValue(string value)
+        {
+            return FindValue<GlueConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlueConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GovernanceType.
+    /// </summary>
+    public class GovernanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for GovernanceType
+        /// </summary>
+        public static readonly GovernanceType AWS_MANAGED = new GovernanceType("AWS_MANAGED");
+        /// <summary>
+        /// Constant USER_MANAGED for GovernanceType
+        /// </summary>
+        public static readonly GovernanceType USER_MANAGED = new GovernanceType("USER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GovernanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernanceType FindValue(string value)
+        {
+            return FindValue<GovernanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GroupProfileStatus.
     /// </summary>
     public class GroupProfileStatus : ConstantClass
@@ -1427,6 +2063,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type HyperPodOrchestrator.
+    /// </summary>
+    public class HyperPodOrchestrator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EKS for HyperPodOrchestrator
+        /// </summary>
+        public static readonly HyperPodOrchestrator EKS = new HyperPodOrchestrator("EKS");
+        /// <summary>
+        /// Constant SLURM for HyperPodOrchestrator
+        /// </summary>
+        public static readonly HyperPodOrchestrator SLURM = new HyperPodOrchestrator("SLURM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperPodOrchestrator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperPodOrchestrator FindValue(string value)
+        {
+            return FindValue<HyperPodOrchestrator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperPodOrchestrator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InventorySearchScope.
     /// </summary>
     public class InventorySearchScope : ConstantClass
@@ -1485,6 +2171,292 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type JobRunMode.
+    /// </summary>
+    public class JobRunMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for JobRunMode
+        /// </summary>
+        public static readonly JobRunMode ON_DEMAND = new JobRunMode("ON_DEMAND");
+        /// <summary>
+        /// Constant SCHEDULED for JobRunMode
+        /// </summary>
+        public static readonly JobRunMode SCHEDULED = new JobRunMode("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobRunMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobRunMode FindValue(string value)
+        {
+            return FindValue<JobRunMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobRunMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobRunStatus.
+    /// </summary>
+    public class JobRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABORTED for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus ABORTED = new JobRunStatus("ABORTED");
+        /// <summary>
+        /// Constant CANCELED for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus CANCELED = new JobRunStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus FAILED = new JobRunStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus IN_PROGRESS = new JobRunStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIALLY_SUCCEEDED for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus PARTIALLY_SUCCEEDED = new JobRunStatus("PARTIALLY_SUCCEEDED");
+        /// <summary>
+        /// Constant SCHEDULED for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus SCHEDULED = new JobRunStatus("SCHEDULED");
+        /// <summary>
+        /// Constant SUCCESS for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus SUCCESS = new JobRunStatus("SUCCESS");
+        /// <summary>
+        /// Constant TIMED_OUT for JobRunStatus
+        /// </summary>
+        public static readonly JobRunStatus TIMED_OUT = new JobRunStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobRunStatus FindValue(string value)
+        {
+            return FindValue<JobRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobType.
+    /// </summary>
+    public class JobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINEAGE for JobType
+        /// </summary>
+        public static readonly JobType LINEAGE = new JobType("LINEAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobType FindValue(string value)
+        {
+            return FindValue<JobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LineageEventProcessingStatus.
+    /// </summary>
+    public class LineageEventProcessingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LineageEventProcessingStatus
+        /// </summary>
+        public static readonly LineageEventProcessingStatus FAILED = new LineageEventProcessingStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for LineageEventProcessingStatus
+        /// </summary>
+        public static readonly LineageEventProcessingStatus PROCESSING = new LineageEventProcessingStatus("PROCESSING");
+        /// <summary>
+        /// Constant REQUESTED for LineageEventProcessingStatus
+        /// </summary>
+        public static readonly LineageEventProcessingStatus REQUESTED = new LineageEventProcessingStatus("REQUESTED");
+        /// <summary>
+        /// Constant SUCCESS for LineageEventProcessingStatus
+        /// </summary>
+        public static readonly LineageEventProcessingStatus SUCCESS = new LineageEventProcessingStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineageEventProcessingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineageEventProcessingStatus FindValue(string value)
+        {
+            return FindValue<LineageEventProcessingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineageEventProcessingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LineageImportStatus.
+    /// </summary>
+    public class LineageImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LineageImportStatus
+        /// </summary>
+        public static readonly LineageImportStatus FAILED = new LineageImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LineageImportStatus
+        /// </summary>
+        public static readonly LineageImportStatus IN_PROGRESS = new LineageImportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIALLY_SUCCEEDED for LineageImportStatus
+        /// </summary>
+        public static readonly LineageImportStatus PARTIALLY_SUCCEEDED = new LineageImportStatus("PARTIALLY_SUCCEEDED");
+        /// <summary>
+        /// Constant SUCCESS for LineageImportStatus
+        /// </summary>
+        public static readonly LineageImportStatus SUCCESS = new LineageImportStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineageImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineageImportStatus FindValue(string value)
+        {
+            return FindValue<LineageImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineageImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListingStatus.
     /// </summary>
     public class ListingStatus : ConstantClass
@@ -1532,6 +2504,100 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedPolicyType.
+    /// </summary>
+    public class ManagedPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD_TO_PROJECT_MEMBER_POOL for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType ADD_TO_PROJECT_MEMBER_POOL = new ManagedPolicyType("ADD_TO_PROJECT_MEMBER_POOL");
+        /// <summary>
+        /// Constant CREATE_ASSET_TYPE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ASSET_TYPE = new ManagedPolicyType("CREATE_ASSET_TYPE");
+        /// <summary>
+        /// Constant CREATE_DOMAIN_UNIT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_DOMAIN_UNIT = new ManagedPolicyType("CREATE_DOMAIN_UNIT");
+        /// <summary>
+        /// Constant CREATE_ENVIRONMENT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ENVIRONMENT = new ManagedPolicyType("CREATE_ENVIRONMENT");
+        /// <summary>
+        /// Constant CREATE_ENVIRONMENT_FROM_BLUEPRINT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ENVIRONMENT_FROM_BLUEPRINT = new ManagedPolicyType("CREATE_ENVIRONMENT_FROM_BLUEPRINT");
+        /// <summary>
+        /// Constant CREATE_ENVIRONMENT_PROFILE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ENVIRONMENT_PROFILE = new ManagedPolicyType("CREATE_ENVIRONMENT_PROFILE");
+        /// <summary>
+        /// Constant CREATE_FORM_TYPE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_FORM_TYPE = new ManagedPolicyType("CREATE_FORM_TYPE");
+        /// <summary>
+        /// Constant CREATE_GLOSSARY for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_GLOSSARY = new ManagedPolicyType("CREATE_GLOSSARY");
+        /// <summary>
+        /// Constant CREATE_PROJECT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_PROJECT = new ManagedPolicyType("CREATE_PROJECT");
+        /// <summary>
+        /// Constant CREATE_PROJECT_FROM_PROJECT_PROFILE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_PROJECT_FROM_PROJECT_PROFILE = new ManagedPolicyType("CREATE_PROJECT_FROM_PROJECT_PROFILE");
+        /// <summary>
+        /// Constant DELEGATE_CREATE_ENVIRONMENT_PROFILE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType DELEGATE_CREATE_ENVIRONMENT_PROFILE = new ManagedPolicyType("DELEGATE_CREATE_ENVIRONMENT_PROFILE");
+        /// <summary>
+        /// Constant OVERRIDE_DOMAIN_UNIT_OWNERS for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType OVERRIDE_DOMAIN_UNIT_OWNERS = new ManagedPolicyType("OVERRIDE_DOMAIN_UNIT_OWNERS");
+        /// <summary>
+        /// Constant OVERRIDE_PROJECT_OWNERS for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType OVERRIDE_PROJECT_OWNERS = new ManagedPolicyType("OVERRIDE_PROJECT_OWNERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedPolicyType FindValue(string value)
+        {
+            return FindValue<ManagedPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedPolicyType(string value)
         {
             return FindValue(value);
         }
@@ -1851,6 +2917,242 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type OAuth2GrantType.
+    /// </summary>
+    public class OAuth2GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType AUTHORIZATION_CODE = new OAuth2GrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2GrantType FindValue(string value)
+        {
+            return FindValue<OAuth2GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2GrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpenLineageRunState.
+    /// </summary>
+    public class OpenLineageRunState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ABORT for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState ABORT = new OpenLineageRunState("ABORT");
+        /// <summary>
+        /// Constant COMPLETE for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState COMPLETE = new OpenLineageRunState("COMPLETE");
+        /// <summary>
+        /// Constant FAIL for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState FAIL = new OpenLineageRunState("FAIL");
+        /// <summary>
+        /// Constant OTHER for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState OTHER = new OpenLineageRunState("OTHER");
+        /// <summary>
+        /// Constant RUNNING for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState RUNNING = new OpenLineageRunState("RUNNING");
+        /// <summary>
+        /// Constant START for OpenLineageRunState
+        /// </summary>
+        public static readonly OpenLineageRunState START = new OpenLineageRunState("START");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpenLineageRunState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpenLineageRunState FindValue(string value)
+        {
+            return FindValue<OpenLineageRunState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpenLineageRunState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverallDeploymentStatus.
+    /// </summary>
+    public class OverallDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_DEPLOYMENT for OverallDeploymentStatus
+        /// </summary>
+        public static readonly OverallDeploymentStatus FAILED_DEPLOYMENT = new OverallDeploymentStatus("FAILED_DEPLOYMENT");
+        /// <summary>
+        /// Constant FAILED_VALIDATION for OverallDeploymentStatus
+        /// </summary>
+        public static readonly OverallDeploymentStatus FAILED_VALIDATION = new OverallDeploymentStatus("FAILED_VALIDATION");
+        /// <summary>
+        /// Constant IN_PROGRESS for OverallDeploymentStatus
+        /// </summary>
+        public static readonly OverallDeploymentStatus IN_PROGRESS = new OverallDeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING_DEPLOYMENT for OverallDeploymentStatus
+        /// </summary>
+        public static readonly OverallDeploymentStatus PENDING_DEPLOYMENT = new OverallDeploymentStatus("PENDING_DEPLOYMENT");
+        /// <summary>
+        /// Constant SUCCESSFUL for OverallDeploymentStatus
+        /// </summary>
+        public static readonly OverallDeploymentStatus SUCCESSFUL = new OverallDeploymentStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverallDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverallDeploymentStatus FindValue(string value)
+        {
+            return FindValue<OverallDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverallDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProjectDesignation.
+    /// </summary>
+    public class ProjectDesignation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTRIBUTOR for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation CONTRIBUTOR = new ProjectDesignation("CONTRIBUTOR");
+        /// <summary>
+        /// Constant OWNER for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation OWNER = new ProjectDesignation("OWNER");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_STEWARD for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation PROJECT_CATALOG_STEWARD = new ProjectDesignation("PROJECT_CATALOG_STEWARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProjectDesignation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectDesignation FindValue(string value)
+        {
+            return FindValue<ProjectDesignation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectDesignation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProjectStatus.
     /// </summary>
     public class ProjectStatus : ConstantClass
@@ -1905,6 +3207,76 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type Protocol.
+    /// </summary>
+    public class Protocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATHENA for Protocol
+        /// </summary>
+        public static readonly Protocol ATHENA = new Protocol("ATHENA");
+        /// <summary>
+        /// Constant GLUE_INTERACTIVE_SESSION for Protocol
+        /// </summary>
+        public static readonly Protocol GLUE_INTERACTIVE_SESSION = new Protocol("GLUE_INTERACTIVE_SESSION");
+        /// <summary>
+        /// Constant HTTPS for Protocol
+        /// </summary>
+        public static readonly Protocol HTTPS = new Protocol("HTTPS");
+        /// <summary>
+        /// Constant JDBC for Protocol
+        /// </summary>
+        public static readonly Protocol JDBC = new Protocol("JDBC");
+        /// <summary>
+        /// Constant LIVY for Protocol
+        /// </summary>
+        public static readonly Protocol LIVY = new Protocol("LIVY");
+        /// <summary>
+        /// Constant ODBC for Protocol
+        /// </summary>
+        public static readonly Protocol ODBC = new Protocol("ODBC");
+        /// <summary>
+        /// Constant PRISM for Protocol
+        /// </summary>
+        public static readonly Protocol PRISM = new Protocol("PRISM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Protocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Protocol FindValue(string value)
+        {
+            return FindValue<Protocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RejectRuleBehavior.
     /// </summary>
     public class RejectRuleBehavior : ConstantClass
@@ -1948,6 +3320,194 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RejectRuleBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleAction.
+    /// </summary>
+    public class RuleAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_SUBSCRIPTION_REQUEST for RuleAction
+        /// </summary>
+        public static readonly RuleAction CREATE_SUBSCRIPTION_REQUEST = new RuleAction("CREATE_SUBSCRIPTION_REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleAction FindValue(string value)
+        {
+            return FindValue<RuleAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleScopeSelectionMode.
+    /// </summary>
+    public class RuleScopeSelectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RuleScopeSelectionMode
+        /// </summary>
+        public static readonly RuleScopeSelectionMode ALL = new RuleScopeSelectionMode("ALL");
+        /// <summary>
+        /// Constant SPECIFIC for RuleScopeSelectionMode
+        /// </summary>
+        public static readonly RuleScopeSelectionMode SPECIFIC = new RuleScopeSelectionMode("SPECIFIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleScopeSelectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleScopeSelectionMode FindValue(string value)
+        {
+            return FindValue<RuleScopeSelectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleScopeSelectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleTargetType.
+    /// </summary>
+    public class RuleTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for RuleTargetType
+        /// </summary>
+        public static readonly RuleTargetType DOMAIN_UNIT = new RuleTargetType("DOMAIN_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleTargetType FindValue(string value)
+        {
+            return FindValue<RuleTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleType.
+    /// </summary>
+    public class RuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METADATA_FORM_ENFORCEMENT for RuleType
+        /// </summary>
+        public static readonly RuleType METADATA_FORM_ENFORCEMENT = new RuleType("METADATA_FORM_ENFORCEMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleType FindValue(string value)
+        {
+            return FindValue<RuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleType(string value)
         {
             return FindValue(value);
         }
@@ -2068,6 +3628,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfGrantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortFieldConnection.
+    /// </summary>
+    public class SortFieldConnection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for SortFieldConnection
+        /// </summary>
+        public static readonly SortFieldConnection NAME = new SortFieldConnection("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortFieldConnection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortFieldConnection FindValue(string value)
+        {
+            return FindValue<SortFieldConnection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortFieldConnection(string value)
         {
             return FindValue(value);
         }
@@ -2214,6 +3820,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Status
+        /// </summary>
+        public static readonly Status DISABLED = new Status("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Status
+        /// </summary>
+        public static readonly Status ENABLED = new Status("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }
@@ -2466,6 +4122,60 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetEntityType.
+    /// </summary>
+    public class TargetEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType DOMAIN_UNIT = new TargetEntityType("DOMAIN_UNIT");
+        /// <summary>
+        /// Constant ENVIRONMENT_BLUEPRINT_CONFIGURATION for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType ENVIRONMENT_BLUEPRINT_CONFIGURATION = new TargetEntityType("ENVIRONMENT_BLUEPRINT_CONFIGURATION");
+        /// <summary>
+        /// Constant ENVIRONMENT_PROFILE for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType ENVIRONMENT_PROFILE = new TargetEntityType("ENVIRONMENT_PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetEntityType FindValue(string value)
+        {
+            return FindValue<TargetEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetEntityType(string value)
         {
             return FindValue(value);
         }
@@ -2980,6 +4690,18 @@ namespace Amazon.DataZone
     public class UserDesignation : ConstantClass
     {
 
+        /// <summary>
+        /// Constant PROJECT_CATALOG_CONSUMER for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_CONSUMER = new UserDesignation("PROJECT_CATALOG_CONSUMER");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_STEWARD for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_STEWARD = new UserDesignation("PROJECT_CATALOG_STEWARD");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_VIEWER for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_VIEWER = new UserDesignation("PROJECT_CATALOG_VIEWER");
         /// <summary>
         /// Constant PROJECT_CONTRIBUTOR for UserDesignation
         /// </summary>

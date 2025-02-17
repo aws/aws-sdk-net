@@ -157,31 +157,7 @@ namespace Amazon.SageMaker.Model
         /// file. For example, <c>{"class_labels": "imagenet_labels_1000.txt"}</c>. Labels inside
         /// the txt file should be separated by newlines.
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>EIA</c>: Compilation for the Elastic Inference Accelerator supports the following
-        /// compiler options:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>precision_mode</c>: Specifies the precision of compiled artifacts. Supported values
-        /// are <c>"FP16"</c> and <c>"FP32"</c>. Default is <c>"FP32"</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>signature_def_key</c>: Specifies the signature to use for models in SavedModel
-        /// format. Defaults is TensorFlow's default signature def key.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>output_names</c>: Specifies a list of output tensor names for models in FrozenGraph
-        /// format. Set at most one API field, either: <c>signature_def_key</c> or <c>output_names</c>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example: <c>{"precision_mode": "FP32", "output_names": ["output:0"]}</c> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Min=3, Max=1024)]
         public string CompilerOptions
@@ -200,10 +176,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that
-        /// Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption
-        /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
-        /// default KMS key for Amazon S3 for your role's account. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+        /// Amazon SageMaker AI uses to encrypt your output models with Amazon S3 server-side
+        /// encryption after compilation job. If you don't provide a KMS key ID, Amazon SageMaker
+        /// AI uses the default KMS key for Amazon S3 for your role's account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         ///  
@@ -245,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputLocation. 
         /// <para>
-        /// Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts.
+        /// Identifies the S3 bucket where you want Amazon SageMaker AI to store the model artifacts.
         /// For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>

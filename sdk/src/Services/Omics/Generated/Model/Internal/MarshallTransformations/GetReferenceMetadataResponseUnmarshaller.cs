@@ -58,10 +58,22 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("creationJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreationJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("creationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))

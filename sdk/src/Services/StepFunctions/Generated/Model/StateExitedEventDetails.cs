@@ -34,9 +34,47 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class StateExitedEventDetails
     {
+        private Dictionary<string, string> _assignedVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private AssignedVariablesDetails _assignedVariablesDetails;
         private string _name;
         private string _output;
         private HistoryEventExecutionDataDetails _outputDetails;
+
+        /// <summary>
+        /// Gets and sets the property AssignedVariables. 
+        /// <para>
+        /// Map of variable name and value as a serialized JSON representation.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AssignedVariables
+        {
+            get { return this._assignedVariables; }
+            set { this._assignedVariables = value; }
+        }
+
+        // Check to see if AssignedVariables property is set
+        internal bool IsSetAssignedVariables()
+        {
+            return this._assignedVariables != null && (this._assignedVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssignedVariablesDetails. 
+        /// <para>
+        /// Provides details about input or output in an execution history event.
+        /// </para>
+        /// </summary>
+        public AssignedVariablesDetails AssignedVariablesDetails
+        {
+            get { return this._assignedVariablesDetails; }
+            set { this._assignedVariablesDetails = value; }
+        }
+
+        // Check to see if AssignedVariablesDetails property is set
+        internal bool IsSetAssignedVariablesDetails()
+        {
+            return this._assignedVariablesDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

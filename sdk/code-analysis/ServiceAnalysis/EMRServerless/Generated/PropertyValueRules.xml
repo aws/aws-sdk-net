@@ -211,7 +211,7 @@
     <property>Amazon.EMRServerless.Model.StartJobRunRequest.ExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.StartJobRunRequest.ExecutionTimeoutMinutes</property>
@@ -357,7 +357,7 @@
     <property>Amazon.EMRServerless.Model.CloudWatchLoggingConfiguration.EncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:(\d{12})?:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:([0-9]{12}):key\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.CloudWatchLoggingConfiguration.LogGroupName</property>
@@ -399,7 +399,7 @@
     <property>Amazon.EMRServerless.Model.ImageConfiguration.ImageUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>([a-z0-9]+[a-z0-9-.]*)\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?:\:([a-zA-Z0-9_][a-zA-Z0-9-._]{0,299})|@(sha256:[0-9a-f]{64}))</pattern>
+    <pattern>([0-9]{12})\.dkr\.ecr\.([a-z0-9-]+).([a-z0-9._-]+)\/((?:[a-z0-9]+(?:[-._][a-z0-9]+)*/)*[a-z0-9]+(?:[-._][a-z0-9]+)*)(?::([a-zA-Z0-9_]+[a-zA-Z0-9-._]*)|@(sha256:[0-9a-f]{64}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.ImageConfiguration.ResolvedImageDigest</property>
@@ -409,7 +409,7 @@
     <property>Amazon.EMRServerless.Model.ImageConfigurationInput.ImageUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>([a-z0-9]+[a-z0-9-.]*)\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?:\:([a-zA-Z0-9_][a-zA-Z0-9-._]{0,299})|@(sha256:[0-9a-f]{64}))</pattern>
+    <pattern>([0-9]{12})\.dkr\.ecr\.([a-z0-9-]+).([a-z0-9._-]+)\/((?:[a-z0-9]+(?:[-._][a-z0-9]+)*/)*[a-z0-9]+(?:[-._][a-z0-9]+)*)(?::([a-zA-Z0-9_]+[a-zA-Z0-9-._]*)|@(sha256:[0-9a-f]{64}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.InitialCapacityConfig.WorkerCount</property>
@@ -442,7 +442,7 @@
     <property>Amazon.EMRServerless.Model.JobRun.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRun.ExecutionTimeoutMinutes</property>
@@ -499,7 +499,7 @@
     <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRunAttemptSummary.Id</property>
@@ -551,7 +551,7 @@
     <property>Amazon.EMRServerless.Model.JobRunSummary.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.JobRunSummary.Id</property>
@@ -581,7 +581,7 @@
     <property>Amazon.EMRServerless.Model.ManagedPersistenceMonitoringConfiguration.EncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:(\d{12})?:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:([0-9]{12}):key\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.MaximumAllowedResources.Cpu</property>
@@ -619,7 +619,7 @@
     <property>Amazon.EMRServerless.Model.S3MonitoringConfiguration.EncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:(\d{12})?:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):kms:[a-zA-Z0-9\-]*:([0-9]{12}):key\/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.S3MonitoringConfiguration.LogUri</property>
@@ -630,7 +630,7 @@
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.SparkSubmit.EntryPoint</property>
     <min>1</min>
-    <max>256</max>
+    <max>4096</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

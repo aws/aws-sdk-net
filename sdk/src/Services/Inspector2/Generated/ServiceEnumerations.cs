@@ -2409,6 +2409,14 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ErrorCode DISASSOCIATE_ALL_MEMBERS = new ErrorCode("DISASSOCIATE_ALL_MEMBERS");
         /// <summary>
+        /// Constant EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED = new ErrorCode("EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED = new ErrorCode("EC2_SSM_RESOURCE_DATA_SYNC_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant ENABLE_IN_PROGRESS for ErrorCode
         /// </summary>
         public static readonly ErrorCode ENABLE_IN_PROGRESS = new ErrorCode("ENABLE_IN_PROGRESS");
@@ -3575,6 +3583,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly PackageManager COMPOSER = new PackageManager("COMPOSER");
         /// <summary>
+        /// Constant DOTNET_CORE for PackageManager
+        /// </summary>
+        public static readonly PackageManager DOTNET_CORE = new PackageManager("DOTNET_CORE");
+        /// <summary>
         /// Constant GEMSPEC for PackageManager
         /// </summary>
         public static readonly PackageManager GEMSPEC = new PackageManager("GEMSPEC");
@@ -4253,6 +4265,18 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant DOTNET_6 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_6 = new Runtime("DOTNET_6");
+        /// <summary>
+        /// Constant DOTNET_7 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_7 = new Runtime("DOTNET_7");
+        /// <summary>
+        /// Constant DOTNETCORE_3_1 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNETCORE_3_1 = new Runtime("DOTNETCORE_3_1");
+        /// <summary>
         /// Constant GO_1_X for Runtime
         /// </summary>
         public static readonly Runtime GO_1_X = new Runtime("GO_1_X");
@@ -4297,6 +4321,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly Runtime PYTHON_3_10 = new Runtime("PYTHON_3_10");
         /// <summary>
+        /// Constant PYTHON_3_11 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_11 = new Runtime("PYTHON_3_11");
+        /// <summary>
         /// Constant PYTHON_3_7 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3_7 = new Runtime("PYTHON_3_7");
@@ -4308,6 +4336,14 @@ namespace Amazon.Inspector2
         /// Constant PYTHON_3_9 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3_9 = new Runtime("PYTHON_3_9");
+        /// <summary>
+        /// Constant RUBY_2_7 for Runtime
+        /// </summary>
+        public static readonly Runtime RUBY_2_7 = new Runtime("RUBY_2_7");
+        /// <summary>
+        /// Constant RUBY_3_2 for Runtime
+        /// </summary>
+        public static readonly Runtime RUBY_3_2 = new Runtime("RUBY_3_2");
         /// <summary>
         /// Constant UNSUPPORTED for Runtime
         /// </summary>
@@ -4508,6 +4544,14 @@ namespace Amazon.Inspector2
         /// Constant ACCESS_DENIED for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason ACCESS_DENIED = new ScanStatusReason("ACCESS_DENIED");
+        /// <summary>
+        /// Constant AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED = new ScanStatusReason("AGENTLESS_INSTANCE_COLLECTION_TIME_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED = new ScanStatusReason("AGENTLESS_INSTANCE_STORAGE_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED for ScanStatusReason
         /// </summary>

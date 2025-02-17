@@ -56,11 +56,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property DataResources. 
         /// <para>
-        /// CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and
-        /// Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources
-        /// for an individual event selector, but the total number of data resources cannot exceed
-        /// 250 across all event selectors in a trail. This limit does not apply if you configure
-        /// resource logging for all data events.
+        /// CloudTrail supports data event logging for Amazon S3 objects in standard S3 buckets,
+        /// Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify
+        /// up to 250 resources for an individual event selector, but the total number of data
+        /// resources cannot exceed 250 across all event selectors in a trail. This limit does
+        /// not apply if you configure resource logging for all data events.
         /// </para>
         ///  
         /// <para>
@@ -68,6 +68,14 @@ namespace Amazon.CloudTrail.Model
         /// Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
         /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To log data events for all other resource types including objects stored in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">directory
+        /// buckets</a>, you must use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+        /// You must also use <c>AdvancedEventSelectors</c> if you want to filter on the <c>eventName</c>
+        /// field.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<DataResource> DataResources
         {

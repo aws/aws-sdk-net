@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The key value store entity already exists. You must provide a unique key value store
-    /// entity.
+    /// The entity already exists. You must provide a unique entity.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

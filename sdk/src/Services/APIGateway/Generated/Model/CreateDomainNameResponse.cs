@@ -39,12 +39,16 @@ namespace Amazon.APIGateway.Model
         private DateTime? _certificateUploadDate;
         private string _distributionDomainName;
         private string _distributionHostedZoneId;
+        private string _domainNameArn;
+        private string _domainNameId;
         private DomainNameStatus _domainNameStatus;
         private string _domainNameStatusMessage;
         private EndpointConfiguration _endpointConfiguration;
+        private string _managementPolicy;
         private MutualTlsAuthentication _mutualTlsAuthentication;
         private string _name;
         private string _ownershipVerificationCertificateArn;
+        private string _policy;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private string _regionalDomainName;
@@ -56,7 +60,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CertificateArn. 
         /// <para>
         /// The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized
-        /// endpoint for this domain name. Certificate Manager is the only supported source.
+        /// endpoint or private endpoint for this domain name. Certificate Manager is the only
+        /// supported source.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -74,8 +79,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateName. 
         /// <para>
-        /// The name of the certificate that will be used by edge-optimized endpoint for this
-        /// domain name.
+        /// The name of the certificate that will be used by edge-optimized endpoint or private
+        /// endpoint for this domain name.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -93,8 +98,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateUploadDate. 
         /// <para>
-        /// The timestamp when the certificate that was used by edge-optimized endpoint for this
-        /// domain name was uploaded.
+        /// The timestamp when the certificate that was used by edge-optimized endpoint or private
+        /// endpoint for this domain name was uploaded.
         /// </para>
         /// </summary>
         public DateTime CertificateUploadDate
@@ -149,6 +154,43 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDistributionHostedZoneId()
         {
             return this._distributionHostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameArn. 
+        /// <para>
+        /// The ARN of the domain name. Supported only for private custom domain names. 
+        /// </para>
+        /// </summary>
+        public string DomainNameArn
+        {
+            get { return this._domainNameArn; }
+            set { this._domainNameArn = value; }
+        }
+
+        // Check to see if DomainNameArn property is set
+        internal bool IsSetDomainNameArn()
+        {
+            return this._domainNameArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameId. 
+        /// <para>
+        /// The identifier for the domain name resource. Supported only for private custom domain
+        /// names.
+        /// </para>
+        /// </summary>
+        public string DomainNameId
+        {
+            get { return this._domainNameId; }
+            set { this._domainNameId = value; }
+        }
+
+        // Check to see if DomainNameId property is set
+        internal bool IsSetDomainNameId()
+        {
+            return this._domainNameId != null;
         }
 
         /// <summary>
@@ -211,6 +253,27 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagementPolicy. 
+        /// <para>
+        /// A stringified JSON policy document that applies to the API Gateway Management service
+        /// for this DomainName. This policy document controls access for access association sources
+        /// to create domain name access associations with this DomainName. Supported only for
+        /// private custom domain names.
+        /// </para>
+        /// </summary>
+        public string ManagementPolicy
+        {
+            get { return this._managementPolicy; }
+            set { this._managementPolicy = value; }
+        }
+
+        // Check to see if ManagementPolicy property is set
+        internal bool IsSetManagementPolicy()
+        {
+            return this._managementPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MutualTlsAuthentication. 
         /// <para>
         /// The mutual TLS authentication configuration for a custom domain name. If specified,
@@ -266,6 +329,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetOwnershipVerificationCertificateArn()
         {
             return this._ownershipVerificationCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// A stringified JSON policy document that applies to the <c>execute-api</c> service
+        /// for this DomainName regardless of the caller and Method configuration. Supported only
+        /// for private custom domain names.
+        /// </para>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>

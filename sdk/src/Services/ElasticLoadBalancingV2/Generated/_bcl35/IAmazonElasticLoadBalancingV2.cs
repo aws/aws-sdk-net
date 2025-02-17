@@ -914,7 +914,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the DeleteSharedTrustStoreAssociation service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DeleteAssociationSameAccountException">
-        /// The specified association cannot be within the same account.
+        /// The specified association can't be within the same account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreAssociationNotFoundException">
         /// The specified association does not exist.
@@ -1188,6 +1188,92 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  DescribeAccountLimitsResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCapacityReservation
+
+
+        /// <summary>
+        /// Describes the capacity reservation status for the specified load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservation service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        DescribeCapacityReservationResponse DescribeCapacityReservation(DescribeCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservation operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        IAsyncResult BeginDescribeCapacityReservation(DescribeCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityReservationResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        DescribeCapacityReservationResponse EndDescribeCapacityReservation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeListenerAttributes
+
+
+        /// <summary>
+        /// Describes the attributes for the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        DescribeListenerAttributesResponse DescribeListenerAttributes(DescribeListenerAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeListenerAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        IAsyncResult BeginDescribeListenerAttributes(DescribeListenerAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeListenerAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeListenerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        DescribeListenerAttributesResponse EndDescribeListenerAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2001,6 +2087,76 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  ModifyCapacityReservation
+
+
+        /// <summary>
+        /// Modifies the capacity reservation of the specified load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// When modifying capacity reservation, you must include at least one <c>MinimumLoadBalancerCapacity</c>
+        /// or <c>ResetCapacityReservation</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCapacityReservation service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityDecreaseRequestsLimitExceededException">
+        /// You've exceeded the daily capacity decrease limit for this reservation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityReservationPendingException">
+        /// There is a pending capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityUnitsLimitExceededException">
+        /// You've exceeded the capacity units limit.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InsufficientCapacityException">
+        /// There is insufficient capacity to reserve.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.PriorRequestNotCompleteException">
+        /// This operation is not allowed while a prior request has not been completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        IAsyncResult BeginModifyCapacityReservation(ModifyCapacityReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  ModifyCapacityReservationResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        ModifyCapacityReservationResponse EndModifyCapacityReservation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyListener
 
 
@@ -2113,6 +2269,52 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>Returns a  ModifyListenerResult from ElasticLoadBalancingV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         ModifyListenerResponse EndModifyListener(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyListenerAttributes
+
+
+        /// <summary>
+        /// Modifies the specified attributes of the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ModifyListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        ModifyListenerAttributesResponse ModifyListenerAttributes(ModifyListenerAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyListenerAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        IAsyncResult BeginModifyListenerAttributes(ModifyListenerAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyListenerAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyListenerAttributes.</param>
+        /// 
+        /// <returns>Returns a  ModifyListenerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        ModifyListenerAttributesResponse EndModifyListenerAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2415,7 +2617,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// With a Network Load Balancer, you cannot register instances by instance ID if they
+        /// With a Network Load Balancer, you can't register instances by instance ID if they
         /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
         /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
         /// </para>
@@ -2809,6 +3011,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.AvailabilityZoneNotSupportedException">
         /// The specified Availability Zone is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityReservationPendingException">
+        /// There is a pending capacity reservation.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.

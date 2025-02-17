@@ -48,6 +48,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         {
             ConfirmSignUpResponse response = new ConfirmSignUpResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Session", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Session = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

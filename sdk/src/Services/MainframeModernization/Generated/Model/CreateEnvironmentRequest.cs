@@ -43,6 +43,7 @@ namespace Amazon.MainframeModernization.Model
         private string _instanceType;
         private string _kmsKeyId;
         private string _name;
+        private NetworkType _networkType;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -60,6 +61,7 @@ namespace Amazon.MainframeModernization.Model
         /// handles deleting the clientToken after it expires. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -200,6 +202,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type required for the runtime environment.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

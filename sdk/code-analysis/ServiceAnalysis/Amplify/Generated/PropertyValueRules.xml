@@ -528,7 +528,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartDeploymentRequest.SourceUrl</property>
     <max>3000</max>
-    <pattern>(?s).*</pattern>
+    <pattern>^(s3|https|http)://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.AppId</property>
@@ -1017,6 +1017,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.JobSummary.SourceUrl</property>
+    <max>3000</max>
+    <pattern>^(s3|https|http)://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.ProductionBranch.BranchName</property>
     <min>1</min>
     <max>255</max>
@@ -1071,6 +1076,16 @@
     <property>Amazon.Amplify.Model.SubDomainSetting.Prefix</property>
     <max>255</max>
     <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.WafConfiguration.StatusReason</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.WafConfiguration.WebAclArn</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^arn:aws:wafv2:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.BranchName</property>

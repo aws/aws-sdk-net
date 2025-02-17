@@ -48,6 +48,34 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetNetwork())
+            {
+                context.Writer.WritePropertyName("network");
+                context.Writer.Write(requestObject.Network);
+            }
+
+            if(requestObject.IsSetNetworkRoutes())
+            {
+                context.Writer.WritePropertyName("networkRoutes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNetworkRoutesListValue in requestObject.NetworkRoutes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputRequestDestinationRouteMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNetworkRoutesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStaticIpAddress())
+            {
+                context.Writer.WritePropertyName("staticIpAddress");
+                context.Writer.Write(requestObject.StaticIpAddress);
+            }
+
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("streamName");

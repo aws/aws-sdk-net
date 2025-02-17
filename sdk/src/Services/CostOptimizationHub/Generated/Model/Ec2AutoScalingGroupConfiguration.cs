@@ -30,16 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// The EC2 auto scaling group configuration used for recommendations.
+    /// The EC2 Auto Scaling group configuration used for recommendations.
     /// </summary>
     public partial class Ec2AutoScalingGroupConfiguration
     {
+        private AllocationStrategy _allocationStrategy;
         private InstanceConfiguration _instance;
+        private List<MixedInstanceConfiguration> _mixedInstances = AWSConfigs.InitializeCollections ? new List<MixedInstanceConfiguration>() : null;
+        private Ec2AutoScalingGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        /// The strategy used for allocating instances, based on a predefined priority order or
+        /// based on the lowest available price.
+        /// </para>
+        /// </summary>
+        public AllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Instance. 
         /// <para>
-        /// Details about the instance.
+        /// Details about the instance for the EC2 Auto Scaling group with a single instance type.
         /// </para>
         /// </summary>
         public InstanceConfiguration Instance
@@ -52,6 +74,43 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetInstance()
         {
             return this._instance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MixedInstances. 
+        /// <para>
+        /// A list of instance types for an EC2 Auto Scaling group with mixed instance types.
+        /// </para>
+        /// </summary>
+        public List<MixedInstanceConfiguration> MixedInstances
+        {
+            get { return this._mixedInstances; }
+            set { this._mixedInstances = value; }
+        }
+
+        // Check to see if MixedInstances property is set
+        internal bool IsSetMixedInstances()
+        {
+            return this._mixedInstances != null && (this._mixedInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of EC2 Auto Scaling group, showing whether it consists of a single instance
+        /// type or mixed instance types.
+        /// </para>
+        /// </summary>
+        public Ec2AutoScalingGroupType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

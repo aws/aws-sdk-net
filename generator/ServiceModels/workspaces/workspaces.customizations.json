@@ -6,7 +6,7 @@
                     "VALUE": { "emitPropertyName": "VALUE_TYPE" }
                 }
             ]
-        },
+        }
 	},
 	"simpleMethods" : {
         "operations" : {

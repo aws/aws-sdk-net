@@ -46,8 +46,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of seconds for a proxy to wait for a connection to become available in
         /// the connection pool. This setting only applies when the proxy has opened its maximum
-        /// number of connections and all connections are busy with client sessions. For an unlimited
-        /// wait time, specify <c>0</c>.
+        /// number of connections and all connections are busy with client sessions.
         /// </para>
         ///  
         /// <para>

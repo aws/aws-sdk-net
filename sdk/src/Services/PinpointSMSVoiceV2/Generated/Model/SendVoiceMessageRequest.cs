@@ -43,6 +43,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _maxPricePerMinute;
         private string _messageBody;
         private VoiceMessageBodyTextType _messageBodyTextType;
+        private bool? _messageFeedbackEnabled;
         private string _originationIdentity;
         private string _protectConfigurationId;
         private int? _timeToLive;
@@ -193,11 +194,36 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MessageFeedbackEnabled. 
+        /// <para>
+        /// Set to true to enable message feedback for the message. When a user receives the message
+        /// you need to update the message status using <a>PutMessageFeedback</a>.
+        /// </para>
+        /// </summary>
+        public bool MessageFeedbackEnabled
+        {
+            get { return this._messageFeedbackEnabled.GetValueOrDefault(); }
+            set { this._messageFeedbackEnabled = value; }
+        }
+
+        // Check to see if MessageFeedbackEnabled property is set
+        internal bool IsSetMessageFeedbackEnabled()
+        {
+            return this._messageFeedbackEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginationIdentity. 
         /// <para>
         /// The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId,
         /// PhoneNumberArn, PoolId, or PoolArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OriginationIdentity

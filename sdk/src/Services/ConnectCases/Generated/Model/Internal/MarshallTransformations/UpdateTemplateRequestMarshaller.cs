@@ -112,6 +112,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRules())
+                {
+                    context.Writer.WritePropertyName("rules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TemplateRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");

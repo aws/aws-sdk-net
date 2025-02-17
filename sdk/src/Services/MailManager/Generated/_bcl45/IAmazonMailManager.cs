@@ -32,17 +32,18 @@ namespace Amazon.MailManager
     /// <summary>
     /// <para>Interface for accessing MailManager</para>
     ///
-    /// AWS SES Mail Manager API 
+    /// Amazon SES Mail Manager API 
     /// <para>
-    ///  <a href="http://aws.amazon.com/ses">AWS SES Mail Manager API</a> contains operations
-    /// and data types that comprise the Mail Manager feature of Amazon Simple Email Service.
+    /// The Amazon SES Mail Manager API contains operations and data types that comprise the
+    /// Mail Manager feature of <a href="http://aws.amazon.com/ses">Amazon Simple Email Service
+    /// (SES)</a>.
     /// 
     ///  
     /// <para>
     /// Mail Manager is a set of Amazon SES email gateway features designed to help you strengthen
     /// your organization's email infrastructure, simplify email workflow management, and
     /// streamline email compliance control. To learn more, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/eb.html">Mail
-    /// Manager chapter</a> in the Amazon SES Developer Guide.
+    /// Manager chapter</a> in the <i>Amazon SES Developer Guide</i>.
     /// </para>
     /// 
     /// </para>
@@ -159,6 +160,120 @@ namespace Amazon.MailManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddonSubscription">REST API Reference for CreateAddonSubscription Operation</seealso>
         Task<CreateAddonSubscriptionResponse> CreateAddonSubscriptionAsync(CreateAddonSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAddressList
+
+
+        /// <summary>
+        /// Creates a new address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressList service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        CreateAddressListResponse CreateAddressList(CreateAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        Task<CreateAddressListResponse> CreateAddressListAsync(CreateAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAddressListImportJob
+
+
+        /// <summary>
+        /// Creates an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        CreateAddressListImportJobResponse CreateAddressListImportJob(CreateAddressListImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        Task<CreateAddressListImportJobResponse> CreateAddressListImportJobAsync(CreateAddressListImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -488,6 +603,54 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeleteAddressList
+
+
+        /// <summary>
+        /// Deletes an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        DeleteAddressListResponse DeleteAddressList(DeleteAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        Task<DeleteAddressListResponse> DeleteAddressListAsync(DeleteAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteArchive
 
 
@@ -728,6 +891,60 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeregisterMemberFromAddressList
+
+
+        /// <summary>
+        /// Removes a member from an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMemberFromAddressList service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterMemberFromAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        DeregisterMemberFromAddressListResponse DeregisterMemberFromAddressList(DeregisterMemberFromAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Removes a member from an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMemberFromAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterMemberFromAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        Task<DeregisterMemberFromAddressListResponse> DeregisterMemberFromAddressListAsync(DeregisterMemberFromAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAddonInstance
 
 
@@ -805,6 +1022,114 @@ namespace Amazon.MailManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddonSubscription">REST API Reference for GetAddonSubscription Operation</seealso>
         Task<GetAddonSubscriptionResponse> GetAddonSubscriptionAsync(GetAddonSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAddressList
+
+
+        /// <summary>
+        /// Fetch attributes of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressList service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        GetAddressListResponse GetAddressList(GetAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Fetch attributes of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        Task<GetAddressListResponse> GetAddressListAsync(GetAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAddressListImportJob
+
+
+        /// <summary>
+        /// Fetch attributes of an import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        GetAddressListImportJobResponse GetAddressListImportJob(GetAddressListImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Fetch attributes of an import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        Task<GetAddressListImportJobResponse> GetAddressListImportJobAsync(GetAddressListImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1152,6 +1477,60 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  GetMemberOfAddressList
+
+
+        /// <summary>
+        /// Fetch attributes of a member in an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberOfAddressList service method.</param>
+        /// 
+        /// <returns>The response from the GetMemberOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        GetMemberOfAddressListResponse GetMemberOfAddressList(GetMemberOfAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Fetch attributes of a member in an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberOfAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMemberOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        Task<GetMemberOfAddressListResponse> GetMemberOfAddressListAsync(GetMemberOfAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRelay
 
 
@@ -1337,6 +1716,108 @@ namespace Amazon.MailManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddonSubscriptions">REST API Reference for ListAddonSubscriptions Operation</seealso>
         Task<ListAddonSubscriptionsResponse> ListAddonSubscriptionsAsync(ListAddonSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAddressListImportJobs
+
+
+        /// <summary>
+        /// Lists jobs for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressListImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAddressListImportJobs service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        ListAddressListImportJobsResponse ListAddressListImportJobs(ListAddressListImportJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists jobs for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressListImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAddressListImportJobs service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        Task<ListAddressListImportJobsResponse> ListAddressListImportJobsAsync(ListAddressListImportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAddressLists
+
+
+        /// <summary>
+        /// Lists address lists for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAddressLists service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        ListAddressListsResponse ListAddressLists(ListAddressListsRequest request);
+
+
+
+        /// <summary>
+        /// Lists address lists for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAddressLists service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        Task<ListAddressListsResponse> ListAddressListsAsync(ListAddressListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1530,6 +2011,60 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  ListMembersOfAddressList
+
+
+        /// <summary>
+        /// Lists members of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMembersOfAddressList service method.</param>
+        /// 
+        /// <returns>The response from the ListMembersOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        ListMembersOfAddressListResponse ListMembersOfAddressList(ListMembersOfAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Lists members of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMembersOfAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMembersOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        Task<ListMembersOfAddressListResponse> ListMembersOfAddressListAsync(ListMembersOfAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListRelays
 
 
@@ -1672,6 +2207,132 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  RegisterMemberToAddressList
+
+
+        /// <summary>
+        /// Adds a member to an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMemberToAddressList service method.</param>
+        /// 
+        /// <returns>The response from the RegisterMemberToAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        RegisterMemberToAddressListResponse RegisterMemberToAddressList(RegisterMemberToAddressListRequest request);
+
+
+
+        /// <summary>
+        /// Adds a member to an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMemberToAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterMemberToAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        Task<RegisterMemberToAddressListResponse> RegisterMemberToAddressListAsync(RegisterMemberToAddressListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartAddressListImportJob
+
+
+        /// <summary>
+        /// Starts an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        StartAddressListImportJobResponse StartAddressListImportJob(StartAddressListImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        Task<StartAddressListImportJobResponse> StartAddressListImportJobAsync(StartAddressListImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartArchiveExport
 
 
@@ -1795,6 +2456,66 @@ namespace Amazon.MailManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartArchiveSearch">REST API Reference for StartArchiveSearch Operation</seealso>
         Task<StartArchiveSearchResponse> StartArchiveSearchAsync(StartArchiveSearchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopAddressListImportJob
+
+
+        /// <summary>
+        /// Stops an ongoing import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAddressListImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        StopAddressListImportJobResponse StopAddressListImportJob(StopAddressListImportJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops an ongoing import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        Task<StopAddressListImportJobResponse> StopAddressListImportJobAsync(StopAddressListImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2154,7 +2875,7 @@ namespace Amazon.MailManager
 
 
         /// <summary>
-        /// &gt;Update attributes of an already provisioned rule set.
+        /// Update attributes of an already provisioned rule set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuleSet service method.</param>
         /// 
@@ -2174,7 +2895,7 @@ namespace Amazon.MailManager
 
 
         /// <summary>
-        /// &gt;Update attributes of an already provisioned rule set.
+        /// Update attributes of an already provisioned rule set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuleSet service method.</param>
         /// <param name="cancellationToken">

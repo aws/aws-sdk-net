@@ -49,7 +49,7 @@ namespace Amazon.SSO.Internal
                 AccountId = accountId,
                 RoleName = roleName,
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             var response = client.GetRoleCredentials(request);
 
@@ -94,7 +94,7 @@ namespace Amazon.SSO.Internal
                 AccountId = accountId,
                 RoleName = roleName,
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             var response = await client.GetRoleCredentialsAsync(request).ConfigureAwait(false);
 

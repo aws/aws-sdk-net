@@ -90,6 +90,13 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </important> </li> <li> 
     /// <para>
+    /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+    /// than 5000 accounts, and you can only use the standard migration process for organizations
+    /// with less than 5000 accounts. Use the assisted migration process to enable all features
+    /// mode, or create a support case for assistance if you are unable to use assisted migration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
     /// a suspended account as a delegated administrator.
     /// </para>
@@ -253,9 +260,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
-    /// period before you can remove it from the organization. If you get an error that indicates
-    /// that a wait period is required, try again in a few days.
+    /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+    /// until at least seven days after the account was created. Invited accounts aren't subject
+    /// to this waiting period.
     /// </para>
     ///  </li> </ul>
     /// </summary>

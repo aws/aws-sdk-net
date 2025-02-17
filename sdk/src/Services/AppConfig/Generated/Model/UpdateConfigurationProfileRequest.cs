@@ -130,7 +130,7 @@ namespace Amazon.AppConfig.Model
         /// The name of the configuration profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

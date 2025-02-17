@@ -22,7 +22,7 @@
     <property>Amazon.Budgets.Model.CreateBudgetActionRequest.ExecutionRoleArn</property>
     <min>32</min>
     <max>618</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso|-iso-[a-z]{1})?:iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateBudgetActionResponse.AccountId</property>
@@ -473,7 +473,7 @@
     <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.ExecutionRoleArn</property>
     <min>32</min>
     <max>618</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso|-iso-[a-z]{1})?:iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateBudgetActionResponse.AccountId</property>
@@ -527,7 +527,7 @@
     <property>Amazon.Budgets.Model.Action.ExecutionRoleArn</property>
     <min>32</min>
     <max>618</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso|-iso-[a-z]{1})?:iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.ActionHistoryDetails.Message</property>
@@ -572,7 +572,7 @@
     <property>Amazon.Budgets.Model.IamActionDefinition.PolicyArn</property>
     <min>25</min>
     <max>684</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::(\d{12}|aws):policy(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+    <pattern>^arn:aws(-cn|-us-gov|-iso|-iso-[a-z]{1})?:iam::(\d{12}|aws):policy(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>

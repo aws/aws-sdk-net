@@ -87,8 +87,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Unknown. 
         /// <para>
         /// The total number of buckets that Amazon Macie wasn't able to evaluate server-side
-        /// encryption requirements for. Macie can't determine whether the bucket policies for
-        /// these buckets require server-side encryption of new objects.
+        /// encryption requirements for. For example, the buckets' permissions settings or a quota
+        /// prevented Macie from retrieving the requisite data. Macie can't determine whether
+        /// bucket policies for the buckets require server-side encryption of new objects.
         /// </para>
         /// </summary>
         public long Unknown

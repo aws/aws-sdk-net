@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _replicaStatusDescription;
         private string _replicaStatusPercentProgress;
         private TableClassSummary _replicaTableClassSummary;
+        private TableWarmThroughputDescription _warmThroughput;
 
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
@@ -261,6 +262,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaTableClassSummary()
         {
             return this._replicaTableClassSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Represents the warm throughput value for this replica.
+        /// </para>
+        /// </summary>
+        public TableWarmThroughputDescription WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

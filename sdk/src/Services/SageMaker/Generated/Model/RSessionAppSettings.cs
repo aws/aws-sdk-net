@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CustomImages. 
         /// <para>
-        /// A list of custom SageMaker images that are configured to run as a RSession app.
+        /// A list of custom SageMaker AI images that are configured to run as a RSession app.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

@@ -360,7 +360,16 @@ namespace Amazon.IdentityManagement
         /// The caller of this operation must be granted the <c>PassRole</c> permission on the
         /// IAM role by a permissions policy.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// When using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#available-keys-for-iam">iam:AssociatedResourceArn</a>
+        /// condition in a policy to restrict the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+        /// IAM action, special considerations apply if the policy is intended to define access
+        /// for the <c>AddRoleToInstanceProfile</c> action. In this case, you cannot specify a
+        /// Region or instance ID in the EC2 instance ARN. The ARN value must be <c>arn:aws:ec2:*:CallerAccountId:instance/*</c>.
+        /// Using any other ARN value may lead to unexpected evaluation results.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
         /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
@@ -1157,12 +1166,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted root certificate authorities (CAs) instead of using
-        /// a certificate thumbprint to verify your IdP server certificate. In these cases, your
-        /// legacy thumbprint remains in your configuration, but is no longer used for validation.
-        /// These OIDC IdPs include Auth0, GitHub, GitLab, Google, and those that use an Amazon
-        /// S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Amazon Web Services secures communication with OIDC identity providers (IdPs) using
+        /// our library of trusted root certificate authorities (CAs) to verify the JSON Web Key
+        /// Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that
+        /// is not signed by one of these trusted CAs, only then we secure communication using
+        /// the thumbprints set in the IdP's configuration.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -3422,6 +3430,113 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DisableOrganizationsRootCredentialsManagement
+
+        internal virtual DisableOrganizationsRootCredentialsManagementResponse DisableOrganizationsRootCredentialsManagement(DisableOrganizationsRootCredentialsManagementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationsRootCredentialsManagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationsRootCredentialsManagementResponseUnmarshaller.Instance;
+
+            return Invoke<DisableOrganizationsRootCredentialsManagementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables the management of privileged root user credentials across member accounts
+        /// in your organization. When you disable this feature, the management account and the
+        /// delegated administrator for IAM can no longer manage root user credentials for member
+        /// accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootCredentialsManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootCredentialsManagement">REST API Reference for DisableOrganizationsRootCredentialsManagement Operation</seealso>
+        public virtual Task<DisableOrganizationsRootCredentialsManagementResponse> DisableOrganizationsRootCredentialsManagementAsync(DisableOrganizationsRootCredentialsManagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationsRootCredentialsManagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationsRootCredentialsManagementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableOrganizationsRootCredentialsManagementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisableOrganizationsRootSessions
+
+        internal virtual DisableOrganizationsRootSessionsResponse DisableOrganizationsRootSessions(DisableOrganizationsRootSessionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationsRootSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationsRootSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<DisableOrganizationsRootSessionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables root user sessions for privileged tasks across member accounts in your organization.
+        /// When you disable this feature, the management account and the delegated administrator
+        /// for IAM can no longer perform privileged tasks on member accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootSessions">REST API Reference for DisableOrganizationsRootSessions Operation</seealso>
+        public virtual Task<DisableOrganizationsRootSessionsResponse> DisableOrganizationsRootSessionsAsync(DisableOrganizationsRootSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableOrganizationsRootSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableOrganizationsRootSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableOrganizationsRootSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableMFADevice
 
         internal virtual EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
@@ -3482,6 +3597,156 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableMFADeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableOrganizationsRootCredentialsManagement
+
+        internal virtual EnableOrganizationsRootCredentialsManagementResponse EnableOrganizationsRootCredentialsManagement(EnableOrganizationsRootCredentialsManagementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationsRootCredentialsManagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationsRootCredentialsManagementResponseUnmarshaller.Instance;
+
+            return Invoke<EnableOrganizationsRootCredentialsManagementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables the management of privileged root user credentials across member accounts
+        /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>, the management account and the delegated administrator for IAM can
+        /// manage root user credentials for member accounts in your organization.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable centralized root access, you must have an account configured with
+        /// the following settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-iam.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootCredentialsManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootCredentialsManagement">REST API Reference for EnableOrganizationsRootCredentialsManagement Operation</seealso>
+        public virtual Task<EnableOrganizationsRootCredentialsManagementResponse> EnableOrganizationsRootCredentialsManagementAsync(EnableOrganizationsRootCredentialsManagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationsRootCredentialsManagementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationsRootCredentialsManagementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableOrganizationsRootCredentialsManagementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableOrganizationsRootSessions
+
+        internal virtual EnableOrganizationsRootSessionsResponse EnableOrganizationsRootSessions(EnableOrganizationsRootSessionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationsRootSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationsRootSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<EnableOrganizationsRootSessionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows the management account or delegated administrator to perform privileged tasks
+        /// on member accounts in your organization. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a> in the <i>Identity and Access Management
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable this feature, you must have an account configured with the following
+        /// settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootSessions">REST API Reference for EnableOrganizationsRootSessions Operation</seealso>
+        public virtual Task<EnableOrganizationsRootSessionsResponse> EnableOrganizationsRootSessionsAsync(EnableOrganizationsRootSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableOrganizationsRootSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableOrganizationsRootSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableOrganizationsRootSessionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5691,9 +5956,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5714,9 +5979,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -6556,6 +6821,59 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = ListOpenIDConnectProviderTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOpenIDConnectProviderTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOrganizationsFeatures
+
+        internal virtual ListOrganizationsFeaturesResponse ListOrganizationsFeatures(ListOrganizationsFeaturesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationsFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationsFeaturesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationsFeaturesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the centralized root access features enabled for your organization. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationsFeatures service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationsFeatures service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOrganizationsFeatures">REST API Reference for ListOrganizationsFeatures Operation</seealso>
+        public virtual Task<ListOrganizationsFeaturesResponse> ListOrganizationsFeaturesAsync(ListOrganizationsFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationsFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationsFeaturesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrganizationsFeaturesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10338,12 +10656,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted root certificate authorities (CAs) instead of using
-        /// a certificate thumbprint to verify your IdP server certificate. In these cases, your
-        /// legacy thumbprint remains in your configuration, but is no longer used for validation.
-        /// These OIDC IdPs include Auth0, GitHub, GitLab, Google, and those that use an Amazon
-        /// S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Amazon Web Services secures communication with OIDC identity providers (IdPs) using
+        /// our library of trusted root certificate authorities (CAs) to verify the JSON Web Key
+        /// Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that
+        /// is not signed by one of these trusted CAs, only then we secure communication using
+        /// the thumbprints set in the IdP's configuration.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -10498,14 +10815,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the metadata document for an existing SAML provider resource object.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4</a>.
-        /// </para>
-        ///  </note>
+        /// Updates the metadata document, SAML encryption settings, and private keys for an existing
+        /// SAML provider. To rotate private keys, add your new private key and then remove the
+        /// old key in a separate request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// <param name="cancellationToken">

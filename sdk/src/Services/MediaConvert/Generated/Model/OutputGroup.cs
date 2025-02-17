@@ -78,6 +78,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Name. Name of the output group
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string Name
         {
             get { return this._name; }

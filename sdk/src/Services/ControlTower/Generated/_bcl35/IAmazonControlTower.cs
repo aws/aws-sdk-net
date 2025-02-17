@@ -1682,6 +1682,68 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  ResetEnabledControl
+
+
+        /// <summary>
+        /// Resets an enabled control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledControl service method.</param>
+        /// 
+        /// <returns>The response from the ResetEnabledControl service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">REST API Reference for ResetEnabledControl Operation</seealso>
+        ResetEnabledControlResponse ResetEnabledControl(ResetEnabledControlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEnabledControl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledControl operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetEnabledControl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">REST API Reference for ResetEnabledControl Operation</seealso>
+        IAsyncResult BeginResetEnabledControl(ResetEnabledControlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetEnabledControl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetEnabledControl.</param>
+        /// 
+        /// <returns>Returns a  ResetEnabledControlResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">REST API Reference for ResetEnabledControl Operation</seealso>
+        ResetEnabledControlResponse EndResetEnabledControl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ResetLandingZone
 
 
@@ -1927,10 +1989,11 @@ namespace Amazon.ControlTower
         /// </para>
         ///  
         /// <para>
-        /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
-        /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
-        /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
-        /// For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// If the <c>DriftSummary</c> status for the control shows as <c>DRIFTED</c>, you cannot
+        /// call this API. Instead, you can update the control by calling the <c>ResetEnabledControl</c>
+        /// API. Alternatively, you can call <c>DisableControl</c> and then call <c>EnableControl</c>
+        /// again. Also, you can run an extending governance operation to repair drift. For usage
+        /// examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
         /// <i>Controls Reference Guide</i> </a>. 
         /// </para>
         /// </summary>

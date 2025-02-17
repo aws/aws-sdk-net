@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBShardGroupIdentifier. 
         /// <para>
-        /// Teh name of the DB shard group to delete.
+        /// The name of the DB shard group to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

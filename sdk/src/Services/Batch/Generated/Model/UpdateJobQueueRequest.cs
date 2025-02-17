@@ -96,7 +96,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The set of actions that Batch perform on jobs that remain at the head of the job queue
         /// in the specified state longer than specified times. Batch will perform each action
-        /// after <c>maxTimeSeconds</c> has passed.
+        /// after <c>maxTimeSeconds</c> has passed. (<b>Note</b>: The minimum value for maxTimeSeconds
+        /// is 600 (10 minutes) and its maximum value is 86,400 (24 hours).)
         /// </para>
         /// </summary>
         public List<JobStateTimeLimitAction> JobStateTimeLimitActions

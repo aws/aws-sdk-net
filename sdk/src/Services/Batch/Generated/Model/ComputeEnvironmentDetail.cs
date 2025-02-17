@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private string _computeEnvironmentName;
         private ComputeResource _computeResources;
         private OrchestrationType _containerOrchestrationType;
+        private string _context;
         private string _ecsClusterArn;
         private EksConfiguration _eksConfiguration;
         private string _serviceRole;
@@ -126,6 +127,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainerOrchestrationType()
         {
             return this._containerOrchestrationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>

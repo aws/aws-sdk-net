@@ -90,6 +90,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryInsightsResponse", targetDepth))
+                {
+                    var unmarshaller = ScheduledQueryInsightsResponseUnmarshaller.Instance;
+                    unmarshalledObject.QueryInsightsResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RunStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

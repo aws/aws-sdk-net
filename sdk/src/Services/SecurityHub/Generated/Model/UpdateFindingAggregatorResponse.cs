@@ -42,7 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingAggregationRegion. 
         /// <para>
-        /// The aggregation Region.
+        /// The home Region. Findings generated in linked Regions are replicated and sent to the
+        /// home Region.
         /// </para>
         /// </summary>
         public string FindingAggregationRegion

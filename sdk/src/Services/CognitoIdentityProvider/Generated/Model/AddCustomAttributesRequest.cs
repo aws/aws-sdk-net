@@ -31,8 +31,17 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AddCustomAttributes operation.
-    /// Adds additional user attributes to the user pool schema.
+    /// Adds additional user attributes to the user pool schema. Custom attributes can be
+    /// mutable or immutable and have a <c>custom:</c> or <c>dev:</c> prefix. For more information,
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-custom-attributes">Custom
+    /// attributes</a>.
     /// 
+    ///  
+    /// <para>
+    /// You can also create custom attributes in the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-Schema">Schema
+    /// parameter</a> of <c>CreateUserPool</c> and <c>UpdateUserPool</c>. You can't delete
+    /// custom attributes after you create them.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -63,8 +72,40 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomAttributes. 
         /// <para>
-        /// An array of custom attributes, such as Mutable and Name.
+        /// An array of custom attribute names and other properties. Sets the following characteristics:
         /// </para>
+        ///  <dl> <dt>AttributeDataType</dt> <dd> 
+        /// <para>
+        /// The expected data type. Can be a string, a number, a date and time, or a boolean.
+        /// </para>
+        ///  </dd> <dt>Mutable</dt> <dd> 
+        /// <para>
+        /// If true, you can grant app clients write access to the attribute value. If false,
+        /// the attribute value can only be set up on sign-up or administrator creation of users.
+        /// </para>
+        ///  </dd> <dt>Name</dt> <dd> 
+        /// <para>
+        /// The attribute name. For an attribute like <c>custom:myAttribute</c>, enter <c>myAttribute</c>
+        /// for this field.
+        /// </para>
+        ///  </dd> <dt>Required</dt> <dd> 
+        /// <para>
+        /// When true, users who sign up or are created must set a value for the attribute.
+        /// </para>
+        ///  </dd> <dt>NumberAttributeConstraints</dt> <dd> 
+        /// <para>
+        /// The minimum and maximum length of accepted values for a <c>Number</c>-type attribute.
+        /// </para>
+        ///  </dd> <dt>StringAttributeConstraints</dt> <dd> 
+        /// <para>
+        /// The minimum and maximum length of accepted values for a <c>String</c>-type attribute.
+        /// </para>
+        ///  </dd> <dt>DeveloperOnlyAttribute</dt> <dd> 
+        /// <para>
+        /// This legacy option creates an attribute with a <c>dev:</c> prefix. You can only set
+        /// the value of a developer-only attribute with administrative IAM credentials.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]
         public List<SchemaAttributeType> CustomAttributes
@@ -82,7 +123,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to add custom attributes.
+        /// The ID of the user pool where you want to add custom attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

@@ -60,6 +60,8 @@ namespace Amazon.Amplify.Model
         private RepositoryCloneMethod _repositoryCloneMethod;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updateTime;
+        private WafConfiguration _wafConfiguration;
+        private DateTime? _webhookCreateTime;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -197,7 +199,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// Creates a date and time for the Amplify app. 
+        /// A timestamp of when Amplify created the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -435,6 +437,11 @@ namespace Amazon.Amplify.Model
         /// For an app requiring Amplify Hosting's original SSR support only, set the platform
         /// type to <c>WEB_DYNAMIC</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are deploying an SSG only app with Next.js 14 or later, you must use the platform
+        /// type <c>WEB_COMPUTE</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Platform Platform
@@ -533,7 +540,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// Updates the date and time for the Amplify app. 
+        /// A timestamp of when Amplify updated the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -547,6 +554,43 @@ namespace Amazon.Amplify.Model
         internal bool IsSetUpdateTime()
         {
             return this._updateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WafConfiguration. 
+        /// <para>
+        /// Describes the Firewall configuration for the Amplify app. Firewall support enables
+        /// you to protect your hosted applications with a direct integration with WAF.
+        /// </para>
+        /// </summary>
+        public WafConfiguration WafConfiguration
+        {
+            get { return this._wafConfiguration; }
+            set { this._wafConfiguration = value; }
+        }
+
+        // Check to see if WafConfiguration property is set
+        internal bool IsSetWafConfiguration()
+        {
+            return this._wafConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebhookCreateTime. 
+        /// <para>
+        /// A timestamp of when Amplify created the webhook in your Git repository.
+        /// </para>
+        /// </summary>
+        public DateTime WebhookCreateTime
+        {
+            get { return this._webhookCreateTime.GetValueOrDefault(); }
+            set { this._webhookCreateTime = value; }
+        }
+
+        // Check to see if WebhookCreateTime property is set
+        internal bool IsSetWebhookCreateTime()
+        {
+            return this._webhookCreateTime.HasValue; 
         }
 
     }

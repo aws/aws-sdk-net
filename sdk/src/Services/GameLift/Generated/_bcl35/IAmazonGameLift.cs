@@ -178,7 +178,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -294,7 +294,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.OutOfCapacityException">
@@ -541,52 +541,230 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  CreateContainerFleet
+
+
+        /// <summary>
+        /// Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to
+        /// host your containerized game servers. Use this operation to define how to deploy a
+        /// container architecture onto each fleet instance and configure fleet settings. You
+        /// can create a container fleet in any Amazon Web Services Regions that Amazon GameLift
+        /// supports for multi-location fleets. A container fleet can be deployed to a single
+        /// location or multiple locations. Container fleets are deployed with Amazon Linux 2023
+        /// as the instance operating system.
+        /// 
+        ///  
+        /// <para>
+        /// Define the fleet's container architecture using container group definitions. Each
+        /// fleet can have one of the following container group types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The game server container group runs your game server build and dependent software.
+        /// Amazon GameLift deploys one or more replicas of this container group to each fleet
+        /// instance. The number of replicas depends on the computing capabilities of the fleet
+        /// instance in use. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An optional per-instance container group might be used to run other software that
+        /// only needs to run once per instance, such as background services, logging, or test
+        /// processes. One per-instance container group is deployed to each fleet instance. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each container group can include the definition for one or more containers. A container
+        /// definition specifies a container image that is stored in an Amazon Elastic Container
+        /// Registry (Amazon ECR) public or private repository.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation to make the following types of requests. Most fleet settings have
+        /// default values, so you can create a working fleet with a minimal configuration and
+        /// default values, which you can customize later.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create a fleet with no container groups. You can configure a container fleet and then
+        /// add container group definitions later. In this scenario, no fleet instances are deployed,
+        /// and the fleet can't host game sessions until you add a game server container group
+        /// definition. Provide the following required parameter values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FleetRoleArn</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a fleet with a game server container group. Provide the following required
+        /// parameter values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FleetRoleArn</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GameServerContainerGroupDefinitionName</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a fleet with a game server container group and a per-instance container group.
+        /// Provide the following required parameter values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FleetRoleArn</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GameServerContainerGroupDefinitionName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PerInstanceContainerGroupDefinitionName</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation creates a new container fleet resource, places it in
+        /// <c>PENDING</c> status, and initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
+        /// creation workflow</a>. For fleets with container groups, this workflow starts a fleet
+        /// deployment and transitions the status to <c>ACTIVE</c>. Fleets without a container
+        /// group are placed in <c>CREATED</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update most of the properties of a fleet, including container group definitions,
+        /// and deploy the update across all fleet instances. Use a fleet update to deploy a new
+        /// game server version update across the container fleet. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainerFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateContainerFleet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">REST API Reference for CreateContainerFleet Operation</seealso>
+        CreateContainerFleetResponse CreateContainerFleet(CreateContainerFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainerFleet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContainerFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">REST API Reference for CreateContainerFleet Operation</seealso>
+        IAsyncResult BeginCreateContainerFleet(CreateContainerFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContainerFleet.</param>
+        /// 
+        /// <returns>Returns a  CreateContainerFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">REST API Reference for CreateContainerFleet Operation</seealso>
+        CreateContainerFleetResponse EndCreateContainerFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateContainerGroupDefinition
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-        /// in public preview. </b> 
+        /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
+        /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
+        /// container group is similar to a container task or pod. Use container group definitions
+        /// when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// 
         /// 
         ///  
         /// <para>
-        /// Creates a <c>ContainerGroupDefinition</c> resource that describes a set of containers
-        /// for hosting your game server with Amazon GameLift managed EC2 hosting. An Amazon GameLift
-        /// container group is similar to a container "task" and "pod". Each container group can
-        /// have one or more containers. 
+        /// A container group definition determines how Amazon GameLift deploys your containers
+        /// to each instance in a container fleet. You can maintain multiple versions of a container
+        /// group definition.
         /// </para>
         ///  
         /// <para>
-        /// Use container group definitions when you create a container fleet. Container group
-        /// definitions determine how Amazon GameLift deploys your containers to each instance
-        /// in a container fleet. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create two types of container groups, based on scheduling strategy:
+        /// There are two types of container groups:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A <b>replica container group</b> manages the containers that run your game server
-        /// application and supporting software. Replica container groups might be replicated
-        /// multiple times on each fleet instance, depending on instance resources. 
+        /// A <b>game server container group</b> has the containers that run your game server
+        /// application and supporting software. A game server container group can have these
+        /// container types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Game server container. This container runs your game server. You can define one game
+        /// server container in a game server container group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <b>daemon container group</b> manages containers that run other software, such as
-        /// background services, logging, or test processes. You might use a daemon container
-        /// group for processes that need to run only once per fleet instance, or processes that
-        /// need to persist independently of the replica container group. 
+        /// Support container. This container runs software in parallel with your game server.
+        /// You can define up to 8 support containers in a game server group.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To create a container group definition, specify a group name, a list of container
-        /// definitions, and maximum total CPU and memory requirements for the container group.
-        /// Specify an operating system and scheduling strategy or use the default values. When
-        /// using the Amazon Web Services CLI tool, you can pass in your container definitions
-        /// as a JSON file.
+        /// When building a game server container group definition, you can choose to bundle your
+        /// game server executable and all dependent software into a single game server container.
+        /// Alternatively, you can separate the software into one game server container and one
+        /// or more support containers.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// On a container fleet instance, a game server container group can be deployed multiple
+        /// times (depending on the compute resources of the instance). This means that all containers
+        /// in the container group are replicated together.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <b>per-instance container group</b> has containers for processes that aren't replicated
+        /// on a container fleet instance. This might include background services, logging, test
+        /// processes, or processes that need to persist independently of the game server container
+        /// group. When building a per-instance container group, you can define up to 10 support
+        /// containers.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// This operation requires Identity and Access Management (IAM) permissions to access
         /// container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
@@ -594,30 +772,106 @@ namespace Amazon.GameLift
         /// </para>
         ///  </note> 
         /// <para>
-        /// If successful, this operation creates a new <c>ContainerGroupDefinition</c> resource
-        /// with an ARN value assigned. You can't change the properties of a container group definition.
-        /// Instead, create a new one. 
+        ///  <b>Request options</b> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>Learn more</b> 
+        /// Use this operation to make the following types of requests. You can specify values
+        /// for the minimum required parameters and customize optional values later.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
-        /// a container group definition</a> 
+        /// Create a game server container group definition. Provide the following required parameter
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html">Container
-        /// fleet design guide</a> 
+        ///  <c>ContainerGroupType</c> (<c>GAME_SERVER</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-definitions.html#containers-definitions-create">Create
-        /// a container definition as a JSON file</a> 
+        ///  <c>OperatingSystem</c> (omit to use default value)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At least one <c>GameServerContainerDefinition</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ContainerName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ImageUrl</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PortConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ServerSdkVersion</c> (omit to use default value)
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Create a per-instance container group definition. Provide the following required parameter
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ContainerGroupType</c> (<c>PER_INSTANCE</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OperatingSystem</c> (omit to use default value)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At least one <c>SupportContainerDefinition</c> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ContainerName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ImageUrl</c> 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this request creates a <c>ContainerGroupDefinition</c> resource and
+        /// assigns a unique ARN value. You can update most properties of a container group definition
+        /// by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>,
+        /// and optionally save the update as a new version.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerGroupDefinition service method.</param>
         /// 
@@ -683,14 +937,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
-        /// 
-        ///  
-        /// <para>
         /// Creates a fleet of compute resources to host your game servers. Use this operation
         /// to set up the following types of fleets based on compute type: 
-        /// </para>
+        /// 
         ///  
         /// <para>
         ///  <b>Managed EC2 fleet</b> 
@@ -751,62 +1000,6 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <b>Managed container fleet</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// A container fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances.
-        /// Your container architecture is deployed to each fleet instance based on the fleet
-        /// configuration. Amazon GameLift manages the containers on each fleet instance and controls
-        /// the lifecycle of game server processes, which host game sessions for players. Container
-        /// fleets can have instances in multiple locations. Each container on an instance that
-        /// runs game server processes is registered as a <c>Compute</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To create a container fleet, provide these required parameters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>ComputeType</c> set to <c>CONTAINER</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ContainerGroupsConfiguration</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>EC2InboundPermissions</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>EC2InstanceType</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>FleetType</c> set to <c>ON_DEMAND</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>Name</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>RuntimeConfiguration</c> with at least one <c>ServerProcesses</c> configuration
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If successful, this operation creates a new fleet resource and places it in <c>NEW</c>
-        /// status while Amazon GameLift initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
-        /// creation workflow</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling
-        /// on/off for each location.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Anywhere fleet</b> 
         /// </para>
         ///  
@@ -848,11 +1041,6 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-build-fleet.html">Setting
-        /// up a container fleet</a> 
-        /// </para>
-        ///  
-        /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
         /// fleet creation issues</a> 
         /// </para>
@@ -882,7 +1070,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
@@ -935,15 +1123,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Adds remote locations to an EC2 and begins populating the new locations with instances.
+        /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
+        /// settings.
         /// 
-        ///  
-        /// <para>
-        /// Adds remote locations to an EC2 or container fleet and begins populating the new locations
-        /// with instances. The new instances conform to the fleet's instance type, auto-scaling,
-        /// and other configuration settings.
-        /// </para>
         ///  <note> 
         /// <para>
         /// You can't add remote locations to a fleet that resides in an Amazon Web Services Region
@@ -973,8 +1156,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location
-        /// fleets</a> 
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-editing.html#fleets-update-locations">Update
+        /// fleet locations</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleetLocations service method.</param>
@@ -1001,7 +1189,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
@@ -1170,8 +1358,8 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players in a specific fleet location. This
         /// operation prompts an available server process to start a game session and retrieves
         /// connection information for the new game session. As an alternative, consider using
-        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-        /// , which uses the FleetIQ algorithm and queues to optimize the placement process.
+        /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>,
+        /// which uses the FleetIQ algorithm and queues to optimize the placement process.
         /// 
         ///  
         /// <para>
@@ -1264,7 +1452,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -1395,7 +1583,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -1556,7 +1744,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -1750,7 +1938,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -1820,7 +2008,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -1922,7 +2110,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -1992,7 +2180,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -2209,7 +2397,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -2302,7 +2490,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -2369,7 +2557,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2409,7 +2597,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2489,7 +2677,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2538,7 +2726,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2579,23 +2767,135 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  DeleteContainerFleet
+
+
+        /// <summary>
+        /// Deletes all resources and information related to a container fleet and shuts down
+        /// currently running fleet instances, including those in remote locations. The container
+        /// fleet must be in <c>ACTIVE</c> status to be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process,
+        /// the fleet status is changed to <c>DELETING</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+        /// up Amazon GameLift Fleets</a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerFleet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContainerFleet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
+        /// The requested tagging operation did not succeed. This may be due to invalid tag format
+        /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">REST API Reference for DeleteContainerFleet Operation</seealso>
+        DeleteContainerFleetResponse DeleteContainerFleet(DeleteContainerFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerFleet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContainerFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">REST API Reference for DeleteContainerFleet Operation</seealso>
+        IAsyncResult BeginDeleteContainerFleet(DeleteContainerFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContainerFleet.</param>
+        /// 
+        /// <returns>Returns a  DeleteContainerFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">REST API Reference for DeleteContainerFleet Operation</seealso>
+        DeleteContainerFleetResponse EndDeleteContainerFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteContainerGroupDefinition
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-        /// in public preview. </b> 
+        /// Deletes a container group definition. 
         /// 
         ///  
         /// <para>
-        /// Deletes a container group definition resource. You can delete a container group definition
-        /// if there are no fleets using the definition. 
+        ///  <b>Request options:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Delete an entire container group definition, including all versions. Specify the container
+        /// group definition name, or use an ARN value without the version number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete a particular version. Specify the container group definition name and a version
+        /// number, or use an ARN value that includes the version number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keep the newest versions and delete all older versions. Specify the container group
+        /// definition name and the number of versions to retain. For example, set <c>VersionCountToRetain</c>
+        /// to 5 to delete all but the five most recent versions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Result</b> 
         /// </para>
         ///  
         /// <para>
-        /// To delete a container group definition, identify the resource to delete.
+        /// If successful, Amazon GameLift removes the container group definition versions that
+        /// you request deletion for. This request will fail for any requested versions if the
+        /// following is true: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If the version is being used in an active fleet
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is being deployed to a fleet in a deployment that's currently in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the version is designated as a rollback definition in a fleet deployment that's
+        /// currently in progress.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>Learn more</b> 
         /// </para>
@@ -2618,7 +2918,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2707,7 +3007,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2762,7 +3062,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -2844,7 +3144,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -2951,7 +3251,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3009,7 +3309,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -3074,7 +3374,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3131,7 +3431,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -3203,7 +3503,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -3270,11 +3570,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request);
@@ -3353,7 +3656,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
@@ -3423,7 +3726,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3496,7 +3799,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3537,19 +3840,14 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Removes a compute resource from an Amazon GameLift Anywhere fleet. Deregistered computes
+        /// can no longer host game sessions through Amazon GameLift.
         /// 
         ///  
         /// <para>
-        /// Removes a compute resource from an Amazon GameLift Anywhere fleet or container fleet.
-        /// Deregistered computes can no longer host game sessions through Amazon GameLift.
-        /// </para>
-        ///  
-        /// <para>
-        /// For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent,
-        /// the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't
-        /// use the Agent, call this operation to deregister fleet computes. 
+        /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
+        /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
+        /// call this operation to deregister fleet computes. 
         /// </para>
         ///  
         /// <para>
@@ -3569,7 +3867,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3647,7 +3945,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3718,7 +4016,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3758,7 +4056,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3829,7 +4127,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3869,7 +4167,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -3910,14 +4208,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
-        /// 
-        ///  
-        /// <para>
         /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
-        /// list of all computes in a fleet, call <a>ListCompute</a>. 
-        /// </para>
+        /// list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.
+        /// 
+        /// 
         ///  
         /// <para>
         /// To request information on a specific compute, provide the fleet ID and compute name.
@@ -3930,18 +4224,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>EC2</c> fleets, this operation returns information about the EC2 instance.
+        /// For managed EC2 fleets, this operation returns information about the EC2 instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>ANYWHERE</c> fleets, this operation returns information about the registered
-        /// compute.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For <c>CONTAINER</c> fleets, this operation returns information about the container
-        /// that's registered as a compute, and the instance it's running on. The compute name
-        /// is the container name.
+        /// For Anywhere fleets, this operation returns information about the registered compute.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3957,11 +4244,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeCompute">REST API Reference for DescribeCompute Operation</seealso>
         DescribeComputeResponse DescribeCompute(DescribeComputeRequest request);
@@ -3994,22 +4284,121 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  DescribeContainerFleet
+
+
+        /// <summary>
+        /// Retrieves the properties for a container fleet. When requesting attributes for multiple
+        /// fleets, use the pagination parameters to retrieve results as a set of sequential pages.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get container fleet properties for a single fleet. Provide either the fleet ID or
+        /// ARN value. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, a <c>ContainerFleet</c> object is returned. This object includes the
+        /// fleet properties, including information about the most recent deployment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some API operations limit the number of fleet IDs that allowed in one request. If
+        /// a request exceeds this limit, the request fails and the error message contains the
+        /// maximum allowed number.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContainerFleet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContainerFleet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">REST API Reference for DescribeContainerFleet Operation</seealso>
+        DescribeContainerFleetResponse DescribeContainerFleet(DescribeContainerFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContainerFleet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContainerFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">REST API Reference for DescribeContainerFleet Operation</seealso>
+        IAsyncResult BeginDescribeContainerFleet(DescribeContainerFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContainerFleet.</param>
+        /// 
+        /// <returns>Returns a  DescribeContainerFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">REST API Reference for DescribeContainerFleet Operation</seealso>
+        DescribeContainerFleetResponse EndDescribeContainerFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeContainerGroupDefinition
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-        /// in public preview. </b> 
+        /// Retrieves the properties of a container group definition, including all container
+        /// definitions in the group. 
         /// 
         ///  
         /// <para>
-        /// Retrieves the properties of a container group definition, including all container
-        /// definitions in the group. 
+        ///  <b>Request options:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve the latest version of a container group definition. Specify the container
+        /// group definition name only, or use an ARN value without a version number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Retrieve a particular version. Specify the container group definition name and a version
+        /// number, or use an ARN value that includes the version number.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results:</b> 
         /// </para>
         ///  
         /// <para>
-        /// To retrieve a container group definition, provide a resource identifier. If successful,
-        /// this operation returns the complete properties of the container group definition.
+        /// If successful, this operation returns the complete properties of a container group
+        /// definition version.
         /// </para>
         ///  
         /// <para>
@@ -4034,7 +4423,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4287,15 +4676,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
-        /// 
-        ///  
-        /// <para>
         /// Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region.
         /// Properties include the computing hardware and deployment configuration for instances
         /// in the fleet.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// You can use this operation in the following ways: 
@@ -4346,7 +4730,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4387,18 +4771,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Retrieves the resource capacity settings for one or more fleets. For a container fleet,
+        /// this operation also returns counts for game server container groups.
         /// 
         ///  
         /// <para>
-        /// Retrieves the resource capacity settings for one or more fleets. For a container fleet,
-        /// this operation also returns counts for replica container groups.
-        /// </para>
-        ///  
-        /// <para>
         /// With multi-location fleets, this operation retrieves data for the fleet's home Region
-        /// only. To retrieve capacity for remote locations, see <a>DescribeFleetLocationCapacity</a>.
+        /// only. To retrieve capacity for remote locations, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html</a>.
         /// </para>
         ///  
         /// <para>
@@ -4458,11 +4837,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request);
@@ -4492,6 +4874,87 @@ namespace Amazon.GameLift
         /// <returns>Returns a  DescribeFleetCapacityResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         DescribeFleetCapacityResponse EndDescribeFleetCapacity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeFleetDeployment
+
+
+        /// <summary>
+        /// Retrieves information about a managed container fleet deployment. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get information about the latest deployment for a specific fleet. Provide the fleet
+        /// ID or ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Get information about a specific deployment. Provide the fleet ID or ARN and the
+        /// deployment ID.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, a <c>FleetDeployment</c> object is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetDeployment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetDeployment service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">REST API Reference for DescribeFleetDeployment Operation</seealso>
+        DescribeFleetDeploymentResponse DescribeFleetDeployment(DescribeFleetDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetDeployment operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">REST API Reference for DescribeFleetDeployment Operation</seealso>
+        IAsyncResult BeginDescribeFleetDeployment(DescribeFleetDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetDeployment.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetDeploymentResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">REST API Reference for DescribeFleetDeployment Operation</seealso>
+        DescribeFleetDeploymentResponse EndDescribeFleetDeployment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4535,11 +4998,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request);
@@ -4614,6 +5080,11 @@ namespace Amazon.GameLift
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
         /// up Amazon GameLift fleets</a> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetLocationAttributes service method.</param>
         /// 
@@ -4627,7 +5098,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4673,8 +5144,8 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the resource capacity settings for a fleet location. The data returned includes
         /// the current capacity (number of EC2 instances) and some scaling settings for the requested
-        /// fleet location. For a container fleet, this operation also returns counts for replica
-        /// container groups.
+        /// fleet location. For a managed container fleet, this operation also returns counts
+        /// for game server container groups.
         /// 
         ///  
         /// <para>
@@ -4701,6 +5172,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting
+        /// </para>
+        ///  
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
         /// metrics for fleets</a> 
         /// </para>
@@ -4717,7 +5193,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4786,6 +5262,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting
+        /// </para>
+        ///  
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
         /// metrics for fleets</a> 
         /// </para>
@@ -4802,7 +5283,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4849,8 +5330,7 @@ namespace Amazon.GameLift
         /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
         /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a container fleet,
-        /// the port settings should include one or more of the fleet's connection ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -4895,7 +5375,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -4911,8 +5391,7 @@ namespace Amazon.GameLift
         /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
         /// IP addresses and port settings that incoming traffic can use to access server processes
         /// in the fleet. Game server processes that are running in the fleet must use a port
-        /// that falls within this range. To connect to game server processes on a container fleet,
-        /// the port settings should include one or more of the fleet's connection ports. 
+        /// that falls within this range. 
         /// 
         ///  
         /// <para>
@@ -4957,7 +5436,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5065,7 +5544,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5141,7 +5620,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5219,7 +5698,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5306,7 +5785,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5409,7 +5888,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -5470,8 +5949,8 @@ namespace Amazon.GameLift
         /// <para>
         /// This operation is not designed to be continually called to track game session status.
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
-        /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
-        /// receive notifications from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
+        /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
+        /// from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
         /// should only be used for games in development with low game session usage. 
         /// </para>
         /// </summary>
@@ -5487,7 +5966,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5555,7 +6034,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -5669,7 +6148,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -5722,8 +6201,9 @@ namespace Amazon.GameLift
         /// Retrieves information about the EC2 instances in an Amazon GameLift managed fleet,
         /// including instance ID, connection data, and status. You can use this operation with
         /// a multi-location fleet to get location-specific instance information. As an alternative,
-        /// use the operations <a>ListCompute</a> and <a>DescribeCompute</a> to retrieve information
-        /// for compute resources, including EC2 and Anywhere fleets.
+        /// use the operations <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
+        /// and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
+        /// to retrieve information for compute resources, including EC2 and Anywhere fleets.
         /// 
         ///  
         /// <para>
@@ -5789,7 +6269,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6014,7 +6494,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -6108,7 +6588,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6152,9 +6632,7 @@ namespace Amazon.GameLift
         /// Retrieves a fleet's runtime configuration settings. The runtime configuration determines
         /// which server processes run, and how, on computes in the fleet. For managed EC2 fleets,
         /// the runtime configuration describes server processes that run on each fleet instance.
-        /// For container fleets, the runtime configuration describes server processes that run
-        /// in each replica container group. You can update a fleet's runtime configuration at
-        /// any time using <a>UpdateRuntimeConfiguration</a>.
+        /// can update a fleet's runtime configuration at any time using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html">UpdateRuntimeConfiguration</a>.
         /// 
         ///  
         /// <para>
@@ -6192,7 +6670,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6260,7 +6738,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6342,7 +6820,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6479,7 +6957,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6520,60 +6998,32 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
+        /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.
         /// 
         ///  
         /// <para>
-        /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
-        /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets
+        ///  <b>Request options</b> 
         /// </para>
         ///  
         /// <para>
-        /// To request access, specify the compute name and the fleet ID. If successful, this
-        /// operation returns a set of temporary Amazon Web Services credentials, including a
-        /// two-part access key and a session token.
+        /// To request access to a compute, specify the compute name and the fleet ID.
         /// </para>
         ///  
         /// <para>
-        ///  <b>EC2 fleets</b> 
+        ///  <b>Results</b> 
         /// </para>
         ///  
         /// <para>
-        /// With an EC2 fleet (where compute type is <c>EC2</c>), use these credentials with Amazon
-        /// EC2 Systems Manager (SSM) to start a session with the compute. For more details, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
-        /// Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Container fleets</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// With a container fleet (where compute type is <c>CONTAINER</c>), use these credentials
-        /// and the target value with SSM to connect to the fleet instance where the container
-        /// is running. After you're connected to the instance, use Docker commands to interact
-        /// with the container.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Learn more</b> 
+        /// If successful, this operation returns a set of temporary Amazon Web Services credentials,
+        /// including a two-part access key and a session token.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-        /// connect to fleet instances</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-        /// fleet issues</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">
-        /// Remotely connect to a container fleet</a> 
+        /// With a managed EC2 fleet (where compute type is <c>EC2</c>), use these credentials
+        /// with Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more
+        /// details, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
+        /// Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6589,11 +7039,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">REST API Reference for GetComputeAccess Operation</seealso>
         GetComputeAccessResponse GetComputeAccess(GetComputeAccessRequest request);
@@ -6631,29 +7084,27 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests an authentication token from Amazon GameLift for a compute resource in an
-        /// Amazon GameLift Anywhere fleet or container fleet. Game servers that are running on
-        /// the compute use this token to communicate with the Amazon GameLift service, such as
-        /// when calling the Amazon GameLift server SDK action <c>InitSDK()</c>. Authentication
-        /// tokens are valid for a limited time span, so you need to request a fresh token before
-        /// the current token expires.
+        /// Amazon GameLift fleet. Game servers that are running on the compute use this token
+        /// to communicate with the Amazon GameLift service, such as when calling the Amazon GameLift
+        /// server SDK action <c>InitSDK()</c>. Authentication tokens are valid for a limited
+        /// time span, so you need to request a fresh token before the current token expires.
         /// 
         ///  
         /// <para>
-        /// Use this operation based on the fleet compute type:
+        ///  <b>Request options</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>EC2</c> fleets, auth token retrieval and refresh is handled automatically.
-        /// All game servers that are running on all fleet instances have access to a valid auth
-        /// token.
+        /// For managed EC2 fleets (compute type <c>EC2</c>), auth token retrieval and refresh
+        /// is handled automatically. All game servers that are running on all fleet instances
+        /// have access to a valid auth token.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>ANYWHERE</c> and <c>CONTAINER</c> fleets, if you're using the Amazon GameLift
-        /// Agent, auth token retrieval and refresh is handled automatically for any container
-        /// or Anywhere compute where the Agent is running. If you're not using the Agent, create
-        /// a mechanism to retrieve and refresh auth tokens for computes that are running game
-        /// server processes. 
+        /// For Anywhere fleets (compute type <c>ANYWHERE</c>), if you're using the Amazon GameLift
+        /// Agent, auth token retrieval and refresh is handled automatically for any compute where
+        /// the Agent is running. If you're not using the Agent, create a mechanism to retrieve
+        /// and refresh auth tokens for computes that are running game server processes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6688,11 +7139,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAuthToken">REST API Reference for GetComputeAuthToken Operation</seealso>
         GetComputeAuthTokenResponse GetComputeAuthToken(GetComputeAuthTokenRequest request);
@@ -6758,7 +7212,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6797,7 +7251,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -6841,7 +7295,7 @@ namespace Amazon.GameLift
         /// Requests authorization to remotely connect to an instance in an Amazon GameLift managed
         /// fleet. Use this operation to connect to instances with game servers that use Amazon
         /// GameLift server SDK 4.x or earlier. To connect to instances with game servers that
-        /// use server SDK 5.x or later, call <a>GetComputeAccess</a>.
+        /// use server SDK 5.x or later, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess</a>.
         /// 
         ///  
         /// <para>
@@ -6903,7 +7357,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -7084,44 +7538,41 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Retrieves information on the compute resources in an Amazon GameLift fleet. Use the
+        /// pagination parameters to retrieve results in a set of sequential pages.
         /// 
         ///  
         /// <para>
-        /// Retrieves information on the compute resources in an Amazon GameLift fleet. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To request a list of computes, specify the fleet ID. Use the pagination parameters
-        /// to retrieve results in a set of sequential pages.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can filter the result set by location. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If successful, this operation returns information on all computes in the requested
-        /// fleet. Depending on the fleet's compute type, the result includes the following information:
-        /// 
+        ///  <b>Request options:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>EC2</c> fleets, this operation returns information about the EC2 instance.
-        /// Compute names are instance IDs.
+        /// Retrieve a list of all computes in a fleet. Specify a fleet ID. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>ANYWHERE</c> fleets, this operation returns the compute names and details provided
-        /// when the compute was registered with <c>RegisterCompute</c>. The <c>GameLiftServiceSdkEndpoint</c>
-        /// or <c>GameLiftAgentEndpoint</c> is included.
+        /// Retrieve a list of all computes in a specific fleet location. Specify a fleet ID and
+        /// location.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns information on a set of computes. Depending
+        /// on the type of fleet, the result includes the following information: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For managed EC2 fleets (compute type <c>EC2</c>), this operation returns information
+        /// about the EC2 instance. Compute names are EC2 instance IDs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>CONTAINER</c> fleets, this operation returns information about containers that
-        /// are registered as computes, and the instances they're running on. Compute names are
-        /// container names.
+        /// For Anywhere fleets (compute type <c>ANYWHERE</c>), this operation returns compute
+        /// names and details as provided when the compute was registered with <c>RegisterCompute</c>.
+        /// This includes <c>GameLiftServiceSdkEndpoint</c> or <c>GameLiftAgentEndpoint</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -7138,6 +7589,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListCompute">REST API Reference for ListCompute Operation</seealso>
         ListComputeResponse ListCompute(ListComputeRequest request);
@@ -7170,35 +7624,138 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  ListContainerFleets
+
+
+        /// <summary>
+        /// Retrieves a collection of container fleet resources in an Amazon Web Services Region.
+        /// For fleets that have multiple locations, this operation retrieves fleets based on
+        /// their home Region only.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get a list of all fleets. Call this operation without specifying a container group
+        /// definition. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Get a list of fleets filtered by container group definition. Provide the container
+        /// group definition name or ARN value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To get a list of all Realtime Servers fleets with a specific configuration script,
+        /// provide the script ID. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns a collection of container fleets that match
+        /// the request parameters. A NextToken value is also returned if there are more result
+        /// pages to retrieve.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Fleet IDs are returned in no particular order.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerFleets service method.</param>
+        /// 
+        /// <returns>The response from the ListContainerFleets service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">REST API Reference for ListContainerFleets Operation</seealso>
+        ListContainerFleetsResponse ListContainerFleets(ListContainerFleetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContainerFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerFleets operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContainerFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">REST API Reference for ListContainerFleets Operation</seealso>
+        IAsyncResult BeginListContainerFleets(ListContainerFleetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContainerFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContainerFleets.</param>
+        /// 
+        /// <returns>Returns a  ListContainerFleetsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">REST API Reference for ListContainerFleets Operation</seealso>
+        ListContainerFleetsResponse EndListContainerFleets(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListContainerGroupDefinitions
 
 
         /// <summary>
-        /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-        /// in public preview. </b> 
+        /// Retrieves container group definitions for the Amazon Web Services account and Amazon
+        /// Web Services Region. Use the pagination parameters to retrieve results in a set of
+        /// sequential pages.
         /// 
         ///  
         /// <para>
-        /// Retrieves all container group definitions for the Amazon Web Services account and
-        /// Amazon Web Services Region that are currently in use. You can filter the result set
-        /// by the container groups' scheduling strategy. Use the pagination parameters to retrieve
-        /// results in a set of sequential pages.
+        /// This operation returns only the latest version of each definition. To retrieve all
+        /// versions of a container group definition, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitionVersions.html">ListContainerGroupDefinitionVersions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Request options:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve the most recent versions of all container group definitions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Retrieve the most recent versions of all container group definitions, filtered by
+        /// type. Specify the container group type to filter on. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns the complete properties of a set of container
+        /// group definition versions that match the request.
         /// </para>
         ///  <note> 
         /// <para>
         /// This operation returns the list of container group definitions in no particular order.
         /// 
         /// </para>
-        ///  </note> 
-        /// <para>
-        ///  <b>Learn more</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
-        /// a container group definition</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerGroupDefinitions service method.</param>
         /// 
@@ -7248,20 +7805,195 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  ListContainerGroupDefinitionVersions
+
+
+        /// <summary>
+        /// Retrieves all versions of a container group definition. Use the pagination parameters
+        /// to retrieve results in a set of sequential pages.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get all versions of a specified container group definition. Specify the container
+        /// group definition name or ARN value. (If the ARN value has a version number, it's ignored.)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns the complete properties of a set of container
+        /// group definition versions that match the request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation returns the list of container group definitions in descending version
+        /// order (latest first). 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
+        /// a container group definition</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerGroupDefinitionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListContainerGroupDefinitionVersions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">REST API Reference for ListContainerGroupDefinitionVersions Operation</seealso>
+        ListContainerGroupDefinitionVersionsResponse ListContainerGroupDefinitionVersions(ListContainerGroupDefinitionVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContainerGroupDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerGroupDefinitionVersions operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContainerGroupDefinitionVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">REST API Reference for ListContainerGroupDefinitionVersions Operation</seealso>
+        IAsyncResult BeginListContainerGroupDefinitionVersions(ListContainerGroupDefinitionVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContainerGroupDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContainerGroupDefinitionVersions.</param>
+        /// 
+        /// <returns>Returns a  ListContainerGroupDefinitionVersionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">REST API Reference for ListContainerGroupDefinitionVersions Operation</seealso>
+        ListContainerGroupDefinitionVersionsResponse EndListContainerGroupDefinitionVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFleetDeployments
+
+
+        /// <summary>
+        /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
+        /// Use the pagination parameters to retrieve results as a set of sequential pages. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get a list of all deployments. Call this operation without specifying a fleet ID.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Get a list of all deployments for a fleet. Specify the container fleet ID or ARN value.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns a list of deployments that match the request
+        /// parameters. A NextToken value is also returned if there are more result pages to retrieve.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deployments are returned starting with the latest.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleetDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListFleetDeployments service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">REST API Reference for ListFleetDeployments Operation</seealso>
+        ListFleetDeploymentsResponse ListFleetDeployments(ListFleetDeploymentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFleetDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFleetDeployments operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleetDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">REST API Reference for ListFleetDeployments Operation</seealso>
+        IAsyncResult BeginListFleetDeployments(ListFleetDeploymentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFleetDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFleetDeployments.</param>
+        /// 
+        /// <returns>Returns a  ListFleetDeploymentsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">REST API Reference for ListFleetDeployments Operation</seealso>
+        ListFleetDeploymentsResponse EndListFleetDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListFleets
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
-        /// 
-        ///  
-        /// <para>
         /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
         /// filter the result set to find only those fleets that are deployed with a specific
         /// build or script. For fleets that have multiple locations, this operation retrieves
         /// fleets based on their home Region only.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// You can use operation in the following ways: 
@@ -7279,11 +8011,6 @@ namespace Amazon.GameLift
         /// <para>
         /// To get a list of all Realtime Servers fleets with a specific configuration script,
         /// provide the script ID. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  To get a list of all fleets with a specific container group definition, provide the
-        /// <c>ContainerGroupDefinition</c> ID. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7312,7 +8039,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -7639,12 +8366,15 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
         /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -7789,11 +8519,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request);
@@ -7830,19 +8563,13 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
         /// 
         ///  
         /// <para>
-        /// Registers a compute resource in an Amazon GameLift fleet. Register computes with an
-        /// Amazon GameLift Anywhere fleet or a container fleet. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent,
-        /// the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't
-        /// use the Agent, call this operation to register fleet computes.
+        /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
+        /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
+        /// call this operation to register fleet computes.
         /// </para>
         ///  
         /// <para>
@@ -8075,7 +8802,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -8122,7 +8849,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -8193,7 +8920,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -8239,7 +8966,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -8326,7 +9053,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -8407,8 +9134,7 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, a <c>GameSession</c> object is returned for each game session that
         /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
-        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
-        /// .
+        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>.
         /// </para>
         ///  
         /// <para>
@@ -8430,8 +9156,8 @@ namespace Amazon.GameLift
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
         /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-        /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
-        /// <c>Value</c> to search for the game sessions.
+        /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+        /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
         /// <para>
@@ -8490,7 +9216,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
@@ -8586,7 +9312,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -8630,66 +9356,93 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Places a request for a new game session in a queue. When processing a placement request,
-        /// Amazon GameLift searches for available resources on the queue's destinations, scanning
-        /// each until it finds resources or the placement request times out.
+        /// Makes a request to start a new game session using a game session queue. When processing
+        /// a placement request in a queue, Amazon GameLift finds the best possible available
+        /// resource to host the game session and prompts the resource to start the game session.
+        /// 
         /// 
         ///  
         /// <para>
-        /// A game session placement request can also request player sessions. When a new game
-        /// session is successfully created, Amazon GameLift creates a player session for each
-        /// player included in the request.
+        ///  <b>Request options</b> 
         /// </para>
         ///  
         /// <para>
-        /// When placing a game session, by default Amazon GameLift tries each fleet in the order
-        /// they are listed in the queue configuration. Ideally, a queue's destinations are listed
-        /// in preference order.
-        /// </para>
-        ///  
-        /// <para>
-        /// Alternatively, when requesting a game session with players, you can also provide latency
-        /// data for each player in relevant Regions. Latency data indicates the performance lag
-        /// a player experiences when connected to a fleet in the Region. Amazon GameLift uses
-        /// latency data to reorder the list of destinations to place the game session in a Region
-        /// with minimal lag. If latency data is provided for multiple players, Amazon GameLift
-        /// calculates each Region's average lag for all players and reorders to get the best
-        /// game play across all players. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To place a new game session request, specify the following:
+        /// Call this API with the following minimum parameters: <i>GameSessionQueueName</i>,
+        /// <i>MaximumPlayerSessionCount</i>, and <i>PlacementID</i>. You can also include game
+        /// session data (data formatted as strings) or game properties (data formatted as key-value
+        /// pairs) to pass to the new game session.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The queue name and a set of game session properties and settings
+        /// You can change how Amazon GameLift chooses a hosting resource for the new game session.
+        /// Prioritizing resources for game session placements is defined when you configure a
+        /// game session queue. You can use the default prioritization process or specify a custom
+        /// process by providing a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_PriorityConfiguration.html">
+        /// PriorityConfiguration</a> when you create or update a queue.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Prioritize based on resource cost and location, using the queue's configured priority
+        /// settings. Call this API with the minimum parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A unique ID (such as a UUID) for the placement. You use this ID to track the status
-        /// of the placement request
+        /// Prioritize based on latency. Include a set of values for <i>PlayerLatencies</i>. You
+        /// can provide latency data with or without player session data. This option instructs
+        /// Amazon GameLift to reorder the queue's prioritized locations list based on the latency
+        /// data. If latency data is provided for multiple players, Amazon GameLift calculates
+        /// each location's average latency for all players and reorders to find the lowest latency
+        /// across all players. Don't include latency data if you're providing a custom list of
+        /// locations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) A set of player data and a unique player ID for each player that you are
-        /// joining to the new game session (player data is optional, but if you include it, you
-        /// must also provide a unique ID for each player)
+        /// Prioritize based on a custom list of locations. If you're using a queue that's configured
+        /// to prioritize location first (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a>
+        /// for game session queues), use the <i>PriorityConfigurationOverride</i> parameter to
+        /// substitute a different location list for this placement request. When prioritizing
+        /// placements by location, Amazon GameLift searches each location in prioritized order
+        /// to find an available hosting resource for the new game session. You can choose whether
+        /// to use the override list for the first placement attempt only or for all attempts.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Latency data for all players (if you want to optimize game play for the players)
+        /// You can request new player sessions for a group of players. Include the <i>DesiredPlayerSessions</i>
+        /// parameter and include at minimum a unique player ID for each. You can also include
+        /// player-specific data to pass to the new game session. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, a new game session placement is created.
+        ///  <b>Result</b> 
         /// </para>
         ///  
         /// <para>
-        /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
-        /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
-        /// has been created and a game session ARN and Region are referenced. If the placement
-        /// request times out, you can resubmit the request or retry it with a different queue.
-        /// 
+        /// If successful, this request generates a new game session placement request and adds
+        /// it to the game session queue for Amazon GameLift to process in turn. You can track
+        /// the status of individual placement requests by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>.
+        /// A new game session is running if the status is <c>FULFILLED</c> and the request returns
+        /// the game session connection information (IP address and port). If you include player
+        /// session data, Amazon GameLift creates a player session for each player ID in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request results in a <c>BadRequestException</c> in the following situations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the request includes both <i>PlayerLatencies</i> and <i>PriorityConfigurationOverride</i>
+        /// parameters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the request includes the <i>PriorityConfigurationOverride</i> parameter and designates
+        /// a queue doesn't prioritize locations.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon GameLift continues to retry each placement request until it reaches the queue's
+        /// timeout setting. If a request times out, you can resubmit the request to the same
+        /// queue or try a different queue. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -8704,11 +9457,14 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request);
@@ -8814,7 +9570,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -8909,7 +9665,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -9003,7 +9759,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9063,7 +9819,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9142,7 +9898,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -9230,7 +9986,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9319,12 +10075,15 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
         /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -9354,6 +10113,132 @@ namespace Amazon.GameLift
         /// <returns>Returns a  TagResourceResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TerminateGameSession
+
+
+        /// <summary>
+        /// Ends a game session that's currently in progress. Use this action to terminate any
+        /// game session that isn't in <c>ERROR</c> status. Terminating a game session is the
+        /// most efficient way to free up a server process when it's hosting a game session that's
+        /// in a bad state or not ending properly. You can use this action to terminate a game
+        /// session that's being hosted on any type of Amazon GameLift fleet compute, including
+        /// computes for managed EC2, managed container, and Anywhere fleets. The game server
+        /// must be integrated with Amazon GameLift server SDK 5.x or greater.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Request termination for a single game session. Provide the game session ID and the
+        /// termination mode. There are two potential methods for terminating a game session:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Initiate a graceful termination using the normal game session shutdown sequence. With
+        /// this mode, the Amazon GameLift service prompts the server process that's hosting the
+        /// game session by calling the server SDK callback method <c>OnProcessTerminate()</c>.
+        /// The callback implementation is part of the custom game server code. It might involve
+        /// a variety of actions to gracefully end a game session, such as notifying players,
+        /// before stopping the server process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Force an immediate game session termination. With this mode, the Amazon GameLift service
+        /// takes action to stop the server process, which ends the game session without the normal
+        /// game session shutdown sequence. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, game session termination is initiated. During this activity, the game
+        /// session status is changed to <c>TERMINATING</c>. When completed, the server process
+        /// that was hosting the game session has been stopped and replaced with a new server
+        /// process that's ready to host a new game session. The old game session's status is
+        /// changed to <c>TERMINATED</c> with a status reason that indicates the termination method
+        /// used.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html">Add
+        /// Amazon GameLift to your game server</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon GameLift server SDK 5 reference guide for <c>OnProcessTerminate()</c> (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-cpp-initsdk.html">C++</a>)
+        /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-csharp-initsdk.html">C#</a>)
+        /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk5-unreal-initsdk.html">Unreal</a>)
+        /// (<a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-server-sdk-go-initsdk.html">Go</a>)
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateGameSession service method.</param>
+        /// 
+        /// <returns>The response from the TerminateGameSession service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
+        /// The requested operation would cause a conflict with the current state of a resource
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotReadyException">
+        /// The operation failed because Amazon GameLift has not yet finished validating this
+        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// backoffs and jitter</a>.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
+        TerminateGameSessionResponse TerminateGameSession(TerminateGameSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateGameSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateGameSession operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateGameSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
+        IAsyncResult BeginTerminateGameSession(TerminateGameSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TerminateGameSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateGameSession.</param>
+        /// 
+        /// <returns>Returns a  TerminateGameSessionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
+        TerminateGameSessionResponse EndTerminateGameSession(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9409,12 +10294,15 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
         /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -9477,7 +10365,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9549,7 +10437,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9583,6 +10471,258 @@ namespace Amazon.GameLift
         /// <returns>Returns a  UpdateBuildResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         UpdateBuildResponse EndUpdateBuild(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateContainerFleet
+
+
+        /// <summary>
+        /// Updates the properties of a managed container fleet. Depending on the properties being
+        /// updated, this operation might initiate a fleet deployment. You can track deployments
+        /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// As with CreateContainerFleet, many fleet properties use common defaults or are calculated
+        /// based on the fleet's container group definitions. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update fleet properties that result in a fleet deployment. Include only those properties
+        /// that you want to change. Specify deployment configuration settings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update fleet properties that don't result in a fleet deployment. Include only those
+        /// properties that you want to change.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Changes to the following properties initiate a fleet deployment: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GameServerContainerGroupDefinition</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PerInstanceContainerGroupDefinition</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GameServerContainerGroupsPerInstance</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InstanceInboundPermissions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InstanceConnectionPortRange</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LogConfiguration</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation updates the container fleet resource, and might initiate
+        /// a new deployment of fleet resources using the deployment configuration provided. A
+        /// deployment replaces existing fleet instances with new instances that are deployed
+        /// with the updated fleet properties. The fleet is placed in <c>UPDATING</c> status until
+        /// the deployment is complete, then return to <c>ACTIVE</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can have only one update deployment active at a time for a fleet. If a second
+        /// update request initiates a deployment while another deployment is in progress, the
+        /// first deployment is cancelled.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerFleet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContainerFleet service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotReadyException">
+        /// The operation failed because Amazon GameLift has not yet finished validating this
+        /// compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential
+        /// backoffs and jitter</a>.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">REST API Reference for UpdateContainerFleet Operation</seealso>
+        UpdateContainerFleetResponse UpdateContainerFleet(UpdateContainerFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerFleet operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">REST API Reference for UpdateContainerFleet Operation</seealso>
+        IAsyncResult BeginUpdateContainerFleet(UpdateContainerFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContainerFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContainerFleet.</param>
+        /// 
+        /// <returns>Returns a  UpdateContainerFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">REST API Reference for UpdateContainerFleet Operation</seealso>
+        UpdateContainerFleetResponse EndUpdateContainerFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateContainerGroupDefinition
+
+
+        /// <summary>
+        /// Updates properties in an existing container group definition. This operation doesn't
+        /// replace the definition. Instead, it creates a new version of the definition and saves
+        /// it separately. You can access all versions that you choose to retain.
+        /// 
+        ///  
+        /// <para>
+        /// The only property you can't update is the container group type.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Request options:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update based on the latest version of the container group definition. Specify the
+        /// container group definition name only, or use an ARN value without a version number.
+        /// Provide updated values for the properties that you want to change only. All other
+        /// values remain the same as the latest version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update based on a specific version of the container group definition. Specify the
+        /// container group definition name and a source version number, or use an ARN value with
+        /// a version number. Provide updated values for the properties that you want to change
+        /// only. All other values remain the same as the source version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Change a game server container definition. Provide the updated container definition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add or change a support container definition. Provide a complete set of container
+        /// definitions, including the updated definition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove a support container definition. Provide a complete set of container definitions,
+        /// excluding the definition to remove. If the container group has only one support container
+        /// definition, provide an empty set.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If successful, this operation returns the complete properties of the new container
+        /// group definition version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the container group definition version is used in an active fleets, the update
+        /// automatically initiates a new fleet deployment of the new version. You can track a
+        /// fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerGroupDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContainerGroupDefinition service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">REST API Reference for UpdateContainerGroupDefinition Operation</seealso>
+        UpdateContainerGroupDefinitionResponse UpdateContainerGroupDefinition(UpdateContainerGroupDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContainerGroupDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerGroupDefinition operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerGroupDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">REST API Reference for UpdateContainerGroupDefinition Operation</seealso>
+        IAsyncResult BeginUpdateContainerGroupDefinition(UpdateContainerGroupDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContainerGroupDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContainerGroupDefinition.</param>
+        /// 
+        /// <returns>Returns a  UpdateContainerGroupDefinitionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">REST API Reference for UpdateContainerGroupDefinition Operation</seealso>
+        UpdateContainerGroupDefinitionResponse EndUpdateContainerGroupDefinition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9633,7 +10773,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9674,17 +10814,12 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-        /// which is currently in public preview.</b> 
+        /// Updates capacity settings for a managed EC2 fleet or managed container fleet. For
+        /// these fleets, you adjust capacity by changing the number of instances in the fleet.
+        /// Fleet capacity determines the number of game sessions and players that the fleet can
+        /// host based on its configuration. For fleets with multiple locations, use this operation
+        /// to manage capacity settings in each location individually.
         /// 
-        ///  
-        /// <para>
-        /// Updates capacity settings for a managed EC2 fleet or container fleet. For these fleets,
-        /// you adjust capacity by changing the number of instances in the fleet. Fleet capacity
-        /// determines the number of game sessions and players that the fleet can host based on
-        /// its configuration. For fleets with multiple locations, use this operation to manage
-        /// capacity settings in each location individually.
-        /// </para>
         ///  
         /// <para>
         /// Use this operation to set these fleet capacity properties: 
@@ -9760,7 +10895,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9816,11 +10951,6 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// For a container fleet, inbound permissions must specify port numbers that are defined
-        /// in the fleet's connection port settings.
-        /// </para>
-        ///  
-        /// <para>
         /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
         /// locations, port setting updates can take time to propagate across all locations. You
         /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
@@ -9860,7 +10990,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -9962,7 +11092,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -10041,7 +11171,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -10120,7 +11250,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -10188,7 +11318,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -10255,7 +11385,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
@@ -10297,11 +11427,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Updates the runtime configuration for the specified fleet. The runtime configuration
-        /// tells Amazon GameLift how to launch server processes on computes in the fleet. For
-        /// managed EC2 fleets, it determines what server processes to run on each fleet instance.
-        /// For container fleets, it describes what server processes to run in each replica container
-        /// group. You can update a fleet's runtime configuration at any time after the fleet
-        /// is created; it does not need to be in <c>ACTIVE</c> status.
+        /// tells Amazon GameLift how to launch server processes on computes in managed EC2 and
+        /// Anywhere fleets. You can update a fleet's runtime configuration at any time after
+        /// the fleet is created; it does not need to be in <c>ACTIVE</c> status.
         /// 
         ///  
         /// <para>
@@ -10346,7 +11474,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -10439,7 +11567,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// THe requested resources was not found. The resource was either not created yet or
+        /// The requested resources was not found. The resource was either not created yet or
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">

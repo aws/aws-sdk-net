@@ -63,6 +63,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             
+            if (publicRequest.IsSetClientToken())
+                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            else            
+                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
+                
+            
             if (publicRequest.IsSetOrigin())
                 request.Parameters.Add("origin", StringUtils.FromString(publicRequest.Origin));
             request.ResourcePath = "/instance/{InstanceId}/approved-origin";

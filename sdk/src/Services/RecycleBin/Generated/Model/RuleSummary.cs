@@ -79,7 +79,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property LockState. 
         /// <para>
-        /// The lock state for the retention rule.
+        /// [Region-level retention rules only] The lock state for the retention rule.
         /// </para>
         ///  <ul> <li> 
         /// <para>

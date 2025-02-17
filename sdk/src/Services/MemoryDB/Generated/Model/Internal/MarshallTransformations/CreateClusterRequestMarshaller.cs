@@ -99,6 +99,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEngine())
+                {
+                    context.Writer.WritePropertyName("Engine");
+                    context.Writer.Write(publicRequest.Engine);
+                }
+
                 if(publicRequest.IsSetEngineVersion())
                 {
                     context.Writer.WritePropertyName("EngineVersion");
@@ -115,6 +121,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MaintenanceWindow");
                     context.Writer.Write(publicRequest.MaintenanceWindow);
+                }
+
+                if(publicRequest.IsSetMultiRegionClusterName())
+                {
+                    context.Writer.WritePropertyName("MultiRegionClusterName");
+                    context.Writer.Write(publicRequest.MultiRegionClusterName);
                 }
 
                 if(publicRequest.IsSetNodeType())

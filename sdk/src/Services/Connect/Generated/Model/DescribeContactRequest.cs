@@ -37,16 +37,18 @@ namespace Amazon.Connect.Model
     /// <para>
     /// Describes the specified contact. 
     /// </para>
-    ///  <important> 
+    ///  <important> <ul> <li> 
     /// <para>
-    /// Contact information remains available in Amazon Connect for 24 months, and then it
-    /// is deleted.
+    ///  <c>CustomerEndpoint</c> and <c>SystemEndpoint</c> are only populated for EMAIL contacts.
+    /// 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Only data from November 12, 2021, and later is returned by this API.
+    /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
+    /// and then it is deleted. Only contact information that is available in Amazon Connect
+    /// is returned by this API.
     /// </para>
-    ///  </important>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class DescribeContactRequest : AmazonConnectRequest
     {

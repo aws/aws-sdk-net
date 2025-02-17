@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Contains information about an archive rule.
+    /// Contains information about an archive rule. Archive rules automatically archive new
+    /// findings that meet the criteria you define when you create the rule.
     /// </summary>
     public partial class ArchiveRuleSummary
     {

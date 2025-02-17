@@ -35,8 +35,30 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class OAuth2ClientCredentialConfiguration
     {
+        private string _authorizationUrl;
         private string _roleArn;
         private string _secretArn;
+        private string _tokenUrl;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationUrl. 
+        /// <para>
+        /// The redirect URL required by the OAuth 2.0 protocol for Amazon Q Business to authenticate
+        /// a plugin user through a third party authentication server.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AuthorizationUrl
+        {
+            get { return this._authorizationUrl; }
+            set { this._authorizationUrl = value; }
+        }
+
+        // Check to see if AuthorizationUrl property is set
+        internal bool IsSetAuthorizationUrl()
+        {
+            return this._authorizationUrl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
@@ -76,6 +98,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenUrl. 
+        /// <para>
+        /// The URL required by the OAuth 2.0 protocol to exchange an end user authorization code
+        /// for an access token.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TokenUrl
+        {
+            get { return this._tokenUrl; }
+            set { this._tokenUrl = value; }
+        }
+
+        // Check to see if TokenUrl property is set
+        internal bool IsSetTokenUrl()
+        {
+            return this._tokenUrl != null;
         }
 
     }

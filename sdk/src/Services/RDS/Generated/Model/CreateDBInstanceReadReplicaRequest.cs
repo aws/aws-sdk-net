@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -125,6 +126,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The amount of storage (in gibibytes) to allocate initially for the read replica. Follow
         /// the allocation rules specified in <c>CreateDBInstance</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
         /// </para>
         ///  <note> 
         /// <para>
@@ -290,6 +295,29 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the read replica.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this setting is not supported.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the read replica, for example db.m4.large. Not
@@ -338,20 +366,26 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
-        /// The name of the DB parameter group to associate with this DB instance.
+        /// The name of the DB parameter group to associate with this read replica DB instance.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <c>DBParameterGroupName</c>, then Amazon RDS uses
-        /// the <c>DBParameterGroup</c> of the source DB instance for a same Region read replica,
-        /// or the default <c>DBParameterGroup</c> for the specified DB engine for a cross-Region
-        /// read replica.
+        /// For Single-AZ or Multi-AZ DB instance read replica instances, if you don't specify
+        /// a value for <c>DBParameterGroupName</c>, then Amazon RDS uses the <c>DBParameterGroup</c>
+        /// of the source DB instance for a same Region read replica, or the default <c>DBParameterGroup</c>
+        /// for the specified DB engine for a cross-Region read replica.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Multi-AZ DB cluster same Region read replica instances, if you don't specify a
+        /// value for <c>DBParameterGroupName</c>, then Amazon RDS uses the default <c>DBParameterGroup</c>.
         /// </para>
         ///  
         /// <para>
         /// Specifying a parameter group for this operation is only supported for MySQL DB instances
-        /// for cross-Region read replicas and for Oracle DB instances. It isn't supported for
-        /// MySQL DB instances for same Region read replicas or for RDS Custom.
+        /// for cross-Region read replicas, for Multi-AZ DB cluster read replica instances, and
+        /// for Oracle DB instances. It isn't supported for MySQL DB instances for same Region
+        /// read replicas or for RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -1204,11 +1238,6 @@ namespace Amazon.RDS.Model
         /// (or <c>--source-region</c> for the CLI) instead of specifying <c>PreSignedUrl</c>
         /// manually. Specifying <c>SourceRegion</c> autogenerates a presigned URL that is a valid
         /// request for the operation that can run in the source Amazon Web Services Region.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SourceRegion</c> isn't supported for SQL Server, because Amazon RDS for SQL Server
-        /// doesn't support cross-Region read replicas.
         /// </para>
         ///  </note> 
         /// <para>

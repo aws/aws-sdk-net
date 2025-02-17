@@ -31,7 +31,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLogSources operation.
-    /// Retrieves the log sources in the current Amazon Web Services Region.
+    /// Retrieves the log sources.
     /// </summary>
     public partial class ListLogSourcesRequest : AmazonSecurityLakeRequest
     {

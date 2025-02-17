@@ -78,6 +78,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("associatedAttackSequenceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociatedAttackSequenceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("confidence", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

@@ -65,6 +65,17 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetSqlComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("sqlComputeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SqlComputeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSqlParameters())
             {
                 context.Writer.WritePropertyName("sqlParameters");

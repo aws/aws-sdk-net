@@ -36,6 +36,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private string _averageNormalizedUnitsUsedPerHour;
+        private string _averageNumberOfCapacityUnitsUsedPerHour;
         private string _averageNumberOfInstancesUsedPerHour;
         private string _averageUtilization;
         private string _currencyCode;
@@ -46,12 +47,16 @@ namespace Amazon.CostExplorer.Model
         private string _estimatedReservationCostForLookbackPeriod;
         private InstanceDetails _instanceDetails;
         private string _maximumNormalizedUnitsUsedPerHour;
+        private string _maximumNumberOfCapacityUnitsUsedPerHour;
         private string _maximumNumberOfInstancesUsedPerHour;
         private string _minimumNormalizedUnitsUsedPerHour;
+        private string _minimumNumberOfCapacityUnitsUsedPerHour;
         private string _minimumNumberOfInstancesUsedPerHour;
         private string _recommendedNormalizedUnitsToPurchase;
+        private string _recommendedNumberOfCapacityUnitsToPurchase;
         private string _recommendedNumberOfInstancesToPurchase;
         private string _recurringStandardMonthlyCost;
+        private ReservedCapacityDetails _reservedCapacityDetails;
         private string _upfrontCost;
 
         /// <summary>
@@ -91,6 +96,27 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetAverageNormalizedUnitsUsedPerHour()
         {
             return this._averageNormalizedUnitsUsedPerHour != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AverageNumberOfCapacityUnitsUsedPerHour. 
+        /// <para>
+        /// The average number of provisioned capacity units that you used in an hour during the
+        /// historical period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AverageNumberOfCapacityUnitsUsedPerHour
+        {
+            get { return this._averageNumberOfCapacityUnitsUsedPerHour; }
+            set { this._averageNumberOfCapacityUnitsUsedPerHour = value; }
+        }
+
+        // Check to see if AverageNumberOfCapacityUnitsUsedPerHour property is set
+        internal bool IsSetAverageNumberOfCapacityUnitsUsedPerHour()
+        {
+            return this._averageNumberOfCapacityUnitsUsedPerHour != null;
         }
 
         /// <summary>
@@ -291,6 +317,27 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumNumberOfCapacityUnitsUsedPerHour. 
+        /// <para>
+        /// The maximum number of provisioned capacity units that you used in an hour during the
+        /// historical period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string MaximumNumberOfCapacityUnitsUsedPerHour
+        {
+            get { return this._maximumNumberOfCapacityUnitsUsedPerHour; }
+            set { this._maximumNumberOfCapacityUnitsUsedPerHour = value; }
+        }
+
+        // Check to see if MaximumNumberOfCapacityUnitsUsedPerHour property is set
+        internal bool IsSetMaximumNumberOfCapacityUnitsUsedPerHour()
+        {
+            return this._maximumNumberOfCapacityUnitsUsedPerHour != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumNumberOfInstancesUsedPerHour. 
         /// <para>
         /// The maximum number of instances that you used in an hour during the historical period.
@@ -328,6 +375,27 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetMinimumNormalizedUnitsUsedPerHour()
         {
             return this._minimumNormalizedUnitsUsedPerHour != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumNumberOfCapacityUnitsUsedPerHour. 
+        /// <para>
+        /// The minimum number of provisioned capacity units that you used in an hour during the
+        /// historical period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string MinimumNumberOfCapacityUnitsUsedPerHour
+        {
+            get { return this._minimumNumberOfCapacityUnitsUsedPerHour; }
+            set { this._minimumNumberOfCapacityUnitsUsedPerHour = value; }
+        }
+
+        // Check to see if MinimumNumberOfCapacityUnitsUsedPerHour property is set
+        internal bool IsSetMinimumNumberOfCapacityUnitsUsedPerHour()
+        {
+            return this._minimumNumberOfCapacityUnitsUsedPerHour != null;
         }
 
         /// <summary>
@@ -370,6 +438,26 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendedNumberOfCapacityUnitsToPurchase. 
+        /// <para>
+        /// The number of reserved capacity units that Amazon Web Services recommends that you
+        /// purchase.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string RecommendedNumberOfCapacityUnitsToPurchase
+        {
+            get { return this._recommendedNumberOfCapacityUnitsToPurchase; }
+            set { this._recommendedNumberOfCapacityUnitsToPurchase = value; }
+        }
+
+        // Check to see if RecommendedNumberOfCapacityUnitsToPurchase property is set
+        internal bool IsSetRecommendedNumberOfCapacityUnitsToPurchase()
+        {
+            return this._recommendedNumberOfCapacityUnitsToPurchase != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecommendedNumberOfInstancesToPurchase. 
         /// <para>
         /// The number of instances that Amazon Web Services recommends that you purchase.
@@ -405,6 +493,24 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetRecurringStandardMonthlyCost()
         {
             return this._recurringStandardMonthlyCost != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedCapacityDetails. 
+        /// <para>
+        /// Details about the reservations that Amazon Web Services recommends that you purchase.
+        /// </para>
+        /// </summary>
+        public ReservedCapacityDetails ReservedCapacityDetails
+        {
+            get { return this._reservedCapacityDetails; }
+            set { this._reservedCapacityDetails = value; }
+        }
+
+        // Check to see if ReservedCapacityDetails property is set
+        internal bool IsSetReservedCapacityDetails()
+        {
+            return this._reservedCapacityDetails != null;
         }
 
         /// <summary>

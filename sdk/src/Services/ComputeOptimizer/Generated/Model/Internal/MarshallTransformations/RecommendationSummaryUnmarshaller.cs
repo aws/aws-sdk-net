@@ -72,10 +72,28 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("aggregatedSavingsOpportunity", targetDepth))
+                {
+                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                    unmarshalledObject.AggregatedSavingsOpportunity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("currentPerformanceRiskRatings", targetDepth))
                 {
                     var unmarshaller = CurrentPerformanceRiskRatingsUnmarshaller.Instance;
                     unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idleSavingsOpportunity", targetDepth))
+                {
+                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                    unmarshalledObject.IdleSavingsOpportunity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idleSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IdleSummary, IdleSummaryUnmarshaller>(IdleSummaryUnmarshaller.Instance);
+                    unmarshalledObject.IdleSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inferredWorkloadSavings", targetDepth))

@@ -291,6 +291,14 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion ApSoutheast4 = new CloudWatchRegion("ap-southeast-4");
         /// <summary>
+        /// Constant ApSoutheast5 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSoutheast5 = new CloudWatchRegion("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSoutheast7 = new CloudWatchRegion("ap-southeast-7");
+        /// <summary>
         /// Constant CaCentral1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion CaCentral1 = new CloudWatchRegion("ca-central-1");
@@ -350,6 +358,10 @@ namespace Amazon.Route53
         /// Constant MeSouth1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion MeSouth1 = new CloudWatchRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion MxCentral1 = new CloudWatchRegion("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for CloudWatchRegion
         /// </summary>
@@ -941,6 +953,14 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast4 = new ResourceRecordSetRegion("ap-southeast-4");
         /// <summary>
+        /// Constant ApSoutheast5 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion ApSoutheast5 = new ResourceRecordSetRegion("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion ApSoutheast7 = new ResourceRecordSetRegion("ap-southeast-7");
+        /// <summary>
         /// Constant CaCentral1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion CaCentral1 = new ResourceRecordSetRegion("ca-central-1");
@@ -1000,6 +1020,10 @@ namespace Amazon.Route53
         /// Constant MeSouth1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion MeSouth1 = new ResourceRecordSetRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion MxCentral1 = new ResourceRecordSetRegion("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for ResourceRecordSetRegion
         /// </summary>
@@ -1129,6 +1153,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly RRType DS = new RRType("DS");
         /// <summary>
+        /// Constant HTTPS for RRType
+        /// </summary>
+        public static readonly RRType HTTPS = new RRType("HTTPS");
+        /// <summary>
         /// Constant MX for RRType
         /// </summary>
         public static readonly RRType MX = new RRType("MX");
@@ -1156,6 +1184,18 @@ namespace Amazon.Route53
         /// Constant SRV for RRType
         /// </summary>
         public static readonly RRType SRV = new RRType("SRV");
+        /// <summary>
+        /// Constant SSHFP for RRType
+        /// </summary>
+        public static readonly RRType SSHFP = new RRType("SSHFP");
+        /// <summary>
+        /// Constant SVCB for RRType
+        /// </summary>
+        public static readonly RRType SVCB = new RRType("SVCB");
+        /// <summary>
+        /// Constant TLSA for RRType
+        /// </summary>
+        public static readonly RRType TLSA = new RRType("TLSA");
         /// <summary>
         /// Constant TXT for RRType
         /// </summary>
@@ -1359,6 +1399,14 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly VPCRegion ApSoutheast4 = new VPCRegion("ap-southeast-4");
         /// <summary>
+        /// Constant ApSoutheast5 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSoutheast5 = new VPCRegion("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast7 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion ApSoutheast7 = new VPCRegion("ap-southeast-7");
+        /// <summary>
         /// Constant CaCentral1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion CaCentral1 = new VPCRegion("ca-central-1");
@@ -1370,6 +1418,10 @@ namespace Amazon.Route53
         /// Constant CnNorth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion CnNorth1 = new VPCRegion("cn-north-1");
+        /// <summary>
+        /// Constant CnNorthwest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion CnNorthwest1 = new VPCRegion("cn-northwest-1");
         /// <summary>
         /// Constant EuCentral1 for VPCRegion
         /// </summary>
@@ -1414,6 +1466,10 @@ namespace Amazon.Route53
         /// Constant MeSouth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion MeSouth1 = new VPCRegion("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion MxCentral1 = new VPCRegion("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for VPCRegion
         /// </summary>

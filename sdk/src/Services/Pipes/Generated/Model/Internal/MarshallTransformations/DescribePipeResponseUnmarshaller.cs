@@ -94,6 +94,12 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                     response.EnrichmentParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

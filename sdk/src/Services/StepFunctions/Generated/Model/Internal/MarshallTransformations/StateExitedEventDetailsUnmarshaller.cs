@@ -66,6 +66,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("assignedVariables", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AssignedVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assignedVariablesDetails", targetDepth))
+                {
+                    var unmarshaller = AssignedVariablesDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AssignedVariablesDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

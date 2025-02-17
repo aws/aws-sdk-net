@@ -68,6 +68,7 @@ namespace Amazon.EC2.Model
         private string _address;
         private string _customerOwnedIpv4Pool;
         private DomainType _domain;
+        private string _ipamPoolId;
         private string _networkBorderGroup;
         private string _publicIpv4Pool;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
@@ -126,6 +127,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPoolId. 
+        /// <para>
+        /// The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR provisioned
+        /// to it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-eip-pool.html">Allocate
+        /// sequential Elastic IP addresses from an IPAM pool</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public string IpamPoolId
+        {
+            get { return this._ipamPoolId; }
+            set { this._ipamPoolId = value; }
+        }
+
+        // Check to see if IpamPoolId property is set
+        internal bool IsSetIpamPoolId()
+        {
+            return this._ipamPoolId != null;
         }
 
         /// <summary>

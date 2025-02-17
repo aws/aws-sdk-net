@@ -291,6 +291,79 @@ namespace Amazon.DataExchange
         #endregion
 
 
+        #region  AcceptDataGrant
+
+        /// <summary>
+        /// This operation accepts a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the AcceptDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        public virtual AcceptDataGrantResponse AcceptDataGrant(AcceptDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptDataGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptDataGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        public virtual IAsyncResult BeginAcceptDataGrant(AcceptDataGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptDataGrant.</param>
+        /// 
+        /// <returns>Returns a  AcceptDataGrantResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        public virtual AcceptDataGrantResponse EndAcceptDataGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptDataGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelJob
 
         /// <summary>
@@ -358,6 +431,78 @@ namespace Amazon.DataExchange
         public virtual CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataGrant
+
+        /// <summary>
+        /// This operation creates a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        public virtual CreateDataGrantResponse CreateDataGrant(CreateDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataGrant(CreateDataGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataGrant.</param>
+        /// 
+        /// <returns>Returns a  CreateDataGrantResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        public virtual CreateDataGrantResponse EndCreateDataGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataGrantResponse>(asyncResult);
         }
 
         #endregion
@@ -715,6 +860,75 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  DeleteDataGrant
+
+        /// <summary>
+        /// This operation deletes a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        public virtual DeleteDataGrantResponse DeleteDataGrant(DeleteDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataGrant(DeleteDataGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataGrant.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataGrantResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        public virtual DeleteDataGrantResponse EndDeleteDataGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataSet
 
         /// <summary>
@@ -993,6 +1207,75 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetDataGrant
+
+        /// <summary>
+        /// This operation returns information about a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        public virtual GetDataGrantResponse GetDataGrant(GetDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        public virtual IAsyncResult BeginGetDataGrant(GetDataGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataGrant.</param>
+        /// 
+        /// <returns>Returns a  GetDataGrantResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        public virtual GetDataGrantResponse EndGetDataGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataSet
 
         /// <summary>
@@ -1191,6 +1474,75 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetReceivedDataGrant
+
+        /// <summary>
+        /// This operation returns information about a received data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetReceivedDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        public virtual GetReceivedDataGrantResponse GetReceivedDataGrant(GetReceivedDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetReceivedDataGrantResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReceivedDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReceivedDataGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        public virtual IAsyncResult BeginGetReceivedDataGrant(GetReceivedDataGrantRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReceivedDataGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReceivedDataGrant.</param>
+        /// 
+        /// <returns>Returns a  GetReceivedDataGrantResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        public virtual GetReceivedDataGrantResponse EndGetReceivedDataGrant(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetReceivedDataGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRevision
 
         /// <summary>
@@ -1253,6 +1605,75 @@ namespace Amazon.DataExchange
         public virtual GetRevisionResponse EndGetRevision(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRevisionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataGrants
+
+        /// <summary>
+        /// This operation returns information about all data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        public virtual ListDataGrantsResponse ListDataGrants(ListDataGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        public virtual IAsyncResult BeginListDataGrants(ListDataGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataGrants.</param>
+        /// 
+        /// <returns>Returns a  ListDataGrantsResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        public virtual ListDataGrantsResponse EndListDataGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataGrantsResponse>(asyncResult);
         }
 
         #endregion
@@ -1327,8 +1748,7 @@ namespace Amazon.DataExchange
 
         /// <summary>
         /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-        /// and the maxResults parameter is ignored.
+        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
         /// 
@@ -1519,6 +1939,75 @@ namespace Amazon.DataExchange
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReceivedDataGrants
+
+        /// <summary>
+        /// This operation returns information about all received data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        public virtual ListReceivedDataGrantsResponse ListReceivedDataGrants(ListReceivedDataGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceivedDataGrantsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceivedDataGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceivedDataGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        public virtual IAsyncResult BeginListReceivedDataGrants(ListReceivedDataGrantsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceivedDataGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceivedDataGrants.</param>
+        /// 
+        /// <returns>Returns a  ListReceivedDataGrantsResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        public virtual ListReceivedDataGrantsResponse EndListReceivedDataGrants(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReceivedDataGrantsResponse>(asyncResult);
         }
 
         #endregion

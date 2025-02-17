@@ -32,6 +32,12 @@ namespace Amazon.IoTJobsDataPlane.Model
     /// <summary>
     /// Container for the parameters to the GetPendingJobExecutions operation.
     /// Gets the list of all jobs for a thing that are not in a terminal status.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetPendingJobExecutionsRequest : AmazonIoTJobsDataPlaneRequest
     {

@@ -72,6 +72,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeTypesAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fleetsAllowed", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FleetsAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maximumBuildsAllowed", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -121,10 +121,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ChecksumCRC32 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-crc32"));
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-crc32c"))
                 response.ChecksumCRC32C = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-crc32c"));
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-crc64nvme"))
+                response.ChecksumCRC64NVME = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-crc64nvme"));
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha1"))
                 response.ChecksumSHA1 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-sha1"));
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha256"))
                 response.ChecksumSHA256 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-sha256"));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderChecksumType))
+                response.ChecksumType = S3Transforms.ToString(responseData.GetHeaderValue(S3Constants.AmzHeaderChecksumType));
 
             foreach (var name in responseData.GetHeaderNames())
             {

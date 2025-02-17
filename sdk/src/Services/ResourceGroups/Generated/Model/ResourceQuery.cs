@@ -196,7 +196,7 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         ///  <i> <c>CLOUDFORMATION_STACK_1_0:</c> </i> Specifies that you want the group to contain
         /// the members of an CloudFormation stack. The <c>Query</c> contains a <c>StackIdentifier</c>
-        /// element with an ARN for a CloudFormation stack.
+        /// element with an Amazon resource name (ARN) for a CloudFormation stack.
         /// </para>
         ///  </li> <li> 
         /// <para>

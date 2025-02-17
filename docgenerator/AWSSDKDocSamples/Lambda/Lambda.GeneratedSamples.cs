@@ -11,11 +11,11 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 {
     class LambdaSamples : ISample
     {
-        static IAmazonLambda client = new AmazonLambdaClient();
         public void LambdaAddLayerVersionPermission()
         {
             #region to-add-permissions-to-a-layer-version-1586479797163
 
+            var client = new AmazonLambdaClient();
             var response = client.AddLayerVersionPermission(new AddLayerVersionPermissionRequest 
             {
                 Action = "lambda:GetLayerVersion",
@@ -35,6 +35,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region add-permission-1474651469455
 
+            var client = new AmazonLambdaClient();
             var response = client.AddPermission(new AddPermissionRequest 
             {
                 Action = "lambda:InvokeFunction",
@@ -54,6 +55,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region add-permission-1474651469456
 
+            var client = new AmazonLambdaClient();
             var response = client.AddPermission(new AddPermissionRequest 
             {
                 Action = "lambda:InvokeFunction",
@@ -71,6 +73,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-create-an-alias-for-a-lambda-function-1586480324259
 
+            var client = new AmazonLambdaClient();
             var response = client.CreateAlias(new CreateAliasRequest 
             {
                 Description = "alias for live version of function",
@@ -92,6 +95,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-create-a-mapping-between-an-event-source-and-an-aws-lambda-function-1586480555467
 
+            var client = new AmazonLambdaClient();
             var response = client.CreateEventSourceMapping(new CreateEventSourceMappingRequest 
             {
                 BatchSize = 5,
@@ -114,6 +118,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-create-a-function-1586492061186
 
+            var client = new AmazonLambdaClient();
             var response = client.CreateFunction(new CreateFunctionRequest 
             {
                 Code = new FunctionCode {
@@ -165,6 +170,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-a-lambda-function-alias-1481660370804
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteAlias(new DeleteAliasRequest 
             {
                 FunctionName = "my-function",
@@ -179,6 +185,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-a-lambda-function-event-source-mapping-1481658973862
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteEventSourceMapping(new DeleteEventSourceMappingRequest 
             {
                 UUID = "14e0db71-xmpl-4eb5-b481-8945cf9d10c2"
@@ -199,6 +206,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-a-lambda-function-1481648553696
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteFunction(new DeleteFunctionRequest 
             {
                 FunctionName = "my-function",
@@ -213,6 +221,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-remove-the-reserved-concurrent-execution-limit-from-a-function-1586480714680
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteFunctionConcurrency(new DeleteFunctionConcurrencyRequest 
             {
                 FunctionName = "my-function"
@@ -226,6 +235,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-an-asynchronous-invocation-configuration-1586481102187
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteFunctionEventInvokeConfig(new DeleteFunctionEventInvokeConfigRequest 
             {
                 FunctionName = "my-function",
@@ -240,6 +250,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-a-version-of-a-lambda-layer-1586481157547
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteLayerVersion(new DeleteLayerVersionRequest 
             {
                 LayerName = "my-layer",
@@ -254,6 +265,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-a-provisioned-concurrency-configuration-1586481032551
 
+            var client = new AmazonLambdaClient();
             var response = client.DeleteProvisionedConcurrencyConfig(new DeleteProvisionedConcurrencyConfigRequest 
             {
                 FunctionName = "my-function",
@@ -268,6 +280,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-account-settings-1481657495274
 
+            var client = new AmazonLambdaClient();
             var response = client.GetAccountSettings(new GetAccountSettingsRequest 
             {
             });
@@ -282,6 +295,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-retrieve-a-lambda-function-alias-1481648742254
 
+            var client = new AmazonLambdaClient();
             var response = client.GetAlias(new GetAliasRequest 
             {
                 FunctionName = "my-function",
@@ -301,6 +315,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-a-lambda-functions-event-source-mapping-1481661622799
 
+            var client = new AmazonLambdaClient();
             var response = client.GetEventSourceMapping(new GetEventSourceMappingRequest 
             {
                 UUID = "14e0db71-xmpl-4eb5-b481-8945cf9d10c2"
@@ -326,6 +341,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-a-lambda-function-1481661622799
 
+            var client = new AmazonLambdaClient();
             var response = client.GetFunction(new GetFunctionRequest 
             {
                 FunctionName = "my-function",
@@ -343,6 +359,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-the-reserved-concurrency-setting-for-a-function-1586481279992
 
+            var client = new AmazonLambdaClient();
             var response = client.GetFunctionConcurrency(new GetFunctionConcurrencyRequest 
             {
                 FunctionName = "my-function"
@@ -357,6 +374,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-a-lambda-functions-event-source-mapping-1481661622799
 
+            var client = new AmazonLambdaClient();
             var response = client.GetFunctionConfiguration(new GetFunctionConfigurationRequest 
             {
                 FunctionName = "my-function",
@@ -389,6 +407,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-an-asynchronous-invocation-configuration-1586481338463
 
+            var client = new AmazonLambdaClient();
             var response = client.GetFunctionEventInvokeConfig(new GetFunctionEventInvokeConfigRequest 
             {
                 FunctionName = "my-function",
@@ -408,6 +427,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-information-about-a-lambda-layer-version-1586481457839
 
+            var client = new AmazonLambdaClient();
             var response = client.GetLayerVersion(new GetLayerVersionRequest 
             {
                 LayerName = "my-layer",
@@ -430,6 +450,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-information-about-a-lambda-layer-version-1586481457839
 
+            var client = new AmazonLambdaClient();
             var response = client.GetLayerVersionByArn(new GetLayerVersionByArnRequest 
             {
                 Arn = "arn:aws:lambda:ca-central-1:123456789012:layer:blank-python-lib:3"
@@ -450,6 +471,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-retrieve-a-lambda-function-policy-1481649319053
 
+            var client = new AmazonLambdaClient();
             var response = client.GetPolicy(new GetPolicyRequest 
             {
                 FunctionName = "my-function",
@@ -464,8 +486,9 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region to-view-a-provisioned-concurrency-configuration-1586490192690
+            #region to-get-a-provisioned-concurrency-configuration-1586490192690
 
+            var client = new AmazonLambdaClient();
             var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
             {
                 FunctionName = "my-function",
@@ -483,8 +506,9 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region to-get-a-provisioned-concurrency-configuration-1586490192690
+            #region to-view-a-provisioned-concurrency-configuration-1586490192690
 
+            var client = new AmazonLambdaClient();
             var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
             {
                 FunctionName = "my-function",
@@ -504,6 +528,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-invoke-a-lambda-function-1481659683915
 
+            var client = new AmazonLambdaClient();
             var response = client.Invoke(new InvokeRequest 
             {
                 FunctionName = "my-function",
@@ -520,6 +545,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-invoke-a-lambda-function-async-1481659683915
 
+            var client = new AmazonLambdaClient();
             var response = client.Invoke(new InvokeRequest 
             {
                 FunctionName = "my-function",
@@ -537,6 +563,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-invoke-a-lambda-function-asynchronously-1481649694923
 
+            var client = new AmazonLambdaClient();
             var response = client.InvokeAsync(new InvokeAsyncRequest 
             {
                 FunctionName = "my-function",
@@ -551,6 +578,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-list-a-functions-aliases-1481650199732
 
+            var client = new AmazonLambdaClient();
             var response = client.ListAliases(new ListAliasesRequest 
             {
                 FunctionName = "my-function"
@@ -565,6 +593,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-list-the-event-source-mappings-for-a-function-1586490285906
 
+            var client = new AmazonLambdaClient();
             var response = client.ListEventSourceMappings(new ListEventSourceMappingsRequest 
             {
                 FunctionName = "my-function"
@@ -579,6 +608,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-view-a-list-of-asynchronous-invocation-configurations-1586490355611
 
+            var client = new AmazonLambdaClient();
             var response = client.ListFunctionEventInvokeConfigs(new ListFunctionEventInvokeConfigsRequest 
             {
                 FunctionName = "my-function"
@@ -593,6 +623,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-a-list-of-lambda-functions-1481650507425
 
+            var client = new AmazonLambdaClient();
             var response = client.ListFunctions(new ListFunctionsRequest 
             {
             });
@@ -607,6 +638,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-list-the-layers-that-are-compatible-with-your-functions-runtime-1586490857297
 
+            var client = new AmazonLambdaClient();
             var response = client.ListLayers(new ListLayersRequest 
             {
                 CompatibleRuntime = "python3.7"
@@ -621,6 +653,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-list-versions-of-a-layer-1586490857297
 
+            var client = new AmazonLambdaClient();
             var response = client.ListLayerVersions(new ListLayerVersionsRequest 
             {
                 LayerName = "blank-java-lib"
@@ -635,6 +668,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-get-a-list-of-provisioned-concurrency-configurations-1586491032592
 
+            var client = new AmazonLambdaClient();
             var response = client.ListProvisionedConcurrencyConfigs(new ListProvisionedConcurrencyConfigsRequest 
             {
                 FunctionName = "my-function"
@@ -649,6 +683,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-retrieve-the-list-of-tags-for-a-lambda-function-1586491111498
 
+            var client = new AmazonLambdaClient();
             var response = client.ListTags(new ListTagsRequest 
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function"
@@ -663,6 +698,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-list-versions-1481650603750
 
+            var client = new AmazonLambdaClient();
             var response = client.ListVersionsByFunction(new ListVersionsByFunctionRequest 
             {
                 FunctionName = "my-function"
@@ -677,6 +713,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-create-a-lambda-layer-version-1586491213595
 
+            var client = new AmazonLambdaClient();
             var response = client.PublishLayerVersion(new PublishLayerVersionRequest 
             {
                 CompatibleRuntimes = new List<string> {
@@ -708,6 +745,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-publish-a-version-of-a-lambda-function-1481650704986
 
+            var client = new AmazonLambdaClient();
             var response = client.PublishVersion(new PublishVersionRequest 
             {
                 CodeSha256 = "",
@@ -741,6 +779,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-configure-a-reserved-concurrency-limit-for-a-function-1586491405956
 
+            var client = new AmazonLambdaClient();
             var response = client.PutFunctionConcurrency(new PutFunctionConcurrencyRequest 
             {
                 FunctionName = "my-function",
@@ -756,6 +795,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-configure-error-handling-for-asynchronous-invocation-1586491524021
 
+            var client = new AmazonLambdaClient();
             var response = client.PutFunctionEventInvokeConfig(new PutFunctionEventInvokeConfigRequest 
             {
                 FunctionName = "my-function",
@@ -776,6 +816,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-allocate-provisioned-concurrency-1586491651377
 
+            var client = new AmazonLambdaClient();
             var response = client.PutProvisionedConcurrencyConfig(new PutProvisionedConcurrencyConfigRequest 
             {
                 FunctionName = "my-function",
@@ -795,6 +836,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-delete-layer-version-permissions-1586491829416
 
+            var client = new AmazonLambdaClient();
             var response = client.RemoveLayerVersionPermission(new RemoveLayerVersionPermissionRequest 
             {
                 LayerName = "my-layer",
@@ -810,6 +852,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-remove-a-lambda-functions-permissions-1481661337021
 
+            var client = new AmazonLambdaClient();
             var response = client.RemovePermission(new RemovePermissionRequest 
             {
                 FunctionName = "my-function",
@@ -825,6 +868,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-add-tags-to-an-existing-lambda-function-1586491890446
 
+            var client = new AmazonLambdaClient();
             var response = client.TagResource(new TagResourceRequest 
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function",
@@ -841,6 +885,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-remove-tags-from-an-existing-lambda-function-1586491956425
 
+            var client = new AmazonLambdaClient();
             var response = client.UntagResource(new UntagResourceRequest 
             {
                 Resource = "arn:aws:lambda:us-west-2:123456789012:function:my-function",
@@ -857,6 +902,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-update-a-function-alias-1481650817950
 
+            var client = new AmazonLambdaClient();
             var response = client.UpdateAlias(new UpdateAliasRequest 
             {
                 FunctionName = "my-function",
@@ -881,6 +927,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-update-a-lambda-function-event-source-mapping-1481650907413
 
+            var client = new AmazonLambdaClient();
             var response = client.UpdateEventSourceMapping(new UpdateEventSourceMappingRequest 
             {
                 BatchSize = 123,
@@ -905,6 +952,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-update-a-lambda-functions-code-1481650992672
 
+            var client = new AmazonLambdaClient();
             var response = client.UpdateFunctionCode(new UpdateFunctionCodeRequest 
             {
                 FunctionName = "my-function",
@@ -934,6 +982,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-update-a-lambda-functions-configuration-1481651096447
 
+            var client = new AmazonLambdaClient();
             var response = client.UpdateFunctionConfiguration(new UpdateFunctionConfigurationRequest 
             {
                 FunctionName = "my-function",
@@ -962,6 +1011,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
         {
             #region to-update-an-asynchronous-invocation-configuration-1586492061186
 
+            var client = new AmazonLambdaClient();
             var response = client.UpdateFunctionEventInvokeConfig(new UpdateFunctionEventInvokeConfigRequest 
             {
                 DestinationConfig = new DestinationConfig { OnFailure = new OnFailure { Destination = "arn:aws:sqs:us-east-2:123456789012:destination" } },

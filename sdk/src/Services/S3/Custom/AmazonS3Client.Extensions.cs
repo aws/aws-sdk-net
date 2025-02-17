@@ -568,7 +568,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 Expires = expiration
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
 
             return this.GetPreSignedURL(request);
@@ -583,7 +583,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return this.BeginDeleteObject(request, callback, state);
         }
@@ -602,7 +602,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 InputStream = stream
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return transfer.BeginUpload(request, callback, state);
         }
@@ -622,7 +622,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return transfer.BeginUpload(request, callback, state);
         }
@@ -643,7 +643,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return transfer.BeginDownload(request, callback, state);
         }
@@ -661,7 +661,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return this.BeginGetObject(request, callback, state);
         }

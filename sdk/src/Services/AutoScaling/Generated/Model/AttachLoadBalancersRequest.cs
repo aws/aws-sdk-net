@@ -33,9 +33,9 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the AttachLoadBalancers operation.
     /// <note> 
     /// <para>
-    /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
-    /// multiple traffic sources types. We recommend using <c>AttachTrafficSources</c> to
-    /// simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancers</c>.
+    /// This API operation is superseded by <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html">https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html</a>,
+    /// which can attach multiple traffic sources types. We recommend using <c>AttachTrafficSources</c>
+    /// to simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancers</c>.
     /// You can use both the original <c>AttachLoadBalancers</c> API operation and <c>AttachTrafficSources</c>
     /// on the same Auto Scaling group.
     /// </para>
@@ -46,8 +46,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
-    /// API. To detach a load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+    /// To describe the load balancers for an Auto Scaling group, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+    /// API. To detach a load balancer from the Auto Scaling group, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DetachLoadBalancers.html">DetachLoadBalancers</a>
     /// API.
     /// </para>
     ///  

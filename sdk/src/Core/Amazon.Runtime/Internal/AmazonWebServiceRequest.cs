@@ -98,7 +98,14 @@ namespace Amazon.Runtime
         /// <summary>
         /// Checksum validation behavior for validating the integrity of this request's response
         /// </summary>
-        protected internal virtual CoreChecksumResponseBehavior CoreChecksumMode => CoreChecksumResponseBehavior.DISABLED;
+        protected internal virtual CoreChecksumResponseBehavior CoreChecksumMode
+        {
+            get  => CoreChecksumResponseBehavior.DISABLED;
+            set 
+            {
+                // An empty setter which should be overridden by operations that has requestValidationModeMember.
+            }
+        }
 
         /// <summary>
         /// Checksum algorithms that are supported for validating the integrity of this request's response

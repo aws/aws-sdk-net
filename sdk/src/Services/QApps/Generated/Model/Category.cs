@@ -34,8 +34,46 @@ namespace Amazon.QApps.Model
     /// </summary>
     public partial class Category
     {
+        private int? _appCount;
+        private string _color;
         private string _id;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AppCount. 
+        /// <para>
+        /// The number of published Amazon Q Apps associated with a category
+        /// </para>
+        /// </summary>
+        public int AppCount
+        {
+            get { return this._appCount.GetValueOrDefault(); }
+            set { this._appCount = value; }
+        }
+
+        // Check to see if AppCount property is set
+        internal bool IsSetAppCount()
+        {
+            return this._appCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Color. 
+        /// <para>
+        /// The color of the category
+        /// </para>
+        /// </summary>
+        public string Color
+        {
+            get { return this._color; }
+            set { this._color = value; }
+        }
+
+        // Check to see if Color property is set
+        internal bool IsSetColor()
+        {
+            return this._color != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

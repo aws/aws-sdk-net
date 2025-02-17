@@ -56,6 +56,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("managedBy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ManagedBy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("serialConsoleAccessEnabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

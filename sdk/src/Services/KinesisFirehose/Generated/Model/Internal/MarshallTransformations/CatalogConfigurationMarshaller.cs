@@ -54,6 +54,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CatalogARN);
             }
 
+            if(requestObject.IsSetWarehouseLocation())
+            {
+                context.Writer.WritePropertyName("WarehouseLocation");
+                context.Writer.Write(requestObject.WarehouseLocation);
+            }
+
         }
 
         /// <summary>

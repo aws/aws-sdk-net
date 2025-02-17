@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class CreateSecurityGroupResponse : AmazonWebServiceResponse
     {
         private string _groupId;
+        private string _securityGroupArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupArn. 
+        /// <para>
+        /// The security group ARN.
+        /// </para>
+        /// </summary>
+        public string SecurityGroupArn
+        {
+            get { return this._securityGroupArn; }
+            set { this._securityGroupArn = value; }
+        }
+
+        // Check to see if SecurityGroupArn property is set
+        internal bool IsSetSecurityGroupArn()
+        {
+            return this._securityGroupArn != null;
         }
 
         /// <summary>

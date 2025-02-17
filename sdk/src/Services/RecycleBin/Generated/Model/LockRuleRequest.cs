@@ -31,7 +31,15 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the LockRule operation.
-    /// Locks a retention rule. A locked retention rule can't be modified or deleted.
+    /// Locks a Region-level retention rule. A locked retention rule can't be modified or
+    /// deleted.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You can't lock tag-level retention rules, or Region-level retention rules that have
+    /// exclusion tags.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LockRuleRequest : AmazonRecycleBinRequest
     {

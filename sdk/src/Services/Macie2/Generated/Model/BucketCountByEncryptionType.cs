@@ -107,8 +107,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Unknown. 
         /// <para>
         /// The total number of buckets that Amazon Macie doesn't have current encryption metadata
-        /// for. Macie can't provide current data about the default encryption settings for these
-        /// buckets.
+        /// for. For example, the buckets' permissions settings or a quota prevented Macie from
+        /// retrieving the default encryption settings for the buckets.
         /// </para>
         /// </summary>
         public long Unknown

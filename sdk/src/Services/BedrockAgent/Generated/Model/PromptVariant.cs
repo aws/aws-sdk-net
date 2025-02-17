@@ -34,11 +34,53 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class PromptVariant
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
+        private PromptGenAiResource _genAiResource;
         private PromptInferenceConfiguration _inferenceConfiguration;
+        private List<PromptMetadataEntry> _metadata = AWSConfigs.InitializeCollections ? new List<PromptMetadataEntry>() : null;
         private string _modelId;
         private string _name;
         private PromptTemplateConfiguration _templateConfiguration;
         private PromptTemplateType _templateType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// Contains model-specific inference configurations that aren't in the <c>inferenceConfiguration</c>
+        /// field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// request parameters and response fields for foundation models</a>.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenAiResource. 
+        /// <para>
+        /// Specifies a generative AI resource with which to use the prompt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public PromptGenAiResource GenAiResource
+        {
+            get { return this._genAiResource; }
+            set { this._genAiResource = value; }
+        }
+
+        // Check to see if GenAiResource property is set
+        internal bool IsSetGenAiResource()
+        {
+            return this._genAiResource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceConfiguration. 
@@ -59,9 +101,30 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// An array of objects, each containing a key-value pair that defines a metadata tag
+        /// and value to attach to a prompt variant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public List<PromptMetadataEntry> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model with which to run inference on the prompt.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> with which to run inference on the prompt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -102,6 +165,7 @@ namespace Amazon.BedrockAgent.Model
         /// Contains configurations for the prompt template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PromptTemplateConfiguration TemplateConfiguration
         {
             get { return this._templateConfiguration; }

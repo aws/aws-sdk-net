@@ -64,10 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("browserExtensionConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrowserExtensionConfigurationUnmarshaller.Instance;
+                    response.BrowserExtensionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customizationConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomizationConfigurationUnmarshaller.Instance;
+                    response.CustomizationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("defaultEndpoint", targetDepth))
@@ -80,6 +92,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ErrorDetailUnmarshaller.Instance;
                     response.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("identityProviderConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityProviderConfigurationUnmarshaller.Instance;
+                    response.IdentityProviderConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("origins", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Origins = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

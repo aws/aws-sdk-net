@@ -31,20 +31,23 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The details of a capacity provider strategy. A capacity provider strategy can be set
-    /// when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity
-    /// provider strategy for a cluster with the <a>CreateCluster</a> API.
+    /// when using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>or
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
+    /// APIs or as the default capacity provider strategy for a cluster with the <c>CreateCluster</c>
+    /// API.
     /// 
     ///  
     /// <para>
     /// Only capacity providers that are already associated with a cluster and have an <c>ACTIVE</c>
-    /// or <c>UPDATING</c> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+    /// or <c>UPDATING</c> status can be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
     /// API is used to associate a capacity provider with a cluster.
     /// </para>
     ///  
     /// <para>
     /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
     /// must already be created. New Auto Scaling group capacity providers can be created
-    /// with the <a>CreateCapacityProvider</a> API operation.
+    /// with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a>
+    /// API operation.
     /// </para>
     ///  
     /// <para>
@@ -57,12 +60,13 @@ namespace Amazon.ECS.Model
     /// With <c>FARGATE_SPOT</c>, you can run interruption tolerant tasks at a rate that's
     /// discounted compared to the <c>FARGATE</c> price. <c>FARGATE_SPOT</c> runs tasks on
     /// spare compute capacity. When Amazon Web Services needs the capacity back, your tasks
-    /// are interrupted with a two-minute warning. <c>FARGATE_SPOT</c> only supports Linux
-    /// tasks with the X86_64 architecture on platform version 1.3.0 or later.
+    /// are interrupted with a two-minute warning. <c>FARGATE_SPOT</c> supports Linux tasks
+    /// with the X86_64 architecture on platform version 1.3.0 or later. <c>FARGATE_SPOT</c>
+    /// supports Linux tasks with the ARM64 architecture on platform version 1.4.0 or later.
     /// </para>
     ///  
     /// <para>
-    /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+    /// A capacity provider strategy can contain a maximum of 20 capacity providers.
     /// </para>
     /// </summary>
     public partial class CapacityProviderStrategyItem

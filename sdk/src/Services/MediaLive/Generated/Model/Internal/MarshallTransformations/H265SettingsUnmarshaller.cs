@@ -108,6 +108,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deblocking", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Deblocking = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterSettings", targetDepth))
                 {
                     var unmarshaller = H265FilterSettingsUnmarshaller.Instance;
@@ -178,6 +184,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MinIInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("minQp", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinQp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mvOverPictureBoundaries", targetDepth))

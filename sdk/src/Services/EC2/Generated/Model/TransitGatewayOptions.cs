@@ -194,18 +194,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupReferencingSupport. <note> 
+        /// Gets and sets the property SecurityGroupReferencingSupport. 
         /// <para>
-        /// This parameter is in preview and may not be available for your account.
+        /// Enables you to reference a security group across VPCs attached to a transit gateway
+        /// to simplify security group management. 
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// Enables you to reference a security group across VPCs attached to a transit gateway.
-        /// Use this option to simplify security group management and control of instance-to-instance
-        /// traffic across VPCs that are connected by transit gateway. You can also use this option
-        /// to migrate from VPC peering (which was the only option that supported security group
-        /// referencing) to transit gateways (which now also support security group referencing).
-        /// This option is disabled by default and there are no additional costs to use this feature.
+        /// This option is disabled by default.
         /// </para>
         /// </summary>
         public SecurityGroupReferencingSupportValue SecurityGroupReferencingSupport

@@ -45,6 +45,14 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Paginator for Rerank operation
+        ///</summary>
+        public IRerankPaginator Rerank(RerankRequest request) 
+        {
+            return new RerankPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for Retrieve operation
         ///</summary>
         public IRetrievePaginator Retrieve(RetrieveRequest request) 

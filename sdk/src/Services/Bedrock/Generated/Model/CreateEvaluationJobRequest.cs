@@ -31,13 +31,11 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEvaluationJob operation.
-    /// API operation for creating and managing Amazon Bedrock automatic model evaluation
-    /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
-    /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-    /// evaluation</a>.
+    /// Creates an evaluation job.
     /// </summary>
     public partial class CreateEvaluationJobRequest : AmazonBedrockRequest
     {
+        private ApplicationType _applicationType;
         private string _clientRequestToken;
         private string _customerEncryptionKeyId;
         private EvaluationConfig _evaluationConfig;
@@ -47,6 +45,25 @@ namespace Amazon.Bedrock.Model
         private List<Tag> _jobTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private EvaluationOutputDataConfig _outputDataConfig;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge
+        /// base (retrieval and response generation).
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -73,8 +90,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CustomerEncryptionKeyId. 
         /// <para>
-        /// Specify your customer managed key ARN that will be used to encrypt your model evaluation
-        /// job.
+        /// Specify your customer managed encryption key Amazon Resource Name (ARN) that will
+        /// be used to encrypt your evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -93,7 +110,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EvaluationConfig. 
         /// <para>
-        /// Specifies whether the model evaluation job is automatic or uses human worker.
+        /// Contains the configuration details of either an automated or human-based evaluation
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,9 +130,12 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InferenceConfig. 
         /// <para>
-        /// Specify the models you want to use in your model evaluation job. Automatic model evaluation
-        /// jobs support a single model, and model evaluation job that use human workers support
-        /// two models.
+        /// Contains the configuration details of the inference model for the evaluation job.
+        /// </para>
+        ///  
+        /// <para>
+        /// For model evaluation jobs, automated jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a>, and jobs that use human workers support two models or inference profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -133,7 +154,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobDescription. 
         /// <para>
-        /// A description of the model evaluation job.
+        /// A description of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -152,8 +173,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the model evaluation job. Model evaluation job names must unique with
-        /// your AWS account, and your account's AWS region.
+        /// A name for the evaluation job. Names must unique with your Amazon Web Services account,
+        /// and your account's Amazon Web Services region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -191,8 +212,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// An object that defines where the results of model evaluation job will be saved in
-        /// Amazon S3.
+        /// Contains the configuration details of the Amazon S3 bucket for storing the results
+        /// of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -212,12 +233,9 @@ namespace Amazon.Bedrock.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume
-        /// to perform tasks on your behalf. The service role must have Amazon Bedrock as the
-        /// service principal, and provide access to any Amazon S3 buckets specified in the <c>EvaluationConfig</c>
-        /// object. To pass this role to Amazon Bedrock, the caller of this API must have the
-        /// <c>iam:PassRole</c> permission. To learn more about the required permissions, see
+        /// to perform tasks on your behalf. To learn more about the required permissions, see
         /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required
-        /// permissions</a>.
+        /// permissions for model evaluations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

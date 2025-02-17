@@ -43,7 +43,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You cannot delete a file system that is part of an EFS Replication configuration.
+    /// You cannot delete a file system that is part of an EFS replication configuration.
     /// You need to delete the replication configuration first.
     /// </para>
     ///  </note> 

@@ -100,6 +100,24 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.FilesDeleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilesFailed", targetDepth))
+                {
+                    var unmarshaller = TaskExecutionFilesFailedDetailUnmarshaller.Instance;
+                    response.FilesFailed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FilesListed", targetDepth))
+                {
+                    var unmarshaller = TaskExecutionFilesListedDetailUnmarshaller.Instance;
+                    response.FilesListed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FilesPrepared", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FilesPrepared = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilesSkipped", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -164,6 +182,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskExecutionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TaskMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TaskMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TaskReportConfig", targetDepth))

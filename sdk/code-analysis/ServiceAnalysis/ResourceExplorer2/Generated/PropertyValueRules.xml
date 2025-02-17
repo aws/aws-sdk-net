@@ -25,6 +25,11 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetManagedViewRequest.ManagedViewArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.GetViewRequest.ViewArn</property>
     <min>1</min>
     <max>1011</max>
@@ -50,6 +55,46 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListManagedViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListManagedViewsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListManagedViewsRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListResourcesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListResourcesRequest.ViewArn</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListResourcesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListResourcesResponse.ViewArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.ListSupportedResourceTypesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -72,7 +117,7 @@
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.SearchRequest.QueryString</property>
     <min>0</min>
-    <max>1011</max>
+    <max>1280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.SearchRequest.ViewArn</property>

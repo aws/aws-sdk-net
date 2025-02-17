@@ -73,6 +73,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomerEndpoint())
+                {
+                    context.Writer.WritePropertyName("CustomerEndpoint");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomerEndpoint, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -83,6 +94,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetQueueInfo())
+                {
+                    context.Writer.WritePropertyName("QueueInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueueInfoInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QueueInfo, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetReferences())
@@ -101,6 +123,47 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSegmentAttributes())
+                {
+                    context.Writer.WritePropertyName("SegmentAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                        var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSystemEndpoint())
+                {
+                    context.Writer.WritePropertyName("SystemEndpoint");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SystemEndpoint, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUserInfo())
+                {
+                    context.Writer.WritePropertyName("UserInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserInfo, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 

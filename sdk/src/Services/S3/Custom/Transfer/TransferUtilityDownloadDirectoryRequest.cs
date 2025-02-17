@@ -52,6 +52,8 @@ namespace Amazon.S3.Transfer
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
 
+        private RequestPayer requestPayer;
+
         /// <summary>
         /// 	Gets or sets the name of the bucket.
         /// </summary>
@@ -80,6 +82,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Gets or sets the local directory where objects from Amazon S3 will be downloaded.  
 		/// 	If the directory doesn't exist, it will be created.
+        /// 	For some platforms like Linux, the file system is case-sensitive. The correct casing to the actual path must be used.
         /// </summary>
         /// <value>
         /// 	The local directory where objects from Amazon S3 will be downloaded.
@@ -299,6 +302,16 @@ namespace Amazon.S3.Transfer
         {
             get { return this.serverSideEncryptionCustomerProvidedKeyMD5; }
             set { this.serverSideEncryptionCustomerProvidedKeyMD5 = value; }
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
         }
 
         /// <summary>

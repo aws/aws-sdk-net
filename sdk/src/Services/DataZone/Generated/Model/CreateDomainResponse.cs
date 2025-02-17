@@ -37,10 +37,13 @@ namespace Amazon.DataZone.Model
         private string _arn;
         private string _description;
         private string _domainExecutionRole;
+        private DomainVersion _domainVersion;
         private string _id;
         private string _kmsKeyIdentifier;
         private string _name;
         private string _portalUrl;
+        private string _rootDomainUnitId;
+        private string _serviceRole;
         private SingleSignOn _singleSignOn;
         private DomainStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -99,6 +102,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainExecutionRole()
         {
             return this._domainExecutionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVersion. 
+        /// <para>
+        /// The version of the domain that is created.
+        /// </para>
+        /// </summary>
+        public DomainVersion DomainVersion
+        {
+            get { return this._domainVersion; }
+            set { this._domainVersion = value; }
+        }
+
+        // Check to see if DomainVersion property is set
+        internal bool IsSetDomainVersion()
+        {
+            return this._domainVersion != null;
         }
 
         /// <summary>
@@ -174,6 +195,43 @@ namespace Amazon.DataZone.Model
         internal bool IsSetPortalUrl()
         {
             return this._portalUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootDomainUnitId. 
+        /// <para>
+        /// The ID of the root domain unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RootDomainUnitId
+        {
+            get { return this._rootDomainUnitId; }
+            set { this._rootDomainUnitId = value; }
+        }
+
+        // Check to see if RootDomainUnitId property is set
+        internal bool IsSetRootDomainUnitId()
+        {
+            return this._rootDomainUnitId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// Te service role of the domain that is created.
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
         }
 
         /// <summary>

@@ -78,6 +78,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttributeCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotAttributeCondition", targetDepth))
+                {
+                    var unmarshaller = AttributeConditionUnmarshaller.Instance;
+                    unmarshalledObject.NotAttributeCondition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrExpression", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);

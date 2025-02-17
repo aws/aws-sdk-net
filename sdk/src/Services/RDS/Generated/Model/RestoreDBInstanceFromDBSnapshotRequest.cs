@@ -53,6 +53,15 @@ namespace Amazon.RDS.Model
     /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
     /// must be the ARN of the shared DB snapshot.
     /// </para>
+    ///  
+    /// <para>
+    /// To restore from a DB snapshot with an unsupported engine version, you must first upgrade
+    /// the engine version of the snapshot. For more information about upgrading a RDS for
+    /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
+    /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
+    /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+    /// a PostgreSQL DB snapshot engine version</a>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
@@ -126,6 +135,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
         /// the allocation rules specified in CreateDBInstance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1074,10 +1087,11 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group. The Db2 license through Amazon
-        /// Web Services Marketplace model requires an Amazon Web Services Marketplace subscription.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS
-        /// for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
+        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License Manager self-managed license. The Db2 license through Amazon Web Services
+        /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
+        /// RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>

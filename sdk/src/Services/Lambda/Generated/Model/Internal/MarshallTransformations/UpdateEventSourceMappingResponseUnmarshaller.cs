@@ -88,10 +88,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.EventSourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventSourceMappingArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EventSourceMappingArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilterCriteria", targetDepth))
                 {
                     var unmarshaller = FilterCriteriaUnmarshaller.Instance;
                     response.FilterCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FilterCriteriaError", targetDepth))
+                {
+                    var unmarshaller = FilterCriteriaErrorUnmarshaller.Instance;
+                    response.FilterCriteriaError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FunctionArn", targetDepth))
@@ -104,6 +116,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.FunctionResponseTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KMSKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KMSKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
@@ -136,10 +154,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetricsConfig", targetDepth))
+                {
+                    var unmarshaller = EventSourceMappingMetricsConfigUnmarshaller.Instance;
+                    response.MetricsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParallelizationFactor", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     response.ParallelizationFactor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisionedPollerConfig", targetDepth))
+                {
+                    var unmarshaller = ProvisionedPollerConfigUnmarshaller.Instance;
+                    response.ProvisionedPollerConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Queues", targetDepth))

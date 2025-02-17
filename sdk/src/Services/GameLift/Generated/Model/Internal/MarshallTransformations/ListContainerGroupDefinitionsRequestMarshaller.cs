@@ -69,6 +69,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContainerGroupType())
+                {
+                    context.Writer.WritePropertyName("ContainerGroupType");
+                    context.Writer.Write(publicRequest.ContainerGroupType);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
@@ -79,12 +85,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSchedulingStrategy())
-                {
-                    context.Writer.WritePropertyName("SchedulingStrategy");
-                    context.Writer.Write(publicRequest.SchedulingStrategy);
                 }
 
                 writer.WriteObjectEnd();

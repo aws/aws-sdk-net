@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the CreateServerlessCacheSnapshot operation.
     /// This API creates a copy of an entire ServerlessCache at a specific moment in time.
-    /// Available for Redis OSS and Serverless Memcached only.
+    /// Available for Valkey, Redis OSS and Serverless Memcached only.
     /// </summary>
     public partial class CreateServerlessCacheSnapshotRequest : AmazonElastiCacheRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS and Serverless
-        /// Memcached only. Default: NULL
+        /// The ID of the KMS key used to encrypt the snapshot. Available for Valkey, Redis OSS
+        /// and Serverless Memcached only. Default: NULL
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -64,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheName. 
         /// <para>
         /// The name of an existing serverless cache. The snapshot is created from this cache.
-        /// Available for Redis OSS and Serverless Memcached only.
+        /// Available for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheSnapshotName. 
         /// <para>
         /// The name for the snapshot being created. Must be unique for the customer account.
-        /// Available for Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.
+        /// Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and
+        /// 255 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +105,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public List<Tag> Tags

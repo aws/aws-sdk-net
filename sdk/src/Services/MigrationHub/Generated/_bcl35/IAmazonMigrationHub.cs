@@ -223,6 +223,76 @@ namespace Amazon.MigrationHub
 
         #endregion
         
+        #region  AssociateSourceResource
+
+
+        /// <summary>
+        /// Associates a source resource with a migration task. For example, the source resource
+        /// can be a source server, an application, or a migration wave.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceResource service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceResource service method, as returned by MigrationHub.</returns>
+        /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
+        /// Exception raised to indicate a successfully authorized action when the <c>DryRun</c>
+        /// flag is set to "true".
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
+        /// Exception raised to indicate a request was not authorized when the <c>DryRun</c> flag
+        /// is set to "true".
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateSourceResource">REST API Reference for AssociateSourceResource Operation</seealso>
+        AssociateSourceResourceResponse AssociateSourceResource(AssociateSourceResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSourceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceResource operation on AmazonMigrationHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSourceResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateSourceResource">REST API Reference for AssociateSourceResource Operation</seealso>
+        IAsyncResult BeginAssociateSourceResource(AssociateSourceResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSourceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSourceResource.</param>
+        /// 
+        /// <returns>Returns a  AssociateSourceResourceResult from MigrationHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateSourceResource">REST API Reference for AssociateSourceResource Operation</seealso>
+        AssociateSourceResourceResponse EndAssociateSourceResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateProgressUpdateStream
 
 
@@ -694,6 +764,75 @@ namespace Amazon.MigrationHub
 
         #endregion
         
+        #region  DisassociateSourceResource
+
+
+        /// <summary>
+        /// Removes the association between a source resource and a migration task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceResource service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceResource service method, as returned by MigrationHub.</returns>
+        /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
+        /// Exception raised to indicate a successfully authorized action when the <c>DryRun</c>
+        /// flag is set to "true".
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
+        /// Exception raised to indicate a request was not authorized when the <c>DryRun</c> flag
+        /// is set to "true".
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateSourceResource">REST API Reference for DisassociateSourceResource Operation</seealso>
+        DisassociateSourceResourceResponse DisassociateSourceResource(DisassociateSourceResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSourceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceResource operation on AmazonMigrationHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSourceResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateSourceResource">REST API Reference for DisassociateSourceResource Operation</seealso>
+        IAsyncResult BeginDisassociateSourceResource(DisassociateSourceResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSourceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSourceResource.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSourceResourceResult from MigrationHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateSourceResource">REST API Reference for DisassociateSourceResource Operation</seealso>
+        DisassociateSourceResourceResponse EndDisassociateSourceResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ImportMigrationTask
 
 
@@ -1061,6 +1200,68 @@ namespace Amazon.MigrationHub
 
         #endregion
         
+        #region  ListMigrationTaskUpdates
+
+
+        /// <summary>
+        /// This is a paginated API that returns all the migration-task states for the specified
+        /// <c>MigrationTaskName</c> and <c>ProgressUpdateStream</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrationTaskUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListMigrationTaskUpdates service method, as returned by MigrationHub.</returns>
+        /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTaskUpdates">REST API Reference for ListMigrationTaskUpdates Operation</seealso>
+        ListMigrationTaskUpdatesResponse ListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMigrationTaskUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrationTaskUpdates operation on AmazonMigrationHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMigrationTaskUpdates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTaskUpdates">REST API Reference for ListMigrationTaskUpdates Operation</seealso>
+        IAsyncResult BeginListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMigrationTaskUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMigrationTaskUpdates.</param>
+        /// 
+        /// <returns>Returns a  ListMigrationTaskUpdatesResult from MigrationHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTaskUpdates">REST API Reference for ListMigrationTaskUpdates Operation</seealso>
+        ListMigrationTaskUpdatesResponse EndListMigrationTaskUpdates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListProgressUpdateStreams
 
 
@@ -1117,6 +1318,68 @@ namespace Amazon.MigrationHub
         /// <returns>Returns a  ListProgressUpdateStreamsResult from MigrationHub.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         ListProgressUpdateStreamsResponse EndListProgressUpdateStreams(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSourceResources
+
+
+        /// <summary>
+        /// Lists all the source resource that are associated with the specified <c>MigrationTaskName</c>
+        /// and <c>ProgressUpdateStream</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceResources service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceResources service method, as returned by MigrationHub.</returns>
+        /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
+        /// Exception raised when an internal, configuration, or dependency error is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.InvalidInputException">
+        /// Exception raised when the provided input violates a policy constraint or is entered
+        /// in the wrong format or data type.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
+        /// Exception raised when the request references a resource (Application Discovery Service
+        /// configuration, update stream, migration task, etc.) that does not exist in Application
+        /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListSourceResources">REST API Reference for ListSourceResources Operation</seealso>
+        ListSourceResourcesResponse ListSourceResources(ListSourceResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceResources operation on AmazonMigrationHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSourceResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListSourceResources">REST API Reference for ListSourceResources Operation</seealso>
+        IAsyncResult BeginListSourceResources(ListSourceResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSourceResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSourceResources.</param>
+        /// 
+        /// <returns>Returns a  ListSourceResourcesResult from MigrationHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListSourceResources">REST API Reference for ListSourceResources Operation</seealso>
+        ListSourceResourcesResponse EndListSourceResources(IAsyncResult asyncResult);
 
         #endregion
         

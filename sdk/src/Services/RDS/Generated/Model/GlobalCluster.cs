@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
     {
         private string _databaseName;
         private bool? _deletionProtection;
+        private string _endpoint;
         private string _engine;
         private string _engineLifecycleSupport;
         private string _engineVersion;
@@ -46,6 +47,7 @@ namespace Amazon.RDS.Model
         private string _globalClusterResourceId;
         private string _status;
         private bool? _storageEncrypted;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -81,6 +83,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        ///  The writer endpoint for the new global database cluster. This endpoint always points
+        /// to the writer DB instance in the current primary cluster. 
+        /// </para>
+        /// </summary>
+        public string Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
         }
 
         /// <summary>
@@ -271,6 +292,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,7 +41,7 @@
             "GetContextKeysForPrincipalPolicy": {
                 "methodForms": [
                     [
-                        "PolicySourceArn",
+                        "PolicySourceArn"
                     ],
                     [
                         "PolicySourceArn",

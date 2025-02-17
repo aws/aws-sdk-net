@@ -125,6 +125,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListClusterSchedulerConfigs operation
+        ///</summary>
+        public IListClusterSchedulerConfigsPaginator ListClusterSchedulerConfigs(ListClusterSchedulerConfigsRequest request) 
+        {
+            return new ListClusterSchedulerConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCodeRepositories operation
         ///</summary>
         public IListCodeRepositoriesPaginator ListCodeRepositories(ListCodeRepositoriesRequest request) 
@@ -138,6 +146,14 @@ namespace Amazon.SageMaker.Model
         public IListCompilationJobsPaginator ListCompilationJobs(ListCompilationJobsRequest request) 
         {
             return new ListCompilationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComputeQuotas operation
+        ///</summary>
+        public IListComputeQuotasPaginator ListComputeQuotas(ListComputeQuotasRequest request) 
+        {
+            return new ListComputeQuotasPaginator(this.client, request);
         }
 
         /// <summary>
@@ -469,6 +485,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListPartnerApps operation
+        ///</summary>
+        public IListPartnerAppsPaginator ListPartnerApps(ListPartnerAppsRequest request) 
+        {
+            return new ListPartnerAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPipelineExecutions operation
         ///</summary>
         public IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request) 
@@ -578,6 +602,14 @@ namespace Amazon.SageMaker.Model
         public IListTrainingJobsForHyperParameterTuningJobPaginator ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request) 
         {
             return new ListTrainingJobsForHyperParameterTuningJobPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrainingPlans operation
+        ///</summary>
+        public IListTrainingPlansPaginator ListTrainingPlans(ListTrainingPlansRequest request) 
+        {
+            return new ListTrainingPlansPaginator(this.client, request);
         }
 
         /// <summary>

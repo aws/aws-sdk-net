@@ -35,8 +35,10 @@ namespace Amazon.ResilienceHub.Model
     public partial class RecommendationItem
     {
         private bool? _alreadyImplemented;
+        private Alarm _discoveredAlarm;
         private bool? _excluded;
         private ExcludeRecommendationReason _excludeReason;
+        private Experiment _latestDiscoveredExperiment;
         private string _resourceId;
         private string _targetAccountId;
         private string _targetRegion;
@@ -57,6 +59,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAlreadyImplemented()
         {
             return this._alreadyImplemented.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveredAlarm. 
+        /// <para>
+        /// Indicates the previously implemented Amazon CloudWatch alarm discovered by Resilience
+        /// Hub.
+        /// </para>
+        /// </summary>
+        public Alarm DiscoveredAlarm
+        {
+            get { return this._discoveredAlarm; }
+            set { this._discoveredAlarm = value; }
+        }
+
+        // Check to see if DiscoveredAlarm property is set
+        internal bool IsSetDiscoveredAlarm()
+        {
+            return this._discoveredAlarm != null;
         }
 
         /// <summary>
@@ -93,6 +114,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetExcludeReason()
         {
             return this._excludeReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDiscoveredExperiment. 
+        /// <para>
+        /// Indicates the experiment created in FIS that was discovered by Resilience Hub, which
+        /// matches the recommendation.
+        /// </para>
+        /// </summary>
+        public Experiment LatestDiscoveredExperiment
+        {
+            get { return this._latestDiscoveredExperiment; }
+            set { this._latestDiscoveredExperiment = value; }
+        }
+
+        // Check to see if LatestDiscoveredExperiment property is set
+        internal bool IsSetLatestDiscoveredExperiment()
+        {
+            return this._latestDiscoveredExperiment != null;
         }
 
         /// <summary>

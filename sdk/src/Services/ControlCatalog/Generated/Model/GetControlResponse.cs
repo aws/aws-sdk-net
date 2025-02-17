@@ -37,7 +37,9 @@ namespace Amazon.ControlCatalog.Model
         private string _arn;
         private ControlBehavior _behavior;
         private string _description;
+        private ImplementationDetails _implementation;
         private string _name;
+        private List<ControlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ControlParameter>() : null;
         private RegionConfiguration _regionConfiguration;
 
         /// <summary>
@@ -63,7 +65,7 @@ namespace Amazon.ControlCatalog.Model
         /// Gets and sets the property Behavior. 
         /// <para>
         /// A term that identifies the control's functional behavior. One of <c>Preventive</c>,
-        /// <c>Deteictive</c>, <c>Proactive</c> 
+        /// <c>Detective</c>, <c>Proactive</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,6 +101,25 @@ namespace Amazon.ControlCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Implementation. 
+        /// <para>
+        /// Returns information about the control, as an <c>ImplementationDetails</c> object that
+        /// shows the underlying implementation type for a control.
+        /// </para>
+        /// </summary>
+        public ImplementationDetails Implementation
+        {
+            get { return this._implementation; }
+            set { this._implementation = value; }
+        }
+
+        // Check to see if Implementation property is set
+        internal bool IsSetImplementation()
+        {
+            return this._implementation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The display name of the control.
@@ -115,6 +136,26 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Returns an array of <c>ControlParameter</c> objects that specify the parameters a
+        /// control supports. An empty list is returned for controls that don’t support parameters.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<ControlParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

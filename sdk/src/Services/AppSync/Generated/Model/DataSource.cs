@@ -302,6 +302,10 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>AMAZON_BEDROCK_RUNTIME</b>: The data source is the Amazon Bedrock runtime.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL
         /// operation without connecting to a data source, such as when you're performing data
         /// transformation with resolvers or invoking a subscription from a mutation.

@@ -47,12 +47,52 @@ namespace Amazon.SageMakerMetrics
 
 
         
+        #region  BatchGetMetrics
+
+
+        /// <summary>
+        /// Used to retrieve training metrics from SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetrics service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMetrics service method, as returned by SageMakerMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        BatchGetMetricsResponse BatchGetMetrics(BatchGetMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetrics operation on AmazonSageMakerMetricsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        IAsyncResult BeginBatchGetMetrics(BatchGetMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetMetrics.</param>
+        /// 
+        /// <returns>Returns a  BatchGetMetricsResult from SageMakerMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        BatchGetMetricsResponse EndBatchGetMetrics(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchPutMetrics
 
 
         /// <summary>
         /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-        /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
+        /// SageMaker Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMetrics service method.</param>
         /// 

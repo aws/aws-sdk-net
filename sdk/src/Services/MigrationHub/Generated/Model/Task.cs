@@ -84,7 +84,7 @@ namespace Amazon.MigrationHub.Model
         /// that explains an error state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=2500)]
         public string StatusDetail
         {
             get { return this._statusDetail; }

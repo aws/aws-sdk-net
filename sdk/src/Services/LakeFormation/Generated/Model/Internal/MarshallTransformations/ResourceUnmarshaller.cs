@@ -96,6 +96,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.LFTag = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LFTagExpression", targetDepth))
+                {
+                    var unmarshaller = LFTagExpressionResourceUnmarshaller.Instance;
+                    unmarshalledObject.LFTagExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LFTagPolicy", targetDepth))
                 {
                     var unmarshaller = LFTagPolicyResourceUnmarshaller.Instance;

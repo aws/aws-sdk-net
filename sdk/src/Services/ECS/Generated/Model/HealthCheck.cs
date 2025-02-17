@@ -33,8 +33,8 @@ namespace Amazon.ECS.Model
     /// An object representing a container health check. Health check parameters that are
     /// specified in a container definition override any Docker health checks that exist in
     /// the container image (such as those specified in a parent image or from the image's
-    /// Dockerfile). This configuration maps to the <c>HEALTHCHECK</c> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-    /// run</a>.
+    /// Dockerfile). This configuration maps to the <c>HEALTHCHECK</c> parameter of docker
+    /// run.
     /// 
     ///  <note> 
     /// <para>
@@ -192,7 +192,12 @@ namespace Amazon.ECS.Model
     /// Container health checks aren't supported for tasks that are part of a service that's
     /// configured to use a Classic Load Balancer.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For an example of how to specify a task definition with multiple containers where
+    /// container dependency is specified, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container
+    /// dependency</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class HealthCheck
     {
@@ -231,9 +236,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// An exit code of 0 indicates success, and non-zero exit code indicates failure. For
-        /// more information, see <c>HealthCheck</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a>.
+        /// more information, see <c>HealthCheck</c> in the docker container create command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -253,7 +256,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Interval. 
         /// <para>
         /// The time period in seconds between each health check execution. You may specify between
-        /// 5 and 300 seconds. The default value is 30 seconds.
+        /// 5 and 300 seconds. The default value is 30 seconds. This value applies only when you
+        /// specify a <c>command</c>. 
         /// </para>
         /// </summary>
         public int Interval
@@ -272,7 +276,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Retries. 
         /// <para>
         /// The number of times to retry a failed health check before the container is considered
-        /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.
+        /// unhealthy. You may specify between 1 and 10 retries. The default value is 3. This
+        /// value applies only when you specify a <c>command</c>. 
         /// </para>
         /// </summary>
         public int Retries
@@ -292,7 +297,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The optional grace period to provide containers time to bootstrap before failed health
         /// checks count towards the maximum number of retries. You can specify between 0 and
-        /// 300 seconds. By default, the <c>startPeriod</c> is off.
+        /// 300 seconds. By default, the <c>startPeriod</c> is off. This value applies only when
+        /// you specify a <c>command</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -317,7 +323,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The time period in seconds to wait for a health check to succeed before it is considered
-        /// a failure. You may specify between 2 and 60 seconds. The default value is 5.
+        /// a failure. You may specify between 2 and 60 seconds. The default value is 5. This
+        /// value applies only when you specify a <c>command</c>. 
         /// </para>
         /// </summary>
         public int Timeout

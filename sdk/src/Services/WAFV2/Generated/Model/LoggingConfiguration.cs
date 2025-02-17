@@ -35,6 +35,11 @@ namespace Amazon.WAFV2.Model
     /// fields to keep out of the logs and you can specify filters so that you log only a
     /// subset of the logging records. 
     /// 
+    ///  
+    /// <para>
+    /// If you configure data protection for the web ACL, the protection applies to the data
+    /// that WAF sends to the logs. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can define one logging destination per web ACL.
@@ -196,6 +201,16 @@ namespace Amazon.WAFV2.Model
         /// of an WAF policy configuration. If true, only Firewall Manager can modify or delete
         /// the configuration. 
         /// </para>
+        ///  
+        /// <para>
+        /// The logging configuration can be created by Firewall Manager for use with any web
+        /// ACL that Firewall Manager is using for an WAF policy. Web ACLs that Firewall Manager
+        /// creates and uses have their <c>ManagedByFirewallManager</c> property set to true.
+        /// Web ACLs that were created by a customer account and then retrofitted by Firewall
+        /// Manager for use by a policy have their <c>RetrofittedByFirewallManager</c> property
+        /// set to true. For either case, any corresponding logging configuration will indicate
+        /// <c>ManagedByFirewallManager</c>.
+        /// </para>
         /// </summary>
         public bool ManagedByFirewallManager
         {
@@ -222,6 +237,11 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
+        /// If you configure data protection for the web ACL, the protection applies to the data
+        /// that WAF sends to the logs. 
+        /// </para>
+        ///  
+        /// <para>
         /// Redaction applies only to the component that's specified in the rule's <c>FieldToMatch</c>
         /// setting, so the <c>SingleHeader</c> redaction doesn't apply to rules that use the
         /// <c>Headers</c> <c>FieldToMatch</c>.
@@ -233,9 +253,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// This setting has no impact on request sampling. With request sampling, the only way
-        /// to exclude fields is by disabling sampling in the web ACL visibility configuration.
-        /// 
+        /// This setting has no impact on request sampling. You can only exclude fields from request
+        /// sampling by disabling sampling in the web ACL visibility configuration or by configuring
+        /// data protection for the web ACL.
         /// </para>
         ///  </note>
         /// </summary>

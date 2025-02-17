@@ -31,60 +31,32 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComputeAccess operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
+    /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
+    /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets.
     /// 
     ///  
     /// <para>
-    /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
-    /// managed fleet. This operation is not used with Amazon GameLift Anywhere fleets
+    ///  <b>Request options</b> 
     /// </para>
     ///  
     /// <para>
-    /// To request access, specify the compute name and the fleet ID. If successful, this
-    /// operation returns a set of temporary Amazon Web Services credentials, including a
-    /// two-part access key and a session token.
+    /// To request access to a compute, specify the compute name and the fleet ID.
     /// </para>
     ///  
     /// <para>
-    ///  <b>EC2 fleets</b> 
+    ///  <b>Results</b> 
     /// </para>
     ///  
     /// <para>
-    /// With an EC2 fleet (where compute type is <c>EC2</c>), use these credentials with Amazon
-    /// EC2 Systems Manager (SSM) to start a session with the compute. For more details, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
-    /// Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Container fleets</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// With a container fleet (where compute type is <c>CONTAINER</c>), use these credentials
-    /// and the target value with SSM to connect to the fleet instance where the container
-    /// is running. After you're connected to the instance, use Docker commands to interact
-    /// with the container.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Learn more</b> 
+    /// If successful, this operation returns a set of temporary Amazon Web Services credentials,
+    /// including a two-part access key and a session token.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-    /// connect to fleet instances</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-    /// fleet issues</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">
-    /// Remotely connect to a container fleet</a> 
+    /// With a managed EC2 fleet (where compute type is <c>EC2</c>), use these credentials
+    /// with Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more
+    /// details, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
+    /// Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -97,9 +69,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeName. 
         /// <para>
         /// A unique identifier for the compute resource that you want to connect to. For an EC2
-        /// fleet compute, use the instance ID. For a container fleet, use the compute name (for
-        /// example, <c>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</c>)
-        /// or the compute ARN. 
+        /// fleet compute, use the instance ID. Use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>
+        /// to retrieve compute identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -122,7 +93,7 @@ namespace Amazon.GameLift.Model
         /// connect to. You can use either the fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

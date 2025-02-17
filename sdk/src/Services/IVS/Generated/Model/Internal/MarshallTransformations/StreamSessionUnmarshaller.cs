@@ -84,6 +84,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.IngestConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ingestConfigurations", targetDepth))
+                {
+                    var unmarshaller = IngestConfigurationsUnmarshaller.Instance;
+                    unmarshalledObject.IngestConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordingConfiguration", targetDepth))
                 {
                     var unmarshaller = RecordingConfigurationUnmarshaller.Instance;

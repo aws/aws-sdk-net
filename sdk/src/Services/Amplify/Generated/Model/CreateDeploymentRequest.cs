@@ -32,7 +32,7 @@ namespace Amazon.Amplify.Model
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
     /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
-    /// not connected to a repository. 
+    /// not connected to a Git repository. 
     /// 
     ///  
     /// <para>

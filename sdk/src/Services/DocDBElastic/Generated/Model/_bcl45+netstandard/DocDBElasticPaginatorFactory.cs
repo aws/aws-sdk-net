@@ -51,5 +51,13 @@ namespace Amazon.DocDBElastic.Model
         {
             return new ListClusterSnapshotsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListPendingMaintenanceActions operation
+        ///</summary>
+        public IListPendingMaintenanceActionsPaginator ListPendingMaintenanceActions(ListPendingMaintenanceActionsRequest request) 
+        {
+            return new ListPendingMaintenanceActionsPaginator(this.client, request);
+        }
     }
 }

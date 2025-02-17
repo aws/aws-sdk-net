@@ -71,6 +71,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetAddOrganizationalUnitExclusions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AddOrganizationalUnitExclusions)
+                    {
+                        if(publicRequestlistValue.IsSetOrganizationsEntityPath())
+                        {
+                            request.Parameters.Add("AddOrganizationalUnitExclusion" + "." + publicRequestlistValueIndex + "." + "OrganizationsEntityPath", StringUtils.FromString(publicRequestlistValue.OrganizationsEntityPath));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
@@ -87,6 +99,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetRegionName())
                         {
                             request.Parameters.Add("RemoveOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRemoveOrganizationalUnitExclusions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RemoveOrganizationalUnitExclusions)
+                    {
+                        if(publicRequestlistValue.IsSetOrganizationsEntityPath())
+                        {
+                            request.Parameters.Add("RemoveOrganizationalUnitExclusion" + "." + publicRequestlistValueIndex + "." + "OrganizationsEntityPath", StringUtils.FromString(publicRequestlistValue.OrganizationsEntityPath));
                         }
                         publicRequestlistValueIndex++;
                     }

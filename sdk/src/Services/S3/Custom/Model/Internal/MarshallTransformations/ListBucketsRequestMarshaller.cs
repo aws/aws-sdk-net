@@ -16,6 +16,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable 1591
 
@@ -24,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// List Buckets Request Marshaller
     /// </summary>       
-    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
 	{
 		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
 		{
@@ -37,7 +38,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
-			request.ResourcePath = "/";
+            if (listBucketsRequest.IsSetContinuationToken())
+                request.Parameters.Add("continuation-token", StringUtils.FromString(listBucketsRequest.ContinuationToken));
+
+            if (listBucketsRequest.IsSetMaxBuckets())
+                request.Parameters.Add("max-buckets", StringUtils.FromInt(listBucketsRequest.MaxBuckets));
+
+            if (listBucketsRequest.IsSetPrefix())
+                request.Parameters.Add("prefix", StringUtils.FromString(listBucketsRequest.Prefix));
+
+            if (listBucketsRequest.IsSetBucketRegion())
+                request.Parameters.Add("bucket-region", StringUtils.FromString(listBucketsRequest.BucketRegion));
+
+            request.ResourcePath = "/";
             request.UseQueryString = true;
 
             return request;

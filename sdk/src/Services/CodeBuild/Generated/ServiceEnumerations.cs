@@ -615,6 +615,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant ATTRIBUTE_BASED_COMPUTE for ComputeType
+        /// </summary>
+        public static readonly ComputeType ATTRIBUTE_BASED_COMPUTE = new ComputeType("ATTRIBUTE_BASED_COMPUTE");
+        /// <summary>
         /// Constant BUILD_GENERAL1_2XLARGE for ComputeType
         /// </summary>
         public static readonly ComputeType BUILD_GENERAL1_2XLARGE = new ComputeType("BUILD_GENERAL1_2XLARGE");
@@ -747,6 +751,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly EnvironmentType ARM_CONTAINER = new EnvironmentType("ARM_CONTAINER");
         /// <summary>
+        /// Constant ARM_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType ARM_EC2 = new EnvironmentType("ARM_EC2");
+        /// <summary>
         /// Constant ARM_LAMBDA_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType ARM_LAMBDA_CONTAINER = new EnvironmentType("ARM_LAMBDA_CONTAINER");
@@ -754,6 +762,10 @@ namespace Amazon.CodeBuild
         /// Constant LINUX_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_CONTAINER = new EnvironmentType("LINUX_CONTAINER");
+        /// <summary>
+        /// Constant LINUX_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType LINUX_EC2 = new EnvironmentType("LINUX_EC2");
         /// <summary>
         /// Constant LINUX_GPU_CONTAINER for EnvironmentType
         /// </summary>
@@ -763,9 +775,17 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly EnvironmentType LINUX_LAMBDA_CONTAINER = new EnvironmentType("LINUX_LAMBDA_CONTAINER");
         /// <summary>
+        /// Constant MAC_ARM for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType MAC_ARM = new EnvironmentType("MAC_ARM");
+        /// <summary>
         /// Constant WINDOWS_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType WINDOWS_CONTAINER = new EnvironmentType("WINDOWS_CONTAINER");
+        /// <summary>
+        /// Constant WINDOWS_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType WINDOWS_EC2 = new EnvironmentType("WINDOWS_EC2");
         /// <summary>
         /// Constant WINDOWS_SERVER_2019_CONTAINER for EnvironmentType
         /// </summary>
@@ -921,6 +941,14 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly FleetContextCode CREATE_FAILED = new FleetContextCode("CREATE_FAILED");
         /// <summary>
+        /// Constant INSUFFICIENT_CAPACITY for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode INSUFFICIENT_CAPACITY = new FleetContextCode("INSUFFICIENT_CAPACITY");
+        /// <summary>
+        /// Constant PENDING_DELETION for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode PENDING_DELETION = new FleetContextCode("PENDING_DELETION");
+        /// <summary>
         /// Constant UPDATE_FAILED for FleetContextCode
         /// </summary>
         public static readonly FleetContextCode UPDATE_FAILED = new FleetContextCode("UPDATE_FAILED");
@@ -1004,6 +1032,156 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetOverflowBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetProxyRuleBehavior.
+    /// </summary>
+    public class FleetProxyRuleBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW_ALL for FleetProxyRuleBehavior
+        /// </summary>
+        public static readonly FleetProxyRuleBehavior ALLOW_ALL = new FleetProxyRuleBehavior("ALLOW_ALL");
+        /// <summary>
+        /// Constant DENY_ALL for FleetProxyRuleBehavior
+        /// </summary>
+        public static readonly FleetProxyRuleBehavior DENY_ALL = new FleetProxyRuleBehavior("DENY_ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleBehavior FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetProxyRuleEffectType.
+    /// </summary>
+    public class FleetProxyRuleEffectType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for FleetProxyRuleEffectType
+        /// </summary>
+        public static readonly FleetProxyRuleEffectType ALLOW = new FleetProxyRuleEffectType("ALLOW");
+        /// <summary>
+        /// Constant DENY for FleetProxyRuleEffectType
+        /// </summary>
+        public static readonly FleetProxyRuleEffectType DENY = new FleetProxyRuleEffectType("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleEffectType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleEffectType FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleEffectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleEffectType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetProxyRuleType.
+    /// </summary>
+    public class FleetProxyRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN for FleetProxyRuleType
+        /// </summary>
+        public static readonly FleetProxyRuleType DOMAIN = new FleetProxyRuleType("DOMAIN");
+        /// <summary>
+        /// Constant IP for FleetProxyRuleType
+        /// </summary>
+        public static readonly FleetProxyRuleType IP = new FleetProxyRuleType("IP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleType FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleType(string value)
         {
             return FindValue(value);
         }
@@ -1406,6 +1584,56 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogsConfigStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MachineType.
+    /// </summary>
+    public class MachineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERAL for MachineType
+        /// </summary>
+        public static readonly MachineType GENERAL = new MachineType("GENERAL");
+        /// <summary>
+        /// Constant NVME for MachineType
+        /// </summary>
+        public static readonly MachineType NVME = new MachineType("NVME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MachineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MachineType FindValue(string value)
+        {
+            return FindValue<MachineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MachineType(string value)
         {
             return FindValue(value);
         }
@@ -2442,6 +2670,10 @@ namespace Amazon.CodeBuild
         /// Constant BUILD_BATCH for WebhookBuildType
         /// </summary>
         public static readonly WebhookBuildType BUILD_BATCH = new WebhookBuildType("BUILD_BATCH");
+        /// <summary>
+        /// Constant RUNNER_BUILDKITE_BUILD for WebhookBuildType
+        /// </summary>
+        public static readonly WebhookBuildType RUNNER_BUILDKITE_BUILD = new WebhookBuildType("RUNNER_BUILDKITE_BUILD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2513,6 +2745,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");
         /// <summary>
+        /// Constant REPOSITORY_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType REPOSITORY_NAME = new WebhookFilterType("REPOSITORY_NAME");
+        /// <summary>
         /// Constant TAG_NAME for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType TAG_NAME = new WebhookFilterType("TAG_NAME");
@@ -2570,6 +2806,10 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ORGANIZATION for WebhookScopeType
         /// </summary>
         public static readonly WebhookScopeType GITHUB_ORGANIZATION = new WebhookScopeType("GITHUB_ORGANIZATION");
+        /// <summary>
+        /// Constant GITLAB_GROUP for WebhookScopeType
+        /// </summary>
+        public static readonly WebhookScopeType GITLAB_GROUP = new WebhookScopeType("GITLAB_GROUP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

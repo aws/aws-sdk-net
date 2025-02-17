@@ -86,6 +86,28 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FileFormat);
                 }
 
+                if(publicRequest.IsSetInputConversion())
+                {
+                    context.Writer.WritePropertyName("inputConversion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputConversionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputConversion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMapping())
+                {
+                    context.Writer.WritePropertyName("mapping");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MappingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Mapping, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMappingTemplate())
                 {
                     context.Writer.WritePropertyName("mappingTemplate");
@@ -98,10 +120,32 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOutputConversion())
+                {
+                    context.Writer.WritePropertyName("outputConversion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputConversionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConversion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSampleDocument())
                 {
                     context.Writer.WritePropertyName("sampleDocument");
                     context.Writer.Write(publicRequest.SampleDocument);
+                }
+
+                if(publicRequest.IsSetSampleDocuments())
+                {
+                    context.Writer.WritePropertyName("sampleDocuments");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SampleDocumentsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SampleDocuments, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetStatus())

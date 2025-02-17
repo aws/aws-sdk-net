@@ -78,6 +78,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIdentityProviderArn())
+                {
+                    context.Writer.WritePropertyName("IdentityProviderArn");
+                    context.Writer.Write(publicRequest.IdentityProviderArn);
+                }
+
                 if(publicRequest.IsSetProduct())
                 {
                     context.Writer.WritePropertyName("Product");

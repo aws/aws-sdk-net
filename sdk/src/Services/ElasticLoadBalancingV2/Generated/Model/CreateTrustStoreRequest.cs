@@ -105,7 +105,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// This name must be unique per region and cannot be changed after creation.
+        /// This name must be unique per region and can't be changed after creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

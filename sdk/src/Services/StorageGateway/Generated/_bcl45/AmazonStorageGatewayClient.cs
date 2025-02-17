@@ -39,7 +39,14 @@ namespace Amazon.StorageGateway
     /// <summary>
     /// <para>Implementation for accessing StorageGateway</para>
     ///
-    /// Storage Gateway Service 
+    /// Storage Gateway Service <important> 
+    /// <para>
+    /// Amazon FSx File Gateway is no longer available to new customers. Existing customers
+    /// of FSx File Gateway can continue to use the service normally. For capabilities similar
+    /// to FSx File Gateway, visit <a href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this
+    /// blog post</a>.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Storage Gateway is the service that connects an on-premises software appliance with
     /// cloud-based storage to provide seamless and secure integration between an organization's
@@ -1013,6 +1020,71 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = CancelArchivalResponseUnmarshaller.Instance;
             
             return InvokeAsync<CancelArchivalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelCacheReport
+
+
+        /// <summary>
+        /// Cancels generation of a specified cache report. You can use this operation to manually
+        /// cancel an IN-PROGRESS report for any reason. This action changes the report status
+        /// from IN-PROGRESS to CANCELLED. You can only cancel in-progress reports. If the the
+        /// report you attempt to cancel is in FAILED, ERROR, or COMPLETED state, the cancel operation
+        /// returns an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCacheReport service method.</param>
+        /// 
+        /// <returns>The response from the CancelCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelCacheReport">REST API Reference for CancelCacheReport Operation</seealso>
+        public virtual CancelCacheReportResponse CancelCacheReport(CancelCacheReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCacheReportResponseUnmarshaller.Instance;
+
+            return Invoke<CancelCacheReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels generation of a specified cache report. You can use this operation to manually
+        /// cancel an IN-PROGRESS report for any reason. This action changes the report status
+        /// from IN-PROGRESS to CANCELLED. You can only cancel in-progress reports. If the the
+        /// report you attempt to cancel is in FAILED, ERROR, or COMPLETED state, the cancel operation
+        /// returns an error.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCacheReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelCacheReport">REST API Reference for CancelCacheReport Operation</seealso>
+        public virtual Task<CancelCacheReportResponse> CancelCacheReportAsync(CancelCacheReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCacheReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelCacheReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2041,6 +2113,81 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DeleteCacheReport
+
+
+        /// <summary>
+        /// Deletes the specified cache report and any associated tags from the Storage Gateway
+        /// database. You can only delete completed reports. If the status of the report you attempt
+        /// to delete still IN-PROGRESS, the delete operation returns an error. You can use <c>CancelCacheReport</c>
+        /// to cancel an IN-PROGRESS report.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>DeleteCacheReport</c> does not delete the report object from your Amazon S3 bucket.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheReport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteCacheReport">REST API Reference for DeleteCacheReport Operation</seealso>
+        public virtual DeleteCacheReportResponse DeleteCacheReport(DeleteCacheReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCacheReportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCacheReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified cache report and any associated tags from the Storage Gateway
+        /// database. You can only delete completed reports. If the status of the report you attempt
+        /// to delete still IN-PROGRESS, the delete operation returns an error. You can use <c>CancelCacheReport</c>
+        /// to cancel an IN-PROGRESS report.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>DeleteCacheReport</c> does not delete the report object from your Amazon S3 bucket.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCacheReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteCacheReport">REST API Reference for DeleteCacheReport Operation</seealso>
+        public virtual Task<DeleteCacheReportResponse> DeleteCacheReportAsync(DeleteCacheReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCacheReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCacheReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteChapCredentials
 
 
@@ -3006,6 +3153,65 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeCachediSCSIVolumesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCacheReport
+
+
+        /// <summary>
+        /// Returns information about the specified cache report, including completion status
+        /// and generation progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheReport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCacheReport">REST API Reference for DescribeCacheReport Operation</seealso>
+        public virtual DescribeCacheReportResponse DescribeCacheReport(DescribeCacheReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCacheReportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCacheReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the specified cache report, including completion status
+        /// and generation progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCacheReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCacheReport">REST API Reference for DescribeCacheReport Operation</seealso>
+        public virtual Task<DescribeCacheReportResponse> DescribeCacheReportAsync(DescribeCacheReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCacheReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCacheReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4424,6 +4630,69 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  ListCacheReports
+
+
+        /// <summary>
+        /// Returns a list of existing cache reports for all file shares associated with your
+        /// Amazon Web Services account. This list includes all information provided by the <c>DescribeCacheReport</c>
+        /// action, such as report name, status, completion progress, start time, end time, filters,
+        /// and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCacheReports service method.</param>
+        /// 
+        /// <returns>The response from the ListCacheReports service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListCacheReports">REST API Reference for ListCacheReports Operation</seealso>
+        public virtual ListCacheReportsResponse ListCacheReports(ListCacheReportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCacheReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCacheReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCacheReportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of existing cache reports for all file shares associated with your
+        /// Amazon Web Services account. This list includes all information provided by the <c>DescribeCacheReport</c>
+        /// action, such as report name, status, completion progress, start time, end time, filters,
+        /// and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCacheReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCacheReports service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListCacheReports">REST API Reference for ListCacheReports Operation</seealso>
+        public virtual Task<ListCacheReportsResponse> ListCacheReportsAsync(ListCacheReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCacheReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCacheReportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCacheReportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListFileShares
 
 
@@ -5228,18 +5497,18 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sends you notification through CloudWatch Events when all files written to your file
+        /// Sends you notification through Amazon EventBridge when all files written to your file
         /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
-        /// Storage Gateway can send a notification through Amazon CloudWatch Events when all
-        /// files written to your file share up to that point in time have been uploaded to Amazon
-        /// S3. These files include files written to the file share up to the time that you make
-        /// a request for notification. When the upload is done, Storage Gateway sends you notification
-        /// through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the
-        /// notification through event targets such as Amazon SNS or Lambda function. This operation
-        /// is only supported for S3 File Gateways.
+        /// Storage Gateway can send a notification through Amazon EventBridge when all files
+        /// written to your file share up to that point in time have been uploaded to Amazon S3.
+        /// These files include files written to the file share up to the time that you make a
+        /// request for notification. When the upload is done, Storage Gateway sends you notification
+        /// through EventBridge. You can configure EventBridge to send the notification through
+        /// event targets such as Amazon SNS or Lambda function. This operation is only supported
+        /// for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
@@ -5270,18 +5539,18 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sends you notification through CloudWatch Events when all files written to your file
+        /// Sends you notification through Amazon EventBridge when all files written to your file
         /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
-        /// Storage Gateway can send a notification through Amazon CloudWatch Events when all
-        /// files written to your file share up to that point in time have been uploaded to Amazon
-        /// S3. These files include files written to the file share up to the time that you make
-        /// a request for notification. When the upload is done, Storage Gateway sends you notification
-        /// through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the
-        /// notification through event targets such as Amazon SNS or Lambda function. This operation
-        /// is only supported for S3 File Gateways.
+        /// Storage Gateway can send a notification through Amazon EventBridge when all files
+        /// written to your file share up to that point in time have been uploaded to Amazon S3.
+        /// These files include files written to the file share up to the time that you make a
+        /// request for notification. When the upload is done, Storage Gateway sends you notification
+        /// through EventBridge. You can configure EventBridge to send the notification through
+        /// event targets such as Amazon SNS or Lambda function. This operation is only supported
+        /// for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
@@ -6183,6 +6452,147 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = StartAvailabilityMonitorTestResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartAvailabilityMonitorTestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartCacheReport
+
+
+        /// <summary>
+        /// Starts generating a report of the file metadata currently cached by an S3 File Gateway
+        /// for a specific file share. You can use this report to identify and resolve issues
+        /// if you have files failing upload from your gateway to Amazon S3. The report is a CSV
+        /// file containing a list of files which match the set of filter parameters you specify
+        /// in the request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <b>Files Failing Upload</b> flag is reset every 24 hours and during gateway reboot.
+        /// If this report captures the files after the reset, but before they become flagged
+        /// again, they will not be reported as <b>Files Failing Upload</b>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following requirements must be met to successfully generate a cache report:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must have permissions to list the entire Amazon S3 bucket associated with the
+        /// specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No other cache reports can currently be in-progress for the specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There must be fewer than 10 existing cache reports for the specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The gateway must be online and connected to Amazon Web Services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The root disk must have at least 20GB of free space when report generation starts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify at least one value for <c>InclusionFilters</c> or <c>ExclusionFilters</c>
+        /// in the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCacheReport service method.</param>
+        /// 
+        /// <returns>The response from the StartCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartCacheReport">REST API Reference for StartCacheReport Operation</seealso>
+        public virtual StartCacheReportResponse StartCacheReport(StartCacheReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCacheReportResponseUnmarshaller.Instance;
+
+            return Invoke<StartCacheReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts generating a report of the file metadata currently cached by an S3 File Gateway
+        /// for a specific file share. You can use this report to identify and resolve issues
+        /// if you have files failing upload from your gateway to Amazon S3. The report is a CSV
+        /// file containing a list of files which match the set of filter parameters you specify
+        /// in the request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <b>Files Failing Upload</b> flag is reset every 24 hours and during gateway reboot.
+        /// If this report captures the files after the reset, but before they become flagged
+        /// again, they will not be reported as <b>Files Failing Upload</b>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following requirements must be met to successfully generate a cache report:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must have permissions to list the entire Amazon S3 bucket associated with the
+        /// specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No other cache reports can currently be in-progress for the specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There must be fewer than 10 existing cache reports for the specified file share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The gateway must be online and connected to Amazon Web Services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The root disk must have at least 20GB of free space when report generation starts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify at least one value for <c>InclusionFilters</c> or <c>ExclusionFilters</c>
+        /// in the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCacheReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCacheReport service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartCacheReport">REST API Reference for StartCacheReport Operation</seealso>
+        public virtual Task<StartCacheReportResponse> StartCacheReportAsync(StartCacheReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCacheReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCacheReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartCacheReportResponse>(request, options, cancellationToken);
         }
 
         #endregion

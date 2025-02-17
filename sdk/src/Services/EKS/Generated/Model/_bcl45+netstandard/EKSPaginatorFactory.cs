@@ -45,6 +45,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeClusterVersions operation
+        ///</summary>
+        public IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request) 
+        {
+            return new DescribeClusterVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccessEntries operation
         ///</summary>
         public IListAccessEntriesPaginator ListAccessEntries(ListAccessEntriesRequest request) 

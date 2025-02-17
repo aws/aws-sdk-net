@@ -241,6 +241,170 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type AssetCategoryType.
+    /// </summary>
+    public class AssetCategoryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_APP_GRAPHIC for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType AUTH_APP_GRAPHIC = new AssetCategoryType("AUTH_APP_GRAPHIC");
+        /// <summary>
+        /// Constant EMAIL_GRAPHIC for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType EMAIL_GRAPHIC = new AssetCategoryType("EMAIL_GRAPHIC");
+        /// <summary>
+        /// Constant FAVICON_ICO for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType FAVICON_ICO = new AssetCategoryType("FAVICON_ICO");
+        /// <summary>
+        /// Constant FAVICON_SVG for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType FAVICON_SVG = new AssetCategoryType("FAVICON_SVG");
+        /// <summary>
+        /// Constant FORM_BACKGROUND for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType FORM_BACKGROUND = new AssetCategoryType("FORM_BACKGROUND");
+        /// <summary>
+        /// Constant FORM_LOGO for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType FORM_LOGO = new AssetCategoryType("FORM_LOGO");
+        /// <summary>
+        /// Constant IDP_BUTTON_ICON for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType IDP_BUTTON_ICON = new AssetCategoryType("IDP_BUTTON_ICON");
+        /// <summary>
+        /// Constant PAGE_BACKGROUND for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PAGE_BACKGROUND = new AssetCategoryType("PAGE_BACKGROUND");
+        /// <summary>
+        /// Constant PAGE_FOOTER_BACKGROUND for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PAGE_FOOTER_BACKGROUND = new AssetCategoryType("PAGE_FOOTER_BACKGROUND");
+        /// <summary>
+        /// Constant PAGE_FOOTER_LOGO for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PAGE_FOOTER_LOGO = new AssetCategoryType("PAGE_FOOTER_LOGO");
+        /// <summary>
+        /// Constant PAGE_HEADER_BACKGROUND for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PAGE_HEADER_BACKGROUND = new AssetCategoryType("PAGE_HEADER_BACKGROUND");
+        /// <summary>
+        /// Constant PAGE_HEADER_LOGO for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PAGE_HEADER_LOGO = new AssetCategoryType("PAGE_HEADER_LOGO");
+        /// <summary>
+        /// Constant PASSKEY_GRAPHIC for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PASSKEY_GRAPHIC = new AssetCategoryType("PASSKEY_GRAPHIC");
+        /// <summary>
+        /// Constant PASSWORD_GRAPHIC for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType PASSWORD_GRAPHIC = new AssetCategoryType("PASSWORD_GRAPHIC");
+        /// <summary>
+        /// Constant SMS_GRAPHIC for AssetCategoryType
+        /// </summary>
+        public static readonly AssetCategoryType SMS_GRAPHIC = new AssetCategoryType("SMS_GRAPHIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetCategoryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetCategoryType FindValue(string value)
+        {
+            return FindValue<AssetCategoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetCategoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetExtensionType.
+    /// </summary>
+    public class AssetExtensionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ICO for AssetExtensionType
+        /// </summary>
+        public static readonly AssetExtensionType ICO = new AssetExtensionType("ICO");
+        /// <summary>
+        /// Constant JPEG for AssetExtensionType
+        /// </summary>
+        public static readonly AssetExtensionType JPEG = new AssetExtensionType("JPEG");
+        /// <summary>
+        /// Constant PNG for AssetExtensionType
+        /// </summary>
+        public static readonly AssetExtensionType PNG = new AssetExtensionType("PNG");
+        /// <summary>
+        /// Constant SVG for AssetExtensionType
+        /// </summary>
+        public static readonly AssetExtensionType SVG = new AssetExtensionType("SVG");
+        /// <summary>
+        /// Constant WEBP for AssetExtensionType
+        /// </summary>
+        public static readonly AssetExtensionType WEBP = new AssetExtensionType("WEBP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetExtensionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetExtensionType FindValue(string value)
+        {
+            return FindValue<AssetExtensionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetExtensionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttributeDataType.
     /// </summary>
     public class AttributeDataType : ConstantClass
@@ -299,6 +463,64 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type AuthFactorType.
+    /// </summary>
+    public class AuthFactorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMAIL_OTP for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType EMAIL_OTP = new AuthFactorType("EMAIL_OTP");
+        /// <summary>
+        /// Constant PASSWORD for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType PASSWORD = new AuthFactorType("PASSWORD");
+        /// <summary>
+        /// Constant SMS_OTP for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType SMS_OTP = new AuthFactorType("SMS_OTP");
+        /// <summary>
+        /// Constant WEB_AUTHN for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType WEB_AUTHN = new AuthFactorType("WEB_AUTHN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthFactorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthFactorType FindValue(string value)
+        {
+            return FindValue<AuthFactorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthFactorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthFlowType.
     /// </summary>
     public class AuthFlowType : ConstantClass
@@ -324,6 +546,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant REFRESH_TOKEN_AUTH for AuthFlowType
         /// </summary>
         public static readonly AuthFlowType REFRESH_TOKEN_AUTH = new AuthFlowType("REFRESH_TOKEN_AUTH");
+        /// <summary>
+        /// Constant USER_AUTH for AuthFlowType
+        /// </summary>
+        public static readonly AuthFlowType USER_AUTH = new AuthFlowType("USER_AUTH");
         /// <summary>
         /// Constant USER_PASSWORD_AUTH for AuthFlowType
         /// </summary>
@@ -441,6 +667,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ChallengeNameType DEVICE_SRP_AUTH = new ChallengeNameType("DEVICE_SRP_AUTH");
         /// <summary>
+        /// Constant EMAIL_OTP for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType EMAIL_OTP = new ChallengeNameType("EMAIL_OTP");
+        /// <summary>
         /// Constant MFA_SETUP for ChallengeNameType
         /// </summary>
         public static readonly ChallengeNameType MFA_SETUP = new ChallengeNameType("MFA_SETUP");
@@ -449,9 +679,21 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ChallengeNameType NEW_PASSWORD_REQUIRED = new ChallengeNameType("NEW_PASSWORD_REQUIRED");
         /// <summary>
+        /// Constant PASSWORD for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType PASSWORD = new ChallengeNameType("PASSWORD");
+        /// <summary>
+        /// Constant PASSWORD_SRP for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType PASSWORD_SRP = new ChallengeNameType("PASSWORD_SRP");
+        /// <summary>
         /// Constant PASSWORD_VERIFIER for ChallengeNameType
         /// </summary>
         public static readonly ChallengeNameType PASSWORD_VERIFIER = new ChallengeNameType("PASSWORD_VERIFIER");
+        /// <summary>
+        /// Constant SELECT_CHALLENGE for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType SELECT_CHALLENGE = new ChallengeNameType("SELECT_CHALLENGE");
         /// <summary>
         /// Constant SELECT_MFA_TYPE for ChallengeNameType
         /// </summary>
@@ -461,9 +703,17 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ChallengeNameType SMS_MFA = new ChallengeNameType("SMS_MFA");
         /// <summary>
+        /// Constant SMS_OTP for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType SMS_OTP = new ChallengeNameType("SMS_OTP");
+        /// <summary>
         /// Constant SOFTWARE_TOKEN_MFA for ChallengeNameType
         /// </summary>
         public static readonly ChallengeNameType SOFTWARE_TOKEN_MFA = new ChallengeNameType("SOFTWARE_TOKEN_MFA");
+        /// <summary>
+        /// Constant WEB_AUTHN for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType WEB_AUTHN = new ChallengeNameType("WEB_AUTHN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -544,6 +794,60 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChallengeResponse(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ColorSchemeModeType.
+    /// </summary>
+    public class ColorSchemeModeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DARK for ColorSchemeModeType
+        /// </summary>
+        public static readonly ColorSchemeModeType DARK = new ColorSchemeModeType("DARK");
+        /// <summary>
+        /// Constant DYNAMIC for ColorSchemeModeType
+        /// </summary>
+        public static readonly ColorSchemeModeType DYNAMIC = new ColorSchemeModeType("DYNAMIC");
+        /// <summary>
+        /// Constant LIGHT for ColorSchemeModeType
+        /// </summary>
+        public static readonly ColorSchemeModeType LIGHT = new ColorSchemeModeType("LIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColorSchemeModeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColorSchemeModeType FindValue(string value)
+        {
+            return FindValue<ColorSchemeModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColorSchemeModeType(string value)
         {
             return FindValue(value);
         }
@@ -1246,6 +1550,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant ALLOW_REFRESH_TOKEN_AUTH for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType ALLOW_REFRESH_TOKEN_AUTH = new ExplicitAuthFlowsType("ALLOW_REFRESH_TOKEN_AUTH");
+        /// <summary>
+        /// Constant ALLOW_USER_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType ALLOW_USER_AUTH = new ExplicitAuthFlowsType("ALLOW_USER_AUTH");
         /// <summary>
         /// Constant ALLOW_USER_PASSWORD_AUTH for ExplicitAuthFlowsType
         /// </summary>
@@ -2117,6 +2425,60 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type UserPoolTierType.
+    /// </summary>
+    public class UserPoolTierType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ESSENTIALS for UserPoolTierType
+        /// </summary>
+        public static readonly UserPoolTierType ESSENTIALS = new UserPoolTierType("ESSENTIALS");
+        /// <summary>
+        /// Constant LITE for UserPoolTierType
+        /// </summary>
+        public static readonly UserPoolTierType LITE = new UserPoolTierType("LITE");
+        /// <summary>
+        /// Constant PLUS for UserPoolTierType
+        /// </summary>
+        public static readonly UserPoolTierType PLUS = new UserPoolTierType("PLUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserPoolTierType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserPoolTierType FindValue(string value)
+        {
+            return FindValue<UserPoolTierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserPoolTierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UserStatusType.
     /// </summary>
     public class UserStatusType : ConstantClass
@@ -2184,6 +2546,56 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserVerificationType.
+    /// </summary>
+    public class UserVerificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Preferred for UserVerificationType
+        /// </summary>
+        public static readonly UserVerificationType Preferred = new UserVerificationType("preferred");
+        /// <summary>
+        /// Constant Required for UserVerificationType
+        /// </summary>
+        public static readonly UserVerificationType Required = new UserVerificationType("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserVerificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserVerificationType FindValue(string value)
+        {
+            return FindValue<UserVerificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserVerificationType(string value)
         {
             return FindValue(value);
         }

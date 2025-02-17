@@ -78,6 +78,16 @@ namespace Amazon.S3
         public static readonly S3Region APSoutheast4 = new S3Region("ap-southeast-4");
 
         /// <summary>
+        /// Specifies that the S3 Bucket should use the ap-southeast-5 locality.
+        /// </summary>
+        public static readonly S3Region APSoutheast5 = new S3Region("ap-southeast-5");
+
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the ap-southeast-7 locality.
+        /// </summary>
+        public static readonly S3Region APSoutheast7 = new S3Region("ap-southeast-7");
+
+        /// <summary>
         /// Specifies that the S3 Bucket should use the ca-central-1 locality.
         /// </summary>
         public static readonly S3Region CACentral1 = new S3Region("ca-central-1");
@@ -143,6 +153,11 @@ namespace Amazon.S3
         public static readonly S3Region MESouth1 = new S3Region("me-south-1");
 
         /// <summary>
+        /// Specifies that the S3 Bucket should use the mx-central-1 locality.
+        /// </summary>
+        public static readonly S3Region MXCentral1 = new S3Region("mx-central-1");
+
+        /// <summary>
         /// Specifies that the S3 Bucket should use the sa-east-1 locality.
         /// </summary>
         public static readonly S3Region SAEast1 = new S3Region("sa-east-1");
@@ -206,6 +221,16 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use the eu-isoe-west-1 locality.
         /// </summary>
         public static readonly S3Region EUIsoeWest1 = new S3Region("eu-isoe-west-1");
+
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the us-isof-east-1 locality.
+        /// </summary>
+        public static readonly S3Region USIsofEast1 = new S3Region("us-isof-east-1");
+
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the us-isof-south-1 locality.
+        /// </summary>
+        public static readonly S3Region USIsofSouth1 = new S3Region("us-isof-south-1");
 
     }
 }

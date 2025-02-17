@@ -40,8 +40,13 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private VpcConfig _overrideVpcConfig;
+        private InstanceGroupStatus _status;
         private int? _targetCount;
         private int? _threadsPerCore;
+        private string _trainingPlanArn;
+        private string _trainingPlanStatus;
 
         /// <summary>
         /// Gets and sets the property CurrentCount. 
@@ -158,13 +163,96 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnStartDeepHealthChecks. 
+        /// <para>
+        /// A flag indicating whether deep health checks should be performed when the cluster
+        /// instance group is created or updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OnStartDeepHealthChecks
+        {
+            get { return this._onStartDeepHealthChecks; }
+            set { this._onStartDeepHealthChecks = value; }
+        }
+
+        // Check to see if OnStartDeepHealthChecks property is set
+        internal bool IsSetOnStartDeepHealthChecks()
+        {
+            return this._onStartDeepHealthChecks != null && (this._onStartDeepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideVpcConfig. 
+        /// <para>
+        /// The customized VPC configuration at the instance group level that overrides the default
+        /// VPC configuration of the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the cluster instance group.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>InService</c>: The instance group is active and healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Creating</c>: The instance group is being provisioned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Updating</c>: The instance group is being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c>: The instance group has failed to provision or is no longer healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Degraded</c>: The instance group is degraded, meaning that some instances have
+        /// failed to provision or are no longer healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Deleting</c>: The instance group is being deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InstanceGroupStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetCount. 
         /// <para>
         /// The number of instances you specified to add to the instance group of a SageMaker
         /// HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0, Max=6758)]
         public int TargetCount
         {
             get { return this._targetCount.GetValueOrDefault(); }
@@ -199,6 +287,51 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan associated with this cluster
+        /// instance group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanStatus. 
+        /// <para>
+        /// The current status of the training plan associated with this cluster instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string TrainingPlanStatus
+        {
+            get { return this._trainingPlanStatus; }
+            set { this._trainingPlanStatus = value; }
+        }
+
+        // Check to see if TrainingPlanStatus property is set
+        internal bool IsSetTrainingPlanStatus()
+        {
+            return this._trainingPlanStatus != null;
         }
 
     }

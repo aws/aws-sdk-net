@@ -48,6 +48,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAthena())
+            {
+                context.Writer.WritePropertyName("athena");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AthenaTableReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Athena, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGlue())
             {
                 context.Writer.WritePropertyName("glue");
@@ -55,6 +66,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 
                 var marshaller = GlueTableReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Glue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSnowflake())
+            {
+                context.Writer.WritePropertyName("snowflake");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeTableReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Snowflake, context);
 
                 context.Writer.WriteObjectEnd();
             }

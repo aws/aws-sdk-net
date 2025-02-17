@@ -149,7 +149,8 @@ namespace Amazon.Runtime
         CRC32C,
         CRC32,
         SHA256,
-        SHA1
+        SHA1,
+        CRC64NVME
     }
 
     /// <summary>
@@ -176,5 +177,57 @@ namespace Amazon.Runtime
         /// The SDK will attempt to verify the response checksum
         /// </summary>
         ENABLED
+    }
+
+    /// <summary>
+    /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
+    /// to the cell responsible for a given account, which avoids the additional latency of extra backend hops and reduces
+    /// complexity in the routing layer.
+    /// </summary>
+    public enum AccountIdEndpointMode
+    {
+        /// <summary>
+        /// The default value. The endpoint will include the account id if available.
+        /// </summary>
+        PREFERRED,
+        /// <summary>
+        /// The resolved endpoint will need to include the account id.
+        /// </summary>
+        REQUIRED,
+        /// <summary>
+        /// The resolved endpoint will not include the account id.
+        /// </summary>
+        DISABLED
+    }
+
+    /// <summary>
+    /// RequestChecksumCalculation determines the behavior for calculating checksums for request payloads.
+    /// </summary>
+    public enum RequestChecksumCalculation
+    {
+        /// <summary>
+        /// Calculate checksum for all request payloads of operations that supports checksum.
+        /// </summary>
+        WHEN_SUPPORTED,
+        /// <summary>
+        /// Calculate checksum for request payloads of operations that requires checksum.
+        /// </summary>
+        WHEN_REQUIRED,
+    }
+
+    /// <summary>
+    /// ResponseChecksumValidation determines the behavior for validating checksums on response payloads.
+    /// </summary>
+    public enum ResponseChecksumValidation
+    {
+        /// <summary>
+        /// Perform checksum validation for all response payloads of operations that supports checksum.
+        /// </summary>
+        WHEN_SUPPORTED,
+        /// <summary>
+        /// Perform checksum validation for response payloads of operations that supports checksum
+        /// and request validation is set to ENABLED.
+        /// </summary>
+        WHEN_REQUIRED,
     }
 }

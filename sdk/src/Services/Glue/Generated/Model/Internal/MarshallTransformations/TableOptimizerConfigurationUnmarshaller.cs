@@ -72,10 +72,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth))
+                {
+                    var unmarshaller = OrphanFileDeletionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OrphanFileDeletionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("retentionConfiguration", targetDepth))
+                {
+                    var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RetentionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcConfiguration", targetDepth))
+                {
+                    var unmarshaller = TableOptimizerVpcConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

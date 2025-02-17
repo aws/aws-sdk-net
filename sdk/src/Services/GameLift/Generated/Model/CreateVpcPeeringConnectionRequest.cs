@@ -84,7 +84,7 @@ namespace Amazon.GameLift.Model
         /// tells Amazon GameLift which GameLift VPC to peer with. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }

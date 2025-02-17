@@ -44,6 +44,7 @@ namespace Amazon.Imagebuilder.Model
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyPair;
         private Logging _logging;
+        private Placement _placement;
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
@@ -219,6 +220,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetLogging()
         {
             return this._logging != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The instance placement settings that define where the instances that are launched
+        /// from your image will run.
+        /// </para>
+        /// </summary>
+        public Placement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
         }
 
         /// <summary>

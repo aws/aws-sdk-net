@@ -34,10 +34,30 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class SourceContentDataDetails
     {
+        private CitationSpan _citationSpan;
         private string _id;
         private RankingData _rankingData;
         private TextData _textData;
         private SourceContentType _type;
+
+        /// <summary>
+        /// Gets and sets the property CitationSpan. 
+        /// <para>
+        /// Contains information about where the text with a citation begins and ends in the generated
+        /// output.
+        /// </para>
+        /// </summary>
+        public CitationSpan CitationSpan
+        {
+            get { return this._citationSpan; }
+            set { this._citationSpan = value; }
+        }
+
+        // Check to see if CitationSpan property is set
+        internal bool IsSetCitationSpan()
+        {
+            return this._citationSpan != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

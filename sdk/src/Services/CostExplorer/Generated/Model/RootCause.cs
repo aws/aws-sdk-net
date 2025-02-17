@@ -30,17 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The combination of Amazon Web Service, linked account, linked account name, Region,
-    /// and usage type where a cost anomaly is observed. The linked account name will only
-    /// be available when the account name can be identified.
+    /// The combination of Amazon Web Services service, linked account, linked account name,
+    /// Region, and usage type where a cost anomaly is observed, along with the dollar and
+    /// percentage amount of the anomaly impact. The linked account name will only be available
+    /// when the account name can be identified.
     /// </summary>
     public partial class RootCause
     {
+        private RootCauseImpact _impact;
         private string _linkedAccount;
         private string _linkedAccountName;
         private string _region;
         private string _service;
         private string _usageType;
+
+        /// <summary>
+        /// Gets and sets the property Impact. 
+        /// <para>
+        /// The dollar impact for the root cause.
+        /// </para>
+        /// </summary>
+        public RootCauseImpact Impact
+        {
+            get { return this._impact; }
+            set { this._impact = value; }
+        }
+
+        // Check to see if Impact property is set
+        internal bool IsSetImpact()
+        {
+            return this._impact != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LinkedAccount. 
@@ -102,7 +122,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Service name that's associated with the cost anomaly. 
+        /// The Amazon Web Services service name that's associated with the cost anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

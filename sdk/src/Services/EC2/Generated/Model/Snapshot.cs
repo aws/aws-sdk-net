@@ -34,9 +34,13 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Snapshot
     {
+        private string _availabilityZone;
+        private int? _completionDurationMinutes;
+        private DateTime? _completionTime;
         private string _dataEncryptionKeyId;
         private string _description;
         private bool? _encrypted;
+        private long? _fullSnapshotSizeInBytes;
         private string _kmsKeyId;
         private string _outpostArn;
         private string _ownerAlias;
@@ -50,8 +54,68 @@ namespace Amazon.EC2.Model
         private string _stateMessage;
         private StorageTier _storageTier;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private TransferType _transferType;
         private string _volumeId;
         private int? _volumeSize;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone or Local Zone of the snapshot. For example, <c>us-west-1a</c>
+        /// (Availability Zone) or <c>us-west-2-lax-1a</c> (Local Zone).
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionDurationMinutes. <note> 
+        /// <para>
+        /// Only for snapshot copies created with time-based snapshot copy operations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The completion duration requested for the time-based snapshot copy operation.
+        /// </para>
+        /// </summary>
+        public int CompletionDurationMinutes
+        {
+            get { return this._completionDurationMinutes.GetValueOrDefault(); }
+            set { this._completionDurationMinutes = value; }
+        }
+
+        // Check to see if CompletionDurationMinutes property is set
+        internal bool IsSetCompletionDurationMinutes()
+        {
+            return this._completionDurationMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionTime. 
+        /// <para>
+        /// The time stamp when the snapshot was completed.
+        /// </para>
+        /// </summary>
+        public DateTime CompletionTime
+        {
+            get { return this._completionTime.GetValueOrDefault(); }
+            set { this._completionTime = value; }
+        }
+
+        // Check to see if CompletionTime property is set
+        internal bool IsSetCompletionTime()
+        {
+            return this._completionTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataEncryptionKeyId. 
@@ -110,6 +174,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncrypted()
         {
             return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullSnapshotSizeInBytes. 
+        /// <para>
+        /// The full size of the snapshot, in bytes.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This is <b>not</b> the incremental size of the snapshot. This is the full snapshot
+        /// size and represents the size of all the blocks that were written to the source volume
+        /// at the time the snapshot was created.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public long FullSnapshotSizeInBytes
+        {
+            get { return this._fullSnapshotSizeInBytes.GetValueOrDefault(); }
+            set { this._fullSnapshotSizeInBytes = value; }
+        }
+
+        // Check to see if FullSnapshotSizeInBytes property is set
+        internal bool IsSetFullSnapshotSizeInBytes()
+        {
+            return this._fullSnapshotSizeInBytes.HasValue; 
         }
 
         /// <summary>
@@ -356,6 +445,41 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferType. <note> 
+        /// <para>
+        /// Only for snapshot copies.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Indicates whether the snapshot copy was created with a standard or time-based snapshot
+        /// copy operation. Time-based snapshot copy operations complete within the completion
+        /// duration specified in the request. Standard snapshot copy operations are completed
+        /// on a best-effort basis.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>standard</c> - The snapshot copy was created with a standard snapshot copy operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>time-based</c> - The snapshot copy was created with a time-based snapshot copy
+        /// operation.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TransferType TransferType
+        {
+            get { return this._transferType; }
+            set { this._transferType = value; }
+        }
+
+        // Check to see if TransferType property is set
+        internal bool IsSetTransferType()
+        {
+            return this._transferType != null;
         }
 
         /// <summary>

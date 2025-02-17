@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the appintegrations-2020-07-29.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

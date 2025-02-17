@@ -34,20 +34,13 @@ namespace Amazon.SQS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The rate of requests per second exceeds the Amazon Web Services KMS request quota
-    /// for an account and Region. 
+    /// Exceeds the permitted request rate for the queue or for the recipient of the request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A burst or sustained high rate of requests to change the state of the same KMS key.
-    /// This condition is often known as a "hot key."
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-    /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-    /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-    /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
+    /// Ensure that the request rate is within the Amazon SQS limits for sending messages.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-quotas.html#quotas-requests">Amazon
+    /// SQS quotas</a> in the <i>Amazon SQS Developer Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

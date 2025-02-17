@@ -66,6 +66,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("anywhereSettings", targetDepth))
+                {
+                    var unmarshaller = DescribeAnywhereSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AnywhereSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelClass = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("channelEngineVersion", targetDepth))
+                {
+                    var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
+                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("destinations", targetDepth))

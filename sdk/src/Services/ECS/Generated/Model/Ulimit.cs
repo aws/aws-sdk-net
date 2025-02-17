@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
     /// operating system with the exception of the <c>nofile</c> resource limit parameter
     /// which Fargate overrides. The <c>nofile</c> resource limit sets a restriction on the
     /// number of open files that a container can use. The default <c>nofile</c> soft limit
-    /// is <c>1024</c> and the default hard limit is <c>65535</c>.
+    /// is <c> 65535</c> and the default hard limit is <c>65535</c>.
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HardLimit. 
         /// <para>
-        /// The hard limit for the <c>ulimit</c> type.
+        /// The hard limit for the <c>ulimit</c> type. The value can be specified in bytes, seconds,
+        /// or as a count, depending on the <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +93,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SoftLimit. 
         /// <para>
-        /// The soft limit for the <c>ulimit</c> type.
+        /// The soft limit for the <c>ulimit</c> type. The value can be specified in bytes, seconds,
+        /// or as a count, depending on the <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -72,6 +72,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Region);
             }
 
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
+
         }
 
         /// <summary>

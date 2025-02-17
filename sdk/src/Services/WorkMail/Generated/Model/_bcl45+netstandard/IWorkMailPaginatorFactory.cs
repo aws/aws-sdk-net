@@ -82,6 +82,11 @@ namespace Amazon.WorkMail.Model
         IListOrganizationsPaginator ListOrganizations(ListOrganizationsRequest request);
 
         /// <summary>
+        /// Paginator for ListPersonalAccessTokens operation
+        ///</summary>
+        IListPersonalAccessTokensPaginator ListPersonalAccessTokens(ListPersonalAccessTokensRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceDelegates operation
         ///</summary>
         IListResourceDelegatesPaginator ListResourceDelegates(ListResourceDelegatesRequest request);

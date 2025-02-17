@@ -73,6 +73,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContactId);
                 }
 
+                if(publicRequest.IsSetContactRecordingType())
+                {
+                    context.Writer.WritePropertyName("ContactRecordingType");
+                    context.Writer.Write(publicRequest.ContactRecordingType);
+                }
+
                 if(publicRequest.IsSetInitialContactId())
                 {
                     context.Writer.WritePropertyName("InitialContactId");

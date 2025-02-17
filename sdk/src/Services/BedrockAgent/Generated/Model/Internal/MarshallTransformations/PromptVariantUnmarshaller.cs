@@ -66,10 +66,28 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalModelRequestFields", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("genAiResource", targetDepth))
+                {
+                    var unmarshaller = PromptGenAiResourceUnmarshaller.Instance;
+                    unmarshalledObject.GenAiResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inferenceConfiguration", targetDepth))
                 {
                     var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PromptMetadataEntry, PromptMetadataEntryUnmarshaller>(PromptMetadataEntryUnmarshaller.Instance);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("modelId", targetDepth))

@@ -37,6 +37,7 @@ namespace Amazon.IoTSiteWise.Model
         private bool? _booleanValue;
         private double? _doubleValue;
         private int? _integerValue;
+        private PropertyValueNullValue _nullValue;
         private string _stringValue;
 
         /// <summary>
@@ -60,7 +61,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property DoubleValue. 
         /// <para>
-        /// Asset property data of type double (floating point number).
+        ///  Asset property data of type double (floating point number). The min value is -10^10.
+        /// The max value is 10^10. Double.NaN is allowed. 
         /// </para>
         /// </summary>
         public double DoubleValue
@@ -94,9 +96,28 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NullValue. 
+        /// <para>
+        /// The type of null asset property data with BAD and UNCERTAIN qualities.
+        /// </para>
+        /// </summary>
+        public PropertyValueNullValue NullValue
+        {
+            get { return this._nullValue; }
+            set { this._nullValue = value; }
+        }
+
+        // Check to see if NullValue property is set
+        internal bool IsSetNullValue()
+        {
+            return this._nullValue != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// Asset property data of type string (sequence of characters).
+        ///  Asset property data of type string (sequence of characters). The allowed pattern:
+        /// "^$|[^\u0000-\u001F\u007F]+". The max length is 1024. 
         /// </para>
         /// </summary>
         public string StringValue

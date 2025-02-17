@@ -25,6 +25,8 @@ namespace ServiceClientGenerator.Generators.Endpoints
                 case "AWS::S3::DisableMultiRegionAccessPoints": return "config.DisableMultiregionAccessPoints";
                 case "AWS::S3::UseGlobalEndpoint": return "config.USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Legacy";
                 case "AWS::STS::UseGlobalEndpoint": return "config.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy";
+                case "AWS::Auth::AccountId": return "requestContext.ImmutableCredentials.AccountId";
+                case "AWS::Auth::AccountIdEndpointMode": return "config.AccountIdEndpointMode.ToString().ToLower()";
                 default: throw new Exception("Unknown builtIn");
             }
         }
@@ -38,7 +40,15 @@ namespace ServiceClientGenerator.Generators.Endpoints
             var code = new StringBuilder();
             foreach (var param in parameters.Where(c => c.Value.builtIn != null))
             {
-                code.AppendLine($@"{indent}result.{param.Key} = {GetValueSource(param.Value)};");
+                if (param.Value.builtIn == "AWS::Auth::AccountId")
+                {
+                    code.AppendLine($@"{indent}if (requestContext.ImmutableCredentials != null)");
+                    code.AppendLine($@"{innerIndent}result.{param.Key} = {GetValueSource(param.Value)};");
+                }
+                else
+                {
+                    code.AppendLine($@"{indent}result.{param.Key} = {GetValueSource(param.Value)};");
+                }
             }
             return code.ToString();
         }
@@ -64,7 +74,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
         {
             var code = new StringBuilder();
 
-            var ops = Config.ServiceModel.Operations.Where(x => x.StaticContextParameters.Count > 0 || x.RequestStructure?.Members.Any(c => c.ContextParameter != null) == true);
+            var ops = Config.ServiceModel.Operations.Where(x => x.StaticContextParameters.Count > 0 || x.OperationContextParameters.Count > 0 || x.RequestStructure?.Members.Any(c => c.ContextParameter != null) == true);
             foreach (var op in ops)
             {
                 code.AppendLine($@"{indent}if (requestContext.RequestName == ""{op.Name}Request"") {{");
@@ -78,14 +88,24 @@ namespace ServiceClientGenerator.Generators.Endpoints
                 {
                     continue;
                 }
-                var members = op.RequestStructure.Members.Where(c => c.ContextParameter != null).ToList();
-                if (members.Count > 0)
+                var memberswithContextParameter = op.RequestStructure.Members.Where(c => c.ContextParameter != null).ToList();
+                if (memberswithContextParameter.Count > 0 || op.OperationContextParameters.Count > 0)
                 {
                     code.AppendLine($@"{innerIndent}var request = ({op.Name}Request)requestContext.OriginalRequest;");
-                    foreach (var member in members)
-                    {
-                        code.AppendLine($@"{innerIndent}result.{member.ContextParameter.name} = request.{member.PropertyName};");
-                    }
+                }
+
+                foreach (var param in op.OperationContextParameters)
+                {
+                    var nativeValue = param.GetNativeValue(op.RequestStructure);
+                    if (nativeValue == null)
+                        continue;
+
+                    code.AppendLine($@"{innerIndent}result.{param.name} = request.{nativeValue};");
+                }
+
+                foreach (var member in memberswithContextParameter)
+                {
+                    code.AppendLine($@"{innerIndent}result.{member.ContextParameter.name} = request.{member.PropertyName};");
                 }
                 code.AppendLine($@"{innerIndent}return result;");
                 code.AppendLine($@"{indent}}}");

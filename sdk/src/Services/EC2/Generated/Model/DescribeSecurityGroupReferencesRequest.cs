@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityGroupReferences operation.
-    /// Describes the VPCs on the other side of a VPC peering connection that are referencing
-    /// the security groups you've specified in this request.
+    /// Describes the VPCs on the other side of a VPC peering or Transit Gateway connection
+    /// that are referencing the security groups you've specified in this request.
     /// </summary>
     public partial class DescribeSecurityGroupReferencesRequest : AmazonEC2Request
     {

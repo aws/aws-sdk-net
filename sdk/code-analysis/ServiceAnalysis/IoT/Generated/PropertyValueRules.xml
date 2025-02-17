@@ -31,6 +31,36 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AssociateSbomWithPackageVersionRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+    <pattern>\S{36,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AssociateSbomWithPackageVersionRequest.PackageName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AssociateSbomWithPackageVersionRequest.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AssociateSbomWithPackageVersionResponse.PackageName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AssociateSbomWithPackageVersionResponse.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AssociateTargetsWithJobRequest.Comment</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -246,6 +276,33 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandRequest.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandRequest.DisplayName</property>
+    <max>64</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateCommandResponse.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateCustomMetricRequest.ClientRequestToken</property>
@@ -548,6 +605,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreatePackageVersionRequest.Recipe</property>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreatePackageVersionRequest.VersionName</property>
@@ -874,6 +935,22 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteCommandRequest.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteCommandExecutionRequest.ExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteCommandExecutionRequest.TargetArn</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DeleteCustomMetricRequest.MetricName</property>
@@ -1577,6 +1654,24 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DisassociateSbomFromPackageVersionRequest.ClientToken</property>
+    <min>36</min>
+    <max>64</max>
+    <pattern>\S{36,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DisassociateSbomFromPackageVersionRequest.PackageName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DisassociateSbomFromPackageVersionRequest.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.EnableTopicRuleRequest.RuleName</property>
     <min>1</min>
     <max>128</max>
@@ -1620,6 +1715,57 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.GetCardinalityRequest.QueryString</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandRequest.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandResponse.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandResponse.DisplayName</property>
+    <max>64</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandExecutionRequest.ExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandExecutionRequest.TargetArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandExecutionResponse.ExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandExecutionResponse.ExecutionTimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetCommandExecutionResponse.TargetArn</property>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetEffectivePoliciesRequest.ThingName</property>
@@ -1696,6 +1842,10 @@
     <min>1</min>
     <max>1600</max>
     <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetPackageVersionResponse.Recipe</property>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPackageVersionResponse.VersionName</property>
@@ -1784,6 +1934,18 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.GetStatisticsRequest.QueryString</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetThingConnectivityDataRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetThingConnectivityDataResponse.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetTopicRuleRequest.RuleName</property>
@@ -1969,6 +2131,26 @@
     <property>Amazon.IoT.Model.ListCertificatesByCAResponse.NextMarker</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCommandExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCommandExecutionsRequest.TargetArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCommandsRequest.CommandParameterName</property>
+    <min>1</min>
+    <max>192</max>
+    <pattern>^[.$a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListCommandsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCustomMetricsRequest.MaxResults</property>
@@ -2220,6 +2402,11 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListPrincipalThingsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListProvisioningTemplatesRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -2260,6 +2447,23 @@
     <property>Amazon.IoT.Model.ListRoleAliasesResponse.NextMarker</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSbomValidationResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSbomValidationResultsRequest.PackageName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSbomValidationResultsRequest.VersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListScheduledAuditsRequest.MaxResults</property>
@@ -2365,6 +2569,17 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListThingPrincipalsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListThingPrincipalsV2Request.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListThingRegistrationTaskReportsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -2386,7 +2601,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingsRequest.AttributeValue</property>
     <max>800</max>
-    <pattern>[a-zA-Z0-9_.,@/:#-]*</pattern>
+    <pattern>[a-zA-Z0-9_.,@/:#=\[\]-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingsRequest.MaxResults</property>
@@ -2804,6 +3019,38 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandRequest.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandRequest.DisplayName</property>
+    <max>64</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandResponse.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateCommandResponse.DisplayName</property>
+    <max>64</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateCustomMetricRequest.DisplayName</property>
     <max>128</max>
   </property-value-rule>
@@ -2966,6 +3213,10 @@
     <pattern>[a-zA-Z0-9-_.]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdatePackageVersionRequest.Recipe</property>
+    <max>3072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdatePackageVersionRequest.VersionName</property>
     <min>1</min>
     <max>64</max>
@@ -3097,6 +3348,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateThingGroupsForThingRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateThingTypeRequest.ThingTypeName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
@@ -3385,6 +3642,69 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ClientCertificateConfig.ClientCertificateCallbackArn</property>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandExecutionResult.BIN</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandExecutionResult.S</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandExecutionSummary.ExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandExecutionSummary.TargetArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameter.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameter.Name</property>
+    <min>1</min>
+    <max>192</max>
+    <pattern>^[.$a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValue.BIN</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValue.S</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandParameterValue.UL</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandPayload.ContentType</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandSummary.CommandId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CommandSummary.DisplayName</property>
+    <max>64</max>
+    <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DetectMitigationActionExecution.ActionName</property>
@@ -3854,6 +4174,27 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.PrincipalThingObject.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PropagatingAttribute.ConnectionAttribute</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PropagatingAttribute.ThingAttribute</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.,@/:#-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PropagatingAttribute.UserPropertyKey</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:$.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ProvisioningHook.PayloadVersion</property>
     <min>10</min>
     <max>32</max>
@@ -4026,6 +4367,16 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ServerCertificateConfig.OcspAuthorizedResponderArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/[a-zA-Z0-9/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ServerCertificateConfig.OcspLambdaArn</property>
+    <max>140</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ServerCertificateSummary.ServerCertificateArn</property>
     <min>1</min>
     <max>2048</max>
@@ -4034,6 +4385,16 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.StatisticalThreshold.Statistic</property>
     <pattern>(p0|p0\.1|p0\.01|p1|p10|p50|p90|p99|p99\.9|p99\.99|p100)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StatusReason.ReasonCode</property>
+    <max>64</max>
+    <pattern>[A-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StatusReason.ReasonDescription</property>
+    <max>1024</max>
+    <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Stream.FileId</property>
@@ -4163,6 +4524,16 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingTypeProperties.ThingTypeDescription</property>
     <max>2028</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TimeFilter.After</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TimeFilter.Before</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TlsConfig.SecurityPolicy</property>

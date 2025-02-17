@@ -36,12 +36,32 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CreateQueueRequest : AmazonMediaConvertRequest
     {
+        private int? _concurrentJobs;
         private string _description;
         private string _name;
         private PricingPlan _pricingPlan;
         private ReservationPlanSettings _reservationPlanSettings;
         private QueueStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConcurrentJobs. Specify the maximum number of jobs your
+        /// queue can process concurrently. For on-demand queues, the value you enter is constrained
+        /// by your service quotas for Maximum concurrent jobs, per on-demand queue and Maximum
+        /// concurrent jobs, per account. For reserved queues, specify the number of jobs you
+        /// can process concurrently in your reservation plan instead.
+        /// </summary>
+        public int ConcurrentJobs
+        {
+            get { return this._concurrentJobs.GetValueOrDefault(); }
+            set { this._concurrentJobs = value; }
+        }
+
+        // Check to see if ConcurrentJobs property is set
+        internal bool IsSetConcurrentJobs()
+        {
+            return this._concurrentJobs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. Optional. A description of the queue that

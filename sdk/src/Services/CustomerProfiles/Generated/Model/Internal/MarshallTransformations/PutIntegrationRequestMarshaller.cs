@@ -70,6 +70,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEventTriggerNames())
+                {
+                    context.Writer.WritePropertyName("EventTriggerNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventTriggerNamesListValue in publicRequest.EventTriggerNames)
+                    {
+                            context.Writer.Write(publicRequestEventTriggerNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFlowDefinition())
                 {
                     context.Writer.WritePropertyName("FlowDefinition");
@@ -99,6 +110,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestObjectTypeNamesValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("RoleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
                 }
 
                 if(publicRequest.IsSetTags())

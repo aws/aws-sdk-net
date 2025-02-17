@@ -53,8 +53,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Snapshots copied to an Outpost are encrypted by default using the default encryption
     /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-    /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
-    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+    /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
+    /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CopySnapshotRequest : AmazonEC2Request
     {
+        private int? _completionDurationMinutes;
         private string _description;
         private string _destinationOutpostArn;
         private string _destinationRegion;
@@ -78,6 +79,33 @@ namespace Amazon.EC2.Model
         private string _sourceRegion;
         private string _sourceSnapshotId;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CompletionDurationMinutes. 
+        /// <para>
+        /// Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot
+        /// copy. Time-based snapshot copy operations complete within the specified duration.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
+        /// Time-based copies</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value, the snapshot copy operation is completed on a best-effort
+        /// basis.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2880)]
+        public int CompletionDurationMinutes
+        {
+            get { return this._completionDurationMinutes.GetValueOrDefault(); }
+            set { this._completionDurationMinutes = value; }
+        }
+
+        // Check to see if CompletionDurationMinutes property is set
+        internal bool IsSetCompletionDurationMinutes()
+        {
+            return this._completionDurationMinutes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

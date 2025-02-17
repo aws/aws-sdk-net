@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The cluster object that has been deleted
+        /// The cluster object that has been deleted.
         /// </para>
         /// </summary>
         public Cluster Cluster

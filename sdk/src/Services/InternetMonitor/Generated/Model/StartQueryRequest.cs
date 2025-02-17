@@ -163,6 +163,23 @@ namespace Amazon.InternetMonitor.Model
         ///  <c>TOP_LOCATION_DETAILS</c>: Provides TTFB for Amazon CloudFront, your current configuration,
         /// and the best performing EC2 configuration, at 1 hour intervals.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OVERALL_TRAFFIC_SUGGESTIONS</c>: Provides TTFB, using a 30-day weighted average,
+        /// for all traffic in each Amazon Web Services location that is monitored.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OVERALL_TRAFFIC_SUGGESTIONS_DETAILS</c>: Provides TTFB, using a 30-day weighted
+        /// average, for each top location, for a proposed Amazon Web Services location. Must
+        /// provide an Amazon Web Services location to search.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ROUTING_SUGGESTIONS</c>: Provides the predicted average round-trip time (RTT)
+        /// from an IP prefix toward an Amazon Web Services location for a DNS resolver. The RTT
+        /// is calculated at one hour intervals, over a one hour period.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For lists of the fields returned with each query type and more information about how

@@ -22,8 +22,11 @@ using System.IO;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Specifies encryption-related information for an Amazon S3 bucket that is a destination
-    /// for replicated objects.
+    /// <para>Specifies encryption-related information for an Amazon S3 bucket that is a destination 
+    /// for replicated objects.</para> <note> <para>If you're specifying a customer managed KMS 
+    /// key, we recommend using a fully qualified KMS key ARN. If you use a KMS key alias instead, 
+    /// then KMS resolves the key within the requester’s account. This behavior can result in data 
+    /// that's encrypted with a KMS key that belongs to the requester, and not the bucket owner.</para> </note>
     /// </summary>
     public class EncryptionConfiguration
     {

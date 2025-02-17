@@ -60,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<Runbook> _runbooks = AWSConfigs.InitializeCollections ? new List<Runbook>() : null;
         private DateTime? _scheduledTime;
         private string _target;
+        private string _targetLocationsURL;
         private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
         private string _targetParameterName;
         private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
@@ -162,8 +163,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
         /// CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services
         /// Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-        /// Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>. 
+        /// automations in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon
+        /// Web Services Systems Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public AutomationType AutomationType
@@ -550,6 +551,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTarget()
         {
             return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocationsURL. 
+        /// <para>
+        /// A publicly accessible URL for a file that contains the <c>TargetLocations</c> body.
+        /// Currently, only files in presigned Amazon S3 buckets are supported
+        /// </para>
+        /// </summary>
+        public string TargetLocationsURL
+        {
+            get { return this._targetLocationsURL; }
+            set { this._targetLocationsURL = value; }
+        }
+
+        // Check to see if TargetLocationsURL property is set
+        internal bool IsSetTargetLocationsURL()
+        {
+            return this._targetLocationsURL != null;
         }
 
         /// <summary>

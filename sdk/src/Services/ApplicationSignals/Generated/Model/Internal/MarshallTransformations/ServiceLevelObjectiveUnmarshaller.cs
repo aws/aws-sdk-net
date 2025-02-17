@@ -72,6 +72,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BurnRateConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BurnRateConfiguration, BurnRateConfigurationUnmarshaller>(BurnRateConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.BurnRateConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -82,6 +88,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Goal", targetDepth))
@@ -100,6 +112,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestBasedSli", targetDepth))
+                {
+                    var unmarshaller = RequestBasedServiceLevelIndicatorUnmarshaller.Instance;
+                    unmarshalledObject.RequestBasedSli = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sli", targetDepth))

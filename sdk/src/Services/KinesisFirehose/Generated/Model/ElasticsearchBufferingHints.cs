@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the buffering to perform before delivering data to the Amazon ES destination.
+    /// Describes the buffering to perform before delivering data to the Amazon OpenSearch
+    /// Service destination.
     /// </summary>
     public partial class ElasticsearchBufferingHints
     {
@@ -66,7 +67,7 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// We recommend setting this parameter to a value greater than the amount of data you
-        /// typically ingest into the delivery stream in 10 seconds. For example, if you typically
+        /// typically ingest into the Firehose stream in 10 seconds. For example, if you typically
         /// ingest data at 1 MB/sec, the value should be 10 MB or higher.
         /// </para>
         /// </summary>

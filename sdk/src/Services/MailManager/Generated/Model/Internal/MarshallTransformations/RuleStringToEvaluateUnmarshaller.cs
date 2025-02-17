@@ -72,6 +72,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MimeHeaderAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MimeHeaderAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

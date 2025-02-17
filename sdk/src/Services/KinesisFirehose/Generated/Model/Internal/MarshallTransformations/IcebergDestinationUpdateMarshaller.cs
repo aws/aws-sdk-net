@@ -48,6 +48,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAppendOnly())
+            {
+                context.Writer.WritePropertyName("AppendOnly");
+                context.Writer.Write(requestObject.AppendOnly);
+            }
+
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
@@ -138,6 +144,28 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
                 var marshaller = S3DestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSchemaEvolutionConfiguration())
+            {
+                context.Writer.WritePropertyName("SchemaEvolutionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SchemaEvolutionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchemaEvolutionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTableCreationConfiguration())
+            {
+                context.Writer.WritePropertyName("TableCreationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TableCreationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TableCreationConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

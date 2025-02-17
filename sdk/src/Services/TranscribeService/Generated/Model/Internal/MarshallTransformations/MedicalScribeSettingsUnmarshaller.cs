@@ -72,6 +72,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelIdentification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClinicalNoteGenerationSettings", targetDepth))
+                {
+                    var unmarshaller = ClinicalNoteGenerationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ClinicalNoteGenerationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxSpeakerLabels", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -93,6 +93,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
     {
+        private Entity _entity;
         private List<InputLogEvent> _logEvents = AWSConfigs.InitializeCollections ? new List<InputLogEvent>() : null;
         private string _logGroupName;
         private string _logStreamName;
@@ -114,6 +115,24 @@ namespace Amazon.CloudWatchLogs.Model
             _logGroupName = logGroupName;
             _logStreamName = logStreamName;
             _logEvents = logEvents;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Entity. 
+        /// <para>
+        /// The entity associated with the log events.
+        /// </para>
+        /// </summary>
+        public Entity Entity
+        {
+            get { return this._entity; }
+            set { this._entity = value; }
+        }
+
+        // Check to see if Entity property is set
+        internal bool IsSetEntity()
+        {
+            return this._entity != null;
         }
 
         /// <summary>

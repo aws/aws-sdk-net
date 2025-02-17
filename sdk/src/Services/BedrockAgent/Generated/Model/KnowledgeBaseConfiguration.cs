@@ -30,12 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains details about the embeddings configuration of the knowledge base.
+    /// Contains details about the vector embeddings configuration of the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseConfiguration
     {
+        private KendraKnowledgeBaseConfiguration _kendraKnowledgeBaseConfiguration;
+        private SqlKnowledgeBaseConfiguration _sqlKnowledgeBaseConfiguration;
         private KnowledgeBaseType _type;
         private VectorKnowledgeBaseConfiguration _vectorKnowledgeBaseConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property KendraKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Settings for an Amazon Kendra knowledge base.
+        /// </para>
+        /// </summary>
+        public KendraKnowledgeBaseConfiguration KendraKnowledgeBaseConfiguration
+        {
+            get { return this._kendraKnowledgeBaseConfiguration; }
+            set { this._kendraKnowledgeBaseConfiguration = value; }
+        }
+
+        // Check to see if KendraKnowledgeBaseConfiguration property is set
+        internal bool IsSetKendraKnowledgeBaseConfiguration()
+        {
+            return this._kendraKnowledgeBaseConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Specifies configurations for a knowledge base connected to an SQL database.
+        /// </para>
+        /// </summary>
+        public SqlKnowledgeBaseConfiguration SqlKnowledgeBaseConfiguration
+        {
+            get { return this._sqlKnowledgeBaseConfiguration; }
+            set { this._sqlKnowledgeBaseConfiguration = value; }
+        }
+
+        // Check to see if SqlKnowledgeBaseConfiguration property is set
+        internal bool IsSetSqlKnowledgeBaseConfiguration()
+        {
+            return this._sqlKnowledgeBaseConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 
@@ -59,7 +97,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property VectorKnowledgeBaseConfiguration. 
         /// <para>
-        /// Contains details about the embeddings model that'sused to convert the data source.
+        /// Contains details about the model that's used to convert the data source into vector
+        /// embeddings.
         /// </para>
         /// </summary>
         public VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration

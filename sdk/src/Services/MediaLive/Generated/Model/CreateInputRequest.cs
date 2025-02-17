@@ -37,8 +37,10 @@ namespace Amazon.MediaLive.Model
     {
         private List<InputDestinationRequest> _destinations = AWSConfigs.InitializeCollections ? new List<InputDestinationRequest>() : null;
         private List<InputDeviceSettings> _inputDevices = AWSConfigs.InitializeCollections ? new List<InputDeviceSettings>() : null;
+        private InputNetworkLocation _inputNetworkLocation;
         private List<string> _inputSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<MediaConnectFlowRequest> _mediaConnectFlows = AWSConfigs.InitializeCollections ? new List<MediaConnectFlowRequest>() : null;
+        private MulticastSettingsCreateRequest _multicastSettings;
         private string _name;
         private string _requestId;
         private string _roleArn;
@@ -79,6 +81,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputNetworkLocation. The location of this input. AWS,
+        /// for an input existing in the AWS Cloud, On-Prem foran input in a customer network.
+        /// </summary>
+        public InputNetworkLocation InputNetworkLocation
+        {
+            get { return this._inputNetworkLocation; }
+            set { this._inputNetworkLocation = value; }
+        }
+
+        // Check to see if InputNetworkLocation property is set
+        internal bool IsSetInputNetworkLocation()
+        {
+            return this._inputNetworkLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputSecurityGroups. A list of security groups referenced
         /// by IDs to attach to the input.
         /// </summary>
@@ -111,6 +129,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMediaConnectFlows()
         {
             return this._mediaConnectFlows != null && (this._mediaConnectFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastSettings. Multicast Input settings.
+        /// </summary>
+        public MulticastSettingsCreateRequest MulticastSettings
+        {
+            get { return this._multicastSettings; }
+            set { this._multicastSettings = value; }
+        }
+
+        // Check to see if MulticastSettings property is set
+        internal bool IsSetMulticastSettings()
+        {
+            return this._multicastSettings != null;
         }
 
         /// <summary>

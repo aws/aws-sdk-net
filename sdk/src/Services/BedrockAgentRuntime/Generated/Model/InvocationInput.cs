@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InvocationInput
     {
         private ActionGroupInvocationInput _actionGroupInvocationInput;
+        private AgentCollaboratorInvocationInput _agentCollaboratorInvocationInput;
         private CodeInterpreterInvocationInput _codeInterpreterInvocationInput;
         private InvocationType _invocationType;
         private KnowledgeBaseLookupInput _knowledgeBaseLookupInput;
@@ -57,6 +58,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroupInvocationInput()
         {
             return this._actionGroupInvocationInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboratorInvocationInput. 
+        /// <para>
+        /// The collaborator's invocation input.
+        /// </para>
+        /// </summary>
+        public AgentCollaboratorInvocationInput AgentCollaboratorInvocationInput
+        {
+            get { return this._agentCollaboratorInvocationInput; }
+            set { this._agentCollaboratorInvocationInput = value; }
+        }
+
+        // Check to see if AgentCollaboratorInvocationInput property is set
+        internal bool IsSetAgentCollaboratorInvocationInput()
+        {
+            return this._agentCollaboratorInvocationInput != null;
         }
 
         /// <summary>

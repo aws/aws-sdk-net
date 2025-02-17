@@ -114,6 +114,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PartnerProfileId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreserveContentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreserveContentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

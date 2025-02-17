@@ -66,7 +66,7 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// You can use an endpoint to connect programmatically to an Amazon Web Services service.
     /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
@@ -370,13 +370,8 @@ namespace Amazon.Connect
         #region  AssociateAnalyticsDataSet
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates the specified dataset for a Amazon Connect instance with the target account.
         /// You can associate only one dataset in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
         /// 
@@ -1302,7 +1297,8 @@ namespace Amazon.Connect
         #region  AssociateTrafficDistributionGroupUser
 
         /// <summary>
-        /// Associates an agent with a traffic distribution group.
+        /// Associates an agent with a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
         /// 
@@ -1374,7 +1370,7 @@ namespace Amazon.Connect
         #region  AssociateUserProficiencies
 
         /// <summary>
-        /// &gt;Associates a set of proficiencies with a user.
+        /// Associates a set of proficiencies with a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
         /// 
@@ -1443,13 +1439,8 @@ namespace Amazon.Connect
         #region  BatchAssociateAnalyticsDataSet
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
         /// account. You can associate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
         /// 
@@ -1518,13 +1509,8 @@ namespace Amazon.Connect
         #region  BatchDisassociateAnalyticsDataSet
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
         /// You can disassociate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
         /// 
@@ -2077,6 +2063,96 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateContact
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
+        /// AGENT_REPLY, and FLOW.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new EMAIL contact. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse CreateContact(CreateContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual IAsyncResult BeginCreateContact(CreateContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContact.</param>
+        /// 
+        /// <returns>Returns a  CreateContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse EndCreateContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateContactFlow
 
         /// <summary>
@@ -2245,6 +2321,170 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateContactFlowVersion
+
+        /// <summary>
+        /// Publishes a new version of the flow provided. Versions are immutable and monotonically
+        /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+        /// only supports creating versions for flows of type <c>Campaign</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        public virtual CreateContactFlowVersionResponse CreateContactFlowVersion(CreateContactFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContactFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateContactFlowVersion(CreateContactFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContactFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateContactFlowVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        public virtual CreateContactFlowVersionResponse EndCreateContactFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContactFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEmailAddress
+
+        /// <summary>
+        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
+        /// 
+        /// <returns>The response from the CreateEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">REST API Reference for CreateEmailAddress Operation</seealso>
+        public virtual CreateEmailAddressResponse CreateEmailAddress(CreateEmailAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailAddressResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEmailAddressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEmailAddress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">REST API Reference for CreateEmailAddress Operation</seealso>
+        public virtual IAsyncResult BeginCreateEmailAddress(CreateEmailAddressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEmailAddressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEmailAddress.</param>
+        /// 
+        /// <returns>Returns a  CreateEmailAddressResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">REST API Reference for CreateEmailAddress Operation</seealso>
+        public virtual CreateEmailAddressResponse EndCreateEmailAddress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEmailAddressResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEvaluationForm
 
         /// <summary>
@@ -2396,6 +2636,81 @@ namespace Amazon.Connect
         public virtual CreateHoursOfOperationResponse EndCreateHoursOfOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateHoursOfOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateHoursOfOperationOverride
+
+        /// <summary>
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the CreateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual CreateHoursOfOperationOverrideResponse CreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginCreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  CreateHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual CreateHoursOfOperationOverrideResponse EndCreateHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHoursOfOperationOverrideResponse>(asyncResult);
         }
 
         #endregion
@@ -2857,15 +3172,86 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreatePushNotificationRegistration
+
+        /// <summary>
+        /// Creates registration for a device token and a chat contact to receive real-time push
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
+        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the CreatePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        public virtual CreatePushNotificationRegistrationResponse CreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePushNotificationRegistrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePushNotificationRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        public virtual IAsyncResult BeginCreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePushNotificationRegistration.</param>
+        /// 
+        /// <returns>Returns a  CreatePushNotificationRegistrationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        public virtual CreatePushNotificationRegistrationResponse EndCreatePushNotificationRegistration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePushNotificationRegistrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateQueue
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -3352,7 +3738,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
-        /// replicated. 
+        /// replicated.
         /// 
         ///  <note> 
         /// <para>
@@ -4295,6 +4681,153 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowVersion
+
+        /// <summary>
+        /// Deletes the particular version specified in flow version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual DeleteContactFlowVersionResponse DeleteContactFlowVersion(DeleteContactFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContactFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContactFlowVersion(DeleteContactFlowVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContactFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactFlowVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual DeleteContactFlowVersionResponse EndDeleteContactFlowVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContactFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEmailAddress
+
+        /// <summary>
+        /// Deletes email address from the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">REST API Reference for DeleteEmailAddress Operation</seealso>
+        public virtual DeleteEmailAddressResponse DeleteEmailAddress(DeleteEmailAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailAddressResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailAddressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailAddress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">REST API Reference for DeleteEmailAddress Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEmailAddress(DeleteEmailAddressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailAddressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailAddress.</param>
+        /// 
+        /// <returns>Returns a  DeleteEmailAddressResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">REST API Reference for DeleteEmailAddress Operation</seealso>
+        public virtual DeleteEmailAddressResponse EndDeleteEmailAddress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEmailAddressResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEvaluationForm
 
         /// <summary>
@@ -4445,6 +4978,75 @@ namespace Amazon.Connect
         public virtual DeleteHoursOfOperationResponse EndDeleteHoursOfOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHoursOfOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteHoursOfOperationOverride
+
+        /// <summary>
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual DeleteHoursOfOperationOverrideResponse DeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  DeleteHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual DeleteHoursOfOperationOverrideResponse EndDeleteHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHoursOfOperationOverrideResponse>(asyncResult);
         }
 
         #endregion
@@ -4734,11 +5336,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeletePushNotificationRegistration
+
+        /// <summary>
+        /// Deletes registration for a device token and a chat contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DeletePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        public virtual DeletePushNotificationRegistrationResponse DeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePushNotificationRegistrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePushNotificationRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        public virtual IAsyncResult BeginDeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePushNotificationRegistration.</param>
+        /// 
+        /// <returns>Returns a  DeletePushNotificationRegistrationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        public virtual DeletePushNotificationRegistrationResponse EndDeletePushNotificationRegistration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePushNotificationRegistrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteQueue
 
         /// <summary>
-        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-        /// website.
+        /// Deletes a queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -5796,7 +6466,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -5876,16 +6546,18 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months, and then it
-        /// is deleted.
+        ///  <c>CustomerEndpoint</c> and <c>SystemEndpoint</c> are only populated for EMAIL contacts.
+        /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Only data from November 12, 2021, and later is returned by this API.
+        /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
+        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// is returned by this API.
         /// </para>
-        ///  </important>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// 
@@ -6030,9 +6702,14 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
+        /// flow version.
         /// </para>
         ///  
         /// <para>
@@ -6117,9 +6794,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
@@ -6185,6 +6862,78 @@ namespace Amazon.Connect
         public virtual DescribeContactFlowModuleResponse EndDescribeContactFlowModule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeContactFlowModuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEmailAddress
+
+        /// <summary>
+        /// Describe email address form the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">REST API Reference for DescribeEmailAddress Operation</seealso>
+        public virtual DescribeEmailAddressResponse DescribeEmailAddress(DescribeEmailAddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailAddressResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEmailAddressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEmailAddress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">REST API Reference for DescribeEmailAddress Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEmailAddress(DescribeEmailAddressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailAddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailAddressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEmailAddress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEmailAddress.</param>
+        /// 
+        /// <returns>Returns a  DescribeEmailAddressResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">REST API Reference for DescribeEmailAddress Operation</seealso>
+        public virtual DescribeEmailAddressResponse EndDescribeEmailAddress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEmailAddressResponse>(asyncResult);
         }
 
         #endregion
@@ -6326,6 +7075,75 @@ namespace Amazon.Connect
         public virtual DescribeHoursOfOperationResponse EndDescribeHoursOfOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHoursOfOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeHoursOfOperationOverride
+
+        /// <summary>
+        /// Describes the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual DescribeHoursOfOperationOverrideResponse DescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  DescribeHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual DescribeHoursOfOperationOverrideResponse EndDescribeHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHoursOfOperationOverrideResponse>(asyncResult);
         }
 
         #endregion
@@ -6568,7 +7386,7 @@ namespace Amazon.Connect
         /// parameter. However, if the number is claimed to a traffic distribution group and you
         /// are calling this API in the alternate Amazon Web Services Region associated with the
         /// traffic distribution group, you must provide a full phone number ARN. If a UUID is
-        /// provided in this scenario, you will receive a <c>ResourceNotFoundException</c>.
+        /// provided in this scenario, you receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -7576,12 +8394,7 @@ namespace Amazon.Connect
         #region  DisassociateAnalyticsDataSet
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes the dataset ID associated with a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
         /// 
@@ -8392,7 +9205,8 @@ namespace Amazon.Connect
         #region  DisassociateTrafficDistributionGroupUser
 
         /// <summary>
-        /// Disassociates an agent from a traffic distribution group.
+        /// Disassociates an agent from a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
         /// 
@@ -8884,6 +9698,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetEffectiveHoursOfOperations
+
+        /// <summary>
+        /// Get the hours of operations with the effective override applied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the GetEffectiveHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual GetEffectiveHoursOfOperationsResponse GetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEffectiveHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEffectiveHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEffectiveHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginGetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEffectiveHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEffectiveHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  GetEffectiveHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual GetEffectiveHoursOfOperationsResponse EndGetEffectiveHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEffectiveHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
         /// <summary>
@@ -9145,7 +10028,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 3 months, at varying intervals. 
+        /// the last 3 months, at varying intervals. It does not support agent queues.
         /// </para>
         ///  
         /// <para>
@@ -9428,9 +10311,9 @@ namespace Amazon.Connect
         #region  ImportPhoneNumber
 
         /// <summary>
-        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
-        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
-        /// Services Region where the Amazon Connect instance was created.
+        /// Imports a claimed phone number from an external service, such as Amazon Web Services
+        /// End User Messaging, into an Amazon Connect instance. You can call this API only in
+        /// the same Amazon Web Services Region where the Amazon Connect instance was created.
         /// 
         ///  <important> 
         /// <para>
@@ -9457,7 +10340,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
         /// 
         /// </para>
         /// </summary>
@@ -9605,12 +10488,7 @@ namespace Amazon.Connect
         #region  ListAnalyticsDataAssociations
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
         /// 
@@ -9672,6 +10550,76 @@ namespace Amazon.Connect
         public virtual ListAnalyticsDataAssociationsResponse EndListAnalyticsDataAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAnalyticsDataAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAnalyticsDataLakeDataSets
+
+        /// <summary>
+        /// Lists the data lake datasets available to associate with for a given Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataLakeDataSets service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalyticsDataLakeDataSets service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">REST API Reference for ListAnalyticsDataLakeDataSets Operation</seealso>
+        public virtual ListAnalyticsDataLakeDataSetsResponse ListAnalyticsDataLakeDataSets(ListAnalyticsDataLakeDataSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyticsDataLakeDataSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyticsDataLakeDataSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalyticsDataLakeDataSetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnalyticsDataLakeDataSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataLakeDataSets operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnalyticsDataLakeDataSets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">REST API Reference for ListAnalyticsDataLakeDataSets Operation</seealso>
+        public virtual IAsyncResult BeginListAnalyticsDataLakeDataSets(ListAnalyticsDataLakeDataSetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalyticsDataLakeDataSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalyticsDataLakeDataSetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnalyticsDataLakeDataSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnalyticsDataLakeDataSets.</param>
+        /// 
+        /// <returns>Returns a  ListAnalyticsDataLakeDataSetsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">REST API Reference for ListAnalyticsDataLakeDataSets Operation</seealso>
+        public virtual ListAnalyticsDataLakeDataSetsResponse EndListAnalyticsDataLakeDataSets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnalyticsDataLakeDataSetsResponse>(asyncResult);
         }
 
         #endregion
@@ -9750,11 +10698,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListAssociatedContacts
+
+        /// <summary>
+        /// Provides information about contact tree, a list of associated contacts with a unique
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedContacts service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociatedContacts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">REST API Reference for ListAssociatedContacts Operation</seealso>
+        public virtual ListAssociatedContactsResponse ListAssociatedContacts(ListAssociatedContactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedContactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociatedContactsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssociatedContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedContacts operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedContacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">REST API Reference for ListAssociatedContacts Operation</seealso>
+        public virtual IAsyncResult BeginListAssociatedContacts(ListAssociatedContactsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociatedContactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociatedContactsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssociatedContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociatedContacts.</param>
+        /// 
+        /// <returns>Returns a  ListAssociatedContactsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">REST API Reference for ListAssociatedContacts Operation</seealso>
+        public virtual ListAssociatedContactsResponse EndListAssociatedContacts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssociatedContactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAuthenticationProfiles
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -9834,7 +10852,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-        /// Lex bots currently associated with the instance. Use this API to returns both Amazon
+        /// Lex bots currently associated with the instance. Use this API to return both Amazon
         /// Lex V1 and V2 bots.
         /// </para>
         /// </summary>
@@ -10113,6 +11131,79 @@ namespace Amazon.Connect
         public virtual ListContactFlowsResponse EndListContactFlows(IAsyncResult asyncResult)
         {
             return EndInvoke<ListContactFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListContactFlowVersions
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and flow
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        public virtual ListContactFlowVersionsResponse ListContactFlowVersions(ListContactFlowVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactFlowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactFlowVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        public virtual IAsyncResult BeginListContactFlowVersions(ListContactFlowVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactFlowVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactFlowVersions.</param>
+        /// 
+        /// <returns>Returns a  ListContactFlowVersionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        public virtual ListContactFlowVersionsResponse EndListContactFlowVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListContactFlowVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -10459,6 +11550,75 @@ namespace Amazon.Connect
         public virtual ListFlowAssociationsResponse EndListFlowAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFlowAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHoursOfOperationOverrides
+
+        /// <summary>
+        /// List the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides service method.</param>
+        /// 
+        /// <returns>The response from the ListHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual ListHoursOfOperationOverridesResponse ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHoursOfOperationOverridesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHoursOfOperationOverrides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual IAsyncResult BeginListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHoursOfOperationOverrides.</param>
+        /// 
+        /// <returns>Returns a  ListHoursOfOperationOverridesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual ListHoursOfOperationOverridesResponse EndListHoursOfOperationOverrides(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHoursOfOperationOverridesResponse>(asyncResult);
         }
 
         #endregion
@@ -11543,7 +12703,7 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
         /// Thrown for analyzed content when requested OutputType was not enabled for a given
         /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
-        /// Redaction policy set in Contact flow.
+        /// Redaction policy set in the flow.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -13076,7 +14236,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web Services Support.
+        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
         /// </para>
         ///  </important> 
         /// <para>
@@ -13614,7 +14774,7 @@ namespace Amazon.Connect
         #region  SearchContactFlows
 
         /// <summary>
-        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Amazon Connect instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// 
@@ -13745,6 +14905,147 @@ namespace Amazon.Connect
         public virtual SearchContactsResponse EndSearchContacts(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchContactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchEmailAddresses
+
+        /// <summary>
+        /// Searches email address in an instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the SearchEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
+        public virtual SearchEmailAddressesResponse SearchEmailAddresses(SearchEmailAddressesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchEmailAddressesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchEmailAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchEmailAddresses operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchEmailAddresses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
+        public virtual IAsyncResult BeginSearchEmailAddresses(SearchEmailAddressesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchEmailAddresses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchEmailAddresses.</param>
+        /// 
+        /// <returns>Returns a  SearchEmailAddressesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
+        public virtual SearchEmailAddressesResponse EndSearchEmailAddresses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchEmailAddressesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchHoursOfOperationOverrides
+
+        /// <summary>
+        /// Searches the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides service method.</param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual SearchHoursOfOperationOverridesResponse SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchHoursOfOperationOverridesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchHoursOfOperationOverrides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual IAsyncResult BeginSearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchHoursOfOperationOverrides.</param>
+        /// 
+        /// <returns>Returns a  SearchHoursOfOperationOverridesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual SearchHoursOfOperationOverridesResponse EndSearchHoursOfOperationOverrides(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchHoursOfOperationOverridesResponse>(asyncResult);
         }
 
         #endregion
@@ -14558,8 +15859,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
-        /// 
+        /// Access to this API is currently restricted to Amazon Web Services End User Messaging
+        /// for supporting SMS integration. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
@@ -14626,6 +15927,90 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SendOutboundEmail
+
+        /// <summary>
+        /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+        /// up Amazon Connect outbound campaigns</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendOutboundEmail service method.</param>
+        /// 
+        /// <returns>The response from the SendOutboundEmail service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">REST API Reference for SendOutboundEmail Operation</seealso>
+        public virtual SendOutboundEmailResponse SendOutboundEmail(SendOutboundEmailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendOutboundEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOutboundEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendOutboundEmailResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendOutboundEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendOutboundEmail operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendOutboundEmail
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">REST API Reference for SendOutboundEmail Operation</seealso>
+        public virtual IAsyncResult BeginSendOutboundEmail(SendOutboundEmailRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendOutboundEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOutboundEmailResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendOutboundEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendOutboundEmail.</param>
+        /// 
+        /// <returns>Returns a  SendOutboundEmailResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">REST API Reference for SendOutboundEmail Operation</seealso>
+        public virtual SendOutboundEmailResponse EndSendOutboundEmail(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendOutboundEmailResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartAttachedFileUpload
 
         /// <summary>
@@ -14634,7 +16019,8 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a>.
+        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+        /// Connect Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -14736,7 +16122,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web Services Support. 
+        /// contact Amazon Web ServicesSupport. 
         /// </para>
         ///  
         /// <para>
@@ -15086,6 +16472,264 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartEmailContact
+
+        /// <summary>
+        /// Creates an inbound email contact and initiates a flow to start the email contact for
+        /// the customer. Response of this API provides the ContactId of the email contact created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEmailContact service method.</param>
+        /// 
+        /// <returns>The response from the StartEmailContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
+        public virtual StartEmailContactResponse StartEmailContact(StartEmailContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEmailContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEmailContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartEmailContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEmailContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEmailContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartEmailContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
+        public virtual IAsyncResult BeginStartEmailContact(StartEmailContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEmailContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEmailContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartEmailContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartEmailContact.</param>
+        /// 
+        /// <returns>Returns a  StartEmailContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
+        public virtual StartEmailContactResponse EndStartEmailContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartEmailContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartOutboundChatContact
+
+        /// <summary>
+        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
+        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
+        /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
+        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// Flow Action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using SMS in Amazon Connect, see the following topics in
+        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
+        /// up SMS messaging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
+        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundChatContact service method.</param>
+        /// 
+        /// <returns>The response from the StartOutboundChatContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
+        public virtual StartOutboundChatContactResponse StartOutboundChatContact(StartOutboundChatContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundChatContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundChatContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartOutboundChatContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOutboundChatContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundChatContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOutboundChatContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
+        public virtual IAsyncResult BeginStartOutboundChatContact(StartOutboundChatContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundChatContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundChatContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartOutboundChatContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOutboundChatContact.</param>
+        /// 
+        /// <returns>Returns a  StartOutboundChatContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
+        public virtual StartOutboundChatContactResponse EndStartOutboundChatContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartOutboundChatContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartOutboundEmailContact
+
+        /// <summary>
+        /// Initiates a flow to send an agent reply or outbound email contact (created from the
+        /// CreateContact API) to a customer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundEmailContact service method.</param>
+        /// 
+        /// <returns>The response from the StartOutboundEmailContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">REST API Reference for StartOutboundEmailContact Operation</seealso>
+        public virtual StartOutboundEmailContactResponse StartOutboundEmailContact(StartOutboundEmailContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundEmailContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundEmailContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartOutboundEmailContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOutboundEmailContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundEmailContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOutboundEmailContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">REST API Reference for StartOutboundEmailContact Operation</seealso>
+        public virtual IAsyncResult BeginStartOutboundEmailContact(StartOutboundEmailContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOutboundEmailContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOutboundEmailContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartOutboundEmailContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOutboundEmailContact.</param>
+        /// 
+        /// <returns>Returns a  StartOutboundEmailContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">REST API Reference for StartOutboundEmailContact Operation</seealso>
+        public virtual StartOutboundEmailContactResponse EndStartOutboundEmailContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartOutboundEmailContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
         /// <summary>
@@ -15185,6 +16829,81 @@ namespace Amazon.Connect
         public virtual StartOutboundVoiceContactResponse EndStartOutboundVoiceContact(IAsyncResult asyncResult)
         {
             return EndInvoke<StartOutboundVoiceContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartScreenSharing
+
+        /// <summary>
+        /// Starts screen sharing for a contact. For more information about screen sharing, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
+        /// 
+        /// <returns>The response from the StartScreenSharing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        public virtual StartScreenSharingResponse StartScreenSharing(StartScreenSharingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartScreenSharingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartScreenSharingResponseUnmarshaller.Instance;
+
+            return Invoke<StartScreenSharingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartScreenSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartScreenSharing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        public virtual IAsyncResult BeginStartScreenSharing(StartScreenSharingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartScreenSharingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartScreenSharingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartScreenSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartScreenSharing.</param>
+        /// 
+        /// <returns>Returns a  StartScreenSharingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        public virtual StartScreenSharingResponse EndStartScreenSharing(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartScreenSharingResponse>(asyncResult);
         }
 
         #endregion
@@ -15860,8 +17579,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
-        /// contact flows, agent statuses, hours of operation, phone numbers, security profiles,
-        /// and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
+        /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
         /// resources in Amazon Connect</a>.
         /// </para>
         ///  
@@ -16265,7 +17984,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -16356,6 +18075,13 @@ namespace Amazon.Connect
         /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -16586,9 +18312,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
@@ -16738,9 +18464,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
@@ -17123,6 +18849,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateEmailAddressMetadata
+
+        /// <summary>
+        /// Updates an email address metadata. For more information about email addresses, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEmailAddressMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">REST API Reference for UpdateEmailAddressMetadata Operation</seealso>
+        public virtual UpdateEmailAddressMetadataResponse UpdateEmailAddressMetadata(UpdateEmailAddressMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailAddressMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailAddressMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmailAddressMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEmailAddressMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEmailAddressMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">REST API Reference for UpdateEmailAddressMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEmailAddressMetadata(UpdateEmailAddressMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEmailAddressMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEmailAddressMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEmailAddressMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEmailAddressMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateEmailAddressMetadataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">REST API Reference for UpdateEmailAddressMetadata Operation</seealso>
+        public virtual UpdateEmailAddressMetadataResponse EndUpdateEmailAddressMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEmailAddressMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateEvaluationForm
 
         /// <summary>
@@ -17280,6 +19083,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateHoursOfOperationOverride
+
+        /// <summary>
+        /// Update the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual UpdateHoursOfOperationOverrideResponse UpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  UpdateHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual UpdateHoursOfOperationOverrideResponse EndUpdateHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHoursOfOperationOverrideResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateInstanceAttribute
 
         /// <summary>
@@ -17424,6 +19302,97 @@ namespace Amazon.Connect
         public virtual UpdateInstanceStorageConfigResponse EndUpdateInstanceStorageConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateParticipantAuthentication
+
+        /// <summary>
+        /// Instructs Amazon Connect to resume the authentication process. The subsequent actions
+        /// depend on the request body contents:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>If a code is provided</b>: Connect retrieves the identity information from Amazon
+        /// Cognito and imports it into Connect Customer Profiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>If an error is provided</b>: The error branch of the Authenticate Customer block
+        /// is executed.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The API returns a success response to acknowledge the request. However, the interaction
+        /// and exchange of identity information occur asynchronously after the response is returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateParticipantAuthentication service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        public virtual UpdateParticipantAuthenticationResponse UpdateParticipantAuthentication(UpdateParticipantAuthenticationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParticipantAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParticipantAuthenticationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateParticipantAuthenticationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateParticipantAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantAuthentication operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateParticipantAuthentication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        public virtual IAsyncResult BeginUpdateParticipantAuthentication(UpdateParticipantAuthenticationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParticipantAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParticipantAuthenticationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateParticipantAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateParticipantAuthentication.</param>
+        /// 
+        /// <returns>Returns a  UpdateParticipantAuthenticationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        public virtual UpdateParticipantAuthenticationResponse EndUpdateParticipantAuthentication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateParticipantAuthenticationResponse>(asyncResult);
         }
 
         #endregion
@@ -18167,6 +20136,81 @@ namespace Amazon.Connect
         public virtual UpdateQueueOutboundCallerConfigResponse EndUpdateQueueOutboundCallerConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateQueueOutboundCallerConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQueueOutboundEmailConfig
+
+        /// <summary>
+        /// Updates the outbound email address Id for a specified queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundEmailConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueOutboundEmailConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">REST API Reference for UpdateQueueOutboundEmailConfig Operation</seealso>
+        public virtual UpdateQueueOutboundEmailConfigResponse UpdateQueueOutboundEmailConfig(UpdateQueueOutboundEmailConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQueueOutboundEmailConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueOutboundEmailConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQueueOutboundEmailConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueOutboundEmailConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundEmailConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueOutboundEmailConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">REST API Reference for UpdateQueueOutboundEmailConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQueueOutboundEmailConfig(UpdateQueueOutboundEmailConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQueueOutboundEmailConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQueueOutboundEmailConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueOutboundEmailConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueOutboundEmailConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueOutboundEmailConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">REST API Reference for UpdateQueueOutboundEmailConfig Operation</seealso>
+        public virtual UpdateQueueOutboundEmailConfigResponse EndUpdateQueueOutboundEmailConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQueueOutboundEmailConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -18969,7 +21013,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// When you shift telephony traffic, also shift agents and/or agent sign-ins to ensure
+        /// they can handle the calls in the other Region. If you don't shift the agents, voice
+        /// calls will go to the shifted Region but there won't be any agents available to receive
+        /// the calls.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The <c>SignInConfig</c> distribution is available only on a default <c>TrafficDistributionGroup</c>
         /// (see the <c>IsDefault</c> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>

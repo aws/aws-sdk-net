@@ -62,7 +62,7 @@ namespace Amazon.Route53Domains.Model
         /// The price of a domain, in a specific currency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0)]
         public double Price
         {
             get { return this._price.GetValueOrDefault(); }

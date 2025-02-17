@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchContactFlows operation.
-    /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+    /// Searches the flows in an Amazon Connect instance, with optional filtering.
     /// </summary>
     public partial class SearchContactFlowsRequest : AmazonConnectRequest
     {

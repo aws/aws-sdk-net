@@ -31,6 +31,10 @@ namespace Amazon.CostOptimizationHub
     {
 
         /// <summary>
+        /// Constant Delete for ActionType
+        /// </summary>
+        public static readonly ActionType Delete = new ActionType("Delete");
+        /// <summary>
         /// Constant MigrateToGraviton for ActionType
         /// </summary>
         public static readonly ActionType MigrateToGraviton = new ActionType("MigrateToGraviton");
@@ -46,6 +50,10 @@ namespace Amazon.CostOptimizationHub
         /// Constant Rightsize for ActionType
         /// </summary>
         public static readonly ActionType Rightsize = new ActionType("Rightsize");
+        /// <summary>
+        /// Constant ScaleIn for ActionType
+        /// </summary>
+        public static readonly ActionType ScaleIn = new ActionType("ScaleIn");
         /// <summary>
         /// Constant Stop for ActionType
         /// </summary>
@@ -84,6 +92,106 @@ namespace Amazon.CostOptimizationHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AllocationStrategy.
+    /// </summary>
+    public class AllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("LowestPrice");
+        /// <summary>
+        /// Constant Prioritized for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy Prioritized = new AllocationStrategy("Prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllocationStrategy FindValue(string value)
+        {
+            return FindValue<AllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ec2AutoScalingGroupType.
+    /// </summary>
+    public class Ec2AutoScalingGroupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MixedInstanceTypes for Ec2AutoScalingGroupType
+        /// </summary>
+        public static readonly Ec2AutoScalingGroupType MixedInstanceTypes = new Ec2AutoScalingGroupType("MixedInstanceTypes");
+        /// <summary>
+        /// Constant SingleInstanceType for Ec2AutoScalingGroupType
+        /// </summary>
+        public static readonly Ec2AutoScalingGroupType SingleInstanceType = new Ec2AutoScalingGroupType("SingleInstanceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2AutoScalingGroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2AutoScalingGroupType FindValue(string value)
+        {
+            return FindValue<Ec2AutoScalingGroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2AutoScalingGroupType(string value)
         {
             return FindValue(value);
         }

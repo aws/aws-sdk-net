@@ -63,6 +63,24 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetAvailabilityZoneDistribution())
+                {
+                    if(publicRequest.AvailabilityZoneDistribution.IsSetCapacityDistributionStrategy())
+                    {
+                        request.Parameters.Add("AvailabilityZoneDistribution" + "." + "CapacityDistributionStrategy", StringUtils.FromString(publicRequest.AvailabilityZoneDistribution.CapacityDistributionStrategy));
+                    }
+                }
+                if(publicRequest.IsSetAvailabilityZoneImpairmentPolicy())
+                {
+                    if(publicRequest.AvailabilityZoneImpairmentPolicy.IsSetImpairedZoneHealthCheckBehavior())
+                    {
+                        request.Parameters.Add("AvailabilityZoneImpairmentPolicy" + "." + "ImpairedZoneHealthCheckBehavior", StringUtils.FromString(publicRequest.AvailabilityZoneImpairmentPolicy.ImpairedZoneHealthCheckBehavior));
+                    }
+                    if(publicRequest.AvailabilityZoneImpairmentPolicy.IsSetZonalShiftEnabled())
+                    {
+                        request.Parameters.Add("AvailabilityZoneImpairmentPolicy" + "." + "ZonalShiftEnabled", StringUtils.FromBool(publicRequest.AvailabilityZoneImpairmentPolicy.ZonalShiftEnabled));
+                    }
+                }
                 if(publicRequest.IsSetAvailabilityZones())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +93,34 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCapacityRebalance())
                 {
                     request.Parameters.Add("CapacityRebalance", StringUtils.FromBool(publicRequest.CapacityRebalance));
+                }
+                if(publicRequest.IsSetCapacityReservationSpecification())
+                {
+                    if(publicRequest.CapacityReservationSpecification.IsSetCapacityReservationPreference())
+                    {
+                        request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationPreference", StringUtils.FromString(publicRequest.CapacityReservationSpecification.CapacityReservationPreference));
+                    }
+                    if(publicRequest.CapacityReservationSpecification.IsSetCapacityReservationTarget())
+                    {
+                        if(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationIds())
+                        {
+                            int publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex = 1;
+                            foreach(var publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValue in publicRequest.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationIds)
+                            {
+                                request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationIds" + "." + "member" + "." + publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex, StringUtils.FromString(publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValue));
+                                publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex++;
+                            }
+                        }
+                        if(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationResourceGroupArns())
+                        {
+                            int publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex = 1;
+                            foreach(var publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValue in publicRequest.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArns)
+                            {
+                                request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArns" + "." + "member" + "." + publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex, StringUtils.FromString(publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValue));
+                                publicRequestCapacityReservationSpecificationCapacityReservationTargetlistValueIndex++;
+                            }
+                        }
+                    }
                 }
                 if(publicRequest.IsSetContext())
                 {
@@ -321,6 +367,24 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                                         }
                                     }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                                        {
+                                            if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                            {
+                                                int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                                foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                                {
+                                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                                    {
+                                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + "item" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                                    }
+                                                    publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                                }
+                                            }
+                                        }
+                                    }
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBurstablePerformance())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BurstablePerformance));
@@ -487,6 +551,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetServiceLinkedRoleARN())
                 {
                     request.Parameters.Add("ServiceLinkedRoleARN", StringUtils.FromString(publicRequest.ServiceLinkedRoleARN));
+                }
+                if(publicRequest.IsSetSkipZonalShiftValidation())
+                {
+                    request.Parameters.Add("SkipZonalShiftValidation", StringUtils.FromBool(publicRequest.SkipZonalShiftValidation));
                 }
                 if(publicRequest.IsSetTags())
                 {

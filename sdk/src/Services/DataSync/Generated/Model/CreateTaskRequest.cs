@@ -58,6 +58,7 @@ namespace Amazon.DataSync.Model
         private TaskSchedule _schedule;
         private string _sourceLocationArn;
         private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
+        private TaskMode _taskMode;
         private TaskReportConfig _taskReportConfig;
 
         /// <summary>
@@ -65,6 +66,11 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring
         /// your task.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Enhanced mode tasks, you don't need to specify anything. DataSync automatically
+        /// sends logs to a CloudWatch log group named <c>/aws/datasync</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -124,8 +130,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// Specifies include filters define the files, objects, and folders in your source location
-        /// that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+        /// Specifies include filters that define the files, objects, and folders in your source
+        /// location that you want DataSync to transfer. For more information and examples, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
         /// what DataSync transfers by using filters</a>.
         /// </para>
         /// </summary>
@@ -267,6 +274,49 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskMode. 
+        /// <para>
+        /// Specifies one of the following task modes for your data transfer:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENHANCED</c> - Transfer virtually unlimited numbers of objects with higher performance
+        /// than Basic mode. Enhanced mode tasks optimize the data transfer process by listing,
+        /// preparing, transferring, and verifying data in parallel. Enhanced mode is currently
+        /// available for transfers between Amazon S3 locations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To create an Enhanced mode task, the IAM role that you use to call the <c>CreateTask</c>
+        /// operation must have the <c>iam:CreateServiceLinkedRole</c> permission.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>BASIC</c> (default) - Transfer files or objects between Amazon Web Services storage
+        /// and all other supported DataSync locations. Basic mode tasks are subject to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a>
+        /// on the number of files, objects, and directories in a dataset. Basic mode sequentially
+        /// prepares, transfers, and verifies data, making it slower than Enhanced mode for most
+        /// workloads.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
+        /// task mode differences</a>.
+        /// </para>
+        /// </summary>
+        public TaskMode TaskMode
+        {
+            get { return this._taskMode; }
+            set { this._taskMode = value; }
+        }
+
+        // Check to see if TaskMode property is set
+        internal bool IsSetTaskMode()
+        {
+            return this._taskMode != null;
         }
 
         /// <summary>

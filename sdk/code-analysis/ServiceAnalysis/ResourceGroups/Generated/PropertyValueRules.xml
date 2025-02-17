@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.CancelTagSyncTaskRequest.TaskArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}/tag-sync-task/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Criticality</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Description</property>
     <max>1024</max>
     <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.CreateGroupRequest.DisplayName</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Name</property>
@@ -12,76 +29,158 @@
     <pattern>[a-zA-Z0-9_\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Owner</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.DeleteGroupRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.DeleteGroupRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetGroupRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetGroupRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetGroupConfigurationRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetGroupQueryRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetGroupQueryRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetTagsRequest.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GetTagsResponse.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskRequest.TaskArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}/tag-sync-task/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.ErrorMessage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.GroupArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.GroupName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.TagValue</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GetTagSyncTaskResponse.TaskArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}/tag-sync-task/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupResourcesRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListGroupingStatusesRequest.Group</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListGroupingStatusesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListGroupingStatusesRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListGroupingStatusesResponse.Group</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListGroupingStatusesResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ListGroupResourcesRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ListGroupResourcesRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ListGroupResourcesRequest.MaxResults</property>
@@ -118,10 +217,27 @@
     <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListTagSyncTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListTagSyncTasksRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListTagSyncTasksResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.PutGroupConfigurationRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.SearchResourcesRequest.MaxResults</property>
@@ -141,34 +257,99 @@
     <pattern>^[a-zA-Z0-9+/]*={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskRequest.Group</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskRequest.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskRequest.TagValue</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.GroupArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.GroupName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.TagValue</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.StartTagSyncTaskResponse.TaskArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}/tag-sync-task/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.TagRequest.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.TagResponse.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UngroupResourcesRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UntagRequest.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UntagResponse.Arn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.Criticality</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.Description</property>
@@ -176,28 +357,40 @@
     <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.DisplayName</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.Owner</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupQueryRequest.Group</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}|arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupQueryRequest.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.AccountSettings.GroupLifecycleEventsStatusMessage</property>
@@ -219,21 +412,38 @@
     <pattern>arn:aws(-[a-z]+)*:[a-z0-9\-]*:([a-z]{2}(-[a-z]+)+-\d{1})?:([0-9]{12})?:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.Group.Criticality</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.Description</property>
     <max>1024</max>
     <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.Group.DisplayName</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.GroupArn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.Name</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.Group.Owner</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupConfigurationItem.Type</property>
@@ -247,22 +457,70 @@
     <pattern>[a-z-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.Criticality</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.Description</property>
+    <max>1024</max>
+    <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.DisplayName</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupIdentifier.GroupArn</property>
     <min>12</min>
     <max>1600</max>
-    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,300}</pattern>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupIdentifier.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.Owner</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupingStatusesItem.ErrorCode</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupingStatusesItem.ErrorMessage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupingStatusesItem.ResourceArn</property>
+    <pattern>arn:aws(-[a-z]+)*:[a-z0-9\-]*:([a-z]{2}(-[a-z]+)+-\d{1})?:([0-9]{12})?:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupQuery.GroupName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListTagSyncTasksFilter.GroupArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.ListTagSyncTasksFilter.GroupName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.PendingResource.ResourceArn</property>
@@ -286,5 +544,46 @@
     <min>1</min>
     <max>128</max>
     <pattern>^\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.ErrorMessage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.GroupArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/([a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.GroupName</property>
+    <min>1</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9_\.-]{1,300}|[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.TagValue</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.TagSyncTaskItem.TaskArn</property>
+    <min>12</min>
+    <max>1600</max>
+    <pattern>arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,150}/[a-z0-9]{26}/tag-sync-task/[a-z0-9]{26}</pattern>
   </property-value-rule>
 </property-value-rules>

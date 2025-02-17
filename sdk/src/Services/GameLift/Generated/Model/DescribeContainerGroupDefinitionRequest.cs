@@ -31,18 +31,31 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContainerGroupDefinition operation.
-    /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview. </b> 
+    /// Retrieves the properties of a container group definition, including all container
+    /// definitions in the group. 
     /// 
     ///  
     /// <para>
-    /// Retrieves the properties of a container group definition, including all container
-    /// definitions in the group. 
+    ///  <b>Request options:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Retrieve the latest version of a container group definition. Specify the container
+    /// group definition name only, or use an ARN value without a version number.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Retrieve a particular version. Specify the container group definition name and a version
+    /// number, or use an ARN value that includes the version number.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Results:</b> 
     /// </para>
     ///  
     /// <para>
-    /// To retrieve a container group definition, provide a resource identifier. If successful,
-    /// this operation returns the complete properties of the container group definition.
+    /// If successful, this operation returns the complete properties of a container group
+    /// definition version.
     /// </para>
     ///  
     /// <para>
@@ -58,6 +71,7 @@ namespace Amazon.GameLift.Model
     public partial class DescribeContainerGroupDefinitionRequest : AmazonGameLiftRequest
     {
         private string _name;
+        private int? _versionNumber;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -77,6 +91,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionNumber. 
+        /// <para>
+        /// The specific version to retrieve.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int VersionNumber
+        {
+            get { return this._versionNumber.GetValueOrDefault(); }
+            set { this._versionNumber = value; }
+        }
+
+        // Check to see if VersionNumber property is set
+        internal bool IsSetVersionNumber()
+        {
+            return this._versionNumber.HasValue; 
         }
 
     }

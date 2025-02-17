@@ -69,6 +69,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBillingViewArn())
+                {
+                    context.Writer.WritePropertyName("BillingViewArn");
+                    context.Writer.Write(publicRequest.BillingViewArn);
+                }
+
                 if(publicRequest.IsSetCostCategoryName())
                 {
                     context.Writer.WritePropertyName("CostCategoryName");

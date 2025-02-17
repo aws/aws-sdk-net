@@ -92,8 +92,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
-        /// Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive
+        /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int OriginKeepaliveTimeout
@@ -152,8 +152,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
-        /// Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response
+        /// timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
         public int OriginReadTimeout

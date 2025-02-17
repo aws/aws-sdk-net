@@ -31,8 +31,9 @@ namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
     /// Container for the parameters to the DisconnectParticipant operation.
-    /// Disconnects a specified participant and revokes the participant permanently from a
-    /// specified stage.
+    /// Disconnects a specified participant from a specified stage. If the participant is
+    /// publishing using an <a>IngestConfiguration</a>, DisconnectParticipant also updates
+    /// the <c>stageArn</c> in the IngestConfiguration to be an empty string.
     /// </summary>
     public partial class DisconnectParticipantRequest : AmazonIVSRealTimeRequest
     {
@@ -43,8 +44,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// Identifier of the participant to be disconnected. This is assigned by IVS and returned
-        /// by <a>CreateParticipantToken</a>.
+        /// Identifier of the participant to be disconnected. IVS assigns this; it is returned
+        /// by <a>CreateParticipantToken</a> (for streams using WebRTC ingest) or <a>CreateIngestConfiguration</a>
+        /// (for streams using RTMP ingest).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

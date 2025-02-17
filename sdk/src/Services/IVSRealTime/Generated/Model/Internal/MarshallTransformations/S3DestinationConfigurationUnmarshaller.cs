@@ -84,6 +84,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("thumbnailConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CompositionThumbnailConfiguration, CompositionThumbnailConfigurationUnmarshaller>(CompositionThumbnailConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ThumbnailConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -39,6 +39,7 @@ namespace Amazon.LakeFormation.Model
         private DataCellsFilterResource _dataCellsFilter;
         private DataLocationResource _dataLocation;
         private LFTagKeyResource _lfTag;
+        private LFTagExpressionResource _lfTagExpression;
         private LFTagPolicyResource _lfTagPolicy;
         private TableResource _table;
         private TableWithColumnsResource _tableWithColumns;
@@ -138,9 +139,29 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LFTagExpression. 
+        /// <para>
+        /// LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value
+        /// pairs.
+        /// </para>
+        /// </summary>
+        public LFTagExpressionResource LFTagExpression
+        {
+            get { return this._lfTagExpression; }
+            set { this._lfTagExpression = value; }
+        }
+
+        // Check to see if LFTagExpression property is set
+        internal bool IsSetLFTagExpression()
+        {
+            return this._lfTagExpression != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LFTagPolicy. 
         /// <para>
-        /// A list of LF-tag conditions that define a resource's LF-tag policy.
+        /// A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag
+        /// policy.
         /// </para>
         /// </summary>
         public LFTagPolicyResource LFTagPolicy

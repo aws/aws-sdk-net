@@ -125,6 +125,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSearchableSegmentAttributes())
+            {
+                context.Writer.WritePropertyName("SearchableSegmentAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SearchableSegmentAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.SearchableSegmentAttributes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

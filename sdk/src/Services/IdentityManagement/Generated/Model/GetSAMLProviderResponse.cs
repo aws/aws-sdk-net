@@ -34,10 +34,31 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetSAMLProviderResponse : AmazonWebServiceResponse
     {
+        private AssertionEncryptionModeType _assertionEncryptionMode;
         private DateTime? _createDate;
+        private List<SAMLPrivateKey> _privateKeyList = AWSConfigs.InitializeCollections ? new List<SAMLPrivateKey>() : null;
         private string _samlMetadataDocument;
+        private string _samlProviderUUID;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _validUntil;
+
+        /// <summary>
+        /// Gets and sets the property AssertionEncryptionMode. 
+        /// <para>
+        /// Specifies the encryption setting for the SAML provider.
+        /// </para>
+        /// </summary>
+        public AssertionEncryptionModeType AssertionEncryptionMode
+        {
+            get { return this._assertionEncryptionMode; }
+            set { this._assertionEncryptionMode = value; }
+        }
+
+        // Check to see if AssertionEncryptionMode property is set
+        internal bool IsSetAssertionEncryptionMode()
+        {
+            return this._assertionEncryptionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreateDate. 
@@ -58,6 +79,25 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateKeyList. 
+        /// <para>
+        /// The private key metadata for the SAML provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<SAMLPrivateKey> PrivateKeyList
+        {
+            get { return this._privateKeyList; }
+            set { this._privateKeyList = value; }
+        }
+
+        // Check to see if PrivateKeyList property is set
+        internal bool IsSetPrivateKeyList()
+        {
+            return this._privateKeyList != null && (this._privateKeyList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SAMLMetadataDocument. 
         /// <para>
         /// The XML metadata document that includes information about an identity provider.
@@ -74,6 +114,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetSAMLMetadataDocument()
         {
             return this._samlMetadataDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAMLProviderUUID. 
+        /// <para>
+        /// The unique identifier assigned to the SAML provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=22, Max=64)]
+        public string SAMLProviderUUID
+        {
+            get { return this._samlProviderUUID; }
+            set { this._samlProviderUUID = value; }
+        }
+
+        // Check to see if SAMLProviderUUID property is set
+        internal bool IsSetSAMLProviderUUID()
+        {
+            return this._samlProviderUUID != null;
         }
 
         /// <summary>

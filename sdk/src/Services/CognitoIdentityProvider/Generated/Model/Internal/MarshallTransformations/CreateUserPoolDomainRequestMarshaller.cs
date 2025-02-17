@@ -86,6 +86,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Domain);
                 }
 
+                if(publicRequest.IsSetManagedLoginVersion())
+                {
+                    context.Writer.WritePropertyName("ManagedLoginVersion");
+                    context.Writer.Write(publicRequest.ManagedLoginVersion);
+                }
+
                 if(publicRequest.IsSetUserPoolId())
                 {
                     context.Writer.WritePropertyName("UserPoolId");

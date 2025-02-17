@@ -94,6 +94,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumAlgorithm));
 
+            if (initiateMultipartUploadRequest.IsSetChecksumType())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumType, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumType));
+
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
             if (string.IsNullOrEmpty(initiateMultipartUploadRequest.BucketName))

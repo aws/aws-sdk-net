@@ -40,6 +40,8 @@ namespace Amazon.OpenSearchServerless.Model
         private long? _createdDate;
         private string _dashboardEndpoint;
         private string _description;
+        private string _failureCode;
+        private string _failureMessage;
         private string _id;
         private string _kmsKeyArn;
         private long? _lastModifiedDate;
@@ -137,6 +139,42 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureCode. 
+        /// <para>
+        /// A failure code associated with the request.
+        /// </para>
+        /// </summary>
+        public string FailureCode
+        {
+            get { return this._failureCode; }
+            set { this._failureCode = value; }
+        }
+
+        // Check to see if FailureCode property is set
+        internal bool IsSetFailureCode()
+        {
+            return this._failureCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureMessage. 
+        /// <para>
+        /// A message associated with the failure code.
+        /// </para>
+        /// </summary>
+        public string FailureMessage
+        {
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
+        }
+
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
+        {
+            return this._failureMessage != null;
         }
 
         /// <summary>

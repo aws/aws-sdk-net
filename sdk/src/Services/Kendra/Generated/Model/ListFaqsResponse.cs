@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FaqSummaryItems. 
         /// <para>
-        /// information about the FAQs associated with the specified index.
+        /// Summary information about the FAQs for a specified index.
         /// </para>
         /// </summary>
         public List<FaqSummary> FaqSummaryItems

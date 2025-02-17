@@ -156,6 +156,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuntimeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schedulerConfiguration", targetDepth))
+                {
+                    var unmarshaller = SchedulerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SchedulerConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

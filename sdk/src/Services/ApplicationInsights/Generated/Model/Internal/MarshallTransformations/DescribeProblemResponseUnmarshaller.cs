@@ -58,6 +58,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     response.Problem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SNSNotificationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SNSNotificationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

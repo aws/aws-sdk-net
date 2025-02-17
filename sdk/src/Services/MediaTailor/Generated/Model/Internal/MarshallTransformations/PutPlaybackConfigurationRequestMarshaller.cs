@@ -67,6 +67,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdConditioningConfiguration())
+                {
+                    context.Writer.WritePropertyName("AdConditioningConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdConditioningConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdConditioningConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAdDecisionServerUrl())
                 {
                     context.Writer.WritePropertyName("AdDecisionServerUrl");

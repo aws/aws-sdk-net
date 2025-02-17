@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.SimpleEmailV2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -84,6 +86,16 @@ namespace Amazon.SimpleEmailV2.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "SendBulkEmailRequest") {
+                var request = (SendBulkEmailRequest)requestContext.OriginalRequest;
+                result.EndpointId = request.EndpointId;
+                return result;
+            }
+            if (requestContext.RequestName == "SendEmailRequest") {
+                var request = (SendEmailRequest)requestContext.OriginalRequest;
+                result.EndpointId = request.EndpointId;
+                return result;
+            }
 
             return result;
         }

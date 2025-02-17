@@ -37,6 +37,8 @@ namespace Amazon.CloudTrail.Model
         private string _deliveryS3Uri;
         private DeliveryStatus _deliveryStatus;
         private string _errorMessage;
+        private string _eventDataStoreOwnerAccountId;
+        private string _prompt;
         private string _queryId;
         private QueryStatisticsForDescribeQuery _queryStatistics;
         private QueryStatus _queryStatus;
@@ -96,6 +98,47 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prompt. 
+        /// <para>
+        ///  The prompt used for a generated query. For information about generated queries, see
+        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+        /// CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i>
+        /// user guide. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=500)]
+        public string Prompt
+        {
+            get { return this._prompt; }
+            set { this._prompt = value; }
+        }
+
+        // Check to see if Prompt property is set
+        internal bool IsSetPrompt()
+        {
+            return this._prompt != null;
         }
 
         /// <summary>

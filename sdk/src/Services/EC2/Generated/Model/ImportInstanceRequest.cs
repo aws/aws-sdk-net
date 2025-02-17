@@ -34,18 +34,12 @@ namespace Amazon.EC2.Model
     /// <note> 
     /// <para>
     /// We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
-    /// <c>ImportImage</c> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+    /// <c>ImportImage</c> </a> API instead. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
     /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
     /// Creates an import instance task using metadata from the specified disk image.
-    /// </para>
-    ///  
-    /// <para>
-    /// This API action is not supported by the Command Line Interface (CLI). For information
-    /// about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
-    /// a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
     /// </para>
     ///  
     /// <para>
@@ -56,6 +50,10 @@ namespace Amazon.EC2.Model
     /// <para>
     /// For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
     /// Import Manifest</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This API action is not supported by the Command Line Interface (CLI).
     /// </para>
     /// </summary>
     public partial class ImportInstanceRequest : AmazonEC2Request

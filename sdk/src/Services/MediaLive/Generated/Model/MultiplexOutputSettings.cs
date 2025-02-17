@@ -34,7 +34,23 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MultiplexOutputSettings
     {
+        private MultiplexContainerSettings _containerSettings;
         private OutputLocationRef _destination;
+
+        /// <summary>
+        /// Gets and sets the property ContainerSettings.
+        /// </summary>
+        public MultiplexContainerSettings ContainerSettings
+        {
+            get { return this._containerSettings; }
+            set { this._containerSettings = value; }
+        }
+
+        // Check to see if ContainerSettings property is set
+        internal bool IsSetContainerSettings()
+        {
+            return this._containerSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Destination. Destination is a Multiplex.

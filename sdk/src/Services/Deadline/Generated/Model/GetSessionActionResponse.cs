@@ -34,6 +34,7 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class GetSessionActionResponse : AmazonWebServiceResponse
     {
+        private List<AcquiredLimit> _acquiredLimits = AWSConfigs.InitializeCollections ? new List<AcquiredLimit>() : null;
         private SessionActionDefinition _definition;
         private DateTime? _endedAt;
         private int? _processExitCode;
@@ -44,6 +45,25 @@ namespace Amazon.Deadline.Model
         private DateTime? _startedAt;
         private SessionActionStatus _status;
         private DateTime? _workerUpdatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AcquiredLimits. 
+        /// <para>
+        /// The limits and their amounts acquired during a session action. If no limits were acquired
+        /// during the session, this field isn't returned.
+        /// </para>
+        /// </summary>
+        public List<AcquiredLimit> AcquiredLimits
+        {
+            get { return this._acquiredLimits; }
+            set { this._acquiredLimits = value; }
+        }
+
+        // Check to see if AcquiredLimits property is set
+        internal bool IsSetAcquiredLimits()
+        {
+            return this._acquiredLimits != null && (this._acquiredLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Definition. 

@@ -43,6 +43,7 @@ namespace Amazon.FSx.Model
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _endpointIpAddressRange;
         private string _preferredSubnetId;
+        private OpenZFSReadCacheConfiguration _readCacheConfiguration;
         private OpenZFSCreateRootVolumeConfiguration _rootVolumeConfiguration;
         private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
@@ -239,6 +240,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetPreferredSubnetId()
         {
             return this._preferredSubnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadCacheConfiguration. 
+        /// <para>
+        ///  Specifies the optional provisioned SSD read cache on file systems that use the Intelligent-Tiering
+        /// storage class. 
+        /// </para>
+        /// </summary>
+        public OpenZFSReadCacheConfiguration ReadCacheConfiguration
+        {
+            get { return this._readCacheConfiguration; }
+            set { this._readCacheConfiguration = value; }
+        }
+
+        // Check to see if ReadCacheConfiguration property is set
+        internal bool IsSetReadCacheConfiguration()
+        {
+            return this._readCacheConfiguration != null;
         }
 
         /// <summary>

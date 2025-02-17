@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EFSFileSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FSxLustreFileSystem", targetDepth))
+                {
+                    var unmarshaller = FSxLustreFileSystemUnmarshaller.Instance;
+                    unmarshalledObject.FSxLustreFileSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

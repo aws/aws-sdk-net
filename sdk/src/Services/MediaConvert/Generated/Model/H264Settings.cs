@@ -67,6 +67,7 @@ namespace Amazon.MediaConvert.Model
         private H264QvbrSettings _qvbrSettings;
         private H264RateControlMode _rateControlMode;
         private H264RepeatPps _repeatPps;
+        private H264SaliencyAwareEncoding _saliencyAwareEncoding;
         private H264ScanTypeConversionMode _scanTypeConversionMode;
         private H264SceneChangeDetect _sceneChangeDetect;
         private int? _slices;
@@ -77,6 +78,7 @@ namespace Amazon.MediaConvert.Model
         private H264Telecine _telecine;
         private H264TemporalAdaptiveQuantization _temporalAdaptiveQuantization;
         private H264UnregisteredSeiTimecode _unregisteredSeiTimecode;
+        private H264WriteMp4PackagingType _writeMp4PackagingType;
 
         /// <summary>
         /// Gets and sets the property AdaptiveQuantization. Keep the default value, Auto, for
@@ -296,15 +298,20 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateConversionAlgorithm. Choose the method that you
-        /// want MediaConvert to use when increasing or decreasing the frame rate. For numerically
-        /// simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default
-        /// value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose
-        /// Interpolate. This results in a smooth picture, but might introduce undesirable video
-        /// artifacts. For complex frame rate conversions, especially if your source video has
-        /// already been converted from its original cadence: Choose FrameFormer to do motion-compensated
+        /// want MediaConvert to use when increasing or decreasing your video's frame rate. For
+        /// numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep
+        /// the default value, Drop duplicate. For numerically complex conversions, to avoid stutter:
+        /// Choose Interpolate. This results in a smooth picture, but might introduce undesirable
+        /// video artifacts. For complex frame rate conversions, especially if your source video
+        /// has already been converted from its original cadence: Choose FrameFormer to do motion-compensated
         /// interpolation. FrameFormer uses the best conversion method frame by frame. Note that
         /// using FrameFormer increases the transcoding time and incurs a significant add-on cost.
         /// When you choose FrameFormer, your input video resolution must be at least 128x96.
+        /// To create an output with the same number of frames as your input: Choose Maintain
+        /// frame count. When you do, MediaConvert will not drop, interpolate, add, or otherwise
+        /// change the frame count from your input to your output. Note that since the frame count
+        /// is maintained, the duration of your output will become shorter at higher frame rates
+        /// and longer at lower frame rates.
         /// </summary>
         public H264FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -539,19 +546,21 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinIInterval. Use this setting only when you also enable
-        /// Scene change detection. This setting determines how the encoder manages the spacing
-        /// between I-frames that it inserts as part of the I-frame cadence and the I-frames that
-        /// it inserts for Scene change detection. We recommend that you have the transcoder automatically
-        /// choose this value for you based on characteristics of your input video. To enable
-        /// this automatic behavior, do this by keeping the default empty value. When you explicitly
-        /// specify a value for this setting, the encoder determines whether to skip a cadence-driven
-        /// I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven
-        /// I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips
-        /// the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is
-        /// stretched slightly. When the cadence-driven I-frames are farther from the scene-change
-        /// I-frame than the value you set, then the encoder leaves all I-frames in place and
-        /// the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
+        /// Gets and sets the property MinIInterval. Specify the minimum number of frames allowed
+        /// between two IDR-frames in your output. This includes frames created at the start of
+        /// a GOP or a scene change. Use Min I-Interval to improve video compression by varying
+        /// GOP size when two IDR-frames would be created near each other. For example, if a regular
+        /// cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and
+        /// you set Min I-interval to 5, then the encoder would only write an IDR-frame for the
+        /// scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame
+        /// would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves
+        /// all IDR-frames in place. To use an automatically determined interval: We recommend
+        /// that you keep this value blank. This allows for MediaConvert to use an optimal setting
+        /// according to the characteristics of your input video, and results in better video
+        /// compression. To manually specify an interval: Enter a value from 1 to 30. Use when
+        /// your downstream systems have specific GOP size requirements. To disable GOP size variance:
+        /// Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven
+        /// GOP. Use when your downstream systems require a regular GOP size.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public int MinIInterval
@@ -734,6 +743,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetRepeatPps()
         {
             return this._repeatPps != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaliencyAwareEncoding. Specify whether to apply Saliency
+        /// aware encoding to your output. Use to improve the perceptual video quality of your
+        /// output by allocating more encoding bits to the prominent or noticeable parts of your
+        /// content. To apply saliency aware encoding, when possible: We recommend that you choose
+        /// Preferred. The effects of Saliency aware encoding are best seen in lower bitrate outputs.
+        /// When you choose Preferred, note that Saliency aware encoding will only apply to outputs
+        /// that are 720p or higher in resolution. To not apply saliency aware encoding, prioritizing
+        /// encoding speed over perceptual video quality: Choose Disabled.
+        /// </summary>
+        public H264SaliencyAwareEncoding SaliencyAwareEncoding
+        {
+            get { return this._saliencyAwareEncoding; }
+            set { this._saliencyAwareEncoding = value; }
+        }
+
+        // Check to see if SaliencyAwareEncoding property is set
+        internal bool IsSetSaliencyAwareEncoding()
+        {
+            return this._saliencyAwareEncoding != null;
         }
 
         /// <summary>
@@ -959,6 +990,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetUnregisteredSeiTimecode()
         {
             return this._unregisteredSeiTimecode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteMp4PackagingType. Specify how SPS and PPS NAL units
+        /// are written in your output MP4 container, according to ISO/IEC 14496-15. If the location
+        /// of these parameters doesn't matter in your workflow: Keep the default value, AVC1.
+        /// MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but
+        /// not into samples directly). To write SPS and PPS NAL units directly into samples (but
+        /// not in the 'stsd' box): Choose AVC3. When you do, note that your output might not
+        /// play properly with some downstream systems or players.
+        /// </summary>
+        public H264WriteMp4PackagingType WriteMp4PackagingType
+        {
+            get { return this._writeMp4PackagingType; }
+            set { this._writeMp4PackagingType = value; }
+        }
+
+        // Check to see if WriteMp4PackagingType property is set
+        internal bool IsSetWriteMp4PackagingType()
+        {
+            return this._writeMp4PackagingType != null;
         }
 
     }

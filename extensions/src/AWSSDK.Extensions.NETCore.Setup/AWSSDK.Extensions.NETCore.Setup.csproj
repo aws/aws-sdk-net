@@ -39,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.7.300" />
+    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
-
 </Project>

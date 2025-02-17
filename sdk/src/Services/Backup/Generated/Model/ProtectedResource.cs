@@ -64,8 +64,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastBackupVaultArn. 
         /// <para>
-        /// This is the ARN (Amazon Resource Name) of the backup vault that contains the most
-        /// recent backup recovery point.
+        /// The ARN (Amazon Resource Name) of the backup vault that contains the most recent backup
+        /// recovery point.
         /// </para>
         /// </summary>
         public string LastBackupVaultArn
@@ -83,7 +83,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastRecoveryPointArn. 
         /// <para>
-        /// This is the ARN (Amazon Resource Name) of the most recent recovery point.
+        /// The ARN (Amazon Resource Name) of the most recent recovery point.
         /// </para>
         /// </summary>
         public string LastRecoveryPointArn
@@ -120,7 +120,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// The non-unique name of the resource that belongs to the specified backup.
         /// </para>
         /// </summary>
         public string ResourceName

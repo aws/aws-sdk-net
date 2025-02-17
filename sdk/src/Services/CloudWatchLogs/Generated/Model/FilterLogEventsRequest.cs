@@ -231,8 +231,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// If you specify a value for both <c>logStreamNamePrefix</c> and <c>logStreamNames</c>,
-        /// but the value for <c>logStreamNamePrefix</c> does not match any log stream names specified
-        /// in <c>logStreamNames</c>, the action returns an <c>InvalidParameterException</c> error.
+        /// the action returns an <c>InvalidParameterException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -255,7 +254,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for both <c>logStreamNamePrefix</c> and <c>logStreamNames</c>,
+        /// If you specify a value for both <c>logStreamNames</c> and <c>logStreamNamePrefix</c>,
         /// the action returns an <c>InvalidParameterException</c> error.
         /// </para>
         /// </summary>

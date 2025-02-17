@@ -150,6 +150,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelCard = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelLifeCycle", targetDepth))
+                {
+                    var unmarshaller = ModelLifeCycleUnmarshaller.Instance;
+                    unmarshalledObject.ModelLifeCycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelMetrics", targetDepth))
                 {
                     var unmarshaller = ModelMetricsUnmarshaller.Instance;

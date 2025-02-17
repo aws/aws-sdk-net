@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the statistics for the ingestion job.
+    /// Contains the statistics for the data ingestion job.
     /// </summary>
     public partial class IngestionJobStatistics
     {
@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property NumberOfDocumentsDeleted. 
         /// <para>
-        /// The number of source documents that was deleted.
+        /// The number of source documents that were deleted.
         /// </para>
         /// </summary>
         public long NumberOfDocumentsDeleted

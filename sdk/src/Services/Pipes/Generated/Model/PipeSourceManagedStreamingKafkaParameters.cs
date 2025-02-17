@@ -119,7 +119,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// (Streams only) The position in a stream from which to start reading.
+        /// The position in a stream from which to start reading.
         /// </para>
         /// </summary>
         public MSKStartPosition StartingPosition

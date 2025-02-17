@@ -27,6 +27,11 @@ namespace Amazon.CloudWatchLogs.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeConfigurationTemplates operation
+        ///</summary>
+        IDescribeConfigurationTemplatesPaginator DescribeConfigurationTemplates(DescribeConfigurationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDeliveries operation
         ///</summary>
         IDescribeDeliveriesPaginator DescribeDeliveries(DescribeDeliveriesRequest request);
@@ -85,5 +90,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// Paginator for ListLogAnomalyDetectors operation
         ///</summary>
         IListLogAnomalyDetectorsPaginator ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLogGroupsForQuery operation
+        ///</summary>
+        IListLogGroupsForQueryPaginator ListLogGroupsForQuery(ListLogGroupsForQueryRequest request);
     }
 }

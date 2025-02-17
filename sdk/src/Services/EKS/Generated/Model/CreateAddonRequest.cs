@@ -157,7 +157,8 @@ namespace Amazon.EKS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-ons-iam.html">Attach
-        /// an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the EKS User Guide.
+        /// an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public List<AddonPodIdentityAssociations> PodIdentityAssociations
@@ -194,7 +195,8 @@ namespace Amazon.EKS.Model
         ///  <b>Preserve</b> – This is similar to the NONE option. If the self-managed version
         /// of the add-on is installed on your cluster Amazon EKS doesn't change the add-on resource
         /// properties. Creation of the add-on might fail if conflicts are detected. This option
-        /// works differently during the update operation. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+        /// works differently during the update operation. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">
+        /// <c>UpdateAddon</c> </a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

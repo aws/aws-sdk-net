@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// This is the time the resource testing plan was created.
+        /// The time the resource testing plan was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// This is the time the update completed for the restore testing plan.
+        /// The time the update completed for the restore testing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

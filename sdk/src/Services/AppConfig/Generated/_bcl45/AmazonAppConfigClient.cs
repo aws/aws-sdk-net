@@ -1326,7 +1326,10 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Creates a new configuration in the AppConfig hosted configuration store.
+        /// Creates a new configuration in the AppConfig hosted configuration store. If you're
+        /// creating a feature flag, we recommend you familiarize yourself with the JSON schema
+        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+        /// reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
         /// 
@@ -1387,7 +1390,10 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Creates a new configuration in the AppConfig hosted configuration store.
+        /// Creates a new configuration in the AppConfig hosted configuration store. If you're
+        /// creating a feature flag, we recommend you familiarize yourself with the JSON schema
+        /// for feature flag data. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile-feature-flags.html#appconfig-type-reference-feature-flags">Type
+        /// reference for AWS.AppConfig.FeatureFlags</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1455,8 +1461,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes an application. Deleting an application does not delete a configuration from
-        /// a host.
+        /// Deletes an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -1482,8 +1487,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes an application. Deleting an application does not delete a configuration from
-        /// a host.
+        /// Deletes an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -1516,8 +1520,14 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes a configuration profile. Deleting a configuration profile does not delete
-        /// a configuration from a host.
+        /// Deletes a configuration profile.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent users from unintentionally deleting actively-used configuration profiles,
+        /// enable <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+        /// protection</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationProfile service method.</param>
         /// 
@@ -1547,8 +1557,14 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes a configuration profile. Deleting a configuration profile does not delete
-        /// a configuration from a host.
+        /// Deletes a configuration profile.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent users from unintentionally deleting actively-used configuration profiles,
+        /// enable <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+        /// protection</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationProfile service method.</param>
         /// <param name="cancellationToken">
@@ -1585,8 +1601,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration
-        /// from a host.
+        /// Deletes a deployment strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentStrategy service method.</param>
         /// 
@@ -1612,8 +1627,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration
-        /// from a host.
+        /// Deletes a deployment strategy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentStrategy service method.</param>
         /// <param name="cancellationToken">
@@ -1646,8 +1660,14 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes an environment. Deleting an environment does not delete a configuration from
-        /// a host.
+        /// Deletes an environment.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent users from unintentionally deleting actively-used environments, enable
+        /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+        /// protection</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// 
@@ -1677,8 +1697,14 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Deletes an environment. Deleting an environment does not delete a configuration from
-        /// a host.
+        /// Deletes an environment.
+        /// 
+        ///  
+        /// <para>
+        /// To prevent users from unintentionally deleting actively-used environments, enable
+        /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html">deletion
+        /// protection</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -1892,6 +1918,59 @@ namespace Amazon.AppConfig
 
         #endregion
         
+        #region  GetAccountSettings
+
+
+        /// <summary>
+        /// Returns information about the status of the <c>DeletionProtection</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the status of the <c>DeletionProtection</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetApplication
 
 
@@ -1970,7 +2049,7 @@ namespace Amazon.AppConfig
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GetConfiguration</c> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        ///  <a>GetConfiguration</a> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -2014,7 +2093,7 @@ namespace Amazon.AppConfig
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GetConfiguration</c> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        ///  <a>GetConfiguration</a> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -3066,7 +3145,10 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Stops a deployment. This API action works only on deployments that have a status of
-        /// <c>DEPLOYING</c>. This action moves the deployment to a status of <c>ROLLED_BACK</c>.
+        /// <c>DEPLOYING</c>, unless an <c>AllowRevert</c> parameter is supplied. If the <c>AllowRevert</c>
+        /// parameter is supplied, the status of an in-progress deployment will be <c>ROLLED_BACK</c>.
+        /// The status of a completed deployment will be <c>REVERTED</c>. AppConfig only allows
+        /// a revert within 72 hours of deployment completion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDeployment service method.</param>
         /// 
@@ -3093,7 +3175,10 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Stops a deployment. This API action works only on deployments that have a status of
-        /// <c>DEPLOYING</c>. This action moves the deployment to a status of <c>ROLLED_BACK</c>.
+        /// <c>DEPLOYING</c>, unless an <c>AllowRevert</c> parameter is supplied. If the <c>AllowRevert</c>
+        /// parameter is supplied, the status of an in-progress deployment will be <c>ROLLED_BACK</c>.
+        /// The status of a completed deployment will be <c>REVERTED</c>. AppConfig only allows
+        /// a revert within 72 hours of deployment completion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -3240,6 +3325,59 @@ namespace Amazon.AppConfig
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountSettings
+
+
+        /// <summary>
+        /// Updates the value of the <c>DeletionProtection</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the value of the <c>DeletionProtection</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountSettings service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
+        public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAccountSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

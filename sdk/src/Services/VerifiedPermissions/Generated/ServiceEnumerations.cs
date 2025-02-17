@@ -25,6 +25,56 @@ namespace Amazon.VerifiedPermissions
 {
 
     /// <summary>
+    /// Constants used for properties of type BatchGetPolicyErrorCode.
+    /// </summary>
+    public class BatchGetPolicyErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POLICY_NOT_FOUND for BatchGetPolicyErrorCode
+        /// </summary>
+        public static readonly BatchGetPolicyErrorCode POLICY_NOT_FOUND = new BatchGetPolicyErrorCode("POLICY_NOT_FOUND");
+        /// <summary>
+        /// Constant POLICY_STORE_NOT_FOUND for BatchGetPolicyErrorCode
+        /// </summary>
+        public static readonly BatchGetPolicyErrorCode POLICY_STORE_NOT_FOUND = new BatchGetPolicyErrorCode("POLICY_STORE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetPolicyErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetPolicyErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetPolicyErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetPolicyErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Decision.
     /// </summary>
     public class Decision : ConstantClass

@@ -31,7 +31,8 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateServiceNetworkServiceAssociation operation.
-    /// Associates a service with a service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
+    /// Associates the specified service with the specified service network. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations">Manage
     /// service associations</a> in the <i>Amazon VPC Lattice User Guide</i>.
     /// 
     ///  
@@ -83,7 +84,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service.
+        /// The ID or ARN of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]
@@ -102,8 +103,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceNetworkIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN
-        /// if the resources specified in the operation are in different accounts.
+        /// The ID or ARN of the service network. You must use an ARN if the resources are in
+        /// different accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=2048)]

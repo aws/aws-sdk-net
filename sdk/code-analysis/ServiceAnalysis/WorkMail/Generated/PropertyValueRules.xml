@@ -125,6 +125,30 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1124</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationRequest.Name</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateIdentityCenterApplicationResponse.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -246,6 +270,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateUserRequest.IdentityProviderUserId</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateUserRequest.LastName</property>
     <max>256</max>
   </property-value-rule>
@@ -331,6 +361,18 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteIdentityCenterApplicationRequest.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteIdentityProviderConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteImpersonationRoleRequest.ImpersonationRoleId</property>
     <min>1</min>
     <max>64</max>
@@ -411,6 +453,18 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteOrganizationResponse.State</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeletePersonalAccessTokenRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeletePersonalAccessTokenRequest.PersonalAccessTokenId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteResourceRequest.OrganizationId</property>
@@ -539,6 +593,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeIdentityProviderConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeInboundDmarcSettingsRequest.OrganizationId</property>
@@ -735,6 +795,18 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.FirstName</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeUserResponse.IdentityProviderIdentityStoreId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeUserResponse.IdentityProviderUserId</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeUserResponse.Initials</property>
@@ -1004,6 +1076,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.UserId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataRequest.PersonalAccessTokenId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.PersonalAccessTokenId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetPersonalAccessTokenMetadataResponse.UserId</property>
     <min>12</min>
     <max>256</max>
   </property-value-rule>
@@ -1302,6 +1403,35 @@
     <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListPersonalAccessTokensRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListPersonalAccessTokensResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListResourceDelegatesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1417,6 +1547,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws:iam:[a-z0-9-]*:[a-z0-9-]+:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutIdentityProviderConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutInboundDmarcSettingsRequest.OrganizationId</property>
@@ -1789,6 +1925,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateUserRequest.IdentityProviderUserId</property>
+    <min>0</min>
+    <max>47</max>
+    <pattern>^$|^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateUserRequest.Initials</property>
     <max>256</max>
   </property-value-rule>
@@ -1923,6 +2065,18 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.IdentityCenterConfiguration.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.IdentityCenterConfiguration.InstanceArn</property>
+    <min>10</min>
+    <max>1124</max>
+    <pattern>^arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ImpersonationMatchedRule.ImpersonationRuleId</property>
     <min>1</min>
     <max>64</max>
@@ -1993,6 +2147,12 @@
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersFilters.DisplayNamePrefix</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListUsersFilters.IdentityProviderUserIdPrefix</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^[A-Fa-f0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListUsersFilters.PrimaryEmailPrefix</property>
@@ -2129,6 +2289,28 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.PersonalAccessTokenConfiguration.LifetimeInDays</property>
+    <min>1</min>
+    <max>3653</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.PersonalAccessTokenId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PersonalAccessTokenSummary.UserId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.RedactedEwsAvailabilityProvider.EwsEndpoint</property>
     <max>256</max>
     <pattern>https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
@@ -2184,6 +2366,18 @@
     <property>Amazon.WorkMail.Model.User.Id</property>
     <min>12</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.User.IdentityProviderIdentityStoreId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.User.IdentityProviderUserId</property>
+    <min>1</min>
+    <max>47</max>
+    <pattern>^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.User.Name</property>

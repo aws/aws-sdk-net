@@ -78,6 +78,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GameServerContainerGroupCounts", targetDepth))
+                {
+                    var unmarshaller = GameServerContainerGroupCountsUnmarshaller.Instance;
+                    unmarshalledObject.GameServerContainerGroupCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceCounts", targetDepth))
                 {
                     var unmarshaller = EC2InstanceCountsUnmarshaller.Instance;
@@ -94,12 +100,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReplicaContainerGroupCounts", targetDepth))
-                {
-                    var unmarshaller = ReplicaContainerGroupCountsUnmarshaller.Instance;
-                    unmarshalledObject.ReplicaContainerGroupCounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

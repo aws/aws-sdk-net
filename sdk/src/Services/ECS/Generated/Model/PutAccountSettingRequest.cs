@@ -76,6 +76,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>fargateFIPSMode</c> - When turned on, you can run Fargate workloads in a manner
+        /// that is compliant with Federal Information Processing Standard (FIPS-140). For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html">Fargate
+        /// Federal Information Processing Standard (FIPS-140)</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>containerInstanceLongArnFormat</c> - When modified, the Amazon Resource Name (ARN)
         /// and resource ID format of the resource type for a specified user, role, or the root
         /// user for an account is affected. The opt-in and opt-out account setting must be set
@@ -94,12 +101,29 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>containerInsights</c> - When modified, the default setting indicating whether
-        /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
-        /// changed. If <c>containerInsights</c> is turned on, any new clusters that are created
-        /// will have Container Insights turned on unless you disable it during cluster creation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
-        /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        ///  <c>containerInsights</c> - Container Insights with enhanced observability provides
+        /// all the Container Insights metrics, plus additional task and container metrics. This
+        /// version supports enhanced observability for Amazon ECS clusters using the Amazon EC2
+        /// and Fargate launch types. After you configure Container Insights with enhanced observability
+        /// on Amazon ECS, Container Insights auto-collects detailed infrastructure telemetry
+        /// from the cluster level down to the container level in your environment and displays
+        /// these critical performance data in curated dashboards removing the heavy lifting in
+        /// observability set-up. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To use Container Insights with enhanced observability, set the <c>containerInsights</c>
+        /// account setting to <c>enhanced</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use Container Insights, set the <c>containerInsights</c> account setting to <c>enabled</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">Monitor
+        /// Amazon ECS containers using Container Insights with enhanced observability</a> in
+        /// the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -110,11 +134,6 @@ namespace Amazon.ECS.Model
         /// a VPC in dual-stack mode</a>. For more information on using IPv6 with tasks launched
         /// on Fargate, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-task-networking.html#fargate-task-networking-vpc-dual-stack">Using
         /// a VPC in dual-stack mode</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>fargateFIPSMode</c> - If you specify <c>fargateFIPSMode</c>, Fargate FIPS 140
-        /// compliance is affected.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -194,7 +213,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The account setting value for the specified principal ARN. Accepted values are <c>enabled</c>,
-        /// <c>disabled</c>, <c>on</c>, and <c>off</c>.
+        /// <c>disabled</c>, <c>enhanced</c>, <c>on</c>, and <c>off</c>.
         /// </para>
         ///  
         /// <para>

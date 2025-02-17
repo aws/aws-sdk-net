@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Budgets.Endpoints;
 using Amazon.Budgets.Internal;
@@ -241,6 +242,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Budgets")]
+        [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BudgetsEndpointParameters();
+            parameters["Region"] = "aws-iso-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://budgets.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Budgets")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
@@ -294,7 +310,22 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://budgets.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://budgets.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Budgets")]
+        [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BudgetsEndpointParameters();
+            parameters["Region"] = "aws-iso-b-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://budgets.global.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -354,7 +385,37 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://budgets.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+            Assert.AreEqual("https://budgets.global.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Budgets")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BudgetsEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://budgets.global.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Budgets")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BudgetsEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBudgetsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://budgets.global.csp.hci.ic.gov", endpoint.URL);
         }
 
         [TestMethod]

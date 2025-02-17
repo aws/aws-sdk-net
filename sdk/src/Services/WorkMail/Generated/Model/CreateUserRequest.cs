@@ -39,6 +39,7 @@ namespace Amazon.WorkMail.Model
         private string _displayName;
         private string _firstName;
         private bool? _hiddenFromGlobalAddressList;
+        private string _identityProviderUserId;
         private string _lastName;
         private string _name;
         private string _organizationId;
@@ -99,6 +100,27 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetHiddenFromGlobalAddressList()
         {
             return this._hiddenFromGlobalAddressList.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderUserId. 
+        /// <para>
+        /// User ID from the IAM Identity Center. If this parameter is empty it will be updated
+        /// automatically when the user logs in for the first time to the mailbox associated with
+        /// WorkMail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=47)]
+        public string IdentityProviderUserId
+        {
+            get { return this._identityProviderUserId; }
+            set { this._identityProviderUserId = value; }
+        }
+
+        // Check to see if IdentityProviderUserId property is set
+        internal bool IsSetIdentityProviderUserId()
+        {
+            return this._identityProviderUserId != null;
         }
 
         /// <summary>

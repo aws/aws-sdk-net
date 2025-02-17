@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// The service was unable to fully process this request because of an internal server
-    /// error.
+    /// An internal server error occurred while processing the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

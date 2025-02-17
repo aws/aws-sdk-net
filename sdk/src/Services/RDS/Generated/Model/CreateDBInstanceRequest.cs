@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -128,7 +129,7 @@ namespace Amazon.RDS.Model
         /// <param name="dbInstanceIdentifier">The identifier for this DB instance. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <c>mydbinstance</c> </param>
         /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1, io2): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example <c>db.m5.large</c>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</param>
-        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
+        /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-se2-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-dev</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user. This setting doesn't apply to Amazon Aurora DB instances. The name for the master user is managed by the DB cluster. This setting is required for RDS DB instances. Constraints: <ul> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster. Constraints: <ul> <li> Can't be specified if <c>ManageMasterUserPassword</c> is turned on. </li> <li> Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character. </li> </ul> Length Constraints: <ul> <li> RDS for Db2 - Must contain from 8 to 255 characters. </li> <li> RDS for MariaDB - Must contain from 8 to 41 characters. </li> <li> RDS for Microsoft SQL Server - Must contain from 8 to 128 characters. </li> <li> RDS for MySQL - Must contain from 8 to 41 characters. </li> <li> RDS for Oracle - Must contain from 8 to 30 characters. </li> <li> RDS for PostgreSQL - Must contain from 8 to 128 characters. </li> </ul></param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -589,6 +590,33 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting only applies to Amazon Aurora DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster that this DB instance will belong to.
@@ -691,6 +719,11 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must contain 1 to 64 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -951,10 +984,6 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must match the name of an existing DB subnet group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must not be <c>default</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1441,6 +1470,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>custom-sqlserver-dev</c> (for RDS Custom for SQL Server DB instances)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
@@ -1721,10 +1754,11 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group. The Db2 license through Amazon
-        /// Web Services Marketplace model requires an Amazon Web Services Marketplace subscription.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS
-        /// for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
+        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License Manager self-managed license. The Db2 license through Amazon Web Services
+        /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
+        /// RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2619,7 +2653,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
-        /// The storage throughput value for the DB instance.
+        /// The storage throughput value, in mebibyte per second (MiBps), for the DB instance.
         /// </para>
         ///  
         /// <para>

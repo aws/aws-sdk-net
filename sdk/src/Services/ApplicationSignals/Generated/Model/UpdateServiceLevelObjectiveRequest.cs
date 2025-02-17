@@ -32,14 +32,43 @@ namespace Amazon.ApplicationSignals.Model
     /// <summary>
     /// Container for the parameters to the UpdateServiceLevelObjective operation.
     /// Updates an existing service level objective (SLO). If you omit parameters, the previous
-    /// values of those parameters are retained.
+    /// values of those parameters are retained. 
+    /// 
+    ///  
+    /// <para>
+    /// You cannot change from a period-based SLO to a request-based SLO, or change from a
+    /// request-based SLO to a period-based SLO.
+    /// </para>
     /// </summary>
     public partial class UpdateServiceLevelObjectiveRequest : AmazonApplicationSignalsRequest
     {
+        private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private string _description;
         private Goal _goal;
         private string _id;
+        private RequestBasedServiceLevelIndicatorConfig _requestBasedSliConfig;
         private ServiceLevelIndicatorConfig _sliConfig;
+
+        /// <summary>
+        /// Gets and sets the property BurnRateConfigurations. 
+        /// <para>
+        /// Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric
+        /// that indicates how fast the service is consuming the error budget, relative to the
+        /// attainment goal of the SLO.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BurnRateConfiguration> BurnRateConfigurations
+        {
+            get { return this._burnRateConfigurations; }
+            set { this._burnRateConfigurations = value; }
+        }
+
+        // Check to see if BurnRateConfigurations property is set
+        internal bool IsSetBurnRateConfigurations()
+        {
+            return this._burnRateConfigurations != null && (this._burnRateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -100,10 +129,34 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestBasedSliConfig. 
+        /// <para>
+        /// If this SLO is a request-based SLO, this structure defines the information about what
+        /// performance metric this SLO will monitor.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify both <c>SliConfig</c> and <c>RequestBasedSliConfig</c> in the same
+        /// operation.
+        /// </para>
+        /// </summary>
+        public RequestBasedServiceLevelIndicatorConfig RequestBasedSliConfig
+        {
+            get { return this._requestBasedSliConfig; }
+            set { this._requestBasedSliConfig = value; }
+        }
+
+        // Check to see if RequestBasedSliConfig property is set
+        internal bool IsSetRequestBasedSliConfig()
+        {
+            return this._requestBasedSliConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SliConfig. 
         /// <para>
-        /// A structure that contains information about what performance metric this SLO will
-        /// monitor.
+        /// If this SLO is a period-based SLO, this structure defines the information about what
+        /// performance metric this SLO will monitor.
         /// </para>
         /// </summary>
         public ServiceLevelIndicatorConfig SliConfig

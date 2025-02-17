@@ -1,13 +1,8 @@
 ﻿using Amazon;
-
-using Xunit;
-using Amazon.S3;
+using Amazon.Internal;
 using System;
 using System.IO;
-using System.Diagnostics;
-using System.Reflection;
-using System.Collections.Generic;
-using Amazon.Internal;
+using Xunit;
 
 namespace AWSSDK_NetStandard.UnitTests
 {
@@ -119,7 +114,7 @@ namespace AWSSDK_NetStandard.UnitTests
 
         private FileInfo CreateEndpointCustomizationFile()
         {
-            string customizationResourceName = "UnitTests.NetStandard.endpoint.customization.json";
+            string customizationResourceName = "endpoint.customization.json";
             FileInfo fi = new FileInfo(Path.Combine(Path.GetTempPath(), Path.GetTempFileName()));
 
             using (StreamReader resStream = new StreamReader(Utils.GetAssemblyResourceStream(customizationResourceName)))

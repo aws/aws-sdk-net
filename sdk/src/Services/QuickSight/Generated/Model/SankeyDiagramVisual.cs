@@ -44,6 +44,7 @@ namespace Amazon.QuickSight.Model
         private SankeyDiagramChartConfiguration _chartConfiguration;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
+        private string _visualContentAltText;
         private string _visualId;
 
         /// <summary>
@@ -117,6 +118,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualContentAltText. 
+        /// <para>
+        /// The alt text for the visual.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string VisualContentAltText
+        {
+            get { return this._visualContentAltText; }
+            set { this._visualContentAltText = value; }
+        }
+
+        // Check to see if VisualContentAltText property is set
+        internal bool IsSetVisualContentAltText()
+        {
+            return this._visualContentAltText != null;
         }
 
         /// <summary>

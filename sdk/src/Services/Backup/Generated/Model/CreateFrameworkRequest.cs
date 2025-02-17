@@ -47,8 +47,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property FrameworkControls. 
         /// <para>
-        /// A list of the controls that make up the framework. Each control in the list has a
-        /// name, input parameters, and scope.
+        /// The controls that make up the framework. Each control in the list has a name, input
+        /// parameters, and scope.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,8 +107,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property FrameworkTags. 
         /// <para>
-        /// Metadata that you can assign to help organize the frameworks that you create. Each
-        /// tag is a key-value pair.
+        /// The tags to assign to the framework.
         /// </para>
         /// </summary>
         public Dictionary<string, string> FrameworkTags

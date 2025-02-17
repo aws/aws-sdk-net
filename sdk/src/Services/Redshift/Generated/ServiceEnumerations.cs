@@ -415,6 +415,110 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type DataShareType.
+    /// </summary>
+    public class DataShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL for DataShareType
+        /// </summary>
+        public static readonly DataShareType INTERNAL = new DataShareType("INTERNAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataShareType FindValue(string value)
+        {
+            return FindValue<DataShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataShareType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DescribeIntegrationsFilterName.
+    /// </summary>
+    public class DescribeIntegrationsFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IntegrationArn for DescribeIntegrationsFilterName
+        /// </summary>
+        public static readonly DescribeIntegrationsFilterName IntegrationArn = new DescribeIntegrationsFilterName("integration-arn");
+        /// <summary>
+        /// Constant SourceArn for DescribeIntegrationsFilterName
+        /// </summary>
+        public static readonly DescribeIntegrationsFilterName SourceArn = new DescribeIntegrationsFilterName("source-arn");
+        /// <summary>
+        /// Constant SourceTypes for DescribeIntegrationsFilterName
+        /// </summary>
+        public static readonly DescribeIntegrationsFilterName SourceTypes = new DescribeIntegrationsFilterName("source-types");
+        /// <summary>
+        /// Constant Status for DescribeIntegrationsFilterName
+        /// </summary>
+        public static readonly DescribeIntegrationsFilterName Status = new DescribeIntegrationsFilterName("status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribeIntegrationsFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribeIntegrationsFilterName FindValue(string value)
+        {
+            return FindValue<DescribeIntegrationsFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribeIntegrationsFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImpactRankingType.
     /// </summary>
     public class ImpactRankingType : ConstantClass
@@ -562,6 +666,56 @@ namespace Amazon.Redshift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NamespaceRegistrationStatus.
+    /// </summary>
+    public class NamespaceRegistrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deregistering for NamespaceRegistrationStatus
+        /// </summary>
+        public static readonly NamespaceRegistrationStatus Deregistering = new NamespaceRegistrationStatus("Deregistering");
+        /// <summary>
+        /// Constant Registering for NamespaceRegistrationStatus
+        /// </summary>
+        public static readonly NamespaceRegistrationStatus Registering = new NamespaceRegistrationStatus("Registering");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NamespaceRegistrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NamespaceRegistrationStatus FindValue(string value)
+        {
+            return FindValue<NamespaceRegistrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NamespaceRegistrationStatus(string value)
         {
             return FindValue(value);
         }

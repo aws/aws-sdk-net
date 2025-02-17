@@ -87,7 +87,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the game session to update. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }
@@ -164,11 +164,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+        ///  <c>NoProtection</c> -- The game session can be terminated during a scale-down event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FullProtection</b> -- If the game session is in an <c>ACTIVE</c> status, it cannot
+        ///  <c>FullProtection</c> -- If the game session is in an <c>ACTIVE</c> status, it cannot
         /// be terminated during a scale-down event.
         /// </para>
         ///  </li> </ul>

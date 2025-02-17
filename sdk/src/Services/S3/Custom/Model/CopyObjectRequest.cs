@@ -276,6 +276,17 @@ namespace Amazon.S3.Model
         /// Specifying this header with a COPY action doesn't affect bucket-level settings for
         /// S3 Bucket Key.
         /// </para>
+        /// 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> 
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// 
+        /// <para>
+        /// <b>Directory buckets</b> - S3 Bucket Keys aren't supported, when you copy SSE-KMS encrypted objects from general purpose buckets to directory buckets, 
+        /// from directory buckets to general purpose buckets, or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>. 
+        /// In this case, Amazon S3 makes a call to KMS every time a copy request is made for a KMS-encrypted object.
+        /// </para>
         /// </summary>
         public bool BucketKeyEnabled
         {
@@ -774,9 +785,82 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// <para>
-        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
-        /// example, AES256, <c>aws:kms</c>).
+        /// The server-side encryption algorithm used when storing this object in Amazon S3. 
+        /// Unrecognized or unsupported values won't write a destination object and will receive a <c>400 Bad Request</c> response. 
         /// </para>
+        /// 
+        /// <para>
+        /// Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket. 
+        /// When copying an object, if you don't specify encryption information in your copy request, the encryption setting of the target 
+        /// object is set to the default encryption configuration of the destination bucket. 
+        /// 
+        /// By default, all buckets have a base level of encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3).
+        /// If the destination bucket has a different default encryption configuration, Amazon S3 uses the corresponding encryption key to encrypt the 
+        /// target object copy.
+        /// </para>
+        /// 
+        /// <para>
+        /// With server-side encryption, Amazon S3 encrypts your data as it writes your data to disks in its data centers and decrypts the data when you access it. 
+        /// For more information about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using Server-Side Encryption</a> 
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// 
+        /// <para>
+        /// <b>General purpose buckets</b>
+        /// </para>
+        /// 
+        /// <ul>
+        /// <li>
+        /// <para>
+        /// For general purpose buckets, there are the following supported options for server-side encryption: server-side encryption with Key Management Service (KMS) keys (SSE-KMS), 
+        /// dual-layer server-side encryption with Amazon Web Services KMS keys (DSSE-KMS), and server-side encryption with customer-provided encryption keys (SSE-C). 
+        /// 
+        /// Amazon S3 uses the corresponding KMS key, or a customer-provided key to encrypt the target object copy.
+        /// </para>
+        /// </li>
+        /// 
+        /// <li>
+        /// <para>
+        /// When you perform a <c>CopyObject</c> operation, if you want to use a different type of encryption setting for the target object, you can specify appropriate 
+        /// encryption-related headers to encrypt the target object with an Amazon S3 managed key, a KMS key, or a customer-provided key. 
+        /// If the encryption setting in your request is different from the default encryption configuration of the destination bucket, the encryption setting in your request takes precedence.
+        /// </para>
+        /// </li>
+        /// </ul>
+        /// 
+        /// <para>
+        /// <b>Directory buckets</b>
+        /// </para>
+        /// 
+        /// <ul>
+        /// <li>
+        /// <para>
+        /// For directory buckets, there are only two supported options for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>). 
+        /// 
+        /// We recommend that the bucket's default encryption uses the desired encryption configuration and you don't override the bucket default encryption in 
+        /// your <c>CreateSession</c> requests or <c>PUT</c> object requests. Then, new objects are automatically encrypted with the desired encryption settings. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting data with server-side encryption</a> in 
+        /// the <i>Amazon S3 User Guide</i>. 
+        /// 
+        /// For more information about the encryption overriding behaviors in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying server-side encryption with KMS for new object uploads</a>.
+        /// </para>
+        /// </li>
+        /// 
+        /// <li>
+        /// <para>
+        /// To encrypt new object copies to a directory bucket with SSE-KMS, we recommend you specify SSE-KMS as the directory bucket's default encryption configuration with a 
+        /// KMS key (specifically, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>). 
+        /// 
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a> (<c>aws/s3</c>) isn't supported. 
+        /// 
+        /// Your SSE-KMS configuration can only support 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> per directory 
+        /// bucket for the lifetime of the bucket. After you specify a customer managed key for SSE-KMS, you can't override the customer managed key for the bucket's SSE-KMS configuration. 
+        /// Then, when you perform a <c>CopyObject</c> operation and want to specify server-side encryption settings for new object copies with SSE-KMS in the
+        /// encryption-related request headers, you must ensure the encryption key is the same customer managed key that you specified for the directory bucket's default encryption configuration. 
+        /// </para>
+        /// </li>
+        /// </ul>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -857,10 +941,22 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKeyManagementServiceEncryptionContext. 
         /// <para>
-        /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs. This value must be explicitly added to specify encryption
-        /// context for CopyObject requests.
+        /// Specifies the Amazon Web Services KMS Encryption Context as an additional encryption context to use for the destination object encryption. 
+        /// The value of this header is a Base64 encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// </para> 
+        /// 
+        /// <para>
+        /// <b>General purpose buckets</b> - This value must be explicitly added to specify encryption context for <c>CopyObject</c> requests if you want an additional encryption 
+        /// context for your destination object. 
+        /// 
+        /// The additional encryption context of the source object won't be copied to the destination object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html#encryption-context">Encryption context</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// 
+        /// <para>
+        /// <b>Directory buckets</b> - You can optionally provide an explicit encryption context value.
+        /// The value must match the default encryption context - the bucket Amazon Resource Name (ARN). 
+        /// An additional encryption context value is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -882,11 +978,22 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
-        /// Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET
-        /// and PUT requests for an object protected by Amazon Web Services KMS will fail if not
-        /// made via SSL or using SigV4. For information about configuring using any of the officially
-        /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-        /// the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
+        /// Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object encryption. 
+        /// All GET and PUT requests for an object protected by KMS will fail if they're not made via SSL or using SigV4. 
+        /// 
+        /// For information about configuring any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///
+        /// <para> 
+        /// <b>Directory buckets</b> - If you specify <c>x-amz-server-side-encryption</c> with <c>aws:kms</c>, you must specify the <c>x-amz-server-side-encryption-aws-kms-key-id</c> header 
+        /// with the ID (Key ID or Key ARN) of the KMS symmetric encryption customer managed key to use. 
+        /// Otherwise, you get an HTTP <c>400 Bad Request</c> error. 
+        /// Only use the key ID or key ARN. The key alias format of the KMS key isn't supported. 
+        /// Your SSE-KMS configuration can only support 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> per directory bucket
+        /// for the lifetime of the bucket. 
+        /// 
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a> (<c>aws/s3</c>) isn't supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

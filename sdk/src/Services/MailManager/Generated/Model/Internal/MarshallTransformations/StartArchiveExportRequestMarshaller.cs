@@ -103,6 +103,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FromTimestamp);
                 }
 
+                if(publicRequest.IsSetIncludeMetadata())
+                {
+                    context.Writer.WritePropertyName("IncludeMetadata");
+                    context.Writer.Write(publicRequest.IncludeMetadata);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

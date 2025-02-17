@@ -30,5 +30,10 @@ namespace Amazon.Chatbot.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeSlackChannelConfigurationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the SlackChannelConfigurations
+        /// </summary>
+        IPaginatedEnumerable<SlackChannelConfiguration> SlackChannelConfigurations { get; }
     }
 }

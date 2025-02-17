@@ -88,6 +88,16 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast4 = GetEndpoint("ap-southeast-4", "Asia Pacific (Melbourne)");
 
         /// <summary>
+        /// The Asia Pacific (Malaysia) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast5 = GetEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)");
+
+        /// <summary>
+        /// The Asia Pacific (Thailand) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast7 = GetEndpoint("ap-southeast-7", "Asia Pacific (Thailand)");
+
+        /// <summary>
         /// The Canada (Central) endpoint.
         /// </summary>
         public static readonly RegionEndpoint CACentral1 = GetEndpoint("ca-central-1", "Canada (Central)");
@@ -153,6 +163,11 @@ namespace Amazon
         public static readonly RegionEndpoint MESouth1 = GetEndpoint("me-south-1", "Middle East (Bahrain)");
 
         /// <summary>
+        /// The Mexico (Central) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint MXCentral1 = GetEndpoint("mx-central-1", "Mexico (Central)");
+
+        /// <summary>
         /// The South America (Sao Paulo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint SAEast1 = GetEndpoint("sa-east-1", "South America (Sao Paulo)");
@@ -216,6 +231,16 @@ namespace Amazon
         /// The EU ISOE West endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUIsoeWest1 = GetEndpoint("eu-isoe-west-1", "EU ISOE West");
+
+        /// <summary>
+        /// The US ISOF EAST endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofEast1 = GetEndpoint("us-isof-east-1", "US ISOF EAST");
+
+        /// <summary>
+        /// The US ISOF SOUTH endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofSouth1 = GetEndpoint("us-isof-south-1", "US ISOF SOUTH");
 
     }
 }

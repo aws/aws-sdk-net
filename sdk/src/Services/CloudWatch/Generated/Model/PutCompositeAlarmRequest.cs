@@ -264,6 +264,15 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         ///  <c>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </c> 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Start a Amazon Q Developer operational investigation</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i>
+        /// </c> 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> AlarmActions

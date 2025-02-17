@@ -35,6 +35,8 @@ namespace Amazon.Inspector2.Model
     public partial class FindingTypeAggregationResponse
     {
         private string _accountId;
+        private long? _exploitAvailableCount;
+        private long? _fixAvailableCount;
         private SeverityCounts _severityCounts;
 
         /// <summary>
@@ -54,6 +56,42 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExploitAvailableCount. 
+        /// <para>
+        /// The number of findings that have an exploit available.
+        /// </para>
+        /// </summary>
+        public long ExploitAvailableCount
+        {
+            get { return this._exploitAvailableCount.GetValueOrDefault(); }
+            set { this._exploitAvailableCount = value; }
+        }
+
+        // Check to see if ExploitAvailableCount property is set
+        internal bool IsSetExploitAvailableCount()
+        {
+            return this._exploitAvailableCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FixAvailableCount. 
+        /// <para>
+        ///  Details about the number of fixes. 
+        /// </para>
+        /// </summary>
+        public long FixAvailableCount
+        {
+            get { return this._fixAvailableCount.GetValueOrDefault(); }
+            set { this._fixAvailableCount = value; }
+        }
+
+        // Check to see if FixAvailableCount property is set
+        internal bool IsSetFixAvailableCount()
+        {
+            return this._fixAvailableCount.HasValue; 
         }
 
         /// <summary>

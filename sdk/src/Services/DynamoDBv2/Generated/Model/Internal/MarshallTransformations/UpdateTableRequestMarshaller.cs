@@ -113,6 +113,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMultiRegionConsistency())
+                {
+                    context.Writer.WritePropertyName("MultiRegionConsistency");
+                    context.Writer.Write(publicRequest.MultiRegionConsistency);
+                }
+
                 if(publicRequest.IsSetOnDemandThroughput())
                 {
                     context.Writer.WritePropertyName("OnDemandThroughput");
@@ -183,6 +189,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TableName");
                     context.Writer.Write(publicRequest.TableName);
+                }
+
+                if(publicRequest.IsSetWarmThroughput())
+                {
+                    context.Writer.WritePropertyName("WarmThroughput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WarmThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmThroughput, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

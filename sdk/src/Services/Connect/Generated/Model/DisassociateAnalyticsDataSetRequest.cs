@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAnalyticsDataSet operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Removes the dataset ID associated with a given Amazon Connect instance.
-    /// </para>
     /// </summary>
     public partial class DisassociateAnalyticsDataSetRequest : AmazonConnectRequest
     {

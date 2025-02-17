@@ -32,6 +32,11 @@ namespace Amazon.WorkSpacesWeb.Model
         IListBrowserSettingsPaginator ListBrowserSettings(ListBrowserSettingsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataProtectionSettings operation
+        ///</summary>
+        IListDataProtectionSettingsPaginator ListDataProtectionSettings(ListDataProtectionSettingsRequest request);
+
+        /// <summary>
         /// Paginator for ListIdentityProviders operation
         ///</summary>
         IListIdentityProvidersPaginator ListIdentityProviders(ListIdentityProvidersRequest request);
@@ -50,6 +55,11 @@ namespace Amazon.WorkSpacesWeb.Model
         /// Paginator for ListPortals operation
         ///</summary>
         IListPortalsPaginator ListPortals(ListPortalsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
 
         /// <summary>
         /// Paginator for ListTrustStoreCertificates operation

@@ -49,7 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property FinalSnapshotName. 
         /// <para>
         /// Name of the final snapshot to be taken before the serverless cache is deleted. Available
-        /// for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot
+        /// for Valkey, Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot
         /// is not taken.
         /// </para>
         /// </summary>

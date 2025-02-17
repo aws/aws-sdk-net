@@ -94,6 +94,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.ResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceNetworkLogType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ServiceNetworkLogType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

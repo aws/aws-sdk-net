@@ -69,10 +69,34 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllocatedStorage())
+                {
+                    context.Writer.WritePropertyName("allocatedStorage");
+                    context.Writer.Write(publicRequest.AllocatedStorage);
+                }
+
+                if(publicRequest.IsSetDbInstanceType())
+                {
+                    context.Writer.WritePropertyName("dbInstanceType");
+                    context.Writer.Write(publicRequest.DbInstanceType);
+                }
+
                 if(publicRequest.IsSetDbParameterGroupIdentifier())
                 {
                     context.Writer.WritePropertyName("dbParameterGroupIdentifier");
                     context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                }
+
+                if(publicRequest.IsSetDbStorageType())
+                {
+                    context.Writer.WritePropertyName("dbStorageType");
+                    context.Writer.Write(publicRequest.DbStorageType);
+                }
+
+                if(publicRequest.IsSetDeploymentType())
+                {
+                    context.Writer.WritePropertyName("deploymentType");
+                    context.Writer.Write(publicRequest.DeploymentType);
                 }
 
                 if(publicRequest.IsSetIdentifier())
@@ -90,6 +114,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPort())
+                {
+                    context.Writer.WritePropertyName("port");
+                    context.Writer.Write(publicRequest.Port);
                 }
 
                 writer.WriteObjectEnd();

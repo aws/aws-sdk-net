@@ -46,6 +46,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _influxAuthParametersSecretArn;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
+        private NetworkType _networkType;
+        private int? _port;
         private bool? _publiclyAccessible;
         private string _secondaryAvailabilityZone;
         private Status _status;
@@ -222,9 +224,10 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property InfluxAuthParametersSecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret containing the initial
-        /// InfluxDB authorization parameters. The secret value is a JSON formatted key-value
-        /// pair holding InfluxDB authorization values: organization, bucket, username, and password.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing
+        /// the initial InfluxDB authorization parameters. The secret value is a JSON formatted
+        /// key-value pair holding InfluxDB authorization values: organization, bucket, username,
+        /// and password.
         /// </para>
         /// </summary>
         public string InfluxAuthParametersSecretArn
@@ -275,6 +278,45 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4,
+        /// which can communicate over IPv4 protocol only, or DUAL, which can communicate over
+        /// both IPv4 and IPv6 protocols.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which InfluxDB accepts connections. The default value is 8086.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>

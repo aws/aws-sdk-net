@@ -90,6 +90,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Range", targetDepth))
+                {
+                    var unmarshaller = RangeUnmarshaller.Instance;
+                    unmarshalledObject.Range = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

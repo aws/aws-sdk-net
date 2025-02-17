@@ -31,7 +31,7 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataProduct operation.
-    /// Deletes an data product in Amazon DataZone.
+    /// Deletes a data product in Amazon DataZone.
     /// </summary>
     public partial class DeleteDataProductRequest : AmazonDataZoneRequest
     {

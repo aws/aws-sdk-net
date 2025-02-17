@@ -31,15 +31,17 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMicrosoftTeamsChannelConfiguration operation.
-    /// Get a single MS Teams Channel Configurations
+    /// Returns a Microsoft Teams channel configuration in an AWS account.
     /// </summary>
     public partial class GetMicrosoftTeamsChannelConfigurationRequest : AmazonChatbotRequest
     {
         private string _chatConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the MicrosoftTeamsChannelConfiguration
-        /// to retrieve.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn

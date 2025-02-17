@@ -1985,6 +1985,69 @@ namespace Amazon.DocDB
 
         #endregion
         
+        #region  FailoverGlobalCluster
+
+
+        /// <summary>
+        /// Promotes the specified secondary DB cluster to be the primary DB cluster in the global
+        /// cluster when failing over a global cluster occurs.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to respond to an unplanned event, such as a regional disaster in
+        /// the primary region. Failing over can result in a loss of write transaction data that
+        /// wasn't replicated to the chosen secondary before the failover event occurred. However,
+        /// the recovery process that promotes a DB instance on the chosen seconday DB cluster
+        /// to be the primary writer DB instance guarantees that the data is in a transactionally
+        /// consistent state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FailoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFailoverGlobalCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        IAsyncResult BeginFailoverGlobalCluster(FailoverGlobalClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FailoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFailoverGlobalCluster.</param>
+        /// 
+        /// <returns>Returns a  FailoverGlobalClusterResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        FailoverGlobalClusterResponse EndFailoverGlobalCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 

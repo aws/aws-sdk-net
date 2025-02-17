@@ -26,6 +26,22 @@ namespace Amazon.S3.Model
     {
         private BucketInfo _bucketInfo;
         private LocationInfo _location;
+        private BucketLocationConstraint _bucketLocationConstraint;
+
+        /// <summary>
+        /// Gets and sets the property LocationConstraint.
+        /// </summary>
+        public BucketLocationConstraint LocationConstraint
+        {
+            get { return this._bucketLocationConstraint; }
+            set { this._bucketLocationConstraint = value; }
+        }
+
+        // Check to see if LocationConstraint property is set
+        internal bool IsSetLocationConstraint()
+        {
+            return this._bucketLocationConstraint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketInfo.

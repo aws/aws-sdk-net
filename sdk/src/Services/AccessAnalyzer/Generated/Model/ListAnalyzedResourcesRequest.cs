@@ -32,8 +32,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Container for the parameters to the ListAnalyzedResources operation.
     /// Retrieves a list of resources of the specified type that have been analyzed by the
-    /// specified external access analyzer. This action is not supported for unused access
-    /// analyzers.
+    /// specified analyzer.
     /// </summary>
     public partial class ListAnalyzedResourcesRequest : AmazonAccessAnalyzerRequest
     {

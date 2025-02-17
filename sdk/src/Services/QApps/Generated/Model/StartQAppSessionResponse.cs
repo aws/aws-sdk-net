@@ -59,7 +59,7 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The unique identifier of the new Q App session.
+        /// The unique identifier of the new or retrieved Q App session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

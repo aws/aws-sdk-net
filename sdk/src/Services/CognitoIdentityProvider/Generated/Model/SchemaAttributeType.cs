@@ -37,9 +37,16 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// Developer-only attributes are a legacy feature of user pools, are read-only to all
-    /// app clients. You can create and update developer-only attributes only with IAM-authenticated
-    /// API operations. Use app client read/write permissions instead.
+    /// Developer-only <c>dev:</c> attributes are a legacy feature of user pools, and are
+    /// read-only to all app clients. You can create and update developer-only attributes
+    /// only with IAM-authenticated API operations. Use app client read/write permissions
+    /// instead.
+    /// </para>
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
     /// </para>
     /// </summary>
     public partial class SchemaAttributeType

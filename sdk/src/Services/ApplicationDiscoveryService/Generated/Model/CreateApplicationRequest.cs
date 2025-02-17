@@ -37,11 +37,12 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
         private string _description;
         private string _name;
+        private string _wave;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the application to be created.
+        /// The description of the application to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -60,7 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the application to be created.
+        /// The name of the application to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=127)]
@@ -74,6 +75,25 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Wave. 
+        /// <para>
+        /// The name of the migration wave of the application to be created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Wave
+        {
+            get { return this._wave; }
+            set { this._wave = value; }
+        }
+
+        // Check to see if Wave property is set
+        internal bool IsSetWave()
+        {
+            return this._wave != null;
         }
 
     }

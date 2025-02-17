@@ -65,7 +65,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
+            
+            if (publicRequest.IsSetRestoreToFolders())
+                request.Parameters.Add("restore-to-folders", StringUtils.FromBool(publicRequest.RestoreToFolders));
             request.ResourcePath = "/accounts/{AwsAccountId}/restore/analyses/{AnalysisId}";
+            request.UseQueryString = true;
 
             return request;
         }

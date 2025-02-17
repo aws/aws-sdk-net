@@ -58,6 +58,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.FindingStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

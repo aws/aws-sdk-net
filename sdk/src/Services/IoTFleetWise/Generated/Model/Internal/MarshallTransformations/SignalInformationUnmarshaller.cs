@@ -66,6 +66,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("dataPartitionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataPartitionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxSampleCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

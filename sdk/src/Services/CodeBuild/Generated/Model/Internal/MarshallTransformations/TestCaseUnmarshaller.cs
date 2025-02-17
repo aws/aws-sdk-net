@@ -114,6 +114,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.TestRawDataPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testSuiteName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestSuiteName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

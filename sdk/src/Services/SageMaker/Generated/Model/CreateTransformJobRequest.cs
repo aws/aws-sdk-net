@@ -172,8 +172,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to set in the Docker container. We support up to 16 key
-        /// and values entries in the map.
+        /// The environment variables to set in the Docker container. Don't include any sensitive
+        /// data in your environment variables. We support up to 16 key and values entries in
+        /// the map.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]

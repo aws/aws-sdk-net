@@ -34,6 +34,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GetEvaluationJobResponse : AmazonWebServiceResponse
     {
+        private ApplicationType _applicationType;
         private DateTime? _creationTime;
         private string _customerEncryptionKeyId;
         private EvaluationConfig _evaluationConfig;
@@ -49,9 +50,28 @@ namespace Amazon.Bedrock.Model
         private EvaluationJobStatus _status;
 
         /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge
+        /// base (retrieval and response generation).
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the model evaluation job was created.
+        /// The time the evaluation job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,8 +90,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CustomerEncryptionKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed key specified when the model
-        /// evaluation job was created.
+        /// The Amazon Resource Name (ARN) of the customer managed encryption key specified when
+        /// the evaluation job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -90,8 +110,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EvaluationConfig. 
         /// <para>
-        /// Contains details about the type of model evaluation job, the metrics used, the task
-        /// type selected, the datasets used, and any custom metrics you defined.
+        /// Contains the configuration details of either an automated or human-based evaluation
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,7 +130,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property FailureMessages. 
         /// <para>
-        /// An array of strings the specify why the model evaluation job has failed.
+        /// A list of strings that specify why the evaluation job failed to create.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -129,7 +149,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InferenceConfig. 
         /// <para>
-        /// Details about the models you specified in your model evaluation job.
+        /// Contains the configuration details of the inference model used for the evaluation
+        /// job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,7 +169,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model evaluation job.
+        /// The Amazon Resource Name (ARN) of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -167,7 +188,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobDescription. 
         /// <para>
-        /// The description of the model evaluation job.
+        /// The description of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -186,7 +207,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the model evaluation job.
+        /// The name for the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -205,7 +226,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// The type of model evaluation job.
+        /// Specifies whether the evaluation job is automated or human-based.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -224,7 +245,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// When the model evaluation job was last modified.
+        /// The time the evaluation job was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -242,7 +263,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Amazon S3 location for where output data is saved.
+        /// Contains the configuration details of the Amazon S3 bucket for storing the results
+        /// of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -261,8 +283,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role used in the model evaluation
-        /// job.
+        /// The Amazon Resource Name (ARN) of the IAM service role used in the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -281,7 +302,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the model evaluation job.
+        /// The current status of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

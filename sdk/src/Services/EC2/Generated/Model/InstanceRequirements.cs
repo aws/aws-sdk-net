@@ -74,10 +74,9 @@ namespace Amazon.EC2.Model
     ///  </note> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
-    /// a mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
-    /// EC2 Auto Scaling User Guide</i>, and also <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
-    /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
-    /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+    /// mixed instances group using attribute-based instance type selection</a> in the <i>Amazon
+    /// EC2 Auto Scaling User Guide</i>, and also <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Specify
+    /// attributes for instance type selection for EC2 Fleet or Spot Fleet</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
     /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
@@ -91,6 +90,7 @@ namespace Amazon.EC2.Model
         private List<string> _allowedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BareMetal _bareMetal;
         private BaselineEbsBandwidthMbps _baselineEbsBandwidthMbps;
+        private BaselinePerformanceFactors _baselinePerformanceFactors;
         private BurstablePerformance _burstablePerformance;
         private List<string> _cpuManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _excludedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -276,15 +276,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with GPU accelerators, specify <c>gpu</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// For instance types with FPGA accelerators, specify <c>fpga</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with inference accelerators, specify <c>inference</c>.
+        /// For instance types with GPU accelerators, specify <c>gpu</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Inference accelerators, specify <c>inference</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -402,6 +402,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BaselinePerformanceFactors. 
+        /// <para>
+        /// The baseline performance to consider, using an instance family as a baseline reference.
+        /// The instance family establishes the lowest acceptable level of performance. Amazon
+        /// EC2 uses this baseline to guide instance type selection, but there is no guarantee
+        /// that the selected instance types will always exceed the baseline for every application.
+        /// Currently, this parameter only supports CPU performance as a baseline performance
+        /// factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance
+        /// protection</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BaselinePerformanceFactors BaselinePerformanceFactors
+        {
+            get { return this._baselinePerformanceFactors; }
+            set { this._baselinePerformanceFactors = value; }
+        }
+
+        // Check to see if BaselinePerformanceFactors property is set
+        internal bool IsSetBaselinePerformanceFactors()
+        {
+            return this._baselinePerformanceFactors != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BurstablePerformance. 
         /// <para>
         /// Indicates whether burstable performance T instance types are included, excluded, or
@@ -453,6 +477,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// For instance types with Amazon Web Services CPUs, specify <c>amazon-web-services</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Apple CPUs, specify <c>apple</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

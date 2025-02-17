@@ -27,7 +27,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateSession operation
     /// </summary>  
-    public class CreateSessionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class CreateSessionResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
+            IWebResponseData responseData = context.ResponseData;
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
+            {
+                response.ServerSideEncryption = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-aws-kms-key-id"))
+            {
+                response.SSEKMSKeyId = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-aws-kms-key-id"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-context"))
+            {
+                response.SSEKMSEncryptionContext = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption-context"));
+            }
+            if (responseData.IsHeaderPresent("x-amz-server-side-encryption-bucket-key-enabled"))
+            {
+                response.BucketKeyEnabled = S3Transforms.ToBool(responseData.GetHeaderValue("x-amz-server-side-encryption-bucket-key-enabled"));
+            }
+
             return;
         }
 
@@ -79,7 +97,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -93,7 +111,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return NoSuchBucketExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
         private static CreateSessionResponseUnmarshaller _instance = new CreateSessionResponseUnmarshaller();

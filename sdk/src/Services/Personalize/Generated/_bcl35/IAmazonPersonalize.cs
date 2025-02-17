@@ -1420,12 +1420,11 @@ namespace Amazon.Personalize
         /// <summary>
         /// <important> 
         /// <para>
-        /// After you create a solution, you can’t change its configuration. By default, all new
-        /// solutions use automatic training. With automatic training, you incur training costs
-        /// while your solution is active. You can't stop automatic training for a solution. To
-        /// avoid unnecessary costs, make sure to delete the solution when you are finished. For
-        /// information about training costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
-        /// Personalize pricing</a>.
+        /// By default, all new solutions use automatic training. With automatic training, you
+        /// incur training costs while your solution is active. To avoid unnecessary costs, when
+        /// you are finished you can <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+        /// the solution</a> to turn off automatic training. For information about training costs,
+        /// see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1439,9 +1438,9 @@ namespace Amazon.Personalize
         /// <para>
         ///  By default, new solutions use automatic training to create solution versions every
         /// 7 days. You can change the training frequency. Automatic solution version creation
-        /// starts one hour after the solution is ACTIVE. If you manually create a solution version
-        /// within the hour, the solution skips the first automatic training. For more information,
-        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
+        /// starts within one hour after the solution is ACTIVE. If you manually create a solution
+        /// version within the hour, the solution skips the first automatic training. For more
+        /// information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
         /// automatic training</a>.
         /// </para>
         ///  
@@ -1496,6 +1495,11 @@ namespace Amazon.Personalize
         ///  <b>Related APIs</b> 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">UpdateSolution</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
         /// 
@@ -4543,6 +4547,76 @@ namespace Amazon.Personalize
         /// <returns>Returns a  UpdateRecommenderResult from Personalize.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
         UpdateRecommenderResponse EndUpdateRecommender(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSolution
+
+
+        /// <summary>
+        /// Updates an Amazon Personalize solution to use a different automatic training configuration.
+        /// When you update a solution, you can change whether the solution uses automatic training,
+        /// and you can change the training frequency. For more information about updating a solution,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-solution.html">Updating
+        /// a solution</a>.
+        /// 
+        ///  
+        /// <para>
+        /// A solution update can be in one of the following states:
+        /// </para>
+        ///  
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the status of a solution update, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+        /// API operation and find the status in the <c>latestSolutionUpdate</c>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSolution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSolution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">REST API Reference for UpdateSolution Operation</seealso>
+        UpdateSolutionResponse UpdateSolution(UpdateSolutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSolution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSolution operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSolution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">REST API Reference for UpdateSolution Operation</seealso>
+        IAsyncResult BeginUpdateSolution(UpdateSolutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSolution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSolution.</param>
+        /// 
+        /// <returns>Returns a  UpdateSolutionResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">REST API Reference for UpdateSolution Operation</seealso>
+        UpdateSolutionResponse EndUpdateSolution(IAsyncResult asyncResult);
 
         #endregion
                 

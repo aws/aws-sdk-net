@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.NeptuneGraph.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -84,6 +86,10 @@ namespace Amazon.NeptuneGraph.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CancelExportTaskRequest") {
+                result.ApiType = "ControlPlane";
+                return result;
+            }
             if (requestContext.RequestName == "CancelImportTaskRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
@@ -124,6 +130,10 @@ namespace Amazon.NeptuneGraph.Internal
                 result.ApiType = "DataPlane";
                 return result;
             }
+            if (requestContext.RequestName == "GetExportTaskRequest") {
+                result.ApiType = "ControlPlane";
+                return result;
+            }
             if (requestContext.RequestName == "GetGraphRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
@@ -146,6 +156,10 @@ namespace Amazon.NeptuneGraph.Internal
             }
             if (requestContext.RequestName == "GetQueryRequest") {
                 result.ApiType = "DataPlane";
+                return result;
+            }
+            if (requestContext.RequestName == "ListExportTasksRequest") {
+                result.ApiType = "ControlPlane";
                 return result;
             }
             if (requestContext.RequestName == "ListGraphsRequest") {
@@ -177,6 +191,10 @@ namespace Amazon.NeptuneGraph.Internal
                 return result;
             }
             if (requestContext.RequestName == "RestoreGraphFromSnapshotRequest") {
+                result.ApiType = "ControlPlane";
+                return result;
+            }
+            if (requestContext.RequestName == "StartExportTaskRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
             }

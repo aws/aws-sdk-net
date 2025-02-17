@@ -253,6 +253,56 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type AssetModelVersionType.
+    /// </summary>
+    public class AssetModelVersionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AssetModelVersionType
+        /// </summary>
+        public static readonly AssetModelVersionType ACTIVE = new AssetModelVersionType("ACTIVE");
+        /// <summary>
+        /// Constant LATEST for AssetModelVersionType
+        /// </summary>
+        public static readonly AssetModelVersionType LATEST = new AssetModelVersionType("LATEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetModelVersionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetModelVersionType FindValue(string value)
+        {
+            return FindValue<AssetModelVersionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetModelVersionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetRelationshipType.
     /// </summary>
     public class AssetRelationshipType : ConstantClass
@@ -934,6 +984,160 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetSourceFormat.
+    /// </summary>
+    public class DatasetSourceFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE for DatasetSourceFormat
+        /// </summary>
+        public static readonly DatasetSourceFormat KNOWLEDGE_BASE = new DatasetSourceFormat("KNOWLEDGE_BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetSourceFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetSourceFormat FindValue(string value)
+        {
+            return FindValue<DatasetSourceFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetSourceFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetSourceType.
+    /// </summary>
+    public class DatasetSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KENDRA for DatasetSourceType
+        /// </summary>
+        public static readonly DatasetSourceType KENDRA = new DatasetSourceType("KENDRA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetSourceType FindValue(string value)
+        {
+            return FindValue<DatasetSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetState.
+    /// </summary>
+    public class DatasetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DatasetState
+        /// </summary>
+        public static readonly DatasetState ACTIVE = new DatasetState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for DatasetState
+        /// </summary>
+        public static readonly DatasetState CREATING = new DatasetState("CREATING");
+        /// <summary>
+        /// Constant DELETING for DatasetState
+        /// </summary>
+        public static readonly DatasetState DELETING = new DatasetState("DELETING");
+        /// <summary>
+        /// Constant FAILED for DatasetState
+        /// </summary>
+        public static readonly DatasetState FAILED = new DatasetState("FAILED");
+        /// <summary>
+        /// Constant UPDATING for DatasetState
+        /// </summary>
+        public static readonly DatasetState UPDATING = new DatasetState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetState FindValue(string value)
+        {
+            return FindValue<DatasetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetState(string value)
         {
             return FindValue(value);
         }
@@ -1807,6 +2011,10 @@ namespace Amazon.IoTSiteWise
         /// </summary>
         public static readonly PortalState FAILED = new PortalState("FAILED");
         /// <summary>
+        /// Constant PENDING for PortalState
+        /// </summary>
+        public static readonly PortalState PENDING = new PortalState("PENDING");
+        /// <summary>
         /// Constant UPDATING for PortalState
         /// </summary>
         public static readonly PortalState UPDATING = new PortalState("UPDATING");
@@ -1840,6 +2048,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PortalState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PortalType.
+    /// </summary>
+    public class PortalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SITEWISE_PORTAL_V1 for PortalType
+        /// </summary>
+        public static readonly PortalType SITEWISE_PORTAL_V1 = new PortalType("SITEWISE_PORTAL_V1");
+        /// <summary>
+        /// Constant SITEWISE_PORTAL_V2 for PortalType
+        /// </summary>
+        public static readonly PortalType SITEWISE_PORTAL_V2 = new PortalType("SITEWISE_PORTAL_V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PortalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PortalType FindValue(string value)
+        {
+            return FindValue<PortalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PortalType(string value)
         {
             return FindValue(value);
         }
@@ -2006,6 +2264,68 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Quality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RawValueType.
+    /// </summary>
+    public class RawValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant B for RawValueType
+        /// </summary>
+        public static readonly RawValueType B = new RawValueType("B");
+        /// <summary>
+        /// Constant D for RawValueType
+        /// </summary>
+        public static readonly RawValueType D = new RawValueType("D");
+        /// <summary>
+        /// Constant I for RawValueType
+        /// </summary>
+        public static readonly RawValueType I = new RawValueType("I");
+        /// <summary>
+        /// Constant S for RawValueType
+        /// </summary>
+        public static readonly RawValueType S = new RawValueType("S");
+        /// <summary>
+        /// Constant U for RawValueType
+        /// </summary>
+        public static readonly RawValueType U = new RawValueType("U");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RawValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RawValueType FindValue(string value)
+        {
+            return FindValue<RawValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RawValueType(string value)
         {
             return FindValue(value);
         }

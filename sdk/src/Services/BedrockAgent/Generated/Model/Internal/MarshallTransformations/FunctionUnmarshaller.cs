@@ -84,6 +84,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("requireConfirmation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequireConfirmation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

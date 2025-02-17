@@ -98,8 +98,10 @@ namespace Amazon.MediaConvert.Model
         /// for outputs in File output groups. If you do not specify a value, the service will
         /// use default extensions by container type as follows * MPEG-2 transport stream, m2ts
         /// * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm
-        /// * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+        /// * Animated GIF container, gif * No Container, the service will use codec extensions
+        /// (e.g. AAC, H265, H265, AC3)
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Extension
         {
             get { return this._extension; }

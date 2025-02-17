@@ -148,30 +148,41 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ChatMode. 
         /// <para>
-        /// The chat modes available to an Amazon Q Business end user.
+        /// The <c>chatMode</c> parameter determines the chat modes available to Amazon Q Business
+        /// users:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>RETRIEVAL_MODE</c> - The default chat mode for an Amazon Q Business application.
-        /// When this mode is enabled, Amazon Q Business generates responses only from data sources
-        /// connected to an Amazon Q Business application.
+        ///  <c>RETRIEVAL_MODE</c> - If you choose this mode, Amazon Q generates responses solely
+        /// from the data sources connected and indexed by the application. If an answer is not
+        /// found in the data sources or there are no data sources available, Amazon Q will respond
+        /// with a "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In
+        /// that case, Amazon Q will generate a response from the LLM knowledge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CREATOR_MODE</c> - By selecting this mode, users can choose to generate responses
-        /// only from the LLM knowledge, without consulting connected data sources, for a chat
-        /// request.
+        ///  <c>CREATOR_MODE</c> - By selecting this mode, you can choose to generate responses
+        /// only from the LLM knowledge. You can also attach files and have Amazon Q generate
+        /// a response based on the data in those files. If the attached files do not contain
+        /// an answer for the query, Amazon Q will automatically fall back to generating a response
+        /// from the LLM knowledge.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PLUGIN_MODE</c> - By selecting this mode, users can choose to use plugins in chat.
+        ///  <c>PLUGIN_MODE</c> - By selecting this mode, users can choose to use plugins in chat
+        /// to get their responses.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If none of the modes are selected, Amazon Q will only respond using the information
+        /// from the attached files.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin
         /// controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>,
-        /// and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation
-        /// settings</a>.
+        /// and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response
+        /// sources</a>.
         /// </para>
         /// </summary>
         public ChatMode ChatMode
@@ -264,7 +275,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The groups that a user associated with the chat input belongs to.
+        /// The group names that a user associated with the chat input belongs to.
         /// </para>
         /// </summary>
         public List<string> UserGroups
@@ -304,7 +315,6 @@ namespace Amazon.QBusiness.Model
         /// A end user message in a conversation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=7000)]
         public string UserMessage
         {
             get { return this._userMessage; }

@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property IngestionJobSummaries. 
         /// <para>
-        /// A list of objects, each of which contains information about an ingestion job.
+        /// A list of data ingestion jobs with information about each job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

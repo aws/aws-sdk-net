@@ -40,6 +40,7 @@ namespace Amazon.Backup.Model
         private long? _completeWindowMinutes;
         private string _iamRoleArn;
         private string _idempotencyToken;
+        private Index _index;
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
@@ -48,8 +49,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupOptions. 
         /// <para>
-        /// Specifies the backup option for a selected resource. This option is only available
-        /// for Windows Volume Shadow Copy Service (VSS) backup jobs.
+        /// The backup option for a selected resource. This option is only available for Windows
+        /// Volume Shadow Copy Service (VSS) backup jobs.
         /// </para>
         ///  
         /// <para>
@@ -75,7 +76,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,6 +159,50 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Index. 
+        /// <para>
+        /// Include this parameter to enable index creation if your backup job has a resource
+        /// type that supports backup indexes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resource types that support backup indexes include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EBS</c> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Index can have 1 of 2 possible values, either <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a backup index for an eligible <c>ACTIVE</c> recovery point that does not
+        /// yet have a backup index, set value to <c>ENABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a backup index, set value to <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public Index Index
+        {
+            get { return this._index; }
+            set { this._index = value; }
+        }
+
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
+        {
+            return this._index != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
@@ -173,10 +218,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Resource types that are able to be transitioned to cold storage are listed in the
-        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table. Backup ignores this expression for other
-        /// resource types.
+        /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table. Backup ignores this expression for other resource
+        /// types.
         /// </para>
         ///  
         /// <para>
@@ -198,8 +242,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointTags. 
         /// <para>
-        /// To help organize your resources, you can assign your own metadata to the resources
-        /// that you create. Each tag is a key-value pair.
+        /// The tags to assign to the resources.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

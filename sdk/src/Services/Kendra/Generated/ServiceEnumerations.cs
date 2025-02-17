@@ -1674,6 +1674,10 @@ namespace Amazon.Kendra
         /// Constant ENTERPRISE_EDITION for IndexEdition
         /// </summary>
         public static readonly IndexEdition ENTERPRISE_EDITION = new IndexEdition("ENTERPRISE_EDITION");
+        /// <summary>
+        /// Constant GEN_AI_ENTERPRISE_EDITION for IndexEdition
+        /// </summary>
+        public static readonly IndexEdition GEN_AI_ENTERPRISE_EDITION = new IndexEdition("GEN_AI_ENTERPRISE_EDITION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

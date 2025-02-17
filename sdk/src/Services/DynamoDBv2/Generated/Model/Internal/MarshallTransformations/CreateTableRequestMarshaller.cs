@@ -223,6 +223,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetWarmThroughput())
+                {
+                    context.Writer.WritePropertyName("WarmThroughput");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WarmThroughputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmThroughput, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

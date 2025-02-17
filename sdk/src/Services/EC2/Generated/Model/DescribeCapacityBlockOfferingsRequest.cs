@@ -34,6 +34,22 @@ namespace Amazon.EC2.Model
     /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
     /// Region that you're currently using. With Capacity Blocks, you purchase a specific
     /// instance type for a period of time.
+    /// 
+    ///  
+    /// <para>
+    /// To search for an available Capacity Block offering, you specify a reservation duration
+    /// and instance count. You must select one of the following options.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For reservation durations<b> 1-day increments up 14 days and 7-day increments up to
+    /// 182 days total</b> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeCapacityBlockOfferingsRequest : AmazonEC2Request
     {
@@ -88,7 +104,6 @@ namespace Amazon.EC2.Model
         /// The number of instances for which to reserve capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -107,7 +122,6 @@ namespace Amazon.EC2.Model
         /// The type of instance for which the Capacity Block offering reserves capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }

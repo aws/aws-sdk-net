@@ -70,6 +70,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.DomainExecutionRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PortalUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rootDomainUnitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RootDomainUnitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ServiceRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("singleSignOn", targetDepth))

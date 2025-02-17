@@ -31,17 +31,17 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeliveryStreams operation.
-    /// Lists your delivery streams in alphabetical order of their names.
+    /// Lists your Firehose streams in alphabetical order of their names.
     /// 
     ///  
     /// <para>
-    /// The number of delivery streams might be too large to return using a single call to
-    /// <c>ListDeliveryStreams</c>. You can limit the number of delivery streams returned,
+    /// The number of Firehose streams might be too large to return using a single call to
+    /// <c>ListDeliveryStreams</c>. You can limit the number of Firehose streams returned,
     /// using the <c>Limit</c> parameter. To determine whether there are more delivery streams
     /// to list, check the value of <c>HasMoreDeliveryStreams</c> in the output. If there
-    /// are more delivery streams to list, you can request them by calling this operation
+    /// are more Firehose streams to list, you can request them by calling this operation
     /// again and setting the <c>ExclusiveStartDeliveryStreamName</c> parameter to the name
-    /// of the last delivery stream returned in the last call.
+    /// of the last Firehose stream returned in the last call.
     /// </para>
     /// </summary>
     public partial class ListDeliveryStreamsRequest : AmazonKinesisFirehoseRequest
@@ -53,20 +53,20 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamType. 
         /// <para>
-        /// The delivery stream type. This can be one of the following values:
+        /// The Firehose stream type. This can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the Firehose stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        ///  <c>KinesisStreamAsSource</c>: The Firehose stream uses a Kinesis data stream as a
         /// source.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This parameter is optional. If this parameter is omitted, delivery streams of all
+        /// This parameter is optional. If this parameter is omitted, Firehose streams of all
         /// types are returned.
         /// </para>
         /// </summary>
@@ -85,8 +85,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ExclusiveStartDeliveryStreamName. 
         /// <para>
-        /// The list of delivery streams returned by this call to <c>ListDeliveryStreams</c> will
-        /// start with the delivery stream whose name comes alphabetically immediately after the
+        /// The list of Firehose streams returned by this call to <c>ListDeliveryStreams</c> will
+        /// start with the Firehose stream whose name comes alphabetically immediately after the
         /// name you specify in <c>ExclusiveStartDeliveryStreamName</c>.
         /// </para>
         /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of delivery streams to list. The default value is 10.
+        /// The maximum number of Firehose streams to list. The default value is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

@@ -72,6 +72,21 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
             request.ResourcePath = "/asset-models/{assetModelId}/composite-models/{assetModelCompositeModelId}";
+        
+            if (publicRequest.IsSetIfMatch()) 
+            {
+                request.Headers["If-Match"] = publicRequest.IfMatch;
+            }
+        
+            if (publicRequest.IsSetIfNoneMatch()) 
+            {
+                request.Headers["If-None-Match"] = publicRequest.IfNoneMatch;
+            }
+        
+            if (publicRequest.IsSetMatchForVersionType()) 
+            {
+                request.Headers["Match-For-Version-Type"] = publicRequest.MatchForVersionType;
+            }
             request.UseQueryString = true;
             
             request.HostPrefix = $"api.";

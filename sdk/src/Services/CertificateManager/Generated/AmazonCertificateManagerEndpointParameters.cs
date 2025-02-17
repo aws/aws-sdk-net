@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the acm-2015-12-08.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

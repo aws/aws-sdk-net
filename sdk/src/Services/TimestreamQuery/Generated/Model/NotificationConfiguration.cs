@@ -40,7 +40,8 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property SnsConfiguration. 
         /// <para>
-        /// Details on SNS configuration. 
+        /// Details about the Amazon Simple Notification Service (SNS) configuration. This field
+        /// is visible only when SNS Topic is provided when updating the account settings. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

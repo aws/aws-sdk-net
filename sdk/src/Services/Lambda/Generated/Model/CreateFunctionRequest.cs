@@ -35,8 +35,8 @@ namespace Amazon.Lambda.Model
     /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
     /// role</a>. The deployment package is a .zip file archive or container image that contains
     /// your function code. The execution role grants the function permission to use Amazon
-    /// Web Services, such as Amazon CloudWatch Logs for log streaming and X-Ray for request
-    /// tracing.
+    /// Web Services services, such as Amazon CloudWatch Logs for log streaming and X-Ray
+    /// for request tracing.
     /// 
     ///  
     /// <para>
@@ -91,15 +91,15 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// If another Amazon Web Services account or an Amazon Web Service invokes your function,
-    /// use <a>AddPermission</a> to grant permission by creating a resource-based Identity
-    /// and Access Management (IAM) policy. You can grant permissions at the function level,
-    /// on a version, or on an alias.
+    /// If another Amazon Web Services account or an Amazon Web Services service invokes your
+    /// function, use <a>AddPermission</a> to grant permission by creating a resource-based
+    /// Identity and Access Management (IAM) policy. You can grant permissions at the function
+    /// level, on a version, or on an alias.
     /// </para>
     ///  
     /// <para>
     /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-    /// to events in other Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>),
+    /// to events in other Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>),
     /// or configure a function trigger in the other service. For more information, see <a
     /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
     /// Lambda functions</a>.
@@ -375,14 +375,36 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt
-        /// your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
-        /// variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-        /// SnapStart</a> is activated, Lambda also uses this key is to encrypt your function's
-        /// snapshot. If you deploy your function using a container image, Lambda also uses this
-        /// key to encrypt your function when it's deployed. Note that this is not the same key
-        /// that's used to protect your container image in the Amazon Elastic Container Registry
-        /// (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service
-        /// key.
+        /// the following resources:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+        /// variables</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+        /// SnapStart</a> snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When used with <c>SourceKMSKeyArn</c>, the unzipped version of the .zip deployment
+        /// package that's used for function invocations. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/encrypt-zip-package.html#enable-zip-custom-encryption">
+        /// Specifying a customer managed key for Lambda</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The optimized version of the container image that's used for function invocations.
+        /// Note that this is not the same key that's used to protect your container image in
+        /// the Amazon Elastic Container Registry (Amazon ECR). For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-lifecycle">Function
+        /// lifecycle</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed key</a>.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -516,13 +538,22 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-        /// Runtime is required if the deployment package is a .zip file archive.
+        /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">
+        /// runtime</a>. Runtime is required if the deployment package is a .zip file archive.
+        /// Specifying a runtime results in an error if you're deploying a function using a container
+        /// image.
         /// </para>
         ///  
         /// <para>
-        /// The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-        /// deprecation policy</a>.
+        /// The following list includes deprecated runtimes. Lambda blocks creating new functions
+        /// and updating existing functions shortly after each runtime is deprecated. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-deprecation-levels">Runtime
+        /// use after deprecation</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of all currently supported runtimes, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-supported">Supported
+        /// runtimes</a>.
         /// </para>
         /// </summary>
         public Runtime Runtime

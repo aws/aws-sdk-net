@@ -32,7 +32,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// You can't delete a cluster that has registered container instances. First, deregister
     /// the container instances before you can delete the cluster. For more information, see
-    /// <a>DeregisterContainerInstance</a>.
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -36,7 +36,8 @@ namespace Amazon.Connect.Model
     ///  <important> 
     /// <para>
     /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-    /// Connect Case</a>.
+    /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+    /// Connect Email</a>. 
     /// </para>
     ///  </important>
     /// </summary>
@@ -55,8 +56,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AssociatedResourceArn. 
         /// <para>
-        /// The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-        /// are the only current supported resource.
+        /// The resource to which the attached file is (being) uploaded to. The supported resources
+        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
+        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -160,6 +162,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The use case for the file.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Only <c>ATTACHMENTS</c> are supported.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public FileUseCaseType FileUseCaseType

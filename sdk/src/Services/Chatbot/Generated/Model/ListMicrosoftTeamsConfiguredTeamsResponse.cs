@@ -38,8 +38,10 @@ namespace Amazon.Chatbot.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ConfiguredTeams. A list of teams in Microsoft Teams that
-        /// have been configured with AWS Chatbot.
+        /// Gets and sets the property ConfiguredTeams. 
+        /// <para>
+        /// A list of teams in Microsoft Teams that are configured with AWS Chatbot.
+        /// </para>
         /// </summary>
         public List<ConfiguredTeam> ConfiguredTeams
         {
@@ -54,10 +56,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken

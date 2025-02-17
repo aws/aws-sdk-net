@@ -53,7 +53,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// You are not a registered delegated administrator for Config with permissions to call
     /// <c>ListDelegatedAdministrators</c> API. Ensure that the management account registers
-    /// delagated administrator for Config service principle name before the delegated administrator
+    /// delagated administrator for Config service principal name before the delegated administrator
     /// creates an aggregator.
     /// </para>
     ///  </li> </ul> 

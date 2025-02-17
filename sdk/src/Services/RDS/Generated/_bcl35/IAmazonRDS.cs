@@ -950,8 +950,8 @@ namespace Amazon.RDS
         /// <para>
         /// A blue/green deployment creates a staging environment that copies the production environment.
         /// In a blue/green deployment, the blue environment is the current production environment.
-        /// The green environment is the staging environment. The staging environment stays in
-        /// sync with the current production environment using logical replication.
+        /// The green environment is the staging environment, and it stays in sync with the current
+        /// production environment.
         /// </para>
         ///  
         /// <para>
@@ -1753,19 +1753,6 @@ namespace Amazon.RDS
         /// <para>
         /// This command doesn't apply to RDS Custom.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB parameter group, you should wait at least 5 minutes before creating
-        /// your first DB instance that uses that DB parameter group as the default parameter
-        /// group. This allows Amazon RDS to fully complete the create action before the parameter
-        /// group is used as the default for a new DB instance. This is especially important for
-        /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
-        /// parameter group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// 
@@ -2012,9 +1999,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
@@ -2022,6 +2006,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.MaxDBShardGroupLimitReachedException">
         /// The maximum number of DB shard groups for your Amazon Web Services account in the
         /// specified Amazon Web Services Region has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.UnsupportedDBEngineVersionException">
         /// The specified DB engine version isn't supported for Aurora Limitless Database.
@@ -2292,8 +2280,8 @@ namespace Amazon.RDS
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
-        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
-        /// (unique name) to create a new global database cluster.
+        /// The <c>GlobalClusterIdentifier</c> already exists. Specify a new global database identifier
+        /// (unique name) to create a new global database cluster or to rename an existing one.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterQuotaExceededException">
         /// The number of global database clusters for this account is already at the maximum
@@ -4550,6 +4538,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request);
 
@@ -6173,9 +6165,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6236,6 +6228,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
         /// <c>LogFileName</c> doesn't refer to an existing DB log file.
         /// </exception>
@@ -6290,9 +6286,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6543,8 +6539,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i>.
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -7613,9 +7610,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
         ModifyDBShardGroupResponse ModifyDBShardGroup(ModifyDBShardGroupRequest request);
 
@@ -7920,6 +7914,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
+        /// The <c>GlobalClusterIdentifier</c> already exists. Specify a new global database identifier
+        /// (unique name) to create a new global database cluster or to rename an existing one.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
@@ -7968,14 +7966,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies a zero-ETL integration with Amazon Redshift.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
-        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
-        /// the integration.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// 
@@ -8761,8 +8751,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -9357,6 +9348,15 @@ namespace Amazon.RDS
         /// <para>
         /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
         /// must be the ARN of the shared DB snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// To restore from a DB snapshot with an unsupported engine version, you must first upgrade
+        /// the engine version of the snapshot. For more information about upgrading a RDS for
+        /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
+        /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
+        /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+        /// a PostgreSQL DB snapshot engine version</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10326,10 +10326,11 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the
-        /// DB instance's metadata, including its endpoint, DB parameter group, and option group
-        /// membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
-        /// restore if necessary.
+        /// Stops an Amazon RDS DB instance temporarily. When you stop a DB instance, Amazon RDS
+        /// retains the DB instance's metadata, including its endpoint, DB parameter group, and
+        /// option group membership. Amazon RDS also retains the transaction logs so you can do
+        /// a point-in-time restore if necessary. The instance restarts automatically after 7
+        /// days.
         /// 
         ///  
         /// <para>

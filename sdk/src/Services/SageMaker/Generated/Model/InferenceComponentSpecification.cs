@@ -35,18 +35,65 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class InferenceComponentSpecification
     {
+        private string _baseInferenceComponentName;
         private InferenceComponentComputeResourceRequirements _computeResourceRequirements;
         private InferenceComponentContainerSpecification _container;
         private string _modelName;
         private InferenceComponentStartupParameters _startupParameters;
 
         /// <summary>
-        /// Gets and sets the property ComputeResourceRequirements. 
+        /// Gets and sets the property BaseInferenceComponentName. 
         /// <para>
-        /// The compute resources allocated to run the model assigned to the inference component.
+        /// The name of an existing inference component that is to contain the inference component
+        /// that you're creating with your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify this parameter only if your request is meant to create an adapter inference
+        /// component. An adapter inference component contains the path to an adapter model. The
+        /// purpose of the adapter model is to tailor the inference output of a base foundation
+        /// model, which is hosted by the base inference component. The adapter inference component
+        /// uses the compute resources that you assigned to the base inference component.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an adapter inference component, use the <c>Container</c> parameter
+        /// to specify the location of the adapter artifacts. In the parameter value, use the
+        /// <c>ArtifactUrl</c> parameter of the <c>InferenceComponentContainerSpecification</c>
+        /// data type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can create an adapter inference component, you must have an existing inference
+        /// component that contains the foundation model that you want to adapt.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Max=63)]
+        public string BaseInferenceComponentName
+        {
+            get { return this._baseInferenceComponentName; }
+            set { this._baseInferenceComponentName = value; }
+        }
+
+        // Check to see if BaseInferenceComponentName property is set
+        internal bool IsSetBaseInferenceComponentName()
+        {
+            return this._baseInferenceComponentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeResourceRequirements. 
+        /// <para>
+        /// The compute resources allocated to run the model, plus any adapter models, that you
+        /// assign to the inference component.
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit this parameter if your request is meant to create an adapter inference component.
+        /// An adapter inference component is loaded by a base inference component, and it uses
+        /// the compute resources of the base inference component.
+        /// </para>
+        /// </summary>
         public InferenceComponentComputeResourceRequirements ComputeResourceRequirements
         {
             get { return this._computeResourceRequirements; }
@@ -81,8 +128,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of an existing SageMaker model object in your account that you want to deploy
-        /// with the inference component.
+        /// The name of an existing SageMaker AI model object in your account that you want to
+        /// deploy with the inference component.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

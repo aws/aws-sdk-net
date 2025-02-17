@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class GetFindingsStatisticsResponse : AmazonWebServiceResponse
     {
         private FindingStatistics _findingStatistics;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property FindingStatistics. 
@@ -53,6 +54,28 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetFindingStatistics()
         {
             return this._findingStatistics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination parameter to be used on the next list operation to retrieve more items.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is currently not supported.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

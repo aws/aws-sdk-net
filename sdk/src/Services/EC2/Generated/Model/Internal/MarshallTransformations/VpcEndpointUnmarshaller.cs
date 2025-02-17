@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("failureReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupIdentifierUnmarshaller.Instance;
@@ -93,6 +99,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv4PrefixSet/item", targetDepth))
+                    {
+                        var unmarshaller = SubnetIpPrefixesUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv4Prefixes == null)
+                        {
+                            unmarshalledObject.Ipv4Prefixes = new List<SubnetIpPrefixes>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv4Prefixes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6PrefixSet/item", targetDepth))
+                    {
+                        var unmarshaller = SubnetIpPrefixesUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv6Prefixes == null)
+                        {
+                            unmarshalledObject.Ipv6Prefixes = new List<SubnetIpPrefixes>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv6Prefixes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("lastError", targetDepth))
@@ -136,6 +164,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RequesterManaged = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("resourceConfigurationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceConfigurationArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("routeTableIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -151,6 +185,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceNetworkArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceNetworkArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

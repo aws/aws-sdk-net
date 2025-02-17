@@ -76,7 +76,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource, which can be <c>WirelessDevice</c> or <c>WirelessGateway</c>.
+        /// The type of the resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>,
+        /// or <c>FuotaTask</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

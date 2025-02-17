@@ -73,6 +73,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IntegerValue);
             }
 
+            if(requestObject.IsSetNullValue())
+            {
+                context.Writer.WritePropertyName("nullValue");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PropertyValueNullValueMarshaller.Instance;
+                marshaller.Marshall(requestObject.NullValue, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");

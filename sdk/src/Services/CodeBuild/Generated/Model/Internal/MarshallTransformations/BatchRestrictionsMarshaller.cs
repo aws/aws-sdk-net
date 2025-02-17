@@ -59,6 +59,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFleetsAllowed())
+            {
+                context.Writer.WritePropertyName("fleetsAllowed");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFleetsAllowedListValue in requestObject.FleetsAllowed)
+                {
+                        context.Writer.Write(requestObjectFleetsAllowedListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMaximumBuildsAllowed())
             {
                 context.Writer.WritePropertyName("maximumBuildsAllowed");

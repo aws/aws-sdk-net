@@ -54,6 +54,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PointInTimeRecoveryEnabled);
             }
 
+            if(requestObject.IsSetRecoveryPeriodInDays())
+            {
+                context.Writer.WritePropertyName("RecoveryPeriodInDays");
+                context.Writer.Write(requestObject.RecoveryPeriodInDays);
+            }
+
         }
 
         /// <summary>

@@ -41,6 +41,14 @@ namespace Amazon.QBusiness.Model
     /// work in research and engineering, and therefore belong in the intellectual property
     /// group, can see top-secret company documents in their Amazon Q Business chat results.
     /// </para>
+    ///  
+    /// <para>
+    /// There are two options for creating groups, either passing group members inline or
+    /// using an S3 file via the S3PathForGroupMembers field. For inline groups, there is
+    /// a limit of 1000 members per group and for provided S3 files there is a limit of 100
+    /// thousand members. When creating a group using an S3 file, you provide both an S3 file
+    /// and a <c>RoleArn</c> for Amazon Q Buisness to access the file.
+    /// </para>
     /// </summary>
     public partial class PutGroupRequest : AmazonQBusinessRequest
     {
@@ -49,6 +57,7 @@ namespace Amazon.QBusiness.Model
         private GroupMembers _groupMembers;
         private string _groupName;
         private string _indexId;
+        private string _roleArn;
         private MembershipType _type;
 
         /// <summary>
@@ -117,13 +126,6 @@ namespace Amazon.QBusiness.Model
         /// the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering",
         /// and "Sales and Marketing".
         /// </para>
-        ///  
-        /// <para>
-        /// If you have more than 1000 users and/or sub groups for a single group, you need to
-        /// provide the path to the S3 file that lists your users and sub groups for a group.
-        /// Your sub groups can contain more than 1000 users, but the list of sub groups that
-        /// belong to a group (and/or users) must be no more than 1000.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string GroupName
@@ -155,6 +157,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIndexId()
         {
             return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that
+        /// contains your list of users that belong to a group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1284)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

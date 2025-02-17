@@ -93,7 +93,7 @@ namespace Amazon.MediaConvert.Model
         /// For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html,
         /// in the AWS Secrets Manager User Guide.
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=2048)]
         public string CredentialsSecretName
         {
             get { return this._credentialsSecretName; }

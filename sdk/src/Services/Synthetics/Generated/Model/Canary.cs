@@ -42,6 +42,7 @@ namespace Amazon.Synthetics.Model
         private int? _failureRetentionPeriodInDays;
         private string _id;
         private string _name;
+        private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
         private CanaryRunConfigOutput _runConfig;
         private string _runtimeVersion;
         private CanaryScheduleOutput _schedule;
@@ -190,7 +191,7 @@ namespace Amazon.Synthetics.Model
         /// The name of the canary.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -201,6 +202,32 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedResourceCleanup. 
+        /// <para>
+        /// Specifies whether to also delete the Lambda functions and layers used by this canary
+        /// when the canary is deleted. If it is <c>AUTOMATIC</c>, the Lambda functions and layers
+        /// will be deleted when the canary is deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of this parameter is <c>OFF</c>, then the value of the <c>DeleteLambda</c>
+        /// parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a>
+        /// operation determines whether the Lambda functions and layers will be deleted.
+        /// </para>
+        /// </summary>
+        public ProvisionedResourceCleanupSetting ProvisionedResourceCleanup
+        {
+            get { return this._provisionedResourceCleanup; }
+            set { this._provisionedResourceCleanup = value; }
+        }
+
+        // Check to see if ProvisionedResourceCleanup property is set
+        internal bool IsSetProvisionedResourceCleanup()
+        {
+            return this._provisionedResourceCleanup != null;
         }
 
         /// <summary>

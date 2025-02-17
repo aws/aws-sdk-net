@@ -1,0 +1,34 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "GetTelemetryEvaluationStatusForOrganization",
+    "operationName" : "GetTelemetryEvaluationStatusForOrganization",
+    "input" : { },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "AccessDeniedException"
+      }
+    },
+    "config" : {
+      "region" : "us-east-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetTelemetryEvaluationStatus",
+    "operationName" : "GetTelemetryEvaluationStatus",
+    "input" : { },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "AccessDeniedException"
+      }
+    },
+    "config" : {
+      "region" : "us-east-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}

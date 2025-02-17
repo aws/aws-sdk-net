@@ -34,10 +34,14 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// Specifying your desired <c>Conditions</c>, <c>ListOfTags</c>, <c>NotResources</c>,
-    /// and/or <c>Resources</c> is recommended. If none of these are specified, Backup will
-    /// attempt to select all supported and opted-in storage resources, which could have unintended
-    /// cost implications.
+    /// We recommend that you specify conditions, tags, or resources to include or exclude.
+    /// Otherwise, Backup attempts to select all supported and opted-in storage resources,
+    /// which could have unintended cost implications.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning
+    /// resources programmatically</a>.
     /// </para>
     /// </summary>
     public partial class BackupSelection
@@ -52,25 +56,19 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Conditions. 
         /// <para>
-        /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
-        /// "true" },</c>. Condition operators are case sensitive.
+        /// The conditions that you define to assign resources to your backup plans using tags.
+        /// For example, <c>"StringEquals": { "ConditionKey": "aws:ResourceTag/backup", "ConditionValue":
+        /// "daily" }</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <c>Conditions</c> differs from <c>ListOfTags</c> as follows:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// When you specify more than one condition, you only assign the resources that match
-        /// ALL conditions (using AND logic).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>Conditions</c> supports <c>StringEquals</c>, <c>StringLike</c>, <c>StringNotEquals</c>,
-        /// and <c>StringNotLike</c>. <c>ListOfTags</c> only supports <c>StringEquals</c>.
+        /// and <c>StringNotLike</c>. Condition operators are case sensitive.
         /// </para>
-        ///  </li> </ul>
+        ///  
+        /// <para>
+        /// If you specify multiple conditions, the resources much match all conditions (AND logic).
+        /// </para>
         /// </summary>
         public Conditions Conditions
         {
@@ -107,25 +105,19 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ListOfTags. 
         /// <para>
-        /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
-        /// "true" },</c>. Condition operators are case sensitive.
+        /// The conditions that you define to assign resources to your backup plans using tags.
+        /// For example, <c>"StringEquals": { "ConditionKey": "backup", "ConditionValue": "daily"}</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <c>ListOfTags</c> differs from <c>Conditions</c> as follows:
+        ///  <c>ListOfTags</c> supports only <c>StringEquals</c>. Condition operators are case
+        /// sensitive.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// When you specify more than one condition, you assign all resources that match AT LEAST
-        /// ONE condition (using OR logic).
+        /// If you specify multiple conditions, the resources much match any of the conditions
+        /// (OR logic).
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListOfTags</c> only supports <c>StringEquals</c>. <c>Conditions</c> supports <c>StringEquals</c>,
-        /// <c>StringLike</c>, <c>StringNotEquals</c>, and <c>StringNotLike</c>. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Condition> ListOfTags
         {
@@ -142,8 +134,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property NotResources. 
         /// <para>
-        /// A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum
-        /// number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
+        /// The Amazon Resource Names (ARNs) of the resources to exclude from a backup plan. The
+        /// maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
         /// </para>
         ///  
         /// <para>
@@ -167,14 +159,18 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number
-        /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
+        /// The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The
+        /// maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
         /// </para>
         ///  
         /// <para>
         /// If you need to assign many resources to a backup plan, consider a different resource
         /// selection strategy, such as assigning all resources of a resource type or refining
         /// your resource selection using tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).
         /// </para>
         /// </summary>
         public List<string> Resources

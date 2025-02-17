@@ -36,6 +36,7 @@ namespace Amazon.DirectConnect.Model
     public partial class DirectConnectGatewayAssociation
     {
         private List<RouteFilterPrefix> _allowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
+        private AssociatedCoreNetwork _associatedCoreNetwork;
         private AssociatedGateway _associatedGateway;
         private string _associationId;
         private DirectConnectGatewayAssociationState _associationState;
@@ -62,6 +63,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAllowedPrefixesToDirectConnectGateway()
         {
             return this._allowedPrefixesToDirectConnectGateway != null && (this._allowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedCoreNetwork. 
+        /// <para>
+        /// The ID of the Cloud WAN core network associated with the Direct Connect attachment.
+        /// </para>
+        /// </summary>
+        public AssociatedCoreNetwork AssociatedCoreNetwork
+        {
+            get { return this._associatedCoreNetwork; }
+            set { this._associatedCoreNetwork = value; }
+        }
+
+        // Check to see if AssociatedCoreNetwork property is set
+        internal bool IsSetAssociatedCoreNetwork()
+        {
+            return this._associatedCoreNetwork != null;
         }
 
         /// <summary>

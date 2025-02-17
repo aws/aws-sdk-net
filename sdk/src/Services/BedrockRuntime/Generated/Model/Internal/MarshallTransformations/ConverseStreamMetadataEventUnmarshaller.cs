@@ -72,6 +72,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("performanceConfig", targetDepth))
+                {
+                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trace", targetDepth))
                 {
                     var unmarshaller = ConverseStreamTraceUnmarshaller.Instance;

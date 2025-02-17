@@ -41,7 +41,9 @@ namespace Amazon.QuickSight.Model
         private List<FilterGroup> _filterGroups = AWSConfigs.InitializeCollections ? new List<FilterGroup>() : null;
         private AssetOptions _options;
         private List<ParameterDeclaration> _parameterDeclarations = AWSConfigs.InitializeCollections ? new List<ParameterDeclaration>() : null;
+        private QueryExecutionOptions _queryExecutionOptions;
         private List<SheetDefinition> _sheets = AWSConfigs.InitializeCollections ? new List<SheetDefinition>() : null;
+        private List<StaticFile> _staticFiles = AWSConfigs.InitializeCollections ? new List<StaticFile>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisDefaults.
@@ -189,6 +191,21 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryExecutionOptions.
+        /// </summary>
+        public QueryExecutionOptions QueryExecutionOptions
+        {
+            get { return this._queryExecutionOptions; }
+            set { this._queryExecutionOptions = value; }
+        }
+
+        // Check to see if QueryExecutionOptions property is set
+        internal bool IsSetQueryExecutionOptions()
+        {
+            return this._queryExecutionOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Sheets. 
         /// <para>
         /// An array of sheet definitions for a template.
@@ -205,6 +222,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSheets()
         {
             return this._sheets != null && (this._sheets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticFiles. 
+        /// <para>
+        /// The static files for the definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<StaticFile> StaticFiles
+        {
+            get { return this._staticFiles; }
+            set { this._staticFiles = value; }
+        }
+
+        // Check to see if StaticFiles property is set
+        internal bool IsSetStaticFiles()
+        {
+            return this._staticFiles != null && (this._staticFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

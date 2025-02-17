@@ -127,7 +127,14 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The description of the budget summary.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field can store any content. Escape or encode this content before displaying
+        /// it on a webpage or any other system that might interpret the content of this field.
+        /// </para>
+        ///  </important>
         /// </summary>
+        [Obsolete("ListBudgets no longer supports description. Use GetBudget if description is needed.")]
         [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string Description
         {
@@ -146,6 +153,12 @@ namespace Amazon.Deadline.Model
         /// <para>
         /// The display name of the budget summary to update.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field can store any content. Escape or encode this content before displaying
+        /// it on a webpage or any other system that might interpret the content of this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string DisplayName

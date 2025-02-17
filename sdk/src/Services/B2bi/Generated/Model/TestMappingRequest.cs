@@ -87,6 +87,12 @@ namespace Amazon.B2bi.Model
         /// Specifies the mapping template for the transformer. This template is used to map the
         /// parsed EDI file using JSONata or XSLT.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a>
+        /// data type instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=350000)]
         public string MappingTemplate

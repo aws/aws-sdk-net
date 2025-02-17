@@ -85,6 +85,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SourceUrl);
                 }
 
+                if(publicRequest.IsSetSourceUrlType())
+                {
+                    context.Writer.WritePropertyName("sourceUrlType");
+                    context.Writer.Write(publicRequest.SourceUrlType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

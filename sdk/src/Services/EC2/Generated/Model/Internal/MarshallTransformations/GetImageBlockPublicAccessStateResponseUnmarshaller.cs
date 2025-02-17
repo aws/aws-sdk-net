@@ -62,6 +62,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.ImageBlockPublicAccessState = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("managedBy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ManagedBy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

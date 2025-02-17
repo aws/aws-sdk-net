@@ -665,6 +665,7 @@ namespace Amazon.Util
             {
                 if (!IsIMDSEnabled || useNullToken)
                 {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("IsIMDSEnabled is {0}, useNullToken is {1}", IsIMDSEnabled, useNullToken);
                     return null;
                 }
 
@@ -690,6 +691,8 @@ namespace Amazon.Util
                         {
                             throw new InvalidOperationException("Unable to retrieve token for use in IMDSv2 call and IMDSv1 has been disabled.");
                         }
+                        
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Status code is {0}. Using null token.", httpStatusCode.GetValueOrDefault());
 
                         useNullToken = true;
                         return null;
@@ -718,9 +721,11 @@ namespace Amazon.Util
 
                         if (httpStatusCode == null)
                         {
+                            Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Status code is null. Using null token.");
                             useNullToken = true;
                         }
 
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Return null to fallback to the IMDS flow without using a token.");
                         //Return null to fallback to the IMDS flow without using a token.                    
                         return null;
                     }
@@ -744,12 +749,15 @@ namespace Amazon.Util
 
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp, string token)
         {
+            Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Attempting to get metadata for {0}", relativeOrAbsolutePath);
             var items = new List<string>();
             //For all meta-data queries we need to fetch an api token to use. In the event a 
             //token cannot be obtained we will fallback to not using a token.
             if (token == null)
             {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("No token provided, attempting to fetch API token");
                 token = FetchApiToken(DEFAULT_RETRIES);
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("API token fetch result: {0}", token == null ? "null" : "token received");
             }
 
             var headers = new Dictionary<string, string>();
@@ -757,7 +765,12 @@ namespace Amazon.Util
 
             if (!string.IsNullOrEmpty(token))
             {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Added EC2 metadata token to headers");
                 headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
+            }
+            else
+            {
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("No token available for EC2 metadata request");
             }
 
             try
@@ -794,6 +807,7 @@ namespace Amazon.Util
             catch (IMDSDisabledException)
             {
                 // Keep this behavior identical to when HttpStatusCode.NotFound is returned.
+                Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("IMDS is disabled");
                 return null;
             }
             catch (Exception e)
@@ -802,6 +816,7 @@ namespace Amazon.Util
 
                 if (httpStatusCode == HttpStatusCode.NotFound)
                 {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("EC2 Metadata service not found.");
                     return null;
                 }
                 else if (httpStatusCode == HttpStatusCode.Unauthorized)

@@ -7,6 +7,23 @@
     <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CreateIngestConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CreateIngestConfigurationRequest.StageArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CreateIngestConfigurationRequest.UserId</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.CreateParticipantTokenRequest.Duration</property>
     <min>1</min>
     <max>20160</max>
@@ -39,6 +56,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.DeleteIngestConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.DeletePublicKeyRequest.Arn</property>
@@ -80,6 +103,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:encoder-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GetIngestConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.GetParticipantRequest.ParticipantId</property>
@@ -181,6 +210,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ListEncoderConfigurationsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9+/=_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListIngestConfigurationsRequest.FilterByStageArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListIngestConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListIngestConfigurationsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9+/=_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ListIngestConfigurationsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[a-zA-Z0-9+/=_-]*</pattern>
@@ -365,6 +417,18 @@
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.UpdateIngestConfigurationRequest.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.UpdateIngestConfigurationRequest.StageArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.UpdateStageRequest.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -419,6 +483,11 @@
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CompositionThumbnailConfiguration.TargetIntervalSeconds</property>
+    <min>1</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.DestinationConfiguration.Name</property>
     <min>0</min>
     <max>128</max>
@@ -469,6 +538,68 @@
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.GridConfiguration.GridGap</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.StageArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.StreamKey</property>
+    <pattern>rt_[0-9]+_[a-z0-9-]+_[a-zA-Z0-9-]+_.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfiguration.UserId</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfigurationSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfigurationSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfigurationSummary.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfigurationSummary.StageArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^$|^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.IngestConfigurationSummary.UserId</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.BrowserName</property>
@@ -539,6 +670,11 @@
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.UserId</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantThumbnailConfiguration.TargetIntervalSeconds</property>
+    <min>1</min>
+    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantToken.Duration</property>
@@ -652,6 +788,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StageEndpoints.Rtmp</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.StageEndpoints.Rtmps</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.StageEndpoints.Whip</property>
     <min>0</min>
     <max>2048</max>
@@ -722,12 +868,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Video.Height</property>
-    <min>1</min>
+    <min>2</min>
     <max>1920</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Video.Width</property>
-    <min>1</min>
+    <min>2</min>
     <max>1920</max>
   </property-value-rule>
 </property-value-rules>

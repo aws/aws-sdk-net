@@ -12,6 +12,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaCapturePipelineRequest.SinkIamRoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.CreateMediaCapturePipelineRequest.SourceArn</property>
     <min>1</min>
     <max>1024</max>
@@ -506,6 +511,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.MediaCapturePipeline.SinkIamRoleArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.MediaCapturePipeline.SourceArn</property>
     <min>1</min>
     <max>1024</max>
@@ -722,6 +732,16 @@
     <property>Amazon.ChimeSDKMediaPipelines.Model.SqsQueueSinkConfiguration.InsightsTarget</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SseAwsKeyManagementParams.AwsKmsEncryptionContext</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMediaPipelines.Model.SseAwsKeyManagementParams.AwsKmsKeyId</property>
+    <max>4096</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMediaPipelines.Model.StreamChannelDefinition.NumberOfChannels</property>

@@ -56,7 +56,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or the ARN of the resource group to delete.
+        /// The name or the Amazon resource name (ARN) of the resource group to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

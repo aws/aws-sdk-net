@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
         private string _engineVersion;
+        private KerberosAuthenticationSettings _kerberosAuthenticationSettings;
         private bool? _multiAZ;
         private string _networkType;
         private string _preferredMaintenanceWindow;
@@ -178,6 +179,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KerberosAuthenticationSettings. 
+        /// <para>
+        /// Specifies the settings required for kerberos authentication when modifying a replication
+        /// instance.
+        /// </para>
+        /// </summary>
+        public KerberosAuthenticationSettings KerberosAuthenticationSettings
+        {
+            get { return this._kerberosAuthenticationSettings; }
+            set { this._kerberosAuthenticationSettings = value; }
+        }
+
+        // Check to see if KerberosAuthenticationSettings property is set
+        internal bool IsSetKerberosAuthenticationSettings()
+        {
+            return this._kerberosAuthenticationSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
         ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
@@ -287,6 +307,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public string ReplicationInstanceClass
         {
             get { return this._replicationInstanceClass; }

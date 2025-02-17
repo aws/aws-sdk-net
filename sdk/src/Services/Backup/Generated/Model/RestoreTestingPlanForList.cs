@@ -129,7 +129,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingPlanName. 
         /// <para>
-        /// This is the restore testing plan name.
+        /// The restore testing plan name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

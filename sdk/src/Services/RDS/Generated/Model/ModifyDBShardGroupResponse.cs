@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyDBShardGroup operation.
+    /// Contains the details for an Amazon RDS DB shard group.
     /// </summary>
     public partial class ModifyDBShardGroupResponse : AmazonWebServiceResponse
     {
         private int? _computeRedundancy;
         private string _dbClusterIdentifier;
+        private string _dbShardGroupArn;
         private string _dbShardGroupIdentifier;
         private string _dbShardGroupResourceId;
         private string _endpoint;
@@ -43,27 +44,27 @@ namespace Amazon.RDS.Model
         private double? _minACU;
         private bool? _publiclyAccessible;
         private string _status;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ComputeRedundancy. 
         /// <para>
-        /// Specifies whether to create standby instances for the DB shard group. Valid values
-        /// are the following:
+        /// Specifies whether to create standby DB shard groups for the DB shard group. Valid
+        /// values are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 0 - Creates a single, primary DB instance for each physical shard. This is the default
-        /// value, and the only one supported for the preview.
+        /// 0 - Creates a DB shard group without a standby DB shard group. This is the default
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 1 - Creates a primary DB instance and a standby instance in a different Availability
-        /// Zone (AZ) for each physical shard.
+        /// 1 - Creates a DB shard group with a standby DB shard group in a different Availability
+        /// Zone (AZ).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2 - Creates a primary DB instance and two standby instances in different AZs for each
-        /// physical shard.
+        /// 2 - Creates a DB shard group with two standby DB shard groups in two different AZs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -95,6 +96,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBShardGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB shard group.
+        /// </para>
+        /// </summary>
+        public string DBShardGroupArn
+        {
+            get { return this._dbShardGroupArn; }
+            set { this._dbShardGroupArn = value; }
+        }
+
+        // Check to see if DBShardGroupArn property is set
+        internal bool IsSetDBShardGroupArn()
+        {
+            return this._dbShardGroupArn != null;
         }
 
         /// <summary>
@@ -244,6 +263,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

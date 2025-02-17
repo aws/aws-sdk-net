@@ -41,7 +41,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Indicates the error that occurred while generating a grouping recommendation.
+        /// Error that occurred while generating a grouping recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -60,7 +60,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property GroupingId. 
         /// <para>
-        /// Indicates the identifier of the grouping recommendation task.
+        /// Identifier of the grouping recommendation task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

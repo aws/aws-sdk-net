@@ -30,9 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A list of users or sub groups that belong to a group. This is useful for user context
-    /// filtering, where search results are filtered based on the user or their group access
-    /// to documents.
+    /// A list of users that belong to a group. This is useful for user context filtering,
+    /// where search results are filtered based on the user or their group access to documents.
     /// </summary>
     public partial class GroupMembers
     {
@@ -43,8 +42,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MemberGroups. 
         /// <para>
-        /// A list of sub groups that belong to a group. For example, the sub groups "Research",
-        /// "Engineering", and "Sales and Marketing" all belong to the group "Company".
+        /// A list of users that belong to a group. This can also include sub groups. For example,
+        /// the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to
+        /// the group "Company A".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

@@ -32,7 +32,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <summary>
     /// Contains information about the action group being invoked. For more information about
     /// the possible structures, see the InvocationInput tab in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-orchestration.html">OrchestrationTrace</a>
-    /// in the Amazon Bedrock User Guide.
+    /// in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// </summary>
     public partial class ActionGroupInvocationInput
     {

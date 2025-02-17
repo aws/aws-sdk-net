@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// Identifes a User level permission for a channel configuration.
+    /// Identifes a user level permission for a channel configuration.
     /// </summary>
     public partial class SlackUserIdentity
     {
@@ -41,8 +41,10 @@ namespace Amazon.Chatbot.Model
         private string _slackUserId;
 
         /// <summary>
-        /// Gets and sets the property AwsUserIdentity. The AWS user identity ARN used to associate
-        /// a Slack User Identity with an IAM Role.
+        /// Gets and sets the property AwsUserIdentity. 
+        /// <para>
+        /// The AWS user identity ARN used to associate a Slack user ID with an IAM Role.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=1101)]
         public string AwsUserIdentity
@@ -58,8 +60,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the SlackChannelConfiguration
-        /// associated with the user identity.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated with the
+        /// user identity to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -75,9 +80,15 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamRoleArn. The ARN of the IAM role that defines the permissions
-        /// for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is
-        /// not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+        /// policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1224)]
         public string IamRoleArn
@@ -93,8 +104,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackTeamId. The ID of the Slack workspace authorized with
-        /// AWS Chatbot.
+        /// Gets and sets the property SlackTeamId. 
+        /// <para>
+        /// The ID of the Slack workspace authorized with AWS Chatbot.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackTeamId
@@ -110,7 +123,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackUserId. The ID of the user in Slack.
+        /// Gets and sets the property SlackUserId. 
+        /// <para>
+        /// The ID of the user in Slack
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackUserId

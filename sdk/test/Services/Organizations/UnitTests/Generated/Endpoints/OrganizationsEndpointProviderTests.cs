@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Organizations.Endpoints;
 using Amazon.Organizations.Internal;
@@ -361,6 +362,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Organizations")]
+        [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new OrganizationsEndpointParameters();
+            parameters["Region"] = "aws-iso-b-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://organizations.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Organizations")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
@@ -415,6 +431,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://organizations.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Organizations")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new OrganizationsEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://organizations.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
         }
 
         [TestMethod]

@@ -84,6 +84,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectedComponentArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ConnectedComponentArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Credentials", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ApplicationCredential, ApplicationCredentialUnmarshaller>(ApplicationCredentialUnmarshaller.Instance);

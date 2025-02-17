@@ -102,6 +102,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("roleConfiguration", targetDepth))
+                {
+                    var unmarshaller = RoleConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RoleConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scraperId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

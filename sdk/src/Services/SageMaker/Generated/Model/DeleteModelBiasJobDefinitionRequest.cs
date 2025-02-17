@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteModelBiasJobDefinition operation.
-    /// Deletes an Amazon SageMaker model bias job definition.
+    /// Deletes an Amazon SageMaker AI model bias job definition.
     /// </summary>
     public partial class DeleteModelBiasJobDefinitionRequest : AmazonSageMakerRequest
     {

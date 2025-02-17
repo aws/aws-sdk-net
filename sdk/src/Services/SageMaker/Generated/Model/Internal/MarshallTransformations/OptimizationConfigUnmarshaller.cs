@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelQuantizationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelShardingConfig", targetDepth))
+                {
+                    var unmarshaller = ModelShardingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

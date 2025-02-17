@@ -32,7 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmForgotPassword operation.
-    /// Allows a user to enter a confirmation code to reset a forgotten password.
+    /// This public API operation accepts a confirmation code that Amazon Cognito sent to
+    /// a user and accepts a new password for that user.
     /// 
     ///  <note> 
     /// <para>
@@ -77,7 +78,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID of the app associated with the user pool.
+        /// The ID of the app client where the user wants to reset their password. This parameter
+        /// is an identifier of the client application that users are resetting their password
+        /// from, but this operation resets users' passwords for all app clients in the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -118,22 +121,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -152,8 +156,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ConfirmationCode. 
         /// <para>
-        /// The confirmation code from your user's request to reset their password. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.
+        /// The confirmation code that your user pool sent in response to an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html">AdminResetUserPassword</a>
+        /// or a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -217,6 +222,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

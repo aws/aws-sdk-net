@@ -37,6 +37,7 @@ namespace Amazon.MailManager.Model
         private AddHeaderAction _addHeader;
         private ArchiveAction _archive;
         private DeliverToMailboxAction _deliverToMailbox;
+        private DeliverToQBusinessAction _deliverToQBusiness;
         private DropAction _drop;
         private RelayAction _relay;
         private ReplaceRecipientAction _replaceRecipient;
@@ -95,6 +96,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetDeliverToMailbox()
         {
             return this._deliverToMailbox != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliverToQBusiness. 
+        /// <para>
+        /// This action delivers an email to an Amazon Q Business application for ingestion into
+        /// its knowledge base.
+        /// </para>
+        /// </summary>
+        public DeliverToQBusinessAction DeliverToQBusiness
+        {
+            get { return this._deliverToQBusiness; }
+            set { this._deliverToQBusiness = value; }
+        }
+
+        // Check to see if DeliverToQBusiness property is set
+        internal bool IsSetDeliverToQBusiness()
+        {
+            return this._deliverToQBusiness != null;
         }
 
         /// <summary>

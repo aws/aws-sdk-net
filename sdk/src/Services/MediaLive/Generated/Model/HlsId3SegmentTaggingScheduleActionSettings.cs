@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for the action to insert a user-defined ID3 tag in each HLS segment
+    /// Settings for the action to insert ID3 metadata in every segment, in HLS output groups.
     /// </summary>
     public partial class HlsId3SegmentTaggingScheduleActionSettings
     {
@@ -38,8 +38,9 @@ namespace Amazon.MediaLive.Model
         private string _tag;
 
         /// <summary>
-        /// Gets and sets the property Id3. Base64 string formatted according to the ID3 specification:
-        /// http://id3.org/id3v2.4.0-structure
+        /// Gets and sets the property Id3. Complete this parameter if you want to specify the
+        /// entire ID3 metadata. Enter a base64 string that contains one or more fully formed
+        /// ID3 tags, according to the ID3 specification: http://id3.org/id3v2.4.0-structure
         /// </summary>
         public string Id3
         {
@@ -54,9 +55,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tag. ID3 tag to insert into each segment. Supports special
-        /// keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers:
-        /// https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
+        /// Gets and sets the property Tag. Complete this parameter if you want to specify only
+        /// the metadata, not the entire frame. MediaLive will insert the metadata in a TXXX frame.
+        /// Enter the value as plain text. You can include standard MediaLive variable data such
+        /// as the current segment number.
         /// </summary>
         public string Tag
         {

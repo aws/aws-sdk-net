@@ -45,10 +45,10 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IncludeModelsSDL. 
         /// <para>
-        /// A boolean flag that determines whether SDL should be generated for introspected types
-        /// or not. If set to <c>true</c>, each model will contain an <c>sdl</c> property that
-        /// contains the SDL for that type. The SDL only contains the type data and no additional
-        /// metadata or directives. 
+        /// A boolean flag that determines whether SDL should be generated for introspected types.
+        /// If set to <c>true</c>, each model will contain an <c>sdl</c> property that contains
+        /// the SDL for that type. The SDL only contains the type data and no additional metadata
+        /// or directives. 
         /// </para>
         /// </summary>
         public bool IncludeModelsSDL

@@ -39,14 +39,22 @@ namespace Amazon.Transfer.Model
     ///  <note> 
     /// <para>
     ///  After May 19, 2021, you won't be able to create a server using <c>EndpointType=VPC_ENDPOINT</c>
-    /// in your Amazon Web Servicesaccount if your account hasn't already done so before May
-    /// 19, 2021. If you have already created servers with <c>EndpointType=VPC_ENDPOINT</c>
-    /// in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected.
+    /// in your Amazon Web Services account if your account hasn't already done so before
+    /// May 19, 2021. If you have already created servers with <c>EndpointType=VPC_ENDPOINT</c>
+    /// in your Amazon Web Services account on or before May 19, 2021, you will not be affected.
     /// After this date, use <c>EndpointType</c>=<c>VPC</c>.
     /// </para>
     ///  
     /// <para>
     /// For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+    /// </para>
+    ///  
+    /// <para>
+    /// It is recommended that you use <c>VPC</c> as the <c>EndpointType</c>. With this endpoint
+    /// type, you have the option to directly associate up to three Elastic IPv4 addresses
+    /// (BYO IP included) with your server's endpoint and use VPC security groups to restrict
+    /// traffic by the client's public IP address. This is not possible with <c>EndpointType</c>
+    /// set to <c>VPC_ENDPOINT</c>.
     /// </para>
     ///  </note>
     /// </summary>

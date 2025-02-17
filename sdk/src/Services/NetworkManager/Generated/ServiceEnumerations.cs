@@ -31,6 +31,18 @@ namespace Amazon.NetworkManager
     {
 
         /// <summary>
+        /// Constant DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS");
+        /// <summary>
+        /// Constant DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF");
+        /// <summary>
+        /// Constant DIRECT_CONNECT_GATEWAY_NOT_FOUND for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode DIRECT_CONNECT_GATEWAY_NOT_FOUND = new AttachmentErrorCode("DIRECT_CONNECT_GATEWAY_NOT_FOUND");
+        /// <summary>
         /// Constant MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED = new AttachmentErrorCode("MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED");
@@ -186,6 +198,10 @@ namespace Amazon.NetworkManager
         /// Constant CONNECT for AttachmentType
         /// </summary>
         public static readonly AttachmentType CONNECT = new AttachmentType("CONNECT");
+        /// <summary>
+        /// Constant DIRECT_CONNECT_GATEWAY for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType DIRECT_CONNECT_GATEWAY = new AttachmentType("DIRECT_CONNECT_GATEWAY");
         /// <summary>
         /// Constant SITE_TO_SITE_VPN for AttachmentType
         /// </summary>

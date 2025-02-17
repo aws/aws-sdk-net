@@ -63,13 +63,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z
-        /// to see sessions that started August 29, 2018, and later.
+        /// InvokedAfter: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z
+        /// to see sessions that started August 29, 2024, and later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z
-        /// to see sessions that started before August 29, 2018.
+        /// InvokedBefore: Specify a timestamp to limit your results. For example, specify 2024-08-29T00:00:00Z
+        /// to see sessions that started before August 29, 2024.
         /// </para>
         ///  </li> <li> 
         /// <para>

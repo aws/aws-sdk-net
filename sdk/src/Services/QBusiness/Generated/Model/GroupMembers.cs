@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private List<MemberGroup> _memberGroups = AWSConfigs.InitializeCollections ? new List<MemberGroup>() : null;
         private List<MemberUser> _memberUsers = AWSConfigs.InitializeCollections ? new List<MemberUser>() : null;
+        private S3 _s3PathForGroupMembers;
 
         /// <summary>
         /// Gets and sets the property MemberGroups. 
@@ -45,7 +46,6 @@ namespace Amazon.QBusiness.Model
         /// "Engineering", and "Sales and Marketing" all belong to the group "Company".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public List<MemberGroup> MemberGroups
         {
             get { return this._memberGroups; }
@@ -65,7 +65,6 @@ namespace Amazon.QBusiness.Model
         /// to the "Interns" group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
         public List<MemberUser> MemberUsers
         {
             get { return this._memberUsers; }
@@ -76,6 +75,21 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetMemberUsers()
         {
             return this._memberUsers != null && (this._memberUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3PathForGroupMembers.
+        /// </summary>
+        public S3 S3PathForGroupMembers
+        {
+            get { return this._s3PathForGroupMembers; }
+            set { this._s3PathForGroupMembers = value; }
+        }
+
+        // Check to see if S3PathForGroupMembers property is set
+        internal bool IsSetS3PathForGroupMembers()
+        {
+            return this._s3PathForGroupMembers != null;
         }
 
     }

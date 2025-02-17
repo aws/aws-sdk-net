@@ -78,6 +78,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.EmbeddingModelConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supplementalDataStorageConfiguration", targetDepth))
+                {
+                    var unmarshaller = SupplementalDataStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SupplementalDataStorageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -86,13 +86,19 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// Specifies default encryption for a bucket using server-side encryption with different
-        /// key options. By default, all buckets have a default encryption configuration that
-        /// uses server-side encryption with Amazon S3 managed keys (SSE-S3). You can optionally
-        /// configure default encryption for a bucket by using server-side encryption with an
-        /// Amazon Web Services KMS key (SSE-KMS) or a customer-provided key (SSE-C). For information
-        /// about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-        /// S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.
+        /// Specifies default encryption for a bucket using server-side encryption with different key options.
+        /// </para>
+        /// 
+        /// <para>
+        /// <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests 
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i></c>. 
+        /// 
+        /// Virtual-hosted-style requests aren't supported. 
+        /// Directory bucket names must be unique in the chosen Availability Zone. 
+        /// Bucket names must also follow the format <c><i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c><i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). 
+        /// 
+        /// For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> 
+        /// in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -112,16 +118,20 @@ namespace Amazon.S3.Model
         /// <para>
         /// Indicates the algorithm used to create the checksum for the object when you use the
         /// SDK. This header will not provide any additional functionality if you don't use the
-        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
-        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
-        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum</c>
+        /// or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the request
+        /// with the HTTP status code <c>400 Bad Request</c>. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <c>ChecksumAlgorithm</c>
         /// parameter.
+        /// </para>
+        /// 
+        /// <para>
+        /// For directory buckets, when you use Amazon Web Services SDKs, <c>CRC32</c> is the default checksum algorithm that's used for performance.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -139,12 +149,16 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContentMD5. 
         /// <para>
-        /// The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.
+        /// The Base64 encoded 128-bit <c>MD5</c> digest of the server-side encryption configuration.
         /// </para>
         ///  
         /// <para>
         /// For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon
         /// Web Services SDKs, this field is calculated automatically.
+        /// </para>
+        /// 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
         /// </para>
         /// </summary>
         public string ContentMD5
@@ -179,7 +193,12 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
+        /// </para>
+        /// 
+        /// <para>
+        /// For directory buckets, this header is not supported in this API operation. 
+        /// If you specify this header, the request fails with the HTTP status code <c>501 Not Implemented</c>.
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner

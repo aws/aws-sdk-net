@@ -42,6 +42,7 @@ namespace Amazon.VPCLattice.Model
         private string _name;
         private long? _numberOfAssociatedServices;
         private long? _numberOfAssociatedVPCs;
+        private SharingConfig _sharingConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -83,7 +84,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the service network was created, specified in ISO-8601 format.
+        /// The date and time that the service network was created, in ISO-8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -104,7 +105,7 @@ namespace Amazon.VPCLattice.Model
         /// The ID of the service network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=32)]
+        [AWSProperty(Min=20, Max=20)]
         public string Id
         {
             get { return this._id; }
@@ -120,7 +121,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The date and time of the last update, specified in ISO-8601 format.
+        /// The date and time of the last update, in ISO-8601 format.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -188,6 +189,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetNumberOfAssociatedVPCs()
         {
             return this._numberOfAssociatedVPCs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingConfig. 
+        /// <para>
+        /// Specifies if the service network is enabled for sharing.
+        /// </para>
+        /// </summary>
+        public SharingConfig SharingConfig
+        {
+            get { return this._sharingConfig; }
+            set { this._sharingConfig = value; }
+        }
+
+        // Check to see if SharingConfig property is set
+        internal bool IsSetSharingConfig()
+        {
+            return this._sharingConfig != null;
         }
 
     }

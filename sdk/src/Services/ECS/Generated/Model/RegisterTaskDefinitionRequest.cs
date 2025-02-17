@@ -47,10 +47,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// You can specify a Docker networking mode for the containers in your task definition
-    /// with the <c>networkMode</c> parameter. The available network modes correspond to those
-    /// described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-    /// settings</a> in the Docker run reference. If you specify the <c>awsvpc</c> network
-    /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
+    /// with the <c>networkMode</c> parameter. If you specify the <c>awsvpc</c> network mode,
+    /// the task is allocated an elastic network interface, and you must specify a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
     /// when you create a service or run a task with the task definition. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
     /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -60,6 +58,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerDefinition> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private string _cpu;
+        private bool? _enableFaultInjection;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _family;
@@ -181,6 +180,26 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableFaultInjection. 
+        /// <para>
+        /// Enables fault injection when you register your task definition and allows for fault
+        /// injection requests to be accepted from the task's containers. The default value is
+        /// <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool EnableFaultInjection
+        {
+            get { return this._enableFaultInjection.GetValueOrDefault(); }
+            set { this._enableFaultInjection = value; }
+        }
+
+        // Check to see if EnableFaultInjection property is set
+        internal bool IsSetEnableFaultInjection()
+        {
+            return this._enableFaultInjection.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
         /// The amount of ephemeral storage to allocate for the task. This parameter is used to
@@ -218,11 +237,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS
-        /// container agent permission to make Amazon Web Services API calls on your behalf. The
-        /// task execution IAM role is required depending on the requirements of your task. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
-        /// ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// container agent permission to make Amazon Web Services API calls on your behalf. For
+        /// informationabout the required IAM roles for Amazon ECS, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-ecs-iam-role-overview.html">IAM
+        /// roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -288,14 +305,12 @@ namespace Amazon.ECS.Model
         /// If <c>none</c> is specified, then IPC resources within the containers of a task are
         /// private and not shared with other containers in a task or on the container instance.
         /// If no value is specified, then the IPC resource namespace sharing depends on the Docker
-        /// daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
-        /// settings</a> in the <i>Docker run reference</i>.
+        /// daemon setting on the container instance.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> IPC mode is used, be aware that there is a heightened risk of undesired
-        /// IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.
+        /// IPC namespace expose.
         /// </para>
         ///  
         /// <para>
@@ -448,19 +463,15 @@ namespace Amazon.ECS.Model
         ///  </important> 
         /// <para>
         /// If the network mode is <c>awsvpc</c>, the task is allocated an elastic network interface,
-        /// and you must specify a <a>NetworkConfiguration</a> value when you create a service
-        /// or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// and you must specify a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
+        /// value when you create a service or run a task with the task definition. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If the network mode is <c>host</c>, you cannot run multiple instantiations of the
         /// same task on a single container instance when port mappings are used.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
-        /// settings</a> in the <i>Docker run reference</i>.
         /// </para>
         /// </summary>
         public NetworkMode NetworkMode
@@ -496,15 +507,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container. For
-        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-        /// settings</a> in the <i>Docker run reference</i>.
+        /// If no value is specified, the default is a private namespace for each container.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> PID mode is used, there's a heightened risk of undesired process
-        /// namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-        /// security</a>.
+        /// namespace exposure.
         /// </para>
         ///  <note> 
         /// <para>

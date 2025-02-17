@@ -70,6 +70,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Result);
             }
 
+            if(requestObject.IsSetRetryConfiguration())
+            {
+                context.Writer.WritePropertyName("retryConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetryConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

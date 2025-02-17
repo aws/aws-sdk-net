@@ -505,8 +505,7 @@ namespace Amazon.ResourceExplorer2
         /// <summary>
         /// Retrieves the status of your account's Amazon Web Services service access, and validates
         /// the service linked role required to access the multi-account search feature. Only
-        /// the management account or a delegated administrator with service access enabled can
-        /// invoke this API call.
+        /// the management account can invoke this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountLevelServiceConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -611,6 +610,48 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetIndex">REST API Reference for GetIndex Operation</seealso>
         Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetManagedView
+
+
+
+        /// <summary>
+        /// Retrieves details of the specified <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed view</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedView service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        Task<GetManagedViewResponse> GetManagedViewAsync(GetManagedViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -724,6 +765,88 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">REST API Reference for ListIndexesForMembers Operation</seealso>
         Task<ListIndexesForMembersResponse> ListIndexesForMembersAsync(ListIndexesForMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListManagedViews
+
+
+
+        /// <summary>
+        /// Lists the Amazon resource names (ARNs) of the <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed views</a> available in the Amazon Web Services Region in which
+        /// you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedViews service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        Task<ListManagedViewsResponse> ListManagedViewsAsync(ListManagedViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListResources
+
+
+
+        /// <summary>
+        /// Returns a list of resources and their details that match the specified criteria. This
+        /// query must use a view. If you don’t explicitly specify a view, then Resource Explorer
+        /// uses the default view for the Amazon Web Services Region in which you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResources service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

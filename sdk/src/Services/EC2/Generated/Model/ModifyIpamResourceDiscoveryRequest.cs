@@ -37,9 +37,11 @@ namespace Amazon.EC2.Model
     public partial class ModifyIpamResourceDiscoveryRequest : AmazonEC2Request
     {
         private List<AddIpamOperatingRegion> _addOperatingRegions = AWSConfigs.InitializeCollections ? new List<AddIpamOperatingRegion>() : null;
+        private List<AddIpamOrganizationalUnitExclusion> _addOrganizationalUnitExclusions = AWSConfigs.InitializeCollections ? new List<AddIpamOrganizationalUnitExclusion>() : null;
         private string _description;
         private string _ipamResourceDiscoveryId;
         private List<RemoveIpamOperatingRegion> _removeOperatingRegions = AWSConfigs.InitializeCollections ? new List<RemoveIpamOperatingRegion>() : null;
+        private List<RemoveIpamOrganizationalUnitExclusion> _removeOrganizationalUnitExclusions = AWSConfigs.InitializeCollections ? new List<RemoveIpamOrganizationalUnitExclusion>() : null;
 
         /// <summary>
         /// Gets and sets the property AddOperatingRegions. 
@@ -61,6 +63,37 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddOperatingRegions()
         {
             return this._addOperatingRegions != null && (this._addOperatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddOrganizationalUnitExclusions. 
+        /// <para>
+        /// Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated
+        /// with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion,
+        /// IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a
+        /// limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas
+        /// for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The resulting set of exclusions must not result in "overlap", meaning two or more
+        /// OU exclusions must not exclude the same OU. For more information and examples, see
+        /// the Amazon Web Services CLI request process in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/exclude-ous.html#exclude-ous-create-delete">Add
+        /// or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<AddIpamOrganizationalUnitExclusion> AddOrganizationalUnitExclusions
+        {
+            get { return this._addOrganizationalUnitExclusions; }
+            set { this._addOrganizationalUnitExclusions = value; }
+        }
+
+        // Check to see if AddOrganizationalUnitExclusions property is set
+        internal bool IsSetAddOrganizationalUnitExclusions()
+        {
+            return this._addOrganizationalUnitExclusions != null && (this._addOrganizationalUnitExclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,6 +150,37 @@ namespace Amazon.EC2.Model
         internal bool IsSetRemoveOperatingRegions()
         {
             return this._removeOperatingRegions != null && (this._removeOperatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveOrganizationalUnitExclusions. 
+        /// <para>
+        /// Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is integrated
+        /// with Amazon Web Services Organizations and you add an organizational unit (OU) exclusion,
+        /// IPAM will not manage the IP addresses in accounts in that OU exclusion. There is a
+        /// limit on the number of exclusions you can create. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas
+        /// for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The resulting set of exclusions must not result in "overlap", meaning two or more
+        /// OU exclusions must not exclude the same OU. For more information and examples, see
+        /// the Amazon Web Services CLI request process in <a href="https://docs.aws.amazon.com/vpc/latest/ipam/exclude-ous.html#exclude-ous-create-delete">Add
+        /// or remove OU exclusions </a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<RemoveIpamOrganizationalUnitExclusion> RemoveOrganizationalUnitExclusions
+        {
+            get { return this._removeOrganizationalUnitExclusions; }
+            set { this._removeOrganizationalUnitExclusions = value; }
+        }
+
+        // Check to see if RemoveOrganizationalUnitExclusions property is set
+        internal bool IsSetRemoveOrganizationalUnitExclusions()
+        {
+            return this._removeOrganizationalUnitExclusions != null && (this._removeOrganizationalUnitExclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

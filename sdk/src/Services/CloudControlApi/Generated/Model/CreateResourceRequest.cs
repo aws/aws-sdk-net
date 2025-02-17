@@ -121,7 +121,7 @@ namespace Amazon.CloudControlApi.Model
         /// and property types reference</a> in the <i>CloudFormation Users Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=65536)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=262144)]
         public string DesiredState
         {
             get { return this._desiredState; }

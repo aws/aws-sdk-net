@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Advanced event selectors let you create fine-grained selectors for CloudTrail management
-    /// and data events. They help you control costs by logging only those events that are
-    /// important to you. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-    /// management events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events</a> in the <i>CloudTrail User Guide</i>.
+    /// Advanced event selectors let you create fine-grained selectors for CloudTrail management,
+    /// data, and network activity events. They help you control costs by logging only those
+    /// events that are important to you. For more information about configuring advanced
+    /// event selectors, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+    /// network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+    /// management events</a> topics in the <i>CloudTrail User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -42,51 +44,9 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Supported CloudTrail event record fields for management events</b> 
+    /// For information about configurable advanced event selector fields, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>
+    /// in the <i>CloudTrail API Reference</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>eventCategory</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventSource</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>readOnly</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Supported CloudTrail event record fields for data events</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>eventCategory</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>resources.type</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>readOnly</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventName</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>resources.ARN</c> 
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// For event data stores for CloudTrail Insights events, Config configuration items,
-    /// Audit Manager evidence, or events outside of Amazon Web Services, the only supported
-    /// field is <c>eventCategory</c>. 
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class AdvancedEventSelector
     {

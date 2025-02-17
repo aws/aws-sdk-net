@@ -31,19 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
+    /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
     /// 
     ///  
     /// <para>
-    /// Registers a compute resource in an Amazon GameLift fleet. Register computes with an
-    /// Amazon GameLift Anywhere fleet or a container fleet. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent,
-    /// the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't
-    /// use the Agent, call this operation to register fleet computes.
+    /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
+    /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
+    /// call this operation to register fleet computes.
     /// </para>
     ///  
     /// <para>
@@ -161,7 +155,7 @@ namespace Amazon.GameLift.Model
         /// fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -178,7 +172,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property IpAddress. 
         /// <para>
         /// The IP address of the compute resource. Amazon GameLift requires either a DNS name
-        /// or IP address.
+        /// or IP address. When registering an Anywhere fleet, an IP address is required.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -198,7 +192,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a custom location to associate with the compute resource being registered.
-        /// 
+        /// This parameter is required when registering a compute for an Anywhere fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

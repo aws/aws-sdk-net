@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private string _assetId;
         private string _assetRevision;
+        private AssetScope _assetScope;
         private FailureCause _failureCause;
         private DateTime? _failureTimestamp;
         private DateTime? _grantedTimestamp;
@@ -78,6 +79,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAssetRevision()
         {
             return this._assetRevision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetScope. 
+        /// <para>
+        /// The asset scope of the subscribed asset.
+        /// </para>
+        /// </summary>
+        public AssetScope AssetScope
+        {
+            get { return this._assetScope; }
+            set { this._assetScope = value; }
+        }
+
+        // Check to see if AssetScope property is set
+        internal bool IsSetAssetScope()
+        {
+            return this._assetScope != null;
         }
 
         /// <summary>

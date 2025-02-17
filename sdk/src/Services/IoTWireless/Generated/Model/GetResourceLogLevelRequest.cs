@@ -32,7 +32,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Container for the parameters to the GetResourceLogLevel operation.
     /// Fetches the log-level override, if any, for a given resource-ID and resource-type.
-    /// It can be used for a wireless device or a wireless gateway.
+    /// It can be used for a wireless device, wireless gateway or fuota task.
     /// </summary>
     public partial class GetResourceLogLevelRequest : AmazonIoTWirelessRequest
     {
@@ -58,7 +58,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of the resource, which can be <c>WirelessDevice</c> or <c>WirelessGateway</c>.
+        /// The type of the resource, which can be <c>WirelessDevice</c>, <c>WirelessGateway</c>
+        /// or <c>FuotaTask</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

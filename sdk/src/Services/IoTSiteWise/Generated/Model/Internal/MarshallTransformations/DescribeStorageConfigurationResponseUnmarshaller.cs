@@ -58,6 +58,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.ConfigurationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disallowIngestNullNaN", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.DisallowIngestNullNaN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("disassociatedDataStorage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
     {
         private string _description;
         private string _domainIdentifier;
+        private EnvironmentDeploymentDetails _environmentDeploymentDetails;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
@@ -63,7 +64,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which a project is to be updated.
+        /// The ID of the Amazon DataZone domain where a project is being updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,6 +78,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentDeploymentDetails. 
+        /// <para>
+        /// The environment deployment details of the project.
+        /// </para>
+        /// </summary>
+        public EnvironmentDeploymentDetails EnvironmentDeploymentDetails
+        {
+            get { return this._environmentDeploymentDetails; }
+            set { this._environmentDeploymentDetails = value; }
+        }
+
+        // Check to see if EnvironmentDeploymentDetails property is set
+        internal bool IsSetEnvironmentDeploymentDetails()
+        {
+            return this._environmentDeploymentDetails != null;
         }
 
         /// <summary>

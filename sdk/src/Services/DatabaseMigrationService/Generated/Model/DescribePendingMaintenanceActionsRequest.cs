@@ -31,7 +31,8 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePendingMaintenanceActions operation.
-    /// For internal use only
+    /// Returns a list of upcoming maintenance events for replication instances in your account
+    /// in the current Region.
     /// </summary>
     public partial class DescribePendingMaintenanceActionsRequest : AmazonDatabaseMigrationServiceRequest
     {

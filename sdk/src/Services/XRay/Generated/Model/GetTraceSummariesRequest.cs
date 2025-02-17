@@ -56,8 +56,8 @@ namespace Amazon.XRay.Model
     ///  
     /// <para>
     /// For a full list of indexed fields and keywords that you can use in filter expressions,
-    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
-    /// Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-console.html#xray-console-filters">Use
+    /// filter expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetTraceSummariesRequest : AmazonXRayRequest
@@ -186,8 +186,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TimeRangeType. 
         /// <para>
-        /// A parameter to indicate whether to query trace summaries by TraceId, Event (trace
-        /// update time), or Service (segment end time).
+        /// Query trace summaries by TraceId (trace start time), Event (trace update time), or
+        /// Service (trace segment end time).
         /// </para>
         /// </summary>
         public TimeRangeType TimeRangeType

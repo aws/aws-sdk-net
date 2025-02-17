@@ -47,6 +47,11 @@ namespace Amazon.MemoryDB.Model
         IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMultiRegionClusters operation
+        ///</summary>
+        IDescribeMultiRegionClustersPaginator DescribeMultiRegionClusters(DescribeMultiRegionClustersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeParameterGroups operation
         ///</summary>
         IDescribeParameterGroupsPaginator DescribeParameterGroups(DescribeParameterGroupsRequest request);

@@ -48,6 +48,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConfigOptions())
+            {
+                context.Writer.WritePropertyName("ConfigOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TopicConfigOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfigOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDataSets())
             {
                 context.Writer.WritePropertyName("DataSets");

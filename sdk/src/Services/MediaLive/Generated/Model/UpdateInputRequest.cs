@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private string _inputId;
         private List<string> _inputSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<MediaConnectFlowRequest> _mediaConnectFlows = AWSConfigs.InitializeCollections ? new List<MediaConnectFlowRequest>() : null;
+        private MulticastSettingsUpdateRequest _multicastSettings;
         private string _name;
         private string _roleArn;
         private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
@@ -124,6 +125,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMediaConnectFlows()
         {
             return this._mediaConnectFlows != null && (this._mediaConnectFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastSettings. Multicast Input settings.
+        /// </summary>
+        public MulticastSettingsUpdateRequest MulticastSettings
+        {
+            get { return this._multicastSettings; }
+            set { this._multicastSettings = value; }
+        }
+
+        // Check to see if MulticastSettings property is set
+        internal bool IsSetMulticastSettings()
+        {
+            return this._multicastSettings != null;
         }
 
         /// <summary>

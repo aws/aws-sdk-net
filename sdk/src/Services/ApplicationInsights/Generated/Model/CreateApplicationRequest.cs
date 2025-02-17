@@ -43,6 +43,7 @@ namespace Amazon.ApplicationInsights.Model
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
+        private string _snsNotificationArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -198,6 +199,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetResourceGroupName()
         {
             return this._resourceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SNSNotificationArn. 
+        /// <para>
+        ///  The SNS notification topic ARN. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=300)]
+        public string SNSNotificationArn
+        {
+            get { return this._snsNotificationArn; }
+            set { this._snsNotificationArn = value; }
+        }
+
+        // Check to see if SNSNotificationArn property is set
+        internal bool IsSetSNSNotificationArn()
+        {
+            return this._snsNotificationArn != null;
         }
 
         /// <summary>

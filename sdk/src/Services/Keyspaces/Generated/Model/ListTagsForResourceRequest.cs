@@ -32,6 +32,12 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Returns a list of all tags associated with the specified Amazon Keyspaces resource.
+    /// 
+    ///  
+    /// <para>
+    /// To read keyspace metadata using <c>ListTagsForResource</c>, the IAM principal needs
+    /// <c>Select</c> action permissions for the specified resource and the system keyspace.
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonKeyspacesRequest
     {

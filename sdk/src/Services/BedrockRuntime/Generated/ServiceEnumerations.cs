@@ -25,6 +25,60 @@ namespace Amazon.BedrockRuntime
 {
 
     /// <summary>
+    /// Constants used for properties of type AsyncInvokeStatus.
+    /// </summary>
+    public class AsyncInvokeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for AsyncInvokeStatus
+        /// </summary>
+        public static readonly AsyncInvokeStatus Completed = new AsyncInvokeStatus("Completed");
+        /// <summary>
+        /// Constant Failed for AsyncInvokeStatus
+        /// </summary>
+        public static readonly AsyncInvokeStatus Failed = new AsyncInvokeStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for AsyncInvokeStatus
+        /// </summary>
+        public static readonly AsyncInvokeStatus InProgress = new AsyncInvokeStatus("InProgress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AsyncInvokeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AsyncInvokeStatus FindValue(string value)
+        {
+            return FindValue<AsyncInvokeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AsyncInvokeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConversationRole.
     /// </summary>
     public class ConversationRole : ConstantClass
@@ -254,6 +308,64 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailContentFilterConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentFilterStrength.
+    /// </summary>
+    public class GuardrailContentFilterStrength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for GuardrailContentFilterStrength
+        /// </summary>
+        public static readonly GuardrailContentFilterStrength HIGH = new GuardrailContentFilterStrength("HIGH");
+        /// <summary>
+        /// Constant LOW for GuardrailContentFilterStrength
+        /// </summary>
+        public static readonly GuardrailContentFilterStrength LOW = new GuardrailContentFilterStrength("LOW");
+        /// <summary>
+        /// Constant MEDIUM for GuardrailContentFilterStrength
+        /// </summary>
+        public static readonly GuardrailContentFilterStrength MEDIUM = new GuardrailContentFilterStrength("MEDIUM");
+        /// <summary>
+        /// Constant NONE for GuardrailContentFilterStrength
+        /// </summary>
+        public static readonly GuardrailContentFilterStrength NONE = new GuardrailContentFilterStrength("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentFilterStrength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentFilterStrength FindValue(string value)
+        {
+            return FindValue<GuardrailContentFilterStrength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentFilterStrength(string value)
         {
             return FindValue(value);
         }
@@ -624,6 +736,106 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailConverseContentQualifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailConverseImageFormat.
+    /// </summary>
+    public class GuardrailConverseImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jpeg for GuardrailConverseImageFormat
+        /// </summary>
+        public static readonly GuardrailConverseImageFormat Jpeg = new GuardrailConverseImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for GuardrailConverseImageFormat
+        /// </summary>
+        public static readonly GuardrailConverseImageFormat Png = new GuardrailConverseImageFormat("png");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailConverseImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailConverseImageFormat FindValue(string value)
+        {
+            return FindValue<GuardrailConverseImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailConverseImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailImageFormat.
+    /// </summary>
+    public class GuardrailImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jpeg for GuardrailImageFormat
+        /// </summary>
+        public static readonly GuardrailImageFormat Jpeg = new GuardrailImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for GuardrailImageFormat
+        /// </summary>
+        public static readonly GuardrailImageFormat Png = new GuardrailImageFormat("png");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailImageFormat FindValue(string value)
+        {
+            return FindValue<GuardrailImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailImageFormat(string value)
         {
             return FindValue(value);
         }
@@ -1189,6 +1401,152 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type PerformanceConfigLatency.
+    /// </summary>
+    public class PerformanceConfigLatency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optimized for PerformanceConfigLatency
+        /// </summary>
+        public static readonly PerformanceConfigLatency Optimized = new PerformanceConfigLatency("optimized");
+        /// <summary>
+        /// Constant Standard for PerformanceConfigLatency
+        /// </summary>
+        public static readonly PerformanceConfigLatency Standard = new PerformanceConfigLatency("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PerformanceConfigLatency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PerformanceConfigLatency FindValue(string value)
+        {
+            return FindValue<PerformanceConfigLatency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PerformanceConfigLatency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortAsyncInvocationBy.
+    /// </summary>
+    public class SortAsyncInvocationBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SubmissionTime for SortAsyncInvocationBy
+        /// </summary>
+        public static readonly SortAsyncInvocationBy SubmissionTime = new SortAsyncInvocationBy("SubmissionTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortAsyncInvocationBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortAsyncInvocationBy FindValue(string value)
+        {
+            return FindValue<SortAsyncInvocationBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortAsyncInvocationBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ascending for SortOrder
+        /// </summary>
+        public static readonly SortOrder Ascending = new SortOrder("Ascending");
+        /// <summary>
+        /// Constant Descending for SortOrder
+        /// </summary>
+        public static readonly SortOrder Descending = new SortOrder("Descending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StopReason.
     /// </summary>
     public class StopReason : ConstantClass
@@ -1348,6 +1706,84 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Trace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoFormat.
+    /// </summary>
+    public class VideoFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Flv for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Flv = new VideoFormat("flv");
+        /// <summary>
+        /// Constant Mkv for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Mkv = new VideoFormat("mkv");
+        /// <summary>
+        /// Constant Mov for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Mov = new VideoFormat("mov");
+        /// <summary>
+        /// Constant Mp4 for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Mp4 = new VideoFormat("mp4");
+        /// <summary>
+        /// Constant Mpeg for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Mpeg = new VideoFormat("mpeg");
+        /// <summary>
+        /// Constant Mpg for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Mpg = new VideoFormat("mpg");
+        /// <summary>
+        /// Constant Three_gp for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Three_gp = new VideoFormat("three_gp");
+        /// <summary>
+        /// Constant Webm for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Webm = new VideoFormat("webm");
+        /// <summary>
+        /// Constant Wmv for VideoFormat
+        /// </summary>
+        public static readonly VideoFormat Wmv = new VideoFormat("wmv");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoFormat FindValue(string value)
+        {
+            return FindValue<VideoFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoFormat(string value)
         {
             return FindValue(value);
         }

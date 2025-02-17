@@ -112,6 +112,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetDetection())
+            {
+                context.Writer.WritePropertyName("Detection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DetectionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Detection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFindingProviderFields())
             {
                 context.Writer.WritePropertyName("FindingProviderFields");

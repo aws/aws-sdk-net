@@ -31,7 +31,8 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceNetworkVpcAssociation operation.
-    /// Retrieves information about the association between a service network and a VPC.
+    /// Retrieves information about the specified association between a service network and
+    /// a VPC.
     /// </summary>
     public partial class GetServiceNetworkVpcAssociationRequest : AmazonVPCLatticeRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceNetworkVpcAssociationIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the association.
+        /// The ID or ARN of the association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]

@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStudioLifecycleConfigs operation.
-    /// Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services
+    /// Lists the Amazon SageMaker AI Studio Lifecycle Configurations in your Amazon Web Services
     /// Account.
     /// </summary>
     public partial class ListStudioLifecycleConfigsRequest : AmazonSageMakerRequest

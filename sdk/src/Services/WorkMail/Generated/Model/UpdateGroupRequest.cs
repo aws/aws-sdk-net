@@ -31,7 +31,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// Updates attibutes in a group.
+    /// Updates attributes in a group.
     /// </summary>
     public partial class UpdateGroupRequest : AmazonWorkMailRequest
     {

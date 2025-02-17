@@ -271,11 +271,12 @@ namespace Amazon.Inspector2
 
         /// <summary>
         /// Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
-        /// An HTTP 200 response indicates the association was successfully started, but doesn’t
-        /// indicate whether it was completed. You can check if the association completed by using
-        /// <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
+        /// An HTTP 200 response indicates the association was started but doesn’t indicate whether
+        /// it completed. You can check if the association completed using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
         /// for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
-        /// for a single account.
+        /// for a single account. An HTTP 402 response indicates the association failed because
+        /// the organization size exceeded its limit. For information on limits, see <a href="https://docs.aws.amazon.com/inspector/latest/user/quotas.html">Amazon
+        /// Inspector quotas</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateMember service method.</param>
         /// 
@@ -285,6 +286,10 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota. To perform the requested action, remove some
+        /// of the relevant resources, or use Service Quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -306,11 +311,12 @@ namespace Amazon.Inspector2
 
         /// <summary>
         /// Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
-        /// An HTTP 200 response indicates the association was successfully started, but doesn’t
-        /// indicate whether it was completed. You can check if the association completed by using
-        /// <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
+        /// An HTTP 200 response indicates the association was started but doesn’t indicate whether
+        /// it completed. You can check if the association completed using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
         /// for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
-        /// for a single account.
+        /// for a single account. An HTTP 402 response indicates the association failed because
+        /// the organization size exceeded its limit. For information on limits, see <a href="https://docs.aws.amazon.com/inspector/latest/user/quotas.html">Amazon
+        /// Inspector quotas</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateMember service method.</param>
         /// <param name="cancellationToken">
@@ -323,6 +329,10 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota. To perform the requested action, remove some
+        /// of the relevant resources, or use Service Quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -2805,7 +2815,7 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Lists coverage details for you environment.
+        /// Lists coverage details for your environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
         /// 
@@ -2832,7 +2842,7 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Lists coverage details for you environment.
+        /// Lists coverage details for your environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoverage service method.</param>
         /// <param name="cancellationToken">
@@ -3765,7 +3775,7 @@ namespace Amazon.Inspector2
         /// <summary>
         /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
         /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
-        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// to stop a CIS scan session for the scan ID supplied by the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopCisSession service method.</param>
         /// 
@@ -3800,7 +3810,7 @@ namespace Amazon.Inspector2
         /// <summary>
         /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
         /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
-        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// to stop a CIS scan session for the scan ID supplied by the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopCisSession service method.</param>
         /// <param name="cancellationToken">

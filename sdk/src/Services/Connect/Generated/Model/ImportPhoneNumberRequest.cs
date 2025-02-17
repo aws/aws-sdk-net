@@ -31,9 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportPhoneNumber operation.
-    /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
-    /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
-    /// Services Region where the Amazon Connect instance was created.
+    /// Imports a claimed phone number from an external service, such as Amazon Web Services
+    /// End User Messaging, into an Amazon Connect instance. You can call this API only in
+    /// the same Amazon Web Services Region where the Amazon Connect instance was created.
     /// 
     ///  <important> 
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
     /// For example, if you already have 99 claimed or imported numbers and a service level
     /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
     /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-    /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+    /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
     /// 
     /// </para>
     /// </summary>
@@ -137,8 +137,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SourcePhoneNumberArn. 
         /// <para>
         /// The claimed phone number ARN being imported from the external service, such as Amazon
-        /// Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number
-        /// to import from Amazon Pinpoint.
+        /// Web Services End User Messaging. If it is from Amazon Web Services End User Messaging,
+        /// it looks like the ARN of the phone number to import from Amazon Web Services End User
+        /// Messaging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

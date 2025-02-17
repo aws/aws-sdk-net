@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of the Amazon Web Services accounts that you
-        /// want to delete stack instances for.
+        /// [Self-managed permissions] The account IDs of the Amazon Web Services accounts that
+        /// you want to delete stack instances for.
         /// </para>
         ///  
         /// <para>
@@ -212,7 +212,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
         /// set operation options</a>.
         /// </para>
         /// </summary>

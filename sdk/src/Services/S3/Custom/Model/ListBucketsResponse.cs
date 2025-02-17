@@ -28,6 +28,8 @@ namespace Amazon.S3.Model
     {
         private List<S3Bucket> buckets = AWSConfigs.InitializeCollections ? new List<S3Bucket>() : null;
         private Owner owner;
+        private string continuationToken;
+        private string _prefix;
 
         /// <summary>
         /// List of buckets.
@@ -57,6 +59,41 @@ namespace Amazon.S3.Model
         internal bool IsSetOwner()
         {
             return this.owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuationToken. 
+        /// <para>
+        /// <c>ContinuationToken</c> is included in the response when there are more buckets that can be listed with pagination. 
+        /// The next <c>ListBuckets</c> request to Amazon S3 can be continued with this <c>ContinuationToken</c>. 
+        /// <c>ContinuationToken</c> is obfuscated and is not a real bucket.
+        /// </para>
+        /// </summary>
+        public string ContinuationToken
+        {
+            get { return this.continuationToken; }
+            set { this.continuationToken = value; }
+        }
+
+        // Check to see if ContinuationToken property is set
+        internal bool IsSetContinuationToken()
+        {
+            return this.continuationToken != null;
+        }
+
+        /// <summary>
+        /// <para>If <c>Prefix</c> was sent with the request, it is included in the response.</para> <para>All bucket names in the response begin with the specified bucket name prefix.</para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
         }
     }
 }

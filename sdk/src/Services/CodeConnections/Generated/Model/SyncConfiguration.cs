@@ -40,6 +40,7 @@ namespace Amazon.CodeConnections.Model
         private string _ownerId;
         private ProviderType _providerType;
         private PublishDeploymentStatus _publishDeploymentStatus;
+        private PullRequestComment _pullRequestComment;
         private string _repositoryLinkId;
         private string _repositoryName;
         private string _resourceName;
@@ -141,6 +142,25 @@ namespace Amazon.CodeConnections.Model
         internal bool IsSetPublishDeploymentStatus()
         {
             return this._publishDeploymentStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestComment. 
+        /// <para>
+        /// A toggle that specifies whether to enable or disable pull request comments for the
+        /// sync configuration to be created.
+        /// </para>
+        /// </summary>
+        public PullRequestComment PullRequestComment
+        {
+            get { return this._pullRequestComment; }
+            set { this._pullRequestComment = value; }
+        }
+
+        // Check to see if PullRequestComment property is set
+        internal bool IsSetPullRequestComment()
+        {
+            return this._pullRequestComment != null;
         }
 
         /// <summary>

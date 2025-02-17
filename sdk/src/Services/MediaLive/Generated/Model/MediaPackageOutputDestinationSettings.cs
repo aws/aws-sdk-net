@@ -34,7 +34,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MediaPackageOutputDestinationSettings
     {
+        private string _channelGroup;
         private string _channelId;
+        private string _channelName;
+
+        /// <summary>
+        /// Gets and sets the property ChannelGroup. Name of the channel group in MediaPackageV2.
+        /// Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
+        /// channel that uses MediaPackage v2.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ChannelGroup
+        {
+            get { return this._channelGroup; }
+            set { this._channelGroup = value; }
+        }
+
+        // Check to see if ChannelGroup property is set
+        internal bool IsSetChannelGroup()
+        {
+            return this._channelGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelId. ID of the channel in MediaPackage that is the
@@ -54,6 +74,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetChannelId()
         {
             return this._channelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelName. Name of the channel in MediaPackageV2. Only
+        /// use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
+        /// channel that uses MediaPackage v2.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ChannelName
+        {
+            get { return this._channelName; }
+            set { this._channelName = value; }
+        }
+
+        // Check to see if ChannelName property is set
+        internal bool IsSetChannelName()
+        {
+            return this._channelName != null;
         }
 
     }

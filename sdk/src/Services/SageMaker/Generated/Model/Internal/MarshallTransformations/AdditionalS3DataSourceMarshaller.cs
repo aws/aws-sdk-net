@@ -54,6 +54,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionType);
             }
 
+            if(requestObject.IsSetETag())
+            {
+                context.Writer.WritePropertyName("ETag");
+                context.Writer.Write(requestObject.ETag);
+            }
+
             if(requestObject.IsSetS3DataType())
             {
                 context.Writer.WritePropertyName("S3DataType");

@@ -269,8 +269,10 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To transcribe speech in Modern Standard Arabic (<c>ar-SA</c>), your media file must
-        /// be encoded at a sample rate of 16,000 Hz or higher.
+        /// To transcribe speech in Modern Standard Arabic (<c>ar-SA</c>) in Amazon Web Services
+        /// GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East,
+        /// us-gov-east-1), Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your
+        /// media file must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         ///  </note>
         /// </summary>
@@ -355,8 +357,10 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// To transcribe speech in Modern Standard Arabic (<c>ar-SA</c>), your media file must
-        /// be encoded at a sample rate of 16,000 Hz or higher.
+        /// To transcribe speech in Modern Standard Arabic (<c>ar-SA</c>)in Amazon Web Services
+        /// GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East,
+        /// us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your
+        /// media file must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

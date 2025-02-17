@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies a custom data identifier or managed data identifier that detected a type
-    /// of sensitive data to start excluding or including in an S3 bucket's sensitivity score.
+    /// of sensitive data to exclude from an S3 bucket's sensitivity score.
     /// </summary>
     public partial class SuppressDataIdentifier
     {
@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the custom data identifier or managed data identifier that
-        /// detected the type of sensitive data to exclude or include in the score.
+        /// detected the type of sensitive data to exclude from the score.
         /// </para>
         /// </summary>
         public string Id

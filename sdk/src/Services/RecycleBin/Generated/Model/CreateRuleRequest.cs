@@ -31,13 +31,35 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRule operation.
-    /// Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule">
-    /// Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.
+    /// Creates a Recycle Bin retention rule. You can create two types of retention rules:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Tag-level retention rules</b> - These retention rules use resource tags to identify
+    /// the resources to protect. For each retention rule, you specify one or more tag key
+    /// and value pairs. Resources (of the specified type) that have at least one of these
+    /// tag key and value pairs are automatically retained in the Recycle Bin upon deletion.
+    /// Use this type of retention rule to protect specific resources in your account based
+    /// on their tags.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Region-level retention rules</b> - These retention rules, by default, apply to
+    /// all of the resources (of the specified type) in the Region, even if the resources
+    /// are not tagged. However, you can specify exclusion tags to exclude resources that
+    /// have specific tags. Use this type of retention rule to protect all resources of a
+    /// specific type in a Region.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html">
+    /// Create Recycle Bin retention rules</a> in the <i>Amazon EBS User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateRuleRequest : AmazonRecycleBinRequest
     {
         private string _description;
+        private List<ResourceTag> _excludeResourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private LockConfiguration _lockConfiguration;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private ResourceType _resourceType;
@@ -63,6 +85,31 @@ namespace Amazon.RecycleBin.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExcludeResourceTags. 
+        /// <para>
+        /// [Region-level retention rules only] Specifies the exclusion tags to use to identify
+        /// resources that are to be excluded, or ignored, by a Region-level retention rule. Resources
+        /// that have any of these tags are not retained by the retention rule upon deletion.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify exclusion tags for tag-level retention rules.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<ResourceTag> ExcludeResourceTags
+        {
+            get { return this._excludeResourceTags; }
+            set { this._excludeResourceTags = value; }
+        }
+
+        // Check to see if ExcludeResourceTags property is set
+        internal bool IsSetExcludeResourceTags()
+        {
+            return this._excludeResourceTags != null && (this._excludeResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LockConfiguration. 
         /// <para>
         /// Information about the retention rule lock configuration.
@@ -83,12 +130,12 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// Specifies the resource tags to use to identify resources that are to be retained by
-        /// a tag-level retention rule. For tag-level retention rules, only deleted resources,
-        /// of the specified resource type, that have one or more of the specified tag key and
-        /// value pairs are retained. If a resource is deleted, but it does not have any of the
-        /// specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.
+        /// [Tag-level retention rules only] Specifies the resource tags to use to identify resources
+        /// that are to be retained by a tag-level retention rule. For tag-level retention rules,
+        /// only deleted resources, of the specified resource type, that have one or more of the
+        /// specified tag key and value pairs are retained. If a resource is deleted, but it does
+        /// not have any of the specified tag key and value pairs, it is immediately deleted without
+        /// being retained by the retention rule.
         /// </para>
         ///  
         /// <para>

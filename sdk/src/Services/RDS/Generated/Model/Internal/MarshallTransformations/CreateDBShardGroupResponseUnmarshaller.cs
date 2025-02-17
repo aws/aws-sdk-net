@@ -94,6 +94,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.DBClusterIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBShardGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DBShardGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBShardGroupIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -136,6 +142,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.TagList == null)
+                        {
+                            response.TagList = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.TagList.Add(item);
+                        continue;
+                    }
                 } 
            }
 
@@ -173,10 +190,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMaxAcu"))
-                {
-                    return InvalidMaxAcuExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVPCNetworkStateFault"))
                 {
                     return InvalidVPCNetworkStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -184,6 +197,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MaxDBShardGroupLimitReached"))
                 {
                     return MaxDBShardGroupLimitReachedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NetworkTypeNotSupported"))
+                {
+                    return NetworkTypeNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedDBEngineVersion"))
                 {

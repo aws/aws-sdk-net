@@ -58,8 +58,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-        /// generator and write-only properties</a> in the <i>CloudFormation User Guide</i>.
+        /// The type of this warning. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve
+        /// write-only properties</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

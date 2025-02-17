@@ -376,7 +376,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
         /// The specified entity already exists.
@@ -449,7 +449,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the AddRegion service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -462,7 +462,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -830,7 +830,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
         /// The specified entity already exists.
@@ -907,7 +907,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
         /// The specified entity already exists.
@@ -1373,7 +1373,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -1729,7 +1729,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1937,7 +1937,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeClientAuthenticationSettings service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -2018,7 +2018,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -2205,6 +2205,76 @@ namespace Amazon.DirectoryService
         public virtual DescribeDirectoriesResponse EndDescribeDirectories(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDirectoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDirectoryDataAccess
+
+        /// <summary>
+        /// Obtains status of directory data access enablement through the Directory Service Data
+        /// API for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryDataAccess service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDirectoryDataAccess service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">REST API Reference for DescribeDirectoryDataAccess Operation</seealso>
+        public virtual DescribeDirectoryDataAccessResponse DescribeDirectoryDataAccess(DescribeDirectoryDataAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDirectoryDataAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDirectoryDataAccess operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDirectoryDataAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">REST API Reference for DescribeDirectoryDataAccess Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDirectoryDataAccess(DescribeDirectoryDataAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDirectoryDataAccess.</param>
+        /// 
+        /// <returns>Returns a  DescribeDirectoryDataAccessResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">REST API Reference for DescribeDirectoryDataAccess Operation</seealso>
+        public virtual DescribeDirectoryDataAccessResponse EndDescribeDirectoryDataAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDirectoryDataAccessResponse>(asyncResult);
         }
 
         #endregion
@@ -2435,7 +2505,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -2813,7 +2883,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeUpdateDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -2885,7 +2955,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DisableClientAuthentication service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -2948,6 +3018,82 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DisableDirectoryDataAccess
+
+        /// <summary>
+        /// Deactivates access to directory data via the Directory Service Data API for the specified
+        /// directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDirectoryDataAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableDirectoryDataAccess service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryInDesiredStateException">
+        /// The directory is already updated to desired update type settings.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">REST API Reference for DisableDirectoryDataAccess Operation</seealso>
+        public virtual DisableDirectoryDataAccessResponse DisableDirectoryDataAccess(DisableDirectoryDataAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableDirectoryDataAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableDirectoryDataAccess operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDirectoryDataAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">REST API Reference for DisableDirectoryDataAccess Operation</seealso>
+        public virtual IAsyncResult BeginDisableDirectoryDataAccess(DisableDirectoryDataAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableDirectoryDataAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableDirectoryDataAccessResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">REST API Reference for DisableDirectoryDataAccess Operation</seealso>
+        public virtual DisableDirectoryDataAccessResponse EndDisableDirectoryDataAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableDirectoryDataAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableLDAPS
 
         /// <summary>
@@ -2963,7 +3109,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidLDAPSStatusException">
         /// The LDAP activities could not be performed because they are limited by the LDAPS status.
@@ -3165,7 +3311,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the EnableClientAuthentication service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -3232,6 +3378,82 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  EnableDirectoryDataAccess
+
+        /// <summary>
+        /// Enables access to directory data via the Directory Service Data API for the specified
+        /// directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDirectoryDataAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableDirectoryDataAccess service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryInDesiredStateException">
+        /// The directory is already updated to desired update type settings.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">REST API Reference for EnableDirectoryDataAccess Operation</seealso>
+        public virtual EnableDirectoryDataAccessResponse EnableDirectoryDataAccess(EnableDirectoryDataAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableDirectoryDataAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableDirectoryDataAccess operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDirectoryDataAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">REST API Reference for EnableDirectoryDataAccess Operation</seealso>
+        public virtual IAsyncResult BeginEnableDirectoryDataAccess(EnableDirectoryDataAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableDirectoryDataAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableDirectoryDataAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableDirectoryDataAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableDirectoryDataAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableDirectoryDataAccessResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">REST API Reference for EnableDirectoryDataAccess Operation</seealso>
+        public virtual EnableDirectoryDataAccessResponse EndEnableDirectoryDataAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableDirectoryDataAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableLDAPS
 
         /// <summary>
@@ -3247,7 +3469,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidLDAPSStatusException">
         /// The LDAP activities could not be performed because they are limited by the LDAPS status.
@@ -3962,7 +4184,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidCertificateException">
         /// The certificate PEM that was provided has incorrect encoding.
@@ -4173,7 +4395,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -4241,7 +4463,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the RemoveRegion service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -4250,7 +4472,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in Directory Service.
@@ -4374,6 +4596,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Resets the password for any user in your Managed Microsoft AD or Simple AD directory.
+        /// Disabled users will become enabled and can be authenticated following the API call.
         /// 
         ///  
         /// <para>
@@ -4403,7 +4626,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -4579,7 +4802,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the ShareDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -4667,7 +4890,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -4811,7 +5034,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
         /// The specified entity could not be found.
@@ -4880,7 +5103,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the UpdateDirectorySetup service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// Client authentication is not available in this region at this time.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -4892,7 +5115,7 @@ namespace Amazon.DirectoryService
         /// The directory is already updated to desired update type settings.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -4970,7 +5193,7 @@ namespace Amazon.DirectoryService
         /// A client exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DomainControllerLimitExceededException">
         /// The maximum allowed number of domain controllers per directory was exceeded. The default
@@ -5116,7 +5339,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
-        /// The specified directory is unavailable or could not be found.
+        /// The specified directory is unavailable.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.IncompatibleSettingsException">
         /// The specified directory setting is not compatible with other settings.

@@ -80,7 +80,7 @@ namespace Amazon.Outposts.Model
         /// The ID for the Amazon Web Services Outposts order.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=20)]
         public string OrderId
         {
             get { return this._orderId; }

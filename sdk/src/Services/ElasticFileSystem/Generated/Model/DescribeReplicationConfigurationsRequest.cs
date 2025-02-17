@@ -45,7 +45,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property FileSystemId. 
         /// <para>
         /// You can retrieve the replication configuration for a specific file system by providing
-        /// its file system ID.
+        /// its file system ID. For cross-account,cross-region replication, an account can only
+        /// describe the replication configuration for a file system in its own Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

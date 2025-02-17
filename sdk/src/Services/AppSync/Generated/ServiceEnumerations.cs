@@ -199,6 +199,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly ApiCachingBehavior FULL_REQUEST_CACHING = new ApiCachingBehavior("FULL_REQUEST_CACHING");
         /// <summary>
+        /// Constant OPERATION_LEVEL_CACHING for ApiCachingBehavior
+        /// </summary>
+        public static readonly ApiCachingBehavior OPERATION_LEVEL_CACHING = new ApiCachingBehavior("OPERATION_LEVEL_CACHING");
+        /// <summary>
         /// Constant PER_RESOLVER_CACHING for ApiCachingBehavior
         /// </summary>
         public static readonly ApiCachingBehavior PER_RESOLVER_CACHING = new ApiCachingBehavior("PER_RESOLVER_CACHING");
@@ -765,6 +769,10 @@ namespace Amazon.AppSync
     {
 
         /// <summary>
+        /// Constant AMAZON_BEDROCK_RUNTIME for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_BEDROCK_RUNTIME = new DataSourceType("AMAZON_BEDROCK_RUNTIME");
+        /// <summary>
         /// Constant AMAZON_DYNAMODB for DataSourceType
         /// </summary>
         public static readonly DataSourceType AMAZON_DYNAMODB = new DataSourceType("AMAZON_DYNAMODB");
@@ -883,6 +891,68 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type EventLogLevel.
+    /// </summary>
+    public class EventLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel ALL = new EventLogLevel("ALL");
+        /// <summary>
+        /// Constant DEBUG for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel DEBUG = new EventLogLevel("DEBUG");
+        /// <summary>
+        /// Constant ERROR for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel ERROR = new EventLogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel INFO = new EventLogLevel("INFO");
+        /// <summary>
+        /// Constant NONE for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel NONE = new EventLogLevel("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventLogLevel FindValue(string value)
+        {
+            return FindValue<EventLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventLogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FieldLogLevel.
     /// </summary>
     public class FieldLogLevel : ConstantClass
@@ -893,9 +963,17 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly FieldLogLevel ALL = new FieldLogLevel("ALL");
         /// <summary>
+        /// Constant DEBUG for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel DEBUG = new FieldLogLevel("DEBUG");
+        /// <summary>
         /// Constant ERROR for FieldLogLevel
         /// </summary>
         public static readonly FieldLogLevel ERROR = new FieldLogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel INFO = new FieldLogLevel("INFO");
         /// <summary>
         /// Constant NONE for FieldLogLevel
         /// </summary>

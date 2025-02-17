@@ -46,6 +46,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _engine;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
@@ -166,8 +167,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-        /// Users with Redis OSS AUTH</a> 
+        ///  For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/auth.html">Authenticating
+        /// Users with AUTH</a> 
         /// </para>
         /// </summary>
         public AuthTokenUpdateStrategyType AuthTokenUpdateStrategy
@@ -185,8 +186,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        ///  If you are running Valkey 7.2 or Redis OSS engine version 6.0 or later, set this
+        /// parameter to yes to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
@@ -355,13 +356,32 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Modifies the engine listed in a cluster message. The options are redis, memcached
+        /// or valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The upgraded version of the cache engine to be run on the cache nodes.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version, you must delete the existing cluster
         /// and create it anew with the earlier engine version. 
@@ -383,9 +403,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version
+        /// 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on
+        /// the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -465,7 +485,7 @@ namespace Amazon.ElastiCache.Model
         /// If <c>cross-az</c> is specified, existing Memcached nodes remain in their current
         /// Availability Zone. Only newly created nodes can be located in different Availability
         /// Zones. For guidance on how to move existing Memcached nodes to different Availability
-        /// Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+        /// Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html">Cache
         /// Node Considerations for Memcached</a>.
         /// </para>
         ///  
@@ -619,8 +639,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 40.
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
         /// </para>
         ///  <note> 
         /// <para>

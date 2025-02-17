@@ -48,6 +48,23 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalModelRequestFields);
+            }
+
+            if(requestObject.IsSetGenAiResource())
+            {
+                context.Writer.WritePropertyName("genAiResource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PromptGenAiResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenAiResource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");
@@ -57,6 +74,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.InferenceConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMetadataListValue in requestObject.Metadata)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PromptMetadataEntryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMetadataListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetModelId())

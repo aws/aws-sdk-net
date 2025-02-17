@@ -309,7 +309,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property PerformanceMode. 
         /// <para>
-        /// The Performance mode of the file system.
+        /// The performance mode of the file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,8 +38,28 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class KnowledgeBaseFlowNodeConfiguration
     {
+        private GuardrailConfiguration _guardrailConfiguration;
         private string _knowledgeBaseId;
         private string _modelId;
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// Contains configurations for a guardrail to apply during query and response generation
+        /// for the knowledge base in this configuration.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
@@ -63,8 +83,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model to use to generate a response from the query results.
-        /// Omit this field if you want to return the retrieved results as an array.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> to use to generate a response from the query results. Omit this field
+        /// if you want to return the retrieved results as an array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

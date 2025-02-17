@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and do not believe that
+        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and don't believe that
         /// any action is needed. The finding is no longer updated.
         /// </para>
         ///  </li> <li> 

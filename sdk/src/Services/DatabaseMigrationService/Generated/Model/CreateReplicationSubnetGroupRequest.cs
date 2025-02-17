@@ -81,8 +81,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-        /// underscores, or hyphens. Must not be "default".
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// or hyphens. Must not be "default".
         /// </para>
         ///  
         /// <para>

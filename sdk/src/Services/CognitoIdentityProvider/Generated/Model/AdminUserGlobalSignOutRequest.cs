@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AdminUserGlobalSignOut operation.
     /// Invalidates the identity, access, and refresh tokens that Amazon Cognito issued to
     /// a user. Call this operation with your administrative credentials when your user signs
-    /// out of your app. This results in the following behavior. 
+    /// out of your app. This results in the following behavior.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -59,7 +59,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Other requests might be valid until your user's token expires.
+    /// Other requests might be valid until your user's token expires. This operation doesn't
+    /// clear the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+    /// login</a> session cookie. To clear the session for a user who signed in with managed
+    /// login or the classic hosted UI, direct their browser session to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">logout
+    /// endpoint</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -113,7 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to sign out a user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

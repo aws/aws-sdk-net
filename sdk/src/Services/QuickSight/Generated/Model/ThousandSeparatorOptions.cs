@@ -34,8 +34,30 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ThousandSeparatorOptions
     {
+        private DigitGroupingStyle _groupingStyle;
         private NumericSeparatorSymbol _symbol;
         private Visibility _visibility;
+
+        /// <summary>
+        /// Gets and sets the property GroupingStyle. 
+        /// <para>
+        /// Determines the way numbers are styled to accommodate different readability standards.
+        /// The <c>DEFAULT</c> value uses the standard international grouping system and groups
+        /// numbers by the thousands. The <c>LAKHS</c> value uses the Indian numbering system
+        /// and groups numbers by lakhs and crores.
+        /// </para>
+        /// </summary>
+        public DigitGroupingStyle GroupingStyle
+        {
+            get { return this._groupingStyle; }
+            set { this._groupingStyle = value; }
+        }
+
+        // Check to see if GroupingStyle property is set
+        internal bool IsSetGroupingStyle()
+        {
+            return this._groupingStyle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Symbol. 

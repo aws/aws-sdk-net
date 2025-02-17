@@ -90,6 +90,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.Product);
                 }
 
+                if(publicRequest.IsSetProductUserArn())
+                {
+                    context.Writer.WritePropertyName("ProductUserArn");
+                    context.Writer.Write(publicRequest.ProductUserArn);
+                }
+
                 if(publicRequest.IsSetUsername())
                 {
                     context.Writer.WritePropertyName("Username");

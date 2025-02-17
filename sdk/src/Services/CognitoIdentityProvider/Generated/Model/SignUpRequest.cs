@@ -64,7 +64,17 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// You might receive a <c>LimitExceeded</c> exception in response to this request if
+    /// you have exceeded a rate quota for email or SMS messages, and if your user pool automatically
+    /// verifies email addresses or phone numbers. When you get this exception in the response,
+    /// the user is successfully created and is in an <c>UNCONFIRMED</c> state. You can send
+    /// a new code with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html">
+    /// ResendConfirmationCode</a> request, or confirm the user as an administrator with an
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html">
+    /// AdminConfirmSignUp</a> request.
+    /// </para>
     /// </summary>
     public partial class SignUpRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -141,22 +151,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -177,8 +188,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The password of the user you want to register.
         /// </para>
+        ///  
+        /// <para>
+        /// Users can sign up without a password when your user pool supports passwordless sign-in
+        /// with email or SMS OTPs. To create a user with no password, omit this parameter or
+        /// submit a blank value. You can only create a passwordless user when passwordless sign-in
+        /// is available. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
+        /// SignInPolicyType</a> property of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+        /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }
@@ -195,7 +215,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SecretHash. 
         /// <para>
         /// A keyed-hash message authentication code (HMAC) calculated using the secret key of
-        /// a user pool client and username plus the client ID in the message.
+        /// a user pool client and username plus the client ID in the message. For more information
+        /// about <c>SecretHash</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// secret hash values</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -241,6 +263,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -31,8 +31,7 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSetting operation.
-    /// Allows you to change the basic scan type version by setting the <c>name</c> parameter
-    /// to either <c>CLAIR</c> to <c>AWS_NATIVE</c>.
+    /// Allows you to change the basic scan type version or registry policy scope.
     /// </summary>
     public partial class PutAccountSettingRequest : AmazonECRRequest
     {
@@ -42,7 +41,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Basic scan type version name. 
+        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c> or <c>REGISTRY_POLICY_SCOPE</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -61,8 +61,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Setting value that determines what basic scan type is being used: <c>AWS_NATIVE</c>
-        /// or <c>CLAIR</c>.
+        /// Setting value that is specified. The following are valid values for the basic scan
+        /// type being used: <c>AWS_NATIVE</c> or <c>CLAIR</c>. The following are valid values
+        /// for the registry policy scope being used: <c>V1</c> or <c>V2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

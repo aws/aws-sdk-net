@@ -221,7 +221,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        ///  The creation date and time for a branch that is part of an Amplify app. 
+        /// A timestamp of when Amplify created the branch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -587,7 +587,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  The last updated date and time for a branch that is part of an Amplify app. 
+        /// A timestamp for the last updated time for a branch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

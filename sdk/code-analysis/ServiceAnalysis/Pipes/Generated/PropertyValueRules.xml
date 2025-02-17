@@ -10,7 +10,13 @@
     <property>Amazon.Pipes.Model.CreatePipeRequest.Enrichment</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.CreatePipeRequest.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.CreatePipeRequest.Name</property>
@@ -28,13 +34,13 @@
     <property>Amazon.Pipes.Model.CreatePipeRequest.Source</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.CreatePipeRequest.Target</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.CreatePipeResponse.Arn</property>
@@ -88,7 +94,13 @@
     <property>Amazon.Pipes.Model.DescribePipeResponse.Enrichment</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.DescribePipeResponse.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DescribePipeResponse.Name</property>
@@ -106,7 +118,7 @@
     <property>Amazon.Pipes.Model.DescribePipeResponse.Source</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DescribePipeResponse.StateReason</property>
@@ -118,7 +130,7 @@
     <property>Amazon.Pipes.Model.DescribePipeResponse.Target</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.ListPipesRequest.Limit</property>
@@ -215,7 +227,13 @@
     <property>Amazon.Pipes.Model.UpdatePipeRequest.Enrichment</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Pipes.Model.UpdatePipeRequest.KmsKeyIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_\-/:]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.UpdatePipeRequest.Name</property>
@@ -233,7 +251,7 @@
     <property>Amazon.Pipes.Model.UpdatePipeRequest.Target</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.UpdatePipeResponse.Arn</property>
@@ -276,19 +294,19 @@
     <property>Amazon.Pipes.Model.CloudwatchLogsLogDestination.LogGroupArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:logs:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.CloudwatchLogsLogDestinationParameters.LogGroupArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:logs:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:logs:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):log-group:[\.\-_/#A-Za-z0-9]{1,512}(:\*)?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DeadLetterConfig.Arn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.DimensionMapping.DimensionName</property>
@@ -309,13 +327,13 @@
     <property>Amazon.Pipes.Model.EcsTaskOverride.ExecutionRoleArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.EcsTaskOverride.TaskRoleArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.Filter.Pattern</property>
@@ -326,31 +344,31 @@
     <property>Amazon.Pipes.Model.FirehoseLogDestination.DeliveryStreamArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:firehose:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.FirehoseLogDestinationParameters.DeliveryStreamArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:firehose:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:firehose:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):deliverystream/[a-zA-Z0-9_.-]{1,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MQBrokerAccessCredentials.BasicAuth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MSKAccessCredentials.ClientCertificateTlsAuth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MSKAccessCredentials.SaslScram512Auth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.MultiMeasureAttributeMapping.MeasureValue</property>
@@ -377,7 +395,7 @@
     <property>Amazon.Pipes.Model.Pipe.Enrichment</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.Pipe.Name</property>
@@ -389,7 +407,7 @@
     <property>Amazon.Pipes.Model.Pipe.Source</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.Pipe.StateReason</property>
@@ -401,7 +419,7 @@
     <property>Amazon.Pipes.Model.Pipe.Target</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.PipeEnrichmentParameters.InputTemplate</property>
@@ -538,7 +556,7 @@
     <property>Amazon.Pipes.Model.PipeSourceSelfManagedKafkaParameters.ServerRootCaCertificate</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.PipeSourceSelfManagedKafkaParameters.TopicName</property>
@@ -580,7 +598,7 @@
     <property>Amazon.Pipes.Model.PipeTargetEcsTaskParameters.TaskDefinitionArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?)?:(\d{12})?:(.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.PipeTargetEventBridgeEventBusParameters.DetailType</property>
@@ -629,7 +647,7 @@
     <property>Amazon.Pipes.Model.PipeTargetRedshiftDataParameters.SecretManagerArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)|(\$(\.[\w/_-]+(\[(\d+|\*)\])*)*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.PipeTargetRedshiftDataParameters.StatementName</property>
@@ -700,25 +718,25 @@
     <property>Amazon.Pipes.Model.SelfManagedKafkaAccessConfigurationCredentials.BasicAuth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.SelfManagedKafkaAccessConfigurationCredentials.ClientCertificateTlsAuth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.SelfManagedKafkaAccessConfigurationCredentials.SaslScram256Auth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.SelfManagedKafkaAccessConfigurationCredentials.SaslScram512Auth</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.SingleMeasureMapping.MeasureName</property>
@@ -834,7 +852,7 @@
     <property>Amazon.Pipes.Model.UpdatePipeSourceSelfManagedKafkaParameters.ServerRootCaCertificate</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}):(\d{12}):secret:.+)</pattern>
+    <pattern>(^arn:aws([a-z]|\-)*:secretsmanager:([a-z]{2,4}((-gov)|(-de)|(-iso([a-z]?)))?-[a-z]+(-\d{1})?):(\d{12}):secret:.+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Pipes.Model.UpdatePipeSourceSqsQueueParameters.BatchSize</property>

@@ -31,7 +31,13 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTables operation.
-    /// Returns a list of tables for a specified keyspace.
+    /// The <c>ListTables</c> operation returns a list of tables for a specified keyspace.
+    /// 
+    ///  
+    /// <para>
+    /// To read keyspace metadata using <c>ListTables</c>, the IAM principal needs <c>Select</c>
+    /// action permissions for the system keyspace.
+    /// </para>
     /// </summary>
     public partial class ListTablesRequest : AmazonKeyspacesRequest
     {

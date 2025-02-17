@@ -984,8 +984,9 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Creates a job. A job is a render submission submitted by a user. It contains specific
-        /// job properties outlined as steps and tasks.
+        /// Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule
+        /// and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
+        /// Cloud jobs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -1016,8 +1017,9 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Creates a job. A job is a render submission submitted by a user. It contains specific
-        /// job properties outlined as steps and tasks.
+        /// Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule
+        /// and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
+        /// Cloud jobs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -1119,6 +1121,92 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLicenseEndpoint">REST API Reference for CreateLicenseEndpoint Operation</seealso>
         Task<CreateLicenseEndpointResponse> CreateLicenseEndpointAsync(CreateLicenseEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLimit
+
+
+        /// <summary>
+        /// Creates a limit that manages the distribution of shared resources, such as floating
+        /// licenses. A limit can throttle work assignments, help manage workloads, and track
+        /// current usage. Before you use a limit, you must associate the limit with one or more
+        /// queues. 
+        /// 
+        ///  
+        /// <para>
+        /// You must add the <c>amountRequirementName</c> to a step in a job template to declare
+        /// the limit requirement.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLimit service method.</param>
+        /// 
+        /// <returns>The response from the CreateLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ServiceQuotaExceededException">
+        /// You exceeded your service quota. Service quotas, also referred to as limits, are the
+        /// maximum number of service resources or operations for your Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">REST API Reference for CreateLimit Operation</seealso>
+        CreateLimitResponse CreateLimit(CreateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Creates a limit that manages the distribution of shared resources, such as floating
+        /// licenses. A limit can throttle work assignments, help manage workloads, and track
+        /// current usage. Before you use a limit, you must associate the limit with one or more
+        /// queues. 
+        /// 
+        ///  
+        /// <para>
+        /// You must add the <c>amountRequirementName</c> to a step in a job template to declare
+        /// the limit requirement.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ServiceQuotaExceededException">
+        /// You exceeded your service quota. Service quotas, also referred to as limits, are the
+        /// maximum number of service resources or operations for your Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">REST API Reference for CreateLimit Operation</seealso>
+        Task<CreateLimitResponse> CreateLimitAsync(CreateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1383,6 +1471,72 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueFleetAssociation">REST API Reference for CreateQueueFleetAssociation Operation</seealso>
         Task<CreateQueueFleetAssociationResponse> CreateQueueFleetAssociationAsync(CreateQueueFleetAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateQueueLimitAssociation
+
+
+        /// <summary>
+        /// Associates a limit with a particular queue. After the limit is associated, all workers
+        /// for jobs that specify the limit associated with the queue are subject to the limit.
+        /// You can't associate two limits with the same <c>amountRequirementName</c> to the same
+        /// queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueueLimitAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">REST API Reference for CreateQueueLimitAssociation Operation</seealso>
+        CreateQueueLimitAssociationResponse CreateQueueLimitAssociation(CreateQueueLimitAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Associates a limit with a particular queue. After the limit is associated, all workers
+        /// for jobs that specify the limit associated with the queue are subject to the limit.
+        /// You can't associate two limits with the same <c>amountRequirementName</c> to the same
+        /// queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueueLimitAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">REST API Reference for CreateQueueLimitAssociation Operation</seealso>
+        Task<CreateQueueLimitAssociationResponse> CreateQueueLimitAssociationAsync(CreateQueueLimitAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1786,6 +1940,62 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  DeleteLimit
+
+
+        /// <summary>
+        /// Removes a limit from the specified farm. Before you delete a limit you must use the
+        /// <c>DeleteQueueLimitAssociation</c> operation to remove the association with any queues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLimit service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">REST API Reference for DeleteLimit Operation</seealso>
+        DeleteLimitResponse DeleteLimit(DeleteLimitRequest request);
+
+
+
+        /// <summary>
+        /// Removes a limit from the specified farm. Before you delete a limit you must use the
+        /// <c>DeleteQueueLimitAssociation</c> operation to remove the association with any queues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">REST API Reference for DeleteLimit Operation</seealso>
+        Task<DeleteLimitResponse> DeleteLimitAsync(DeleteLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteMeteredProduct
 
 
@@ -1913,6 +2123,13 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Deletes a queue.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't recover the jobs in a queue if you delete the queue. Deleting the queue
+        /// also deletes the jobs in that queue.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -1944,6 +2161,13 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Deletes a queue.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't recover the jobs in a queue if you delete the queue. Deleting the queue
+        /// also deletes the jobs in that queue.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -2095,6 +2319,80 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueFleetAssociation">REST API Reference for DeleteQueueFleetAssociation Operation</seealso>
         Task<DeleteQueueFleetAssociationResponse> DeleteQueueFleetAssociationAsync(DeleteQueueFleetAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteQueueLimitAssociation
+
+
+        /// <summary>
+        /// Removes the association between a queue and a limit. You must use the <c>UpdateQueueLimitAssociation</c>
+        /// operation to set the status to <c>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</c> or <c>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</c>.
+        /// The status does not change immediately. Use the <c>GetQueueLimitAssociation</c> operation
+        /// to see if the status changed to <c>STOPPED</c> before deleting the association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueueLimitAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">REST API Reference for DeleteQueueLimitAssociation Operation</seealso>
+        DeleteQueueLimitAssociationResponse DeleteQueueLimitAssociation(DeleteQueueLimitAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Removes the association between a queue and a limit. You must use the <c>UpdateQueueLimitAssociation</c>
+        /// operation to set the status to <c>STOP_LIMIT_USAGE_AND_COMPLETE_TASKS</c> or <c>STOP_LIMIT_USAGE_AND_CANCEL_TASKS</c>.
+        /// The status does not change immediately. Use the <c>GetQueueLimitAssociation</c> operation
+        /// to see if the status changed to <c>STOPPED</c> before deleting the association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQueueLimitAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">REST API Reference for DeleteQueueLimitAssociation Operation</seealso>
+        Task<DeleteQueueLimitAssociationResponse> DeleteQueueLimitAssociationAsync(DeleteQueueLimitAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2776,6 +3074,66 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  GetLimit
+
+
+        /// <summary>
+        /// Gets information about a specific limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLimit service method.</param>
+        /// 
+        /// <returns>The response from the GetLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">REST API Reference for GetLimit Operation</seealso>
+        GetLimitResponse GetLimit(GetLimitRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a specific limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">REST API Reference for GetLimit Operation</seealso>
+        Task<GetLimitResponse> GetLimitAsync(GetLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetMonitor
 
 
@@ -3013,6 +3371,66 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueFleetAssociation">REST API Reference for GetQueueFleetAssociation Operation</seealso>
         Task<GetQueueFleetAssociationResponse> GetQueueFleetAssociationAsync(GetQueueFleetAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetQueueLimitAssociation
+
+
+        /// <summary>
+        /// Gets information about a specific association between a queue and a limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueueLimitAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">REST API Reference for GetQueueLimitAssociation Operation</seealso>
+        GetQueueLimitAssociationResponse GetQueueLimitAssociation(GetQueueLimitAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a specific association between a queue and a limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueueLimitAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">REST API Reference for GetQueueLimitAssociation Operation</seealso>
+        Task<GetQueueLimitAssociationResponse> GetQueueLimitAssociationAsync(GetQueueLimitAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3896,6 +4314,66 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  ListJobParameterDefinitions
+
+
+        /// <summary>
+        /// Lists parameter definitions of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobParameterDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListJobParameterDefinitions service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        ListJobParameterDefinitionsResponse ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists parameter definitions of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobParameterDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobParameterDefinitions service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        Task<ListJobParameterDefinitionsResponse> ListJobParameterDefinitionsAsync(ListJobParameterDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListJobs
 
 
@@ -4013,6 +4491,66 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLicenseEndpoints">REST API Reference for ListLicenseEndpoints Operation</seealso>
         Task<ListLicenseEndpointsResponse> ListLicenseEndpointsAsync(ListLicenseEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListLimits
+
+
+        /// <summary>
+        /// Gets a list of limits defined in the specified farm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLimits service method.</param>
+        /// 
+        /// <returns>The response from the ListLimits service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">REST API Reference for ListLimits Operation</seealso>
+        ListLimitsResponse ListLimits(ListLimitsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of limits defined in the specified farm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLimits service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">REST API Reference for ListLimits Operation</seealso>
+        Task<ListLimitsResponse> ListLimitsAsync(ListLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4239,6 +4777,58 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociations">REST API Reference for ListQueueFleetAssociations Operation</seealso>
         Task<ListQueueFleetAssociationsResponse> ListQueueFleetAssociationsAsync(ListQueueFleetAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListQueueLimitAssociations
+
+
+        /// <summary>
+        /// Gets a list of the associations between queues and limits defined in a farm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueLimitAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListQueueLimitAssociations service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">REST API Reference for ListQueueLimitAssociations Operation</seealso>
+        ListQueueLimitAssociationsResponse ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of the associations between queues and limits defined in a farm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueLimitAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueueLimitAssociations service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">REST API Reference for ListQueueLimitAssociations Operation</seealso>
+        Task<ListQueueLimitAssociationsResponse> ListQueueLimitAssociationsAsync(ListQueueLimitAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5328,7 +5918,9 @@ namespace Amazon.Deadline
         /// <summary>
         /// Starts an asynchronous request for getting aggregated statistics about queues and
         /// farms. Get the statistics using the <c>GetSessionsStatisticsAggregation</c> operation.
-        /// Statistics are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
+        /// You can only have one running aggregation for your Deadline Cloud farm. Call the <c>GetSessionsStatisticsAggregation</c>
+        /// operation and check the <c>status</c> field to see if an aggregation is running. Statistics
+        /// are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSessionsStatisticsAggregation service method.</param>
@@ -5358,7 +5950,9 @@ namespace Amazon.Deadline
         /// <summary>
         /// Starts an asynchronous request for getting aggregated statistics about queues and
         /// farms. Get the statistics using the <c>GetSessionsStatisticsAggregation</c> operation.
-        /// Statistics are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
+        /// You can only have one running aggregation for your Deadline Cloud farm. Call the <c>GetSessionsStatisticsAggregation</c>
+        /// operation and check the <c>status</c> field to see if an aggregation is running. Statistics
+        /// are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSessionsStatisticsAggregation service method.</param>
@@ -5716,7 +6310,19 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Updates a job.
+        /// Updates a job. 
+        /// 
+        ///  
+        /// <para>
+        /// When you change the status of the job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
@@ -5747,7 +6353,19 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Updates a job.
+        /// Updates a job. 
+        /// 
+        ///  
+        /// <para>
+        /// When you change the status of the job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">
@@ -5777,6 +6395,66 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLimit
+
+
+        /// <summary>
+        /// Updates the properties of the specified limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLimit service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">REST API Reference for UpdateLimit Operation</seealso>
+        UpdateLimitResponse UpdateLimit(UpdateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Updates the properties of the specified limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLimit service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">REST API Reference for UpdateLimit Operation</seealso>
+        Task<UpdateLimitResponse> UpdateLimitAsync(UpdateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6019,6 +6697,70 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueFleetAssociation">REST API Reference for UpdateQueueFleetAssociation Operation</seealso>
         Task<UpdateQueueFleetAssociationResponse> UpdateQueueFleetAssociationAsync(UpdateQueueFleetAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateQueueLimitAssociation
+
+
+        /// <summary>
+        /// Updates the status of the queue. If you set the status to one of the <c>STOP_LIMIT_USAGE*</c>
+        /// values, there will be a delay before the status transitions to the <c>STOPPED</c>
+        /// state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueLimitAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">REST API Reference for UpdateQueueLimitAssociation Operation</seealso>
+        UpdateQueueLimitAssociationResponse UpdateQueueLimitAssociation(UpdateQueueLimitAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the status of the queue. If you set the status to one of the <c>STOP_LIMIT_USAGE*</c>
+        /// values, there will be a delay before the status transitions to the <c>STOPPED</c>
+        /// state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueLimitAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQueueLimitAssociation service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">REST API Reference for UpdateQueueLimitAssociation Operation</seealso>
+        Task<UpdateQueueLimitAssociationResponse> UpdateQueueLimitAssociationAsync(UpdateQueueLimitAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

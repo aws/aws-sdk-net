@@ -38,6 +38,10 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
+    ///  <b>Tags are added at creation and cannot be updated</b> 
+    /// </para>
+    ///  
+    /// <para>
     ///  <c>PutStoredQuery</c> is an idempotent API. Subsequent requests won’t create a duplicate
     /// resource if one was already created. If a following request has different <c>tags</c>
     /// values, Config will ignore these differences and treat it as an idempotent request

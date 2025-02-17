@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         private int? _iops;
         private string _kmsKeyId;
         private bool? _multiAttachEnabled;
+        private OperatorRequest _operator;
         private string _outpostArn;
         private int? _size;
         private string _snapshotId;
@@ -281,6 +282,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetMultiAttachEnabled()
         {
             return this._multiAttachEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public OperatorRequest Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

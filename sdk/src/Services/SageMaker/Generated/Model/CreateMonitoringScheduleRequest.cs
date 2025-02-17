@@ -31,8 +31,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMonitoringSchedule operation.
-    /// Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor
-    /// the data captured for an Amazon SageMaker Endpoint.
+    /// Creates a schedule that regularly starts Amazon SageMaker AI Processing Jobs to monitor
+    /// the data captured for an Amazon SageMaker AI Endpoint.
     /// </summary>
     public partial class CreateMonitoringScheduleRequest : AmazonSageMakerRequest
     {

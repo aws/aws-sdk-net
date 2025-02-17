@@ -39,13 +39,6 @@ namespace Amazon.DataSync.Model
     /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
     /// NFS file servers</a>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// If you're copying data to or from an Snowcone device, you can also use <c>CreateLocationNfs</c>
-    /// to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
-    /// transfers with Snowcone</a>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateLocationNfsRequest : AmazonDataSyncRequest
     {
@@ -76,13 +69,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property OnPremConfig. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect
-        /// to your NFS file server.
+        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to
+        /// your NFS file server.
         /// </para>
         ///  
         /// <para>
-        /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
-        /// multiple agents for transfers</a>.
+        /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using
+        /// multiple DataSync agents</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -139,7 +139,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to
-        /// HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.
+        /// HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.
         /// </para>
         /// </summary>
         public string Protocol

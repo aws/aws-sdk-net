@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private AttachmentReference _attachment;
         private DateReference _date;
         private EmailReference _email;
+        private EmailMessageReference _emailMessage;
         private NumberReference _number;
         private StringReference _string;
         private UrlReference _url;
@@ -97,6 +98,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetEmail()
         {
             return this._email != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailMessage. 
+        /// <para>
+        /// Information about the reference when the referenceType is <c>EMAIL_MESSAGE</c>. Otherwise,
+        /// null.
+        /// </para>
+        /// </summary>
+        public EmailMessageReference EmailMessage
+        {
+            get { return this._emailMessage; }
+            set { this._emailMessage = value; }
+        }
+
+        // Check to see if EmailMessage property is set
+        internal bool IsSetEmailMessage()
+        {
+            return this._emailMessage != null;
         }
 
         /// <summary>

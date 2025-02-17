@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use <c>AndAllFilters</c> and <c>AndOrFilters</c> in combination with each
+    /// You can use <c>AndAllFilters</c> and <c>OrAllFilters</c> in combination with each
     /// other or with other operations such as <c>EqualsTo</c>. For example:
     /// </para>
     ///  
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AndOrFilters</c> 
+    ///  <c>OrAllFilters</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -63,8 +63,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// This example filters results or documents that belong to the HR department <i>and</i>
-    /// belong to projects that contain "new hires" <i>or</i> "new hiring" in the project
+    /// This example filters results or documents that belong to the HR department <c>AND</c>
+    /// belong to projects that contain "new hires" <c>OR</c> "new hiring" in the project
     /// name (must use <c>ContainAny</c> with <c>StringListValue</c>). This example is filtering
     /// with a depth of 2.
     /// </para>

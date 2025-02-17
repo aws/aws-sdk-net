@@ -86,6 +86,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeleteDirectory);
                 }
 
+                if(publicRequest.IsSetDeleteIdentityCenterApplication())
+                {
+                    context.Writer.WritePropertyName("DeleteIdentityCenterApplication");
+                    context.Writer.Write(publicRequest.DeleteIdentityCenterApplication);
+                }
+
                 if(publicRequest.IsSetForceDelete())
                 {
                     context.Writer.WritePropertyName("ForceDelete");

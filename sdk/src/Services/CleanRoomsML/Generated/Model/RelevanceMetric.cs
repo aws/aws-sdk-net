@@ -59,6 +59,7 @@ namespace Amazon.CleanRoomsML.Model
         /// The relevance score of the generated audience.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public double Score
         {
             get { return this._score.GetValueOrDefault(); }

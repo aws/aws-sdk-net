@@ -44,9 +44,21 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of structures that you can use to filter the results to those that match
-        /// one or more sets of key-value pairs that you specify.
+        /// You can use the following filters to streamline results:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Status
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Username
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -82,7 +94,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call.
+        /// The maximum number of results to return from a single request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -100,7 +112,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for the next set of results.
+        /// A token to specify where to start paginating. This is the nextToken from a previously
+        /// truncated response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -120,8 +133,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <para>
         /// The name of the user-based subscription product.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Product
         {
             get { return this._product; }

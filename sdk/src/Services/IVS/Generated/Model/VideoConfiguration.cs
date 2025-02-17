@@ -31,8 +31,8 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Object specifying a stream’s video configuration, as set up by the broadcaster (usually
-    /// in an encoder). This is part of the <a>IngestConfiguration</a> object and used for
-    /// monitoring stream health.
+    /// in an encoder). This is part of the <a>IngestConfigurations</a> object and the deprecated
+    /// <a>IngestConfiguration</a> object. It is used for monitoring stream health.
     /// </summary>
     public partial class VideoConfiguration
     {
@@ -40,8 +40,11 @@ namespace Amazon.IVS.Model
         private string _avcProfile;
         private string _codec;
         private string _encoder;
+        private string _level;
+        private string _profile;
         private long? _targetBitrate;
         private long? _targetFramerate;
+        private string _track;
         private long? _videoHeight;
         private long? _videoWidth;
 
@@ -120,6 +123,45 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Level. 
+        /// <para>
+        /// Indicates the degree of required decoder performance for a profile. Normally this
+        /// is set automatically by the encoder. When an AVC codec is used, this field has the
+        /// same value as <c>avcLevel</c>.
+        /// </para>
+        /// </summary>
+        public string Level
+        {
+            get { return this._level; }
+            set { this._level = value; }
+        }
+
+        // Check to see if Level property is set
+        internal bool IsSetLevel()
+        {
+            return this._level != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profile. 
+        /// <para>
+        /// Indicates to the decoder the requirements for decoding the stream. When an AVC codec
+        /// is used, this field has the same value as <c>avcProfile</c>.
+        /// </para>
+        /// </summary>
+        public string Profile
+        {
+            get { return this._profile; }
+            set { this._profile = value; }
+        }
+
+        // Check to see if Profile property is set
+        internal bool IsSetProfile()
+        {
+            return this._profile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetBitrate. 
         /// <para>
         /// The expected ingest bitrate (bits per second). This is configured in the encoder.
@@ -153,6 +195,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetTargetFramerate()
         {
             return this._targetFramerate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Track. 
+        /// <para>
+        /// Name of the video track. If multitrack is not enabled, this is track0 (the sole track).
+        /// </para>
+        /// </summary>
+        public string Track
+        {
+            get { return this._track; }
+            set { this._track = value; }
+        }
+
+        // Check to see if Track property is set
+        internal bool IsSetTrack()
+        {
+            return this._track != null;
         }
 
         /// <summary>

@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.EMRContainers.Endpoints;
 using Amazon.EMRContainers.Internal;
@@ -451,6 +452,66 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("EMRContainers")]
+        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new EMRContainersEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://emr-containers.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EMRContainers")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new EMRContainersEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://emr-containers.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EMRContainers")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new EMRContainersEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://emr-containers.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EMRContainers")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new EMRContainersEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://emr-containers.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("EMRContainers")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
@@ -466,21 +527,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("EMRContainers")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new EMRContainersEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://emr-containers-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("EMRContainers")]
         [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
@@ -490,21 +536,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://emr-containers.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("EMRContainers")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new EMRContainersEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonEMRContainersEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://emr-containers.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

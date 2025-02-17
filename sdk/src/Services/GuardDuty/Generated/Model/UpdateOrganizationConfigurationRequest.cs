@@ -62,7 +62,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Represents whether or not to automatically enable member accounts in the organization.
+        /// Represents whether to automatically enable member accounts in the organization. This
+        /// applies to only new member accounts, not the existing member accounts. When a new
+        /// account joins the organization, the chosen features will be enabled for them by default.
         /// </para>
         ///  
         /// <para>
@@ -161,6 +163,12 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. 
         /// <para>
         /// The ID of the detector that configures the delegated administrator.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

@@ -40,7 +40,7 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token value retrieved from a previous call to access the next page of results.
+        /// The token value used to access the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]

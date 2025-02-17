@@ -150,6 +150,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetQueryExecutionOptions())
+            {
+                context.Writer.WritePropertyName("QueryExecutionOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QueryExecutionOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.QueryExecutionOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSheets())
             {
                 context.Writer.WritePropertyName("Sheets");
@@ -160,6 +171,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                     var marshaller = SheetDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSheetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStaticFiles())
+            {
+                context.Writer.WritePropertyName("StaticFiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStaticFilesListValue in requestObject.StaticFiles)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StaticFileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStaticFilesListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     {
         private AfdSignaling _afdSignaling;
         private AntiAlias _antiAlias;
+        private ChromaPositionMode _chromaPositionMode;
         private VideoCodecSettings _codecSettings;
         private ColorMetadata _colorMetadata;
         private Rectangle _crop;
@@ -48,6 +49,7 @@ namespace Amazon.MediaConvert.Model
         private ScalingBehavior _scalingBehavior;
         private int? _sharpness;
         private VideoTimecodeInsertion _timecodeInsertion;
+        private TimecodeTrack _timecodeTrack;
         private VideoPreprocessor _videoPreprocessors;
         private int? _width;
 
@@ -89,14 +91,33 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChromaPositionMode. Specify the chroma sample positioning
+        /// metadata for your H.264 or H.265 output. To have MediaConvert automatically determine
+        /// chroma positioning: We recommend that you keep the default value, Auto. To specify
+        /// center positioning: Choose Force center. To specify top left positioning: Choose Force
+        /// top left.
+        /// </summary>
+        public ChromaPositionMode ChromaPositionMode
+        {
+            get { return this._chromaPositionMode; }
+            set { this._chromaPositionMode = value; }
+        }
+
+        // Check to see if ChromaPositionMode property is set
+        internal bool IsSetChromaPositionMode()
+        {
+            return this._chromaPositionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CodecSettings. Video codec settings contains the group
         /// of settings related to video encoding. The settings in this group vary depending on
         /// the value that you choose for Video codec. For each codec enum that you choose, define
         /// the corresponding settings object. The following lists the codec enum, settings object
         /// pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
-        /// * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
-        /// * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9,
-        /// Vp9Settings * XAVC, XavcSettings
+        /// * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings
+        /// * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings *
+        /// VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
         /// </summary>
         public VideoCodecSettings CodecSettings
         {
@@ -147,7 +168,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property DropFrameTimecode. Applies only to 29.97 fps outputs. When
         /// this feature is enabled, the service will use drop-frame timecode on outputs. If it
         /// is not possible to use drop-frame timecode, the system will fall back to non-drop-frame.
-        /// This setting is enabled by default when Timecode insertion is enabled.
+        /// This setting is enabled by default when Timecode insertion or Timecode track is enabled.
         /// </summary>
         public DropFrameTimecode DropFrameTimecode
         {
@@ -296,6 +317,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimecodeInsertion()
         {
             return this._timecodeInsertion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimecodeTrack. To include a timecode track in your MP4
+        /// output: Choose Enabled. MediaConvert writes the timecode track in the Null Media Header
+        /// box (NMHD), without any timecode text formatting information. You can also specify
+        /// dropframe or non-dropframe timecode under the Drop Frame Timecode setting. To not
+        /// include a timecode track: Keep the default value, Disabled.
+        /// </summary>
+        public TimecodeTrack TimecodeTrack
+        {
+            get { return this._timecodeTrack; }
+            set { this._timecodeTrack = value; }
+        }
+
+        // Check to see if TimecodeTrack property is set
+        internal bool IsSetTimecodeTrack()
+        {
+            return this._timecodeTrack != null;
         }
 
         /// <summary>

@@ -80,13 +80,16 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't update an existing delivery. You can only create and delete deliveries.
+    /// To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.
     /// </para>
     /// </summary>
     public partial class CreateDeliveryRequest : AmazonCloudWatchLogsRequest
     {
         private string _deliveryDestinationArn;
         private string _deliverySourceName;
+        private string _fieldDelimiter;
+        private List<string> _recordFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private S3DeliveryConfiguration _s3DeliveryConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -125,6 +128,65 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDeliverySourceName()
         {
             return this._deliverySourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldDelimiter. 
+        /// <para>
+        /// The field delimiter to use between record fields when the final output format of a
+        /// delivery is in <c>Plain</c>, <c>W3C</c>, or <c>Raw</c> format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public string FieldDelimiter
+        {
+            get { return this._fieldDelimiter; }
+            set { this._fieldDelimiter = value; }
+        }
+
+        // Check to see if FieldDelimiter property is set
+        internal bool IsSetFieldDelimiter()
+        {
+            return this._fieldDelimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordFields. 
+        /// <para>
+        /// The list of record fields to be delivered to the destination, in order. If the delivery's
+        /// log source has mandatory fields, they must be included in this list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public List<string> RecordFields
+        {
+            get { return this._recordFields; }
+            set { this._recordFields = value; }
+        }
+
+        // Check to see if RecordFields property is set
+        internal bool IsSetRecordFields()
+        {
+            return this._recordFields != null && (this._recordFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeliveryConfiguration. 
+        /// <para>
+        /// This structure contains parameters that are valid only when the delivery's delivery
+        /// destination is an S3 bucket.
+        /// </para>
+        /// </summary>
+        public S3DeliveryConfiguration S3DeliveryConfiguration
+        {
+            get { return this._s3DeliveryConfiguration; }
+            set { this._s3DeliveryConfiguration = value; }
+        }
+
+        // Check to see if S3DeliveryConfiguration property is set
+        internal bool IsSetS3DeliveryConfiguration()
+        {
+            return this._s3DeliveryConfiguration != null;
         }
 
         /// <summary>

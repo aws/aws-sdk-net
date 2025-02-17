@@ -36,10 +36,12 @@ namespace Amazon.CustomerProfiles.Model
     {
         private DateTime? _createdAt;
         private string _domainName;
+        private List<string> _eventTriggerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isUnstructured;
         private DateTime? _lastUpdatedAt;
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
         private string _workflowId;
@@ -80,6 +82,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTriggerNames. 
+        /// <para>
+        /// A list of unique names for active event triggers associated with the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> EventTriggerNames
+        {
+            get { return this._eventTriggerNames; }
+            set { this._eventTriggerNames = value; }
+        }
+
+        // Check to see if EventTriggerNames property is set
+        internal bool IsSetEventTriggerNames()
+        {
+            return this._eventTriggerNames != null && (this._eventTriggerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,6 +180,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetObjectTypeNames()
         {
             return this._objectTypeNames != null && (this._objectTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to
+        /// make Customer Profiles requests on your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

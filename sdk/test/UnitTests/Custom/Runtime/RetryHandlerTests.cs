@@ -197,12 +197,12 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-55));
         }
 
-        // Test that even if the diff is less than 5 minutes, we will still retry if the error code is a clock skew error code
-        // and that we will always update the clockskew on a retry.
+        // Tests that if the error code is a definite clockskew error code such as RequestTimeTooSkewed, the request is always retried
+        // and the clock skew is always updated. Purposely setting the skew to -3 to test that the retry handler will only consider the error code.
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void AlwaysRetryOnClockSkewErrorCode()
+        public void AlwaysRetryOnDefiniteClockSkewErrorCode()
         {
             Tester.Reset();
             Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
@@ -214,6 +214,40 @@ namespace AWSSDK.UnitTests
             {
                 var timeString = DateTime.UtcNow.AddMinutes(-3).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
                 var exception = new AmazonS3Exception("(" + timeString + " - ");
+                exception.ErrorCode = "RequestTimeTooSkewed";
+                throw exception;
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                request.RequestContext.Request.Endpoint = requestEndpoint;
+                RuntimePipeline.InvokeSync(request);
+            }, typeof(AmazonServiceException));
+            //Always retrying if the error code is RequestTooSkewed, so we must hit the max attempts here.
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+
+            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -3
+            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-3));
+        }
+
+        // Tests that if the error code is a possible clockskew error such as InvalidSignatureException,  the retry handler
+        // checks the diff to see whether to retry or not. In this case since the diff > 5 minutes we retry.
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryOnPossibleClockSkewErrorCodeIfAboveThreshold()
+        {
+            Tester.Reset();
+            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
+
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
+
+            Tester.Action = (int callCount) =>
+            {
+                var timeString = DateTime.UtcNow.AddMinutes(-7).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+                var exception = new AmazonS3Exception("(" + timeString + " - ");
                 exception.ErrorCode = "InvalidSignatureException";
                 throw exception;
             };
@@ -224,11 +258,46 @@ namespace AWSSDK.UnitTests
                 request.RequestContext.Request.Endpoint = requestEndpoint;
                 RuntimePipeline.InvokeSync(request);
             }, typeof(AmazonServiceException));
-            
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+            //Fails the first attempt, then succeeds on second attempt after retrying.
+            Assert.AreEqual(2, Tester.CallCount);
 
-            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -3
-            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-3));
+            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -7
+            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-7));
+        }
+
+        // Tests that if the error code is a possible clockskew error code such as  AuthFailure, the retry handler
+        // checks the diff to see whether to retry or not. In this case since the diff < 5 minutes we don't retry since this 
+        // is not a clockskew error.
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void NoRetryIfDiffIsBelowMaxThreshold()
+        {
+            Tester.Reset();
+            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
+
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
+
+            Tester.Action = (int callCount) =>
+            {
+                var timeString = DateTime.UtcNow.AddMinutes(-4).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+                var exception = new AmazonS3Exception("(" + timeString + " - ");
+                exception.ErrorCode = "AuthFailure";
+                throw exception;
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                request.RequestContext.Request.Endpoint = requestEndpoint;
+                RuntimePipeline.InvokeSync(request);
+            }, typeof(AmazonServiceException));
+            // Doesn't retry
+            Assert.AreEqual(1, Tester.CallCount);
+
+            // RetryPolicy shouldn't update clockskew because there is none.
+            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) == TimeSpan.FromMinutes(0));
         }
 
         [TestMethod]

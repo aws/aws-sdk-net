@@ -45,7 +45,8 @@ namespace Amazon.CloudFormation.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
-    /// your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+    /// your public extension before publishing</a> in the <i>CloudFormation Command Line
+    /// Interface (CLI) User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -67,8 +68,8 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// An extension must have a test status of <c>PASSED</c> before it can be published.
     /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
-    /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
-    /// User Guide</i>.
+    /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+    /// Line Interface (CLI) User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TestTypeRequest : AmazonCloudFormationRequest
@@ -128,8 +129,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-        /// Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity
-        /// and Access Management User Guide</i>.
+        /// Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]

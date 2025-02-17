@@ -64,8 +64,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-        /// Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
+        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
+        /// for using CloudFormation StackSets</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -107,8 +107,8 @@ namespace Amazon.CloudFormation.Model
         /// The capabilities that are allowed in the stack set. Some stack set templates might
         /// include resources that can affect permissions in your Amazon Web Services account—for
         /// example, by creating new Identity and Access Management (IAM) users. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in CloudFormation Templates.</a> 
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
+        /// IAM resources in CloudFormation templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -231,14 +231,14 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// With <c>self-managed</c> permissions, you must create the administrator and execution
         /// roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.
+        /// self-managed permissions</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
         /// required to deploy to accounts managed by Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
-        /// Service-Managed Stack Set Permissions</a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
+        /// trusted access for stack sets with Organizations</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

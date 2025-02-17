@@ -65,6 +65,17 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StorageConfigurationArn);
             }
 
+            if(requestObject.IsSetThumbnailConfiguration())
+            {
+                context.Writer.WritePropertyName("thumbnailConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ParticipantThumbnailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ThumbnailConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

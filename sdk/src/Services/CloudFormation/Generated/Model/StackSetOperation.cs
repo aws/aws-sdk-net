@@ -78,8 +78,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-        /// Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
+        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// self-managed permissions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -250,8 +250,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+        /// drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public StackSetDriftDetectionDetails StackSetDriftDetectionDetails
@@ -302,8 +302,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <c>QUEUED</c>: [Service-managed permissions] For automatic deployments that require
         /// a sequence of operations, the operation is queued to be performed. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-        /// set operation status codes</a> in the <i>CloudFormation User Guide</i>.
+        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">StackSets
+        /// status codes</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

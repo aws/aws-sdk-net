@@ -65,11 +65,12 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-    /// 
+    /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
+    ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
+    /// | <c>trn2u.48xlarge</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>

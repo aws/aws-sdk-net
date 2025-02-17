@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class Agent
     {
         private string _agentArn;
+        private AgentCollaboration _agentCollaboration;
         private string _agentId;
         private string _agentName;
         private string _agentResourceRoleArn;
@@ -43,6 +44,7 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _customerEncryptionKeyArn;
+        private CustomOrchestration _customOrchestration;
         private string _description;
         private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _foundationModel;
@@ -50,6 +52,7 @@ namespace Amazon.BedrockAgent.Model
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private MemoryConfiguration _memoryConfiguration;
+        private OrchestrationType _orchestrationType;
         private DateTime? _preparedAt;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -72,6 +75,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetAgentArn()
         {
             return this._agentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration settings.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
         }
 
         /// <summary>
@@ -261,6 +282,24 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomOrchestration. 
+        /// <para>
+        ///  Contains custom orchestration configurations for the agent. 
+        /// </para>
+        /// </summary>
+        public CustomOrchestration CustomOrchestration
+        {
+            get { return this._customOrchestration; }
+            set { this._customOrchestration = value; }
+        }
+
+        // Check to see if CustomOrchestration property is set
+        internal bool IsSetCustomOrchestration()
+        {
+            return this._customOrchestration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the agent.
@@ -397,6 +436,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMemoryConfiguration()
         {
             return this._memoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationType. 
+        /// <para>
+        ///  Specifies the orchestration strategy for the agent. 
+        /// </para>
+        /// </summary>
+        public OrchestrationType OrchestrationType
+        {
+            get { return this._orchestrationType; }
+            set { this._orchestrationType = value; }
+        }
+
+        // Check to see if OrchestrationType property is set
+        internal bool IsSetOrchestrationType()
+        {
+            return this._orchestrationType != null;
         }
 
         /// <summary>

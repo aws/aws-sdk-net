@@ -159,8 +159,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeGuruSecurity.CodeAnalysis" Path="|AWSSDK.CodeGuruSecurity.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodePipeline.CodeAnalysis" Path="|AWSSDK.CodePipeline.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodePipeline.CodeAnalysis" Path="|AWSSDK.CodePipeline.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeStar.CodeAnalysis" Path="|AWSSDK.CodeStar.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeStar.CodeAnalysis" Path="|AWSSDK.CodeStar.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeStarconnections.CodeAnalysis" Path="|AWSSDK.CodeStarconnections.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.CodeStarconnections.CodeAnalysis" Path="|AWSSDK.CodeStarconnections.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.CodeStarNotifications.CodeAnalysis" Path="|AWSSDK.CodeStarNotifications.CodeAnalysis|"/>
@@ -321,10 +319,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.InternetMonitor.CodeAnalysis" Path="|AWSSDK.InternetMonitor.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoT.CodeAnalysis" Path="|AWSSDK.IoT.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoT.CodeAnalysis" Path="|AWSSDK.IoT.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoT1ClickDevicesService.CodeAnalysis" Path="|AWSSDK.IoT1ClickDevicesService.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoT1ClickDevicesService.CodeAnalysis" Path="|AWSSDK.IoT1ClickDevicesService.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoT1ClickProjects.CodeAnalysis" Path="|AWSSDK.IoT1ClickProjects.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoT1ClickProjects.CodeAnalysis" Path="|AWSSDK.IoT1ClickProjects.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTAnalytics.CodeAnalysis" Path="|AWSSDK.IoTAnalytics.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTAnalytics.CodeAnalysis" Path="|AWSSDK.IoTAnalytics.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IotData.CodeAnalysis" Path="|AWSSDK.IotData.CodeAnalysis|"/>
@@ -475,8 +469,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NetworkFirewall.CodeAnalysis" Path="|AWSSDK.NetworkFirewall.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NimbleStudio.CodeAnalysis" Path="|AWSSDK.NimbleStudio.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NimbleStudio.CodeAnalysis" Path="|AWSSDK.NimbleStudio.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OAM.CodeAnalysis" Path="|AWSSDK.OAM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.OAM.CodeAnalysis" Path="|AWSSDK.OAM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Omics.CodeAnalysis" Path="|AWSSDK.Omics.CodeAnalysis|"/>
@@ -689,8 +681,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WellArchitected.CodeAnalysis" Path="|AWSSDK.WellArchitected.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkDocs.CodeAnalysis" Path="|AWSSDK.WorkDocs.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkLink.CodeAnalysis" Path="|AWSSDK.WorkLink.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkLink.CodeAnalysis" Path="|AWSSDK.WorkLink.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkMail.CodeAnalysis" Path="|AWSSDK.WorkMail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkMail.CodeAnalysis" Path="|AWSSDK.WorkMail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkMailMessageFlow.CodeAnalysis" Path="|AWSSDK.WorkMailMessageFlow.CodeAnalysis|"/>

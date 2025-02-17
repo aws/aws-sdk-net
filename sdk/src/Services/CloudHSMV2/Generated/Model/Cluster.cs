@@ -41,7 +41,9 @@ namespace Amazon.CloudHSMV2.Model
         private DateTime? _createTimestamp;
         private List<Hsm> _hsms = AWSConfigs.InitializeCollections ? new List<Hsm>() : null;
         private string _hsmType;
+        private DateTime? _hsmTypeRollbackExpiration;
         private ClusterMode _mode;
+        private NetworkType _networkType;
         private string _preCoPassword;
         private string _securityGroup;
         private string _sourceBackupId;
@@ -179,6 +181,24 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HsmTypeRollbackExpiration. 
+        /// <para>
+        /// The timestamp until when the cluster can be rolled back to its original HSM type.
+        /// </para>
+        /// </summary>
+        public DateTime HsmTypeRollbackExpiration
+        {
+            get { return this._hsmTypeRollbackExpiration.GetValueOrDefault(); }
+            set { this._hsmTypeRollbackExpiration = value; }
+        }
+
+        // Check to see if HsmTypeRollbackExpiration property is set
+        internal bool IsSetHsmTypeRollbackExpiration()
+        {
+            return this._hsmTypeRollbackExpiration.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
         /// The mode of the cluster.
@@ -194,6 +214,32 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The cluster's NetworkType can be IPv4 (the default) or DUALSTACK. The IPv4 NetworkType
+        /// restricts communication between your application and the hardware security modules
+        /// (HSMs) to the IPv4 protocol only. The DUALSTACK NetworkType enables communication
+        /// over both IPv4 and IPv6 protocols. To use DUALSTACK, configure your virtual private
+        /// cloud (VPC) and subnets to support both IPv4 and IPv6. This configuration involves
+        /// adding IPv6 Classless Inter-Domain Routing (CIDR) blocks to the existing IPv4 CIDR
+        /// blocks in your subnets. The NetworkType you choose affects the network addressing
+        /// options for your cluster. DUALSTACK provides more flexibility by supporting both IPv4
+        /// and IPv6 communication.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

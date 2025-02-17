@@ -36,12 +36,39 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class PromptConfiguration
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private string _basePromptTemplate;
+        private string _foundationModel;
         private InferenceConfiguration _inferenceConfiguration;
         private CreationMode _parserMode;
         private CreationMode _promptCreationMode;
         private PromptState _promptState;
         private PromptType _promptType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// If the Converse or ConverseStream operations support the model, <c>additionalModelRequestFields</c>
+        /// contains additional inference parameters, beyond the base set of inference parameters
+        /// in the <c>inferenceConfiguration</c> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Inference request parameters and response fields for
+        /// foundation models</i> in the Amazon Bedrock user guide.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property BasePromptTemplate. 
@@ -64,6 +91,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetBasePromptTemplate()
         {
             return this._basePromptTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// The agent's foundation model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string FoundationModel
+        {
+            get { return this._foundationModel; }
+            set { this._foundationModel = value; }
+        }
+
+        // Check to see if FoundationModel property is set
+        internal bool IsSetFoundationModel()
+        {
+            return this._foundationModel != null;
         }
 
         /// <summary>

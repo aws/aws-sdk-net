@@ -102,10 +102,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
-    /// You can only close an account from the Billing and Cost Management console, and you
-    /// must be signed in as the root user. For information on the requirements and process
-    /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+    /// It isn't recommended to use <c>CreateAccount</c> to create multiple temporary accounts,
+    /// and using the <c>CreateAccount</c> API to close accounts is subject to a 30-day usage
+    /// quota. For information on the requirements and process for closing an account, see
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
     /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> </important> <note> 

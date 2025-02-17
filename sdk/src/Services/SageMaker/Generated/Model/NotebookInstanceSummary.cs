@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides summary information for an SageMaker notebook instance.
+    /// Provides summary information for an SageMaker AI notebook instance.
     /// </summary>
     public partial class NotebookInstanceSummary
     {
@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. These repositories are
         /// cloned at the same level as the default repository of your notebook instance. For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker AI Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. When you open a notebook
         /// instance, it opens in the directory that contains this repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker AI Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

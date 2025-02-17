@@ -32,7 +32,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Container for the parameters to the SearchResources operation.
     /// Retrieves (queries) statistical data and other information about Amazon Web Services
-    /// resources that Amazon Macie monitors and analyzes.
+    /// resources that Amazon Macie monitors and analyzes for an account.
     /// </summary>
     public partial class SearchResourcesRequest : AmazonMacie2Request
     {

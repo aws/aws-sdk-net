@@ -48,6 +48,53 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectAdditionalModelRequestFieldsKvp in requestObject.AdditionalModelRequestFields)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalModelRequestFieldsKvp.Key);
+                    var requestObjectAdditionalModelRequestFieldsValue = requestObjectAdditionalModelRequestFieldsKvp.Value;
+
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectAdditionalModelRequestFieldsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetInferenceConfig())
+            {
+                context.Writer.WritePropertyName("inferenceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InferenceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InferenceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPerformanceConfig())
+            {
+                context.Writer.WritePropertyName("performanceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PerformanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerformanceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPromptTemplate())
+            {
+                context.Writer.WritePropertyName("promptTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PromptTemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.PromptTemplate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueryTransformationConfiguration())
             {
                 context.Writer.WritePropertyName("queryTransformationConfiguration");

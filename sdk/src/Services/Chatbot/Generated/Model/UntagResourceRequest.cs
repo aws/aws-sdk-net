@@ -31,7 +31,8 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the supplied tags from a configuration
+    /// Detaches a key-value pair from a resource, as identified by its Amazon Resource Name
+    /// (ARN). Resources are users, servers, roles, and other entities.
     /// </summary>
     public partial class UntagResourceRequest : AmazonChatbotRequest
     {
@@ -39,7 +40,11 @@ namespace Amazon.Chatbot.Model
         private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. The ARN of the configuration.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The value of the resource that will have the tag removed. An Amazon Resource Name
+        /// (ARN) is an identifier for a specific AWS resource, such as a server, user, or role.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
@@ -55,7 +60,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. A list of tag keys to remove from the configuration.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// TagKeys are key-value pairs assigned to ARNs that can be used to group and search
+        /// for resources by type. This metadata can be attached to resources for any purpose.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys

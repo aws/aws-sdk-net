@@ -84,20 +84,10 @@ namespace Amazon.Pipes.Model
         /// <para>
         /// How EventBridge should format the log records.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <c>json</c>: JSON 
+        /// EventBridge currently only supports <c>json</c> formatting.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>plain</c>: Plain text
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>w3c</c>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file
-        /// format</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public S3OutputFormat OutputFormat
         {

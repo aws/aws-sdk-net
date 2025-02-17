@@ -32,6 +32,13 @@ namespace Amazon.IoTFleetWise.Model
     /// <summary>
     /// Container for the parameters to the ImportDecoderManifest operation.
     /// Creates a decoder manifest using your existing CAN DBC file from your local device.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// The CAN signal name must be unique and not repeated across CAN message definitions
+    /// in a .dbc file. 
+    /// </para>
     /// </summary>
     public partial class ImportDecoderManifestRequest : AmazonIoTFleetWiseRequest
     {

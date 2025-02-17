@@ -59,6 +59,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCommitMode())
+            {
+                context.Writer.WritePropertyName("CommitMode");
+                context.Writer.Write(requestObject.CommitMode);
+            }
+
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");

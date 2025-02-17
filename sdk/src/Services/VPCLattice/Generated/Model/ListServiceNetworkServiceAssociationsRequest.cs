@@ -31,17 +31,16 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceNetworkServiceAssociations operation.
-    /// Lists the associations between the service network and the service. You can filter
-    /// the list either by service or service network. You must provide either the service
-    /// network identifier or the service identifier.
+    /// Lists the associations between a service network and a service. You can filter the
+    /// list either by service or service network. You must provide either the service network
+    /// identifier or the service identifier.
     /// 
     ///  
     /// <para>
-    /// Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN),
-    /// such as when a service network is associated with a VPC or when a service is associated
-    /// with a service network. If the association is for a resource that is shared with another
-    /// account, the association includes the local account ID as the prefix in the ARN for
-    /// each account the resource is shared with.
+    /// Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such
+    /// as when a service network is associated with a VPC or when a service is associated
+    /// with a service network. If the association is for a resource is shared with another
+    /// account, the association includes the local account ID as the prefix in the ARN.
     /// </para>
     /// </summary>
     public partial class ListServiceNetworkServiceAssociationsRequest : AmazonVPCLatticeRequest
@@ -92,7 +91,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service.
+        /// The ID or ARN of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=17, Max=2048)]
@@ -111,7 +110,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceNetworkIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service network.
+        /// The ID or ARN of the service network.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=2048)]

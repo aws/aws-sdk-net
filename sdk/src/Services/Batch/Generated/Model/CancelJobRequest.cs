@@ -31,9 +31,8 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// Cancels a job in an Batch job queue. Jobs that are in the <c>SUBMITTED</c> or <c>PENDING</c>
-    /// are canceled. A job in<c>RUNNABLE</c> remains in <c>RUNNABLE</c> until it reaches
-    /// the head of the job queue. Then the job status is updated to <c>FAILED</c>.
+    /// Cancels a job in an Batch job queue. Jobs that are in a <c>SUBMITTED</c>, <c>PENDING</c>,
+    /// or <c>RUNNABLE</c> state are cancelled and the job status is updated to <c>FAILED</c>.
     /// 
     ///  <note> 
     /// <para>
@@ -80,8 +79,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Reason. 
         /// <para>
         /// A message to attach to the job that explains the reason for canceling it. This message
-        /// is returned by future <a>DescribeJobs</a> operations on the job. This message is also
-        /// recorded in the Batch activity logs.
+        /// is returned by future <a>DescribeJobs</a> operations on the job. It is also recorded
+        /// in the Batch activity logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter has as limit of 1024 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

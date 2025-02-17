@@ -86,6 +86,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetHsmType())
+                {
+                    context.Writer.WritePropertyName("HsmType");
+                    context.Writer.Write(publicRequest.HsmType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

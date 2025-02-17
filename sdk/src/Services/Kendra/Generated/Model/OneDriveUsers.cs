@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A list of users whose documents should be indexed. Specify the user names in email
         /// format, for example, <c>username@tenantdomain</c>. If you need to index the documents
-        /// of more than 100 users, use the <c>OneDriveUserS3Path</c> field to specify the location
+        /// of more than 10 users, use the <c>OneDriveUserS3Path</c> field to specify the location
         /// of a file containing a list of users.
         /// </para>
         /// </summary>

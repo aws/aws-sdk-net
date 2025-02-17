@@ -30,7 +30,162 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The challenge response type.
+    /// The responses to the challenge that you received in the previous request. Each challenge
+    /// has its own required response parameters. The following examples are partial JSON
+    /// request bodies that highlight challenge-response parameters.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You must provide a SECRET_HASH parameter in all challenge responses to an app client
+    /// that has a client secret. Include a <c>DEVICE_KEY</c> for device authentication.
+    /// </para>
+    ///  </important> <dl> <dt>SELECT_CHALLENGE</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "[username]",
+    /// "ANSWER": "[Challenge name]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Available challenges are <c>PASSWORD</c>, <c>PASSWORD_SRP</c>, <c>EMAIL_OTP</c>, <c>SMS_OTP</c>,
+    /// and <c>WEB_AUTHN</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Complete authentication in the <c>SELECT_CHALLENGE</c> response for <c>PASSWORD</c>,
+    /// <c>PASSWORD_SRP</c>, and <c>WEB_AUTHN</c>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN",
+    /// "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+    /// AuthenticationResponseJSON</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD",
+    /// "USERNAME": "[username]", "PASSWORD": "[password]"}</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP",
+    /// "USERNAME": "[username]", "SRP_A": "[SRP_A]"}</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For <c>SMS_OTP</c> and <c>EMAIL_OTP</c>, respond with the username and answer. Your
+    /// user pool will send a code for the user to submit in the next challenge response.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP",
+    /// "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP",
+    /// "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  </li> </ul> </dd> <dt>SMS_OTP</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "[code]", "USERNAME":
+    /// "[username]"}</c> 
+    /// </para>
+    ///  </dd> <dt>EMAIL_OTP</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "[code]",
+    /// "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  </dd> <dt>SMS_MFA</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[code]", "USERNAME":
+    /// "[username]"}</c> 
+    /// </para>
+    ///  </dd> <dt>PASSWORD_VERIFIER</dt> <dd> 
+    /// <para>
+    /// This challenge response is part of the SRP flow. Amazon Cognito requires that your
+    /// application respond to this challenge within a few seconds. When the response time
+    /// exceeds this period, your user pool returns a <c>NotAuthorizedException</c> error.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE":
+    /// "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP":
+    /// [timestamp], "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Add <c>"DEVICE_KEY"</c> when you sign in with a remembered device.
+    /// </para>
+    ///  </dd> <dt>CUSTOM_CHALLENGE</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "[username]",
+    /// "ANSWER": "[challenge_answer]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Add <c>"DEVICE_KEY"</c> when you sign in with a remembered device.
+    /// </para>
+    ///  </dd> <dt>NEW_PASSWORD_REQUIRED</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD":
+    /// "[new_password]", "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To set any required attributes that <c>InitiateAuth</c> returned in an <c>requiredAttributes</c>
+    /// parameter, add <c>"userAttributes.[attribute_name]": "[attribute_value]"</c>. This
+    /// parameter can also set values for writable attributes that aren't required by your
+    /// user pool.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// In a <c>NEW_PASSWORD_REQUIRED</c> challenge response, you can't modify a required
+    /// attribute that already has a value. In <c>RespondToAuthChallenge</c>, set a value
+    /// for any keys that Amazon Cognito returned in the <c>requiredAttributes</c> parameter,
+    /// then use the <c>UpdateUserAttributes</c> API operation to modify the value of any
+    /// additional attributes.
+    /// </para>
+    ///  </note> </dd> <dt>SOFTWARE_TOKEN_MFA</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "SOFTWARE_TOKEN_MFA", "ChallengeResponses": {"USERNAME": "[username]",
+    /// "SOFTWARE_TOKEN_MFA_CODE": [authenticator_code]}</c> 
+    /// </para>
+    ///  </dd> <dt>DEVICE_SRP_AUTH</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "DEVICE_SRP_AUTH", "ChallengeResponses": {"USERNAME": "[username]",
+    /// "DEVICE_KEY": "[device_key]", "SRP_A": "[srp_a]"}</c> 
+    /// </para>
+    ///  </dd> <dt>DEVICE_PASSWORD_VERIFIER</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "DEVICE_PASSWORD_VERIFIER", "ChallengeResponses": {"DEVICE_KEY":
+    /// "[device_key]", "PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK":
+    /// "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}</c> 
+    /// </para>
+    ///  </dd> <dt>MFA_SETUP</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "MFA_SETUP", "ChallengeResponses": {"USERNAME": "[username]"},
+    /// "SESSION": "[Session ID from VerifySoftwareToken]"</c> 
+    /// </para>
+    ///  </dd> <dt>SELECT_MFA_TYPE</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]",
+    /// "ANSWER": "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</c> 
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    /// For more information about <c>SECRET_HASH</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+    /// secret hash values</a>. For information about <c>DEVICE_KEY</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+    /// with user devices in your user pool</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
+    /// </para>
     /// </summary>
     public partial class ChallengeResponseType
     {
@@ -40,7 +195,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name.
+        /// The type of challenge that your previous authentication request returned in the parameter
+        /// <c>ChallengeName</c>, for example <c>SMS_MFA</c>.
         /// </para>
         /// </summary>
         public ChallengeName ChallengeName
@@ -58,7 +214,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeResponse. 
         /// <para>
-        /// The challenge response.
+        /// The set of key-value pairs that provides a response to the requested challenge.
         /// </para>
         /// </summary>
         public ChallengeResponse ChallengeResponse

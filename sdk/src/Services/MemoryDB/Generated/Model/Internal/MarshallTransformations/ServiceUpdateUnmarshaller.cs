@@ -84,6 +84,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Engine", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NodesUpdated", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

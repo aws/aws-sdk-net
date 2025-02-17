@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Exceptions. 
         /// <para>
-        /// Lists the failures that cannot be retried in the current Region.
+        /// Lists the failures that cannot be retried.
         /// </para>
         /// </summary>
         public List<DataLakeException> Exceptions
@@ -58,7 +58,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// List if there are more results available. The value of nextToken is a unique pagination
+        /// Lists if there are more results available. The value of nextToken is a unique pagination
         /// token for each page. Repeat the call using the returned token to retrieve the next
         /// page. Keep all other arguments unchanged.
         /// </para>

@@ -174,6 +174,22 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public string ClientAppId { get; set; }
 
+
+        /// <summary>
+        /// Determines the behavior for calculating checksums for request payloads.
+        /// </summary>
+        public RequestChecksumCalculation? RequestChecksumCalculation { get; set; }
+        
+        /// <summary>
+        /// Determines the behavior for validating checksums on response payloads.
+        /// </summary>
+        public ResponseChecksumValidation? ResponseChecksumValidation { get; set; }
+
+        /// <summary>
+        /// The Account ID endpoint mode as preferred, required, or disabled.
+        /// </summary>
+        public AccountIdEndpointMode? AccountIdEndpointMode { get; set; }
+
         /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
@@ -276,6 +292,7 @@ namespace Amazon.Runtime.CredentialManagement
                 "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "," +
                 "RetryMode= " + RetryMode + "," +
                 "MaxAttempts= " + MaxAttempts +
+                "AccountIdEndpointMode= " + AccountIdEndpointMode +
                 "]";
         }
 

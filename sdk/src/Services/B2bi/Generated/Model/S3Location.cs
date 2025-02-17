@@ -31,7 +31,7 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Specifies the details for the Amazon S3 file location that is being used with Amazon
-    /// Web Services B2BI Data Interchange. File locations in Amazon S3 are identified using
+    /// Web Services B2B Data Interchange. File locations in Amazon S3 are identified using
     /// a combination of the bucket and key.
     /// </summary>
     public partial class S3Location

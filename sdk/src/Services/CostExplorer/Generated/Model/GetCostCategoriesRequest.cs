@@ -42,6 +42,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetCostCategoriesRequest : AmazonCostExplorerRequest
     {
+        private string _billingViewArn;
         private string _costCategoryName;
         private Expression _filter;
         private int? _maxResults;
@@ -49,6 +50,29 @@ namespace Amazon.CostExplorer.Model
         private string _searchString;
         private List<SortDefinition> _sortBy = AWSConfigs.InitializeCollections ? new List<SortDefinition>() : null;
         private DateInterval _timePeriod;
+
+        /// <summary>
+        /// Gets and sets the property BillingViewArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The
+        /// ARN is used to specify which particular billing view you want to interact with or
+        /// retrieve information from when making API calls related to Amazon Web Services Billing
+        /// and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews
+        /// API.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string BillingViewArn
+        {
+            get { return this._billingViewArn; }
+            set { this._billingViewArn = value; }
+        }
+
+        // Check to see if BillingViewArn property is set
+        internal bool IsSetBillingViewArn()
+        {
+            return this._billingViewArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CostCategoryName.

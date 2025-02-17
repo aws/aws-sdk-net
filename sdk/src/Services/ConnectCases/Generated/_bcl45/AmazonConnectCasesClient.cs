@@ -39,11 +39,24 @@ namespace Amazon.ConnectCases
     /// <summary>
     /// <para>Implementation for accessing ConnectCases</para>
     ///
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html">Cases
+    /// actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html">Cases
+    /// data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// With Amazon Connect Cases, your agents can track and manage customer issues that require
     /// multiple interactions, follow-up tasks, and teams in your contact center. A case represents
     /// a customer issue. It records the issue, the steps and interactions taken to resolve
     /// the issue, and the outcome. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon
     /// Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonConnectCasesClient : AmazonServiceClient, IAmazonConnectCases
     {
@@ -268,6 +281,87 @@ namespace Amazon.ConnectCases
         #endregion
 
 
+        #region  BatchGetCaseRule
+
+
+        /// <summary>
+        /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
+        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCaseRule service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchGetCaseRule">REST API Reference for BatchGetCaseRule Operation</seealso>
+        public virtual BatchGetCaseRuleResponse BatchGetCaseRule(BatchGetCaseRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCaseRuleResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCaseRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a batch of case rules. In the Amazon Connect admin website, case rules are known
+        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCaseRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchGetCaseRule">REST API Reference for BatchGetCaseRule Operation</seealso>
+        public virtual Task<BatchGetCaseRuleResponse> BatchGetCaseRuleAsync(BatchGetCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCaseRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCaseRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetField
 
 
@@ -435,11 +529,17 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
         /// </para>
-        ///  </note> <pre><c> &lt;p&gt;Creates a case in the specified Cases domain. Case system
-        /// and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt;
-        /// &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt;
-        /// &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full
-        /// customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+        ///  </note> 
+        /// <para>
+        /// Creates a case in the specified Cases domain. Case system and custom fields are taken
+        /// as an array id/value pairs with a declared data types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following fields are required when creating a case:
+        /// </para>
+        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
+        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
         /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
         /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </c></pre>
@@ -486,11 +586,17 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
         /// </para>
-        ///  </note> <pre><c> &lt;p&gt;Creates a case in the specified Cases domain. Case system
-        /// and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt;
-        /// &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt;
-        /// &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full
-        /// customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+        ///  </note> 
+        /// <para>
+        /// Creates a case in the specified Cases domain. Case system and custom fields are taken
+        /// as an array id/value pairs with a declared data types.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following fields are required when creating a case:
+        /// </para>
+        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
+        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
         /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
         /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </c></pre>
@@ -531,6 +637,105 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCaseRule
+
+
+        /// <summary>
+        /// Creates a new case rule. In the Amazon Connect admin website, case rules are known
+        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCaseRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCaseRule">REST API Reference for CreateCaseRule Operation</seealso>
+        public virtual CreateCaseRuleResponse CreateCaseRule(CreateCaseRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCaseRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCaseRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new case rule. In the Amazon Connect admin website, case rules are known
+        /// as <i>case field conditions</i>. For more information about case field conditions,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCaseRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCaseRule">REST API Reference for CreateCaseRule Operation</seealso>
+        public virtual Task<CreateCaseRuleResponse> CreateCaseRuleAsync(CreateCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCaseRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCaseRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -876,7 +1081,11 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
-        ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>type</c> field is reserved for internal use only.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// 
@@ -928,7 +1137,11 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
-        ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>type</c> field is reserved for internal use only.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -979,6 +1192,32 @@ namespace Amazon.ConnectCases
         /// IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within
         /// the same Template. A template can be either Active or Inactive, as indicated by its
         /// status. Inactive templates cannot be used to create cases.
+        /// 
+        ///  
+        /// <para>
+        ///  Other template APIs are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
         /// 
@@ -1027,6 +1266,32 @@ namespace Amazon.ConnectCases
         /// IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within
         /// the same Template. A template can be either Active or Inactive, as indicated by its
         /// status. Inactive templates cannot be used to create cases.
+        /// 
+        ///  
+        /// <para>
+        ///  Other template APIs are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1068,6 +1333,91 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCaseRule
+
+
+        /// <summary>
+        /// Deletes a case rule. In the Amazon Connect admin website, case rules are known as
+        /// <i>case field conditions</i>. For more information about case field conditions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCaseRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCaseRule">REST API Reference for DeleteCaseRule Operation</seealso>
+        public virtual DeleteCaseRuleResponse DeleteCaseRule(DeleteCaseRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCaseRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCaseRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a case rule. In the Amazon Connect admin website, case rules are known as
+        /// <i>case field conditions</i>. For more information about case field conditions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCaseRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCaseRule">REST API Reference for DeleteCaseRule Operation</seealso>
+        public virtual Task<DeleteCaseRuleResponse> DeleteCaseRuleAsync(DeleteCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCaseRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCaseRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1959,7 +2309,29 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Returns the details for the requested template.
+        /// Returns the details for the requested template. Other template APIs are: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
@@ -1993,7 +2365,29 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Returns the details for the requested template.
+        /// Returns the details for the requested template. Other template APIs are: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2026,6 +2420,87 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCaseRules
+
+
+        /// <summary>
+        /// Lists all case rules in a Cases domain. In the Amazon Connect admin website, case
+        /// rules are known as <i>case field conditions</i>. For more information about case field
+        /// conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCaseRules service method.</param>
+        /// 
+        /// <returns>The response from the ListCaseRules service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListCaseRules">REST API Reference for ListCaseRules Operation</seealso>
+        public virtual ListCaseRulesResponse ListCaseRules(ListCaseRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCaseRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCaseRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCaseRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all case rules in a Cases domain. In the Amazon Connect admin website, case
+        /// rules are known as <i>case field conditions</i>. For more information about case field
+        /// conditions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCaseRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCaseRules service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListCaseRules">REST API Reference for ListCaseRules Operation</seealso>
+        public virtual Task<ListCaseRulesResponse> ListCaseRulesAsync(ListCaseRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCaseRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCaseRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCaseRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2479,7 +2954,33 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Lists all of the templates in a Cases domain. Each list item is a condensed summary
-        /// object of the template.
+        /// object of the template. 
+        /// 
+        ///  
+        /// <para>
+        ///  Other template APIs are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
         /// 
@@ -2514,7 +3015,33 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Lists all of the templates in a Cases domain. Each list item is a condensed summary
-        /// object of the template.
+        /// object of the template. 
+        /// 
+        ///  
+        /// <para>
+        ///  Other template APIs are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -2969,10 +3496,16 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
         /// </para>
-        ///  </note> <pre><c> &lt;p&gt;Updates the values of fields on a case. Fields to be updated
-        /// are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt;
-        /// input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an
-        /// HTTP 200 response with an empty HTTP body.&lt;/p&gt; </c></pre>
+        ///  </note> 
+        /// <para>
+        /// Updates the values of fields on a case. Fields to be updated are received as an array
+        /// of id/value pairs identical to the <c>CreateCase</c> input .
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action is successful, the service sends back an HTTP 200 response with an empty
+        /// HTTP body.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// 
@@ -3011,10 +3544,16 @@ namespace Amazon.ConnectCases
         /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
         /// permission on the User ARN resource that you provide
         /// </para>
-        ///  </note> <pre><c> &lt;p&gt;Updates the values of fields on a case. Fields to be updated
-        /// are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt;
-        /// input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an
-        /// HTTP 200 response with an empty HTTP body.&lt;/p&gt; </c></pre>
+        ///  </note> 
+        /// <para>
+        /// Updates the values of fields on a case. Fields to be updated are received as an array
+        /// of id/value pairs identical to the <c>CreateCase</c> input .
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action is successful, the service sends back an HTTP 200 response with an empty
+        /// HTTP body.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// <param name="cancellationToken">
@@ -3047,6 +3586,97 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCaseRule
+
+
+        /// <summary>
+        /// Updates a case rule. In the Amazon Connect admin website, case rules are known as
+        /// <i>case field conditions</i>. For more information about case field conditions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCaseRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCaseRule">REST API Reference for UpdateCaseRule Operation</seealso>
+        public virtual UpdateCaseRuleResponse UpdateCaseRule(UpdateCaseRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCaseRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCaseRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a case rule. In the Amazon Connect admin website, case rules are known as
+        /// <i>case field conditions</i>. For more information about case field conditions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
+        /// case field conditions to a case template</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCaseRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCaseRule service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCaseRule">REST API Reference for UpdateCaseRule Operation</seealso>
+        public virtual Task<UpdateCaseRuleResponse> UpdateCaseRuleAsync(UpdateCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCaseRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCaseRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCaseRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3270,6 +3900,32 @@ namespace Amazon.ConnectCases
         /// and <c>status</c>. At least one of these attributes must not be null. If a null value
         /// is provided for a given attribute, that attribute is ignored and its current value
         /// is preserved.
+        /// 
+        ///  
+        /// <para>
+        /// Other template APIs are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// 
@@ -3313,6 +3969,32 @@ namespace Amazon.ConnectCases
         /// and <c>status</c>. At least one of these attributes must not be null. If a null value
         /// is provided for a given attribute, that attribute is ignored and its current value
         /// is preserved.
+        /// 
+        ///  
+        /// <para>
+        /// Other template APIs are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// <param name="cancellationToken">

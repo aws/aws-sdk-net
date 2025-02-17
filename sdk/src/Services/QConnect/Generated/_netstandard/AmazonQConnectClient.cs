@@ -39,7 +39,17 @@ namespace Amazon.QConnect
     /// <summary>
     /// <para>Implementation for accessing QConnect</para>
     ///
-    /// <note> 
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Q_Connect.html">Amazon
+    /// Q actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Q_Connect.html">Amazon
+    /// Q data types</a> 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     ///  <b>Powered by Amazon Bedrock</b>: Amazon Web Services implements <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html">automated
     /// abuse detection</a>. Because Amazon Q in Connect is built on Amazon Bedrock, users
@@ -299,6 +309,397 @@ namespace Amazon.QConnect
         #endregion
 
 
+        #region  ActivateMessageTemplate
+
+        internal virtual ActivateMessageTemplateResponse ActivateMessageTemplate(ActivateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<ActivateMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Activates a specific version of the Amazon Q in Connect message template. After the
+        /// version is activated, the previous active version will be deactivated automatically.
+        /// You can use the <c>$ACTIVE_VERSION</c> qualifier later to reference the version that
+        /// is in active status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ActivateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ActivateMessageTemplate">REST API Reference for ActivateMessageTemplate Operation</seealso>
+        public virtual Task<ActivateMessageTemplateResponse> ActivateMessageTemplateAsync(ActivateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ActivateMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIAgent
+
+        internal virtual CreateAIAgentResponse CreateAIAgent(CreateAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect AI Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgent">REST API Reference for CreateAIAgent Operation</seealso>
+        public virtual Task<CreateAIAgentResponse> CreateAIAgentAsync(CreateAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIAgentVersion
+
+        internal virtual CreateAIAgentVersionResponse CreateAIAgentVersion(CreateAIAgentVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIAgentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIAgentVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIAgentVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates and Amazon Q in Connect AI Agent version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIAgentVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIAgentVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgentVersion">REST API Reference for CreateAIAgentVersion Operation</seealso>
+        public virtual Task<CreateAIAgentVersionResponse> CreateAIAgentVersionAsync(CreateAIAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIAgentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIAgentVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIAgentVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIGuardrail
+
+        internal virtual CreateAIGuardrailResponse CreateAIGuardrail(CreateAIGuardrailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIGuardrailResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIGuardrailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect AI Guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIGuardrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIGuardrail service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIGuardrail">REST API Reference for CreateAIGuardrail Operation</seealso>
+        public virtual Task<CreateAIGuardrailResponse> CreateAIGuardrailAsync(CreateAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIGuardrailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIGuardrailVersion
+
+        internal virtual CreateAIGuardrailVersionResponse CreateAIGuardrailVersion(CreateAIGuardrailVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIGuardrailVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIGuardrailVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIGuardrailVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect AI Guardrail version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIGuardrailVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIGuardrailVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIGuardrailVersion">REST API Reference for CreateAIGuardrailVersion Operation</seealso>
+        public virtual Task<CreateAIGuardrailVersionResponse> CreateAIGuardrailVersionAsync(CreateAIGuardrailVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIGuardrailVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIGuardrailVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIGuardrailVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIPrompt
+
+        internal virtual CreateAIPromptResponse CreateAIPrompt(CreateAIPromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIPromptResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIPromptResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect AI Prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIPrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIPrompt service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPrompt">REST API Reference for CreateAIPrompt Operation</seealso>
+        public virtual Task<CreateAIPromptResponse> CreateAIPromptAsync(CreateAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIPromptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIPromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIPromptVersion
+
+        internal virtual CreateAIPromptVersionResponse CreateAIPromptVersion(CreateAIPromptVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIPromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIPromptVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIPromptVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect AI Prompt version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIPromptVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIPromptVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPromptVersion">REST API Reference for CreateAIPromptVersion Operation</seealso>
+        public virtual Task<CreateAIPromptVersionResponse> CreateAIPromptVersionAsync(CreateAIPromptVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAIPromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIPromptVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAIPromptVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAssistant
 
         internal virtual CreateAssistantResponse CreateAssistant(CreateAssistantRequest request)
@@ -624,6 +1025,191 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  CreateMessageTemplate
+
+        internal virtual CreateMessageTemplateResponse CreateMessageTemplate(CreateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect message template. The name of the message template
+        /// has to be unique for each knowledge base. The channel subtype of the message template
+        /// is immutable and cannot be modified after creation. After the message template is
+        /// created, you can use the <c>$LATEST</c> qualifier to reference the created message
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplate">REST API Reference for CreateMessageTemplate Operation</seealso>
+        public virtual Task<CreateMessageTemplateResponse> CreateMessageTemplateAsync(CreateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMessageTemplateAttachment
+
+        internal virtual CreateMessageTemplateAttachmentResponse CreateMessageTemplateAttachment(CreateMessageTemplateAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Uploads an attachment file to the specified Amazon Q in Connect message template.
+        /// The name of the message template attachment has to be unique for each message template
+        /// referenced by the <c>$LATEST</c> qualifier. The body of the attachment file should
+        /// be encoded using base64 encoding. After the file is uploaded, you can use the pre-signed
+        /// Amazon S3 URL returned in response to download the uploaded file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplateAttachment service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateAttachment">REST API Reference for CreateMessageTemplateAttachment Operation</seealso>
+        public virtual Task<CreateMessageTemplateAttachmentResponse> CreateMessageTemplateAttachmentAsync(CreateMessageTemplateAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMessageTemplateAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMessageTemplateVersion
+
+        internal virtual CreateMessageTemplateVersionResponse CreateMessageTemplateVersion(CreateMessageTemplateVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Amazon Q in Connect message template version from the current content
+        /// and configuration of a message template. Versions are immutable and monotonically
+        /// increasing. Once a version is created, you can reference a specific version of the
+        /// message template by passing in <c>&lt;message-template-id&gt;:&lt;versionNumber&gt;</c>
+        /// as the message template identifier. An error is displayed if the supplied <c>messageTemplateContentSha256</c>
+        /// is different from the <c>messageTemplateContentSha256</c> of the message template
+        /// with <c>$LATEST</c> qualifier. If multiple <c>CreateMessageTemplateVersion</c> requests
+        /// are made while the message template remains the same, only the first invocation creates
+        /// a new version and the succeeding requests will return the same response as the first
+        /// invocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplateVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateVersion">REST API Reference for CreateMessageTemplateVersion Operation</seealso>
+        public virtual Task<CreateMessageTemplateVersionResponse> CreateMessageTemplateVersionAsync(CreateMessageTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMessageTemplateVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateQuickResponse
 
         internal virtual CreateQuickResponseResponse CreateQuickResponse(CreateQuickResponseRequest request)
@@ -724,6 +1310,360 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeactivateMessageTemplate
+
+        internal virtual DeactivateMessageTemplateResponse DeactivateMessageTemplate(DeactivateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deactivates a specific version of the Amazon Q in Connect message template . After
+        /// the version is deactivated, you can no longer use the <c>$ACTIVE_VERSION</c> qualifier
+        /// to reference the version in active status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeactivateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeactivateMessageTemplate">REST API Reference for DeactivateMessageTemplate Operation</seealso>
+        public virtual Task<DeactivateMessageTemplateResponse> DeactivateMessageTemplateAsync(DeactivateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeactivateMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIAgent
+
+        internal virtual DeleteAIAgentResponse DeleteAIAgent(DeleteAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect AI Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgent">REST API Reference for DeleteAIAgent Operation</seealso>
+        public virtual Task<DeleteAIAgentResponse> DeleteAIAgentAsync(DeleteAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIAgentVersion
+
+        internal virtual DeleteAIAgentVersionResponse DeleteAIAgentVersion(DeleteAIAgentVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIAgentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIAgentVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIAgentVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect AI Agent Version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIAgentVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIAgentVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgentVersion">REST API Reference for DeleteAIAgentVersion Operation</seealso>
+        public virtual Task<DeleteAIAgentVersionResponse> DeleteAIAgentVersionAsync(DeleteAIAgentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIAgentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIAgentVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIAgentVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIGuardrail
+
+        internal virtual DeleteAIGuardrailResponse DeleteAIGuardrail(DeleteAIGuardrailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIGuardrailResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIGuardrailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect AI Guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIGuardrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIGuardrail service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIGuardrail">REST API Reference for DeleteAIGuardrail Operation</seealso>
+        public virtual Task<DeleteAIGuardrailResponse> DeleteAIGuardrailAsync(DeleteAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIGuardrailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIGuardrailVersion
+
+        internal virtual DeleteAIGuardrailVersionResponse DeleteAIGuardrailVersion(DeleteAIGuardrailVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIGuardrailVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIGuardrailVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIGuardrailVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete and Amazon Q in Connect AI Guardrail version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIGuardrailVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIGuardrailVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIGuardrailVersion">REST API Reference for DeleteAIGuardrailVersion Operation</seealso>
+        public virtual Task<DeleteAIGuardrailVersionResponse> DeleteAIGuardrailVersionAsync(DeleteAIGuardrailVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIGuardrailVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIGuardrailVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIGuardrailVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIPrompt
+
+        internal virtual DeleteAIPromptResponse DeleteAIPrompt(DeleteAIPromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIPromptResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIPromptResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect AI Prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIPrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIPrompt service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPrompt">REST API Reference for DeleteAIPrompt Operation</seealso>
+        public virtual Task<DeleteAIPromptResponse> DeleteAIPromptAsync(DeleteAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIPromptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIPromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIPromptVersion
+
+        internal virtual DeleteAIPromptVersionResponse DeleteAIPromptVersion(DeleteAIPromptVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIPromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIPromptVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIPromptVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete and Amazon Q in Connect AI Prompt version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIPromptVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIPromptVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPromptVersion">REST API Reference for DeleteAIPromptVersion Operation</seealso>
+        public virtual Task<DeleteAIPromptVersionResponse> DeleteAIPromptVersionAsync(DeleteAIPromptVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAIPromptVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIPromptVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAIPromptVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1018,6 +1958,116 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  DeleteMessageTemplate
+
+        internal virtual DeleteMessageTemplateResponse DeleteMessageTemplate(DeleteMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect message template entirely or a specific version of
+        /// the message template if version is supplied in the request. You can provide the message
+        /// template identifier as <c>&lt;message-template-id&gt;:&lt;versionNumber&gt;</c> to
+        /// delete a specific version of the message template. If it is not supplied, the message
+        /// template and all available versions will be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplate">REST API Reference for DeleteMessageTemplate Operation</seealso>
+        public virtual Task<DeleteMessageTemplateResponse> DeleteMessageTemplateAsync(DeleteMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMessageTemplateAttachment
+
+        internal virtual DeleteMessageTemplateAttachmentResponse DeleteMessageTemplateAttachment(DeleteMessageTemplateAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMessageTemplateAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the attachment file from the Amazon Q in Connect message template that is
+        /// referenced by <c>$LATEST</c> qualifier. Attachments on available message template
+        /// versions will remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplateAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMessageTemplateAttachment service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplateAttachment">REST API Reference for DeleteMessageTemplateAttachment Operation</seealso>
+        public virtual Task<DeleteMessageTemplateAttachmentResponse> DeleteMessageTemplateAttachmentAsync(DeleteMessageTemplateAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMessageTemplateAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteQuickResponse
 
         internal virtual DeleteQuickResponseResponse DeleteQuickResponse(DeleteQuickResponseRequest request)
@@ -1057,6 +2107,144 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = DeleteQuickResponseResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteQuickResponseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAIAgent
+
+        internal virtual GetAIAgentResponse GetAIAgent(GetAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<GetAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets an Amazon Q in Connect AI Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIAgent">REST API Reference for GetAIAgent Operation</seealso>
+        public virtual Task<GetAIAgentResponse> GetAIAgentAsync(GetAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAIGuardrail
+
+        internal virtual GetAIGuardrailResponse GetAIGuardrail(GetAIGuardrailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIGuardrailResponseUnmarshaller.Instance;
+
+            return Invoke<GetAIGuardrailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the Amazon Q in Connect AI Guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAIGuardrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAIGuardrail service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIGuardrail">REST API Reference for GetAIGuardrail Operation</seealso>
+        public virtual Task<GetAIGuardrailResponse> GetAIGuardrailAsync(GetAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIGuardrailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAIGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAIPrompt
+
+        internal virtual GetAIPromptResponse GetAIPrompt(GetAIPromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIPromptResponseUnmarshaller.Instance;
+
+            return Invoke<GetAIPromptResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets and Amazon Q in Connect AI Prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAIPrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAIPrompt service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIPrompt">REST API Reference for GetAIPrompt Operation</seealso>
+        public virtual Task<GetAIPromptResponse> GetAIPromptAsync(GetAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAIPromptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAIPromptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1370,6 +2558,99 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  GetMessageTemplate
+
+        internal virtual GetMessageTemplateResponse GetMessageTemplate(GetMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the Amazon Q in Connect message template. The message template identifier
+        /// can contain an optional qualifier, for example, <c>&lt;message-template-id&gt;:&lt;qualifier&gt;</c>,
+        /// which is either an actual version number or an Amazon Q Connect managed qualifier
+        /// <c>$ACTIVE_VERSION</c> | <c>$LATEST</c>. If it is not supplied, then <c>$LATEST</c>
+        /// is assumed implicitly.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetMessageTemplate">REST API Reference for GetMessageTemplate Operation</seealso>
+        public virtual Task<GetMessageTemplateResponse> GetMessageTemplateAsync(GetMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNextMessage
+
+        internal virtual GetNextMessageResponse GetNextMessage(GetNextMessageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNextMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNextMessageResponseUnmarshaller.Instance;
+
+            return Invoke<GetNextMessageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves next message on an Amazon Q in Connect session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNextMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNextMessage service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetNextMessage">REST API Reference for GetNextMessage Operation</seealso>
+        public virtual Task<GetNextMessageResponse> GetNextMessageAsync(GetNextMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNextMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNextMessageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNextMessageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetQuickResponse
 
         internal virtual GetQuickResponseResponse GetQuickResponse(GetQuickResponseRequest request)
@@ -1511,6 +2792,282 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIAgents
+
+        internal virtual ListAIAgentsResponse ListAIAgents(ListAIAgentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIAgentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIAgentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists AI Agents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIAgents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIAgents service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgents">REST API Reference for ListAIAgents Operation</seealso>
+        public virtual Task<ListAIAgentsResponse> ListAIAgentsAsync(ListAIAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIAgentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIAgentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIAgentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIAgentVersions
+
+        internal virtual ListAIAgentVersionsResponse ListAIAgentVersions(ListAIAgentVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIAgentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIAgentVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIAgentVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List AI Agent versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIAgentVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIAgentVersions service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgentVersions">REST API Reference for ListAIAgentVersions Operation</seealso>
+        public virtual Task<ListAIAgentVersionsResponse> ListAIAgentVersionsAsync(ListAIAgentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIAgentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIAgentVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIAgentVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIGuardrails
+
+        internal virtual ListAIGuardrailsResponse ListAIGuardrails(ListAIGuardrailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIGuardrailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIGuardrailsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIGuardrailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the AI Guardrails available on the Amazon Q in Connect assistant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIGuardrails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIGuardrails service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIGuardrails">REST API Reference for ListAIGuardrails Operation</seealso>
+        public virtual Task<ListAIGuardrailsResponse> ListAIGuardrailsAsync(ListAIGuardrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIGuardrailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIGuardrailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIGuardrailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIGuardrailVersions
+
+        internal virtual ListAIGuardrailVersionsResponse ListAIGuardrailVersions(ListAIGuardrailVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIGuardrailVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIGuardrailVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIGuardrailVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists AI Guardrail versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIGuardrailVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIGuardrailVersions service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIGuardrailVersions">REST API Reference for ListAIGuardrailVersions Operation</seealso>
+        public virtual Task<ListAIGuardrailVersionsResponse> ListAIGuardrailVersionsAsync(ListAIGuardrailVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIGuardrailVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIGuardrailVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIGuardrailVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIPrompts
+
+        internal virtual ListAIPromptsResponse ListAIPrompts(ListAIPromptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIPromptsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIPromptsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the AI Prompts available on the Amazon Q in Connect assistant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIPrompts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIPrompts service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPrompts">REST API Reference for ListAIPrompts Operation</seealso>
+        public virtual Task<ListAIPromptsResponse> ListAIPromptsAsync(ListAIPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIPromptsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIPromptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIPromptVersions
+
+        internal virtual ListAIPromptVersionsResponse ListAIPromptVersions(ListAIPromptVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIPromptVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIPromptVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIPromptVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists AI Prompt versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIPromptVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIPromptVersions service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPromptVersions">REST API Reference for ListAIPromptVersions Operation</seealso>
+        public virtual Task<ListAIPromptVersionsResponse> ListAIPromptVersionsAsync(ListAIPromptVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAIPromptVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIPromptVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAIPromptVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1772,6 +3329,142 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  ListMessages
+
+        internal virtual ListMessagesResponse ListMessages(ListMessagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMessagesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists messages on an Amazon Q in Connect session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMessages service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessages">REST API Reference for ListMessages Operation</seealso>
+        public virtual Task<ListMessagesResponse> ListMessagesAsync(ListMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMessagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMessageTemplates
+
+        internal virtual ListMessageTemplatesResponse ListMessageTemplates(ListMessageTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMessageTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the available Amazon Q in Connect message templates for the specified knowledge
+        /// base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMessageTemplates service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplates">REST API Reference for ListMessageTemplates Operation</seealso>
+        public virtual Task<ListMessageTemplatesResponse> ListMessageTemplatesAsync(ListMessageTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMessageTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMessageTemplateVersions
+
+        internal virtual ListMessageTemplateVersionsResponse ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMessageTemplateVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the available versions for the specified Amazon Q in Connect message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplateVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMessageTemplateVersions service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplateVersions">REST API Reference for ListMessageTemplateVersions Operation</seealso>
+        public virtual Task<ListMessageTemplateVersionsResponse> ListMessageTemplateVersionsAsync(ListMessageTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMessageTemplateVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListQuickResponses
 
         internal virtual ListQuickResponsesResponse ListQuickResponses(ListQuickResponsesRequest request)
@@ -2004,6 +3697,52 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  RemoveAssistantAIAgent
+
+        internal virtual RemoveAssistantAIAgentResponse RemoveAssistantAIAgent(RemoveAssistantAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAssistantAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAssistantAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAssistantAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAssistantAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveAssistantAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveAssistantAIAgent">REST API Reference for RemoveAssistantAIAgent Operation</seealso>
+        public virtual Task<RemoveAssistantAIAgentResponse> RemoveAssistantAIAgentAsync(RemoveAssistantAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveAssistantAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAssistantAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAssistantAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveKnowledgeBaseTemplateUri
 
         internal virtual RemoveKnowledgeBaseTemplateUriResponse RemoveKnowledgeBaseTemplateUri(RemoveKnowledgeBaseTemplateUriRequest request)
@@ -2043,6 +3782,56 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = RemoveKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RenderMessageTemplate
+
+        internal virtual RenderMessageTemplateResponse RenderMessageTemplate(RenderMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<RenderMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Renders the Amazon Q in Connect message template based on the attribute values provided
+        /// and generates the message content. For any variable present in the message template,
+        /// if the attribute value is neither provided in the attribute request parameter nor
+        /// the default attribute of the message template, the rendered message content will keep
+        /// the variable placeholder as it is and return the attribute keys that are missing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenderMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RenderMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RenderMessageTemplate">REST API Reference for RenderMessageTemplate Operation</seealso>
+        public virtual Task<RenderMessageTemplateResponse> RenderMessageTemplateAsync(RenderMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RenderMessageTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2087,6 +3876,52 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = SearchContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchMessageTemplates
+
+        internal virtual SearchMessageTemplatesResponse SearchMessageTemplates(SearchMessageTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchMessageTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for Amazon Q in Connect message templates in the specified knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchMessageTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchMessageTemplates service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchMessageTemplates">REST API Reference for SearchMessageTemplates Operation</seealso>
+        public virtual Task<SearchMessageTemplatesResponse> SearchMessageTemplatesAsync(SearchMessageTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchMessageTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2179,6 +4014,63 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = SearchSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendMessage
+
+        internal virtual SendMessageResponse SendMessage(SendMessageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
+
+            return Invoke<SendMessageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Submits a message to the Amazon Q in Connect session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendMessage service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SendMessage">REST API Reference for SendMessage Operation</seealso>
+        public virtual Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2372,6 +4264,208 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  UpdateAIAgent
+
+        internal virtual UpdateAIAgentResponse UpdateAIAgent(UpdateAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an AI Agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIAgent">REST API Reference for UpdateAIAgent Operation</seealso>
+        public virtual Task<UpdateAIAgentResponse> UpdateAIAgentAsync(UpdateAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAIGuardrail
+
+        internal virtual UpdateAIGuardrailResponse UpdateAIGuardrail(UpdateAIGuardrailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIGuardrailResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAIGuardrailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an AI Guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAIGuardrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAIGuardrail service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIGuardrail">REST API Reference for UpdateAIGuardrail Operation</seealso>
+        public virtual Task<UpdateAIGuardrailResponse> UpdateAIGuardrailAsync(UpdateAIGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIGuardrailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIGuardrailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAIGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAIPrompt
+
+        internal virtual UpdateAIPromptResponse UpdateAIPrompt(UpdateAIPromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIPromptResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAIPromptResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an AI Prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAIPrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAIPrompt service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIPrompt">REST API Reference for UpdateAIPrompt Operation</seealso>
+        public virtual Task<UpdateAIPromptResponse> UpdateAIPromptAsync(UpdateAIPromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAIPromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAIPromptResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAIPromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAssistantAIAgent
+
+        internal virtual UpdateAssistantAIAgentResponse UpdateAssistantAIAgent(UpdateAssistantAIAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssistantAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssistantAIAgentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssistantAIAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssistantAIAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAssistantAIAgent service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAssistantAIAgent">REST API Reference for UpdateAssistantAIAgent Operation</seealso>
+        public virtual Task<UpdateAssistantAIAgentResponse> UpdateAssistantAIAgentAsync(UpdateAssistantAIAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAssistantAIAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAssistantAIAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAssistantAIAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateContent
 
         internal virtual UpdateContentResponse UpdateContent(UpdateContentRequest request)
@@ -2462,6 +4556,118 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = UpdateKnowledgeBaseTemplateUriResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateKnowledgeBaseTemplateUriResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMessageTemplate
+
+        internal virtual UpdateMessageTemplateResponse UpdateMessageTemplate(UpdateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMessageTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Amazon Q in Connect message template. Partial update is supported. If
+        /// any field is not supplied, it will remain unchanged for the message template that
+        /// is referenced by the <c>$LATEST</c> qualifier. Any modification will only apply to
+        /// the message template that is referenced by the <c>$LATEST</c> qualifier. The fields
+        /// for all available versions will remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplate">REST API Reference for UpdateMessageTemplate Operation</seealso>
+        public virtual Task<UpdateMessageTemplateResponse> UpdateMessageTemplateAsync(UpdateMessageTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMessageTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMessageTemplateMetadata
+
+        internal virtual UpdateMessageTemplateMetadataResponse UpdateMessageTemplateMetadata(UpdateMessageTemplateMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMessageTemplateMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Amazon Q in Connect message template metadata. Note that any modification
+        /// to the message template’s name, description and grouping configuration will applied
+        /// to the message template pointed by the <c>$LATEST</c> qualifier and all available
+        /// versions. Partial update is supported. If any field is not supplied, it will remain
+        /// unchanged for the message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplateMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMessageTemplateMetadata service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplateMetadata">REST API Reference for UpdateMessageTemplateMetadata Operation</seealso>
+        public virtual Task<UpdateMessageTemplateMetadataResponse> UpdateMessageTemplateMetadataAsync(UpdateMessageTemplateMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMessageTemplateMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2560,6 +4766,49 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSessionData
+
+        internal virtual UpdateSessionDataResponse UpdateSessionData(UpdateSessionDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionDataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSessionDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the data stored on an Amazon Q in Connect Session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSessionData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSessionData service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSessionData">REST API Reference for UpdateSessionData Operation</seealso>
+        public virtual Task<UpdateSessionDataResponse> UpdateSessionDataAsync(UpdateSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSessionDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSessionDataResponse>(request, options, cancellationToken);
         }
 
         #endregion

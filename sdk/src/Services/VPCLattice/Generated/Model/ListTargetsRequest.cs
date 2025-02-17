@@ -83,7 +83,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property TargetGroupIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the target group.
+        /// The ID or ARN of the target group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]

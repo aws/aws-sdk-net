@@ -103,13 +103,32 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// The Amazon ECS scheduler uses this parameter to replace unhealthy tasks by starting
+        /// replacement tasks first and then stopping the unhealthy tasks, as long as cluster
+        /// resources for starting replacement tasks are available. For more information about
+        /// how the scheduler replaces unhealthy tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
+        /// ECS services</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// If a service is using either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
-        /// deployment types and tasks that use the EC2 launch type, the <b>maximum percent</b>
-        /// value is set to the default value and is used to define the upper limit on the number
-        /// of the tasks in the service that remain in the <c>RUNNING</c> state while the container
-        /// instances are in the <c>DRAINING</c> state. If the tasks in the service use the Fargate
-        /// launch type, the maximum percent value is not used, although it is returned when describing
-        /// your service.
+        /// deployment types, and tasks in the service use the EC2 launch type, the <b>maximum
+        /// percent</b> value is set to the default value. The <b>maximum percent</b> value is
+        /// used to define the upper limit on the number of the tasks in the service that remain
+        /// in the <c>RUNNING</c> state while the container instances are in the <c>DRAINING</c>
+        /// state.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify a custom <c>maximumPercent</c> value for a service that uses either
+        /// the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c> deployment types and has tasks
+        /// that use the EC2 launch type.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If the service uses either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
+        /// deployment types, and the tasks in the service use the Fargate launch type, the maximum
+        /// percent value is not used. The value is still returned when describing your service.
         /// </para>
         /// </summary>
         public int MaximumPercent
@@ -135,6 +154,15 @@ namespace Amazon.ECS.Model
         /// of four tasks and a <c>minimumHealthyPercent</c> of 50%, the service scheduler may
         /// stop two existing tasks to free up cluster capacity before starting two new tasks.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If any tasks are unhealthy and if <c>maximumPercent</c> doesn't allow the Amazon
+        /// ECS scheduler to start replacement tasks, the scheduler stops the unhealthy tasks
+        /// one-by-one — using the <c>minimumHealthyPercent</c> as a constraint — to clear up
+        /// capacity to launch replacement tasks. For more information about how the scheduler
+        /// replaces unhealthy tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
+        /// ECS services</a> . 
         /// </para>
         ///  
         /// <para>
@@ -194,12 +222,22 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If a service is using either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
         /// deployment types and is running tasks that use the EC2 launch type, the <b>minimum
-        /// healthy percent</b> value is set to the default value and is used to define the lower
-        /// limit on the number of the tasks in the service that remain in the <c>RUNNING</c>
-        /// state while the container instances are in the <c>DRAINING</c> state. If a service
-        /// is using either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c> deployment
-        /// types and is running tasks that use the Fargate launch type, the minimum healthy percent
-        /// value is not used, although it is returned when describing your service.
+        /// healthy percent</b> value is set to the default value. The <b>minimum healthy percent</b>
+        /// value is used to define the lower limit on the number of the tasks in the service
+        /// that remain in the <c>RUNNING</c> state while the container instances are in the <c>DRAINING</c>
+        /// state.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify a custom <c>minimumHealthyPercent</c> value for a service that uses
+        /// either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c> deployment types and
+        /// has tasks that use the EC2 launch type.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If a service is using either the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c>
+        /// deployment types and is running tasks that use the Fargate launch type, the minimum
+        /// healthy percent value is not used, although it is returned when describing your service.
         /// </para>
         /// </summary>
         public int MinimumHealthyPercent

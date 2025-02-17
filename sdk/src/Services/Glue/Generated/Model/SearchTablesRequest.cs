@@ -199,7 +199,7 @@ namespace Amazon.Glue.Model
         /// Specifying a value in quotes filters based on an exact match to the value.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string SearchText
         {
             get { return this._searchText; }

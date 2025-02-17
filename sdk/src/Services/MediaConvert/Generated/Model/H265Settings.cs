@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private int? _bitrate;
         private H265CodecLevel _codecLevel;
         private H265CodecProfile _codecProfile;
+        private H265Deblocking _deblocking;
         private H265DynamicSubGop _dynamicSubGop;
         private H265EndOfStreamMarkers _endOfStreamMarkers;
         private H265FlickerAdaptiveQuantization _flickerAdaptiveQuantization;
@@ -190,6 +191,26 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Deblocking. Use Deblocking to improve the video quality
+        /// of your output by smoothing the edges of macroblock artifacts created during video
+        /// compression. To reduce blocking artifacts at block boundaries, and improve overall
+        /// video quality: Keep the default value, Enabled. To not apply any deblocking: Choose
+        /// Disabled. Visible block edge artifacts might appear in the output, especially at lower
+        /// bitrates.
+        /// </summary>
+        public H265Deblocking Deblocking
+        {
+            get { return this._deblocking; }
+            set { this._deblocking = value; }
+        }
+
+        // Check to see if Deblocking property is set
+        internal bool IsSetDeblocking()
+        {
+            return this._deblocking != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DynamicSubGop. Specify whether to allow the number of B-frames
         /// in your output GOP structure to vary or not depending on your input video content.
         /// To improve the subjective video quality of your output that has high-motion content:
@@ -272,15 +293,20 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property FramerateConversionAlgorithm. Choose the method that you
-        /// want MediaConvert to use when increasing or decreasing the frame rate. For numerically
-        /// simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default
-        /// value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose
-        /// Interpolate. This results in a smooth picture, but might introduce undesirable video
-        /// artifacts. For complex frame rate conversions, especially if your source video has
-        /// already been converted from its original cadence: Choose FrameFormer to do motion-compensated
+        /// want MediaConvert to use when increasing or decreasing your video's frame rate. For
+        /// numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep
+        /// the default value, Drop duplicate. For numerically complex conversions, to avoid stutter:
+        /// Choose Interpolate. This results in a smooth picture, but might introduce undesirable
+        /// video artifacts. For complex frame rate conversions, especially if your source video
+        /// has already been converted from its original cadence: Choose FrameFormer to do motion-compensated
         /// interpolation. FrameFormer uses the best conversion method frame by frame. Note that
         /// using FrameFormer increases the transcoding time and incurs a significant add-on cost.
         /// When you choose FrameFormer, your input video resolution must be at least 128x96.
+        /// To create an output with the same number of frames as your input: Choose Maintain
+        /// frame count. When you do, MediaConvert will not drop, interpolate, add, or otherwise
+        /// change the frame count from your input to your output. Note that since the frame count
+        /// is maintained, the duration of your output will become shorter at higher frame rates
+        /// and longer at lower frame rates.
         /// </summary>
         public H265FramerateConversionAlgorithm FramerateConversionAlgorithm
         {
@@ -516,19 +542,21 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinIInterval. Use this setting only when you also enable
-        /// Scene change detection. This setting determines how the encoder manages the spacing
-        /// between I-frames that it inserts as part of the I-frame cadence and the I-frames that
-        /// it inserts for Scene change detection. We recommend that you have the transcoder automatically
-        /// choose this value for you based on characteristics of your input video. To enable
-        /// this automatic behavior, do this by keeping the default empty value. When you explicitly
-        /// specify a value for this setting, the encoder determines whether to skip a cadence-driven
-        /// I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven
-        /// I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips
-        /// the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is
-        /// stretched slightly. When the cadence-driven I-frames are farther from the scene-change
-        /// I-frame than the value you set, then the encoder leaves all I-frames in place and
-        /// the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
+        /// Gets and sets the property MinIInterval. Specify the minimum number of frames allowed
+        /// between two IDR-frames in your output. This includes frames created at the start of
+        /// a GOP or a scene change. Use Min I-Interval to improve video compression by varying
+        /// GOP size when two IDR-frames would be created near each other. For example, if a regular
+        /// cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and
+        /// you set Min I-interval to 5, then the encoder would only write an IDR-frame for the
+        /// scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame
+        /// would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves
+        /// all IDR-frames in place. To use an automatically determined interval: We recommend
+        /// that you keep this value blank. This allows for MediaConvert to use an optimal setting
+        /// according to the characteristics of your input video, and results in better video
+        /// compression. To manually specify an interval: Enter a value from 1 to 30. Use when
+        /// your downstream systems have specific GOP size requirements. To disable GOP size variance:
+        /// Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven
+        /// GOP. Use when your downstream systems require a regular GOP size.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
         public int MinIInterval

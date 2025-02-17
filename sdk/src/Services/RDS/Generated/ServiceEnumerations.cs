@@ -393,6 +393,10 @@ namespace Amazon.RDS
     {
 
         /// <summary>
+        /// Constant MYSQL_CACHING_SHA2_PASSWORD for ClientPasswordAuthType
+        /// </summary>
+        public static readonly ClientPasswordAuthType MYSQL_CACHING_SHA2_PASSWORD = new ClientPasswordAuthType("MYSQL_CACHING_SHA2_PASSWORD");
+        /// <summary>
         /// Constant MYSQL_NATIVE_PASSWORD for ClientPasswordAuthType
         /// </summary>
         public static readonly ClientPasswordAuthType MYSQL_NATIVE_PASSWORD = new ClientPasswordAuthType("MYSQL_NATIVE_PASSWORD");
@@ -438,6 +442,56 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClientPasswordAuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterScalabilityType.
+    /// </summary>
+    public class ClusterScalabilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Limitless for ClusterScalabilityType
+        /// </summary>
+        public static readonly ClusterScalabilityType Limitless = new ClusterScalabilityType("limitless");
+        /// <summary>
+        /// Constant Standard for ClusterScalabilityType
+        /// </summary>
+        public static readonly ClusterScalabilityType Standard = new ClusterScalabilityType("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterScalabilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterScalabilityType FindValue(string value)
+        {
+            return FindValue<ClusterScalabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterScalabilityType(string value)
         {
             return FindValue(value);
         }
@@ -492,6 +546,56 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomEngineVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatabaseInsightsMode.
+    /// </summary>
+    public class DatabaseInsightsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Advanced for DatabaseInsightsMode
+        /// </summary>
+        public static readonly DatabaseInsightsMode Advanced = new DatabaseInsightsMode("advanced");
+        /// <summary>
+        /// Constant Standard for DatabaseInsightsMode
+        /// </summary>
+        public static readonly DatabaseInsightsMode Standard = new DatabaseInsightsMode("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseInsightsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseInsightsMode FindValue(string value)
+        {
+            return FindValue<DatabaseInsightsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseInsightsMode(string value)
         {
             return FindValue(value);
         }

@@ -73,6 +73,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnableTrace())
+                {
+                    context.Writer.WritePropertyName("enableTrace");
+                    context.Writer.Write(publicRequest.EnableTrace);
+                }
+
+                if(publicRequest.IsSetExecutionId())
+                {
+                    context.Writer.WritePropertyName("executionId");
+                    context.Writer.Write(publicRequest.ExecutionId);
+                }
+
                 if(publicRequest.IsSetInputs())
                 {
                     context.Writer.WritePropertyName("inputs");
@@ -87,6 +99,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetModelPerformanceConfiguration())
+                {
+                    context.Writer.WritePropertyName("modelPerformanceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelPerformanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelPerformanceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

@@ -789,6 +789,63 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetSafetyLever
+
+        /// <summary>
+        /// Gets information about the specified safety lever.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever service method.</param>
+        /// 
+        /// <returns>The response from the GetSafetyLever service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        public virtual GetSafetyLeverResponse GetSafetyLever(GetSafetyLeverRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
+
+            return Invoke<GetSafetyLeverResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSafetyLever operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSafetyLever
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        public virtual IAsyncResult BeginGetSafetyLever(GetSafetyLeverRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSafetyLever operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSafetyLever.</param>
+        /// 
+        /// <returns>Returns a  GetSafetyLeverResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        public virtual GetSafetyLeverResponse EndGetSafetyLever(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSafetyLeverResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTargetAccountConfiguration
 
         /// <summary>
@@ -1665,6 +1722,69 @@ namespace Amazon.FIS
         public virtual UpdateExperimentTemplateResponse EndUpdateExperimentTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateExperimentTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSafetyLeverState
+
+        /// <summary>
+        /// Updates the specified safety lever state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSafetyLeverState service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        public virtual UpdateSafetyLeverStateResponse UpdateSafetyLeverState(UpdateSafetyLeverStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSafetyLeverStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSafetyLeverState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSafetyLeverState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSafetyLeverState(UpdateSafetyLeverStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSafetyLeverState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSafetyLeverState.</param>
+        /// 
+        /// <returns>Returns a  UpdateSafetyLeverStateResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        public virtual UpdateSafetyLeverStateResponse EndUpdateSafetyLeverState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSafetyLeverStateResponse>(asyncResult);
         }
 
         #endregion

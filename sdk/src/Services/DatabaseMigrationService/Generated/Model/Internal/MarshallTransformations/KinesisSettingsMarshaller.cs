@@ -108,6 +108,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StreamArn);
             }
 
+            if(requestObject.IsSetUseLargeIntegerValue())
+            {
+                context.Writer.WritePropertyName("UseLargeIntegerValue");
+                context.Writer.Write(requestObject.UseLargeIntegerValue);
+            }
+
         }
 
         /// <summary>

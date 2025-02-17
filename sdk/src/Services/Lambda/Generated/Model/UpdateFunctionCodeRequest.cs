@@ -77,6 +77,7 @@ namespace Amazon.Lambda.Model
         private string _s3Bucket;
         private string _s3Key;
         private string _s3ObjectVersion;
+        private string _sourceKMSKeyArn;
         private MemoryStream _zipFile;
 
         /// <summary>
@@ -273,6 +274,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetS3ObjectVersion()
         {
             return this._s3ObjectVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceKMSKeyArn. 
+        /// <para>
+        /// The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt
+        /// your function's .zip deployment package. If you don't provide a customer managed key,
+        /// Lambda uses an Amazon Web Services managed key.
+        /// </para>
+        /// </summary>
+        public string SourceKMSKeyArn
+        {
+            get { return this._sourceKMSKeyArn; }
+            set { this._sourceKMSKeyArn = value; }
+        }
+
+        // Check to see if SourceKMSKeyArn property is set
+        internal bool IsSetSourceKMSKeyArn()
+        {
+            return this._sourceKMSKeyArn != null;
         }
 
         /// <summary>

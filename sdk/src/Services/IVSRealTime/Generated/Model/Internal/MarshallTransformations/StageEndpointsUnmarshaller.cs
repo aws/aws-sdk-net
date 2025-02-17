@@ -72,6 +72,18 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rtmp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Rtmp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rtmps", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Rtmps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("whip", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

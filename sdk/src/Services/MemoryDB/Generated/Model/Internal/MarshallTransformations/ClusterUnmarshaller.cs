@@ -108,6 +108,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Engine", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnginePatchVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -130,6 +136,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaintenanceWindow = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MultiRegionClusterName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionClusterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

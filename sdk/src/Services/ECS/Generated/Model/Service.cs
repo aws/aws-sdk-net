@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Service
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clusterArn;
         private DateTime? _createdAt;
@@ -65,6 +66,30 @@ namespace Amazon.ECS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
         private List<TaskSet> _taskSets = AWSConfigs.InitializeCollections ? new List<TaskSet>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
+        /// Service Developer Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -198,8 +223,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         /// The desired number of instantiations of the task definition to keep running on the
-        /// service. This value is specified when the service is created with <a>CreateService</a>,
-        /// and it can be modified with <a>UpdateService</a>.
+        /// service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+        /// , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -691,7 +716,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The task definition to use for tasks in the service. This value is specified when
-        /// the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.
+        /// the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>,
+        /// and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// </para>
         /// </summary>
         public string TaskDefinition

@@ -69,6 +69,11 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
     /// up Amazon GameLift fleets</a> 
     /// </para>
+    ///  
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+    /// Amazon GameLift service locations</a> for managed hosting
+    /// </para>
     /// </summary>
     public partial class DescribeFleetLocationAttributesRequest : AmazonGameLiftRequest
     {
@@ -84,7 +89,7 @@ namespace Amazon.GameLift.Model
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

@@ -48,16 +48,21 @@ namespace Amazon.SageMaker.Model
     /// You can restrict access to this API and to the URL that it returns to a list of IP
     /// addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information,
     /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-    /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
+    /// to Amazon SageMaker AI Studio Through an Interface VPC Endpoint</a> .
     /// </para>
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// The URL that you get from a call to <c>CreatePresignedDomainUrl</c> has a default
     /// timeout of 5 minutes. You can configure this value using <c>ExpiresInSeconds</c>.
     /// If you try to use the URL after the timeout limit expires, you are directed to the
     /// Amazon Web Services console sign-in page.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// The JupyterLab session default expiration time is 12 hours. You can configure this
+    /// value using SessionExpirationDurationInSeconds.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreatePresignedDomainUrlRequest : AmazonSageMakerRequest
     {

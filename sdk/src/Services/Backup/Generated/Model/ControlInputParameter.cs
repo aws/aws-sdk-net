@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// A list of parameters for a control. A control can have zero, one, or more than one
-    /// parameter. An example of a control with two parameters is: "backup plan frequency
-    /// is at least <c>daily</c> and the retention period is at least <c>1 year</c>". The
-    /// first parameter is <c>daily</c>. The second parameter is <c>1 year</c>.
+    /// The parameters for a control. A control can have zero, one, or more than one parameter.
+    /// An example of a control with two parameters is: "backup plan frequency is at least
+    /// <c>daily</c> and the retention period is at least <c>1 year</c>". The first parameter
+    /// is <c>daily</c>. The second parameter is <c>1 year</c>.
     /// </summary>
     public partial class ControlInputParameter
     {

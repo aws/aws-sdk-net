@@ -42,6 +42,11 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeConnectionsPaginator DescribeConnections(DescribeConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDataMigrations operation
+        ///</summary>
+        IDescribeDataMigrationsPaginator DescribeDataMigrations(DescribeDataMigrationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDataProviders operation
         ///</summary>
         IDescribeDataProvidersPaginator DescribeDataProviders(DescribeDataProvidersRequest request);

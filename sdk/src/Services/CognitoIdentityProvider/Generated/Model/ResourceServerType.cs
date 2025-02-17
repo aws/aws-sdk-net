@@ -30,7 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about a resource server for a user pool.
+    /// The details of a resource server configuration and associated custom scopes in a user
+    /// pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class ResourceServerType
     {
@@ -106,7 +114,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool that hosts the resource server.
+        /// The ID of the user pool that contains the resource server configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

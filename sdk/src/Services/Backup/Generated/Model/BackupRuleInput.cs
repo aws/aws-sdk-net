@@ -37,6 +37,7 @@ namespace Amazon.Backup.Model
         private long? _completionWindowMinutes;
         private List<CopyAction> _copyActions = AWSConfigs.InitializeCollections ? new List<CopyAction>() : null;
         private bool? _enableContinuousBackup;
+        private List<IndexAction> _indexActions = AWSConfigs.InitializeCollections ? new List<IndexAction>() : null;
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _ruleName;
@@ -103,6 +104,39 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IndexActions. 
+        /// <para>
+        /// There can up to one IndexAction in each BackupRule, as each backup can have 0 or 1
+        /// backup index associated with it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Within the array is ResourceTypes. Only 1 resource type will be accepted for each
+        /// BackupRule. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EBS</c> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<IndexAction> IndexActions
+        {
+            get { return this._indexActions; }
+            set { this._indexActions = value; }
+        }
+
+        // Check to see if IndexActions property is set
+        internal bool IsSetIndexActions()
+        {
+            return this._indexActions != null && (this._indexActions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
         /// The lifecycle defines when a protected resource is transitioned to cold storage and
@@ -114,14 +148,13 @@ namespace Amazon.Backup.Model
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
         /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
         /// to cold after days” setting. The “transition to cold after days” setting cannot be
-        /// changed after a backup has been transitioned to cold.
+        /// changed after a backup has been transitioned to cold storage.
         /// </para>
         ///  
         /// <para>
-        /// Resource types that are able to be transitioned to cold storage are listed in the
-        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table. Backup ignores this expression for other
-        /// resource types.
+        /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table. Backup ignores this expression for other resource
+        /// types.
         /// </para>
         ///  
         /// <para>
@@ -143,8 +176,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointTags. 
         /// <para>
-        /// To help organize your resources, you can assign your own metadata to the resources
-        /// that you create. Each tag is a key-value pair.
+        /// The tags to assign to the resources.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -200,7 +232,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpressionTimezone. 
         /// <para>
-        /// This is the timezone in which the schedule expression is set. By default, ScheduleExpressions
+        /// The timezone in which the schedule expression is set. By default, ScheduleExpressions
         /// are in UTC. You can modify this to a specified timezone.
         /// </para>
         /// </summary>
@@ -255,7 +287,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

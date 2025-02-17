@@ -57,7 +57,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property AppComponents. 
         /// <para>
         /// Indicates the Application Components (AppComponents) that were assessed as part of
-        /// the assessnent and are associated with the identified risk and recommendation.
+        /// the assessment and are associated with the identified risk and recommendation.
         /// </para>
         ///  <note> 
         /// <para>

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the account-2021-02-01.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 
@@ -37,15 +38,6 @@ namespace Amazon.Account.Endpoints
         {
             UseDualStack = false;
             UseFIPS = false;
-        }
-
-        /// <summary>
-        /// Region parameter
-        /// </summary>
-        public string Region 
-        { 
-            get { return (string)this["Region"]; }
-            set { this["Region"] = value; } 
         }
 
         /// <summary>
@@ -73,6 +65,15 @@ namespace Amazon.Account.Endpoints
         { 
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
+        }
+
+        /// <summary>
+        /// Region parameter
+        /// </summary>
+        public string Region 
+        { 
+            get { return (string)this["Region"]; }
+            set { this["Region"] = value; } 
         }
     }
 }

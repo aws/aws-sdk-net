@@ -911,6 +911,65 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCommitmentPurchaseAnalysis
+
+
+        /// <summary>
+        /// Retrieves a commitment purchase analysis result based on the <c>AnalysisId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommitmentPurchaseAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the GetCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.AnalysisNotFoundException">
+        /// The requested analysis can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCommitmentPurchaseAnalysis">REST API Reference for GetCommitmentPurchaseAnalysis Operation</seealso>
+        public virtual GetCommitmentPurchaseAnalysisResponse GetCommitmentPurchaseAnalysis(GetCommitmentPurchaseAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommitmentPurchaseAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommitmentPurchaseAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<GetCommitmentPurchaseAnalysisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a commitment purchase analysis result based on the <c>AnalysisId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommitmentPurchaseAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.AnalysisNotFoundException">
+        /// The requested analysis can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCommitmentPurchaseAnalysis">REST API Reference for GetCommitmentPurchaseAnalysis Operation</seealso>
+        public virtual Task<GetCommitmentPurchaseAnalysisResponse> GetCommitmentPurchaseAnalysisAsync(GetCommitmentPurchaseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCommitmentPurchaseAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCommitmentPurchaseAnalysisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCommitmentPurchaseAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCostAndUsage
 
 
@@ -947,6 +1006,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual GetCostAndUsageResponse GetCostAndUsage(GetCostAndUsageRequest request)
@@ -995,6 +1057,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual Task<GetCostAndUsageResponse> GetCostAndUsageAsync(GetCostAndUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1052,6 +1117,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
         public virtual GetCostAndUsageWithResourcesResponse GetCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request)
         {
@@ -1107,6 +1175,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
         public virtual Task<GetCostAndUsageWithResourcesResponse> GetCostAndUsageWithResourcesAsync(GetCostAndUsageWithResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1151,6 +1222,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
         public virtual GetCostCategoriesResponse GetCostCategories(GetCostCategoriesRequest request)
         {
@@ -1194,6 +1268,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
         public virtual Task<GetCostCategoriesResponse> GetCostCategoriesAsync(GetCostCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1222,6 +1299,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
         public virtual GetCostForecastResponse GetCostForecast(GetCostForecastRequest request)
         {
@@ -1248,6 +1328,9 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
         public virtual Task<GetCostForecastResponse> GetCostForecastAsync(GetCostForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1287,6 +1370,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual GetDimensionValuesResponse GetDimensionValues(GetDimensionValuesRequest request)
         {
@@ -1323,6 +1409,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual Task<GetDimensionValuesResponse> GetDimensionValuesAsync(GetDimensionValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2155,6 +2244,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
@@ -2192,6 +2284,9 @@ namespace Amazon.CostExplorer
         /// Your request parameters changed between pages. Try again with the old parameters or
         /// without a pagination token.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2219,6 +2314,9 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
         /// Cost Explorer was unable to identify the usage unit. Provide <c>UsageType/UsageTypeGroup</c>
@@ -2251,6 +2349,9 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
         /// Cost Explorer was unable to identify the usage unit. Provide <c>UsageType/UsageTypeGroup</c>
         /// filter selections that contain matching units, for example: <c>hours</c>.
@@ -2263,6 +2364,65 @@ namespace Amazon.CostExplorer
             options.ResponseUnmarshaller = GetUsageForecastResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetUsageForecastResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCommitmentPurchaseAnalyses
+
+
+        /// <summary>
+        /// Lists the commitment purchase analyses for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommitmentPurchaseAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the ListCommitmentPurchaseAnalyses service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCommitmentPurchaseAnalyses">REST API Reference for ListCommitmentPurchaseAnalyses Operation</seealso>
+        public virtual ListCommitmentPurchaseAnalysesResponse ListCommitmentPurchaseAnalyses(ListCommitmentPurchaseAnalysesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommitmentPurchaseAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommitmentPurchaseAnalysesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCommitmentPurchaseAnalysesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the commitment purchase analyses for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommitmentPurchaseAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommitmentPurchaseAnalyses service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCommitmentPurchaseAnalyses">REST API Reference for ListCommitmentPurchaseAnalyses Operation</seealso>
+        public virtual Task<ListCommitmentPurchaseAnalysesResponse> ListCommitmentPurchaseAnalysesAsync(ListCommitmentPurchaseAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCommitmentPurchaseAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCommitmentPurchaseAnalysesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCommitmentPurchaseAnalysesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2597,6 +2757,77 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  StartCommitmentPurchaseAnalysis
+
+
+        /// <summary>
+        /// Specifies the parameters of a planned commitment purchase and starts the generation
+        /// of the analysis. This enables you to estimate the cost, coverage, and utilization
+        /// impact of your planned commitment purchases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommitmentPurchaseAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation or analysis is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCommitmentPurchaseAnalysis">REST API Reference for StartCommitmentPurchaseAnalysis Operation</seealso>
+        public virtual StartCommitmentPurchaseAnalysisResponse StartCommitmentPurchaseAnalysis(StartCommitmentPurchaseAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommitmentPurchaseAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommitmentPurchaseAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartCommitmentPurchaseAnalysisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Specifies the parameters of a planned commitment purchase and starts the generation
+        /// of the analysis. This enables you to estimate the cost, coverage, and utilization
+        /// impact of your planned commitment purchases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommitmentPurchaseAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation or analysis is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCommitmentPurchaseAnalysis">REST API Reference for StartCommitmentPurchaseAnalysis Operation</seealso>
+        public virtual Task<StartCommitmentPurchaseAnalysisResponse> StartCommitmentPurchaseAnalysisAsync(StartCommitmentPurchaseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCommitmentPurchaseAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCommitmentPurchaseAnalysisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartCommitmentPurchaseAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartCostAllocationTagBackfill
 
 
@@ -2689,7 +2920,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
@@ -2732,7 +2963,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.

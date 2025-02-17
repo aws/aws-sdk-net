@@ -132,6 +132,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduledTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SegmentAttributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ContactSearchSummarySegmentAttributeValue, StringUnmarshaller, ContactSearchSummarySegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, ContactSearchSummarySegmentAttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.SegmentAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

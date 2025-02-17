@@ -33,6 +33,12 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:cloudwatch-alarm-template:.+$</pattern>
   </property-value-rule>
@@ -88,6 +94,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:cloudwatch-alarm-template-group:.+$</pattern>
   </property-value-rule>
@@ -122,6 +134,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateResponse.Arn</property>
@@ -162,6 +180,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:eventbridge-rule-template-group:.+$</pattern>
   </property-value-rule>
@@ -197,6 +221,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateSignalMapRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateSignalMapResponse.Arn</property>
@@ -379,6 +409,11 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListChannelPlacementGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -402,6 +437,11 @@
     <property>Amazon.MediaLive.Model.ListCloudWatchAlarmTemplatesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListClustersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListEventBridgeRuleTemplateGroupsRequest.MaxResults</property>
@@ -450,6 +490,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListMultiplexProgramsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListNetworksRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListNodesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -507,6 +557,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponse.Arn</property>
@@ -814,6 +870,43 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.BufSize</property>
+    <min>50000</min>
+    <max>16000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>3003</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.FramerateNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.MaxBitrate</property>
+    <min>50000</min>
+    <max>8000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.MinIInterval</property>
+    <min>0</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.ParDenominator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.ParNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.BlackoutSlate.NetworkId</property>
     <min>34</min>
     <max>34</max>
@@ -935,6 +1028,22 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.Id3NameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.KlvNameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.NielsenId3NameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.Scte35NameModifier</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CmafIngestGroupSettings.SegmentLength</property>
     <min>1</min>
   </property-value-rule>
@@ -953,6 +1062,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupResponseContent.Arn</property>
@@ -1006,6 +1121,12 @@
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequestContent.Period</property>
     <min>10</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateResponseContent.Arn</property>
@@ -1063,6 +1184,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupResponseContent.Arn</property>
     <pattern>^arn:.+:medialive:.+:eventbridge-rule-template-group:.+$</pattern>
   </property-value-rule>
@@ -1097,6 +1224,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateResponseContent.Arn</property>
@@ -1140,6 +1273,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateSignalMapRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateSignalMapResponseContent.Arn</property>
@@ -1547,6 +1686,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H264Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.H264Settings.NumRefFrames</property>
     <min>1</min>
     <max>6</max>
@@ -1606,6 +1750,11 @@
     <property>Amazon.MediaLive.Model.H265Settings.MinIInterval</property>
     <min>0</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.H265Settings.ParDenominator</property>
@@ -1919,7 +2068,15 @@
     <pattern>^([0,1]?[0-9]|2[0-3]):00$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelGroup</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelName</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -1994,6 +2151,15 @@
     <property>Amazon.MediaLive.Model.MsSmoothGroupSettings.SendDelayMs</property>
     <min>0</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.AudioFramesPerPes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.PcrPeriod</property>
+    <min>0</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.MultiplexMediaConnectOutputDestinationSettings.EntitlementArn</property>
@@ -2219,6 +2385,16 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.SrtOutputSettings.BufferMsec</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.SrtOutputSettings.Latency</property>
+    <min>40</min>
+    <max>16000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.StartDeleteMonitorDeploymentResponseContent.Arn</property>
     <pattern>^arn:.+:medialive:.+:signal-map:.+$</pattern>
   </property-value-rule>
@@ -2248,6 +2424,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponseContent.Arn</property>

@@ -41,6 +41,7 @@ namespace Amazon.QApps.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private bool? _isRatedByUser;
+        private bool? _isVerified;
         private string _libraryItemId;
         private int? _ratingCount;
         private string _status;
@@ -159,6 +160,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetIsRatedByUser()
         {
             return this._isRatedByUser.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsVerified. 
+        /// <para>
+        /// Indicates whether the library item has been verified.
+        /// </para>
+        /// </summary>
+        public bool IsVerified
+        {
+            get { return this._isVerified.GetValueOrDefault(); }
+            set { this._isVerified = value; }
+        }
+
+        // Check to see if IsVerified property is set
+        internal bool IsSetIsVerified()
+        {
+            return this._isVerified.HasValue; 
         }
 
         /// <summary>

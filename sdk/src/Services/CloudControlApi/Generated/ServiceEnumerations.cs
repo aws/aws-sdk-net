@@ -90,6 +90,10 @@ namespace Amazon.CloudControlApi
         /// Constant Throttling for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode Throttling = new HandlerErrorCode("Throttling");
+        /// <summary>
+        /// Constant UnauthorizedTaggingOperation for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode UnauthorizedTaggingOperation = new HandlerErrorCode("UnauthorizedTaggingOperation");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

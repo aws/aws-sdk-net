@@ -107,58 +107,94 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// A set of metadata key-value pairs. Contains information, such as a resource name,
-        /// required to restore a recovery point.
+        /// A set of metadata key-value pairs.
         /// </para>
         ///  
         /// <para>
-        ///  You can get configuration metadata about a resource at the time it was backed up
-        /// by calling <c>GetRecoveryPointRestoreMetadata</c>. However, values in addition to
-        /// those provided by <c>GetRecoveryPointRestoreMetadata</c> might be required to restore
-        /// a resource. For example, you might need to provide a new resource name if the original
+        /// You can get configuration metadata about a resource at the time it was backed up by
+        /// calling <c>GetRecoveryPointRestoreMetadata</c>. However, values in addition to those
+        /// provided by <c>GetRecoveryPointRestoreMetadata</c> might be required to restore a
+        /// resource. For example, you might need to provide a new resource name if the original
         /// already exists.
         /// </para>
         ///  
         /// <para>
-        /// You need to specify specific metadata to restore an Amazon Elastic File System (Amazon
-        /// EFS) instance:
+        /// For more information about the metadata for each resource, see the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>file-system-id</c>: The ID of the Amazon EFS file system that is backed up by
-        /// Backup. Returned in <c>GetRecoveryPointRestoreMetadata</c>.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-aur.html#aur-restore-cli">Metadata
+        /// for Amazon Aurora</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Encrypted</c>: A Boolean value that, if true, specifies that the file system is
-        /// encrypted. If <c>KmsKeyId</c> is specified, <c>Encrypted</c> must be set to <c>true</c>.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-docdb.html#docdb-restore-cli">Metadata
+        /// for Amazon DocumentDB</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KmsKeyId</c>: Specifies the Amazon Web Services KMS key that is used to encrypt
-        /// the restored file system. You can specify a key from another Amazon Web Services account
-        /// provided that key it is properly shared with your account via Amazon Web Services
-        /// KMS.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-application-stacks.html#restoring-cfn-cli">Metadata
+        /// for CloudFormation</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PerformanceMode</c>: Specifies the throughput mode of the file system.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-dynamodb.html#ddb-restore-cli">Metadata
+        /// for Amazon DynamoDB</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CreationToken</c>: A user-supplied value that ensures the uniqueness (idempotency)
-        /// of the request.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-ebs.html#ebs-restore-cli">
+        /// Metadata for Amazon EBS</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>newFileSystem</c>: A Boolean value that, if true, specifies that the recovery
-        /// point is restored to a new Amazon EFS file system.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-ec2.html#restoring-ec2-cli">Metadata
+        /// for Amazon EC2</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ItemsToRestore</c>: An array of one to five strings where each string is a file
-        /// path. Use <c>ItemsToRestore</c> to restore specific files or directories rather than
-        /// the entire file system. This parameter is optional. For example, <c>"itemsToRestore":"[\"/my.test\"]"</c>.
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-efs.html#efs-restore-cli">Metadata
+        /// for Amazon EFS</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-fsx.html#fsx-restore-cli">Metadata
+        /// for Amazon FSx</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-nep.html#nep-restore-cli">Metadata
+        /// for Amazon Neptune</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-rds.html#rds-restore-cli">Metadata
+        /// for Amazon RDS</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/redshift-restores.html#redshift-restore-api">Metadata
+        /// for Amazon Redshift</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-storage-gateway.html#restoring-sgw-cli">Metadata
+        /// for Storage Gateway</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-s3.html#s3-restore-cli">Metadata
+        /// for Amazon S3</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/timestream-restore.html#timestream-restore-api">Metadata
+        /// for Amazon Timestream</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-vm.html#vm-restore-cli">Metadata
+        /// for virtual machines</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -201,63 +237,63 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>Aurora</c> for Amazon Aurora
+        ///  <c>Aurora</c> - Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DocumentDB</c> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>DocumentDB</c> - Amazon DocumentDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CloudFormation</c> for CloudFormation
+        ///  <c>CloudFormation</c> - CloudFormation
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DynamoDB</c> for Amazon DynamoDB
+        ///  <c>DynamoDB</c> - Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EBS</c> for Amazon Elastic Block Store
+        ///  <c>EBS</c> - Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EC2</c> for Amazon Elastic Compute Cloud
+        ///  <c>EC2</c> - Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EFS</c> for Amazon Elastic File System
+        ///  <c>EFS</c> - Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FSx</c> for Amazon FSx
+        ///  <c>FSx</c> - Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Neptune</c> for Amazon Neptune
+        ///  <c>Neptune</c> - Amazon Neptune
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>RDS</c> for Amazon Relational Database Service
+        ///  <c>RDS</c> - Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Redshift</c> for Amazon Redshift
+        ///  <c>Redshift</c> - Amazon Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Storage Gateway</c> for Storage Gateway
+        ///  <c>Storage Gateway</c> - Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>S3</c> for Amazon S3
+        ///  <c>S3</c> - Amazon Simple Storage Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Timestream</c> for Amazon Timestream
+        ///  <c>Timestream</c> - Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>VirtualMachine</c> for virtual machines
+        ///  <c>VirtualMachine</c> - Virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

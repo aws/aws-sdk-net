@@ -37,6 +37,11 @@ namespace Amazon.DataZone.Model
         IListAssetRevisionsPaginator ListAssetRevisions(ListAssetRevisionsRequest request);
 
         /// <summary>
+        /// Paginator for ListConnections operation
+        ///</summary>
+        IListConnectionsPaginator ListConnections(ListConnectionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataProductRevisions operation
         ///</summary>
         IListDataProductRevisionsPaginator ListDataProductRevisions(ListDataProductRevisionsRequest request);
@@ -60,6 +65,16 @@ namespace Amazon.DataZone.Model
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDomainUnitsForParent operation
+        ///</summary>
+        IListDomainUnitsForParentPaginator ListDomainUnitsForParent(ListDomainUnitsForParentRequest request);
+
+        /// <summary>
+        /// Paginator for ListEntityOwners operation
+        ///</summary>
+        IListEntityOwnersPaginator ListEntityOwners(ListEntityOwnersRequest request);
 
         /// <summary>
         /// Paginator for ListEnvironmentActions operation
@@ -87,6 +102,16 @@ namespace Amazon.DataZone.Model
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListJobRuns operation
+        ///</summary>
+        IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLineageEvents operation
+        ///</summary>
+        IListLineageEventsPaginator ListLineageEvents(ListLineageEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListLineageNodeHistory operation
         ///</summary>
         IListLineageNodeHistoryPaginator ListLineageNodeHistory(ListLineageNodeHistoryRequest request);
@@ -102,14 +127,29 @@ namespace Amazon.DataZone.Model
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyGrants operation
+        ///</summary>
+        IListPolicyGrantsPaginator ListPolicyGrants(ListPolicyGrantsRequest request);
+
+        /// <summary>
         /// Paginator for ListProjectMemberships operation
         ///</summary>
         IListProjectMembershipsPaginator ListProjectMemberships(ListProjectMembershipsRequest request);
 
         /// <summary>
+        /// Paginator for ListProjectProfiles operation
+        ///</summary>
+        IListProjectProfilesPaginator ListProjectProfiles(ListProjectProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        IListRulesPaginator ListRules(ListRulesRequest request);
 
         /// <summary>
         /// Paginator for ListSubscriptionGrants operation

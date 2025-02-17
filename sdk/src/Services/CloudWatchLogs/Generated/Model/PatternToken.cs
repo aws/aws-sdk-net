@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A tructures that contains information about one pattern token related to an anomaly.
+    /// A structure that contains information about one pattern token related to an anomaly.
     /// 
     ///  
     /// <para>
@@ -42,6 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private int? _dynamicTokenPosition;
         private Dictionary<string, long> _enumerations = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
+        private string _inferredTokenName;
         private bool? _isDynamic;
         private string _tokenString;
 
@@ -82,6 +83,35 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetEnumerations()
         {
             return this._enumerations != null && (this._enumerations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferredTokenName. 
+        /// <para>
+        /// A name that CloudWatch Logs assigned to this dynamic token to make the pattern more
+        /// readable. The string part of the <c>inferredTokenName</c> gives you a clearer idea
+        /// of the content of this token. The number part of the <c>inferredTokenName</c> shows
+        /// where in the pattern this token appears, compared to other dynamic tokens. CloudWatch
+        /// Logs assigns the string part of the name based on analyzing the content of the log
+        /// events that contain it.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, an inferred token name of <c>IPAddress-3</c> means that the token represents
+        /// an IP address, and this token is the third dynamic token in the pattern.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string InferredTokenName
+        {
+            get { return this._inferredTokenName; }
+            set { this._inferredTokenName = value; }
+        }
+
+        // Check to see if InferredTokenName property is set
+        internal bool IsSetInferredTokenName()
+        {
+            return this._inferredTokenName != null;
         }
 
         /// <summary>

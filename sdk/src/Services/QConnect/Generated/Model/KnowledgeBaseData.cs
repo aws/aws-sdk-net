@@ -35,6 +35,8 @@ namespace Amazon.QConnect.Model
     public partial class KnowledgeBaseData
     {
         private string _description;
+        private List<string> _ingestionFailureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SyncStatus _ingestionStatus;
         private string _knowledgeBaseArn;
         private string _knowledgeBaseId;
         private KnowledgeBaseType _knowledgeBaseType;
@@ -45,6 +47,7 @@ namespace Amazon.QConnect.Model
         private SourceConfiguration _sourceConfiguration;
         private KnowledgeBaseStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -63,6 +66,42 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestionFailureReasons. 
+        /// <para>
+        /// List of failure reasons on ingestion per file.
+        /// </para>
+        /// </summary>
+        public List<string> IngestionFailureReasons
+        {
+            get { return this._ingestionFailureReasons; }
+            set { this._ingestionFailureReasons = value; }
+        }
+
+        // Check to see if IngestionFailureReasons property is set
+        internal bool IsSetIngestionFailureReasons()
+        {
+            return this._ingestionFailureReasons != null && (this._ingestionFailureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestionStatus. 
+        /// <para>
+        /// Status of ingestion on data source.
+        /// </para>
+        /// </summary>
+        public SyncStatus IngestionStatus
+        {
+            get { return this._ingestionStatus; }
+            set { this._ingestionStatus = value; }
+        }
+
+        // Check to see if IngestionStatus property is set
+        internal bool IsSetIngestionStatus()
+        {
+            return this._ingestionStatus != null;
         }
 
         /// <summary>
@@ -261,6 +300,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in a data source.
+        /// </para>
+        /// </summary>
+        public VectorIngestionConfiguration VectorIngestionConfiguration
+        {
+            get { return this._vectorIngestionConfiguration; }
+            set { this._vectorIngestionConfiguration = value; }
+        }
+
+        // Check to see if VectorIngestionConfiguration property is set
+        internal bool IsSetVectorIngestionConfiguration()
+        {
+            return this._vectorIngestionConfiguration != null;
         }
 
     }

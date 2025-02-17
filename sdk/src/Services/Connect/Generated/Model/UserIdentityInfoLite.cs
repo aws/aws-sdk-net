@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// The user's first name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// The user's last name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=300)]
         public string LastName
         {
             get { return this._lastName; }

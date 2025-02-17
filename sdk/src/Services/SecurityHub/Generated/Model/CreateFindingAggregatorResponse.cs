@@ -42,7 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingAggregationRegion. 
         /// <para>
-        /// The aggregation Region.
+        /// The home Region. Findings generated in linked Regions are replicated and sent to the
+        /// home Region.
         /// </para>
         /// </summary>
         public string FindingAggregationRegion
@@ -61,7 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property FindingAggregatorArn. 
         /// <para>
         /// The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve
-        /// details for, update, and stop finding aggregation.
+        /// details for, update, and stop cross-Region aggregation.
         /// </para>
         /// </summary>
         public string FindingAggregatorArn

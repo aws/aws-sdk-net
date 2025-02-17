@@ -39,6 +39,10 @@ namespace Amazon.ECS.Model
     /// authorization. When a task definition revision is not specified, authorization will
     /// occur using the latest revision of a task definition.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Amazon Elastic Inference (EI) is no longer available to customers.
+    /// </para>
     ///  </note> 
     /// <para>
     /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
@@ -48,18 +52,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+    /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
     /// manually on specific container instances.
-    /// </para>
-    ///  
-    /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
     /// </para>
     ///  
     /// <para>
@@ -135,7 +129,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+        /// A capacity provider strategy can contain a maximum of 20 capacity providers.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -437,7 +431,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to propagate the tags from the task definition to the task. If no
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
-        /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
+        /// task during task creation. To add tags to a task after task creation, use the<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
         /// </para>
         ///  <note> 
@@ -462,8 +456,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference ID to use for the task. The reference ID can have a maximum length of
-        /// 1024 characters.
+        /// This parameter is only used by Amazon ECS. It is not intended for use by customers.
         /// </para>
         /// </summary>
         public string ReferenceId
@@ -484,9 +477,9 @@ namespace Amazon.ECS.Model
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
-        /// the <c>startedBy</c> value. Up to 128 letters (uppercase and lowercase), numbers,
-        /// hyphens (-), and underscores (_) are allowed.
+        /// tasks belong to that job by filtering the results of a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>
+        /// call with the <c>startedBy</c> value. Up to 128 letters (uppercase and lowercase),
+        /// numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>

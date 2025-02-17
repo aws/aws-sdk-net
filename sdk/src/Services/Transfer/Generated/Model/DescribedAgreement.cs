@@ -38,9 +38,12 @@ namespace Amazon.Transfer.Model
         private string _agreementId;
         private string _arn;
         private string _baseDirectory;
+        private CustomDirectoriesType _customDirectories;
         private string _description;
+        private EnforceMessageSigningType _enforceMessageSigning;
         private string _localProfileId;
         private string _partnerProfileId;
+        private PreserveFilenameType _preserveFilename;
         private string _serverId;
         private AgreementStatusType _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -160,6 +163,47 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomDirectories. 
+        /// <para>
+        /// A <c>CustomDirectoriesType</c> structure. This structure specifies custom directories
+        /// for storing various AS2 message files. You can specify directories for the following
+        /// types of files.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Failed files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MDN files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Payload files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Status files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary files
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomDirectoriesType CustomDirectories
+        {
+            get { return this._customDirectories; }
+            set { this._customDirectories = value; }
+        }
+
+        // Check to see if CustomDirectories property is set
+        internal bool IsSetCustomDirectories()
+        {
+            return this._customDirectories != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The name or short description that's used to identify the agreement.
@@ -176,6 +220,35 @@ namespace Amazon.Transfer.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnforceMessageSigning. 
+        /// <para>
+        ///  Determines whether or not unsigned messages from your trading partners will be accepted.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Transfer Family rejects unsigned messages from your trading partner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): Transfer Family accepts unsigned messages from your
+        /// trading partner.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EnforceMessageSigningType EnforceMessageSigning
+        {
+            get { return this._enforceMessageSigning; }
+            set { this._enforceMessageSigning = value; }
+        }
+
+        // Check to see if EnforceMessageSigning property is set
+        internal bool IsSetEnforceMessageSigning()
+        {
+            return this._enforceMessageSigning != null;
         }
 
         /// <summary>
@@ -214,6 +287,37 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPartnerProfileId()
         {
             return this._partnerProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreserveFilename. 
+        /// <para>
+        ///  Determines whether or not Transfer Family appends a unique string of characters to
+        /// the end of the AS2 message payload filename when saving it. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: the filename provided by your trading parter is preserved when the
+        /// file is saved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): when Transfer Family saves the file, the filename
+        /// is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File
+        /// names and locations</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PreserveFilenameType PreserveFilename
+        {
+            get { return this._preserveFilename; }
+            set { this._preserveFilename = value; }
+        }
+
+        // Check to see if PreserveFilename property is set
+        internal bool IsSetPreserveFilename()
+        {
+            return this._preserveFilename != null;
         }
 
         /// <summary>

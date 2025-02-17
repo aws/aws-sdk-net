@@ -34,11 +34,30 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilterDateTimePickerControl
     {
+        private CommitMode _commitMode;
         private DateTimePickerControlDisplayOptions _displayOptions;
         private string _filterControlId;
         private string _sourceFilterId;
         private string _title;
         private SheetControlDateTimePickerType _type;
+
+        /// <summary>
+        /// Gets and sets the property CommitMode. 
+        /// <para>
+        /// The visibility configurationof the Apply button on a <c>DateTimePickerControl</c>.
+        /// </para>
+        /// </summary>
+        public CommitMode CommitMode
+        {
+            get { return this._commitMode; }
+            set { this._commitMode = value; }
+        }
+
+        // Check to see if CommitMode property is set
+        internal bool IsSetCommitMode()
+        {
+            return this._commitMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayOptions. 

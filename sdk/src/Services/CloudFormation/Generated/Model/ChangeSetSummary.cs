@@ -258,7 +258,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The state of the change set, such as <c>CREATE_IN_PROGRESS</c>, <c>CREATE_COMPLETE</c>,
+        /// The state of the change set, such as <c>CREATE_PENDING</c>, <c>CREATE_COMPLETE</c>,
         /// or <c>FAILED</c>.
         /// </para>
         /// </summary>

@@ -108,6 +108,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EdgeLocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EdgeLocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationErrors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttachmentError, AttachmentErrorUnmarshaller>(AttachmentErrorUnmarshaller.Instance);

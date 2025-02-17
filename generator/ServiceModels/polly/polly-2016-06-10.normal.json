@@ -428,7 +428,10 @@
         "fi-FI",
         "en-IE",
         "nl-BE",
-        "fr-BE"
+        "fr-BE",
+        "cs-CZ",
+        "de-CH",
+        "en-SG"
       ]
     },
     "LanguageCodeList":{
@@ -1116,7 +1119,10 @@
         "Zayd",
         "Danielle",
         "Gregory",
-        "Burcu"
+        "Burcu",
+        "Jitka",
+        "Sabrina",
+        "Jasmine"
       ]
     },
     "VoiceList":{

@@ -50,7 +50,6 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=30)]
         public int NumberOfDays
         {
             get { return this._numberOfDays.GetValueOrDefault(); }

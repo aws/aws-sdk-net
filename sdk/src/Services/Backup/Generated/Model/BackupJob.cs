@@ -162,7 +162,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -182,7 +182,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -322,7 +322,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property InitiationDate. 
         /// <para>
-        /// This is the date on which the backup job was initiated.
+        /// The date on which the backup job was initiated.
         /// </para>
         /// </summary>
         public DateTime InitiationDate
@@ -466,7 +466,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// The non-unique name of the resource that belongs to the specified backup.
         /// </para>
         /// </summary>
         public string ResourceName

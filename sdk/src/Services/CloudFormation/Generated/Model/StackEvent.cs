@@ -94,8 +94,8 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>CONFIGURATION_COMPLETE</c> - all of the resources in the stack have reached that
-        /// event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-        /// stack deployment</a> in the <i>CloudFormation User Guide</i>.
+        /// event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
@@ -166,7 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookInvocationPoint. 
         /// <para>
-        /// Invocation points are points in provisioning logic where hooks are initiated.
+        /// Invocation points are points in provisioning logic where Hooks are initiated.
         /// </para>
         /// </summary>
         public HookInvocationPoint HookInvocationPoint
@@ -330,8 +330,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.)
+        /// Type of resource. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

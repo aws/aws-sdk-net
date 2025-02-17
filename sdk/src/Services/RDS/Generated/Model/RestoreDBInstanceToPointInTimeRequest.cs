@@ -123,6 +123,10 @@ namespace Amazon.RDS.Model
         /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
         /// the allocation rules specified in <c>CreateDBInstance</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Be sure to allocate enough storage for your new DB instance so that the restore operation
@@ -964,10 +968,11 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group. The Db2 license through Amazon
-        /// Web Services Marketplace model requires an Amazon Web Services Marketplace subscription.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">RDS
-        /// for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
+        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License Manager self-managed license. The Db2 license through Amazon Web Services
+        /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
+        /// RDS for Db2 licensing options</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>

@@ -54,6 +54,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DisplayNamePrefix);
             }
 
+            if(requestObject.IsSetIdentityProviderUserIdPrefix())
+            {
+                context.Writer.WritePropertyName("IdentityProviderUserIdPrefix");
+                context.Writer.Write(requestObject.IdentityProviderUserIdPrefix);
+            }
+
             if(requestObject.IsSetPrimaryEmailPrefix())
             {
                 context.Writer.WritePropertyName("PrimaryEmailPrefix");

@@ -46,6 +46,9 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FunctionInvocationInput
     {
         private string _actionGroup;
+        private ActionInvocationType _actionInvocationType;
+        private string _agentId;
+        private string _collaboratorName;
         private string _function;
         private List<FunctionParameter> _parameters = AWSConfigs.InitializeCollections ? new List<FunctionParameter>() : null;
 
@@ -66,6 +69,61 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroup()
         {
             return this._actionGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActionInvocationType. 
+        /// <para>
+        /// Contains information about the function to invoke,
+        /// </para>
+        /// </summary>
+        public ActionInvocationType ActionInvocationType
+        {
+            get { return this._actionInvocationType; }
+            set { this._actionInvocationType = value; }
+        }
+
+        // Check to see if ActionInvocationType property is set
+        internal bool IsSetActionInvocationType()
+        {
+            return this._actionInvocationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The agent's ID.
+        /// </para>
+        /// </summary>
+        public string AgentId
+        {
+            get { return this._agentId; }
+            set { this._agentId = value; }
+        }
+
+        // Check to see if AgentId property is set
+        internal bool IsSetAgentId()
+        {
+            return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollaboratorName. 
+        /// <para>
+        /// The collaborator's name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string CollaboratorName
+        {
+            get { return this._collaboratorName; }
+            set { this._collaboratorName = value; }
+        }
+
+        // Check to see if CollaboratorName property is set
+        internal bool IsSetCollaboratorName()
+        {
+            return this._collaboratorName != null;
         }
 
         /// <summary>

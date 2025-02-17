@@ -81,6 +81,7 @@ namespace Amazon.CognitoIdentity.Model
         /// The Secret Access Key portion of the credentials
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecretKey
         {
             get { return this._secretKey; }

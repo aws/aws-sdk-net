@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// If you do not provide an integration ARN, then the results include all of the available
+    /// If you don't provide an integration ARN, then the results include all of the available
     /// product integrations. 
     /// </para>
     /// </summary>

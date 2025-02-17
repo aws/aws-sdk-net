@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// A description for a column.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }

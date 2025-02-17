@@ -83,7 +83,10 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
+        private ResultFormatString _resultFormat;
         private string _secretArn;
+        private string _sessionId;
+        private int? _sessionKeepAliveSeconds;
         private List<string> _sqls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _statementName;
         private bool? _withEvent;
@@ -116,6 +119,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// authenticating using either Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -135,7 +139,6 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Database
         {
             get { return this._database; }
@@ -168,6 +171,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement. If no format is specified, the
+        /// default is JSON.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The name or ARN of the secret that enables access to the database. This parameter
@@ -184,6 +206,45 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The session identifier of the query.
+        /// </para>
+        /// </summary>
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionKeepAliveSeconds. 
+        /// <para>
+        /// The number of seconds to keep the session alive after the query finishes. The maximum
+        /// time a session can keep alive is 24 hours. After 24 hours, the session is forced closed
+        /// and the query is terminated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=86400)]
+        public int SessionKeepAliveSeconds
+        {
+            get { return this._sessionKeepAliveSeconds.GetValueOrDefault(); }
+            set { this._sessionKeepAliveSeconds = value; }
+        }
+
+        // Check to see if SessionKeepAliveSeconds property is set
+        internal bool IsSetSessionKeepAliveSeconds()
+        {
+            return this._sessionKeepAliveSeconds.HasValue; 
         }
 
         /// <summary>

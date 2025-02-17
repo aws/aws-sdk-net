@@ -44,6 +44,7 @@ namespace Amazon.QConnect.Model
         private SourceConfiguration _sourceConfiguration;
         private KnowledgeBaseStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -241,6 +242,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in a data source.
+        /// </para>
+        /// </summary>
+        public VectorIngestionConfiguration VectorIngestionConfiguration
+        {
+            get { return this._vectorIngestionConfiguration; }
+            set { this._vectorIngestionConfiguration = value; }
+        }
+
+        // Check to see if VectorIngestionConfiguration property is set
+        internal bool IsSetVectorIngestionConfiguration()
+        {
+            return this._vectorIngestionConfiguration != null;
         }
 
     }

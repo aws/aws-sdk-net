@@ -73,6 +73,36 @@ namespace Amazon.SimpleEmailV2.Model
         ///  <c>DNS_SERVER_ERROR</c> – The DNS server encountered an issue and was unable to complete
         /// the request.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLICATION_ACCESS_DENIED</c> – The verification failed because the user does
+        /// not have the required permissions to replicate the DKIM key from the primary region.
+        /// Ensure you have the necessary permissions in both primary and replica regions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLICATION_PRIMARY_NOT_FOUND</c> – The verification failed because no corresponding
+        /// identity was found in the specified primary region. Ensure the identity exists in
+        /// the primary region before attempting replication. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED</c> – The verification failed because
+        /// the identity in the primary region is configured with Bring Your Own DKIM (BYODKIM).
+        /// DKIM key replication is only supported for identities using Easy DKIM. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</c> – The verification failed because
+        /// the specified primary identity is a replica of another identity, and multi-level replication
+        /// is not supported; the primary identity must be a non-replica identity. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLICATION_PRIMARY_INVALID_REGION</c> – The verification failed due to an invalid
+        /// primary region specified. Ensure you provide a valid AWS region where Amazon SES is
+        /// available and different from the replica region. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public VerificationError ErrorType

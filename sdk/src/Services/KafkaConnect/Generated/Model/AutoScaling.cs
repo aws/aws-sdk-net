@@ -46,7 +46,7 @@ namespace Amazon.KafkaConnect.Model
         /// The maximum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true)]
         public int MaxWorkerCount
         {
             get { return this._maxWorkerCount.GetValueOrDefault(); }
@@ -85,7 +85,7 @@ namespace Amazon.KafkaConnect.Model
         /// The minimum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true)]
         public int MinWorkerCount
         {
             get { return this._minWorkerCount.GetValueOrDefault(); }

@@ -49,6 +49,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             InvokeFlowResponse response = new InvokeFlowResponse();
 
             response.ResponseStream = new FlowResponseStream(context.Stream);
+            if (context.ResponseData.IsHeaderPresent("x-amz-bedrock-flow-execution-id"))
+                response.ExecutionId = context.ResponseData.GetHeaderValue("x-amz-bedrock-flow-execution-id");
 
             return response;
         }

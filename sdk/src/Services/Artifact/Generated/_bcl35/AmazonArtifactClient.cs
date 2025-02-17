@@ -561,6 +561,72 @@ namespace Amazon.Artifact
 
         #endregion
         
+        #region  ListCustomerAgreements
+
+        /// <summary>
+        /// List active customer-agreements applicable to calling identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAgreements service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomerAgreements service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
+        public virtual ListCustomerAgreementsResponse ListCustomerAgreements(ListCustomerAgreementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomerAgreementsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomerAgreements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerAgreements operation on AmazonArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomerAgreements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
+        public virtual IAsyncResult BeginListCustomerAgreements(ListCustomerAgreementsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomerAgreements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomerAgreements.</param>
+        /// 
+        /// <returns>Returns a  ListCustomerAgreementsResult from Artifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
+        public virtual ListCustomerAgreementsResponse EndListCustomerAgreements(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCustomerAgreementsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListReports
 
         /// <summary>

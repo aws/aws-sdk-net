@@ -34,7 +34,27 @@ namespace Amazon.CloudControlApi.Model
     /// </summary>
     public partial class GetResourceRequestStatusResponse : AmazonWebServiceResponse
     {
+        private List<HookProgressEvent> _hooksProgressEvent = AWSConfigs.InitializeCollections ? new List<HookProgressEvent>() : null;
         private ProgressEvent _progressEvent;
+
+        /// <summary>
+        /// Gets and sets the property HooksProgressEvent. 
+        /// <para>
+        /// Lists Hook invocations for the specified target in the request. This is a list since
+        /// the same target can invoke multiple Hooks.
+        /// </para>
+        /// </summary>
+        public List<HookProgressEvent> HooksProgressEvent
+        {
+            get { return this._hooksProgressEvent; }
+            set { this._hooksProgressEvent = value; }
+        }
+
+        // Check to see if HooksProgressEvent property is set
+        internal bool IsSetHooksProgressEvent()
+        {
+            return this._hooksProgressEvent != null && (this._hooksProgressEvent.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ProgressEvent. 

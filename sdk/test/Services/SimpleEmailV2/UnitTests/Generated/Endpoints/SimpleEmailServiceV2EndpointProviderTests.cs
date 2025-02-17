@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.SimpleEmailV2.Endpoints;
 using Amazon.SimpleEmailV2.Internal;
@@ -729,6 +730,162 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void Missing_region_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with dualstack and FIPS disabled. i.e, IPv4 Only stack with no FIPS")]
+        public void Valid_EndpointId_with_dualstack_and_FIPS_disabled_ie_IPv4_Only_stack_with_no_FIPS_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with dualstack enabled")]
+        public void Valid_EndpointId_with_dualstack_enabled_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with FIPS set, dualstack disabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
+        public void Valid_EndpointId_with_FIPS_set_dualstack_disabled_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-northeast-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with both dualstack and FIPS enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
+        public void Valid_EndpointId_with_both_dualstack_and_FIPS_enabled_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "ap-northeast-2";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Regular regional request, without EndpointId")]
+        public void Regular_regional_request_without_EndpointId_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://email.eu-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Invalid EndpointId (Invalid chars / format)")]
+        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label")]
+        public void Invalid_EndpointId_Invalid_chars_format_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "badactor.com?foo=bar";
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Invalid EndpointId (Empty)")]
+        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label")]
+        public void Invalid_EndpointId_Empty_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "";
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with custom sdk endpoint")]
+        public void Valid_EndpointId_with_custom_sdk_endpoint_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with custom sdk endpoint with FIPS enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
+        public void Valid_EndpointId_with_custom_sdk_endpoint_with_FIPS_enabled_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Valid EndpointId with DualStack enabled and partition does not support DualStack")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void Valid_EndpointId_with_DualStack_enabled_and_partition_does_not_support_DualStack_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
         }
 

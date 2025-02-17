@@ -39,7 +39,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// Configuration ID of an application to be created.
+        /// The configuration ID of an application to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

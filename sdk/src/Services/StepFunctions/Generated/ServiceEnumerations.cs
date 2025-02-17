@@ -283,6 +283,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType ChoiceStateExited = new HistoryEventType("ChoiceStateExited");
         /// <summary>
+        /// Constant EvaluationFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType EvaluationFailed = new HistoryEventType("EvaluationFailed");
+        /// <summary>
         /// Constant ExecutionAborted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType ExecutionAborted = new HistoryEventType("ExecutionAborted");
@@ -1084,6 +1088,10 @@ namespace Amazon.StepFunctions
         /// Constant ERROR for ValidateStateMachineDefinitionSeverity
         /// </summary>
         public static readonly ValidateStateMachineDefinitionSeverity ERROR = new ValidateStateMachineDefinitionSeverity("ERROR");
+        /// <summary>
+        /// Constant WARNING for ValidateStateMachineDefinitionSeverity
+        /// </summary>
+        public static readonly ValidateStateMachineDefinitionSeverity WARNING = new ValidateStateMachineDefinitionSeverity("WARNING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

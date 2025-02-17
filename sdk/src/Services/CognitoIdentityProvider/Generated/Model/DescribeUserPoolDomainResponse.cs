@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DomainDescription. 
         /// <para>
-        /// A domain description object containing information about the domain.
+        /// The details of the requested user pool domain.
         /// </para>
         /// </summary>
         public DomainDescriptionType DomainDescription

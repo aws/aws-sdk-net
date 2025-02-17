@@ -108,6 +108,7 @@ namespace Amazon.BedrockAgent.Model
         /// A definition of the nodes and connections in the flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public FlowDefinition Definition
         {
             get { return this._definition; }
@@ -123,7 +124,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the flow version.
+        /// The description of the version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -182,7 +183,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the flow version.
+        /// The name of the version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

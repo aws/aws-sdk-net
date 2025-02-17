@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.Artifact.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -48,10 +50,10 @@ namespace Amazon.Artifact.Internal
         {
             var config = (AmazonArtifactConfig)requestContext.ClientConfig;
             var result = new ArtifactEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.

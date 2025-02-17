@@ -82,6 +82,14 @@ namespace Amazon.Runtime.Internal
             using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.SerializationDurationMetricName))
             {
                 var requestContext = executionContext.RequestContext;
+
+                if (requestContext.OriginalRequest.CoreChecksumMode != CoreChecksumResponseBehavior.ENABLED
+                        && requestContext.ClientConfig.ResponseChecksumValidation == ResponseChecksumValidation.WHEN_SUPPORTED)
+                {
+                    // Set CoreChecksumMode to enabled to validate the integrity of this request's response if it is supported.
+                    requestContext.OriginalRequest.CoreChecksumMode = CoreChecksumResponseBehavior.ENABLED;
+                }
+
                 requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
                 requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 

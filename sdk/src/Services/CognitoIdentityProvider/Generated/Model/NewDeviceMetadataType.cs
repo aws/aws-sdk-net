@@ -30,7 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The new device metadata type.
+    /// Information that your user pool responds with in <c>AuthenticationResult</c>when you
+    /// configure it to remember devices and a user signs in with an unrecognized device.
+    /// Amazon Cognito presents a new device key that you can use to set up <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">device
+    /// authentication</a> in a "Remember me on this device" authentication model.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of authentication operations like <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
+    /// </para>
     /// </summary>
     public partial class NewDeviceMetadataType
     {
@@ -40,7 +51,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceGroupKey. 
         /// <para>
-        /// The device group key.
+        /// The device group key, an identifier used in generating the <c>DEVICE_PASSWORD_VERIFIER</c>
+        /// for device SRP authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -59,7 +71,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceKey. 
         /// <para>
-        /// The device key.
+        /// The device key, an identifier used in generating the <c>DEVICE_PASSWORD_VERIFIER</c>
+        /// for device SRP authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

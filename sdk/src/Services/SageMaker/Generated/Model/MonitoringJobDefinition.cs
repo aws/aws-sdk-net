@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MonitoringInputs. 
         /// <para>
         /// The array of inputs for the monitoring job. Currently we support monitoring an Amazon
-        /// SageMaker Endpoint.
+        /// SageMaker AI Endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -181,8 +181,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume
+        /// to perform tasks on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

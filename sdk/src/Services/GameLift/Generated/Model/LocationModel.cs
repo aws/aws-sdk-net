@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Properties of a custom location for use in an Amazon GameLift Anywhere fleet. This
-    /// data type is returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation.html</a>.
+    /// data type is returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation</a>.
     /// </summary>
     public partial class LocationModel
     {

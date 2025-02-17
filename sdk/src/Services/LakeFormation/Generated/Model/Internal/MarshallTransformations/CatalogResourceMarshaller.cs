@@ -48,6 +48,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.Write(requestObject.Id);
+            }
+
         }
 
         /// <summary>

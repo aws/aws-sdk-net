@@ -103,6 +103,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLFTagExpression())
+            {
+                context.Writer.WritePropertyName("LFTagExpression");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LFTagExpressionResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.LFTagExpression, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLFTagPolicy())
             {
                 context.Writer.WritePropertyName("LFTagPolicy");

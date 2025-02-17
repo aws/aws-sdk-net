@@ -923,9 +923,15 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Create a new registration attachment to use for uploading a file or a URL to a file.
-        /// The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For
+        /// The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For
         /// example, many sender ID registrations require a signed “letter of authorization” (LOA)
         /// to be submitted.
+        /// 
+        ///  
+        /// <para>
+        /// Use either <c>AttachmentUrl</c> or <c>AttachmentBody</c> to upload your attachment.
+        /// If both are specified then an exception is returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegistrationAttachment service method.</param>
         /// <param name="cancellationToken">
@@ -1760,6 +1766,58 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  DeleteProtectConfigurationRuleSetNumberOverride
+
+        internal virtual DeleteProtectConfigurationRuleSetNumberOverrideResponse DeleteProtectConfigurationRuleSetNumberOverride(DeleteProtectConfigurationRuleSetNumberOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProtectConfigurationRuleSetNumberOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Permanently delete the protect configuration rule set number override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProtectConfigurationRuleSetNumberOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProtectConfigurationRuleSetNumberOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfigurationRuleSetNumberOverride">REST API Reference for DeleteProtectConfigurationRuleSetNumberOverride Operation</seealso>
+        public virtual Task<DeleteProtectConfigurationRuleSetNumberOverrideResponse> DeleteProtectConfigurationRuleSetNumberOverrideAsync(DeleteProtectConfigurationRuleSetNumberOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProtectConfigurationRuleSetNumberOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRegistration
 
         internal virtual DeleteRegistrationResponse DeleteRegistration(DeleteRegistrationRequest request)
@@ -1927,6 +1985,60 @@ namespace Amazon.PinpointSMSVoiceV2
             options.ResponseUnmarshaller = DeleteRegistrationFieldValueResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRegistrationFieldValueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the resource-based policy document attached to the AWS End User Messaging
+        /// SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id,
+        /// or Phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2369,7 +2481,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </para>
         ///  
         /// <para>
-        /// If you specify an opted out number that isn't valid, an error is returned.
+        /// If you specify an opted out number that isn't valid, an exception is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptedOutNumbers service method.</param>
@@ -3159,7 +3271,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Retrieves the specified verified destiona numbers.
+        /// Retrieves the specified verified destination numbers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedDestinationNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -3426,6 +3538,60 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the JSON text of the resource-based policy document attached to the AWS
+        /// End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out
+        /// list, Sender Id, or Phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPoolOriginationIdentities
 
         internal virtual ListPoolOriginationIdentitiesResponse ListPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request)
@@ -3484,6 +3650,59 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  ListProtectConfigurationRuleSetNumberOverrides
+
+        internal virtual ListProtectConfigurationRuleSetNumberOverridesResponse ListProtectConfigurationRuleSetNumberOverrides(ListProtectConfigurationRuleSetNumberOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectConfigurationRuleSetNumberOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProtectConfigurationRuleSetNumberOverridesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve all of the protect configuration rule set number overrides that match the
+        /// filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectConfigurationRuleSetNumberOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProtectConfigurationRuleSetNumberOverrides service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListProtectConfigurationRuleSetNumberOverrides">REST API Reference for ListProtectConfigurationRuleSetNumberOverrides Operation</seealso>
+        public virtual Task<ListProtectConfigurationRuleSetNumberOverridesResponse> ListProtectConfigurationRuleSetNumberOverridesAsync(ListProtectConfigurationRuleSetNumberOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectConfigurationRuleSetNumberOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProtectConfigurationRuleSetNumberOverridesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRegistrationAssociations
 
         internal virtual ListRegistrationAssociationsResponse ListRegistrationAssociations(ListRegistrationAssociationsRequest request)
@@ -3498,7 +3717,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Retreive all of the origination identies that are associated with a registration.
+        /// Retrieve all of the origination identities that are associated with a registration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRegistrationAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -3661,6 +3880,67 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  PutMessageFeedback
+
+        internal virtual PutMessageFeedbackResponse PutMessageFeedback(PutMessageFeedbackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMessageFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMessageFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<PutMessageFeedbackResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Set the MessageFeedbackStatus as <c>RECEIVED</c> or <c>FAILED</c> for the passed in
+        /// MessageId. 
+        /// 
+        ///  
+        /// <para>
+        /// If you use message feedback then you must update message feedback record. When you
+        /// receive a signal that a user has received the message you must use <c>PutMessageFeedback</c>
+        /// to set the message feedback record as <c>RECEIVED</c>; Otherwise, an hour after the
+        /// message feedback record is set to <c>FAILED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMessageFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMessageFeedback service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutMessageFeedback">REST API Reference for PutMessageFeedback Operation</seealso>
+        public virtual Task<PutMessageFeedbackResponse> PutMessageFeedbackAsync(PutMessageFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMessageFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMessageFeedbackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutMessageFeedbackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutOptedOutNumber
 
         internal virtual PutOptedOutNumberResponse PutOptedOutNumber(PutOptedOutNumberRequest request)
@@ -3719,6 +3999,63 @@ namespace Amazon.PinpointSMSVoiceV2
 
         #endregion
         
+        #region  PutProtectConfigurationRuleSetNumberOverride
+
+        internal virtual PutProtectConfigurationRuleSetNumberOverrideResponse PutProtectConfigurationRuleSetNumberOverride(PutProtectConfigurationRuleSetNumberOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<PutProtectConfigurationRuleSetNumberOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create or update a RuleSetNumberOverride and associate it with a protect configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProtectConfigurationRuleSetNumberOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutProtectConfigurationRuleSetNumberOverride service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time or it could be that
+        /// the requested action isn't valid for the current state or configuration of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutProtectConfigurationRuleSetNumberOverride">REST API Reference for PutProtectConfigurationRuleSetNumberOverride Operation</seealso>
+        public virtual Task<PutProtectConfigurationRuleSetNumberOverrideResponse> PutProtectConfigurationRuleSetNumberOverrideAsync(PutProtectConfigurationRuleSetNumberOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutProtectConfigurationRuleSetNumberOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRegistrationFieldValue
 
         internal virtual PutRegistrationFieldValueResponse PutRegistrationFieldValue(PutRegistrationFieldValueRequest request)
@@ -3772,6 +4109,62 @@ namespace Amazon.PinpointSMSVoiceV2
             options.ResponseUnmarshaller = PutRegistrationFieldValueResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRegistrationFieldValueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a AWS End User Messaging SMS and Voice resource(phone
+        /// number, sender Id, phone poll, or opt-out list) that is used for sharing the resource.
+        /// A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more
+        /// information about resource-based policies, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
+        /// with shared resources</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4321,6 +4714,58 @@ namespace Amazon.PinpointSMSVoiceV2
             options.ResponseUnmarshaller = SetAccountDefaultProtectConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetAccountDefaultProtectConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SetDefaultMessageFeedbackEnabled
+
+        internal virtual SetDefaultMessageFeedbackEnabledResponse SetDefaultMessageFeedbackEnabled(SetDefaultMessageFeedbackEnabledRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultMessageFeedbackEnabledRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultMessageFeedbackEnabledResponseUnmarshaller.Instance;
+
+            return Invoke<SetDefaultMessageFeedbackEnabledResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sets a configuration set's default for message feedback.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultMessageFeedbackEnabled service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetDefaultMessageFeedbackEnabled service method, as returned by PinpointSMSVoiceV2.</returns>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient permissions to access the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.InternalServerException">
+        /// The API encountered an unexpected error and couldn't complete the request. You might
+        /// be able to successfully issue the request again in the future.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ResourceNotFoundException">
+        /// A requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ThrottlingException">
+        /// An error that occurred because too many requests were sent during a certain amount
+        /// of time.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointSMSVoiceV2.Model.ValidationException">
+        /// A validation exception for a field.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultMessageFeedbackEnabled">REST API Reference for SetDefaultMessageFeedbackEnabled Operation</seealso>
+        public virtual Task<SetDefaultMessageFeedbackEnabledResponse> SetDefaultMessageFeedbackEnabledAsync(SetDefaultMessageFeedbackEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultMessageFeedbackEnabledRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultMessageFeedbackEnabledResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetDefaultMessageFeedbackEnabledResponse>(request, options, cancellationToken);
         }
 
         #endregion

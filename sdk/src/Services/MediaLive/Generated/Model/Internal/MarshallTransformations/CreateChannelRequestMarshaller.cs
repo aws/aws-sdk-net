@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnywhereSettings())
+                {
+                    context.Writer.WritePropertyName("anywhereSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnywhereSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnywhereSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCdiInputSpecification())
                 {
                     context.Writer.WritePropertyName("cdiInputSpecification");
@@ -84,6 +95,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ChannelClass);
                 }
 
+                if(publicRequest.IsSetChannelEngineVersion())
+                {
+                    context.Writer.WritePropertyName("channelEngineVersion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChannelEngineVersionRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChannelEngineVersion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDestinations())
                 {
                     context.Writer.WritePropertyName("destinations");
@@ -98,6 +120,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDryRun())
+                {
+                    context.Writer.WritePropertyName("dryRun");
+                    context.Writer.Write(publicRequest.DryRun);
                 }
 
                 if(publicRequest.IsSetEncoderSettings())

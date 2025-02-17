@@ -31,7 +31,8 @@ namespace Amazon.SecurityToken.Model
 {
     /// <summary>
     /// The error returned if the message passed to <c>DecodeAuthorizationMessage</c> was
-    /// invalid. This can happen if the token contains invalid characters, such as linebreaks.
+    /// invalid. This can happen if the token contains invalid characters, such as line breaks,
+    /// or if the message has expired.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

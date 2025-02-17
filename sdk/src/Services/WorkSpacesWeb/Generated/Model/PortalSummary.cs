@@ -38,6 +38,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private string _browserSettingsArn;
         private BrowserType _browserType;
         private DateTime? _creationDate;
+        private string _dataProtectionSettingsArn;
         private string _displayName;
         private InstanceType _instanceType;
         private string _ipAccessSettingsArn;
@@ -66,10 +67,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center
-        /// (successor to Single Sign-On). Identity sources (including external identity provider
-        /// integration), plus user and group access to your web portal, can be configured in
-        /// the IAM Identity Center.
+        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center.
+        /// Identity sources (including external identity provider integration), plus user and
+        /// group access to your web portal, can be configured in the IAM Identity Center.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -137,6 +137,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProtectionSettingsArn. 
+        /// <para>
+        /// The ARN of the data protection settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataProtectionSettingsArn
+        {
+            get { return this._dataProtectionSettingsArn; }
+            set { this._dataProtectionSettingsArn = value; }
+        }
+
+        // Check to see if DataProtectionSettingsArn property is set
+        internal bool IsSetDataProtectionSettingsArn()
+        {
+            return this._dataProtectionSettingsArn != null;
         }
 
         /// <summary>

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the scheduler-2021-06-30.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

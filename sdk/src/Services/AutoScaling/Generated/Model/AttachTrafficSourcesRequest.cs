@@ -64,15 +64,17 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// After the operation completes, use the <a>DescribeTrafficSources</a> API to return
-    /// details about the state of the attachments between traffic sources and your Auto Scaling
-    /// group. To detach a traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+    /// After the operation completes, use the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTrafficSources.html">DescribeTrafficSources</a>
+    /// API to return details about the state of the attachments between traffic sources and
+    /// your Auto Scaling group. To detach a traffic source from the Auto Scaling group, call
+    /// the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DetachTrafficSources.html">DetachTrafficSources</a>
     /// API.
     /// </para>
     /// </summary>
     public partial class AttachTrafficSourcesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private bool? _skipZonalShiftValidation;
         private List<TrafficSourceIdentifier> _trafficSources = AWSConfigs.InitializeCollections ? new List<TrafficSourceIdentifier>() : null;
 
         /// <summary>
@@ -92,6 +94,27 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipZonalShiftValidation. 
+        /// <para>
+        ///  If you enable zonal shift with cross-zone disabled load balancers, capacity could
+        /// become imbalanced across Availability Zones. To skip the validation, specify <c>true</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto
+        /// Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public bool SkipZonalShiftValidation
+        {
+            get { return this._skipZonalShiftValidation.GetValueOrDefault(); }
+            set { this._skipZonalShiftValidation = value; }
+        }
+
+        // Check to see if SkipZonalShiftValidation property is set
+        internal bool IsSetSkipZonalShiftValidation()
+        {
+            return this._skipZonalShiftValidation.HasValue; 
         }
 
         /// <summary>

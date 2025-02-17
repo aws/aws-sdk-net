@@ -142,8 +142,8 @@ namespace Amazon.FSx.Model
         /// <para>
         /// For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
         /// metadata changes are imported to the FSx for Lustre file system. The path can be an
-        /// S3 bucket or prefix in the format <c>s3://myBucket/myPrefix</c> (where <c>myPrefix</c>
-        /// is optional). 
+        /// S3 bucket or prefix in the format <c>s3://bucket-name/prefix</c> (where <c>prefix</c>
+        /// is optional).
         /// </para>
         ///  </li> <li> 
         /// <para>

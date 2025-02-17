@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The range for memory, in MiB, to use for the accelerator.
+    /// Defines the maximum and minimum amount of memory, in MiB, to use for the accelerator.
     /// </summary>
     public partial class AcceleratorTotalMemoryMiBRange
     {

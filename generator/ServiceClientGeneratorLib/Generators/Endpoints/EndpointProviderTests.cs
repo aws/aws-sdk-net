@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+    #line 1 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EndpointProviderTests : Generators.BaseGenerator
     {
@@ -30,24 +30,24 @@ namespace ServiceClientGenerator.Generators.Endpoints
         public override string TransformText()
         {
             
-            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 7 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
     AddLicenseHeader();
 
             
             #line default
             #line hidden
-            this.Write("\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\nusing Amazon.Runtime;\r\nusi" +
-                    "ng ");
+            this.Write("\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\nusing System.Collections.G" +
+                    "eneric;\r\nusing Amazon.Runtime;\r\nusing ");
             
-            #line 13 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 14 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Endpoints;\r\nusing ");
             
-            #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 15 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -55,14 +55,14 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write(".Internal;\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.Endpoints\r\n{\r\n    [TestClass]\r\n" +
                     "    public partial class ");
             
-            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 20 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointsTests\r\n    {\r\n");
             
-            #line 21 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 22 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
         foreach(var test in this.Config.EndpointTests.testCases)
         {
@@ -73,56 +73,56 @@ namespace ServiceClientGenerator.Generators.Endpoints
             this.Write("        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory(\"" +
                     "Endpoints\")]\r\n        [TestCategory(\"");
             
-            #line 28 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 29 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        [Description(\"");
             
-            #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 30 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(test.documentation));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 31 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 if (test.expect.error != null) {
             
             #line default
             #line hidden
             this.Write("        [ExpectedException(typeof(AmazonClientException), @\"");
             
-            #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 32 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(test.expect.error.SanitizeQuotes()));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 33 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 }
             
             #line default
             #line hidden
             this.Write("        public void ");
             
-            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 34 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ToTestName(test.documentation)));
             
             #line default
             #line hidden
             this.Write("_Test()\r\n        {\r\n            var parameters = new ");
             
-            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 36 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointParameters();\r\n");
             
-            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 37 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
             if (test.@params != null)
             foreach(var param in test.@params)
@@ -133,21 +133,21 @@ if (test.expect.error != null) {
             #line hidden
             this.Write("            parameters[\"");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 42 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(param.Key));
             
             #line default
             #line hidden
             this.Write("\"] = ");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 42 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(param.Value.ToNativeValue()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 43 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
             }
 
@@ -156,14 +156,14 @@ if (test.expect.error != null) {
             #line hidden
             this.Write("            var endpoint = new Amazon");
             
-            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 46 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EndpointProvider().ResolveEndpoint(parameters);\r\n");
             
-            #line 46 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 47 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
             if (test.expect.endpoint != null)
             {
@@ -173,14 +173,14 @@ if (test.expect.error != null) {
             #line hidden
             this.Write("            Assert.AreEqual(\"");
             
-            #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 51 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(test.expect.endpoint.url));
             
             #line default
             #line hidden
             this.Write("\", endpoint.URL);\r\n");
             
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 52 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
             }
 
@@ -189,7 +189,7 @@ if (test.expect.error != null) {
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 56 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
+            #line 57 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
 
         }
 

@@ -69,6 +69,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArn())
+                {
+                    context.Writer.WritePropertyName("Arn");
+                    context.Writer.Write(publicRequest.Arn);
+                }
+
                 if(publicRequest.IsSetConfigurationRecorderNames())
                 {
                     context.Writer.WritePropertyName("ConfigurationRecorderNames");
@@ -78,6 +84,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestConfigurationRecorderNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetServicePrincipal())
+                {
+                    context.Writer.WritePropertyName("ServicePrincipal");
+                    context.Writer.Write(publicRequest.ServicePrincipal);
                 }
 
                 writer.WriteObjectEnd();

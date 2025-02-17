@@ -49,6 +49,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The properties of the container that's used on the Amazon EKS pod.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This object is limited to 10 elements.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<EksContainer> Containers
         {
@@ -147,7 +152,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This object is limited to 10 elements
+        /// This object is limited to 10 elements.
         /// </para>
         ///  </note>
         /// </summary>

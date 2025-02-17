@@ -30,20 +30,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// A Microsoft Teams team that has been authorized with AWS Chatbot.
+    /// A Microsoft Teams team that is authorized with AWS Chatbot.
     /// </summary>
     public partial class ConfiguredTeam
     {
+        private string _state;
+        private string _stateReason;
         private string _teamId;
         private string _teamName;
         private string _tenantId;
 
         /// <summary>
-        /// Gets and sets the property TeamId. The ID of the Microsoft Team authorized with AWS
-        /// Chatbot. To get the team ID, you must perform the initial authorization flow with
-        /// Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID
-        /// from the console. For more details, see steps 1-4 in Get started with Microsoft Teams
-        /// in the AWS Chatbot Administrator Guide.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Either <c>ENABLED</c> or <c>DISABLED</c>. The resource returns <c>DISABLED</c> if
+        /// the organization's AWS Chatbot policy has explicitly denied that configuration. For
+        /// example, if Amazon Chime is disabled.
+        /// </para>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason. 
+        /// <para>
+        /// Provided if State is <c>DISABLED</c>. Provides context as to why the resource is disabled.
+        /// </para>
+        /// </summary>
+        public string StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TeamId. 
+        /// <para>
+        ///  The ID of the Microsoft Teams authorized with AWS Chatbot.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the team ID, you must perform the initial authorization flow with Microsoft
+        /// Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the
+        /// console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+        /// 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
         public string TeamId
@@ -59,7 +106,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamName. The name of the Microsoft Teams Team.
+        /// Gets and sets the property TeamName. 
+        /// <para>
+        /// The name of the Microsoft Teams Team.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string TeamName
@@ -75,7 +125,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TenantId. The ID of the Microsoft Teams tenant.
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// The ID of the Microsoft Teams tenant.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
         public string TenantId

@@ -41,15 +41,20 @@ namespace Amazon.Lambda.Model
         private DestinationConfig _destinationConfig;
         private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private string _eventSourceArn;
+        private string _eventSourceMappingArn;
         private FilterCriteria _filterCriteria;
+        private FilterCriteriaError _filterCriteriaError;
         private string _functionArn;
         private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _kmsKeyArn;
         private DateTime? _lastModified;
         private string _lastProcessingResult;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
+        private EventSourceMappingMetricsConfig _metricsConfig;
         private int? _parallelizationFactor;
+        private ProvisionedPollerConfig _provisionedPollerConfig;
         private List<string> _queues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ScalingConfig _scalingConfig;
         private SelfManagedEventSource _selfManagedEventSource;
@@ -190,11 +195,37 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventSourceMappingArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=85, Max=120)]
+        public string EventSourceMappingArn
+        {
+            get { return this._eventSourceMappingArn; }
+            set { this._eventSourceMappingArn = value; }
+        }
+
+        // Check to see if EventSourceMappingArn property is set
+        internal bool IsSetEventSourceMappingArn()
+        {
+            return this._eventSourceMappingArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
         /// An object that defines the filter criteria that determine whether Lambda should process
         /// an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
         /// event filtering</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If filter criteria is encrypted, this field shows up as <c>null</c> in the response
+        /// of ListEventSourceMapping API calls. You can view this field in plaintext in the response
+        /// of GetEventSourceMapping and DeleteEventSourceMapping calls if you have <c>kms:Decrypt</c>
+        /// permissions for the correct KMS key.
         /// </para>
         /// </summary>
         public FilterCriteria FilterCriteria
@@ -207,6 +238,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFilterCriteria()
         {
             return this._filterCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterCriteriaError. 
+        /// <para>
+        /// An object that contains details about an error related to filter criteria encryption.
+        /// </para>
+        /// </summary>
+        public FilterCriteriaError FilterCriteriaError
+        {
+            get { return this._filterCriteriaError; }
+            set { this._filterCriteriaError = value; }
+        }
+
+        // Check to see if FilterCriteriaError property is set
+        internal bool IsSetFilterCriteriaError()
+        {
+            return this._filterCriteriaError != null;
         }
 
         /// <summary>
@@ -245,6 +294,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionResponseTypes()
         {
             return this._functionResponseTypes != null && (this._functionResponseTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        ///  The ARN of the Key Management Service (KMS) customer managed key that Lambda uses
+        /// to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+        /// criteria</a>.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
@@ -369,6 +438,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+        /// source mapping metrics</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
         /// (Kinesis and DynamoDB Streams only) The number of batches to process concurrently
@@ -386,6 +474,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedPollerConfig. 
+        /// <para>
+        /// (Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration
+        /// for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
+        /// Mode</a>.
+        /// </para>
+        /// </summary>
+        public ProvisionedPollerConfig ProvisionedPollerConfig
+        {
+            get { return this._provisionedPollerConfig; }
+            set { this._provisionedPollerConfig = value; }
+        }
+
+        // Check to see if ProvisionedPollerConfig property is set
+        internal bool IsSetProvisionedPollerConfig()
+        {
+            return this._provisionedPollerConfig != null;
         }
 
         /// <summary>

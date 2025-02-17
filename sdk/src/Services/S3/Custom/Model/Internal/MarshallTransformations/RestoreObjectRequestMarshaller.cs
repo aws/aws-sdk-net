@@ -50,6 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (restoreObjectRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(restoreObjectRequest.ExpectedBucketOwner));
 
+            if (restoreObjectRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(restoreObjectRequest.ChecksumAlgorithm));
+
             if (string.IsNullOrEmpty(restoreObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "RestoreObjectRequest.BucketName");
             if (string.IsNullOrEmpty(restoreObjectRequest.Key))
@@ -74,7 +77,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                ChecksumUtils.SetChecksumData(request, restoreObjectRequest.ChecksumAlgorithm, fallbackToMD5: false);
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    restoreObjectRequest.ChecksumAlgorithm,
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: false,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e)
             {

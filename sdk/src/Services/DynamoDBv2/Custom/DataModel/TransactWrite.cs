@@ -16,11 +16,13 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -35,6 +37,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal DynamoDBContext Context { get; set; }
         internal DynamoDBFlatConfig Config { get; set; }
         internal DocumentTransactWrite DocumentTransaction { get; set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -45,6 +48,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             Context = context;
             Config = config;
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -130,11 +135,8 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
-            {
-                ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
-            });
+            AddDocumentTransaction(storage, conditionExpression);
+            
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
             {
                 OriginalObject = item,
@@ -433,6 +435,45 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
+        
+
+        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
+        {
+            var hashKeyPropertyNames = storage.Config.HashKeyPropertyNames;
+            var rangeKeyPropertyNames = storage.Config.RangeKeyPropertyNames;
+
+            var attributeNames = storage.Document.Keys.ToList();
+
+            foreach (var keyPropertyName in hashKeyPropertyNames)
+            {
+                attributeNames.Remove(keyPropertyName);
+            }
+
+            foreach (var rangeKeyPropertyName in rangeKeyPropertyNames)
+            {
+                attributeNames.Remove(rangeKeyPropertyName);
+            }
+
+            // If there are no attributes left, we need to use PutItem
+            // as UpdateItem requires at least one data attribute
+            if (attributeNames.Any())
+            {
+                DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
+            else
+            {
+
+                DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
+        }
 
         private void SetNewVersion(ItemStorage storage)
         {
@@ -455,6 +496,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        internal TracerProvider TracerProvider { get; private set; }
 
         #region Constructor
 
@@ -466,6 +508,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactWrite(params TransactWrite[] transactionParts)
         {
             allTransactionParts = new List<TransactWrite>(transactionParts);
+            TracerProvider = allTransactionParts.Count > 0
+                ? allTransactionParts[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableTransactWrite(TransactWrite first, params TransactWrite[] rest)
@@ -473,6 +518,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts = new List<TransactWrite>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
+            TracerProvider = allTransactionParts[0].TracerProvider;
         }
 
         #endregion

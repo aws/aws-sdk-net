@@ -103,9 +103,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DataRepositoryPath. 
         /// <para>
         /// The path to the Amazon S3 data repository that will be linked to the file system.
-        /// The path can be an S3 bucket or prefix in the format <c>s3://myBucket/myPrefix/</c>.
-        /// This path specifies where in the S3 data repository files will be imported from or
-        /// exported to.
+        /// The path can be an S3 bucket or prefix in the format <c>s3://bucket-name/prefix/</c>
+        /// (where <c>prefix</c> is optional). This path specifies where in the S3 data repository
+        /// files will be imported from or exported to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=4357)]

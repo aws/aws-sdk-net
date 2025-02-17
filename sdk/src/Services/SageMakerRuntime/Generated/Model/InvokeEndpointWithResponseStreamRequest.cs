@@ -82,6 +82,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _endpointName;
         private string _inferenceComponentName;
         private string _inferenceId;
+        private string _sessionId;
         private string _targetContainerHostname;
         private string _targetVariant;
 
@@ -244,6 +245,33 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInferenceId()
         {
             return !string.IsNullOrEmpty(this._inferenceId);
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The ID of a stateful session to handle your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't create a stateful session by using the <c>InvokeEndpointWithResponseStream</c>
+        /// action. Instead, you can create one by using the <c> <a>InvokeEndpoint</a> </c> action.
+        /// In your request, you specify <c>NEW_SESSION</c> for the <c>SessionId</c> request parameter.
+        /// The response to that request provides the session ID for the <c>NewSessionId</c> response
+        /// parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return !string.IsNullOrEmpty(this._sessionId);
         }
 
         /// <summary>

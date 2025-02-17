@@ -268,6 +268,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeDirectoryDataAccessRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeDomainControllersRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -343,6 +347,10 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DisableDirectoryDataAccessRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DisableLDAPSRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -366,6 +374,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.EnableClientAuthenticationRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.EnableDirectoryDataAccessRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -924,7 +936,7 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RadiusSettings.RadiusTimeout</property>
     <min>1</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RadiusSettings.SharedSecret</property>

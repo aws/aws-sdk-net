@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the Amazon CloudWatch logging options for your delivery stream.
+    /// Describes the Amazon CloudWatch logging options for your Firehose stream.
     /// </summary>
     public partial class CloudWatchLoggingOptions
     {

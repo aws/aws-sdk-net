@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// The <c>Exists</c> filter must be used with aggregators. For more information, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-aggregate.html">Aggregating
         /// inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  </note>

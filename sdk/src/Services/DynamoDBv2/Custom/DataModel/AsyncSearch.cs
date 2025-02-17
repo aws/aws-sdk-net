@@ -15,6 +15,7 @@
 
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -39,6 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
             SourceContext = source;
             DocumentSearch = contextSearch.Search;
             Config = contextSearch.FlatConfig;
+            TracerProvider = source?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -50,6 +53,8 @@ namespace Amazon.DynamoDBv2.DataModel
         private DynamoDBFlatConfig Config { get; set; }
 
         #endregion
+
+        internal TracerProvider TracerProvider { get; private set; }
 
         #region Public properties
 

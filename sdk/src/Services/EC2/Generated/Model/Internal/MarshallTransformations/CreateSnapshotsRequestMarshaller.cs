@@ -87,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("InstanceSpecification" + "." + "InstanceId", StringUtils.FromString(publicRequest.InstanceSpecification.InstanceId));
                     }
                 }
+                if(publicRequest.IsSetLocation())
+                {
+                    request.Parameters.Add("Location", StringUtils.FromString(publicRequest.Location));
+                }
                 if(publicRequest.IsSetOutpostArn())
                 {
                     request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));

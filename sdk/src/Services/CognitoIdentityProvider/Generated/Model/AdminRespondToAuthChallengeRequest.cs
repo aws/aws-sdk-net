@@ -118,7 +118,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+        /// The name of the challenge that you are responding to. You can find more information
+        /// about values for <c>ChallengeName</c> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,14 +145,80 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <important> 
         /// <para>
         /// You must provide a SECRET_HASH parameter in all challenge responses to an app client
-        /// that has a client secret.
+        /// that has a client secret. Include a <c>DEVICE_KEY</c> for device authentication.
         /// </para>
-        ///  </important> <dl> <dt>SMS_MFA</dt> <dd> 
+        ///  </important> <dl> <dt>SELECT_CHALLENGE</dt> <dd> 
         /// <para>
-        ///  <c>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[SMS_code]",
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "[username]",
+        /// "ANSWER": "[Challenge name]"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Available challenges are <c>PASSWORD</c>, <c>PASSWORD_SRP</c>, <c>EMAIL_OTP</c>, <c>SMS_OTP</c>,
+        /// and <c>WEB_AUTHN</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Complete authentication in the <c>SELECT_CHALLENGE</c> response for <c>PASSWORD</c>,
+        /// <c>PASSWORD_SRP</c>, and <c>WEB_AUTHN</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN",
+        /// "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+        /// AuthenticationResponseJSON</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD",
+        /// "USERNAME": "[username]", "PASSWORD": "[password]"}</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP",
+        /// "USERNAME": "[username]", "SRP_A": "[SRP_A]"}</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <c>SMS_OTP</c> and <c>EMAIL_OTP</c>, respond with the username and answer. Your
+        /// user pool will send a code for the user to submit in the next challenge response.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP",
         /// "USERNAME": "[username]"}</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP",
+        /// "USERNAME": "[username]"}</c> 
+        /// </para>
+        ///  </li> </ul> </dd> <dt>SMS_OTP</dt> <dd> 
+        /// <para>
+        ///  <c>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "[code]", "USERNAME":
+        /// "[username]"}</c> 
+        /// </para>
+        ///  </dd> <dt>EMAIL_OTP</dt> <dd> 
+        /// <para>
+        ///  <c>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "[code]",
+        /// "USERNAME": "[username]"}</c> 
+        /// </para>
+        ///  </dd> <dt>SMS_MFA</dt> <dd> 
+        /// <para>
+        ///  <c>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[code]", "USERNAME":
+        /// "[username]"}</c> 
+        /// </para>
         ///  </dd> <dt>PASSWORD_VERIFIER</dt> <dd> 
+        /// <para>
+        /// This challenge response is part of the SRP flow. Amazon Cognito requires that your
+        /// application respond to this challenge within a few seconds. When the response time
+        /// exceeds this period, your user pool returns a <c>NotAuthorizedException</c> error.
+        /// </para>
+        ///  
         /// <para>
         ///  <c>"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE":
         /// "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP":
@@ -239,7 +306,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID.
+        /// The ID of the app client where you initiated sign-in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -269,7 +336,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// pre sign-up
+        /// Pre sign-up
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -277,27 +344,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// post authentication
+        /// Post authentication
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// user migration
+        /// User migration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// pre token generation
+        /// Pre token generation
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// define auth challenge
+        /// Define auth challenge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// create auth challenge
+        /// Create auth challenge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// verify auth challenge response
+        /// Verify auth challenge response
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -315,22 +382,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -354,6 +422,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
+        /// </para>
         /// </summary>
         public ContextDataType ContextData
         {
@@ -370,11 +443,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// If an <c>InitiateAuth</c> or <c>RespondToAuthChallenge</c> API call determines that
-        /// the caller must pass another challenge, it returns a session with other challenge
-        /// parameters. This session should be passed as it is to the next <c>RespondToAuthChallenge</c>
-        /// API call.
+        /// The session identifier that maintains the state of authentication requests and challenge
+        /// responses. If an <c>AdminInitiateAuth</c> or <c>AdminRespondToAuthChallenge</c> API
+        /// request results in a determination that your application must pass another challenge,
+        /// Amazon Cognito returns a session with other challenge parameters. Send this session
+        /// identifier, unmodified, to the next <c>AdminRespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]
@@ -393,7 +466,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the Amazon Cognito user pool.
+        /// The ID of the user pool where you want to respond to an authentication challenge.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

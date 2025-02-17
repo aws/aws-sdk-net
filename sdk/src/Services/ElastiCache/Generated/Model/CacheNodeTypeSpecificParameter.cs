@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// A parameter that has a different value for each cache node type it is applied to.
-    /// For example, in a Redis OSS cluster, a <c>cache.m1.large</c> cache node type would
-    /// have a larger <c>maxmemory</c> value than a <c>cache.m1.small</c> type.
+    /// For example, in a Valkey or Redis OSS cluster, a <c>cache.m1.large</c> cache node
+    /// type would have a larger <c>maxmemory</c> value than a <c>cache.m1.small</c> type.
     /// </summary>
     public partial class CacheNodeTypeSpecificParameter
     {
@@ -92,7 +92,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Indicates whether a change to the parameter is applied immediately or requires a reboot
         /// for the change to be applied. You can force a reboot or wait until the next maintenance
-        /// window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+        /// window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.Rebooting.html">Rebooting
         /// a Cluster</a>.
         /// </para>
         /// </summary>

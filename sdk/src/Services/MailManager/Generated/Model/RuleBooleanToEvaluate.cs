@@ -35,6 +35,7 @@ namespace Amazon.MailManager.Model
     public partial class RuleBooleanToEvaluate
     {
         private RuleBooleanEmailAttribute _attribute;
+        private RuleIsInAddressList _isInAddressList;
 
         /// <summary>
         /// Gets and sets the property Attribute. 
@@ -52,6 +53,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsInAddressList. 
+        /// <para>
+        /// The structure representing the address lists and address list attribute that will
+        /// be used in evaluation of boolean expression.
+        /// </para>
+        /// </summary>
+        public RuleIsInAddressList IsInAddressList
+        {
+            get { return this._isInAddressList; }
+            set { this._isInAddressList = value; }
+        }
+
+        // Check to see if IsInAddressList property is set
+        internal bool IsSetIsInAddressList()
+        {
+            return this._isInAddressList != null;
         }
 
     }

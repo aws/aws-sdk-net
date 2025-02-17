@@ -39,7 +39,6 @@ namespace Amazon.BedrockAgent.Model
         private int? _maxTokens;
         private List<string> _stopSequences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private float? _temperature;
-        private int? _topk;
         private float? _topp;
 
         /// <summary>
@@ -48,7 +47,7 @@ namespace Amazon.BedrockAgent.Model
         /// The maximum number of tokens to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Min=0, Max=8192)]
         public int MaxTokens
         {
             get { return this._maxTokens.GetValueOrDefault(); }
@@ -98,26 +97,6 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetTemperature()
         {
             return this._temperature.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TopK. 
-        /// <para>
-        /// The number of most-likely candidates that the model considers for the next token during
-        /// generation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=500)]
-        public int TopK
-        {
-            get { return this._topk.GetValueOrDefault(); }
-            set { this._topk = value; }
-        }
-
-        // Check to see if TopK property is set
-        internal bool IsSetTopK()
-        {
-            return this._topk.HasValue; 
         }
 
         /// <summary>

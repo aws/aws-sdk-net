@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Flow log data for a monitored network interface is recorded as flow log records, which
     /// are log events consisting of fields that describe the traffic flow. For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
     /// log records</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     ///  
@@ -232,7 +232,7 @@ namespace Amazon.EC2.Model
         /// The fields to include in the flow log record. List the fields in the order in which
         /// they should appear. If you omit this parameter, the flow log is created using the
         /// default format. If you specify this parameter, you must include at least one field.
-        /// For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+        /// For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
         /// log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
         /// Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
         /// </para>

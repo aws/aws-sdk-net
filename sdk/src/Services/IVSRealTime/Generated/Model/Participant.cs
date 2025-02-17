@@ -42,6 +42,7 @@ namespace Amazon.IVSRealTime.Model
         private string _osName;
         private string _osVersion;
         private string _participantId;
+        private ParticipantProtocol _protocol;
         private bool? _published;
         private string _recordings3BucketName;
         private string _recordings3Prefix;
@@ -202,6 +203,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetParticipantId()
         {
             return this._participantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// Type of ingest protocol that the participant employs for broadcasting.
+        /// </para>
+        /// </summary>
+        public ParticipantProtocol Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
         /// <summary>

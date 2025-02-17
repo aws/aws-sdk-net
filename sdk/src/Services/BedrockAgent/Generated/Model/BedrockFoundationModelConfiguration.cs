@@ -30,17 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Settings for a foundation model used to parse documents for a data source.
+    /// Settings for a foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+    /// profile</a> used to parse documents for a data source.
     /// </summary>
     public partial class BedrockFoundationModelConfiguration
     {
         private string _modelArn;
+        private ParsingModality _parsingModality;
         private ParsingPrompt _parsingPrompt;
 
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The model's ARN.
+        /// The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> to use for parsing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -54,6 +57,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParsingModality. 
+        /// <para>
+        /// Specifies whether to enable parsing of multimodal data, including both text and/or
+        /// images.
+        /// </para>
+        /// </summary>
+        public ParsingModality ParsingModality
+        {
+            get { return this._parsingModality; }
+            set { this._parsingModality = value; }
+        }
+
+        // Check to see if ParsingModality property is set
+        internal bool IsSetParsingModality()
+        {
+            return this._parsingModality != null;
         }
 
         /// <summary>

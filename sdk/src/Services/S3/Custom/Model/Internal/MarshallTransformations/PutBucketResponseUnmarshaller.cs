@@ -37,8 +37,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketResponse response = new PutBucketResponse();
+            UnmarshallResult(context, response);
 
             return response;
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PutBucketResponse response)
+        {
+            IWebResponseData responseData = context.ResponseData;
+
+            if (responseData.IsHeaderPresent("Location"))
+                response.Location = BucketLocationConstraint.FindValue(responseData.GetHeaderValue("Location"));
+            return;
         }
 
         /// <summary>
@@ -50,7 +60,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -68,7 +78,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return BucketAlreadyOwnedByYouExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
         private static PutBucketResponseUnmarshaller _instance;

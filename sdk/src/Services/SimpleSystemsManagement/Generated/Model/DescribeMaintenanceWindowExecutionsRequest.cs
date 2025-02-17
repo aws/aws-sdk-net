@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Values. An array of strings, each between 1 and 256 characters. Supported values are
-        /// date/time strings in a valid ISO 8601 date/time format, such as <c>2021-11-04T05:00:00Z</c>.
+        /// date/time strings in a valid ISO 8601 date/time format, such as <c>2024-11-04T05:00:00Z</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

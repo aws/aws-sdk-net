@@ -46,7 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names: data-provider-identifier
+        /// Valid filter names and values: data-provider-identifier, data provider arn or name
         /// </para>
         /// </summary>
         public List<Filter> Filters

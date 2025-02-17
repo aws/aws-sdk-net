@@ -34,10 +34,29 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class PromptFlowNodeInlineConfiguration
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private PromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private PromptTemplateConfiguration _templateConfiguration;
         private PromptTemplateType _templateType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// Additional fields to be included in the model request for the Prompt node.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceConfiguration. 
@@ -60,7 +79,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model to run inference with.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> to run inference with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

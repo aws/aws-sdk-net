@@ -173,6 +173,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterScalabilityType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterScalabilityType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -194,6 +200,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CustomEndpoints.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("DatabaseInsightsMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseInsightsMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DatabaseName", targetDepth))

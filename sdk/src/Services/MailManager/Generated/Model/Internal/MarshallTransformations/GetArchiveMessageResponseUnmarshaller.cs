@@ -52,10 +52,22 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Envelope", targetDepth))
+                {
+                    var unmarshaller = EnvelopeUnmarshaller.Instance;
+                    response.Envelope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MessageDownloadLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageDownloadLink = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Metadata", targetDepth))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    response.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

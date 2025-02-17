@@ -31,8 +31,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePrincipalMapping operation.
-    /// Deletes a group so that all users and sub groups that belong to the group can no longer
-    /// access documents only available to that group.
+    /// Deletes a group so that all users that belong to the group can no longer access documents
+    /// only available to that group.
     /// 
     ///  
     /// <para>

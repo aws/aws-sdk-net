@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("bandwidthWeightings/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.BandwidthWeightings == null)
+                        {
+                            unmarshalledObject.BandwidthWeightings = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BandwidthWeightings.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("defaultNetworkCardIndex", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

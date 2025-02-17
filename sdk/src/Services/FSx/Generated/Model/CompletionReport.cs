@@ -93,8 +93,8 @@ namespace Amazon.FSx.Model
         /// on the file system's linked S3 data repository. An absolute path that defines where
         /// the completion report will be stored in the destination location. The <c>Path</c>
         /// you provide must be located within the file system’s ExportPath. An example <c>Path</c>
-        /// value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-        /// information for each file in the report: FilePath, FileStatus, and ErrorCode.
+        /// value is "s3://amzn-s3-demo-bucket/myExportPath/optionalPrefix". The report provides
+        /// the following information for each file in the report: FilePath, FileStatus, and ErrorCode.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=4357)]

@@ -112,6 +112,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VaultState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VaultState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VaultType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

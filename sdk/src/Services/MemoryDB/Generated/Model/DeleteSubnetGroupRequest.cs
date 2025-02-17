@@ -41,7 +41,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property SubnetGroupName. 
         /// <para>
-        /// The name of the subnet group to delete
+        /// The name of the subnet group to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

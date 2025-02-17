@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private Dictionary<string, Amazon.Runtime.Documents.Document> _additionalModelRequestFields = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private GuardrailConfiguration _guardrailConfiguration;
         private InferenceConfig _inferenceConfig;
+        private PerformanceConfiguration _performanceConfig;
         private PromptTemplate _promptTemplate;
 
         /// <summary>
@@ -109,9 +110,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// The latency configuration for the model.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PromptTemplate. 
         /// <para>
         /// Contains the template for the prompt that's sent to the model for response generation.
+        /// Generation prompts must include the <c>$search_results$</c> variable. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use
+        /// placeholder variables</a> in the user guide.
         /// </para>
         /// </summary>
         public PromptTemplate PromptTemplate

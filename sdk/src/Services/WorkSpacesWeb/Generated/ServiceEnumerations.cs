@@ -345,6 +345,52 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type RedactionPlaceHolderType.
+    /// </summary>
+    public class RedactionPlaceHolderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CustomText for RedactionPlaceHolderType
+        /// </summary>
+        public static readonly RedactionPlaceHolderType CustomText = new RedactionPlaceHolderType("CustomText");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedactionPlaceHolderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedactionPlaceHolderType FindValue(string value)
+        {
+            return FindValue<RedactionPlaceHolderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedactionPlaceHolderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RendererType.
     /// </summary>
     public class RendererType : ConstantClass
@@ -384,6 +430,106 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RendererType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionSortBy.
+    /// </summary>
+    public class SessionSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StartTimeAscending for SessionSortBy
+        /// </summary>
+        public static readonly SessionSortBy StartTimeAscending = new SessionSortBy("StartTimeAscending");
+        /// <summary>
+        /// Constant StartTimeDescending for SessionSortBy
+        /// </summary>
+        public static readonly SessionSortBy StartTimeDescending = new SessionSortBy("StartTimeDescending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionSortBy FindValue(string value)
+        {
+            return FindValue<SessionSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Active = new SessionStatus("Active");
+        /// <summary>
+        /// Constant Terminated for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Terminated = new SessionStatus("Terminated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }

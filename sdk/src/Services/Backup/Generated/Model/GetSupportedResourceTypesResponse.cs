@@ -47,6 +47,14 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>CloudFormation</c> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DocumentDB</c> for Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>DynamoDB</c> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -63,7 +71,11 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FSX</c> for Amazon FSx
+        ///  <c>FSx</c> for Amazon FSx
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Neptune</c> for Amazon Neptune
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,15 +83,28 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>Redshift</c> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SAP HANA on Amazon EC2</c> for SAP HANA databases on Amazon Elastic Compute Cloud
+        /// instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>Storage Gateway</c> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DocDB</c> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>Timestream</c> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Neptune</c> for Amazon Neptune
+        ///  <c>VirtualMachine</c> for VMware virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

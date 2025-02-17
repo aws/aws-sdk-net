@@ -32,15 +32,15 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// The current status of the configuration recorder.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// For a detailed status of recording events over time, add your Config events to CloudWatch
     /// metrics and use CloudWatch metrics.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class ConfigurationRecorderStatus
     {
+        private string _arn;
         private string _lastErrorCode;
         private string _lastErrorMessage;
         private DateTime? _lastStartTime;
@@ -49,6 +49,26 @@ namespace Amazon.ConfigService.Model
         private DateTime? _lastStopTime;
         private string _name;
         private bool? _recording;
+        private string _servicePrincipal;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the configuration recorder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastErrorCode. 
@@ -192,6 +212,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetRecording()
         {
             return this._recording.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePrincipal. 
+        /// <para>
+        /// For service-linked configuration recorders, the service principal of the linked Amazon
+        /// Web Services service.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ServicePrincipal
+        {
+            get { return this._servicePrincipal; }
+            set { this._servicePrincipal = value; }
+        }
+
+        // Check to see if ServicePrincipal property is set
+        internal bool IsSetServicePrincipal()
+        {
+            return this._servicePrincipal != null;
         }
 
     }

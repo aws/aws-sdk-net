@@ -81,6 +81,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteElementString("VersionId", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.VersionId));
                         }
+
+                        if (deleteDeleteobjectsListValue.IsSetETag())
+                        {
+                            xmlWriter.WriteElementString("ETag", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.ETag));
+                        }
+                        if (deleteDeleteobjectsListValue.IsSetLastModifiedTime())
+                        {
+                            xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime));
+                        }
+                        if (deleteDeleteobjectsListValue.IsSetSize())
+                        {
+                            xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size));
+                        }
+
                         xmlWriter.WriteEndElement();
                     }
                 }
@@ -97,7 +111,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                ChecksumUtils.SetChecksumData(request, deleteObjectsRequest.ChecksumAlgorithm);
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    deleteObjectsRequest.ChecksumAlgorithm, 
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: true,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e)
             {

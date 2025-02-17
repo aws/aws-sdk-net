@@ -90,6 +90,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerNameIndication", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServerNameIndication = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

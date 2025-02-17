@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The description of the user pool client.
+    /// A short description of a user pool app client.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html">ListUserPoolClients</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class UserPoolClientDescription
     {
@@ -41,7 +47,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The app client ID.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -60,7 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientName. 
         /// <para>
-        /// The client name from the user pool client description.
+        /// The app client name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -79,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to describe the user pool client.
+        /// The ID of the user pool that's associated with the app client.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

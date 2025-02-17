@@ -61,8 +61,10 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// A list of resources for the access permissions. Any strings that can be used as a
-        /// resource in an IAM policy can be used in the list of resources to check.
+        /// A list of resources for the access permissions. Any strings that can be used as an
+        /// Amazon Resource Name (ARN) in an IAM policy can be used in the list of resources to
+        /// check. You can only use a wildcard in the portion of the ARN that specifies the resource
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

@@ -1030,6 +1030,87 @@ namespace Amazon.ApplicationAutoScaling
 
         #endregion
         
+        #region  GetPredictiveScalingForecast
+
+
+        /// <summary>
+        /// Retrieves the forecast data for a predictive scaling policy.
+        /// 
+        ///  
+        /// <para>
+        /// Load forecasts are predictions of the hourly load values using historical load data
+        /// from CloudWatch and an analysis of historical trends. Capacity forecasts are represented
+        /// as predicted values for the minimum capacity that is needed on an hourly basis, based
+        /// on the hourly load forecast.
+        /// </para>
+        ///  
+        /// <para>
+        /// A minimum of 24 hours of data is required to create the initial forecasts. However,
+        /// having a full 14 days of historical data results in more accurate forecasts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPredictiveScalingForecast service method.</param>
+        /// 
+        /// <returns>The response from the GetPredictiveScalingForecast service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/GetPredictiveScalingForecast">REST API Reference for GetPredictiveScalingForecast Operation</seealso>
+        public virtual GetPredictiveScalingForecastResponse GetPredictiveScalingForecast(GetPredictiveScalingForecastRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPredictiveScalingForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPredictiveScalingForecastResponseUnmarshaller.Instance;
+
+            return Invoke<GetPredictiveScalingForecastResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the forecast data for a predictive scaling policy.
+        /// 
+        ///  
+        /// <para>
+        /// Load forecasts are predictions of the hourly load values using historical load data
+        /// from CloudWatch and an analysis of historical trends. Capacity forecasts are represented
+        /// as predicted values for the minimum capacity that is needed on an hourly basis, based
+        /// on the hourly load forecast.
+        /// </para>
+        ///  
+        /// <para>
+        /// A minimum of 24 hours of data is required to create the initial forecasts. However,
+        /// having a full 14 days of historical data results in more accurate forecasts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPredictiveScalingForecast service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPredictiveScalingForecast service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/GetPredictiveScalingForecast">REST API Reference for GetPredictiveScalingForecast Operation</seealso>
+        public virtual Task<GetPredictiveScalingForecastResponse> GetPredictiveScalingForecastAsync(GetPredictiveScalingForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPredictiveScalingForecastRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPredictiveScalingForecastResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPredictiveScalingForecastResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 

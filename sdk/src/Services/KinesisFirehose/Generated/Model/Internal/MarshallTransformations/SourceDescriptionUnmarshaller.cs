@@ -66,6 +66,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DatabaseSourceDescription", targetDepth))
+                {
+                    var unmarshaller = DatabaseSourceDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseSourceDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DirectPutSourceDescription", targetDepth))
+                {
+                    var unmarshaller = DirectPutSourceDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.DirectPutSourceDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KinesisStreamSourceDescription", targetDepth))
                 {
                     var unmarshaller = KinesisStreamSourceDescriptionUnmarshaller.Instance;

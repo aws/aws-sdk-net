@@ -31,7 +31,19 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJob operation.
-    /// Updates a job.
+    /// Updates a job. 
+    /// 
+    ///  
+    /// <para>
+    /// When you change the status of the job to <c>ARCHIVED</c>, the job can't be scheduled
+    /// or archived.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+    /// be recovered.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateJobRequest : AmazonDeadlineRequest
     {
@@ -41,6 +53,7 @@ namespace Amazon.Deadline.Model
         private UpdateJobLifecycleStatus _lifecycleStatus;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
+        private int? _maxWorkerCount;
         private int? _priority;
         private string _queueId;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
@@ -105,8 +118,15 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property LifecycleStatus. 
         /// <para>
-        /// The status of a job in its lifecycle.
+        /// The status of a job in its lifecycle. When you change the status of the job to <c>ARCHIVED</c>,
+        /// the job can't be scheduled or archived.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
         /// </summary>
         public UpdateJobLifecycleStatus LifecycleStatus
         {
@@ -156,6 +176,40 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask()
         {
             return this._maxRetriesPerTask.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxWorkerCount. 
+        /// <para>
+        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
+        /// is reached, no more workers will be assigned to process the job, even if the fleets
+        /// assigned to the job's queue has available workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't set the <c>maxWorkerCount</c> to 0. If you set it to -1, there is no maximum
+        /// number of workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify the <c>maxWorkerCount</c>, the default is -1.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of workers that can process tasks in the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1, Max=2147483647)]
+        public int MaxWorkerCount
+        {
+            get { return this._maxWorkerCount.GetValueOrDefault(); }
+            set { this._maxWorkerCount = value; }
+        }
+
+        // Check to see if MaxWorkerCount property is set
+        internal bool IsSetMaxWorkerCount()
+        {
+            return this._maxWorkerCount.HasValue; 
         }
 
         /// <summary>

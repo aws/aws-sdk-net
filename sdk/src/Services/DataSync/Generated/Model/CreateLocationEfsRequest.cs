@@ -54,7 +54,12 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AccessPointArn. 
         /// <para>
         /// Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to
-        /// access the Amazon EFS file system.
+        /// mount your Amazon EFS file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
+        /// restricted file systems</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -73,8 +78,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Ec2Config. 
         /// <para>
-        /// Specifies the subnet and security groups DataSync uses to access your Amazon EFS file
-        /// system.
+        /// Specifies the subnet and security groups DataSync uses to connect to one of your Amazon
+        /// EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount
+        /// targets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,7 +99,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EfsFilesystemArn. 
         /// <para>
-        /// Specifies the ARN for the Amazon EFS file system.
+        /// Specifies the ARN for your Amazon EFS file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -112,8 +118,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FileSystemAccessRoleArn. 
         /// <para>
-        /// Specifies an Identity and Access Management (IAM) role that DataSync assumes when
-        /// mounting the Amazon EFS file system.
+        /// Specifies an Identity and Access Management (IAM) role that allows DataSync to access
+        /// your Amazon EFS file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information on creating this role, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
+        /// a DataSync IAM role for file system access</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -133,7 +144,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property InTransitEncryption. 
         /// <para>
         /// Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption
-        /// when it copies data to or from the Amazon EFS file system.
+        /// when it transfers data to or from your Amazon EFS file system.
         /// </para>
         ///  
         /// <para>
@@ -157,14 +168,15 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Subdirectory. 
         /// <para>
         /// Specifies a mount path for your Amazon EFS file system. This is where DataSync reads
-        /// or writes data (depending on if this is a source or destination location). By default,
-        /// DataSync uses the root directory, but you can also include subdirectories.
+        /// or writes data on your file system (depending on if this is a source or destination
+        /// location).
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// You must specify a value with forward slashes (for example, <c>/path/to/folder</c>).
+        /// By default, DataSync uses the root directory (or <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access
+        /// point</a> if you provide one by using <c>AccessPointArn</c>). You can also include
+        /// subdirectories using forward slashes (for example, <c>/path/to/folder</c>).
         /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Max=4096)]
         public string Subdirectory

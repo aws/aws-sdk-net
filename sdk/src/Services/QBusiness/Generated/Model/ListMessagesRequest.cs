@@ -101,8 +101,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the number of retrievers returned exceeds <c>maxResults</c>, Amazon Q Business
-        /// returns a next token as a pagination token to retrieve the next set of messages.
+        /// If the number of messages returned exceeds <c>maxResults</c>, Amazon Q Business returns
+        /// a next token as a pagination token to retrieve the next set of messages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

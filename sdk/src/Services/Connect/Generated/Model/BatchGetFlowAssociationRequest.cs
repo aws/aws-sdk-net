@@ -64,6 +64,17 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A list of resource identifiers to retrieve flow associations.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services End User Messaging SMS phone number ARN when using <c>SMS_PHONE_NUMBER</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Web Services End User Messaging Social phone number ARN when using <c>WHATSAPP_MESSAGING_PHONE_NUMBER</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> ResourceIds

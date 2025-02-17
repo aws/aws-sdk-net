@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.CreateReplicationInstanceRequest.ReplicationInstanceClass</property>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.DescribeDataMigrationsRequest.Marker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.DescribeDataMigrationsResponse.Marker</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.ModifyReplicationInstanceRequest.ReplicationInstanceClass</property>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.OrderableReplicationInstance.ReplicationInstanceClass</property>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.ReplicationInstance.ReplicationInstanceClass</property>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DatabaseMigrationService.Model.ReplicationPendingModifiedValues.ReplicationInstanceClass</property>
+    <max>30</max>
+  </property-value-rule>
+</property-value-rules>

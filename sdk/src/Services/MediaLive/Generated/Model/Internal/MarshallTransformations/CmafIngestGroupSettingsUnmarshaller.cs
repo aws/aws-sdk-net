@@ -72,10 +72,46 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("id3Behavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id3Behavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id3NameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id3NameModifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("klvBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("klvNameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvNameModifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nielsenId3Behavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nielsenId3NameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NielsenId3NameModifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scte35NameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scte35NameModifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scte35Type", targetDepth))

@@ -625,7 +625,23 @@ namespace Amazon.Runtime
             if ((isChunkedUploadWrapperStreamWithLength || isTrailingHeadersWrapperStreamWithLength || isCompressionWrapperStreamWithLength)
                 || (chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null && compressionWrapperStream == null))
             {
-                _request.Content.Headers.ContentLength = contentStream.Length;
+                long position = 0;
+                try
+                {
+                    if (contentStream.CanSeek)
+                    {
+                        position = contentStream.Position;
+                    }
+                }
+                catch (NotSupportedException)
+                {
+                    // If this method is invoked from an older service package, the content stream may not support getting the
+                    // current position (for example, "MD5Stream" doesn't).
+                    // In this case, we'll assume the position is 0 to maintain the previous behavior.
+                    position = 0;
+                }
+
+                _request.Content.Headers.ContentLength = contentStream.Length - position;
             }
 
             WriteContentHeaders(contentHeaders);

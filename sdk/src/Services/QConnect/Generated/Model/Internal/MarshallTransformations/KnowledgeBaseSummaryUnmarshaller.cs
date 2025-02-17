@@ -126,6 +126,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vectorIngestionConfiguration", targetDepth))
+                {
+                    var unmarshaller = VectorIngestionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VectorIngestionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

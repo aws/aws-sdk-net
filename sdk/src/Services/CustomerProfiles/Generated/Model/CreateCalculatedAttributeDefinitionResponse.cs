@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private DateTime? _createdAt;
         private string _description;
         private string _displayName;
+        private Filter _filter;
         private DateTime? _lastUpdatedAt;
         private Statistic _statistic;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -155,6 +156,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The filter that was used as part of the request.
+        /// </para>
+        /// </summary>
+        public Filter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

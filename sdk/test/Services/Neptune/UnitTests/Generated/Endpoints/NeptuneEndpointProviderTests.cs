@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Neptune.Endpoints;
 using Amazon.Neptune.Internal;
@@ -834,21 +835,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void Missing_region_Test()
         {
             var parameters = new NeptuneEndpointParameters();
-            var endpoint = new AmazonNeptuneEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Neptune")]
-        [Description("Partition doesn't support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Partition_doesnt_support_DualStack_Test()
-        {
-            var parameters = new NeptuneEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonNeptuneEndpointProvider().ResolveEndpoint(parameters);
         }
 

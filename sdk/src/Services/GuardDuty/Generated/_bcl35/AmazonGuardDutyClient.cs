@@ -867,8 +867,8 @@ namespace Amazon.GuardDuty
         #region  CreatePublishingDestination
 
         /// <summary>
-        /// Creates a publishing destination to export findings to. The resource to export findings
-        /// to must exist before you use this operation.
+        /// Creates a publishing destination where you can export your GuardDuty findings. Before
+        /// you start exporting the findings, the destination resource must exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublishingDestination service method.</param>
         /// 
@@ -2309,7 +2309,7 @@ namespace Amazon.GuardDuty
         #region  GetDetector
 
         /// <summary>
-        /// Retrieves an Amazon GuardDuty detector specified by the detectorId.
+        /// Retrieves a GuardDuty detector specified by the detectorId.
         /// 
         ///  
         /// <para>
@@ -2497,8 +2497,14 @@ namespace Amazon.GuardDuty
         #region  GetFindingsStatistics
 
         /// <summary>
-        /// Lists Amazon GuardDuty findings statistics for the specified detector ID.
+        /// Lists GuardDuty findings statistics for the specified detector ID.
         /// 
+        ///  
+        /// <para>
+        /// You must provide either <c>findingStatisticTypes</c> or <c>groupBy</c> parameter,
+        /// and not both. You can use the <c>maxResults</c> and <c>orderBy</c> parameters only
+        /// when using <c>groupBy</c>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some flags might not be available in all

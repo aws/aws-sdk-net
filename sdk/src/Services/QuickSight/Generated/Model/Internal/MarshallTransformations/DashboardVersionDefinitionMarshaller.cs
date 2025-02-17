@@ -166,6 +166,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStaticFiles())
+            {
+                context.Writer.WritePropertyName("StaticFiles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStaticFilesListValue in requestObject.StaticFiles)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StaticFileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStaticFilesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

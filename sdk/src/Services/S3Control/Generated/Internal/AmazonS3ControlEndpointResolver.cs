@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.S3Control.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -489,6 +491,12 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "ListAccessPointsForObjectLambdaRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListAccessPointsForObjectLambdaRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListCallerAccessGrantsRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListCallerAccessGrantsRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 return result;
             }

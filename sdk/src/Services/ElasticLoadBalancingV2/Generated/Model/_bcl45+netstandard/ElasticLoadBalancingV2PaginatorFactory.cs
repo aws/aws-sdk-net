@@ -37,6 +37,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeListenerCertificates operation
+        ///</summary>
+        public IDescribeListenerCertificatesPaginator DescribeListenerCertificates(DescribeListenerCertificatesRequest request) 
+        {
+            return new DescribeListenerCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeListeners operation
         ///</summary>
         public IDescribeListenersPaginator DescribeListeners(DescribeListenersRequest request) 
@@ -50,6 +58,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         public IDescribeLoadBalancersPaginator DescribeLoadBalancers(DescribeLoadBalancersRequest request) 
         {
             return new DescribeLoadBalancersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRules operation
+        ///</summary>
+        public IDescribeRulesPaginator DescribeRules(DescribeRulesRequest request) 
+        {
+            return new DescribeRulesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -30,7 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that controls whether access logs are written for the distribution.
+    /// A complex type that specifies whether access logs are written for the distribution.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you already enabled standard logging (legacy) and you want to enable standard logging
+    /// (v2) to send your access logs to Amazon S3, we recommend that you specify a <i>different</i>
+    /// Amazon S3 bucket or use a <i>separate path</i> in the same bucket (for example, use
+    /// a log prefix or partitioning). This helps you keep track of which log files are associated
+    /// with which logging subscription and prevents log files from overwriting each other.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Standard
+    /// logging (access logs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LoggingConfig
     {
@@ -47,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates LoggingConfig with the parameterized properties
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket to store the access logs in, for example, <c>myawslogbucket.s3.amazonaws.com</c>.</param>
+        /// <param name="bucket">The Amazon S3 bucket to store the access logs in, for example, <c>amzn-s3-demo-bucket.s3.amazonaws.com</c>.</param>
         /// <param name="prefix">An optional string that you want CloudFront to prefix to the access log <c>filenames</c> for this distribution, for example, <c>myprefix/</c>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <c>Prefix</c> element in the <c>Logging</c> element.</param>
         public LoggingConfig(string bucket, string prefix)
         {
@@ -58,10 +70,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon S3 bucket to store the access logs in, for example, <c>myawslogbucket.s3.amazonaws.com</c>.
+        /// The Amazon S3 bucket to store the access logs in, for example, <c>amzn-s3-demo-bucket.s3.amazonaws.com</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Bucket
         {
             get { return this._bucket; }
@@ -81,11 +92,10 @@ namespace Amazon.CloudFront.Model
         /// If you don't want to enable logging when you create a distribution or if you want
         /// to disable logging for an existing distribution, specify <c>false</c> for <c>Enabled</c>,
         /// and specify empty <c>Bucket</c> and <c>Prefix</c> elements. If you specify <c>false</c>
-        /// for <c>Enabled</c> but you specify values for <c>Bucket</c>, <c>prefix</c>, and <c>IncludeCookies</c>,
-        /// the values are automatically deleted.
+        /// for <c>Enabled</c> but you specify values for <c>Bucket</c> and <c>prefix</c>, the
+        /// values are automatically deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool Enabled
         {
             get { return this._enabled.GetValueOrDefault(); }
@@ -109,7 +119,6 @@ namespace Amazon.CloudFront.Model
         /// <c>IncludeCookies</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool IncludeCookies
         {
             get { return this._includeCookies.GetValueOrDefault(); }
@@ -131,7 +140,6 @@ namespace Amazon.CloudFront.Model
         /// element in the <c>Logging</c> element.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Prefix
         {
             get { return this._prefix; }

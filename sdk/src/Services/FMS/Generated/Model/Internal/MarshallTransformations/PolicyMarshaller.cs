@@ -145,6 +145,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetResourceTagLogicalOperator())
+            {
+                context.Writer.WritePropertyName("ResourceTagLogicalOperator");
+                context.Writer.Write(requestObject.ResourceTagLogicalOperator);
+            }
+
             if(requestObject.IsSetResourceTags())
             {
                 context.Writer.WritePropertyName("ResourceTags");

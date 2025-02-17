@@ -36,12 +36,15 @@ namespace Amazon.StepFunctions.Model
     {
         private List<ValidateStateMachineDefinitionDiagnostic> _diagnostics = AWSConfigs.InitializeCollections ? new List<ValidateStateMachineDefinitionDiagnostic>() : null;
         private ValidateStateMachineDefinitionResultCode _result;
+        private bool? _truncated;
 
         /// <summary>
         /// Gets and sets the property Diagnostics. 
         /// <para>
-        /// If the result is <c>OK</c>, this field will be empty. When there are errors, this
-        /// field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.
+        /// An array of diagnostic errors and warnings found during validation of the state machine
+        /// definition. Since <b>warnings</b> do not prevent deploying your workflow definition,
+        /// the <b>result</b> value could be <c>OK</c> even when warning diagnostics are present
+        /// in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,6 +78,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Truncated. 
+        /// <para>
+        /// The result value will be <c>true</c> if the number of diagnostics found in the workflow
+        /// definition exceeds <c>maxResults</c>. When all diagnostics results are returned, the
+        /// value will be <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool Truncated
+        {
+            get { return this._truncated.GetValueOrDefault(); }
+            set { this._truncated = value; }
+        }
+
+        // Check to see if Truncated property is set
+        internal bool IsSetTruncated()
+        {
+            return this._truncated.HasValue; 
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.S3
                     Prefix = prefix,
                     Marker = marker
                 };
-                InternalSDKUtils.ApplyValues(request, additionalProperties);
+                InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
                 var listResponse = this.ListObjects(request);
                 keys.AddRange(listResponse.S3Objects?.Select(o => o.Key));
@@ -58,7 +58,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             this.DeleteObject(request);
         }
 
@@ -73,7 +73,7 @@ namespace Amazon.S3
             {
                 request.AddKey(key);
             }
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             this.DeleteObjects(request);
         }
 
@@ -86,7 +86,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 InputStream = stream
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             transfer.Upload(request);
         }
 
@@ -99,7 +99,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             transfer.Upload(request);
         }
 
@@ -113,7 +113,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             transfer.Download(request);
         }
 
@@ -124,7 +124,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             return this.GetObject(request).ResponseStream;
         }
 

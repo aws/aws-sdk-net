@@ -31,7 +31,7 @@ namespace Amazon.QApps.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLibraryItem operation.
-    /// Updates the metadata and status of a library item for an Amazon Q App.
+    /// Updates the library item for an Amazon Q App.
     /// </summary>
     public partial class UpdateLibraryItemRequest : AmazonQAppsRequest
     {

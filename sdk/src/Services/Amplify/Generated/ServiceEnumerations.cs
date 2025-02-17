@@ -221,6 +221,10 @@ namespace Amazon.Amplify
         /// </summary>
         public static readonly JobStatus CANCELLING = new JobStatus("CANCELLING");
         /// <summary>
+        /// Constant CREATED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CREATED = new JobStatus("CREATED");
+        /// <summary>
         /// Constant FAILED for JobStatus
         /// </summary>
         public static readonly JobStatus FAILED = new JobStatus("FAILED");
@@ -443,6 +447,56 @@ namespace Amazon.Amplify
 
 
     /// <summary>
+    /// Constants used for properties of type SourceUrlType.
+    /// </summary>
+    public class SourceUrlType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUCKET_PREFIX for SourceUrlType
+        /// </summary>
+        public static readonly SourceUrlType BUCKET_PREFIX = new SourceUrlType("BUCKET_PREFIX");
+        /// <summary>
+        /// Constant ZIP for SourceUrlType
+        /// </summary>
+        public static readonly SourceUrlType ZIP = new SourceUrlType("ZIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceUrlType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceUrlType FindValue(string value)
+        {
+            return FindValue<SourceUrlType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceUrlType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Stage.
     /// </summary>
     public class Stage : ConstantClass
@@ -568,6 +622,68 @@ namespace Amazon.Amplify
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WafStatus.
+    /// </summary>
+    public class WafStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATING for WafStatus
+        /// </summary>
+        public static readonly WafStatus ASSOCIATING = new WafStatus("ASSOCIATING");
+        /// <summary>
+        /// Constant ASSOCIATION_FAILED for WafStatus
+        /// </summary>
+        public static readonly WafStatus ASSOCIATION_FAILED = new WafStatus("ASSOCIATION_FAILED");
+        /// <summary>
+        /// Constant ASSOCIATION_SUCCESS for WafStatus
+        /// </summary>
+        public static readonly WafStatus ASSOCIATION_SUCCESS = new WafStatus("ASSOCIATION_SUCCESS");
+        /// <summary>
+        /// Constant DISASSOCIATING for WafStatus
+        /// </summary>
+        public static readonly WafStatus DISASSOCIATING = new WafStatus("DISASSOCIATING");
+        /// <summary>
+        /// Constant DISASSOCIATION_FAILED for WafStatus
+        /// </summary>
+        public static readonly WafStatus DISASSOCIATION_FAILED = new WafStatus("DISASSOCIATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WafStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WafStatus FindValue(string value)
+        {
+            return FindValue<WafStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WafStatus(string value)
         {
             return FindValue(value);
         }

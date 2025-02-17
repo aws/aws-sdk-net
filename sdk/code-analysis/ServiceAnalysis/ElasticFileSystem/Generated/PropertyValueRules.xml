@@ -160,6 +160,11 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.CreateReplicationConfigurationResponse.SourceFileSystemOwnerId</property>
+    <max>14</max>
+    <pattern>^(\d{12})|(\d{4}-\d{4}-\d{4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.CreateReplicationConfigurationResponse.SourceFileSystemRegion</property>
     <min>1</min>
     <max>64</max>
@@ -572,10 +577,20 @@
     <pattern>^(arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:file-system/fs-[0-9a-f]{8,40}|fs-[0-9a-f]{8,40})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.Destination.OwnerId</property>
+    <max>14</max>
+    <pattern>^(\d{12})|(\d{4}-\d{4}-\d{4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.Destination.Region</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.Destination.RoleArn</property>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.DestinationToCreate.AvailabilityZoneName</property>
@@ -598,6 +613,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-{0,1}[0-9]{0,1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticFileSystem.Model.DestinationToCreate.RoleArn</property>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticFileSystem.Model.FileSystemAlreadyExistsException.ErrorCode</property>

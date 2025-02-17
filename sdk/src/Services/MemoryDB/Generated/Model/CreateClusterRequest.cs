@@ -41,9 +41,11 @@ namespace Amazon.MemoryDB.Model
         private string _clusterName;
         private bool? _dataTiering;
         private string _description;
+        private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
         private string _maintenanceWindow;
+        private string _multiRegionClusterName;
         private string _nodeType;
         private int? _numReplicasPerShard;
         private int? _numShards;
@@ -157,6 +159,24 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the engine to be used for the cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the Redis OSS engine to be used for the cluster.
@@ -246,6 +266,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetMaintenanceWindow()
         {
             return this._maintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionClusterName. 
+        /// <para>
+        /// The name of the multi-Region cluster to be created.
+        /// </para>
+        /// </summary>
+        public string MultiRegionClusterName
+        {
+            get { return this._multiRegionClusterName; }
+            set { this._multiRegionClusterName = value; }
+        }
+
+        // Check to see if MultiRegionClusterName property is set
+        internal bool IsSetMultiRegionClusterName()
+        {
+            return this._multiRegionClusterName != null;
         }
 
         /// <summary>

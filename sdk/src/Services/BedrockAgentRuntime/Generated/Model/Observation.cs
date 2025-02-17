@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class Observation
     {
         private ActionGroupInvocationOutput _actionGroupInvocationOutput;
+        private AgentCollaboratorInvocationOutput _agentCollaboratorInvocationOutput;
         private CodeInterpreterInvocationOutput _codeInterpreterInvocationOutput;
         private FinalResponse _finalResponse;
         private KnowledgeBaseLookupOutput _knowledgeBaseLookupOutput;
@@ -59,6 +60,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroupInvocationOutput()
         {
             return this._actionGroupInvocationOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboratorInvocationOutput. 
+        /// <para>
+        /// A collaborator's invocation output.
+        /// </para>
+        /// </summary>
+        public AgentCollaboratorInvocationOutput AgentCollaboratorInvocationOutput
+        {
+            get { return this._agentCollaboratorInvocationOutput; }
+            set { this._agentCollaboratorInvocationOutput = value; }
+        }
+
+        // Check to see if AgentCollaboratorInvocationOutput property is set
+        internal bool IsSetAgentCollaboratorInvocationOutput()
+        {
+            return this._agentCollaboratorInvocationOutput != null;
         }
 
         /// <summary>

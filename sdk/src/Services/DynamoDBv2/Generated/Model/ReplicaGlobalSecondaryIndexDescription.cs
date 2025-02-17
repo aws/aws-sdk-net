@@ -37,6 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _indexName;
         private OnDemandThroughputOverride _onDemandThroughputOverride;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
+        private GlobalSecondaryIndexWarmThroughputDescription _warmThroughput;
 
         /// <summary>
         /// Gets and sets the property IndexName. 
@@ -92,6 +93,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughputOverride()
         {
             return this._provisionedThroughputOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Represents the warm throughput of the global secondary index for this replica.
+        /// </para>
+        /// </summary>
+        public GlobalSecondaryIndexWarmThroughputDescription WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

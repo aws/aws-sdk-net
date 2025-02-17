@@ -532,7 +532,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 VerifyKeyId(keyId, usedKeyId);
                 uploadID = imur.UploadId;
 
-
                 CopyPartRequest request = new CopyPartRequest
                 {
                     DestinationBucket = bucketName,
@@ -558,16 +557,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 //PartNumber
                 Assert.IsTrue(response.PartNumber == 1);
 
-                var completeResponse = Client.CompleteMultipartUpload(new CompleteMultipartUploadRequest
+                var completeRequest = new CompleteMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = dstKey,
-                    UploadId = uploadID,
-                    PartETags = new List<PartETag>()
-                    {
-                        new PartETag { ETag = response.ETag, PartNumber = response.PartNumber }
-                    }
-                });
+                    UploadId = uploadID
+                };
+                completeRequest.AddPartETags(response);
+
+                var completeResponse = Client.CompleteMultipartUpload(completeRequest);
                 Assert.AreEqual(serverSideEncryptionMethod, completeResponse.ServerSideEncryptionMethod);
                 usedKeyId = completeResponse.ServerSideEncryptionKeyManagementServiceKeyId;
                 VerifyKeyId(keyId, usedKeyId);

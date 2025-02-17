@@ -73,19 +73,19 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery
+        /// When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a Firehose
         /// stream that is encrypted with a customer managed CMK, Firehose schedules the grant
         /// it had on the old CMK for retirement.
         /// </para>
         ///  
         /// <para>
-        /// You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams.
+        /// You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 Firehose streams.
         /// If a <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
         /// exceeds this limit, Firehose throws a <c>LimitExceededException</c>. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric
+        /// To encrypt your Firehose stream, use symmetric CMKs. Firehose doesn't support asymmetric
         /// CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
         /// Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service
         /// developer guide.

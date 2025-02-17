@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateManagedPrefixList operation.
-    /// Creates a managed prefix list. You can specify one or more entries for the prefix
-    /// list. Each entry consists of a CIDR block and an optional description.
+    /// Creates a managed prefix list. You can specify entries for the prefix list. Each entry
+    /// consists of a CIDR block and an optional description.
     /// </summary>
     public partial class CreateManagedPrefixListRequest : AmazonEC2Request
     {

@@ -66,6 +66,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("billedResourceUtilization", targetDepth))
+                {
+                    var unmarshaller = BilledResourceUtilizationUnmarshaller.Instance;
+                    unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalDurationInMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

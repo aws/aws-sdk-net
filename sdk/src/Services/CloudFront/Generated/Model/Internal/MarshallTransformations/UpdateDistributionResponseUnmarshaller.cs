@@ -112,6 +112,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return ContinuousDeploymentPolicyInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFound"))
+                {
+                    return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"))
                 {
                     return IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

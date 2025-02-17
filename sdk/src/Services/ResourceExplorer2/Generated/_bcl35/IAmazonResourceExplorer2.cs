@@ -660,8 +660,7 @@ namespace Amazon.ResourceExplorer2
         /// <summary>
         /// Retrieves the status of your account's Amazon Web Services service access, and validates
         /// the service linked role required to access the multi-account search feature. Only
-        /// the management account or a delegated administrator with service access enabled can
-        /// invoke this API call.
+        /// the management account can invoke this API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountLevelServiceConfiguration service method.</param>
         /// 
@@ -833,6 +832,70 @@ namespace Amazon.ResourceExplorer2
         /// <returns>Returns a  GetIndexResult from ResourceExplorer2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetIndex">REST API Reference for GetIndex Operation</seealso>
         GetIndexResponse EndGetIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetManagedView
+
+
+        /// <summary>
+        /// Retrieves details of the specified <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed view</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedView service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedView service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        GetManagedViewResponse GetManagedView(GetManagedViewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedView operation on AmazonResourceExplorer2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        IAsyncResult BeginGetManagedView(GetManagedViewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedView.</param>
+        /// 
+        /// <returns>Returns a  GetManagedViewResult from ResourceExplorer2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        GetManagedViewResponse EndGetManagedView(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1012,6 +1075,132 @@ namespace Amazon.ResourceExplorer2
         /// <returns>Returns a  ListIndexesForMembersResult from ResourceExplorer2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">REST API Reference for ListIndexesForMembers Operation</seealso>
         ListIndexesForMembersResponse EndListIndexesForMembers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListManagedViews
+
+
+        /// <summary>
+        /// Lists the Amazon resource names (ARNs) of the <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed views</a> available in the Amazon Web Services Region in which
+        /// you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedViews service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedViews service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        ListManagedViewsResponse ListManagedViews(ListManagedViewsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedViews operation on AmazonResourceExplorer2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        IAsyncResult BeginListManagedViews(ListManagedViewsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedViews.</param>
+        /// 
+        /// <returns>Returns a  ListManagedViewsResult from ResourceExplorer2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        ListManagedViewsResponse EndListManagedViews(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListResources
+
+
+        /// <summary>
+        /// Returns a list of resources and their details that match the specified criteria. This
+        /// query must use a view. If you don’t explicitly specify a view, then Resource Explorer
+        /// uses the default view for the Amazon Web Services Region in which you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResources service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        ListResourcesResponse ListResources(ListResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResources operation on AmazonResourceExplorer2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResources.</param>
+        /// 
+        /// <returns>Returns a  ListResourcesResult from ResourceExplorer2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
+        ListResourcesResponse EndListResources(IAsyncResult asyncResult);
 
         #endregion
         

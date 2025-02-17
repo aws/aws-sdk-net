@@ -31,6 +31,28 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Defines settings for using an Amazon Polly voice to communicate with a user.
+    /// 
+    ///  
+    /// <para>
+    /// Valid values include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>standard</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>neural</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>long-form</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>generative</c> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class VoiceSettings
     {

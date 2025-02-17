@@ -85,6 +85,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Action);
                 }
 
+                if(publicRequest.IsSetArtifact())
+                {
+                    context.Writer.WritePropertyName("artifact");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageVersionArtifactMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Artifact, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAttributes())
                 {
                     context.Writer.WritePropertyName("attributes");
@@ -103,6 +114,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetRecipe())
+                {
+                    context.Writer.WritePropertyName("recipe");
+                    context.Writer.Write(publicRequest.Recipe);
                 }
 
                 writer.WriteObjectEnd();

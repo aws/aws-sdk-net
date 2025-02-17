@@ -31,9 +31,17 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetTraces operation.
+    /// <note> 
+    /// <para>
+    /// You cannot find traces through this API if Transaction Search is enabled since trace
+    /// is not indexed in X-Ray.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Retrieves a list of traces specified by ID. Each trace is a collection of segment
     /// documents that originates from a single request. Use <c>GetTraceSummaries</c> to get
     /// a list of trace IDs.
+    /// </para>
     /// </summary>
     public partial class BatchGetTracesRequest : AmazonXRayRequest
     {

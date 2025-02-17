@@ -172,16 +172,36 @@ namespace Amazon.S3.Transfer.Internal
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
-                UploadId = initResponse.UploadId
+                UploadId = initResponse.UploadId,
+                IfNoneMatch = this._fileTransporterRequest.IfNoneMatch,
+                IfMatch = this._fileTransporterRequest.IfMatch,
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ChecksumType = initResponse.ChecksumType,
+                ChecksumCRC32 = this._fileTransporterRequest.ChecksumCRC32,
+                ChecksumCRC32C = this._fileTransporterRequest.ChecksumCRC32C,
+                ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
+                ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
+                ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
                 && this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != ServerSideEncryptionCustomerMethod.None)
             {
                 compRequest.SSECustomerAlgorithm = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod.ToString();
+                compRequest.SSECustomerKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey;
+
+                // If the MD5 of the customer encryption key was not provided use the value from the initiate response.
+                compRequest.SSECustomerKeyMD5 =
+                    this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5 ??
+                    initResponse.ServerSideEncryptionCustomerProvidedKeyMD5;
             }
 
-            compRequest.AddPartETags(this._uploadResponses);
+            compRequest.AddPartETagsAndChecksums(this._uploadResponses);
+
+            if (this._fileTransporterRequest.IsSetMpuObjectSize())
+            {
+                compRequest.MpuObjectSize = this._fileTransporterRequest.MpuObjectSize;
+            }
 
             if (requestEventHandler != null)
             {
@@ -242,7 +262,10 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header
+#pragma warning disable CS0618 // Type or member is obsolete
+                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header,
+#pragma warning restore CS0618 // Type or member is obsolete
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             // If the InitiateMultipartUploadResponse indicates that this upload is using KMS, force SigV4 for each UploadPart request
@@ -295,11 +318,29 @@ namespace Amazon.S3.Transfer.Internal
                 TagSet = this._fileTransporterRequest.TagSet,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
                 ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
-                ObjectLockMode = this._fileTransporterRequest.ObjectLockMode
+                ObjectLockMode = this._fileTransporterRequest.ObjectLockMode,
+                RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
                 initRequest.ObjectLockRetainUntilDate = this._fileTransporterRequest.ObjectLockRetainUntilDate;
+
+            if (HasPrecalculatedChecksum(out ChecksumAlgorithm algorithmToUse))
+            {
+                initRequest.ChecksumType = ChecksumType.FULL_OBJECT;
+
+                // For full object checksums, the corresponding algorithm of the precalculated value must be used for all individual part uploads.
+                if (!initRequest.IsSetChecksumAlgorithm())
+                {
+                    initRequest.ChecksumAlgorithm = algorithmToUse;
+                    _fileTransporterRequest.ChecksumAlgorithm = algorithmToUse;
+                }
+            }
+            else if (ShouldSetDefaultAlgorithm(initRequest))
+            {
+                initRequest.ChecksumAlgorithm = ChecksumUtils.DefaultAlgorithm.ToString();
+                initRequest.ChecksumType = ChecksumType.FULL_OBJECT;
+            }
 
             if (requestEventHandler != null)
             {
@@ -325,6 +366,71 @@ namespace Amazon.S3.Transfer.Internal
             var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, this._contentLength,
                 e.CompensationForRetry, this._fileTransporterRequest.FilePath);
             this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+
+        /// <summary>
+        /// <para>
+        /// If a checksum algorithm was not specified, we MUST add the default value used by the SDK (as the individual part 
+        /// uploads will calculate a checksum as specified by the S3 model).
+        /// </para>
+        /// 
+        /// <para>
+        /// We also need to check if the default validation was disabled (either via the global S3 configuration or in the 
+        /// upload request). The newer <c>RequestChecksumCalculation</c> option is also validated since the UploadPart
+        /// operation is modeled with <c>"requestChecksumRequired":false</c>
+        /// </para>
+        /// </summary>
+        private bool ShouldSetDefaultAlgorithm(InitiateMultipartUploadRequest initRequest)
+        {
+            return 
+                !initRequest.IsSetChecksumAlgorithm() &&
+                !AWSConfigsS3.DisableDefaultChecksumValidation &&
+                !this._fileTransporterRequest.DisableDefaultChecksumValidation.GetValueOrDefault() &&
+                (_s3Client.Config.SignatureVersion != "2") &&
+                (_s3Client.Config.RequestChecksumCalculation == RequestChecksumCalculation.WHEN_SUPPORTED);
+        }
+
+        /// <summary>
+        /// If a pre-calculated value was specified, we MUST set the checksum type to <c>FULL_OBJECT</c>.
+        /// </summary>
+        /// <param name="chosenAlgorithm">
+        /// The corresponding checksum algorithm for the precalculated value (if one was provided).
+        /// </param>
+        private bool HasPrecalculatedChecksum(out ChecksumAlgorithm chosenAlgorithm)
+        {
+            chosenAlgorithm = null;
+
+            if (this._fileTransporterRequest.IsSetChecksumCRC64NVME())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.CRC64NVME;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumCRC32())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.CRC32;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumCRC32C())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.CRC32C;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumSHA1())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.SHA1;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumSHA256())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.SHA256;
+                return true;
+            }
+
+            return false;
         }
     }
 

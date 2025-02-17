@@ -40,8 +40,8 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
-    /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
-    /// </c> to add it to the Amazon EKS control plane.
+    /// Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+    /// <c>RegisterClusterRequest</c> </a> to add it to the Amazon EKS control plane.
     /// </para>
     ///  
     /// <para>

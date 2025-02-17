@@ -92,6 +92,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Mode);
                 }
 
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
                 if(publicRequest.IsSetSourceBackupId())
                 {
                     context.Writer.WritePropertyName("SourceBackupId");

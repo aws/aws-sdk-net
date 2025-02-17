@@ -34,9 +34,11 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class StopChannelResponse : AmazonWebServiceResponse
     {
+        private DescribeAnywhereSettings _anywhereSettings;
         private string _arn;
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
+        private ChannelEngineVersionResponse _channelEngineVersion;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private List<ChannelEgressEndpoint> _egressEndpoints = AWSConfigs.InitializeCollections ? new List<ChannelEgressEndpoint>() : null;
         private EncoderSettings _encoderSettings;
@@ -52,6 +54,21 @@ namespace Amazon.MediaLive.Model
         private ChannelState _state;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcOutputSettingsDescription _vpc;
+
+        /// <summary>
+        /// Gets and sets the property AnywhereSettings. Anywhere settings for this channel.
+        /// </summary>
+        public DescribeAnywhereSettings AnywhereSettings
+        {
+            get { return this._anywhereSettings; }
+            set { this._anywhereSettings = value; }
+        }
+
+        // Check to see if AnywhereSettings property is set
+        internal bool IsSetAnywhereSettings()
+        {
+            return this._anywhereSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. The unique arn of the channel.
@@ -98,6 +115,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetChannelClass()
         {
             return this._channelClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelEngineVersion. Requested engine version for this
+        /// channel.
+        /// </summary>
+        public ChannelEngineVersionResponse ChannelEngineVersion
+        {
+            get { return this._channelEngineVersion; }
+            set { this._channelEngineVersion = value; }
+        }
+
+        // Check to see if ChannelEngineVersion property is set
+        internal bool IsSetChannelEngineVersion()
+        {
+            return this._channelEngineVersion != null;
         }
 
         /// <summary>

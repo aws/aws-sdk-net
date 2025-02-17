@@ -78,6 +78,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.BasicAuthParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectivityParameters", targetDepth))
+                {
+                    var unmarshaller = DescribeConnectionConnectivityParametersUnmarshaller.Instance;
+                    unmarshalledObject.ConnectivityParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InvocationHttpParameters", targetDepth))
                 {
                     var unmarshaller = ConnectionHttpParametersUnmarshaller.Instance;

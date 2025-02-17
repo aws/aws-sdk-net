@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the StopEvaluationJob operation.
-    /// Stops an in progress model evaluation job.
+    /// Stops an evaluation job that is current being created or running.
     /// </summary>
     public partial class StopEvaluationJobRequest : AmazonBedrockRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// The ARN of the model evaluation job you want to stop.
+        /// The Amazon Resource Name (ARN) of the evaluation job you want to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1011)]

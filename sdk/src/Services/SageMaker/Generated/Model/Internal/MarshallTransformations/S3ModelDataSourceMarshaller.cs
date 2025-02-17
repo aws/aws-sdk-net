@@ -54,6 +54,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionType);
             }
 
+            if(requestObject.IsSetETag())
+            {
+                context.Writer.WritePropertyName("ETag");
+                context.Writer.Write(requestObject.ETag);
+            }
+
             if(requestObject.IsSetHubAccessConfig())
             {
                 context.Writer.WritePropertyName("HubAccessConfig");
@@ -63,6 +69,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.HubAccessConfig, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetManifestEtag())
+            {
+                context.Writer.WritePropertyName("ManifestEtag");
+                context.Writer.Write(requestObject.ManifestEtag);
+            }
+
+            if(requestObject.IsSetManifestS3Uri())
+            {
+                context.Writer.WritePropertyName("ManifestS3Uri");
+                context.Writer.Write(requestObject.ManifestS3Uri);
             }
 
             if(requestObject.IsSetModelAccessConfig())

@@ -31,15 +31,18 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMicrosoftTeamsChannelConfiguration operation.
-    /// Deletes MS Teams Channel Configuration
+    /// Deletes a Microsoft Teams channel configuration for AWS Chatbot
     /// </summary>
     public partial class DeleteMicrosoftTeamsChannelConfigurationRequest : AmazonChatbotRequest
     {
         private string _chatConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the MicrosoftTeamsChannelConfiguration
-        /// to delete.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated
+        /// with the user identity to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn

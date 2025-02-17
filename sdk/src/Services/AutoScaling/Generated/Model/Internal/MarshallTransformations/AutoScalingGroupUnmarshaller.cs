@@ -67,6 +67,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AvailabilityZoneDistribution", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneDistributionUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneDistribution = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AvailabilityZoneImpairmentPolicy", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneImpairmentPolicyUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneImpairmentPolicy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +94,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CapacityReservationSpecification", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationSpecification = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Context", targetDepth))

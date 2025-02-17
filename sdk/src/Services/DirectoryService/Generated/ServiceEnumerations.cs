@@ -241,6 +241,68 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type DataAccessStatus.
+    /// </summary>
+    public class DataAccessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for DataAccessStatus
+        /// </summary>
+        public static readonly DataAccessStatus Disabled = new DataAccessStatus("Disabled");
+        /// <summary>
+        /// Constant Disabling for DataAccessStatus
+        /// </summary>
+        public static readonly DataAccessStatus Disabling = new DataAccessStatus("Disabling");
+        /// <summary>
+        /// Constant Enabled for DataAccessStatus
+        /// </summary>
+        public static readonly DataAccessStatus Enabled = new DataAccessStatus("Enabled");
+        /// <summary>
+        /// Constant Enabling for DataAccessStatus
+        /// </summary>
+        public static readonly DataAccessStatus Enabling = new DataAccessStatus("Enabling");
+        /// <summary>
+        /// Constant Failed for DataAccessStatus
+        /// </summary>
+        public static readonly DataAccessStatus Failed = new DataAccessStatus("Failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataAccessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataAccessStatus FindValue(string value)
+        {
+            return FindValue<DataAccessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataAccessStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DirectoryConfigurationStatus.
     /// </summary>
     public class DirectoryConfigurationStatus : ConstantClass
@@ -452,6 +514,10 @@ namespace Amazon.DirectoryService
         /// Constant Restoring for DirectoryStage
         /// </summary>
         public static readonly DirectoryStage Restoring = new DirectoryStage("Restoring");
+        /// <summary>
+        /// Constant Updating for DirectoryStage
+        /// </summary>
+        public static readonly DirectoryStage Updating = new DirectoryStage("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -580,6 +646,10 @@ namespace Amazon.DirectoryService
         /// Constant Restoring for DomainControllerStatus
         /// </summary>
         public static readonly DomainControllerStatus Restoring = new DomainControllerStatus("Restoring");
+        /// <summary>
+        /// Constant Updating for DomainControllerStatus
+        /// </summary>
+        public static readonly DomainControllerStatus Updating = new DomainControllerStatus("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

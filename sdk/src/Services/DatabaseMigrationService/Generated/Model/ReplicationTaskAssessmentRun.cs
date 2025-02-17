@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private ReplicationTaskAssessmentRunProgress _assessmentProgress;
         private string _assessmentRunName;
+        private bool? _isLatestTaskAssessmentRun;
         private string _lastFailureMessage;
         private string _replicationTaskArn;
         private string _replicationTaskAssessmentRunArn;
@@ -51,6 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _resultKmsKeyArn;
         private string _resultLocationBucket;
         private string _resultLocationFolder;
+        private ReplicationTaskAssessmentRunResultStatistic _resultStatistic;
         private string _serviceAccessRoleArn;
         private string _status;
 
@@ -89,6 +91,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAssessmentRunName()
         {
             return this._assessmentRunName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsLatestTaskAssessmentRun. 
+        /// <para>
+        /// Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask.
+        /// The status is either true or false.
+        /// </para>
+        /// </summary>
+        public bool IsLatestTaskAssessmentRun
+        {
+            get { return this._isLatestTaskAssessmentRun.GetValueOrDefault(); }
+            set { this._isLatestTaskAssessmentRun = value; }
+        }
+
+        // Check to see if IsLatestTaskAssessmentRun property is set
+        internal bool IsSetIsLatestTaskAssessmentRun()
+        {
+            return this._isLatestTaskAssessmentRun.HasValue; 
         }
 
         /// <summary>
@@ -237,6 +258,26 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultStatistic. 
+        /// <para>
+        ///  Result statistics for a completed assessment run, showing aggregated statistics of
+        /// IndividualAssessments for how many assessments were passed, failed, or encountered
+        /// issues such as errors or warnings. 
+        /// </para>
+        /// </summary>
+        public ReplicationTaskAssessmentRunResultStatistic ResultStatistic
+        {
+            get { return this._resultStatistic; }
+            set { this._resultStatistic = value; }
+        }
+
+        // Check to see if ResultStatistic property is set
+        internal bool IsSetResultStatistic()
+        {
+            return this._resultStatistic != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// ARN of the service role used to start the assessment run using the <c>StartReplicationTaskAssessmentRun</c>
@@ -311,6 +352,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  <c>"starting"</c> – The assessment run is starting, but resources are not yet being
         /// provisioned for individual assessments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"warning"</c> – At least one individual assessment completed with a <c>warning</c>
+        /// status.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.CloudWatchRUM.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;

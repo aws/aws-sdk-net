@@ -58,6 +58,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     response.ConnectorArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectorOperationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectorOperationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectorState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -63,6 +63,7 @@ namespace Amazon.CognitoIdentity.Model
         /// An OpenID token, valid for 10 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Token
         {
             get { return this._token; }

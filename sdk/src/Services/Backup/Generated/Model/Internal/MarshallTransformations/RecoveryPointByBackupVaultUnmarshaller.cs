@@ -126,6 +126,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IndexStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IndexStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexStatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsEncrypted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

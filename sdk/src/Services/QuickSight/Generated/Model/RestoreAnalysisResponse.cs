@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _analysisId;
         private string _arn;
         private string _requestId;
+        private List<string> _restorationFailedFolderArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _status;
 
         /// <summary>
@@ -92,6 +93,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRequestId()
         {
             return this._requestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestorationFailedFolderArns. 
+        /// <para>
+        /// A list of folder arns thatthe analysis failed to be restored to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> RestorationFailedFolderArns
+        {
+            get { return this._restorationFailedFolderArns; }
+            set { this._restorationFailedFolderArns = value; }
+        }
+
+        // Check to see if RestorationFailedFolderArns property is set
+        internal bool IsSetRestorationFailedFolderArns()
+        {
+            return this._restorationFailedFolderArns != null && (this._restorationFailedFolderArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

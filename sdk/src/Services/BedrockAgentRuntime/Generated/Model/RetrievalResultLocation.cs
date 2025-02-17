@@ -49,16 +49,19 @@ namespace Amazon.BedrockAgentRuntime.Model
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
-    /// response</a> – in the <c>locatino</c> field
+    /// response</a> – in the <c>location</c> field
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class RetrievalResultLocation
     {
         private RetrievalResultConfluenceLocation _confluenceLocation;
+        private RetrievalResultCustomDocumentLocation _customDocumentLocation;
+        private RetrievalResultKendraDocumentLocation _kendraDocumentLocation;
         private RetrievalResultS3Location _s3Location;
         private RetrievalResultSalesforceLocation _salesforceLocation;
         private RetrievalResultSharePointLocation _sharePointLocation;
+        private RetrievalResultSqlLocation _sqlLocation;
         private RetrievalResultLocationType _type;
         private RetrievalResultWebLocation _webLocation;
 
@@ -78,6 +81,42 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetConfluenceLocation()
         {
             return this._confluenceLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDocumentLocation. 
+        /// <para>
+        /// Specifies the location of a document in a custom data source.
+        /// </para>
+        /// </summary>
+        public RetrievalResultCustomDocumentLocation CustomDocumentLocation
+        {
+            get { return this._customDocumentLocation; }
+            set { this._customDocumentLocation = value; }
+        }
+
+        // Check to see if CustomDocumentLocation property is set
+        internal bool IsSetCustomDocumentLocation()
+        {
+            return this._customDocumentLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KendraDocumentLocation. 
+        /// <para>
+        /// The location of a document in Amazon Kendra.
+        /// </para>
+        /// </summary>
+        public RetrievalResultKendraDocumentLocation KendraDocumentLocation
+        {
+            get { return this._kendraDocumentLocation; }
+            set { this._kendraDocumentLocation = value; }
+        }
+
+        // Check to see if KendraDocumentLocation property is set
+        internal bool IsSetKendraDocumentLocation()
+        {
+            return this._kendraDocumentLocation != null;
         }
 
         /// <summary>
@@ -132,6 +171,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSharePointLocation()
         {
             return this._sharePointLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlLocation. 
+        /// <para>
+        /// Specifies information about the SQL query used to retrieve the result.
+        /// </para>
+        /// </summary>
+        public RetrievalResultSqlLocation SqlLocation
+        {
+            get { return this._sqlLocation; }
+            set { this._sqlLocation = value; }
+        }
+
+        // Check to see if SqlLocation property is set
+        internal bool IsSetSqlLocation()
+        {
+            return this._sqlLocation != null;
         }
 
         /// <summary>

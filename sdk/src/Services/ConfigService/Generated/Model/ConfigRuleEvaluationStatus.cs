@@ -36,7 +36,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// This action does not return status information about Config Custom Lambda rules.
+    /// This operation does not return status information about Config Custom Lambda rules.
     /// </para>
     /// </summary>
     public partial class ConfigRuleEvaluationStatus

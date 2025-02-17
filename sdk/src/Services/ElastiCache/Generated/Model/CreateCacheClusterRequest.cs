@@ -32,11 +32,11 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the CreateCacheCluster operation.
     /// Creates a cluster. All nodes in the cluster run the same protocol-compliant cache
-    /// engine software, either Memcached or Redis OSS.
+    /// engine software, either Memcached, Valkey or Redis OSS.
     /// 
     ///  
     /// <para>
-    /// This operation is not supported for Redis OSS (cluster mode enabled) clusters.
+    /// This operation is not supported for Valkey or Redis OSS (cluster mode enabled) clusters.
     /// </para>
     /// </summary>
     public partial class CreateCacheClusterRequest : AmazonElastiCacheRequest
@@ -81,8 +81,8 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates CreateCacheClusterRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheClusterId">The node group (shard) identifier. This parameter is stored as a lowercase string.  <b>Constraints:</b>  <ul> <li> A name must contain from 1 to 50 alphanumeric characters or hyphens. </li> <li> The first character must be a letter. </li> <li> A name cannot end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
-        /// <param name="numCacheNodes">The initial number of cache nodes that the cluster has. For clusters running Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40. If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
-        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group (shard). The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <ul> <li> General purpose: <ul> <li> Current generation:   <b>M7g node types</b>: <c>cache.m7g.large</c>, <c>cache.m7g.xlarge</c>, <c>cache.m7g.2xlarge</c>, <c>cache.m7g.4xlarge</c>, <c>cache.m7g.8xlarge</c>, <c>cache.m7g.12xlarge</c>, <c>cache.m7g.16xlarge</c>  <note> For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>  </note>  <b>M6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>, <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>, <c>cache.m6g.16xlarge</c>   <b>M5 node types:</b> <c>cache.m5.large</c>, <c>cache.m5.xlarge</c>, <c>cache.m5.2xlarge</c>, <c>cache.m5.4xlarge</c>, <c>cache.m5.12xlarge</c>, <c>cache.m5.24xlarge</c>   <b>M4 node types:</b> <c>cache.m4.large</c>, <c>cache.m4.xlarge</c>, <c>cache.m4.2xlarge</c>, <c>cache.m4.4xlarge</c>, <c>cache.m4.10xlarge</c>   <b>T4g node types</b> (available only for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>   <b>T3 node types:</b> <c>cache.t3.micro</c>, <c>cache.t3.small</c>, <c>cache.t3.medium</c>   <b>T2 node types:</b> <c>cache.t2.micro</c>, <c>cache.t2.small</c>, <c>cache.t2.medium</c>  </li> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>T1 node types:</b> <c>cache.t1.micro</c>   <b>M1 node types:</b> <c>cache.m1.small</c>, <c>cache.m1.medium</c>, <c>cache.m1.large</c>, <c>cache.m1.xlarge</c>   <b>M3 node types:</b> <c>cache.m3.medium</c>, <c>cache.m3.large</c>, <c>cache.m3.xlarge</c>, <c>cache.m3.2xlarge</c>  </li> </ul> </li> <li> Compute optimized: <ul> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>C1 node types:</b> <c>cache.c1.xlarge</c>  </li> </ul> </li> <li> Memory optimized: <ul> <li> Current generation:   <b>R7g node types</b>: <c>cache.r7g.large</c>, <c>cache.r7g.xlarge</c>, <c>cache.r7g.2xlarge</c>, <c>cache.r7g.4xlarge</c>, <c>cache.r7g.8xlarge</c>, <c>cache.r7g.12xlarge</c>, <c>cache.r7g.16xlarge</c>  <note> For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>  </note>  <b>R6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>, <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>, <c>cache.r6g.16xlarge</c>   <b>R5 node types:</b> <c>cache.r5.large</c>, <c>cache.r5.xlarge</c>, <c>cache.r5.2xlarge</c>, <c>cache.r5.4xlarge</c>, <c>cache.r5.12xlarge</c>, <c>cache.r5.24xlarge</c>   <b>R4 node types:</b> <c>cache.r4.large</c>, <c>cache.r4.xlarge</c>, <c>cache.r4.2xlarge</c>, <c>cache.r4.4xlarge</c>, <c>cache.r4.8xlarge</c>, <c>cache.r4.16xlarge</c>  </li> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>M2 node types:</b> <c>cache.m2.xlarge</c>, <c>cache.m2.2xlarge</c>, <c>cache.m2.4xlarge</c>   <b>R3 node types:</b> <c>cache.r3.large</c>, <c>cache.r3.xlarge</c>, <c>cache.r3.2xlarge</c>, <c>cache.r3.4xlarge</c>, <c>cache.r3.8xlarge</c>  </li> </ul> </li> </ul>  <b>Additional node type info</b>  <ul> <li> All current generation instance types are created in Amazon VPC by default. </li> <li> Redis OSS append-only files (AOF) are not supported for T1 or T2 instances. </li> <li> Redis OSS Multi-AZ with automatic failover is not supported on T1 instances. </li> <li> Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported on Redis OSS version 2.8.22 and later. </li> </ul></param>
+        /// <param name="numCacheNodes">The initial number of cache nodes that the cluster has. For clusters running Valkey or Redis OSS, this value must be 1. For clusters running Memcached, this value must be between 1 and 40. If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
+        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group (shard). The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <ul> <li> General purpose: <ul> <li> Current generation:   <b>M7g node types</b>: <c>cache.m7g.large</c>, <c>cache.m7g.xlarge</c>, <c>cache.m7g.2xlarge</c>, <c>cache.m7g.4xlarge</c>, <c>cache.m7g.8xlarge</c>, <c>cache.m7g.12xlarge</c>, <c>cache.m7g.16xlarge</c>  <note> For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>  </note>  <b>M6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>, <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>, <c>cache.m6g.16xlarge</c>   <b>M5 node types:</b> <c>cache.m5.large</c>, <c>cache.m5.xlarge</c>, <c>cache.m5.2xlarge</c>, <c>cache.m5.4xlarge</c>, <c>cache.m5.12xlarge</c>, <c>cache.m5.24xlarge</c>   <b>M4 node types:</b> <c>cache.m4.large</c>, <c>cache.m4.xlarge</c>, <c>cache.m4.2xlarge</c>, <c>cache.m4.4xlarge</c>, <c>cache.m4.10xlarge</c>   <b>T4g node types</b> (available only for Redis OSS engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>   <b>T3 node types:</b> <c>cache.t3.micro</c>, <c>cache.t3.small</c>, <c>cache.t3.medium</c>   <b>T2 node types:</b> <c>cache.t2.micro</c>, <c>cache.t2.small</c>, <c>cache.t2.medium</c>  </li> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>T1 node types:</b> <c>cache.t1.micro</c>   <b>M1 node types:</b> <c>cache.m1.small</c>, <c>cache.m1.medium</c>, <c>cache.m1.large</c>, <c>cache.m1.xlarge</c>   <b>M3 node types:</b> <c>cache.m3.medium</c>, <c>cache.m3.large</c>, <c>cache.m3.xlarge</c>, <c>cache.m3.2xlarge</c>  </li> </ul> </li> <li> Compute optimized: <ul> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>C1 node types:</b> <c>cache.c1.xlarge</c>  </li> </ul> </li> <li> Memory optimized: <ul> <li> Current generation:   <b>R7g node types</b>: <c>cache.r7g.large</c>, <c>cache.r7g.xlarge</c>, <c>cache.r7g.2xlarge</c>, <c>cache.r7g.4xlarge</c>, <c>cache.r7g.8xlarge</c>, <c>cache.r7g.12xlarge</c>, <c>cache.r7g.16xlarge</c>  <note> For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>  </note>  <b>R6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>, <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>, <c>cache.r6g.16xlarge</c>   <b>R5 node types:</b> <c>cache.r5.large</c>, <c>cache.r5.xlarge</c>, <c>cache.r5.2xlarge</c>, <c>cache.r5.4xlarge</c>, <c>cache.r5.12xlarge</c>, <c>cache.r5.24xlarge</c>   <b>R4 node types:</b> <c>cache.r4.large</c>, <c>cache.r4.xlarge</c>, <c>cache.r4.2xlarge</c>, <c>cache.r4.4xlarge</c>, <c>cache.r4.8xlarge</c>, <c>cache.r4.16xlarge</c>  </li> <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)  <b>M2 node types:</b> <c>cache.m2.xlarge</c>, <c>cache.m2.2xlarge</c>, <c>cache.m2.4xlarge</c>   <b>R3 node types:</b> <c>cache.r3.large</c>, <c>cache.r3.xlarge</c>, <c>cache.r3.2xlarge</c>, <c>cache.r3.4xlarge</c>, <c>cache.r3.8xlarge</c>  </li> </ul> </li> </ul>  <b>Additional node type info</b>  <ul> <li> All current generation instance types are created in Amazon VPC by default. </li> <li> Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances. </li> <li> Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances. </li> <li> The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported on Valkey, or on Redis OSS version 2.8.22 and later. </li> </ul></param>
         /// <param name="engine">The name of the cache engine to be used for this cluster. Valid values for this parameter are: <c>memcached</c> | <c>redis</c> </param>
         /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cluster. Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</param>
         public CreateCacheClusterRequest(string cacheClusterId, int numCacheNodes, string cacheNodeType, string engine, List<string> cacheSecurityGroupNames)
@@ -137,9 +137,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        ///  If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and above,
+        /// set this parameter to yes to opt-in to the next auto minor version upgrade campaign.
+        /// This parameter is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -245,7 +245,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 
         /// </para>
         ///  </note> 
@@ -329,7 +329,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 
         /// </para>
         ///  </note> 
@@ -374,16 +374,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
-        /// supported on Redis OSS version 2.8.22 and later.
+        /// The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+        /// on Valkey, or on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -455,7 +455,7 @@ namespace Amazon.ElastiCache.Model
         ///  <important> 
         /// <para>
         /// If you're going to launch your cluster in an Amazon VPC, you need to create a subnet
-        /// group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
+        /// group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.html">Subnets
         /// and Subnet Groups</a>.
         /// </para>
         ///  </important>
@@ -502,7 +502,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version, you must delete the existing cluster
         /// or replication group and create it anew with the earlier engine version. 
@@ -524,9 +524,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version
+        /// 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on
+        /// the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -563,9 +563,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
-        /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
-        /// 
+        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached
+        /// engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>. 
         /// </para>
         /// </summary>
         public NetworkType NetworkType
@@ -611,8 +611,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 40.
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
         /// </para>
         ///  
         /// <para>
@@ -853,9 +853,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotArns. 
         /// <para>
         /// A single-element string list containing an Amazon Resource Name (ARN) that uniquely
-        /// identifies a Redis OSS RDB snapshot file stored in Amazon S3. The snapshot file is
-        /// used to populate the node group (shard). The Amazon S3 object name in the ARN cannot
-        /// contain any commas.
+        /// identifies a Valkey or Redis OSS RDB snapshot file stored in Amazon S3. The snapshot
+        /// file is used to populate the node group (shard). The Amazon S3 object name in the
+        /// ARN cannot contain any commas.
         /// </para>
         ///  <note> 
         /// <para>
@@ -881,9 +881,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of a Redis OSS snapshot from which to restore data into the new node group
-        /// (shard). The snapshot status changes to <c>restoring</c> while the new node group
-        /// (shard) is being created.
+        /// The name of a Valkey or Redis OSS snapshot from which to restore data into the new
+        /// node group (shard). The snapshot status changes to <c>restoring</c> while the new
+        /// node group (shard) is being created.
         /// </para>
         ///  <note> 
         /// <para>

@@ -210,9 +210,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <c>InstallOverrideList</c> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-        /// the <c>AWS-RunPatchBaseline SSM document</c> </a> in the <i>Amazon Web Services Systems
-        /// Manager User Guide</i>.
+        /// For more information about the <c>InstallOverrideList</c> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">SSM
+        /// Command document for patching: <c>AWS-RunPatchBaseline</c> </a> in the <i>Amazon Web
+        /// Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -513,8 +513,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property UnreportedNotApplicableCount. 
         /// <para>
         /// The number of patches beyond the supported limit of <c>NotApplicableCount</c> that
-        /// aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services
-        /// Systems Manager.
+        /// aren't reported by name to Inventory. Inventory is a tool in Amazon Web Services Systems
+        /// Manager.
         /// </para>
         /// </summary>
         public int UnreportedNotApplicableCount

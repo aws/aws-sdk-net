@@ -586,6 +586,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TestStateRequest.Variables</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.TestStateResponse.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -666,6 +670,11 @@
     <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ValidateStateMachineDefinitionRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -744,6 +753,26 @@
     <property>Amazon.StepFunctions.Model.EncryptionConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.EvaluationFailedEventDetails.Cause</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.EvaluationFailedEventDetails.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.EvaluationFailedEventDetails.Location</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.EvaluationFailedEventDetails.State</property>
+    <min>1</min>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.ExecutionAbortedEventDetails.Cause</property>
@@ -833,6 +862,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.AfterArguments</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.AfterInputPath</property>
     <max>262144</max>
   </property-value-rule>
@@ -854,6 +887,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.InspectionData.Result</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.InspectionData.Variables</property>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>

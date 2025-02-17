@@ -100,6 +100,11 @@ namespace Amazon.MWAA
     ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html">InvokeRestApi</a>
+    /// 
+    /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     ///  <b>Regions</b> 
@@ -173,7 +178,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+        /// Creates an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -274,7 +279,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+        /// Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// 
@@ -365,6 +370,70 @@ namespace Amazon.MWAA
         /// <returns>Returns a  GetEnvironmentResult from MWAA.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InvokeRestApi
+
+
+        /// <summary>
+        /// Invokes the Apache Airflow REST API on the webserver with the specified inputs. To
+        /// learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-mwaa-apache-airflow-rest-api.html">Using
+        /// the Apache Airflow REST API</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeRestApi service method.</param>
+        /// 
+        /// <returns>The response from the InvokeRestApi service method, as returned by MWAA.</returns>
+        /// <exception cref="Amazon.MWAA.Model.AccessDeniedException">
+        /// Access to the Apache Airflow Web UI or CLI has been denied due to insufficient permissions.
+        /// To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html">Accessing
+        /// an Amazon MWAA environment</a>.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.InternalServerException">
+        /// InternalServerException: An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
+        /// ResourceNotFoundException: The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.RestApiClientException">
+        /// An exception indicating that a client-side error occurred during the Apache Airflow
+        /// REST API call.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.RestApiServerException">
+        /// An exception indicating that a server-side error occurred during the Apache Airflow
+        /// REST API call.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ValidationException">
+        /// ValidationException: The provided input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">REST API Reference for InvokeRestApi Operation</seealso>
+        InvokeRestApiResponse InvokeRestApi(InvokeRestApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InvokeRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InvokeRestApi operation on AmazonMWAAClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeRestApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">REST API Reference for InvokeRestApi Operation</seealso>
+        IAsyncResult BeginInvokeRestApi(InvokeRestApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InvokeRestApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeRestApi.</param>
+        /// 
+        /// <returns>Returns a  InvokeRestApiResult from MWAA.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">REST API Reference for InvokeRestApi Operation</seealso>
+        InvokeRestApiResponse EndInvokeRestApi(IAsyncResult asyncResult);
 
         #endregion
         

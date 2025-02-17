@@ -296,9 +296,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// it is activated as a Systems Manager managed node. The name is specified as the <c>DefaultInstanceName</c>
         /// property using the <a>CreateActivation</a> command. It is applied to the managed node
         /// by specifying the Activation Code and Activation ID when you install SSM Agent on
-        /// the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install
-        /// SSM Agent for a hybrid and multicloud environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
-        /// SSM Agent for a hybrid and multicloud environment (Windows)</a>. To retrieve the <c>Name</c>
+        /// the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-ssm-agent-install-linux.html">How
+        /// to install SSM Agent on hybrid Linux nodes</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/hybrid-multicloud-ssm-agent-install-windows.html">How
+        /// to install SSM Agent on hybrid Windows Server nodes</a>. To retrieve the <c>Name</c>
         /// tag of an EC2 instance, use the Amazon EC2 <c>DescribeInstances</c> operation. For
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
@@ -361,7 +361,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformType. 
         /// <para>
-        /// The operating system platform type. 
+        /// The operating system platform type.
         /// </para>
         /// </summary>
         public PlatformType PlatformType

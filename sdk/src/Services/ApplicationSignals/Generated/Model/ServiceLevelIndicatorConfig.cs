@@ -31,7 +31,7 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// This structure specifies the information about the service and the performance metric
-    /// that an SLO is to monitor.
+    /// that a period-based SLO is to monitor.
     /// </summary>
     public partial class ServiceLevelIndicatorConfig
     {
@@ -61,7 +61,9 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricThreshold. 
         /// <para>
-        /// The value that the SLI metric is compared to.
+        /// This parameter is used only when a request-based SLO tracks the <c>Latency</c> metric.
+        /// Specify the threshold value that the observed <c>Latency</c> metric values are to
+        /// be compared to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

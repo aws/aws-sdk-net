@@ -54,6 +54,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActionGroup);
             }
 
+            if(requestObject.IsSetAgentId())
+            {
+                context.Writer.WritePropertyName("agentId");
+                context.Writer.Write(requestObject.AgentId);
+            }
+
+            if(requestObject.IsSetConfirmationState())
+            {
+                context.Writer.WritePropertyName("confirmationState");
+                context.Writer.Write(requestObject.ConfirmationState);
+            }
+
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("function");

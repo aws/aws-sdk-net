@@ -98,9 +98,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Some stack templates might include resources that can affect permissions in your Amazon
-        /// Web Services account; for example, by creating new Identity and Access Management
-        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying
-        /// one of these capabilities.
+        /// Web Services account; for example, by creating new IAM users. For those stacks, you
+        /// must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -127,12 +126,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
         /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
@@ -142,7 +141,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+        /// AWS::IAM::ManagedPolicy</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">
         /// AWS::IAM::Policy</a> 
         /// </para>
         ///  </li> <li> 
@@ -152,17 +156,17 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
         /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
         /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
@@ -178,7 +182,7 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.
         /// </para>
@@ -195,8 +199,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// CloudFormation macros to perform custom processing on templates</a>.
+        /// For more information about macros, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
+        /// custom processing on CloudFormation templates with template macros</a>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -251,7 +255,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you create a change set for a new stack, CloudFormation creates a stack with a
-        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+        /// unique stack ID, but no template or resources. The stack will be in the <c>REVIEW_IN_PROGRESS</c>
         /// state until you execute the change set.
         /// </para>
         ///  
@@ -325,9 +329,9 @@ namespace Amazon.CloudFormation.Model
         /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
         /// type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not
         /// accept custom names, such as EC2 instances, use the resource import feature instead.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
-        /// existing resources into CloudFormation management</a> in the <i>CloudFormation User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import
+        /// Amazon Web Services resources into a CloudFormation stack with a resource import</a>
+        /// in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -366,9 +370,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NotificationARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
-        /// topics that CloudFormation associates with the stack. To remove all associated notification
-        /// topics, specify an empty list.
+        /// The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation associates
+        /// with the stack. To remove all associated notification topics, specify an empty list.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -476,8 +479,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// If the list of resource types doesn't include a resource type that you're updating,
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for condition keys
-        /// in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+        /// types. IAM uses this parameter for condition keys in IAM policies for CloudFormation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
         /// access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <note> 
@@ -501,12 +504,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
-        /// CloudFormation assumes when executing the change set. CloudFormation uses the role's
-        /// credentials to make calls on your behalf. CloudFormation uses this role for all future
-        /// operations on the stack. Provided that users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least permission.
+        /// The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes when executing
+        /// the change set. CloudFormation uses the role's credentials to make calls on your behalf.
+        /// CloudFormation uses this role for all future operations on the stack. Provided that
+        /// users have permission to operate on the stack, CloudFormation uses this role even
+        /// if the users don't have permission to pass it. Ensure that the role grants least permission.
         /// </para>
         ///  
         /// <para>
@@ -616,11 +618,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// The location of the file that contains the revised template. The URL must point to
-        /// a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
-        /// Manager document. CloudFormation generates the change set by comparing this template
-        /// with the stack that you specified. The location for an Amazon S3 bucket must start
-        /// with <c>https://</c>.
+        /// The URL of the file that contains the revised template. The URL must point to a template
+        /// (max size: 1 MB) that's located in an Amazon S3 bucket or a Systems Manager document.
+        /// CloudFormation generates the change set by comparing this template with the stack
+        /// that you specified. The location for an Amazon S3 bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

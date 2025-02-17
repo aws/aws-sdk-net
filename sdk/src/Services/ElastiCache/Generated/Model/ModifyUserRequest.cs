@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private string _accessString;
         private string _appendAccessString;
         private AuthenticationMode _authenticationMode;
+        private string _engine;
         private bool? _noPasswordRequired;
         private List<string> _passwords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userId;
@@ -94,6 +95,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAuthenticationMode()
         {
             return this._authenticationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The engine for a specific user. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>

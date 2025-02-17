@@ -40,19 +40,13 @@ namespace Amazon.ECS.Model
     /// authorization. When a task definition revision is not specified, authorization will
     /// occur using the latest revision of a task definition.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Amazon Elastic Inference (EI) is no longer available to customers.
+    /// </para>
     ///  </note> 
     /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+    /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
     /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
@@ -247,7 +241,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ReferenceId. 
         /// <para>
-        /// The reference ID to use for the task.
+        /// This parameter is only used by Amazon ECS. It is not intended for use by customers.
         /// </para>
         /// </summary>
         public string ReferenceId
@@ -268,9 +262,9 @@ namespace Amazon.ECS.Model
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
-        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
-        /// the <c>startedBy</c> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens
-        /// (-), and underscores (_) are allowed.
+        /// tasks belong to that job by filtering the results of a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>
+        /// call with the <c>startedBy</c> value. Up to 36 letters (uppercase and lowercase),
+        /// numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>

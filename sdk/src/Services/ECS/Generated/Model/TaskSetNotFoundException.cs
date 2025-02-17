@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>.
+    /// The specified task set wasn't found. You can view your available task sets with <a
+    /// href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html">DescribeTaskSets</a>.
     /// Task sets are specific to each cluster, service and Region.
     /// </summary>
     #if !NETSTANDARD

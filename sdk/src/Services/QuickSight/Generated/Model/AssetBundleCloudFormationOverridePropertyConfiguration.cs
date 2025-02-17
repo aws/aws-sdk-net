@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleExportJobDashboardOverrideProperties> _dashboards = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobDashboardOverrideProperties>() : null;
         private List<AssetBundleExportJobDataSetOverrideProperties> _dataSets = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobDataSetOverrideProperties>() : null;
         private List<AssetBundleExportJobDataSourceOverrideProperties> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobDataSourceOverrideProperties>() : null;
+        private List<AssetBundleExportJobFolderOverrideProperties> _folders = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobFolderOverrideProperties>() : null;
         private List<AssetBundleExportJobRefreshScheduleOverrideProperties> _refreshSchedules = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobRefreshScheduleOverrideProperties>() : null;
         private AssetBundleExportJobResourceIdOverrideConfiguration _resourceIdOverrideConfiguration;
         private List<AssetBundleExportJobThemeOverrideProperties> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobThemeOverrideProperties>() : null;
@@ -122,6 +123,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Folders. 
+        /// <para>
+        /// An optional list of structures that controls how <c>Folder</c> resources are parameterized
+        /// in the returned CloudFormation template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<AssetBundleExportJobFolderOverrideProperties> Folders
+        {
+            get { return this._folders; }
+            set { this._folders = value; }
+        }
+
+        // Check to see if Folders property is set
+        internal bool IsSetFolders()
+        {
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

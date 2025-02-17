@@ -380,6 +380,19 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
         TelemetryProvider TelemetryProvider { get; }
+
+        /// <summary>
+        /// Determines the behavior for calculating checksums for request payloads.
+        /// By default it is set to <see cref="RequestChecksumCalculation.WHEN_SUPPORTED"/>.
+        /// </summary>
+        RequestChecksumCalculation RequestChecksumCalculation { get; }
+        
+        /// <summary>
+        /// Determines the behavior for validating checksums on response payloads.
+        /// By default it is set to <see cref="ResponseChecksumValidation.WHEN_SUPPORTED"/>.
+        /// </summary>
+        ResponseChecksumValidation ResponseChecksumValidation { get; }
+
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

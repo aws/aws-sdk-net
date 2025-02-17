@@ -315,6 +315,114 @@ namespace Amazon.AutoScaling
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityDistributionStrategy.
+    /// </summary>
+    public class CapacityDistributionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BalancedBestEffort for CapacityDistributionStrategy
+        /// </summary>
+        public static readonly CapacityDistributionStrategy BalancedBestEffort = new CapacityDistributionStrategy("balanced-best-effort");
+        /// <summary>
+        /// Constant BalancedOnly for CapacityDistributionStrategy
+        /// </summary>
+        public static readonly CapacityDistributionStrategy BalancedOnly = new CapacityDistributionStrategy("balanced-only");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityDistributionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityDistributionStrategy FindValue(string value)
+        {
+            return FindValue<CapacityDistributionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityDistributionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationPreference.
+    /// </summary>
+    public class CapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityReservationsFirst for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference CapacityReservationsFirst = new CapacityReservationPreference("capacity-reservations-first");
+        /// <summary>
+        /// Constant CapacityReservationsOnly for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference CapacityReservationsOnly = new CapacityReservationPreference("capacity-reservations-only");
+        /// <summary>
+        /// Constant Default for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference Default = new CapacityReservationPreference("default");
+        /// <summary>
+        /// Constant None for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference None = new CapacityReservationPreference("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CpuManufacturer.
     /// </summary>
     public class CpuManufacturer : ConstantClass
@@ -362,6 +470,56 @@ namespace Amazon.AutoScaling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CpuManufacturer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImpairedZoneHealthCheckBehavior.
+    /// </summary>
+    public class ImpairedZoneHealthCheckBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IgnoreUnhealthy for ImpairedZoneHealthCheckBehavior
+        /// </summary>
+        public static readonly ImpairedZoneHealthCheckBehavior IgnoreUnhealthy = new ImpairedZoneHealthCheckBehavior("IgnoreUnhealthy");
+        /// <summary>
+        /// Constant ReplaceUnhealthy for ImpairedZoneHealthCheckBehavior
+        /// </summary>
+        public static readonly ImpairedZoneHealthCheckBehavior ReplaceUnhealthy = new ImpairedZoneHealthCheckBehavior("ReplaceUnhealthy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpairedZoneHealthCheckBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpairedZoneHealthCheckBehavior FindValue(string value)
+        {
+            return FindValue<ImpairedZoneHealthCheckBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpairedZoneHealthCheckBehavior(string value)
         {
             return FindValue(value);
         }
@@ -524,6 +682,10 @@ namespace Amazon.AutoScaling
     public class InstanceRefreshStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Baking for InstanceRefreshStatus
+        /// </summary>
+        public static readonly InstanceRefreshStatus Baking = new InstanceRefreshStatus("Baking");
         /// <summary>
         /// Constant Cancelled for InstanceRefreshStatus
         /// </summary>

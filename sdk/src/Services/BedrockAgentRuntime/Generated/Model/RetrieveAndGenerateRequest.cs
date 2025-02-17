@@ -31,8 +31,9 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveAndGenerate operation.
-    /// Queries a knowledge base and generates responses based on the retrieved results. The
-    /// response only cites sources that are relevant to the query.
+    /// Queries a knowledge base and generates responses based on the retrieved results and
+    /// using the specified foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+    /// profile</a>. The response only cites sources that are relevant to the query.
     /// </summary>
     public partial class RetrieveAndGenerateRequest : AmazonBedrockAgentRuntimeRequest
     {

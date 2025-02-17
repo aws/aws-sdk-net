@@ -40,10 +40,12 @@ namespace Amazon.Outposts.Model
         private DateTime? _creationDate;
         private bool? _dryRun;
         private CapacityTaskFailure _failed;
+        private InstancesToExclude _instancesToExclude;
         private DateTime? _lastModifiedDate;
         private string _orderId;
         private string _outpostId;
         private List<InstanceTypeCapacity> _requestedInstancePools = AWSConfigs.InitializeCollections ? new List<InstanceTypeCapacity>() : null;
+        private TaskActionOnBlockingInstances _taskActionOnBlockingInstances;
 
         /// <summary>
         /// Gets and sets the property CapacityTaskId. 
@@ -156,6 +158,25 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstancesToExclude. 
+        /// <para>
+        /// User-specified instances that must not be stopped in order to free up the capacity
+        /// needed to run the capacity task.
+        /// </para>
+        /// </summary>
+        public InstancesToExclude InstancesToExclude
+        {
+            get { return this._instancesToExclude; }
+            set { this._instancesToExclude = value; }
+        }
+
+        // Check to see if InstancesToExclude property is set
+        internal bool IsSetInstancesToExclude()
+        {
+            return this._instancesToExclude != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         /// Date that the specified capacity task was last modified.
@@ -228,6 +249,34 @@ namespace Amazon.Outposts.Model
         internal bool IsSetRequestedInstancePools()
         {
             return this._requestedInstancePools != null && (this._requestedInstancePools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskActionOnBlockingInstances. 
+        /// <para>
+        /// User-specified option in case an instance is blocking the capacity task from running.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>WAIT_FOR_EVACUATION</c> - Checks every 10 minutes over 48 hours to determine if
+        /// instances have stopped and capacity is available to complete the task.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAIL_TASK</c> - The capacity task fails.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TaskActionOnBlockingInstances TaskActionOnBlockingInstances
+        {
+            get { return this._taskActionOnBlockingInstances; }
+            set { this._taskActionOnBlockingInstances = value; }
+        }
+
+        // Check to see if TaskActionOnBlockingInstances property is set
+        internal bool IsSetTaskActionOnBlockingInstances()
+        {
+            return this._taskActionOnBlockingInstances != null;
         }
 
     }

@@ -45,6 +45,14 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataProtectionSettings operation
+        ///</summary>
+        public IListDataProtectionSettingsPaginator ListDataProtectionSettings(ListDataProtectionSettingsRequest request) 
+        {
+            return new ListDataProtectionSettingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIdentityProviders operation
         ///</summary>
         public IListIdentityProvidersPaginator ListIdentityProviders(ListIdentityProvidersRequest request) 
@@ -74,6 +82,14 @@ namespace Amazon.WorkSpacesWeb.Model
         public IListPortalsPaginator ListPortals(ListPortalsRequest request) 
         {
             return new ListPortalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
         }
 
         /// <summary>

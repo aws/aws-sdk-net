@@ -48,6 +48,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCopyFrom())
+            {
+                context.Writer.WritePropertyName("copyFrom");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CopyFromSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CopyFrom, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("data");

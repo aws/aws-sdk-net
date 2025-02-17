@@ -52,6 +52,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EmailMfaConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailMfaConfigTypeUnmarshaller.Instance;
+                    response.EmailMfaConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MfaConfiguration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -68,6 +74,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SoftwareTokenMfaConfigTypeUnmarshaller.Instance;
                     response.SoftwareTokenMfaConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WebAuthnConfiguration", targetDepth))
+                {
+                    var unmarshaller = WebAuthnConfigurationTypeUnmarshaller.Instance;
+                    response.WebAuthnConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

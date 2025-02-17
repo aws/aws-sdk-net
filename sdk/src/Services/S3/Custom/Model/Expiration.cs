@@ -94,6 +94,13 @@ namespace Amazon.S3.Model
             if (string.IsNullOrEmpty(headerValue))
                 throw new ArgumentNullException("headerValue");
 
+            // S3 Express may return a not implemented value instead of the format we're expecting.
+            // We'll return without populating the rule ID and expiry date instead of trying to parse the header.
+            if (headerValue.Equals("NotImplemented", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
             var expiryMatches = ExpiryRegex().Match(headerValue);
             if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Expiry Date match");

@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRiskConfiguration operation.
-    /// Describes the risk configuration.
+    /// Given an app client or user pool ID where threat protection is configured, describes
+    /// the risk configuration. This operation returns details about adaptive authentication,
+    /// compromised credentials, and IP-address allow- and denylists. For more information
+    /// about threat protection, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html">Threat
+    /// protection</a>.
     /// </summary>
     public partial class DescribeRiskConfigurationRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +45,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID.
+        /// The ID of the app client with the risk configuration that you want to inspect. You
+        /// can apply default risk configuration at the user pool level and further customize
+        /// it from user pool defaults at the app-client level. Specify <c>ClientId</c> to inspect
+        /// client-level configuration, or <c>UserPoolId</c> to inspect pool-level configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -60,7 +67,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool with the risk configuration that you want to inspect. You
+        /// can apply default risk configuration at the user pool level and further customize
+        /// it from user pool defaults at the app-client level. Specify <c>ClientId</c> to inspect
+        /// client-level configuration, or <c>UserPoolId</c> to inspect pool-level configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

@@ -433,20 +433,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        public bool IsEventStream
-        {
-            get
-            {
-                var isEventStream = data[EventStreamKey];
-                if (isEventStream != null && isEventStream.IsBoolean)
-                {
-                    return (bool)isEventStream;
-                }
-
-                return false;
-            }
-        }
-
         /// <summary>
         /// If this shape is a primitive type this returns true so that the request can show if the member has been set or not
         /// </summary>

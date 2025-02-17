@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private bool? _isEgress;
         private string _prefixListId;
         private ReferencedSecurityGroup _referencedGroupInfo;
+        private string _securityGroupRuleArn;
         private string _securityGroupRuleId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _toPort;
@@ -233,6 +234,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetReferencedGroupInfo()
         {
             return this._referencedGroupInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupRuleArn. 
+        /// <para>
+        /// The ARN of the security group rule.
+        /// </para>
+        /// </summary>
+        public string SecurityGroupRuleArn
+        {
+            get { return this._securityGroupRuleArn; }
+            set { this._securityGroupRuleArn = value; }
+        }
+
+        // Check to see if SecurityGroupRuleArn property is set
+        internal bool IsSetSecurityGroupRuleArn()
+        {
+            return this._securityGroupRuleArn != null;
         }
 
         /// <summary>

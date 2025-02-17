@@ -90,6 +90,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DNSName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnablePrefixForIpv6SourceNat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EnablePrefixForIpv6SourceNat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

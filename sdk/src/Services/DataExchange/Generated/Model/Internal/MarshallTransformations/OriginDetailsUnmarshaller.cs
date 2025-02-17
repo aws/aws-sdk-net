@@ -66,6 +66,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DataGrantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataGrantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

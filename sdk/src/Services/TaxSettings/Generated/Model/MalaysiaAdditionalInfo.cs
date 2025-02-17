@@ -34,7 +34,45 @@ namespace Amazon.TaxSettings.Model
     /// </summary>
     public partial class MalaysiaAdditionalInfo
     {
+        private string _businessRegistrationNumber;
         private List<string> _serviceTaxCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _taxInformationNumber;
+
+        /// <summary>
+        /// Gets and sets the property BusinessRegistrationNumber. 
+        /// <para>
+        /// The tax registration number (TRN) in Malaysia. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid MyKad or NRIC number. For business, you must specify a
+        /// <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c> with a TIN type
+        /// and tax identification number. For business resellers, you must specify a <c>businessRegistrationNumber</c>
+        /// and <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c> with a sales and
+        /// service tax (SST) type and a valid SST number. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
+        /// </para>
+        /// </summary>
+        public string BusinessRegistrationNumber
+        {
+            get { return this._businessRegistrationNumber; }
+            set { this._businessRegistrationNumber = value; }
+        }
+
+        // Check to see if BusinessRegistrationNumber property is set
+        internal bool IsSetBusinessRegistrationNumber()
+        {
+            return this._businessRegistrationNumber != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceTaxCodes. 
@@ -42,7 +80,7 @@ namespace Amazon.TaxSettings.Model
         /// List of service tax codes for your TRN in Malaysia.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4)]
+        [AWSProperty(Min=0, Max=4)]
         public List<string> ServiceTaxCodes
         {
             get { return this._serviceTaxCodes; }
@@ -53,6 +91,40 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetServiceTaxCodes()
         {
             return this._serviceTaxCodes != null && (this._serviceTaxCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxInformationNumber. 
+        /// <para>
+        /// The tax information number in Malaysia. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid MyKad or NRIC number. For business resellers, you must
+        /// specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a sales and service tax (SST) type and a valid SST number. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
+        /// </para>
+        /// </summary>
+        public string TaxInformationNumber
+        {
+            get { return this._taxInformationNumber; }
+            set { this._taxInformationNumber = value; }
+        }
+
+        // Check to see if TaxInformationNumber property is set
+        internal bool IsSetTaxInformationNumber()
+        {
+            return this._taxInformationNumber != null;
         }
 
     }

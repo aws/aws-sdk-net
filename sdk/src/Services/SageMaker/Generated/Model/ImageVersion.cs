@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A version of a SageMaker <c>Image</c>. A version represents an existing container
+    /// A version of a SageMaker AI <c>Image</c>. A version represents an existing container
     /// image.
     /// </summary>
     public partial class ImageVersion

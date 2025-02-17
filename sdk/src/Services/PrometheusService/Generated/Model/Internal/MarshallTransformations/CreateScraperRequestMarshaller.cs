@@ -95,6 +95,17 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRoleConfiguration())
+                {
+                    context.Writer.WritePropertyName("roleConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RoleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RoleConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetScrapeConfiguration())
                 {
                     context.Writer.WritePropertyName("scrapeConfiguration");

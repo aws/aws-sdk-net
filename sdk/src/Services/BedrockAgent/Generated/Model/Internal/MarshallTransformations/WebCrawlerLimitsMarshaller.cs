@@ -48,6 +48,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMaxPages())
+            {
+                context.Writer.WritePropertyName("maxPages");
+                context.Writer.Write(requestObject.MaxPages);
+            }
+
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");

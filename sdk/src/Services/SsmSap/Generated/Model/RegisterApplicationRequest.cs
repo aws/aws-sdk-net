@@ -54,6 +54,7 @@ namespace Amazon.SsmSap.Model
     {
         private string _applicationId;
         private ApplicationType _applicationType;
+        private List<ComponentInfo> _componentsInfo = AWSConfigs.InitializeCollections ? new List<ComponentInfo>() : null;
         private List<ApplicationCredential> _credentials = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
         private string _databaseArn;
         private List<string> _instances = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -67,7 +68,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -97,6 +98,30 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetApplicationType()
         {
             return this._applicationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentsInfo. 
+        /// <para>
+        /// This is an optional parameter for component details to which the SAP ABAP application
+        /// is attached, such as Web Dispatcher.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an array of ApplicationComponent objects. You may input 0 to 5 items.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<ComponentInfo> ComponentsInfo
+        {
+            get { return this._componentsInfo; }
+            set { this._componentsInfo = value; }
+        }
+
+        // Check to see if ComponentsInfo property is set
+        internal bool IsSetComponentsInfo()
+        {
+            return this._componentsInfo != null && (this._componentsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

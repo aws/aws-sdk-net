@@ -2154,6 +2154,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home Region is not set. Set the home Region to continue.
         /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
         /// The value of one or more parameters are either invalid or out of range. Verify the
         /// parameter values and try again.
@@ -2194,6 +2197,9 @@ namespace Amazon.ApplicationDiscoveryService
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home Region is not set. Set the home Region to continue.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
         /// The value of one or more parameters are either invalid or out of range. Verify the

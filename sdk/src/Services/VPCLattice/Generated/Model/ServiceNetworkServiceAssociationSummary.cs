@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// Summary information about the association between a service network and a service.
+    /// Summary information about an association between a service network and a service.
     /// </summary>
     public partial class ServiceNetworkServiceAssociationSummary
     {
@@ -70,7 +70,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the association was created, specified in ISO-8601 format.
+        /// The date and time that the association was created, in ISO-8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -242,7 +242,7 @@ namespace Amazon.VPCLattice.Model
         /// The ID of the service network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=32)]
+        [AWSProperty(Min=20, Max=20)]
         public string ServiceNetworkId
         {
             get { return this._serviceNetworkId; }

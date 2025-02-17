@@ -121,6 +121,10 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         ///  <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IMPORT_ISO</b> – An ISO disk import created the image.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public BuildType BuildType

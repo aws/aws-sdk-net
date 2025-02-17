@@ -771,7 +771,7 @@ namespace Amazon.EKS
         /// <para>
         /// The Fargate profile allows an administrator to declare which pods run on Fargate and
         /// specify which pods run on which Fargate profile. This declaration is done through
-        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// the profile's selectors. Each profile can have up to five selectors that contain a
         /// namespace and labels. A namespace is required for every selector. The label field
         /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
         /// on Fargate. If a to-be-scheduled pod matches any of the selectors in the Fargate profile,
@@ -847,7 +847,7 @@ namespace Amazon.EKS
         /// <para>
         /// The Fargate profile allows an administrator to declare which pods run on Fargate and
         /// specify which pods run on which Fargate profile. This declaration is done through
-        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// the profile's selectors. Each profile can have up to five selectors that contain a
         /// namespace and labels. A namespace is required for every selector. The label field
         /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
         /// on Fargate. If a to-be-scheduled pod matches any of the selectors in the Fargate profile,
@@ -2122,6 +2122,54 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeClusterVersions
+
+
+        /// <summary>
+        /// Lists available Kubernetes versions for Amazon EKS clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterVersions service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
+        DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists available Kubernetes versions for Amazon EKS clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterVersions service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
+        Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeEksAnywhereSubscription
 
 
@@ -2522,9 +2570,9 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When the status of the update is <c>Succeeded</c>, the update is complete. If an update
-        /// fails, the status is <c>Failed</c>, and an error detail explains the reason for the
-        /// failure.
+        /// When the status of the update is <c>Successful</c>, the update is complete. If an
+        /// update fails, the status is <c>Failed</c>, and an error detail explains the reason
+        /// for the failure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
@@ -2557,9 +2605,9 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When the status of the update is <c>Succeeded</c>, the update is complete. If an update
-        /// fails, the status is <c>Failed</c>, and an error detail explains the reason for the
-        /// failure.
+        /// When the status of the update is <c>Successful</c>, the update is complete. If an
+        /// update fails, the status is <c>Failed</c>, and an error detail explains the reason
+        /// for the failure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
@@ -3511,8 +3559,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
-        /// </c> to add it to the Amazon EKS control plane.
+        /// Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+        /// <c>RegisterClusterRequest</c> </a> to add it to the Amazon EKS control plane.
         /// </para>
         ///  
         /// <para>
@@ -3576,8 +3624,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
-        /// </c> to add it to the Amazon EKS control plane.
+        /// Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+        /// <c>RegisterClusterRequest</c> </a> to add it to the Amazon EKS control plane.
         /// </para>
         ///  
         /// <para>
@@ -3907,6 +3955,11 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
+        /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
+        /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
+        /// </para>
+        ///  
+        /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
         /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
         /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
@@ -3981,6 +4034,11 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
+        /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
+        /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
+        /// </para>
+        ///  
+        /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
         /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
         /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
@@ -4028,8 +4086,8 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your cluster update with the <a>DescribeUpdate</a>
-        /// API operation.
+        /// can use to track the status of your cluster update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation.
         /// 
         ///  
         /// <para>
@@ -4040,8 +4098,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
-        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// If your cluster has managed node groups attached to it, all of your node groups' Kubernetes
+        /// versions must match the cluster's Kubernetes version in order to update the cluster
         /// to a new Kubernetes version.
         /// </para>
         /// </summary>
@@ -4080,8 +4138,8 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your cluster update with the <a>DescribeUpdate</a>
-        /// API operation.
+        /// can use to track the status of your cluster update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation.
         /// 
         ///  
         /// <para>
@@ -4092,8 +4150,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
-        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// If your cluster has managed node groups attached to it, all of your node groups' Kubernetes
+        /// versions must match the cluster's Kubernetes version in order to update the cluster
         /// to a new Kubernetes version.
         /// </para>
         /// </summary>
@@ -4210,9 +4268,9 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. Currently you can update the Kubernetes labels for a node group or
-        /// the scaling configuration.
+        /// can use to track the status of your node group update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation. You can update the Kubernetes labels and
+        /// taints for a node group and the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// 
@@ -4249,9 +4307,9 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. Currently you can update the Kubernetes labels for a node group or
-        /// the scaling configuration.
+        /// can use to track the status of your node group update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation. You can update the Kubernetes labels and
+        /// taints for a node group and the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// <param name="cancellationToken">

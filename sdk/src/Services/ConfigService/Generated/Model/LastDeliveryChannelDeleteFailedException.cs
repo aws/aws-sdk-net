@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You cannot delete the delivery channel you specified because the configuration recorder
-    /// is running.
+    /// You cannot delete the delivery channel you specified because the customer managed
+    /// configuration recorder is running.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

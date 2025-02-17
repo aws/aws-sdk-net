@@ -47,6 +47,7 @@ namespace Amazon.QuickSight.Model
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, LogicalTable>() : null;
         private string _name;
+        private PerformanceConfiguration _performanceConfiguration;
         private List<ResourcePermission> _permissions = AWSConfigs.InitializeCollections ? new List<ResourcePermission>() : null;
         private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
@@ -258,6 +259,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfiguration. 
+        /// <para>
+        /// The configuration for the performance optimization of the dataset that contains a
+        /// <c>UniqueKey</c> configuration.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfiguration
+        {
+            get { return this._performanceConfiguration; }
+            set { this._performanceConfiguration = value; }
+        }
+
+        // Check to see if PerformanceConfiguration property is set
+        internal bool IsSetPerformanceConfiguration()
+        {
+            return this._performanceConfiguration != null;
         }
 
         /// <summary>

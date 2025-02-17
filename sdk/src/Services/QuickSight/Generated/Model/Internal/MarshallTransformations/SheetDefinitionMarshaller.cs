@@ -76,6 +76,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetImages())
+            {
+                context.Writer.WritePropertyName("Images");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectImagesListValue in requestObject.Images)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SheetImageMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetLayouts())
             {
                 context.Writer.WritePropertyName("Layouts");

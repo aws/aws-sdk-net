@@ -43,6 +43,14 @@ namespace Amazon.IoTFleetWise.Model
     /// and transfer data with campaigns</a> in the <i>Amazon Web Services IoT FleetWise Developer
     /// Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// Access to certain Amazon Web Services IoT FleetWise features is currently gated. For
+    /// more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+    /// Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT
+    /// FleetWise Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateCampaignRequest : AmazonIoTFleetWiseRequest
     {
@@ -50,6 +58,7 @@ namespace Amazon.IoTFleetWise.Model
         private Compression _compression;
         private List<DataDestinationConfig> _dataDestinationConfigs = AWSConfigs.InitializeCollections ? new List<DataDestinationConfig>() : null;
         private List<string> _dataExtraDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataPartition> _dataPartitions = AWSConfigs.InitializeCollections ? new List<DataPartition>() : null;
         private string _description;
         private DiagnosticsMode _diagnosticsMode;
         private DateTime? _expiryTime;
@@ -58,6 +67,7 @@ namespace Amazon.IoTFleetWise.Model
         private int? _priority;
         private string _signalCatalogArn;
         private List<SignalInformation> _signalsToCollect = AWSConfigs.InitializeCollections ? new List<SignalInformation>() : null;
+        private List<SignalFetchInformation> _signalsToFetch = AWSConfigs.InitializeCollections ? new List<SignalFetchInformation>() : null;
         private SpoolingMode _spoolingMode;
         private DateTime? _startTime;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -86,7 +96,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Compression. 
         /// <para>
-        ///  (Optional) Whether to compress signals before transmitting data to Amazon Web Services
+        /// Determines whether to compress signals before transmitting data to Amazon Web Services
         /// IoT FleetWise. If you don't want to compress the signals, use <c>OFF</c>. If it's
         /// not specified, <c>SNAPPY</c> is used. 
         /// </para>
@@ -110,8 +120,13 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property DataDestinationConfigs. 
         /// <para>
-        /// The destination where the campaign sends data. You can choose to send data to be stored
-        /// in Amazon S3 or Amazon Timestream.
+        /// The destination where the campaign sends data. You can send data to an MQTT topic,
+        /// or store it in Amazon S3 or Amazon Timestream.
+        /// </para>
+        ///  
+        /// <para>
+        /// MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to
+        /// communicate with your devices.
         /// </para>
         ///  
         /// <para>
@@ -143,7 +158,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property DataExtraDimensions. 
         /// <para>
-        ///  (Optional) A list of vehicle attributes to associate with a campaign. 
+        /// A list of vehicle attributes to associate with a campaign. 
         /// </para>
         ///  
         /// <para>
@@ -157,7 +172,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: An empty array
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5)]
         public List<string> DataExtraDimensions
         {
             get { return this._dataExtraDimensions; }
@@ -168,6 +183,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetDataExtraDimensions()
         {
             return this._dataExtraDimensions != null && (this._dataExtraDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPartitions. 
+        /// <para>
+        /// The data partitions associated with the signals collected from the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<DataPartition> DataPartitions
+        {
+            get { return this._dataPartitions; }
+            set { this._dataPartitions = value; }
+        }
+
+        // Check to see if DataPartitions property is set
+        internal bool IsSetDataPartitions()
+        {
+            return this._dataPartitions != null && (this._dataPartitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,9 +226,9 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property DiagnosticsMode. 
         /// <para>
-        ///  (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services
-        /// IoT FleetWise. If you want to send diagnostic trouble codes, use <c>SEND_ACTIVE_DTCS</c>.
-        /// If it's not specified, <c>OFF</c> is used.
+        /// Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise.
+        /// If you want to send diagnostic trouble codes, use <c>SEND_ACTIVE_DTCS</c>. If it's
+        /// not specified, <c>OFF</c> is used.
         /// </para>
         ///  
         /// <para>
@@ -216,8 +250,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        ///  (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970
-        /// at midnight UTC time). Vehicle data isn't collected after the campaign expires. 
+        /// The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight
+        /// UTC time). Vehicle data isn't collected after the campaign expires. 
         /// </para>
         ///  
         /// <para>
@@ -258,8 +292,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property PostTriggerCollectionDuration. 
         /// <para>
-        ///  (Optional) How long (in milliseconds) to collect raw data after a triggering event
-        /// initiates the collection. If it's not specified, <c>0</c> is used.
+        /// How long (in milliseconds) to collect raw data after a triggering event initiates
+        /// the collection. If it's not specified, <c>0</c> is used.
         /// </para>
         ///  
         /// <para>
@@ -282,15 +316,16 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// (Optional) A number indicating the priority of one campaign over another campaign
-        /// for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles
-        /// before any other campaigns. If it's not specified, <c>0</c> is used. 
+        /// A number indicating the priority of one campaign over another campaign for a certain
+        /// vehicle or fleet. A campaign with the lowest value is deployed to vehicles before
+        /// any other campaigns. If it's not specified, <c>0</c> is used. 
         /// </para>
         ///  
         /// <para>
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
+        [Obsolete("priority is no longer used or needed as input")]
         [AWSProperty(Min=0)]
         public int Priority
         {
@@ -327,10 +362,16 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property SignalsToCollect. 
         /// <para>
-        /// (Optional) A list of information about signals to collect. 
+        /// A list of information about signals to collect. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you upload a signal as a condition in a data partition for a campaign, then those
+        /// same signals must be included in <c>signalsToCollect</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
         public List<SignalInformation> SignalsToCollect
         {
             get { return this._signalsToCollect; }
@@ -344,9 +385,28 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SignalsToFetch. 
+        /// <para>
+        /// A list of information about signals to fetch.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<SignalFetchInformation> SignalsToFetch
+        {
+            get { return this._signalsToFetch; }
+            set { this._signalsToFetch = value; }
+        }
+
+        // Check to see if SignalsToFetch property is set
+        internal bool IsSetSignalsToFetch()
+        {
+            return this._signalsToFetch != null && (this._signalsToFetch.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SpoolingMode. 
         /// <para>
-        /// (Optional) Whether to store collected data after a vehicle lost a connection with
+        /// Determines whether to store collected data after a vehicle lost a connection with
         /// the cloud. After a connection is re-established, the data is automatically forwarded
         /// to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle
         /// loses connection with the cloud, use <c>TO_DISK</c>. If it's not specified, <c>OFF</c>
@@ -372,8 +432,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// (Optional) The time, in milliseconds, to deliver a campaign after it was approved.
-        /// If it's not specified, <c>0</c> is used.
+        /// The time, in milliseconds, to deliver a campaign after it was approved. If it's not
+        /// specified, <c>0</c> is used.
         /// </para>
         ///  
         /// <para>

@@ -248,6 +248,14 @@ namespace Amazon.PrometheusService
         /// Constant DELETION_FAILED for ScraperStatusCode
         /// </summary>
         public static readonly ScraperStatusCode DELETION_FAILED = new ScraperStatusCode("DELETION_FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ScraperStatusCode
+        /// </summary>
+        public static readonly ScraperStatusCode UPDATE_FAILED = new ScraperStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ScraperStatusCode
+        /// </summary>
+        public static readonly ScraperStatusCode UPDATING = new ScraperStatusCode("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

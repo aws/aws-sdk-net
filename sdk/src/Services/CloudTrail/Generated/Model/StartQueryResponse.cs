@@ -34,7 +34,27 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class StartQueryResponse : AmazonWebServiceResponse
     {
+        private string _eventDataStoreOwnerAccountId;
         private string _queryId;
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueryId. 

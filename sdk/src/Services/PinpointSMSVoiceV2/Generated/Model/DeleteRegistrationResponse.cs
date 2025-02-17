@@ -184,15 +184,21 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>CLOSED</c>: The phone number or sender ID has been deleted and you must also delete
+        /// the registration for the number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>CREATED</c>: Your registration is created but not submitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SUBMITTED</c>: Your registration has been submitted and is awaiting review.
+        ///  <c>COMPLETE</c>: Your registration has been approved and your origination identity
+        /// has been created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
+        ///  <c>DELETED</c>: The registration has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -201,8 +207,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>COMPLETE</c>: Your registration has been approved and and your origination identity
-        /// has been created.
+        ///  <c>REQUIRES_AUTHENTICATION</c>: You need to complete email authentication.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -210,12 +215,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CLOSED</c>: The phone number or sender ID has been deleted and you must also delete
-        /// the registration for the number.
+        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DELETED</c>: The registration has been deleted.
+        ///  <c>SUBMITTED</c>: Your registration has been submitted and is awaiting review.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -68,7 +68,7 @@ namespace Amazon.ElastiCache
         /// tags to categorize and track all your ElastiCache resources, with the exception of
         /// global replication group. When you add or remove tags on replication groups, those
         /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// 
         ///  
@@ -81,7 +81,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Tagging.html">Using
         /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
@@ -109,8 +109,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -126,7 +126,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -152,7 +152,7 @@ namespace Amazon.ElastiCache
         /// tags to categorize and track all your ElastiCache resources, with the exception of
         /// global replication group. When you add or remove tags on replication groups, those
         /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// 
         ///  
@@ -165,7 +165,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Tagging.html">Using
         /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
@@ -196,8 +196,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -213,7 +213,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -319,7 +319,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Apply the service update. For more information on service updates and applying them,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/applying-updates.html">Applying
         /// Service Updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchApplyUpdateAction service method.</param>
@@ -338,7 +338,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Apply the service update. For more information on service updates and applying them,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/applying-updates.html">Applying
         /// Service Updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchApplyUpdateAction service method.</param>
@@ -363,7 +363,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Stop the service update. For more information on service updates and stopping them,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/stopping-self-service-updates.html">Stopping
         /// Service Updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchStopUpdateAction service method.</param>
@@ -382,7 +382,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Stop the service update. For more information on service updates and stopping them,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/stopping-self-service-updates.html">Stopping
         /// Service Updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchStopUpdateAction service method.</param>
@@ -452,8 +452,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a copy of an existing serverless cache’s snapshot. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// Creates a copy of an existing serverless cache’s snapshot. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyServerlessCacheSnapshot service method.</param>
         /// 
@@ -465,20 +465,20 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
         /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -494,8 +494,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a copy of an existing serverless cache’s snapshot. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// Creates a copy of an existing serverless cache’s snapshot. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyServerlessCacheSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -510,20 +510,20 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
         /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -546,7 +546,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -554,8 +554,8 @@ namespace Amazon.ElastiCache
         /// create their own Amazon S3 buckets and copy snapshots to it. To control access to
         /// your snapshots, use an IAM policy to control who has the ability to use the <c>CopySnapshot</c>
         /// operation. For more information about using IAM to control the use of ElastiCache
-        /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
-        /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+        /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html">Exporting
+        /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.html">Authentication
         /// &amp; Access Control</a>.
         /// </para>
         ///  </important> 
@@ -573,7 +573,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -583,7 +583,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -593,7 +593,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -623,7 +623,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -634,7 +634,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -645,7 +645,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -686,7 +686,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -694,8 +694,8 @@ namespace Amazon.ElastiCache
         /// create their own Amazon S3 buckets and copy snapshots to it. To control access to
         /// your snapshots, use an IAM policy to control who has the ability to use the <c>CopySnapshot</c>
         /// operation. For more information about using IAM to control the use of ElastiCache
-        /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
-        /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+        /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html">Exporting
+        /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.html">Authentication
         /// &amp; Access Control</a>.
         /// </para>
         ///  </important> 
@@ -713,7 +713,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -723,7 +723,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -733,7 +733,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -763,7 +763,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -774,7 +774,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -785,7 +785,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+        /// href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -829,11 +829,11 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Creates a cluster. All nodes in the cluster run the same protocol-compliant cache
-        /// engine software, either Memcached or Redis OSS.
+        /// engine software, either Memcached, Valkey or Redis OSS.
         /// 
         ///  
         /// <para>
-        /// This operation is not supported for Redis OSS (cluster mode enabled) clusters.
+        /// This operation is not supported for Valkey or Redis OSS (cluster mode enabled) clusters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
@@ -859,7 +859,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
@@ -897,11 +897,11 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Creates a cluster. All nodes in the cluster run the same protocol-compliant cache
-        /// engine software, either Memcached or Redis OSS.
+        /// engine software, either Memcached, Valkey or Redis OSS.
         /// 
         ///  
         /// <para>
-        /// This operation is not supported for Redis OSS (cluster mode enabled) clusters.
+        /// This operation is not supported for Valkey or Redis OSS (cluster mode enabled) clusters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
@@ -930,7 +930,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
@@ -987,7 +987,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ParameterGroups.html">Parameters
         /// and Parameter Groups</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -1040,7 +1040,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ParameterGroups.html">Parameters
         /// and Parameter Groups</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -1254,10 +1254,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Global Datastore for Redis OSS offers fully managed, fast, reliable and secure cross-region
-        /// replication. Using Global Datastore for Redis OSS, you can create cross-region read
-        /// replica clusters for ElastiCache (Redis OSS) to enable low-latency reads and disaster
-        /// recovery across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
+        /// Global Datastore offers fully managed, fast, reliable and secure cross-region replication.
+        /// Using Global Datastore with Valkey or Redis OSS, you can create cross-region read
+        /// replica clusters for ElastiCache to enable low-latency reads and disaster recovery
+        /// across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastore.html">Replication
         /// Across Regions Using Global Datastore</a>. 
         /// 
         ///  <ul> <li> 
@@ -1295,10 +1295,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Global Datastore for Redis OSS offers fully managed, fast, reliable and secure cross-region
-        /// replication. Using Global Datastore for Redis OSS, you can create cross-region read
-        /// replica clusters for ElastiCache (Redis OSS) to enable low-latency reads and disaster
-        /// recovery across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
+        /// Global Datastore offers fully managed, fast, reliable and secure cross-region replication.
+        /// Using Global Datastore with Valkey or Redis OSS, you can create cross-region read
+        /// replica clusters for ElastiCache to enable low-latency reads and disaster recovery
+        /// across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastore.html">Replication
         /// Across Regions Using Global Datastore</a>. 
         /// 
         ///  <ul> <li> 
@@ -1342,8 +1342,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a Redis OSS (cluster mode disabled) or a Redis OSS (cluster mode enabled)
-        /// replication group.
+        /// Creates a Valkey or Redis OSS (cluster mode disabled) or a Valkey or Redis OSS (cluster
+        /// mode enabled) replication group.
         /// 
         ///  
         /// <para>
@@ -1352,26 +1352,26 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// A Redis OSS (cluster mode disabled) replication group is a collection of nodes, where
-        /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
-        /// to the primary are asynchronously propagated to the replicas.
+        /// A Valkey or Redis OSS (cluster mode disabled) replication group is a collection of
+        /// nodes, where one of the nodes is a read/write primary and the others are read-only
+        /// replicas. Writes to the primary are asynchronously propagated to the replicas.
         /// </para>
         ///  
         /// <para>
-        /// A Redis OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards (API/CLI:
-        /// node groups). Each shard has a primary node and up to 5 read-only replica nodes. The
-        /// configuration can range from 90 shards and 0 replicas to 15 shards and 5 replicas,
-        /// which is the maximum number or replicas allowed. 
+        /// A Valkey or Redis OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards
+        /// (API/CLI: node groups). Each shard has a primary node and up to 5 read-only replica
+        /// nodes. The configuration can range from 90 shards and 0 replicas to 15 shards and
+        /// 5 replicas, which is the maximum number or replicas allowed. 
         /// </para>
         ///  
         /// <para>
-        /// The node or shard limit can be increased to a maximum of 500 per cluster if the Redis
-        /// OSS engine version is 5.0.6 or higher. For example, you can choose to configure a
-        /// 500 node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
+        /// The node or shard limit can be increased to a maximum of 500 per cluster if the Valkey
+        /// or Redis OSS engine version is 5.0.6 or higher. For example, you can choose to configure
+        /// a 500 node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
         /// and 500 shards (single primary and no replicas). Make sure there are enough available
         /// IP addresses to accommodate the increase. Common pitfalls include the subnets in the
         /// subnet group have too small a CIDR range or the subnets are shared and heavily used
-        /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
+        /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.Creating.html">Creating
         /// a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.
         /// </para>
         ///  
@@ -1382,15 +1382,15 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// When a Redis OSS (cluster mode disabled) replication group has been successfully created,
-        /// you can add one or more read replicas to it, up to a total of 5 read replicas. If
-        /// you need to increase or decrease the number of node groups (console: shards), you
-        /// can use ElastiCache (Redis OSS) scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
-        /// ElastiCache (Redis OSS) Clusters</a> in the <i>ElastiCache User Guide</i>.
+        /// When a Valkey or Redis OSS (cluster mode disabled) replication group has been successfully
+        /// created, you can add one or more read replicas to it, up to a total of 5 read replicas.
+        /// If you need to increase or decrease the number of node groups (console: shards), you
+        /// can use scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Scaling.html">Scaling
+        /// self-designed clusters</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey and Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1420,7 +1420,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -1470,8 +1470,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a Redis OSS (cluster mode disabled) or a Redis OSS (cluster mode enabled)
-        /// replication group.
+        /// Creates a Valkey or Redis OSS (cluster mode disabled) or a Valkey or Redis OSS (cluster
+        /// mode enabled) replication group.
         /// 
         ///  
         /// <para>
@@ -1480,26 +1480,26 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// A Redis OSS (cluster mode disabled) replication group is a collection of nodes, where
-        /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
-        /// to the primary are asynchronously propagated to the replicas.
+        /// A Valkey or Redis OSS (cluster mode disabled) replication group is a collection of
+        /// nodes, where one of the nodes is a read/write primary and the others are read-only
+        /// replicas. Writes to the primary are asynchronously propagated to the replicas.
         /// </para>
         ///  
         /// <para>
-        /// A Redis OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards (API/CLI:
-        /// node groups). Each shard has a primary node and up to 5 read-only replica nodes. The
-        /// configuration can range from 90 shards and 0 replicas to 15 shards and 5 replicas,
-        /// which is the maximum number or replicas allowed. 
+        /// A Valkey or Redis OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards
+        /// (API/CLI: node groups). Each shard has a primary node and up to 5 read-only replica
+        /// nodes. The configuration can range from 90 shards and 0 replicas to 15 shards and
+        /// 5 replicas, which is the maximum number or replicas allowed. 
         /// </para>
         ///  
         /// <para>
-        /// The node or shard limit can be increased to a maximum of 500 per cluster if the Redis
-        /// OSS engine version is 5.0.6 or higher. For example, you can choose to configure a
-        /// 500 node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
+        /// The node or shard limit can be increased to a maximum of 500 per cluster if the Valkey
+        /// or Redis OSS engine version is 5.0.6 or higher. For example, you can choose to configure
+        /// a 500 node cluster that ranges between 83 shards (one primary and 5 replicas per shard)
         /// and 500 shards (single primary and no replicas). Make sure there are enough available
         /// IP addresses to accommodate the increase. Common pitfalls include the subnets in the
         /// subnet group have too small a CIDR range or the subnets are shared and heavily used
-        /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
+        /// by other clusters. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.Creating.html">Creating
         /// a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.
         /// </para>
         ///  
@@ -1510,15 +1510,15 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// When a Redis OSS (cluster mode disabled) replication group has been successfully created,
-        /// you can add one or more read replicas to it, up to a total of 5 read replicas. If
-        /// you need to increase or decrease the number of node groups (console: shards), you
-        /// can use ElastiCache (Redis OSS) scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
-        /// ElastiCache (Redis OSS) Clusters</a> in the <i>ElastiCache User Guide</i>.
+        /// When a Valkey or Redis OSS (cluster mode disabled) replication group has been successfully
+        /// created, you can add one or more read replicas to it, up to a total of 5 read replicas.
+        /// If you need to increase or decrease the number of node groups (console: shards), you
+        /// can use scaling. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Scaling.html">Scaling
+        /// self-designed clusters</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey and Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1551,7 +1551,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -1703,7 +1703,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// This API creates a copy of an entire ServerlessCache at a specific moment in time.
-        /// Available for Redis OSS and Serverless Memcached only.
+        /// Available for Valkey, Redis OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCacheSnapshot service method.</param>
         /// 
@@ -1721,12 +1721,12 @@ namespace Amazon.ElastiCache
         /// The serverless cache was not found or does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
         /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -1743,7 +1743,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// This API creates a copy of an entire ServerlessCache at a specific moment in time.
-        /// Available for Redis OSS and Serverless Memcached only.
+        /// Available for Valkey, Redis OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServerlessCacheSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -1764,12 +1764,12 @@ namespace Amazon.ElastiCache
         /// The serverless cache was not found or does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotQuotaExceededException">
         /// The number of serverless cache snapshots exceeds the customer snapshot quota. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -1792,7 +1792,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1825,12 +1825,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1855,7 +1856,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1891,12 +1892,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1920,8 +1922,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1956,8 +1958,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1998,8 +2000,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user group. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup service method.</param>
@@ -2037,8 +2039,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user group. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup service method.</param>
@@ -2134,10 +2136,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Dynamically decreases the number of replicas in a Redis OSS (cluster mode disabled)
-        /// replication group or the number of replica nodes in one or more node groups (shards)
-        /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-        /// with no cluster down time.
+        /// Dynamically decreases the number of replicas in a Valkey or Redis OSS (cluster mode
+        /// disabled) replication group or the number of replica nodes in one or more node groups
+        /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+        /// is performed with no cluster down time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicaCount service method.</param>
         /// 
@@ -2148,7 +2150,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -2189,10 +2191,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Dynamically decreases the number of replicas in a Redis OSS (cluster mode disabled)
-        /// replication group or the number of replica nodes in one or more node groups (shards)
-        /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-        /// with no cluster down time.
+        /// Dynamically decreases the number of replicas in a Valkey or Redis OSS (cluster mode
+        /// disabled) replication group or the number of replica nodes in one or more node groups
+        /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+        /// is performed with no cluster down time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicaCount service method.</param>
         /// <param name="cancellationToken">
@@ -2206,7 +2208,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -2261,11 +2263,11 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Redis OSS (cluster mode enabled) clusters
+        /// Valkey or Redis OSS (cluster mode enabled) clusters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS (cluster mode disabled) clusters
+        /// Valkey or Redis OSS (cluster mode disabled) clusters
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2281,7 +2283,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A cluster from a Redis OSS (cluster mode enabled) replication group
+        /// A cluster from a Valkey or Redis OSS (cluster mode enabled) replication group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2312,12 +2314,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2344,11 +2347,11 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Redis OSS (cluster mode enabled) clusters
+        /// Valkey or Redis OSS (cluster mode enabled) clusters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS (cluster mode disabled) clusters
+        /// Valkey or Redis OSS (cluster mode disabled) clusters
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2364,7 +2367,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A cluster from a Redis OSS (cluster mode enabled) replication group
+        /// A cluster from a Valkey or Redis OSS (cluster mode enabled) replication group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2398,12 +2401,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2738,12 +2742,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2806,12 +2811,13 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
-        /// node.
+        /// Creating a snapshot of a Valkey or Redis OSS cluster running on a <c>cache.t1.micro</c>
+        /// cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
+        /// Creating a snapshot of a cluster that is running Memcached rather than Valkey or Redis
+        /// OSS.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2858,8 +2864,8 @@ namespace Amazon.ElastiCache
         /// The serverless cache was not found or does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -2901,8 +2907,8 @@ namespace Amazon.ElastiCache
         /// The serverless cache was not found or does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotAlreadyExistsException">
-        /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -2916,8 +2922,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deletes an existing serverless cache snapshot. Available for Redis OSS and Serverless
-        /// Memcached only.
+        /// Deletes an existing serverless cache snapshot. Available for Valkey, Redis OSS and
+        /// Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCacheSnapshot service method.</param>
         /// 
@@ -2926,12 +2932,12 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -2942,8 +2948,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deletes an existing serverless cache snapshot. Available for Redis OSS and Serverless
-        /// Memcached only.
+        /// Deletes an existing serverless cache snapshot. Available for Valkey, Redis OSS and
+        /// Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServerlessCacheSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -2955,12 +2961,12 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -2980,7 +2986,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3011,7 +3017,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3042,9 +3048,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Deletes a user. The user will be removed
-        /// from all user groups and in turn removed from all replication groups. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a user. The
+        /// user will be removed from all user groups and in turn removed from all replication
+        /// groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
@@ -3071,9 +3077,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Deletes a user. The user will be removed
-        /// from all user groups and in turn removed from all replication groups. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a user. The
+        /// user will be removed from all user groups and in turn removed from all replication
+        /// groups. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
@@ -3106,9 +3112,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Deletes a user group. The user group must
-        /// first be disassociated from the replication group before it can be deleted. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a user group.
+        /// The user group must first be disassociated from the replication group before it can
+        /// be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup service method.</param>
@@ -3132,9 +3138,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis OSS engine version 6.0 onwards: Deletes a user group. The user group must
-        /// first be disassociated from the replication group before it can be deleted. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a user group.
+        /// The user group must first be disassociated from the replication group before it can
+        /// be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup service method.</param>
@@ -3929,7 +3935,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3954,7 +3960,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3980,7 +3986,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4009,7 +4015,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4264,7 +4270,7 @@ namespace Amazon.ElastiCache
         /// Returns information about serverless cache snapshots. By default, this API lists all
         /// of the customer’s serverless cache snapshots. It can also describe a single serverless
         /// cache snapshot, or the snapshots associated with a particular serverless cache. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCacheSnapshots service method.</param>
         /// 
@@ -4280,7 +4286,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
         DescribeServerlessCacheSnapshotsResponse DescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request);
@@ -4291,7 +4297,7 @@ namespace Amazon.ElastiCache
         /// Returns information about serverless cache snapshots. By default, this API lists all
         /// of the customer’s serverless cache snapshots. It can also describe a single serverless
         /// cache snapshot, or the snapshots associated with a particular serverless cache. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessCacheSnapshots service method.</param>
         /// <param name="cancellationToken">
@@ -4310,7 +4316,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
         Task<DescribeServerlessCacheSnapshotsResponse> DescribeServerlessCacheSnapshotsAsync(DescribeServerlessCacheSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4373,7 +4379,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4402,7 +4408,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4432,7 +4438,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4465,7 +4471,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4685,7 +4691,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Provides the functionality to export the serverless cache snapshot data to Amazon
-        /// S3. Available for Redis OSS only.
+        /// S3. Available for Valkey and Redis OSS only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportServerlessCacheSnapshot service method.</param>
         /// 
@@ -4694,12 +4700,12 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -4711,7 +4717,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Provides the functionality to export the serverless cache snapshot data to Amazon
-        /// S3. Available for Redis OSS only.
+        /// S3. Available for Valkey and Redis OSS only.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportServerlessCacheSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -4723,12 +4729,12 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -4842,10 +4848,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Dynamically increases the number of replicas in a Redis OSS (cluster mode disabled)
-        /// replication group or the number of replica nodes in one or more node groups (shards)
-        /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-        /// with no cluster down time.
+        /// Dynamically increases the number of replicas in a Valkey or Redis OSS (cluster mode
+        /// disabled) replication group or the number of replica nodes in one or more node groups
+        /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+        /// is performed with no cluster down time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicaCount service method.</param>
         /// 
@@ -4856,7 +4862,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -4897,10 +4903,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Dynamically increases the number of replicas in a Redis OSS (cluster mode disabled)
-        /// replication group or the number of replica nodes in one or more node groups (shards)
-        /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-        /// with no cluster down time.
+        /// Dynamically increases the number of replicas in a Valkey or Redis OSS (cluster mode
+        /// disabled) replication group or the number of replica nodes in one or more node groups
+        /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+        /// is performed with no cluster down time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicaCount service method.</param>
         /// <param name="cancellationToken">
@@ -4914,7 +4920,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -4958,7 +4964,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Lists all available node types that you can scale your Redis OSS cluster's or replication
+        /// Lists all available node types that you can scale with your cluster's replication
         /// group's current node type.
         /// 
         ///  
@@ -4989,7 +4995,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Lists all available node types that you can scale your Redis OSS cluster's or replication
+        /// Lists all available node types that you can scale with your cluster's replication
         /// group's current node type.
         /// 
         ///  
@@ -5034,7 +5040,7 @@ namespace Amazon.ElastiCache
         /// tags to categorize and track all your ElastiCache resources, with the exception of
         /// global replication group. When you add or remove tags on replication groups, those
         /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </para>
         ///  
@@ -5067,8 +5073,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -5084,7 +5090,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -5109,7 +5115,7 @@ namespace Amazon.ElastiCache
         /// tags to categorize and track all your ElastiCache resources, with the exception of
         /// global replication group. When you add or remove tags on replication groups, those
         /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </para>
         ///  
@@ -5145,8 +5151,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -5162,7 +5168,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -5201,7 +5207,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5255,7 +5261,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5466,14 +5472,13 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Modifies the settings for a replication group. This is limited to Redis OSS 7 and
-        /// newer.
+        /// Modifies the settings for a replication group. This is limited to Valkey and Redis
+        /// OSS 7 and above.
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-        /// for Amazon ElastiCache (Redis OSS) (cluster mode enabled)</a> in the ElastiCache User
-        /// Guide
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/scaling-redis-cluster-mode-enabled.html">Scaling
+        /// for Valkey or Redis OSS (cluster mode enabled)</a> in the ElastiCache User Guide
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5482,7 +5487,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5502,7 +5507,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5549,14 +5554,13 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Modifies the settings for a replication group. This is limited to Redis OSS 7 and
-        /// newer.
+        /// Modifies the settings for a replication group. This is limited to Valkey and Redis
+        /// OSS 7 and above.
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-        /// for Amazon ElastiCache (Redis OSS) (cluster mode enabled)</a> in the ElastiCache User
-        /// Guide
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/scaling-redis-cluster-mode-enabled.html">Scaling
+        /// for Valkey or Redis OSS (cluster mode enabled)</a> in the ElastiCache User Guide
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5565,7 +5569,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This operation is valid for Redis OSS only.
+        /// This operation is valid for Valkey or Redis OSS only.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5588,7 +5592,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5646,7 +5650,7 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the ModifyReplicationGroupShardConfiguration service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5695,7 +5699,7 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the ModifyReplicationGroupShardConfiguration service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
         /// The requested cache node type is not available in the specified Availability Zone.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a>
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
@@ -5947,9 +5951,8 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible
-        /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
-        /// Costs with Reserved Nodes</a> for Redis OSS or <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing
-        /// Costs with Reserved Nodes</a> for Memcached.
+        /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/reserved-nodes.html">Managing
+        /// Costs with Reserved Nodes</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering service method.</param>
         /// 
@@ -5981,9 +5984,8 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible
-        /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
-        /// Costs with Reserved Nodes</a> for Redis OSS or <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing
-        /// Costs with Reserved Nodes</a> for Memcached.
+        /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/reserved-nodes.html">Managing
+        /// Costs with Reserved Nodes</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedCacheNodesOffering service method.</param>
         /// <param name="cancellationToken">
@@ -6082,14 +6084,14 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// Rebooting a cluster is currently supported on Memcached and Redis OSS (cluster mode
-        /// disabled) clusters. Rebooting is not supported on Redis OSS (cluster mode enabled)
-        /// clusters.
+        /// Rebooting a cluster is currently supported on Memcached, Valkey and Redis OSS (cluster
+        /// mode disabled) clusters. Rebooting is not supported on Valkey or Redis OSS (cluster
+        /// mode enabled) clusters.
         /// </para>
         ///  
         /// <para>
-        /// If you make changes to parameters that require a Redis OSS (cluster mode enabled)
-        /// cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
+        /// If you make changes to parameters that require a Valkey or Redis OSS (cluster mode
+        /// enabled) cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/nodes.rebooting.html">Rebooting
         /// a Cluster</a> for an alternate process.
         /// </para>
         /// </summary>
@@ -6124,14 +6126,14 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// Rebooting a cluster is currently supported on Memcached and Redis OSS (cluster mode
-        /// disabled) clusters. Rebooting is not supported on Redis OSS (cluster mode enabled)
-        /// clusters.
+        /// Rebooting a cluster is currently supported on Memcached, Valkey and Redis OSS (cluster
+        /// mode disabled) clusters. Rebooting is not supported on Valkey or Redis OSS (cluster
+        /// mode enabled) clusters.
         /// </para>
         ///  
         /// <para>
-        /// If you make changes to parameters that require a Redis OSS (cluster mode enabled)
-        /// cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
+        /// If you make changes to parameters that require a Valkey or Redis OSS (cluster mode
+        /// enabled) cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/nodes.rebooting.html">Rebooting
         /// a Cluster</a> for an alternate process.
         /// </para>
         /// </summary>
@@ -6161,7 +6163,7 @@ namespace Amazon.ElastiCache
         /// to categorize and track all your ElastiCache resources, with the exception of global
         /// replication group. When you add or remove tags on replication groups, those actions
         /// will be replicated to all nodes in the replication group. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -6188,8 +6190,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -6205,7 +6207,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -6230,7 +6232,7 @@ namespace Amazon.ElastiCache
         /// to categorize and track all your ElastiCache resources, with the exception of global
         /// replication group. When you add or remove tags on replication groups, those actions
         /// will be replicated to all nodes in the replication group. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -6260,8 +6262,8 @@ namespace Amazon.ElastiCache
         /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
-        /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-        /// and Serverless Memcached only.
+        /// The state of the serverless cache snapshot was not received. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheStateException">
         /// The account for these credentials is not currently active.
@@ -6277,7 +6279,7 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServerlessCacheSnapshotNotFoundException">
         /// This serverless cache snapshot could not be found or does not exist. Available for
-        /// Redis OSS and Serverless Memcached only.
+        /// Valkey, Redis OSS and Serverless Memcached only.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
@@ -6515,9 +6517,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If calling this operation multiple times on different shards in the same Redis OSS
-        /// (cluster mode enabled) replication group, the first node replacement must complete
-        /// before a subsequent call can be made.
+        /// If calling this operation multiple times on different shards in the same Valkey or
+        /// Redis OSS (cluster mode enabled) replication group, the first node replacement must
+        /// complete before a subsequent call can be made.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6554,7 +6556,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ECEvents.Viewing.html">Viewing
         /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
         /// </para>
         ///  </li> <li> 
@@ -6564,7 +6566,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+        /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html#auto-failover-test">Testing
         /// Multi-AZ </a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
@@ -6637,9 +6639,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If calling this operation multiple times on different shards in the same Redis OSS
-        /// (cluster mode enabled) replication group, the first node replacement must complete
-        /// before a subsequent call can be made.
+        /// If calling this operation multiple times on different shards in the same Valkey or
+        /// Redis OSS (cluster mode enabled) replication group, the first node replacement must
+        /// complete before a subsequent call can be made.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6676,7 +6678,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+        ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ECEvents.Viewing.html">Viewing
         /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
         /// </para>
         ///  </li> <li> 
@@ -6686,7 +6688,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+        /// Also see, <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html#auto-failover-test">Testing
         /// Multi-AZ </a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>

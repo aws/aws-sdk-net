@@ -31,15 +31,46 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the PutEventSelectors operation.
-    /// Configures an event selector or advanced event selectors for your trail. Use event
-    /// selectors or advanced event selectors to specify management and data event settings
-    /// for your trail. If you want your trail to log Insights events, be sure the event selector
-    /// enables logging of the Insights event types you want configured for your trail. For
-    /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
-    /// Insights events</a> in the <i>CloudTrail User Guide</i>. By default, trails created
-    /// without specific event selectors are configured to log all read and write management
-    /// events, and no data events.
+    /// Configures event selectors (also referred to as <i>basic event selectors</i>) or advanced
+    /// event selectors for your trail. You can use either <c>AdvancedEventSelectors</c> or
+    /// <c>EventSelectors</c>, but not both. If you apply <c>AdvancedEventSelectors</c> to
+    /// a trail, any existing <c>EventSelectors</c> are overwritten.
     /// 
+    ///  
+    /// <para>
+    /// You can use <c>AdvancedEventSelectors</c> to log management events, data events for
+    /// all resource types, and network activity events.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use <c>EventSelectors</c> to log management events and data events for the
+    /// following resource types:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>AWS::DynamoDB::Table</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AWS::Lambda::Function</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AWS::S3::Object</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can't use <c>EventSelectors</c> to log network activity events.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want your trail to log Insights events, be sure the event selector or advanced
+    /// event selector enables logging of the Insights event types you want configured for
+    /// your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Working
+    /// with CloudTrail Insights</a> in the <i>CloudTrail User Guide</i>. By default, trails
+    /// created without specific event selectors are configured to log all read and write
+    /// management events, and no data events or network activity events.
+    /// </para>
     ///  
     /// <para>
     /// When an event occurs in your account, CloudTrail evaluates the event selectors or
@@ -53,7 +84,8 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// You create an event selector for a trail and specify that you want write-only events.
+    /// You create an event selector for a trail and specify that you want to log write-only
+    /// events.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,20 +113,17 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  
     /// <para>
-    /// You can configure up to five event selectors for each trail. For more information,
-    /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-    /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
-    /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
+    /// You can configure up to five event selectors for each trail.
     /// </para>
     ///  
     /// <para>
     /// You can add advanced event selectors, and conditions for your advanced event selectors,
-    /// up to a maximum of 500 values for all conditions and selectors on a trail. You can
-    /// use either <c>AdvancedEventSelectors</c> or <c>EventSelectors</c>, but not both. If
-    /// you apply <c>AdvancedEventSelectors</c> to a trail, any existing <c>EventSelectors</c>
-    /// are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events</a> in the <i>CloudTrail User Guide</i>.
+    /// up to a maximum of 500 values for all conditions and selectors on a trail. For more
+    /// information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+    /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+    /// network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+    /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutEventSelectorsRequest : AmazonCloudTrailRequest
@@ -106,13 +135,19 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        ///  Specifies the settings for advanced event selectors. You can add advanced event selectors,
-        /// and conditions for your advanced event selectors, up to a maximum of 500 values for
-        /// all conditions and selectors on a trail. You can use either <c>AdvancedEventSelectors</c>
-        /// or <c>EventSelectors</c>, but not both. If you apply <c>AdvancedEventSelectors</c>
-        /// to a trail, any existing <c>EventSelectors</c> are overwritten. For more information
-        /// about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events</a> in the <i>CloudTrail User Guide</i>. 
+        ///  Specifies the settings for advanced event selectors. You can use advanced event selectors
+        /// to log management events, data events for all resource types, and network activity
+        /// events.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can add advanced event selectors, and conditions for your advanced event selectors,
+        /// up to a maximum of 500 values for all conditions and selectors on a trail. You can
+        /// use either <c>AdvancedEventSelectors</c> or <c>EventSelectors</c>, but not both. If
+        /// you apply <c>AdvancedEventSelectors</c> to a trail, any existing <c>EventSelectors</c>
+        /// are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+        /// network activity events</a> in the <i>CloudTrail User Guide</i>. 
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors
@@ -130,10 +165,31 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EventSelectors. 
         /// <para>
-        /// Specifies the settings for your event selectors. You can configure up to five event
-        /// selectors for a trail. You can use either <c>EventSelectors</c> or <c>AdvancedEventSelectors</c>
-        /// in a <c>PutEventSelectors</c> request, but not both. If you apply <c>EventSelectors</c>
-        /// to a trail, any existing <c>AdvancedEventSelectors</c> are overwritten.
+        /// Specifies the settings for your event selectors. You can use event selectors to log
+        /// management events and data events for the following resource types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS::DynamoDB::Table</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Lambda::Function</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::S3::Object</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't use event selectors to log network activity events.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can configure up to five event selectors for a trail. You can use either <c>EventSelectors</c>
+        /// or <c>AdvancedEventSelectors</c> in a <c>PutEventSelectors</c> request, but not both.
+        /// If you apply <c>EventSelectors</c> to a trail, any existing <c>AdvancedEventSelectors</c>
+        /// are overwritten.
         /// </para>
         /// </summary>
         public List<EventSelector> EventSelectors

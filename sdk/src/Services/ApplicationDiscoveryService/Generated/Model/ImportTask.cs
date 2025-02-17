@@ -39,6 +39,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private int? _applicationImportSuccess;
         private string _clientRequestToken;
         private string _errorsAndFailedEntriesZip;
+        private FileClassification _fileClassification;
         private DateTime? _importCompletionTime;
         private DateTime? _importDeletedTime;
         private DateTime? _importRequestTime;
@@ -138,6 +139,24 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetErrorsAndFailedEntriesZip()
         {
             return this._errorsAndFailedEntriesZip != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileClassification. 
+        /// <para>
+        /// The type of file detected by the import task.
+        /// </para>
+        /// </summary>
+        public FileClassification FileClassification
+        {
+            get { return this._fileClassification; }
+            set { this._fileClassification = value; }
+        }
+
+        // Check to see if FileClassification property is set
+        internal bool IsSetFileClassification()
+        {
+            return this._fileClassification != null;
         }
 
         /// <summary>

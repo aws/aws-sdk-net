@@ -162,6 +162,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DolbyVisionMetadataXml);
             }
 
+            if(requestObject.IsSetDynamicAudioSelectors())
+            {
+                context.Writer.WritePropertyName("dynamicAudioSelectors");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDynamicAudioSelectorsKvp in requestObject.DynamicAudioSelectors)
+                {
+                    context.Writer.WritePropertyName(requestObjectDynamicAudioSelectorsKvp.Key);
+                    var requestObjectDynamicAudioSelectorsValue = requestObjectDynamicAudioSelectorsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DynamicAudioSelectorMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDynamicAudioSelectorsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFileInput())
             {
                 context.Writer.WritePropertyName("fileInput");

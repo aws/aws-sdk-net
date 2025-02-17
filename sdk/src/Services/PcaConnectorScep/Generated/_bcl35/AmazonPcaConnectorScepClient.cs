@@ -36,17 +36,9 @@ namespace Amazon.PcaConnectorScep
     /// <summary>
     /// <para>Implementation for accessing PcaConnectorScep</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Connector for SCEP (Preview) is in preview release for Amazon Web Services Private
-    /// Certificate Authority and is subject to change.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Connector for SCEP (Preview) creates a connector between Amazon Web Services Private
-    /// CA and your SCEP-enabled clients and devices. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.html">Connector
+    /// Connector for SCEP creates a connector between Amazon Web Services Private CA and
+    /// your SCEP-enabled clients and devices. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep.html">Connector
     /// for SCEP</a> in the <i>Amazon Web Services Private CA User Guide</i>.
-    /// </para>
     /// </summary>
     public partial class AmazonPcaConnectorScepClient : AmazonServiceClient, IAmazonPcaConnectorScep
     {

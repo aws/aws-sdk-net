@@ -35,9 +35,31 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class CoreDevice
     {
+        private string _architecture;
         private string _coreDeviceThingName;
         private DateTime? _lastStatusUpdateTimestamp;
+        private string _platform;
+        private string _runtime;
         private CoreDeviceStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The computer architecture of the core device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Architecture
+        {
+            get { return this._architecture; }
+            set { this._architecture = value; }
+        }
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this._architecture != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
@@ -74,6 +96,53 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetLastStatusUpdateTimestamp()
         {
             return this._lastStatusUpdateTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The operating system platform that the core device runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// The runtime for the core device. The runtime can be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>aws_nucleus_classic</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>aws_nucleus_lite</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

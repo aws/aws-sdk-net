@@ -50,6 +50,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <a>DescribePhoneNumbers</a>
         /// to get the values for PhoneNumberId and PhoneNumberArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string PhoneNumberId

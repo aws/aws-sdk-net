@@ -58,6 +58,7 @@ namespace Amazon.MediaLive.Model
         private H264LookAheadRateControl _lookAheadRateControl;
         private int? _maxBitrate;
         private int? _minIInterval;
+        private int? _minQp;
         private int? _numRefFrames;
         private H264ParControl _parControl;
         private int? _parDenominator;
@@ -505,6 +506,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMinIInterval()
         {
             return this._minIInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinQp. Sets the minimum QP. If you aren't familiar with
+        /// quantization adjustment, leave the field empty. MediaLive willapply an appropriate
+        /// value.
+        /// </summary>
+        [AWSProperty(Min=1, Max=51)]
+        public int MinQp
+        {
+            get { return this._minQp.GetValueOrDefault(); }
+            set { this._minQp = value; }
+        }
+
+        // Check to see if MinQp property is set
+        internal bool IsSetMinQp()
+        {
+            return this._minQp.HasValue; 
         }
 
         /// <summary>

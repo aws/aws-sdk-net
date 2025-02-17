@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetImageBlockPublicAccessStateResponse : AmazonWebServiceResponse
     {
         private string _imageBlockPublicAccessState;
+        private ManagedBy _managedBy;
 
         /// <summary>
         /// Gets and sets the property ImageBlockPublicAccessState. 
@@ -67,6 +68,35 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageBlockPublicAccessState()
         {
             return this._imageBlockPublicAccessState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The entity that manages the state for block public access for AMIs. Possible values
+        /// include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account</c> - The state is managed by the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>declarative-policy</c> - The state is managed by a declarative policy and can't
+        /// be modified by the account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
     }

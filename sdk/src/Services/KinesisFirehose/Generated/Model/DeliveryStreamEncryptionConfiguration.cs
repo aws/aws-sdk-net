@@ -107,7 +107,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// This is the server-side encryption (SSE) status for the delivery stream. For a full
+        /// This is the server-side encryption (SSE) status for the Firehose stream. For a full
         /// description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
         /// and <a>StopDeliveryStreamEncryption</a>. If this status is <c>ENABLING_FAILED</c>
         /// or <c>DISABLING_FAILED</c>, it is the status of the most recent attempt to enable

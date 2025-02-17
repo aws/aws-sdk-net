@@ -60,6 +60,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Metadata);
             }
 
+            if(requestObject.IsSetOpenSearchServerlessEntityId())
+            {
+                context.Writer.WritePropertyName("openSearchServerlessEntityId");
+                context.Writer.Write(requestObject.OpenSearchServerlessEntityId);
+            }
+
             if(requestObject.IsSetSessionTimeout())
             {
                 context.Writer.WritePropertyName("sessionTimeout");

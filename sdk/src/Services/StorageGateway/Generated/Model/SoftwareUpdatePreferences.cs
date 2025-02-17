@@ -47,7 +47,11 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>EMERGENCY_VERSIONS_ONLY</c> - Disables regular gateway maintenance updates.
+        ///  <c>EMERGENCY_VERSIONS_ONLY</c> - Disables regular gateway maintenance updates. The
+        /// gateway will still receive emergency version updates on rare occasions if necessary
+        /// to remedy highly critical security or durability issues. You will be notified before
+        /// an emergency version update is applied. These updates are applied during your gateway's
+        /// scheduled maintenance window.
         /// </para>
         /// </summary>
         public AutomaticUpdatePolicy AutomaticUpdatePolicy

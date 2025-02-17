@@ -132,7 +132,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// Gets and sets the property DesktopArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces
-        /// Web, or AppStream 2.0.
+        /// Secure Browser, or AppStream 2.0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -267,7 +267,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The name of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }

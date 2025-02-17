@@ -107,6 +107,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRequestId())
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(publicRequest.RequestId);
+                }
+
+                else if(!(publicRequest.IsSetRequestId()))
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

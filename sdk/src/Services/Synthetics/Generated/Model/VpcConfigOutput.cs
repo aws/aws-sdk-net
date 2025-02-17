@@ -37,9 +37,29 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class VpcConfigOutput
     {
+        private bool? _ipv6AllowedForDualStack;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property Ipv6AllowedForDualStack. 
+        /// <para>
+        /// Indicates whether this canary allows outbound IPv6 traffic if it is connected to dual-stack
+        /// subnets.
+        /// </para>
+        /// </summary>
+        public bool Ipv6AllowedForDualStack
+        {
+            get { return this._ipv6AllowedForDualStack.GetValueOrDefault(); }
+            set { this._ipv6AllowedForDualStack = value; }
+        }
+
+        // Check to see if Ipv6AllowedForDualStack property is set
+        internal bool IsSetIpv6AllowedForDualStack()
+        {
+            return this._ipv6AllowedForDualStack.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

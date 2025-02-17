@@ -111,6 +111,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetJobEngineVersion())
+                {
+                    context.Writer.WritePropertyName("jobEngineVersion");
+                    context.Writer.Write(publicRequest.JobEngineVersion);
+                }
+
                 if(publicRequest.IsSetJobTemplate())
                 {
                     context.Writer.WritePropertyName("jobTemplate");

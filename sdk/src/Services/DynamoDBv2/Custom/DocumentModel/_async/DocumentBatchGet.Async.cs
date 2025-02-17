@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -38,9 +39,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentBatchGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -59,9 +64,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentBatchGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion

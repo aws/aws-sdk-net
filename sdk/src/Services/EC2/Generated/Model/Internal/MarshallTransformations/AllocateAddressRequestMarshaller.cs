@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
                 }
+                if(publicRequest.IsSetIpamPoolId())
+                {
+                    request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
+                }
                 if(publicRequest.IsSetNetworkBorderGroup())
                 {
                     request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));

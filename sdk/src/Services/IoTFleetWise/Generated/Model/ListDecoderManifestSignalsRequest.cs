@@ -49,7 +49,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of items to return, between 1 and 100, inclusive. 
+        /// The maximum number of items to return, between 1 and 100, inclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

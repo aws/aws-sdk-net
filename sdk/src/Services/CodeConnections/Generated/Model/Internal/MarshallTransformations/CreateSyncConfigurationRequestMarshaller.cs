@@ -87,6 +87,12 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PublishDeploymentStatus);
                 }
 
+                if(publicRequest.IsSetPullRequestComment())
+                {
+                    context.Writer.WritePropertyName("PullRequestComment");
+                    context.Writer.Write(publicRequest.PullRequestComment);
+                }
+
                 if(publicRequest.IsSetRepositoryLinkId())
                 {
                     context.Writer.WritePropertyName("RepositoryLinkId");

@@ -130,10 +130,9 @@ namespace ServiceClientGenerator
                         IncludePath = serviceConfiguration.IsTestService
                             ? Utils.PathCombineAlt("..", "..", "..", "src", "Core", $"AWSSDK.Core.{projectType}.csproj")
                             : Utils.PathCombineAlt("..", "..", "Core", $"AWSSDK.Core.{projectType}.csproj")
-                    }); ;
+                    });
 
-                    projectFileConfiguration.ProjectReferences = projectReferenceList;
-                    GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration);
+                    GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration, projectReferenceList);
                     continue;
                 }   
 
@@ -250,7 +249,8 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;
         }
-        private void GenerateVS2017ProjectFile(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, ProjectFileConfiguration projectFileConfiguration)
+
+        private void GenerateVS2017ProjectFile(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, ProjectFileConfiguration projectFileConfiguration, List<ProjectReference> projectFileReferences)
         {
             var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
             var projectType = projectFileConfiguration.Name;
@@ -258,7 +258,7 @@ namespace ServiceClientGenerator
             var projectProperties = new Project();
 
             projectProperties.AssemblyName          = assemblyName;
-            projectProperties.ProjectReferences     = projectFileConfiguration.ProjectReferences;
+            projectProperties.ProjectReferences     = projectFileReferences;
             projectProperties.TargetFrameworks      = projectFileConfiguration.TargetFrameworkVersions;
             projectProperties.DefineConstants       = projectFileConfiguration.CompilationConstants;
             projectProperties.CompileRemoveList     = projectFileConfiguration.PlatformExcludeFolders.ToList();

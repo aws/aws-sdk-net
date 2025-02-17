@@ -30,22 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// A set of instructions that define the set of server processes to run on computes in
     /// a fleet. Server processes run either an executable in a custom game build or a Realtime
     /// Servers script. Amazon GameLift launches the processes, manages their life cycle,
     /// and replaces them as needed. Computes check regularly for an updated runtime configuration.
     /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// On a container fleet, the Amazon GameLift Agent uses the runtime configuration to
-    /// manage the lifecycle of server processes in a replica container group.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// An Amazon GameLift instance is limited to 50 processes running concurrently. To calculate
@@ -87,7 +77,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MaxConcurrentGameSessionActivations. 
         /// <para>
         /// The number of game sessions in status <c>ACTIVATING</c> to allow on an instance or
-        /// container. This setting limits the instance resources that can be used for new game
+        /// compute. This setting limits the instance resources that can be used for new game
         /// activations at any one time.
         /// </para>
         /// </summary>

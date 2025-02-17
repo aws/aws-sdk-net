@@ -340,10 +340,6 @@
       <Project>{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}</Project>
       <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/CodeStar/AWSSDK.CodeStar.CodeAnalysis.csproj">
-      <Project>{03B6D436-B184-4EA0-8210-6A5DC38B9BAB}</Project>
-      <Name>AWSSDK.CodeStar.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeStarconnections/AWSSDK.CodeStarconnections.CodeAnalysis.csproj">
       <Project>{9F19D6D8-7B75-43AC-8819-74B822450464}</Project>
       <Name>AWSSDK.CodeStarconnections.CodeAnalysis</Name>
@@ -664,14 +660,6 @@
       <Project>{35387ADA-E9AE-401A-B7E7-D838BC4FCD73}</Project>
       <Name>AWSSDK.IoT.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoT1ClickDevicesService/AWSSDK.IoT1ClickDevicesService.CodeAnalysis.csproj">
-      <Project>{43D69BD9-4E04-46BD-915B-9FCEDE6F48FA}</Project>
-      <Name>AWSSDK.IoT1ClickDevicesService.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoT1ClickProjects/AWSSDK.IoT1ClickProjects.CodeAnalysis.csproj">
-      <Project>{8851F971-2487-48C2-A82F-94E7E4483111}</Project>
-      <Name>AWSSDK.IoT1ClickProjects.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTAnalytics/AWSSDK.IoTAnalytics.CodeAnalysis.csproj">
       <Project>{42CDFA21-D472-4EE0-A39A-087171068780}</Project>
       <Name>AWSSDK.IoTAnalytics.CodeAnalysis</Name>
@@ -971,10 +959,6 @@
     <ProjectReference Include="../ServiceAnalysis/NetworkManager/AWSSDK.NetworkManager.CodeAnalysis.csproj">
       <Project>{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}</Project>
       <Name>AWSSDK.NetworkManager.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/NimbleStudio/AWSSDK.NimbleStudio.CodeAnalysis.csproj">
-      <Project>{D34DF54F-B993-4ADB-8FB0-BE4301ABB80A}</Project>
-      <Name>AWSSDK.NimbleStudio.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/OAM/AWSSDK.OAM.CodeAnalysis.csproj">
       <Project>{CE46B838-797A-40BD-8460-0858007DE083}</Project>
@@ -1399,10 +1383,6 @@
     <ProjectReference Include="../ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj">
       <Project>{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}</Project>
       <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/WorkLink/AWSSDK.WorkLink.CodeAnalysis.csproj">
-      <Project>{8484906F-DCA2-4C37-B5A1-D91EADB881D3}</Project>
-      <Name>AWSSDK.WorkLink.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkMail/AWSSDK.WorkMail.CodeAnalysis.csproj">
       <Project>{1268A2A7-7344-4C80-A985-28B7C8ABEB37}</Project>

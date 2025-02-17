@@ -114,6 +114,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxRetriesPerTask = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxWorkerCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxWorkerCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))

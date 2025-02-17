@@ -31,12 +31,15 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserPoolClient operation.
-    /// Creates the user pool client.
+    /// Creates an app client in a user pool. This operation sets basic and advanced configuration
+    /// options. You can create an app client in the Amazon Cognito console to your preferences
+    /// and use the output of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>
+    /// to generate requests from that baseline.
     /// 
     ///  
     /// <para>
-    /// When you create a new user pool client, token revocation is automatically activated.
-    /// For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
+    /// New app clients activate token revocation by default. For more information about revoking
+    /// tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -214,10 +217,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
-        /// The allowed OAuth scopes. Possible values provided by OAuth are <c>phone</c>, <c>email</c>,
-        /// <c>openid</c>, and <c>profile</c>. Possible values provided by Amazon Web Services
-        /// are <c>aws.cognito.signin.user.admin</c>. Custom scopes created in Resource Servers
-        /// are also supported.
+        /// The OAuth 2.0 scopes that you want to permit your app client to authorize. Scopes
+        /// govern access control to user pool self-service API operations, user data from the
+        /// <c>userInfo</c> endpoint, and third-party APIs. Possible values provided by OAuth
+        /// are <c>phone</c>, <c>email</c>, <c>openid</c>, and <c>profile</c>. Possible values
+        /// provided by Amazon Web Services are <c>aws.cognito.signin.user.admin</c>. Custom scopes
+        /// created in Resource Servers are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -239,14 +244,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool analytics configuration for collecting metrics and sending them to your
         /// Amazon Pinpoint campaign.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only
-        /// support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1.
-        /// In Regions where Amazon Pinpoint is available, user pools support sending events to
-        /// Amazon Pinpoint projects within that same Region.
+        /// In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might
+        /// not have access to analytics or might be configurable with campaigns in the US East
+        /// (N. Virginia) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using
+        /// Amazon Pinpoint analytics</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         public AnalyticsConfigurationType AnalyticsConfiguration
         {
@@ -297,7 +301,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Be registered with the authorization server.
+        /// Be registered with the authorization server. Amazon Cognito doesn't accept authorization
+        /// requests with <c>redirect_uri</c> values that aren't in the list of <c>CallbackURLs</c>
+        /// that you provide in this parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -334,7 +340,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientName. 
         /// <para>
-        /// The client name for the user pool client you would like to create.
+        /// A friendly name for the app client that you want to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -356,36 +362,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The default redirect URI. In app clients with one assigned IdP, replaces <c>redirect_uri</c>
         /// in authentication requests. Must be in the <c>CallbackURLs</c> list.
         /// </para>
-        ///  
-        /// <para>
-        /// A redirect URI must:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Be an absolute URI.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Be registered with the authorization server.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Not include a fragment component.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
-        /// redirect URI</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
-        /// only.
-        /// </para>
-        ///  
-        /// <para>
-        /// App callback URLs such as myapp://example are also supported.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string DefaultRedirectURI
@@ -404,7 +380,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property EnablePropagateAdditionalUserContextData. 
         /// <para>
         /// Activates the propagation of additional user context data. For more information about
-        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html">
         /// Adding advanced security to a user pool</a>. If you don’t include this parameter,
         /// you can't send device fingerprint information, including source IP address, to Amazon
         /// Cognito advanced security. You can only activate <c>EnablePropagateAdditionalUserContextData</c>
@@ -467,6 +443,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>ALLOW_USER_AUTH</c>: Enable selection-based sign-in with <c>USER_AUTH</c>. This
+        /// setting covers username-password, secure remote password (SRP), passwordless, and
+        /// passkey authentication. This authentiation flow can do username-password and SRP authentication
+        /// without other <c>ExplicitAuthFlows</c> permitting them. For example users can complete
+        /// an SRP challenge through <c>USER_AUTH</c> without the flow <c>USER_SRP_AUTH</c> being
+        /// active for the app client. This flow doesn't include <c>CUSTOM_AUTH</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ALLOW_ADMIN_USER_PASSWORD_AUTH</c>: Enable admin based user password authentication
         /// flow <c>ADMIN_USER_PASSWORD_AUTH</c>. This setting replaces the <c>ADMIN_NO_SRP_AUTH</c>
         /// setting. With this authentication flow, your app passes a user name and password to
@@ -514,8 +499,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GenerateSecret. 
         /// <para>
-        /// Boolean to specify whether you want to generate a secret for the user pool client
-        /// being created.
+        /// When <c>true</c>, generates a client secret for the app client. Client secrets are
+        /// used with server-side and machine-to-machine applications. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App
+        /// client types</a>.
         /// </para>
         /// </summary>
         public bool GenerateSecret
@@ -570,7 +557,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogoutURLs. 
         /// <para>
-        /// A list of allowed logout URLs for the IdPs.
+        /// A list of allowed logout URLs for managed login authentication. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout
+        /// endpoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -630,21 +619,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ReadAttributes. 
         /// <para>
-        /// The list of user attributes that you want your app client to have read-only access
-        /// to. After your user authenticates in your app, their access token authorizes them
-        /// to read their own attribute value for any attribute in this list. An example of this
-        /// kind of activity is when your user selects a link to view their profile information.
-        /// Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+        /// The list of user attributes that you want your app client to have read access to.
+        /// After your user authenticates in your app, their access token authorizes them to read
+        /// their own attribute value for any attribute in this list. An example of this kind
+        /// of activity is when your user selects a link to view their profile information. Your
+        /// app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
         /// API request to retrieve and display your user's profile data.
         /// </para>
         ///  
         /// <para>
         /// When you don't specify the <c>ReadAttributes</c> for your app client, your app can
         /// read the values of <c>email_verified</c>, <c>phone_number_verified</c>, and the Standard
-        /// attributes of your user pool. When your user pool has read access to these default
-        /// attributes, <c>ReadAttributes</c> doesn't return any information. Amazon Cognito only
-        /// populates <c>ReadAttributes</c> in the API response if you have specified your own
-        /// custom set of read attributes.
+        /// attributes of your user pool. When your user pool app client has read access to these
+        /// default attributes, <c>ReadAttributes</c> doesn't return any information. Amazon Cognito
+        /// only populates <c>ReadAttributes</c> in the API response if you have specified your
+        /// own custom set of read attributes.
         /// </para>
         /// </summary>
         public List<string> ReadAttributes
@@ -708,6 +697,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// that you configured for the SAML and OIDC IdPs in your user pool, for example <c>MySAMLIdP</c>
         /// or <c>MyOIDCIdP</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+        /// login</a>. The removal of <c>COGNITO</c> from this list doesn't prevent authentication
+        /// operations for local users with the user pools API in an Amazon Web Services SDK.
+        /// The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+        /// rule</a>.
+        /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders
         {
@@ -724,8 +721,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenValidityUnits. 
         /// <para>
-        /// The units in which the validity times are represented. The default unit for RefreshToken
-        /// is days, and default for ID and access tokens are hours.
+        /// The units that validity times are represented in. The default unit for refresh tokens
+        /// is days, and the default for ID and access tokens are hours.
         /// </para>
         /// </summary>
         public TokenValidityUnitsType TokenValidityUnits
@@ -743,7 +740,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to create a user pool client.
+        /// The ID of the user pool where you want to create an app client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

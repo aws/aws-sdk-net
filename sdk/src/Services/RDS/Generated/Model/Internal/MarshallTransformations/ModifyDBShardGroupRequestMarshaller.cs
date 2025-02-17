@@ -59,6 +59,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetComputeRedundancy())
+                {
+                    request.Parameters.Add("ComputeRedundancy", StringUtils.FromInt(publicRequest.ComputeRedundancy));
+                }
                 if(publicRequest.IsSetDBShardGroupIdentifier())
                 {
                     request.Parameters.Add("DBShardGroupIdentifier", StringUtils.FromString(publicRequest.DBShardGroupIdentifier));

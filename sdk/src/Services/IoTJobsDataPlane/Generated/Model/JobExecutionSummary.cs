@@ -81,7 +81,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was last updated.
+        /// The time, in seconds since the epoch, when the job execution was last updated.
         /// </para>
         /// </summary>
         public long LastUpdatedAt
@@ -99,7 +99,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property QueuedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution was enqueued.
+        /// The time, in seconds since the epoch, when the job execution was enqueued.
         /// </para>
         /// </summary>
         public long QueuedAt
@@ -117,7 +117,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time, in milliseconds since the epoch, when the job execution started.
+        /// The time, in seconds since the epoch, when the job execution started.
         /// </para>
         /// </summary>
         public long StartedAt
@@ -136,7 +136,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Gets and sets the property VersionNumber. 
         /// <para>
         /// The version of the job execution. Job execution versions are incremented each time
-        /// AWS IoT Jobs receives an update from a device.
+        /// IoT Jobs receives an update from a device.
         /// </para>
         /// </summary>
         public long VersionNumber

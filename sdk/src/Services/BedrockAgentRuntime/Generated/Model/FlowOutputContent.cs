@@ -31,17 +31,6 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Contains information about the content in an output from prompt flow invocation.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_RequestSyntax">InvokeFlow
-    /// request</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class FlowOutputContent
     {

@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Represents an individual cache node within a cluster. Each cache node runs its own
-    /// instance of the cluster's protocol-compliant caching software - either Memcached or
-    /// Redis OSS.
+    /// instance of the cluster's protocol-compliant caching software - either Memcached,
+    /// Valkey or Redis OSS.
     /// 
     ///  
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+    /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
     /// Node Types</a> 
     /// </para>
     ///  </note> 
@@ -140,7 +140,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+    /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
     /// Node Types</a> 
     /// </para>
     ///  </note> 
@@ -185,16 +185,16 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
+    /// Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
+    /// Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
-    /// supported on Redis OSS version 2.8.22 and later.
+    /// The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+    /// on Valkey, or on Redis OSS version 2.8.22 and later.
     /// </para>
     ///  </li> </ul>
     /// </summary>

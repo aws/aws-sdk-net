@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The configurations of the external source wrapper object in the retrieveAndGenerate
+    /// The configurations of the external source wrapper object in the <c>retrieveAndGenerate</c>
     /// function.
     /// </summary>
     public partial class ExternalSourcesRetrieveAndGenerateConfiguration
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property GenerationConfiguration. 
         /// <para>
-        /// The prompt used with the external source wrapper object with the retrieveAndGenerate
+        /// The prompt used with the external source wrapper object with the <c>retrieveAndGenerate</c>
         /// function.
         /// </para>
         /// </summary>
@@ -61,11 +61,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The modelArn used with the external source wrapper object in the retrieveAndGenerate
-        /// function.
+        /// The model Amazon Resource Name (ARN) for the external source wrapper object in the
+        /// <c>retrieveAndGenerate</c> function.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelArn
         {
             get { return this._modelArn; }
@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The document used with the external source wrapper object in the retrieveAndGenerate
+        /// The document for the external source wrapper object in the <c>retrieveAndGenerate</c>
         /// function.
         /// </para>
         /// </summary>

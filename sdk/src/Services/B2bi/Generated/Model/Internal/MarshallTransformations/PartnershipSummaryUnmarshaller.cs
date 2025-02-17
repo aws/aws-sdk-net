@@ -72,6 +72,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("capabilityOptions", targetDepth))
+                {
+                    var unmarshaller = CapabilityOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CapabilityOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

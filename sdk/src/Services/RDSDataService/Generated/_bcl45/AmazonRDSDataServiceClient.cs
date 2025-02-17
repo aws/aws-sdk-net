@@ -50,11 +50,11 @@ namespace Amazon.RDSDataService
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Aurora PostgreSQL - Serverless v2, Serverless v1, and provisioned
+    /// Aurora PostgreSQL - Serverless v2, provisioned, and Serverless v1
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Aurora MySQL - Serverless v1 only
+    /// Aurora MySQL - Serverless v2, provisioned, and Serverless v1
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -320,6 +320,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -331,6 +336,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -422,6 +430,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -433,6 +446,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -494,9 +510,9 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  
         /// <para>
-        /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-        /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
-        /// enabled.
+        /// For Aurora MySQL, DDL statements inside a transaction cause an implicit commit. We
+        /// recommend that you run each MySQL DDL statement in a separate <c>ExecuteStatement</c>
+        /// call with <c>continueAfterTimeout</c> enabled.
         /// </para>
         ///  </note>
         /// </summary>
@@ -516,6 +532,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -527,6 +548,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -584,9 +608,9 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  
         /// <para>
-        /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-        /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
-        /// enabled.
+        /// For Aurora MySQL, DDL statements inside a transaction cause an implicit commit. We
+        /// recommend that you run each MySQL DDL statement in a separate <c>ExecuteStatement</c>
+        /// call with <c>continueAfterTimeout</c> enabled.
         /// </para>
         ///  </note>
         /// </summary>
@@ -609,6 +633,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -620,6 +649,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -697,6 +729,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -777,6 +812,9 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
         /// </exception>
@@ -830,9 +868,9 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
-        /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-        /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
+        /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
+        /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
+        /// or <c>ExecuteStatement</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -872,9 +910,9 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
-        /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-        /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
+        /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
+        /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
+        /// or <c>ExecuteStatement</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -946,6 +984,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -957,6 +1000,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -1049,6 +1095,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -1060,6 +1111,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
@@ -1154,6 +1208,9 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.
         /// </exception>
@@ -1231,6 +1288,9 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InternalServerErrorException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.InvalidResourceStateException">
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.InvalidSecretException">
         /// The Secrets Manager secret used with the request isn't valid.

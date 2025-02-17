@@ -39,8 +39,11 @@ namespace Amazon.S3.Model
         private bool? bucketKeyEnabled;
         private string _checksumCRC32;
         private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private long? _size;
+        private ChecksumType _checksumType;
 
         /// <summary>
         /// Gets and sets the Expiration property.
@@ -64,17 +67,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3
-        /// (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3)
-        /// (<code>AES256</code>) is supported.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -148,18 +143,9 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> is has a valid value of <code>aws:kms</code>,
-        /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric encryption customer managed key that was used for the
-        /// object. 
+        /// If present, indicates the ID of the KMS key that was used for object encryption.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
@@ -207,20 +193,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption.
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// <para>
-        /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
-        /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
-        /// with the encryption context key-value pairs. This value is stored as object metadata
-        /// and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code>
-        /// or <code>CopyObject</code> operations on this object.
+        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
+        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs. 
+        /// This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for future <c>GetObject</c> operations on this object.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
@@ -253,11 +230,6 @@ namespace Amazon.S3.Model
         /// Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption
         /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool BucketKeyEnabled
         {
@@ -274,8 +246,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present
-        /// if it was uploaded with the object. When you use an API operation on an object that
+        /// The Base64 encoded, 32-bit <c>CRC-32</c> checksum of the object. This checksum is only present
+        /// if the checksum was uploaded with the object. When you use an API operation on an object that
         /// was uploaded using multipart uploads, this value may not be a direct checksum value
         /// of the full object. Instead, it's a calculation based on the checksum values of each
         /// individual part. For more information about how checksums are calculated with multipart
@@ -298,8 +270,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present
-        /// if it was uploaded with the object. When you use an API operation on an object that
+        /// The Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the object. This checksum is only present
+        /// if the checksum was uploaded with the object. When you use an API operation on an object that
         /// was uploaded using multipart uploads, this value may not be a direct checksum value
         /// of the full object. Instead, it's a calculation based on the checksum values of each
         /// individual part. For more information about how checksums are calculated with multipart
@@ -320,9 +292,32 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// The Base64 encoded, 64-bit <c>CRC-64NVME</c> checksum of the object. This header is present
+        /// if it was uploaded with the <c>CRC-64NVME</c> checksum algorithm, or if it was uploaded 
+        /// without a checksum (and Amazon S3 added the default checksum, <c>CRC-64NVME</c>, to the uploaded object).
+        /// For more information about how checksums are calculated with multipart
+        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC64NVME
+        {
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
+        }
+
+        // Check to see if ChecksumCRC64NVME property is set
+        internal bool IsSetChecksumCRC64NVME()
+        {
+            return this._checksumCRC64NVME != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present
+        /// The Base64 encoded, 160-bit <c>SHA-1</c> digest of the object. This will only be present
         /// if it was uploaded with the object. When you use the API operation on an object that
         /// was uploaded using multipart uploads, this value may not be a direct checksum value
         /// of the full object. Instead, it's a calculation based on the checksum values of each
@@ -346,7 +341,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present
+        /// The Base64 encoded, 256-bit <c>SHA-256</c> digest of the object. This will only be present
         /// if it was uploaded with the object. When you use an API operation on an object that
         /// was uploaded using multipart uploads, this value may not be a direct checksum value
         /// of the full object. Instead, it's a calculation based on the checksum values of each
@@ -365,6 +360,48 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// <para>
+        /// The size of the object in bytes.This will only be present if you append to an object.
+        /// </para>
+        /// <note><para>This functionality is only supported for objects in the S3; Express One Zone storage class in directory buckets.</para></note>
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumType. 
+        /// <para>
+        /// This header specifies the checksum type of the object, which determines how part-level 
+        /// checksums are combined to create an object-level checksum for multipart objects. For 
+        /// <c>PutObject</c> uploads, the checksum type is always <c>FULL_OBJECT</c>. You can use 
+        /// this header as a data integrity check to verify that the checksum type that is received 
+        /// is the same checksum that was specified. For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this._checksumType; }
+            set { this._checksumType = value; }
+        }
+
+        // Check to see if ChecksumType property is set
+        internal bool IsSetChecksumType()
+        {
+            return this._checksumType != null;
         }
     }
 }

@@ -94,6 +94,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetServiceRole())
+                {
+                    context.Writer.WritePropertyName("serviceRole");
+                    context.Writer.Write(publicRequest.ServiceRole);
+                }
+
                 if(publicRequest.IsSetSingleSignOn())
                 {
                     context.Writer.WritePropertyName("singleSignOn");

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Defines the built-in prompt datasets, built-in metric names and custom metric names,
-    /// and the task type.
+    /// Defines the prompt datasets, built-in metric names and custom metric names, and the
+    /// task type.
     /// </summary>
     public partial class EvaluationDatasetMetricConfig
     {
@@ -61,13 +61,38 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property MetricNames. 
         /// <para>
-        /// The names of the metrics used. For automated model evaluation jobs valid values are
-        /// <c>"Builtin.Accuracy"</c>, <c>"Builtin.Robustness"</c>, and <c>"Builtin.Toxicity"</c>.
-        /// In human-based model evaluation jobs the array of strings must match the <c>name</c>
-        /// parameter specified in <c>HumanEvaluationCustomMetric</c>. 
+        /// The names of the metrics you want to use for your evaluation job.
+        /// </para>
+        ///  
+        /// <para>
+        /// For knowledge base evaluation jobs that evaluate retrieval only, valid values are
+        /// "<c>Builtin.ContextRelevance</c>", "<c>Builtin.ContextConverage</c>".
+        /// </para>
+        ///  
+        /// <para>
+        /// For knowledge base evaluation jobs that evaluate retrieval with response generation,
+        /// valid values are "<c>Builtin.Correctness</c>", "<c>Builtin.Completeness</c>", "<c>Builtin.Helpfulness</c>",
+        /// "<c>Builtin.LogicalCoherence</c>", "<c>Builtin.Faithfulness</c>", "<c>Builtin.Harmfulness</c>",
+        /// "<c>Builtin.Stereotyping</c>", "<c>Builtin.Refusal</c>".
+        /// </para>
+        ///  
+        /// <para>
+        /// For automated model evaluation jobs, valid values are "<c>Builtin.Accuracy</c>", "<c>Builtin.Robustness</c>",
+        /// and "<c>Builtin.Toxicity</c>". In model evaluation jobs that use a LLM as judge you
+        /// can specify "<c>Builtin.Correctness</c>", "<c>Builtin.Completeness"</c>, "<c>Builtin.Faithfulness"</c>,
+        /// "<c>Builtin.Helpfulness</c>", "<c>Builtin.Coherence</c>", "<c>Builtin.Relevance</c>",
+        /// "<c>Builtin.FollowingInstructions</c>", "<c>Builtin.ProfessionalStyleAndTone</c>",
+        /// You can also specify the following responsible AI related metrics only for model evaluation
+        /// job that use a LLM as judge "<c>Builtin.Harmfulness</c>", "<c>Builtin.Stereotyping</c>",
+        /// and "<c>Builtin.Refusal</c>".
+        /// </para>
+        ///  
+        /// <para>
+        /// For human-based model evaluation jobs, the list of strings must match the <c>name</c>
+        /// parameter specified in <c>HumanEvaluationCustomMetric</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=15)]
         public List<string> MetricNames
         {
             get { return this._metricNames; }
@@ -83,7 +108,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property TaskType. 
         /// <para>
-        /// The task type you want the model to carry out. 
+        /// The the type of task you want to evaluate for your evaluation job. This applies only
+        /// to model evaluation jobs and is ignored for knowledge base evaluation jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

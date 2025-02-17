@@ -219,6 +219,7 @@ namespace Amazon.S3.Model
         private ChecksumAlgorithm _checksumAlgorithm;
         private string _checksumCRC32;
         private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
         private string md5Digest;
@@ -343,8 +344,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
-        /// CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 32-bit
+        /// <c>CRC-32</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -364,8 +365,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
-        /// CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 32-bit
+        /// <c>CRC-32C</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -382,11 +383,32 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 32-bit
+        /// <c>CRC-64NVME</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC64NVME
+        {
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
+        }
+
+        // Check to see if ChecksumCRC64NVME property is set
+        internal bool IsSetChecksumCRC64NVME()
+        {
+            return this._checksumCRC64NVME != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 160-bit
-        /// SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 160-bit
+        /// <c>SHA-1</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -406,8 +428,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 256-bit
-        /// SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// is the same data that was originally sent. This specifies the Base64 encoded, 256-bit
+        /// <c>SHA-256</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -534,7 +556,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
+        /// The Base64 encoded encryption key for Amazon S3 to use to encrypt the object
         /// <para>
         /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
         /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
@@ -646,10 +668,7 @@ namespace Amazon.S3.Model
         /// integrity check on upload requests.</b></para>
         /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
         /// performance under high CPU loads. Setting DisableDefaultChecksumValidation sets the deprecated property
-        /// DisableMD5Stream to the same value. The default value is false. Set this value to true to 
-        /// disable the default checksum validation used in all S3 upload requests or override this value per
-        /// request by setting the DisableDefaultChecksumValidation property on <see cref="S3.Model.PutObjectRequest"/>,
-        /// <see cref="S3.Model.UploadPartRequest"/>, or <see cref="S3.Transfer.TransferUtilityUploadRequest"/>.</para>
+        /// DisableMD5Stream to the same value. The default value is false.</para>
         /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
         /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
         /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
@@ -659,7 +678,15 @@ namespace Amazon.S3.Model
         public bool? DisableDefaultChecksumValidation { get; set; }
 
         /// <summary>
-        /// An MD5 digest for the part.
+        /// <para>
+        /// The Base64 encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when 
+        /// using the command from the CLI. This parameter is required if object lock parameters are specified.
+        /// </para> 
+        /// <note>
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para> 
+        /// </note>
         /// </summary>
         public string MD5Digest
         {
@@ -806,7 +833,15 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets or sets whether the Content-MD5 header should be calculated for upload.
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
         /// </summary>
+        /// <remarks>
+        /// If set, the SDK populates the Content-MD5 header but S3 will prioritize the checksum headers (for example, <c>x-amz-checksum-crc32</c>).
+        /// You can also control the behavior of the checksum calculation for all S3 operations by setting the <see cref="ClientConfig.RequestChecksumCalculation"/> option.
+        /// </remarks>
+        [Obsolete("This property is redundant in the latest version of the AWSSDK.S3 package, which automatically calculates a checksum to verify data integrity (using CRC32 by default).")]
         public bool CalculateContentMD5Header
         {
             get { return this.calculateContentMD5Header; }

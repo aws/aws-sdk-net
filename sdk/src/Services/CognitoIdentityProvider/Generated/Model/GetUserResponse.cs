@@ -109,7 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserMFASettingList. 
         /// <para>
         /// The MFA options that are activated for the user. The possible values in this list
-        /// are <c>SMS_MFA</c> and <c>SOFTWARE_TOKEN_MFA</c>.
+        /// are <c>SMS_MFA</c>, <c>EMAIL_OTP</c>, and <c>SOFTWARE_TOKEN_MFA</c>.
         /// </para>
         /// </summary>
         public List<string> UserMFASettingList

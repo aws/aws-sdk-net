@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private List<IpamResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<IpamResourceTag>() : null;
         private IpamResourceType _resourceType;
         private DateTime? _sampleTime;
+        private string _subnetId;
         private string _vpcId;
 
         /// <summary>
@@ -288,6 +289,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSampleTime()
         {
             return this._sampleTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The subnet ID.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
         }
 
         /// <summary>

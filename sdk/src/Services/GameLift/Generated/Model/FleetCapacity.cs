@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Current resource capacity settings for managed EC2 fleets and container fleets. For
-    /// multi-location fleets, location values might refer to a fleet's remote location or
-    /// its home Region. 
+    /// Current resource capacity settings for managed EC2 fleets and managed container fleets.
+    /// For multi-location fleets, location values might refer to a fleet's remote location
+    /// or its home Region. 
     /// 
     ///  
     /// <para>
@@ -46,10 +46,10 @@ namespace Amazon.GameLift.Model
     {
         private string _fleetArn;
         private string _fleetId;
+        private GameServerContainerGroupCounts _gameServerContainerGroupCounts;
         private EC2InstanceCounts _instanceCounts;
         private EC2InstanceType _instanceType;
         private string _location;
-        private ReplicaContainerGroupCounts _replicaContainerGroupCounts;
 
         /// <summary>
         /// Gets and sets the property FleetArn. 
@@ -59,6 +59,7 @@ namespace Amazon.GameLift.Model
         /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -77,6 +78,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the fleet associated with the location.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -87,6 +89,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GameServerContainerGroupCounts. 
+        /// <para>
+        /// The number and status of game server container groups deployed in a container fleet.
+        /// 
+        /// </para>
+        /// </summary>
+        public GameServerContainerGroupCounts GameServerContainerGroupCounts
+        {
+            get { return this._gameServerContainerGroupCounts; }
+            set { this._gameServerContainerGroupCounts = value; }
+        }
+
+        // Check to see if GameServerContainerGroupCounts property is set
+        internal bool IsSetGameServerContainerGroupCounts()
+        {
+            return this._gameServerContainerGroupCounts != null;
         }
 
         /// <summary>
@@ -148,26 +169,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReplicaContainerGroupCounts. 
-        /// <para>
-        ///  <b>This property is used with the Amazon GameLift containers feature, which is currently
-        /// in public preview.</b> The number and status of replica container groups in a container
-        /// fleet.
-        /// </para>
-        /// </summary>
-        public ReplicaContainerGroupCounts ReplicaContainerGroupCounts
-        {
-            get { return this._replicaContainerGroupCounts; }
-            set { this._replicaContainerGroupCounts = value; }
-        }
-
-        // Check to see if ReplicaContainerGroupCounts property is set
-        internal bool IsSetReplicaContainerGroupCounts()
-        {
-            return this._replicaContainerGroupCounts != null;
         }
 
     }

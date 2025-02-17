@@ -32,8 +32,8 @@ namespace Amazon.PaymentCryptography.Model
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
     /// Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon
-    /// Web Services Region. You can filter the list of aliases. For more information, see
-    /// <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
+    /// Web Services Region. You can filter the aliases by <c>keyARN</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
     /// aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// 
     ///  
@@ -77,8 +77,28 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ListAliasesRequest : AmazonPaymentCryptographyRequest
     {
+        private string _keyArn;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property KeyArn. 
+        /// <para>
+        /// The <c>keyARN</c> for which you want to list all aliases.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=70, Max=150)]
+        public string KeyArn
+        {
+            get { return this._keyArn; }
+            set { this._keyArn = value; }
+        }
+
+        // Check to see if KeyArn property is set
+        internal bool IsSetKeyArn()
+        {
+            return this._keyArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

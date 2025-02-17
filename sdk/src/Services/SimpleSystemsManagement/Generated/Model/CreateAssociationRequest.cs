@@ -36,12 +36,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// and running on your managed nodes, or that certain ports must be closed. For static
     /// targets, the association specifies a schedule for when the configuration is reapplied.
     /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
-    /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
-    /// Manager applies the configuration when new managed nodes are added to the group. The
-    /// association also specifies actions to take when applying the configuration. For example,
-    /// an association for anti-virus software might run once a day. If the software isn't
-    /// installed, then State Manager installs it. If the software is installed, but the service
-    /// isn't running, then the association might instruct State Manager to start the service.
+    /// Services autoscaling group, State Manager, a tool in Amazon Web Services Systems Manager
+    /// applies the configuration when new managed nodes are added to the group. The association
+    /// also specifies actions to take when applying the configuration. For example, an association
+    /// for anti-virus software might run once a day. If the software isn't installed, then
+    /// State Manager installs it. If the software is installed, but the service isn't running,
+    /// then the association might instruct State Manager to start the service.
     /// </summary>
     public partial class CreateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -142,7 +142,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Choose the parameter that will define how your automation will branch out. This target
         /// is required for associations that use an Automation runbook and target resources by
-        /// using rate controls. Automation is a capability of Amazon Web Services Systems Manager.
+        /// using rate controls. Automation is a tool in Amazon Web Services Systems Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -597,7 +597,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services resource groups, all managed nodes in an Amazon Web Services account,
         /// or individual managed node IDs. You can target all managed nodes in an Amazon Web
         /// Services account by specifying the <c>InstanceIds</c> key with a value of <c>*</c>.
-        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Understanding
         /// targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services
         /// Systems Manager User Guide</i>.
         /// </para>

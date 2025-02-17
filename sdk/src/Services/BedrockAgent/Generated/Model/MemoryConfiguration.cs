@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class MemoryConfiguration
     {
         private List<string> _enabledMemoryTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SessionSummaryConfiguration _sessionSummaryConfiguration;
         private int? _storageDays;
 
         /// <summary>
@@ -57,12 +58,31 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionSummaryConfiguration. 
+        /// <para>
+        /// Contains the configuration for SESSION_SUMMARY memory type enabled for the agent.
+        /// 
+        /// </para>
+        /// </summary>
+        public SessionSummaryConfiguration SessionSummaryConfiguration
+        {
+            get { return this._sessionSummaryConfiguration; }
+            set { this._sessionSummaryConfiguration = value; }
+        }
+
+        // Check to see if SessionSummaryConfiguration property is set
+        internal bool IsSetSessionSummaryConfiguration()
+        {
+            return this._sessionSummaryConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageDays. 
         /// <para>
         /// The number of days the agent is configured to retain the conversational context.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
+        [AWSProperty(Min=0, Max=365)]
         public int StorageDays
         {
             get { return this._storageDays.GetValueOrDefault(); }

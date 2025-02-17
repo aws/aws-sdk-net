@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPool. 
         /// <para>
-        /// The container of metadata returned by the server to describe the pool.
+        /// The details of the requested user pool.
         /// </para>
         /// </summary>
         public UserPoolType UserPool

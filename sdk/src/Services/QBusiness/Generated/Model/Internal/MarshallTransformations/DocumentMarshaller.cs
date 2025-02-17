@@ -109,6 +109,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Id);
             }
 
+            if(requestObject.IsSetMediaExtractionConfiguration())
+            {
+                context.Writer.WritePropertyName("mediaExtractionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MediaExtractionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaExtractionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");

@@ -78,6 +78,12 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HooksRequestToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HooksRequestToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

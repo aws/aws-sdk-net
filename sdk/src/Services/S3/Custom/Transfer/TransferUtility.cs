@@ -30,6 +30,8 @@ using Amazon.S3.Model;
 using Amazon.S3.Transfer.Internal;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry;
 
 namespace Amazon.S3.Transfer
 {
@@ -59,6 +61,8 @@ namespace Amazon.S3.Transfer
     /// </remarks>
     public partial class TransferUtility : ITransferUtility
     {
+        private readonly string S3TransferTracerScope = $"S3.Transfer";
+
         TransferUtilityConfig _config;
         IAmazonS3 _s3Client;
         bool _shouldDispose = false;
@@ -401,7 +405,7 @@ namespace Amazon.S3.Transfer
             //If the length is -1 that means when we tried to get the ContentLength, we caught a NotSupportedException
             //or it means the length is unknown. In this case we do a multpartupload. If we are uploading
             //a nonseekable stream and the ContentLength is more than zero, we also do a multipart upload.
-            if (request.ContentLength == -1 && request.InputStream != null && !request.InputStream.CanSeek)
+            if (request.ContentLength <= 0 && request.InputStream != null && !request.InputStream.CanSeek)
             {
                 return true;
             }
@@ -503,6 +507,55 @@ namespace Amazon.S3.Transfer
                 SearchPattern = searchPattern,
                 SearchOption = searchOption
             };
+        }
+
+        /// <summary>
+        /// Creates a new span with the required attributes.
+        /// </summary>
+        /// <param name="methodName">The name of the method from which to create the span name.</param>
+        /// <param name="initialAttributes">Optional initial set of attributes for the span.</param>
+        /// <param name="spanKind">Optional type of span to create.</param>
+        /// <param name="parentContext">Optional parent context for the span.</param>
+        /// <returns>A <see cref="TraceSpan"/> instance representing the created span.</returns>
+        private TraceSpan CreateSpan(
+            string methodName,
+            Attributes initialAttributes = null,
+            SpanKind spanKind = SpanKind.INTERNAL,
+            SpanContext parentContext = null)
+        {
+            if (initialAttributes == null)
+                initialAttributes = new Attributes();
+
+            // Add common attributes
+            var operationName = ExtractOperationName(methodName);
+            initialAttributes.Set(TelemetryConstants.MethodAttributeKey, operationName);
+
+            initialAttributes.Set(TelemetryConstants.SystemAttributeKey, TelemetryConstants.SystemAttributeValue);
+            initialAttributes.Set(TelemetryConstants.ServiceAttributeKey, S3TransferTracerScope);
+
+            var spanName = $"{nameof(TransferUtility)}.{operationName}";
+
+            var tracerProvider = this._s3Client.Config.TelemetryProvider.TracerProvider;
+
+            var tracer = tracerProvider.GetTracer($"{TelemetryConstants.TelemetryScopePrefix}.{S3TransferTracerScope}");
+
+            return tracer.CreateSpan(spanName, initialAttributes, spanKind, parentContext);
+        }
+
+        /// <summary>
+        /// Extracts the operation name from a given method name.
+        /// </summary>
+        /// <param name="methodName">The name of the method for which the operation name is to be extracted.</param>
+        /// <returns>
+        /// The operation name if the method name ends with "Async"; otherwise, returns the original method name.
+        /// </returns>
+        private string ExtractOperationName(string methodName)
+        {
+            if (methodName.EndsWith("Async", StringComparison.Ordinal))
+            {
+                return methodName.Substring(0, methodName.Length - 5);
+            }
+            return methodName;
         }
 
     }

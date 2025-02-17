@@ -84,6 +84,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEnvironmentRolePermissionBoundary())
+                {
+                    context.Writer.WritePropertyName("environmentRolePermissionBoundary");
+                    context.Writer.Write(publicRequest.EnvironmentRolePermissionBoundary);
+                }
+
                 if(publicRequest.IsSetManageAccessRoleArn())
                 {
                     context.Writer.WritePropertyName("manageAccessRoleArn");

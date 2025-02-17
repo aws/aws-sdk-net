@@ -39,6 +39,7 @@ namespace Amazon.NeptuneGraph.Model
         private string _graphId;
         private ImportOptions _importOptions;
         private ImportTaskDetails _importTaskDetails;
+        private ParquetType _parquetType;
         private string _roleArn;
         private string _source;
         private ImportTaskStatus _status;
@@ -48,7 +49,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property AttemptNumber. 
         /// <para>
-        /// The number of the current attempt to execute the import task.
+        /// The number of the current attempts to execute the import task.
         /// </para>
         /// </summary>
         public int AttemptNumber
@@ -139,6 +140,24 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetImportTaskDetails()
         {
             return this._importTaskDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParquetType. 
+        /// <para>
+        /// The parquet type of the import task.
+        /// </para>
+        /// </summary>
+        public ParquetType ParquetType
+        {
+            get { return this._parquetType; }
+            set { this._parquetType = value; }
+        }
+
+        // Check to see if ParquetType property is set
+        internal bool IsSetParquetType()
+        {
+            return this._parquetType != null;
         }
 
         /// <summary>

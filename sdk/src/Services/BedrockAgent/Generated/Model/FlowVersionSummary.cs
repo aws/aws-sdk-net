@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains information about the flow version.
+    /// Contains information about a version of a flow.
     /// 
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time at the flow version was created.
+        /// The time at the version was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

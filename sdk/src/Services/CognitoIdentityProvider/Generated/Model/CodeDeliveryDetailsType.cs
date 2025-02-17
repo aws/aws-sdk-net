@@ -32,6 +32,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The delivery details for an email or SMS message that Amazon Cognito sent for authentication
     /// or verification.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of operations that send a code for user profile
+    /// confirmation, verification, or management, for example <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>.
+    /// </para>
     /// </summary>
     public partial class CodeDeliveryDetailsType
     {

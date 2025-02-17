@@ -62,6 +62,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AnycastIpListId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnycastIpListId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheBehaviors", targetDepth))
                     {
                         var unmarshaller = CacheBehaviorsUnmarshaller.Instance;

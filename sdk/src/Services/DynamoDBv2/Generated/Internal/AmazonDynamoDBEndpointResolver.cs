@@ -18,6 +18,8 @@
  */
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -52,6 +54,9 @@ namespace Amazon.DynamoDBv2.Internal
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            if (requestContext.ImmutableCredentials != null)
+                result.AccountId = requestContext.ImmutableCredentials.AccountId;
+            result.AccountIdEndpointMode = config.AccountIdEndpointMode.ToString().ToLower();
 
 
             // The region needs to be determined from the ServiceURL if not set.

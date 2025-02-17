@@ -75,6 +75,64 @@ namespace Amazon.DocDBElastic
 
 
     /// <summary>
+    /// Constants used for properties of type OptInType.
+    /// </summary>
+    public class OptInType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLY_ON for OptInType
+        /// </summary>
+        public static readonly OptInType APPLY_ON = new OptInType("APPLY_ON");
+        /// <summary>
+        /// Constant IMMEDIATE for OptInType
+        /// </summary>
+        public static readonly OptInType IMMEDIATE = new OptInType("IMMEDIATE");
+        /// <summary>
+        /// Constant NEXT_MAINTENANCE for OptInType
+        /// </summary>
+        public static readonly OptInType NEXT_MAINTENANCE = new OptInType("NEXT_MAINTENANCE");
+        /// <summary>
+        /// Constant UNDO_OPT_IN for OptInType
+        /// </summary>
+        public static readonly OptInType UNDO_OPT_IN = new OptInType("UNDO_OPT_IN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OptInType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OptInType FindValue(string value)
+        {
+            return FindValue<OptInType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OptInType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SnapshotType.
     /// </summary>
     public class SnapshotType : ConstantClass
@@ -147,6 +205,10 @@ namespace Amazon.DocDBElastic
         /// </summary>
         public static readonly Status DELETING = new Status("DELETING");
         /// <summary>
+        /// Constant INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE for Status
+        /// </summary>
+        public static readonly Status INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE = new Status("INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE");
+        /// <summary>
         /// Constant INACCESSIBLE_ENCRYPTION_CREDS for Status
         /// </summary>
         public static readonly Status INACCESSIBLE_ENCRYPTION_CREDS = new Status("INACCESSIBLE_ENCRYPTION_CREDS");
@@ -174,6 +236,10 @@ namespace Amazon.DocDBElastic
         /// Constant IP_ADDRESS_LIMIT_EXCEEDED for Status
         /// </summary>
         public static readonly Status IP_ADDRESS_LIMIT_EXCEEDED = new Status("IP_ADDRESS_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant MAINTENANCE for Status
+        /// </summary>
+        public static readonly Status MAINTENANCE = new Status("MAINTENANCE");
         /// <summary>
         /// Constant MERGING for Status
         /// </summary>

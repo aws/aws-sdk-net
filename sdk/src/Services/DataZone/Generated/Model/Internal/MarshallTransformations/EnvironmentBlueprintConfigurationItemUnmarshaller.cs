@@ -90,6 +90,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnvironmentBlueprintId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("environmentRolePermissionBoundary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnvironmentRolePermissionBoundary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manageAccessRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

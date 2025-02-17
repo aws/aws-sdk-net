@@ -78,6 +78,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssetRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("assetScope", targetDepth))
+                {
+                    var unmarshaller = AssetScopeUnmarshaller.Instance;
+                    unmarshalledObject.AssetScope = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("failureCause", targetDepth))
                 {
                     var unmarshaller = FailureCauseUnmarshaller.Instance;

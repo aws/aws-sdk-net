@@ -78,6 +78,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetClientIdsForOIDC())
+                {
+                    context.Writer.WritePropertyName("clientIdsForOIDC");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestClientIdsForOIDCListValue in publicRequest.ClientIdsForOIDC)
+                    {
+                            context.Writer.Write(publicRequestClientIdsForOIDCListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -112,10 +123,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIamIdentityProviderArn())
+                {
+                    context.Writer.WritePropertyName("iamIdentityProviderArn");
+                    context.Writer.Write(publicRequest.IamIdentityProviderArn);
+                }
+
                 if(publicRequest.IsSetIdentityCenterInstanceArn())
                 {
                     context.Writer.WritePropertyName("identityCenterInstanceArn");
                     context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
+                }
+
+                if(publicRequest.IsSetIdentityType())
+                {
+                    context.Writer.WritePropertyName("identityType");
+                    context.Writer.Write(publicRequest.IdentityType);
                 }
 
                 if(publicRequest.IsSetPersonalizationConfiguration())
@@ -136,6 +159,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
                     var marshaller = QAppsConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQuickSightConfiguration())
+                {
+                    context.Writer.WritePropertyName("quickSightConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QuickSightConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QuickSightConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -67,6 +67,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnalyticsEngine())
+                {
+                    context.Writer.WritePropertyName("analyticsEngine");
+                    context.Writer.Write(publicRequest.AnalyticsEngine);
+                }
+
                 if(publicRequest.IsSetCreatorDisplayName())
                 {
                     context.Writer.WritePropertyName("creatorDisplayName");
@@ -82,6 +88,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestCreatorMemberAbilitiesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCreatorMLMemberAbilities())
+                {
+                    context.Writer.WritePropertyName("creatorMLMemberAbilities");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetCreatorPaymentConfiguration())

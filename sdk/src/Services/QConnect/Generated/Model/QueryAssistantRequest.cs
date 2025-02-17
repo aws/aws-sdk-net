@@ -50,7 +50,9 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private int? _maxResults;
         private string _nextToken;
+        private KnowledgeBaseSearchType _overrideKnowledgeBaseSearchType;
         private List<QueryCondition> _queryCondition = AWSConfigs.InitializeCollections ? new List<QueryCondition>() : null;
+        private QueryInputData _queryInputData;
         private string _queryText;
         private string _sessionId;
 
@@ -114,6 +116,26 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverrideKnowledgeBaseSearchType. 
+        /// <para>
+        /// The search type to be used against the Knowledge Base for this request. The values
+        /// can be <c>SEMANTIC</c> which uses vector embeddings or <c>HYBRID</c> which use vector
+        /// embeddings and raw text.
+        /// </para>
+        /// </summary>
+        public KnowledgeBaseSearchType OverrideKnowledgeBaseSearchType
+        {
+            get { return this._overrideKnowledgeBaseSearchType; }
+            set { this._overrideKnowledgeBaseSearchType = value; }
+        }
+
+        // Check to see if OverrideKnowledgeBaseSearchType property is set
+        internal bool IsSetOverrideKnowledgeBaseSearchType()
+        {
+            return this._overrideKnowledgeBaseSearchType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryCondition. 
         /// <para>
         /// Information about how to query content.
@@ -133,12 +155,30 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryInputData. 
+        /// <para>
+        /// Information about the query.
+        /// </para>
+        /// </summary>
+        public QueryInputData QueryInputData
+        {
+            get { return this._queryInputData; }
+            set { this._queryInputData = value; }
+        }
+
+        // Check to see if QueryInputData property is set
+        internal bool IsSetQueryInputData()
+        {
+            return this._queryInputData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryText. 
         /// <para>
         /// The text to search for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string QueryText
         {
             get { return this._queryText; }

@@ -47,27 +47,27 @@ namespace Amazon.RDS.Model
         private double? _maxACU;
         private double? _minACU;
         private bool? _publiclyAccessible;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ComputeRedundancy. 
         /// <para>
-        /// Specifies whether to create standby instances for the DB shard group. Valid values
-        /// are the following:
+        /// Specifies whether to create standby DB shard groups for the DB shard group. Valid
+        /// values are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 0 - Creates a single, primary DB instance for each physical shard. This is the default
-        /// value, and the only one supported for the preview.
+        /// 0 - Creates a DB shard group without a standby DB shard group. This is the default
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 1 - Creates a primary DB instance and a standby instance in a different Availability
-        /// Zone (AZ) for each physical shard.
+        /// 1 - Creates a DB shard group with a standby DB shard group in a different Availability
+        /// Zone (AZ).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2 - Creates a primary DB instance and two standby instances in different AZs for each
-        /// physical shard.
+        /// 2 - Creates a DB shard group with two standby DB shard groups in two different AZs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -224,6 +224,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

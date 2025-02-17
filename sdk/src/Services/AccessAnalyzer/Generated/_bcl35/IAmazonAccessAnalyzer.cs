@@ -1064,6 +1064,62 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  GetFindingsStatistics
+
+
+        /// <summary>
+        /// Retrieves a list of aggregated finding statistics for an external access or unused
+        /// access analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsStatistics service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
+        GetFindingsStatisticsResponse GetFindingsStatistics(GetFindingsStatisticsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingsStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsStatistics operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingsStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
+        IAsyncResult BeginGetFindingsStatistics(GetFindingsStatisticsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingsStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingsStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetFindingsStatisticsResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
+        GetFindingsStatisticsResponse EndGetFindingsStatistics(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetFindingV2
 
 
@@ -1292,8 +1348,7 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Retrieves a list of resources of the specified type that have been analyzed by the
-        /// specified external access analyzer. This action is not supported for unused access
-        /// analyzers.
+        /// specified analyzer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyzedResources service method.</param>
         /// 
@@ -1905,6 +1960,64 @@ namespace Amazon.AccessAnalyzer
         /// <returns>Returns a  UntagResourceResult from AccessAnalyzer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAnalyzer
+
+
+        /// <summary>
+        /// Modifies the configuration of an existing analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalyzer service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
+        UpdateAnalyzerResponse UpdateAnalyzer(UpdateAnalyzerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalyzer operation on AmazonAccessAnalyzerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAnalyzer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
+        IAsyncResult BeginUpdateAnalyzer(UpdateAnalyzerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAnalyzer.</param>
+        /// 
+        /// <returns>Returns a  UpdateAnalyzerResult from AccessAnalyzer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
+        UpdateAnalyzerResponse EndUpdateAnalyzer(IAsyncResult asyncResult);
 
         #endregion
         

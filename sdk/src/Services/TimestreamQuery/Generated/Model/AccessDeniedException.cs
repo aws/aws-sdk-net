@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// You are not authorized to perform this action.
+    /// You do not have the necessary permissions to access the account settings.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

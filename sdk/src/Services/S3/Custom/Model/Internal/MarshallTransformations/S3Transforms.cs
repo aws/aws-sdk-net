@@ -108,10 +108,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         internal static int ToInt(string value)
         {
-            //return int.Parse(value, CultureInfo.InvariantCulture);
             int result = Unmarshall<int>(value);
             return result;
         }
+        internal static long ToLong(string value)
+        {
+            long result = Unmarshall<long>(value);
+            return result;
+        }
+
         internal static string ToString(string value)
         {
             return value;

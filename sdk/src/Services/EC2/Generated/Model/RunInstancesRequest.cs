@@ -138,6 +138,8 @@ namespace Amazon.EC2.Model
         private int? _minCount;
         private bool? _monitoring;
         private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceNetworkInterfaceSpecification>() : null;
+        private InstanceNetworkPerformanceOptionsRequest _networkPerformanceOptions;
+        private OperatorRequest _operator;
         private Placement _placement;
         private PrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _privateIpAddress;
@@ -210,7 +212,7 @@ namespace Amazon.EC2.Model
         /// Information about the Capacity Reservation targeting option. If you do not specify
         /// this parameter, the instance's Capacity Reservation preference defaults to <c>open</c>,
         /// which enables it to run in any open Capacity Reservation that has matching attributes
-        /// (instance type, platform, Availability Zone).
+        /// (instance type, platform, Availability Zone, and tenancy).
         /// </para>
         /// </summary>
         public CapacityReservationSpecification CapacityReservationSpecification
@@ -326,15 +328,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the
-        /// Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after
-        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>,
-        /// you can terminate the instance by running the shutdown command from the instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>false</c> 
+        /// Indicates whether termination protection is enabled for the instance. The default
+        /// is <c>false</c>, which means that you can terminate the instance using the Amazon
+        /// EC2 console, command line tools, or API. You can enable termination protection when
+        /// you launch an instance, while the instance is running, or while the instance is stopped.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -404,9 +401,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Elastic Inference (EI) is no longer available to new customers. For more information,
-        /// see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
-        /// Elastic Inference FAQs</a>.
+        /// Amazon Elastic Inference is no longer available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -865,6 +860,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains settings for the network performance options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceNetworkPerformanceOptionsRequest NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public OperatorRequest Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

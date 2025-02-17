@@ -35,19 +35,19 @@ namespace Amazon.Synthetics.Model
     /// 
     ///  
     /// <para>
-    /// If you specify <c>DeleteLambda</c> to <c>true</c>, CloudWatch Synthetics also deletes
-    /// the Lambda functions and layers that are used by the canary.
+    /// If the canary's <c>ProvisionedResourceCleanup</c> field is set to <c>AUTOMATIC</c>
+    /// or you specify <c>DeleteLambda</c> in this operation as <c>true</c>, CloudWatch Synthetics
+    /// also deletes the Lambda functions and layers that are used by the canary.
     /// </para>
     ///  
     /// <para>
     /// Other resources used and created by the canary are not automatically deleted. After
-    /// you delete a canary that you do not intend to use again, you should also delete the
-    /// following:
+    /// you delete a canary, you should also delete the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
-    /// </c>.
+    /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-Alarm-<i>first-198-characters-of-canary-name</i>-<i>canaryId</i>-<i>alarm
+    /// number</i> </c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -56,12 +56,13 @@ namespace Amazon.Synthetics.Model
     ///  </li> <li> 
     /// <para>
     /// IAM roles created for the canary. If they were created in the console, these roles
-    /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </c>.
+    /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>First-21-Characters-of-CanaryName</i>
+    /// </c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// CloudWatch Logs log groups created for the canary. These logs groups have the name
-    /// <c>/aws/lambda/cwsyn-<i>MyCanaryName</i> </c>. 
+    /// <c>/aws/lambda/cwsyn-<i>First-21-Characters-of-CanaryName</i> </c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -79,7 +80,14 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property DeleteLambda. 
         /// <para>
         /// Specifies whether to also delete the Lambda functions and layers used by this canary.
-        /// The default is false.
+        /// The default is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your setting for this parameter is used only if the canary doesn't have <c>AUTOMATIC</c>
+        /// for its <c>ProvisionedResourceCleanup</c> field. If that field is set to <c>AUTOMATIC</c>,
+        /// then the Lambda functions and layers will be deleted when this canary is deleted.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -105,7 +113,7 @@ namespace Amazon.Synthetics.Model
         /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=21)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

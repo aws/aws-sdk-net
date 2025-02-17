@@ -1185,6 +1185,56 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  GetFindingsStatistics
+
+        internal virtual GetFindingsStatisticsResponse GetFindingsStatistics(GetFindingsStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingsStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of aggregated finding statistics for an external access or unused
+        /// access analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingsStatistics service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
+        public virtual Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(GetFindingsStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingsStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFindingsStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFindingV2
 
         internal virtual GetFindingV2Response GetFindingV2(GetFindingV2Request request)
@@ -1399,8 +1449,7 @@ namespace Amazon.AccessAnalyzer
 
         /// <summary>
         /// Retrieves a list of resources of the specified type that have been analyzed by the
-        /// specified external access analyzer. This action is not supported for unused access
-        /// analyzers.
+        /// specified analyzer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyzedResources service method.</param>
         /// <param name="cancellationToken">
@@ -1935,6 +1984,58 @@ namespace Amazon.AccessAnalyzer
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAnalyzer
+
+        internal virtual UpdateAnalyzerResponse UpdateAnalyzer(UpdateAnalyzerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalyzerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAnalyzerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the configuration of an existing analyzer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnalyzer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
+        public virtual Task<UpdateAnalyzerResponse> UpdateAnalyzerAsync(UpdateAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAnalyzerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAnalyzerResponse>(request, options, cancellationToken);
         }
 
         #endregion

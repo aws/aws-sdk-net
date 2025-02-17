@@ -31,6 +31,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KafkaConnect.Model.ListConnectorOperationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KafkaConnect.Model.ListConnectorsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -46,34 +51,14 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.AutoScaling.MaxWorkerCount</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KafkaConnect.Model.AutoScaling.McuCount</property>
     <min>1</min>
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.AutoScaling.MinWorkerCount</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.AutoScalingUpdate.MaxWorkerCount</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KafkaConnect.Model.AutoScalingUpdate.McuCount</property>
     <min>1</min>
     <max>8</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.AutoScalingUpdate.MinWorkerCount</property>
-    <min>1</min>
-    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KafkaConnect.Model.CustomPlugin.Revision</property>
@@ -86,19 +71,9 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.ProvisionedCapacity.WorkerCount</property>
-    <min>1</min>
-    <max>10</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.KafkaConnect.Model.ProvisionedCapacityUpdate.McuCount</property>
     <min>1</min>
     <max>8</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.KafkaConnect.Model.ProvisionedCapacityUpdate.WorkerCount</property>
-    <min>1</min>
-    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KafkaConnect.Model.ScaleInPolicy.CpuUtilizationPercentage</property>

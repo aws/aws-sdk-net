@@ -316,7 +316,7 @@ namespace Amazon.FSx.Model
         /// the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=1024)]
+        [AWSProperty(Min=4, Max=4096)]
         public int RecordSizeKiB
         {
             get { return this._recordSizeKiB.GetValueOrDefault(); }
@@ -367,7 +367,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacityQuotaGiB. 
         /// <para>
-        /// The maximum amount of storage in gibibtyes (GiB) that the volume can use from its
+        /// The maximum amount of storage in gibibytes (GiB) that the volume can use from its
         /// parent. You can specify a quota larger than the storage on the parent volume.
         /// </para>
         /// </summary>

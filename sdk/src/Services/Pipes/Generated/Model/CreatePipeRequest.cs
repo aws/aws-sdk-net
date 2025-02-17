@@ -40,6 +40,7 @@ namespace Amazon.Pipes.Model
         private RequestedPipeState _desiredState;
         private string _enrichment;
         private PipeEnrichmentParameters _enrichmentParameters;
+        private string _kmsKeyIdentifier;
         private PipeLogConfigurationParameters _logConfiguration;
         private string _name;
         private string _roleArn;
@@ -121,6 +122,37 @@ namespace Amazon.Pipes.Model
         internal bool IsSetEnrichmentParameters()
         {
             return this._enrichmentParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier of the KMS customer managed key for EventBridge to use, if you choose
+        /// to use a customer managed key to encrypt pipe data. The identifier can be the key
+        /// Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a customer managed key identifier, EventBridge uses an Amazon
+        /// Web Services owned key to encrypt pipe data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing
+        /// keys</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

@@ -36,10 +36,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVerifiedAccessInstanceRequest : AmazonEC2Request
     {
+        private string _cidrEndpointsCustomSubDomain;
         private string _clientToken;
         private string _description;
         private bool? _fipsEnabled;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CidrEndpointsCustomSubDomain. 
+        /// <para>
+        /// The custom subdomain.
+        /// </para>
+        /// </summary>
+        public string CidrEndpointsCustomSubDomain
+        {
+            get { return this._cidrEndpointsCustomSubDomain; }
+            set { this._cidrEndpointsCustomSubDomain = value; }
+        }
+
+        // Check to see if CidrEndpointsCustomSubDomain property is set
+        internal bool IsSetCidrEndpointsCustomSubDomain()
+        {
+            return this._cidrEndpointsCustomSubDomain != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

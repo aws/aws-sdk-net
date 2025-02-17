@@ -56,6 +56,9 @@ namespace Amazon.S3.Model
     /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
     /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
     /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+    /// For more information about the permissions to S3 API operations by S3 resource types,
+    /// see <a href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+    /// permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -255,10 +258,14 @@ namespace Amazon.S3.Model
         /// This must be enabled to retrieve the checksum.
         /// </para>
         ///  
-        /// <para>
-        /// In addition, if you enable <c>ChecksumMode</c> and the object is KMS encrypted,
-        /// you must have permission to the <c>kms:Decrypt</c> action for the request to
-        /// succeed.
+        /// <para> 
+        /// <b>General purpose buckets</b> - If you enable checksum mode and the object is uploaded with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html">checksum</a> 
+        /// and encrypted with an Key Management Service (KMS) key, you must have permission to use the <c>kms:Decrypt</c> action to retrieve the checksum.</para>
+        /// 
+        /// <para> 
+        /// <b>Directory buckets</b> - If you enable <c>ChecksumMode</c> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), 
+        /// you must also have the <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key policies for the KMS key to retrieve the 
+        /// checksum of the object.
         /// </para>
         /// </summary>
         public ChecksumMode ChecksumMode

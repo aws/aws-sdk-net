@@ -1916,9 +1916,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         CreateTableResponse CreateTable(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput);
@@ -1988,9 +2004,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         CreateTableResponse CreateTable(CreateTableRequest request);
@@ -2067,9 +2099,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         Task<CreateTableResponse> CreateTableAsync(string tableName, List<KeySchemaElement> keySchema, List<AttributeDefinition> attributeDefinitions, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2143,9 +2191,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2324,6 +2388,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -2383,6 +2451,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -2439,6 +2511,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -2502,6 +2578,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -2564,6 +2644,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -2624,6 +2708,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -2722,9 +2810,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2815,9 +2919,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2906,9 +3026,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -2992,9 +3128,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3082,9 +3234,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3172,9 +3340,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -3252,7 +3436,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days. 
         /// </para>
         ///  
         /// <para>
@@ -3289,7 +3474,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days. 
         /// </para>
         ///  
         /// <para>
@@ -4249,9 +4435,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4310,9 +4512,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4373,9 +4591,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -4436,9 +4670,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -5884,9 +6134,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
         ImportTableResponse ImportTable(ImportTableRequest request);
@@ -5942,9 +6208,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
         Task<ImportTableResponse> ImportTableAsync(ImportTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6615,6 +6897,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -6690,6 +6976,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -6762,6 +7052,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -6841,6 +7135,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -6919,6 +7217,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -6995,6 +7297,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -7090,9 +7396,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -7180,9 +7502,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -7593,8 +7931,9 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
         /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
-        /// during the last 35 days. Any number of users can execute up to 50 concurrent restores
-        /// (any type of restore) in a given account. 
+        /// in the last 35 days. You can set the recovery period to any value between 1 and 35
+        /// days. Any number of users can execute up to 50 concurrent restores (any type of restore)
+        /// in a given account. 
         /// 
         ///  
         /// <para>
@@ -7728,8 +8067,9 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
         /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
-        /// during the last 35 days. Any number of users can execute up to 50 concurrent restores
-        /// (any type of restore) in a given account. 
+        /// in the last 35 days. You can set the recovery period to any value between 1 and 35
+        /// days. Any number of users can execute up to 50 concurrent restores (any type of restore)
+        /// in a given account. 
         /// 
         ///  
         /// <para>
@@ -8555,7 +8895,22 @@ namespace Amazon.DynamoDBv2
         /// cost allocation tracking. You can call TagResource up to five times per second, per
         /// account. 
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TagResource</c> is an asynchronous operation. If you issue a <a>ListTagsOfResource</a>
+        /// request immediately after a <c>TagResource</c> request, DynamoDB might return your
+        /// previous tag set, if there was one, or an empty tag set. This is because <c>ListTagsOfResource</c>
+        /// uses an eventually consistent query, and the metadata for your tags or table might
+        /// not be available at that moment. Wait for a few seconds, and then try the <c>ListTagsOfResource</c>
+        /// request again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application or removal of tags using <c>TagResource</c> and <c>UntagResource</c>
+        /// APIs is eventually consistent. <c>ListTagsOfResource</c> API will only reflect the
+        /// changes after a few seconds.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -8602,9 +8957,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -8621,7 +8992,22 @@ namespace Amazon.DynamoDBv2
         /// cost allocation tracking. You can call TagResource up to five times per second, per
         /// account. 
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TagResource</c> is an asynchronous operation. If you issue a <a>ListTagsOfResource</a>
+        /// request immediately after a <c>TagResource</c> request, DynamoDB might return your
+        /// previous tag set, if there was one, or an empty tag set. This is because <c>ListTagsOfResource</c>
+        /// uses an eventually consistent query, and the metadata for your tags or table might
+        /// not be available at that moment. Wait for a few seconds, and then try the <c>ListTagsOfResource</c>
+        /// request again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application or removal of tags using <c>TagResource</c> and <c>UntagResource</c>
+        /// APIs is eventually consistent. <c>ListTagsOfResource</c> API will only reflect the
+        /// changes after a few seconds.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -8671,9 +9057,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10161,7 +10563,22 @@ namespace Amazon.DynamoDBv2
         /// Removes the association of tags from an Amazon DynamoDB resource. You can call <c>UntagResource</c>
         /// up to five times per second, per account. 
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UntagResource</c> is an asynchronous operation. If you issue a <a>ListTagsOfResource</a>
+        /// request immediately after an <c>UntagResource</c> request, DynamoDB might return your
+        /// previous tag set, if there was one, or an empty tag set. This is because <c>ListTagsOfResource</c>
+        /// uses an eventually consistent query, and the metadata for your tags or table might
+        /// not be available at that moment. Wait for a few seconds, and then try the <c>ListTagsOfResource</c>
+        /// request again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application or removal of tags using <c>TagResource</c> and <c>UntagResource</c>
+        /// APIs is eventually consistent. <c>ListTagsOfResource</c> API will only reflect the
+        /// changes after a few seconds.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -10208,9 +10625,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10225,7 +10658,22 @@ namespace Amazon.DynamoDBv2
         /// Removes the association of tags from an Amazon DynamoDB resource. You can call <c>UntagResource</c>
         /// up to five times per second, per account. 
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UntagResource</c> is an asynchronous operation. If you issue a <a>ListTagsOfResource</a>
+        /// request immediately after an <c>UntagResource</c> request, DynamoDB might return your
+        /// previous tag set, if there was one, or an empty tag set. This is because <c>ListTagsOfResource</c>
+        /// uses an eventually consistent query, and the metadata for your tags or table might
+        /// not be available at that moment. Wait for a few seconds, and then try the <c>ListTagsOfResource</c>
+        /// request again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application or removal of tags using <c>TagResource</c> and <c>UntagResource</c>
+        /// APIs is eventually consistent. <c>ListTagsOfResource</c> API will only reflect the
+        /// changes after a few seconds.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
         /// for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -10275,9 +10723,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -10307,7 +10771,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -10345,7 +10810,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -10660,9 +11126,25 @@ namespace Amazon.DynamoDBv2
         /// The specified replica is no longer part of the global table.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
         UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request);
@@ -10741,9 +11223,25 @@ namespace Amazon.DynamoDBv2
         /// The specified replica is no longer part of the global table.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
         Task<UpdateGlobalTableSettingsResponse> UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10787,6 +11285,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -10839,6 +11341,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -10886,6 +11392,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -10941,6 +11451,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -10995,6 +11509,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -11046,6 +11564,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -11111,9 +11633,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11171,9 +11709,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11263,9 +11817,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11349,9 +11919,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11440,9 +12026,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11530,9 +12132,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11597,9 +12215,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11664,9 +12298,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11762,9 +12412,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -11860,9 +12526,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
-        /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
-        /// state.
+        /// The operation conflicts with the resource's availability. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You attempted to recreate an existing table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a table currently in the <c>CREATING</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a resource that was already being updated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When appropriate, wait for the ongoing update to complete and attempt the request
+        /// again.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not

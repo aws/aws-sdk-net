@@ -102,10 +102,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("commitmentInfo", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationCommitmentInfoUnmarshaller.Instance;
+                        unmarshalledObject.CommitmentInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("createDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("deliveryPreference", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeliveryPreference = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebsOptimized", targetDepth))
@@ -207,6 +219,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("unusedReservationBillingOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UnusedReservationBillingOwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

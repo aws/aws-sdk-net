@@ -84,6 +84,50 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBrowserExtensionConfiguration())
+                {
+                    context.Writer.WritePropertyName("browserExtensionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BrowserExtensionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BrowserExtensionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomizationConfiguration())
+                {
+                    context.Writer.WritePropertyName("customizationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomizationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdentityProviderConfiguration())
+                {
+                    context.Writer.WritePropertyName("identityProviderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOrigins())
+                {
+                    context.Writer.WritePropertyName("origins");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOriginsListValue in publicRequest.Origins)
+                    {
+                            context.Writer.Write(publicRequestOriginsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

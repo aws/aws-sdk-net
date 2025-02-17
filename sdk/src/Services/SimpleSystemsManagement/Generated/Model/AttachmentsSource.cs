@@ -87,7 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>"Values": [ "s3://doc-example-bucket/my-folder" ]</c> 
+        ///  <c>"Values": [ "s3://amzn-s3-demo-bucket/my-prefix" ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</c> 
+        ///  <c>"Values": [ "s3://amzn-s3-demo-bucket/my-prefix/my-file.py" ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

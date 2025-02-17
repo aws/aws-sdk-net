@@ -134,9 +134,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompositeMemberIdentifier. 
         /// <para>
-        /// This is the identifier of a resource within a composite group, such as nested (child)
-        /// recovery point belonging to a composite (parent) stack. The ID is transferred from
-        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+        /// The identifier of a resource within a composite group, such as nested (child) recovery
+        /// point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
         /// logical ID</a> within a stack.
         /// </para>
         /// </summary>
@@ -209,7 +208,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DestinationBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for
-        /// example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string DestinationBackupVaultArn
@@ -314,7 +313,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property NumberOfChildJobs. 
         /// <para>
-        /// This is the number of child (nested) copy jobs.
+        /// The number of child (nested) copy jobs.
         /// </para>
         /// </summary>
         public long NumberOfChildJobs
@@ -370,7 +369,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// The non-unique name of the resource that belongs to the specified backup.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -409,7 +408,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>. 
+        /// <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>. 
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn

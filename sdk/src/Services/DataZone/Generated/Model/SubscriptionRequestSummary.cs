@@ -38,7 +38,9 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _decisionComment;
         private string _domainId;
+        private string _existingSubscriptionId;
         private string _id;
+        private List<MetadataFormSummary> _metadataFormsSummary = AWSConfigs.InitializeCollections ? new List<MetadataFormSummary>() : null;
         private string _requestReason;
         private string _reviewerId;
         private SubscriptionRequestStatus _status;
@@ -124,6 +126,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExistingSubscriptionId. 
+        /// <para>
+        /// The ID of the existing subscription.
+        /// </para>
+        /// </summary>
+        public string ExistingSubscriptionId
+        {
+            get { return this._existingSubscriptionId; }
+            set { this._existingSubscriptionId = value; }
+        }
+
+        // Check to see if ExistingSubscriptionId property is set
+        internal bool IsSetExistingSubscriptionId()
+        {
+            return this._existingSubscriptionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the subscription request.
@@ -140,6 +160,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataFormsSummary. 
+        /// <para>
+        /// The summary of the metadata forms.
+        /// </para>
+        /// </summary>
+        public List<MetadataFormSummary> MetadataFormsSummary
+        {
+            get { return this._metadataFormsSummary; }
+            set { this._metadataFormsSummary = value; }
+        }
+
+        // Check to see if MetadataFormsSummary property is set
+        internal bool IsSetMetadataFormsSummary()
+        {
+            return this._metadataFormsSummary != null && (this._metadataFormsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -82,6 +82,18 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.DistributionHostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domainNameArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainNameArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("domainNameId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainNameId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domainNameStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +112,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.EndpointConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managementPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ManagementPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mutualTlsAuthentication", targetDepth))
                 {
                     var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
@@ -116,6 +134,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwnershipVerificationCertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("regionalCertificateArn", targetDepth))

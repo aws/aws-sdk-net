@@ -114,6 +114,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Hypervisor = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("imageAllowed", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ImageAllowed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("imageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -213,6 +219,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceImageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceImageRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceImageRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sourceInstanceId", targetDepth))

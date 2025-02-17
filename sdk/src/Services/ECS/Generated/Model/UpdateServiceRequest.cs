@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
     /// count, task placement constraints and strategies, health check grace period, enable
     /// ECS managed tags option, and propagate tags option, using this API. If the launch
     /// type, load balancer, network configuration, platform version, or task definition need
-    /// to be updated, create a new task set For more information, see <a>CreateTaskSet</a>.
+    /// to be updated, create a new task set For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
     /// </para>
     ///  
     /// <para>
@@ -132,11 +132,12 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <c>docker
-    /// stop</c> is issued to the containers running in the task. This results in a <c>SIGTERM</c>
-    /// and a 30-second timeout. After this, <c>SIGKILL</c> is sent and the containers are
-    /// forcibly stopped. If the container handles the <c>SIGTERM</c> gracefully and exits
-    /// within 30 seconds from receiving it, no <c>SIGKILL</c> is sent.
+    /// When <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>
+    /// stops a task during a deployment, the equivalent of <c>docker stop</c> is issued to
+    /// the containers running in the task. This results in a <c>SIGTERM</c> and a 30-second
+    /// timeout. After this, <c>SIGKILL</c> is sent and the containers are forcibly stopped.
+    /// If the container handles the <c>SIGTERM</c> gracefully and exits within 30 seconds
+    /// from receiving it, no <c>SIGKILL</c> is sent.
     /// </para>
     ///  
     /// <para>
@@ -207,6 +208,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class UpdateServiceRequest : AmazonECSRequest
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
@@ -226,6 +228,31 @@ namespace Amazon.ECS.Model
         private List<ServiceRegistry> _serviceRegistries = AWSConfigs.InitializeCollections ? new List<ServiceRegistry>() : null;
         private string _taskDefinition;
         private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
+        private List<VpcLatticeConfiguration> _vpcLatticeConfigurations = AWSConfigs.InitializeCollections ? new List<VpcLatticeConfiguration>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
+        /// Service Developer Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -244,14 +271,14 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A capacity provider strategy consists of one or more capacity providers along with
         /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
-        /// with the cluster to be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+        /// with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// API is used to associate a capacity provider with a cluster. Only capacity providers
         /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
         /// </para>
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
+        /// must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateClusterCapacityProvider.html">CreateClusterCapacityProvider</a>
         /// API operation.
         /// </para>
         ///  
@@ -262,8 +289,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-        /// available capacity providers for a cluster after the cluster is created.
+        /// The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>API
+        /// operation is used to update the list of available capacity providers for a cluster
+        /// after the cluster is created.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -410,13 +438,18 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is
-        /// only valid if your service is configured to use a load balancer. If your service's
-        /// tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
-        /// time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check
-        /// status. This grace period can prevent the ECS service scheduler from marking tasks
-        /// as unhealthy and stopping them before they have time to come up.
+        /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
+        /// first started. If you don't specify a health check grace period value, the default
+        /// value of <c>0</c> is used. If you don't use any of the health checks, then <c>healthCheckGracePeriodSeconds</c>
+        /// is unused.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your service's tasks take a while to start and respond to health checks, you can
+        /// specify a health check grace period of up to 2,147,483,647 seconds (about 69 years).
+        /// During that time, the Amazon ECS service scheduler ignores health check status. This
+        /// grace period can prevent the service scheduler from marking tasks as unhealthy and
+        /// stopping them before they have time to come up.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -721,6 +754,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetVolumeConfigurations()
         {
             return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLatticeConfigurations. 
+        /// <para>
+        /// An object representing the VPC Lattice configuration for the service being updated.
+        /// </para>
+        /// </summary>
+        public List<VpcLatticeConfiguration> VpcLatticeConfigurations
+        {
+            get { return this._vpcLatticeConfigurations; }
+            set { this._vpcLatticeConfigurations = value; }
+        }
+
+        // Check to see if VpcLatticeConfigurations property is set
+        internal bool IsSetVpcLatticeConfigurations()
+        {
+            return this._vpcLatticeConfigurations != null && (this._vpcLatticeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

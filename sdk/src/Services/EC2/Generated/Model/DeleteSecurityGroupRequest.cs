@@ -36,7 +36,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If you attempt to delete a security group that is associated with an instance or network
-    /// interface or is referenced by another security group, the operation fails with <c>DependencyViolation</c>.
+    /// interface, is referenced by another security group in the same VPC, or has a VPC association,
+    /// the operation fails with <c>DependencyViolation</c>.
     /// </para>
     /// </summary>
     public partial class DeleteSecurityGroupRequest : AmazonEC2Request

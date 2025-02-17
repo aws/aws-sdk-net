@@ -84,6 +84,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IamIdentityCenterApplicationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamIdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IamIdentityCenterInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamIdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityStore", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

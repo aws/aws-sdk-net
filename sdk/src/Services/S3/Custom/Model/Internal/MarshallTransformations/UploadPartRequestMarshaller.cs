@@ -51,6 +51,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (uploadPartRequest.IsSetChecksumCRC32C())
                 request.Headers["x-amz-checksum-crc32c"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumCRC32C);
 
+            if (uploadPartRequest.IsSetChecksumCRC64NVME())
+                request.Headers["x-amz-checksum-crc64nvme"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumCRC64NVME);
+
             if (uploadPartRequest.IsSetChecksumSHA1())
                 request.Headers["x-amz-checksum-sha1"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumSHA1);
 

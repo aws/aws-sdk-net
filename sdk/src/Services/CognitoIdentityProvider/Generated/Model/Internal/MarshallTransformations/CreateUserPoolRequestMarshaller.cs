@@ -284,6 +284,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUserPoolTier())
+                {
+                    context.Writer.WritePropertyName("UserPoolTier");
+                    context.Writer.Write(publicRequest.UserPoolTier);
+                }
+
                 if(publicRequest.IsSetVerificationMessageTemplate())
                 {
                     context.Writer.WritePropertyName("VerificationMessageTemplate");

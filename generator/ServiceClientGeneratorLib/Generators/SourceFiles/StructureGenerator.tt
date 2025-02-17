@@ -390,11 +390,10 @@ namespace <#=this.Config.Namespace#>.Model
                 // Flexible checksum overrides to allow response validation configuration on the request
                 if (this.StructureType == StructureType.Request && !string.IsNullOrEmpty(this.Operation.ChecksumConfiguration?.RequestValidationModeMember))
                 {
-#>  
-#region Flexible checksum properties
-        /// <summary>
-        /// This must be enabled to retrieve the checksum
-        /// </summary>
+#>
+        #region Flexible checksum properties
+        
+        /// <inheritdoc/>
         protected override CoreChecksumResponseBehavior CoreChecksumMode
         {
             get
@@ -406,18 +405,18 @@ namespace <#=this.Config.Namespace#>.Model
 
                 return CoreChecksumResponseBehavior.DISABLED;
             }
+            set { this.<#=this.Operation.ChecksumConfiguration.RequestValidationModeMember#> = value.ToString(); }
         }
 
-        private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
+        private static readonly List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
         {
             <#= string.Join(", ", Operation.ChecksumConfiguration?.ResponseAlgorithms?.Select(s => $"CoreChecksumAlgorithm.{s}").ToArray()) #>
         };
 
-        /// <summary>
-        /// Checksum algorithms supported by this operation for response validation
-        /// </summary>
+        /// <inheritdoc/>
         protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _supportedChecksumAlgorithms.AsReadOnly();
-#endregion
+
+        #endregion
 <#
                 }
 

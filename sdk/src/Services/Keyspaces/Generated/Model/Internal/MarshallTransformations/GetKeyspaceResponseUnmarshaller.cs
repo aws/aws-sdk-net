@@ -58,6 +58,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.KeyspaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationGroupStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReplicationGroupStatus, ReplicationGroupStatusUnmarshaller>(ReplicationGroupStatusUnmarshaller.Instance);
+                    response.ReplicationGroupStatuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("replicationRegions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

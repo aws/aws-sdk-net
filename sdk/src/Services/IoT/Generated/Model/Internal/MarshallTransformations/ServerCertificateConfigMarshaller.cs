@@ -54,6 +54,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnableOCSPCheck);
             }
 
+            if(requestObject.IsSetOcspAuthorizedResponderArn())
+            {
+                context.Writer.WritePropertyName("ocspAuthorizedResponderArn");
+                context.Writer.Write(requestObject.OcspAuthorizedResponderArn);
+            }
+
+            if(requestObject.IsSetOcspLambdaArn())
+            {
+                context.Writer.WritePropertyName("ocspLambdaArn");
+                context.Writer.Write(requestObject.OcspLambdaArn);
+            }
+
         }
 
         /// <summary>

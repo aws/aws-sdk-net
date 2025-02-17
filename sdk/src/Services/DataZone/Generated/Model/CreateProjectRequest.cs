@@ -37,8 +37,11 @@ namespace Amazon.DataZone.Model
     {
         private string _description;
         private string _domainIdentifier;
+        private string _domainUnitId;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private string _projectProfileId;
+        private List<EnvironmentConfigurationUserParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentConfigurationUserParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -79,6 +82,26 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainUnitId. 
+        /// <para>
+        /// The ID of the domain unit. This parameter is not required and if it is not specified,
+        /// then the project is created at the root domain unit level.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DomainUnitId
+        {
+            get { return this._domainUnitId; }
+            set { this._domainUnitId = value; }
+        }
+
+        // Check to see if DomainUnitId property is set
+        internal bool IsSetDomainUnitId()
+        {
+            return this._domainUnitId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GlossaryTerms. 
         /// <para>
         /// The glossary terms that can be used in this Amazon DataZone project.
@@ -114,6 +137,42 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectProfileId. 
+        /// <para>
+        /// The ID of the project profile.
+        /// </para>
+        /// </summary>
+        public string ProjectProfileId
+        {
+            get { return this._projectProfileId; }
+            set { this._projectProfileId = value; }
+        }
+
+        // Check to see if ProjectProfileId property is set
+        internal bool IsSetProjectProfileId()
+        {
+            return this._projectProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserParameters. 
+        /// <para>
+        /// The user parameters of the project.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentConfigurationUserParameter> UserParameters
+        {
+            get { return this._userParameters; }
+            set { this._userParameters = value; }
+        }
+
+        // Check to see if UserParameters property is set
+        internal bool IsSetUserParameters()
+        {
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

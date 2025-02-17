@@ -66,6 +66,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
             request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
+            
+            if (publicRequest.IsSetDomainNameId())
+                request.Parameters.Add("domainNameId", StringUtils.FromString(publicRequest.DomainNameId));
             request.ResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -94,6 +97,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }

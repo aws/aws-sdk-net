@@ -417,8 +417,8 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Deletes a specified service. If the service still contains one or more registered
-        /// instances, the request fails.
+        /// Deletes a specified service and all associated service attributes. If the service
+        /// still contains one or more registered instances, the request fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -463,6 +463,54 @@ namespace Amazon.ServiceDiscovery
         /// <returns>Returns a  DeleteServiceResult from ServiceDiscovery.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteService">REST API Reference for DeleteService Operation</seealso>
         DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteServiceAttributes
+
+
+        /// <summary>
+        /// Deletes specific attributes associated with a service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteServiceAttributes">REST API Reference for DeleteServiceAttributes Operation</seealso>
+        DeleteServiceAttributesResponse DeleteServiceAttributes(DeleteServiceAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAttributes operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteServiceAttributes">REST API Reference for DeleteServiceAttributes Operation</seealso>
+        IAsyncResult BeginDeleteServiceAttributes(DeleteServiceAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceAttributes.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceAttributesResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteServiceAttributes">REST API Reference for DeleteServiceAttributes Operation</seealso>
+        DeleteServiceAttributesResponse EndDeleteServiceAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -902,6 +950,54 @@ namespace Amazon.ServiceDiscovery
         /// <returns>Returns a  GetServiceResult from ServiceDiscovery.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetService">REST API Reference for GetService Operation</seealso>
         GetServiceResponse EndGetService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetServiceAttributes
+
+
+        /// <summary>
+        /// Returns the attributes associated with a specified service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetServiceAttributes">REST API Reference for GetServiceAttributes Operation</seealso>
+        GetServiceAttributesResponse GetServiceAttributes(GetServiceAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceAttributes operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetServiceAttributes">REST API Reference for GetServiceAttributes Operation</seealso>
+        IAsyncResult BeginGetServiceAttributes(GetServiceAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetServiceAttributesResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetServiceAttributes">REST API Reference for GetServiceAttributes Operation</seealso>
+        GetServiceAttributesResponse EndGetServiceAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1662,6 +1758,58 @@ namespace Amazon.ServiceDiscovery
         /// <returns>Returns a  UpdateServiceResult from ServiceDiscovery.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateServiceAttributes
+
+
+        /// <summary>
+        /// Submits a request to update a specified service to add service-level attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAttributes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceAttributesLimitExceededException">
+        /// The attribute can't be added to the service because you've exceeded the quota for
+        /// the number of attributes you can add to a service.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateServiceAttributes">REST API Reference for UpdateServiceAttributes Operation</seealso>
+        UpdateServiceAttributesResponse UpdateServiceAttributes(UpdateServiceAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAttributes operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateServiceAttributes">REST API Reference for UpdateServiceAttributes Operation</seealso>
+        IAsyncResult BeginUpdateServiceAttributes(UpdateServiceAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAttributes.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceAttributesResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateServiceAttributes">REST API Reference for UpdateServiceAttributes Operation</seealso>
+        UpdateServiceAttributesResponse EndUpdateServiceAttributes(IAsyncResult asyncResult);
 
         #endregion
                 

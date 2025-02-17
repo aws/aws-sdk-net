@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToVolumes;
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
+        private OpenZFSReadCacheConfiguration _readCacheConfiguration;
         private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
@@ -156,6 +157,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetDiskIopsConfiguration()
         {
             return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadCacheConfiguration. 
+        /// <para>
+        ///  The configuration for the optional provisioned SSD read cache on file systems that
+        /// use the Intelligent-Tiering storage class.
+        /// </para>
+        /// </summary>
+        public OpenZFSReadCacheConfiguration ReadCacheConfiguration
+        {
+            get { return this._readCacheConfiguration; }
+            set { this._readCacheConfiguration = value; }
+        }
+
+        // Check to see if ReadCacheConfiguration property is set
+        internal bool IsSetReadCacheConfiguration()
+        {
+            return this._readCacheConfiguration != null;
         }
 
         /// <summary>

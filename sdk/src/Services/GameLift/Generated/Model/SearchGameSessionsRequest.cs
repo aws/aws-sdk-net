@@ -71,8 +71,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If successful, a <c>GameSession</c> object is returned for each game session that
     /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
-    /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
-    /// .
+    /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>.
     /// </para>
     ///  
     /// <para>
@@ -94,8 +93,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
     /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-    /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
-    /// <c>Value</c> to search for the game sessions.
+    /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+    /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
     /// </para>
     ///  
     /// <para>
@@ -263,6 +262,7 @@ namespace Amazon.GameLift.Model
         /// alias ID, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

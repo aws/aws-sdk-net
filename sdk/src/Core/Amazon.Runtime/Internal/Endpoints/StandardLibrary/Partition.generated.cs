@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = true,
                 implicitGlobalRegion = "us-east-1"
             };
-            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il)\-\w+\-\d+$", aws);
+            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", aws);
             _partitionsByRegionName.Add("af-south-1", aws);
             _partitionsByRegionName.Add("ap-east-1", aws);
             _partitionsByRegionName.Add("ap-northeast-1", aws);
@@ -49,6 +49,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("ap-southeast-2", aws);
             _partitionsByRegionName.Add("ap-southeast-3", aws);
             _partitionsByRegionName.Add("ap-southeast-4", aws);
+            _partitionsByRegionName.Add("ap-southeast-5", aws);
+            _partitionsByRegionName.Add("ap-southeast-7", aws);
             _partitionsByRegionName.Add("aws-global", aws);
             _partitionsByRegionName.Add("ca-central-1", aws);
             _partitionsByRegionName.Add("ca-west-1", aws);
@@ -63,6 +65,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("il-central-1", aws);
             _partitionsByRegionName.Add("me-central-1", aws);
             _partitionsByRegionName.Add("me-south-1", aws);
+            _partitionsByRegionName.Add("mx-central-1", aws);
             _partitionsByRegionName.Add("sa-east-1", aws);
             _partitionsByRegionName.Add("us-east-1", aws);
             _partitionsByRegionName.Add("us-east-2", aws);
@@ -146,6 +149,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 implicitGlobalRegion = "us-isof-south-1"
             };
             _partitionsByRegex.Add(@"^us\-isof\-\w+\-\d+$", aws_iso_f);
+            _partitionsByRegionName.Add("aws-iso-f-global", aws_iso_f);
+            _partitionsByRegionName.Add("us-isof-east-1", aws_iso_f);
+            _partitionsByRegionName.Add("us-isof-south-1", aws_iso_f);
 
             _defaultPartition = aws;
         }

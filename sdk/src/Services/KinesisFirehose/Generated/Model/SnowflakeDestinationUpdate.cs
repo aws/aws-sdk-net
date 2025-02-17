@@ -294,7 +294,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// Choose an S3 backup mode
+        /// Choose an S3 backup mode. Once you set the mode as <c>AllData</c>, you can not change
+        /// it to <c>FailedDataOnly</c>.
         /// </para>
         /// </summary>
         public SnowflakeS3BackupMode S3BackupMode

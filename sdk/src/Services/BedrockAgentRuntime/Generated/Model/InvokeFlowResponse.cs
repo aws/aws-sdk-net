@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class InvokeFlowResponse : AmazonWebServiceResponse
     {
+        private string _executionId;
         private FlowResponseStream _responseStream;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionId. 
+        /// <para>
+        /// The unique identifier for the current flow execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string ExecutionId
+        {
+            get { return this._executionId; }
+            set { this._executionId = value; }
+        }
+
+        // Check to see if ExecutionId property is set
+        internal bool IsSetExecutionId()
+        {
+            return !string.IsNullOrEmpty(this._executionId);
+        }
 
         /// <summary>
         /// Gets and sets the property ResponseStream. 

@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AntiAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("chromaPositionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChromaPositionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codecSettings", targetDepth))
                 {
                     var unmarshaller = VideoCodecSettingsUnmarshaller.Instance;
@@ -142,6 +148,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timecodeTrack", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimecodeTrack = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoPreprocessors", targetDepth))

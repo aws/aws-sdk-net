@@ -31,14 +31,18 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Retrieves the list of tags applied to a configuration.
+    /// Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify.
+    /// The resource can be a user, server, or role.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonChatbotRequest
     {
         private string _resourceARN;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. The ARN of the configuration.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The ARN of the resource to list tags for.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN

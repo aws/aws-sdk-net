@@ -1415,6 +1415,9 @@ namespace Amazon.CloudHSMV2
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
         /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceLimitExceededException">
+        /// The request was rejected because it exceeds an CloudHSM limit.
+        /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
         /// The request was rejected because it refers to a resource that cannot be found.
         /// </exception>
@@ -1455,6 +1458,9 @@ namespace Amazon.CloudHSMV2
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
         /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceLimitExceededException">
+        /// The request was rejected because it exceeds an CloudHSM limit.
         /// </exception>
         /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
         /// The request was rejected because it refers to a resource that cannot be found.

@@ -166,6 +166,30 @@ namespace Amazon.S3.Internal
                                 }
                                 return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                             }
+                            if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 19, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 19, 21, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                            {
+                                if (Equals(refs["UseFIPS"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                            {
+                                if (Equals(refs["UseFIPS"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 26, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 26, 28, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                            {
+                                if (Equals(refs["UseFIPS"], true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
                             throw new AmazonClientException("Unrecognized S3Express bucket name format.");
                         }
                         if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 14, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 14, 16, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
@@ -177,6 +201,30 @@ namespace Amazon.S3.Internal
                             return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
                         if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 15, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 15, 17, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 19, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 19, 21, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 20, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 20, 22, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
+                        {
+                            if (Equals(refs["UseFIPS"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://{Bucket}.s3express-fips-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://{Bucket}.s3express-{s3expressAvailabilityZoneId}.{Region}.amazonaws.com", refs), InterpolateJson(@"{""backend"":""S3Express"",""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4-s3express"",""signingName"":""s3express"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if ((refs["s3expressAvailabilityZoneId"] = Substring((string)refs["Bucket"], 6, 26, true)) != null && (refs["s3expressAvailabilityZoneDelim"] = Substring((string)refs["Bucket"], 26, 28, true)) != null && Equals(refs["s3expressAvailabilityZoneDelim"], "--"))
                         {
                             if (Equals(refs["UseFIPS"], true))
                             {

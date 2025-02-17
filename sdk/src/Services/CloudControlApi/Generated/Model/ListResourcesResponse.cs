@@ -47,7 +47,7 @@ namespace Amazon.CloudControlApi.Model
         /// returns all results, <c>NextToken</c> is set to null.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

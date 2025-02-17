@@ -36,6 +36,7 @@ namespace Amazon.ConfigService.Model
     public partial class ConfigurationAggregator
     {
         private List<AccountAggregationSource> _accountAggregationSources = AWSConfigs.InitializeCollections ? new List<AccountAggregationSource>() : null;
+        private AggregatorFilters _aggregatorFilters;
         private string _configurationAggregatorArn;
         private string _configurationAggregatorName;
         private string _createdBy;
@@ -60,6 +61,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetAccountAggregationSources()
         {
             return this._accountAggregationSources != null && (this._accountAggregationSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AggregatorFilters. 
+        /// <para>
+        /// An object to filter the data you specify for an aggregator.
+        /// </para>
+        /// </summary>
+        public AggregatorFilters AggregatorFilters
+        {
+            get { return this._aggregatorFilters; }
+            set { this._aggregatorFilters = value; }
+        }
+
+        // Check to see if AggregatorFilters property is set
+        internal bool IsSetAggregatorFilters()
+        {
+            return this._aggregatorFilters != null;
         }
 
         /// <summary>

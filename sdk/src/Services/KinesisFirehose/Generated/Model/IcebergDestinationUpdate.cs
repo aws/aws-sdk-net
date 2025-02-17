@@ -30,15 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes an update for a destination in Apache Iceberg Tables. 
-    /// 
-    ///  
-    /// <para>
-    /// Amazon Data Firehose is in preview release and is subject to change.
-    /// </para>
+    /// Describes an update for a destination in Apache Iceberg Tables.
     /// </summary>
     public partial class IcebergDestinationUpdate
     {
+        private bool? _appendOnly;
         private BufferingHints _bufferingHints;
         private CatalogConfiguration _catalogConfiguration;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
@@ -48,6 +44,35 @@ namespace Amazon.KinesisFirehose.Model
         private string _roleARN;
         private IcebergS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
+        private SchemaEvolutionConfiguration _schemaEvolutionConfiguration;
+        private TableCreationConfiguration _tableCreationConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AppendOnly. 
+        /// <para>
+        ///  Describes whether all incoming data for this delivery stream will be append only
+        /// (inserts only and not for updates and deletes) for Iceberg delivery. This feature
+        /// is only applicable for Apache Iceberg Tables. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is false. If you set this value to true, Firehose automatically
+        /// increases the throughput limit of a stream based on the throttling levels of the stream.
+        /// If you set this parameter to true for a stream with updates and deletes, you will
+        /// see out of order delivery. 
+        /// </para>
+        /// </summary>
+        public bool AppendOnly
+        {
+            get { return this._appendOnly.GetValueOrDefault(); }
+            set { this._appendOnly = value; }
+        }
+
+        // Check to see if AppendOnly property is set
+        internal bool IsSetAppendOnly()
+        {
+            return this._appendOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BufferingHints.
@@ -68,10 +93,6 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property CatalogConfiguration. 
         /// <para>
         ///  Configuration describing where the destination Iceberg tables are persisted. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>
         /// </summary>
         public CatalogConfiguration CatalogConfiguration
@@ -105,11 +126,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property DestinationTableConfigurationList. 
         /// <para>
         ///  Provides a list of <c>DestinationTableConfigurations</c> which Firehose uses to deliver
-        /// data to Apache Iceberg tables. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// data to Apache Iceberg Tables. Firehose will write data with insert if table specific
+        /// configuration is not provided here.
         /// </para>
         /// </summary>
         public List<DestinationTableConfiguration> DestinationTableConfigurationList
@@ -157,11 +175,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Apache Iceberg Tables role. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
+        ///  The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling
+        /// Apache Iceberg Tables. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -180,12 +195,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        ///  Describes how Firehose will backup records. Currently,Firehose only supports <c>FailedDataOnly</c>
-        /// for preview. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
+        ///  Describes how Firehose will backup records. Currently,Firehose only supports <c>FailedDataOnly</c>.
+        /// 
         /// </para>
         /// </summary>
         public IcebergS3BackupMode S3BackupMode
@@ -213,6 +224,50 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3Configuration()
         {
             return this._s3Configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaEvolutionConfiguration. 
+        /// <para>
+        ///  The configuration to enable automatic schema evolution. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public SchemaEvolutionConfiguration SchemaEvolutionConfiguration
+        {
+            get { return this._schemaEvolutionConfiguration; }
+            set { this._schemaEvolutionConfiguration = value; }
+        }
+
+        // Check to see if SchemaEvolutionConfiguration property is set
+        internal bool IsSetSchemaEvolutionConfiguration()
+        {
+            return this._schemaEvolutionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableCreationConfiguration. 
+        /// <para>
+        ///  The configuration to enable automatic table creation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public TableCreationConfiguration TableCreationConfiguration
+        {
+            get { return this._tableCreationConfiguration; }
+            set { this._tableCreationConfiguration = value; }
+        }
+
+        // Check to see if TableCreationConfiguration property is set
+        internal bool IsSetTableCreationConfiguration()
+        {
+            return this._tableCreationConfiguration != null;
         }
 
     }

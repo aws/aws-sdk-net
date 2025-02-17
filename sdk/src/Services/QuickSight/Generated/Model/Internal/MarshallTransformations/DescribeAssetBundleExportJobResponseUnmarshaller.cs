@@ -106,6 +106,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.IncludeAllDependencies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeFolderMembers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IncludeFolderMembers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeFolderMemberships", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IncludeFolderMemberships = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludePermissions", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

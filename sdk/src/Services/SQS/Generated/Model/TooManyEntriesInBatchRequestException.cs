@@ -30,7 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The batch request contains more entries than permissible.
+    /// The batch request contains more entries than permissible. For Amazon SQS, the maximum
+    /// number of entries you can include in a single <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html">SendMessageBatch</a>,
+    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html">DeleteMessageBatch</a>,
+    /// or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html">ChangeMessageVisibilityBatch</a>
+    /// request is 10.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

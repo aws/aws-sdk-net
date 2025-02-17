@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the API key authorization parameters for the connection.
+    /// The API key authorization parameters for the connection.
     /// </summary>
     public partial class CreateConnectionApiKeyAuthRequestParameters
     {

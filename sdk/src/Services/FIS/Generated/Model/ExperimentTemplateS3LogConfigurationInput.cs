@@ -62,7 +62,7 @@ namespace Amazon.FIS.Model
         /// The bucket prefix.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=700)]
         public string Prefix
         {
             get { return this._prefix; }

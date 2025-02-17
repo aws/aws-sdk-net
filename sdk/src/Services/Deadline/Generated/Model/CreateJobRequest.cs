@@ -31,8 +31,9 @@ namespace Amazon.Deadline.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// Creates a job. A job is a render submission submitted by a user. It contains specific
-    /// job properties outlined as steps and tasks.
+    /// Creates a job. A job is a set of instructions that Deadline Cloud uses to schedule
+    /// and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
+    /// Cloud jobs</a>.
     /// </summary>
     public partial class CreateJobRequest : AmazonDeadlineRequest
     {
@@ -41,9 +42,11 @@ namespace Amazon.Deadline.Model
         private string _farmId;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
+        private int? _maxWorkerCount;
         private Dictionary<string, JobParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, JobParameter>() : null;
         private int? _priority;
         private string _queueId;
+        private string _sourceJobId;
         private string _storageProfileId;
         private CreateJobTargetTaskRunStatus _targetTaskRunStatus;
         private string _template;
@@ -128,7 +131,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property MaxRetriesPerTask. 
         /// <para>
-        /// The maximum number of retries for a job.
+        /// The maximum number of retries for each task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -142,6 +145,37 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask()
         {
             return this._maxRetriesPerTask.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxWorkerCount. 
+        /// <para>
+        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
+        /// is reached, no more workers will be assigned to process the job, even if the fleets
+        /// assigned to the job's queue has available workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't set the <c>maxWorkerCount</c> to 0. If you set it to -1, there is no maximum
+        /// number of workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify the <c>maxWorkerCount</c>, Deadline Cloud won't throttle the
+        /// number of workers used to process the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1, Max=2147483647)]
+        public int MaxWorkerCount
+        {
+            get { return this._maxWorkerCount.GetValueOrDefault(); }
+            set { this._maxWorkerCount = value; }
+        }
+
+        // Check to see if MaxWorkerCount property is set
+        internal bool IsSetMaxWorkerCount()
+        {
+            return this._maxWorkerCount.HasValue; 
         }
 
         /// <summary>
@@ -166,7 +200,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job on a scale of 1 to 100. The highest priority is 1.
+        /// The priority of the job on a scale of 0 to 100. The highest priority (first scheduled)
+        /// is 100. When two jobs have the same priority, the oldest job is scheduled first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -202,6 +237,24 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceJobId. 
+        /// <para>
+        /// The job ID for the source job.
+        /// </para>
+        /// </summary>
+        public string SourceJobId
+        {
+            get { return this._sourceJobId; }
+            set { this._sourceJobId = value; }
+        }
+
+        // Check to see if SourceJobId property is set
+        internal bool IsSetSourceJobId()
+        {
+            return this._sourceJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageProfileId. 
         /// <para>
         /// The storage profile ID for the storage profile to connect to the job.
@@ -222,8 +275,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property TargetTaskRunStatus. 
         /// <para>
-        /// The initial status of the job's tasks when they are created. Tasks that are created
-        /// with a <c>SUSPENDED</c> status will not run until you update their status.
+        /// The initial job status when it is created. Jobs that are created with a <c>SUSPENDED</c>
+        /// status will not run until manually requeued.
         /// </para>
         /// </summary>
         public CreateJobTargetTaskRunStatus TargetTaskRunStatus
@@ -244,7 +297,7 @@ namespace Amazon.Deadline.Model
         /// The job template to use for this job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=300000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300000)]
         public string Template
         {
             get { return this._template; }
@@ -263,7 +316,6 @@ namespace Amazon.Deadline.Model
         /// The file type for the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobTemplateType TemplateType
         {
             get { return this._templateType; }

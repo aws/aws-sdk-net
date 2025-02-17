@@ -104,11 +104,18 @@ namespace Amazon.RedshiftDataAPIService
         /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
         /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -171,11 +178,18 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
         /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -375,6 +389,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -443,6 +460,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -504,11 +524,18 @@ namespace Amazon.RedshiftDataAPIService
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
         /// The SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -571,11 +598,18 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
         /// The SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -589,8 +623,10 @@ namespace Amazon.RedshiftDataAPIService
 
 
         /// <summary>
-        /// Fetches the temporarily cached result of an SQL statement. A token is returned to
-        /// page through the statement results. 
+        /// Fetches the temporarily cached result of an SQL statement in JSON format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>JSON</c> , or let the format default to JSON. A token is
+        /// returned to page through the statement results.
         /// 
         ///  
         /// <para>
@@ -617,8 +653,10 @@ namespace Amazon.RedshiftDataAPIService
 
 
         /// <summary>
-        /// Fetches the temporarily cached result of an SQL statement. A token is returned to
-        /// page through the statement results. 
+        /// Fetches the temporarily cached result of an SQL statement in JSON format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>JSON</c> , or let the format default to JSON. A token is
+        /// returned to page through the statement results.
         /// 
         ///  
         /// <para>
@@ -644,6 +682,72 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">REST API Reference for GetStatementResult Operation</seealso>
         Task<GetStatementResultResponse> GetStatementResultAsync(GetStatementResultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStatementResultV2
+
+
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in CSV format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>CSV</c>. A token is returned to page through the statement
+        /// results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResultV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetStatementResultV2 service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
+        GetStatementResultV2Response GetStatementResultV2(GetStatementResultV2Request request);
+
+
+
+        /// <summary>
+        /// Fetches the temporarily cached result of an SQL statement in CSV format. The <c>ExecuteStatement</c>
+        /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
+        /// <c>ResultFormat</c> as <c>CSV</c>. A token is returned to page through the statement
+        /// results.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+        /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+        /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatementResultV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStatementResultV2 service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
+        Task<GetStatementResultV2Response> GetStatementResultV2Async(GetStatementResultV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -705,6 +809,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -773,6 +880,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -840,6 +950,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -906,6 +1019,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -1031,6 +1147,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -1098,6 +1217,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.

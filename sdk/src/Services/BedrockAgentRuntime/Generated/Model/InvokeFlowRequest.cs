@@ -34,7 +34,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Invokes an alias of a flow to run the inputs that you specify and return the output
     /// of each node as a stream. If there's an error, the error is returned. For more information,
     /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
-    /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+    /// a flow in Amazon Bedrock</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -44,9 +45,52 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class InvokeFlowRequest : AmazonBedrockAgentRuntimeRequest
     {
+        private bool? _enableTrace;
+        private string _executionId;
         private string _flowAliasIdentifier;
         private string _flowIdentifier;
         private List<FlowInput> _inputs = AWSConfigs.InitializeCollections ? new List<FlowInput>() : null;
+        private ModelPerformanceConfiguration _modelPerformanceConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property EnableTrace. 
+        /// <para>
+        /// Specifies whether to return the trace for the flow or not. Traces track inputs and
+        /// outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+        /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
+        /// </para>
+        /// </summary>
+        public bool EnableTrace
+        {
+            get { return this._enableTrace.GetValueOrDefault(); }
+            set { this._enableTrace = value; }
+        }
+
+        // Check to see if EnableTrace property is set
+        internal bool IsSetEnableTrace()
+        {
+            return this._enableTrace.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionId. 
+        /// <para>
+        /// The unique identifier for the current flow execution. If you don't provide a value,
+        /// Amazon Bedrock creates the identifier for you. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string ExecutionId
+        {
+            get { return this._executionId; }
+            set { this._executionId = value; }
+        }
+
+        // Check to see if ExecutionId property is set
+        internal bool IsSetExecutionId()
+        {
+            return this._executionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FlowAliasIdentifier. 
@@ -103,6 +147,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPerformanceConfiguration. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public ModelPerformanceConfiguration ModelPerformanceConfiguration
+        {
+            get { return this._modelPerformanceConfiguration; }
+            set { this._modelPerformanceConfiguration = value; }
+        }
+
+        // Check to see if ModelPerformanceConfiguration property is set
+        internal bool IsSetModelPerformanceConfiguration()
+        {
+            return this._modelPerformanceConfiguration != null;
         }
 
     }

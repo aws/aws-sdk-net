@@ -76,18 +76,13 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following error handling options are available only for stream sources (DynamoDB
-    /// and Kinesis):
+    /// The following error handling options are available only for DynamoDB and Kinesis event
+    /// sources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
     /// in two and retry.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
-    /// SNS topic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -104,6 +99,16 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
+    /// the following option is also available:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
+    /// SNS topic, or Amazon S3 bucket.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -157,10 +162,13 @@ namespace Amazon.Lambda.Model
         private FilterCriteria _filterCriteria;
         private string _functionName;
         private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _kmsKeyArn;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
+        private EventSourceMappingMetricsConfig _metricsConfig;
         private int? _parallelizationFactor;
+        private ProvisionedPollerConfig _provisionedPollerConfig;
         private ScalingConfig _scalingConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
         private int? _tumblingWindowInSeconds;
@@ -382,6 +390,27 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        ///  The ARN of the Key Management Service (KMS) customer managed key that Lambda uses
+        /// to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+        /// criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify
+        /// this property to encrypt data using your own customer managed key. 
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
         /// The maximum amount of time, in seconds, that Lambda spends gathering records before
@@ -390,18 +419,18 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// For streams and Amazon SQS event sources, the default batching window is 0 seconds.
-        /// For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources,
-        /// the default batching window is 500 ms. Note that because you can only change <c>MaximumBatchingWindowInSeconds</c>
-        /// in increments of seconds, you cannot revert back to the 500 ms default batching window
-        /// after you have changed it. To restore the default batching window, you must create
-        /// a new event source mapping.
+        /// For Kinesis, DynamoDB, and Amazon SQS event sources, the default batching window is
+        /// 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event
+        /// sources, the default batching window is 500 ms. Note that because you can only change
+        /// <c>MaximumBatchingWindowInSeconds</c> in increments of seconds, you cannot revert
+        /// back to the 500 ms default batching window after you have changed it. To restore the
+        /// default batching window, you must create a new event source mapping.
         /// </para>
         ///  
         /// <para>
-        /// Related setting: For streams and Amazon SQS event sources, when you set <c>BatchSize</c>
-        /// to a value greater than 10, you must set <c>MaximumBatchingWindowInSeconds</c> to
-        /// at least 1.
+        /// Related setting: For Kinesis, DynamoDB, and Amazon SQS event sources, when you set
+        /// <c>BatchSize</c> to a value greater than 10, you must set <c>MaximumBatchingWindowInSeconds</c>
+        /// to at least 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -459,6 +488,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+        /// source mapping metrics</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
         /// (Kinesis and DynamoDB Streams only) The number of batches to process from each shard
@@ -476,6 +524,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedPollerConfig. 
+        /// <para>
+        /// (Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration
+        /// for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
+        /// Mode</a>.
+        /// </para>
+        /// </summary>
+        public ProvisionedPollerConfig ProvisionedPollerConfig
+        {
+            get { return this._provisionedPollerConfig; }
+            set { this._provisionedPollerConfig = value; }
+        }
+
+        // Check to see if ProvisionedPollerConfig property is set
+        internal bool IsSetProvisionedPollerConfig()
+        {
+            return this._provisionedPollerConfig != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
     {
         private AlarmSpecification _alarmSpecification;
         private bool? _autoRollback;
+        private int? _bakeTime;
         private int? _checkpointDelay;
         private List<int> _checkpointPercentages = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _instanceWarmup;
@@ -105,6 +106,26 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoRollback()
         {
             return this._autoRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BakeTime. 
+        /// <para>
+        ///  The amount of time, in seconds, to wait at the end of an instance refresh before
+        /// the instance refresh is considered complete. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=172800)]
+        public int BakeTime
+        {
+            get { return this._bakeTime.GetValueOrDefault(); }
+            set { this._bakeTime = value; }
+        }
+
+        // Check to see if BakeTime property is set
+        internal bool IsSetBakeTime()
+        {
+            return this._bakeTime.HasValue; 
         }
 
         /// <summary>

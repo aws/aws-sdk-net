@@ -329,6 +329,474 @@ namespace Amazon.VPCLattice
 
 
     /// <summary>
+    /// Constants used for properties of type ProtocolType.
+    /// </summary>
+    public class ProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TCP for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType TCP = new ProtocolType("TCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtocolType FindValue(string value)
+        {
+            return FindValue<ProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceConfigurationIpAddressType.
+    /// </summary>
+    public class ResourceConfigurationIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for ResourceConfigurationIpAddressType
+        /// </summary>
+        public static readonly ResourceConfigurationIpAddressType DUALSTACK = new ResourceConfigurationIpAddressType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for ResourceConfigurationIpAddressType
+        /// </summary>
+        public static readonly ResourceConfigurationIpAddressType IPV4 = new ResourceConfigurationIpAddressType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for ResourceConfigurationIpAddressType
+        /// </summary>
+        public static readonly ResourceConfigurationIpAddressType IPV6 = new ResourceConfigurationIpAddressType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceConfigurationIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceConfigurationIpAddressType FindValue(string value)
+        {
+            return FindValue<ResourceConfigurationIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceConfigurationIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceConfigurationStatus.
+    /// </summary>
+    public class ResourceConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus ACTIVE = new ResourceConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus CREATE_FAILED = new ResourceConfigurationStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus CREATE_IN_PROGRESS = new ResourceConfigurationStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus DELETE_FAILED = new ResourceConfigurationStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus DELETE_IN_PROGRESS = new ResourceConfigurationStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus UPDATE_FAILED = new ResourceConfigurationStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ResourceConfigurationStatus
+        /// </summary>
+        public static readonly ResourceConfigurationStatus UPDATE_IN_PROGRESS = new ResourceConfigurationStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ResourceConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceConfigurationType.
+    /// </summary>
+    public class ResourceConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARN for ResourceConfigurationType
+        /// </summary>
+        public static readonly ResourceConfigurationType ARN = new ResourceConfigurationType("ARN");
+        /// <summary>
+        /// Constant CHILD for ResourceConfigurationType
+        /// </summary>
+        public static readonly ResourceConfigurationType CHILD = new ResourceConfigurationType("CHILD");
+        /// <summary>
+        /// Constant GROUP for ResourceConfigurationType
+        /// </summary>
+        public static readonly ResourceConfigurationType GROUP = new ResourceConfigurationType("GROUP");
+        /// <summary>
+        /// Constant SINGLE for ResourceConfigurationType
+        /// </summary>
+        public static readonly ResourceConfigurationType SINGLE = new ResourceConfigurationType("SINGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceConfigurationType FindValue(string value)
+        {
+            return FindValue<ResourceConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceGatewayIpAddressType.
+    /// </summary>
+    public class ResourceGatewayIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for ResourceGatewayIpAddressType
+        /// </summary>
+        public static readonly ResourceGatewayIpAddressType DUALSTACK = new ResourceGatewayIpAddressType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for ResourceGatewayIpAddressType
+        /// </summary>
+        public static readonly ResourceGatewayIpAddressType IPV4 = new ResourceGatewayIpAddressType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for ResourceGatewayIpAddressType
+        /// </summary>
+        public static readonly ResourceGatewayIpAddressType IPV6 = new ResourceGatewayIpAddressType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceGatewayIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceGatewayIpAddressType FindValue(string value)
+        {
+            return FindValue<ResourceGatewayIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceGatewayIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceGatewayStatus.
+    /// </summary>
+    public class ResourceGatewayStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus ACTIVE = new ResourceGatewayStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus CREATE_FAILED = new ResourceGatewayStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus CREATE_IN_PROGRESS = new ResourceGatewayStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus DELETE_FAILED = new ResourceGatewayStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus DELETE_IN_PROGRESS = new ResourceGatewayStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus UPDATE_FAILED = new ResourceGatewayStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ResourceGatewayStatus
+        /// </summary>
+        public static readonly ResourceGatewayStatus UPDATE_IN_PROGRESS = new ResourceGatewayStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceGatewayStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceGatewayStatus FindValue(string value)
+        {
+            return FindValue<ResourceGatewayStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceGatewayStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceNetworkLogType.
+    /// </summary>
+    public class ServiceNetworkLogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE for ServiceNetworkLogType
+        /// </summary>
+        public static readonly ServiceNetworkLogType RESOURCE = new ServiceNetworkLogType("RESOURCE");
+        /// <summary>
+        /// Constant SERVICE for ServiceNetworkLogType
+        /// </summary>
+        public static readonly ServiceNetworkLogType SERVICE = new ServiceNetworkLogType("SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceNetworkLogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceNetworkLogType FindValue(string value)
+        {
+            return FindValue<ServiceNetworkLogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceNetworkLogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceNetworkResourceAssociationStatus.
+    /// </summary>
+    public class ServiceNetworkResourceAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus ACTIVE = new ServiceNetworkResourceAssociationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus CREATE_FAILED = new ServiceNetworkResourceAssociationStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus CREATE_IN_PROGRESS = new ServiceNetworkResourceAssociationStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus DELETE_FAILED = new ServiceNetworkResourceAssociationStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus DELETE_IN_PROGRESS = new ServiceNetworkResourceAssociationStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant PARTIAL for ServiceNetworkResourceAssociationStatus
+        /// </summary>
+        public static readonly ServiceNetworkResourceAssociationStatus PARTIAL = new ServiceNetworkResourceAssociationStatus("PARTIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceNetworkResourceAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceNetworkResourceAssociationStatus FindValue(string value)
+        {
+            return FindValue<ServiceNetworkResourceAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceNetworkResourceAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceNetworkServiceAssociationStatus.
     /// </summary>
     public class ServiceNetworkServiceAssociationStatus : ConstantClass

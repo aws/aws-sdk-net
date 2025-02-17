@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private CustomDBEngineVersionAMI _image;
         private string _kmsKeyId;
         private string _majorEngineVersion;
+        private ServerlessV2FeaturesSupport _serverlessV2FeaturesSupport;
         private string _status;
         private List<string> _supportedCACertificateIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<CharacterSet> _supportedCharacterSets = AWSConfigs.InitializeCollections ? new List<CharacterSet>() : null;
@@ -371,6 +372,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetMajorEngineVersion()
         {
             return this._majorEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2FeaturesSupport. 
+        /// <para>
+        /// Specifies any Aurora Serverless v2 properties or limits that differ between Aurora
+        /// engine versions. You can test the values of this attribute when deciding which Aurora
+        /// version to use in a new or upgraded DB cluster. You can also retrieve the version
+        /// of an existing DB cluster and check whether that version supports certain Aurora Serverless
+        /// v2 features before you attempt to use those features. 
+        /// </para>
+        /// </summary>
+        public ServerlessV2FeaturesSupport ServerlessV2FeaturesSupport
+        {
+            get { return this._serverlessV2FeaturesSupport; }
+            set { this._serverlessV2FeaturesSupport = value; }
+        }
+
+        // Check to see if ServerlessV2FeaturesSupport property is set
+        internal bool IsSetServerlessV2FeaturesSupport()
+        {
+            return this._serverlessV2FeaturesSupport != null;
         }
 
         /// <summary>

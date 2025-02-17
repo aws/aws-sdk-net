@@ -41,6 +41,7 @@ namespace Amazon.NeptuneGraph.Model
         private Format _format;
         private string _graphIdentifier;
         private ImportOptions _importOptions;
+        private ParquetType _parquetType;
         private string _roleArn;
         private string _source;
 
@@ -136,6 +137,24 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetImportOptions()
         {
             return this._importOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParquetType. 
+        /// <para>
+        /// The parquet type of the import task.
+        /// </para>
+        /// </summary>
+        public ParquetType ParquetType
+        {
+            get { return this._parquetType; }
+            set { this._parquetType = value; }
+        }
+
+        // Check to see if ParquetType property is set
+        internal bool IsSetParquetType()
+        {
+            return this._parquetType != null;
         }
 
         /// <summary>

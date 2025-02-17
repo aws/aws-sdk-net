@@ -70,6 +70,7 @@ namespace Amazon.DynamoDBv2.Model
         private TableClass _tableClass;
         private string _tableName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private WarmThroughput _warmThroughput;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -584,6 +585,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Represents the warm throughput (in read units per second and write units per second)
+        /// for creating a table.
+        /// </para>
+        /// </summary>
+        public WarmThroughput WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

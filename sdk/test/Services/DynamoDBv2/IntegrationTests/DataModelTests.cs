@@ -183,6 +183,76 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Name, storedEmployee.Name);
         }
 
+
+        /// <summary>
+        /// Tests that disabling fetching table metadata works with a key that has a property converter.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestTransactWrite_AddSaveItem_DocumentTransaction()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+            
+            {
+
+                var hashRangeOnly = new AnnotatedRangeTable
+                {
+                    Name = "Bob",
+                    Age = 10
+                };
+
+                var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<AnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+            }
+
+            {
+                var hashRangeOnly = new IgnoreAnnotatedRangeTable
+                {
+                    Name = "Bob",
+                    Age = 10,
+                    IgnoreAttribute = 100
+                };
+
+                var transactWrite = Context.CreateTransactWrite<IgnoreAnnotatedRangeTable>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<IgnoreAnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+                Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
+            }
+
+            {
+                var hashRangeOnly = new AnnotatedRangeTable2
+                {
+                    Name = "Bob",
+                    Age = 10,
+                    NotAnnotatedAttribute = 100
+                };
+
+                var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable2>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<AnnotatedRangeTable2>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+                Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
+                Assert.AreEqual(hashRangeOnly.NotAnnotatedAttribute, storedHashOnly.NotAnnotatedAttribute);
+            }
+
+        }
+
         /// <summary>
         /// Tests that the DynamoDB operations can retrieve <see cref="DateTime"/> attributes in UTC and local timezone.
         /// </summary>
@@ -2038,6 +2108,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
             public Status Name { get; set; }
         }
+
+        [DynamoDBTable("HashRangeTable")]
+        public class AnnotatedRangeTable
+        {
+            // Hash key
+            [DynamoDBHashKey]
+            public string Name { get; set; }
+
+            // Range key
+            [DynamoDBRangeKey]
+            internal int Age { get; set; }
+        }
+
+        [DynamoDBTable("HashRangeTable")]
+        public class IgnoreAnnotatedRangeTable : AnnotatedRangeTable
+        {
+            [DynamoDBIgnore]
+            internal int IgnoreAttribute { get; set; }
+        }
+
+
+        [DynamoDBTable("HashRangeTable")]
+        public class AnnotatedRangeTable2 : AnnotatedRangeTable
+        {
+            internal int NotAnnotatedAttribute { get; set; }
+        }
+
+
 
         public class DateTimeUtcConverter : IPropertyConverter
         {

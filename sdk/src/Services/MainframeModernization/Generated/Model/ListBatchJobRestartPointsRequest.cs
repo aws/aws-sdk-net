@@ -31,12 +31,13 @@ namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBatchJobRestartPoints operation.
-    /// Lists all the job steps for JCL files to restart a batch job. This is only applicable
+    /// Lists all the job steps for a JCL file to restart a batch job. This is only applicable
     /// for Micro Focus engine with versions 8.0.6 and above.
     /// </summary>
     public partial class ListBatchJobRestartPointsRequest : AmazonMainframeModernizationRequest
     {
         private string _applicationId;
+        private string _authSecretsManagerArn;
         private string _executionId;
 
         /// <summary>
@@ -59,9 +60,29 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthSecretsManagerArn. 
+        /// <para>
+        /// The Amazon Web Services Secrets Manager containing user's credentials for authentication
+        /// and authorization for List Batch Job Restart Points operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string AuthSecretsManagerArn
+        {
+            get { return this._authSecretsManagerArn; }
+            set { this._authSecretsManagerArn = value; }
+        }
+
+        // Check to see if AuthSecretsManagerArn property is set
+        internal bool IsSetAuthSecretsManagerArn()
+        {
+            return this._authSecretsManagerArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// The unique identifier of each batch job execution.
+        /// The unique identifier of the batch job execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

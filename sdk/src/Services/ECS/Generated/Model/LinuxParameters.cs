@@ -72,10 +72,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Devices. 
         /// <para>
         /// Any host devices to expose to the container. This parameter maps to <c>Devices</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>--device</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// in the docker container create command and the <c>--device</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -100,11 +97,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property InitProcessEnabled. 
         /// <para>
         /// Run an <c>init</c> process inside the container that forwards signals and reaps processes.
-        /// This parameter maps to the <c>--init</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
-        /// on your container instance. To check the Docker Remote API version on your container
-        /// instance, log in to your container instance and run the following command: <c>sudo
-        /// docker version --format '{{.Server.APIVersion}}'</c> 
+        /// This parameter maps to the <c>--init</c> option to docker run. This parameter requires
+        /// version 1.25 of the Docker Remote API or greater on your container instance. To check
+        /// the Docker Remote API version on your container instance, log in to your container
+        /// instance and run the following command: <c>sudo docker version --format '{{.Server.APIVersion}}'</c>
+        /// 
         /// </para>
         /// </summary>
         public bool InitProcessEnabled
@@ -123,9 +120,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MaxSwap. 
         /// <para>
         /// The total amount of swap memory (in MiB) a container can use. This parameter will
-        /// be translated to the <c>--memory-swap</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a> where the value would be the sum of the container memory plus the <c>maxSwap</c>
-        /// value.
+        /// be translated to the <c>--memory-swap</c> option to docker run where the value would
+        /// be the sum of the container memory plus the <c>maxSwap</c> value.
         /// </para>
         ///  
         /// <para>
@@ -162,8 +158,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SharedMemorySize. 
         /// <para>
         /// The value for the size (in MiB) of the <c>/dev/shm</c> volume. This parameter maps
-        /// to the <c>--shm-size</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// to the <c>--shm-size</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -193,8 +188,7 @@ namespace Amazon.ECS.Model
         /// Accepted values are whole numbers between <c>0</c> and <c>100</c>. If the <c>swappiness</c>
         /// parameter is not specified, a default value of <c>60</c> is used. If a value is not
         /// specified for <c>maxSwap</c> then this parameter is ignored. This parameter maps to
-        /// the <c>--memory-swappiness</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// the <c>--memory-swappiness</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -223,8 +217,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tmpfs. 
         /// <para>
         /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter
-        /// maps to the <c>--tmpfs</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// maps to the <c>--tmpfs</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>

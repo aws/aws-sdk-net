@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// An internal server error occurred. Retry your request.
+    /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+    /// in the Amazon Bedrock User Guide
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

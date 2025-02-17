@@ -31,13 +31,19 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFindingAggregator operation.
-    /// Updates the finding aggregation configuration. Used to update the Region linking mode
-    /// and the list of included or excluded Regions. You cannot use <c>UpdateFindingAggregator</c>
-    /// to change the aggregation Region.
-    /// 
+    /// <note> 
+    /// <para>
+    /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Updates cross-Region aggregation settings. You can use this operation to update the
+    /// Region linking mode and the list of included or excluded Amazon Web Services Regions.
+    /// However, you can't use this operation to change the home Region.
+    /// </para>
     ///  
     /// <para>
-    /// You must run <c>UpdateFindingAggregator</c> from the current aggregation Region. 
+    /// You can invoke this operation from the current home Region only. 
     /// </para>
     /// </summary>
     public partial class UpdateFindingAggregatorRequest : AmazonSecurityHubRequest
@@ -83,23 +89,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ALL_REGIONS</c> - Indicates to aggregate findings from all of the Regions where
-        /// Security Hub is enabled. When you choose this option, Security Hub also automatically
-        /// aggregates findings from new Regions as Security Hub supports them and you opt into
-        /// them. 
+        ///  <c>ALL_REGIONS</c> - Aggregates findings from all of the Regions where Security Hub
+        /// is enabled. When you choose this option, Security Hub also automatically aggregates
+        /// findings from new Regions as Security Hub supports them and you opt into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Indicates to aggregate findings from all of
-        /// the Regions where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
+        ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Aggregates findings from all of the Regions
+        /// where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
         /// parameter. When you choose this option, Security Hub also automatically aggregates
         /// findings from new Regions as Security Hub supports them and you opt into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SPECIFIED_REGIONS</c> - Indicates to aggregate findings only from the Regions
-        /// listed in the <c>Regions</c> parameter. Security Hub does not automatically aggregate
-        /// findings from new Regions. 
+        ///  <c>SPECIFIED_REGIONS</c> - Aggregates findings only from the Regions listed in the
+        /// <c>Regions</c> parameter. Security Hub does not automatically aggregate findings from
+        /// new Regions. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NO_REGIONS</c> - Aggregates no data because no Regions are selected as linked
+        /// Regions. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,13 +130,18 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// If <c>RegionLinkingMode</c> is <c>ALL_REGIONS_EXCEPT_SPECIFIED</c>, then this is a
-        /// space-separated list of Regions that do not aggregate findings to the aggregation
+        /// space-separated list of Regions that don't replicate and send findings to the home
         /// Region.
         /// </para>
         ///  
         /// <para>
         /// If <c>RegionLinkingMode</c> is <c>SPECIFIED_REGIONS</c>, then this is a space-separated
-        /// list of Regions that do aggregate findings to the aggregation Region.
+        /// list of Regions that do replicate and send findings to the home Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// An <c>InvalidInputException</c> error results if you populate this field while <c>RegionLinkingMode</c>
+        /// is <c>NO_REGIONS</c>.
         /// </para>
         /// </summary>
         public List<string> Regions

@@ -34,6 +34,14 @@ namespace Amazon.CloudFormation.Model
     /// Creates a stack as specified in the template. After the call completes successfully,
     /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>
     /// operation.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about creating a stack and monitoring stack progress, see <a
+    /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Managing
+    /// Amazon Web Services resources as a single unit with CloudFormation stacks</a> in the
+    /// <i>CloudFormation User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateStackRequest : AmazonCloudFormationRequest
     {
@@ -69,9 +77,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Some stack templates might include resources that can affect permissions in your Amazon
-        /// Web Services account; for example, by creating new Identity and Access Management
-        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying
-        /// one of these capabilities.
+        /// Web Services account; for example, by creating new IAM users. For those stacks, you
+        /// must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
         /// <para>
@@ -98,12 +105,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">AWS::IAM::AccessKey</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">AWS::IAM::Group</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -113,7 +120,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+        /// AWS::IAM::ManagedPolicy</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -123,18 +135,18 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">AWS::IAM::User</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in CloudFormation Templates</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
+        /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,7 +161,7 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.
         /// </para>
@@ -171,8 +183,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// CloudFormation macros to perform custom processing on templates</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
+        /// custom processing on CloudFormation templates with template macros</a>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -257,9 +269,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Whether to enable termination protection on the specified stack. If a user attempts
         /// to delete a stack with termination protection enabled, the operation fails and the
-        /// stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-        /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination
-        /// protection is deactivated on stacks by default.
+        /// stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+        /// CloudFormation stacks from being deleted</a> in the <i>CloudFormation User Guide</i>.
+        /// Termination protection is deactivated on stacks by default.
         /// </para>
         ///  
         /// <para>
@@ -283,9 +295,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NotificationARNs. 
         /// <para>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish stack related
-        /// events. You can find your Amazon SNS topic ARNs using the Amazon SNS console or your
-        /// Command Line Interface (CLI).
+        /// The Amazon SNS topic ARNs to publish stack related events. You can find your Amazon
+        /// SNS topic ARNs using the Amazon SNS console or your Command Line Interface (CLI).
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -360,9 +371,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// If the list of resource types doesn't include a resource that you're creating, the
         /// stack creation fails. By default, CloudFormation grants permissions to all resource
-        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
-        /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with Identity and Access Management</a>.
+        /// types. IAM uses this parameter for CloudFormation-specific condition keys in IAM policies.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
+        /// access with Identity and Access Management</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -408,12 +419,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
-        /// CloudFormation assumes to create the stack. CloudFormation uses the role's credentials
-        /// to make calls on your behalf. CloudFormation always uses this role for all future
-        /// operations on the stack. Provided that users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.
+        /// The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to create
+        /// the stack. CloudFormation uses the role's credentials to make calls on your behalf.
+        /// CloudFormation always uses this role for all future operations on the stack. Provided
+        /// that users have permission to operate on the stack, CloudFormation uses this role
+        /// even if the users don't have permission to pass it. Ensure that the role grants least
+        /// privilege.
         /// </para>
         ///  
         /// <para>
@@ -483,10 +494,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyBody. 
         /// <para>
-        /// Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-        /// Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>. You
-        /// can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter,
-        /// but not both.
+        /// Structure containing the stack policy body. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent
+        /// updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You can specify
+        /// either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -548,8 +559,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
-        /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// anatomy</a> in the <i>CloudFormation User Guide</i>.
+        /// length of 51,200 bytes.
         /// </para>
         ///  
         /// <para>
@@ -573,11 +583,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// Location of file containing the template body. The URL must point to a template (max
-        /// size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document.
-        /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3
-        /// bucket must start with <c>https://</c>.
+        /// The URL of a file containing the template body. The URL must point to a template (max
+        /// size: 1 MB) that's located in an Amazon S3 bucket or a Systems Manager document. The
+        /// location for an Amazon S3 bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

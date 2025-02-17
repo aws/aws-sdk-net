@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -47,9 +48,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public virtual async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await DocumentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
-            return items;
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(AsyncSearch<T>), nameof(GetNextSetAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var documents = await DocumentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
+                List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
+                return items;
+            }
         }
 
         /// <summary>
@@ -62,9 +67,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public virtual async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await DocumentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
-            return items;
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(AsyncSearch<T>), nameof(GetRemainingAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var documents = await DocumentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
+                List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
+                return items;
+            }
         }
 
         #endregion

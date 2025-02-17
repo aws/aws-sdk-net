@@ -42,28 +42,6 @@ namespace ServiceClientGenerator
             public const string LegacyServiceIdKey = "legacy-service-id";
         }
 
-        abstract class ProjectsSectionKeys
-        {
-            public const string ProjectsKey = "projects";
-            public const string NameKey = "name";
-            public const string ConfigurationsKey = "configurations";
-            public const string TargetFrameworksKey = "targetFrameworks";
-            public const string DefineConstantsKey = "defineConstants";
-            public const string BinSubFolderKey = "binSubFolder";
-            public const string TemplateKey = "template";
-            public const string PlatformCodeFoldersKey = "platformCodeFolders";
-            public const string ExtraTestProjects = "extraTestProjects";
-            public const string NuGetTargetFrameworkKey = "nugetTargetPlatform";
-            public const string PlatformExcludeFoldersKey = "excludeFolders";
-            public const string FrameworkPathOverrideKey = "frameworkPathOverride";
-            public const string FrameworkRefernecesKey = "frameworkReferences";
-            public const string EmbeddedResourcesKey = "embeddedResources";
-            public const string UnitTestProjectsKey = "unittestprojects";
-            public const string NoWarn = "noWarn";
-            public const string PackageReferences = "packageReferences";
-            public const string OutputPathOverrideKey = "outputPathOverride";
-        }
-
         /// <summary>
         /// URL for Apache License 2.0
         /// </summary>
@@ -455,53 +433,6 @@ namespace ServiceClientGenerator
             return config;
         }
 
-        private static List<string> SafeGetStringList(JsonData data, string key)
-        {
-            var t = data.SafeGet(key);
-            if (t != null)
-            {
-                return (from object obj in t select obj.ToString()).ToList<string>();
-            }
-            else
-            {
-                return new List<string>();
-            }
-        }
-
-        private static List<T> SafeGetObjectList<T>(JsonData data, string key, Func<JsonData, T> converter)
-        {
-            var t = data.SafeGet(key);
-            if (t != null)
-            {
-                return (from JsonData obj in t select converter(obj)).ToList<T>();
-            }
-            else
-            {
-                return new List<T>();
-            }
-        }
-
-        private static ProjectFileConfiguration LoadProjectFileConfiguration(JsonData node)
-        {
-            return new ProjectFileConfiguration{
-                Name                            = node.SafeGetString(ProjectsSectionKeys.NameKey),
-                TargetFrameworkVersions         = SafeGetStringList(node, ProjectsSectionKeys.TargetFrameworksKey),
-                CompilationConstants            = SafeGetStringList(node, ProjectsSectionKeys.DefineConstantsKey),
-                BinSubFolder                    = node.SafeGetString(ProjectsSectionKeys.BinSubFolderKey),
-                Template                        = node.SafeGetString(ProjectsSectionKeys.TemplateKey),
-                NuGetTargetPlatform             = node.SafeGetString(ProjectsSectionKeys.NuGetTargetFrameworkKey),
-                FrameworkPathOverride           = node.SafeGetString(ProjectsSectionKeys.FrameworkPathOverrideKey),
-                NoWarn                          = node.SafeGetString(ProjectsSectionKeys.NoWarn),
-                OutputPathOverride              = node.SafeGetString(ProjectsSectionKeys.OutputPathOverrideKey),
-                Configurations                  = SafeGetStringList(node, ProjectsSectionKeys.ConfigurationsKey),
-                EmbeddedResources               = SafeGetStringList(node, ProjectsSectionKeys.EmbeddedResourcesKey),
-                PlatformCodeFolders             = SafeGetStringList(node, ProjectsSectionKeys.PlatformCodeFoldersKey),
-                PlatformExcludeFolders          = SafeGetStringList(node, ProjectsSectionKeys.PlatformExcludeFoldersKey),
-                DllReferences                   = SafeGetObjectList<Dependency>(node, ProjectsSectionKeys.FrameworkRefernecesKey, Dependency.ParseJson),
-                PackageReferences               = SafeGetObjectList<ProjectFileCreator.PackageReference>(node, ProjectsSectionKeys.PackageReferences, ProjectFileCreator.PackageReference.ParseJson),
-            };
-        }
-
         /// <summary>
         /// Parses the Visual Studio project metadata entries from the manifest. These
         /// are used when generating project files for a service.
@@ -513,22 +444,10 @@ namespace ServiceClientGenerator
         {
             var projectConfigurations = new List<ProjectFileConfiguration>();
 
-            var projectsNode = document[ProjectsSectionKeys.ProjectsKey];
+            var projectsNode = document[ProjectFileConfiguration.ProjectsSectionKeys.ProjectsKey];
             foreach (JsonData projectNode in projectsNode)
             {
-                var config = LoadProjectFileConfiguration(projectNode);
-
-                var extraTestProjects = projectNode.SafeGet(ProjectsSectionKeys.ExtraTestProjects);
-                if (extraTestProjects == null)
-                {
-                    config.ExtraTestProjects = new List<string>();
-                }
-                else
-                {
-                    config.ExtraTestProjects = (from object etp in extraTestProjects
-                                                select etp.ToString()).ToList();
-                }
-
+                var config = ProjectFileConfiguration.Load(projectNode, loadExtraTestProjects: true);
                 projectConfigurations.Add(config);
             }
 
@@ -538,10 +457,10 @@ namespace ServiceClientGenerator
         void LoadUnitTestProjectConfigurations(JsonData document)
         {
             IList<ProjectFileConfiguration> configuraitons = new List<ProjectFileConfiguration>();
-            var projectsNode = document[ProjectsSectionKeys.UnitTestProjectsKey];
+            var projectsNode = document[ProjectFileConfiguration.ProjectsSectionKeys.UnitTestProjectsKey];
             foreach (JsonData projectNode in projectsNode)
             {
-                var configuration = LoadProjectFileConfiguration(projectNode);
+                var configuration = ProjectFileConfiguration.Load(projectNode, loadExtraTestProjects: false);
                 configuraitons.Add(configuration);
             }
 

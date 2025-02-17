@@ -42,7 +42,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation has a limit of five transactions per second, after which transactions
+    /// This operation has a limit of 25 transactions per second, after which transactions
     /// are throttled.
     /// </para>
     ///  

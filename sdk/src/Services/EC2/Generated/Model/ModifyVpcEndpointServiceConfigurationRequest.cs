@@ -31,10 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpcEndpointServiceConfiguration operation.
-    /// Modifies the attributes of your VPC endpoint service configuration. You can change
-    /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
-    /// specify whether acceptance is required for requests to connect to your endpoint service
-    /// through an interface VPC endpoint.
+    /// Modifies the attributes of the specified VPC endpoint service configuration.
     /// 
     ///  
     /// <para>
@@ -48,17 +45,19 @@ namespace Amazon.EC2.Model
         private List<string> _addGatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _addNetworkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _addSupportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addSupportedRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _privateDnsName;
         private List<string> _removeGatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _removeNetworkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _removePrivateDnsName;
         private List<string> _removeSupportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeSupportedRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceId;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Indicates whether requests to create an endpoint to your service must be accepted.
+        /// Indicates whether requests to create an endpoint to the service must be accepted.
         /// </para>
         /// </summary>
         public bool AcceptanceRequired
@@ -76,8 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddGatewayLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service
-        /// configuration.
+        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the service configuration.
         /// </para>
         /// </summary>
         public List<string> AddGatewayLoadBalancerArns
@@ -95,8 +93,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddNetworkLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service
-        /// configuration.
+        /// The Amazon Resource Names (ARNs) of Network Load Balancers to add to the service configuration.
         /// </para>
         /// </summary>
         public List<string> AddNetworkLoadBalancerArns
@@ -114,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSupportedIpAddressTypes. 
         /// <para>
-        /// The IP address types to add to your service configuration.
+        /// The IP address types to add to the service configuration.
         /// </para>
         /// </summary>
         public List<string> AddSupportedIpAddressTypes
@@ -127,6 +124,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddSupportedIpAddressTypes()
         {
             return this._addSupportedIpAddressTypes != null && (this._addSupportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddSupportedRegions. 
+        /// <para>
+        /// The supported Regions to add to the service configuration.
+        /// </para>
+        /// </summary>
+        public List<string> AddSupportedRegions
+        {
+            get { return this._addSupportedRegions; }
+            set { this._addSupportedRegions = value; }
+        }
+
+        // Check to see if AddSupportedRegions property is set
+        internal bool IsSetAddSupportedRegions()
+        {
+            return this._addSupportedRegions != null && (this._addSupportedRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +166,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveGatewayLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service
+        /// The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the service
         /// configuration.
         /// </para>
         /// </summary>
@@ -170,7 +185,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveNetworkLoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service
+        /// The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the service
         /// configuration.
         /// </para>
         /// </summary>
@@ -207,7 +222,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveSupportedIpAddressTypes. 
         /// <para>
-        /// The IP address types to remove from your service configuration.
+        /// The IP address types to remove from the service configuration.
         /// </para>
         /// </summary>
         public List<string> RemoveSupportedIpAddressTypes
@@ -220,6 +235,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRemoveSupportedIpAddressTypes()
         {
             return this._removeSupportedIpAddressTypes != null && (this._removeSupportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveSupportedRegions. 
+        /// <para>
+        /// The supported Regions to remove from the service configuration.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveSupportedRegions
+        {
+            get { return this._removeSupportedRegions; }
+            set { this._removeSupportedRegions = value; }
+        }
+
+        // Check to see if RemoveSupportedRegions property is set
+        internal bool IsSetRemoveSupportedRegions()
+        {
+            return this._removeSupportedRegions != null && (this._removeSupportedRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

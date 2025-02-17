@@ -339,6 +339,50 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  BatchGetTaxExemptions
+
+        internal virtual BatchGetTaxExemptionsResponse BatchGetTaxExemptions(BatchGetTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTaxExemptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the active tax exemptions for a given list of accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
+        public virtual Task<BatchGetTaxExemptionsResponse> BatchGetTaxExemptionsAsync(BatchGetTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetTaxExemptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchPutTaxRegistration
 
         internal virtual BatchPutTaxRegistrationResponse BatchPutTaxRegistration(BatchPutTaxRegistrationRequest request)
@@ -415,30 +459,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -596,6 +652,53 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  DeleteSupplementalTaxRegistration
+
+        internal virtual DeleteSupplementalTaxRegistrationResponse DeleteSupplementalTaxRegistration(DeleteSupplementalTaxRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSupplementalTaxRegistrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSupplementalTaxRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">REST API Reference for DeleteSupplementalTaxRegistration Operation</seealso>
+        public virtual Task<DeleteSupplementalTaxRegistrationResponse> DeleteSupplementalTaxRegistrationAsync(DeleteSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTaxRegistration
 
         internal virtual DeleteTaxRegistrationResponse DeleteTaxRegistration(DeleteTaxRegistrationRequest request)
@@ -647,6 +750,94 @@ namespace Amazon.TaxSettings
             options.ResponseUnmarshaller = DeleteTaxRegistrationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTaxRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTaxExemptionTypes
+
+        internal virtual GetTaxExemptionTypesResponse GetTaxExemptionTypes(GetTaxExemptionTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxExemptionTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get supported tax exemption types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaxExemptionTypes service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
+        public virtual Task<GetTaxExemptionTypesResponse> GetTaxExemptionTypesAsync(GetTaxExemptionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTaxExemptionTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTaxInheritance
+
+        internal virtual GetTaxInheritanceResponse GetTaxInheritance(GetTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxInheritanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The get account tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxInheritance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
+        public virtual Task<GetTaxInheritanceResponse> GetTaxInheritanceAsync(GetTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTaxInheritanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -736,6 +927,94 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  ListSupplementalTaxRegistrations
+
+        internal virtual ListSupplementalTaxRegistrationsResponse ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSupplementalTaxRegistrationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves supplemental tax registrations for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupplementalTaxRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSupplementalTaxRegistrations service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">REST API Reference for ListSupplementalTaxRegistrations Operation</seealso>
+        public virtual Task<ListSupplementalTaxRegistrationsResponse> ListSupplementalTaxRegistrationsAsync(ListSupplementalTaxRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSupplementalTaxRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTaxExemptions
+
+        internal virtual ListTaxExemptionsResponse ListTaxExemptions(ListTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTaxExemptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
+        public virtual Task<ListTaxExemptionsResponse> ListTaxExemptionsAsync(ListTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTaxExemptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTaxRegistrations
 
         internal virtual ListTaxRegistrationsResponse ListTaxRegistrations(ListTaxRegistrationsRequest request)
@@ -778,6 +1057,151 @@ namespace Amazon.TaxSettings
             options.ResponseUnmarshaller = ListTaxRegistrationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTaxRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSupplementalTaxRegistration
+
+        internal virtual PutSupplementalTaxRegistrationResponse PutSupplementalTaxRegistration(PutSupplementalTaxRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSupplementalTaxRegistrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stores supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSupplementalTaxRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">REST API Reference for PutSupplementalTaxRegistration Operation</seealso>
+        public virtual Task<PutSupplementalTaxRegistrationResponse> PutSupplementalTaxRegistrationAsync(PutSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTaxExemption
+
+        internal virtual PutTaxExemptionResponse PutTaxExemption(PutTaxExemptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxExemptionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds the tax exemption for a single account or all accounts listed in a consolidated
+        /// billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
+        /// The access is denied for the Amazon Web Services Support API.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
+        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
+        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
+        public virtual Task<PutTaxExemptionResponse> PutTaxExemptionAsync(PutTaxExemptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutTaxExemptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTaxInheritance
+
+        internal virtual PutTaxInheritanceResponse PutTaxInheritance(PutTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxInheritanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The updated tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxInheritance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
+        public virtual Task<PutTaxInheritanceResponse> PutTaxInheritanceAsync(PutTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutTaxInheritanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -857,30 +1281,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>

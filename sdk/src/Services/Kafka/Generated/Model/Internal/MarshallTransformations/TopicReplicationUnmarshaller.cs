@@ -90,6 +90,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("topicNameConfiguration", targetDepth))
+                {
+                    var unmarshaller = ReplicationTopicNameConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TopicNameConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("topicsToExclude", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

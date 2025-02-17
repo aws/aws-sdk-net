@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCachePoint())
+            {
+                context.Writer.WritePropertyName("cachePoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CachePointBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.CachePoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputVariables())
             {
                 context.Writer.WritePropertyName("inputVariables");

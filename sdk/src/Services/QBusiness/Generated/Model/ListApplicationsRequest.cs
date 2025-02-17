@@ -32,6 +32,14 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
     /// Lists Amazon Q Business applications.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Q Business applications may securely transmit data for processing across Amazon
+    /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+    /// region inference in Amazon Q Business</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListApplicationsRequest : AmazonQBusinessRequest
     {

@@ -72,10 +72,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.HiddenAppTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HiddenInstanceTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.HiddenInstanceTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HiddenMlTools", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HiddenMlTools = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HiddenSageMakerImageVersionAliases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HiddenSageMakerImage, HiddenSageMakerImageUnmarshaller>(HiddenSageMakerImageUnmarshaller.Instance);
+                    unmarshalledObject.HiddenSageMakerImageVersionAliases = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

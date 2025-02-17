@@ -96,6 +96,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.SinkArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SinkIamRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SinkIamRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SinkType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SseAwsKeyManagementParams", targetDepth))
+                {
+                    var unmarshaller = SseAwsKeyManagementParamsUnmarshaller.Instance;
+                    unmarshalledObject.SseAwsKeyManagementParams = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

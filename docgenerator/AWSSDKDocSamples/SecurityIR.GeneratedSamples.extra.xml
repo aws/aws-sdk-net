@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.BatchGetMemberAccountDetails(Amazon.SecurityIR.Model.BatchGetMemberAccountDetailsRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.BatchGetMemberAccountDetails(Amazon.SecurityIR.Model.BatchGetMemberAccountDetailsRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.BatchGetMemberAccountDetailsRequest" />
+            <member name="T:Amazon.SecurityIR.Model.BatchGetMemberAccountDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke BatchGetMemberAccountDetails"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.CancelMembership(Amazon.SecurityIR.Model.CancelMembershipRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.CancelMembership(Amazon.SecurityIR.Model.CancelMembershipRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.CancelMembershipRequest" />
+            <member name="T:Amazon.SecurityIR.Model.CancelMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CancelMembership"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.CloseCase(Amazon.SecurityIR.Model.CloseCaseRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.CloseCase(Amazon.SecurityIR.Model.CloseCaseRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.CloseCaseRequest" />
+            <member name="T:Amazon.SecurityIR.Model.CloseCaseResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CloseCase"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.CreateCase(Amazon.SecurityIR.Model.CreateCaseRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.CreateCase(Amazon.SecurityIR.Model.CreateCaseRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.CreateCaseRequest" />
+            <member name="T:Amazon.SecurityIR.Model.CreateCaseResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CreateCase"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.CreateCaseComment(Amazon.SecurityIR.Model.CreateCaseCommentRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.CreateCaseComment(Amazon.SecurityIR.Model.CreateCaseCommentRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.CreateCaseCommentRequest" />
+            <member name="T:Amazon.SecurityIR.Model.CreateCaseCommentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CreateCaseComment"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.CreateMembership(Amazon.SecurityIR.Model.CreateMembershipRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.CreateMembership(Amazon.SecurityIR.Model.CreateMembershipRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.CreateMembershipRequest" />
+            <member name="T:Amazon.SecurityIR.Model.CreateMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CreateMembership"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetCase(Amazon.SecurityIR.Model.GetCaseRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetCase(Amazon.SecurityIR.Model.GetCaseRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseRequest" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetCase"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetCaseAttachmentDownloadUrl(Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetCaseAttachmentDownloadUrl(Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlRequest" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetCaseAttachmentDownloadUrl"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetCaseAttachmentUploadUrl(Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetCaseAttachmentUploadUrl(Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest" />
+            <member name="T:Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetCaseAttachmentUploadUrl"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetMembership(Amazon.SecurityIR.Model.GetMembershipRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetMembership(Amazon.SecurityIR.Model.GetMembershipRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.GetMembershipRequest" />
+            <member name="T:Amazon.SecurityIR.Model.GetMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetMembership"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListCaseEdits(Amazon.SecurityIR.Model.ListCaseEditsRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListCaseEdits(Amazon.SecurityIR.Model.ListCaseEditsRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListCaseEditsRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListCaseEditsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListCaseEdits"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListCases(Amazon.SecurityIR.Model.ListCasesRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListCases(Amazon.SecurityIR.Model.ListCasesRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListCasesRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListCasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListCases"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListComments(Amazon.SecurityIR.Model.ListCommentsRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListComments(Amazon.SecurityIR.Model.ListCommentsRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListCommentsRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListCommentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListComments"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListMemberships(Amazon.SecurityIR.Model.ListMembershipsRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListMemberships(Amazon.SecurityIR.Model.ListMembershipsRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListMembershipsRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListMemberships"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.ListTagsForResource(Amazon.SecurityIR.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.ListTagsForResource(Amazon.SecurityIR.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.SecurityIR.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListTagsForResource"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.TagResource(Amazon.SecurityIR.Model.TagResourceRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.TagResource(Amazon.SecurityIR.Model.TagResourceRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.TagResourceRequest" />
+            <member name="T:Amazon.SecurityIR.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke TagResource"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UntagResource(Amazon.SecurityIR.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UntagResource(Amazon.SecurityIR.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UntagResourceRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UntagResource"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UpdateCase(Amazon.SecurityIR.Model.UpdateCaseRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UpdateCase(Amazon.SecurityIR.Model.UpdateCaseRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateCase"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UpdateCaseComment(Amazon.SecurityIR.Model.UpdateCaseCommentRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UpdateCaseComment(Amazon.SecurityIR.Model.UpdateCaseCommentRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseCommentRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseCommentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateCaseComment"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UpdateCaseStatus(Amazon.SecurityIR.Model.UpdateCaseStatusRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UpdateCaseStatus(Amazon.SecurityIR.Model.UpdateCaseStatusRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseStatusRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateCaseStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateCaseStatus"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UpdateMembership(Amazon.SecurityIR.Model.UpdateMembershipRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UpdateMembership(Amazon.SecurityIR.Model.UpdateMembershipRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateMembershipRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateMembership"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.UpdateResolverType(Amazon.SecurityIR.Model.UpdateResolverTypeRequest)" />
+            <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.UpdateResolverType(Amazon.SecurityIR.Model.UpdateResolverTypeRequest)" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateResolverTypeRequest" />
+            <member name="T:Amazon.SecurityIR.Model.UpdateResolverTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateResolverType"
+                    source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

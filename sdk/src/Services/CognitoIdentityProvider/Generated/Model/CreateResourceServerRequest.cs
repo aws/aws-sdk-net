@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceServer operation.
-    /// Creates a new OAuth2.0 resource server and defines custom scopes within it.
+    /// Creates a new OAuth2.0 resource server and defines custom scopes within it. Resource
+    /// servers are associated with custom scopes and machine-to-machine (M2M) authorization.
+    /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access
+    /// control with resource servers</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -110,7 +113,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// A list of scopes. Each scope is a key-value map with the keys <c>name</c> and <c>description</c>.
+        /// A list of custom scopes. Each scope is a key-value map with the keys <c>ScopeName</c>
+        /// and <c>ScopeDescription</c>. The name of a custom scope is a combination of <c>ScopeName</c>
+        /// and the resource server <c>Name</c> in this request, for example <c>MyResourceServerName/MyScopeName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -129,7 +134,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool where you want to create a resource server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

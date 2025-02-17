@@ -66,6 +66,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GlobalAccelerator", targetDepth))
+                {
+                    var unmarshaller = GlobalAcceleratorForDirectoryUnmarshaller.Instance;
+                    unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StorageConnectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);

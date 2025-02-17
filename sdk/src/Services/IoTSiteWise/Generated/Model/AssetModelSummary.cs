@@ -43,6 +43,7 @@ namespace Amazon.IoTSiteWise.Model
         private DateTime? _lastUpdateDate;
         private string _name;
         private AssetModelStatus _status;
+        private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -231,6 +232,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the asset model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

@@ -36,7 +36,17 @@ namespace Amazon.CustomerProfiles
     /// <summary>
     /// <para>Implementation for accessing CustomerProfiles</para>
     ///
-    /// Amazon Connect Customer Profiles 
+    /// Amazon Connect Customer Profiles <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
+    /// Profiles actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html">Customer
+    /// Profiles data types</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Amazon Connect Customer Profiles is a unified customer profile for your contact center
     /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
@@ -351,6 +361,144 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  BatchGetCalculatedAttributeForProfile
+
+        /// <summary>
+        /// Fetch the possible attribute values given the attribute name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCalculatedAttributeForProfile service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCalculatedAttributeForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
+        public virtual BatchGetCalculatedAttributeForProfileResponse BatchGetCalculatedAttributeForProfile(BatchGetCalculatedAttributeForProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCalculatedAttributeForProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCalculatedAttributeForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCalculatedAttributeForProfile operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCalculatedAttributeForProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetCalculatedAttributeForProfile(BatchGetCalculatedAttributeForProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetCalculatedAttributeForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCalculatedAttributeForProfile.</param>
+        /// 
+        /// <returns>Returns a  BatchGetCalculatedAttributeForProfileResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
+        public virtual BatchGetCalculatedAttributeForProfileResponse EndBatchGetCalculatedAttributeForProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetCalculatedAttributeForProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetProfile
+
+        /// <summary>
+        /// Get a batch of profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetProfile service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
+        public virtual BatchGetProfileResponse BatchGetProfile(BatchGetProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetProfile operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetProfile(BatchGetProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetProfile.</param>
+        /// 
+        /// <returns>Returns a  BatchGetProfileResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
+        public virtual BatchGetProfileResponse EndBatchGetProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCalculatedAttributeDefinition
 
         /// <summary>
@@ -603,6 +751,82 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateEventTrigger
+
+        /// <summary>
+        /// Creates an event trigger, which specifies the rules when to perform action based on
+        /// customer's ingested data.
+        /// 
+        ///  
+        /// <para>
+        /// Each event stream can be associated with only one integration in the same region and
+        /// AWS account as the event stream. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventTrigger service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
+        public virtual CreateEventTriggerResponse CreateEventTrigger(CreateEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventTriggerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventTrigger operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventTrigger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
+        public virtual IAsyncResult BeginCreateEventTrigger(CreateEventTriggerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventTrigger.</param>
+        /// 
+        /// <returns>Returns a  CreateEventTriggerResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
+        public virtual CreateEventTriggerResponse EndCreateEventTrigger(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEventTriggerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIntegrationWorkflow
 
         /// <summary>
@@ -745,6 +969,213 @@ namespace Amazon.CustomerProfiles
         public virtual CreateProfileResponse EndCreateProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSegmentDefinition
+
+        /// <summary>
+        /// Creates a segment definition associated to the given domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateSegmentDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
+        public virtual CreateSegmentDefinitionResponse CreateSegmentDefinition(CreateSegmentDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSegmentDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegmentDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
+        public virtual IAsyncResult BeginCreateSegmentDefinition(CreateSegmentDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegmentDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateSegmentDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
+        public virtual CreateSegmentDefinitionResponse EndCreateSegmentDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSegmentDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSegmentEstimate
+
+        /// <summary>
+        /// Creates a segment estimate query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentEstimate service method.</param>
+        /// 
+        /// <returns>The response from the CreateSegmentEstimate service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
+        public virtual CreateSegmentEstimateResponse CreateSegmentEstimate(CreateSegmentEstimateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSegmentEstimateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSegmentEstimate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentEstimate operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegmentEstimate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
+        public virtual IAsyncResult BeginCreateSegmentEstimate(CreateSegmentEstimateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSegmentEstimate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegmentEstimate.</param>
+        /// 
+        /// <returns>Returns a  CreateSegmentEstimateResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
+        public virtual CreateSegmentEstimateResponse EndCreateSegmentEstimate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSegmentEstimateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSegmentSnapshot
+
+        /// <summary>
+        /// Triggers a job to export a segment to a specified destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CreateSegmentSnapshot service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
+        public virtual CreateSegmentSnapshotResponse CreateSegmentSnapshot(CreateSegmentSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSegmentSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSegmentSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegmentSnapshot operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegmentSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginCreateSegmentSnapshot(CreateSegmentSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSegmentSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegmentSnapshot.</param>
+        /// 
+        /// <returns>Returns a  CreateSegmentSnapshotResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
+        public virtual CreateSegmentSnapshotResponse EndCreateSegmentSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSegmentSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -956,6 +1387,81 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteEventStreamResponse EndDeleteEventStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEventTrigger
+
+        /// <summary>
+        /// Disable and deletes the Event Trigger.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an Event Trigger with an active Integration associated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventTrigger service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
+        public virtual DeleteEventTriggerResponse DeleteEventTrigger(DeleteEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventTriggerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventTrigger operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventTrigger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEventTrigger(DeleteEventTriggerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventTrigger.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventTriggerResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
+        public virtual DeleteEventTriggerResponse EndDeleteEventTrigger(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventTriggerResponse>(asyncResult);
         }
 
         #endregion
@@ -1304,6 +1810,75 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteProfileObjectTypeResponse EndDeleteProfileObjectType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProfileObjectTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSegmentDefinition
+
+        /// <summary>
+        /// Deletes a segment definition from the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegmentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSegmentDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
+        public virtual DeleteSegmentDefinitionResponse DeleteSegmentDefinition(DeleteSegmentDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSegmentDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegmentDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSegmentDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSegmentDefinition(DeleteSegmentDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSegmentDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteSegmentDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
+        public virtual DeleteSegmentDefinitionResponse EndDeleteSegmentDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSegmentDefinitionResponse>(asyncResult);
         }
 
         #endregion
@@ -1811,6 +2386,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetEventTrigger
+
+        /// <summary>
+        /// Get a specific Event Trigger from the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventTrigger service method.</param>
+        /// 
+        /// <returns>The response from the GetEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
+        public virtual GetEventTriggerResponse GetEventTrigger(GetEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventTriggerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventTrigger operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventTrigger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
+        public virtual IAsyncResult BeginGetEventTrigger(GetEventTriggerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventTrigger.</param>
+        /// 
+        /// <returns>Returns a  GetEventTriggerResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
+        public virtual GetEventTriggerResponse EndGetEventTrigger(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEventTriggerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetIdentityResolutionJob
 
         /// <summary>
@@ -2232,6 +2876,282 @@ namespace Amazon.CustomerProfiles
         public virtual GetProfileObjectTypeTemplateResponse EndGetProfileObjectTypeTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProfileObjectTypeTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSegmentDefinition
+
+        /// <summary>
+        /// Gets a segment definition from the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
+        public virtual GetSegmentDefinitionResponse GetSegmentDefinition(GetSegmentDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
+        public virtual IAsyncResult BeginGetSegmentDefinition(GetSegmentDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
+        public virtual GetSegmentDefinitionResponse EndGetSegmentDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSegmentDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSegmentEstimate
+
+        /// <summary>
+        /// Gets the result of a segment estimate query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentEstimate service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentEstimate service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
+        public virtual GetSegmentEstimateResponse GetSegmentEstimate(GetSegmentEstimateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentEstimateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentEstimate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentEstimate operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentEstimate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
+        public virtual IAsyncResult BeginGetSegmentEstimate(GetSegmentEstimateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentEstimate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentEstimate.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentEstimateResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
+        public virtual GetSegmentEstimateResponse EndGetSegmentEstimate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSegmentEstimateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSegmentMembership
+
+        /// <summary>
+        /// Determines if the given profiles are within a segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentMembership service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentMembership service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
+        public virtual GetSegmentMembershipResponse GetSegmentMembership(GetSegmentMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentMembership operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
+        public virtual IAsyncResult BeginGetSegmentMembership(GetSegmentMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentMembership.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentMembershipResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
+        public virtual GetSegmentMembershipResponse EndGetSegmentMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSegmentMembershipResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSegmentSnapshot
+
+        /// <summary>
+        /// Retrieve the latest status of a segment snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentSnapshot service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
+        public virtual GetSegmentSnapshotResponse GetSegmentSnapshot(GetSegmentSnapshotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentSnapshotResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentSnapshot operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
+        public virtual IAsyncResult BeginGetSegmentSnapshot(GetSegmentSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentSnapshot.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentSnapshotResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
+        public virtual GetSegmentSnapshotResponse EndGetSegmentSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSegmentSnapshotResponse>(asyncResult);
         }
 
         #endregion
@@ -2790,6 +3710,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListEventTriggers
+
+        /// <summary>
+        /// List all Event Triggers under a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventTriggers service method.</param>
+        /// 
+        /// <returns>The response from the ListEventTriggers service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
+        public virtual ListEventTriggersResponse ListEventTriggers(ListEventTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventTriggersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEventTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEventTriggers operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventTriggers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
+        public virtual IAsyncResult BeginListEventTriggers(ListEventTriggersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEventTriggers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventTriggers.</param>
+        /// 
+        /// <returns>Returns a  ListEventTriggersResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
+        public virtual ListEventTriggersResponse EndListEventTriggers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEventTriggersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListIdentityResolutionJobs
 
         /// <summary>
@@ -2925,6 +3914,144 @@ namespace Amazon.CustomerProfiles
         public virtual ListIntegrationsResponse EndListIntegrations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIntegrationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListObjectTypeAttributes
+
+        /// <summary>
+        /// Fetch the possible attribute values given the attribute name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectTypeAttributes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
+        public virtual ListObjectTypeAttributesResponse ListObjectTypeAttributes(ListObjectTypeAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectTypeAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectTypeAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributes operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectTypeAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
+        public virtual IAsyncResult BeginListObjectTypeAttributes(ListObjectTypeAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjectTypeAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectTypeAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListObjectTypeAttributesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
+        public virtual ListObjectTypeAttributesResponse EndListObjectTypeAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListObjectTypeAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProfileAttributeValues
+
+        /// <summary>
+        /// Fetch the possible attribute values given the attribute name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileAttributeValues service method.</param>
+        /// 
+        /// <returns>The response from the ListProfileAttributeValues service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
+        public virtual ListProfileAttributeValuesResponse ListProfileAttributeValues(ListProfileAttributeValuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileAttributeValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfileAttributeValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileAttributeValues operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfileAttributeValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
+        public virtual IAsyncResult BeginListProfileAttributeValues(ListProfileAttributeValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfileAttributeValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfileAttributeValues.</param>
+        /// 
+        /// <returns>Returns a  ListProfileAttributeValuesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
+        public virtual ListProfileAttributeValuesResponse EndListProfileAttributeValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfileAttributeValuesResponse>(asyncResult);
         }
 
         #endregion
@@ -3201,6 +4328,75 @@ namespace Amazon.CustomerProfiles
         public virtual ListRuleBasedMatchesResponse EndListRuleBasedMatches(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRuleBasedMatchesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSegmentDefinitions
+
+        /// <summary>
+        /// Lists all segment definitions under a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListSegmentDefinitions service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
+        public virtual ListSegmentDefinitionsResponse ListSegmentDefinitions(ListSegmentDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSegmentDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSegmentDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentDefinitions operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSegmentDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListSegmentDefinitions(ListSegmentDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSegmentDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSegmentDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListSegmentDefinitionsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
+        public virtual ListSegmentDefinitionsResponse EndListSegmentDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSegmentDefinitionsResponse>(asyncResult);
         }
 
         #endregion
@@ -4078,6 +5274,75 @@ namespace Amazon.CustomerProfiles
         public virtual UpdateDomainResponse EndUpdateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEventTrigger
+
+        /// <summary>
+        /// Update the properties of an Event Trigger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventTrigger service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
+        public virtual UpdateEventTriggerResponse UpdateEventTrigger(UpdateEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventTriggerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventTrigger operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventTrigger
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEventTrigger(UpdateEventTriggerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEventTrigger operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventTrigger.</param>
+        /// 
+        /// <returns>Returns a  UpdateEventTriggerResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
+        public virtual UpdateEventTriggerResponse EndUpdateEventTrigger(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEventTriggerResponse>(asyncResult);
         }
 
         #endregion
