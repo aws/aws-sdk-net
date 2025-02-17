@@ -102,6 +102,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildSpec);
                 }
 
+                if(publicRequest.IsSetComputeRoleArn())
+                {
+                    context.Writer.WritePropertyName("computeRoleArn");
+                    context.Writer.Write(publicRequest.ComputeRoleArn);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

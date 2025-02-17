@@ -42,6 +42,7 @@ namespace Amazon.Amplify.Model
         private string _branchArn;
         private string _branchName;
         private string _buildSpec;
+        private string _computeRoleArn;
         private DateTime? _createTime;
         private List<string> _customDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
@@ -216,6 +217,29 @@ namespace Amazon.Amplify.Model
         internal bool IsSetBuildSpec()
         {
             return this._buildSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role for a branch of an SSR app. The Compute
+        /// role allows the Amplify Hosting compute service to securely access specific Amazon
+        /// Web Services resources based on the role's permissions. For more information about
+        /// the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding
+        /// an SSR Compute role</a> in the <i>Amplify User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string ComputeRoleArn
+        {
+            get { return this._computeRoleArn; }
+            set { this._computeRoleArn = value; }
+        }
+
+        // Check to see if ComputeRoleArn property is set
+        internal bool IsSetComputeRoleArn()
+        {
+            return this._computeRoleArn != null;
         }
 
         /// <summary>
