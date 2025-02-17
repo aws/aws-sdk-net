@@ -414,50 +414,50 @@ namespace Amazon.Runtime.Documents
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
         public static Document FromObject(object o)
         {
-        string jsonString = JsonSerializer.Serialize(o);
-        using JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
+            string jsonString = JsonSerializer.Serialize(o);
+            using JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
 
-        return FromObject(jsonDoc.RootElement);
+            return FromObject(jsonDoc.RootElement);
         }
 
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-    private static Document FromObject(JsonElement jsonElement)
-    {
-        switch (jsonElement.ValueKind)
+        private static Document FromObject(JsonElement jsonElement)
         {
-            case JsonValueKind.Undefined:
-            case JsonValueKind.Null:
-                return new Document();
-            case JsonValueKind.False:
-            case JsonValueKind.True:
-                return new Document(jsonElement.GetBoolean());
-            case JsonValueKind.Number:
-                if (jsonElement.TryGetInt64(out long longValue))
-                    return new Document(longValue);
-                if (jsonElement.TryGetDouble(out double doubleValue))
-                    return new Document(doubleValue);
-                throw new NotSupportedException("Unsupported number format");
-            case JsonValueKind.String:
-                return new Document(jsonElement.GetString());
-            case JsonValueKind.Array:
-                return new Document(jsonElement.EnumerateArray().Select(FromObject).ToArray());
-            case JsonValueKind.Object:
-                var dictionary = new Dictionary<string, Document>();
-                Copy(jsonElement, dictionary);
-                return new Document(dictionary);
-        }
+            switch (jsonElement.ValueKind)
+            {
+                case JsonValueKind.Undefined:
+                case JsonValueKind.Null:
+                    return new Document();
+                case JsonValueKind.False:
+                case JsonValueKind.True:
+                    return new Document(jsonElement.GetBoolean());
+                case JsonValueKind.Number:
+                    if (jsonElement.TryGetInt64(out long longValue))
+                        return new Document(longValue);
+                    if (jsonElement.TryGetDouble(out double doubleValue))
+                        return new Document(doubleValue);
+                    throw new NotSupportedException("Unsupported number format");
+                case JsonValueKind.String:
+                    return new Document(jsonElement.GetString());
+                case JsonValueKind.Array:
+                    return new Document(jsonElement.EnumerateArray().Select(FromObject).ToArray());
+                case JsonValueKind.Object:
+                    var dictionary = new Dictionary<string, Document>();
+                    Copy(jsonElement, dictionary);
+                    return new Document(dictionary);
+            }
 
-        throw new NotSupportedException($"Couldn't convert {jsonElement.ValueKind}");
-    }
+            throw new NotSupportedException($"Couldn't convert {jsonElement.ValueKind}");
+        }
 
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-    private static void Copy(JsonElement jsonElement, Dictionary<string, Document> target)
-    {
-        foreach (JsonProperty property in jsonElement.EnumerateObject())
+        private static void Copy(JsonElement jsonElement, Dictionary<string, Document> target)
         {
-            target[property.Name] = FromObject(property.Value);
+            foreach (JsonProperty property in jsonElement.EnumerateObject())
+            {
+                target[property.Name] = FromObject(property.Value);
+            }
         }
-    }
         #endregion
     }
 }

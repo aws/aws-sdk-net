@@ -1,6 +1,5 @@
 The AWS SDK for .NET includes the following third-party software/licensing:
 
-** Json processing from LitJson
 All the source code and related files distributed with this software have
 been dedicated to the public domain by the authors.
 
