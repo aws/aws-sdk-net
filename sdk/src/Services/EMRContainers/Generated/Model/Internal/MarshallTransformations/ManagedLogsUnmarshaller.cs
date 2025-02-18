@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfiguration Object
+    /// Response Unmarshaller for ManagedLogs Object
     /// </summary>  
-    public class MonitoringConfigurationUnmarshaller : IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
+    public class ManagedLogsUnmarshaller : IUnmarshaller<ManagedLogs, XmlUnmarshallerContext>, IUnmarshaller<ManagedLogs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfiguration IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ManagedLogs IUnmarshaller<ManagedLogs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ManagedLogs Unmarshall(JsonUnmarshallerContext context)
         {
-            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
+            ManagedLogs unmarshalledObject = new ManagedLogs();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = CloudWatchMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchMonitoringConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("containerLogRotationConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerLogRotationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerLogRotationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("managedLogs", targetDepth))
-                {
-                    var unmarshaller = ManagedLogsUnmarshaller.Instance;
-                    unmarshalledObject.ManagedLogs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("persistentAppUI", targetDepth))
+                if (context.TestExpression("allowAWSToRetainLogs", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PersistentAppUI = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowAWSToRetainLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("encryptionKeyArn", targetDepth))
                 {
-                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
+        private static ManagedLogsUnmarshaller _instance = new ManagedLogsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigurationUnmarshaller Instance
+        public static ManagedLogsUnmarshaller Instance
         {
             get
             {

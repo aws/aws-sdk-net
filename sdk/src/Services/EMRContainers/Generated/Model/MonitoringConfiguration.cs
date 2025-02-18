@@ -36,6 +36,7 @@ namespace Amazon.EMRContainers.Model
     {
         private CloudWatchMonitoringConfiguration _cloudWatchMonitoringConfiguration;
         private ContainerLogRotationConfiguration _containerLogRotationConfiguration;
+        private ManagedLogs _managedLogs;
         private PersistentAppUI _persistentAppUI;
         private S3MonitoringConfiguration _s3MonitoringConfiguration;
 
@@ -73,6 +74,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetContainerLogRotationConfiguration()
         {
             return this._containerLogRotationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedLogs. 
+        /// <para>
+        /// The entity that controls configuration for managed logs.
+        /// </para>
+        /// </summary>
+        public ManagedLogs ManagedLogs
+        {
+            get { return this._managedLogs; }
+            set { this._managedLogs = value; }
+        }
+
+        // Check to see if ManagedLogs property is set
+        internal bool IsSetManagedLogs()
+        {
+            return this._managedLogs != null;
         }
 
         /// <summary>

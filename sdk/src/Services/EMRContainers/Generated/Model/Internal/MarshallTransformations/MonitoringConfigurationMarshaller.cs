@@ -70,6 +70,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetManagedLogs())
+            {
+                context.Writer.WritePropertyName("managedLogs");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ManagedLogsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedLogs, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPersistentAppUI())
             {
                 context.Writer.WritePropertyName("persistentAppUI");
