@@ -7,7 +7,6 @@ using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using System.Text.Json;
-using Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests
