@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fixed JsonRPCRequestMarshaller to properly handle enum payloads by setting content headers to plain text instead of JSON object"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
