@@ -292,7 +292,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static string GenerateName(string name)
         {
-            return name + new Random().Next();
+            return name + DateTime.UtcNow.Ticks;
         }
         public class ListSleeper
         {
