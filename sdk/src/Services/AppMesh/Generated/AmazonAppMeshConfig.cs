@@ -32,7 +32,7 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("App Mesh", "3.7.400.96");
+            InternalSDKUtils.BuildUserAgentString("App Mesh", "3.7.400.97");
 
         private string _userAgent = UserAgentString;
         ///<summary>

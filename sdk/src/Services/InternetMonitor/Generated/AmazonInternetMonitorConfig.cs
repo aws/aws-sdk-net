@@ -32,7 +32,7 @@ namespace Amazon.InternetMonitor
     public partial class AmazonInternetMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("InternetMonitor", "3.7.402.46");
+            InternalSDKUtils.BuildUserAgentString("InternetMonitor", "3.7.402.47");
 
         private string _userAgent = UserAgentString;
         ///<summary>

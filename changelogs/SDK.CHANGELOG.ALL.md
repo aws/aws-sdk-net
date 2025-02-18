@@ -1,3 +1,15 @@
+### 3.7.985.0 (2025-02-18 19:25 UTC)
+* Batch (3.7.404.32)
+	* This documentation-only update corrects some typos.
+* EMRContainers (3.7.402.0)
+	* EMR on EKS StartJobRun Api will be supporting the configuration of log storage in AWS by using "managedLogs" under "MonitoringConfiguration".
+* MediaLive (3.7.411.0)
+	* Adds support for creating CloudWatchAlarmTemplates for AWS Elemental MediaTailor Playback Configuration resources.
+* Core 3.7.402.3
+	* Temporarily disable calculating `CRC64-NVME` checksums for responses, as it may cause issues when reading objects from S3 using the [Read-S3Object Cmdlet](https://docs.aws.amazon.com/powershell/latest/reference/items/Read-S3Object.html)
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.984.0 (2025-02-17 19:18 UTC)
 * Amplify (3.7.404.0)
 	* Add ComputeRoleArn to CreateApp, UpdateApp, CreateBranch, and UpdateBranch, allowing caller to specify a role to be assumed by Amplify Hosting for server-side rendered applications.
