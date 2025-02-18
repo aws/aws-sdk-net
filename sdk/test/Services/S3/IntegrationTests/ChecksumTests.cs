@@ -42,7 +42,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static IEnumerable<object[]> GetAlgorithmsToTest =>
             new List<object[]> {
-                new object[] { CoreChecksumAlgorithm.CRC64NVME },
+                // TODO: Re-enable CRC64 once the CRT issue is resolved.
+                // new object[] { CoreChecksumAlgorithm.CRC64NVME },
                 new object[] { CoreChecksumAlgorithm.CRC32C },
                 new object[] { CoreChecksumAlgorithm.CRC32 },
                 new object[] { CoreChecksumAlgorithm.SHA1 },
@@ -233,6 +234,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             Assert.IsNotNull(response.ChecksumSHA256);
             Assert.IsNull(response.ChecksumCRC32);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestCRC64ChecksumIsCalculated()
+        {
+            var response = Client.PutObject(new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = "test-file-crc64.txt",
+                ContentBody = "Hello world",
+                ChecksumAlgorithm = ChecksumAlgorithm.CRC64NVME,
+            });
+
+            Assert.IsNotNull(response.ChecksumCRC64NVME);
         }
 
         /// <summary>

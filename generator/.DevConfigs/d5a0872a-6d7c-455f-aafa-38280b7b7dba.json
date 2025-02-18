@@ -1,0 +1,11 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Temporarily disable calculating `CRC64-NVME` checksums for responses, as it may cause issues when reading objects from S3 using the [Read-S3Object Cmdlet](https://docs.aws.amazon.com/powershell/latest/reference/items/Read-S3Object.html)"
+        ],
+        "backwardIncompatibilitiesToIgnore": [],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}
+
