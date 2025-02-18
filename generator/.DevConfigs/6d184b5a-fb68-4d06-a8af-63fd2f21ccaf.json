@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "[Breaking Change] Remove LitJson source from SDK and clean up all references."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

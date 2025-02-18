@@ -28,7 +28,6 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ThirdParty.Json.LitJson;
 using System.Text.Json;
 
 namespace AWSSDK.UnitTests

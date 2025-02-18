@@ -20,7 +20,6 @@ using System.IO;
 using System.Text.Json;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Transform
 {
