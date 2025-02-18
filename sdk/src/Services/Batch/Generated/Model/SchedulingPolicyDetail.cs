@@ -62,7 +62,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FairsharePolicy. 
         /// <para>
-        /// The fair share policy for the scheduling policy.
+        /// The fair-share scheduling policy details.
         /// </para>
         /// </summary>
         public FairsharePolicy FairsharePolicy
@@ -80,7 +80,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the scheduling policy.
+        /// The name of the fair-share scheduling policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,8 +99,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that you apply to the scheduling policy to categorize and organize your resources.
-        /// Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// The tags that you apply to the fair-share scheduling policy to categorize and organize
+        /// your resources. Each tag consists of a key and an optional value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services resources</a> in <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>

@@ -40,8 +40,8 @@ namespace Amazon.Batch.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
-    /// at a time. 
+    /// Job queues with a scheduling policy are limited to 500 active share identifiers at
+    /// a time. 
     /// </para>
     ///  </note> <important> 
     /// <para>
@@ -335,9 +335,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SchedulingPriorityOverride. 
         /// <para>
-        /// The scheduling priority for the job. This only affects jobs in job queues with a fair
-        /// share policy. Jobs with a higher scheduling priority are scheduled before jobs with
-        /// a lower scheduling priority. This overrides any scheduling priority in the job definition
+        /// The scheduling priority for the job. This only affects jobs in job queues with a fair-share
+        /// policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower
+        /// scheduling priority. This overrides any scheduling priority in the job definition
         /// and works only within a single share identifier.
         /// </para>
         ///  
@@ -361,8 +361,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
         /// The share identifier for the job. Don't specify this parameter if the job queue doesn't
-        /// have a scheduling policy. If the job queue has a scheduling policy, then this parameter
-        /// must be specified.
+        /// have a fair-share scheduling policy. If the job queue has a fair-share scheduling
+        /// policy, then this parameter must be specified.
         /// </para>
         ///  
         /// <para>
