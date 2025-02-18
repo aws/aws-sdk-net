@@ -559,12 +559,6 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequest.RequestId</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\S]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:signal-map:.+$</pattern>
   </property-value-rule>
@@ -2424,12 +2418,6 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequestContent.RequestId</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponseContent.Arn</property>

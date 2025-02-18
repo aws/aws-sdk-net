@@ -76,17 +76,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DryRun);
                 }
 
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
