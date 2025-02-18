@@ -36,7 +36,7 @@ namespace Amazon.Runtime.EventStreams
     {
         BoolTrue = 0,
         BoolFalse,
-        Byte,
+        SByte,
         Int16,
         Int32,
         Int64,
@@ -88,14 +88,14 @@ namespace Amazon.Runtime.EventStreams
         void SetBool(bool value);
 
         /// <summary>
-        /// Returns the current value as a byte
+        /// Returns the current value as a signed byte
         /// </summary>
-        Byte AsByte();
+        sbyte AsSByte();
 
         /// <summary>
         /// Sets the current value
         /// </summary>
-        void SetByte(Byte value);
+        void SetSByte(sbyte value);
 
         /// <summary>
         /// Gets the current value as a 16 bit integer. (Host Order).
@@ -236,8 +236,8 @@ namespace Amazon.Runtime.EventStreams
                 case EventStreamHeaderType.BoolFalse:
                     header.HeaderValue = false;
                     break;
-                case EventStreamHeaderType.Byte:
-                    header.HeaderValue = buffer[newOffset];
+                case EventStreamHeaderType.SByte:
+                    header.HeaderValue = (sbyte)buffer[newOffset];
                     newOffset += _sizeOfByte;
                     break;
                 case EventStreamHeaderType.Int16:
@@ -313,8 +313,8 @@ namespace Amazon.Runtime.EventStreams
                 case EventStreamHeaderType.BoolTrue:
                 case EventStreamHeaderType.BoolFalse:
                     break;
-                case EventStreamHeaderType.Byte:
-                    buffer[newOffset++] = (byte)HeaderValue;
+                case EventStreamHeaderType.SByte:
+                    buffer[newOffset++] = (byte)(sbyte)HeaderValue;
                     break;
                 case EventStreamHeaderType.Int16:
                     serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder((Int16)HeaderValue));
@@ -382,7 +382,7 @@ namespace Amazon.Runtime.EventStreams
                 case EventStreamHeaderType.BoolTrue:
                 case EventStreamHeaderType.BoolFalse:
                     break;
-                case EventStreamHeaderType.Byte:
+                case EventStreamHeaderType.SByte:
                     len += _sizeOfByte;
                     break;
                 case EventStreamHeaderType.Int16:
@@ -434,20 +434,20 @@ namespace Amazon.Runtime.EventStreams
         }
 
         /// <summary>
-        /// Returns the current value as a byte
+        /// Returns the current value as a signed byte
         /// </summary>
-        public Byte AsByte()
+        public sbyte AsSByte()
         {
-            return (Byte)HeaderValue;
+            return (sbyte)HeaderValue;
         }
 
         /// <summary>
         /// Sets the current value
         /// </summary>
-        public void SetByte(Byte value)
+        public void SetSByte(sbyte value)
         {
             HeaderValue = value;
-            HeaderType = EventStreamHeaderType.Byte;
+            HeaderType = EventStreamHeaderType.SByte;
         }
 
         /// <summary>

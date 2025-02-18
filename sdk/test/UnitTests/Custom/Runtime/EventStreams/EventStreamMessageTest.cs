@@ -147,10 +147,9 @@ namespace AWSSDK.UnitTests
                                 var boolVal = header.GetProperty(HeaderValueField).GetBoolean();
                                 Assert.AreEqual(boolVal, headerValue.AsBool());
                                 break;
-                            case EventStreamHeaderType.Byte:
-                                //commenting this out for now because the test case clearly defines a signed byte and this needs to be changed internally
-                                //var byteVal = header.GetProperty(HeaderValueField).GetSByte();
-                                //Assert.AreEqual(byteVal, headerValue.AsSByte());
+                            case EventStreamHeaderType.SByte:                                
+                                var byteVal = header.GetProperty(HeaderValueField).GetSByte();
+                                Assert.AreEqual(byteVal, headerValue.AsSByte());
                                 break;
                             case EventStreamHeaderType.Int16:
                                 var int16Val = header.GetProperty(HeaderValueField).GetInt16();
@@ -161,8 +160,8 @@ namespace AWSSDK.UnitTests
                                 Assert.AreEqual(int32Val, headerValue.AsInt32());
                                 break;
                             case EventStreamHeaderType.Int64:
-                                var intVal = header.GetProperty(HeaderValueField).GetInt64();
-                                Assert.AreEqual(intVal, headerValue.AsInt64());
+                                var int64Val = header.GetProperty(HeaderValueField).GetInt64();
+                                Assert.AreEqual(int64Val, headerValue.AsInt64());
                                 break;
                             case EventStreamHeaderType.Timestamp:
                                 var dateVal = header.GetProperty(HeaderValueField).GetInt64();
@@ -226,10 +225,9 @@ namespace AWSSDK.UnitTests
                                 var boolVal = header.GetProperty(HeaderValueField).GetBoolean();
                                 headerValue.SetBool(boolVal);
                                 break;
-                            case EventStreamHeaderType.Byte:
-                                // commenting this out for now b/c the test case clearly defines a signed byte and this needs to be changed internally
-                                //var byteVal = (sbyte)(int)header[HeaderValueField];
-                                //headerValue.SetSByte(byteVal);
+                            case EventStreamHeaderType.SByte:                                
+                                var byteVal = header.GetProperty(HeaderValueField).GetSByte();
+                                headerValue.SetSByte(byteVal);
                                 break;
                             case EventStreamHeaderType.Int16:
                                 var int16Val = header.GetProperty(HeaderValueField).GetInt16();
@@ -240,8 +238,8 @@ namespace AWSSDK.UnitTests
                                 headerValue.SetInt32(int32Val);
                                 break;
                             case EventStreamHeaderType.Int64:
-                                var intVal = (long)header.GetProperty(HeaderValueField).GetInt64();
-                                headerValue.SetInt64(intVal);
+                                var int64Val = (long)header.GetProperty(HeaderValueField).GetInt64();
+                                headerValue.SetInt64(int64Val);
                                 break;
                             case EventStreamHeaderType.Timestamp:
                                 var dateVal = header.GetProperty(HeaderValueField).GetInt64();
