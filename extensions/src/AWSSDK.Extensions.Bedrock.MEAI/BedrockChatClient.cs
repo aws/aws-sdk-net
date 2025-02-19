@@ -39,6 +39,8 @@ internal sealed partial class BedrockChatClient : IChatClient
     private readonly IAmazonBedrockRuntime _runtime;
     /// <summary>Default model ID to use when no model is specified in the request.</summary>
     private readonly string? _modelId;
+    /// <summary>Metadata describing the chat client.</summary>
+    private readonly ChatClientMetadata _metadata;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BedrockChatClient"/> class.
@@ -52,7 +54,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         _runtime = runtime!;
         _modelId = modelId;
 
-        Metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId);
+        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId);
     }
 
     public void Dispose()
@@ -61,10 +63,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
-    public ChatClientMetadata Metadata { get; }
-
-    /// <inheritdoc />
-    public async Task<ChatCompletion> CompleteAsync(
+    public async Task<ChatResponse> GetResponseAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
         if (chatMessages is null)
@@ -100,7 +99,7 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                 if (content.Image is { Source.Bytes: { } imageBytes, Format: { } imageFormat })
                 {
-                    result.Contents.Add(new ImageContent(imageBytes.ToArray(), GetMimeType(imageFormat)));
+                    result.Contents.Add(new DataContent(imageBytes.ToArray(), GetMimeType(imageFormat)));
                 }
 
                 if (content.Video is { Source.Bytes: { } videoBytes, Format: { } videoFormat })
@@ -125,7 +124,7 @@ internal sealed partial class BedrockChatClient : IChatClient
             result.AdditionalProperties = new(responseFieldsDictionary);
         }
 
-        return new ChatCompletion(result)
+        return new(result)
         {
             FinishReason = response.StopReason is not null ? GetChatFinishReason(response.StopReason) : null,
             Usage = response.Usage is TokenUsage usage ? new()
@@ -138,7 +137,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
-    public async IAsyncEnumerable<StreamingChatCompletionUpdate> CompleteStreamingAsync(
+    public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         if (chatMessages is null)
@@ -254,7 +253,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
-    public object? GetService(Type serviceType, object? key)
+    public object? GetService(Type serviceType, object? serviceKey)
     {
         if (serviceType is null)
         {
@@ -262,7 +261,8 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return 
-            key is not null ? null :
+            serviceKey is not null ? null :
+            serviceType == typeof(ChatClientMetadata) ? _metadata :
             serviceType.IsInstanceOfType(_runtime) ? _runtime :
             serviceType.IsInstanceOfType(this) ? this :
             null;
@@ -342,7 +342,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                     contents.Add(new() { Text = tc.Text });
                     break;
 
-                case DataContent dc when dc.ContainsData:
+                case DataContent dc when dc.Data.HasValue:
                     if (GetImageFormat(dc.MediaType) is ImageFormat imageFormat)
                     {
                         contents.Add(new()
@@ -602,12 +602,19 @@ internal sealed partial class BedrockChatClient : IChatClient
             Document inputs = default;
             List<Document> required = [];
 
-            foreach (var parameter in f.Metadata.Parameters)
+            if (f.JsonSchema.TryGetProperty("properties", out JsonElement properties))
             {
-                inputs.Add(parameter.Name, parameter.Schema is JsonElement schema ? ToDocument(schema) : new Document(true));
-                if (parameter.IsRequired)
+                foreach (JsonProperty parameter in properties.EnumerateObject())
                 {
-                    required.Add(parameter.Name);
+                    inputs.Add(parameter.Name, ToDocument(parameter.Value));
+                }
+            }
+
+            if (f.JsonSchema.TryGetProperty("required", out JsonElement requiredProperties))
+            {
+                foreach (JsonElement requiredProperty in requiredProperties.EnumerateArray())
+                {
+                    required.Add(requiredProperty.GetString());
                 }
             }
 
@@ -615,8 +622,8 @@ internal sealed partial class BedrockChatClient : IChatClient
             {
                 ToolSpec = new ToolSpecification()
                 {
-                    Name = f.Metadata.Name,
-                    Description = !string.IsNullOrEmpty(f.Metadata.Description) ? f.Metadata.Description : f.Metadata.Name,
+                    Name = f.Name,
+                    Description = !string.IsNullOrEmpty(f.Description) ? f.Description : f.Name,
                     InputSchema = new()
                     {
                         Json = new(new Dictionary<string, Document>()
@@ -636,6 +643,7 @@ internal sealed partial class BedrockChatClient : IChatClient
             switch (options!.ToolMode)
             {
                 case AutoChatToolMode:
+                case null:
                     choice = new ToolChoice() { Auto = new() };
                     break;
 
@@ -714,7 +722,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                             }
                             catch (Exception e)
                             {
-                                DefaultLogger.Debug(e, "Unable to serialize ChatOptions.AdditionalProperties[\"{PropertyName}\"] of type {PropertyType}", prop.Key, prop.Value?.GetType());
+                                DefaultLogger.Debug(e, "Unable to serialize ChatOptions.AdditionalProperties[\"{0}\"] of type {1}", prop.Key, prop.Value?.GetType());
                             }
                             break;
                     }
