@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes a web-based, remote graphical user interface (GUI), NICE DCV session. The
-    /// session is used to access a virtual computer’s operating system or application.
+    /// Describes a web-based, remote graphical user interface (GUI), Amazon DCV session.
+    /// The session is used to access a virtual computer’s operating system or application.
     /// </summary>
     public partial class Session
     {

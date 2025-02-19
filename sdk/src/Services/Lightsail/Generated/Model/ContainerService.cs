@@ -284,7 +284,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
         /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
         /// in the <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
@@ -465,7 +465,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tag keys and optional values for the resource. For more information about tags
-        /// in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+        /// in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>

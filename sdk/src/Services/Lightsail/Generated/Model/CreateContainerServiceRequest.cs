@@ -36,7 +36,7 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// A Lightsail container service is a compute resource to which you can deploy containers.
-    /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container
+    /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-container-services">Container
     /// services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.
     /// </para>
     /// </summary>
@@ -117,7 +117,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
         /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
         /// in the <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
@@ -261,7 +261,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+        /// For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         /// </summary>

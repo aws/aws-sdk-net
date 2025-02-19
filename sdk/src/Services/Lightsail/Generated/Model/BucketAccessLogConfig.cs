@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// For more information about bucket access logs, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging
+    /// For more information about bucket access logs, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bucket-access-logs">Logging
     /// bucket requests using access logging in Amazon Lightsail</a> in the <i>Amazon Lightsail
     /// Developer Guide</i>.
     /// </para>

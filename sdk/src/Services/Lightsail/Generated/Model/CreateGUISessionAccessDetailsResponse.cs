@@ -97,7 +97,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Sessions. 
         /// <para>
-        /// Returns information about the specified NICE DCV GUI session.
+        /// Returns information about the specified Amazon DCV GUI session.
         /// </para>
         /// </summary>
         public List<Session> Sessions

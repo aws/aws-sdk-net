@@ -80,7 +80,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -129,7 +129,7 @@ namespace Amazon.Lightsail.Model
         ///  <ul> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -211,7 +211,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-keeping-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>

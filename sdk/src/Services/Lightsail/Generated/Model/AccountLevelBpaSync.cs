@@ -44,7 +44,7 @@ namespace Amazon.Lightsail.Model
     /// When the account-level BPA status is <c>InSync</c>, the Amazon S3 account-level BPA
     /// configuration is synchronized and it applies to your Lightsail buckets. For more information
     /// about Amazon Simple Storage Service account-level BPA and how it affects Lightsail
-    /// buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+    /// buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block
     /// public access for buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>.
     /// </para>
@@ -118,7 +118,7 @@ namespace Amazon.Lightsail.Model
         /// BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the
         /// synchronization can occur. This means that all your buckets are private and not publicly
         /// accessible. For more information about how to create the required service-linked role
-        /// to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
+        /// to allow synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using
         /// Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
         /// Guide</i>.
         /// </para>
@@ -129,14 +129,14 @@ namespace Amazon.Lightsail.Model
         /// BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access
         /// permissions and individual object access permissions apply to your Lightsail buckets.
         /// For more information about how to create the required service-linked role to allow
-        /// synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
+        /// synchronization, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-using-service-linked-roles">Using
         /// Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>Unknown</c> - The reason that synchronization failed is unknown. Contact Amazon
-        /// Web Services Support for more information.
+        /// Web ServicesSupport for more information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

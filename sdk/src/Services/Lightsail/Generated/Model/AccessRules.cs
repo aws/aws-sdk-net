@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// For more information about bucket access permissions, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions">Understanding
+    /// For more information about bucket access permissions, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-understanding-bucket-permissions">Understanding
     /// bucket permissions in Amazon Lightsail</a> in the 
     /// </para>
     ///  

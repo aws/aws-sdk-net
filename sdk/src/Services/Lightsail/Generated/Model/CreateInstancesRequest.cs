@@ -36,7 +36,7 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// The <c>create instances</c> operation supports tag-based access control via request
-    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
     /// Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -265,7 +265,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// Depending on the machine image you choose, the command to get software on your instance
         /// varies. Amazon Linux and CentOS use <c>yum</c>, Debian and Ubuntu use <c>apt-get</c>,
-        /// and FreeBSD uses <c>pkg</c>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+        /// and FreeBSD uses <c>pkg</c>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </note>
