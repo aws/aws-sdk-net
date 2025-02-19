@@ -185,8 +185,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OverrideVpcConfig. 
         /// <para>
-        /// The customized VPC configuration at the instance group level that overrides the default
-        /// VPC configuration of the SageMaker HyperPod cluster.
+        /// The customized Amazon VPC configuration at the instance group level that overrides
+        /// the default Amazon VPC configuration of the SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
         public VpcConfig OverrideVpcConfig

@@ -14553,6 +14553,46 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlR7iXlarge = new ProductionVariantInstanceType("ml.r7i.xlarge");
         /// <summary>
+        /// Constant MlR8g12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g12xlarge = new ProductionVariantInstanceType("ml.r8g.12xlarge");
+        /// <summary>
+        /// Constant MlR8g16xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g16xlarge = new ProductionVariantInstanceType("ml.r8g.16xlarge");
+        /// <summary>
+        /// Constant MlR8g24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g24xlarge = new ProductionVariantInstanceType("ml.r8g.24xlarge");
+        /// <summary>
+        /// Constant MlR8g2xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g2xlarge = new ProductionVariantInstanceType("ml.r8g.2xlarge");
+        /// <summary>
+        /// Constant MlR8g48xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g48xlarge = new ProductionVariantInstanceType("ml.r8g.48xlarge");
+        /// <summary>
+        /// Constant MlR8g4xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g4xlarge = new ProductionVariantInstanceType("ml.r8g.4xlarge");
+        /// <summary>
+        /// Constant MlR8g8xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g8xlarge = new ProductionVariantInstanceType("ml.r8g.8xlarge");
+        /// <summary>
+        /// Constant MlR8gLarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gLarge = new ProductionVariantInstanceType("ml.r8g.large");
+        /// <summary>
+        /// Constant MlR8gMedium for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gMedium = new ProductionVariantInstanceType("ml.r8g.medium");
+        /// <summary>
+        /// Constant MlR8gXlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gXlarge = new ProductionVariantInstanceType("ml.r8g.xlarge");
+        /// <summary>
         /// Constant MlT22xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlT22xlarge = new ProductionVariantInstanceType("ml.t2.2xlarge");

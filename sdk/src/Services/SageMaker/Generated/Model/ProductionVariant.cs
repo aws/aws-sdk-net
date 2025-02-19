@@ -163,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NVIDIA driver version: 535.54.03
+        /// NVIDIA driver version: 535
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -175,15 +175,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NVIDIA driver version: 535.54.03
+        /// NVIDIA driver version: 535
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CUDA driver version: 12.2
+        /// CUDA version: 12.2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CUDA Container Toolkit with disabled CUDA-compat mounting
+        /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
         /// </para>
         ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-3-1</dt> <dd> <ul> <li> 
         /// <para>
@@ -191,7 +191,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NVIDIA driver version: 550.144.01
+        /// NVIDIA driver version: 550
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -199,7 +199,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Container Toolkit with disabled CUDA-compat mounting
+        /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>

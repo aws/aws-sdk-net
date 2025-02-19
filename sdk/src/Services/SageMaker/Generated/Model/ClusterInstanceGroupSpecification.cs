@@ -184,30 +184,50 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OverrideVpcConfig. 
         /// <para>
-        /// To configure multi-AZ deployments, customize the VPC configuration at the instance
+        /// To configure multi-AZ deployments, customize the Amazon VPC configuration at the instance
         /// group level. You can specify different subnets and security groups across different
         /// AZs in the instance group specification to override a SageMaker HyperPod cluster's
-        /// default VPC configuration. For more information about deploying a cluster in multiple
-        /// AZs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones">Setting
+        /// default Amazon VPC configuration. For more information about deploying a cluster in
+        /// multiple AZs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones">Setting
         /// up SageMaker HyperPod clusters across multiple AZs</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing
-        /// enabled in your instance group VPC configuration, the nodes automatically use IPv6
-        /// addressing for network communication.
+        /// When your Amazon VPC and subnets support IPv6, network communications differ based
+        /// on the cluster orchestration platform:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  For information about adding IPv6 support for your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
-        /// support for your VPC</a>.
+        /// Slurm-orchestrated clusters automatically configure nodes with dual IPv6 and IPv4
+        /// addresses, allowing immediate IPv6 network communications.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  For information about creating a new VPC for use with IPv6, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Create
-        /// a VPC</a>.
+        /// In Amazon EKS-orchestrated clusters, nodes receive dual-stack addressing, but pods
+        /// can only use IPv6 when the Amazon EKS cluster is explicitly IPv6-enabled. For information
+        /// about deploying an IPv6 Amazon EKS cluster, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/deploy-ipv6-cluster.html#_deploy_an_ipv6_cluster_with_eksctl">Amazon
+        /// EKS IPv6 Cluster Deployment</a>.
         /// </para>
-        ///  </note>
+        ///  </li> </ul> 
+        /// <para>
+        /// Additional resources for IPv6 configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For information about adding IPv6 support to your VPC, see to <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
+        /// Support for VPC</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For information about creating a new IPv6-compatible VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Amazon
+        /// VPC Creation Guide</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure SageMaker HyperPod with a custom Amazon VPC, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-optional-vpc">Custom
+        /// Amazon VPC Setup for SageMaker HyperPod</a>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public VpcConfig OverrideVpcConfig
         {
