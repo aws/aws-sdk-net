@@ -157,14 +157,12 @@ namespace Amazon.Runtime.Credentials
 
                 using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
                 {
-                    writer.WriteLine("Unable to find credentials");
+                    writer.WriteLine("Failed to resolve AWS credentials. The credential providers used to search for credentials returned the following errors:");
                     writer.WriteLine();
                     for (int i = 0; i < errors.Count; i++)
                     {
                         Exception e = errors[i];
-                        writer.WriteLine("Exception {0} of {1}:", i + 1, errors.Count);
-                        writer.WriteLine(e.ToString());
-                        writer.WriteLine();
+                        writer.WriteLine("Exception {0} of {1}: {2}", i + 1, errors.Count, e.Message);
                     }
 
                     throw new AmazonClientException(writer.ToString());
@@ -241,7 +239,25 @@ namespace Amazon.Runtime.Credentials
                 Logger.GetLogger(typeof(GenericContainerCredentials)).Error(e, $"Failed to access environment variables {GenericContainerCredentials.RelativeURIEnvVariable} and {GenericContainerCredentials.FullURIEnvVariable}." +
                     $" Either {GenericContainerCredentials.RelativeURIEnvVariable} or {GenericContainerCredentials.FullURIEnvVariable} environment variables must be set.");
             }
-            return DefaultInstanceProfileAWSCredentials.Instance;
+
+            try
+            {
+                var credentials = DefaultInstanceProfileAWSCredentials.Instance;
+
+                // Test that credentials can be resolved using EC2 instance metadata. Assuming the
+                // credentials are successfully resolved the credentials will be cached so the
+                // later use of getting credentials for making the request will not have to redo
+                // the network calls to EC2 instance metadata to get credentials.
+                credentials.GetCredentials();
+
+                return credentials;
+            }
+            catch (AmazonServiceException e)
+            {
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Failed to connect to EC2 instance metadata to retrieve credentials: {0}.",
+                    e.Message), e);
+            }
         }
 
         /// <summary>
