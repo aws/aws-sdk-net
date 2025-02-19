@@ -1229,7 +1229,8 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
-        /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+        /// do stage conditions work?</a>.For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
         /// rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
@@ -1319,7 +1320,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Used to override a stage condition.
+        /// Used to override a stage condition. For more information about conditions, see <a
+        /// href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+        /// do stage conditions work?</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition service method.</param>
         /// <param name="cancellationToken">

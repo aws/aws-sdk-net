@@ -30,32 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The conditions for making checks that, if met, succeed a stage. For more information
-    /// about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
-    /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
-    /// do stage conditions work?</a>.
+    /// The environment variables for the action.
     /// </summary>
-    public partial class SuccessConditions
+    public partial class EnvironmentVariable
     {
-        private List<Condition> _conditions = AWSConfigs.InitializeCollections ? new List<Condition>() : null;
+        private string _name;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Conditions. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The conditions that are success conditions.
+        /// The environment variable name in the key-value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
-        public List<Condition> Conditions
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Name
         {
-            get { return this._conditions; }
-            set { this._conditions = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Conditions property is set
-        internal bool IsSetConditions()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The environment variable value in the key-value pair.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2000)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }
