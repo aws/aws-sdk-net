@@ -4930,6 +4930,71 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  PutConfigurationSetArchivingOptions
+
+        /// <summary>
+        /// Associate the configuration set with a MailManager archive. When you send email using
+        /// the <c>SendEmail</c> or <c>SendBulkEmail</c> operations the message as it will be
+        /// given to the receiving SMTP server will be archived, along with the recipient information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetArchivingOptions service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetArchivingOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetArchivingOptions">REST API Reference for PutConfigurationSetArchivingOptions Operation</seealso>
+        public virtual PutConfigurationSetArchivingOptionsResponse PutConfigurationSetArchivingOptions(PutConfigurationSetArchivingOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetArchivingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetArchivingOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationSetArchivingOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConfigurationSetArchivingOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetArchivingOptions operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationSetArchivingOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetArchivingOptions">REST API Reference for PutConfigurationSetArchivingOptions Operation</seealso>
+        public virtual IAsyncResult BeginPutConfigurationSetArchivingOptions(PutConfigurationSetArchivingOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetArchivingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetArchivingOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutConfigurationSetArchivingOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationSetArchivingOptions.</param>
+        /// 
+        /// <returns>Returns a  PutConfigurationSetArchivingOptionsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetArchivingOptions">REST API Reference for PutConfigurationSetArchivingOptions Operation</seealso>
+        public virtual PutConfigurationSetArchivingOptionsResponse EndPutConfigurationSetArchivingOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutConfigurationSetArchivingOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutConfigurationSetDeliveryOptions
 
         /// <summary>

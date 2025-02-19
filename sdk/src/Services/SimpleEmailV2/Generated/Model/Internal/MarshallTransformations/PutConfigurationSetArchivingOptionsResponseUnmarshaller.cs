@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetConfigurationSet operation
+    /// Response Unmarshaller for PutConfigurationSetArchivingOptions operation
     /// </summary>  
-    public class GetConfigurationSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutConfigurationSetArchivingOptionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,67 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetConfigurationSetResponse response = new GetConfigurationSetResponse();
+            PutConfigurationSetArchivingOptionsResponse response = new PutConfigurationSetArchivingOptionsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("ArchivingOptions", targetDepth))
-                {
-                    var unmarshaller = ArchivingOptionsUnmarshaller.Instance;
-                    response.ArchivingOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeliveryOptions", targetDepth))
-                {
-                    var unmarshaller = DeliveryOptionsUnmarshaller.Instance;
-                    response.DeliveryOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReputationOptions", targetDepth))
-                {
-                    var unmarshaller = ReputationOptionsUnmarshaller.Instance;
-                    response.ReputationOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SendingOptions", targetDepth))
-                {
-                    var unmarshaller = SendingOptionsUnmarshaller.Instance;
-                    response.SendingOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SuppressionOptions", targetDepth))
-                {
-                    var unmarshaller = SuppressionOptionsUnmarshaller.Instance;
-                    response.SuppressionOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrackingOptions", targetDepth))
-                {
-                    var unmarshaller = TrackingOptionsUnmarshaller.Instance;
-                    response.TrackingOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VdmOptions", targetDepth))
-                {
-                    var unmarshaller = VdmOptionsUnmarshaller.Instance;
-                    response.VdmOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -145,9 +86,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetConfigurationSetResponseUnmarshaller _instance = new GetConfigurationSetResponseUnmarshaller();        
+        private static PutConfigurationSetArchivingOptionsResponseUnmarshaller _instance = new PutConfigurationSetArchivingOptionsResponseUnmarshaller();        
 
-        internal static GetConfigurationSetResponseUnmarshaller GetInstance()
+        internal static PutConfigurationSetArchivingOptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +96,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetConfigurationSetResponseUnmarshaller Instance
+        public static PutConfigurationSetArchivingOptionsResponseUnmarshaller Instance
         {
             get
             {

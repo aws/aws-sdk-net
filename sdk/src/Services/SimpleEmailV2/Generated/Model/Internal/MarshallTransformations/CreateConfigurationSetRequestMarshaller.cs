@@ -67,6 +67,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArchivingOptions())
+                {
+                    context.Writer.WritePropertyName("ArchivingOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArchivingOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ArchivingOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetConfigurationSetName())
                 {
                     context.Writer.WritePropertyName("ConfigurationSetName");
