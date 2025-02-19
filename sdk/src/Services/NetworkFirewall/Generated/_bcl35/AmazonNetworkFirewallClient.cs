@@ -82,7 +82,10 @@ namespace Amazon.NetworkFirewall
     /// Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
     /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
-    /// open source network analysis and threat detection engine. 
+    /// open source network analysis and threat detection engine. Network Firewall supports
+    /// Suricata version 7.0.3. For information about Suricata, see the <a href="https://suricata.io/">Suricata
+    /// website</a> and the <a href="https://suricata.readthedocs.io/en/suricata-7.0.3/">Suricata
+    /// User Guide</a>. 
     /// </para>
     ///  
     /// <para>
@@ -608,6 +611,10 @@ namespace Amazon.NetworkFirewall
         ///  
         /// <para>
         /// To retrieve information about firewalls, use <a>ListFirewalls</a> and <a>DescribeFirewall</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate a report on the last 30 days of traffic monitored by a firewall, use <a>StartAnalysisReport</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewall service method.</param>
@@ -2117,6 +2124,175 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  GetAnalysisReportResults
+
+        /// <summary>
+        /// The results of a <c>COMPLETED</c> analysis report generated with <a>StartAnalysisReport</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a>AnalysisTypeReportResult</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisReportResults service method.</param>
+        /// 
+        /// <returns>The response from the GetAnalysisReportResults service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
+        public virtual GetAnalysisReportResultsResponse GetAnalysisReportResults(GetAnalysisReportResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnalysisReportResultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAnalysisReportResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisReportResults operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAnalysisReportResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
+        public virtual IAsyncResult BeginGetAnalysisReportResults(GetAnalysisReportResultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAnalysisReportResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAnalysisReportResults.</param>
+        /// 
+        /// <returns>Returns a  GetAnalysisReportResultsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
+        public virtual GetAnalysisReportResultsResponse EndGetAnalysisReportResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAnalysisReportResultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAnalysisReports
+
+        /// <summary>
+        /// Returns a list of all traffic analysis reports generated within the last 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisReports service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalysisReports service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
+        public virtual ListAnalysisReportsResponse ListAnalysisReports(ListAnalysisReportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalysisReportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnalysisReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisReports operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnalysisReports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
+        public virtual IAsyncResult BeginListAnalysisReports(ListAnalysisReportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnalysisReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnalysisReports.</param>
+        /// 
+        /// <returns>Returns a  ListAnalysisReportsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
+        public virtual ListAnalysisReportsResponse EndListAnalysisReports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnalysisReportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFirewallPolicies
 
         /// <summary>
@@ -2654,6 +2830,93 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  StartAnalysisReport
+
+        /// <summary>
+        /// Generates a traffic analysis report for the timeframe and traffic type you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For information on the contents of a traffic analysis report, see <a>AnalysisReport</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAnalysisReport service method.</param>
+        /// 
+        /// <returns>The response from the StartAnalysisReport service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
+        public virtual StartAnalysisReportResponse StartAnalysisReport(StartAnalysisReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
+
+            return Invoke<StartAnalysisReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAnalysisReport operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAnalysisReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
+        public virtual IAsyncResult BeginStartAnalysisReport(StartAnalysisReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAnalysisReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAnalysisReport.</param>
+        /// 
+        /// <returns>Returns a  StartAnalysisReportResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
+        public virtual StartAnalysisReportResponse EndStartAnalysisReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAnalysisReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -2834,6 +3097,88 @@ namespace Amazon.NetworkFirewall
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFirewallAnalysisSettings
+
+        /// <summary>
+        /// Enables specific types of firewall analysis on a specific firewall you define.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallAnalysisSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFirewallAnalysisSettings service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
+        public virtual UpdateFirewallAnalysisSettingsResponse UpdateFirewallAnalysisSettings(UpdateFirewallAnalysisSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFirewallAnalysisSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFirewallAnalysisSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallAnalysisSettings operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFirewallAnalysisSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFirewallAnalysisSettings(UpdateFirewallAnalysisSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFirewallAnalysisSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFirewallAnalysisSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateFirewallAnalysisSettingsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
+        public virtual UpdateFirewallAnalysisSettingsResponse EndUpdateFirewallAnalysisSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFirewallAnalysisSettingsResponse>(asyncResult);
         }
 
         #endregion

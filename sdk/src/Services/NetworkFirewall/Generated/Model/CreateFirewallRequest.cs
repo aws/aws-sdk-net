@@ -61,11 +61,16 @@ namespace Amazon.NetworkFirewall.Model
     /// <para>
     /// To retrieve information about firewalls, use <a>ListFirewalls</a> and <a>DescribeFirewall</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// To generate a report on the last 30 days of traffic monitored by a firewall, use <a>StartAnalysisReport</a>.
+    /// </para>
     /// </summary>
     public partial class CreateFirewallRequest : AmazonNetworkFirewallRequest
     {
         private bool? _deleteProtection;
         private string _description;
+        private List<string> _enabledAnalysisTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallName;
         private string _firewallPolicyArn;
@@ -113,6 +118,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledAnalysisTypes. 
+        /// <para>
+        /// An optional setting indicating the specific traffic analysis types to enable on the
+        /// firewall. 
+        /// </para>
+        /// </summary>
+        public List<string> EnabledAnalysisTypes
+        {
+            get { return this._enabledAnalysisTypes; }
+            set { this._enabledAnalysisTypes = value; }
+        }
+
+        // Check to see if EnabledAnalysisTypes property is set
+        internal bool IsSetEnabledAnalysisTypes()
+        {
+            return this._enabledAnalysisTypes != null && (this._enabledAnalysisTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +247,6 @@ namespace Amazon.NetworkFirewall.Model
         /// in each subnet. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<SubnetMapping> SubnetMappings
         {
             get { return this._subnetMappings; }
@@ -266,7 +289,7 @@ namespace Amazon.NetworkFirewall.Model
         /// You can't change this setting after you create the firewall. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string VpcId
         {
             get { return this._vpcId; }
