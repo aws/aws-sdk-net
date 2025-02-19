@@ -1,3 +1,21 @@
+### 3.7.986.0 (2025-02-19 19:26 UTC)
+* CodePipeline (3.7.407.0)
+	* Add environment variables to codepipeline action declaration.
+* ECS (3.7.408.33)
+	* This is a documentation only release for Amazon ECS that supports the CPU task limit increase.
+* Lightsail (3.7.400.98)
+	* Documentation updates for Amazon Lightsail.
+* LocationService (3.7.401.0)
+	* Adds support for larger property maps for tracking and geofence positions changes. It increases the maximum number of items from 3 to 4, and the maximum value length from 40 to 150.
+* MailManager (3.7.405.0)
+	* This release adds additional metadata fields in Mail Manager archive searches to show email source and details about emails that were archived when being sent with SES.
+* NetworkFirewall (3.7.403.0)
+	* This release introduces Network Firewall's Automated Domain List feature. New APIs include UpdateFirewallAnalysisSettings, StartAnalysisReport, GetAnalysisReportResults, and ListAnalysisReports. These allow customers to enable analysis on firewalls to identify and report frequently accessed domain.
+* SageMaker (3.7.424.0)
+	* Adds r8g instance type support to SageMaker Realtime Endpoints
+* SimpleEmailV2 (3.7.408.0)
+	* This release adds the ability for outbound email sent with SES to preserve emails to a Mail Manager archive.
+
 ### 3.7.985.0 (2025-02-18 19:25 UTC)
 * Batch (3.7.404.32)
 	* This documentation-only update corrects some typos.
