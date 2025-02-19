@@ -65,6 +65,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/EnumPayload";
             request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Payload);
+            request.Headers["Content-Type"] = "text/plain";
 
             return request;
         }

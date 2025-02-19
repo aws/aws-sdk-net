@@ -143,6 +143,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 #>
 			request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.<#= payload.PropertyName #>);
+<# if (payload.Shape.IsEnum) { #>
+			request.Headers["Content-Type"] = "text/plain";
+<# } #>
 <#
 	}
     else if (payload?.IsMemoryStream == true)
