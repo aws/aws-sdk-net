@@ -43,12 +43,6 @@ namespace AWSSDK.ProtocolTests.RestXml
         /// <summary>
         /// Serializes XML maps that have xmlName on members
         /// </summary>
-        /*
-        * This test either requires a breaking change and will be addressed
-        * in V4, or has a backlog item to be fixed in the future. Please
-        * refer to the VNextTests list to see which it is.
-        * */
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
@@ -92,8 +86,6 @@ namespace AWSSDK.ProtocolTests.RestXml
         /// <summary>
         /// Serializes XML lists
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

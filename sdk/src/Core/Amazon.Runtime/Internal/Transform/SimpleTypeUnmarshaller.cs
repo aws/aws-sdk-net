@@ -843,32 +843,36 @@ namespace Amazon.Runtime.Internal.Transform
     {
         private KUnmarshaller keyUnmarshaller;
         private VUnmarshaller valueUnmarshaller;
+        private string keyName;
+        private string valueName;
 
-        public XmlKeyValueUnmarshaller(KUnmarshaller keyUnmarshaller, VUnmarshaller valueUnmarshaller)
+        public XmlKeyValueUnmarshaller(KUnmarshaller keyUnmarshaller, VUnmarshaller valueUnmarshaller, string keyName, string valueName)
         {
             this.keyUnmarshaller = keyUnmarshaller;
             this.valueUnmarshaller = valueUnmarshaller;
+            this.keyName = keyName;
+            this.valueName = valueName;
         }
 
         public KeyValuePair<K, V> Unmarshall(XmlUnmarshallerContext context)
         {
             K key = default(K);
             V value = default(V);
+            // skip namespaces and attributes, since we don't unmarshall the namespaces.
+            // Read until the next non attribute so that the target depth is set correctly.
+            while (context.IsAttribute)
+                context.Read();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
 
             while (context.Read())
             {
-                if (context.TestExpression("key", targetDepth))
+                if (context.TestExpression(keyName, targetDepth))
                 {
                     key = this.keyUnmarshaller.Unmarshall(context);
                 }
-                else if (context.TestExpression("name", targetDepth))
-                {
-                    key = this.keyUnmarshaller.Unmarshall(context);
-                }
-                else if (context.TestExpression("value", targetDepth))
+                else if (context.TestExpression(valueName, targetDepth))
                 {
                     value = this.valueUnmarshaller.Unmarshall(context);
                 }
@@ -974,16 +978,15 @@ namespace Amazon.Runtime.Internal.Transform
         }
     }
 
-
     public class XmlDictionaryUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller> : IXmlUnmarshaller<Dictionary<TKey, TValue>, XmlUnmarshallerContext>
         where TKeyUnmarshaller : IXmlUnmarshaller<TKey, XmlUnmarshallerContext>
         where TValueUnmarshaller : IXmlUnmarshaller<TValue, XmlUnmarshallerContext>
     {
         private XmlKeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller> KVUnmarshaller;
 
-        public XmlDictionaryUnmarshaller(TKeyUnmarshaller kUnmarshaller, TValueUnmarshaller vUnmarshaller)
+        public XmlDictionaryUnmarshaller(TKeyUnmarshaller kUnmarshaller, TValueUnmarshaller vUnmarshaller, string keyName, string valueName)
         {
-            KVUnmarshaller = new XmlKeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller>(kUnmarshaller, vUnmarshaller);
+            KVUnmarshaller = new XmlKeyValueUnmarshaller<TKey, TValue, TKeyUnmarshaller, TValueUnmarshaller>(kUnmarshaller, vUnmarshaller, keyName, valueName);
         }                
 
         public Dictionary<TKey, TValue> Unmarshall(XmlUnmarshallerContext context)

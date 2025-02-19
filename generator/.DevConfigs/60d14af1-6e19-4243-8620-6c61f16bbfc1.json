@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Update XmlDictionary and KeyValueUnmarshallers to be able to handle any Key and Value Xml Element name"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
