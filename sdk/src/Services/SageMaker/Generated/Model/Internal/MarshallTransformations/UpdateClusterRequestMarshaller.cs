@@ -91,6 +91,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInstanceGroupsToDelete())
+                {
+                    context.Writer.WritePropertyName("InstanceGroupsToDelete");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInstanceGroupsToDeleteListValue in publicRequest.InstanceGroupsToDelete)
+                    {
+                            context.Writer.Write(publicRequestInstanceGroupsToDeleteListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNodeRecovery())
                 {
                     context.Writer.WritePropertyName("NodeRecovery");
