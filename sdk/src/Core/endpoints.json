@@ -4008,7 +4008,9 @@
           "endpoints": {
             "ap-northeast-1": {},
             "ap-northeast-2": {},
+            "ap-northeast-3": {},
             "ap-south-1": {},
+            "ap-south-2": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "bedrock-ap-northeast-1": {
@@ -4023,11 +4025,23 @@
               },
               "hostname": "bedrock.ap-northeast-2.amazonaws.com"
             },
+            "bedrock-ap-northeast-3": {
+              "credentialScope": {
+                "region": "ap-northeast-3"
+              },
+              "hostname": "bedrock.ap-northeast-3.amazonaws.com"
+            },
             "bedrock-ap-south-1": {
               "credentialScope": {
                 "region": "ap-south-1"
               },
               "hostname": "bedrock.ap-south-1.amazonaws.com"
+            },
+            "bedrock-ap-south-2": {
+              "credentialScope": {
+                "region": "ap-south-2"
+              },
+              "hostname": "bedrock.ap-south-2.amazonaws.com"
             },
             "bedrock-ap-southeast-1": {
               "credentialScope": {
@@ -4113,11 +4127,23 @@
               },
               "hostname": "bedrock-runtime.ap-northeast-2.amazonaws.com"
             },
+            "bedrock-runtime-ap-northeast-3": {
+              "credentialScope": {
+                "region": "ap-northeast-3"
+              },
+              "hostname": "bedrock-runtime.ap-northeast-3.amazonaws.com"
+            },
             "bedrock-runtime-ap-south-1": {
               "credentialScope": {
                 "region": "ap-south-1"
               },
               "hostname": "bedrock-runtime.ap-south-1.amazonaws.com"
+            },
+            "bedrock-runtime-ap-south-2": {
+              "credentialScope": {
+                "region": "ap-south-2"
+              },
+              "hostname": "bedrock-runtime.ap-south-2.amazonaws.com"
             },
             "bedrock-runtime-ap-southeast-1": {
               "credentialScope": {
@@ -4943,6 +4969,16 @@
                 }
               ]
             },
+            "ap-southeast-7": {
+              "variants": [
+                {
+                  "hostname": "cloudcontrolapi.ap-southeast-7.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "variants": [
                 {
@@ -5135,6 +5171,16 @@
               "variants": [
                 {
                   "hostname": "cloudcontrolapi.me-south-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "mx-central-1": {
+              "variants": [
+                {
+                  "hostname": "cloudcontrolapi.mx-central-1.api.aws",
                   "tags": [
                     "dualstack"
                   ]
