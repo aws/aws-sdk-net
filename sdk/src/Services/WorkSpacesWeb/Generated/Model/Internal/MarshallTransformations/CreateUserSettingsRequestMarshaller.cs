@@ -167,6 +167,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetToolbarConfiguration())
+                {
+                    context.Writer.WritePropertyName("toolbarConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ToolbarConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ToolbarConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUploadAllowed())
                 {
                     context.Writer.WritePropertyName("uploadAllowed");

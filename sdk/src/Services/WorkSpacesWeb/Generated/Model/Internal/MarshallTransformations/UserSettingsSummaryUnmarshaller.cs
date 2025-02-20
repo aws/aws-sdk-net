@@ -114,6 +114,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrintAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("toolbarConfiguration", targetDepth))
+                {
+                    var unmarshaller = ToolbarConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ToolbarConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("uploadAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
