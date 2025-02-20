@@ -84,7 +84,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("DomainNames/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (response.DomainNames == null)
                         {
                             response.DomainNames = new Dictionary<string, string>();

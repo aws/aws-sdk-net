@@ -57,7 +57,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (unmarshalledObject.AdditionalEncryptionContext == null)
                         {
                             unmarshalledObject.AdditionalEncryptionContext = new Dictionary<string, string>();

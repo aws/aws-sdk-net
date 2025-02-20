@@ -84,7 +84,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("VerificationAttributes/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityVerificationAttributesUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityVerificationAttributesUnmarshaller.Instance, "key", "value");
                         if (response.VerificationAttributes == null)
                         {
                             response.VerificationAttributes = new Dictionary<string, IdentityVerificationAttributes>();
