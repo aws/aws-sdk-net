@@ -453,7 +453,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Aurora DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public DatabaseInsightsMode DatabaseInsightsMode

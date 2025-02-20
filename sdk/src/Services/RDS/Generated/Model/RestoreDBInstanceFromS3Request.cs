@@ -254,13 +254,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the mode of Database Insights to enable for the DB instance.
         /// </para>
-        ///  
-        /// <para>
-        /// This setting only applies to Amazon Aurora DB instances.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, this value is inherited from the DB cluster and can't be changed.
+        /// Aurora DB instances inherit this value from the DB cluster, so you can't change this
+        /// value.
         /// </para>
         ///  </note>
         /// </summary>
