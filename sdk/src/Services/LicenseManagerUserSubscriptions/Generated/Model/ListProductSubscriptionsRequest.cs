@@ -136,7 +136,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         ///  
         /// <para>
         /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
-        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> | <c>REMOTE_DESKTOP_SERVICES</c> 
         /// </para>
         /// </summary>
         public string Product
