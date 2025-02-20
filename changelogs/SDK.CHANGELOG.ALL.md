@@ -1,3 +1,20 @@
+### 3.7.987.0 (2025-02-20 19:27 UTC)
+* CodeBuild (3.7.411.0)
+	* Add webhook status and status message to AWS CodeBuild webhooks
+* GuardDuty (3.7.406.0)
+	* Reduce the minimum number of required attack sequence signals from 2 to 1
+* LicenseManagerUserSubscriptions (3.7.401.47)
+	* Updates entity to include Microsoft RDS SAL as a valid type of user subscription.
+* RDS (3.7.410.36)
+	* CloudWatch Database Insights now supports Amazon RDS.
+* SageMaker (3.7.425.0)
+	* Added new capability in the UpdateCluster operation to remove instance groups from your SageMaker HyperPod cluster.
+* WorkSpacesWeb (3.7.403.0)
+	* Add support for toolbar configuration under user settings.
+* Core 3.7.402.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.986.0 (2025-02-19 19:26 UTC)
 * CodePipeline (3.7.407.0)
 	* Add environment variables to codepipeline action declaration.
