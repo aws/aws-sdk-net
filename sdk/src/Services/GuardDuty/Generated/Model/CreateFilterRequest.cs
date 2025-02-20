@@ -536,7 +536,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// service.runtimeDetails.process.name
+        /// service.runtimeDetails.process.executablePath
         /// </para>
         ///  </li> <li> 
         /// <para>
