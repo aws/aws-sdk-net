@@ -212,7 +212,7 @@ namespace Amazon.SecurityToken
                 throw exception;
             }
         }
-        
+
 #if AWS_ASYNC_API
         /// <summary>
         /// <see cref="ICoreAmazonSTS"/>
@@ -221,7 +221,7 @@ namespace Amazon.SecurityToken
         /// <param name="roleSessionName"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        async Task<AssumeRoleImmutableCredentials> ICoreAmazonSTS.CredentialsFromAssumeRoleAuthenticationAsync(string roleArn,
+        async Task<AssumeRoleImmutableCredentials> ICoreAmazonSTSAsync.CredentialsFromAssumeRoleAuthenticationAsync(string roleArn,
             string roleSessionName, AssumeRoleAWSCredentialsOptions options)
         {
             try

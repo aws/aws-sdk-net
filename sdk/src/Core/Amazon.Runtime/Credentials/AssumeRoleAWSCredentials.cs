@@ -137,7 +137,7 @@ namespace Amazon.Runtime
             _logger.InfoFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
-        
+
 #if AWS_ASYNC_API
 #if NET8_0_OR_GREATER
         [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
@@ -146,7 +146,7 @@ namespace Amazon.Runtime
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
-            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SecurityTokenServiceClientContext {Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings } ));
 
             if (coreSTSClient == null)
@@ -179,8 +179,19 @@ namespace Amazon.Runtime
                     throw exception;
                 }
             }
-            
-            var credentials = await coreSTSClient.CredentialsFromAssumeRoleAuthenticationAsync(RoleArn, RoleSessionName, Options).ConfigureAwait(false);
+
+            AssumeRoleImmutableCredentials credentials;
+            var coreSTSClientAsync = coreSTSClient as ICoreAmazonSTSAsync;
+            if (coreSTSClientAsync != null)
+            {
+                credentials = await coreSTSClientAsync.CredentialsFromAssumeRoleAuthenticationAsync(RoleArn, RoleSessionName, Options).ConfigureAwait(false);
+            }
+            else
+            {
+                _logger.InfoFormat("{0} does not implement {1}. AWSSDK.Core likely needs to be upgraded to a newer version.", coreSTSClient.GetType(), nameof(ICoreAmazonSTSAsync));
+                credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
+            }
+
             _logger.InfoFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
