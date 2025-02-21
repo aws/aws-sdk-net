@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -21,7 +21,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// <summary>
     /// Base DynamoDB attribute.
     /// </summary>
-    [AttributeUsage(AttributeTargets.All, Inherited=true, AllowMultiple=false)]
+    [AttributeUsage(AttributeTargets.All, Inherited = true, AllowMultiple = false)]
     public abstract class DynamoDBAttribute : Attribute
     {
     }
@@ -188,6 +188,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Whether the data should be stored as epoch seconds.
         /// If false, data is stored as ISO-8601 string.
         /// </param>
+        [Obsolete("This constructor is obsolete. Set the property " + nameof(StoreAsEpochLong) + " for proper 64-bit support instead.")]
         public DynamoDBPropertyAttribute(bool storeAsEpoch)
         {
             StoreAsEpoch = storeAsEpoch;
@@ -220,6 +221,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Whether the data should be stored as epoch seconds.
         /// If false, data is stored as ISO-8601 string.
         /// </param>
+        [Obsolete("This constructor is obsolete. Use DynamoDbProperty(string attributeName) and set the property " + nameof(StoreAsEpochLong) + " for proper 64-bit support instead.")]
         public DynamoDBPropertyAttribute(string attributeName, bool storeAsEpoch)
             : base(attributeName)
         {
@@ -236,8 +238,24 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Flag that directs DynamoDBContext to store this data as epoch seconds integer.
         /// If false, data is stored as ISO-8601 string.
         /// Cannot be set at the same time as Converter.
+        /// This property does not support dates after 2038-01-19. To store dates after this time, use StoreAsEpochLong instead.
         /// </summary>
+        /// <remarks>
+        /// For more information on the issues surrounding dates after 2038-01-19, see the following link:
+        /// https://github.com/aws/aws-sdk-net/issues/3443
+        /// </remarks>
+        [Obsolete("This property is obsolete. Dates after 2038-01-19 will NOT be stored in the epoch seconds integer format. To fix this, use " + nameof(StoreAsEpochLong) + " instead.")]
         public bool StoreAsEpoch { get; set; }
+
+        /// <summary>
+        /// Flag that directs DynamoDBContext to store this data as epoch seconds integer.
+        /// If false, data is stored as ISO-8601 string.
+        /// Cannot be set at the same time as Converter.
+        /// </summary>
+        /// <remarks>
+        /// This property supports dates after 2038-01-19 (known as the Year 2038 problem).
+        /// </remarks>
+        public bool StoreAsEpochLong { get; set; }
     }
 
     /// <summary>

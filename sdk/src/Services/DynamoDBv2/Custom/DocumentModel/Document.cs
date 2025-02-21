@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -276,6 +276,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return entry;
         }
 
+        // Converts a user-supplied DateTime-convertible DynamoDBEntry to epoch seconds stored in a Numeric Primitive.
+        // Differs from DateTimeToEpochSeconds by supporting dates after 2038.
+        internal static DynamoDBEntry DateTimeToEpochSecondsLong(DynamoDBEntry entry, string attributeName)
+        {
+            string epochSecondsAsString = null;
+            try
+            {
+                var dateTime = entry.AsDateTime();
+                epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
+            }
+            catch (Exception e)
+            {
+                var logger = Logger.GetLogger(typeof(Document));
+                logger.InfoFormat(
+                    "Encountered error attempting to convert '{0}' with value '{1}' to epoch seconds: {1}",
+                    attributeName, entry, e);
+
+                // To prevent the data from being (de)serialized incorrectly, we choose to throw the exception instead
+                // of swallowing it.
+                throw;
+            }
+
+            if (epochSecondsAsString != null)
+            {
+                entry = new Primitive(epochSecondsAsString, saveAsNumeric: true);
+            }
+
+            return entry;
+        }
+
         internal static Document FromAttributeMap(Dictionary<string, AttributeValue> data, IEnumerable<string> epochAttributes)
         {
             Document doc = new Document();
@@ -311,7 +341,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         internal Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion,
-            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
+            IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes, bool isEmptyStringValueEnabled)
         {
             if (conversion == null) throw new ArgumentNullException("conversion");
 
@@ -323,6 +353,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var entry = kvp.Value;
 
                 ApplyEpochRules(epochAttributes, attributeName, ref entry);
+                ApplyEpochLongRules(epochLongAttributes, attributeName, ref entry);
 
                 var attributeConversionConfig = new AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
                 var value = entry.ConvertToAttributeValue(attributeConversionConfig);
@@ -336,7 +367,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         internal Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion,
-            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
+            IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes, bool isEmptyStringValueEnabled)
         {
             if (conversion == null) throw new ArgumentNullException("conversion");
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
@@ -347,6 +378,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var entry = kvp.Value;
 
                 ApplyEpochRules(epochAttributes, attributeName, ref entry);
+                ApplyEpochLongRules(epochLongAttributes, attributeName, ref entry);
 
                 var attributeConversionConfig = new AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
                 ret.Add(attributeName, entry.ConvertToExpectedAttributeValue(attributeConversionConfig));
@@ -356,7 +388,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         internal Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion,
-            bool changedAttributesOnly, IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
+            bool changedAttributesOnly, IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes, bool isEmptyStringValueEnabled)
         {
             if (conversion == null) throw new ArgumentNullException("conversion");
             Dictionary<string, AttributeValueUpdate> ret = new Dictionary<string, AttributeValueUpdate>();
@@ -367,6 +399,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 DynamoDBEntry entry = kvp.Value;
 
                 ApplyEpochRules(epochAttributes, attributeName, ref entry);
+                ApplyEpochLongRules(epochLongAttributes, attributeName, ref entry);
 
                 if (!changedAttributesOnly || this.IsAttributeChanged(attributeName))
                 {
@@ -387,6 +420,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     if (string.Equals(epochAttribute, attributeName, StringComparison.Ordinal))
                     {
                         entry = DateTimeToEpochSeconds(entry, attributeName);
+                    }
+                }
+            }
+        }
+
+        private static void ApplyEpochLongRules(IEnumerable<string> epochLongAttributes, string attributeName, ref DynamoDBEntry entry)
+        {
+            if (epochLongAttributes != null)
+            {
+                foreach (var epochLongAttribute in epochLongAttributes)
+                {
+                    if (string.Equals(epochLongAttribute, attributeName, StringComparison.Ordinal))
+                    {
+                        entry = DateTimeToEpochSecondsLong(entry, attributeName);
                     }
                 }
             }
@@ -457,7 +504,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion)
         {
-            return ToAttributeMap(conversion, epochAttributes: null, isEmptyStringValueEnabled: false);
+            return ToAttributeMap(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: false);
         }
 
         /// <summary>
@@ -468,7 +515,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            return ToAttributeMap(conversion, epochAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            return ToAttributeMap(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -499,7 +546,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion,
             bool isEmptyStringValueEnabled)
         {
-            return ToExpectedAttributeMap(conversion, epochAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            return ToExpectedAttributeMap(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -520,7 +567,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion, bool changedAttributesOnly)
         {
-            return ToAttributeUpdateMap(conversion, changedAttributesOnly, epochAttributes: null, isEmptyStringValueEnabled: false);
+            return ToAttributeUpdateMap(conversion, changedAttributesOnly, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: false);
         }
 
         /// <summary>
@@ -533,7 +580,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion,
             bool changedAttributesOnly, bool isEmptyStringValueEnabled)
         {
-            return ToAttributeUpdateMap(conversion, changedAttributesOnly, epochAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            return ToAttributeUpdateMap(conversion, changedAttributesOnly, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
         }
 
         /// <summary>
