@@ -93,6 +93,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.UserAgent);
             }
 
+            if(requestObject.IsSetUserAgentHeader())
+            {
+                context.Writer.WritePropertyName("userAgentHeader");
+                context.Writer.Write(requestObject.UserAgentHeader);
+            }
+
         }
 
         /// <summary>

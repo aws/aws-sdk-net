@@ -2944,6 +2944,11 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.WebCrawlerConfiguration.UserAgentHeader</property>
+    <min>61</min>
+    <max>86</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.WebCrawlerLimits.MaxPages</property>
     <min>1</min>
   </property-value-rule>
