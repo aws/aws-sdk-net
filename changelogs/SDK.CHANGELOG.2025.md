@@ -1,3 +1,12 @@
+### 3.7.988.0 (2025-02-21 19:24 UTC)
+* AppStream (3.7.406.0)
+	* Added support for Certificate-Based Authentication on AppStream 2.0 multi-session fleets.
+* BedrockAgent (3.7.418.0)
+	* Introduce a new parameter which represents the user-agent header value used by the Bedrock Knowledge Base Web Connector.
+* Core 3.7.402.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.987.0 (2025-02-20 19:27 UTC)
 * CodeBuild (3.7.411.0)
 	* Add webhook status and status message to AWS CodeBuild webhooks
