@@ -59,13 +59,12 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpEnumPayloadRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonProtocol");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "text/plain";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/EnumPayload";
             request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Payload);
-            request.Headers["Content-Type"] = "text/plain";
 
             return request;
         }
