@@ -20,8 +20,6 @@ namespace AWSSDK.UnitTests
 
         public EC2InstanceMetadataServlet()
         {
-            ResetUseNullToken();
-
             SetupResponseHandler();
 
             var currentEndpointUrl = Environment.GetEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
@@ -34,9 +32,6 @@ namespace AWSSDK.UnitTests
         public override void Dispose()
         {
             _metadataServiceEndpointSwitch.Dispose();
-
-            ResetUseNullToken();
-
             base.Dispose();
         }
 
@@ -116,19 +111,6 @@ namespace AWSSDK.UnitTests
         {
             Environment.SetEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT", address);
             FallbackInternalConfigurationFactory.Reset();
-        }
-
-        private static FieldInfo ResetUseNullToken()
-        {
-            var nullTokenField = 
-                typeof(EC2InstanceMetadata)
-                    .GetField("useNullToken", BindingFlags.NonPublic | BindingFlags.Static);
-
-
-            nullTokenField.SetValue(null, false);
-
-            Assert.IsFalse((bool)nullTokenField.GetValue(null));
-            return nullTokenField;
         }
     }
 }

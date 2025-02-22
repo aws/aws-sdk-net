@@ -60,7 +60,6 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoSession = "sso_session";
         private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
-        private const string EC2MetadataV1DisabledField = "ec2_metadata_v1_disabled";
         private const string UseDualstackEndpointField = "use_dualstack_endpoint";
         private const string UseFIPSEndpointField = "use_fips_endpoint";
         private const string EndpointUrlField = "endpoint_url";
@@ -94,7 +93,6 @@ namespace Amazon.Runtime.CredentialManagement
             SsoSession,
             EC2MetadataServiceEndpointField,
             EC2MetadataServiceEndpointModeField,
-            EC2MetadataV1DisabledField,
             UseDualstackEndpointField,
             UseFIPSEndpointField,
             DefaultConfigurationModeField,
@@ -414,9 +412,6 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.EC2MetadataServiceEndpointMode != null)
                 reservedProperties[EC2MetadataServiceEndpointModeField] = profile.EC2MetadataServiceEndpointMode.ToString().ToLowerInvariant();
-
-            if (profile.EC2MetadataV1Disabled != null)
-                reservedProperties[EC2MetadataV1DisabledField] = profile.EC2MetadataV1Disabled.ToString().ToLowerInvariant();
 
             if (profile.UseDualstackEndpoint != null)
                 reservedProperties[UseDualstackEndpointField] = profile.UseDualstackEndpoint.ToString().ToLowerInvariant();
@@ -794,20 +789,6 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                 }
 
-                string ec2MetadataV1DisabledString;
-                bool? ec2MetadataV1Disabled = null;
-                if (reservedProperties.TryGetValue(EC2MetadataV1DisabledField, out ec2MetadataV1DisabledString))
-                {
-                    bool ec2MetadataV1DisabledOut;
-                    if (!bool.TryParse(ec2MetadataV1DisabledString, out ec2MetadataV1DisabledOut))
-                    {
-                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", ec2MetadataV1DisabledString, EC2MetadataV1DisabledField, profileName);
-                        profile = null;
-                        return false;
-                    }
-                    ec2MetadataV1Disabled = ec2MetadataV1DisabledOut;
-                }
-
                 string useDualstackEndpointString;
                 bool? useDualstackEndpoint = null;
                 if (reservedProperties.TryGetValue(UseDualstackEndpointField, out useDualstackEndpointString))
@@ -966,7 +947,6 @@ namespace Amazon.Runtime.CredentialManagement
                     MaxAttempts = maxAttempts,
                     EC2MetadataServiceEndpoint = ec2MetadataServiceEndpoint,
                     EC2MetadataServiceEndpointMode = ec2MetadataServiceEndpointMode,
-                    EC2MetadataV1Disabled = ec2MetadataV1Disabled,
                     UseDualstackEndpoint = useDualstackEndpoint,
                     UseFIPSEndpoint = useFIPSEndpoint,
                     NestedProperties = nestedProperties,

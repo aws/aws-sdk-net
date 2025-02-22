@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                 servlet.AddTokenFetchResponse(string.Empty, HttpStatusCode.BadRequest);
                 try
                 {
-                    var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
+                    var metadata = EC2InstanceMetadata.FetchApiToken();
                 }
                 catch(WebException wex)
                 {
@@ -134,7 +134,7 @@ namespace AWSSDK_DotNet.UnitTests.EC2
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
-        public void TestEC2InstanceMetadataInsecureCredentialsFallbackToken()
+        public void TestEC2InstanceMetadataFailFastStatusCodes()
         {
             var failFastStatusCodes = new HttpStatusCode[]
             {
@@ -150,77 +150,25 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                 using (var servlet = new EC2InstanceMetadataServlet())
                 {
                     servlet.AddTokenFetchResponse(token, failFastStatusCode);
-                    servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.OK);
-                    servlet.AddMetadataGetSecurityCredentialsResponse(_fakeValidIamSecurityCredentialMetadata, token);
 
-                    var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
-
-                    Assert.IsNotNull(metadata);
-                    Assert.AreEqual(1, metadata.Count);
-                    Assert.IsTrue(metadata.ContainsKey("Item1"));
-                    var creds = metadata["Item1"];
-                    Assert.AreEqual("value1", creds.AccessKeyId);
-                    Assert.AreEqual("value2", creds.SecretAccessKey);
-                    Assert.AreEqual("value3", creds.Token);
+                    Assert.ThrowsException<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken(), "IMDS rejected request to get API token.");
                 }
             }
         }
 
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("EC2")]
-        public void TestEC2MetadataV1DisabledFlagDisablesFallbackToIMDSv1()
-        {
-            EC2InstanceMetadata.EC2MetadataV1Disabled = true;
-
-            var failFastStatusCodes = new HttpStatusCode[]
-            {
-                HttpStatusCode.NotFound,
-                HttpStatusCode.Forbidden,
-                HttpStatusCode.MethodNotAllowed,
-                HttpStatusCode.ServiceUnavailable
-            };
-
-            foreach (var failFastStatusCode in failFastStatusCodes)
-            {
-                var token = string.Empty;
-                using (var servlet = new EC2InstanceMetadataServlet())
-                {
-                    // Add 3 response for retries
-                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
-                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
-                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
-
-                    IDictionary<string, IAMSecurityCredentialMetadata> metadata = null;
-                    try
-                    {
-                        metadata = EC2InstanceMetadata.IAMSecurityCredentials;
-                    }
-                    catch (InvalidOperationException ex)
-                    {
-                        Assert.IsTrue(ex.Message.Contains("IMDSv1 has been disabled"));
-                    }
-
-                    Assert.IsNull(metadata);
-                }
-            }
-        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
-        public void TestEC2InstanceMetadataInsecureCredentialsFallbackNotFound()
+        public void TestEC2InstanceMetadataTokenNotFound()
         {
             var token = string.Empty;
 
             using (var servlet = new EC2InstanceMetadataServlet())
             {
                 servlet.AddTokenFetchResponse(token, HttpStatusCode.NotFound);
-                servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.NotFound);
 
-                var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
-
-                Assert.IsNull(metadata);
+                Assert.ThrowsException<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken());
             }
         }
 
@@ -238,32 +186,6 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                 servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.ServiceUnavailable);
                 servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.OK);
                 servlet.AddTokenFetchResponse(token);
-                servlet.AddMetadataGetSecurityCredentialsResponse(_fakeValidIamSecurityCredentialMetadata, token);
-
-                var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
-
-                Assert.IsNotNull(metadata);
-                Assert.AreEqual(1, metadata.Count);
-                Assert.IsTrue(metadata.ContainsKey("Item1"));
-                var creds = metadata["Item1"];
-                Assert.AreEqual("value1", creds.AccessKeyId);
-                Assert.AreEqual("value2", creds.SecretAccessKey);
-                Assert.AreEqual("value3", creds.Token);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("EC2")]
-        public void TestEC2InstanceMetadataInsecureCredentialsRetry()
-        {
-            var token = string.Empty;
-
-            using (var servlet = new EC2InstanceMetadataServlet())
-            {
-                servlet.AddTokenFetchResponse(token, HttpStatusCode.NotFound);
-                servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.ServiceUnavailable);
-                servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.OK);
                 servlet.AddMetadataGetSecurityCredentialsResponse(_fakeValidIamSecurityCredentialMetadata, token);
 
                 var metadata = EC2InstanceMetadata.IAMSecurityCredentials;

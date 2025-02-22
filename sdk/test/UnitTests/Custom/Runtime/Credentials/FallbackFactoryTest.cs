@@ -229,37 +229,6 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
-        [DataRow(true, false, "ec-metadata-v1-enabled", true)]  // service client should supersede conflicting env var and profile values
-        [DataRow(false, true, "ec-metadata-v1-disabled", false)]
-        [DataRow(null, true, "ec-metadata-v1-enabled", true)]   // env var should supersede conflicting profile value
-        [DataRow(null, false, "ec-metadata-v1-disabled", false)]
-        [DataRow(null, null, "ec-metadata-v1-disabled", true)]    // profile should drive value
-        [DataRow(null, null, "ec-metadata-v1-enabled", false)]
-        [DataRow(null, null, "default", false)]             // should default to false when no config values specified
-        public void TestEC2MetadataV1DisabledConfigurationHierarchy(bool? ec2InstanceMetadataConfigValue, bool? envVarValue, string profileName, bool expectedEC2MetadataV1DisabledValue)
-        {
-            // Reset private _ec2MetadataV1Disabled field to its null
-            ReflectionHelpers.Invoke(typeof(EC2InstanceMetadata), "_ec2MetadataV1Disabled", new object[] { null });
-
-            if (ec2InstanceMetadataConfigValue.HasValue)
-            {
-                EC2InstanceMetadata.EC2MetadataV1Disabled = ec2InstanceMetadataConfigValue.Value;
-            }
-
-            var envVariables = new Dictionary<string, string>();
-            if (envVarValue.HasValue)
-            {
-                envVariables.Add(AWS_EC2_METADATA_V1_DISABLED, envVarValue.Value.ToString());
-            }
-
-            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
-            {
-                Assert.AreEqual(expectedEC2MetadataV1DisabledValue, EC2InstanceMetadata.EC2MetadataV1Disabled);
-            }
-
-        }
-
         [TestMethod]
         public void TestEnableEndpointDiscoveryEnvVariable()
         {
