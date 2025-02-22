@@ -126,11 +126,6 @@
         }
 	},
     "shapeModifiers": {
-        "*": {
-            "exclude": [
-                "DryRun"
-            ]
-        },
         "AttachVolumeResponse": {
             "modify": [
                 {

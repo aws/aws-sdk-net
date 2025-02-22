@@ -81,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConnectionNotificationArn", StringUtils.FromString(publicRequest.ConnectionNotificationArn));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetServiceId())
                 {
                     request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));

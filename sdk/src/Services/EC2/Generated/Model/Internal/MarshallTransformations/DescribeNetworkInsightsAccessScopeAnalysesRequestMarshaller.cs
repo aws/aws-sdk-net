@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AnalysisStartTimeEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTimeEnd));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetFilters())
                 {
                     if (publicRequest.Filters.Count == 0)

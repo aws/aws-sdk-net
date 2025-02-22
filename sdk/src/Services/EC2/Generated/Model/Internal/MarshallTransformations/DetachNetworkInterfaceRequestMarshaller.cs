@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AttachmentId", StringUtils.FromString(publicRequest.AttachmentId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetForce())
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));

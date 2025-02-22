@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CapacityBlockOfferingId", StringUtils.FromString(publicRequest.CapacityBlockOfferingId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetInstancePlatform())
                 {
                     request.Parameters.Add("InstancePlatform", StringUtils.FromString(publicRequest.InstancePlatform));

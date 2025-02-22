@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigDeliveryS3DestinationArn", StringUtils.FromString(publicRequest.ConfigDeliveryS3DestinationArn));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetFlowLogId())
                 {
                     request.Parameters.Add("FlowLogId", StringUtils.FromString(publicRequest.FlowLogId));
