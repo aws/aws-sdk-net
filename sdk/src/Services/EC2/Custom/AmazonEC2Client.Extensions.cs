@@ -149,6 +149,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="request">Request to do a dry run of.</param>
         /// <returns>Result of the dry run.</returns>
+        [Obsolete("This method has been deprecated. Use DryRun property at request level instead.")]
         public DryRunResponse DryRun(AmazonEC2Request request)
         {
             DryRunResponse response = new DryRunResponse { IsSuccessful = false };

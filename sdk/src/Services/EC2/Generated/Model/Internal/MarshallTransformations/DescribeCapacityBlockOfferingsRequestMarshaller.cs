@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CapacityDurationHours", StringUtils.FromInt(publicRequest.CapacityDurationHours));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEndDateRange())
                 {
                     request.Parameters.Add("EndDateRange", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateRange));

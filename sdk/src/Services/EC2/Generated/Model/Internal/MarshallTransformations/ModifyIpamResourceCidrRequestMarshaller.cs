@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationIpamScopeId", StringUtils.FromString(publicRequest.DestinationIpamScopeId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetMonitored())
                 {
                     request.Parameters.Add("Monitored", StringUtils.FromBool(publicRequest.Monitored));

@@ -115,6 +115,7 @@ namespace Amazon.EC2.Model
         private CreditSpecificationRequest _creditSpecification;
         private bool? _disableApiStop;
         private bool? _disableApiTermination;
+        private bool? _dryRun;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecification = AWSConfigs.InitializeCollections ? new List<ElasticGpuSpecification>() : null;
         private List<ElasticInferenceAccelerator> _elasticInferenceAccelerators = AWSConfigs.InitializeCollections ? new List<ElasticInferenceAccelerator>() : null;
@@ -349,6 +350,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDisableApiTermination()
         {
             return this._disableApiTermination.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the operation, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

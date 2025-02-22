@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupDescription", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetGroupName())
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));

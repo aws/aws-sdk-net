@@ -86,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("DestinationOptions" + "." + "PerHourPartition", StringUtils.FromBool(publicRequest.DestinationOptions.PerHourPartition));
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetLogDestination())
                 {
                     request.Parameters.Add("LogDestination", StringUtils.FromString(publicRequest.LogDestination));

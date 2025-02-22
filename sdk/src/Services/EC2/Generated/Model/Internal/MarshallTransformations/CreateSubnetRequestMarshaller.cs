@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetIpv4IpamPoolId())
                 {
                     request.Parameters.Add("Ipv4IpamPoolId", StringUtils.FromString(publicRequest.Ipv4IpamPoolId));

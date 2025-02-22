@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceIndex", StringUtils.FromInt(publicRequest.DeviceIndex));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEnaSrdSpecification())
                 {
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdEnabled())

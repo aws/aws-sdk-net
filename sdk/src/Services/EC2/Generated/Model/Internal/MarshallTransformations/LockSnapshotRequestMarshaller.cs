@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CoolOffPeriod", StringUtils.FromInt(publicRequest.CoolOffPeriod));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetExpirationDate())
                 {
                     request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));

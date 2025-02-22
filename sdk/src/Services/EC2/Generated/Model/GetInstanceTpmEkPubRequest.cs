@@ -36,9 +36,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetInstanceTpmEkPubRequest : AmazonEC2Request
     {
+        private bool? _dryRun;
         private string _instanceId;
         private EkPubKeyFormat _keyFormat;
         private EkPubKeyType _keyType;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specify this parameter to verify whether the request will succeed, without actually
+        /// making the request. If the request will succeed, the response is <c>DryRunOperation</c>.
+        /// Otherwise, the response is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 

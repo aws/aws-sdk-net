@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "EC2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Removed customization in ec2.customizations.json which excluded DryRun property from service request model and marked AmazonEC2Client.DryRun() extension method as obsolete."
+            ]
+        }
+    ]
+}

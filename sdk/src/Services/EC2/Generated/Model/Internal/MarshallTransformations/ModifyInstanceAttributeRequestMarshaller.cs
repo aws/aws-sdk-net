@@ -107,6 +107,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DisableApiTermination.Value", StringUtils.FromBool(publicRequest.DisableApiTermination));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     request.Parameters.Add("EbsOptimized.Value", StringUtils.FromBool(publicRequest.EbsOptimized));

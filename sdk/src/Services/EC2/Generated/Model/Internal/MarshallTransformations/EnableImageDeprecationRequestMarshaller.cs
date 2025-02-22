@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeprecateAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeprecateAt));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
