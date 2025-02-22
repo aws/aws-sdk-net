@@ -84,7 +84,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
                     if (context.TestExpression("attributes/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (response.Attributes == null)
                         {
                             response.Attributes = new Dictionary<string, string>();

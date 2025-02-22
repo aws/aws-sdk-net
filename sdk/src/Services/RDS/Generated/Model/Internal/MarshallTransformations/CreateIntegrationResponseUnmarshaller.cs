@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (response.AdditionalEncryptionContext == null)
                         {
                             response.AdditionalEncryptionContext = new Dictionary<string, string>();

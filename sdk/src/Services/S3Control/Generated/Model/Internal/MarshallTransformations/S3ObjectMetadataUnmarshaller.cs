@@ -118,7 +118,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UserMetadata", targetDepth))
                     {
-                        var unmarshaller = new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         unmarshalledObject.UserMetadata = unmarshaller.Unmarshall(context);
                         continue;
                     }

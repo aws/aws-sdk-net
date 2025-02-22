@@ -59,7 +59,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public IRequest Marshall(SendApiAssetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataExchange");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "text/plain";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
