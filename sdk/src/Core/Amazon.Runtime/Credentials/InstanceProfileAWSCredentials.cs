@@ -79,7 +79,6 @@ namespace Amazon.Runtime
 
                 if (httpStatusCode == HttpStatusCode.Unauthorized)
                 {
-                    EC2InstanceMetadata.ClearTokenFlag();
                     Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
                     throw;
                 }
@@ -136,7 +135,6 @@ namespace Amazon.Runtime
 
                     if (httpStatusCode == HttpStatusCode.Unauthorized)
                     {
-                        EC2InstanceMetadata.ClearTokenFlag();
                         Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
                     }
 
@@ -231,7 +229,6 @@ namespace Amazon.Runtime
 
                 if (httpStatusCode == HttpStatusCode.Unauthorized)
                 {
-                    EC2InstanceMetadata.ClearTokenFlag();
                     Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
                 }
 
