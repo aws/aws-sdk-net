@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConnectionNotificationId", StringUtils.FromString(publicRequest.ConnectionNotificationId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetFilters())
                 {
                     if (publicRequest.Filters.Count == 0)

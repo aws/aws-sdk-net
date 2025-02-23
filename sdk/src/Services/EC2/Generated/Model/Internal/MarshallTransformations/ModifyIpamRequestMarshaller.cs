@@ -80,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEnablePrivateGua())
                 {
                     request.Parameters.Add("EnablePrivateGua", StringUtils.FromBool(publicRequest.EnablePrivateGua));

@@ -10,6 +10,7 @@ using Amazon.EC2;
 using Amazon.EC2.Model;
 
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 {
@@ -37,6 +38,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Images);
+        }
+
+        [TestMethod]
+        [TestCategory("EC2")]
+        public void TestDescribeAmazonImagesWithDryRun()
+        {
+            var request = new DescribeImagesRequest()
+            {
+                DryRun = true,
+                Owners = new List<string> { "amazon" },
+            };
+            
+            var assertedException = Assert.ThrowsException<AmazonEC2Exception>( () => {
+                Client.DescribeImages(request);
+            });
+            
+            Assert.AreEqual(HttpStatusCode.PreconditionFailed, assertedException.StatusCode);
+            Assert.AreEqual("DryRunOperation", assertedException.ErrorCode);
         }
 
 #if ASYNC_AWAIT

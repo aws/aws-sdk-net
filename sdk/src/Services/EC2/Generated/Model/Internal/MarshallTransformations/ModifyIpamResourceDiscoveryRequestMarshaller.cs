@@ -97,6 +97,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetIpamResourceDiscoveryId())
                 {
                     request.Parameters.Add("IpamResourceDiscoveryId", StringUtils.FromString(publicRequest.IpamResourceDiscoveryId));

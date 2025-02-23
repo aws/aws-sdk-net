@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("BgpOptions" + "." + "PeerAsn", StringUtils.FromLong(publicRequest.BgpOptions.PeerAsn));
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetInsideCidrBlocks())
                 {
                     if (publicRequest.InsideCidrBlocks.Count == 0)

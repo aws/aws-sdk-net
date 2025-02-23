@@ -67,6 +67,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConnectionId", StringUtils.FromString(publicRequest.ConnectionId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetUsername())
                 {
                     request.Parameters.Add("Username", StringUtils.FromString(publicRequest.Username));

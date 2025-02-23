@@ -2495,6 +2495,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.ModifyVolumeAttribute(new ModifyVolumeAttributeRequest 
             {
                 AutoEnableIO = jsondata object,
+                DryRun = true,
                 VolumeId = "vol-1234567890abcdef0"
             });
 

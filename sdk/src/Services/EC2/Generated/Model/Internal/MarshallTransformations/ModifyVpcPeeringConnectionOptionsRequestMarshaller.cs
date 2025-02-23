@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowEgressFromLocalVpcToRemoteClassicLink", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink));
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetRequesterPeeringConnectionOptions())
                 {
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())

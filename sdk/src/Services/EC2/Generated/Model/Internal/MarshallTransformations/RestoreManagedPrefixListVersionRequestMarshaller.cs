@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CurrentVersion", StringUtils.FromLong(publicRequest.CurrentVersion));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetPrefixListId())
                 {
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));

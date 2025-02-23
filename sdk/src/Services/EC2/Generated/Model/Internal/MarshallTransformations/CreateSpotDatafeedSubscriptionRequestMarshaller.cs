@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Bucket", StringUtils.FromString(publicRequest.Bucket));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetPrefix())
                 {
                     request.Parameters.Add("Prefix", StringUtils.FromString(publicRequest.Prefix));

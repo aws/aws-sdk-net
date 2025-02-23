@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("DeviceOptions" + "." + "PublicSigningKeyUrl", StringUtils.FromString(publicRequest.DeviceOptions.PublicSigningKeyUrl));
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetNativeApplicationOidcOptions())
                 {
                     if(publicRequest.NativeApplicationOidcOptions.IsSetAuthorizationEndpoint())

@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceName", StringUtils.FromString(publicRequest.DeviceName));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetIpAddress())
                 {
                     request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.IpAddress));

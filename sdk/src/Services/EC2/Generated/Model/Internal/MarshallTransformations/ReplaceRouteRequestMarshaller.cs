@@ -79,6 +79,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationPrefixListId", StringUtils.FromString(publicRequest.DestinationPrefixListId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEgressOnlyInternetGatewayId())
                 {
                     request.Parameters.Add("EgressOnlyInternetGatewayId", StringUtils.FromString(publicRequest.EgressOnlyInternetGatewayId));

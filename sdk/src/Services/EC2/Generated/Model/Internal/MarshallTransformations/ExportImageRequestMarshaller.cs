@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DiskImageFormat", StringUtils.FromString(publicRequest.DiskImageFormat));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));

@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Asn", StringUtils.FromString(publicRequest.Asn));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetIpamId())
                 {
                     request.Parameters.Add("IpamId", StringUtils.FromString(publicRequest.IpamId));
