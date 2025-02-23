@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "EC2",
+            "type": "Patch",
+            "changeLogMessages": [
+                "[Breaking Change] Removed DryRun method from service client. To perform a dry run use the DryRun property on the request object for individual EC2 operations."
+            ]
+        }
+    ]
+}
