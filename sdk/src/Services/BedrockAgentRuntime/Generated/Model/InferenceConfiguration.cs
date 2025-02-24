@@ -50,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The maximum number of tokens allowed in the generated response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Min=0, Max=8192)]
         public int MaximumLength
         {
             get { return this._maximumLength.GetValueOrDefault(); }

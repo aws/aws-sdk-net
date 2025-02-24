@@ -118,8 +118,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         /// Specifies whether to override the default parser Lambda function when parsing the
         /// raw foundation model output in the part of the agent sequence defined by the <c>promptType</c>.
-        /// If you set the field as <c>OVERRIDEN</c>, the <c>overrideLambda</c> field in the <a
-        /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// If you set the field as <c>OVERRIDDEN</c>, the <c>overrideLambda</c> field in the
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
         /// must be specified with the ARN of a Lambda function.
         /// </para>
         /// </summary>

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PostProcessingModelInvocationOutput Object
+    /// Response Unmarshaller for ReasoningTextBlock Object
     /// </summary>  
-    public class PostProcessingModelInvocationOutputUnmarshaller : IUnmarshaller<PostProcessingModelInvocationOutput, XmlUnmarshallerContext>, IUnmarshaller<PostProcessingModelInvocationOutput, JsonUnmarshallerContext>
+    public class ReasoningTextBlockUnmarshaller : IUnmarshaller<ReasoningTextBlock, XmlUnmarshallerContext>, IUnmarshaller<ReasoningTextBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PostProcessingModelInvocationOutput IUnmarshaller<PostProcessingModelInvocationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReasoningTextBlock IUnmarshaller<ReasoningTextBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PostProcessingModelInvocationOutput Unmarshall(JsonUnmarshallerContext context)
+        public ReasoningTextBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            PostProcessingModelInvocationOutput unmarshalledObject = new PostProcessingModelInvocationOutput();
+            ReasoningTextBlock unmarshalledObject = new ReasoningTextBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = MetadataUnmarshaller.Instance;
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parsedResponse", targetDepth))
-                {
-                    var unmarshaller = PostProcessingParsedResponseUnmarshaller.Instance;
-                    unmarshalledObject.ParsedResponse = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rawResponse", targetDepth))
-                {
-                    var unmarshaller = RawResponseUnmarshaller.Instance;
-                    unmarshalledObject.RawResponse = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reasoningContent", targetDepth))
-                {
-                    var unmarshaller = ReasoningContentBlockUnmarshaller.Instance;
-                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("traceId", targetDepth))
+                if (context.TestExpression("signature", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TraceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Signature = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("text", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static PostProcessingModelInvocationOutputUnmarshaller _instance = new PostProcessingModelInvocationOutputUnmarshaller();        
+        private static ReasoningTextBlockUnmarshaller _instance = new ReasoningTextBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PostProcessingModelInvocationOutputUnmarshaller Instance
+        public static ReasoningTextBlockUnmarshaller Instance
         {
             get
             {
