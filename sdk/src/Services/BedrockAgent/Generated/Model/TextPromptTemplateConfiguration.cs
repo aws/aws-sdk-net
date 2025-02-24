@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgent.Model
         /// The message for the prompt.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }
