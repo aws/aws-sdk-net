@@ -18,7 +18,7 @@ namespace AWSSDK.Extensions.Logging.ILoggerAdaptor
             return _logger.IsEnabled(ConvertLogLevel(level));
         }
 
-        public void Log(SdkLogLevel level, string message, Exception ex, params string[] parameters)
+        public void Log(SdkLogLevel level, string message, Exception ex, params object[] parameters)
         {
             _logger.Log(ConvertLogLevel(level), ex, message, parameters);
         }
@@ -44,9 +44,11 @@ namespace AWSSDK.Extensions.Logging.ILoggerAdaptor
             _LogFactory = logFactory;
         }
 
-        public IAdaptorLogger CreateAdaptorLogger<T>()
+        public string Name { get; } = "ILogger";
+
+        public IAdaptorLogger CreateAdaptorLogger(Type type)
         {
-            return new AdaptorLoggerImpl(_LogFactory.CreateLogger<T>());
+            return new AdaptorLoggerImpl(_LogFactory.CreateLogger(type));
         }
     }
 }

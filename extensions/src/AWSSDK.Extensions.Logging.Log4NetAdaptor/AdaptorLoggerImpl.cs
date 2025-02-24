@@ -34,7 +34,7 @@ namespace AWSSDK.Extensions.Logging.Log4NetAdaptor
             }
         }
 
-        public void Log(SdkLogLevel level, string message, Exception ex, params string[] parameters)
+        public void Log(SdkLogLevel level, string message, Exception ex, params object[] parameters)
         {
             switch(level)
             {
@@ -63,9 +63,11 @@ namespace AWSSDK.Extensions.Logging.Log4NetAdaptor
 
     internal class AdaptorLoggerFactoryImpl : IAdaptorLoggerFactory
     {
-        public IAdaptorLogger CreateAdaptorLogger<T>()
+        public string Name { get; } = "Log4Net";
+
+        public IAdaptorLogger CreateAdaptorLogger(Type type)
         {
-            return new AdaptorLoggerImpl(LogManager.GetLogger(typeof(T)));
+            return new AdaptorLoggerImpl(LogManager.GetLogger(type));
         }
     }
 }
