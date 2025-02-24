@@ -71,13 +71,13 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         {
                             response.FlatNestedMap = new Dictionary<string, Dictionary<string, string>>();
                         }
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value"), "key", "value");
                         response.FlatNestedMap.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("nestedMap", targetDepth))
                     {
-                        var unmarshaller = new XmlDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value"), "key", "value");
                         response.NestedMap = unmarshaller.Unmarshall(context);
                         continue;
                     }

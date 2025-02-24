@@ -113,7 +113,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("intEnumMap/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance, "key", "value");
                         if (response.IntEnumMap == null)
                         {
                             response.IntEnumMap = new Dictionary<string, int>();

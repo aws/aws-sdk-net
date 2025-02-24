@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "Patch",
+            "changeLogMessages": [
+                "Improved error message in DataModel when in Native AOT mode and nested types have been trimmed."
+            ]
+        }
+    ]
+}

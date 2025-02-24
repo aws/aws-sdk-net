@@ -25,9 +25,9 @@ public class BedrockEmbeddingGeneratorTests
         IEmbeddingGenerator<string, Embedding<float>> generator = runtime.AsEmbeddingGenerator(modelId, dimensions);
 
         Assert.NotNull(generator);
-        Assert.Equal("aws.bedrock", generator.Metadata.ProviderName);
-        Assert.Equal(modelId, generator.Metadata.ModelId);
-        Assert.Equal(dimensions, generator.Metadata.Dimensions);
+        Assert.Equal("aws.bedrock", generator.GetService<EmbeddingGeneratorMetadata>()?.ProviderName);
+        Assert.Equal(modelId, generator.GetService<EmbeddingGeneratorMetadata>()?.ModelId);
+        Assert.Equal(dimensions, generator.GetService<EmbeddingGeneratorMetadata>()?.Dimensions);
     }
 
     [Fact]

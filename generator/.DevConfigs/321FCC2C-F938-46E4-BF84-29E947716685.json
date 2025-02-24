@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "[Breaking Change] Remove support for deprecated IMDS v1."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

@@ -90,27 +90,16 @@ public final class ProtocolTestCustomizations {
             "XmlUnionsWithStructMember",
             "XmlUnionsWithStringMember",
             "XmlUnionsWithBooleanMember",
-            "XmlUnionsWithUnionMember"
-
-    );
-    public static final List<String> VNextTests = Arrays.asList(
-            // These tests are not actually breaking change but have their own backlog item to be addressed.
-            // To avoid creating yet another list to check we'll add these here so they have an ignore flag.
-            "XmlMapsXmlName",
-            "FlattenedXmlMapWithXmlName",
-            "RestXmlFlattenedXmlMapWithXmlNamespace",
-            "QueryQueryXmlMapsXmlName",
-            "QueryQueryFlattenedXmlMapWithXmlName",
-            "QueryQueryFlattenedXmlMapWithXmlNamespace",
-            "RestXmlXmlMapWithXmlNamespace",
+            "XmlUnionsWithUnionMember",
             // the .NET SDK will not support these tests as the service should be sending back valid xml in the response even if
-            // the response is empty. Net's built-in xml serializer throws an exception if no root element is present.
+            // the response is empty. Net's built-in xml serializer throws an exception if no root element is present and we do not want
+            // to use exceptions and control flow.
             "QueryEmptyInputAndEmptyOutput",
             "QueryNoInputAndNoOutput",
-            "QueryNoInputAndOutput",
+            "QueryNoInputAndOutput"
+    );
+    public static final List<String> VNextTests = Arrays.asList(
             //These are the tests that are failing in v4 after updating to 1.54.0 and artifacts 1.0.3004.0. Each one needs to be investigated.
-            "RestJsonEnumPayloadRequest",
-            "RestJsonStringPayloadRequest",
             "RestJsonNullAndEmptyHeaders",
             "NestedXmlMapWithXmlNameDeserializes",
             "NullAndEmptyHeaders"

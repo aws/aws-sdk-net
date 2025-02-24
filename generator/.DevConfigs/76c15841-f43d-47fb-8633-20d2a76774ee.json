@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "[Breaking Change] Updated EventStreams Byte to SByte to be inline with the spec where Byte was intended to be signed."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

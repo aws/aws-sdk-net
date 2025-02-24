@@ -52,11 +52,6 @@ namespace Amazon.Runtime.Internal
         public string EC2MetadataServiceEndpoint { get; set; }
 
         /// <summary>
-        /// Controls whether request EC2 metadata v1 fallback is disabled.
-        /// </summary>
-        public bool? EC2MetadataV1Disabled { get; set; }
-
-        /// <summary>
         /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
         /// </summary>
         public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
@@ -134,7 +129,6 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_RETRY_MODE = "AWS_RETRY_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
-        public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_V1_DISABLED = "AWS_EC2_METADATA_V1_DISABLED";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS = "AWS_IGNORE_CONFIGURED_ENDPOINT_URLS";
@@ -160,7 +154,6 @@ namespace Amazon.Runtime.Internal
             RetryMode = GetEnvironmentVariable<RequestRetryMode>(ENVIRONMENT_VARIABLE_AWS_RETRY_MODE);
             EC2MetadataServiceEndpoint = GetEC2MetadataEndpointEnvironmentVariable();
             EC2MetadataServiceEndpointMode = GetEnvironmentVariable<EC2MetadataServiceEndpointMode>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
-            EC2MetadataV1Disabled = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_V1_DISABLED);
             UseDualstackEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT);
             UseFIPSEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT);
             IgnoreConfiguredEndpointUrls = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS, false);
@@ -336,7 +329,6 @@ namespace Amazon.Runtime.Internal
                 MaxAttempts = profile.MaxAttempts;
                 EC2MetadataServiceEndpoint = profile.EC2MetadataServiceEndpoint;
                 EC2MetadataServiceEndpointMode = profile.EC2MetadataServiceEndpointMode;
-                EC2MetadataV1Disabled = profile.EC2MetadataV1Disabled;
                 UseDualstackEndpoint = profile.UseDualstackEndpoint;
                 UseFIPSEndpoint = profile.UseFIPSEndpoint;
                 IgnoreConfiguredEndpointUrls = profile.IgnoreConfiguredEndpointUrls;
@@ -361,7 +353,6 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint", profile.EC2MetadataServiceEndpoint),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode),
-                new KeyValuePair<string, object>("ec2_metadata_v1_disabled", profile.EC2MetadataV1Disabled),
                 new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint),
                 new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint),
                 new KeyValuePair<string,object>( "ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
@@ -433,7 +424,6 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.MaxAttempts = SeekValue(standardGenerators, (c) => c.MaxAttempts);
             _cachedConfiguration.EC2MetadataServiceEndpoint = SeekString(standardGenerators, (c) => c.EC2MetadataServiceEndpoint);
             _cachedConfiguration.EC2MetadataServiceEndpointMode = SeekValue(standardGenerators, (c) => c.EC2MetadataServiceEndpointMode);
-            _cachedConfiguration.EC2MetadataV1Disabled = SeekValue(standardGenerators, (c) => c.EC2MetadataV1Disabled);
             _cachedConfiguration.UseDualstackEndpoint = SeekValue(standardGenerators, (c) => c.UseDualstackEndpoint);
             _cachedConfiguration.UseFIPSEndpoint = SeekValue(standardGenerators, (c) => c.UseFIPSEndpoint);
             _cachedConfiguration.IgnoreConfiguredEndpointUrls = SeekValue(standardGenerators, (c) => c.IgnoreConfiguredEndpointUrls);
@@ -522,17 +512,6 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.EC2MetadataServiceEndpoint;
-            }
-        }
-
-        /// <summary>
-        /// Controls whether request EC2 metadata v1 fallback is disabled.
-        /// </summary>
-        public static bool? EC2MetadataV1Disabled
-        {
-            get
-            {
-                return _cachedConfiguration.EC2MetadataV1Disabled;
             }
         }
 

@@ -1,0 +1,18 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Updated `restJson1` protocol services to use `text/plain` as `Content-Type` (instead of `application/json`) for string payloads"
+        ],
+        "type": "Patch",
+        "updateMinimum": false
+    },
+    "services": [
+        {
+            "serviceName": "DataExchange",
+            "type": "Patch",
+            "changeLogMessages": [
+                "Updated `SendApiAsset` operation to set correct `Content-Type` header"
+            ]
+        }
+    ]
+}

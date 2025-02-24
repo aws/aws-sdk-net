@@ -67,7 +67,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("nestedXmlMapWithXmlNameMap", targetDepth))
                     {
-                        var unmarshaller = new XmlDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "InnerKey", "InnerValue"), "OuterKey", "value");
                         response.NestedXmlMapWithXmlNameMap = unmarshaller.Unmarshall(context);
                         continue;
                     }
