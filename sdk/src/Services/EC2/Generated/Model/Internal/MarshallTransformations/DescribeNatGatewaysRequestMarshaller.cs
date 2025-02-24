@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetFilter())
                 {
                     if (publicRequest.Filter.Count == 0)

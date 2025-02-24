@@ -119,6 +119,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetPrivateDnsName())
                 {
                     request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));

@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         private string _allocationId;
         private string _clientToken;
         private ConnectivityType _connectivityType;
+        private bool? _dryRun;
         private string _privateIpAddress;
         private List<string> _secondaryAllocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _secondaryPrivateIpAddressCount;
@@ -139,6 +140,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetConnectivityType()
         {
             return this._connectivityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

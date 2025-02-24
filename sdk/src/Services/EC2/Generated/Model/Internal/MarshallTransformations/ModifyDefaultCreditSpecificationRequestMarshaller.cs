@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CpuCredits", StringUtils.FromString(publicRequest.CpuCredits));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetInstanceFamily())
                 {
                     request.Parameters.Add("InstanceFamily", StringUtils.FromString(publicRequest.InstanceFamily));

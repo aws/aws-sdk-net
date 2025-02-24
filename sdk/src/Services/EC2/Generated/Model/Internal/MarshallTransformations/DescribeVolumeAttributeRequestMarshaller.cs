@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));

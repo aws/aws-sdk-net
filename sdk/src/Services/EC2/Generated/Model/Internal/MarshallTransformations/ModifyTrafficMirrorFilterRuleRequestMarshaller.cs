@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("DestinationPortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.DestinationPortRange.ToPort));
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromInt(publicRequest.Protocol));

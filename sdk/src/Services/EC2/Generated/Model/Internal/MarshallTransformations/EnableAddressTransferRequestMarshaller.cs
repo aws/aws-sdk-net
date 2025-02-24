@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocationId", StringUtils.FromString(publicRequest.AllocationId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetTransferAccountId())
                 {
                     request.Parameters.Add("TransferAccountId", StringUtils.FromString(publicRequest.TransferAccountId));

@@ -73,6 +73,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetOptions())
                 {
                     if(publicRequest.Options.IsSetApplianceModeSupport())

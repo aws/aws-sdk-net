@@ -86,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceTrustProviderType", StringUtils.FromString(publicRequest.DeviceTrustProviderType));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetNativeApplicationOidcOptions())
                 {
                     if(publicRequest.NativeApplicationOidcOptions.IsSetAuthorizationEndpoint())

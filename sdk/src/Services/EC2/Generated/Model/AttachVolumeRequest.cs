@@ -77,6 +77,7 @@ namespace Amazon.EC2.Model
     public partial class AttachVolumeRequest : AmazonEC2Request
     {
         private string _device;
+        private bool? _dryRun;
         private string _instanceId;
         private string _volumeId;
 
@@ -115,6 +116,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDevice()
         {
             return this._device != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
