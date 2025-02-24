@@ -1,9 +1,38 @@
 {
     "core": {
-      "changeLogMessages": [
-        "[Breaking Change] Remove LitJson source from SDK and clean up all references."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
+        "changeLogMessages": [
+            "[Breaking Change] Remove `LitJson` source from SDK and clean up all references.",
+            "[Breaking Change] Updated EventStreams Byte to SByte to be inline with the spec where Byte was intended to be signed.",
+            "[Breaking Change] Remove support for deprecated IMDS v1.",
+            "Updated `XmlDictionary` and `KeyValueUnmarshallers` to be able to handle any key and value XML element names",
+            "Updated `restJson1` protocol services to use `text/plain` as `Content-Type` (instead of `application/json`) for string payloads",
+            "Fixed `JsonRPCRequestMarshaller` to properly handle enum payloads by setting content headers to plain text instead of JSON object",
+            "Updated `Microsoft.Extensions.AI` to `9.3.0-preview.1.25114.11` in the `AWSSDK.Extensions.Bedrock.MEAI` package"
+        ],
+        "updateMinimum": true
+    },
+    "services": [
+        {
+            "serviceName": "DataExchange",
+            "type": "Patch",
+            "changeLogMessages": [
+                "Updated `SendApiAsset` operation to set correct `Content-Type` header"
+            ]
+        },
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "Patch",
+            "changeLogMessages": [
+                "Improved error message in DataModel when in Native AOT mode and nested types have been trimmed."
+            ]
+        },
+        {
+            "serviceName": "EC2",
+            "type": "Patch",
+            "changeLogMessages": [
+                "[Breaking Change] Obsoleted DryRun method from service client. To perform a dry run use the DryRun property on the request object for individual EC2 operations."
+            ]
+        }
+    ],
+    "overrideVersion": "4.0.0.0"
+}
