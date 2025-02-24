@@ -298,7 +298,8 @@ namespace <#=this.Config.Namespace#>.Model
                     else if (member.IsList && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
                     {
                     // restxml and restjson is the only protocol where we send empty lists in headers. See following protocol tests.
-                    https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
+                    // https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
+                    // https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
                         if (String.Equals(this.Config.ServiceModel.Type.ToString(), "rest_xml", StringComparison.OrdinalIgnoreCase) || String.Equals(this.Config.ServiceModel.Type.ToString(), "rest_json", StringComparison.OrdinalIgnoreCase))
                         {
 
