@@ -82,7 +82,10 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName(publicRequestSparseBooleanMapKvp.Key);
                         var publicRequestSparseBooleanMapValue = publicRequestSparseBooleanMapKvp.Value;
 
+                        if (publicRequestSparseBooleanMapValue.HasValue)
                             context.Writer.WriteBooleanValue(publicRequestSparseBooleanMapValue.Value);
+                        else
+                            context.Writer.WriteNullValue();
                     }
                     context.Writer.WriteEndObject();
                 }
@@ -95,8 +98,11 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName(publicRequestSparseNumberMapKvp.Key);
                         var publicRequestSparseNumberMapValue = publicRequestSparseNumberMapKvp.Value;
-
+                        
+                        if (publicRequestSparseNumberMapValue.HasValue)
                             context.Writer.WriteNumberValue(publicRequestSparseNumberMapValue.Value);
+                        else
+                            context.Writer.WriteNullValue();
                     }
                     context.Writer.WriteEndObject();
                 }
@@ -128,8 +134,11 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName(publicRequestSparseStringMapKvp.Key);
                         var publicRequestSparseStringMapValue = publicRequestSparseStringMapKvp.Value;
-
+                        
+                        if (publicRequestSparseStringMapValue != null)
                             context.Writer.WriteStringValue(publicRequestSparseStringMapValue);
+                        else
+                            context.Writer.WriteNullValue();
                     }
                     context.Writer.WriteEndObject();
                 }
@@ -142,13 +151,16 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName(publicRequestSparseStructMapKvp.Key);
                         var publicRequestSparseStructMapValue = publicRequestSparseStructMapKvp.Value;
-
-                        context.Writer.WriteStartObject();
-
-                        var marshaller = GreetingStructMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSparseStructMapValue, context);
-
-                        context.Writer.WriteEndObject();
+                        
+                        if (publicRequestSparseStructMapValue != null)
+                        {
+                            context.Writer.WriteStartObject();
+                            var marshaller = GreetingStructMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSparseStructMapValue, context);
+                            context.Writer.WriteEndObject();
+                        }
+                        else
+                            context.Writer.WriteNullValue();
                     }
                     context.Writer.WriteEndObject();
                 }

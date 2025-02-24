@@ -112,7 +112,6 @@ public final class ProtocolTestCustomizations {
             "RestJsonEnumPayloadRequest",
             "RestJsonStringPayloadRequest",
             "RestJsonNullAndEmptyHeaders",
-            "RestJsonSerializesSparseNullMapValues",
             "NestedXmlMapWithXmlNameDeserializes",
             "NullAndEmptyHeaders"
     );
