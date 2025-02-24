@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (unmarshalledObject.EvalDecisionDetails == null)
                         {
                             unmarshalledObject.EvalDecisionDetails = new Dictionary<string, string>();

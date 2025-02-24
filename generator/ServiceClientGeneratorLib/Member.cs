@@ -728,10 +728,12 @@ namespace ServiceClientGenerator
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
+                    var keyLocationName = memberShape[Shape.KeyKey][ServiceModel.LocationNameKey] == null ? "key" : memberShape[Shape.KeyKey][ServiceModel.LocationNameKey].ToString();
                     var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey], typeNode.ToString());
 
                     var valueType = DetermineType(memberShape[Shape.ValueKey], true, false);
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], false);
+                    var valueLocationName = memberShape[Shape.ValueKey][ServiceModel.LocationNameKey] == null ? "value" : memberShape[Shape.ValueKey][ServiceModel.LocationNameKey].ToString();
                     var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], typeNode.ToString(), false);
 
                     //Direct sub maps can not be flattened. If the parent was a map then force the sub map to not be flat.
@@ -745,11 +747,11 @@ namespace ServiceClientGenerator
                         return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else if (this.model.Type == ServiceType.Rest_Xml && !isFlat)
-                        return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
-                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                        return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5}, \"{6}\", \"{7}\")",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate, keyLocationName, valueLocationName);
                     else
-                        return string.Format("new XmlKeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
-                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                        return string.Format("new XmlKeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5}, \"{6}\", \"{7}\")",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate, keyLocationName, valueLocationName);
                 case "list":
                     var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey], false);

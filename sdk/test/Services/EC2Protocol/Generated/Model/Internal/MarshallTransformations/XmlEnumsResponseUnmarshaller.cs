@@ -87,7 +87,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("fooEnumMap/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
                         if (response.FooEnumMap == null)
                         {
                             response.FooEnumMap = new Dictionary<string, string>();

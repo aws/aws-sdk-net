@@ -92,8 +92,6 @@ namespace AWSSDK.ProtocolTests.RestXml
         /// Serializes nested XML maps in responses that have xmlName on
         /// members
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
