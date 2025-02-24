@@ -1,3 +1,18 @@
+### 3.7.989.0 (2025-02-24 20:41 UTC)
+* BedrockAgent (3.7.419.0)
+	* This release improves support for newer models in Amazon Bedrock Flows.
+* BedrockAgentRuntime (3.7.420.0)
+	* Adding support for ReasoningContent fields in Pre-Processing, Post-Processing and Orchestration Trace outputs.
+* BedrockRuntime (3.7.413.0)
+	* This release adds Reasoning Content support to Converse and ConverseStream APIs
+* ElastiCache (3.7.402.44)
+	* Documentation update, adding clarity and rephrasing.
+* ElasticInference (Removed)
+	* Amazon Elastic Inference has been removed from the SDK because it has been discontinued.
+* Core 3.7.402.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.988.0 (2025-02-21 19:24 UTC)
 * AppStream (3.7.406.0)
 	* Added support for Certificate-Based Authentication on AppStream 2.0 multi-session fleets.
