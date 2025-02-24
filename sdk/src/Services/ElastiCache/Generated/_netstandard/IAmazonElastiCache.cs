@@ -1058,8 +1058,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -1101,7 +1101,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user group.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>

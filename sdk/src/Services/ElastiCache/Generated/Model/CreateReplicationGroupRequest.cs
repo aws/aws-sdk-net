@@ -140,11 +140,12 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Valkey 7.2 and later, Redis OSS version <c>3.2.6</c>, or Redis OSS <c>4.x</c>
+        /// and later.
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>false</c> 
+        /// Default: <c>true</c> when using Valkey, <c>false</c> when using Redis OSS
         /// </para>
         /// </summary>
         public bool AtRestEncryptionEnabled
@@ -563,7 +564,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the cache engine to be used for the clusters in this replication group.
-        /// The value must be set to <c>Redis</c>.
+        /// The value must be set to <c>valkey</c> or <c>redis</c>.
         /// </para>
         /// </summary>
         public string Engine
@@ -629,7 +630,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The network type you choose when creating a replication group, either <c>ipv4</c>
         /// | <c>ipv6</c>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS
-        /// engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances
+        /// engine version 6.2 to 7.1 or Memcached engine version 1.6.6 and above on all instances
         /// built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
@@ -705,7 +706,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached
+        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 and Memcached
         /// engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
