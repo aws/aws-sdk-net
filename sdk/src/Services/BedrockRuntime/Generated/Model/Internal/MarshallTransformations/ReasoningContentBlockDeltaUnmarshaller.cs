@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlockDelta Object
+    /// Response Unmarshaller for ReasoningContentBlockDelta Object
     /// </summary>  
-    public class ContentBlockDeltaUnmarshaller : IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>, IUnmarshaller<ContentBlockDelta, JsonUnmarshallerContext>
+    public class ReasoningContentBlockDeltaUnmarshaller : IUnmarshaller<ReasoningContentBlockDelta, XmlUnmarshallerContext>, IUnmarshaller<ReasoningContentBlockDelta, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBlockDelta IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReasoningContentBlockDelta IUnmarshaller<ReasoningContentBlockDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockDelta Unmarshall(JsonUnmarshallerContext context)
+        public ReasoningContentBlockDelta Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBlockDelta unmarshalledObject = new ContentBlockDelta();
+            ReasoningContentBlockDelta unmarshalledObject = new ReasoningContentBlockDelta();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("redactedContent", targetDepth))
                 {
-                    var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.RedactedContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signature", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Signature = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("text", targetDepth))
@@ -78,23 +84,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static ContentBlockDeltaUnmarshaller _instance = new ContentBlockDeltaUnmarshaller();        
+        private static ReasoningContentBlockDeltaUnmarshaller _instance = new ReasoningContentBlockDeltaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockDeltaUnmarshaller Instance
+        public static ReasoningContentBlockDeltaUnmarshaller Instance
         {
             get
             {

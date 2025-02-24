@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlockDelta Object
+    /// Response Unmarshaller for ReasoningContentBlock Object
     /// </summary>  
-    public class ContentBlockDeltaUnmarshaller : IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>, IUnmarshaller<ContentBlockDelta, JsonUnmarshallerContext>
+    public class ReasoningContentBlockUnmarshaller : IUnmarshaller<ReasoningContentBlock, XmlUnmarshallerContext>, IUnmarshaller<ReasoningContentBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBlockDelta IUnmarshaller<ContentBlockDelta, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReasoningContentBlock IUnmarshaller<ReasoningContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockDelta Unmarshall(JsonUnmarshallerContext context)
+        public ReasoningContentBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBlockDelta unmarshalledObject = new ContentBlockDelta();
+            ReasoningContentBlock unmarshalledObject = new ReasoningContentBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("reasoningText", targetDepth))
                 {
-                    var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ReasoningTextBlockUnmarshaller.Instance;
+                    unmarshalledObject.ReasoningText = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("redactedContent", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.RedactedContent = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBlockDeltaUnmarshaller _instance = new ContentBlockDeltaUnmarshaller();        
+        private static ReasoningContentBlockUnmarshaller _instance = new ReasoningContentBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockDeltaUnmarshaller Instance
+        public static ReasoningContentBlockUnmarshaller Instance
         {
             get
             {

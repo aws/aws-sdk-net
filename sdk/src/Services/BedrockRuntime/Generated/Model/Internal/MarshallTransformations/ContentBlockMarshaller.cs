@@ -81,6 +81,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetReasoningContent())
+            {
+                context.Writer.WritePropertyName("reasoningContent");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReasoningContentBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReasoningContent, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
