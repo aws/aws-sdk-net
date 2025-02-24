@@ -1,0 +1,12 @@
+{
+    "services": [
+        {
+            "serviceName": "ElasticInference",
+            "type": "removal",
+            "changeLogMessages": [
+                "Amazon Elastic Inference has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}
+

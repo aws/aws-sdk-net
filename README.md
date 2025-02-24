@@ -384,8 +384,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 * [AWSSDK.ElasticFileSystem](https://www.nuget.org/packages/AWSSDK.ElasticFileSystem/)
 	* Amazon Elastic File System (Amazon EFS) is a file storage service for Amazon Elastic Compute Cloud (Amazon EC2) instances.
-* [AWSSDK.ElasticInference](https://www.nuget.org/packages/AWSSDK.ElasticInference/)
-	* Amazon Elastic Inference allows customers to attach Elastic Inference Accelerators to Amazon EC2 and Amazon ECS tasks, thus providing low-cost GPU-powered acceleration and reducing the cost of running deep learning inference. This release allows customers to add or remove tags for their Elastic Inference Accelerators.
 * [AWSSDK.ElasticLoadBalancing](https://www.nuget.org/packages/AWSSDK.ElasticLoadBalancing/)
 	* Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.
 * [AWSSDK.ElasticLoadBalancingV2](https://www.nuget.org/packages/AWSSDK.ElasticLoadBalancingV2/)

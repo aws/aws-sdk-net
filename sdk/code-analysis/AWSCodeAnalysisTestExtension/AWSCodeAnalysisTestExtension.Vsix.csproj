@@ -516,10 +516,6 @@
       <Project>{BAFDC761-0BEF-4070-B6EE-C3ABCD87AF1F}</Project>
       <Name>AWSSDK.ElasticFileSystem.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/ElasticInference/AWSSDK.ElasticInference.CodeAnalysis.csproj">
-      <Project>{921448C5-FDB1-4CF4-BAE7-E2D439CCDEE8}</Project>
-      <Name>AWSSDK.ElasticInference.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ElasticLoadBalancing/AWSSDK.ElasticLoadBalancing.CodeAnalysis.csproj">
       <Project>{4D6BCF8D-4375-4102-A0A8-EC27DCD94059}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.CodeAnalysis</Name>
