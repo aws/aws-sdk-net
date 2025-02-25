@@ -55,6 +55,7 @@ namespace Amazon.CodeBuild.Model
         private List<BuildBatchPhase> _phases = AWSConfigs.InitializeCollections ? new List<BuildBatchPhase>() : null;
         private string _projectName;
         private int? _queuedTimeoutInMinutes;
+        private List<string> _reportArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resolvedSourceVersion;
         private List<BuildArtifacts> _secondaryArtifacts = AWSConfigs.InitializeCollections ? new List<BuildArtifacts>() : null;
         private List<ProjectSource> _secondarySources = AWSConfigs.InitializeCollections ? new List<ProjectSource>() : null;
@@ -468,6 +469,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetQueuedTimeoutInMinutes()
         {
             return this._queuedTimeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportArns. 
+        /// <para>
+        /// An array that contains the ARNs of reports created by merging reports from builds
+        /// associated with this batch build.
+        /// </para>
+        /// </summary>
+        public List<string> ReportArns
+        {
+            get { return this._reportArns; }
+            set { this._reportArns = value; }
+        }
+
+        // Check to see if ReportArns property is set
+        internal bool IsSetReportArns()
+        {
+            return this._reportArns != null && (this._reportArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
