@@ -143,7 +143,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = EpochDate,
                 EpochDate2 = EpochDate,
                 NonEpochDate1 = EpochDate,
-                NonEpochDate2 = EpochDate
+                NonEpochDate2 = EpochDate,
+                LongEpochDate = LongEpochDate
             };
 
             Context.Save(employee);
@@ -153,6 +154,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, storedEmployee.EpochDate2);
             ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(LongEpochDate, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
@@ -274,6 +276,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context = new DynamoDBContext(Client, config);
 
             var currTime = DateTime.Now;
+            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Local); // DateTime.Now returns Local kind.
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -282,11 +285,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = currTime,
                 EpochDate2 = currTime,
                 NonEpochDate1 = currTime,
-                NonEpochDate2 = currTime
+                NonEpochDate2 = currTime,
+                LongEpochDate = longEpochTime
             };
 
             Context.Save(employee);
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+            var expectedLongEpochTime = retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
 
             // Load 
             var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
@@ -295,6 +300,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -307,6 +313,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -317,6 +324,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
@@ -346,6 +354,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
 
             var currTime = DateTime.Now;
+            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Local); // DateTime.Now returns Local kind.
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -354,7 +363,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = currTime,
                 EpochDate2 = currTime,
                 NonEpochDate1 = currTime,
-                NonEpochDate2 = currTime
+                NonEpochDate2 = currTime,
+                LongEpochDate = longEpochTime
             };
 
             Context.Save(employee);
@@ -362,6 +372,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Since we are adding a custom DateTimeUtcConverter, the expected time will always be in the UTC time zone.
             // regardless of RetrieveDateTimeInUtc value.
             var expectedCurrTime = currTime.ToUniversalTime();
+            var expectedLongEpochTime = longEpochTime.ToUniversalTime();
 
             // Load 
             var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
@@ -370,6 +381,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -382,6 +394,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -392,6 +405,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
@@ -413,6 +427,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
             var currTime = DateTime.Now;
+            var longEpochTime = new DateTime(2039, 7, 23, 2, 3, 4, DateTimeKind.Local);
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -421,11 +436,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = currTime,
                 EpochDate2 = currTime,
                 NonEpochDate1 = currTime,
-                NonEpochDate2 = currTime
+                NonEpochDate2 = currTime,
+                LongEpochDate = longEpochTime
             };
 
             Context.Save(employee);
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+            var expectedLongEpochTime = retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
 
             // Load 
             var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, operationConfig);
@@ -434,6 +451,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -446,6 +464,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
@@ -456,6 +475,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
@@ -2071,6 +2091,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime NonEpochDate1 { get; set; }
 
             public DateTime NonEpochDate2 { get; set; }
+
+            [DynamoDBProperty(StoreAsEpochLong = true)]
+            public DateTime LongEpochDate { get; set; }
         }
 
         /// <summary>
@@ -2080,6 +2103,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class NumericEpochEmployee : EpochEmployee
         {
 
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]NumericHashRangeTable.
+        /// </summary>
+        [DynamoDBTable("BadEmployeeHashRangeTable")]
+        public class BadNumericEpochEmployee : NumericEpochEmployee
+        {
+            [DynamoDBProperty(StoreAsEpoch = true, StoreAsEpochLong = true)]
+            public DateTime BadLongEpochDate { get; set; }
         }
 
         /// <summary>

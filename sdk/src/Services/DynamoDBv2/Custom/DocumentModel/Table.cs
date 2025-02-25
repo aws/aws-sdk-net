@@ -232,6 +232,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (StoreAsEpoch.Contains(keyName))
                     value = Document.DateTimeToEpochSeconds(value, keyName);
 
+                if (StoreAsEpochLong.Contains(keyName))
+                    value = Document.DateTimeToEpochSecondsLong(value, keyName);
+
                 Primitive primitive = value.AsPrimitive();
                 if (primitive == null)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Key attribute {0} must be a Primitive type", keyName));
@@ -930,7 +933,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document representing the data.</returns>
         public Document FromAttributeMap(Dictionary<string, AttributeValue> data)
         {
-            return Document.FromAttributeMap(data, this.StoreAsEpoch);
+            return Document.FromAttributeMap(data, this.StoreAsEpoch, this.StoreAsEpochLong);
         }
 
         /// <summary>

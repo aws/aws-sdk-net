@@ -251,6 +251,39 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return entry;
         }
 
+        // Converts a Numeric Primitive value from a service attribute to a DynamoDBEntry that can
+        // be converted to a DateTime.
+        internal static DynamoDBEntry EpochSecondsLongToDateTime(DynamoDBEntry entry, string attributeName)
+        {
+            var primitive = entry.AsPrimitive();
+
+            // only try to convert N types to epoch time
+            if (primitive != null &&
+                primitive.Type == DynamoDBEntryType.Numeric)
+            {
+                DateTime? dateTime = null;
+                try
+                {
+                    var epochSeconds = primitive.AsLong();
+                    dateTime = AWSSDKUtils.ConvertFromUnixLongEpochSeconds(epochSeconds);
+                }
+                catch (Exception e)
+                {
+                    var logger = Logger.GetLogger(typeof(Document));
+                    logger.InfoFormat(
+                        "Encountered error attempting to convert attribute '{0}' with value '{1}' to DateTime: {2}",
+                        attributeName, entry, e);
+                }
+
+                if (dateTime.HasValue)
+                {
+                    entry = (Primitive)(dateTime.Value);
+                }
+            }
+
+            return entry;
+        }
+
         // Converts a user-supplied DateTime-convertible DynamoDBEntry to epoch seconds stored in a Numeric Primitive.
         internal static DynamoDBEntry DateTimeToEpochSeconds(DynamoDBEntry entry, string attributeName)
         {
@@ -306,7 +339,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return entry;
         }
 
-        internal static Document FromAttributeMap(Dictionary<string, AttributeValue> data, IEnumerable<string> epochAttributes)
+        internal static Document FromAttributeMap(Dictionary<string, AttributeValue> data, IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes)
         {
             Document doc = new Document();
 
@@ -332,6 +365,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     if (doc.currentValues.TryGetValue(epochAttribute, out epochEntry))
                     {
                         doc.currentValues[epochAttribute] = EpochSecondsToDateTime(epochEntry, epochAttribute);
+                    }
+                }
+            }
+
+            if (epochLongAttributes != null)
+            {
+                foreach (var epochLongAttribute in epochLongAttributes)
+                {
+                    DynamoDBEntry epochLongEntry;
+                    if (doc.currentValues.TryGetValue(epochLongAttribute, out epochLongEntry))
+                    {
+                        doc.currentValues[epochLongAttribute] = EpochSecondsLongToDateTime(epochLongEntry, epochLongAttribute);
                     }
                 }
             }
@@ -765,7 +810,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document representing the data.</returns>
         public static Document FromAttributeMap(Dictionary<string, AttributeValue> data)
         {
-            return FromAttributeMap(data, epochAttributes: null);
+            return FromAttributeMap(data, epochAttributes: null, epochLongAttributes: null);
         }
 
         /// <summary>
