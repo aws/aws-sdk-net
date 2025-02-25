@@ -120,6 +120,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.DevicePoolArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceProxy", targetDepth))
+                {
+                    var unmarshaller = DeviceProxyUnmarshaller.Instance;
+                    unmarshalledObject.DeviceProxy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deviceSelectionResult", targetDepth))
                 {
                     var unmarshaller = DeviceSelectionResultUnmarshaller.Instance;

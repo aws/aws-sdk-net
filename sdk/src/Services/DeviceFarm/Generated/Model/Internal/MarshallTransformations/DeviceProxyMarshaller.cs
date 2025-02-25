@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRemoteAccessSessionConfiguration Marshaller
+    /// DeviceProxy Marshaller
     /// </summary>
-    public class CreateRemoteAccessSessionConfigurationMarshaller : IRequestMarshaller<CreateRemoteAccessSessionConfiguration, JsonMarshallerContext> 
+    public class DeviceProxyMarshaller : IRequestMarshaller<DeviceProxy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,20 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CreateRemoteAccessSessionConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeviceProxy requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBillingMethod())
+            if(requestObject.IsSetHost())
             {
-                context.Writer.WritePropertyName("billingMethod");
-                context.Writer.Write(requestObject.BillingMethod);
+                context.Writer.WritePropertyName("host");
+                context.Writer.Write(requestObject.Host);
             }
 
-            if(requestObject.IsSetDeviceProxy())
+            if(requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("deviceProxy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DeviceProxyMarshaller.Instance;
-                marshaller.Marshall(requestObject.DeviceProxy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetVpceConfigurationArns())
-            {
-                context.Writer.WritePropertyName("vpceConfigurationArns");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectVpceConfigurationArnsListValue in requestObject.VpceConfigurationArns)
-                {
-                        context.Writer.Write(requestObjectVpceConfigurationArnsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
             }
 
         }
@@ -81,7 +65,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CreateRemoteAccessSessionConfigurationMarshaller Instance = new CreateRemoteAccessSessionConfigurationMarshaller();
+        public readonly static DeviceProxyMarshaller Instance = new DeviceProxyMarshaller();
 
     }
 }
