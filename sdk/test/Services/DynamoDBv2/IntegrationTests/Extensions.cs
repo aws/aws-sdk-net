@@ -50,6 +50,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storeAsEpoch = property.GetValue(table, null) as IEnumerable<string>;
             return storeAsEpoch;
         }
+        public static IEnumerable<string> GetStoreAsEpochLong(this Table table)
+        {
+            var property = table
+                .GetType()
+                .GetProperty("StoreAsEpochLong", BindingFlags.Instance | BindingFlags.NonPublic);
+            var storeAsEpochLong = property.GetValue(table, null) as IEnumerable<string>;
+            return storeAsEpochLong;
+        }
         public static TimeSpan GetAbsolute(this TimeSpan ts)
         {
             return (ts.Ticks < 0 ? -ts : ts);
