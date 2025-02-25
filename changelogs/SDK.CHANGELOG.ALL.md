@@ -1,3 +1,18 @@
+### 3.7.990.0 (2025-02-25 19:27 UTC)
+* CodeBuild (3.7.412.0)
+	* Adding "reportArns" field in output of BatchGetBuildBatches API. "reportArns" is an array that contains the ARNs of reports created by merging reports from builds associated with the batch build.
+* DeviceFarm (3.7.402.0)
+	* Add an optional configuration to the ScheduleRun and CreateRemoteAccessSession API to set a device level http/s proxy.
+* EC2 (3.7.431.0)
+	* Adds support for time-based EBS-backed AMI copy operations. Time-based copy ensures that EBS-backed AMIs are copied within and across Regions in a specified timeframe.
+* IoT (3.7.407.0)
+	* AWS IoT - AWS IoT Device Defender adds support for a new Device Defender Audit Check that monitors device certificate age and custom threshold configurations for both the new device certificate age check and existing device certificate expiry check.
+* TaxSettings (3.7.403.0)
+	* PutTaxRegistration API changes for Egypt, Greece, Vietnam countries
+* Core 3.7.402.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.989.0 (2025-02-24 20:41 UTC)
 * BedrockAgent (3.7.419.0)
 	* This release improves support for newer models in Amazon Bedrock Flows.

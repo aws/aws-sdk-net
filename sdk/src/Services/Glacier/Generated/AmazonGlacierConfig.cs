@@ -32,7 +32,7 @@ namespace Amazon.Glacier
     public partial class AmazonGlacierConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Glacier", "3.7.400.100");
+            InternalSDKUtils.BuildUserAgentString("Glacier", "3.7.400.101");
 
         private string _userAgent = UserAgentString;
         ///<summary>
