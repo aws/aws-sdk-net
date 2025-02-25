@@ -30,30 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TaxSettings.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetTaxExemptions operation.
-    /// Get the active tax exemptions for a given list of accounts. The IAM action is <c>tax:GetExemptions</c>.
+    /// Additional tax information to specify for a TRN in Greece.
     /// </summary>
-    public partial class BatchGetTaxExemptionsRequest : AmazonTaxSettingsRequest
+    public partial class GreeceAdditionalInfo
     {
-        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _contractingAuthorityCode;
 
         /// <summary>
-        /// Gets and sets the property AccountIds. 
+        /// Gets and sets the property ContractingAuthorityCode. 
         /// <para>
-        ///  List of unique account identifiers. 
+        /// The code of contracting authority for e-invoicing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
-        public List<string> AccountIds
+        public string ContractingAuthorityCode
         {
-            get { return this._accountIds; }
-            set { this._accountIds = value; }
+            get { return this._contractingAuthorityCode; }
+            set { this._contractingAuthorityCode = value; }
         }
 
-        // Check to see if AccountIds property is set
-        internal bool IsSetAccountIds()
+        // Check to see if ContractingAuthorityCode property is set
+        internal bool IsSetContractingAuthorityCode()
         {
-            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._contractingAuthorityCode != null;
         }
 
     }

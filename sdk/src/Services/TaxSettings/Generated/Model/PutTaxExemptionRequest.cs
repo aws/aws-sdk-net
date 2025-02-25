@@ -32,7 +32,7 @@ namespace Amazon.TaxSettings.Model
     /// <summary>
     /// Container for the parameters to the PutTaxExemption operation.
     /// Adds the tax exemption for a single account or all accounts listed in a consolidated
-    /// billing family.
+    /// billing family. The IAM action is <c>tax:UpdateExemptions</c>.
     /// </summary>
     public partial class PutTaxExemptionRequest : AmazonTaxSettingsRequest
     {

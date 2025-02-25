@@ -50,8 +50,10 @@ namespace Amazon.TaxSettings.Model
     public partial class AdditionalInfoRequest
     {
         private CanadaAdditionalInfo _canadaAdditionalInfo;
+        private EgyptAdditionalInfo _egyptAdditionalInfo;
         private EstoniaAdditionalInfo _estoniaAdditionalInfo;
         private GeorgiaAdditionalInfo _georgiaAdditionalInfo;
+        private GreeceAdditionalInfo _greeceAdditionalInfo;
         private IsraelAdditionalInfo _israelAdditionalInfo;
         private ItalyAdditionalInfo _italyAdditionalInfo;
         private KenyaAdditionalInfo _kenyaAdditionalInfo;
@@ -63,6 +65,7 @@ namespace Amazon.TaxSettings.Model
         private SpainAdditionalInfo _spainAdditionalInfo;
         private TurkeyAdditionalInfo _turkeyAdditionalInfo;
         private UkraineAdditionalInfo _ukraineAdditionalInfo;
+        private VietnamAdditionalInfo _vietnamAdditionalInfo;
 
         /// <summary>
         /// Gets and sets the property CanadaAdditionalInfo. 
@@ -80,6 +83,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetCanadaAdditionalInfo()
         {
             return this._canadaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgyptAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in Egypt. 
+        /// </para>
+        /// </summary>
+        public EgyptAdditionalInfo EgyptAdditionalInfo
+        {
+            get { return this._egyptAdditionalInfo; }
+            set { this._egyptAdditionalInfo = value; }
+        }
+
+        // Check to see if EgyptAdditionalInfo property is set
+        internal bool IsSetEgyptAdditionalInfo()
+        {
+            return this._egyptAdditionalInfo != null;
         }
 
         /// <summary>
@@ -116,6 +137,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetGeorgiaAdditionalInfo()
         {
             return this._georgiaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GreeceAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in Greece.
+        /// </para>
+        /// </summary>
+        public GreeceAdditionalInfo GreeceAdditionalInfo
+        {
+            get { return this._greeceAdditionalInfo; }
+            set { this._greeceAdditionalInfo = value; }
+        }
+
+        // Check to see if GreeceAdditionalInfo property is set
+        internal bool IsSetGreeceAdditionalInfo()
+        {
+            return this._greeceAdditionalInfo != null;
         }
 
         /// <summary>
@@ -314,6 +353,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetUkraineAdditionalInfo()
         {
             return this._ukraineAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VietnamAdditionalInfo. 
+        /// <para>
+        /// Additional tax information to specify for a TRN in Vietnam. 
+        /// </para>
+        /// </summary>
+        public VietnamAdditionalInfo VietnamAdditionalInfo
+        {
+            get { return this._vietnamAdditionalInfo; }
+            set { this._vietnamAdditionalInfo = value; }
+        }
+
+        // Check to see if VietnamAdditionalInfo property is set
+        internal bool IsSetVietnamAdditionalInfo()
+        {
+            return this._vietnamAdditionalInfo != null;
         }
 
     }

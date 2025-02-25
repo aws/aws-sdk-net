@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TaxSettings.Model
 {
     /// <summary>
-    /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+    /// You've exceeded the Amazon Web ServicesSupport case creation limit for your account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

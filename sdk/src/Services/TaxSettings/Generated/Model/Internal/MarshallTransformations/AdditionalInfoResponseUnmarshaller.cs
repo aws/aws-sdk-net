@@ -78,6 +78,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.CanadaAdditionalInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("egyptAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = EgyptAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.EgyptAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("estoniaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = EstoniaAdditionalInfoUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GeorgiaAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.GeorgiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("greeceAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = GreeceAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.GreeceAdditionalInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("indiaAdditionalInfo", targetDepth))
@@ -160,6 +172,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UkraineAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vietnamAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = VietnamAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.VietnamAdditionalInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
