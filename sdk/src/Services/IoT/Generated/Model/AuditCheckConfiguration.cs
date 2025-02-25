@@ -34,7 +34,27 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class AuditCheckConfiguration
     {
+        private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _enabled;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// A structure containing the configName and corresponding configValue for configuring
+        /// audit checks.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 
