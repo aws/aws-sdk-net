@@ -20,6 +20,7 @@
  *
  */
 
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -92,9 +93,11 @@ namespace Amazon.S3.Model
         internal Expiration(string headerValue)
         {
             if (string.IsNullOrEmpty(headerValue))
+            {
                 throw new ArgumentNullException("headerValue");
+            }
 
-            // S3 Express may return a not implemented value instead of the format we're expecting.
+            // S3 Express returns a "NotImplemented" value instead of the format we're expecting.
             // We'll return without populating the rule ID and expiry date instead of trying to parse the header.
             if (headerValue.Equals("NotImplemented", StringComparison.OrdinalIgnoreCase))
             {
@@ -102,17 +105,28 @@ namespace Amazon.S3.Model
             }
 
             var expiryMatches = ExpiryRegex().Match(headerValue);
-            if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
-                throw new InvalidOperationException("No Expiry Date match");
-            string expiryDateValue = expiryMatches.Groups[1].Value;
-            this.expiryDateUtc = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
-            this.expiryDate = new DateTime(this.expiryDateUtc.Ticks, DateTimeKind.Unspecified);
+            if (expiryMatches.Success && expiryMatches.Groups[1].Success)
+            {
+                string expiryDateValue = expiryMatches.Groups[1].Value;
+
+                try
+                {
+                    this.expiryDateUtc = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
+                    this.expiryDate = new DateTime(this.expiryDateUtc.Ticks, DateTimeKind.Unspecified);
+                }
+                catch (FormatException)
+                {
+                    var logger = Logger.GetLogger(typeof(Expiration));
+                    logger.DebugFormat("Unable to parse expiry-date from: {0}", headerValue);
+                }
+            }
 
             var ruleMatches = RuleRegex().Match(headerValue);
-            if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)
-                throw new InvalidOperationException("No Rule Id match");
-            string ruleIdValue = ruleMatches.Groups[1].Value;
-            this.ruleId = UrlDecode(ruleIdValue);
+            if (ruleMatches.Success && ruleMatches.Groups[1].Success)
+            {
+                string ruleIdValue = ruleMatches.Groups[1].Value;
+                this.ruleId = UrlDecode(ruleIdValue);
+            }
         }
 
         private static string UrlDecode(string url)

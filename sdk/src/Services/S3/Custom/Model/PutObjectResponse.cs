@@ -46,19 +46,15 @@ namespace Amazon.S3.Model
         private ChecksumType _checksumType;
 
         /// <summary>
-        /// Gets and sets the Expiration property.
-        /// Specifies the expiration date for the object and the
-        /// rule governing the expiration.
-        /// Is null if expiration is not applicable.
-        /// If the expiration is configured for the object (see https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html\), 
-        /// the response includes this header. 
-        /// It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. 
-        /// The value of the rule-id is URL encoded."
-        ///  <note> 
+        /// Gets and sets the property Expiration. 
         /// <para>
-        /// This functionality is not supported for directory buckets.
+        /// If the object expiration is configured, this will contain the expiration date (<c>expiry-date</c>)
+        /// and rule ID (<c>rule-id</c>). The value of <c>rule-id</c> is URL encoded.
         /// </para>
-        ///  </note>
+        /// <para>
+        /// Object expiration information is not returned for directory buckets (for those, the
+        /// response header will contain the value <c>"NotImplemented"</c>).
+        /// </para>
         /// </summary>
         public Expiration Expiration
         {

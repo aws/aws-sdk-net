@@ -153,15 +153,15 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the Expiration property.
-        /// Specifies the expiration date for the object and the
-        /// rule governing the expiration.
-        /// Is null if expiration is not applicable.
-        ///  <note> 
+        /// Gets and sets the property Expiration. 
         /// <para>
-        /// This functionality is not supported for directory buckets.
+        /// If the object expiration is configured, this will contain the expiration date (<c>expiry-date</c>)
+        /// and rule ID (<c>rule-id</c>). The value of <c>rule-id</c> is URL encoded.
         /// </para>
-        ///  </note>
+        /// <para>
+        /// Object expiration information is not returned for directory buckets (for those, the
+        /// response header will contain the value <c>"NotImplemented"</c>).
+        /// </para>
         /// </summary>
         public Expiration Expiration
         {
@@ -177,15 +177,15 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the RestoreExpiration property.
-        /// RestoreExpiration will be set for objects that have been restored from Amazon Glacier.  
-        /// It indiciates for those objects how long the restored object will exist.
-        /// </summary>
-        ///  <note> 
         /// <para>
-        /// This functionality is not supported for directory buckets. Only the S3 Express One
-        /// Zone storage class is supported by directory buckets to store objects.
+        /// RestoreExpiration will be set for objects that have been restored from Amazon Glacier.
+        /// It indicates for those objects how long the restored object will exist.
         /// </para>
-        ///  </note>
+        /// <para>
+        /// This functionality is not supported for directory buckets. 
+        /// Only the S3 Express One Zone storage class is supported by directory buckets to store objects.
+        /// </para>
+        /// </summary>
         public DateTime? RestoreExpiration
         {
             get { return this.restoreExpiration; }
@@ -194,19 +194,20 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Gets and sets the RestoreInProgress
-        /// Will be true when the object is in the process of being restored from Amazon Glacier.
-        /// </summary>
-        ///  <note> 
         /// <para>
-        /// This functionality is not supported for directory buckets. Only the S3 Express One
-        /// Zone storage class is supported by directory buckets to store objects.
+        /// Will be <c>true</c> when the object is in the process of being restored from Amazon Glacier.
         /// </para>
-        ///  </note>
+        /// <para>
+        /// This functionality is not supported for directory buckets. 
+        /// Only the S3 Express One Zone storage class is supported by directory buckets to store objects.
+        /// </para>
+        /// </summary>
         public bool RestoreInProgress
         {
             get { return this.restoreInProgress; }
             set { this.restoreInProgress = value; }
         }
+
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>

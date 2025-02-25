@@ -240,8 +240,12 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
-        /// If the object expiration is configured, this will contain the expiration date (expiry-date)
-        /// and rule ID (rule-id). The value of rule-id is URL encoded.
+        /// If the object expiration is configured, this will contain the expiration date (<c>expiry-date</c>)
+        /// and rule ID (<c>rule-id</c>). The value of <c>rule-id</c> is URL encoded.
+        /// </para>
+        /// <para>
+        /// Object expiration information is not returned for directory buckets (for those, the
+        /// response header will contain the value <c>"NotImplemented"</c>).
         /// </para>
         /// </summary>
         public Expiration Expiration
