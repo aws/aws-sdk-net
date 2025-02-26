@@ -917,9 +917,9 @@ if(structureIsEvent || structureIsEventStream)
                     else if (member.IsList && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
                     {
                     // restxml and restjson is the only protocol where we send empty lists in headers. See following protocol tests.
-                    // https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
-                    // https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
-                        if (String.Equals(this.Config.ServiceModel.Type.ToString(), "rest_xml", StringComparison.OrdinalIgnoreCase) || String.Equals(this.Config.ServiceModel.Type.ToString(), "rest_json", StringComparison.OrdinalIgnoreCase))
+                    // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
+                    // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
+                        if (this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
                         {
 
 
