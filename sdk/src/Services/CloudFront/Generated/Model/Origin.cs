@@ -44,6 +44,10 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Use <c>VpcOriginConfig</c> to specify a VPC origin.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Use <c>CustomOriginConfig</c> to specify all other kinds of origins, including:
     /// </para>
     ///  <ul> <li> 
