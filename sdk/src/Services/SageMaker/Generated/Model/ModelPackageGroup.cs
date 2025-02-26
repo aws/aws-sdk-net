@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A group of versioned models in the model registry.
+    /// A group of versioned models in the Model Registry.
     /// </summary>
     public partial class ModelPackageGroup
     {

@@ -80,14 +80,19 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of node IDs to be deleted from the specified cluster.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove
         /// instances that are configured as Slurm controller nodes.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for assistance.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=99)]
+        [AWSProperty(Required=true, Min=1, Max=3000)]
         public List<string> NodeIds
         {
             get { return this._nodeIds; }

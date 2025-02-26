@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _inferenceComponentArn;
         private string _inferenceComponentName;
         private InferenceComponentStatus _inferenceComponentStatus;
+        private InferenceComponentDeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
         private InferenceComponentRuntimeConfigSummary _runtimeConfig;
         private InferenceComponentSpecificationSummary _specification;
@@ -176,6 +177,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInferenceComponentStatus()
         {
             return this._inferenceComponentStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDeploymentConfig. 
+        /// <para>
+        /// The deployment and rollback settings that you assigned to the inference component.
+        /// </para>
+        /// </summary>
+        public InferenceComponentDeploymentConfig LastDeploymentConfig
+        {
+            get { return this._lastDeploymentConfig; }
+            set { this._lastDeploymentConfig = value; }
+        }
+
+        // Check to see if LastDeploymentConfig property is set
+        internal bool IsSetLastDeploymentConfig()
+        {
+            return this._lastDeploymentConfig != null;
         }
 
         /// <summary>

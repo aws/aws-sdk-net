@@ -31,6 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The properties of an experiment as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API. For information about experiments, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>
     /// API.
     /// </summary>
     public partial class Experiment
