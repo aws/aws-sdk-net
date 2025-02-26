@@ -91,6 +91,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetListResponseScope())
+                {
+                    context.Writer.WritePropertyName("listResponseScope");
+                    context.Writer.Write(publicRequest.ListResponseScope);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

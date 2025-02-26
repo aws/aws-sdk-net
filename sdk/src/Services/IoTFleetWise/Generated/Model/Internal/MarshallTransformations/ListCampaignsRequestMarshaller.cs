@@ -69,6 +69,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetListResponseScope())
+                {
+                    context.Writer.WritePropertyName("listResponseScope");
+                    context.Writer.Write(publicRequest.ListResponseScope);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

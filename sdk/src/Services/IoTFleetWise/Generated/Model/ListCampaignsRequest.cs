@@ -42,9 +42,30 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class ListCampaignsRequest : AmazonIoTFleetWiseRequest
     {
+        private ListResponseScope _listResponseScope;
         private int? _maxResults;
         private string _nextToken;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property ListResponseScope. 
+        /// <para>
+        /// When you set the <c>listResponseScope</c> parameter to <c>METADATA_ONLY</c>, the list
+        /// response includes: campaign name, Amazon Resource Name (ARN), creation time, and last
+        /// modification time.
+        /// </para>
+        /// </summary>
+        public ListResponseScope ListResponseScope
+        {
+            get { return this._listResponseScope; }
+            set { this._listResponseScope = value; }
+        }
+
+        // Check to see if ListResponseScope property is set
+        internal bool IsSetListResponseScope()
+        {
+            return this._listResponseScope != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
