@@ -21,7 +21,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ExistingObjectReplication unmarshaller
     /// </summary>
-    public class ExistingObjectReplicationUnmarshaller : IXmlUnmarshaller<ExistingObjectReplication, XmlUnmarshallerContext>, IXmlUnmarshaller<ExistingObjectReplication, JsonUnmarshallerContext>
+    public class ExistingObjectReplicationUnmarshaller : IXmlUnmarshaller<ExistingObjectReplication, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,16 +55,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return ExistingObjectReplication;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ExistingObjectReplication Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static ExistingObjectReplicationUnmarshaller _instance;

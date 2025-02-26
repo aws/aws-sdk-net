@@ -125,7 +125,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 if (publicRequestAccessControlPolicyGrantsValue.Grantee != null)
                                 {
-                                    xmlWriter.WriteStartElement( "Grantee");
+                                    xmlWriter.WriteStartElement( "xsi","Grantee", "http://www.w3.org/2001/XMLSchema-instance");
                                     if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
                                         xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.Type));
                                     if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetDisplayName())

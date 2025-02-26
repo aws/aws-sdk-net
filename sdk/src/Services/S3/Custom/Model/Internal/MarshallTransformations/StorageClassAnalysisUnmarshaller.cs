@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///  StorageClassAnalysisUnmarshaller
     /// </summary>
-    public class StorageClassAnalysisUnmarshaller : IXmlUnmarshaller<StorageClassAnalysis, XmlUnmarshallerContext>, IXmlUnmarshaller<StorageClassAnalysis, JsonUnmarshallerContext>
+    public class StorageClassAnalysisUnmarshaller : IXmlUnmarshaller<StorageClassAnalysis, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -58,16 +58,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return storageClassAnalysis;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StorageClassAnalysis Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static StorageClassAnalysisUnmarshaller _instance;

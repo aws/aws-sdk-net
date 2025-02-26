@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CORSRule Unmarshaller
      /// </summary>
-    public class CORSRuleUnmarshaller : IXmlUnmarshaller<CORSRule, XmlUnmarshallerContext>, IXmlUnmarshaller<CORSRule, JsonUnmarshallerContext> 
+    public class CORSRuleUnmarshaller : IXmlUnmarshaller<CORSRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -108,15 +108,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return cORSRule;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CORSRule Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static CORSRuleUnmarshaller _instance;
 

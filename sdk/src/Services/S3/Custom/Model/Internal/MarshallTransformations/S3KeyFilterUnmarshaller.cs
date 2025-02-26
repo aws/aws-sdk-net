@@ -22,22 +22,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   S3KeyFilter Unmarshaller
     /// </summary>
-    public class S3KeyFilterUnmarshaller : IXmlUnmarshaller<S3KeyFilter, XmlUnmarshallerContext>, IXmlUnmarshaller<S3KeyFilter, JsonUnmarshallerContext> 
+    public class S3KeyFilterUnmarshaller : IXmlUnmarshaller<S3KeyFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3KeyFilter Unmarshall(XmlUnmarshallerContext context) 
+        public S3KeyFilter Unmarshall(XmlUnmarshallerContext context)
         {
             S3KeyFilter s3KeyFilter = new S3KeyFilter();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+
+            if (context.IsStartOfDocument)
+                targetDepth += 2;
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -60,16 +60,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return s3KeyFilter;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3KeyFilter Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static S3KeyFilterUnmarshaller _instance;

@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetObjectKeyFormat Object
     /// </summary>  
-    public class TargetObjectKeyFormatUnmarshaller : IXmlUnmarshaller<TargetObjectKeyFormat, XmlUnmarshallerContext>, IXmlUnmarshaller<TargetObjectKeyFormat, JsonUnmarshallerContext>
+    public class TargetObjectKeyFormatUnmarshaller : IXmlUnmarshaller<TargetObjectKeyFormat, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -58,16 +58,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetObjectKeyFormat Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static TargetObjectKeyFormatUnmarshaller _instance = new TargetObjectKeyFormatUnmarshaller();        

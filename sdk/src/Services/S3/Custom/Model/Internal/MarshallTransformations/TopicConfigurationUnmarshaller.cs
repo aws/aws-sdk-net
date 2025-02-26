@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TopicConfiguration Unmarshaller
      /// </summary>
-    public class TopicConfigurationUnmarshaller : IXmlUnmarshaller<TopicConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<TopicConfiguration, JsonUnmarshallerContext> 
+    public class TopicConfigurationUnmarshaller : IXmlUnmarshaller<TopicConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,16 +81,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return topicConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TopicConfiguration Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static TopicConfigurationUnmarshaller _instance;

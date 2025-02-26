@@ -65,7 +65,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
-                xmlWriter.WriteStartElement("Delete", "");
+                xmlWriter.WriteStartElement("Delete", S3Constants.S3RequestXmlNamespace);
 
                 var deleteDeleteobjectsList = deleteObjectsRequest.Objects;
                 if (deleteDeleteobjectsList != null && deleteDeleteobjectsList.Count > 0)

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// SourceSelectionCriteria unmarshaller
     /// </summary>
-    public class SourceSelectionCriteriaUnmarshaller : IXmlUnmarshaller<SourceSelectionCriteria, XmlUnmarshallerContext>, IXmlUnmarshaller<SourceSelectionCriteria, JsonUnmarshallerContext>
+    public class SourceSelectionCriteriaUnmarshaller : IXmlUnmarshaller<SourceSelectionCriteria, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,16 +62,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return SourceSelectionCriteria;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SourceSelectionCriteria Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static SourceSelectionCriteriaUnmarshaller _instance;

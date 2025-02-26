@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Tag Unmarshaller
      /// </summary>
-    public class TagUnmarshaller : IXmlUnmarshaller<Tag, XmlUnmarshallerContext>, IXmlUnmarshaller<Tag, JsonUnmarshallerContext> 
+    public class TagUnmarshaller : IXmlUnmarshaller<Tag, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return tag;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Tag Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static TagUnmarshaller _instance;

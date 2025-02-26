@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Expiration Unmarshaller
      /// </summary>
-    public class ExpirationUnmarshaller : IXmlUnmarshaller<LifecycleRuleExpiration, XmlUnmarshallerContext>, IXmlUnmarshaller<LifecycleRuleExpiration, JsonUnmarshallerContext> 
+    public class ExpirationUnmarshaller : IXmlUnmarshaller<LifecycleRuleExpiration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,15 +72,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return expiration;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LifecycleRuleExpiration Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ExpirationUnmarshaller _instance;
 

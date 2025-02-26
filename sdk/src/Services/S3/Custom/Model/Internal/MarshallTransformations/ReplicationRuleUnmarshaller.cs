@@ -23,7 +23,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReplicationRule unmarshaller
     /// </summary>
-    public class ReplicationRuleUnmarshaller : IXmlUnmarshaller<ReplicationRule, XmlUnmarshallerContext>, IXmlUnmarshaller<ReplicationRule, JsonUnmarshallerContext> 
+    public class ReplicationRuleUnmarshaller : IXmlUnmarshaller<ReplicationRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,16 +105,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return rule;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static ReplicationRuleUnmarshaller _instance;

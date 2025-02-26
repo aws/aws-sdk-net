@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PartitionedPrefix Object
     /// </summary>  
-    public class PartitionedPrefixUnmarshaller : IXmlUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>, IXmlUnmarshaller<PartitionedPrefix, JsonUnmarshallerContext>
+    public class PartitionedPrefixUnmarshaller : IXmlUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -52,16 +52,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PartitionedPrefix Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static PartitionedPrefixUnmarshaller _instance = new PartitionedPrefixUnmarshaller();        

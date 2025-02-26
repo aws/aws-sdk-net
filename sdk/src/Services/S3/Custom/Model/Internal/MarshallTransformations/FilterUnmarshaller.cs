@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Filter Unmarshaller
      /// </summary>
-    public class FilterUnmarshaller : IXmlUnmarshaller<Filter, XmlUnmarshallerContext>, IXmlUnmarshaller<Filter, JsonUnmarshallerContext> 
+    public class FilterUnmarshaller : IXmlUnmarshaller<Filter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,16 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return filter;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Filter Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static FilterUnmarshaller _instance;

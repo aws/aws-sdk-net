@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Manual sweep of S3 for protocol test compliance."
+            ]
+        }
+    ]
+}

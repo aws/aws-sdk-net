@@ -9,7 +9,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReplicationTimeValue unmarshaller
     /// </summary>
-    public class ReplicationTimeValueUnmarshaller : IXmlUnmarshaller<ReplicationTimeValue, XmlUnmarshallerContext>, IXmlUnmarshaller<ReplicationTimeValue, JsonUnmarshallerContext>
+    public class ReplicationTimeValueUnmarshaller : IXmlUnmarshaller<ReplicationTimeValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -41,16 +41,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return replicationTimeValue;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationTimeValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static ReplicationTimeValueUnmarshaller _instance;

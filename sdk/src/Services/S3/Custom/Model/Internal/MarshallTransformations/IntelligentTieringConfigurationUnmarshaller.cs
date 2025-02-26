@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Unmarshaller for IntelligentTieringConfiguration
     /// </summary>   
-    public class IntelligentTieringConfigurationUnmarshaller : IXmlUnmarshaller<IntelligentTieringConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<IntelligentTieringConfiguration, JsonUnmarshallerContext>
+    public class IntelligentTieringConfigurationUnmarshaller : IXmlUnmarshaller<IntelligentTieringConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,16 +80,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return response;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IntelligentTieringConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static IntelligentTieringConfigurationUnmarshaller _instance;

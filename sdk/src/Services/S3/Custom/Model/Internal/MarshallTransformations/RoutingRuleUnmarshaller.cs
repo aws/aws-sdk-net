@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   RoutingRule Unmarshaller
      /// </summary>
-    public class RoutingRuleUnmarshaller : IXmlUnmarshaller<RoutingRule, XmlUnmarshallerContext>, IXmlUnmarshaller<RoutingRule, JsonUnmarshallerContext> 
+    public class RoutingRuleUnmarshaller : IXmlUnmarshaller<RoutingRule, XmlUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return routingRule;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RoutingRule Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static RoutingRuleUnmarshaller _instance;

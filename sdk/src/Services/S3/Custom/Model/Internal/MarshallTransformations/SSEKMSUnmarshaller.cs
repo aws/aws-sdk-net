@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   SSEKMS Unmarshaller
     /// </summary>
-    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>, IXmlUnmarshaller<SSEKMS, JsonUnmarshallerContext>
+    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -58,16 +58,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return condition;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SSEKMS Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static SSEKMSUnmarshaller _instance;

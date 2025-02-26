@@ -18,7 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 { 
-    public class MetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>, IXmlUnmarshaller<MetadataTableConfigurationResult, JsonUnmarshallerContext>
+    public class MetadataTableConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataTableConfigurationResult, XmlUnmarshallerContext>
     {
         public MetadataTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
@@ -46,16 +46,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return metadataTableConfigurationResult;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MetadataTableConfigurationResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static MetadataTableConfigurationResultUnmarshaller _instance;

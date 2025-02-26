@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ServerSideEncryptionRule unmarshaller
     /// </summary>
-    public class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>, IXmlUnmarshaller<ServerSideEncryptionRule, JsonUnmarshallerContext>
+    public class ServerSideEncryptionRuleUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,15 +68,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public ServerSideEncryptionRule Unmarshall(JsonUnmarshallerContext input)
-        {
-            return null;
-        }
         private static ServerSideEncryptionRuleUnmarshaller _instance;
 
         /// <summary>
