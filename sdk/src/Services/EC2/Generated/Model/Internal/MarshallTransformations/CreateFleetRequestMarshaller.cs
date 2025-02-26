@@ -104,6 +104,61 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetBlockDeviceMappings())
+                                {
+                                    int publicRequestlistValuelistValuelistValueIndex = 1;
+                                    foreach(var publicRequestlistValuelistValuelistValue in publicRequestlistValuelistValue.BlockDeviceMappings)
+                                    {
+                                        if(publicRequestlistValuelistValuelistValue.IsSetDeviceName())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValuelistValuelistValue.DeviceName));
+                                        }
+                                        if(publicRequestlistValuelistValuelistValue.IsSetEbs())
+                                        {
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetDeleteOnTermination())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValuelistValuelistValue.Ebs.DeleteOnTermination));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetEncrypted())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValuelistValuelistValue.Ebs.Encrypted));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetIops())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValuelistValuelistValue.Ebs.Iops));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetKmsKeyId())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestlistValuelistValuelistValue.Ebs.KmsKeyId));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetSnapshotId())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValuelistValuelistValue.Ebs.SnapshotId));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetThroughput())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValuelistValuelistValue.Ebs.Throughput));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetVolumeSize())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValuelistValuelistValue.Ebs.VolumeSize));
+                                            }
+                                            if(publicRequestlistValuelistValuelistValue.Ebs.IsSetVolumeType())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValuelistValuelistValue.Ebs.VolumeType));
+                                            }
+                                        }
+                                        if(publicRequestlistValuelistValuelistValue.IsSetNoDevice())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValuelistValuelistValue.NoDevice));
+                                        }
+                                        if(publicRequestlistValuelistValuelistValue.IsSetVirtualName())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestlistValuelistValuelistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValuelistValuelistValue.VirtualName));
+                                        }
+                                        publicRequestlistValuelistValuelistValueIndex++;
+                                    }
+                                }
                                 if(publicRequestlistValuelistValue.IsSetImageId())
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestlistValuelistValue.ImageId));

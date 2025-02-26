@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The parameters for a block device for an EBS volume.
+    /// Describes a block device for an EBS volume.
     /// </summary>
-    public partial class LaunchTemplateEbsBlockDeviceRequest
+    public partial class FleetEbsBlockDeviceRequest
     {
         private bool? _deleteOnTermination;
         private bool? _encrypted;
@@ -46,7 +46,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the EBS volume is deleted on instance termination.
+        /// Indicates whether the EBS volume is deleted on instance termination. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/preserving-volumes-on-termination.html">Preserve
+        /// data when an instance is terminated</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -64,10 +66,59 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached
-        /// to instances that support Amazon EBS encryption. If you are creating a volume from
-        /// a snapshot, you can't specify an encryption value.
+        /// Indicates whether the encryption state of an EBS volume is changed while being restored
+        /// from a backing snapshot. The effect of setting the encryption state to <c>true</c>
+        /// depends on the volume origin (new or from a snapshot), starting encryption state,
+        /// ownership, and whether encryption by default is enabled. For more information, see
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// In no case can you remove encryption from an encrypted volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Encrypted volumes can only be attached to instances that support Amazon EBS encryption.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
+        /// instance types</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not returned by .
+        /// </para>
+        ///  
+        /// <para>
+        /// For and , whether you can include this parameter, and the allowed values differ depending
+        /// on the type of block device mapping you are creating.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are creating a block device mapping for a <b>new (empty) volume</b>, you can
+        /// include this parameter, and specify either <c>true</c> for an encrypted volume, or
+        /// <c>false</c> for an unencrypted volume. If you omit this parameter, it defaults to
+        /// <c>false</c> (unencrypted).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing encrypted or unencrypted
+        /// snapshot</b>, you must omit this parameter. If you include this parameter, the request
+        /// will fail, regardless of the value that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing unencrypted volume</b>,
+        /// you can include this parameter, but you must specify <c>false</c>. If you specify
+        /// <c>true</c>, the request will fail. In this case, we recommend that you omit the parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing encrypted volume</b>,
+        /// you can include this parameter, and specify either <c>true</c> or <c>false</c>. However,
+        /// if you specify <c>false</c>, the parameter is ignored and the block device mapping
+        /// is always encrypted. In this case, we recommend that you omit the parameter.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool Encrypted
         {
@@ -107,13 +158,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
+        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
         /// built on the Nitro System</a>. On other instances, you can achieve performance up
         /// to 32,000 IOPS.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is supported for <c>io1</c>, <c>io2</c>, and <c>gp3</c> volumes only.
+        /// This parameter is required for <c>io1</c> and <c>io2</c> volumes. The default for
+        /// <c>gp3</c> volumes is 3,000 IOPS.
         /// </para>
         /// </summary>
         public int Iops
@@ -133,6 +185,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS
         /// key to use for EBS encryption.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only supported on <c>BlockDeviceMapping</c> objects called by <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -168,7 +227,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a <c>gp3</c> volume, with a maximum of 1,000 MiB/s.
+        /// The throughput that the volume supports, in MiB/s.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is valid only for <c>gp3</c> volumes.
         /// </para>
         ///  
         /// <para>
@@ -191,7 +254,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VolumeSize. 
         /// <para>
         /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
-        /// size. The following are the supported volumes sizes for each volume type:
+        /// size. If you specify a snapshot, the default is the snapshot size. You can specify
+        /// a volume size that is equal to or larger than the snapshot size.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the supported sizes for each volume type:
         /// </para>
         ///  <ul> <li> 
         /// <para>

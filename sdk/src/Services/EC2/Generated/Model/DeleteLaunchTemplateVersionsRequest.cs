@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/delete-launch-template.html#delete-launch-template-version">Delete
     /// a launch template version</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>

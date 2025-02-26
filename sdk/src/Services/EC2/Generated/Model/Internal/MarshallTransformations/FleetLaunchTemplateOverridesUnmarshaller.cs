@@ -61,6 +61,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("blockDeviceMappingSet/item", targetDepth))
+                    {
+                        var unmarshaller = BlockDeviceMappingResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.BlockDeviceMappings == null)
+                        {
+                            unmarshalledObject.BlockDeviceMappings = new List<BlockDeviceMappingResponse>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BlockDeviceMappings.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("imageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

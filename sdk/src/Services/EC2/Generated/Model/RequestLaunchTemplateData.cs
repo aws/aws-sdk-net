@@ -116,8 +116,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuOptions. 
         /// <para>
-        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
-        /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU
+        /// options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateCpuOptionsRequest CpuOptions
@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether to enable the instance for stop protection. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
-        /// stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -281,8 +281,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
         /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-        /// is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves
-        /// User Guide</i>.
+        /// is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -558,8 +557,8 @@ namespace Amazon.EC2.Model
         ///  <important> 
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// provided kernels</a> in the <i>Amazon EC2 User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User
+        /// provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -639,8 +638,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MetadataOptions. 
         /// <para>
-        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateInstanceMetadataOptionsRequest MetadataOptions
@@ -860,13 +859,14 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The user data to make available to the instance. You must provide base64-encoded text.
         /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-        /// commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.
+        /// commands when you launch an EC2 instance with user data input</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you are creating the launch template for use with Batch, the user data must be
         /// provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME
-        /// multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
+        /// multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon
         /// EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>

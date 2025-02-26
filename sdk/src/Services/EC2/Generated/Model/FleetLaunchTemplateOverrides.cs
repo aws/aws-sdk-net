@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateOverrides
     {
         private string _availabilityZone;
+        private List<BlockDeviceMappingResponse> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMappingResponse>() : null;
         private string _imageId;
         private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
@@ -60,6 +61,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlockDeviceMappings. 
+        /// <para>
+        /// The block device mapping, which defines the EBS volumes and instance store volumes
+        /// to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+        /// device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<BlockDeviceMappingResponse> BlockDeviceMappings
+        {
+            get { return this._blockDeviceMappings; }
+            set { this._blockDeviceMappings = value; }
+        }
+
+        // Check to see if BlockDeviceMappings property is set
+        internal bool IsSetBlockDeviceMappings()
+        {
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,6 +221,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// If you specify a maximum price, your instances will be interrupted more frequently
         /// than if you do not specify this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a maximum price, it must be more than USD $0.001. Specifying a value
+        /// below USD $0.001 will result in an <c>InvalidParameterValue</c> error message.
         /// </para>
         ///  </important>
         /// </summary>

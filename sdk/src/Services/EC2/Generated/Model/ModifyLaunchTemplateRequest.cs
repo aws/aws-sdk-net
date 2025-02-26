@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// idempotency</a>.
+        /// idempotency in Amazon EC2 API requests</a>.
         /// </para>
         ///  
         /// <para>

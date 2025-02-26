@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The parameters for a block device for an EBS volume.
+    /// Describes a block device for an EBS volume.
     /// </summary>
-    public partial class LaunchTemplateEbsBlockDeviceRequest
+    public partial class EbsBlockDeviceResponse
     {
         private bool? _deleteOnTermination;
         private bool? _encrypted;
@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the EBS volume is deleted on instance termination.
+        /// Indicates whether the volume is deleted on instance termination.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -64,9 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached
-        /// to instances that support Amazon EBS encryption. If you are creating a volume from
-        /// a snapshot, you can't specify an encryption value.
+        /// Indicates whether the volume is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -88,32 +86,6 @@ namespace Amazon.EC2.Model
         /// volumes, this represents the number of IOPS that are provisioned for the volume. For
         /// <c>gp2</c> volumes, this represents the baseline performance of the volume and the
         /// rate at which the volume accumulates I/O credits for bursting.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following are the supported values for each volume type:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>io1</c>: 100 - 64,000 IOPS
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>io2</c>: 100 - 256,000 IOPS
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-        /// built on the Nitro System</a>. On other instances, you can achieve performance up
-        /// to 32,000 IOPS.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is supported for <c>io1</c>, <c>io2</c>, and <c>gp3</c> volumes only.
         /// </para>
         /// </summary>
         public int Iops
@@ -168,11 +140,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a <c>gp3</c> volume, with a maximum of 1,000 MiB/s.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// The throughput that the volume supports, in MiB/s.
         /// </para>
         /// </summary>
         public int Throughput
@@ -190,30 +158,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
-        /// size. The following are the supported volumes sizes for each volume type:
+        /// The size of the volume, in GiBs.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>io1</c>: 4 - 16,384 GiB
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>io2</c>: 4 - 65,536 GiB
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>standard</c>: 1 - 1024 GiB
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public int VolumeSize
         {
