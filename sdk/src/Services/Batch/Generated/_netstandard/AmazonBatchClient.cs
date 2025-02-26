@@ -497,6 +497,48 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateConsumableResource
+
+        internal virtual CreateConsumableResourceResponse CreateConsumableResource(CreateConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConsumableResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Batch consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConsumableResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateConsumableResource">REST API Reference for CreateConsumableResource Operation</seealso>
+        public virtual Task<CreateConsumableResourceResponse> CreateConsumableResourceAsync(CreateConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConsumableResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateJobQueue
 
         internal virtual CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
@@ -639,6 +681,48 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = DeleteComputeEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteComputeEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConsumableResource
+
+        internal virtual DeleteConsumableResourceResponse DeleteConsumableResource(DeleteConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConsumableResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConsumableResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteConsumableResource">REST API Reference for DeleteConsumableResource Operation</seealso>
+        public virtual Task<DeleteConsumableResourceResponse> DeleteConsumableResourceAsync(DeleteConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConsumableResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -829,6 +913,48 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = DescribeComputeEnvironmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeComputeEnvironmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConsumableResource
+
+        internal virtual DescribeConsumableResourceResponse DescribeConsumableResource(DescribeConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConsumableResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of the specified consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConsumableResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeConsumableResource">REST API Reference for DescribeConsumableResource Operation</seealso>
+        public virtual Task<DescribeConsumableResourceResponse> DescribeConsumableResourceAsync(DescribeConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConsumableResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1044,6 +1170,48 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListConsumableResources
+
+        internal virtual ListConsumableResourcesResponse ListConsumableResources(ListConsumableResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListConsumableResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of Batch consumable resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConsumableResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConsumableResources service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListConsumableResources">REST API Reference for ListConsumableResources Operation</seealso>
+        public virtual Task<ListConsumableResourcesResponse> ListConsumableResourcesAsync(ListConsumableResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConsumableResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
@@ -1104,6 +1272,48 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobsByConsumableResource
+
+        internal virtual ListJobsByConsumableResourceResponse ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsByConsumableResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of Batch jobs that require a specific consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByConsumableResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobsByConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
+        public virtual Task<ListJobsByConsumableResourceResponse> ListJobsByConsumableResourceAsync(ListJobsByConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobsByConsumableResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1259,8 +1469,8 @@ namespace Amazon.Batch
         /// 
         ///  <note> 
         /// <para>
-        /// Job queues with a scheduling policy are limited to 500 active share identifiers at
-        /// a time. 
+        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
+        /// at a time. 
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1467,6 +1677,48 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = UpdateComputeEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateComputeEnvironmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConsumableResource
+
+        internal virtual UpdateConsumableResourceResponse UpdateConsumableResource(UpdateConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConsumableResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConsumableResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateConsumableResource">REST API Reference for UpdateConsumableResource Operation</seealso>
+        public virtual Task<UpdateConsumableResourceResponse> UpdateConsumableResourceAsync(UpdateConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConsumableResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

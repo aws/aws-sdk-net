@@ -42,9 +42,19 @@ namespace Amazon.Batch.Model
         IDescribeJobQueuesPaginator DescribeJobQueues(DescribeJobQueuesRequest request);
 
         /// <summary>
+        /// Paginator for ListConsumableResources operation
+        ///</summary>
+        IListConsumableResourcesPaginator ListConsumableResources(ListConsumableResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListJobsByConsumableResource operation
+        ///</summary>
+        IListJobsByConsumableResourcePaginator ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request);
 
         /// <summary>
         /// Paginator for ListSchedulingPolicies operation

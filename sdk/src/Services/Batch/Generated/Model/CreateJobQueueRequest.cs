@@ -154,10 +154,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SchedulingPolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the fair-share scheduling policy. Job queues that
-        /// don't have a fair-share scheduling policy are scheduled in a first-in, first-out (FIFO)
-        /// model. After a job queue has a fair-share scheduling policy, it can be replaced but
-        /// can't be removed.
+        /// The Amazon Resource Name (ARN) of the fair share scheduling policy. Job queues that
+        /// don't have a scheduling policy are scheduled in a first-in, first-out (FIFO) model.
+        /// After a job queue has a scheduling policy, it can be replaced but can't be removed.
         /// </para>
         ///  
         /// <para>
@@ -170,10 +169,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// A job queue without a fair-share scheduling policy is scheduled as a FIFO job queue
-        /// and can't have a fair-share scheduling policy added. Jobs queues with a fair-share
-        /// scheduling policy can have a maximum of 500 active share identifiers. When the limit
-        /// has been reached, submissions of any jobs that add a new share identifier fail.
+        /// A job queue without a scheduling policy is scheduled as a FIFO job queue and can't
+        /// have a scheduling policy added. Jobs queues with a scheduling policy can have a maximum
+        /// of 500 active fair share identifiers. When the limit has been reached, submissions
+        /// of any jobs that add a new fair share identifier fail.
         /// </para>
         /// </summary>
         public string SchedulingPolicyArn

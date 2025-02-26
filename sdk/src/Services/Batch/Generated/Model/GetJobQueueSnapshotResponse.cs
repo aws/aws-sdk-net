@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property FrontOfQueue. 
         /// <para>
         /// The list of the first 100 <c>RUNNABLE</c> jobs in each job queue. For first-in-first-out
-        /// (FIFO) job queues, jobs are ordered based on their submission time. For fair-share
+        /// (FIFO) job queues, jobs are ordered based on their submission time. For fair share
         /// scheduling (FSS) job queues, jobs are ordered based on their job priority and share
         /// usage.
         /// </para>

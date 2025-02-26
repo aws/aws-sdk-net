@@ -107,8 +107,8 @@ namespace Amazon.Batch.Model
         /// If a <c>maxSwap</c> value of <c>0</c> is specified, the container doesn't use swap.
         /// Accepted values are <c>0</c> or any positive integer. If the <c>maxSwap</c> parameter
         /// is omitted, the container doesn't use the swap configuration for the container instance
-        /// on which it runs. A <c>maxSwap</c> value must be set for the <c>swappiness</c> parameter
-        /// to be used.
+        /// that it's running on. A <c>maxSwap</c> value must be set for the <c>swappiness</c>
+        /// parameter to be used.
         /// </para>
         ///  <note> 
         /// <para>

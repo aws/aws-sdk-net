@@ -78,6 +78,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("consumableResourceProperties", targetDepth))
+                {
+                    var unmarshaller = ConsumableResourcePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.ConsumableResourceProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("container", targetDepth))
                 {
                     var unmarshaller = ContainerDetailUnmarshaller.Instance;

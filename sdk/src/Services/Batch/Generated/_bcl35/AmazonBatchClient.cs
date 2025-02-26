@@ -533,6 +533,68 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateConsumableResource
+
+        /// <summary>
+        /// Creates an Batch consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConsumableResource service method.</param>
+        /// 
+        /// <returns>The response from the CreateConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateConsumableResource">REST API Reference for CreateConsumableResource Operation</seealso>
+        public virtual CreateConsumableResourceResponse CreateConsumableResource(CreateConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConsumableResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConsumableResource operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConsumableResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateConsumableResource">REST API Reference for CreateConsumableResource Operation</seealso>
+        public virtual IAsyncResult BeginCreateConsumableResource(CreateConsumableResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsumableResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConsumableResource.</param>
+        /// 
+        /// <returns>Returns a  CreateConsumableResourceResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateConsumableResource">REST API Reference for CreateConsumableResource Operation</seealso>
+        public virtual CreateConsumableResourceResponse EndCreateConsumableResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConsumableResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateJobQueue
 
         /// <summary>
@@ -735,6 +797,68 @@ namespace Amazon.Batch
         public virtual DeleteComputeEnvironmentResponse EndDeleteComputeEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteComputeEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConsumableResource
+
+        /// <summary>
+        /// Deletes the specified consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConsumableResource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteConsumableResource">REST API Reference for DeleteConsumableResource Operation</seealso>
+        public virtual DeleteConsumableResourceResponse DeleteConsumableResource(DeleteConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConsumableResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConsumableResource operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConsumableResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteConsumableResource">REST API Reference for DeleteConsumableResource Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConsumableResource(DeleteConsumableResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsumableResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConsumableResource.</param>
+        /// 
+        /// <returns>Returns a  DeleteConsumableResourceResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteConsumableResource">REST API Reference for DeleteConsumableResource Operation</seealso>
+        public virtual DeleteConsumableResourceResponse EndDeleteConsumableResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConsumableResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -1005,6 +1129,68 @@ namespace Amazon.Batch
         public virtual DescribeComputeEnvironmentsResponse EndDescribeComputeEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeComputeEnvironmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConsumableResource
+
+        /// <summary>
+        /// Returns a description of the specified consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConsumableResource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeConsumableResource">REST API Reference for DescribeConsumableResource Operation</seealso>
+        public virtual DescribeConsumableResourceResponse DescribeConsumableResource(DescribeConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConsumableResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConsumableResource operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConsumableResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeConsumableResource">REST API Reference for DescribeConsumableResource Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConsumableResource(DescribeConsumableResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConsumableResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConsumableResource.</param>
+        /// 
+        /// <returns>Returns a  DescribeConsumableResourceResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeConsumableResource">REST API Reference for DescribeConsumableResource Operation</seealso>
+        public virtual DescribeConsumableResourceResponse EndDescribeConsumableResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConsumableResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -1320,6 +1506,68 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListConsumableResources
+
+        /// <summary>
+        /// Returns a list of Batch consumable resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConsumableResources service method.</param>
+        /// 
+        /// <returns>The response from the ListConsumableResources service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListConsumableResources">REST API Reference for ListConsumableResources Operation</seealso>
+        public virtual ListConsumableResourcesResponse ListConsumableResources(ListConsumableResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListConsumableResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConsumableResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConsumableResources operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConsumableResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListConsumableResources">REST API Reference for ListConsumableResources Operation</seealso>
+        public virtual IAsyncResult BeginListConsumableResources(ListConsumableResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConsumableResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsumableResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConsumableResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConsumableResources.</param>
+        /// 
+        /// <returns>Returns a  ListConsumableResourcesResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListConsumableResources">REST API Reference for ListConsumableResources Operation</seealso>
+        public virtual ListConsumableResourcesResponse EndListConsumableResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConsumableResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         /// <summary>
@@ -1400,6 +1648,68 @@ namespace Amazon.Batch
         public virtual ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListJobsByConsumableResource
+
+        /// <summary>
+        /// Returns a list of Batch jobs that require a specific consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByConsumableResource service method.</param>
+        /// 
+        /// <returns>The response from the ListJobsByConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
+        public virtual ListJobsByConsumableResourceResponse ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsByConsumableResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobsByConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByConsumableResource operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobsByConsumableResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
+        public virtual IAsyncResult BeginListJobsByConsumableResource(ListJobsByConsumableResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobsByConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsByConsumableResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobsByConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobsByConsumableResource.</param>
+        /// 
+        /// <returns>Returns a  ListJobsByConsumableResourceResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
+        public virtual ListJobsByConsumableResourceResponse EndListJobsByConsumableResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJobsByConsumableResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -1604,8 +1914,8 @@ namespace Amazon.Batch
         /// 
         ///  <note> 
         /// <para>
-        /// Job queues with a scheduling policy are limited to 500 active share identifiers at
-        /// a time. 
+        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
+        /// at a time. 
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1923,6 +2233,68 @@ namespace Amazon.Batch
         public virtual UpdateComputeEnvironmentResponse EndUpdateComputeEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateComputeEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConsumableResource
+
+        /// <summary>
+        /// Updates a consumable resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConsumableResource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConsumableResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateConsumableResource">REST API Reference for UpdateConsumableResource Operation</seealso>
+        public virtual UpdateConsumableResourceResponse UpdateConsumableResource(UpdateConsumableResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConsumableResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConsumableResource operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConsumableResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateConsumableResource">REST API Reference for UpdateConsumableResource Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConsumableResource(UpdateConsumableResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConsumableResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsumableResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConsumableResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConsumableResource.</param>
+        /// 
+        /// <returns>Returns a  UpdateConsumableResourceResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateConsumableResource">REST API Reference for UpdateConsumableResource Operation</seealso>
+        public virtual UpdateConsumableResourceResponse EndUpdateConsumableResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConsumableResourceResponse>(asyncResult);
         }
 
         #endregion

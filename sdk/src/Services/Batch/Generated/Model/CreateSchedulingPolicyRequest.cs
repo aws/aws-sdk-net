@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FairsharePolicy. 
         /// <para>
-        /// The fair-share scheduling policy details.
+        /// The fair share policy of the scheduling policy.
         /// </para>
         /// </summary>
         public FairsharePolicy FairsharePolicy
@@ -60,9 +60,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fair-share scheduling policy. It can be up to 128 letters long. It
-        /// can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores
-        /// (_).
+        /// The name of the scheduling policy. It can be up to 128 letters long. It can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

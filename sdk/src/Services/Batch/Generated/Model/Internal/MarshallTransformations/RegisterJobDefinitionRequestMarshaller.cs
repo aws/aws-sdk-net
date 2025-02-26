@@ -67,6 +67,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConsumableResourceProperties())
+                {
+                    context.Writer.WritePropertyName("consumableResourceProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConsumableResourceProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetContainerProperties())
                 {
                     context.Writer.WritePropertyName("containerProperties");

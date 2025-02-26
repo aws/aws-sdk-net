@@ -48,6 +48,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConsumableResourceProperties())
+            {
+                context.Writer.WritePropertyName("consumableResourceProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConsumableResourceProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("container");
