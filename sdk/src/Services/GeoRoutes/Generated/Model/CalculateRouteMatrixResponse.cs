@@ -75,7 +75,7 @@ namespace Amazon.GeoRoutes.Model
         // Check to see if PricingBucket property is set
         internal bool IsSetPricingBucket()
         {
-            return !string.IsNullOrEmpty(this._pricingBucket);
+            return this._pricingBucket != null;
         }
 
         /// <summary>

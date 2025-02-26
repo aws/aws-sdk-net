@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return !string.IsNullOrEmpty(this._accountId);
+            return this._accountId != null;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.S3Control.Model
         // Check to see if OutpostId property is set
         internal bool IsSetOutpostId()
         {
-            return !string.IsNullOrEmpty(this._outpostId);
+            return this._outpostId != null;
         }
 
     }

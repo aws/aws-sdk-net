@@ -71,7 +71,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return !string.IsNullOrEmpty(this._customAttributes);
+            return this._customAttributes != null;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InvokedProductionVariant property is set
         internal bool IsSetInvokedProductionVariant()
         {
-            return !string.IsNullOrEmpty(this._invokedProductionVariant);
+            return this._invokedProductionVariant != null;
         }
 
     }

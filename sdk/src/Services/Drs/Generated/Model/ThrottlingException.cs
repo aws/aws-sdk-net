@@ -160,7 +160,7 @@ namespace Amazon.Drs.Model
         // Check to see if RetryAfterSeconds property is set
         internal bool IsSetRetryAfterSeconds()
         {
-            return !string.IsNullOrEmpty(this._retryAfterSeconds);
+            return this._retryAfterSeconds != null;
         }
 
         /// <summary>

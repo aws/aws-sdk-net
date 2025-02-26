@@ -87,7 +87,7 @@ namespace Amazon.Deadline.Model
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return !string.IsNullOrEmpty(this._clientToken);
+            return this._clientToken != null;
         }
 
         /// <summary>

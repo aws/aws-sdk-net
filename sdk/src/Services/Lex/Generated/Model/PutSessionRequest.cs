@@ -108,7 +108,7 @@ namespace Amazon.Lex.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return !string.IsNullOrEmpty(this._accept);
+            return this._accept != null;
         }
 
         /// <summary>

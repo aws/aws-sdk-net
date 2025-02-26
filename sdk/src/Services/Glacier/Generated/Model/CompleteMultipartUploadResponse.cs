@@ -60,7 +60,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveId property is set
         internal bool IsSetArchiveId()
         {
-            return !string.IsNullOrEmpty(this._archiveId);
+            return this._archiveId != null;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return !string.IsNullOrEmpty(this._location);
+            return this._location != null;
         }
 
     }

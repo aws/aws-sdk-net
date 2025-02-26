@@ -53,7 +53,7 @@ namespace Amazon.EBS.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EBS.Model
         // Check to see if ChecksumAlgorithm property is set
         internal bool IsSetChecksumAlgorithm()
         {
-            return !string.IsNullOrEmpty(this._checksumAlgorithm);
+            return this._checksumAlgorithm != null;
         }
 
     }

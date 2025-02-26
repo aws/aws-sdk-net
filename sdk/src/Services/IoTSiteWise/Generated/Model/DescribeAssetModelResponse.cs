@@ -362,7 +362,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return !string.IsNullOrEmpty(this._eTag);
+            return this._eTag != null;
         }
 
     }

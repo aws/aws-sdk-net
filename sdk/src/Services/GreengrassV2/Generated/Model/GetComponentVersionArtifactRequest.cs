@@ -105,7 +105,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if IotEndpointType property is set
         internal bool IsSetIotEndpointType()
         {
-            return !string.IsNullOrEmpty(this._iotEndpointType);
+            return this._iotEndpointType != null;
         }
 
         /// <summary>

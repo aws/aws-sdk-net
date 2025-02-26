@@ -52,7 +52,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return !string.IsNullOrEmpty(this._location);
+            return this._location != null;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadId property is set
         internal bool IsSetUploadId()
         {
-            return !string.IsNullOrEmpty(this._uploadId);
+            return this._uploadId != null;
         }
 
     }

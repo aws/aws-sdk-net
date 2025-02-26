@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
     }

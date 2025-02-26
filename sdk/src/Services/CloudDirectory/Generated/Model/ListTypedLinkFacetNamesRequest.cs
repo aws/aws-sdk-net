@@ -95,7 +95,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if SchemaArn property is set
         internal bool IsSetSchemaArn()
         {
-            return !string.IsNullOrEmpty(this._schemaArn);
+            return this._schemaArn != null;
         }
 
     }

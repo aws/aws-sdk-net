@@ -97,7 +97,7 @@ namespace Amazon.IotData.Model
         // Check to see if CorrelationData property is set
         internal bool IsSetCorrelationData()
         {
-            return !string.IsNullOrEmpty(this._correlationData);
+            return this._correlationData != null;
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.IotData.Model
         // Check to see if PayloadFormatIndicator property is set
         internal bool IsSetPayloadFormatIndicator()
         {
-            return !string.IsNullOrEmpty(this._payloadFormatIndicator);
+            return this._payloadFormatIndicator != null;
         }
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.IotData.Model
         // Check to see if UserProperties property is set
         internal bool IsSetUserProperties()
         {
-            return !string.IsNullOrEmpty(this._userProperties);
+            return this._userProperties != null;
         }
 
     }

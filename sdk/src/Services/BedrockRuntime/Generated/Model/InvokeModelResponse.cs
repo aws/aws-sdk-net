@@ -76,7 +76,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if PerformanceConfigLatency property is set
         internal bool IsSetPerformanceConfigLatency()
         {
-            return !string.IsNullOrEmpty(this._performanceConfigLatency);
+            return this._performanceConfigLatency != null;
         }
 
     }

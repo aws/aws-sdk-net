@@ -57,7 +57,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if ClientContext property is set
         internal bool IsSetClientContext()
         {
-            return !string.IsNullOrEmpty(this._clientContext);
+            return this._clientContext != null;
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.MobileAnalytics.Model
         // Check to see if ClientContextEncoding property is set
         internal bool IsSetClientContextEncoding()
         {
-            return !string.IsNullOrEmpty(this._clientContextEncoding);
+            return this._clientContextEncoding != null;
         }
 
         /// <summary>

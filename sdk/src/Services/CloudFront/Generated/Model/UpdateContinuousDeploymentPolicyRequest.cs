@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return !string.IsNullOrEmpty(this._ifMatch);
+            return this._ifMatch != null;
         }
 
     }

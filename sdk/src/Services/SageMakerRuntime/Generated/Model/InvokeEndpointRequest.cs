@@ -98,7 +98,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return !string.IsNullOrEmpty(this._accept);
+            return this._accept != null;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return !string.IsNullOrEmpty(this._customAttributes);
+            return this._customAttributes != null;
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if EnableExplanations property is set
         internal bool IsSetEnableExplanations()
         {
-            return !string.IsNullOrEmpty(this._enableExplanations);
+            return this._enableExplanations != null;
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InferenceComponentName property is set
         internal bool IsSetInferenceComponentName()
         {
-            return !string.IsNullOrEmpty(this._inferenceComponentName);
+            return this._inferenceComponentName != null;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InferenceId property is set
         internal bool IsSetInferenceId()
         {
-            return !string.IsNullOrEmpty(this._inferenceId);
+            return this._inferenceId != null;
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return !string.IsNullOrEmpty(this._sessionId);
+            return this._sessionId != null;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if TargetContainerHostname property is set
         internal bool IsSetTargetContainerHostname()
         {
-            return !string.IsNullOrEmpty(this._targetContainerHostname);
+            return this._targetContainerHostname != null;
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if TargetModel property is set
         internal bool IsSetTargetModel()
         {
-            return !string.IsNullOrEmpty(this._targetModel);
+            return this._targetModel != null;
         }
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if TargetVariant property is set
         internal bool IsSetTargetVariant()
         {
-            return !string.IsNullOrEmpty(this._targetVariant);
+            return this._targetVariant != null;
         }
 
     }

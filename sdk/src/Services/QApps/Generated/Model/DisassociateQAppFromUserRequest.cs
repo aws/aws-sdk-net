@@ -73,7 +73,7 @@ namespace Amazon.QApps.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return !string.IsNullOrEmpty(this._instanceId);
+            return this._instanceId != null;
         }
 
     }

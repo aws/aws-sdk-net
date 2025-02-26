@@ -121,7 +121,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChimeBearer property is set
         internal bool IsSetChimeBearer()
         {
-            return !string.IsNullOrEmpty(this._chimeBearer);
+            return this._chimeBearer != null;
         }
 
     }

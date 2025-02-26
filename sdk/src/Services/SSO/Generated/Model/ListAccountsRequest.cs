@@ -61,7 +61,7 @@ namespace Amazon.SSO.Model
         // Check to see if AccessToken property is set
         internal bool IsSetAccessToken()
         {
-            return !string.IsNullOrEmpty(this._accessToken);
+            return this._accessToken != null;
         }
 
         /// <summary>

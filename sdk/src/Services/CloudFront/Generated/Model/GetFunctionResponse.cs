@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return !string.IsNullOrEmpty(this._eTag);
+            return this._eTag != null;
         }
 
         /// <summary>

@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if ExecutionId property is set
         internal bool IsSetExecutionId()
         {
-            return !string.IsNullOrEmpty(this._executionId);
+            return this._executionId != null;
         }
 
         /// <summary>

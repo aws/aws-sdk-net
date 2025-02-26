@@ -77,7 +77,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return !string.IsNullOrEmpty(this._messages);
+            return this._messages != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return !string.IsNullOrEmpty(this._requestAttributes);
+            return this._requestAttributes != null;
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return !string.IsNullOrEmpty(this._sessionId);
+            return this._sessionId != null;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionStateValue property is set
         internal bool IsSetSessionStateValue()
         {
-            return !string.IsNullOrEmpty(this._sessionStateValue);
+            return this._sessionStateValue != null;
         }
 
         #region Dispose Pattern

@@ -53,7 +53,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return !string.IsNullOrEmpty(this._sessionId);
+            return this._sessionId != null;
         }
 
         /// <summary>

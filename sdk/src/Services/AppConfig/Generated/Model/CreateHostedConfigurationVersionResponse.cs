@@ -58,7 +58,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ApplicationId property is set
         internal bool IsSetApplicationId()
         {
-            return !string.IsNullOrEmpty(this._applicationId);
+            return this._applicationId != null;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ConfigurationProfileId property is set
         internal bool IsSetConfigurationProfileId()
         {
-            return !string.IsNullOrEmpty(this._configurationProfileId);
+            return this._configurationProfileId != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return !string.IsNullOrEmpty(this._description);
+            return this._description != null;
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if KmsKeyArn property is set
         internal bool IsSetKmsKeyArn()
         {
-            return !string.IsNullOrEmpty(this._kmsKeyArn);
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return !string.IsNullOrEmpty(this._versionLabel);
+            return this._versionLabel != null;
         }
 
         /// <summary>

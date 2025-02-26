@@ -126,7 +126,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return !string.IsNullOrEmpty(this._description);
+            return this._description != null;
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return !string.IsNullOrEmpty(this._versionLabel);
+            return this._versionLabel != null;
         }
 
     }

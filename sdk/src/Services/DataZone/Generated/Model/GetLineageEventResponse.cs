@@ -75,7 +75,7 @@ namespace Amazon.DataZone.Model
         // Check to see if CreatedBy property is set
         internal bool IsSetCreatedBy()
         {
-            return !string.IsNullOrEmpty(this._createdBy);
+            return this._createdBy != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.DataZone.Model
         // Check to see if DomainId property is set
         internal bool IsSetDomainId()
         {
-            return !string.IsNullOrEmpty(this._domainId);
+            return this._domainId != null;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return !string.IsNullOrEmpty(this._id);
+            return this._id != null;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.DataZone.Model
         // Check to see if ProcessingStatus property is set
         internal bool IsSetProcessingStatus()
         {
-            return !string.IsNullOrEmpty(this._processingStatus);
+            return this._processingStatus != null;
         }
 
     }

@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if SessionId property is set
         internal bool IsSetSessionId()
         {
-            return !string.IsNullOrEmpty(this._sessionId);
+            return this._sessionId != null;
         }
 
     }

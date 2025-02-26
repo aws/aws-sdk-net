@@ -53,7 +53,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if ContentEncoding property is set
         internal bool IsSetContentEncoding()
         {
-            return !string.IsNullOrEmpty(this._contentEncoding);
+            return this._contentEncoding != null;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>

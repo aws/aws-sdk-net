@@ -85,7 +85,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return !string.IsNullOrEmpty(this._location);
+            return this._location != null;
         }
 
     }

@@ -134,7 +134,7 @@ namespace Amazon.OAM.Model
         // Check to see if AmznErrorType property is set
         internal bool IsSetAmznErrorType()
         {
-            return !string.IsNullOrEmpty(this._amznErrorType);
+            return this._amznErrorType != null;
         }
 
     }

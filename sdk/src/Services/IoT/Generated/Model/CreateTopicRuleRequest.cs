@@ -93,7 +93,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return !string.IsNullOrEmpty(this._tags);
+            return this._tags != null;
         }
 
         /// <summary>

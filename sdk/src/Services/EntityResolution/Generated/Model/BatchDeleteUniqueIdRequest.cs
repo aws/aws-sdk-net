@@ -54,7 +54,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if InputSource property is set
         internal bool IsSetInputSource()
         {
-            return !string.IsNullOrEmpty(this._inputSource);
+            return this._inputSource != null;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if UniqueIds property is set
         internal bool IsSetUniqueIds()
         {
-            return this._uniqueIds != null && this._uniqueIds.Count > 0;
+            return this._uniqueIds != null;
         }
 
         /// <summary>
