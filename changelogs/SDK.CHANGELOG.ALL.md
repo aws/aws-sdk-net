@@ -1,3 +1,24 @@
+### 3.7.991.0 (2025-02-26 19:46 UTC)
+* ApplicationSignals (3.7.404.0)
+	* This release adds API support for reading Service Level Objectives and Services from monitoring accounts, from SLO and Service-scoped operations, including ListServices and ListServiceLevelObjectives.
+* Batch (3.7.405.0)
+	* AWS Batch: Resource Aware Scheduling feature support
+* Chime (3.7.401.0)
+	* Removes the Amazon Chime SDK APIs from the "chime" namespace.  Amazon Chime SDK APIs continue to be available in the AWS SDK via the dedicated Amazon Chime SDK namespaces: chime-sdk-identity, chime-sdk-mediapipelines, chime-sdk-meetings, chime-sdk-messaging, and chime-sdk-voice.
+* CloudFront (3.7.404.37)
+	* Documentation update for VPC origin config.
+* EC2 (3.7.432.0)
+	* Amazon EC2 Fleet customers can now override the Block Device Mapping specified in the Launch Template when creating a new Fleet request, saving the effort of creating and associating new Launch Templates to customize the Block Device Mapping.
+* IoTFleetWise (3.7.404.0)
+	* This release adds an optional listResponseScope request parameter in certain list API requests to limit the response to metadata only.
+* OAM (3.7.401.0)
+	* This release adds support for sharing AWS::ApplicationSignals::Service and AWS::ApplicationSignals::ServiceLevelObjective resources.
+* SageMaker (3.7.426.0)
+	* AWS SageMaker InferenceComponents now support rolling update deployments for Inference Components.
+* Core 3.7.402.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.990.0 (2025-02-25 19:27 UTC)
 * CodeBuild (3.7.412.0)
 	* Adding "reportArns" field in output of BatchGetBuildBatches API. "reportArns" is an array that contains the ARNs of reports created by merging reports from builds associated with the batch build.
