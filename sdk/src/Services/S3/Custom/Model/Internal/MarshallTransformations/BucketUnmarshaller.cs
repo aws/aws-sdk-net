@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Bucket Unmarshaller
      /// </summary>
-    public class BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>, IXmlUnmarshaller<S3Bucket, JsonUnmarshallerContext> 
+    public class BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,16 +70,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return bucket;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3Bucket Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static BucketUnmarshaller _instance;

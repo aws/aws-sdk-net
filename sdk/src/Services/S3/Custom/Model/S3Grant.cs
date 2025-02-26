@@ -70,7 +70,7 @@ namespace Amazon.S3.Model
             {
                 if (Grantee != null)
                 {
-                    xmlWriter.WriteStartElement("Grantee");
+                    xmlWriter.WriteStartElement("xsi","Grantee", "http://www.w3.org/2001/XMLSchema-instance");
                     if (Grantee.IsSetType())
                     {
                         xmlWriter.WriteAttributeString("xsi", "type",

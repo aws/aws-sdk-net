@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// AccessControlTranslation unmarshaller
     /// </summary>
-    public class AccessControlTranslationUnmarshaller : IXmlUnmarshaller<AccessControlTranslation, XmlUnmarshallerContext>, IXmlUnmarshaller<AccessControlTranslation, JsonUnmarshallerContext>
+    public class AccessControlTranslationUnmarshaller : IXmlUnmarshaller<AccessControlTranslation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,16 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return accessControlTranslation;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AccessControlTranslation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static AccessControlTranslationUnmarshaller _instance;

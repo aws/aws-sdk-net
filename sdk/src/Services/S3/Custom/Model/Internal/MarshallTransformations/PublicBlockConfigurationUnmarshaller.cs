@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      /// PublicAccessBlockConfiguration Unmarshaller
      /// </summary>
-    public class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<PublicAccessBlockConfiguration, JsonUnmarshallerContext> 
+    public class PublicAccessBlockConfigurationUnmarshaller : IXmlUnmarshaller<PublicAccessBlockConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,16 +70,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return publicAccessBlockConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PublicAccessBlockConfiguration Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static PublicAccessBlockConfigurationUnmarshaller _instance;

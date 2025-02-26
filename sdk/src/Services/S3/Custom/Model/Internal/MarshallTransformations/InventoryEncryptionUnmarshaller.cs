@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   InventoryEncryption Unmarshaller
     /// </summary>
-    public class InventoryEncryptionUnmarshaller : IXmlUnmarshaller<InventoryEncryption, XmlUnmarshallerContext>, IXmlUnmarshaller<InventoryEncryption, JsonUnmarshallerContext>
+    public class InventoryEncryptionUnmarshaller : IXmlUnmarshaller<InventoryEncryption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return condition;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InventoryEncryption Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static InventoryEncryptionUnmarshaller _instance;

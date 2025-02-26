@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// AnalyticsConfiguration Unmarshaller
     /// </summary>
-    public class AnalyticsConfigurationUnmarshaller : IXmlUnmarshaller<AnalyticsConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<AnalyticsConfiguration, JsonUnmarshallerContext>
+    public class AnalyticsConfigurationUnmarshaller : IXmlUnmarshaller<AnalyticsConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -73,16 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return analyticsConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalyticsConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static AnalyticsConfigurationUnmarshaller _instance;

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LoggingEnabled Unmarshaller
      /// </summary>
-    public class LoggingEnabledUnmarshaller : IXmlUnmarshaller<S3BucketLoggingConfig, XmlUnmarshallerContext>, IXmlUnmarshaller<S3BucketLoggingConfig, JsonUnmarshallerContext> 
+    public class LoggingEnabledUnmarshaller : IXmlUnmarshaller<S3BucketLoggingConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,16 +78,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return loggingEnabled;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3BucketLoggingConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static LoggingEnabledUnmarshaller _instance;

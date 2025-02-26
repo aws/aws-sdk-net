@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SimplePrefix Object
     /// </summary>  
-    public class SimplePrefixUnmarshaller : IXmlUnmarshaller<SimplePrefix, XmlUnmarshallerContext>, IXmlUnmarshaller<SimplePrefix, JsonUnmarshallerContext>
+    public class SimplePrefixUnmarshaller : IXmlUnmarshaller<SimplePrefix, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SimplePrefix Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static SimplePrefixUnmarshaller _instance = new SimplePrefixUnmarshaller();        

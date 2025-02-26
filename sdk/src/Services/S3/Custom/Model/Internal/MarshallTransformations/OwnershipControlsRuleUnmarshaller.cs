@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// OwnershipControlsRule unmarshaller
     /// </summary>
-    public class OwnershipControlsRuleUnmarshaller : IXmlUnmarshaller<OwnershipControlsRule, XmlUnmarshallerContext>, IXmlUnmarshaller<OwnershipControlsRule, JsonUnmarshallerContext>
+    public class OwnershipControlsRuleUnmarshaller : IXmlUnmarshaller<OwnershipControlsRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -59,11 +59,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return rule;
-        }
-
-        public OwnershipControlsRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static OwnershipControlsRuleUnmarshaller _instance;

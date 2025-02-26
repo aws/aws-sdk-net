@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// SseKmsEncryptedObjects unmarshaller
     /// </summary>
-    public class SseKmsEncryptedObjectsUnmarshaller : IXmlUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>, IXmlUnmarshaller<SseKmsEncryptedObjects, JsonUnmarshallerContext>
+    public class SseKmsEncryptedObjectsUnmarshaller : IXmlUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,16 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return SseKmsEncryptedObjects;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SseKmsEncryptedObjects Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static SseKmsEncryptedObjectsUnmarshaller _instance;

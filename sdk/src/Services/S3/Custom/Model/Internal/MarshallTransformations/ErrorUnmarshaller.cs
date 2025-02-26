@@ -18,7 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    public class ErrorUnmarshaller : IXmlUnmarshaller<ErrorDetails, XmlUnmarshallerContext>, IXmlUnmarshaller<ErrorDetails, JsonUnmarshallerContext>
+    public class ErrorUnmarshaller : IXmlUnmarshaller<ErrorDetails, XmlUnmarshallerContext>
     {
         public ErrorDetails Unmarshall(XmlUnmarshallerContext context)
         {
@@ -51,16 +51,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return errorDetails;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ErrorDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static ErrorUnmarshaller _instance;

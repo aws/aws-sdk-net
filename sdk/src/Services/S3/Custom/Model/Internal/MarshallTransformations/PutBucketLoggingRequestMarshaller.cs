@@ -84,7 +84,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         var granteeGrantee = loggingEnabledLoggingEnabledtargetGrantsListValue.Grantee;
                                         if (granteeGrantee != null)
                                         {
-                                            xmlWriter.WriteStartElement("Grantee");
+                                            xmlWriter.WriteStartElement("xsi","Grantee", "http://www.w3.org/2001/XMLSchema-instance");
                                             if (granteeGrantee.IsSetType())
                                             {
                                                 xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", granteeGrantee.Type.ToString());

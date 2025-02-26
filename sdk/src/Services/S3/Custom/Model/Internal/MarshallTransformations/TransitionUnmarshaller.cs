@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Transition Unmarshaller
      /// </summary>
-    public class TransitionUnmarshaller : IXmlUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IXmlUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
+    public class TransitionUnmarshaller : IXmlUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,16 +70,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return transition;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LifecycleTransition Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static TransitionUnmarshaller _instance;

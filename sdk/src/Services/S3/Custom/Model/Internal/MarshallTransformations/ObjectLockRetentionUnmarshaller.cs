@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockRetention Object
     /// </summary>  
-    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>, IXmlUnmarshaller<ObjectLockRetention, JsonUnmarshallerContext>
+    public class ObjectLockRetentionUnmarshaller : IXmlUnmarshaller<ObjectLockRetention, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,16 +74,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ObjectLockRetention Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static ObjectLockRetentionUnmarshaller _instance;

@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockLegalHold Object
     /// </summary>  
-    public class ObjectLockLegalHoldUnmarshaller : IXmlUnmarshaller<ObjectLockLegalHold, XmlUnmarshallerContext>, IXmlUnmarshaller<ObjectLockLegalHold, JsonUnmarshallerContext>
+    public class ObjectLockLegalHoldUnmarshaller : IXmlUnmarshaller<ObjectLockLegalHold, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,16 +68,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ObjectLockLegalHold Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static ObjectLockLegalHoldUnmarshaller _instance;

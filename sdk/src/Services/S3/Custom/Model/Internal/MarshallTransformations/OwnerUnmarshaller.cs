@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Owner Unmarshaller
      /// </summary>
-    public class OwnerUnmarshaller : IXmlUnmarshaller<Owner, XmlUnmarshallerContext>, IXmlUnmarshaller<Owner, JsonUnmarshallerContext> 
+    public class OwnerUnmarshaller : IXmlUnmarshaller<Owner, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return owner;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Owner Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static OwnerUnmarshaller _instance;
