@@ -60,8 +60,14 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAwsAccountId())
+                request.Parameters.Add("AwsAccountId", StringUtils.FromString(publicRequest.AwsAccountId));
+            
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+            
+            if (publicRequest.IsSetIncludeLinkedAccounts())
+                request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
