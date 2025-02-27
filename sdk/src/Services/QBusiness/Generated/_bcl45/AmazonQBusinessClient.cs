@@ -1897,6 +1897,95 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  DeleteAttachment
+
+
+        /// <summary>
+        /// Deletes an attachment associated with a specific Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        public virtual DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an attachment associated with a specific Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        public virtual Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteChatControlsConfiguration
 
 
