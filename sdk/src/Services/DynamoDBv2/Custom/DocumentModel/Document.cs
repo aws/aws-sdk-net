@@ -313,11 +313,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         // Differs from DateTimeToEpochSeconds by supporting dates after 2038.
         internal static DynamoDBEntry DateTimeToEpochSecondsLong(DynamoDBEntry entry, string attributeName)
         {
-            string epochSecondsAsString = null;
             try
             {
                 var dateTime = entry.AsDateTime();
-                epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
+                string epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
+                entry = new Primitive(epochSecondsAsString, saveAsNumeric: true);
+                return entry;
             }
             catch (Exception e)
             {
@@ -327,16 +328,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     attributeName, entry, e);
 
                 // To prevent the data from being (de)serialized incorrectly, we choose to throw the exception instead
-                // of swallowing it.
-                throw;
-            }
-
-            if (epochSecondsAsString != null)
-            {
-                entry = new Primitive(epochSecondsAsString, saveAsNumeric: true);
-            }
-
-            return entry;
+                // of swallowing it. This was a purposeful change from the existing DateTimeToEpochSeconds to avoid issues
+                // silently fallback to string format DateTime.
+                throw new AmazonDynamoDBException(
+                    string.Format("Encountered error attempting to convert '{0}' with value '{1}' to epoch seconds.", 
+                    attributeName, entry.AsDateTime()), 
+                    e);
+            }            
         }
 
         internal static Document FromAttributeMap(Dictionary<string, AttributeValue> data, IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes)
