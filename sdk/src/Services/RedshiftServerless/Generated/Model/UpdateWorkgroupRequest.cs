@@ -72,6 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _trackName;
         private string _workgroupName;
 
         /// <summary>
@@ -261,6 +262,26 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackName. 
+        /// <para>
+        /// An optional parameter for the name of the track for the workgroup. If you don't provide
+        /// a track name, the workgroup is assigned to the <c>current</c> track.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TrackName
+        {
+            get { return this._trackName; }
+            set { this._trackName = value; }
+        }
+
+        // Check to see if TrackName property is set
+        internal bool IsSetTrackName()
+        {
+            return this._trackName != null;
         }
 
         /// <summary>

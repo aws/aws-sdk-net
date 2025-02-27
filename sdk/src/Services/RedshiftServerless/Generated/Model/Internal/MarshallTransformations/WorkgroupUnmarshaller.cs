@@ -144,6 +144,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.PatchVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingTrackName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PendingTrackName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -178,6 +184,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trackName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrackName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workgroupArn", targetDepth))

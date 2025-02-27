@@ -176,6 +176,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTrackName())
+                {
+                    context.Writer.WritePropertyName("trackName");
+                    context.Writer.Write(publicRequest.TrackName);
+                }
+
                 if(publicRequest.IsSetWorkgroupName())
                 {
                     context.Writer.WritePropertyName("workgroupName");
