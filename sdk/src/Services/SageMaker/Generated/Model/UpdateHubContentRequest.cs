@@ -30,15 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the ImportHubContent operation.
-    /// Import hub content.
+    /// Container for the parameters to the UpdateHubContent operation.
+    /// Updates SageMaker hub content (either a <c>Model</c> or <c>Notebook</c> resource).
+    /// 
+    ///  
+    /// <para>
+    /// You can update the metadata that describes the resource. In addition to the required
+    /// request fields, specify at least one of the following fields to update:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>HubContentDescription</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>HubContentDisplayName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>HubContentMarkdown</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>HubContentSearchKeywords</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>SupportStatus</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about hubs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html">Private
+    /// curated hubs for foundation model access control in JumpStart</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you want to update a <c>ModelReference</c> resource in your hub, use the <c>UpdateHubContentResource</c>
+    /// API instead.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class ImportHubContentRequest : AmazonSageMakerRequest
+    public partial class UpdateHubContentRequest : AmazonSageMakerRequest
     {
-        private string _documentSchemaVersion;
         private string _hubContentDescription;
         private string _hubContentDisplayName;
-        private string _hubContentDocument;
         private string _hubContentMarkdown;
         private string _hubContentName;
         private List<string> _hubContentSearchKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -46,31 +81,11 @@ namespace Amazon.SageMaker.Model
         private string _hubContentVersion;
         private string _hubName;
         private HubContentSupportStatus _supportStatus;
-        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-
-        /// <summary>
-        /// Gets and sets the property DocumentSchemaVersion. 
-        /// <para>
-        /// The version of the hub content schema to import.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=14)]
-        public string DocumentSchemaVersion
-        {
-            get { return this._documentSchemaVersion; }
-            set { this._documentSchemaVersion = value; }
-        }
-
-        // Check to see if DocumentSchemaVersion property is set
-        internal bool IsSetDocumentSchemaVersion()
-        {
-            return this._documentSchemaVersion != null;
-        }
 
         /// <summary>
         /// Gets and sets the property HubContentDescription. 
         /// <para>
-        /// A description of the hub content to import.
+        /// The description of the hub content.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1023)]
@@ -89,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentDisplayName. 
         /// <para>
-        /// The display name of the hub content to import.
+        /// The display name of the hub content.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -106,30 +121,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HubContentDocument. 
-        /// <para>
-        /// The hub content document that describes information about the hub content such as
-        /// type, associated containers, scripts, and more.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=65535)]
-        public string HubContentDocument
-        {
-            get { return this._hubContentDocument; }
-            set { this._hubContentDocument = value; }
-        }
-
-        // Check to see if HubContentDocument property is set
-        internal bool IsSetHubContentDocument()
-        {
-            return this._hubContentDocument != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property HubContentMarkdown. 
         /// <para>
         /// A string that provides a description of the hub content. This string can include links,
-        /// tables, and standard markdown formating.
+        /// tables, and standard markdown formatting.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
@@ -148,7 +143,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentName. 
         /// <para>
-        /// The name of the hub content to import.
+        /// The name of the hub content resource that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -186,7 +181,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentType. 
         /// <para>
-        /// The type of hub content to import.
+        /// The content type of the resource that you want to update. Only specify a <c>Model</c>
+        /// or <c>Notebook</c> resource for this API. To update a <c>ModelReference</c>, use the
+        /// <c>UpdateHubContentReference</c> API instead.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -205,10 +202,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubContentVersion. 
         /// <para>
-        /// The version of the hub content to import.
+        /// The hub content version that you want to update. For example, if you have two versions
+        /// of a resource in your hub, you can update the second version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=14)]
+        [AWSProperty(Required=true, Min=5, Max=14)]
         public string HubContentVersion
         {
             get { return this._hubContentVersion; }
@@ -224,7 +222,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HubName. 
         /// <para>
-        /// The name of the hub to import content into.
+        /// The name of the SageMaker hub that contains the hub content you want to update. You
+        /// can optionally use the hub ARN instead.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -243,7 +242,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SupportStatus. 
         /// <para>
-        /// The status of the hub content resource.
+        /// Indicates the current status of the hub content resource.
         /// </para>
         /// </summary>
         public HubContentSupportStatus SupportStatus
@@ -256,25 +255,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSupportStatus()
         {
             return this._supportStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Any tags associated with the hub content.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

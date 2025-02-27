@@ -20960,6 +20960,182 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateHubContent
+
+        /// <summary>
+        /// Updates SageMaker hub content (either a <c>Model</c> or <c>Notebook</c> resource).
+        /// 
+        ///  
+        /// <para>
+        /// You can update the metadata that describes the resource. In addition to the required
+        /// request fields, specify at least one of the following fields to update:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>HubContentDescription</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentDisplayName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentMarkdown</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentSearchKeywords</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportStatus</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about hubs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html">Private
+        /// curated hubs for foundation model access control in JumpStart</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to update a <c>ModelReference</c> resource in your hub, use the <c>UpdateHubContentResource</c>
+        /// API instead.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContent">REST API Reference for UpdateHubContent Operation</seealso>
+        public virtual UpdateHubContentResponse UpdateHubContent(UpdateHubContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHubContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHubContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContent">REST API Reference for UpdateHubContent Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHubContent(UpdateHubContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHubContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHubContent.</param>
+        /// 
+        /// <returns>Returns a  UpdateHubContentResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContent">REST API Reference for UpdateHubContent Operation</seealso>
+        public virtual UpdateHubContentResponse EndUpdateHubContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHubContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateHubContentReference
+
+        /// <summary>
+        /// Updates the contents of a SageMaker hub for a <c>ModelReference</c> resource. A <c>ModelReference</c>
+        /// allows you to access public SageMaker JumpStart models from within your private hub.
+        /// 
+        ///  
+        /// <para>
+        /// When using this API, you can update the <c>MinVersion</c> field for additional flexibility
+        /// in the model version. You shouldn't update any additional fields when using this API,
+        /// because the metadata in your private hub should match the public JumpStart model's
+        /// metadata.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to update a <c>Model</c> or <c>Notebook</c> resource in your hub, use
+        /// the <c>UpdateHubContent</c> API instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about adding model references to your hub, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs-admin-guide-add-models.html">
+        /// Add models to a private hub</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContentReference service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContentReference">REST API Reference for UpdateHubContentReference Operation</seealso>
+        public virtual UpdateHubContentReferenceResponse UpdateHubContentReference(UpdateHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHubContentReferenceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContentReference operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHubContentReference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContentReference">REST API Reference for UpdateHubContentReference Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHubContentReference(UpdateHubContentReferenceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHubContentReference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHubContentReference.</param>
+        /// 
+        /// <returns>Returns a  UpdateHubContentReferenceResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContentReference">REST API Reference for UpdateHubContentReference Operation</seealso>
+        public virtual UpdateHubContentReferenceResponse EndUpdateHubContentReference(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHubContentReferenceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateImage
 
         /// <summary>

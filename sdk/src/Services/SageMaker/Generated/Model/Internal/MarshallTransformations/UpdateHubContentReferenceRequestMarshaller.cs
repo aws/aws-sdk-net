@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImportHubContent Request Marshaller
+    /// UpdateHubContentReference Request Marshaller
     /// </summary>       
-    public class ImportHubContentRequestMarshaller : IMarshaller<IRequest, ImportHubContentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateHubContentReferenceRequestMarshaller : IMarshaller<IRequest, UpdateHubContentReferenceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ImportHubContentRequest)input);
+            return this.Marshall((UpdateHubContentReferenceRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ImportHubContentRequest publicRequest)
+        public IRequest Marshall(UpdateHubContentReferenceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.ImportHubContent";
+            string target = "SageMaker.UpdateHubContentReference";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -69,51 +69,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDocumentSchemaVersion())
-                {
-                    context.Writer.WritePropertyName("DocumentSchemaVersion");
-                    context.Writer.Write(publicRequest.DocumentSchemaVersion);
-                }
-
-                if(publicRequest.IsSetHubContentDescription())
-                {
-                    context.Writer.WritePropertyName("HubContentDescription");
-                    context.Writer.Write(publicRequest.HubContentDescription);
-                }
-
-                if(publicRequest.IsSetHubContentDisplayName())
-                {
-                    context.Writer.WritePropertyName("HubContentDisplayName");
-                    context.Writer.Write(publicRequest.HubContentDisplayName);
-                }
-
-                if(publicRequest.IsSetHubContentDocument())
-                {
-                    context.Writer.WritePropertyName("HubContentDocument");
-                    context.Writer.Write(publicRequest.HubContentDocument);
-                }
-
-                if(publicRequest.IsSetHubContentMarkdown())
-                {
-                    context.Writer.WritePropertyName("HubContentMarkdown");
-                    context.Writer.Write(publicRequest.HubContentMarkdown);
-                }
-
                 if(publicRequest.IsSetHubContentName())
                 {
                     context.Writer.WritePropertyName("HubContentName");
                     context.Writer.Write(publicRequest.HubContentName);
-                }
-
-                if(publicRequest.IsSetHubContentSearchKeywords())
-                {
-                    context.Writer.WritePropertyName("HubContentSearchKeywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHubContentSearchKeywordsListValue in publicRequest.HubContentSearchKeywords)
-                    {
-                            context.Writer.Write(publicRequestHubContentSearchKeywordsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetHubContentType())
@@ -122,38 +81,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HubContentType);
                 }
 
-                if(publicRequest.IsSetHubContentVersion())
-                {
-                    context.Writer.WritePropertyName("HubContentVersion");
-                    context.Writer.Write(publicRequest.HubContentVersion);
-                }
-
                 if(publicRequest.IsSetHubName())
                 {
                     context.Writer.WritePropertyName("HubName");
                     context.Writer.Write(publicRequest.HubName);
                 }
 
-                if(publicRequest.IsSetSupportStatus())
+                if(publicRequest.IsSetMinVersion())
                 {
-                    context.Writer.WritePropertyName("SupportStatus");
-                    context.Writer.Write(publicRequest.SupportStatus);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("MinVersion");
+                    context.Writer.Write(publicRequest.MinVersion);
                 }
 
                 writer.WriteObjectEnd();
@@ -164,9 +101,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ImportHubContentRequestMarshaller _instance = new ImportHubContentRequestMarshaller();        
+        private static UpdateHubContentReferenceRequestMarshaller _instance = new UpdateHubContentReferenceRequestMarshaller();        
 
-        internal static ImportHubContentRequestMarshaller GetInstance()
+        internal static UpdateHubContentReferenceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -174,7 +111,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportHubContentRequestMarshaller Instance
+        public static UpdateHubContentReferenceRequestMarshaller Instance
         {
             get
             {

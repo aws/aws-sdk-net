@@ -148,6 +148,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.HubName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReferenceMinVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

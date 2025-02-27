@@ -59,6 +59,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetHubAccessConfig())
+            {
+                context.Writer.WritePropertyName("HubAccessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HubAccessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.HubAccessConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstanceGroupNames())
             {
                 context.Writer.WritePropertyName("InstanceGroupNames");
@@ -68,6 +79,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectInstanceGroupNamesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetModelAccessConfig())
+            {
+                context.Writer.WritePropertyName("ModelAccessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelAccessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelAccessConfig, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetS3DataDistributionType())

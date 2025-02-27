@@ -6837,6 +6837,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly HubContentSupportStatus Deprecated = new HubContentSupportStatus("Deprecated");
         /// <summary>
+        /// Constant Restricted for HubContentSupportStatus
+        /// </summary>
+        public static readonly HubContentSupportStatus Restricted = new HubContentSupportStatus("Restricted");
+        /// <summary>
         /// Constant Supported for HubContentSupportStatus
         /// </summary>
         public static readonly HubContentSupportStatus Supported = new HubContentSupportStatus("Supported");
