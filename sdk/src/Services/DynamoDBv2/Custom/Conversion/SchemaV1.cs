@@ -462,7 +462,8 @@ namespace Amazon.DynamoDBv2
 
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out DateOnly result)
         {
-            return DateOnly.TryParseExact(p.StringValue, DateOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result);
+            return DateOnly.TryParseExact(p.StringValue, DateOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result)
+                || DateOnly.TryParse(p.StringValue, CultureInfo.InvariantCulture, out result);
         }
     }
 
@@ -483,7 +484,8 @@ namespace Amazon.DynamoDBv2
 
         protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out TimeOnly result)
         {
-            return TimeOnly.TryParseExact(p.StringValue, TimeOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result);
+            return TimeOnly.TryParseExact(p.StringValue, TimeOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result)
+                || TimeOnly.TryParse(p.StringValue, CultureInfo.InvariantCulture, out result);
         }
     }
 #endif
