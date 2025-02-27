@@ -220,13 +220,17 @@ namespace <#=this.Config.Namespace#>.Model
                     {
                         propertyAttributes.Add("Max=" + member.Shape.Max);
                     }
-                    bool hasPaginatorInputToken = this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
-                    bool hasPaginatorLimitKey = this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
-
-                    if (hasPaginatorInputToken || hasPaginatorLimitKey)
+                    if (this.StructureType == StructureType.Request)
                     {
-                        propertyAttributes.Add("PaginationKey=true");
+                        // Add PaginationKey attribute to Request Pagination properties that will be used by PowerShell for Auto-Iteration
+                        bool hasPaginatorInputToken = this.StructureType == StructureType.Request && this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
+                        bool hasPaginatorLimitKey = this.StructureType == StructureType.Request  && this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
+                        if (hasPaginatorInputToken || hasPaginatorLimitKey)
+                        {
+                            propertyAttributes.Add("PaginationKey=true");
+                        }
                     }
+
                     if (propertyAttributes.Count > 0)
                     {
 #>
