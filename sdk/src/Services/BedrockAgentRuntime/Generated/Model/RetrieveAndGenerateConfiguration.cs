@@ -95,8 +95,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose ot use <c>EXTERNAL_SOURCES</c>, then currently only Claude 3 Sonnet
-        /// models for knowledge bases are supported.
+        /// If you choose to use <c>EXTERNAL_SOURCES</c>, then currently only Anthropic Claude
+        /// 3 Sonnet models for knowledge bases are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
