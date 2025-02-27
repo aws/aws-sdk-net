@@ -389,6 +389,17 @@
       "output":{"shape":"JsonMapsInputOutput"},
       "documentation":"<p>The example tests basic map serialization.</p>"
     },
+    "SparseJsonMaps":{
+      "name":"SparseJsonMaps",
+      "http":{
+        "method":"POST",
+        "requestUri":"/SparseJsonMaps",
+        "responseCode":200
+      },
+      "input":{"shape":"SparseJsonMapsInputOutput"},
+      "output":{"shape":"SparseJsonMapsInputOutput"},
+      "documentation":"<p>The example tests serialization of JSON map values in sparse maps.</p>"
+    },
     "JsonTimestamps":{
       "name":"JsonTimestamps",
       "http":{
@@ -1466,6 +1477,16 @@
         "denseSetMap":{"shape":"DenseSetMap"}
       }
     },
+    "SparseJsonMapsInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStructMap":{"shape":"SparseStructMap"},
+        "sparseNumberMap":{"shape":"SparseNumberMap"},
+        "sparseBooleanMap":{"shape":"SparseBooleanMap"},
+        "sparseStringMap":{"shape":"SparseStringMap"},
+        "sparseSetMap":{"shape":"SparseSetMap"}
+      }
+    },
     "JsonTimestampsInputOutput":{
       "type":"structure",
       "members":{
@@ -1929,6 +1950,31 @@
         }
       },
       "union":true
+    },
+    "SparseBooleanMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Boolean"}
+    },
+    "SparseNumberMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"Integer"}
+    },
+    "SparseSetMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"StringList"}
+    },
+    "SparseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
+    },
+    "SparseStructMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"GreetingStruct"}
     }
   },
   "documentation":"<p>A REST JSON service that sends JSON requests and responses.</p>"

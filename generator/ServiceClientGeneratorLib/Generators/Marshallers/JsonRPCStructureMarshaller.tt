@@ -49,7 +49,12 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>            {
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
-			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
+			string memberProperty = variableName + "." + member.PropertyName;
+			// Only append .Value for nullable types that aren't already complex types
+			if (member.IsNullable && !member.IsStructure && !member.IsList && !member.IsMap) 
+			{
+				memberProperty += ".Value";
+			}
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
@@ -160,8 +165,76 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName(<#=flatVariableName#>Kvp.Key);
 <#=new string(' ', level * 4)#>                var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
 
-<#+ 
-				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+<#+             // Check for null values - only null checks for sparse maps as defined in customizations
+
+                bool isNullableMap = false;
+                if (this.Structure != null)
+                {
+                    var memberWithMap = this.Structure.Members.FirstOrDefault(m => m.PropertyName == variableName.Split('.').Last());
+                    isNullableMap = (memberWithMap != null && memberWithMap.UseNullable);
+                }
+                
+                if (isNullableMap)
+                {
+#>
+<#=new string(' ', level * 4)#>                if(<#=flatVariableName#>Value == null)
+<#=new string(' ', level * 4)#>                {
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNullValue();
+<#=new string(' ', level * 4)#>                }
+<#=new string(' ', level * 4)#>                else
+<#=new string(' ', level * 4)#>                {
+<#+
+                }
+
+                if(structure.ValueShape.IsBoolean)
+                {
+                    if(isNullableMap)
+                    {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteBooleanValue(<#=flatVariableName#>Value.Value);
+<#+
+                    }
+                    else
+                    {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteBooleanValue(<#=flatVariableName#>Value);
+<#+
+                    }
+                }
+                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
+                {
+                    if(isNullableMap)
+                    {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(<#=flatVariableName#>Value.Value);
+<#+
+                    }
+                    else
+                    {
+#>
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(<#=flatVariableName#>Value);
+<#+
+                    }
+                }
+                else
+                {
+                    if(isNullableMap)
+                    {
+                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape);
+                    }
+                    else
+                    {
+                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+                    }
+                }
+
+                // Close the else block for nullable maps
+                if (isNullableMap)
+                {
+#>
+<#=new string(' ', level * 4)#>                }
+<#+
+                }
 #>
 <#=new string(' ', level * 4)#>            }
 <#=new string(' ', level * 4)#>            context.Writer.WriteEndObject();
@@ -256,9 +329,21 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		}
 		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
 		{
+			// Handle integer enums with special care to support both nullable and non-nullable types
+			if (memberProperty.EndsWith(".Value") && shape.IsInt)
+			{
+				// Already has .Value appended, use as is for nullable types
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=memberProperty#>);
 <#+
+			}
+			else
+			{
+				// For non-nullable types, don't try to access .Value
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=memberProperty#>);
+<#+
+			}
 		}
 		else if (shape.IsBoolean)
 		{

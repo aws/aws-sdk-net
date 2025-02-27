@@ -1041,6 +1041,24 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
                 
+        #region  SparseJsonMaps
+
+
+
+        /// <summary>
+        /// The example tests serialization of JSON map values in sparse maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        Task<SparseJsonMapsResponse> SparseJsonMapsAsync(SparseJsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TestBodyStructure
 
 

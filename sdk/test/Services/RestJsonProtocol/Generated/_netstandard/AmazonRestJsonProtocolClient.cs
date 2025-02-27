@@ -2095,6 +2095,40 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  SparseJsonMaps
+
+        internal virtual SparseJsonMapsResponse SparseJsonMaps(SparseJsonMapsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SparseJsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonMapsResponseUnmarshaller.Instance;
+
+            return Invoke<SparseJsonMapsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The example tests serialization of JSON map values in sparse maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        public virtual Task<SparseJsonMapsResponse> SparseJsonMapsAsync(SparseJsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SparseJsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonMapsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SparseJsonMapsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TestBodyStructure
 
         internal virtual TestBodyStructureResponse TestBodyStructure(TestBodyStructureRequest request)
