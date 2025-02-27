@@ -1,4 +1,11 @@
 {
+    "core": {
+        "changeLogMessages": [
+            "Added method AWSSDKUtils.ConvertFromUnixLongEpochSeconds() for converting Unix epoch seconds to DateTime structure."
+        ],
+        "type": "patch",
+        "updateMinimum": false
+    },
     "services": [
         {
             "serviceName": "DynamoDBv2",
