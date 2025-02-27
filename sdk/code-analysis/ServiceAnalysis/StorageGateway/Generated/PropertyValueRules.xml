@@ -1036,6 +1036,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.EvictFilesFailingUploadRequest.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.DomainName</property>
     <min>1</min>
     <max>1024</max>

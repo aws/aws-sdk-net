@@ -3260,6 +3260,67 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  EvictFilesFailingUpload
+
+
+        /// <summary>
+        /// Starts a process that cleans the specified file share's cache of file entries that
+        /// are failing upload to Amazon S3. This API operation reports success if the request
+        /// is received with valid arguments, and there are no other cache clean operations currently
+        /// in-progress for the specified file share. After a successful request, the cache clean
+        /// operation occurs asynchronously and reports progress using CloudWatch logs and notifications.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If <c>ForceRemove</c> is set to <c>True</c>, the cache clean operation will delete
+        /// file data from the gateway which might otherwise be recoverable. We recommend using
+        /// this operation only after all other methods to clear files failing upload have been
+        /// exhausted, and if your business need outweighs the potential data loss.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvictFilesFailingUpload service method.</param>
+        /// 
+        /// <returns>The response from the EvictFilesFailingUpload service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/EvictFilesFailingUpload">REST API Reference for EvictFilesFailingUpload Operation</seealso>
+        EvictFilesFailingUploadResponse EvictFilesFailingUpload(EvictFilesFailingUploadRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EvictFilesFailingUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EvictFilesFailingUpload operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvictFilesFailingUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/EvictFilesFailingUpload">REST API Reference for EvictFilesFailingUpload Operation</seealso>
+        IAsyncResult BeginEvictFilesFailingUpload(EvictFilesFailingUploadRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EvictFilesFailingUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEvictFilesFailingUpload.</param>
+        /// 
+        /// <returns>Returns a  EvictFilesFailingUploadResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/EvictFilesFailingUpload">REST API Reference for EvictFilesFailingUpload Operation</seealso>
+        EvictFilesFailingUploadResponse EndEvictFilesFailingUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  JoinDomain
 
 
