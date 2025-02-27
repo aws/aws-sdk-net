@@ -9,6 +9,7 @@ namespace Amazon.Runtime.Internal
         private long max;
         public bool Sensitive { get; set; }
         public bool Required { get; set; }
+        public bool PaginationKey { get; set; }
 
         public bool IsMinSet { get; private set; }
         public long Min
