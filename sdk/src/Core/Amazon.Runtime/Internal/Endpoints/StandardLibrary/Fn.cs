@@ -17,9 +17,10 @@ using Amazon.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 {
@@ -366,31 +367,55 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string InterpolateJson(string json, Dictionary<string, object> refs)
         {
-            var jsonObject = JsonMapper.ToObject(json);
-            InterpolateJson(jsonObject, refs);
-            return jsonObject.ToJson();
+            try
+            {
+                using JsonDocument doc = JsonDocument.Parse(json);
+                var element = doc.RootElement;
+                using var stream = new MemoryStream();
+                using var writer = new Utf8JsonWriter(stream);
+
+                InterpolateJson(element, refs, writer);
+                writer.Flush();
+
+                return Encoding.UTF8.GetString(stream.ToArray());
+            }
+            catch (JsonException)
+            {
+                return "";
+            }
         }
 
-        private static void InterpolateJson(JsonData json, Dictionary<string, object> refs)
+        private static void InterpolateJson(JsonElement element, Dictionary<string, object> refs, Utf8JsonWriter writer)
         {
-            if (json.IsString)
+            switch (element.ValueKind)
             {
-                var jsonWrapper = (IJsonWrapper)json;
-                jsonWrapper.SetString(Interpolate(jsonWrapper.GetString(), refs));
-            }
-            if (json.IsObject)
-            {
-                foreach (var key in json.PropertyNames)
-                {
-                    InterpolateJson(json[key], refs);
-                }
-            }
-            if (json.IsArray)
-            {
-                foreach (JsonData item in json)
-                {
-                    InterpolateJson(item, refs);
-                }
+                case JsonValueKind.Object:
+                    writer.WriteStartObject();
+                    foreach (var property in element.EnumerateObject())
+                    {
+                        writer.WritePropertyName(property.Name);
+                        InterpolateJson(property.Value, refs, writer);
+                    }
+                    writer.WriteEndObject();
+                    break;
+
+                case JsonValueKind.Array:
+                    writer.WriteStartArray();
+                    foreach (var item in element.EnumerateArray())
+                    {
+                        InterpolateJson(item, refs, writer);
+                    }
+                    writer.WriteEndArray();
+                    break;
+
+                case JsonValueKind.String:
+                    var interpolated = Interpolate(element.GetString(), refs);
+                    writer.WriteStringValue(interpolated);
+                    break;
+
+                default:
+                    element.WriteTo(writer);
+                    break;
             }
         }
 

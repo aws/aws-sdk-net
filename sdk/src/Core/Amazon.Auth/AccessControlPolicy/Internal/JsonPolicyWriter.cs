@@ -16,9 +16,8 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
-
-using ThirdParty.Json.LitJson;
 using System.Globalization;
+using System.Text.Json;
 
 namespace Amazon.Auth.AccessControlPolicy.Internal
 {
@@ -51,13 +50,18 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             StringWriter writer = new StringWriter(CultureInfo.InvariantCulture);
             try
             {
-                JsonWriter generator = new JsonWriter(writer);
-
-                generator.IndentValue = 4;
-                generator.PrettyPrint = prettyPrint;
-
-                writePolicy(policy, generator);
-                return writer.ToString().Trim();
+                // indentSize is only available in net8+ and net472
+                JsonWriterOptions options = new JsonWriterOptions
+                {
+                    Indented = true,
+                };
+                using (var stream = new MemoryStream())
+                using (var generator = new Utf8JsonWriter(stream, options))
+                {
+                    writePolicy(policy, generator);
+                    generator.Flush();
+                    return Encoding.UTF8.GetString(stream.ToArray()).Trim();
+                }
             }
             catch (Exception e)
             {
@@ -66,9 +70,9 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             }
         }
 
-        private static void writePolicy(Policy policy, JsonWriter generator)
+        private static void writePolicy(Policy policy, Utf8JsonWriter generator)
         {
-            generator.WriteObjectStart();
+            generator.WriteStartObject();
 
             writePropertyValue(generator, JsonDocumentFields.VERSION, policy.Version);
 
@@ -78,10 +82,10 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             }
 
             generator.WritePropertyName(JsonDocumentFields.STATEMENT);
-            generator.WriteArrayStart();
+            generator.WriteStartArray();
             foreach (Statement statement in policy.Statements)
             {
-                generator.WriteObjectStart();
+                generator.WriteStartObject();
                 if (statement.Id != null)
                 {
                     writePropertyValue(generator, JsonDocumentFields.STATEMENT_ID, statement.Id);
@@ -93,18 +97,18 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 writeResources(statement, generator);
                 writeConditions(statement, generator);
 
-                generator.WriteObjectEnd();
+                generator.WriteEndObject();
             }
-            generator.WriteArrayEnd();
+            generator.WriteEndArray();
 
-            generator.WriteObjectEnd();
+            generator.WriteEndObject();
         }
 
         /// <summary>
         /// Uses the specified generator to write the JSON data for the principals in
         /// the specified policy statement.
         /// </summary>
-        private static void writePrincipals(Statement statement, JsonWriter generator)
+        private static void writePrincipals(Statement statement, Utf8JsonWriter generator)
         {
             IList<Principal> principals = statement.Principals;
             if (principals == null || principals.Count == 0) return;
@@ -115,11 +119,11 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 principals[0] != null &&
                 principals[0].Provider.Equals(Principal.ANONYMOUS_PROVIDER, StringComparison.Ordinal))
             {
-                generator.Write("*");
+                generator.WriteStringValue("*");
                 return;
             }
 
-            generator.WriteObjectStart();
+            generator.WriteStartObject();
             Dictionary<string, List<string>> principalIdsByScheme = new Dictionary<string, List<string>>();
             foreach (Principal p in principals)
             {
@@ -138,21 +142,21 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
                 if (principalIdsByScheme[scheme].Count > 1)
                 {
-                    generator.WriteArrayStart();
+                    generator.WriteStartArray();
                 }
                 foreach (string principalId in principalIdsByScheme[scheme])
                 {
-                    generator.Write(principalId);
+                    generator.WriteStringValue(principalId);
                 }
                 if (principalIdsByScheme[scheme].Count > 1)
                 {
-                    generator.WriteArrayEnd();
+                    generator.WriteEndArray();
                 }
             }
-            generator.WriteObjectEnd();
+            generator.WriteEndObject();
         }
 
-        private static void writeActions(Statement statement, JsonWriter generator)
+        private static void writeActions(Statement statement, Utf8JsonWriter generator)
         {
             IList<ActionIdentifier> actions = statement.Actions;
             if (actions == null || actions.Count == 0)
@@ -163,21 +167,21 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             generator.WritePropertyName(JsonDocumentFields.ACTION);
             if (actions.Count > 1)
             {
-                generator.WriteArrayStart();
+                generator.WriteStartArray();
             }
 
             foreach (ActionIdentifier action in actions)
             {
-                generator.Write(action.ActionName);
+                generator.WriteStringValue(action.ActionName);
             }
 
             if (actions.Count > 1)
             {
-                generator.WriteArrayEnd();
+                generator.WriteEndArray();
             }
         }
 
-        private static void writeResources(Statement statement, JsonWriter generator)
+        private static void writeResources(Statement statement, Utf8JsonWriter generator)
         {
             IList<Resource> resources = statement.Resources;
             if (resources == null || resources.Count == 0)
@@ -188,21 +192,21 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             generator.WritePropertyName(JsonDocumentFields.RESOURCE);
             if (resources.Count > 1)
             {
-                generator.WriteArrayStart();
+                generator.WriteStartArray();
             }
 
             foreach (Resource resource in resources)
             {
-                generator.Write(resource.Id);
+                generator.WriteStringValue(resource.Id);
             }
 
             if (resources.Count > 1)
             {
-                generator.WriteArrayEnd();
+                generator.WriteEndArray();
             }
         }
 
-        private static void writeConditions(Statement statement, JsonWriter generator)
+        private static void writeConditions(Statement statement, Utf8JsonWriter generator)
         {
             IList<Condition> conditions = statement.Conditions;
             if (conditions == null || conditions.Count == 0)
@@ -217,11 +221,11 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             Dictionary<string, Dictionary<string, List<string>>> conditionsByTypeAndKeys = sortConditionsByTypeAndKey(conditions);
 
             generator.WritePropertyName(JsonDocumentFields.CONDITION);
-            generator.WriteObjectStart();
+            generator.WriteStartObject();
             foreach (KeyValuePair<string, Dictionary<string, List<string>>> typeEntry in conditionsByTypeAndKeys)
             {
                 generator.WritePropertyName(typeEntry.Key);
-                generator.WriteObjectStart();
+                generator.WriteStartObject();
                 foreach (KeyValuePair<string, List<string>> keyEntry in typeEntry.Value)
                 {
                     IList<string> conditionValues = keyEntry.Value;
@@ -232,25 +236,25 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
 
                     if (conditionValues.Count > 1)
                     {
-                        generator.WriteArrayStart();
+                        generator.WriteStartArray();
                     }
 
                     if (conditionValues != null && conditionValues.Count != 0)
                     {
                         foreach (string conditionValue in conditionValues)
                         {
-                            generator.Write(conditionValue);
+                            generator.WriteStringValue(conditionValue);
                         }
                     }
 
                     if (conditionValues.Count > 1)
                     {
-                        generator.WriteArrayEnd();
+                        generator.WriteEndArray();
                     }
                 }
-                generator.WriteObjectEnd();
+                generator.WriteEndObject();
             }
-            generator.WriteObjectEnd();
+            generator.WriteEndObject();
         }
 
         /// <summary>
@@ -292,10 +296,10 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
             return conditionsByTypeAndKeys;
         }
 
-        private static void writePropertyValue(JsonWriter generator, string propertyName, string value)
+        private static void writePropertyValue(Utf8JsonWriter generator, string propertyName, string value)
         {
             generator.WritePropertyName(propertyName);
-            generator.Write(value);
+            generator.WriteStringValue(value);
         }
     }
 }

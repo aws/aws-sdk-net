@@ -21,12 +21,12 @@ using System.Net;
 using System.Threading;
 
 using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using System.Text.Json;
 
 namespace Amazon.Util
 {
@@ -62,8 +62,6 @@ namespace Amazon.Util
             DEFAULT_APITOKEN_TTL = 21600;
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
-
-        private static bool useNullToken = false;
 
         private static ReaderWriterLockSlim metadataLock = new ReaderWriterLockSlim(); // Lock to control getting metadata across multiple threads.
         private static readonly TimeSpan metadataLockTimeout = TimeSpan.FromMilliseconds(5000);
@@ -116,10 +114,7 @@ namespace Amazon.Util
         public static string EC2ApiTokenUrl => ServiceEndpoint + LATEST + "/api/token";
 
         /// <summary>
-        /// If set to true the SDK logic for falling back to V1 will be disabled.
-        /// When using the SDK on an EC2 instance that has configured instance metadata service to 
-        /// use V1 only, a InvalidOperationException exception will be thrown when attempting to access
-        /// the metadata in EC2 instance metadata.This includes AWS credentials and region information.
+        /// Disable accessing EC2 instance metadata service (IMDS).
         /// The default value is false.
         /// </summary>
         public static bool IsIMDSEnabled
@@ -135,23 +130,6 @@ namespace Amazon.Util
                 return !True.Equals(value, StringComparison.OrdinalIgnoreCase);
             }
         }
-
-        private static bool? _ec2MetadataV1Disabled;
-        
-        /// <summary>
-        /// Controls whether request EC2 metadata v1 fallback is disabled.
-        /// </summary>
-        public static bool EC2MetadataV1Disabled
-        {
-            get
-            {
-                if (_ec2MetadataV1Disabled.HasValue)
-                    return _ec2MetadataV1Disabled.Value;
-                return FallbackInternalConfigurationFactory.EC2MetadataV1Disabled.GetValueOrDefault();
-            }
-            set { _ec2MetadataV1Disabled = value; }
-        }
-
 
         /// <summary>
         /// Allows to configure the proxy used for HTTP requests. The default value is null.
@@ -309,10 +287,10 @@ namespace Amazon.Util
                 {
                     try
                     {
-                        var jsonDocument = JsonMapper.ToObject(identityDocument.ToString());
-                        var regionName = jsonDocument["region"];
-                        if (regionName != null)
-                            return RegionEndpoint.GetBySystemName(regionName.ToString());
+                        using JsonDocument doc = JsonDocument.Parse(identityDocument.ToString());
+                        JsonElement rootElement = doc.RootElement;
+                        if (rootElement.TryGetProperty("region", out JsonElement value))
+                            return RegionEndpoint.GetBySystemName(value.GetString());
                     }
                     catch (Exception e)
                     {
@@ -647,9 +625,11 @@ namespace Amazon.Util
         /// <returns>The API token or null if an API token couldn't be obtained and doesn't need to be used</returns>
         private static string FetchApiToken(int tries)
         {
+            const string errorFailFastMessage = "IMDS rejected request to get API token.";
+            const string errorMessage = "Unable to retrieve token for use in IMDSv2.";
             for (int retry = 1; retry <= tries; retry++)
             {
-                if (!IsIMDSEnabled || useNullToken)
+                if (!IsIMDSEnabled)
                 {
                     return null;
                 }
@@ -672,55 +652,26 @@ namespace Amazon.Util
                         || httpStatusCode == HttpStatusCode.MethodNotAllowed
                         || httpStatusCode == HttpStatusCode.Forbidden)
                     {
-                        if (EC2MetadataV1Disabled)
-                        {
-                            throw new InvalidOperationException("Unable to retrieve token for use in IMDSv2 call and IMDSv1 has been disabled.");
-                        }
-
-                        useNullToken = true;
-                        return null;
+                        throw new InvalidOperationException(errorFailFastMessage);
                     }
 
                     if (retry >= tries)
                     {
                         if (httpStatusCode == HttpStatusCode.BadRequest)
                         {
-                            Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service to obtain a metadata token.");
+                            Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, errorMessage);
                             throw;
                         }
 
-                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service to obtain a metadata token. Attempting to access IMDS without a token.");
-
-                        //If there isn't a status code, it was a failure to contact the server which would be
-                        //a request failure, a network issue, or a timeout. Cache this response and fallback
-                        //to IMDS flow without a token unless EC2MetadataV1Disabled is set to true. If the non
-                        //token IMDS flow returns unauthorized, the useNullToken flag will be cleared and the IMDS
-                        //flow will attempt to obtain another token.
-
-                        if (EC2MetadataV1Disabled)
-                        {
-                            throw new InvalidOperationException("Unable to retrieve token for use in IMDSv2 call and IMDSv1 has been disabled.");
-                        }
-
-                        if (httpStatusCode == null)
-                        {
-                            useNullToken = true;
-                        }
-
-                        //Return null to fallback to the IMDS flow without using a token.                    
-                        return null;
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, errorMessage);
+                        throw new InvalidOperationException(errorMessage);
                     }
 
                     PauseExponentially(retry - 1);
                 }
             }
 
-            return null;
-        }
-
-        public static void ClearTokenFlag()
-        {
-            useNullToken = false;
+            throw new InvalidOperationException(errorMessage);
         }
 
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
@@ -735,16 +686,20 @@ namespace Amazon.Util
             //token cannot be obtained we will fallback to not using a token.
             if (token == null)
             {
-                token = FetchApiToken(DEFAULT_RETRIES);
+                try
+                {
+                    token = FetchApiToken(DEFAULT_RETRIES);
+                }
+                catch(InvalidOperationException e)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).InfoFormat("Failed to retrieve IMDS data \"{0}\" because IMDS API token could not be retrieved: {1}", relativeOrAbsolutePath, e.Message);
+                    return null; // If we could not get a token then assume we are not running in an EC2 instance and return null.
+                }
             }
 
             var headers = new Dictionary<string, string>();
             headers.Add(HeaderKeys.UserAgentHeader, _userAgent);
-
-            if (!string.IsNullOrEmpty(token))
-            {
-                headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
-            }
+            headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
 
             try
             {
@@ -792,7 +747,6 @@ namespace Amazon.Util
                 }
                 else if (httpStatusCode == HttpStatusCode.Unauthorized)
                 {
-                    ClearTokenFlag();
                     Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
                     throw;
                 }

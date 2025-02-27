@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationCapacityReservationId", StringUtils.FromString(publicRequest.DestinationCapacityReservationId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetInstanceCount())
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));

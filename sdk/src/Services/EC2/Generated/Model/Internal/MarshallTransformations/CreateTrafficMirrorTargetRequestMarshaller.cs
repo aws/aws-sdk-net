@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetGatewayLoadBalancerEndpointId())
                 {
                     request.Parameters.Add("GatewayLoadBalancerEndpointId", StringUtils.FromString(publicRequest.GatewayLoadBalancerEndpointId));

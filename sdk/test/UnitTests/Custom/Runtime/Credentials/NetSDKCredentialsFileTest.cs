@@ -67,12 +67,12 @@ namespace AWSSDK.UnitTests
 
         private static readonly string SessionProfileTextAfterUpdate = new StringBuilder()
             .AppendLine("{")
-            .AppendLine("    \"" + UniqueKey + "\" : {")
-            .AppendLine("        \"DisplayName\" : \"ProfileName1\",")
-            .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
-            .AppendLine("        \"AWSSecretKey\" : \"secret_key_id\",")
-            .AppendLine("        \"ProfileType\"  : \"AWS\",")
-            .AppendLine("        \"" + SomeOtherKey + "\" : \"" + SomeOtherValue + "\"")
+            .AppendLine("      \"" + UniqueKey + "\" : {")
+            .AppendLine("          \"DisplayName\" : \"ProfileName1\",")
+            .AppendLine("          \"AWSAccessKey\": \"access_key_id\",")
+            .AppendLine("          \"AWSSecretKey\": \"secret_key_id\",")
+            .AppendLine("          \"ProfileType\": \"AWS\",")
+            .AppendLine("          \"" + SomeOtherKey + "\": \"" + SomeOtherValue + "\"")
             .AppendLine("    }")
             .Append("}").ToString();
 
@@ -438,8 +438,8 @@ namespace AWSSDK.UnitTests
                 };
                 var newProfile = new CredentialProfile("ProfileName1", options);
                 tester.ProfileStore.RegisterProfile(newProfile);
-
-                tester.AssertFileContents(SessionProfileTextAfterUpdate);
+                // we don't care about the spacing
+                tester.AssertFileContentsIgnoreWhitespace(tester.MainFilename, SessionProfileTextAfterUpdate);
             }
         }
 

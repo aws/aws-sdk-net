@@ -26,9 +26,10 @@ using System.Xml.Serialization;
 
 using Amazon.Runtime;
 using Amazon.Util;
-using ThirdParty.Json.LitJson;
 using System.Globalization;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
+using System.Text.Json;
 
 namespace Amazon.S3.Util
 {
@@ -45,38 +46,15 @@ namespace Amazon.S3.Util
     [XmlRootAttribute(IsNullable = false)]
     public class S3PostUploadSignedPolicy
     {
-        /// <summary>
-        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
-        /// </summary>
-        /// <param name="policy">JSON string representing the policy to sign</param>
-        /// <param name="credentials">Credentials to sign the policy with</param>
-        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials)
-        {
-            ImmutableCredentials iCreds = credentials.GetCredentials();
-            var policyBytes = iCreds.UseToken
-                ? addTokenToPolicy(policy, iCreds.Token)
-                : Encoding.UTF8.GetBytes(policy.Trim());
-            var base64Policy = Convert.ToBase64String(policyBytes);
-            string signature = CryptoUtilFactory.CryptoInstance.HMACSign(Encoding.UTF8.GetBytes(base64Policy), iCreds.SecretKey, SigningAlgorithm.HmacSHA1);
-            return new S3PostUploadSignedPolicy
-            {
-                Policy = base64Policy,
-                Signature = signature,
-                AccessKeyId = iCreds.AccessKey,
-                SecurityToken = iCreds.Token,
-                SignatureVersion = "2"
-            };
-        }
-
-        /// <summary>
-        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
-        /// </summary>
-        /// <param name="policy">JSON string representing the policy to sign</param>
-        /// <param name="credentials">Credentials to sign the policy with</param>
-        /// <param name="region">Service region endpoint.</param>
-        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicyV4(string policy, AWSCredentials credentials, RegionEndpoint region)
+        private static JsonDocumentOptions options = new JsonDocumentOptions { AllowTrailingCommas = true };
+    /// <summary>
+    ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
+    /// </summary>
+    /// <param name="policy">JSON string representing the policy to sign</param>
+    /// <param name="credentials">Credentials to sign the policy with</param>
+    /// <param name="region">Service region endpoint.</param>
+    /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
+    public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
         {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
@@ -107,7 +85,6 @@ namespace Amazon.S3.Util
                 Signature = signature,
                 AccessKeyId = iCreds.AccessKey,
                 SecurityToken = iCreds.Token,
-                SignatureVersion = "4",
                 Algorithm = algorithm,
                 Date = dateTimeStamp,
                 Credential = credentialString
@@ -116,65 +93,36 @@ namespace Amazon.S3.Util
 
         private static byte[] addConditionsToPolicy(string policy, Dictionary<string, string> newConditions)
         {
-            var json = JsonMapper.ToObject(new JsonReader(policy));
+            var json = JsonNode.Parse(policy, null, options) as JsonObject;
+            var jsonConditions = json["conditions"] as JsonArray;
 
-            var jsonConditions = json["conditions"];
-
-            if (jsonConditions != null && jsonConditions.IsArray)
+            if (jsonConditions != null)
             {
                 foreach (var newCond in newConditions)
                 {
                     bool found = false;
                     for (int i = 0; i < jsonConditions.Count; i++)
                     {
-                        JsonData jsonCond = jsonConditions[i];
-                        if (jsonCond.IsObject && jsonCond[newCond.Key] != null)
+                        if (jsonConditions[i] is JsonObject obj && obj.ContainsKey(newCond.Key))
                         {
-                            jsonCond[newCond.Key] = newCond.Value;
+                            obj[newCond.Key] = newCond.Value;
                             found = true;
                         }
                     }
+
                     if (!found)
                     {
-                        var jsonCond = new JsonData();
-                        jsonCond.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
-                        jsonCond[newCond.Key] = newCond.Value;
-                        jsonConditions.Add(jsonCond);
+                        var newCondition = new JsonObject
+                        {
+                            [newCond.Key] = newCond.Value
+                        };
+                        jsonConditions.Add(newCondition);
                     }
                 }
             }
-            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
+            return Encoding.UTF8.GetBytes(json.ToJsonString().Trim());
         }
-
-        private static byte[] addTokenToPolicy(string policy, string token)
-        {
-            var json = JsonMapper.ToObject(new JsonReader(policy));
-            var found = false;
-            var conditions = json["conditions"];
-            if (conditions != null && conditions.IsArray)
-            {
-                for (int i = 0; i < conditions.Count; i++)
-                {
-                    JsonData cond = conditions[i];
-                    if (cond.IsObject && cond[S3Constants.PostFormDataSecurityToken] != null)
-                    {
-                        cond[S3Constants.PostFormDataSecurityToken] = token;
-                        found = true;
-                    }
-                }
-
-                if (!found)
-                {
-                    var tokenCondition = new JsonData();
-                    tokenCondition.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
-                    tokenCondition[S3Constants.PostFormDataSecurityToken] = token;
-                    conditions.Add(tokenCondition);
-                }
-            }
-
-            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
-        }
-
+        
         /// <summary>
         /// The policy document which governs what uploads can be done.
         /// </summary>
@@ -194,12 +142,7 @@ namespace Amazon.S3.Util
         /// The security token from session or instance credentials.
         /// </summary>
         public string SecurityToken { get; set; }
-
-        /// <summary>
-        /// The signature version usedd. Either "2" or "4".
-        /// </summary>
-        public string SignatureVersion { get; set; }
-
+        
         /// <summary>
         /// The signing algorithm used. Required as a field in the post Amazon
         /// S3 can re-calculate the signature.
@@ -238,13 +181,14 @@ namespace Amazon.S3.Util
         /// <returns>JSON string</returns>
         public string ToJson()
         {
-            var json = new JsonData();
+            var json = new JsonObject
+            {
+                [KEY_POLICY] = this.Policy,
+                [KEY_SIGNATURE] = this.Signature,
+                [KEY_ACCESSKEY] = this.AccessKeyId
+            };
 
-            json[KEY_POLICY] = this.Policy;
-            json[KEY_SIGNATURE] = this.Signature;
-            json[KEY_ACCESSKEY] = this.AccessKeyId;
-
-            return JsonMapper.ToJson(json);
+            return json.ToJsonString();
         }
 
         /// <summary>
@@ -269,26 +213,32 @@ namespace Amazon.S3.Util
         /// <returns>Instance of S3PostUploadSignedPolicy</returns>
         public static S3PostUploadSignedPolicy GetSignedPolicyFromJson(string policyJson)
         {
-            JsonData json;
-            try { json = JsonMapper.ToObject(policyJson); }
-            catch (Exception e)
+            try
+            {
+                using (var doc = JsonDocument.Parse(policyJson))
+                {
+                    var json = doc.RootElement;
+
+                    // Check if required fields exist and are of the correct type
+                    if (!json.TryGetProperty(KEY_POLICY, out var policyNode) || policyNode.ValueKind != JsonValueKind.String)
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_POLICY);
+                    if (!json.TryGetProperty(KEY_SIGNATURE, out var signatureNode) || signatureNode.ValueKind != JsonValueKind.String)
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_SIGNATURE);
+                    if (!json.TryGetProperty(KEY_ACCESSKEY, out var accessKeyNode) || accessKeyNode.ValueKind != JsonValueKind.String)
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_ACCESSKEY);
+
+                    return new S3PostUploadSignedPolicy
+                    {
+                        Policy = policyNode.GetString(),
+                        Signature = signatureNode.GetString(),
+                        AccessKeyId = accessKeyNode.GetString()
+                    };
+                }
+            }
+            catch (JsonException e)
             {
                 throw new ArgumentException("Invalid JSON document", e);
             }
-
-            if (null == json[KEY_POLICY] || !json[KEY_POLICY].IsString)
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_POLICY);
-            if (null == json[KEY_SIGNATURE] || !json[KEY_SIGNATURE].IsString)
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_SIGNATURE);
-            if (null == json[KEY_ACCESSKEY] || !json[KEY_ACCESSKEY].IsString)
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "JSON document requires '{0}' field"), KEY_ACCESSKEY);
-
-            return new S3PostUploadSignedPolicy
-            {
-                Policy = json[KEY_POLICY].ToString(),
-                Signature = json[KEY_SIGNATURE].ToString(),
-                AccessKeyId = json[KEY_ACCESSKEY].ToString()
-            };
         }
 
         /// <summary>

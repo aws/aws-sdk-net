@@ -18,7 +18,7 @@ using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime
 {
@@ -150,21 +150,21 @@ namespace Amazon.Runtime
         {
             try
             {
-                var o = JsonMapper.ToObject(json);
+                using JsonDocument doc = JsonDocument.Parse(json);
 
                 // get the expiry first - if the credentials have expired we can then
                 // ignore the data
-                var expires = DateTime.Parse((string)o[ExpiresProperty], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
+                var expires = DateTime.Parse(doc.RootElement.GetProperty(ExpiresProperty).GetString(), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                 if (expires <= AWSSDKUtils.CorrectedUtcNow)
                 {
                     Logger.GetLogger(typeof(SAMLImmutableCredentials)).DebugFormat("Skipping serialized credentials due to expiry.");
                     return null;
                 }
 
-                var accessKey = (string)o[AccessKeyProperty];
-                var secretKey = (string)o[SecretKeyProperty];
-                var token = (string)o[TokenProperty];
-                var subject = (string)o[SubjectProperty];
+                var accessKey = doc.RootElement.GetProperty(AccessKeyProperty).GetString();
+                var secretKey = doc.RootElement.GetProperty(SecretKeyProperty).GetString();
+                var token = doc.RootElement.GetProperty(TokenProperty).GetString();
+                var subject = doc.RootElement.GetProperty(SubjectProperty).GetString();
 
                 return new SAMLImmutableCredentials(accessKey, secretKey, token, expires, subject);
             }

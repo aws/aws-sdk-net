@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using ServiceClientGenerator;
-
-using ThirdParty.Json.LitJson;
 
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
@@ -40,16 +38,15 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             Assert.IsNotNull(requestJson);
             Assert.IsNotNull(responseJson);
 
-            JsonData rootdata = JsonMapper.ToObject(requestJson);
+            JsonDocument rootData = JsonDocument.Parse(requestJson);
 
-            Assert.IsTrue(rootdata["ExclusiveStartTableName"].IsString);
-            Assert.IsTrue(rootdata["Limit"].IsInt);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ExclusiveStartTableName").ValueKind == JsonValueKind.String);
+            Assert.IsTrue(rootData.RootElement.GetProperty("Limit").ValueKind == JsonValueKind.Number);
 
-
-            rootdata = JsonMapper.ToObject(responseJson);
-            Assert.IsTrue(rootdata["LastEvaluatedTableName"].IsString);
-            Assert.IsTrue(rootdata["TableNames"].IsArray);
-            Assert.IsTrue(rootdata["TableNames"][0].IsString);
+            rootData = JsonDocument.Parse(responseJson);
+            Assert.IsTrue(rootData.RootElement.GetProperty("LastEvaluatedTableName").ValueKind == JsonValueKind.String);
+            Assert.IsTrue(rootData.RootElement.GetProperty("TableNames").ValueKind == JsonValueKind.Array);
+            Assert.IsTrue(rootData.RootElement.GetProperty("TableNames").EnumerateArray().First().ValueKind == JsonValueKind.String);
         }
 
         [TestMethod][TestCategory("UnitTest")]
@@ -60,65 +57,50 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             Assert.IsNotNull(requestJson);
             Assert.IsNotNull(responseJson);
 
-            JsonData rootdata = JsonMapper.ToObject(requestJson);
+            JsonDocument rootData = JsonDocument.Parse(requestJson);
 
-            Assert.IsTrue(rootdata["AttributesToGet"].IsArray);
-            Assert.IsTrue(rootdata["AttributesToGet"][0].IsString);
+            Assert.IsTrue(rootData.RootElement.GetProperty("AttributesToGet").ValueKind == JsonValueKind.Array);
+            Assert.IsTrue(rootData.RootElement.GetProperty("AttributesToGet").EnumerateArray().First().ValueKind == JsonValueKind.String);
 
-            Assert.IsTrue(rootdata["ConsistentRead"].IsBoolean);
-            Assert.IsTrue(rootdata["TableName"].IsString);
-            Assert.IsTrue(rootdata["ReturnConsumedCapacity"].IsString);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsistentRead").ValueKind == JsonValueKind.True || rootData.RootElement.GetProperty("ConsistentRead").ValueKind == JsonValueKind.False);
+            Assert.IsTrue(rootData.RootElement.GetProperty("TableName").ValueKind == JsonValueKind.String);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ReturnConsumedCapacity").ValueKind == JsonValueKind.String);
 
-            Assert.IsTrue(rootdata["Key"].IsObject);
-            foreach (KeyValuePair<string, JsonData> kvp in rootdata["Key"])
+            Assert.IsTrue(rootData.RootElement.GetProperty("Key").ValueKind == JsonValueKind.Object);
+            Assert.IsTrue(rootData.RootElement.GetProperty("Key").EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.Object));
+
+
+            rootData = JsonDocument.Parse(responseJson);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").ValueKind == JsonValueKind.Object);  
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("CapacityUnits").ValueKind == JsonValueKind.Number);
+
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("GlobalSecondaryIndexes").ValueKind == JsonValueKind.Object);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("GlobalSecondaryIndexes").EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.Object));
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("GlobalSecondaryIndexes").EnumerateObject().All(x => x.Value.GetProperty("CapacityUnits").ValueKind == JsonValueKind.Number));
+
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("LocalSecondaryIndexes").ValueKind == JsonValueKind.Object);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("LocalSecondaryIndexes").EnumerateObject().All(x => x.Value.ValueKind == JsonValueKind.Object));
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("LocalSecondaryIndexes").EnumerateObject().All(x => x.Value.GetProperty("CapacityUnits").ValueKind == JsonValueKind.Number));
+
+
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("Table").ValueKind == JsonValueKind.Object);
+            Assert.IsTrue(rootData.RootElement.GetProperty("ConsumedCapacity").GetProperty("Table").GetProperty("CapacityUnits").ValueKind == JsonValueKind.Number);
+
+            Assert.IsTrue(rootData.RootElement.GetProperty("Item").ValueKind == JsonValueKind.Object);
+            foreach (var kvp in rootData.RootElement.GetProperty("Item").EnumerateObject())
             {
-                Assert.IsTrue(kvp.Value.IsObject);
-            }
+                Assert.IsTrue(kvp.Value.ValueKind == JsonValueKind.Object);
+                Assert.IsTrue(kvp.Value.GetProperty("B").ValueKind == JsonValueKind.String);
+                Assert.IsTrue(kvp.Value.GetProperty("BS").ValueKind == JsonValueKind.Array);
+                Assert.IsTrue(kvp.Value.GetProperty("BS").EnumerateArray().First().ValueKind == JsonValueKind.String);
 
+                Assert.IsTrue(kvp.Value.GetProperty("N").ValueKind == JsonValueKind.String);
+                Assert.IsTrue(kvp.Value.GetProperty("NS").ValueKind == JsonValueKind.Array);
+                Assert.IsTrue(kvp.Value.GetProperty("NS").EnumerateArray().First().ValueKind == JsonValueKind.String);
 
-            rootdata = JsonMapper.ToObject(responseJson);
-            Assert.IsTrue(rootdata["ConsumedCapacity"].IsObject);
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["CapacityUnits"].IsDouble);
-
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["GlobalSecondaryIndexes"].IsObject);
-            foreach (KeyValuePair<string, JsonData> kvp in rootdata["ConsumedCapacity"]["GlobalSecondaryIndexes"])
-            {
-                Assert.IsTrue(kvp.Value.IsObject);
-                Assert.IsTrue(kvp.Value["CapacityUnits"].IsDouble);
-            }
-
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["LocalSecondaryIndexes"].IsObject);
-            foreach (KeyValuePair<string, JsonData> kvp in rootdata["ConsumedCapacity"]["LocalSecondaryIndexes"])
-            {
-                Assert.IsTrue(kvp.Value.IsObject);
-                Assert.IsTrue(kvp.Value["CapacityUnits"].IsDouble);
-            }
-
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["LocalSecondaryIndexes"].IsObject);
-            foreach (KeyValuePair<string, JsonData> kvp in rootdata["ConsumedCapacity"]["LocalSecondaryIndexes"])
-            {
-                Assert.IsTrue(kvp.Value.IsObject);
-                Assert.IsTrue(kvp.Value["CapacityUnits"].IsDouble);
-            }
-
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["Table"].IsObject);
-            Assert.IsTrue(rootdata["ConsumedCapacity"]["Table"]["CapacityUnits"].IsDouble);
-
-            Assert.IsTrue(rootdata["Item"].IsObject);
-            foreach (KeyValuePair<string, JsonData> kvp in rootdata["Item"])
-            {
-                Assert.IsTrue(kvp.Value.IsObject);
-                Assert.IsTrue(kvp.Value["B"].IsString);
-                Assert.IsTrue(kvp.Value["BS"].IsArray);
-                Assert.IsTrue(kvp.Value["BS"][0].IsString);
-
-                Assert.IsTrue(kvp.Value["N"].IsString);
-                Assert.IsTrue(kvp.Value["NS"].IsArray);
-                Assert.IsTrue(kvp.Value["NS"][0].IsString);
-
-                Assert.IsTrue(kvp.Value["S"].IsString);
-                Assert.IsTrue(kvp.Value["SS"].IsArray);
-                Assert.IsTrue(kvp.Value["SS"][0].IsString);
+                Assert.IsTrue(kvp.Value.GetProperty("S").ValueKind == JsonValueKind.String);
+                Assert.IsTrue(kvp.Value.GetProperty("SS").ValueKind == JsonValueKind.Array);
+                Assert.IsTrue(kvp.Value.GetProperty("SS").EnumerateArray().First().ValueKind == JsonValueKind.String);
             }
         }
 

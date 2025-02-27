@@ -71,7 +71,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         {
                             response.MyMap = new Dictionary<string, string>();
                         }
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "K", "V");
                         response.MyMap.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }

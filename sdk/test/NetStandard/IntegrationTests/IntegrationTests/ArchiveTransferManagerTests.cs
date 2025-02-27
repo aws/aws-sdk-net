@@ -10,7 +10,6 @@ using Amazon.Glacier.Model;
 using Amazon.Glacier.Transfer;
 using Amazon.Runtime;
 using Xunit;
-using ThirdParty.Json.LitJson;
 using Amazon;
 using System.Threading.Tasks;
 using System.Security.Cryptography;

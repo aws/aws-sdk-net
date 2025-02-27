@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Amazon.Util.Internal;
-using ThirdParty.Json.LitJson;
 
 #if NET8_0_OR_GREATER
 using System.Text.Json;

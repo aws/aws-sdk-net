@@ -14,7 +14,6 @@
  */
 using System;
 using System.Collections.Generic;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Endpoints
 {

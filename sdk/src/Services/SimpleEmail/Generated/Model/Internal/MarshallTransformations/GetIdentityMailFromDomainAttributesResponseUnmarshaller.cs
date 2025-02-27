@@ -84,7 +84,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("MailFromDomainAttributes/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityMailFromDomainAttributes, StringUnmarshaller, IdentityMailFromDomainAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityMailFromDomainAttributesUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityMailFromDomainAttributes, StringUnmarshaller, IdentityMailFromDomainAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityMailFromDomainAttributesUnmarshaller.Instance, "key", "value");
                         if (response.MailFromDomainAttributes == null)
                         {
                             response.MailFromDomainAttributes = new Dictionary<string, IdentityMailFromDomainAttributes>();

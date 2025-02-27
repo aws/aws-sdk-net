@@ -32,7 +32,7 @@ using Amazon.Util;
 namespace Amazon.S3.Util
 {
     /// <summary>
-    /// Parameters for uploading to Amazon S3 a file using HTTP POS
+    /// Parameters for uploading to Amazon S3 a file using HTTP POST.
     /// </summary>
     /// <remarks>
     /// <para>
@@ -40,7 +40,8 @@ namespace Amazon.S3.Util
     /// This includes metadata. If metadata is specified in the policy, then it must be included in the request. Adding metadata not in the
     /// policy will cause the POST to fail.
     /// </para><para>
-    /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
+    /// For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/> or the API documentation at
+    /// <see href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOST.html"/>.
     /// </para>
     /// </remarks>
     public class S3PostUploadRequest
@@ -217,9 +218,11 @@ namespace Amazon.S3.Util
 
             if (this.SignedPolicy != null)
             {
-                WriteFormDatum(outputStream, S3Constants.PostFormDataAccessKeyId, this.SignedPolicy.AccessKeyId, boundary);
                 WriteFormDatum(outputStream, S3Constants.PostFormDataPolicy, this.SignedPolicy.Policy, boundary);
-                WriteFormDatum(outputStream, S3Constants.PostFormDataSignature, this.SignedPolicy.Signature, boundary);
+                WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzCredential, this.SignedPolicy.Credential, boundary);
+                WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzAlgorithm, this.SignedPolicy.Algorithm, boundary);
+                WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzDate, this.SignedPolicy.Date, boundary);
+                WriteFormDatum(outputStream, S3Constants.PostFormDataXAmzSignature, this.SignedPolicy.Signature, boundary);
             }
         }
 

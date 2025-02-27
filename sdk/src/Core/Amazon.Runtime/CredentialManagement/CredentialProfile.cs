@@ -121,14 +121,6 @@ namespace Amazon.Runtime.CredentialManagement
         public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
 
         /// <summary>
-        /// If set to true the SDK logic for falling back to V1 will be disabled.
-        /// When using the SDK on an EC2 instance that has configured instance metadata service to 
-        /// use V1 only, a InvalidOperationException exception will be thrown when attempting to access
-        /// the metadata in EC2 instance metadata.This includes AWS credentials and region information.
-        /// </summary>
-        public bool? EC2MetadataV1Disabled { get; set; }
-
-        /// <summary>
         /// Configures the endpoint calculation to go to a dual stack (ipv6 enabled) endpoint
         /// for the configured region.
         /// </summary>

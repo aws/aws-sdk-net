@@ -79,6 +79,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeliveryPreference", StringUtils.FromString(publicRequest.DeliveryPreference));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     request.Parameters.Add("EbsOptimized", StringUtils.FromBool(publicRequest.EbsOptimized));

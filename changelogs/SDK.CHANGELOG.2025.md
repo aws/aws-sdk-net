@@ -1,3 +1,37 @@
+### 4.0.0.0-preview.8 (2025-02-25 13:38 UTC)
+* DataExchange (4.0.0.0)
+	* Updated `SendApiAsset` operation to set correct `Content-Type` header
+* DynamoDBv2 (4.0.0.0)
+	* Improved error message in DataModel when in Native AOT mode and nested types have been trimmed.
+* EC2 (4.0.0.0)
+	* [Breaking Change] Obsoleted DryRun method from service client. To perform a dry run use the DryRun property on the request object for individual EC2 operations.
+* Core 4.0.0.0
+	* [Breaking Change] Remove `LitJson` source from SDK and clean up all references.
+	* [Breaking Change] Remove support for deprecated IMDS v1.
+	* [Breaking Change] Updated EventStreams Byte to SByte to be inline with the spec where Byte was intended to be signed.
+	* Fixed `JsonRPCRequestMarshaller` to properly handle enum payloads by setting content headers to plain text instead of JSON object
+	* Updated `Microsoft.Extensions.AI` to `9.3.0-preview.1.25114.11` in the `AWSSDK.Extensions.Bedrock.MEAI` package
+	* Updated `restJson1` protocol services to use `text/plain` as `Content-Type` (instead of `application/json`) for string payloads
+	* Updated `XmlDictionary` and `KeyValueUnmarshallers` to be able to handle any key and value XML element names
+	* All services packages updated to require new Core
+
+### 4.0.0.0-preview.7 (2025-02-17 16:10 UTC)
+* EC2 (4.0.0.0)
+	* [Breaking Change] Removed EC2: DiskImageImporter, ImportCleanup, EC2Metadata, and S3UploadPolicy classes which are obsolete.
+* S3 (4.0.0.0)
+	* Removed GlobalSuppressions for removed EC2 classes.
+* Core 4.0.0.0
+	* [Breaking Change] Removal of AWSConfigsS3.UseSignatureVersion4 and AWSConfigsS3.UseSigV4SetExplicitly to always use SigV4.
+	* [Breaking Change] Removal of ClientConfig.SignatureVersion only used by S3 for backward compatibility.
+	* [Breaking Change] Removal of Endpoint.SignatureVersionOverride from the obsolete Endpoint class used to handle overriding signature versions for S3.
+	* [Breaking Change] Removal of the obsolete EventBridgeSigner class.
+	* [Breaking Change] Updated AmazonS3Util.PostUpload and S3PostUploadSignedPolicy.GetSignedPolicy to use SigV4. S3PostUploadSignedPolicy.GetSignedPolicyV4 removed and overwrote to S3PostUploadSignedPolicy.GetSignedPolicy.
+	* Fixed issue where `System.Text.Json` dependencies were not being copied to the AWS SDK for .NET ZIP artifacts
+	* Refactor `Core` to remove `LitJson` references and use `System.Text.Json` instead
+	* Refactor tests and services to use `System.Text.Json` instead of `LitJson`
+	* Updated S3 GetPreSignedURL to always use SigV4 unless the expiration date is greater than seven days and it is a region which supports SigV2.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.6 (2025-02-06 21:43 UTC)
 * DynamoDBv2 (4.0.0.0)
 	* Add NativeAOT support for the DataModel namespace also known as the Object Persistence high level library.

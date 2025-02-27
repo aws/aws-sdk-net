@@ -42,8 +42,6 @@ namespace AWSSDK.ProtocolTests.AwsQuery
         /// Serializes flattened XML maps in responses that have xmlNamespace
         /// and xmlName on members
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

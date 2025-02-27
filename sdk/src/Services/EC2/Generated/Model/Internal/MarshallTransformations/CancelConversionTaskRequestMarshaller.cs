@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConversionTaskId", StringUtils.FromString(publicRequest.ConversionTaskId));
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetReasonMessage())
                 {
                     request.Parameters.Add("ReasonMessage", StringUtils.FromString(publicRequest.ReasonMessage));

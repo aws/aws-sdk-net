@@ -18,7 +18,6 @@
  *  AWS SDK for .NET
  */
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -27,7 +26,6 @@ using System.Threading;
 using Amazon.EC2.Model;
 using Amazon.Runtime.Internal.Util;
 
-using ThirdParty.Json.LitJson;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
 

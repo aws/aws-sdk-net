@@ -324,8 +324,22 @@ namespace Amazon.DynamoDBv2.DataModel
         internal StorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
             if (!Utils.CanInstantiate(targetType))
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Type {0} is unsupported, it cannot be instantiated", targetType.FullName));
+            {
+                string errorMessage;
+                if (InternalSDKUtils.IsRunningNativeAot())
+                {
+                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
+                        "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
+                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
+                        "If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                }
+                else
+                {
+                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated";
+                }
+
+                throw new InvalidOperationException(errorMessage);
+            }
 
             TargetType = targetType;
             Properties = new List<PropertyStorage>();

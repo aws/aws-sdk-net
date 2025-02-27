@@ -20,15 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading;
+using System.Text.Json;
 
 using Amazon.EC2.Model;
 using Amazon.Runtime.Internal.Util;
 
-using ThirdParty.Json.LitJson;
-using Amazon.Runtime;
 
 #pragma warning disable 1591
 
@@ -417,7 +413,7 @@ namespace Amazon.EC2.Util
         {
             try
             {
-                var jdata = JsonMapper.ToObject(reader);
+                using var jsonDocument = JsonDocument.Parse(reader.BaseStream);
 
                 var platformTags = new string[]
                 {
@@ -428,18 +424,27 @@ namespace Amazon.EC2.Util
                 var parsedDefinitionsMap = new Dictionary<string, string>();
                 foreach (var platformTag in platformTags)
                 {
-                    var imageDefinitions = jdata[platformTag];
-                    if (imageDefinitions == null)
+                    if (!jsonDocument.RootElement.TryGetProperty(platformTag, out var imageDefinitions) || imageDefinitions.ValueKind != JsonValueKind.Array)
                     {
                         Logger.InfoFormat("Parsing AMI definitions - did not find any images for platform tag '{0}'", platformTag);
                         continue;
                     }
 
-                    for (int d = 0; d < imageDefinitions.Count; d++)
+                    for (int d = 0; d < imageDefinitions.GetArrayLength(); d++)
                     {
                         var def = imageDefinitions[d];
-                        var key = (string)def[DefinitionKeyTag];
-                        var prefix = (string)def[DefinitionPrefixTag];
+                        if (def.ValueKind != JsonValueKind.Object)
+                        {
+                            continue;
+                        }
+
+                        var key = def.TryGetProperty(DefinitionKeyTag, out var keyElement) && keyElement.ValueKind == JsonValueKind.String
+                            ? keyElement.GetString()
+                            : null;
+
+                        var prefix = def.TryGetProperty(DefinitionPrefixTag, out var prefixElement) && prefixElement.ValueKind == JsonValueKind.String
+                            ? prefixElement.GetString()
+                            : null;
 
                         if (!string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(prefix))
                             parsedDefinitionsMap[key] = prefix;

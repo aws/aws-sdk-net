@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 
@@ -288,7 +287,7 @@ namespace Amazon.Runtime.Internal.Transform
             return text;
         }
 
-#endregion
+        #endregion
 
         #region Public properties
 

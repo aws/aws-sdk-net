@@ -112,6 +112,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetDryRun())
+                {
+                    request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
+                }
                 if(publicRequest.IsSetEncrypted())
                 {
                     request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));

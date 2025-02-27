@@ -32,6 +32,8 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
     private readonly string? _modelId;
     /// <summary>Default number of dimensions to use when no number of dimensions is specified in the request.</summary>
     private readonly int? _dimensions;
+    /// <summary>Metadata describing the embedding generator.</summary>
+    private readonly EmbeddingGeneratorMetadata _metadata;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BedrockEmbeddingGenerator"/> class.
@@ -47,7 +49,7 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
         _modelId = modelId;
         _dimensions = dimensions;
 
-        Metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId, dimensions: dimensions);
+        _metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId, dimensions: dimensions);
     }
 
     public void Dispose()
@@ -56,10 +58,9 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
     }
 
     /// <inheritdoc />
-    public EmbeddingGeneratorMetadata Metadata { get; }
 
     /// <inheritdoc />
-    public object? GetService(Type serviceType, object? key)
+    public object? GetService(Type serviceType, object? serviceKey)
     {
         if (serviceType is null)
         {
@@ -67,7 +68,8 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
         }
 
         return
-            key is not null ? null :
+            serviceKey is not null ? null :
+            serviceType == typeof(EmbeddingGeneratorMetadata) ? _metadata :
             serviceType.IsInstanceOfType(_runtime) ? _runtime :
             serviceType.IsInstanceOfType(this) ? this :
             null;

@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using ThirdParty.Json.LitJson;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -207,12 +207,12 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1.7976931348623157E+308,    dynamoDBDocument["PDouble"].AsDouble());
             Assert.AreEqual(-1.7976931348623157E+308,   dynamoDBDocument["NDouble"].AsDouble());
 
-            JsonData jsonOriginal = JsonMapper.ToObject(jsonDocument);
-            JsonData jsonNew = JsonMapper.ToObject(dynamoDBDocument.ToJson());
+            JsonDocument jsonOriginal = JsonDocument.Parse(jsonDocument);
+            JsonDocument jsonNew = JsonDocument.Parse(dynamoDBDocument.ToJson());
 
-            foreach (string property in jsonOriginal.PropertyNames)
+            foreach (var property in jsonOriginal.RootElement.EnumerateObject())
             {
-                Assert.AreEqual(jsonOriginal[property].ToString(), jsonNew[property].ToString());
+                Assert.AreEqual(property.Value.ToString(), jsonNew.RootElement.GetProperty(property.Name).ToString());
             }
         }
 
@@ -232,11 +232,13 @@ namespace AWSSDK_DotNet.UnitTests
             var dateWithDecimals = "2022-05-05T11:56:11.000Z";
             var expectedDateDecimal = DateTime.Parse(dateWithDecimals, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
-            var jsonDateWithNoDecimals = JsonMapper.ToJson(new
+            var jsonDateWithNoDecimals = JsonSerializer.Serialize(new
             {
                 DateFromString = dateWithNoDecimals
             });
-            var jsonDateWithDecimals = JsonMapper.ToJson(new
+
+
+            var jsonDateWithDecimals = JsonSerializer.Serialize(new
             {
                 DateFromString = dateWithDecimals
             });

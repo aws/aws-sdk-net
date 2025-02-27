@@ -15,7 +15,6 @@
 
 using System;
 using System.Text.Json;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Documents.Internal.Transform
 {

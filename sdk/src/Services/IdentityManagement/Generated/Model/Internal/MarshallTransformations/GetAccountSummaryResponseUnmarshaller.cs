@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("SummaryMap/entry", targetDepth))
                     {
-                        var unmarshaller = new XmlKeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance, "key", "value");
                         if (response.SummaryMap == null)
                         {
                             response.SummaryMap = new Dictionary<string, int>();
