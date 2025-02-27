@@ -1,3 +1,22 @@
+### 3.7.992.0 (2025-02-27 19:26 UTC)
+* BedrockAgentRuntime (3.7.421.0)
+	* Introduces Sessions (preview) to enable stateful conversations in GenAI applications.
+* ElasticMapReduce (3.7.403.46)
+	* Definition update for EbsConfiguration.
+* QBusiness (3.7.410.0)
+	* This release supports deleting attachments from conversations.
+* RedshiftServerless (3.7.403.0)
+	* Add track support for Redshift Serverless workgroup.
+* S3 (3.7.415.8)
+	* Updated SDK not to throw an error when parsing response headers modeled as `string` into different data types.
+* SageMaker (3.7.427.0)
+	* SageMaker HubService is introducing support for creating Training Jobs in Curated Hub (Private Hub). Additionally, it is introducing two new APIs: UpdateHubContent and UpdateHubContentReference.
+* StorageGateway (3.7.403.0)
+	* This release adds support to invoke a process that cleans the specified file share's cache of file entries that are failing upload to Amazon S3.
+* Core 3.7.402.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.991.0 (2025-02-26 19:46 UTC)
 * ApplicationSignals (3.7.404.0)
 	* This release adds API support for reading Service Level Objectives and Services from monitoring accounts, from SLO and Service-scoped operations, including ListServices and ListServiceLevelObjectives.
