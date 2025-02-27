@@ -78,7 +78,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if ClientContext property is set
         internal bool IsSetClientContext()
         {
-            return !string.IsNullOrEmpty(this._clientContext);
+            return this._clientContext != null;
         }
 
         /// <summary>

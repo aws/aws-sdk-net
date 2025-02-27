@@ -68,7 +68,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ClientContext property is set
         internal bool IsSetClientContext()
         {
-            return !string.IsNullOrEmpty(this._clientContext);
+            return this._clientContext != null;
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.Lambda.Model
         // Check to see if InvocationType property is set
         internal bool IsSetInvocationType()
         {
-            return !string.IsNullOrEmpty(this._invocationType);
+            return this._invocationType != null;
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.Lambda.Model
         // Check to see if LogType property is set
         internal bool IsSetLogType()
         {
-            return !string.IsNullOrEmpty(this._logType);
+            return this._logType != null;
         }
 
         /// <summary>

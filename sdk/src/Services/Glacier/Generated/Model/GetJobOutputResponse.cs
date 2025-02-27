@@ -58,7 +58,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AcceptRanges property is set
         internal bool IsSetAcceptRanges()
         {
-            return !string.IsNullOrEmpty(this._acceptRanges);
+            return this._acceptRanges != null;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return !string.IsNullOrEmpty(this._archiveDescription);
+            return this._archiveDescription != null;
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentRange property is set
         internal bool IsSetContentRange()
         {
-            return !string.IsNullOrEmpty(this._contentRange);
+            return this._contentRange != null;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>

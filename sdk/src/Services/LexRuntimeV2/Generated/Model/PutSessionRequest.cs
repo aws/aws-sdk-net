@@ -168,7 +168,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ResponseContentType property is set
         internal bool IsSetResponseContentType()
         {
-            return !string.IsNullOrEmpty(this._responseContentType);
+            return this._responseContentType != null;
         }
 
         /// <summary>

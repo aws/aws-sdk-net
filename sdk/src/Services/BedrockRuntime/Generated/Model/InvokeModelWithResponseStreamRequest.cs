@@ -97,7 +97,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return !string.IsNullOrEmpty(this._accept);
+            return this._accept != null;
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if GuardrailIdentifier property is set
         internal bool IsSetGuardrailIdentifier()
         {
-            return !string.IsNullOrEmpty(this._guardrailIdentifier);
+            return this._guardrailIdentifier != null;
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if GuardrailVersion property is set
         internal bool IsSetGuardrailVersion()
         {
-            return !string.IsNullOrEmpty(this._guardrailVersion);
+            return this._guardrailVersion != null;
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if PerformanceConfigLatency property is set
         internal bool IsSetPerformanceConfigLatency()
         {
-            return !string.IsNullOrEmpty(this._performanceConfigLatency);
+            return this._performanceConfigLatency != null;
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Amazon.BedrockRuntime.Model
         // Check to see if Trace property is set
         internal bool IsSetTrace()
         {
-            return !string.IsNullOrEmpty(this._trace);
+            return this._trace != null;
         }
 
     }

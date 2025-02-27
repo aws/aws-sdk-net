@@ -163,7 +163,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return !string.IsNullOrEmpty(this._archiveDescription);
+            return this._archiveDescription != null;
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
         /// <summary>

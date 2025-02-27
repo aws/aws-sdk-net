@@ -72,7 +72,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if TestId property is set
         internal bool IsSetTestId()
         {
-            return !string.IsNullOrEmpty(this._testId);
+            return this._testId != null;
         }
 
     }

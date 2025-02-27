@@ -74,7 +74,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ExecutedVersion property is set
         internal bool IsSetExecutedVersion()
         {
-            return !string.IsNullOrEmpty(this._executedVersion);
+            return this._executedVersion != null;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ResponseStreamContentType property is set
         internal bool IsSetResponseStreamContentType()
         {
-            return !string.IsNullOrEmpty(this._responseStreamContentType);
+            return this._responseStreamContentType != null;
         }
 
         /// <summary>

@@ -105,7 +105,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return !string.IsNullOrEmpty(this._ifMatch);
+            return this._ifMatch != null;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if IfNoneMatch property is set
         internal bool IsSetIfNoneMatch()
         {
-            return !string.IsNullOrEmpty(this._ifNoneMatch);
+            return this._ifNoneMatch != null;
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if MatchForVersionType property is set
         internal bool IsSetMatchForVersionType()
         {
-            return !string.IsNullOrEmpty(this._matchForVersionType);
+            return this._matchForVersionType != null;
         }
 
     }

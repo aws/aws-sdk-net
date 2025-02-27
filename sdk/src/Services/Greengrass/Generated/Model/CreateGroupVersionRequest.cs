@@ -58,7 +58,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if AmznClientToken property is set
         internal bool IsSetAmznClientToken()
         {
-            return !string.IsNullOrEmpty(this._amznClientToken);
+            return this._amznClientToken != null;
         }
 
         /// <summary>

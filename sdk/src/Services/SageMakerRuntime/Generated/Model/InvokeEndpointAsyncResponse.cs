@@ -54,7 +54,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if FailureLocation property is set
         internal bool IsSetFailureLocation()
         {
-            return !string.IsNullOrEmpty(this._failureLocation);
+            return this._failureLocation != null;
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if OutputLocation property is set
         internal bool IsSetOutputLocation()
         {
-            return !string.IsNullOrEmpty(this._outputLocation);
+            return this._outputLocation != null;
         }
 
     }

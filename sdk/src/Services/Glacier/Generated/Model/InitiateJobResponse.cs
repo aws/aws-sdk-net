@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return !string.IsNullOrEmpty(this._jobId);
+            return this._jobId != null;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobOutputPath property is set
         internal bool IsSetJobOutputPath()
         {
-            return !string.IsNullOrEmpty(this._jobOutputPath);
+            return this._jobOutputPath != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return !string.IsNullOrEmpty(this._location);
+            return this._location != null;
         }
 
     }

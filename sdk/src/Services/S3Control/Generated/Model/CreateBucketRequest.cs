@@ -139,7 +139,7 @@ namespace Amazon.S3Control.Model
         // Check to see if ACL property is set
         internal bool IsSetACL()
         {
-            return !string.IsNullOrEmpty(this._acl);
+            return this._acl != null;
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantFullControl property is set
         internal bool IsSetGrantFullControl()
         {
-            return !string.IsNullOrEmpty(this._grantFullControl);
+            return this._grantFullControl != null;
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantRead property is set
         internal bool IsSetGrantRead()
         {
-            return !string.IsNullOrEmpty(this._grantRead);
+            return this._grantRead != null;
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantReadACP property is set
         internal bool IsSetGrantReadACP()
         {
-            return !string.IsNullOrEmpty(this._grantReadACP);
+            return this._grantReadACP != null;
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantWrite property is set
         internal bool IsSetGrantWrite()
         {
-            return !string.IsNullOrEmpty(this._grantWrite);
+            return this._grantWrite != null;
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Amazon.S3Control.Model
         // Check to see if GrantWriteACP property is set
         internal bool IsSetGrantWriteACP()
         {
-            return !string.IsNullOrEmpty(this._grantWriteACP);
+            return this._grantWriteACP != null;
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.S3Control.Model
         // Check to see if OutpostId property is set
         internal bool IsSetOutpostId()
         {
-            return !string.IsNullOrEmpty(this._outpostId);
+            return this._outpostId != null;
         }
 
     }

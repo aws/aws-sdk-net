@@ -188,7 +188,7 @@ namespace Amazon.Lex.Model
         // Check to see if Accept property is set
         internal bool IsSetAccept()
         {
-            return !string.IsNullOrEmpty(this._accept);
+            return this._accept != null;
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return !string.IsNullOrEmpty(this._activeContexts);
+            return this._activeContexts != null;
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace Amazon.Lex.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace Amazon.Lex.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return !string.IsNullOrEmpty(this._requestAttributes);
+            return this._requestAttributes != null;
         }
 
         /// <summary>
@@ -402,7 +402,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return !string.IsNullOrEmpty(this._sessionAttributes);
+            return this._sessionAttributes != null;
         }
 
         /// <summary>

@@ -70,7 +70,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ConversationId property is set
         internal bool IsSetConversationId()
         {
-            return !string.IsNullOrEmpty(this._conversationId);
+            return this._conversationId != null;
         }
 
     }

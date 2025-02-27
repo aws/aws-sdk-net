@@ -297,11 +297,22 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else if (member.IsList && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
                     {
-                    // see protocol test https://github.com/smithy-lang/smithy/blob/8418149c69be6e6847dffae27e802730e8e40d49/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L369
-                    // null or empty lists in headers should not be sent over the wire
+                    // restxml and restjson is the only protocol where we send empty lists in headers. See following protocol tests.
+                    // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
+                    // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
+                        if (this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
+                        {
+
+#>
+            return this.<#=member.VariableName#> != null;
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0;
 <#
+                        }
                     }
                     else if (member.IsMap || member.IsList)
                     {
@@ -317,20 +328,10 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-                        // If there's a customization overriding the data type, we'll not use string.IsNullOrEmpty (and rely on checking for not null instead).
-                        // At the moment, this is only the case for Glacier (and InitiateMultipartUploadInput.partSize property).
-                        if (member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers) && member.OverrideDataType == null)
-                        {
-#>
-            return !string.IsNullOrEmpty(this.<#=member.VariableName#>);
-<#
-                        }
-                        else
-                        {
+
 #>
             return this.<#=member.VariableName#> != null;
 <#
-                        }
                     }
 #>
         }

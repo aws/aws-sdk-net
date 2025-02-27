@@ -135,7 +135,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return !string.IsNullOrEmpty(this._accountId);
+            return this._accountId != null;
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MFA property is set
         internal bool IsSetMFA()
         {
-            return !string.IsNullOrEmpty(this._mfa);
+            return this._mfa != null;
         }
 
         /// <summary>

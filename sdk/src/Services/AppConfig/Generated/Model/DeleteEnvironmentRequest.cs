@@ -105,7 +105,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if DeletionProtectionCheck property is set
         internal bool IsSetDeletionProtectionCheck()
         {
-            return !string.IsNullOrEmpty(this._deletionProtectionCheck);
+            return this._deletionProtectionCheck != null;
         }
 
         /// <summary>

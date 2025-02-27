@@ -197,7 +197,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return !string.IsNullOrEmpty(this._checksum);
+            return this._checksum != null;
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Range property is set
         internal bool IsSetRange()
         {
-            return !string.IsNullOrEmpty(this._range);
+            return this._range != null;
         }
 
         /// <summary>

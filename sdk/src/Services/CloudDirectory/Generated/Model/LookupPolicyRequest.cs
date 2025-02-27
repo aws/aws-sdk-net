@@ -62,7 +62,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if DirectoryArn property is set
         internal bool IsSetDirectoryArn()
         {
-            return !string.IsNullOrEmpty(this._directoryArn);
+            return this._directoryArn != null;
         }
 
         /// <summary>

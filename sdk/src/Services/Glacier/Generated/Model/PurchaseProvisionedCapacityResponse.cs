@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CapacityId property is set
         internal bool IsSetCapacityId()
         {
-            return !string.IsNullOrEmpty(this._capacityId);
+            return this._capacityId != null;
         }
 
     }

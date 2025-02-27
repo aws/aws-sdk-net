@@ -75,7 +75,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if NextPollConfigurationToken property is set
         internal bool IsSetNextPollConfigurationToken()
         {
-            return !string.IsNullOrEmpty(this._nextPollConfigurationToken);
+            return this._nextPollConfigurationToken != null;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return !string.IsNullOrEmpty(this._versionLabel);
+            return this._versionLabel != null;
         }
 
     }

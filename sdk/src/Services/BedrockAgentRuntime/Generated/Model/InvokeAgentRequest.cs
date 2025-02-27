@@ -319,7 +319,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if SourceArn property is set
         internal bool IsSetSourceArn()
         {
-            return !string.IsNullOrEmpty(this._sourceArn);
+            return this._sourceArn != null;
         }
 
         /// <summary>

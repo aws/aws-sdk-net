@@ -48,7 +48,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if Greeting property is set
         internal bool IsSetGreeting()
         {
-            return !string.IsNullOrEmpty(this._greeting);
+            return this._greeting != null;
         }
 
     }

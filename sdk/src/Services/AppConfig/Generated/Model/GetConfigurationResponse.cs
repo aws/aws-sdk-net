@@ -54,7 +54,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ConfigurationVersion property is set
         internal bool IsSetConfigurationVersion()
         {
-            return !string.IsNullOrEmpty(this._configurationVersion);
+            return this._configurationVersion != null;
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
     }

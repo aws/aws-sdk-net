@@ -224,7 +224,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return !string.IsNullOrEmpty(this._requestAttributes);
+            return this._requestAttributes != null;
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if RequestContentType property is set
         internal bool IsSetRequestContentType()
         {
-            return !string.IsNullOrEmpty(this._requestContentType);
+            return this._requestContentType != null;
         }
 
         /// <summary>
@@ -339,7 +339,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ResponseContentType property is set
         internal bool IsSetResponseContentType()
         {
-            return !string.IsNullOrEmpty(this._responseContentType);
+            return this._responseContentType != null;
         }
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionStateValue property is set
         internal bool IsSetSessionStateValue()
         {
-            return !string.IsNullOrEmpty(this._sessionStateValue);
+            return this._sessionStateValue != null;
         }
 
         /// <summary>

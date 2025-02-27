@@ -87,7 +87,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ClosedSessionId property is set
         internal bool IsSetClosedSessionId()
         {
-            return !string.IsNullOrEmpty(this._closedSessionId);
+            return this._closedSessionId != null;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return !string.IsNullOrEmpty(this._contentType);
+            return this._contentType != null;
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return !string.IsNullOrEmpty(this._customAttributes);
+            return this._customAttributes != null;
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if InvokedProductionVariant property is set
         internal bool IsSetInvokedProductionVariant()
         {
-            return !string.IsNullOrEmpty(this._invokedProductionVariant);
+            return this._invokedProductionVariant != null;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Amazon.SageMakerRuntime.Model
         // Check to see if NewSessionId property is set
         internal bool IsSetNewSessionId()
         {
-            return !string.IsNullOrEmpty(this._newSessionId);
+            return this._newSessionId != null;
         }
 
     }
