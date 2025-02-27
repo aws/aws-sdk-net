@@ -25,7 +25,7 @@ namespace Amazon.Runtime.Logging
     /// </summary>
     internal class ConsoleAdaptorLogger : IAdaptorLogger
     {
-        public static long _sequanceId;
+        public static long _sequenceId;
 
         private Type _declaredLoggerType;
 
@@ -47,7 +47,7 @@ namespace Amazon.Runtime.Logging
             writer.WriteLine(message, parameters);
 
             string formatted = null;
-            long sequence = Interlocked.Increment(ref _sequanceId);
+            long sequence = Interlocked.Increment(ref _sequenceId);
             string dt = AWSSDKUtils.CorrectedUtcNow.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
             string asString = level.ToString().ToUpper(CultureInfo.InvariantCulture);
 

@@ -25,7 +25,7 @@ namespace Amazon.Runtime.Logging
         /// True if the log level is enabled.
         /// </summary>
         /// <param name="level"></param>
-        /// <returns></returns>
+        /// <returns>True if the log level is enabled.</returns>
         bool IsEnabled(SdkLogLevel level);
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Runtime.Logging
         /// Creates a logger.
         /// </summary>
         /// <param name="type"></param>
-        /// <returns></returns>
+        /// <returns>The IAdaptorLogger wrapping the adapted logging framework's logger.</returns>
         IAdaptorLogger CreateAdaptorLogger(Type type);
     }
 }
