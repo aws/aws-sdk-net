@@ -56,13 +56,13 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        internal void RegisterAdaptorLoggerFactory(IAdaptorLoggerFactory factory)
+        internal static void RegisterAdaptorLoggerFactory(IAdaptorLoggerFactory factory)
         {
             _adaptorFactories.AddOrUpdate(factory.Name, factory, (key, oldValue) => factory);
             _cachedLoggers.Clear();
         }
 
-        internal void DeregisterAdaptorLoggerFactory(string factoryName)
+        internal static void DeregisterAdaptorLoggerFactory(string factoryName)
         {
             if (_adaptorFactories.TryRemove(factoryName, out _))
             {

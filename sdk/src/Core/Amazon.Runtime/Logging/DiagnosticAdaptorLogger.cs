@@ -21,6 +21,9 @@ using System.Threading;
 
 namespace Amazon.Runtime.Logging
 {
+    /// <summary>
+    /// Adaptor for outputing the SDK logs to the System.Diagnostics.
+    /// </summary>
     internal class DiagnosticAdaptorLogger : IAdaptorLogger
     {
         int eventId = 0;

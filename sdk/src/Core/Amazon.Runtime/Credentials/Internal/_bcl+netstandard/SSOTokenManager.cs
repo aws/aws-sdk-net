@@ -138,13 +138,13 @@ namespace Amazon.Runtime.Credentials.Internal
                 _inMemoryCache.TryGetValue(options, out inMemoryToken) &&
                 !inMemoryToken.Token.NeedsRefresh())
             {
-                _logger.InfoFormat($"In Memory cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"In Memory cache has SSOToken for [{options.StartUrl}]");
                 return inMemoryToken.Token;
             }
 
             if (_ssoTokenFileCache.TryGetSsoToken(options, options.CacheFolderLocation, out var ssoToken))
             {
-                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"File cache has SSOToken for [{options.StartUrl}]");
 
                 // token is not expired and doesn't need a refresh
                 if (!ssoToken.NeedsRefresh())
@@ -163,7 +163,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 // refresh token?
                 else if (ssoToken.CanRefresh())
                 {
-                    _logger.InfoFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
+                    _logger.DebugFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
 
                     // only try and refresh an expired token once.  if we've already failed,
                     // don't try again.
@@ -199,7 +199,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                     try
                     {
-                        _logger.InfoFormat($"Refreshing SSOToken for [{options.StartUrl}]");
+                        _logger.DebugFormat($"Refreshing SSOToken for [{options.StartUrl}]");
 
                         var response = _ssooidcClient.RefreshToken(MapSsoTokenToGetSsoTokenResponse(ssoToken));
 
@@ -319,7 +319,7 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (_ssoTokenFileCache.TryGetSsoToken(options, options.CacheFolderLocation, out var ssoToken))
             {
-                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"File cache has SSOToken for [{options.StartUrl}]");
 
                 _ssoTokenFileCache.DeleteSsoToken(options, options.CacheFolderLocation);
 #pragma warning disable CA1031 // Do not catch general exception types.
@@ -339,7 +339,7 @@ namespace Amazon.Runtime.Credentials.Internal
             }
             else
             {
-                _logger.InfoFormat($"No cached sso token found for [{options.StartUrl}]");
+                _logger.DebugFormat($"No cached sso token found for [{options.StartUrl}]");
             }
         }
 
@@ -394,7 +394,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 _inMemoryCache.TryGetValue(options, out inMemoryToken) &&
                 !inMemoryToken.Token.NeedsRefresh())
             {
-                _logger.InfoFormat($"In Memory cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"In Memory cache has SSOToken for [{options.StartUrl}]");
                 return inMemoryToken.Token;
             }
 
@@ -406,7 +406,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
             if (cachedToken.Success)
             {
-                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"File cache has SSOToken for [{options.StartUrl}]");
 
                 var ssoToken = cachedToken.Value;
 
@@ -427,7 +427,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 // refresh token?
                 else if (ssoToken.CanRefresh())
                 {
-                    _logger.InfoFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
+                    _logger.DebugFormat($"File cache SSOToken for [{options.StartUrl}] needs refresh");
 
                     // only try and refresh an expired token once.  if we've already failed,
                     // don't try again.
@@ -463,7 +463,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                     try
                     {
-                        _logger.InfoFormat($"Refreshing SSOToken for [{options.Session}]");
+                        _logger.DebugFormat($"Refreshing SSOToken for [{options.Session}]");
 
                         var response = await _ssooidcClient.RefreshTokenAsync(MapSsoTokenToGetSsoTokenResponse(ssoToken)).ConfigureAwait(false);
 
@@ -586,7 +586,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
             if (cachedToken.Success)
             {
-                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+                _logger.DebugFormat($"File cache has SSOToken for [{options.StartUrl}]");
                 var ssoToken = cachedToken.Value;
                 _ssoTokenFileCache.DeleteSsoToken(options, options.CacheFolderLocation);
 #pragma warning disable CA1031 // Do not catch general exception types.
@@ -606,7 +606,7 @@ namespace Amazon.Runtime.Credentials.Internal
             }
             else
             {
-                _logger.InfoFormat($"No cached sso token found for [{options.StartUrl}]");
+                _logger.DebugFormat($"No cached sso token found for [{options.StartUrl}]");
             }
         }
 

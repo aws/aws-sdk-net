@@ -15,6 +15,9 @@
 
 namespace Amazon.Runtime.Logging
 {
+    /// <summary>
+    /// Enum log levels for the SDK.
+    /// </summary>
     public enum SdkLogLevel
     {
         Trace = 0,

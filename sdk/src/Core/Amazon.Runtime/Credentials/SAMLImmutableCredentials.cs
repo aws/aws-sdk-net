@@ -157,7 +157,7 @@ namespace Amazon.Runtime
                 var expires = DateTime.Parse((string)o[ExpiresProperty], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                 if (expires <= AWSSDKUtils.CorrectedUtcNow)
                 {
-                    Logger.GetLogger(typeof(SAMLImmutableCredentials)).InfoFormat("Skipping serialized credentials due to expiry.");
+                    Logger.GetLogger(typeof(SAMLImmutableCredentials)).DebugFormat("Skipping serialized credentials due to expiry.");
                     return null;
                 }
 

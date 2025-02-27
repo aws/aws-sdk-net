@@ -17,19 +17,42 @@ using System;
 namespace Amazon.Runtime.Logging
 {
     /// <summary>
-    /// 
+    /// The adaptor logger that wraps the logger from the targeted logging framework.
     /// </summary>
     public interface IAdaptorLogger
     {
+        /// <summary>
+        /// True if the log level is enabled.
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
         bool IsEnabled(SdkLogLevel level);
 
+        /// <summary>
+        /// Send a log message to the wrapped logging framework.
+        /// </summary>
+        /// <param name="level">Level of the log message.</param>
+        /// <param name="message">Message to be logged.</param>
+        /// <param name="ex">Exception that should be logged. If no has occurred exception pass null.</param>
+        /// <param name="parameters">Parameters to use for formatting the log message.</param>
         void Log(SdkLogLevel level, string message, Exception ex, params object[] parameters);
     }
 
+    /// <summary>
+    /// Factory for creating a logger that wraps the logging framework.
+    /// </summary>
     public interface IAdaptorLoggerFactory
     {
+        /// <summary>
+        /// The name of the factory used to store the factory in the registry.
+        /// </summary>
         string Name { get; }
 
+        /// <summary>
+        /// Creates a logger.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         IAdaptorLogger CreateAdaptorLogger(Type type);
     }
 }

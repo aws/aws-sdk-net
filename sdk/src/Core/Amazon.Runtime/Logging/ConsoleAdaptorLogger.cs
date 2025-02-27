@@ -20,6 +20,9 @@ using System.Threading;
 
 namespace Amazon.Runtime.Logging
 {
+    /// <summary>
+    /// Adaptor for outputing the SDK logs to the console.
+    /// </summary>
     internal class ConsoleAdaptorLogger : IAdaptorLogger
     {
         public static long _sequanceId;

@@ -18,10 +18,8 @@
  *  AWS SDK for .NET
  *
  */
-
-using System;
+using Amazon.Runtime.Logging;
 using System.Collections.Generic;
-using System.Xml.Linq;
 
 namespace Amazon.Util
 {
@@ -92,7 +90,28 @@ namespace Amazon.Util
             get { return _logTo; }
             set
             {
+                switch(LogTo)
+                {
+                    case LoggingOptions.Console:
+                        AdaptorLoggerFactoryRegistry.DeregisterAdaptorLoggerFactory(new ConsoleAdaptorLoggerFactory().Name);
+                        break;
+                    case LoggingOptions.SystemDiagnostics:
+                        AdaptorLoggerFactoryRegistry.DeregisterAdaptorLoggerFactory(new DiagnosticAdaptorLoggerFactory().Name);
+                        break;
+                }
+
                 _logTo = value;
+
+                switch (LogTo)
+                {
+                    case LoggingOptions.Console:
+                        AdaptorLoggerFactoryRegistry.RegisterAdaptorLoggerFactory(new ConsoleAdaptorLoggerFactory());
+                        break;
+                    case LoggingOptions.SystemDiagnostics:
+                        AdaptorLoggerFactoryRegistry.RegisterAdaptorLoggerFactory(new DiagnosticAdaptorLoggerFactory());
+                        break;
+                }
+
                 AWSConfigs.OnPropertyChanged(AWSConfigs.LoggingDestinationProperty);
             }
         }

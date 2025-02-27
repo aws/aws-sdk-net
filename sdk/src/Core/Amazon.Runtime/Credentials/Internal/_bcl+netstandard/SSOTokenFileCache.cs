@@ -130,7 +130,7 @@ namespace Amazon.Runtime.Credentials.Internal
             {
                 if (string.IsNullOrWhiteSpace(cacheFilePath) || !_file.Exists(cacheFilePath))
                 {
-                    _logger.InfoFormat("No SSO Token cache to load from");
+                    _logger.DebugFormat("No SSO Token cache to load from");
                     return false;
                 }
 
@@ -138,7 +138,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                 ssoToken = SsoTokenUtils.FromJson(json);
 
-                _logger.InfoFormat("SSO Token loaded from cache");
+                _logger.DebugFormat("SSO Token loaded from cache");
 
                 return true;
             }
@@ -162,7 +162,7 @@ namespace Amazon.Runtime.Credentials.Internal
             {
                 if (string.IsNullOrWhiteSpace(cacheFilePath) || !_file.Exists(cacheFilePath))
                 {
-                    _logger.InfoFormat("No SSO Token cache to load from");
+                    _logger.DebugFormat("No SSO Token cache to load from");
                     return result;
                 }
 
@@ -171,7 +171,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 result.Value = SsoTokenUtils.FromJson(json);
                 result.Success = true;
 
-                _logger.InfoFormat("SSO Token loaded from cache");
+                _logger.DebugFormat("SSO Token loaded from cache");
 
                 return result;
             }
@@ -200,7 +200,7 @@ namespace Amazon.Runtime.Credentials.Internal
                     result.Add(new SSOTokenFile { SsoToken = ssoToken, SsoTokenFilePath = cacheFilePath });
                 }
             }
-            _logger.InfoFormat("Number of cached sso tokens {0}", result.Count);
+            _logger.DebugFormat("Number of cached sso tokens {0}", result.Count);
 
             return result;
         }
@@ -346,7 +346,7 @@ namespace Amazon.Runtime.Credentials.Internal
                     result.Add(new SSOTokenFile { SsoToken = ssoToken, SsoTokenFilePath = cacheFilePath });
                 }
             }
-            _logger.InfoFormat("Number of cached sso tokens {0}", result.Count);
+            _logger.DebugFormat("Number of cached sso tokens {0}", result.Count);
             return result;
         }
     }
