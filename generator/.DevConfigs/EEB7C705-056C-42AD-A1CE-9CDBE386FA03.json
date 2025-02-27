@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "[Breaking Change] Rework how SDK logs can be outputted. The AWSSDK.Extensions.Logging.ILoggerAdaptor and AWSSDK.Extensions.Logging.Log4NetAdaptor adaptor packages were added to support outputting the SDK logs to Microsoft.Extensions.Logging or log4net."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
