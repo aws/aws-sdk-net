@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2
     {
         public override IEnumerable<Type> GetTargetTypes()
         {
-            return new[] { typeof(byte), typeof(Nullable<byte>) }; 
+            return new[] { typeof(byte), typeof(Nullable<byte>) };
         }
 
         protected override bool TryTo(byte value, out Primitive p)
@@ -444,7 +444,51 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#endregion
+#if NET8_0_OR_GREATER
+    internal class DateOnlyConverterV1 : Converter<DateOnly>
+    {
+        private const string DateOnlyFormat = "yyyy-MM-dd";
+
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(DateOnly), typeof(DateOnly?) };
+        }
+
+        protected override bool TryTo(DateOnly value, out Primitive p)
+        {
+            p = new Primitive(value.ToString(DateOnlyFormat, CultureInfo.InvariantCulture), DynamoDBEntryType.String);
+            return true;
+        }
+
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out DateOnly result)
+        {
+            return DateOnly.TryParseExact(p.StringValue, DateOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result);
+        }
+    }
+
+    internal class TimeOnlyConverterV1 : Converter<TimeOnly>
+    {
+        private const string TimeOnlyFormat = "HH:mm:ss.fff";
+
+        public override IEnumerable<Type> GetTargetTypes()
+        {
+            return new[] { typeof(TimeOnly), typeof(TimeOnly?) };
+        }
+
+        protected override bool TryTo(TimeOnly value, out Primitive p)
+        {
+            p = new Primitive(value.ToString(TimeOnlyFormat, CultureInfo.InvariantCulture), DynamoDBEntryType.String);
+            return true;
+        }
+
+        protected override bool TryFrom(Primitive p, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, out TimeOnly result)
+        {
+            return TimeOnly.TryParseExact(p.StringValue, TimeOnlyFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result);
+        }
+    }
+#endif
+
+    #endregion
 
     #region Converters supporting reading V2 DDB items, but writing V1 items
 
@@ -569,5 +613,5 @@ namespace Amazon.DynamoDBv2
         }
     }
 
-#endregion
+    #endregion
 }
