@@ -220,6 +220,13 @@ namespace <#=this.Config.Namespace#>.Model
                     {
                         propertyAttributes.Add("Max=" + member.Shape.Max);
                     }
+                    bool hasPaginatorInputToken = this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
+                    bool hasPaginatorLimitKey = this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
+
+                    if (hasPaginatorInputToken || hasPaginatorLimitKey)
+                    {
+                        propertyAttributes.Add("PaginationKey=true");
+                    }
                     if (propertyAttributes.Count > 0)
                     {
 #>
