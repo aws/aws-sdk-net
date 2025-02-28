@@ -287,7 +287,7 @@ namespace Amazon.EC2.Util
                 IpPermission spec = new IpPermission
                 {
                     IpProtocol = "-1",
-                    IpRanges = new List<string>{ "0.0.0.0/0"},
+                    Ipv4Ranges = new List<IpRange> { new IpRange { CidrIp = "0.0.0.0/0", Description = "All Ip ranges"} },
                     UserIdGroupPairs = new List<UserIdGroupPair>() { new UserIdGroupPair() { GroupId = groupId } }
                 };
 #pragma warning restore CS0612,CS0618

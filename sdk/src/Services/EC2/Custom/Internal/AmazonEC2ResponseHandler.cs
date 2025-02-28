@@ -209,9 +209,6 @@ namespace Amazon.EC2.Internal
                     continue;
                 }
 
-#pragma warning disable CS0612,CS0618
-                ipPermission.IpRanges = ipPermission.Ipv4Ranges.Select(i => i.CidrIp).ToList();
-#pragma warning restore CS0612,CS0618
                 ipPermission.CopyIpv4RangesToInternalCollection(ipPermission.Ipv4Ranges);
             }
         }
