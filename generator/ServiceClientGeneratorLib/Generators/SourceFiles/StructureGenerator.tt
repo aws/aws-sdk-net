@@ -222,12 +222,12 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     if (this.StructureType == StructureType.Request)
                     {
-                        // Add PaginationKey attribute to Request Pagination properties that will be used by PowerShell for Auto-Iteration
+                        // Add PaginationRequestKey attribute to Request Pagination properties that will be used by PowerShell for Auto-Iteration
                         bool hasPaginatorInputToken = this.StructureType == StructureType.Request && this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
                         bool hasPaginatorLimitKey = this.StructureType == StructureType.Request  && this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
                         if (hasPaginatorInputToken || hasPaginatorLimitKey)
                         {
-                            propertyAttributes.Add("PaginationKey=true");
+                            propertyAttributes.Add("PaginationRequestKey=true");
                         }
                     }
 
