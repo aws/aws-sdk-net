@@ -22,6 +22,7 @@ using System.Globalization;
 using System.Net;
 using System.Diagnostics.CodeAnalysis;
 using ThirdParty.RuntimeBackports;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -91,13 +92,32 @@ namespace Amazon.Runtime
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
+            ICoreAmazonSTS coreSTSClient = GetSTSClient(region);
+
+            var credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
+            _logger.DebugFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            return new CredentialsRefreshState(credentials, credentials.Expiration);
+        }
+
+        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            var region = FallbackRegionFactory.GetRegionEndpoint() ?? DefaultSTSClientRegion;
+            ICoreAmazonSTS coreSTSClient = GetSTSClient(region);
+
+            var credentials = await coreSTSClient.CredentialsFromAssumeRoleAuthenticationAsync(RoleArn, RoleSessionName, Options).ConfigureAwait(false);
+            _logger.DebugFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            return new CredentialsRefreshState(credentials, credentials.Expiration);
+        }
+
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        private ICoreAmazonSTS GetSTSClient(RegionEndpoint region)
+        {
             ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
-                new CreateInstanceContext(new SecurityTokenServiceClientContext {Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings } ));
+                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings }));
 
             if (coreSTSClient == null)
             {
@@ -130,11 +150,7 @@ namespace Amazon.Runtime
                 }
             }
 
-
-
-            var credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
-            _logger.DebugFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
-            return new CredentialsRefreshState(credentials, credentials.Expiration);
+            return coreSTSClient;
         }
     }
 }

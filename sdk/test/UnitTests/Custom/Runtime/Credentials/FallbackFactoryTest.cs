@@ -648,7 +648,7 @@ namespace AWSSDK.UnitTests
             };
 
             AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
-            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            var mockClient = new Mock<ICoreAmazonSTS>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
             using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
@@ -694,7 +694,7 @@ namespace AWSSDK.UnitTests
             File.WriteAllText(webIdentityTokenFilePath, webIdentityToken);
             var profileText = GetAssumeRoleWithWebIdentityProfileText(webIdentityTokenFilePath);
             AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
-            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            var mockClient = new Mock<ICoreAmazonSTS>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
             using (new FallbackFactoryTestFixture(profileText, "default"))
@@ -744,7 +744,7 @@ namespace AWSSDK.UnitTests
 
             var profileText = GetAssumeRoleWithWebIdentityProfileText(webIdentityTokenFilePath2);
             AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
-            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            var mockClient = new Mock<ICoreAmazonSTS>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
             using (new FallbackFactoryTestFixture(profileText, "default", envVariables))
@@ -836,7 +836,7 @@ namespace AWSSDK.UnitTests
 
             AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials;
             AssumeRoleWithWebIdentityTestCredentials webIdentityCredentials2;
-            var mockClient = new Mock<ICoreAmazonSTS_WebIdentity>();
+            var mockClient = new Mock<ICoreAmazonSTS>();
             mockClient.Setup(c => c.CredentialsFromAssumeRoleWithWebIdentityAuthentication(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AssumeRoleWithWebIdentityCredentialsOptions>()))
                 .Returns(new AssumeRoleImmutableCredentials("dummyAccessKeyId", "dummySecret", "dummyToken", DateTime.UtcNow.AddDays(1)));
             using (new FallbackFactoryTestFixture(ProfileText, "default", envVariables))
@@ -900,7 +900,7 @@ namespace AWSSDK.UnitTests
         // Further FallbackFactory tests involving retries live in AWSSDK.UnitTests.SecurityToken.Custom.FallbackCredentialsFactorySTSTests.
         public class AssumeRoleWithWebIdentityTestCredentials : AssumeRoleWithWebIdentityCredentials
         {
-            public ICoreAmazonSTS_WebIdentity Client { get; set; }
+            public ICoreAmazonSTS Client { get; set; }
             public AssumeRoleWithWebIdentityTestCredentials(string webIdentityTokenFile, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
                 : base(webIdentityTokenFile, roleArn, roleSessionName, options)
             {
@@ -913,7 +913,7 @@ namespace AWSSDK.UnitTests
                 Client = base.CreateClient();
             }
 
-            protected override ICoreAmazonSTS_WebIdentity CreateClient()
+            protected override ICoreAmazonSTS CreateClient()
             {
                 return Client;
             }

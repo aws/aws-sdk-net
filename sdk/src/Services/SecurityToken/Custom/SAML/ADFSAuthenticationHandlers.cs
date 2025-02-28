@@ -20,6 +20,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Amazon.SecurityToken.SAML
 {
@@ -63,6 +64,39 @@ namespace Amazon.SecurityToken.SAML
             }
         }
 
+        /// <summary>
+        /// Authenticates the user with the specified AD FS endpoint and 
+        /// yields the SAML response data for subsequent parsing.
+        /// </summary>
+        /// <param name="identityProvider">
+        /// The https endpoint of the federated identity provider.
+        /// </param>
+        /// <param name="credentials">
+        /// Credentials for the call. If null, the user's default network credentials 
+        /// will be used in a temporary impersonation context.
+        /// </param>
+        /// <param name="authenticationType">
+        /// The authentication type to be used with the endpoint. Valid values are 'NTLM',
+        /// 'Digest', 'Kerberos' and 'Negotiate'.
+        /// </param>
+        /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
+        /// <returns>The response data from a successful authentication request.</returns>
+        public async Task<string> AuthenticateAsync(Uri identityProvider, ICredentials credentials, string authenticationType,
+#if NETSTANDARD
+            IWebProxy proxySettings)
+#else
+            WebProxy proxySettings)
+#endif
+        {
+            try
+            {
+                return await QueryProviderAsync(identityProvider, proxySettings, credentials, authenticationType).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                throw new AdfsAuthenticationControllerException(e.ToString(), e);
+            }
+        }
 
         private static string QueryProvider(Uri identityProvider, IWebProxy proxySettings, ICredentials credentials, string authenticationType)
         {
@@ -82,27 +116,7 @@ namespace Amazon.SecurityToken.SAML
                     WebException webRequestException = null;
                     try
                     {
-#pragma warning disable SYSLIB0014 // Disable obsolete warning for WebRequest.Create because we can't switch to HttpClient while we still target .NET Framework 3.5
-                        request = (HttpWebRequest)WebRequest.Create(uri);
-#pragma warning disable SYSLIB0014
-                        request.CookieContainer = cookieContainer;
-                        request.ConnectionGroupName = connectionGroup;
-                        request.KeepAlive = true; //KeepAlive = false doesn't work on .NET Core 2.1+
-                        request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
-                        request.AllowAutoRedirect = false; // Handling redirection manually to avoid 401 errors
-                        if (proxySettings != null)
-                        {
-                            request.Proxy = proxySettings;
-                        }
-                        if (credentials != null)
-                        {
-                            request.Credentials = credentials?.GetCredential(uri, authenticationType);
-                        }
-                        else
-                        {
-                            request.UseDefaultCredentials = true;
-                        }
-
+                        request = CreateRequest(proxySettings, credentials, authenticationType, uri, cookieContainer, connectionGroup);
                         response = (HttpWebResponse)request.GetResponse();
                     }
                     catch (WebException e)
@@ -157,6 +171,104 @@ namespace Amazon.SecurityToken.SAML
             return responseData;
         }
 
+        private static async Task<string> QueryProviderAsync(Uri identityProvider, IWebProxy proxySettings, ICredentials credentials, string authenticationType)
+        {
+            var uri = identityProvider;
+            var cookieContainer = new CookieContainer();
+            int redirectionsCount = 0;
+            string responseData = null;
+            var connectionGroup = Guid.NewGuid().ToString(); //This is to avoid having multiple users sharing the same connection
+                                                             //if they authenticate against the same endpoint.
+            while (responseData == null)
+            {
+                HttpWebResponse response = null;
+
+                try
+                {
+                    HttpWebRequest request = null;
+                    WebException webRequestException = null;
+                    try
+                    {
+                        request = CreateRequest(proxySettings, credentials, authenticationType, uri, cookieContainer, connectionGroup);
+                        response = (HttpWebResponse)(await request.GetResponseAsync().ConfigureAwait(false));
+                    }
+                    catch (WebException e)
+                    {
+                        webRequestException = e;
+                        response = (HttpWebResponse)e.Response;
+                    }
+
+                    Uri redirectedUri = null;
+                    if (response != null)
+                    {
+                        const int minRedirectStatusCode = 300;
+                        const int maxRedirectStatusCode = 399;
+
+                        int statusCode = (int)response.StatusCode;
+
+                        if (statusCode >= minRedirectStatusCode &&
+                            statusCode <= maxRedirectStatusCode &&
+                            redirectionsCount++ < request.MaximumAutomaticRedirections)
+                        {
+                            var location = response.Headers[HttpResponseHeader.Location];
+                            if (location != null)
+                            {
+                                redirectedUri = new Uri(uri, location);
+                            }
+                        }
+                    }
+
+                    if (redirectedUri != null)
+                    {
+                        uri = redirectedUri;
+                    }
+                    else if (webRequestException != null)
+                    {
+                        throw webRequestException;
+                    }
+                    else
+                    {
+                        using (var reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            responseData = await reader.ReadToEndAsync().ConfigureAwait(false);
+                        }
+                    }
+                }
+                finally
+                {
+                    response?.Close();
+                    response?.Dispose();
+                }
+            }
+
+            return responseData;
+        }
+
+        private static HttpWebRequest CreateRequest(IWebProxy proxySettings, ICredentials credentials, string authenticationType, Uri uri, CookieContainer cookieContainer, string connectionGroup)
+        {
+#pragma warning disable SYSLIB0014 // Disable obsolete warning for WebRequest.Create because we can't switch to HttpClient while we still target .NET Framework 3.5
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+#pragma warning disable SYSLIB0014
+            request.CookieContainer = cookieContainer;
+            request.ConnectionGroupName = connectionGroup;
+            request.KeepAlive = true; //KeepAlive = false doesn't work on .NET Core 2.1+
+            request.UserAgent = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+            request.AllowAutoRedirect = false; // Handling redirection manually to avoid 401 errors
+            if (proxySettings != null)
+            {
+                request.Proxy = proxySettings;
+            }
+            if (credentials != null)
+            {
+                request.Credentials = credentials?.GetCredential(uri, authenticationType);
+            }
+            else
+            {
+                request.UseDefaultCredentials = true;
+            }
+
+            return request;
+        }
     }
 
     /// <summary>

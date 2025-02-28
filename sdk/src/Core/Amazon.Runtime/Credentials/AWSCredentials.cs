@@ -35,11 +35,9 @@ namespace Amazon.Runtime
         /// </summary>
         protected virtual void Validate() { }
 
-#if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             return System.Threading.Tasks.Task.FromResult<ImmutableCredentials>(this.GetCredentials());
         }
-#endif
     }
 }

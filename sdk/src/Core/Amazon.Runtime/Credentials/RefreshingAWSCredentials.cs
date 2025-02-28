@@ -125,7 +125,7 @@ namespace Amazon.Runtime
         /// Returns an instance of ImmutableCredentials for this instance
         /// </summary>
         /// <returns></returns>
-        public override ImmutableCredentials GetCredentials()
+        public override sealed ImmutableCredentials GetCredentials()
         {
             // We save the currentState as it might be modified or cleared.
             var tempState = currentState;
@@ -161,10 +161,10 @@ namespace Amazon.Runtime
                     var tempState = currentState;
                     // double-check that the credentials still need updating
                     // as it's possible that multiple requests were queued acquiring the semaphore
-                    if (ShouldUpdateState(tempState, PreemptExpiryTime))
+                    if (ShouldUpdateState(tempState))
                     {
                         tempState = GenerateNewCredentials();
-                        UpdateToGeneratedCredentials(tempState, PreemptExpiryTime);
+                        UpdateToGeneratedCredentials(tempState);
                         currentState = tempState;
                     }
 
@@ -177,8 +177,7 @@ namespace Amazon.Runtime
             }
         }
 
-#if AWS_ASYNC_API
-        public override async System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
+        public override sealed async System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             // We save the currentState as it might be modified or cleared.
             var tempState = currentState;
@@ -214,10 +213,10 @@ namespace Amazon.Runtime
                     var tempState = currentState;
                     // double-check that the credentials still need updating
                     // as it's possible that multiple requests were queued acquiring the semaphore
-                    if (ShouldUpdateState(tempState, PreemptExpiryTime))
+                    if (ShouldUpdateState(tempState))
                     {
                         tempState = await GenerateNewCredentialsAsync().ConfigureAwait(false);
-                        UpdateToGeneratedCredentials(tempState, PreemptExpiryTime);
+                        UpdateToGeneratedCredentials(tempState);
                         currentState = tempState;
                     }
 
@@ -229,16 +228,15 @@ namespace Amazon.Runtime
                 }
             }
         }
-#endif
 
         #endregion
 
         #region Private/protected credential update methods
 
-        private static void UpdateToGeneratedCredentials(CredentialsRefreshState state, TimeSpan preemptExpiryTime)
+        private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
         {
             // Check if the new credentials are already expired
-            if (ShouldUpdateState(state, preemptExpiryTime))
+            if (ShouldUpdateState(state))
             {
                 string errorMessage;
                 if (state == null)
@@ -257,9 +255,9 @@ namespace Amazon.Runtime
 
             // Offset the Expiration by PreemptExpiryTime. This produces the expiration window 
             // where the credentials should be updated before they actually expire.
-            state.Expiration -= preemptExpiryTime;
+            state.Expiration -= PreemptExpiryTime;
 
-            if (ShouldUpdateState(state, preemptExpiryTime))
+            if (ShouldUpdateState(state))
             {
                 // This could happen if the default value of PreemptExpiryTime is
                 // overridden and set too high such that ShouldUpdate returns true.
@@ -267,7 +265,7 @@ namespace Amazon.Runtime
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
                     AWSSDKUtils.CorrectedUtcNow,
-                    state.Expiration, preemptExpiryTime);
+                    state.Expiration, PreemptExpiryTime);
             }
         }
 
@@ -283,7 +281,7 @@ namespace Amazon.Runtime
         {
             get
             {
-                return ShouldUpdateState(currentState, PreemptExpiryTime);
+                return ShouldUpdateState(currentState);
             }
         }
 
@@ -294,7 +292,7 @@ namespace Amazon.Runtime
         // have the PreemptExpiryTime baked into to the expiration from a call to 
         // UpdateToGeneratedCredentials but it may not if this is new application 
         // load.
-        private static bool ShouldUpdateState(CredentialsRefreshState state, TimeSpan preemptExpiryTime)
+        private bool ShouldUpdateState(CredentialsRefreshState state)
         {
             // it's past the expiration time. At this point currentState.Expiration may 
             // have the PreemptExpiryTime baked into to the expiration from a call to 
@@ -305,7 +303,7 @@ namespace Amazon.Runtime
             {
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
-                                state.Expiration.Add(preemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
+                                state.Expiration.Add(PreemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.f ffffffK", CultureInfo.InvariantCulture),
                                 AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             }
 
@@ -322,7 +320,7 @@ namespace Amazon.Runtime
         {
             throw new NotImplementedException();
         }
-#if AWS_ASYNC_API
+
         /// <summary> 
         /// When overridden in a derived class, generates new credentials and new expiration date.
         /// 
@@ -333,7 +331,7 @@ namespace Amazon.Runtime
         {
             return System.Threading.Tasks.Task.Run(() => this.GenerateNewCredentials());
         }
-#endif
+
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed) return;

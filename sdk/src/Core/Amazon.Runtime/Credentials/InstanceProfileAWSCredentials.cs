@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -147,6 +148,83 @@ namespace Amazon.Runtime
             return state;
         }
 
+        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            CredentialsRefreshState newState = null;
+            var token = await EC2InstanceMetadata.FetchApiTokenAsync().ConfigureAwait(false);
+
+            try
+            {
+                // Attempt to get early credentials. OK to fail at this point.
+                newState = await GetRefreshStateAsync(token).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    throw;
+                }
+
+                var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
+                logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+
+                // if we already have cached credentials, we'll continue to use those credentials,
+                // but try again to refresh them in 2 minutes.
+                if (null != _currentRefreshState)
+                {
+                    var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(2);
+                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
+                    return _currentRefreshState;
+                }
+            }
+
+            if (newState?.IsExpiredWithin(TimeSpan.Zero) == true)
+            {
+                // special case - credentials returned are expired
+                _logger.InfoFormat(_receivedExpiredCredentialsFromIMDS);
+
+                // use a custom refresh time
+                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
+                _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
+
+                return _currentRefreshState;
+            }
+
+            // If successful, save new credentials
+            if (newState != null)
+            {
+                _currentRefreshState = newState;
+            }
+
+            // If still not successful (no credentials available at start), attempt once more to
+            // get credentials, but now without swallowing exception
+            if (_currentRefreshState == null)
+            {
+                try
+                {
+                    _currentRefreshState = await GetRefreshStateAsync(token).ConfigureAwait(false);
+                }
+                catch (Exception e)
+                {
+                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                    if (httpStatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    }
+
+                    throw;
+                }
+            }
+
+            // Return credentials that will expire in at most one hour
+            CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
+            return state;
+        }
+
         #endregion
 
 
@@ -246,6 +324,44 @@ namespace Amazon.Runtime
             }
         }
 
+        /// <summary>
+        /// Retrieves a list of all roles available through current InstanceProfile service
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<IEnumerable<string>> GetAvailableRolesAsync(IWebProxy proxy)
+        {
+            var token = await EC2InstanceMetadata.FetchApiTokenAsync().ConfigureAwait(false);
+            var roles = new List<string>();
+            var allAliases = string.Empty;
+            try
+            {
+                allAliases = await GetContentsAsync(RolesUri, proxy, CreateMetadataTokenHeaders(token)).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                }
+
+                throw;
+            }
+            if (!string.IsNullOrEmpty(allAliases))
+            {
+                string[] parts = allAliases.Split(AliasSeparators, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var part in parts)
+                {
+                    var trim = part.Trim();
+                    if (!string.IsNullOrEmpty(trim))
+                        roles.Add(trim);
+                }
+            }
+
+            return roles;
+        }
+
         #endregion
 
 
@@ -312,16 +428,51 @@ namespace Amazon.Runtime
             return refreshState;
         }
 
+        private async Task<CredentialsRefreshState> GetRefreshStateAsync(string token)
+        {
+            SecurityInfo info = await GetServiceInfoAsync(_proxy, token).ConfigureAwait(false);
+            if (!string.IsNullOrEmpty(info.Message))
+            {
+                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to retrieve credentials. Message = \"{0}\".",
+                    info.Message));
+            }
+
+            var credentials = await GetRoleCredentialsAsync(token).ConfigureAwait(false);
+
+            var refreshState =
+                new CredentialsRefreshState(
+                    new ImmutableCredentials(
+                        credentials.AccessKeyId,
+                        credentials.SecretAccessKey,
+                        credentials.Token),
+                    credentials.Expiration);
+
+            return refreshState;
+        }
+
         private static SecurityInfo GetServiceInfo(IWebProxy proxy, string token)
         {
             CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityInfo, SecurityInfoJsonSerializerContexts>(InfoUri, proxy, CreateMetadataTokenHeaders(token));
         }
 
+        private static async Task<SecurityInfo> GetServiceInfoAsync(IWebProxy proxy, string token)
+        {
+            CheckIsIMDSEnabled();
+            return await GetObjectFromResponseAsync<SecurityInfo, SecurityInfoJsonSerializerContexts>(InfoUri, proxy, CreateMetadataTokenHeaders(token)).ConfigureAwait(false);
+        }
+
         private SecurityCredentials GetRoleCredentials(string token)
         {
             CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityCredentials, SecurityCredentialsJsonSerializerContexts>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token));
+        }
+
+        private async Task<SecurityCredentials> GetRoleCredentialsAsync(string token)
+        {
+            CheckIsIMDSEnabled();
+            return await GetObjectFromResponseAsync<SecurityCredentials, SecurityCredentialsJsonSerializerContexts>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token)).ConfigureAwait(false);
         }
 
         private static void CheckIsIMDSEnabled()
@@ -335,9 +486,26 @@ namespace Amazon.Runtime
             return GetFirstRole(null);
         }
 
+        private static async Task<string> GetFirstRoleAsync()
+        {
+            return await GetFirstRoleAsync(null).ConfigureAwait(false);
+        }
+
         private static string GetFirstRole(IWebProxy proxy)
         {
             IEnumerable<string> roles = GetAvailableRoles(proxy);
+            foreach (string role in roles)
+            {
+                return role;
+            }
+
+            // no roles found
+            throw new InvalidOperationException("No roles found");
+        }
+
+        private static async Task<string> GetFirstRoleAsync(IWebProxy proxy)
+        {
+            IEnumerable<string> roles = await GetAvailableRolesAsync(proxy).ConfigureAwait(false);
             foreach (string role in roles)
             {
                 return role;

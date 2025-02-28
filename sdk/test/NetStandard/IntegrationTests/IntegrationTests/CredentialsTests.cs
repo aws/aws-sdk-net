@@ -8,6 +8,9 @@ using System.IO;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
 using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
 
 namespace Amazon.DNXCore.IntegrationTests
 {

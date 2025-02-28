@@ -64,8 +64,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config, baseUrl: endpoint);
             var executionContext = CreateExecutionContext(client, config, true, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual(expectedEndpoint,
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.FetchCallCount);
@@ -83,8 +84,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, true, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
@@ -94,7 +96,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(endpoints);
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/"));
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(2, client.EndpointOperationCallCount);
@@ -113,8 +115,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, true, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
@@ -126,13 +129,13 @@ namespace AWSSDK.UnitTests
 
             //Eviction happens on a invalid endpoint exception. In this case the endpoint is currently set to the invalid endpoint.
             executionContext.RequestContext.Request.Endpoint = new Uri("https://test123.amazonaws.com/shared/");
-            EndpointDiscoveryHandler.EvictCacheKeyForRequest(executionContext.RequestContext, null);
+            EndpointDiscoveryHandler.EvictCacheKeyForRequest(executionContext.RequestContext, null, immutableCredentials);
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
             Assert.AreEqual(2, client.EndpointOperationCallCount);
             Assert.AreEqual(1, client.FetchCallCount);
             Assert.AreEqual(0, client.CacheCount);
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(3, client.EndpointOperationCallCount);
@@ -153,8 +156,9 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.FetchCallCount);
@@ -174,8 +178,9 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(1, client.EndpointOperationCallCount);
@@ -185,7 +190,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(endpoints);
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/CreateTable"));
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
                 executionContext.RequestContext.Request.Endpoint.ToString());
             Assert.AreEqual(2, client.EndpointOperationCallCount);
@@ -203,9 +208,10 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
             Utils.AssertExceptionExpected(
-                () => { EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false); },
+                () => { EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials); },
                 typeof(AmazonClientException));
 
             Assert.AreEqual(1, client.EndpointOperationCallCount);
@@ -221,8 +227,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY);
             Assert.IsNotNull(endpoints);
             Assert.IsTrue(HasEndpointAddress(endpoints, null));
@@ -240,8 +247,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, false, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY);
             Assert.IsNotNull(endpoints);
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/"));
@@ -260,8 +268,9 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, false, identifiers);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY_IDENTIFIERS);
             Assert.IsNotNull(endpoints);
             Assert.IsTrue(HasEndpointAddress(endpoints, "https://test123.amazonaws.com/shared/CreateTable"));
@@ -278,8 +287,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
@@ -293,8 +303,9 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, false, null);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
@@ -310,8 +321,9 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, false, identifiers);
+            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+            EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
             //Verify the endpoint has not been touched by the endpoint discovery resolver
             Assert.IsNull(executionContext.RequestContext.Request.Endpoint);
@@ -331,7 +343,8 @@ namespace AWSSDK.UnitTests
                 var config = SetupConfig();
                 var client = new EndpointDiscoveryTestClient(config);
                 var executionContext = CreateExecutionContext(client, config, true, null);
-                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+                var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
                 Assert.AreEqual(1, client.CacheCount);
 
@@ -341,7 +354,7 @@ namespace AWSSDK.UnitTests
                 var awsCredentials = new Mock<AWSCredentials>();
                 awsCredentials.Setup(e => e.GetCredentials()).Returns(new ImmutableCredentials("AWS_ACCESS_KEY_ID" + "2", "test2", "test2"));
                 executionContext.RequestContext.Identity = awsCredentials.Object;
-                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false);
+                EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
                 // First endpoint should be evicted, leaving us with only the second one
                 Assert.AreEqual(1, client.CacheCount);

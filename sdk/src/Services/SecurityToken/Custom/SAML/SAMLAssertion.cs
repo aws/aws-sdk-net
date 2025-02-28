@@ -19,6 +19,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 
 using Amazon.Runtime;
@@ -117,6 +118,74 @@ namespace Amazon.SecurityToken.SAML
 #endif
 
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
+                                                response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
+                                                response.Subject);
+        }
+
+        /// <summary>
+        /// Retrieves a set of temporary credentials for the specified role, valid for the specified timespan.
+        /// If the SAML authentication data yield more than one role, a valid role name must be specified.
+        /// </summary>
+        /// <param name="stsClient">The STS client to use when making the AssumeRoleWithSAML request.</param>
+        /// <param name="principalAndRoleArns">
+        /// The arns of the principal and role as returned in the SAML assertion.
+        /// </param>
+        /// <param name="duration">The valid timespan for the credentials.</param>
+        /// <returns>Temporary session credentials for the specified or default role for the user.</returns>
+        public async Task<SAMLImmutableCredentials> GetRoleCredentialsAsync(
+            IAmazonSecurityTokenService stsClient, string principalAndRoleArns, TimeSpan duration)
+        {
+            string roleArn = null;
+            string principalArn = null;
+
+            var swappedPrincipalAndRoleArns = string.Empty;
+            if (!string.IsNullOrEmpty(principalAndRoleArns))
+            {
+                var roleComponents = principalAndRoleArns.Split(',');
+                if (roleComponents.Count() != 2)
+                {
+                    throw new ArgumentException("Unknown or invalid principal and role arns format.");
+                }
+
+                swappedPrincipalAndRoleArns = roleComponents.Last() + "," + roleComponents.First();
+            }
+
+            foreach (var s in RoleSet.Values)
+            {
+                if (s.Equals(principalAndRoleArns, StringComparison.OrdinalIgnoreCase) || s.Equals(swappedPrincipalAndRoleArns, StringComparison.OrdinalIgnoreCase))
+                {
+                    var roleComponents = s.Split(',');
+                    if (IsSamlProvider(roleComponents.First()))
+                    {
+                        //Backwards compatible format -- arn:...:saml-provider/SAML,arn:...:role/RoleName
+                        principalArn = roleComponents.First();
+                        roleArn = roleComponents.Last();
+                    }
+                    else
+                    {
+                        //Documented format -- arn:...:role/RoleName,arn:...:saml-provider/SAML
+                        roleArn = roleComponents.First();
+                        principalArn = roleComponents.Last();
+                    }
+
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(roleArn) || string.IsNullOrEmpty(principalArn))
+                throw new ArgumentException("Unknown or invalid role specified.");
+
+            var assumeSamlRequest = new AssumeRoleWithSAMLRequest
+            {
+                SAMLAssertion = AssertionDocument,
+                RoleArn = roleArn,
+                PrincipalArn = principalArn,
+                DurationSeconds = (int)duration.TotalSeconds
+            };
+
+            var response = await stsClient.AssumeRoleWithSAMLAsync(assumeSamlRequest).ConfigureAwait(false);
+
+            return new SAMLImmutableCredentials(response.Credentials.GetCredentials(),
                                                 response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
                                                 response.Subject);
         }
