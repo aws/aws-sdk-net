@@ -243,10 +243,24 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal static DynamoDBTableAttribute GetTableAttribute(Type targetType)
         {
-            DynamoDBTableAttribute tableAttribute = GetAttribute(targetType) as DynamoDBTableAttribute;
+            if (targetType == null) throw new ArgumentNullException("targetType");
+
+            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBTableAttribute), true);
+            DynamoDBTableAttribute tableAttribute = GetSingleDDBAttribute(attributes) as DynamoDBTableAttribute;
+
             if (tableAttribute == null)
                 return null;
+
             return tableAttribute;
+        }
+
+        internal static DynamoDBPolymorphicTypeAttribute[] GetPolymorphicTypesAttribute(Type targetType)
+        {
+            if (targetType == null) throw new ArgumentNullException("targetType");
+
+            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBPolymorphicTypeAttribute), false);
+
+            return attributes as DynamoDBPolymorphicTypeAttribute[];
         }
 
         internal static DynamoDBAttribute GetAttribute(Type targetType)

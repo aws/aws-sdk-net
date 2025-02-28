@@ -281,14 +281,14 @@ namespace Amazon.DynamoDBv2.DataModel
             if (attributes.Count != properties.Count)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                     "Number of {0} keys on table {1} does not match number of hash keys on type {2}",
-                    keyType, table.TableName, config.TargetType.FullName));
+                    keyType, table.TableName, config.BaseTypeStorageConfig.TargetType.FullName));
             foreach (string hashProperty in properties)
             {
-                PropertyStorage property = config.GetPropertyStorage(hashProperty);
+                PropertyStorage property = config.BaseTypeStorageConfig.GetPropertyStorage(hashProperty);
                 if (!attributes.Contains(property.AttributeName))
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
                         "Key property {0} on type {1} does not correspond to a {2} key on table {3}",
-                        hashProperty, config.TargetType.FullName, keyType, table.TableName));
+                        hashProperty, config.BaseTypeStorageConfig.TargetType.FullName, keyType, table.TableName));
             }
         }
 
@@ -349,8 +349,22 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (storage.Document == null) return null;
 
-            object instance = Utils.InstantiateConverter(objectType, this);
-            PopulateInstance(storage, instance, flatConfig);
+            StorageConfig storageTypeConfig = null;
+
+            // Check if polymorphic types should be used and if the derived type exists in the document
+            if (storage.Config.StorePolymorphicTypes &&
+                storage.Document.TryGetValue(flatConfig.DerivedTypeAttributeName, out var typeValue))
+            {
+                var derivedType = typeValue.AsString();
+                storage.Config.PolymorphicTypesStorageConfig.TryGetValue(derivedType, out storageTypeConfig);
+            }
+
+            // If a valid derived type config was found, use it; otherwise, use the default object type
+            var targetType = storageTypeConfig?.TargetType ?? objectType;
+
+            object instance = Utils.InstantiateConverter(targetType, this);
+            PopulateInstance(storage, instance, flatConfig, storageTypeConfig);
+
             return instance;
         }
 
@@ -366,14 +380,17 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private void PopulateInstance(ItemStorage storage, object instance, DynamoDBFlatConfig flatConfig)
+        private void PopulateInstance(ItemStorage storage, object instance, DynamoDBFlatConfig flatConfig,
+            StorageConfig storageConfig = null)
         {
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
 
+            storageConfig ??= config.BaseTypeStorageConfig;
+
             using (flatConfig.State.Track(document))
             {
-                foreach (PropertyStorage propertyStorage in config.AllPropertyStorage)
+                foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
@@ -412,7 +429,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private ItemStorage ObjectToItemStorage(object toStore, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(objectType, flatConfig);
-            ItemStorage storage = ObjectToItemStorageHelper(toStore, config, flatConfig, keysOnly, flatConfig.IgnoreNullValues.Value);
+            ItemStorage storage = ObjectToItemStorageHelper(toStore, config, flatConfig, keysOnly, flatConfig.IgnoreNullValues != null && flatConfig.IgnoreNullValues.Value);
             return storage;
         }
         internal ItemStorage ObjectToItemStorageHelper(object toStore, ItemStorageConfig config, DynamoDBFlatConfig flatConfig, bool keysOnly, bool ignoreNullValues)
@@ -421,18 +438,36 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateItemStorage(toStore, storage, flatConfig, keysOnly, ignoreNullValues);
             return storage;
         }
-        private void PopulateItemStorage(object toStore, ItemStorage storage, DynamoDBFlatConfig flatConfig, bool keysOnly, bool ignoreNullValues)
+
+        private void PopulateItemStorage(object toStore, ItemStorage storage, DynamoDBFlatConfig flatConfig,
+            bool keysOnly, bool ignoreNullValues)
         {
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
 
             using (flatConfig.State.Track(toStore))
             {
-                foreach (PropertyStorage propertyStorage in config.AllPropertyStorage)
+                Type toStoreType = toStore.GetType();
+                StorageConfig storageConfig;
+
+                if (config.PolymorphicConfig.TryGetValue(toStoreType, out var derivedTypeKey))
+                {
+                    // If the object is a derived type, populate document using the derived type StorageConfig
+                    // and store the derived type key in the document
+                    document[flatConfig.DerivedTypeAttributeName] = new Primitive(derivedTypeKey);
+                    storageConfig = config.PolymorphicTypesStorageConfig[derivedTypeKey];
+                }
+                else
+                {
+                    storageConfig = config.BaseTypeStorageConfig;
+                }
+
+                foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     // if only keys are being serialized, skip non-key properties
                     // still include version, however, to populate the storage.CurrentVersion field
-                    if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey && !propertyStorage.IsVersion) continue;
+                    if (keysOnly && !propertyStorage.IsHashKey && !propertyStorage.IsRangeKey &&
+                        !propertyStorage.IsVersion) continue;
 
                     string propertyName = propertyStorage.PropertyName;
                     string attributeName = propertyStorage.AttributeName;
@@ -445,11 +480,14 @@ namespace Amazon.DynamoDBv2.DataModel
                         if (ShouldSave(dbe, ignoreNullValues))
                         {
                             Primitive dbePrimitive = dbe as Primitive;
-                            if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey || propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+                            if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey ||
+                                propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
                             {
                                 if (dbe != null && dbePrimitive == null)
-                                    throw new InvalidOperationException("Property " + propertyName + " is a hash key, range key or version property and must be Primitive");
+                                    throw new InvalidOperationException("Property " + propertyName +
+                                                                        " is a hash key, range key or version property and must be Primitive");
                             }
+
                             document[attributeName] = dbe;
 
                             if (propertyStorage.IsVersion)
@@ -457,7 +495,8 @@ namespace Amazon.DynamoDBv2.DataModel
                         }
                     }
                     else
-                        throw new InvalidOperationException("Unable to retrieve value from property " + propertyName);
+                        throw new InvalidOperationException(
+                            "Unable to retrieve value from property " + propertyName);
                 }
             }
         }
@@ -499,15 +538,23 @@ namespace Amazon.DynamoDBv2.DataModel
                 Document document = entry as Document;
                 if (document != null)
                 {
-                    if (TryFromMap(targetType, document, flatConfig, out output))
+                    if (TryFromMap(targetType, document, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
                         return output;
+
+                    var typeAttributeName = flatConfig.DerivedTypeAttributeName;//"$type"; 
+                    var derivedType = document.ContainsKey(typeAttributeName) ? document[typeAttributeName].AsString() : null;
+
+                    if (derivedType != null && propertyStorage.DerivedTypeKeysDictionary.TryGetValue(derivedType, out var value))
+                    {
+                        targetType = value;
+                    }
 
                     return DeserializeFromDocument(document, targetType, flatConfig);
                 }
 
                 DynamoDBList list = entry as DynamoDBList;
                 if (list != null &&
-                    TryFromList(targetType, list, flatConfig, out output))
+                    TryFromList(targetType, list, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
                 {
                     return output;
                 }
@@ -517,18 +564,18 @@ namespace Amazon.DynamoDBv2.DataModel
                     entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
             }
         }
-
-        private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,
+            Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             return targetType.IsArray ?
-                 TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
-                 TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
+                 TryFromListToArray(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) : //targetType is Array
+                 TryFromListToIList(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) ; //targetType is IList or has Add method.
         }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
 
-        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
@@ -542,7 +589,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var collection = Utils.Instantiate(targetType);
             IList ilist = collection as IList;
             bool useIListInterface = ilist != null;
-            var propertyStorage = new SimplePropertyStorage(elementType);
+            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
 
             MethodInfo collectionAdd = null;
             if (!useIListInterface)
@@ -564,7 +611,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             if (!Utils.CanInstantiateArray(targetType))
             {
@@ -574,8 +621,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var elementType = Utils.GetElementType(targetType);
             var array = (Array)Utils.InstantiateArray(targetType,list.Entries.Count);
-            var propertyStorage = new SimplePropertyStorage(elementType);
-
+            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
 
             for (int i = 0; i < list.Entries.Count; i++)
             {
@@ -590,7 +636,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             output = null;
 
@@ -603,7 +649,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var dictionary = Utils.Instantiate(targetType);
             var idictionary = dictionary as IDictionary;
-            var propertyStorage = new SimplePropertyStorage(valueType);
+            var propertyStorage = new SimplePropertyStorage(valueType, derivedTypeKeysDictionary);
 
             foreach (var kvp in map)
             {
@@ -637,7 +683,17 @@ namespace Amazon.DynamoDBv2.DataModel
                 return entry;
             }
 
-            var type = propertyStorage.MemberType;
+            Type type;
+            string typeDiscriminator = null;
+            if (propertyStorage.DerivedTypesDictionary.ContainsKey(value.GetType()))
+            {
+                typeDiscriminator = propertyStorage.DerivedTypesDictionary[value.GetType()];
+                type = value.GetType();
+            }
+            else
+            {
+                type = propertyStorage.MemberType;
+            }
 
             if (canReturnScalarInsteadOfList)
             {
@@ -651,20 +707,21 @@ namespace Amazon.DynamoDBv2.DataModel
             else
             {
                 Document map;
-                if (TryToMap(value, type, flatConfig, out map))
+                if (TryToMap(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out map))
                     return map;
 
                 DynamoDBList list;
-                if (TryToList(value, type, flatConfig, out list))
+                if (TryToList(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out list))
                     return list;
 
-                return SerializeToDocument(value, type, flatConfig);
+                return SerializeToDocument(value, type, flatConfig, typeDiscriminator);
             }
         }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, out Document output)
+        private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig,
+            Dictionary<Type, string> derivedTypesDictionary, out Document output)
         {
             output = null;
 
@@ -677,7 +734,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
 
             output = new Document();
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType);
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType,derivedTypesDictionary);
 
             foreach (object keyValue in idictionary.Keys)
             {
@@ -697,7 +754,8 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
+        private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig,
+            Dictionary<Type, string> derivedTypesDictionary, out DynamoDBList output)
         {
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
             {
@@ -715,7 +773,8 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             Type elementType = Utils.GetElementType(type);
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType);
+
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType,derivedTypesDictionary);
             output = new DynamoDBList();
             foreach (var item in enumerable)
             {
@@ -723,7 +782,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (item == null)
                     entry = DynamoDBNull.Null;
                 else
+                {
                     entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+                }
 
                 output.Add(entry);
             }
@@ -752,7 +813,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         {
                             try
                             {
-                                entry = SerializeToDocument(value, elementType, flatConfig);
+                                entry = SerializeToDocument(value, elementType, flatConfig, typeDiscriminator: null);
                                 return true;
                             }
                             catch { }
@@ -807,11 +868,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Serializes a given value to Document
         /// Use only for property conversions, not for full item conversion
         /// </summary>
-        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig)
+        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, string typeDiscriminator)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
             var itemStorage = ObjectToItemStorageHelper(value, config, flatConfig, keysOnly: false, ignoreNullValues: flatConfig.IgnoreNullValues.Value);
             var doc = itemStorage.Document;
+            if (typeDiscriminator != null)
+            {
+                var typeAttributeName = flatConfig.DerivedTypeAttributeName;
+                doc[typeAttributeName] = new Primitive(typeDiscriminator);
+            }
             return doc;
         }
 
@@ -838,6 +904,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
         }
+
         private static bool TryGetValue(object instance, MemberInfo member, out object value)
         {
             FieldInfo fieldInfo = member as FieldInfo;
@@ -870,7 +937,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (var condition in conditions)
                 {
-                    PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                     List<AttributeValue> attributeValues = new List<AttributeValue>();
                     foreach (var value in condition.Values)
                     {
@@ -909,7 +976,7 @@ namespace Amazon.DynamoDBv2.DataModel
             string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
             hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
 
-            PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
+            PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
             string hashAttributeName = propertyStorage.AttributeName;
 
             DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, currentConfig);
@@ -952,7 +1019,7 @@ namespace Amazon.DynamoDBv2.DataModel
             // Configure hash-key equality condition
             string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
             hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
-            PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
+            PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
             string attributeName = propertyStorage.AttributeName;
             DynamoDBEntry hashValue = hashKey[attributeName];
             filter.AddCondition(attributeName, QueryOperator.Equal, hashValue);
@@ -970,7 +1037,7 @@ namespace Amazon.DynamoDBv2.DataModel
                             $"or {nameof(DynamoDBGlobalSecondaryIndexRangeKeyAttribute)}.");
                     }
                     object[] conditionValues = condition.Values;
-                    PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    PropertyStorage conditionProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                     if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)
                         indexNames.AddRange(conditionProperty.IndexNames);
                     if (conditionProperty.IsRangeKey)
@@ -984,7 +1051,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 foreach (ScanCondition condition in currentConfig.QueryFilter)
                 {
                     object[] conditionValues = condition.Values;
-                    PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    PropertyStorage conditionProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                     List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true);
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
@@ -1075,13 +1142,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (string hashKey in storageConfig.HashKeyPropertyNames)
             {
-                string attributeName = storageConfig.GetPropertyStorage(hashKey).AttributeName;
+                string attributeName = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKey).AttributeName;
                 if (!key.ContainsKey(attributeName))
                     throw new InvalidOperationException("Key missing hash key " + hashKey);
             }
             foreach (string rangeKey in storageConfig.RangeKeyPropertyNames)
             {
-                string attributeName = storageConfig.GetPropertyStorage(rangeKey).AttributeName;
+                string attributeName = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKey).AttributeName;
                 if (!key.ContainsKey(attributeName))
                     throw new InvalidOperationException("Key missing range key " + rangeKey);
             }
@@ -1098,7 +1165,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Key key = new Key();
 
             string hashKeyPropertyName = storageConfig.HashKeyPropertyNames[0];
-            PropertyStorage hashKeyProperty = storageConfig.GetPropertyStorage(hashKeyPropertyName);
+            PropertyStorage hashKeyProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyPropertyName);
 
             DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey, flatConfig);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
@@ -1116,7 +1183,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
 
                 string rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames[0];
-                PropertyStorage rangeKeyProperty = storageConfig.GetPropertyStorage(rangeKeyPropertyName);
+                PropertyStorage rangeKeyProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
 
                 DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey, flatConfig);
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
