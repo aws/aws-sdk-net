@@ -103,6 +103,108 @@ namespace Amazon.BedrockDataAutomationRuntime
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// List tags for an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Tag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ServiceQuotaExceededException">
+        /// This exception will be thrown when service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Untag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region DetermineServiceOperationEndpoint
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataAutomationConfiguration Marshaller
+    /// Tag Marshaller
     /// </summary>
-    public class DataAutomationConfigurationMarshaller : IRequestMarshaller<DataAutomationConfiguration, JsonMarshallerContext> 
+    public class TagMarshaller : IRequestMarshaller<Tag, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,20 +44,20 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataAutomationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDataAutomationProjectArn())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("dataAutomationProjectArn");
-                context.Writer.Write(requestObject.DataAutomationProjectArn);
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetStage())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -65,7 +65,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DataAutomationConfigurationMarshaller Instance = new DataAutomationConfigurationMarshaller();
+        public readonly static TagMarshaller Instance = new TagMarshaller();
 
     }
 }

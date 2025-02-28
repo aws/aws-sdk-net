@@ -30,48 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Data automation configuration.
+    /// Key value pair of a tag
     /// </summary>
-    public partial class DataAutomationConfiguration
+    public partial class Tag
     {
-        private string _dataAutomationProjectArn;
-        private DataAutomationStage _stage;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property DataAutomationProjectArn. 
-        /// <para>
-        /// Data automation project arn.
-        /// </para>
+        /// Gets and sets the property Key.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string DataAutomationProjectArn
+        public string Key
         {
-            get { return this._dataAutomationProjectArn; }
-            set { this._dataAutomationProjectArn = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if DataAutomationProjectArn property is set
-        internal bool IsSetDataAutomationProjectArn()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._dataAutomationProjectArn != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Stage. 
-        /// <para>
-        /// Data automation stage.
-        /// </para>
+        /// Gets and sets the property Value.
         /// </summary>
-        public DataAutomationStage Stage
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
         {
-            get { return this._stage; }
-            set { this._stage = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Stage property is set
-        internal bool IsSetStage()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._stage != null;
+            return this._value != null;
         }
 
     }

@@ -107,6 +107,12 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDataAutomationProfileArn())
+                {
+                    context.Writer.WritePropertyName("dataAutomationProfileArn");
+                    context.Writer.Write(publicRequest.DataAutomationProfileArn);
+                }
+
                 if(publicRequest.IsSetEncryptionConfiguration())
                 {
                     context.Writer.WritePropertyName("encryptionConfiguration");
@@ -149,6 +155,22 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                     marshaller.Marshall(publicRequest.OutputConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

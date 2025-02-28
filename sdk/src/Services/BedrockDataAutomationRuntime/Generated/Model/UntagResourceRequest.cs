@@ -30,48 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomationRuntime.Model
 {
     /// <summary>
-    /// Data automation configuration.
+    /// Container for the parameters to the UntagResource operation.
+    /// Untag an Amazon Bedrock Data Automation resource
     /// </summary>
-    public partial class DataAutomationConfiguration
+    public partial class UntagResourceRequest : AmazonBedrockDataAutomationRuntimeRequest
     {
-        private string _dataAutomationProjectArn;
-        private DataAutomationStage _stage;
+        private string _resourcearn;
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property DataAutomationProjectArn. 
-        /// <para>
-        /// Data automation project arn.
-        /// </para>
+        /// Gets and sets the property ResourceARN.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string DataAutomationProjectArn
+        [AWSProperty(Required=true, Min=20, Max=1011)]
+        public string ResourceARN
         {
-            get { return this._dataAutomationProjectArn; }
-            set { this._dataAutomationProjectArn = value; }
+            get { return this._resourcearn; }
+            set { this._resourcearn = value; }
         }
 
-        // Check to see if DataAutomationProjectArn property is set
-        internal bool IsSetDataAutomationProjectArn()
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
         {
-            return this._dataAutomationProjectArn != null;
+            return this._resourcearn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Stage. 
-        /// <para>
-        /// Data automation stage.
-        /// </para>
+        /// Gets and sets the property TagKeys.
         /// </summary>
-        public DataAutomationStage Stage
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public List<string> TagKeys
         {
-            get { return this._stage; }
-            set { this._stage = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Stage property is set
-        internal bool IsSetStage()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._stage != null;
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
