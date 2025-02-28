@@ -1,3 +1,24 @@
+### 3.7.993.0 (2025-02-28 19:30 UTC)
+* BedrockAgent (3.7.420.0)
+	* This release lets Amazon Bedrock Flows support newer models by increasing the maximum length of output in a prompt configuration. This release also increases the maximum number of prompt variables to 20 and the maximum number of node inputs to 20.
+* BedrockDataAutomation (3.7.401.0)
+	* Renamed and added new StandardConfiguration enums. Added support to update EncryptionConfiguration in UpdateBlueprint and UpdateDataAutomation APIs. Changed HttpStatus code for DeleteBlueprint and DeleteDataAutomationProject APIs to 200 from 204. Added APIs to support tagging.
+* BedrockDataAutomationRuntime (3.7.401.0)
+	* Added a mandatory parameter DataAutomationProfileArn to support for cross region inference for InvokeDataAutomationAsync API. Renamed DataAutomationArn to DataAutomationProjectArn. Added APIs to support tagging.
+* DatabaseMigrationService (3.7.408.0)
+	* Add skipped status to the Result Statistics of an Assessment Run
+* EKS (3.7.411.0)
+	* Adding licenses to EKS Anywhere Subscription operations response.
+* MediaConvert (3.7.409.0)
+	* The AWS MediaConvert Probe API allows you to analyze media files and retrieve detailed metadata about their content, format, and structure.
+* Pricing (3.7.401.0)
+	* Update GetProducts and DescribeServices API request input validations.
+* SimpleSystemsManagement (3.7.403.49)
+	* Systems Manager doc-only updates for Feb. 2025.
+* Core 3.7.402.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.992.0 (2025-02-27 19:26 UTC)
 * BedrockAgentRuntime (3.7.421.0)
 	* Introduces Sessions (preview) to enable stateful conversations in GenAI applications.

@@ -32,7 +32,7 @@ namespace Amazon.MediaConnect
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaConnect", "3.7.403.32");
+            InternalSDKUtils.BuildUserAgentString("MediaConnect", "3.7.403.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>
