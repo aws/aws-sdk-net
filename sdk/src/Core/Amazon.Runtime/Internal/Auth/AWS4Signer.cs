@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
-using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
@@ -663,12 +662,6 @@ namespace Amazon.Runtime.Internal.Auth
             // client config properties.
             if (alternateEndpoint != null)
             {
-#pragma warning disable CS0612,CS0618
-                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
-#pragma warning restore CS0612,CS0618
-                if (serviceEndpoint.AuthRegion != null)
-                    return serviceEndpoint.AuthRegion;
-
                 return alternateEndpoint.SystemName;
             }
 
@@ -694,16 +687,6 @@ namespace Amazon.Runtime.Internal.Auth
             var endpoint = clientConfig.RegionEndpoint;
             if (endpoint != null)
             {
-#pragma warning disable CS0612,CS0618
-                var serviceEndpoint = endpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
-                if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
-                    return serviceEndpoint.AuthRegion;
-
-                // Check if the region is overridden in the endpoints.json file
-                var overrideRegion = RegionEndpoint.GetRegionEndpointOverride(endpoint);
-                if (overrideRegion != null)
-                    return overrideRegion.SystemName;
-#pragma warning restore CS0612,CS0618
                 return endpoint.SystemName; 
             }
 

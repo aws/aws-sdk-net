@@ -20,7 +20,6 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
-using Amazon.Internal;
 
 namespace Amazon.Polly
 {
@@ -94,9 +93,15 @@ namespace Amazon.Polly
             var iRequest = marshaller.Marshall(request);
             iRequest.UseQueryString = true;
             iRequest.HttpMethod = HTTPGet;
-#pragma warning disable CS0612,CS0618
-            iRequest.Endpoint = new UriBuilder(HTTPS, region.GetEndpointForService(PollyServiceName, signerOptions.ToGetEndpointForServiceOptions()).Hostname).Uri;
-#pragma warning restore CS0612,CS0618
+
+            var config = new AmazonPollyConfig 
+            { 
+                RegionEndpoint = region,
+                UseFIPSEndpoint = signerOptions.FIPS,
+                UseDualstackEndpoint = signerOptions.DualStack
+            };
+            iRequest.Endpoint = new Uri(config.DetermineServiceOperationEndpoint(new Runtime.Endpoints.ServiceOperationEndpointParameters(request)).URL);
+
             iRequest.Parameters[XAmzExpires] = ((int)FifteenMinutes.TotalSeconds).ToString(CultureInfo.InvariantCulture);
 
             if (request.IsSetLexiconNames())
@@ -159,16 +164,5 @@ namespace Amazon.Polly
         /// supports a FIPS endpoint for the region.  For background, see https://aws.amazon.com/compliance/fips/
         /// </summary>
         public bool FIPS { get; set; }
-
-#pragma warning disable CS0612,CS0618
-        internal GetEndpointForServiceOptions ToGetEndpointForServiceOptions()
-        {
-            return new GetEndpointForServiceOptions
-            {
-                DualStack = DualStack,
-                FIPS = FIPS
-            };
-        }
-#pragma warning restore CS0612,CS0618
     }
 }

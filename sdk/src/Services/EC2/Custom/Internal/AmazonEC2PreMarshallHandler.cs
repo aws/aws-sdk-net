@@ -16,7 +16,6 @@
 using System;
 using System.Globalization;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
-using Amazon.Internal;
 using Amazon.Runtime;
 using Amazon.EC2.Model;
 using Amazon.Runtime.Internal;
@@ -155,7 +154,7 @@ namespace Amazon.EC2.Internal
                 irequest.UseQueryString = true;
                 irequest.HttpMethod = "GET";
                 irequest.Parameters.Add("X-Amz-Expires", AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry.ToString(CultureInfo.InvariantCulture));
-                irequest.Endpoint = new Uri("https://" +  endpoint.GetEndpointForService(config).Hostname);
+                irequest.Endpoint = new Uri(config.DetermineServiceOperationEndpoint(new Runtime.Endpoints.ServiceOperationEndpointParameters(copySnapshotRequest, RegionEndpoint.GetBySystemName(copySnapshotRequest.SourceRegion))).URL);
 
                 // Create presigned URL.
                 var metrics = new RequestMetrics();

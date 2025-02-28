@@ -289,11 +289,6 @@ namespace Amazon.Runtime
         void Validate();
 
         /// <summary>
-        /// Returns the calculated clock skew value for this config's service endpoint. If AWSConfigs.CorrectForClockSkew is false,
-        /// this value won't be used to construct service requests.
-        /// </summary>
-        TimeSpan ClockOffset { get; }
-        /// <summary>
         /// Gets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
         /// Host prefix injection prefixes the service endpoint with request members from APIs which use this feature. 
         /// Example: for a hostPrefix of "foo-name." and a endpoint of "service.region.amazonaws.com" the default behavior is to

@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -96,7 +95,7 @@ namespace Amazon.RDS.Internal
                 var iRequest = marshaller.Marshall(preSignedUrlRequest as AmazonWebServiceRequest);
                 iRequest.UseQueryString = true;
                 iRequest.HttpMethod = HTTPGet;
-                iRequest.Endpoint = new UriBuilder(UriSchemeHTTPS, endpoint.GetEndpointForService(config).Hostname).Uri;
+                iRequest.Endpoint = new Uri(config.DetermineServiceOperationEndpoint(new Runtime.Endpoints.ServiceOperationEndpointParameters(executionContext.RequestContext.OriginalRequest, RegionEndpoint.GetBySystemName(preSignedUrlRequest.SourceRegion))).URL);
                 iRequest.Parameters[DestinationRegionParameterKey] = executionContext.RequestContext.ClientConfig.RegionEndpoint.SystemName;
                 // Most pre signed URLS also have an X-Amz-Expires header.  But RDS just ignores it and always imposes a +/- 14 minute time limit instead.
 

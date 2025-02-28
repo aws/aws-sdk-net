@@ -775,21 +775,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
-#pragma warning restore CS0618 // Re-enable the warning
-
                 SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
-#pragma warning restore CS0618 // Re-enable the warning
 
                 SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
-#pragma warning restore CS0618 // Re-enable the warning
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);

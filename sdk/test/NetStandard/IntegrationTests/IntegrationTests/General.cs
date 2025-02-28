@@ -132,26 +132,6 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        // This is ignored because netstandard uses xunit which runs tests in parallel.
-        // When this test is run in parallel with other tests it causes them to fail b/c it changes
-        // the clockskew while those are running.
-        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
-        public void TestManualClockCorrection()
-        {
-            TestClients(TestServiceCallForManualClockCorrection);
-        }
-
-        // This test verifies that all service clients are able to
-        // correctly handle clock skew errors.
-        // By default it only tests a small subset of services.
-        // This is ignored because netstandard uses xunit which runs tests in parallel.
-        // When this test is run in parallel with other tests it causes them to fail b/c it changes
-        // the clockskew while those are running.
-        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
-        public void TestClockSkewCorrection()
-        {
-            TestClients(TestServiceCallForClockSkew);
-        }
 
         private void TestClients(Action<ClockSkewTestContext> serviceCall)
         {
@@ -177,90 +157,6 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             public IClientConfig Config;
             public Action TestAction;
-        }
-
-        private static void TestServiceCallForManualClockCorrection(ClockSkewTestContext context)
-        {
-            var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
-            var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = context.Config.ClockOffset;
-            var oldUtcNowSource = GetUtcNowSource();
-
-            try
-            {
-                AWSConfigs.CorrectForClockSkew = false;
-
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
-                AWSConfigs.ManualClockCorrection = null;
-                AssertExtensions.ExpectException(context.TestAction);
-
-                AWSConfigs.ManualClockCorrection = IncorrectPositiveClockSkewOffset.Negate();
-                context.TestAction();
-
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
-                AWSConfigs.ManualClockCorrection = IncorrectNegativeClockSkewOffset.Negate();
-                context.TestAction();
-
-                AWSConfigs.ManualClockCorrection = TimeSpan.FromTicks(IncorrectNegativeClockSkewOffset.Negate().Ticks * 2);
-                AssertExtensions.ExpectException(context.TestAction);
-
-                AWSConfigs.ManualClockCorrection = TimeSpan.Zero;
-                AssertExtensions.ExpectException(context.TestAction);
-            }
-            finally
-            {
-                AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
-                AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(oldClockSkewCorrection);
-                SetUtcNowSource(oldUtcNowSource);
-            }
-        }
-
-        private static void TestServiceCallForClockSkew(ClockSkewTestContext context)
-        {
-            var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = context.Config.ClockOffset;
-            var oldUtcNowSource = GetUtcNowSource();
-
-            try
-            {
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
-                Assert.True(context.Config.ClockOffset == TimeSpan.Zero);
-
-                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
-                context.TestAction();
-                Assert.NotStrictEqual(IncorrectPositiveClockSkewOffset, context.Config.ClockOffset);
-
-                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
-                context.TestAction();
-                Assert.NotStrictEqual(IncorrectNegativeClockSkewOffset, context.Config.ClockOffset);
-
-                Console.WriteLine("Simulating positive clock skew");
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
-                AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(context.TestAction);
-
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
-
-                Console.WriteLine("Simulating negative clock skew");
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
-
-                AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(context.TestAction);
-            }
-            finally
-            {
-                AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(oldClockSkewCorrection);
-                SetUtcNowSource(oldUtcNowSource);
-            }
         }
 
         private void TestClient(ClientTest ct, Action<ClockSkewTestContext> serviceCall)
