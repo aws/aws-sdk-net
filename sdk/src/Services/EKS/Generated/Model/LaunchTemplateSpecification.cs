@@ -62,7 +62,7 @@ namespace Amazon.EKS.Model
         ///  
         /// <para>
         /// You must specify either the launch template ID or the launch template name in the
-        /// request, but not both.
+        /// request, but not both. After node group creation, you cannot use a different ID.
         /// </para>
         /// </summary>
         public string Id
@@ -85,7 +85,7 @@ namespace Amazon.EKS.Model
         ///  
         /// <para>
         /// You must specify either the launch template name or the launch template ID in the
-        /// request, but not both.
+        /// request, but not both. After node group creation, you cannot use a different name.
         /// </para>
         /// </summary>
         public string Name
@@ -104,7 +104,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number of the launch template to use. If no version is specified, then
-        /// the template's default version is used.
+        /// the template's default version is used. You can use a different version for node group
+        /// updates.
         /// </para>
         /// </summary>
         public string Version

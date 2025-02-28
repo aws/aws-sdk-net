@@ -43,6 +43,7 @@ namespace Amazon.EKS.Model
         private string _id;
         private List<string> _licenseArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _licenseQuantity;
+        private List<License> _licenses = AWSConfigs.InitializeCollections ? new List<License>() : null;
         private EksAnywhereSubscriptionLicenseType _licenseType;
         private string _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -192,6 +193,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetLicenseQuantity()
         {
             return this._licenseQuantity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Licenses. 
+        /// <para>
+        /// Includes all of the claims in the license token necessary to validate the license
+        /// for extended support.
+        /// </para>
+        /// </summary>
+        public List<License> Licenses
+        {
+            get { return this._licenses; }
+            set { this._licenses = value; }
+        }
+
+        // Check to see if Licenses property is set
+        internal bool IsSetLicenses()
+        {
+            return this._licenses != null && (this._licenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

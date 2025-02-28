@@ -36,10 +36,15 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// You can update a node group using a launch template only if the node group was originally
-    /// deployed with a launch template. If you need to update a custom AMI in a node group
-    /// that was deployed with a launch template, then update your custom AMI, specify the
-    /// new ID in a new version of the launch template, and then update the node group to
-    /// the new version of the launch template.
+    /// deployed with a launch template. Additionally, the launch template ID or name must
+    /// match what was used when the node group was created. You can update the launch template
+    /// version with necessary changes.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you need to update a custom AMI in a node group that was deployed with a launch
+    /// template, then update your custom AMI, specify the new ID in a new version of the
+    /// launch template, and then update the node group to the new version of the launch template.
     /// </para>
     ///  
     /// <para>
@@ -139,7 +144,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// An object representing a node group's launch template specification. You can only
         /// update a node group using a launch template if the node group was originally deployed
-        /// with a launch template.
+        /// with a launch template. When updating, you must specify the same launch template ID
+        /// or name that was used to create the node group.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
