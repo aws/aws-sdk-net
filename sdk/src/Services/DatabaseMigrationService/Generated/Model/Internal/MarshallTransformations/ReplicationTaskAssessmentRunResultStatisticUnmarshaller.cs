@@ -90,6 +90,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Passed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Skipped", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Skipped = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Warning", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
