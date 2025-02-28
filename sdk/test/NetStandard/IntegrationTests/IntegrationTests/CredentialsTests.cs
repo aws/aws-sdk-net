@@ -8,6 +8,9 @@ using System.IO;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
 using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
@@ -44,6 +47,39 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var domains = (await swf.ListDomainsAsync(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" })).DomainInfos;
                     Console.WriteLine(domains.Infos.Count);
+                }
+            }
+        }
+
+        [Fact]
+        [Trait(TestBase.CategoryAttribute, "Credentials")]
+        public async Task TestAssumeRoleAWSCredentialsAsyncGet()
+        {
+            using (var sts = TestBase.CreateClient<AmazonSecurityTokenServiceClient>())
+            using (var iam = TestBase.CreateClient<AmazonIdentityManagementServiceClient>())
+            {
+                var callerIdentity = await sts.GetCallerIdentityAsync(new GetCallerIdentityRequest());
+
+                var roleName = "sdk-testrole-" + DateTime.UtcNow.Ticks;
+                var createRoleRequest = new CreateRoleRequest()
+                {
+                    RoleName = roleName,
+                    AssumeRolePolicyDocument = "{\"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\",\"Principal\": {\"AWS\": [\"" + callerIdentity.Account + "\"]},\"Action\": \"sts:AssumeRole\",\"Condition\": {}}]}"
+                };
+                var role = await iam.CreateRoleAsync(createRoleRequest);
+
+                var sourceCredentials = FallbackCredentialsFactory.GetCredentials();
+
+                var assumeRoleAWSCredentials = new AssumeRoleAWSCredentials(sourceCredentials, role.Role.Arn, "dummyRoleSessionName");
+                try
+                {
+                    var credentials = await assumeRoleAWSCredentials.GetCredentialsAsync();
+                    Assert.NotNull(credentials);
+                }
+                finally
+                {
+                    var deleteRoleRequest = new DeleteRoleRequest() { RoleName = role.Role.RoleName };
+                    await iam.DeleteRoleAsync(deleteRoleRequest);
                 }
             }
         }

@@ -177,7 +177,6 @@ namespace Amazon.Runtime
             }
         }
 
-#if AWS_ASYNC_API
         public override async System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             // We save the currentState as it might be modified or cleared.
@@ -229,7 +228,6 @@ namespace Amazon.Runtime
                 }
             }
         }
-#endif
 
         #endregion
 
@@ -322,7 +320,7 @@ namespace Amazon.Runtime
         {
             throw new NotImplementedException();
         }
-#if AWS_ASYNC_API
+
         /// <summary> 
         /// When overridden in a derived class, generates new credentials and new expiration date.
         /// 
@@ -333,7 +331,7 @@ namespace Amazon.Runtime
         {
             return System.Threading.Tasks.Task.Run(() => this.GenerateNewCredentials());
         }
-#endif
+
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed) return;
