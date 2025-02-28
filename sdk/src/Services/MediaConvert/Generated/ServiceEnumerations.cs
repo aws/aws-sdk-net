@@ -5419,6 +5419,136 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Codec.
+    /// </summary>
+    public class Codec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AAC for Codec
+        /// </summary>
+        public static readonly Codec AAC = new Codec("AAC");
+        /// <summary>
+        /// Constant AC3 for Codec
+        /// </summary>
+        public static readonly Codec AC3 = new Codec("AC3");
+        /// <summary>
+        /// Constant AV1 for Codec
+        /// </summary>
+        public static readonly Codec AV1 = new Codec("AV1");
+        /// <summary>
+        /// Constant AVC for Codec
+        /// </summary>
+        public static readonly Codec AVC = new Codec("AVC");
+        /// <summary>
+        /// Constant C608 for Codec
+        /// </summary>
+        public static readonly Codec C608 = new Codec("C608");
+        /// <summary>
+        /// Constant C708 for Codec
+        /// </summary>
+        public static readonly Codec C708 = new Codec("C708");
+        /// <summary>
+        /// Constant EAC3 for Codec
+        /// </summary>
+        public static readonly Codec EAC3 = new Codec("EAC3");
+        /// <summary>
+        /// Constant FLAC for Codec
+        /// </summary>
+        public static readonly Codec FLAC = new Codec("FLAC");
+        /// <summary>
+        /// Constant HEVC for Codec
+        /// </summary>
+        public static readonly Codec HEVC = new Codec("HEVC");
+        /// <summary>
+        /// Constant MJPEG for Codec
+        /// </summary>
+        public static readonly Codec MJPEG = new Codec("MJPEG");
+        /// <summary>
+        /// Constant MP3 for Codec
+        /// </summary>
+        public static readonly Codec MP3 = new Codec("MP3");
+        /// <summary>
+        /// Constant MP4V for Codec
+        /// </summary>
+        public static readonly Codec MP4V = new Codec("MP4V");
+        /// <summary>
+        /// Constant MPEG2 for Codec
+        /// </summary>
+        public static readonly Codec MPEG2 = new Codec("MPEG2");
+        /// <summary>
+        /// Constant OPUS for Codec
+        /// </summary>
+        public static readonly Codec OPUS = new Codec("OPUS");
+        /// <summary>
+        /// Constant PCM for Codec
+        /// </summary>
+        public static readonly Codec PCM = new Codec("PCM");
+        /// <summary>
+        /// Constant PRORES for Codec
+        /// </summary>
+        public static readonly Codec PRORES = new Codec("PRORES");
+        /// <summary>
+        /// Constant THEORA for Codec
+        /// </summary>
+        public static readonly Codec THEORA = new Codec("THEORA");
+        /// <summary>
+        /// Constant UNKNOWN for Codec
+        /// </summary>
+        public static readonly Codec UNKNOWN = new Codec("UNKNOWN");
+        /// <summary>
+        /// Constant VORBIS for Codec
+        /// </summary>
+        public static readonly Codec VORBIS = new Codec("VORBIS");
+        /// <summary>
+        /// Constant VP8 for Codec
+        /// </summary>
+        public static readonly Codec VP8 = new Codec("VP8");
+        /// <summary>
+        /// Constant VP9 for Codec
+        /// </summary>
+        public static readonly Codec VP9 = new Codec("VP9");
+        /// <summary>
+        /// Constant WEBVTT for Codec
+        /// </summary>
+        public static readonly Codec WEBVTT = new Codec("WEBVTT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Codec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Codec FindValue(string value)
+        {
+            return FindValue<Codec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Codec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColorMetadata.
     /// </summary>
     public class ColorMetadata : ConstantClass
@@ -5462,6 +5592,112 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ColorMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ColorPrimaries.
+    /// </summary>
+    public class ColorPrimaries : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBU_3213_E for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries EBU_3213_E = new ColorPrimaries("EBU_3213_E");
+        /// <summary>
+        /// Constant GENERIC_FILM for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries GENERIC_FILM = new ColorPrimaries("GENERIC_FILM");
+        /// <summary>
+        /// Constant IPT for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries IPT = new ColorPrimaries("IPT");
+        /// <summary>
+        /// Constant ITU_2020 for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries ITU_2020 = new ColorPrimaries("ITU_2020");
+        /// <summary>
+        /// Constant ITU_470BG for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries ITU_470BG = new ColorPrimaries("ITU_470BG");
+        /// <summary>
+        /// Constant ITU_470M for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries ITU_470M = new ColorPrimaries("ITU_470M");
+        /// <summary>
+        /// Constant ITU_709 for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries ITU_709 = new ColorPrimaries("ITU_709");
+        /// <summary>
+        /// Constant LAST for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries LAST = new ColorPrimaries("LAST");
+        /// <summary>
+        /// Constant RESERVED for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries RESERVED = new ColorPrimaries("RESERVED");
+        /// <summary>
+        /// Constant SMPTE_170M for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_170M = new ColorPrimaries("SMPTE_170M");
+        /// <summary>
+        /// Constant SMPTE_2067XYZ for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_2067XYZ = new ColorPrimaries("SMPTE_2067XYZ");
+        /// <summary>
+        /// Constant SMPTE_240M for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_240M = new ColorPrimaries("SMPTE_240M");
+        /// <summary>
+        /// Constant SMPTE_428_1 for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_428_1 = new ColorPrimaries("SMPTE_428_1");
+        /// <summary>
+        /// Constant SMPTE_431_2 for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_431_2 = new ColorPrimaries("SMPTE_431_2");
+        /// <summary>
+        /// Constant SMPTE_EG_432_1 for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries SMPTE_EG_432_1 = new ColorPrimaries("SMPTE_EG_432_1");
+        /// <summary>
+        /// Constant UNSPECIFIED for ColorPrimaries
+        /// </summary>
+        public static readonly ColorPrimaries UNSPECIFIED = new ColorPrimaries("UNSPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColorPrimaries(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColorPrimaries FindValue(string value)
+        {
+            return FindValue<ColorPrimaries>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColorPrimaries(string value)
         {
             return FindValue(value);
         }
@@ -9352,6 +9588,64 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FontScript(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Format.
+    /// </summary>
+    public class Format : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Matroska for Format
+        /// </summary>
+        public static readonly Format Matroska = new Format("matroska");
+        /// <summary>
+        /// Constant Mp4 for Format
+        /// </summary>
+        public static readonly Format Mp4 = new Format("mp4");
+        /// <summary>
+        /// Constant Quicktime for Format
+        /// </summary>
+        public static readonly Format Quicktime = new Format("quicktime");
+        /// <summary>
+        /// Constant Webm for Format
+        /// </summary>
+        public static readonly Format Webm = new Format("webm");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Format(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Format FindValue(string value)
+        {
+            return FindValue<Format>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Format(string value)
         {
             return FindValue(value);
         }
@@ -16479,6 +16773,120 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type MatrixCoefficients.
+    /// </summary>
+    public class MatrixCoefficients : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CD_CL for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients CD_CL = new MatrixCoefficients("CD_CL");
+        /// <summary>
+        /// Constant CD_NCL for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients CD_NCL = new MatrixCoefficients("CD_NCL");
+        /// <summary>
+        /// Constant EBU3213 for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients EBU3213 = new MatrixCoefficients("EBU3213");
+        /// <summary>
+        /// Constant FCC for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients FCC = new MatrixCoefficients("FCC");
+        /// <summary>
+        /// Constant IPT for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients IPT = new MatrixCoefficients("IPT");
+        /// <summary>
+        /// Constant ITU_2020_CL for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients ITU_2020_CL = new MatrixCoefficients("ITU_2020_CL");
+        /// <summary>
+        /// Constant ITU_2020_NCL for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients ITU_2020_NCL = new MatrixCoefficients("ITU_2020_NCL");
+        /// <summary>
+        /// Constant ITU_2100ICtCp for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients ITU_2100ICtCp = new MatrixCoefficients("ITU_2100ICtCp");
+        /// <summary>
+        /// Constant ITU_470BG for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients ITU_470BG = new MatrixCoefficients("ITU_470BG");
+        /// <summary>
+        /// Constant ITU_709 for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients ITU_709 = new MatrixCoefficients("ITU_709");
+        /// <summary>
+        /// Constant LAST for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients LAST = new MatrixCoefficients("LAST");
+        /// <summary>
+        /// Constant RESERVED for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients RESERVED = new MatrixCoefficients("RESERVED");
+        /// <summary>
+        /// Constant RGB for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients RGB = new MatrixCoefficients("RGB");
+        /// <summary>
+        /// Constant SMPTE_170M for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients SMPTE_170M = new MatrixCoefficients("SMPTE_170M");
+        /// <summary>
+        /// Constant SMPTE_2085 for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients SMPTE_2085 = new MatrixCoefficients("SMPTE_2085");
+        /// <summary>
+        /// Constant SMPTE_240M for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients SMPTE_240M = new MatrixCoefficients("SMPTE_240M");
+        /// <summary>
+        /// Constant UNSPECIFIED for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients UNSPECIFIED = new MatrixCoefficients("UNSPECIFIED");
+        /// <summary>
+        /// Constant YCgCo for MatrixCoefficients
+        /// </summary>
+        public static readonly MatrixCoefficients YCgCo = new MatrixCoefficients("YCgCo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MatrixCoefficients(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MatrixCoefficients FindValue(string value)
+        {
+            return FindValue<MatrixCoefficients>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MatrixCoefficients(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MotionImageInsertionMode.
     /// </summary>
     public class MotionImageInsertionMode : ConstantClass
@@ -21344,6 +21752,178 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimedMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrackType.
+    /// </summary>
+    public class TrackType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Audio for TrackType
+        /// </summary>
+        public static readonly TrackType Audio = new TrackType("audio");
+        /// <summary>
+        /// Constant Data for TrackType
+        /// </summary>
+        public static readonly TrackType Data = new TrackType("data");
+        /// <summary>
+        /// Constant Video for TrackType
+        /// </summary>
+        public static readonly TrackType Video = new TrackType("video");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrackType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrackType FindValue(string value)
+        {
+            return FindValue<TrackType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrackType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransferCharacteristics.
+    /// </summary>
+    public class TransferCharacteristics : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARIB_B67 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ARIB_B67 = new TransferCharacteristics("ARIB_B67");
+        /// <summary>
+        /// Constant IEC_61966_2_1 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics IEC_61966_2_1 = new TransferCharacteristics("IEC_61966_2_1");
+        /// <summary>
+        /// Constant IEC_61966_2_4 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics IEC_61966_2_4 = new TransferCharacteristics("IEC_61966_2_4");
+        /// <summary>
+        /// Constant ITU_1361 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_1361 = new TransferCharacteristics("ITU_1361");
+        /// <summary>
+        /// Constant ITU_2020_10bit for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_2020_10bit = new TransferCharacteristics("ITU_2020_10bit");
+        /// <summary>
+        /// Constant ITU_2020_12bit for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_2020_12bit = new TransferCharacteristics("ITU_2020_12bit");
+        /// <summary>
+        /// Constant ITU_470BG for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_470BG = new TransferCharacteristics("ITU_470BG");
+        /// <summary>
+        /// Constant ITU_470M for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_470M = new TransferCharacteristics("ITU_470M");
+        /// <summary>
+        /// Constant ITU_709 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics ITU_709 = new TransferCharacteristics("ITU_709");
+        /// <summary>
+        /// Constant LAST for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics LAST = new TransferCharacteristics("LAST");
+        /// <summary>
+        /// Constant LINEAR for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics LINEAR = new TransferCharacteristics("LINEAR");
+        /// <summary>
+        /// Constant LOC10_2_5 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics LOC10_2_5 = new TransferCharacteristics("LOC10_2_5");
+        /// <summary>
+        /// Constant LOG10_2 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics LOG10_2 = new TransferCharacteristics("LOG10_2");
+        /// <summary>
+        /// Constant RESERVED for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics RESERVED = new TransferCharacteristics("RESERVED");
+        /// <summary>
+        /// Constant SMPTE_170M for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics SMPTE_170M = new TransferCharacteristics("SMPTE_170M");
+        /// <summary>
+        /// Constant SMPTE_2084 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics SMPTE_2084 = new TransferCharacteristics("SMPTE_2084");
+        /// <summary>
+        /// Constant SMPTE_240M for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics SMPTE_240M = new TransferCharacteristics("SMPTE_240M");
+        /// <summary>
+        /// Constant SMPTE_428_1 for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics SMPTE_428_1 = new TransferCharacteristics("SMPTE_428_1");
+        /// <summary>
+        /// Constant UNSPECIFIED for TransferCharacteristics
+        /// </summary>
+        public static readonly TransferCharacteristics UNSPECIFIED = new TransferCharacteristics("UNSPECIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransferCharacteristics(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransferCharacteristics FindValue(string value)
+        {
+            return FindValue<TransferCharacteristics>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransferCharacteristics(string value)
         {
             return FindValue(value);
         }

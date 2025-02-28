@@ -1467,6 +1467,68 @@ namespace Amazon.MediaConvert
 
         #endregion
         
+        #region  Probe
+
+
+        /// <summary>
+        /// The Probe operation analyzes the provided media file and returns comprehensive metadata
+        /// about its container format, tracks, and any encountered errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Probe service method.</param>
+        /// 
+        /// <returns>The response from the Probe service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
+        ProbeResponse Probe(ProbeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Probe operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Probe operation on AmazonMediaConvertClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndProbe
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
+        IAsyncResult BeginProbe(ProbeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  Probe operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginProbe.</param>
+        /// 
+        /// <returns>Returns a  ProbeResult from MediaConvert.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
+        ProbeResponse EndProbe(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutPolicy
 
 
