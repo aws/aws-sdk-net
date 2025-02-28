@@ -152,7 +152,7 @@ namespace Amazon.Runtime.Internal
                     }
                 }
             }
-            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture, 
+            logger.DebugFormat(string.Format(CultureInfo.InvariantCulture, 
                 "CSM configurations found using profile store for the profile = {0}: values are CSM enabled = {1}, host = {2}, port = {3}, clientid = {4}", 
                 ProfileName, csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
         }
@@ -224,7 +224,7 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,
+            logger.DebugFormat(string.Format(CultureInfo.InvariantCulture,
                 "CSM configurations found using environment variable. values are CSM enabled = {0}, host = {1}, port = {2}, clientid = {3}",
                 csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
         }
@@ -259,7 +259,7 @@ namespace Amazon.Runtime.Internal
                 csmConfiguration.Host = AWSConfigs.CSMConfig.CSMHost;
                 csmConfiguration.Port = AWSConfigs.CSMConfig.CSMPort;
 
-                logger.InfoFormat(string.Format(CultureInfo.InvariantCulture,
+                logger.DebugFormat(string.Format(CultureInfo.InvariantCulture,
                     "CSM configurations found using application configuration file. values are CSM enabled = {0}, host = {1}, port = {2}, clientid = {3}",
                     csmConfiguration.Enabled, csmConfiguration.Host, csmConfiguration.Port, csmConfiguration.ClientId));
             }

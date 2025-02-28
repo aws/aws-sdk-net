@@ -13,15 +13,18 @@
  * permissions and limitations under the License.
  */
 
-using System;
-
-namespace Amazon.Runtime.Internal.Util
+namespace Amazon.Runtime.Logging
 {
-    public interface ILogger
+    /// <summary>
+    /// Enum log levels for the SDK.
+    /// </summary>
+    public enum SdkLogLevel
     {
-        void InfoFormat(string messageFormat, params object[] args);
-        void Debug(Exception exception, string messageFormat, params object[] args);
-        void DebugFormat(string messageFormat, params object[] args);
-        void Error(Exception exception, string messageFormat, params object[] args);
+        Trace = 0,
+        Debug = 1,
+        Info = 2,
+        Warn = 3,
+        Error = 4,
+        Fatal = 5
     }
 }

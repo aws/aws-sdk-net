@@ -155,7 +155,7 @@ namespace Amazon.Runtime.Internal
                         cacheEndpoints.Add(new DiscoveryEndpoint(null, 1));            
                         _cache.AddOrUpdate(cacheKey, cacheEndpoints);
                     }
-                    _logger.InfoFormat("The request to discover endpoints did not return any endpoints.");
+                    _logger.DebugFormat("The request to discover endpoints did not return any endpoints.");
                 }
             }
             catch (Exception exception)
