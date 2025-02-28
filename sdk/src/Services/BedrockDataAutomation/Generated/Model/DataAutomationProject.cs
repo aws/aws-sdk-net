@@ -160,7 +160,7 @@ namespace Amazon.BedrockDataAutomation.Model
         /// <summary>
         /// Gets and sets the property ProjectDescription.
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=300)]
         public string ProjectDescription
         {
             get { return this._projectDescription; }

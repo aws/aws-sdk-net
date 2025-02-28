@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateBlueprint Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class UpdateBlueprintRequestMarshaller : IMarshaller<IRequest, UpdateBlueprintRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateBlueprintRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -53,44 +53,24 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateBlueprintRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockDataAutomation");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-07-26";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetBlueprintArn())
-                throw new AmazonBedrockDataAutomationException("Request object does not have required field BlueprintArn set");
-            request.AddPathResource("{blueprintArn}", StringUtils.FromString(publicRequest.BlueprintArn));
-            request.ResourcePath = "/blueprints/{blueprintArn}/";
+            request.ResourcePath = "/listTagsForResource";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlueprintStage())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("blueprintStage");
-                    context.Writer.Write(publicRequest.BlueprintStage);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("schema");
-                    context.Writer.Write(publicRequest.Schema);
+                    context.Writer.WritePropertyName("resourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 writer.WriteObjectEnd();
@@ -101,9 +81,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateBlueprintRequestMarshaller _instance = new UpdateBlueprintRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static UpdateBlueprintRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +91,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateBlueprintRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {
