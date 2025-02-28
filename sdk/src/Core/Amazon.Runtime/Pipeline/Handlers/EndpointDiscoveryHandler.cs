@@ -1,17 +1,17 @@
 ﻿/*
-* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-* 
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-* 
-*  http://aws.amazon.com/apache2.0
-* 
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,9 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
-            PreInvoke(executionContext);
+            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
+
+            PreInvoke(executionContext, immutableCredentials);
 
             try
             {
@@ -46,10 +48,10 @@ namespace Amazon.Runtime.Internal
                 return;
             }
             catch (Exception exception)
-            {
+            {        
                 if (IsInvalidEndpointException(exception))
                 {
-                    EvictCacheKeyForRequest(requestContext, regionalEndpoint);
+                    EvictCacheKeyForRequest(requestContext, regionalEndpoint, immutableCredentials);
                 }
 
                 throw;
@@ -69,18 +71,20 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
-            PreInvoke(executionContext);
+            var immutableCredentials = await ((requestContext.Identity as AWSCredentials)?.GetCredentialsAsync()).ConfigureAwait(false);
+
+            PreInvoke(executionContext, immutableCredentials);
 
             try
             {
-                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
             }
             catch (Exception exception)
             {
                 var capturedException = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(exception);
                 if (IsInvalidEndpointException(capturedException.SourceException))
                 {
-                    EvictCacheKeyForRequest(requestContext, regionalEndpoint);
+                    EvictCacheKeyForRequest(requestContext, regionalEndpoint, immutableCredentials);
                 }
 
                 capturedException.Throw();
@@ -94,22 +98,22 @@ namespace Amazon.Runtime.Internal
         /// Resolves the endpoint to be used for the current request
         /// before invoking the next handler.
         /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>                
-        protected static void PreInvoke(IExecutionContext executionContext)
+        /// <param name="executionContext">The execution context, it contains the request and response context.</param>        
+        /// <param name="credentials">The AWS credentials for the account making the service call.</param>
+        protected static void PreInvoke(IExecutionContext executionContext, ImmutableCredentials credentials)
         {
-            DiscoverEndpoints(executionContext.RequestContext, false);
+            DiscoverEndpoints(executionContext.RequestContext, false, credentials);
         }
 
-        public static void EvictCacheKeyForRequest(IRequestContext requestContext, Uri regionalEndpoint)
+        public static void EvictCacheKeyForRequest(IRequestContext requestContext, Uri regionalEndpoint, ImmutableCredentials credentials)
         {
-            DiscoverEndpoints(requestContext, true);
+            DiscoverEndpoints(requestContext, true, credentials);
             requestContext.Request.Endpoint = regionalEndpoint;
         }
 
-        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey)
+        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey, ImmutableCredentials credentials)
         {
-            var discoveryEndpoints = ProcessEndpointDiscovery(requestContext, evictCacheKey, requestContext.Request.Endpoint);
+            var discoveryEndpoints = ProcessEndpointDiscovery(requestContext, evictCacheKey, requestContext.Request.Endpoint, credentials);
             if (discoveryEndpoints != null)
             {
                 foreach (var endpoint in discoveryEndpoints)
@@ -130,12 +134,11 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
+        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri, ImmutableCredentials credentials)
         {
             var options = requestContext.Options;
-            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
 
-            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && immutableCredentials != null)
+            if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && credentials != null)
             {
                 //Endpoint discovery is supported by this operation and we have an endpoint operation available to use                
                 var endpointDiscoveryData = options.EndpointDiscoveryMarshaller.Marshall(requestContext.OriginalRequest);
@@ -144,7 +147,7 @@ namespace Amazon.Runtime.Internal
                 {
                     operationName = AWSSDKUtils.ExtractOperationName(requestContext.RequestName);
                 }
-                return options.EndpointOperation(new EndpointOperationContext(immutableCredentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
+                return options.EndpointOperation(new EndpointOperationContext(credentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
             }
 
             return null;

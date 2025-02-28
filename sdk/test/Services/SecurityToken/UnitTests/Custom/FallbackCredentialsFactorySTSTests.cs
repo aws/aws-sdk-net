@@ -221,7 +221,7 @@ namespace AWSSDK.UnitTests
 
     public class AssumeRoleWithWebIdentityTestCredentials : AssumeRoleWithWebIdentityCredentials
     {
-        public ICoreAmazonSTS_WebIdentity Client { get; set; }
+        public ICoreAmazonSTS Client { get; set; }
         public AssumeRoleWithWebIdentityTestCredentials(string webIdentityTokenFile, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
             : base(webIdentityTokenFile, roleArn, roleSessionName, options)
         {
@@ -234,7 +234,7 @@ namespace AWSSDK.UnitTests
             Client = base.CreateClient();
         }
 
-        protected override ICoreAmazonSTS_WebIdentity CreateClient()
+        protected override ICoreAmazonSTS CreateClient()
         {
             return Client;
         }

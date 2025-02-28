@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -105,6 +106,46 @@ namespace Amazon.Runtime
                 };
 
                 AWSSDKUtils.Sleep(retry.Next());
+            }
+
+            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
+        }
+
+        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            SecurityCredentials credentials;
+            JitteredDelay retry = new JitteredDelay(TimeSpan.FromMilliseconds(200), TimeSpan.FromMilliseconds(50));
+
+            // Attempt to get the credentials 4 times ignoring null return/exceptions and on the 5th try, escalate the exception if there is one.
+            for (int i = 1; ; i++)
+            {
+                try
+                {
+                    var headers = CreateAuthorizationHeader();
+
+                    // This provider intentionally does not use a proxy when retrieving credentials from the determined endpoint.
+                    credentials = await GetObjectFromResponseAsync<SecurityCredentials, SecurityCredentialsJsonSerializerContexts>(ResolvedEndpointUri, proxy: null, headers).ConfigureAwait(false);
+                    if (credentials != null)
+                    {
+                        break;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    if (i == MaxRetries)
+                    {
+                        // GetObjectFromResponse returns a "Unable to reach credentials server" generic message, but we'll check if there are inner exceptions available.
+                        // They may contain more details about the error (e.g. 500 Internal Server Error).
+                        while (exception.InnerException != null)
+                        {
+                            exception = exception.InnerException;
+                        }
+
+                        throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, "Unable to retrieve credentials. Message = \"{0}\"", exception.Message));
+                    }
+                }
+
+                await Task.Delay(retry.Next()).ConfigureAwait(false);
             }
 
             return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);

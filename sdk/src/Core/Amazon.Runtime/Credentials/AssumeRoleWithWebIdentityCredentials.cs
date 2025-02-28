@@ -25,9 +25,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -172,16 +170,12 @@ namespace Amazon.Runtime
                 }
             }
 
-            AssumeRoleImmutableCredentials credentials;
-            using (var coreStsClient = CreateClient())
-            {
-                credentials = coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication(token, RoleArn, RoleSessionName, _options); // Will retry InvalidIdentityToken and IDPCommunicationError
-            }
+            var coreStsClient = CreateClient();
+            AssumeRoleImmutableCredentials credentials = coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication(token, RoleArn, RoleSessionName, _options); // Will retry InvalidIdentityToken and IDPCommunicationError
             _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
 
-#if AWS_ASYNC_API
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             string token = null;
@@ -210,15 +204,11 @@ namespace Amazon.Runtime
                 }
             }
 
-            AssumeRoleImmutableCredentials credentials;
-            using (var coreStsClient = CreateClient())
-            {
-                credentials = await coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(token, RoleArn, RoleSessionName, _options).ConfigureAwait(false); // Will retry InvalidIdentityToken and IDPCommunicationError
-            }
+            var coreStsClient = CreateClient();
+            AssumeRoleImmutableCredentials credentials = await coreStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(token, RoleArn, RoleSessionName, _options).ConfigureAwait(false); // Will retry InvalidIdentityToken and IDPCommunicationError
             _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
-#endif
 
         /// <summary>
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.
@@ -226,11 +216,11 @@ namespace Amazon.Runtime
         /// <returns>The STS client.</returns>
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-        protected virtual ICoreAmazonSTS_WebIdentity CreateClient()
+        protected virtual ICoreAmazonSTS CreateClient()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
 
-            ICoreAmazonSTS_WebIdentity coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS_WebIdentity>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
                 new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = _options?.ProxySettings }));
             if(coreSTSClient == null)
             {
@@ -244,7 +234,7 @@ namespace Amazon.Runtime
                         stsConfig.SetWebProxy(_options.ProxySettings);
                     }
 
-                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS_WebIdentity>(
+                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
                                 ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), region);
                 }
                 catch (Exception e)

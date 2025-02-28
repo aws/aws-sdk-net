@@ -81,7 +81,7 @@ namespace Amazon.Runtime
 
             _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             
-            _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan);
+            _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
         }
 
         #region Overrides
@@ -174,15 +174,94 @@ namespace Amazon.Runtime
             return credentials;
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Returns a copy of the most recent instance profile credentials.
         /// </summary>
-        public override Task<ImmutableCredentials> GetCredentialsAsync()
+        public override async Task<ImmutableCredentials> GetCredentialsAsync()
         {
-            return Task.FromResult<ImmutableCredentials>(GetCredentials());
+            CheckIsIMDSEnabled();
+            ImmutableCredentials credentials = null;
+
+            // Try to acquire read lock. The thread would be blocked if another thread has write lock.
+            if (_credentialsLock.TryEnterReadLock(_credentialsLockTimeout))
+            {
+                try
+                {
+                    if (null != _lastRetrievedCredentials)
+                    {
+                        if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero) &&
+                            !_imdsRefreshFailed)
+                        {
+                            // this is the first failure - immediately try to renew
+                            _imdsRefreshFailed = true;
+                            _lastRetrievedCredentials = await FetchCredentialsAsync().ConfigureAwait(false);
+                        }
+
+                        // if credentials are expired, we'll still return them, but log a message about
+                        // them being expired.
+                        if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                        {
+                            _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                        }
+                        else
+                        {
+                            _imdsRefreshFailed = false;
+                        }
+
+                        return _lastRetrievedCredentials?.Credentials.Copy();
+                    }
+                }
+                finally
+                {
+                    _credentialsLock.ExitReadLock();
+                }
+            }
+
+            // If there's no credentials cached, hit IMDS directly. Try to acquire write lock.
+            if (_credentialsLock.TryEnterWriteLock(_credentialsLockTimeout))
+            {
+                try
+                {
+                    // Check for last retrieved credentials again in case other thread might have already fetched it.
+                    if (null == _lastRetrievedCredentials)
+                    {
+                        _lastRetrievedCredentials = await FetchCredentialsAsync().ConfigureAwait(false);
+                    }
+
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero) &&
+                         !_imdsRefreshFailed)
+                    {
+                        // this is the first failure - immediately try to renew
+                        _imdsRefreshFailed = true;
+                        _lastRetrievedCredentials = await FetchCredentialsAsync().ConfigureAwait(false);
+                    }
+
+                    // if credentials are expired, we'll still return them, but log a message about
+                    // them being expired.
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                    {
+                        _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                    }
+                    else
+                    {
+                        _imdsRefreshFailed = false;
+                    }
+
+                    credentials = _lastRetrievedCredentials.Credentials?.Copy();
+                }
+                finally
+                {
+                    _credentialsLock.ExitWriteLock();
+                }
+            }
+
+            if (credentials == null)
+            {
+                throw new AmazonServiceException(FailedToGetCredentialsMessage);
+            }
+
+            return credentials;
         }
-#endif
 #endregion
 
         #region Private members
@@ -241,6 +320,28 @@ namespace Amazon.Runtime
             if (securityCredentials == null)
                 throw new AmazonServiceException("Unable to get IAM security credentials from EC2 Instance Metadata Service.");
 
+            IAMSecurityCredentialMetadata metadata = GetMetadataFromSecurityCredentials(securityCredentials);
+
+            return new RefreshingAWSCredentials.CredentialsRefreshState(
+                new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token),
+                metadata.Expiration);
+        }
+
+        private static async Task<RefreshingAWSCredentials.CredentialsRefreshState> FetchCredentialsAsync()
+        {
+            var securityCredentials = await EC2InstanceMetadata.GetIAMSecurityCredentialsAsync().ConfigureAwait(false);
+            if (securityCredentials == null)
+                throw new AmazonServiceException("Unable to get IAM security credentials from EC2 Instance Metadata Service.");
+
+            IAMSecurityCredentialMetadata metadata = GetMetadataFromSecurityCredentials(securityCredentials);
+
+            return new RefreshingAWSCredentials.CredentialsRefreshState(
+                new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token),
+                metadata.Expiration);
+        }
+
+        private static IAMSecurityCredentialMetadata GetMetadataFromSecurityCredentials(System.Collections.Generic.IDictionary<string, IAMSecurityCredentialMetadata> securityCredentials)
+        {
             string firstRole = null;
             foreach (var role in securityCredentials.Keys)
             {
@@ -255,9 +356,7 @@ namespace Amazon.Runtime
             if (metadata == null)
                 throw new AmazonServiceException("Unable to get credentials for role \"" + firstRole + "\" from EC2 Instance Metadata Service.");
 
-            return new RefreshingAWSCredentials.CredentialsRefreshState(
-                new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token),
-                metadata.Expiration);
+            return metadata;
         }
 
         private static void CheckIsIMDSEnabled()

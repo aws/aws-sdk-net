@@ -27,6 +27,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -136,35 +137,7 @@ namespace Amazon.Runtime
             {
                 try
                 {
-                    NetworkCredential userCredential = null;
-                    if (Options.UserIdentity != null)
-                    {
-                        if (Options.CredentialRequestCallback != null)
-                        {
-                            var callbackArgs = new CredentialRequestCallbackArgs
-                            {
-                                ProfileName = Options.ProfileName,
-                                UserIdentity = Options.UserIdentity,
-                                CustomState = Options.CustomCallbackState,
-                                PreviousAuthenticationFailed = attempts > 0
-                            };
-
-                            userCredential = Options.CredentialRequestCallback(callbackArgs);
-
-                            if (userCredential == null) // user declined to authenticate
-                            {
-                                throw new FederatedAuthenticationCancelledException(
-                                    "User cancelled credential request.");
-                            }
-                        }
-                        else
-                        {
-                            var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
-                            logger.InfoFormat(
-                                "FederatedAWSCredentials configured for a specific user but no credential request callback registered; falling back to default identity.");
-                        }
-                    }
-
+                    NetworkCredential userCredential = GetUserCredential(attempts);
                     newState = Authenticate(userCredential);
                 }
                 catch (FederatedAuthenticationFailureException)
@@ -179,8 +152,95 @@ namespace Amazon.Runtime
             return newState;
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        /// <summary>
+        /// Refresh credentials after expiry. If the role profile is configured with user identity
+        /// information and a callback has been registered to obtain the user credential, the callback
+        /// will be invoked ahead of authentication. For role profiles configured with user identity
+        /// but no callback registration, the SDK will fall back to attempting to use the default
+        /// user identity of the current process.
+        /// </summary>
+        /// <returns></returns>
+        protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
+        {
+            Validate();
+            // If the profile indicates the user has already authenticated and received
+            // credentials which are still valid, adopt them instead of requiring a fresh
+            // authentication.
+            SAMLImmutableCredentials currentSession;
+            if (TryGetRoleSession(out currentSession))
+            {
+                // Since cached role session credentials can be obtained, stored credentials exist 
+                // and they were not expired. However, since the stored credentials are actual 
+                // expiration time and not preempt expiration time we must preempt the expiration
+                // to check that they will not expire before this call completes.
+                var cachedState = new CredentialsRefreshState(currentSession, currentSession.Expires);
+
+                // Use the cached credentials as long as they are not within the preempt expiry window
+                // or have since actually expired since the prior call to TryGetRoleSession.
+                //Verify the actual expiration is not within the preempt expiration time.
+                if (!cachedState.IsExpiredWithin(PreemptExpiryTime))
+                {
+                    // The credentials have plenty of time left before they expire so they can be used. After
+                    // return the expiration time will be preempted for future checks using ShouldUpdate.
+                    return cachedState;
+                }
+            }
+
+            CredentialsRefreshState newState = null;
+            var attempts = 0;
+            do
+            {
+                try
+                {
+                    NetworkCredential userCredential = GetUserCredential(attempts);
+                    newState = await AuthenticateAsync(userCredential).ConfigureAwait(false);
+                }
+                catch (FederatedAuthenticationFailureException)
+                {
+                    if (attempts < MaxAuthenticationRetries)
+                        attempts++;
+                    else
+                        throw;
+                }
+            } while (newState == null && attempts < MaxAuthenticationRetries);
+
+            return newState;
+        }
+
+        private NetworkCredential GetUserCredential(int attempts)
+        {
+            NetworkCredential userCredential = null;
+            if (Options.UserIdentity != null)
+            {
+                if (Options.CredentialRequestCallback != null)
+                {
+                    var callbackArgs = new CredentialRequestCallbackArgs
+                    {
+                        ProfileName = Options.ProfileName,
+                        UserIdentity = Options.UserIdentity,
+                        CustomState = Options.CustomCallbackState,
+                        PreviousAuthenticationFailed = attempts > 0
+                    };
+
+                    userCredential = Options.CredentialRequestCallback(callbackArgs);
+
+                    if (userCredential == null) // user declined to authenticate
+                    {
+                        throw new FederatedAuthenticationCancelledException(
+                            "User cancelled credential request.");
+                    }
+                }
+                else
+                {
+                    var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
+                    logger.InfoFormat(
+                        "FederatedAWSCredentials configured for a specific user but no credential request callback registered; falling back to default identity.");
+                }
+            }
+
+            return userCredential;
+        }
+
         private CredentialsRefreshState Authenticate(ICredentials userCredential)
         {
             CredentialsRefreshState state;
@@ -195,9 +255,79 @@ namespace Amazon.Runtime
                 region = DefaultSTSClientRegion;
             }
 
-            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
+            ICoreAmazonSTS coreSTSClient = GetSTSClient(region);
+
+            try
+            {
+                var credentials = coreSTSClient.CredentialsFromSAMLAuthentication(
+                    SAMLEndpoint.EndpointUri.ToString(),
+                    SAMLEndpoint.AuthenticationType.ToString(), RoleArn, MaximumCredentialTimespan, userCredential);
+
+                RegisterRoleSession(credentials);
+
+                state = new CredentialsRefreshState(credentials, credentials.Expires);
+            }
+            catch (Exception e)
+            {
+                var wrappedException =
+                    new AmazonClientException("Credential generation from SAML authentication failed.", e);
+
+                var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
+                logger.Error(wrappedException, wrappedException.Message);
+
+                throw wrappedException;
+            }
+
+            return state;
+        }
+
+        private async Task<CredentialsRefreshState> AuthenticateAsync(ICredentials userCredential)
+        {
+            CredentialsRefreshState state;
+
+            var region = Options.STSRegion;
+            if (region == null)
+            {
+                region = FallbackRegionFactory.GetRegionEndpoint();
+            }
+            if (region == null)
+            {
+                region = DefaultSTSClientRegion;
+            }
+
+            ICoreAmazonSTS coreSTSClient = GetSTSClient(region);
+
+            try
+            {
+                var credentials = await coreSTSClient.CredentialsFromSAMLAuthenticationAsync(
+                    SAMLEndpoint.EndpointUri.ToString(),
+                    SAMLEndpoint.AuthenticationType.ToString(), RoleArn, MaximumCredentialTimespan, userCredential).ConfigureAwait(false);
+
+                RegisterRoleSession(credentials);
+
+                state = new CredentialsRefreshState(credentials, credentials.Expires);
+            }
+            catch (Exception e)
+            {
+                var wrappedException =
+                    new AmazonClientException("Credential generation from SAML authentication failed.", e);
+
+                var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
+                logger.Error(wrappedException, wrappedException.Message);
+
+                throw wrappedException;
+            }
+
+            return state;
+        }
+
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+           Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+        private ICoreAmazonSTS GetSTSClient(RegionEndpoint region)
+        {
+            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
                 new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings }));
-            if(coreSTSClient == null)
+            if (coreSTSClient == null)
             {
                 try
                 {
@@ -228,39 +358,7 @@ namespace Amazon.Runtime
                 }
             }
 
-            var samlCoreSTSClient
-#if NETSTANDARD
-                = coreSTSClient as ICoreAmazonSTS_SAML;
-            if (coreSTSClient == null)
-            {
-                throw new NotImplementedException("The currently loaded version of AWSSDK.SecurityToken doesn't support SAML authentication.");
-            }
-#else
-                = coreSTSClient;
-#endif
-
-            try
-            {
-                var credentials = samlCoreSTSClient.CredentialsFromSAMLAuthentication(
-                    SAMLEndpoint.EndpointUri.ToString(),
-                    SAMLEndpoint.AuthenticationType.ToString(), RoleArn, MaximumCredentialTimespan, userCredential);
-
-                RegisterRoleSession(credentials);
-
-                state = new CredentialsRefreshState(credentials, credentials.Expires);
-            }
-            catch (Exception e)
-            {
-                var wrappedException =
-                    new AmazonClientException("Credential generation from SAML authentication failed.", e);
-
-                var logger = Logger.GetLogger(typeof(FederatedAWSCredentials));
-                logger.Error(wrappedException, wrappedException.Message);
-
-                throw wrappedException;
-            }
-
-            return state;
+            return coreSTSClient;
         }
 
         private string GetRoleSessionName()
