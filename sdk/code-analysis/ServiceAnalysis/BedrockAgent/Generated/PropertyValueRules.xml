@@ -2169,7 +2169,6 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.InferenceConfiguration.MaximumLength</property>
     <min>0</min>
-    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.InferenceConfiguration.Temperature</property>
@@ -2569,7 +2568,6 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PromptModelInferenceConfiguration.MaxTokens</property>
     <min>0</min>
-    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PromptModelInferenceConfiguration.Temperature</property>
