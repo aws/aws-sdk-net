@@ -102,9 +102,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApplyOnlyAtCronInterval. 
         /// <para>
         /// By default, when you create a new association, the system runs it immediately after
-        /// it is created and then according to the schedule you specified. Specify this option
-        /// if you don't want an association to run immediately after you create it. This parameter
-        /// isn't supported for rate expressions.
+        /// it is created and then according to the schedule you specified and when target changes
+        /// are detected. Specify <c>true</c> for <c>ApplyOnlyAtCronInterval</c>if you want the
+        /// association to run only according to the schedule you specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#state-manager-about-scheduling">Understanding
+        /// when associations are applied to resources</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#runbook-target-updates">&gt;About
+        /// target updates with Automation runbooks</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter isn't supported for rate expressions.
         /// </para>
         /// </summary>
         public bool ApplyOnlyAtCronInterval
@@ -161,10 +172,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CalendarNames. 
         /// <para>
-        /// The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you
+        /// The names of Amazon Resource Names (ARNs) of the Change Calendar type documents you
         /// want to gate your associations under. The associations only run when that change calendar
         /// is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
-        /// Web Services Systems Manager Change Calendar</a>.
+        /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> CalendarNames

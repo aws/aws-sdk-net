@@ -3075,6 +3075,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual DeleteParameterResponse DeleteParameter(DeleteParameterRequest request)
@@ -3102,6 +3110,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public virtual Task<DeleteParameterResponse> DeleteParameterAsync(DeleteParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3403,9 +3419,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Removes the server or virtual machine from the list of registered servers. You can
-        /// reregister the node again at any time. If you don't plan to use Run Command on the
-        /// server, we suggest uninstalling SSM Agent first.
+        /// Removes the server or virtual machine from the list of registered servers.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to reregister an on-premises server, edge device, or VM, you must use
+        /// a different Activation Code and Activation ID than used to register the machine previously.
+        /// The Activation Code and Activation ID must not have already been used on the maximum
+        /// number of activations specified when they were created. For more information, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-deregister-hybrid-nodes.html">Deregistering
+        /// managed nodes in a hybrid and multicloud environment</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
         /// 
@@ -3449,9 +3474,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Removes the server or virtual machine from the list of registered servers. You can
-        /// reregister the node again at any time. If you don't plan to use Run Command on the
-        /// server, we suggest uninstalling SSM Agent first.
+        /// Removes the server or virtual machine from the list of registered servers.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to reregister an on-premises server, edge device, or VM, you must use
+        /// a different Activation Code and Activation ID than used to register the machine previously.
+        /// The Activation Code and Activation ID must not have already been used on the maximum
+        /// number of activations specified when they were created. For more information, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-deregister-hybrid-nodes.html">Deregistering
+        /// managed nodes in a hybrid and multicloud environment</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
         /// <param name="cancellationToken">
@@ -8084,6 +8118,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
         /// The specified parameter version wasn't found. Verify the parameter name and version,
@@ -8124,6 +8166,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
         /// The specified parameter version wasn't found. Verify the parameter name and version,
@@ -8169,6 +8219,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
@@ -8209,6 +8267,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public virtual Task<GetParameterHistoryResponse> GetParameterHistoryAsync(GetParameterHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8730,6 +8796,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
         /// A parameter version can have a maximum of ten labels.
@@ -8814,6 +8888,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
         /// A parameter version can have a maximum of ten labels.
@@ -11166,7 +11248,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Add a parameter to the system.
+        /// Create or update a parameter in Parameter Store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// 
@@ -11258,7 +11340,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Add a parameter to the system.
+        /// Create or update a parameter in Parameter Store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// <param name="cancellationToken">
@@ -13115,6 +13197,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
         /// The specified parameter version wasn't found. Verify the parameter name and version,
@@ -13148,6 +13238,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter couldn't be found. Verify the name and try again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+        /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+        /// event logs.
+        /// </para>
+        ///  </note>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
         /// The specified parameter version wasn't found. Verify the parameter name and version,

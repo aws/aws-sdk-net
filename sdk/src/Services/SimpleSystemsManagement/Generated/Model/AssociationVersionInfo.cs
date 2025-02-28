@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApplyOnlyAtCronInterval. 
         /// <para>
-        /// By default, when you create a new associations, the system runs it immediately after
+        /// By default, when you create new associations, the system runs it immediately after
         /// it is created and then according to the schedule you specified. Specify this option
         /// if you don't want an association to run immediately after you create it. This parameter
         /// isn't supported for rate expressions.
@@ -136,7 +136,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
         /// associations are gated under. The associations for this version only run when that
         /// Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
-        /// Web Services Systems Manager Change Calendar</a>.
+        /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> CalendarNames

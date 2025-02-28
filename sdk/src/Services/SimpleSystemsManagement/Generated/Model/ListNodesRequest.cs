@@ -101,8 +101,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncName. 
         /// <para>
-        /// The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region
-        /// configurations. Optional for single account/single-Region configurations.
+        /// The name of the Amazon Web Services managed resource data sync to retrieve information
+        /// about.
+        /// </para>
+        ///  
+        /// <para>
+        /// For cross-account/cross-Region configurations, this parameter is required, and the
+        /// name of the supported resource data sync is <c>AWS-QuickSetup-ManagedNode</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For single account/single-Region configurations, the parameter is not required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

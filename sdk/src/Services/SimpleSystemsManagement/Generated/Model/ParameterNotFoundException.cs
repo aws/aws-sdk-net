@@ -31,6 +31,14 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The parameter couldn't be found. Verify the name and try again.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For the <c>DeleteParameter</c> and <c>GetParameter</c> actions, if the specified parameter
+    /// doesn't exist, the <c>ParameterNotFound</c> exception is <i>not</i> recorded in CloudTrail
+    /// event logs.
+    /// </para>
+    ///  </note>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
