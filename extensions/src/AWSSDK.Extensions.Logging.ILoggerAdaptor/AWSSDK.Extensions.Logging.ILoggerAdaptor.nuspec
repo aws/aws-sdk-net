@@ -2,10 +2,10 @@
 <package> 
   <metadata> 
     <id>AWSSDK.Extensions.Logging.ILoggerAdaptor</id>
-    <title>AWSSDK - Adaptor for Microsoft.Extensions.Logger</title>
+    <title>AWSSDK - Adaptor for Microsoft.Extensions.Logging</title>
     <version>4.0.0.0-preview.8</version>
     <authors>Amazon Web Services</authors>
-    <description>Integrates the AWS SDK for .NET logging into Microsoft.Extensions.Logger.</description>
+    <description>Integrates the AWS SDK for .NET logging into Microsoft.Extensions.Logging.</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
