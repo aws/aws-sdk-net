@@ -301,8 +301,8 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
                 Assert.AreEqual("helloworld.handler", getFunctionConfiguration.Handler);
 
                 // Call the function
-                var invokeAsyncResponse = Client.InvokeAsync(functionName);
-                Assert.AreEqual(invokeAsyncResponse.Status, 202); // Status Code Accepted
+                var invokeResponse = Client.Invoke(new InvokeRequest { FunctionName = functionName });
+                Assert.AreEqual(invokeResponse.StatusCode, 202); // Status Code Accepted
 
                 var clientContext = @"{""System"": ""Windows""}";
                 var clientContextBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(clientContext));

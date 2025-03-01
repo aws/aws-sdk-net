@@ -156,36 +156,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             response = client.ListRoles();
             Assert.IsNotNull(response);
         }
-
-        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
-        [TestMethod]
-        [TestCategory("SecurityToken")]
-        public void TestAssumeRoleCredentials()
-        {
-            var clientId = Guid.NewGuid();
-            var roleArn = _role.Arn;
-            const string sessionName = "NetUser";
-
-            // sleep for IAM data to propagate
-            Thread.Sleep(TimeSpan.FromSeconds(10));
-            var sts = new AmazonSecurityTokenServiceClient(_userCredentials);
-            Thread.Sleep(TimeSpan.FromSeconds(60));
-            var request = new AssumeRoleRequest
-            {
-                RoleArn = roleArn,
-                RoleSessionName = sessionName,
-                DurationSeconds = 3600,
-                ExternalId = clientId.ToString()
-            };
-
-            // keep this unit test even though STSAssumeRoleAWSCredentials is obsolete
-#pragma warning disable 0618
-            var credentials = new STSAssumeRoleAWSCredentials(sts, request);
-
-            var client = new AmazonIdentityManagementServiceClient(credentials);
-            var response = client.ListRoles();
-            Assert.IsNotNull(response);
-        }
-
     }
 }
