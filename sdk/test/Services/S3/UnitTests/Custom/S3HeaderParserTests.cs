@@ -4,7 +4,7 @@ using System.IO;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 
 namespace AWSSDK.UnitTests
 {
@@ -100,7 +100,7 @@ namespace AWSSDK.UnitTests
             var context = new XmlUnmarshallerContext(new MemoryStream(), false, responseData);
             var response = (GetObjectResponse)GetObjectResponseUnmarshaller.Instance.UnmarshallResponse(context);
 
-            Assert.IsFalse(response.RestoreInProgress);
+            Assert.IsFalse(response.RestoreInProgress.GetValueOrDefault());
             Assert.IsNull(response.RestoreExpiration);
         }
     }

@@ -15,14 +15,5 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-
-<<<<<<< HEAD
 [assembly: AssemblyVersion("4.0.0.0")]
 [assembly: AssemblyFileVersion("4.0.0.0")]
-||||||| Commit version number update changes
-[assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.7")]
-=======
-[assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.400")]
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b

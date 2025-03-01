@@ -14,23 +14,23 @@
     <dependencies>
       <group targetFramework="net472">
         <dependency id="AWSSDK.Core" version="4.0.0.0-preview.8" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="4.0.0.0-preview.8" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
       <group targetFramework="netcoreapp3.1">
         <dependency id="AWSSDK.Core" version="4.0.0.0-preview.8" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
       <group targetFramework="net8.0">
         <dependency id="AWSSDK.Core" version="4.0.0.0-preview.8" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
     </dependencies>
   </metadata> 

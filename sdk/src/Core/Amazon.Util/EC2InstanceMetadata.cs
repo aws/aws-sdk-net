@@ -631,7 +631,6 @@ namespace Amazon.Util
             {
                 if (!IsIMDSEnabled)
                 {
-                    Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("IsIMDSEnabled is {0}, useNullToken is {1}", IsIMDSEnabled, useNullToken);
                     return null;
                 }
 
