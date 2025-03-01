@@ -134,6 +134,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Subject", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -78,9 +78,54 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetBlueprintStage())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("blueprintStage");
                 context.Writer.WriteStringValue(publicRequest.BlueprintStage);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlueprintStage())
+                {
+                    context.Writer.WritePropertyName("blueprintStage");
+                    context.Writer.Write(publicRequest.BlueprintStage);
+                }
+
+                if(publicRequest.IsSetSchema())
+                {
+                    context.Writer.WritePropertyName("schema");
+                    context.Writer.Write(publicRequest.Schema);
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlueprintStage())
+                {
+                    context.Writer.WritePropertyName("blueprintStage");
+                    context.Writer.Write(publicRequest.BlueprintStage);
+                }
+
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("encryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSchema())
+                {
+                    context.Writer.WritePropertyName("schema");
+                    context.Writer.Write(publicRequest.Schema);
+                }
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetSchema())
             {

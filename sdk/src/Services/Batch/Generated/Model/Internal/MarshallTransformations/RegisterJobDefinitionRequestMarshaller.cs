@@ -75,8 +75,39 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetContainerProperties())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("containerProperties");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContainerProperties())
+                {
+                    context.Writer.WritePropertyName("containerProperties");
+                    context.Writer.WriteObjectStart();
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConsumableResourceProperties())
+                {
+                    context.Writer.WritePropertyName("consumableResourceProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConsumableResourceProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetContainerProperties())
+                {
+                    context.Writer.WritePropertyName("containerProperties");
+                    context.Writer.WriteObjectStart();
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = ContainerPropertiesMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ContainerProperties, context);

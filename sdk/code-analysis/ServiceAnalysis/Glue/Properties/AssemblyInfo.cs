@@ -28,5 +28,13 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+<<<<<<< HEAD
 [assembly: AssemblyVersion("4.0")]
 [assembly: AssemblyFileVersion("4.0.0.0")]
+||||||| Commit version number update changes
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.413.19")]
+=======
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.413.35")]
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b

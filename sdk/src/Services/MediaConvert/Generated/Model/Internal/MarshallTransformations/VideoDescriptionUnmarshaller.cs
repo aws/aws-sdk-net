@@ -68,6 +68,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AntiAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("chromaPositionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChromaPositionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codecSettings", targetDepth))
                 {
                     var unmarshaller = VideoCodecSettingsUnmarshaller.Instance;

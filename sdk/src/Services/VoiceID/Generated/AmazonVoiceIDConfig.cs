@@ -34,10 +34,16 @@ namespace Amazon.VoiceID
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Voice ID", "4.0.0.0");
 
         private static readonly AmazonVoiceIDEndpointResolver EndpointResolver =
             new AmazonVoiceIDEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Voice ID", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("Voice ID", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

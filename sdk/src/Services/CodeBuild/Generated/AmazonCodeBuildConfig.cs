@@ -34,10 +34,16 @@ namespace Amazon.CodeBuild
     public partial class AmazonCodeBuildConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CodeBuild", "4.0.0.0");
 
         private static readonly AmazonCodeBuildEndpointResolver EndpointResolver =
             new AmazonCodeBuildEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CodeBuild", "3.7.409.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("CodeBuild", "3.7.412.3");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

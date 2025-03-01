@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class RegisterJobDefinitionRequest : AmazonBatchRequest
     {
+        private ConsumableResourceProperties _consumableResourceProperties;
         private ContainerProperties _containerProperties;
         private EcsProperties _ecsProperties;
         private EksProperties _eksProperties;
@@ -48,6 +49,24 @@ namespace Amazon.Batch.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
         private JobDefinitionType _type;
+
+        /// <summary>
+        /// Gets and sets the property ConsumableResourceProperties. 
+        /// <para>
+        /// Contains a list of consumable resources required by the job.
+        /// </para>
+        /// </summary>
+        public ConsumableResourceProperties ConsumableResourceProperties
+        {
+            get { return this._consumableResourceProperties; }
+            set { this._consumableResourceProperties = value; }
+        }
+
+        // Check to see if ConsumableResourceProperties property is set
+        internal bool IsSetConsumableResourceProperties()
+        {
+            return this._consumableResourceProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerProperties. 

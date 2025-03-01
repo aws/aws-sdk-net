@@ -395,7 +395,12 @@ namespace Amazon.ApplicationSignals
         /// using critical metrics such as latency and availability. You can also set SLOs against
         /// any CloudWatch metric or math expression that produces a time series.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can't create an SLO for a service operation that was discovered by Application
+        /// Signals until after that operation has reported standard metrics to Application Signals.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you create an SLO, you specify whether it is a <i>period-based SLO</i> or a <i>request-based
         /// SLO</i>. Each type of SLO has a different way of evaluating your application's performance

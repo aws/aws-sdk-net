@@ -34,10 +34,16 @@ namespace Amazon.SagemakerEdgeManager
     public partial class AmazonSagemakerEdgeManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Sagemaker Edge", "4.0.0.0");
 
         private static readonly AmazonSagemakerEdgeManagerEndpointResolver EndpointResolver =
             new AmazonSagemakerEdgeManagerEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Sagemaker Edge", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("Sagemaker Edge", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

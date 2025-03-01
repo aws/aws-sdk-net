@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalModelRequestFields);
+            }
+
             if(requestObject.IsSetBasePromptTemplate())
             {
                 context.Writer.WritePropertyName("basePromptTemplate");

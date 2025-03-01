@@ -24,6 +24,7 @@ namespace ServiceClientGenerator
         public const string EndpointPrefixKey = "endpointPrefix";
         public const string JsonVersionKey = "jsonVersion";
         public const string ProtocolKey = "protocol";
+        public const string ProtocolsKey = "protocols";
         public const string ProtocolSettingsKey = "protocolSettings";
         public const string ProtocolSettingsH2Key = "h2";
         public const string ServiceFullNameKey = "serviceFullName";
@@ -266,19 +267,67 @@ namespace ServiceClientGenerator
                     serviceType = "query";
                 }
 
-                ServiceType value;
-                if (!Enum.TryParse<ServiceType>(serviceType, true, out value))
+                if (!Enum.TryParse(serviceType, true, out ServiceType value))
                 {
-                    throw new Exception("Unknown service type: " + serviceType);
+                    var supportedProtocols = string.Join(", ", _supportedProtocols);
+                    var unsupportedMessage = $"{ServiceFullName} does not support any of the protocols available in the .NET SDK: {supportedProtocols}";
+                    throw new Exception(unsupportedMessage);
                 }
 
                 return value;
             }
         }
 
+
+        /// <summary>
+        /// List of protocols currently supported by the SDK, ordered by priority (meaning that, if a service
+        /// supports both "json" and "rest-json", "json" should be used).
+        /// </summary>
+        private readonly List<string> _supportedProtocols = new List<string>
+        {
+            "json",
+            "rest-json",
+            "rest-xml",
+            "query",
+            "ec2",
+        };
+
+        private string _preferredProtocol;
+
+        /// <summary>
+        /// The protocol to use for this service.
+        /// </summary>
         public string Protocol
         {
-            get { return this._metadata[ProtocolKey] == null ? "" : this._metadata[ProtocolKey].ToString(); }
+            get
+            {
+                if (_preferredProtocol == null)
+                {
+                    var modelProtocols = this._metadata[ProtocolsKey];
+                    if (modelProtocols != null && modelProtocols.IsArray)
+                    {
+                        // Initialize this to empty to match the behavior of the legacy key.
+                        _preferredProtocol = string.Empty;
+
+                        // Select the first entry in the priority ordered list that's also supported by the service.
+                        var serviceProtocols = modelProtocols.Cast<JsonData>().Select(x => x.ToString());
+                        foreach (var supportedProtocol in _supportedProtocols)
+                        {
+                            if (serviceProtocols.Contains(supportedProtocol))
+                            {
+                                _preferredProtocol = supportedProtocol;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        _preferredProtocol = this._metadata[ProtocolKey] == null ? string.Empty : this._metadata[ProtocolKey].ToString();
+                    }
+                }
+
+                return _preferredProtocol;
+            }
         }
 
         public JsonData ProtocolSettings => _metadata[ProtocolSettingsKey];

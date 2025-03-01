@@ -158,6 +158,11 @@
     <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackRefactorRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackSetRequest.AdministrationRoleARN</property>
     <min>20</min>
     <max>2048</max>
@@ -412,6 +417,11 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackInstanceRequest.StackInstanceRegion</property>
     <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackRefactorResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsRequest.MaxResults</property>
@@ -874,6 +884,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorActionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorActionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackRefactorsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -1573,6 +1613,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackDefinition.TemplateBody</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackDefinition.TemplateURL</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackEvent.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
@@ -1639,6 +1688,16 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceSummary.Region</property>
     <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackRefactorAction.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackRefactorSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackResource.Description</property>

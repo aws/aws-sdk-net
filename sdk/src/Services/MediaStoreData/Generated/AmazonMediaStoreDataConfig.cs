@@ -34,10 +34,16 @@ namespace Amazon.MediaStoreData
     public partial class AmazonMediaStoreDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MediaStore Data", "4.0.0.0");
 
         private static readonly AmazonMediaStoreDataEndpointResolver EndpointResolver =
             new AmazonMediaStoreDataEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MediaStore Data", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("MediaStore Data", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

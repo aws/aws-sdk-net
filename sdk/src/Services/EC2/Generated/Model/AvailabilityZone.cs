@@ -49,16 +49,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        ///  For Availability Zones, this parameter has the same value as the Region name.
+        /// The name of the zone group. For example:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For Local Zones, the name of the associated group, for example <c>us-west-2-lax-1</c>.
+        /// Availability Zones - <c>us-east-1-zg-1</c> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For Wavelength Zones, the name of the associated group, for example <c>us-east-1-wl1-bos-wlz-1</c>.
+        /// Local Zones - <c>us-west-2-lax-1</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Wavelength Zones - <c>us-east-1-wl1-bos-wlz-1</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string GroupName
         {

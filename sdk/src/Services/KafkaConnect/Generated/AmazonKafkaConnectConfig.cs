@@ -34,10 +34,16 @@ namespace Amazon.KafkaConnect
     public partial class AmazonKafkaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("KafkaConnect", "4.0.0.0");
 
         private static readonly AmazonKafkaConnectEndpointResolver EndpointResolver =
             new AmazonKafkaConnectEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("KafkaConnect", "3.7.401.10");
+=======
+            InternalSDKUtils.BuildUserAgentString("KafkaConnect", "3.7.401.26");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

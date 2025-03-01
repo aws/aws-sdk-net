@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         private bool? _encrypted;
         private string _kmsKeyId;
         private string _name;
+        private long? _snapshotCopyCompletionDurationMinutes;
         private string _sourceImageId;
         private string _sourceRegion;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
@@ -283,6 +284,37 @@ namespace Amazon.EC2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotCopyCompletionDurationMinutes. 
+        /// <para>
+        /// Specify a completion duration, in 15 minute increments, to initiate a time-based AMI
+        /// copy. The specified completion duration applies to each of the snapshots associated
+        /// with the AMI. Each snapshot associated with the AMI will be completed within the specified
+        /// completion duration, regardless of their size.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value, the AMI copy operation is completed on a best-effort
+        /// basis.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">
+        /// Time-based copies</a>.
+        /// </para>
+        /// </summary>
+        public long SnapshotCopyCompletionDurationMinutes
+        {
+            get { return this._snapshotCopyCompletionDurationMinutes.GetValueOrDefault(); }
+            set { this._snapshotCopyCompletionDurationMinutes = value; }
+        }
+
+        // Check to see if SnapshotCopyCompletionDurationMinutes property is set
+        internal bool IsSetSnapshotCopyCompletionDurationMinutes()
+        {
+            return this._snapshotCopyCompletionDurationMinutes.HasValue; 
         }
 
         /// <summary>

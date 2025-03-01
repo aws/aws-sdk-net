@@ -56,6 +56,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("configuration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

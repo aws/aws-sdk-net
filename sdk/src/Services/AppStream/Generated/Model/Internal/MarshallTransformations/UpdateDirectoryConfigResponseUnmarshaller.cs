@@ -87,6 +87,10 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IncompatibleImageException"))
+                {
+                    return IncompatibleImageExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRoleException"))
                 {
                     return InvalidRoleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

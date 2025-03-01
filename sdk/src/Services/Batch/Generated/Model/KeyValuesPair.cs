@@ -31,7 +31,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// A filter name and value pair that's used to return a more specific list of results
-    /// from a <c>ListJobs</c> API operation.
+    /// from a <c>ListJobs</c> or <c>ListJobsByConsumableResource</c> API operation.
     /// </summary>
     public partial class KeyValuesPair
     {

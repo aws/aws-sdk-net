@@ -310,6 +310,18 @@
         "CrlConfiguration$CrlDistributionPointExtensionConfiguration": "<p>Configures the behavior of the CRL Distribution Point extension for certificates issued by your certificate authority. If this field is not provided, then the CRl Distribution Point Extension will be present and contain the default CRL URL.</p>"
       }
     },
+    "CrlPathString": {
+      "base": null,
+      "refs": {
+        "CrlConfiguration$CustomPath": "<p>Designates a custom ﬁle path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/ &lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. </p>"
+      }
+    },
+    "CrlType": {
+      "base": null,
+      "refs": {
+        "CrlConfiguration$CrlType": "<p>Specifies whether to create a complete or partitioned CRL. This setting determines the maximum number of certificates that the certificate authority can issue and revoke. For more information, see <a href=\"privateca/latest/userguide/pca.html#limits_pca\">Amazon Web Services Private CA quotas</a>.</p> <ul> <li> <p> <code>COMPLETE</code> - The default setting. Amazon Web Services Private CA maintains a single CRL ﬁle for all unexpired certiﬁcates issued by a CA that have been revoked for any reason. Each certiﬁcate that Amazon Web Services Private CA issues is bound to a speciﬁc CRL through its CRL distribution point (CDP) extension, deﬁned in <a href=\"https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.9\"> RFC 5280</a>.</p> </li> <li> <p> <code>PARTITIONED</code> - Compared to complete CRLs, partitioned CRLs dramatically increase the number of certiﬁcates your private CA can issue. </p> <important> <p> When using partitioned CRLs, you must validate that the CRL's associated issuing distribution point (IDP) URI matches the certiﬁcate's CDP URI to ensure the right CRL has been fetched. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process. </p> </important> </li> </ul>"
+      }
+    },
     "CsrBlob": {
       "base": null,
       "refs": {

@@ -42,6 +42,12 @@ namespace Amazon.FIS.Model
         /// </summary>
         public IPaginatedEnumerable<ListExperimentsResponse> Responses => new PaginatedResponse<ListExperimentsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Experiments
+        /// </summary>
+        public IPaginatedEnumerable<ExperimentSummary> Experiments => 
+            new PaginatedResultKeyResponse<ListExperimentsResponse, ExperimentSummary>(this, (i) => i.Experiments ?? new List<ExperimentSummary>());
+
         internal ListExperimentsPaginator(IAmazonFIS client, ListExperimentsRequest request)
         {
             this._client = client;

@@ -34,10 +34,16 @@ namespace Amazon.CloudWatch
     public partial class AmazonCloudWatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudWatch", "4.0.0.0");
 
         private static readonly AmazonCloudWatchEndpointResolver EndpointResolver =
             new AmazonCloudWatchEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CloudWatch", "3.7.402.36");
+=======
+            InternalSDKUtils.BuildUserAgentString("CloudWatch", "3.7.402.52");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

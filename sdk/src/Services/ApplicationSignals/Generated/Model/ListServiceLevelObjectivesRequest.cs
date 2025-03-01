@@ -35,10 +35,34 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ListServiceLevelObjectivesRequest : AmazonApplicationSignalsRequest
     {
+        private bool? _includeLinkedAccounts;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _operationName;
+        private string _sloOwnerAwsAccountId;
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccounts. 
+        /// <para>
+        /// If you are using this operation in a monitoring account, specify <c>true</c> to include
+        /// SLO from source accounts in the returned data. <pre><c> &lt;/p&gt; &lt;p&gt;When you
+        /// are monitoring an account, you can use Amazon Web Services account ID in &lt;code&gt;KeyAttribute&lt;/code&gt;
+        /// filter for service source account and &lt;code&gt;SloOwnerawsaccountID&lt;/code&gt;
+        /// for SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
+        /// the returned data to only a single source account. &lt;/p&gt; </c></pre>
+        /// </summary>
+        public bool IncludeLinkedAccounts
+        {
+            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            set { this._includeLinkedAccounts = value; }
+        }
+
+        // Check to see if IncludeLinkedAccounts property is set
+        internal bool IsSetIncludeLinkedAccounts()
+        {
+            return this._includeLinkedAccounts.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
@@ -76,7 +100,7 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public Dictionary<string, string> KeyAttributes
         {
             get { return this._keyAttributes; }
@@ -145,6 +169,24 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetOperationName()
         {
             return this._operationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SloOwnerAwsAccountId. 
+        /// <para>
+        /// SLO's Amazon Web Services account ID.
+        /// </para>
+        /// </summary>
+        public string SloOwnerAwsAccountId
+        {
+            get { return this._sloOwnerAwsAccountId; }
+            set { this._sloOwnerAwsAccountId = value; }
+        }
+
+        // Check to see if SloOwnerAwsAccountId property is set
+        internal bool IsSetSloOwnerAwsAccountId()
+        {
+            return this._sloOwnerAwsAccountId != null;
         }
 
     }

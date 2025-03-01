@@ -127,10 +127,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetDefaultAction())
             {
                 context.Writer.WritePropertyName("DefaultAction");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDefaultAction())
+                {
+                    context.Writer.WritePropertyName("DefaultAction");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetDataProtectionConfig())
+                {
+                    context.Writer.WritePropertyName("DataProtectionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataProtectionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataProtectionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDefaultAction())
+                {
+                    context.Writer.WritePropertyName("DefaultAction");
+                    context.Writer.WriteObjectStart();
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = DefaultActionMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DefaultAction, context);

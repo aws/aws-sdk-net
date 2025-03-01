@@ -121,11 +121,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.Period.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetStatistic())
             {
                 context.Writer.WritePropertyName("statistic");
                 context.Writer.WriteStringValue(publicRequest.Statistic);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetStatistic())
+                {
+                    context.Writer.WritePropertyName("statistic");
+                    context.Writer.Write(publicRequest.Statistic);
+                }
+=======
+                if(publicRequest.IsSetRequestId())
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(publicRequest.RequestId);
+                }
+
+                else if(!(publicRequest.IsSetRequestId()))
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetStatistic())
+                {
+                    context.Writer.WritePropertyName("statistic");
+                    context.Writer.Write(publicRequest.Statistic);
+                }
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetTags())
             {

@@ -41,7 +41,9 @@ namespace Amazon.SageMaker.Model
     public partial class S3DataSource
     {
         private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private HubAccessConfig _hubAccessConfig;
         private List<string> _instanceGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ModelAccessConfig _modelAccessConfig;
         private S3DataDistribution _s3DataDistributionType;
         private S3DataType _s3DataType;
         private string _s3Uri;
@@ -67,6 +69,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HubAccessConfig. 
+        /// <para>
+        /// The configuration for a private hub model reference that points to a SageMaker JumpStart
+        /// public hub model.
+        /// </para>
+        /// </summary>
+        public HubAccessConfig HubAccessConfig
+        {
+            get { return this._hubAccessConfig; }
+            set { this._hubAccessConfig = value; }
+        }
+
+        // Check to see if HubAccessConfig property is set
+        internal bool IsSetHubAccessConfig()
+        {
+            return this._hubAccessConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceGroupNames. 
         /// <para>
         /// A list of names of instance groups that get data from the S3 data source.
@@ -83,6 +104,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupNames()
         {
             return this._instanceGroupNames != null && (this._instanceGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelAccessConfig.
+        /// </summary>
+        public ModelAccessConfig ModelAccessConfig
+        {
+            get { return this._modelAccessConfig; }
+            set { this._modelAccessConfig = value; }
+        }
+
+        // Check to see if ModelAccessConfig property is set
+        internal bool IsSetModelAccessConfig()
+        {
+            return this._modelAccessConfig != null;
         }
 
         /// <summary>

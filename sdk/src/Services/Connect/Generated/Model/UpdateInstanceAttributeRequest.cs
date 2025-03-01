@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
     public partial class UpdateInstanceAttributeRequest : AmazonConnectRequest
     {
         private InstanceAttributeType _attributeType;
+        private string _clientToken;
         private string _instanceId;
         private string _value;
 
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         ///  <note> 
         /// <para>
         /// Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
-        /// contact Amazon Web Services Support for allowlisting.
+        /// contact Amazon Web ServicesSupport for allowlisting.
         /// </para>
         ///  </note>
         /// </summary>
@@ -67,6 +68,28 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttributeType()
         {
             return this._attributeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=500)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

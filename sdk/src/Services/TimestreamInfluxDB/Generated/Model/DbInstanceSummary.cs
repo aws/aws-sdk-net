@@ -52,8 +52,16 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// The amount of storage to allocate for your DbStorageType in GiB (gibibytes).
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=20, Max=16384)]
         public int? AllocatedStorage
+||||||| Commit version number update changes
+        [AWSProperty(Min=20, Max=16384)]
+        public int AllocatedStorage
+=======
+        [AWSProperty(Min=20, Max=15360)]
+        public int AllocatedStorage
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
         {
             get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }

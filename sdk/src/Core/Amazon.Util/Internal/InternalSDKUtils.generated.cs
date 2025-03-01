@@ -29,6 +29,12 @@ namespace Amazon.Util.Internal
 {
     public static partial class InternalSDKUtils
     {
+<<<<<<< HEAD
         internal const string CoreVersionNumber = "4.0.0.0";
+||||||| Commit version number update changes
+        internal const string CoreVersionNumber = "3.7.401.8";
+=======
+        internal const string CoreVersionNumber = "3.7.402.10";
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
     }
 }

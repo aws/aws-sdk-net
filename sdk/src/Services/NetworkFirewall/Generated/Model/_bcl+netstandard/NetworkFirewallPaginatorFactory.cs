@@ -37,6 +37,22 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for GetAnalysisReportResults operation
+        ///</summary>
+        public IGetAnalysisReportResultsPaginator GetAnalysisReportResults(GetAnalysisReportResultsRequest request) 
+        {
+            return new GetAnalysisReportResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAnalysisReports operation
+        ///</summary>
+        public IListAnalysisReportsPaginator ListAnalysisReports(ListAnalysisReportsRequest request) 
+        {
+            return new ListAnalysisReportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         ///</summary>
         public IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request) 

@@ -111,7 +111,7 @@ namespace Amazon.ACMPCA.Model
         /// The name of the policy that is associated with the permission.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20480)]
+        [AWSProperty(Min=1, Max=81920)]
         public string Policy
         {
             get { return this._policy; }

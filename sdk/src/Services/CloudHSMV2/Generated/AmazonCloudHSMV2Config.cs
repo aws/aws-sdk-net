@@ -34,10 +34,16 @@ namespace Amazon.CloudHSMV2
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "4.0.0.0");
 
         private static readonly AmazonCloudHSMV2EndpointResolver EndpointResolver =
             new AmazonCloudHSMV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "3.7.402.14");
+=======
+            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "3.7.402.30");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

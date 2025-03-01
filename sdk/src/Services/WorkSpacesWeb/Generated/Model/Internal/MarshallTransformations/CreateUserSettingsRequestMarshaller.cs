@@ -157,11 +157,28 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PrintAllowed);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestTagsListValue in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetUploadAllowed())
+=======
+                if(publicRequest.IsSetToolbarConfiguration())
+                {
+                    context.Writer.WritePropertyName("toolbarConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ToolbarConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ToolbarConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUploadAllowed())
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 {
                     context.Writer.WriteStartObject();
 

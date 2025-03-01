@@ -64,6 +64,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             
+            if (publicRequest.IsSetIncludeLinkedAccounts())
+                request.Parameters.Add("IncludeLinkedAccounts", StringUtils.FromBool(publicRequest.IncludeLinkedAccounts));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -72,6 +75,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOperationName())
                 request.Parameters.Add("OperationName", StringUtils.FromString(publicRequest.OperationName));
+            
+            if (publicRequest.IsSetSloOwnerAwsAccountId())
+                request.Parameters.Add("SloOwnerAwsAccountId", StringUtils.FromString(publicRequest.SloOwnerAwsAccountId));
             request.ResourcePath = "/slos";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();

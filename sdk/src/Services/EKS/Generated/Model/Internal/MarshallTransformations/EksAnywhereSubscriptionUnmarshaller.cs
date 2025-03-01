@@ -104,6 +104,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.LicenseQuantity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("licenses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<License, LicenseUnmarshaller>(LicenseUnmarshaller.Instance);
+                    unmarshalledObject.Licenses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("licenseType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

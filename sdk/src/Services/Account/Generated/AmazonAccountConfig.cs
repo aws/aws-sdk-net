@@ -34,10 +34,16 @@ namespace Amazon.Account
     public partial class AmazonAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Account", "4.0.0.0");
 
         private static readonly AmazonAccountEndpointResolver EndpointResolver =
             new AmazonAccountEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Account", "3.7.401.23");
+=======
+            InternalSDKUtils.BuildUserAgentString("Account", "3.7.401.39");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

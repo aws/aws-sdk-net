@@ -45,7 +45,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// A list of VPC endpoint identifiers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Ids
         {
             get { return this._ids; }

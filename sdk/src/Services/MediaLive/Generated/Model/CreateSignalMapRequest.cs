@@ -41,6 +41,7 @@ namespace Amazon.MediaLive.Model
         private string _discoveryEntryPointArn;
         private List<string> _eventBridgeRuleTemplateGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private string _requestId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -121,6 +122,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestId. An ID that you assign to a create request. This
+        /// ID ensures idempotency when creating resources.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
         }
 
         /// <summary>

@@ -87,10 +87,33 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("EncryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetEnabledAnalysisTypes())
+                {
+                    context.Writer.WritePropertyName("EnabledAnalysisTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEnabledAnalysisTypesListValue in publicRequest.EnabledAnalysisTypes)
+                    {
+                            context.Writer.Write(publicRequestEnabledAnalysisTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("EncryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = EncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.EncryptionConfiguration, context);

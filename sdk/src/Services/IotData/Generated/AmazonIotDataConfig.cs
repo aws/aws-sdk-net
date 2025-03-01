@@ -34,10 +34,16 @@ namespace Amazon.IotData
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "4.0.0.0");
 
         private static readonly AmazonIotDataEndpointResolver EndpointResolver =
             new AmazonIotDataEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "3.7.401.58");
+=======
+            InternalSDKUtils.BuildUserAgentString("IoT Data Plane", "3.7.401.74");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

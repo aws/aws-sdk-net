@@ -34,10 +34,16 @@ namespace Amazon.FSx
     public partial class AmazonFSxConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("FSx", "4.0.0.0");
 
         private static readonly AmazonFSxEndpointResolver EndpointResolver =
             new AmazonFSxEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("FSx", "3.7.402.30");
+=======
+            InternalSDKUtils.BuildUserAgentString("FSx", "3.7.403.10");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

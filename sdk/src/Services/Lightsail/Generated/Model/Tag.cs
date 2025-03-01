@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+    /// For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>

@@ -2701,6 +2701,30 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly ResourceStatus DELETE_SKIPPED = new ResourceStatus("DELETE_SKIPPED");
         /// <summary>
+        /// Constant EXPORT_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_COMPLETE = new ResourceStatus("EXPORT_COMPLETE");
+        /// <summary>
+        /// Constant EXPORT_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_FAILED = new ResourceStatus("EXPORT_FAILED");
+        /// <summary>
+        /// Constant EXPORT_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_IN_PROGRESS = new ResourceStatus("EXPORT_IN_PROGRESS");
+        /// <summary>
+        /// Constant EXPORT_ROLLBACK_COMPLETE for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_ROLLBACK_COMPLETE = new ResourceStatus("EXPORT_ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant EXPORT_ROLLBACK_FAILED for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_ROLLBACK_FAILED = new ResourceStatus("EXPORT_ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant EXPORT_ROLLBACK_IN_PROGRESS for ResourceStatus
+        /// </summary>
+        public static readonly ResourceStatus EXPORT_ROLLBACK_IN_PROGRESS = new ResourceStatus("EXPORT_ROLLBACK_IN_PROGRESS");
+        /// <summary>
         /// Constant IMPORT_COMPLETE for ResourceStatus
         /// </summary>
         public static readonly ResourceStatus IMPORT_COMPLETE = new ResourceStatus("IMPORT_COMPLETE");
@@ -3084,6 +3108,300 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StackInstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackRefactorActionEntity.
+    /// </summary>
+    public class StackRefactorActionEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESOURCE for StackRefactorActionEntity
+        /// </summary>
+        public static readonly StackRefactorActionEntity RESOURCE = new StackRefactorActionEntity("RESOURCE");
+        /// <summary>
+        /// Constant STACK for StackRefactorActionEntity
+        /// </summary>
+        public static readonly StackRefactorActionEntity STACK = new StackRefactorActionEntity("STACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackRefactorActionEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackRefactorActionEntity FindValue(string value)
+        {
+            return FindValue<StackRefactorActionEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackRefactorActionEntity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackRefactorActionType.
+    /// </summary>
+    public class StackRefactorActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for StackRefactorActionType
+        /// </summary>
+        public static readonly StackRefactorActionType CREATE = new StackRefactorActionType("CREATE");
+        /// <summary>
+        /// Constant MOVE for StackRefactorActionType
+        /// </summary>
+        public static readonly StackRefactorActionType MOVE = new StackRefactorActionType("MOVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackRefactorActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackRefactorActionType FindValue(string value)
+        {
+            return FindValue<StackRefactorActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackRefactorActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackRefactorDetection.
+    /// </summary>
+    public class StackRefactorDetection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for StackRefactorDetection
+        /// </summary>
+        public static readonly StackRefactorDetection AUTO = new StackRefactorDetection("AUTO");
+        /// <summary>
+        /// Constant MANUAL for StackRefactorDetection
+        /// </summary>
+        public static readonly StackRefactorDetection MANUAL = new StackRefactorDetection("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackRefactorDetection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackRefactorDetection FindValue(string value)
+        {
+            return FindValue<StackRefactorDetection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackRefactorDetection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackRefactorExecutionStatus.
+    /// </summary>
+    public class StackRefactorExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus AVAILABLE = new StackRefactorExecutionStatus("AVAILABLE");
+        /// <summary>
+        /// Constant EXECUTE_COMPLETE for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus EXECUTE_COMPLETE = new StackRefactorExecutionStatus("EXECUTE_COMPLETE");
+        /// <summary>
+        /// Constant EXECUTE_FAILED for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus EXECUTE_FAILED = new StackRefactorExecutionStatus("EXECUTE_FAILED");
+        /// <summary>
+        /// Constant EXECUTE_IN_PROGRESS for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus EXECUTE_IN_PROGRESS = new StackRefactorExecutionStatus("EXECUTE_IN_PROGRESS");
+        /// <summary>
+        /// Constant OBSOLETE for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus OBSOLETE = new StackRefactorExecutionStatus("OBSOLETE");
+        /// <summary>
+        /// Constant ROLLBACK_COMPLETE for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus ROLLBACK_COMPLETE = new StackRefactorExecutionStatus("ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus ROLLBACK_FAILED = new StackRefactorExecutionStatus("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus ROLLBACK_IN_PROGRESS = new StackRefactorExecutionStatus("ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant UNAVAILABLE for StackRefactorExecutionStatus
+        /// </summary>
+        public static readonly StackRefactorExecutionStatus UNAVAILABLE = new StackRefactorExecutionStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackRefactorExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackRefactorExecutionStatus FindValue(string value)
+        {
+            return FindValue<StackRefactorExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackRefactorExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StackRefactorStatus.
+    /// </summary>
+    public class StackRefactorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_COMPLETE for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus CREATE_COMPLETE = new StackRefactorStatus("CREATE_COMPLETE");
+        /// <summary>
+        /// Constant CREATE_FAILED for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus CREATE_FAILED = new StackRefactorStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus CREATE_IN_PROGRESS = new StackRefactorStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_COMPLETE for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus DELETE_COMPLETE = new StackRefactorStatus("DELETE_COMPLETE");
+        /// <summary>
+        /// Constant DELETE_FAILED for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus DELETE_FAILED = new StackRefactorStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for StackRefactorStatus
+        /// </summary>
+        public static readonly StackRefactorStatus DELETE_IN_PROGRESS = new StackRefactorStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StackRefactorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StackRefactorStatus FindValue(string value)
+        {
+            return FindValue<StackRefactorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StackRefactorStatus(string value)
         {
             return FindValue(value);
         }

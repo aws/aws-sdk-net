@@ -573,39 +573,51 @@ namespace Amazon.S3.Util
             return stringWriter.ToString();
         }
 
+        private const string OngoingRequestRegexPattern = "ongoing-request=\"(.+?)\"";
+        private const string ExpiryDateRegexPattern = "expiry-date=\"(.+?)\"";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(OngoingRequestRegexPattern)]
+        private static partial Regex OngoingRequestRegex();
+        [GeneratedRegex(ExpiryDateRegexPattern)]
+        private static partial Regex ExpiryDateRegex();
+#else
+        private static Regex OngoingRequestRegex() => _ongoingRequestRegex;
+        private static Regex ExpiryDateRegex() => _expiryDateRegex;
+
+        private static readonly Regex _ongoingRequestRegex = new Regex(OngoingRequestRegexPattern);
+        private static readonly Regex _expiryDateRegex = new Regex(ExpiryDateRegexPattern);
+#endif
+
         internal static void ParseAmzRestoreHeader(string header, out bool restoreInProgress, out DateTime? restoreExpiration)
         {
-            const string ONGOING_REQUEST = "ongoing-request";
-            const string EXPIRY_DATE = "expiry-date";
-
             restoreExpiration = null;
             restoreInProgress = false;
 
             if (header == null)
+            {
                 return;
-
-            int pos = header.IndexOf(ONGOING_REQUEST, StringComparison.Ordinal);
-            if (pos != -1)
-            {
-                int startPos = header.IndexOf('"', pos) + 1;
-                int endPos = header.IndexOf('"', startPos + 1);
-
-                string value = header.Substring(startPos, endPos - startPos);
-                bool parseBool;
-                if (Boolean.TryParse(value, out parseBool))
-                    restoreInProgress = parseBool;
             }
-            pos = header.IndexOf(EXPIRY_DATE, StringComparison.Ordinal);
-            if (pos != -1)
-            {
-                int startPos = header.IndexOf('"', pos) + 1;
-                int endPos = header.IndexOf('"', startPos + 1);
 
-                string value = header.Substring(startPos, endPos - startPos);
-                DateTime parseDate;
-                if (DateTime.TryParseExact(value, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture,
-                        DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out parseDate))
+            var ongoingMatches = OngoingRequestRegex().Match(header);
+            if (ongoingMatches.Success && ongoingMatches.Groups[1].Success)
+            {
+                string value = ongoingMatches.Groups[1].Value;
+                if (bool.TryParse(value, out bool parseBool))
+                {
+                    restoreInProgress = parseBool;
+                }
+            }
+
+            var expiryMatches = ExpiryDateRegex().Match(header);
+            if (expiryMatches.Success && expiryMatches.Groups[1].Success)
+            {
+                string value = expiryMatches.Groups[1].Value;
+                if (DateTime.TryParseExact(value, AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture,
+                    DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out DateTime parseDate))
+                {
                     restoreExpiration = parseDate;
+                }
             }
         }
 

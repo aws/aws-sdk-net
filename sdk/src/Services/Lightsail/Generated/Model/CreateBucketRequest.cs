@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// A bucket is a cloud storage resource available in the Lightsail object storage service.
     /// Use buckets to store objects such as data and its descriptive metadata. For more information
-    /// about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
+    /// about buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/buckets-in-amazon-lightsail">Buckets
     /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket
+        /// For more information about bucket names, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/bucket-naming-rules-in-amazon-lightsail">Bucket
         /// naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
+        /// For more information about versioning, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-managing-bucket-object-versioning">Enabling
         /// and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon
         /// Lightsail Developer Guide</i>.
         /// </para>

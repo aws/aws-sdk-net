@@ -34,10 +34,16 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CloudTrail", "4.0.0.0");
 
         private static readonly AmazonCloudTrailEndpointResolver EndpointResolver =
             new AmazonCloudTrailEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CloudTrail", "3.7.403.4");
+=======
+            InternalSDKUtils.BuildUserAgentString("CloudTrail", "3.7.403.20");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

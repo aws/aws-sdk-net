@@ -884,11 +884,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more IPv6 addresses to the specified network interface. You can specify
-        /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
-        /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
-        /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
-        /// addresses, and the limit varies per instance type.
+        /// Assigns the specified IPv6 addresses to the specified network interface. You can specify
+        /// specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically
+        /// assigned from the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses
+        /// to a network interface as you can assign private IPv4 addresses, and the limit varies
+        /// by instance type.
         /// 
         ///  
         /// <para>
@@ -935,14 +935,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Assigns one or more secondary private IP addresses to the specified network interface.
+        /// Assigns the specified secondary private IP addresses to the specified network interface.
         /// 
         ///  
         /// <para>
-        /// You can specify one or more specific secondary IP addresses, or you can specify the
-        /// number of secondary IP addresses to be automatically assigned within the subnet's
-        /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
-        /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// You can specify specific secondary IP addresses, or you can specify the number of
+        /// secondary IP addresses to be automatically assigned from the subnet's CIDR block range.
+        /// The number of secondary IP addresses that you can assign to an instance varies by
+        /// instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -2955,8 +2955,8 @@ namespace Amazon.EC2
         /// <para>
         /// Snapshots copied to an Outpost are encrypted by default using the default encryption
         /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-        /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
-        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+        /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
+        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4264,14 +4264,15 @@ namespace Amazon.EC2
         /// <para>
         /// A launch template contains the parameters to launch an instance. When you launch an
         /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
-        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-        /// an instance from a launch template</a> in the <i>Amazon EC2 User Guide</i>.
+        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Store
+        /// instance launch parameters in Amazon EC2 launch templates</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To clone an existing launch template as the basis for a new launch template, use the
         /// Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#create-launch-template-from-existing-launch-template">Create
         /// a launch template from an existing launch template</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -4324,7 +4325,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html">Modify
         /// a launch template (manage launch template versions)</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>
@@ -4508,8 +4509,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a managed prefix list. You can specify one or more entries for the prefix
-        /// list. Each entry consists of a CIDR block and an optional description.
+        /// Creates a managed prefix list. You can specify entries for the prefix list. Each entry
+        /// consists of a CIDR block and an optional description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateManagedPrefixList service method.</param>
         /// <param name="cancellationToken">
@@ -5304,7 +5305,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// If the source volume is in a Local Zone, you can create the snapshot in the same Local
-        /// Zone or in parent Amazon Web Services Region.
+        /// Zone or in its parent Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5338,7 +5339,7 @@ namespace Amazon.EC2
         /// Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes
         /// that are created from encrypted snapshots are also automatically encrypted. Your encrypted
         /// volumes and any associated snapshots always remain protected. For more information,
-        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
@@ -5393,7 +5394,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// If the source instance is in a Local Zone, you can create the snapshots in the same
-        /// Local Zone or in parent Amazon Web Services Region.
+        /// Local Zone or in its parent Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7243,24 +7244,27 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified EC2 Fleets.
+        /// Deletes the specified EC2 Fleet request.
         /// 
         ///  
         /// <para>
-        /// After you delete an EC2 Fleet, it launches no new instances.
+        /// After you delete an EC2 Fleet request, it launches no new instances.
         /// </para>
         ///  
         /// <para>
-        /// You must also specify whether a deleted EC2 Fleet should terminate its instances.
-        /// If you choose to terminate the instances, the EC2 Fleet enters the <c>deleted_terminating</c>
-        /// state. Otherwise, the EC2 Fleet enters the <c>deleted_running</c> state, and the instances
-        /// continue to run until they are interrupted or you terminate them manually.
+        /// You must also specify whether a deleted EC2 Fleet request should terminate its instances.
+        /// If you choose to terminate the instances, the EC2 Fleet request enters the <c>deleted_terminating</c>
+        /// state. Otherwise, it enters the <c>deleted_running</c> state, and the instances continue
+        /// to run until they are interrupted or you terminate them manually.
         /// </para>
         ///  
         /// <para>
-        /// For <c>instant</c> fleets, EC2 Fleet must terminate the instances when the fleet is
-        /// deleted. Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
-        /// fleets. A deleted <c>instant</c> fleet with running instances is not supported.
+        /// A deleted <c>instant</c> fleet with running instances is not supported. When you delete
+        /// an <c>instant</c> fleet, Amazon EC2 automatically terminates all its instances. For
+        /// fleets with more than 1000 instances, the deletion request might fail. If your fleet
+        /// has more than 1000 instances, first terminate most of the instances manually, leaving
+        /// 1000 or fewer. Then delete the fleet, and the remaining instances will be terminated
+        /// automatically.
         /// </para>
         ///  
         /// <para>
@@ -7286,8 +7290,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete
-        /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/delete-fleet.html">Delete
+        /// an EC2 Fleet request and the instances in the fleet</a> in the <i>Amazon EC2 User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleets service method.</param>
@@ -7782,7 +7787,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/delete-launch-template.html#delete-launch-template-version">Delete
         /// a launch template version</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -8530,7 +8535,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You cannot delete a snapshot of the root device of an EBS volume used by a registered
-        /// AMI. You must first de-register the AMI before you can delete the snapshot.
+        /// AMI. You must first deregister the AMI before you can delete the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -12418,10 +12423,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time. Valid attribute values are: <c>instanceType</c> | <c>kernel</c>
-        /// | <c>ramdisk</c> | <c>userData</c> | <c>disableApiTermination</c> | <c>instanceInitiatedShutdownBehavior</c>
-        /// | <c>rootDeviceName</c> | <c>blockDeviceMapping</c> | <c>productCodes</c> | <c>sourceDestCheck</c>
-        /// | <c>groupSet</c> | <c>ebsOptimized</c> | <c>sriovNetSupport</c>
+        /// one attribute at a time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -14252,13 +14254,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
         /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -14281,13 +14283,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your network interfaces.
+        /// Describes the specified network interfaces or all your network interfaces.
         /// 
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
         /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-        /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+        /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -29225,7 +29227,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network
+        /// Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network
         /// interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
@@ -29260,7 +29262,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+        /// Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes
         /// from a network interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>

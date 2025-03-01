@@ -34,10 +34,16 @@ namespace Amazon.Proton
     public partial class AmazonProtonConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Proton", "4.0.0.0");
 
         private static readonly AmazonProtonEndpointResolver EndpointResolver =
             new AmazonProtonEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Proton", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("Proton", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

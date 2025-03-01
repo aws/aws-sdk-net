@@ -34,10 +34,16 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("App Mesh", "4.0.0.0");
 
         private static readonly AmazonAppMeshEndpointResolver EndpointResolver =
             new AmazonAppMeshEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("App Mesh", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("App Mesh", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

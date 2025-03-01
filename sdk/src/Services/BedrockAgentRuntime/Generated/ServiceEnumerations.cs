@@ -1349,6 +1349,64 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ImageFormat.
+    /// </summary>
+    public class ImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gif for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat Gif = new ImageFormat("gif");
+        /// <summary>
+        /// Constant Jpeg for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat Jpeg = new ImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat Png = new ImageFormat("png");
+        /// <summary>
+        /// Constant Webp for ImageFormat
+        /// </summary>
+        public static readonly ImageFormat Webp = new ImageFormat("webp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageFormat FindValue(string value)
+        {
+            return FindValue<ImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputQueryType.
     /// </summary>
     public class InputQueryType : ConstantClass
@@ -2564,6 +2622,60 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus ACTIVE = new SessionStatus("ACTIVE");
+        /// <summary>
+        /// Constant ENDED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus ENDED = new SessionStatus("ENDED");
+        /// <summary>
+        /// Constant EXPIRED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus EXPIRED = new SessionStatus("EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }

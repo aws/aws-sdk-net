@@ -62,6 +62,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IbmDb2LuwSettings", targetDepth))
+                {
+                    var unmarshaller = IbmDb2LuwDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.IbmDb2LuwSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IbmDb2zOsSettings", targetDepth))
+                {
+                    var unmarshaller = IbmDb2zOsDataProviderSettingsUnmarshaller.Instance;
+                    unmarshalledObject.IbmDb2zOsSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MariaDbSettings", targetDepth))
                 {
                     var unmarshaller = MariaDbDataProviderSettingsUnmarshaller.Instance;

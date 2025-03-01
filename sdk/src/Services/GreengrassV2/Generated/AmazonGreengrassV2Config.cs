@@ -34,10 +34,16 @@ namespace Amazon.GreengrassV2
     public partial class AmazonGreengrassV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("GreengrassV2", "4.0.0.0");
 
         private static readonly AmazonGreengrassV2EndpointResolver EndpointResolver =
             new AmazonGreengrassV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("GreengrassV2", "3.7.401.24");
+=======
+            InternalSDKUtils.BuildUserAgentString("GreengrassV2", "3.7.401.40");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

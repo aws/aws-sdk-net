@@ -47,6 +47,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private int? _idleDisconnectTimeoutInMinutes;
         private EnabledType _pasteAllowed;
         private EnabledType _printAllowed;
+        private ToolbarConfiguration _toolbarConfiguration;
         private EnabledType _uploadAllowed;
         private string _userSettingsArn;
 
@@ -254,6 +255,27 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetPrintAllowed()
         {
             return this._printAllowed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolbarConfiguration. 
+        /// <para>
+        /// The configuration of the toolbar. This allows administrators to select the toolbar
+        /// type and visual mode, set maximum display resolution for sessions, and choose which
+        /// items are visible to end users during their sessions. If administrators do not modify
+        /// these settings, end users retain control over their toolbar preferences.
+        /// </para>
+        /// </summary>
+        public ToolbarConfiguration ToolbarConfiguration
+        {
+            get { return this._toolbarConfiguration; }
+            set { this._toolbarConfiguration = value; }
+        }
+
+        // Check to see if ToolbarConfiguration property is set
+        internal bool IsSetToolbarConfiguration()
+        {
+            return this._toolbarConfiguration != null;
         }
 
         /// <summary>

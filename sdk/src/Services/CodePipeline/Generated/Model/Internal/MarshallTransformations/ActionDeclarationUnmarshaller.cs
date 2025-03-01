@@ -74,6 +74,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("environmentVariables", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputArtifacts", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputArtifact, InputArtifactUnmarshaller>(InputArtifactUnmarshaller.Instance);

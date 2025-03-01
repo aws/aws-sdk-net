@@ -61,11 +61,27 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Paginator for ListConsumableResources operation
+        ///</summary>
+        public IListConsumableResourcesPaginator ListConsumableResources(ListConsumableResourcesRequest request) 
+        {
+            return new ListConsumableResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
         {
             return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListJobsByConsumableResource operation
+        ///</summary>
+        public IListJobsByConsumableResourcePaginator ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request) 
+        {
+            return new ListJobsByConsumableResourcePaginator(this.client, request);
         }
 
         /// <summary>

@@ -34,10 +34,16 @@ namespace Amazon.LexRuntimeV2
     public partial class AmazonLexRuntimeV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Lex Runtime V2", "4.0.0.0");
 
         private static readonly AmazonLexRuntimeV2EndpointResolver EndpointResolver =
             new AmazonLexRuntimeV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Lex Runtime V2", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("Lex Runtime V2", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

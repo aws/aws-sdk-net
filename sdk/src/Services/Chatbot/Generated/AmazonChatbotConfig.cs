@@ -34,10 +34,16 @@ namespace Amazon.Chatbot
     public partial class AmazonChatbotConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("chatbot", "4.0.0.0");
 
         private static readonly AmazonChatbotEndpointResolver EndpointResolver =
             new AmazonChatbotEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("chatbot", "3.7.403.31");
+=======
+            InternalSDKUtils.BuildUserAgentString("chatbot", "3.7.403.47");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

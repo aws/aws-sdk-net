@@ -42,8 +42,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property EmbeddingModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model or inference profile used to create vector
-        /// embeddings for the knowledge base.
+        /// The Amazon Resource Name (ARN) of the model used to create vector embeddings for the
+        /// knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

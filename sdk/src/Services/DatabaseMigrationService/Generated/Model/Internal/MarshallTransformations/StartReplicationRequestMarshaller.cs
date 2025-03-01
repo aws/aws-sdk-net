@@ -87,11 +87,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CdcStartTime.Value)));
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetCdcStopPosition())
             {
                 context.Writer.WritePropertyName("CdcStopPosition");
                 context.Writer.WriteStringValue(publicRequest.CdcStopPosition);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetReplicationConfigArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationConfigArn");
+                    context.Writer.Write(publicRequest.ReplicationConfigArn);
+                }
+=======
+                if(publicRequest.IsSetPremigrationAssessmentSettings())
+                {
+                    context.Writer.WritePropertyName("PremigrationAssessmentSettings");
+                    context.Writer.Write(publicRequest.PremigrationAssessmentSettings);
+                }
+
+                if(publicRequest.IsSetReplicationConfigArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationConfigArn");
+                    context.Writer.Write(publicRequest.ReplicationConfigArn);
+                }
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetReplicationConfigArn())
             {

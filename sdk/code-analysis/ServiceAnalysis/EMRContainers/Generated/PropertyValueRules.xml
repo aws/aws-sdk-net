@@ -724,6 +724,12 @@
     <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.ManagedLogs.EncryptionKeyArn</property>
+    <min>3</min>
+    <max>2048</max>
+    <pattern>^(arn:(aws[a-zA-Z0-9-]*):kms:.+:(\d{12})?:key\/[(0-9a-zA-Z)-?]+|\$\{[a-zA-Z]\w*\})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.ParametricCloudWatchMonitoringConfiguration.LogGroupName</property>
     <min>1</min>
     <max>512</max>

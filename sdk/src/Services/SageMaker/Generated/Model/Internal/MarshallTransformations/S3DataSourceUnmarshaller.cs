@@ -62,10 +62,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttributeNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("HubAccessConfig", targetDepth))
+                {
+                    var unmarshaller = HubAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceGroupNames", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InstanceGroupNames = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ModelAccessConfig", targetDepth))
+                {
+                    var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3DataDistributionType", targetDepth))

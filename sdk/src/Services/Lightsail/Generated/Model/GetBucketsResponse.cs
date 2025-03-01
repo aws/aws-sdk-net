@@ -47,7 +47,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For more information about this feature and how it affects Lightsail buckets, see
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+        /// <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block
         /// public access for buckets in Amazon Lightsail</a>.
         /// </para>
         /// </summary>

@@ -84,8 +84,45 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetStorageConfig())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("StorageConfig");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetStorageConfig())
+                {
+                    context.Writer.WritePropertyName("StorageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceStorageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageConfig, context);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetStorageConfig())
+                {
+                    context.Writer.WritePropertyName("StorageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceStorageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageConfig, context);
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = InstanceStorageConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.StorageConfig, context);

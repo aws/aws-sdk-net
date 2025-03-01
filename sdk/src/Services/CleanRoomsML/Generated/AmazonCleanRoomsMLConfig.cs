@@ -34,10 +34,16 @@ namespace Amazon.CleanRoomsML
     public partial class AmazonCleanRoomsMLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "4.0.0.0");
 
         private static readonly AmazonCleanRoomsMLEndpointResolver EndpointResolver =
             new AmazonCleanRoomsMLEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "3.7.402.23");
+=======
+            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "3.7.402.39");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

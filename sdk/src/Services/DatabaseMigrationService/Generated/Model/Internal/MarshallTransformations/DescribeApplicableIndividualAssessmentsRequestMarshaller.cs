@@ -95,8 +95,116 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetReplicationInstanceArn())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("ReplicationInstanceArn");
                 context.Writer.WriteStringValue(publicRequest.ReplicationInstanceArn);
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    context.Writer.WritePropertyName("MaxRecords");
+                    context.Writer.Write(publicRequest.MaxRecords);
+                }
+
+                if(publicRequest.IsSetMigrationType())
+                {
+                    context.Writer.WritePropertyName("MigrationType");
+                    context.Writer.Write(publicRequest.MigrationType);
+                }
+
+                if(publicRequest.IsSetReplicationInstanceArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationInstanceArn");
+                    context.Writer.Write(publicRequest.ReplicationInstanceArn);
+                }
+
+                if(publicRequest.IsSetReplicationTaskArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationTaskArn");
+                    context.Writer.Write(publicRequest.ReplicationTaskArn);
+                }
+
+                if(publicRequest.IsSetSourceEngineName())
+                {
+                    context.Writer.WritePropertyName("SourceEngineName");
+                    context.Writer.Write(publicRequest.SourceEngineName);
+                }
+
+                if(publicRequest.IsSetTargetEngineName())
+                {
+                    context.Writer.WritePropertyName("TargetEngineName");
+                    context.Writer.Write(publicRequest.TargetEngineName);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMarker())
+                {
+                    context.Writer.WritePropertyName("Marker");
+                    context.Writer.Write(publicRequest.Marker);
+                }
+
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    context.Writer.WritePropertyName("MaxRecords");
+                    context.Writer.Write(publicRequest.MaxRecords);
+                }
+
+                if(publicRequest.IsSetMigrationType())
+                {
+                    context.Writer.WritePropertyName("MigrationType");
+                    context.Writer.Write(publicRequest.MigrationType);
+                }
+
+                if(publicRequest.IsSetReplicationConfigArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationConfigArn");
+                    context.Writer.Write(publicRequest.ReplicationConfigArn);
+                }
+
+                if(publicRequest.IsSetReplicationInstanceArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationInstanceArn");
+                    context.Writer.Write(publicRequest.ReplicationInstanceArn);
+                }
+
+                if(publicRequest.IsSetReplicationTaskArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationTaskArn");
+                    context.Writer.Write(publicRequest.ReplicationTaskArn);
+                }
+
+                if(publicRequest.IsSetSourceEngineName())
+                {
+                    context.Writer.WritePropertyName("SourceEngineName");
+                    context.Writer.Write(publicRequest.SourceEngineName);
+                }
+
+                if(publicRequest.IsSetTargetEngineName())
+                {
+                    context.Writer.WritePropertyName("TargetEngineName");
+                    context.Writer.Write(publicRequest.TargetEngineName);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
             }
 
             if(publicRequest.IsSetReplicationTaskArn())

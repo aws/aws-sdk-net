@@ -57,6 +57,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEgyptAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("egyptAdditionalInfo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EgyptAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.EgyptAdditionalInfo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEstoniaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("estoniaAdditionalInfo");
@@ -77,6 +88,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.GeorgiaAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetGreeceAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("greeceAdditionalInfo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GreeceAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.GreeceAdditionalInfo, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetIsraelAdditionalInfo())
@@ -198,6 +220,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.UkraineAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVietnamAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("vietnamAdditionalInfo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VietnamAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.VietnamAdditionalInfo, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

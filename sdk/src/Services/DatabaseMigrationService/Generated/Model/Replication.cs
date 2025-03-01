@@ -39,6 +39,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private DateTime? _cdcStartTime;
         private string _cdcStopPosition;
         private List<string> _failureMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<PremigrationAssessmentStatus> _premigrationAssessmentStatuses = AWSConfigs.InitializeCollections ? new List<PremigrationAssessmentStatus>() : null;
         private ProvisionData _provisionData;
         private string _recoveryCheckpoint;
         private string _replicationConfigArn;
@@ -130,6 +131,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetFailureMessages()
         {
             return this._failureMessages != null && (this._failureMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PremigrationAssessmentStatuses. 
+        /// <para>
+        /// The status output of premigration assessment in describe-replications.
+        /// </para>
+        /// </summary>
+        public List<PremigrationAssessmentStatus> PremigrationAssessmentStatuses
+        {
+            get { return this._premigrationAssessmentStatuses; }
+            set { this._premigrationAssessmentStatuses = value; }
+        }
+
+        // Check to see if PremigrationAssessmentStatuses property is set
+        internal bool IsSetPremigrationAssessmentStatuses()
+        {
+            return this._premigrationAssessmentStatuses != null && (this._premigrationAssessmentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

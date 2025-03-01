@@ -79,11 +79,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetDirectoryId())
             {
                 context.Writer.WritePropertyName("DirectoryId");
                 context.Writer.WriteStringValue(publicRequest.DirectoryId);
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDirectoryId())
+                {
+                    context.Writer.WritePropertyName("DirectoryId");
+                    context.Writer.Write(publicRequest.DirectoryId);
+                }
+=======
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDirectoryId())
+                {
+                    context.Writer.WritePropertyName("DirectoryId");
+                    context.Writer.Write(publicRequest.DirectoryId);
+                }
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetIdentityManagementType())
             {

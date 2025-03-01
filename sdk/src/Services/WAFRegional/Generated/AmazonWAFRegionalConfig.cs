@@ -34,10 +34,16 @@ namespace Amazon.WAFRegional
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("WAF Regional", "4.0.0.0");
 
         private static readonly AmazonWAFRegionalEndpointResolver EndpointResolver =
             new AmazonWAFRegionalEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("WAF Regional", "3.7.401.86");
+=======
+            InternalSDKUtils.BuildUserAgentString("WAF Regional", "3.7.401.102");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

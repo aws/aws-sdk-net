@@ -49,5 +49,20 @@ namespace Amazon.Runtime.SharedInterfaces.Internal
         /// <param name="previous">Previous value of a rolling checksum</param>
         /// <returns>Updated CRC32C hash as 32-bit integer</returns>
         uint Crc32C(byte[] source, uint previous);
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <returns>CRC64NVME hash as a base64-encoded string</returns>
+        string Crc64NVME(byte[] source);
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <param name="previous">Previous value of a rolling checksum</param>
+        /// <returns>Updated CRC64NVME hash as 64-bit integer</returns>
+        ulong Crc64NVME(byte[] source, ulong previous);
     }
 }

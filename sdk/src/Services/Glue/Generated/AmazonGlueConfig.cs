@@ -34,10 +34,16 @@ namespace Amazon.Glue
     public partial class AmazonGlueConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Glue", "4.0.0.0");
 
         private static readonly AmazonGlueEndpointResolver EndpointResolver =
             new AmazonGlueEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Glue", "3.7.413.19");
+=======
+            InternalSDKUtils.BuildUserAgentString("Glue", "3.7.413.35");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

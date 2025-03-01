@@ -34,10 +34,16 @@ namespace Amazon.Pricing
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Pricing", "4.0.0.0");
 
         private static readonly AmazonPricingEndpointResolver EndpointResolver =
             new AmazonPricingEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Pricing", "3.7.400.89");
+=======
+            InternalSDKUtils.BuildUserAgentString("Pricing", "3.7.401.0");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

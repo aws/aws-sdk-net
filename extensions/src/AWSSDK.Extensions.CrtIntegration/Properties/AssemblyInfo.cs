@@ -16,9 +16,17 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 
+<<<<<<< HEAD
 #if NETFRAMEWORK
 [assembly: AssemblyVersion("4.0")]
 #else
 [assembly: AssemblyVersion("4.0.0.0")]
 #endif
 [assembly: AssemblyFileVersion("4.0.0.0")]
+||||||| Commit version number update changes
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.300.3")]
+=======
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.400")]
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b

@@ -34,6 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetConfigurationSetResponse : AmazonWebServiceResponse
     {
+        private ArchivingOptions _archivingOptions;
         private string _configurationSetName;
         private DeliveryOptions _deliveryOptions;
         private ReputationOptions _reputationOptions;
@@ -42,6 +43,25 @@ namespace Amazon.SimpleEmailV2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrackingOptions _trackingOptions;
         private VdmOptions _vdmOptions;
+
+        /// <summary>
+        /// Gets and sets the property ArchivingOptions. 
+        /// <para>
+        /// An object that defines the MailManager archive where sent emails are archived that
+        /// you send using the configuration set.
+        /// </para>
+        /// </summary>
+        public ArchivingOptions ArchivingOptions
+        {
+            get { return this._archivingOptions; }
+            set { this._archivingOptions = value; }
+        }
+
+        // Check to see if ArchivingOptions property is set
+        internal bool IsSetArchivingOptions()
+        {
+            return this._archivingOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 

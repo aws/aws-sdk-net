@@ -64,10 +64,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
-        /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
-        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
+        /// Specifies whether this is for a global resource type, such as a Amazon CloudFront
+        /// distribution. 
         /// </para>
         ///  
         /// <para>

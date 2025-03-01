@@ -47,8 +47,16 @@ namespace Amazon.BedrockAgent.Model
         /// The maximum number of tokens to return in the response.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=0, Max=8192)]
         public int? MaxTokens
+||||||| Commit version number update changes
+        [AWSProperty(Min=0, Max=8192)]
+        public int MaxTokens
+=======
+        [AWSProperty(Min=0)]
+        public int MaxTokens
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
         {
             get { return this._maxTokens; }
             set { this._maxTokens = value; }

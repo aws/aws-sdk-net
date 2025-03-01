@@ -110,10 +110,38 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteStartObject();
 
+<<<<<<< HEAD
                     var marshaller = RequiredFieldMarshaller.Instance;
                     marshaller.Marshall(publicRequestRequiredFieldsListValue, context);
 
                     context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+=======
+                if(publicRequest.IsSetRules())
+                {
+                    context.Writer.WritePropertyName("rules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TemplateRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 }
                 context.Writer.WriteEndArray();
             }

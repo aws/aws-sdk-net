@@ -140,11 +140,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.HubName);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestTagsListValue in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+=======
+                if(publicRequest.IsSetSupportStatus())
+                {
+                    context.Writer.WritePropertyName("SupportStatus");
+                    context.Writer.Write(publicRequest.SupportStatus);
+                }
+
+                if(publicRequest.IsSetTags())
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 {
                     context.Writer.WriteStartObject();
 

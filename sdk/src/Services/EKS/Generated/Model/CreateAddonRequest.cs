@@ -195,7 +195,8 @@ namespace Amazon.EKS.Model
         ///  <b>Preserve</b> – This is similar to the NONE option. If the self-managed version
         /// of the add-on is installed on your cluster Amazon EKS doesn't change the add-on resource
         /// properties. Creation of the add-on might fail if conflicts are detected. This option
-        /// works differently during the update operation. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+        /// works differently during the update operation. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">
+        /// <c>UpdateAddon</c> </a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

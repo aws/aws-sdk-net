@@ -62,10 +62,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrlDistributionPointExtensionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CrlType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CrlType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomCname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomCname = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CustomPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Enabled", targetDepth))

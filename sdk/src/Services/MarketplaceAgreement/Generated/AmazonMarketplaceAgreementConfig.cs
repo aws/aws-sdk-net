@@ -34,10 +34,16 @@ namespace Amazon.MarketplaceAgreement
     public partial class AmazonMarketplaceAgreementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "4.0.0.0");
 
         private static readonly AmazonMarketplaceAgreementEndpointResolver EndpointResolver =
             new AmazonMarketplaceAgreementEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "3.7.400.88");
+=======
+            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "3.7.400.104");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -34,10 +34,16 @@ namespace Amazon.GuardDuty
     public partial class AmazonGuardDutyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("GuardDuty", "4.0.0.0");
 
         private static readonly AmazonGuardDutyEndpointResolver EndpointResolver =
             new AmazonGuardDutyEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("GuardDuty", "3.7.405.30");
+=======
+            InternalSDKUtils.BuildUserAgentString("GuardDuty", "3.7.406.6");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -40,7 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// A list of user IDs.
+        /// A list of user IDs. Supports variable injection of <c>$.ContactLens.ContactEvaluation.Agent.AgentId</c>
+        /// for <c>OnContactEvaluationSubmit</c> event source. 
         /// </para>
         /// </summary>
         public List<string> UserIds

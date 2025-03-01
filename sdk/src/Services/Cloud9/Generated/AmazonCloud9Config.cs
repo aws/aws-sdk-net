@@ -34,10 +34,16 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Cloud9", "4.0.0.0");
 
         private static readonly AmazonCloud9EndpointResolver EndpointResolver =
             new AmazonCloud9EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Cloud9", "3.7.400.89");
+=======
+            InternalSDKUtils.BuildUserAgentString("Cloud9", "3.7.400.105");
+>>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

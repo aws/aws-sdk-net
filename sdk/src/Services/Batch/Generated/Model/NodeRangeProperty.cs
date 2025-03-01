@@ -35,11 +35,30 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class NodeRangeProperty
     {
+        private ConsumableResourceProperties _consumableResourceProperties;
         private ContainerProperties _container;
         private EcsProperties _ecsProperties;
         private EksProperties _eksProperties;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
+
+        /// <summary>
+        /// Gets and sets the property ConsumableResourceProperties. 
+        /// <para>
+        /// Contains a list of consumable resources required by a job.
+        /// </para>
+        /// </summary>
+        public ConsumableResourceProperties ConsumableResourceProperties
+        {
+            get { return this._consumableResourceProperties; }
+            set { this._consumableResourceProperties = value; }
+        }
+
+        // Check to see if ConsumableResourceProperties property is set
+        internal bool IsSetConsumableResourceProperties()
+        {
+            return this._consumableResourceProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Container. 

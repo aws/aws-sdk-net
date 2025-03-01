@@ -31,7 +31,7 @@ namespace Amazon.TaxSettings.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTaxExemptionTypes operation.
-    /// Get supported tax exemption types.
+    /// Get supported tax exemption types. The IAM action is <c>tax:GetExemptions</c>.
     /// </summary>
     public partial class GetTaxExemptionTypesRequest : AmazonTaxSettingsRequest
     {

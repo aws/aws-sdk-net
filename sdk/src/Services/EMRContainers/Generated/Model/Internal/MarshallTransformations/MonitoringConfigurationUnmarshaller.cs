@@ -68,6 +68,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerLogRotationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("managedLogs", targetDepth))
+                {
+                    var unmarshaller = ManagedLogsUnmarshaller.Instance;
+                    unmarshalledObject.ManagedLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("persistentAppUI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
