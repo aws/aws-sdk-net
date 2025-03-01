@@ -77,7 +77,6 @@ namespace Amazon.Runtime
         private bool? useFIPSEndpoint;
         private bool? disableRequestCompression;
         private long? requestMinCompressionSizeBytes;
-        private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
         private bool? ignoreConfiguredEndpointUrls;
@@ -1112,6 +1111,9 @@ namespace Amazon.Runtime
         }
 #endif
 
+#if NETFRAMEWORK
+        private TimeSpan? readWriteTimeout = null;
+
         /// <summary>
         /// Overrides the default read-write timeout value.
         /// </summary>
@@ -1124,9 +1126,6 @@ namespace Amazon.Runtime
         /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
         /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
-#if NETSTANDARD
-        [Obsolete("ReadWriteTimeout is not consumed in asynchronous HTTP requests. Please use a cancellation token to handle stream read/write timeouts.")]
-#endif
         public TimeSpan? ReadWriteTimeout
         {
             get { return this.readWriteTimeout; }
@@ -1136,6 +1135,7 @@ namespace Amazon.Runtime
                 this.readWriteTimeout = value;
             }
         }
+#endif
 
         /// <summary>
         /// Gets and sets of the EndpointProvider property.
