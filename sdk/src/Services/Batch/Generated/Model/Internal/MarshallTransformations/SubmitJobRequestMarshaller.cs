@@ -84,33 +84,21 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetConsumableResourcePropertiesOverride())
+            {
+                context.Writer.WritePropertyName("consumableResourcePropertiesOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConsumableResourcePropertiesOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetContainerOverrides())
             {
                 context.Writer.WritePropertyName("containerOverrides");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetContainerOverrides())
-                {
-                    context.Writer.WritePropertyName("containerOverrides");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetConsumableResourcePropertiesOverride())
-                {
-                    context.Writer.WritePropertyName("consumableResourcePropertiesOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConsumableResourcePropertiesOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetContainerOverrides())
-                {
-                    context.Writer.WritePropertyName("containerOverrides");
-                    context.Writer.WriteObjectStart();
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = ContainerOverridesMarshaller.Instance;
                 marshaller.Marshall(publicRequest.ContainerOverrides, context);

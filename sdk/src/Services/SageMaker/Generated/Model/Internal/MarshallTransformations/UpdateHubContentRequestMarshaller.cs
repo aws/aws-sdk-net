@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,83 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetHubContentDescription())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHubContentDescription())
-                {
-                    context.Writer.WritePropertyName("HubContentDescription");
-                    context.Writer.Write(publicRequest.HubContentDescription);
-                }
-
-                if(publicRequest.IsSetHubContentDisplayName())
-                {
-                    context.Writer.WritePropertyName("HubContentDisplayName");
-                    context.Writer.Write(publicRequest.HubContentDisplayName);
-                }
-
-                if(publicRequest.IsSetHubContentMarkdown())
-                {
-                    context.Writer.WritePropertyName("HubContentMarkdown");
-                    context.Writer.Write(publicRequest.HubContentMarkdown);
-                }
-
-                if(publicRequest.IsSetHubContentName())
-                {
-                    context.Writer.WritePropertyName("HubContentName");
-                    context.Writer.Write(publicRequest.HubContentName);
-                }
-
-                if(publicRequest.IsSetHubContentSearchKeywords())
-                {
-                    context.Writer.WritePropertyName("HubContentSearchKeywords");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestHubContentSearchKeywordsListValue in publicRequest.HubContentSearchKeywords)
-                    {
-                            context.Writer.Write(publicRequestHubContentSearchKeywordsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetHubContentType())
-                {
-                    context.Writer.WritePropertyName("HubContentType");
-                    context.Writer.Write(publicRequest.HubContentType);
-                }
-
-                if(publicRequest.IsSetHubContentVersion())
-                {
-                    context.Writer.WritePropertyName("HubContentVersion");
-                    context.Writer.Write(publicRequest.HubContentVersion);
-                }
-
-                if(publicRequest.IsSetHubName())
-                {
-                    context.Writer.WritePropertyName("HubName");
-                    context.Writer.Write(publicRequest.HubName);
-                }
-
-                if(publicRequest.IsSetSupportStatus())
-                {
-                    context.Writer.WritePropertyName("SupportStatus");
-                    context.Writer.Write(publicRequest.SupportStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("HubContentDescription");
+                context.Writer.WriteStringValue(publicRequest.HubContentDescription);
             }
+
+            if(publicRequest.IsSetHubContentDisplayName())
+            {
+                context.Writer.WritePropertyName("HubContentDisplayName");
+                context.Writer.WriteStringValue(publicRequest.HubContentDisplayName);
+            }
+
+            if(publicRequest.IsSetHubContentMarkdown())
+            {
+                context.Writer.WritePropertyName("HubContentMarkdown");
+                context.Writer.WriteStringValue(publicRequest.HubContentMarkdown);
+            }
+
+            if(publicRequest.IsSetHubContentName())
+            {
+                context.Writer.WritePropertyName("HubContentName");
+                context.Writer.WriteStringValue(publicRequest.HubContentName);
+            }
+
+            if(publicRequest.IsSetHubContentSearchKeywords())
+            {
+                context.Writer.WritePropertyName("HubContentSearchKeywords");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestHubContentSearchKeywordsListValue in publicRequest.HubContentSearchKeywords)
+                {
+                        context.Writer.WriteStringValue(publicRequestHubContentSearchKeywordsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetHubContentType())
+            {
+                context.Writer.WritePropertyName("HubContentType");
+                context.Writer.WriteStringValue(publicRequest.HubContentType);
+            }
+
+            if(publicRequest.IsSetHubContentVersion())
+            {
+                context.Writer.WritePropertyName("HubContentVersion");
+                context.Writer.WriteStringValue(publicRequest.HubContentVersion);
+            }
+
+            if(publicRequest.IsSetHubName())
+            {
+                context.Writer.WritePropertyName("HubName");
+                context.Writer.WriteStringValue(publicRequest.HubName);
+            }
+
+            if(publicRequest.IsSetSupportStatus())
+            {
+                context.Writer.WritePropertyName("SupportStatus");
+                context.Writer.WriteStringValue(publicRequest.SupportStatus);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

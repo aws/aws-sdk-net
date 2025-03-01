@@ -61,11 +61,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetExecutionStatusFilter())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExecutionStatusFilter)
+                    if (publicRequest.ExecutionStatusFilter.Count == 0)
+                        request.Parameters.Add("ExecutionStatusFilter", "");
+                    else
                     {
-                        request.Parameters.Add("ExecutionStatusFilter" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ExecutionStatusFilter)
+                         {
+                             request.Parameters.Add("ExecutionStatusFilter" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaxResults())

@@ -66,9 +66,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of active findings for the unused access analyzer.
         /// </para>
         /// </summary>
-        public int TotalActiveFindings
+        public int? TotalActiveFindings
         {
-            get { return this._totalActiveFindings.GetValueOrDefault(); }
+            get { return this._totalActiveFindings; }
             set { this._totalActiveFindings = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of archived findings for the unused access analyzer.
         /// </para>
         /// </summary>
-        public int TotalArchivedFindings
+        public int? TotalArchivedFindings
         {
-            get { return this._totalArchivedFindings.GetValueOrDefault(); }
+            get { return this._totalArchivedFindings; }
             set { this._totalArchivedFindings = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of resolved findings for the unused access analyzer.
         /// </para>
         /// </summary>
-        public int TotalResolvedFindings
+        public int? TotalResolvedFindings
         {
-            get { return this._totalResolvedFindings.GetValueOrDefault(); }
+            get { return this._totalResolvedFindings; }
             set { this._totalResolvedFindings = value; }
         }
 

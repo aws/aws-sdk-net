@@ -86,27 +86,21 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetAttributeValues())
             {
                 context.Writer.WritePropertyName("attributeValues");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestAttributeValuesListValue in publicRequest.AttributeValues)
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMaxResults())
-=======
-                if(publicRequest.IsSetListResponseScope())
-                {
-                    context.Writer.WritePropertyName("listResponseScope");
-                    context.Writer.Write(publicRequest.ListResponseScope);
-                }
-
-                if(publicRequest.IsSetMaxResults())
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 {
                         context.Writer.WriteStringValue(publicRequestAttributeValuesListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetListResponseScope())
+            {
+                context.Writer.WritePropertyName("listResponseScope");
+                context.Writer.WriteStringValue(publicRequest.ListResponseScope);
             }
 
             if(publicRequest.IsSetMaxResults())

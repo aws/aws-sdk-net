@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PremigrationAssessmentStatus Object
     /// </summary>  
-    public class PremigrationAssessmentStatusUnmarshaller : IUnmarshaller<PremigrationAssessmentStatus, XmlUnmarshallerContext>, IUnmarshaller<PremigrationAssessmentStatus, JsonUnmarshallerContext>
+    public class PremigrationAssessmentStatusUnmarshaller : IJsonUnmarshaller<PremigrationAssessmentStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PremigrationAssessmentStatus IUnmarshaller<PremigrationAssessmentStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PremigrationAssessmentStatus Unmarshall(JsonUnmarshallerContext context)
+        public PremigrationAssessmentStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PremigrationAssessmentStatus unmarshalledObject = new PremigrationAssessmentStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssessmentProgress", targetDepth))
                 {
                     var unmarshaller = ReplicationTaskAssessmentRunProgressUnmarshaller.Instance;
-                    unmarshalledObject.AssessmentProgress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssessmentProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailOnAssessmentFailure", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.FailOnAssessmentFailure = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.FailOnAssessmentFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastFailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PremigrationAssessmentRunArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PremigrationAssessmentRunArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PremigrationAssessmentRunArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PremigrationAssessmentRunCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.PremigrationAssessmentRunCreationDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PremigrationAssessmentRunCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultEncryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResultEncryptionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultEncryptionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultKmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResultKmsKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultKmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultLocationBucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResultLocationBucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultLocationBucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultLocationFolder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResultLocationFolder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultLocationFolder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultStatistic", targetDepth))
                 {
                     var unmarshaller = ReplicationTaskAssessmentRunResultStatisticUnmarshaller.Instance;
-                    unmarshalledObject.ResultStatistic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultStatistic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

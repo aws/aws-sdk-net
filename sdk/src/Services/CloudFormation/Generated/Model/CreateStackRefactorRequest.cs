@@ -66,9 +66,9 @@ namespace Amazon.CloudFormation.Model
         /// Determines if a new stack is created with the refactor.
         /// </para>
         /// </summary>
-        public bool EnableStackCreation
+        public bool? EnableStackCreation
         {
-            get { return this._enableStackCreation.GetValueOrDefault(); }
+            get { return this._enableStackCreation; }
             set { this._enableStackCreation = value; }
         }
 

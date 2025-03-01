@@ -85,9 +85,9 @@ namespace Amazon.NetworkFirewall.Model
         /// data, in UTC format (for example, <c>YYYY-MM-DDTHH:MM:SSZ</c>). 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The date and time the analysis report was ran. 
         /// </para>
         /// </summary>
-        public DateTime ReportTime
+        public DateTime? ReportTime
         {
-            get { return this._reportTime.GetValueOrDefault(); }
+            get { return this._reportTime; }
             set { this._reportTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.NetworkFirewall.Model
         /// data, in UTC format (for example, <c>YYYY-MM-DDTHH:MM:SSZ</c>. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

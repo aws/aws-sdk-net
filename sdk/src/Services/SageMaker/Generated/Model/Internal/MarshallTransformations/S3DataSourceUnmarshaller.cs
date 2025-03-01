@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("HubAccessConfig", targetDepth))
                 {
                     var unmarshaller = HubAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceGroupNames", targetDepth))
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ModelAccessConfig", targetDepth))
                 {
                     var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DataDistributionType", targetDepth))

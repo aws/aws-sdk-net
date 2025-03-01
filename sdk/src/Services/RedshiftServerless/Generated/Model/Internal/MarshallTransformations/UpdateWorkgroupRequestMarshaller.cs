@@ -149,27 +149,21 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("subnetIds");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-||||||| Commit version number update changes
-                if(publicRequest.IsSetWorkgroupName())
-=======
-                if(publicRequest.IsSetTrackName())
-                {
-                    context.Writer.WritePropertyName("trackName");
-                    context.Writer.Write(publicRequest.TrackName);
-                }
-
-                if(publicRequest.IsSetWorkgroupName())
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 {
                         context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrackName())
+            {
+                context.Writer.WritePropertyName("trackName");
+                context.Writer.WriteStringValue(publicRequest.TrackName);
             }
 
             if(publicRequest.IsSetWorkgroupName())

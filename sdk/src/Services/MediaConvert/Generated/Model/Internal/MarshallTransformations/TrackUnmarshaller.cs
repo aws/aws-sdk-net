@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Track Object
     /// </summary>  
-    public class TrackUnmarshaller : IUnmarshaller<Track, XmlUnmarshallerContext>, IUnmarshaller<Track, JsonUnmarshallerContext>
+    public class TrackUnmarshaller : IJsonUnmarshaller<Track, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Track IUnmarshaller<Track, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Track Unmarshall(JsonUnmarshallerContext context)
+        public Track Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Track unmarshalledObject = new Track();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioProperties", targetDepth))
                 {
                     var unmarshaller = AudioPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.AudioProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataProperties", targetDepth))
                 {
                     var unmarshaller = DataPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.DataProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("index", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Index = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trackType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrackType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrackType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoProperties", targetDepth))
                 {
                     var unmarshaller = VideoPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.VideoProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

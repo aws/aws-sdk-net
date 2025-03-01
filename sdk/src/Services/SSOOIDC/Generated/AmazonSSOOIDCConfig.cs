@@ -34,16 +34,10 @@ namespace Amazon.SSOOIDC
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SSO OIDC", "4.0.0.0");
 
         private static readonly AmazonSSOOIDCEndpointResolver EndpointResolver =
             new AmazonSSOOIDCEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "3.7.400.89");
-=======
-            InternalSDKUtils.BuildUserAgentString("SSO OIDC", "3.7.400.105");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

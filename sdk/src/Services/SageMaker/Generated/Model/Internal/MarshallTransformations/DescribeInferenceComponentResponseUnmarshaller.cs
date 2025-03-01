@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("LastDeploymentConfig", targetDepth))
                 {
                     var unmarshaller = InferenceComponentDeploymentConfigUnmarshaller.Instance;
-                    response.LastDeploymentConfig = unmarshaller.Unmarshall(context);
+                    response.LastDeploymentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))

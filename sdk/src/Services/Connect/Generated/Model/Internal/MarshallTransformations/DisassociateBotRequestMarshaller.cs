@@ -76,47 +76,21 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             if(publicRequest.IsSetLexBot())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("LexBot");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLexBot())
-                {
-                    context.Writer.WritePropertyName("LexBot");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LexBotMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LexBot, context);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetLexBot())
-                {
-                    context.Writer.WritePropertyName("LexBot");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LexBotMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LexBot, context);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 var marshaller = LexBotMarshaller.Instance;
                 marshaller.Marshall(publicRequest.LexBot, context);

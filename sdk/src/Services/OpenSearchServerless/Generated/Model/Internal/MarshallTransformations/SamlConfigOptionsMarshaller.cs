@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOpenSearchServerlessEntityId())
             {
                 context.Writer.WritePropertyName("openSearchServerlessEntityId");
-                context.Writer.Write(requestObject.OpenSearchServerlessEntityId);
+                context.Writer.WriteStringValue(requestObject.OpenSearchServerlessEntityId);
             }
 
             if(requestObject.IsSetSessionTimeout())

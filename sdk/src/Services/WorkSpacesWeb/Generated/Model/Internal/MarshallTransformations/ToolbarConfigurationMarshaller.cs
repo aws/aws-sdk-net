@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHiddenToolbarItems())
             {
                 context.Writer.WritePropertyName("hiddenToolbarItems");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenToolbarItemsListValue in requestObject.HiddenToolbarItems)
                 {
-                        context.Writer.Write(requestObjectHiddenToolbarItemsListValue);
+                        context.Writer.WriteStringValue(requestObjectHiddenToolbarItemsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxDisplayResolution())
             {
                 context.Writer.WritePropertyName("maxDisplayResolution");
-                context.Writer.Write(requestObject.MaxDisplayResolution);
+                context.Writer.WriteStringValue(requestObject.MaxDisplayResolution);
             }
 
             if(requestObject.IsSetToolbarType())
             {
                 context.Writer.WritePropertyName("toolbarType");
-                context.Writer.Write(requestObject.ToolbarType);
+                context.Writer.WriteStringValue(requestObject.ToolbarType);
             }
 
             if(requestObject.IsSetVisualMode())
             {
                 context.Writer.WritePropertyName("visualMode");
-                context.Writer.Write(requestObject.VisualMode);
+                context.Writer.WriteStringValue(requestObject.VisualMode);
             }
 
         }

@@ -127,31 +127,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetComputeRoleArn())
+            {
+                context.Writer.WritePropertyName("computeRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ComputeRoleArn);
+            }
+
             if(publicRequest.IsSetCustomHeaders())
             {
                 context.Writer.WritePropertyName("customHeaders");
                 context.Writer.WriteStringValue(publicRequest.CustomHeaders);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetCustomHeaders())
-                {
-                    context.Writer.WritePropertyName("customHeaders");
-                    context.Writer.Write(publicRequest.CustomHeaders);
-                }
-=======
-                if(publicRequest.IsSetComputeRoleArn())
-                {
-                    context.Writer.WritePropertyName("computeRoleArn");
-                    context.Writer.Write(publicRequest.ComputeRoleArn);
-                }
-
-                if(publicRequest.IsSetCustomHeaders())
-                {
-                    context.Writer.WritePropertyName("customHeaders");
-                    context.Writer.Write(publicRequest.CustomHeaders);
-                }
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetCustomRules())
             {

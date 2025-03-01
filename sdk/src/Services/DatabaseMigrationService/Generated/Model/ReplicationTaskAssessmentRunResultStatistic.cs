@@ -123,9 +123,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of individual assessments that were skipped during the assessment run.
         /// </para>
         /// </summary>
-        public int Skipped
+        public int? Skipped
         {
-            get { return this._skipped.GetValueOrDefault(); }
+            get { return this._skipped; }
             set { this._skipped = value; }
         }
 

@@ -57,9 +57,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FileSize. The size of the file in bytes.
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property LastModified. The last modification time of the file.
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

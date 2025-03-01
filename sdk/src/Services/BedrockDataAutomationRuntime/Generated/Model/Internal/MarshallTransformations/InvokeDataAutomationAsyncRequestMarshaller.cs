@@ -107,28 +107,16 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                 context.Writer.WritePropertyName("dataAutomationConfiguration");
                 context.Writer.WriteStartObject();
 
-<<<<<<< HEAD
                 var marshaller = DataAutomationConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DataAutomationConfiguration, context);
-||||||| Commit version number update changes
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetDataAutomationProfileArn())
-                {
-                    context.Writer.WritePropertyName("dataAutomationProfileArn");
-                    context.Writer.Write(publicRequest.DataAutomationProfileArn);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataAutomationProfileArn())
+            {
+                context.Writer.WritePropertyName("dataAutomationProfileArn");
+                context.Writer.WriteStringValue(publicRequest.DataAutomationProfileArn);
             }
 
             if(publicRequest.IsSetEncryptionConfiguration())
@@ -172,33 +160,23 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                 var marshaller = OutputConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.OutputConfiguration, context);
 
-<<<<<<< HEAD
                 context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetTags())
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

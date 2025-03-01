@@ -43,9 +43,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of findings for the specified unused access type.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

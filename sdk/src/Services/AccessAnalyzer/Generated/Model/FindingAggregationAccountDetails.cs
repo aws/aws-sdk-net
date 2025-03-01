@@ -84,9 +84,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// account.
         /// </para>
         /// </summary>
-        public int NumberOfActiveFindings
+        public int? NumberOfActiveFindings
         {
-            get { return this._numberOfActiveFindings.GetValueOrDefault(); }
+            get { return this._numberOfActiveFindings; }
             set { this._numberOfActiveFindings = value; }
         }
 

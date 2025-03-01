@@ -77,178 +77,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetClientRequestToken())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("ClientRequestToken");
                 context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFileSystemId())
-                {
-                    context.Writer.WritePropertyName("FileSystemId");
-                    context.Writer.Write(publicRequest.FileSystemId);
-                }
-
-                if(publicRequest.IsSetLustreConfiguration())
-                {
-                    context.Writer.WritePropertyName("LustreConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemLustreConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOntapConfiguration())
-                {
-                    context.Writer.WritePropertyName("OntapConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemOntapConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOpenZFSConfiguration())
-                {
-                    context.Writer.WritePropertyName("OpenZFSConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemOpenZFSConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStorageCapacity())
-                {
-                    context.Writer.WritePropertyName("StorageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity);
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("StorageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetWindowsConfiguration())
-                {
-                    context.Writer.WritePropertyName("WindowsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemWindowsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WindowsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetFileSystemId())
-                {
-                    context.Writer.WritePropertyName("FileSystemId");
-                    context.Writer.Write(publicRequest.FileSystemId);
-                }
-
-                if(publicRequest.IsSetFileSystemTypeVersion())
-                {
-                    context.Writer.WritePropertyName("FileSystemTypeVersion");
-                    context.Writer.Write(publicRequest.FileSystemTypeVersion);
-                }
-
-                if(publicRequest.IsSetLustreConfiguration())
-                {
-                    context.Writer.WritePropertyName("LustreConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemLustreConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LustreConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOntapConfiguration())
-                {
-                    context.Writer.WritePropertyName("OntapConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemOntapConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOpenZFSConfiguration())
-                {
-                    context.Writer.WritePropertyName("OpenZFSConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemOpenZFSConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStorageCapacity())
-                {
-                    context.Writer.WritePropertyName("StorageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity);
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("StorageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
-                if(publicRequest.IsSetWindowsConfiguration())
-                {
-                    context.Writer.WritePropertyName("WindowsConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFileSystemWindowsConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.WindowsConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
             }
 
             else if(!(publicRequest.IsSetClientRequestToken()))
@@ -260,6 +90,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("FileSystemId");
                 context.Writer.WriteStringValue(publicRequest.FileSystemId);
+            }
+
+            if(publicRequest.IsSetFileSystemTypeVersion())
+            {
+                context.Writer.WritePropertyName("FileSystemTypeVersion");
+                context.Writer.WriteStringValue(publicRequest.FileSystemTypeVersion);
             }
 
             if(publicRequest.IsSetLustreConfiguration())

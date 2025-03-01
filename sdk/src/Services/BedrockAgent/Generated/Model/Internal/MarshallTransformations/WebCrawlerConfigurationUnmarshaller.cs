@@ -89,7 +89,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("userAgentHeader", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserAgentHeader = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserAgentHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

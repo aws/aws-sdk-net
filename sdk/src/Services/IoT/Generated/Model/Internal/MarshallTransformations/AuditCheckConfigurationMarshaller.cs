@@ -49,15 +49,15 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConfigurationKvp in requestObject.Configuration)
                 {
                     context.Writer.WritePropertyName(requestObjectConfigurationKvp.Key);
                     var requestObjectConfigurationValue = requestObjectConfigurationKvp.Value;
 
-                        context.Writer.Write(requestObjectConfigurationValue);
+                        context.Writer.WriteStringValue(requestObjectConfigurationValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnabled())

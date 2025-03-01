@@ -86,9 +86,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime InvocationStepTime
+        public DateTime? InvocationStepTime
         {
-            get { return this._invocationStepTime.GetValueOrDefault(); }
+            get { return this._invocationStepTime; }
             set { this._invocationStepTime = value; }
         }
 

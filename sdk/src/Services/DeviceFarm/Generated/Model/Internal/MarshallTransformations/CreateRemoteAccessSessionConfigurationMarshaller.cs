@@ -55,12 +55,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceProxy())
             {
                 context.Writer.WritePropertyName("deviceProxy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeviceProxyMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeviceProxy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpceConfigurationArns())

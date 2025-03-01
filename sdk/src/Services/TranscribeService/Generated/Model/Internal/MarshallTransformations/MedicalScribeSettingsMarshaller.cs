@@ -55,12 +55,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClinicalNoteGenerationSettings())
             {
                 context.Writer.WritePropertyName("ClinicalNoteGenerationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClinicalNoteGenerationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClinicalNoteGenerationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxSpeakerLabels())

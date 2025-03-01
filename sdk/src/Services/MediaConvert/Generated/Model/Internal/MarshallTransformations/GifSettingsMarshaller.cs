@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
-                context.Writer.Write(requestObject.FramerateControl);
+                context.Writer.WriteStringValue(requestObject.FramerateControl);
             }
 
             if(requestObject.IsSetFramerateConversionAlgorithm())
             {
                 context.Writer.WritePropertyName("framerateConversionAlgorithm");
-                context.Writer.Write(requestObject.FramerateConversionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.FramerateConversionAlgorithm);
             }
 
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
         }

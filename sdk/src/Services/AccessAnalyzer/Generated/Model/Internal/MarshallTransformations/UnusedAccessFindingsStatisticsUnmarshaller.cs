@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UnusedAccessFindingsStatistics Object
     /// </summary>  
-    public class UnusedAccessFindingsStatisticsUnmarshaller : IUnmarshaller<UnusedAccessFindingsStatistics, XmlUnmarshallerContext>, IUnmarshaller<UnusedAccessFindingsStatistics, JsonUnmarshallerContext>
+    public class UnusedAccessFindingsStatisticsUnmarshaller : IJsonUnmarshaller<UnusedAccessFindingsStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UnusedAccessFindingsStatistics IUnmarshaller<UnusedAccessFindingsStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UnusedAccessFindingsStatistics Unmarshall(JsonUnmarshallerContext context)
+        public UnusedAccessFindingsStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UnusedAccessFindingsStatistics unmarshalledObject = new UnusedAccessFindingsStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("topAccounts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FindingAggregationAccountDetails, FindingAggregationAccountDetailsUnmarshaller>(FindingAggregationAccountDetailsUnmarshaller.Instance);
-                    unmarshalledObject.TopAccounts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FindingAggregationAccountDetails, FindingAggregationAccountDetailsUnmarshaller>(FindingAggregationAccountDetailsUnmarshaller.Instance);
+                    unmarshalledObject.TopAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalActiveFindings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalActiveFindings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalActiveFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalArchivedFindings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalArchivedFindings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalArchivedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalResolvedFindings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalResolvedFindings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalResolvedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unusedAccessTypeStatistics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UnusedAccessTypeStatistics, UnusedAccessTypeStatisticsUnmarshaller>(UnusedAccessTypeStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.UnusedAccessTypeStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UnusedAccessTypeStatistics, UnusedAccessTypeStatisticsUnmarshaller>(UnusedAccessTypeStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.UnusedAccessTypeStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

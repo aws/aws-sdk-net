@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RequiredCaseRule Object
     /// </summary>  
-    public class RequiredCaseRuleUnmarshaller : IUnmarshaller<RequiredCaseRule, XmlUnmarshallerContext>, IUnmarshaller<RequiredCaseRule, JsonUnmarshallerContext>
+    public class RequiredCaseRuleUnmarshaller : IJsonUnmarshaller<RequiredCaseRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RequiredCaseRule IUnmarshaller<RequiredCaseRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RequiredCaseRule Unmarshall(JsonUnmarshallerContext context)
+        public RequiredCaseRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RequiredCaseRule unmarshalledObject = new RequiredCaseRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("conditions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BooleanCondition, BooleanConditionUnmarshaller>(BooleanConditionUnmarshaller.Instance);
-                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BooleanCondition, BooleanConditionUnmarshaller>(BooleanConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

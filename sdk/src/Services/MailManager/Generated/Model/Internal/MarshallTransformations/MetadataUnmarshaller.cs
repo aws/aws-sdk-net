@@ -59,7 +59,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ConfigurationSet", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IngressPointId", targetDepth))
@@ -89,25 +89,25 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if (context.TestExpression("SendingMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SendingMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SendingMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SendingPool", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SendingPool = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SendingPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceIdentity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceIdentity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceIdentity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))

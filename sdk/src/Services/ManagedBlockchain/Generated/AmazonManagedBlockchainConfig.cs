@@ -34,16 +34,10 @@ namespace Amazon.ManagedBlockchain
     public partial class AmazonManagedBlockchainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ManagedBlockchain", "4.0.0.0");
 
         private static readonly AmazonManagedBlockchainEndpointResolver EndpointResolver =
             new AmazonManagedBlockchainEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

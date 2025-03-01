@@ -95,7 +95,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DataProtectionConfig", targetDepth))
                 {
                     var unmarshaller = DataProtectionConfigUnmarshaller.Instance;
-                    unmarshalledObject.DataProtectionConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataProtectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultAction", targetDepth))

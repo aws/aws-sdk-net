@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUniqueIdentificationNumber())
             {
                 context.Writer.WritePropertyName("uniqueIdentificationNumber");
-                context.Writer.Write(requestObject.UniqueIdentificationNumber);
+                context.Writer.WriteStringValue(requestObject.UniqueIdentificationNumber);
             }
 
             if(requestObject.IsSetUniqueIdentificationNumberExpirationDate())
             {
                 context.Writer.WritePropertyName("uniqueIdentificationNumberExpirationDate");
-                context.Writer.Write(requestObject.UniqueIdentificationNumberExpirationDate);
+                context.Writer.WriteStringValue(requestObject.UniqueIdentificationNumberExpirationDate);
             }
 
         }

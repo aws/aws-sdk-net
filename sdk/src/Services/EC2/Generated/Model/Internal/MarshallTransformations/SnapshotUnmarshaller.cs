@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("fullSnapshotSizeInBytes", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.FullSnapshotSizeInBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -34,16 +34,10 @@ namespace Amazon.SupportApp
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Support App", "4.0.0.0");
 
         private static readonly AmazonSupportAppEndpointResolver EndpointResolver =
             new AmazonSupportAppEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Support App", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("Support App", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

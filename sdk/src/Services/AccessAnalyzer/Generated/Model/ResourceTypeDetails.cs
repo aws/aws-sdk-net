@@ -44,9 +44,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of active cross-account findings for the resource type.
         /// </para>
         /// </summary>
-        public int TotalActiveCrossAccount
+        public int? TotalActiveCrossAccount
         {
-            get { return this._totalActiveCrossAccount.GetValueOrDefault(); }
+            get { return this._totalActiveCrossAccount; }
             set { this._totalActiveCrossAccount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The total number of active public findings for the resource type.
         /// </para>
         /// </summary>
-        public int TotalActivePublic
+        public int? TotalActivePublic
         {
-            get { return this._totalActivePublic.GetValueOrDefault(); }
+            get { return this._totalActivePublic; }
             set { this._totalActivePublic = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.Batch.Model
         /// The amount of the consumable resource that is currently available to use.
         /// </para>
         /// </summary>
-        public long AvailableQuantity
+        public long? AvailableQuantity
         {
-            get { return this._availableQuantity.GetValueOrDefault(); }
+            get { return this._availableQuantity; }
             set { this._availableQuantity = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Batch.Model
         /// The Unix timestamp (in milliseconds) for when the consumable resource was created.
         /// </para>
         /// </summary>
-        public long CreatedAt
+        public long? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Batch.Model
         /// The amount of the consumable resource that is currently in use.
         /// </para>
         /// </summary>
-        public long InUseQuantity
+        public long? InUseQuantity
         {
-            get { return this._inUseQuantity.GetValueOrDefault(); }
+            get { return this._inUseQuantity; }
             set { this._inUseQuantity = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.Batch.Model
         /// The total amount of the consumable resource that is available.
         /// </para>
         /// </summary>
-        public long TotalQuantity
+        public long? TotalQuantity
         {
-            get { return this._totalQuantity.GetValueOrDefault(); }
+            get { return this._totalQuantity; }
             set { this._totalQuantity = value; }
         }
 

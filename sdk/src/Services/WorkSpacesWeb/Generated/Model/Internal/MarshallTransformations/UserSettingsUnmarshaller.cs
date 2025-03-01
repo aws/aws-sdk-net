@@ -125,7 +125,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 if (context.TestExpression("toolbarConfiguration", targetDepth))
                 {
                     var unmarshaller = ToolbarConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ToolbarConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToolbarConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("uploadAllowed", targetDepth))

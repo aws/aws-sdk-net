@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetExcludeRateBasedDetails())
             {
                 context.Writer.WritePropertyName("ExcludeRateBasedDetails");
-                context.Writer.Write(requestObject.ExcludeRateBasedDetails);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeRateBasedDetails.Value);
             }
 
             if(requestObject.IsSetExcludeRuleMatchDetails())
             {
                 context.Writer.WritePropertyName("ExcludeRuleMatchDetails");
-                context.Writer.Write(requestObject.ExcludeRuleMatchDetails);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeRuleMatchDetails.Value);
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldToProtectMarshaller.Instance;
                 marshaller.Marshall(requestObject.Field, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -71,7 +71,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 if (context.TestExpression("consumableResourceProperties", targetDepth))
                 {
                     var unmarshaller = ConsumableResourcePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConsumableResourceProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsumableResourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("container", targetDepth))

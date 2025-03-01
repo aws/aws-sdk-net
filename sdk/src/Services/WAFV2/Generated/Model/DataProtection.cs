@@ -83,9 +83,9 @@ namespace Amazon.WAFV2.Model
         /// Default: <c>FALSE</c> 
         /// </para>
         /// </summary>
-        public bool ExcludeRateBasedDetails
+        public bool? ExcludeRateBasedDetails
         {
-            get { return this._excludeRateBasedDetails.GetValueOrDefault(); }
+            get { return this._excludeRateBasedDetails; }
             set { this._excludeRateBasedDetails = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.WAFV2.Model
         /// Default: <c>FALSE</c> 
         /// </para>
         /// </summary>
-        public bool ExcludeRuleMatchDetails
+        public bool? ExcludeRuleMatchDetails
         {
-            get { return this._excludeRuleMatchDetails.GetValueOrDefault(); }
+            get { return this._excludeRuleMatchDetails; }
             set { this._excludeRuleMatchDetails = value; }
         }
 

@@ -72,9 +72,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long CreatedAt
+        public long? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Quantity
+        public long? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.Batch.Model
         /// job transitioned from the <c>STARTING</c> state to the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
-        public long StartedAt
+        public long? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

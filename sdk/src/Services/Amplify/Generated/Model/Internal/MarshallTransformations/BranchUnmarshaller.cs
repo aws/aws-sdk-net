@@ -107,7 +107,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if (context.TestExpression("computeRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputeRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputeRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createTime", targetDepth))

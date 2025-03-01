@@ -75,51 +75,17 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetListResponseScope())
+            {
+                context.Writer.WritePropertyName("listResponseScope");
+                context.Writer.WriteStringValue(publicRequest.ListResponseScope);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("maxResults");
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetListResponseScope())
-                {
-                    context.Writer.WritePropertyName("listResponseScope");
-                    context.Writer.Write(publicRequest.ListResponseScope);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetNextToken())
             {

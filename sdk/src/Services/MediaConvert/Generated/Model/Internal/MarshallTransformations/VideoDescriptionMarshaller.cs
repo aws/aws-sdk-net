@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChromaPositionMode())
             {
                 context.Writer.WritePropertyName("chromaPositionMode");
-                context.Writer.Write(requestObject.ChromaPositionMode);
+                context.Writer.WriteStringValue(requestObject.ChromaPositionMode);
             }
 
             if(requestObject.IsSetCodecSettings())

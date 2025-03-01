@@ -34,16 +34,10 @@ namespace Amazon.CloudWatchRUM
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("RUM", "4.0.0.0");
 
         private static readonly AmazonCloudWatchRUMEndpointResolver EndpointResolver =
             new AmazonCloudWatchRUMEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("RUM", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("RUM", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

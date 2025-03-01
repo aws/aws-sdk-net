@@ -87,6 +87,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOverrideConfiguration())
             {
                 context.Writer.WritePropertyName("overrideConfiguration");
@@ -112,7 +123,6 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetStandardOutputConfiguration())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("standardOutputConfiguration");
                 context.Writer.WriteStartObject();
 
@@ -120,124 +130,6 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.StandardOutputConfiguration, context);
 
                 context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("customOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("overrideConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OverrideConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProjectDescription())
-                {
-                    context.Writer.WritePropertyName("projectDescription");
-                    context.Writer.Write(publicRequest.ProjectDescription);
-                }
-
-                if(publicRequest.IsSetProjectStage())
-                {
-                    context.Writer.WritePropertyName("projectStage");
-                    context.Writer.Write(publicRequest.ProjectStage);
-                }
-
-                if(publicRequest.IsSetStandardOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("standardOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StandardOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StandardOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("customOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOverrideConfiguration())
-                {
-                    context.Writer.WritePropertyName("overrideConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OverrideConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OverrideConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProjectDescription())
-                {
-                    context.Writer.WritePropertyName("projectDescription");
-                    context.Writer.Write(publicRequest.ProjectDescription);
-                }
-
-                if(publicRequest.IsSetProjectStage())
-                {
-                    context.Writer.WritePropertyName("projectStage");
-                    context.Writer.Write(publicRequest.ProjectStage);
-                }
-
-                if(publicRequest.IsSetStandardOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("standardOutputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StandardOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StandardOutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
             }
 
             writer.WriteEndObject();

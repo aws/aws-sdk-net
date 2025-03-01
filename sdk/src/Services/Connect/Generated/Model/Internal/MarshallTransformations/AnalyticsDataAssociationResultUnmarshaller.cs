@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ResourceShareStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceShareStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetAccountId", targetDepth))

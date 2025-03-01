@@ -60,12 +60,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEgyptAdditionalInfo())
             {
                 context.Writer.WritePropertyName("egyptAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EgyptAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.EgyptAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEstoniaAdditionalInfo())
@@ -93,12 +93,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGreeceAdditionalInfo())
             {
                 context.Writer.WritePropertyName("greeceAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreeceAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreeceAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsraelAdditionalInfo())
@@ -225,12 +225,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVietnamAdditionalInfo())
             {
                 context.Writer.WritePropertyName("vietnamAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VietnamAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.VietnamAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

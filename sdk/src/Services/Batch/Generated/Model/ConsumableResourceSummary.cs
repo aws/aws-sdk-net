@@ -84,9 +84,9 @@ namespace Amazon.Batch.Model
         /// The amount of the consumable resource that is currently in use.
         /// </para>
         /// </summary>
-        public long InUseQuantity
+        public long? InUseQuantity
         {
-            get { return this._inUseQuantity.GetValueOrDefault(); }
+            get { return this._inUseQuantity; }
             set { this._inUseQuantity = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Batch.Model
         /// The total amount of the consumable resource that is available.
         /// </para>
         /// </summary>
-        public long TotalQuantity
+        public long? TotalQuantity
         {
-            get { return this._totalQuantity.GetValueOrDefault(); }
+            get { return this._totalQuantity; }
             set { this._totalQuantity = value; }
         }
 

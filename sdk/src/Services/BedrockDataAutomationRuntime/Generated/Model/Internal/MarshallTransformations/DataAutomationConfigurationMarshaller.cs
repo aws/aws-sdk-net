@@ -48,16 +48,8 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                 return;
             if(requestObject.IsSetDataAutomationProjectArn())
             {
-<<<<<<< HEAD
-                context.Writer.WritePropertyName("dataAutomationArn");
-                context.Writer.WriteStringValue(requestObject.DataAutomationArn);
-||||||| Commit version number update changes
-                context.Writer.WritePropertyName("dataAutomationArn");
-                context.Writer.Write(requestObject.DataAutomationArn);
-=======
                 context.Writer.WritePropertyName("dataAutomationProjectArn");
-                context.Writer.Write(requestObject.DataAutomationProjectArn);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
+                context.Writer.WriteStringValue(requestObject.DataAutomationProjectArn);
             }
 
             if(requestObject.IsSetStage())

@@ -92,40 +92,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     var marshaller = ClusterInstanceGroupSpecificationMarshaller.Instance;
                     marshaller.Marshall(publicRequestInstanceGroupsListValue, context);
 
-<<<<<<< HEAD
                     context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
+                context.Writer.WriteEndArray();
+            }
 
-                if(publicRequest.IsSetNodeRecovery())
+            if(publicRequest.IsSetInstanceGroupsToDelete())
+            {
+                context.Writer.WritePropertyName("InstanceGroupsToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceGroupsToDeleteListValue in publicRequest.InstanceGroupsToDelete)
                 {
-                    context.Writer.WritePropertyName("NodeRecovery");
-                    context.Writer.Write(publicRequest.NodeRecovery);
-=======
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetInstanceGroupsToDelete())
-                {
-                    context.Writer.WritePropertyName("InstanceGroupsToDelete");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceGroupsToDeleteListValue in publicRequest.InstanceGroupsToDelete)
-                    {
-                            context.Writer.Write(publicRequestInstanceGroupsToDeleteListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetNodeRecovery())
-                {
-                    context.Writer.WritePropertyName("NodeRecovery");
-                    context.Writer.Write(publicRequest.NodeRecovery);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
+                        context.Writer.WriteStringValue(publicRequestInstanceGroupsToDeleteListValue);
                 }
                 context.Writer.WriteEndArray();
             }

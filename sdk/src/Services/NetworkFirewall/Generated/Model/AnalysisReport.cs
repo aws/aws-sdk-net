@@ -92,9 +92,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The date and time the analysis report was ran. 
         /// </para>
         /// </summary>
-        public DateTime ReportTime
+        public DateTime? ReportTime
         {
-            get { return this._reportTime.GetValueOrDefault(); }
+            get { return this._reportTime; }
             set { this._reportTime = value; }
         }
 

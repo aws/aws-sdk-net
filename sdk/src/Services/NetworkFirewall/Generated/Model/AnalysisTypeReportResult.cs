@@ -70,9 +70,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The date and time any domain was first accessed (within the last 30 day period).
         /// </para>
         /// </summary>
-        public DateTime FirstAccessed
+        public DateTime? FirstAccessed
         {
-            get { return this._firstAccessed.GetValueOrDefault(); }
+            get { return this._firstAccessed; }
             set { this._firstAccessed = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The date and time any domain was last accessed (within the last 30 day period).
         /// </para>
         /// </summary>
-        public DateTime LastAccessed
+        public DateTime? LastAccessed
         {
-            get { return this._lastAccessed.GetValueOrDefault(); }
+            get { return this._lastAccessed; }
             set { this._lastAccessed = value; }
         }
 

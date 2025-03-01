@@ -100,9 +100,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </important> </li> </ul>
         /// </summary>
-        public bool ForceRemove
+        public bool? ForceRemove
         {
-            get { return this._forceRemove.GetValueOrDefault(); }
+            get { return this._forceRemove; }
             set { this._forceRemove = value; }
         }
 

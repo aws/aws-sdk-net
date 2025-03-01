@@ -137,7 +137,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if (context.TestExpression("SourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Subject", targetDepth))

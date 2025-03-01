@@ -189,9 +189,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public long FullSnapshotSizeInBytes
+        public long? FullSnapshotSizeInBytes
         {
-            get { return this._fullSnapshotSizeInBytes.GetValueOrDefault(); }
+            get { return this._fullSnapshotSizeInBytes; }
             set { this._fullSnapshotSizeInBytes = value; }
         }
 

@@ -95,7 +95,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if (context.TestExpression("deviceProxy", targetDepth))
                 {
                     var unmarshaller = DeviceProxyUnmarshaller.Instance;
-                    unmarshalledObject.DeviceProxy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceProxy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deviceUdid", targetDepth))

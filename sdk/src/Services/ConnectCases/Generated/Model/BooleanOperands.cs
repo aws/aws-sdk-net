@@ -86,9 +86,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Result
+        public bool? Result
         {
-            get { return this._result.GetValueOrDefault(); }
+            get { return this._result; }
             set { this._result = value; }
         }
 

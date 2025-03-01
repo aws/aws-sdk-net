@@ -112,177 +112,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetDisconnectTimeoutInMinutes())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
                 context.Writer.WriteNumberValue(publicRequest.DisconnectTimeoutInMinutes.Value);
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCookieSynchronizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCopyAllowed())
-                {
-                    context.Writer.WritePropertyName("copyAllowed");
-                    context.Writer.Write(publicRequest.CopyAllowed);
-                }
-
-                if(publicRequest.IsSetDeepLinkAllowed())
-                {
-                    context.Writer.WritePropertyName("deepLinkAllowed");
-                    context.Writer.Write(publicRequest.DeepLinkAllowed);
-                }
-
-                if(publicRequest.IsSetDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes);
-                }
-
-                if(publicRequest.IsSetDownloadAllowed())
-                {
-                    context.Writer.WritePropertyName("downloadAllowed");
-                    context.Writer.Write(publicRequest.DownloadAllowed);
-                }
-
-                if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes);
-                }
-
-                if(publicRequest.IsSetPasteAllowed())
-                {
-                    context.Writer.WritePropertyName("pasteAllowed");
-                    context.Writer.Write(publicRequest.PasteAllowed);
-                }
-
-                if(publicRequest.IsSetPrintAllowed())
-                {
-                    context.Writer.WritePropertyName("printAllowed");
-                    context.Writer.Write(publicRequest.PrintAllowed);
-                }
-
-                if(publicRequest.IsSetUploadAllowed())
-                {
-                    context.Writer.WritePropertyName("uploadAllowed");
-                    context.Writer.Write(publicRequest.UploadAllowed);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCookieSynchronizationConfiguration())
-                {
-                    context.Writer.WritePropertyName("cookieSynchronizationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CookieSynchronizationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CookieSynchronizationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCopyAllowed())
-                {
-                    context.Writer.WritePropertyName("copyAllowed");
-                    context.Writer.Write(publicRequest.CopyAllowed);
-                }
-
-                if(publicRequest.IsSetDeepLinkAllowed())
-                {
-                    context.Writer.WritePropertyName("deepLinkAllowed");
-                    context.Writer.Write(publicRequest.DeepLinkAllowed);
-                }
-
-                if(publicRequest.IsSetDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes);
-                }
-
-                if(publicRequest.IsSetDownloadAllowed())
-                {
-                    context.Writer.WritePropertyName("downloadAllowed");
-                    context.Writer.Write(publicRequest.DownloadAllowed);
-                }
-
-                if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
-                {
-                    context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes);
-                }
-
-                if(publicRequest.IsSetPasteAllowed())
-                {
-                    context.Writer.WritePropertyName("pasteAllowed");
-                    context.Writer.Write(publicRequest.PasteAllowed);
-                }
-
-                if(publicRequest.IsSetPrintAllowed())
-                {
-                    context.Writer.WritePropertyName("printAllowed");
-                    context.Writer.Write(publicRequest.PrintAllowed);
-                }
-
-                if(publicRequest.IsSetToolbarConfiguration())
-                {
-                    context.Writer.WritePropertyName("toolbarConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ToolbarConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ToolbarConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUploadAllowed())
-                {
-                    context.Writer.WritePropertyName("uploadAllowed");
-                    context.Writer.Write(publicRequest.UploadAllowed);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
             }
 
             if(publicRequest.IsSetDownloadAllowed())
@@ -307,6 +138,17 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("printAllowed");
                 context.Writer.WriteStringValue(publicRequest.PrintAllowed);
+            }
+
+            if(publicRequest.IsSetToolbarConfiguration())
+            {
+                context.Writer.WritePropertyName("toolbarConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ToolbarConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ToolbarConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetUploadAllowed())

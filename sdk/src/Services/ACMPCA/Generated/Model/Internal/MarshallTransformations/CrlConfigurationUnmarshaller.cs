@@ -65,7 +65,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 if (context.TestExpression("CrlType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrlType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrlType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomCname", targetDepth))
@@ -77,7 +77,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 if (context.TestExpression("CustomPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Enabled", targetDepth))

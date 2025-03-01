@@ -113,7 +113,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if (context.TestExpression("versionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

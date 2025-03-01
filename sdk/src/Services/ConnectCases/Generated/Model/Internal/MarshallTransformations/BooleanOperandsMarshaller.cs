@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOperandOne())
             {
                 context.Writer.WritePropertyName("operandOne");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OperandOneMarshaller.Instance;
                 marshaller.Marshall(requestObject.OperandOne, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOperandTwo())
             {
                 context.Writer.WritePropertyName("operandTwo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OperandTwoMarshaller.Instance;
                 marshaller.Marshall(requestObject.OperandTwo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResult())
             {
                 context.Writer.WritePropertyName("result");
-                context.Writer.Write(requestObject.Result);
+                context.Writer.WriteBooleanValue(requestObject.Result.Value);
             }
 
         }

@@ -34,16 +34,10 @@ namespace Amazon.DLM
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DLM", "4.0.0.0");
 
         private static readonly AmazonDLMEndpointResolver EndpointResolver =
             new AmazonDLMEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("DLM", "3.7.401.24");
-=======
-            InternalSDKUtils.BuildUserAgentString("DLM", "3.7.401.40");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

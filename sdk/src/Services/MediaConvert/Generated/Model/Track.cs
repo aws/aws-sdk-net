@@ -90,9 +90,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Duration. The duration of the track in seconds.
         /// </summary>
-        public double Duration
+        public double? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Index. The index of the track.
         /// </summary>
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

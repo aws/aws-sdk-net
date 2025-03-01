@@ -137,7 +137,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if (context.TestExpression("pendingTrackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PendingTrackName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PendingTrackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("port", targetDepth))
@@ -179,7 +179,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if (context.TestExpression("trackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrackName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workgroupArn", targetDepth))

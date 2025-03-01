@@ -41,9 +41,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Duration. The duration of the media file in seconds.
         /// </summary>
-        public double Duration
+        public double? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

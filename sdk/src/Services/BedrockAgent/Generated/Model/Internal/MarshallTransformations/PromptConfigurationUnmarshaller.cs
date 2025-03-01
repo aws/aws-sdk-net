@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("additionalModelRequestFields", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("basePromptTemplate", targetDepth))

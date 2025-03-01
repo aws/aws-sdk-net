@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAWSToRetainLogs())
             {
                 context.Writer.WritePropertyName("allowAWSToRetainLogs");
-                context.Writer.Write(requestObject.AllowAWSToRetainLogs);
+                context.Writer.WriteStringValue(requestObject.AllowAWSToRetainLogs);
             }
 
             if(requestObject.IsSetEncryptionKeyArn())
             {
                 context.Writer.WritePropertyName("encryptionKeyArn");
-                context.Writer.Write(requestObject.EncryptionKeyArn);
+                context.Writer.WriteStringValue(requestObject.EncryptionKeyArn);
             }
 
         }

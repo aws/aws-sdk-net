@@ -107,7 +107,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if (context.TestExpression("testSuiteName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TestSuiteName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TestSuiteName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

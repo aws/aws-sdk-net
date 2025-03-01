@@ -73,54 +73,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArchivingOptions())
+            {
+                context.Writer.WritePropertyName("ArchivingOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ArchivingOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ArchivingOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConfigurationSetName())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("ConfigurationSetName");
                 context.Writer.WriteStringValue(publicRequest.ConfigurationSetName);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationSetName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
-                }
-
-                if(publicRequest.IsSetDeliveryOptions())
-                {
-                    context.Writer.WritePropertyName("DeliveryOptions");
-                    context.Writer.WriteObjectStart();
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArchivingOptions())
-                {
-                    context.Writer.WritePropertyName("ArchivingOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArchivingOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ArchivingOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConfigurationSetName())
-                {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
-                }
-
-                if(publicRequest.IsSetDeliveryOptions())
-                {
-                    context.Writer.WritePropertyName("DeliveryOptions");
-                    context.Writer.WriteObjectStart();
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
             if(publicRequest.IsSetDeliveryOptions())
             {

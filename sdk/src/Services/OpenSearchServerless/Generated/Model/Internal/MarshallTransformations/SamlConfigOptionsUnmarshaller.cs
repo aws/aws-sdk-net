@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 if (context.TestExpression("openSearchServerlessEntityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenSearchServerlessEntityId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenSearchServerlessEntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sessionTimeout", targetDepth))

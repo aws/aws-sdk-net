@@ -34,16 +34,10 @@ namespace Amazon.S3Outposts
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("S3Outposts", "4.0.0.0");
 
         private static readonly AmazonS3OutpostsEndpointResolver EndpointResolver =
             new AmazonS3OutpostsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("S3Outposts", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("S3Outposts", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

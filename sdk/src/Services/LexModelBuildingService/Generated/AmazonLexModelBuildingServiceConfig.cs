@@ -34,16 +34,10 @@ namespace Amazon.LexModelBuildingService
     public partial class AmazonLexModelBuildingServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "4.0.0.0");
 
         private static readonly AmazonLexModelBuildingServiceEndpointResolver EndpointResolver =
             new AmazonLexModelBuildingServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("Lex Model Building Service", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

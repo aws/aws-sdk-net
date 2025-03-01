@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
@@ -63,57 +66,65 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDbClusterId())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDbClusterId())
-                {
-                    context.Writer.WritePropertyName("dbClusterId");
-                    context.Writer.Write(publicRequest.DbClusterId);
-                }
-
-                if(publicRequest.IsSetDbInstanceType())
-                {
-                    context.Writer.WritePropertyName("dbInstanceType");
-                    context.Writer.Write(publicRequest.DbInstanceType);
-                }
-
-                if(publicRequest.IsSetDbParameterGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetFailoverMode())
-                {
-                    context.Writer.WritePropertyName("failoverMode");
-                    context.Writer.Write(publicRequest.FailoverMode);
-                }
-
-                if(publicRequest.IsSetLogDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("logDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPort())
-                {
-                    context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("dbClusterId");
+                context.Writer.WriteStringValue(publicRequest.DbClusterId);
             }
+
+            if(publicRequest.IsSetDbInstanceType())
+            {
+                context.Writer.WritePropertyName("dbInstanceType");
+                context.Writer.WriteStringValue(publicRequest.DbInstanceType);
+            }
+
+            if(publicRequest.IsSetDbParameterGroupIdentifier())
+            {
+                context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.DbParameterGroupIdentifier);
+            }
+
+            if(publicRequest.IsSetFailoverMode())
+            {
+                context.Writer.WritePropertyName("failoverMode");
+                context.Writer.WriteStringValue(publicRequest.FailoverMode);
+            }
+
+            if(publicRequest.IsSetLogDeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("logDeliveryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.WriteNumberValue(publicRequest.Port.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

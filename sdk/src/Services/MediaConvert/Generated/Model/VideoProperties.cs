@@ -46,9 +46,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitDepth. The bit depth of the video track.
         /// </summary>
-        public int BitDepth
+        public int? BitDepth
         {
-            get { return this._bitDepth.GetValueOrDefault(); }
+            get { return this._bitDepth; }
             set { this._bitDepth = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitRate. The bit rate of the video track in bits per second.
         /// </summary>
-        public int BitRate
+        public int? BitRate
         {
-            get { return this._bitRate.GetValueOrDefault(); }
+            get { return this._bitRate; }
             set { this._bitRate = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Height. The height of the video track in pixels.
         /// </summary>
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Width. The width of the video track in pixels.
         /// </summary>
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

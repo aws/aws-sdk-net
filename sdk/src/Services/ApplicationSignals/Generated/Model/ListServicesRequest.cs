@@ -93,9 +93,9 @@ namespace Amazon.ApplicationSignals.Model
         /// If you are using this operation in a monitoring account, specify <c>true</c> to include
         /// services from source accounts in the returned data. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
-        public bool IncludeLinkedAccounts
+        public bool? IncludeLinkedAccounts
         {
-            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            get { return this._includeLinkedAccounts; }
             set { this._includeLinkedAccounts = value; }
         }
 

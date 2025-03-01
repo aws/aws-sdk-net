@@ -305,9 +305,9 @@ namespace Amazon.EC2.Model
         /// Time-based copies</a>.
         /// </para>
         /// </summary>
-        public long SnapshotCopyCompletionDurationMinutes
+        public long? SnapshotCopyCompletionDurationMinutes
         {
-            get { return this._snapshotCopyCompletionDurationMinutes.GetValueOrDefault(); }
+            get { return this._snapshotCopyCompletionDurationMinutes; }
             set { this._snapshotCopyCompletionDurationMinutes = value; }
         }
 

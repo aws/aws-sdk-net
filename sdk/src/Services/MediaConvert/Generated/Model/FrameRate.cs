@@ -40,9 +40,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Denominator. the denominator of the frame rate of the asset.
         /// </summary>
-        public int Denominator
+        public int? Denominator
         {
-            get { return this._denominator.GetValueOrDefault(); }
+            get { return this._denominator; }
             set { this._denominator = value; }
         }
 
@@ -55,9 +55,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Numerator. the numerator of the frame rate of the asset.
         /// </summary>
-        public int Numerator
+        public int? Numerator
         {
-            get { return this._numerator.GetValueOrDefault(); }
+            get { return this._numerator; }
             set { this._numerator = value; }
         }
 

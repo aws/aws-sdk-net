@@ -61,9 +61,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=15360)]
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1024, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// VPC.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

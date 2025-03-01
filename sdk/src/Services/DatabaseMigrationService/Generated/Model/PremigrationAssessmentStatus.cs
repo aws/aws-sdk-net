@@ -71,9 +71,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// running successfully.
         /// </para>
         /// </summary>
-        public bool FailOnAssessmentFailure
+        public bool? FailOnAssessmentFailure
         {
-            get { return this._failOnAssessmentFailure.GetValueOrDefault(); }
+            get { return this._failOnAssessmentFailure; }
             set { this._failOnAssessmentFailure = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date which the assessment run was created.
         /// </para>
         /// </summary>
-        public DateTime PremigrationAssessmentRunCreationDate
+        public DateTime? PremigrationAssessmentRunCreationDate
         {
-            get { return this._premigrationAssessmentRunCreationDate.GetValueOrDefault(); }
+            get { return this._premigrationAssessmentRunCreationDate; }
             set { this._premigrationAssessmentRunCreationDate = value; }
         }
 

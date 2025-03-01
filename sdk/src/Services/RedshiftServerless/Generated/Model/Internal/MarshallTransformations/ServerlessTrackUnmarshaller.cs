@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServerlessTrack Object
     /// </summary>  
-    public class ServerlessTrackUnmarshaller : IUnmarshaller<ServerlessTrack, XmlUnmarshallerContext>, IUnmarshaller<ServerlessTrack, JsonUnmarshallerContext>
+    public class ServerlessTrackUnmarshaller : IJsonUnmarshaller<ServerlessTrack, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServerlessTrack IUnmarshaller<ServerlessTrack, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServerlessTrack Unmarshall(JsonUnmarshallerContext context)
+        public ServerlessTrack Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServerlessTrack unmarshalledObject = new ServerlessTrack();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("trackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrackName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateTargets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UpdateTarget, UpdateTargetUnmarshaller>(UpdateTargetUnmarshaller.Instance);
-                    unmarshalledObject.UpdateTargets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UpdateTarget, UpdateTargetUnmarshaller>(UpdateTargetUnmarshaller.Instance);
+                    unmarshalledObject.UpdateTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workgroupVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkgroupVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkgroupVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

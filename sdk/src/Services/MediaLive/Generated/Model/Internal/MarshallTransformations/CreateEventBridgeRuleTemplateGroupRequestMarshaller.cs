@@ -85,28 +85,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetRequestId())
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(publicRequest.RequestId);
+            }
+
+            else if(!(publicRequest.IsSetRequestId()))
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-=======
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetTags())
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

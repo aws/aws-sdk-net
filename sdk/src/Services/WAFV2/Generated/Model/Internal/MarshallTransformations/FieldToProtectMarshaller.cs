@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldKeys())
             {
                 context.Writer.WritePropertyName("FieldKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldKeysListValue in requestObject.FieldKeys)
                 {
-                        context.Writer.Write(requestObjectFieldKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectFieldKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFieldType())
             {
                 context.Writer.WritePropertyName("FieldType");
-                context.Writer.Write(requestObject.FieldType);
+                context.Writer.WriteStringValue(requestObject.FieldType);
             }
 
         }

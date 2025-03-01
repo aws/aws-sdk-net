@@ -73,7 +73,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 if (context.TestExpression("dbClusterId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DbClusterId = unmarshaller.Unmarshall(context);
+                    response.DbClusterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dbInstanceType", targetDepth))
@@ -121,7 +121,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 if (context.TestExpression("instanceMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceMode = unmarshaller.Unmarshall(context);
+                    response.InstanceMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logDeliveryConfiguration", targetDepth))

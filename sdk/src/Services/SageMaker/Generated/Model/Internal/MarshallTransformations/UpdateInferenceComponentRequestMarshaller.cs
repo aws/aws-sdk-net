@@ -75,6 +75,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeploymentConfig())
+            {
+                context.Writer.WritePropertyName("DeploymentConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceComponentDeploymentConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInferenceComponentName())
             {
                 context.Writer.WritePropertyName("InferenceComponentName");
@@ -94,7 +105,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetSpecification())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("Specification");
                 context.Writer.WriteStartObject();
 
@@ -102,90 +112,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.Specification, context);
 
                 context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInferenceComponentName())
-                {
-                    context.Writer.WritePropertyName("InferenceComponentName");
-                    context.Writer.Write(publicRequest.InferenceComponentName);
-                }
-
-                if(publicRequest.IsSetRuntimeConfig())
-                {
-                    context.Writer.WritePropertyName("RuntimeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceComponentRuntimeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuntimeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSpecification())
-                {
-                    context.Writer.WritePropertyName("Specification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceComponentSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Specification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeploymentConfig())
-                {
-                    context.Writer.WritePropertyName("DeploymentConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceComponentDeploymentConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInferenceComponentName())
-                {
-                    context.Writer.WritePropertyName("InferenceComponentName");
-                    context.Writer.Write(publicRequest.InferenceComponentName);
-                }
-
-                if(publicRequest.IsSetRuntimeConfig())
-                {
-                    context.Writer.WritePropertyName("RuntimeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceComponentRuntimeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuntimeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSpecification())
-                {
-                    context.Writer.WritePropertyName("Specification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InferenceComponentSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Specification, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
             }
 
             writer.WriteEndObject();

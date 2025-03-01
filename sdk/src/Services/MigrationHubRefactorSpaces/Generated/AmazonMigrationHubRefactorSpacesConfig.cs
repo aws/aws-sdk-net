@@ -34,16 +34,10 @@ namespace Amazon.MigrationHubRefactorSpaces
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "4.0.0.0");
 
         private static readonly AmazonMigrationHubRefactorSpacesEndpointResolver EndpointResolver =
             new AmazonMigrationHubRefactorSpacesEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "3.7.400.88");
-=======
-            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "3.7.400.104");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

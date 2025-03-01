@@ -59,7 +59,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 if (context.TestExpression("allocationStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instance", targetDepth))
@@ -70,14 +70,14 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("mixedInstances", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MixedInstanceConfiguration, MixedInstanceConfigurationUnmarshaller>(MixedInstanceConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.MixedInstances = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MixedInstanceConfiguration, MixedInstanceConfigurationUnmarshaller>(MixedInstanceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MixedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

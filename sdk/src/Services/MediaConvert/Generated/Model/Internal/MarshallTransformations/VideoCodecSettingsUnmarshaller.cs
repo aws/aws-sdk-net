@@ -83,7 +83,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 if (context.TestExpression("gifSettings", targetDepth))
                 {
                     var unmarshaller = GifSettingsUnmarshaller.Instance;
-                    unmarshalledObject.GifSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GifSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("h264Settings", targetDepth))

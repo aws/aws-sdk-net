@@ -71,7 +71,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 if (context.TestExpression("egyptAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = EgyptAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.EgyptAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EgyptAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estoniaAdditionalInfo", targetDepth))
@@ -89,7 +89,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 if (context.TestExpression("greeceAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = GreeceAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.GreeceAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GreeceAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("indiaAdditionalInfo", targetDepth))
@@ -167,7 +167,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 if (context.TestExpression("vietnamAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = VietnamAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.VietnamAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VietnamAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

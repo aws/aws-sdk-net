@@ -34,16 +34,10 @@ namespace Amazon.Neptune
     public partial class AmazonNeptuneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Neptune", "4.0.0.0");
 
         private static readonly AmazonNeptuneEndpointResolver EndpointResolver =
             new AmazonNeptuneEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Neptune", "3.7.401.66");
-=======
-            InternalSDKUtils.BuildUserAgentString("Neptune", "3.7.401.82");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>

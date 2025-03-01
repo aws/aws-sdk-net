@@ -91,9 +91,9 @@ namespace Amazon.StorageGateway.Model
         /// The time at which the gateway stopped generating the cache report.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ReportCompletionPercent
+        public int? ReportCompletionPercent
         {
-            get { return this._reportCompletionPercent.GetValueOrDefault(); }
+            get { return this._reportCompletionPercent; }
             set { this._reportCompletionPercent = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.StorageGateway.Model
         /// The time at which the gateway started generating the cache report.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

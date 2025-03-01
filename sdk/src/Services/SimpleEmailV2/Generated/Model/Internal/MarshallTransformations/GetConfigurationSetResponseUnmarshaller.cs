@@ -55,7 +55,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ArchivingOptions", targetDepth))
                 {
                     var unmarshaller = ArchivingOptionsUnmarshaller.Instance;
-                    response.ArchivingOptions = unmarshaller.Unmarshall(context);
+                    response.ArchivingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigurationSetName", targetDepth))

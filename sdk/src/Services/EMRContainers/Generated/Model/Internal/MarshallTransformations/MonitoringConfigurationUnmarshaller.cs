@@ -71,7 +71,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 if (context.TestExpression("managedLogs", targetDepth))
                 {
                     var unmarshaller = ManagedLogsUnmarshaller.Instance;
-                    unmarshalledObject.ManagedLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManagedLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("persistentAppUI", targetDepth))

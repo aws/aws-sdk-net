@@ -60,7 +60,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrlType())
             {
                 context.Writer.WritePropertyName("CrlType");
-                context.Writer.Write(requestObject.CrlType);
+                context.Writer.WriteStringValue(requestObject.CrlType);
             }
 
             if(requestObject.IsSetCustomCname())
@@ -72,7 +72,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomPath())
             {
                 context.Writer.WritePropertyName("CustomPath");
-                context.Writer.Write(requestObject.CustomPath);
+                context.Writer.WriteStringValue(requestObject.CustomPath);
             }
 
             if(requestObject.IsSetEnabled())

@@ -82,9 +82,9 @@ namespace Amazon.Batch.Model
         /// The total amount of the consumable resource that is available.
         /// </para>
         /// </summary>
-        public long TotalQuantity
+        public long? TotalQuantity
         {
-            get { return this._totalQuantity.GetValueOrDefault(); }
+            get { return this._totalQuantity; }
             set { this._totalQuantity = value; }
         }
 

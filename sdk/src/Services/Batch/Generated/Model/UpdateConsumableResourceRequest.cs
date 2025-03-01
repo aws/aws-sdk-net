@@ -136,9 +136,9 @@ namespace Amazon.Batch.Model
         /// non-negative value.
         /// </para>
         /// </summary>
-        public long Quantity
+        public long? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

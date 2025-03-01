@@ -96,8 +96,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("rules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TemplateRule, TemplateRuleUnmarshaller>(TemplateRuleUnmarshaller.Instance);
-                    response.Rules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TemplateRule, TemplateRuleUnmarshaller>(TemplateRuleUnmarshaller.Instance);
+                    response.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

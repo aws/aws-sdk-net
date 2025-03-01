@@ -61,9 +61,9 @@ namespace Amazon.Batch.Model
         /// The quantity of the consumable resource that is needed.
         /// </para>
         /// </summary>
-        public long Quantity
+        public long? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

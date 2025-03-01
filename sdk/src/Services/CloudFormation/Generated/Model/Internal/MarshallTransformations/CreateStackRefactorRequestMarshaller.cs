@@ -69,52 +69,62 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetResourceMappings())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ResourceMappings)
+                    if (publicRequest.ResourceMappings.Count == 0)
+                        request.Parameters.Add("ResourceMappings", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestination())
-                        {
-                            if(publicRequestlistValue.Destination.IsSetLogicalResourceId())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ResourceMappings)
+                         {
+                            if(publicRequestlistValue.IsSetDestination())
                             {
-                                request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.Destination.LogicalResourceId));
+                                if(publicRequestlistValue.Destination.IsSetLogicalResourceId())
+                                {
+                                    request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.Destination.LogicalResourceId));
+                                }
+                                if(publicRequestlistValue.Destination.IsSetStackName())
+                                {
+                                    request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "StackName", StringUtils.FromString(publicRequestlistValue.Destination.StackName));
+                                }
                             }
-                            if(publicRequestlistValue.Destination.IsSetStackName())
+                            if(publicRequestlistValue.IsSetSource())
                             {
-                                request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "StackName", StringUtils.FromString(publicRequestlistValue.Destination.StackName));
+                                if(publicRequestlistValue.Source.IsSetLogicalResourceId())
+                                {
+                                    request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.Source.LogicalResourceId));
+                                }
+                                if(publicRequestlistValue.Source.IsSetStackName())
+                                {
+                                    request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "StackName", StringUtils.FromString(publicRequestlistValue.Source.StackName));
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetSource())
-                        {
-                            if(publicRequestlistValue.Source.IsSetLogicalResourceId())
-                            {
-                                request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.Source.LogicalResourceId));
-                            }
-                            if(publicRequestlistValue.Source.IsSetStackName())
-                            {
-                                request.Parameters.Add("ResourceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "StackName", StringUtils.FromString(publicRequestlistValue.Source.StackName));
-                            }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStackDefinitions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StackDefinitions)
+                    if (publicRequest.StackDefinitions.Count == 0)
+                        request.Parameters.Add("StackDefinitions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetStackName())
-                        {
-                            request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StackName", StringUtils.FromString(publicRequestlistValue.StackName));
-                        }
-                        if(publicRequestlistValue.IsSetTemplateBody())
-                        {
-                            request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateBody", StringUtils.FromString(publicRequestlistValue.TemplateBody));
-                        }
-                        if(publicRequestlistValue.IsSetTemplateURL())
-                        {
-                            request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateURL", StringUtils.FromString(publicRequestlistValue.TemplateURL));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.StackDefinitions)
+                         {
+                            if(publicRequestlistValue.IsSetStackName())
+                            {
+                                request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StackName", StringUtils.FromString(publicRequestlistValue.StackName));
+                            }
+                            if(publicRequestlistValue.IsSetTemplateBody())
+                            {
+                                request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateBody", StringUtils.FromString(publicRequestlistValue.TemplateBody));
+                            }
+                            if(publicRequestlistValue.IsSetTemplateURL())
+                            {
+                                request.Parameters.Add("StackDefinitions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateURL", StringUtils.FromString(publicRequestlistValue.TemplateURL));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

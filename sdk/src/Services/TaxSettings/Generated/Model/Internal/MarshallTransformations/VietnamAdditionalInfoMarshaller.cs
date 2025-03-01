@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetElectronicTransactionCodeNumber())
             {
                 context.Writer.WritePropertyName("electronicTransactionCodeNumber");
-                context.Writer.Write(requestObject.ElectronicTransactionCodeNumber);
+                context.Writer.WriteStringValue(requestObject.ElectronicTransactionCodeNumber);
             }
 
             if(requestObject.IsSetEnterpriseIdentificationNumber())
             {
                 context.Writer.WritePropertyName("enterpriseIdentificationNumber");
-                context.Writer.Write(requestObject.EnterpriseIdentificationNumber);
+                context.Writer.WriteStringValue(requestObject.EnterpriseIdentificationNumber);
             }
 
             if(requestObject.IsSetPaymentVoucherNumber())
             {
                 context.Writer.WritePropertyName("paymentVoucherNumber");
-                context.Writer.Write(requestObject.PaymentVoucherNumber);
+                context.Writer.WriteStringValue(requestObject.PaymentVoucherNumber);
             }
 
             if(requestObject.IsSetPaymentVoucherNumberDate())
             {
                 context.Writer.WritePropertyName("paymentVoucherNumberDate");
-                context.Writer.Write(requestObject.PaymentVoucherNumberDate);
+                context.Writer.WriteStringValue(requestObject.PaymentVoucherNumberDate);
             }
 
         }

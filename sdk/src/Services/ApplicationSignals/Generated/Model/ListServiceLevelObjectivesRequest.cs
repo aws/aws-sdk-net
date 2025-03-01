@@ -52,9 +52,9 @@ namespace Amazon.ApplicationSignals.Model
         /// for SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
         /// the returned data to only a single source account. &lt;/p&gt; </c></pre>
         /// </summary>
-        public bool IncludeLinkedAccounts
+        public bool? IncludeLinkedAccounts
         {
-            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            get { return this._includeLinkedAccounts; }
             set { this._includeLinkedAccounts = value; }
         }
 

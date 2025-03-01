@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -63,100 +66,108 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBucketRegion())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBucketRegion())
-                {
-                    context.Writer.WritePropertyName("BucketRegion");
-                    context.Writer.Write(publicRequest.BucketRegion);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetExclusionFilters())
-                {
-                    context.Writer.WritePropertyName("ExclusionFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExclusionFiltersListValue in publicRequest.ExclusionFilters)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CacheReportFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExclusionFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetFileShareARN())
-                {
-                    context.Writer.WritePropertyName("FileShareARN");
-                    context.Writer.Write(publicRequest.FileShareARN);
-                }
-
-                if(publicRequest.IsSetInclusionFilters())
-                {
-                    context.Writer.WritePropertyName("InclusionFilters");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInclusionFiltersListValue in publicRequest.InclusionFilters)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CacheReportFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInclusionFiltersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetLocationARN())
-                {
-                    context.Writer.WritePropertyName("LocationARN");
-                    context.Writer.Write(publicRequest.LocationARN);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetVPCEndpointDNSName())
-                {
-                    context.Writer.WritePropertyName("VPCEndpointDNSName");
-                    context.Writer.Write(publicRequest.VPCEndpointDNSName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("BucketRegion");
+                context.Writer.WriteStringValue(publicRequest.BucketRegion);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetExclusionFilters())
+            {
+                context.Writer.WritePropertyName("ExclusionFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExclusionFiltersListValue in publicRequest.ExclusionFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CacheReportFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExclusionFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFileShareARN())
+            {
+                context.Writer.WritePropertyName("FileShareARN");
+                context.Writer.WriteStringValue(publicRequest.FileShareARN);
+            }
+
+            if(publicRequest.IsSetInclusionFilters())
+            {
+                context.Writer.WritePropertyName("InclusionFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInclusionFiltersListValue in publicRequest.InclusionFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CacheReportFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInclusionFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLocationARN())
+            {
+                context.Writer.WritePropertyName("LocationARN");
+                context.Writer.WriteStringValue(publicRequest.LocationARN);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVPCEndpointDNSName())
+            {
+                context.Writer.WritePropertyName("VPCEndpointDNSName");
+                context.Writer.WriteStringValue(publicRequest.VPCEndpointDNSName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

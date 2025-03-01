@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitDepth. The bit depth of the audio track.
         /// </summary>
-        public int BitDepth
+        public int? BitDepth
         {
-            get { return this._bitDepth.GetValueOrDefault(); }
+            get { return this._bitDepth; }
             set { this._bitDepth = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property BitRate. The bit rate of the audio track in bits per second.
         /// </summary>
-        public int BitRate
+        public int? BitRate
         {
-            get { return this._bitRate.GetValueOrDefault(); }
+            get { return this._bitRate; }
             set { this._bitRate = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property Channels. The number of audio channels.
         /// </summary>
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property SampleRate. The sample rate of the audio track.
         /// </summary>
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

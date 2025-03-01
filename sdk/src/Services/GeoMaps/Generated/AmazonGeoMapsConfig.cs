@@ -34,16 +34,10 @@ namespace Amazon.GeoMaps
     public partial class AmazonGeoMapsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Geo Maps", "4.0.0.0");
 
         private static readonly AmazonGeoMapsEndpointResolver EndpointResolver =
             new AmazonGeoMapsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Geo Maps", "3.7.400.45");
-=======
-            InternalSDKUtils.BuildUserAgentString("Geo Maps", "3.7.400.61");
->>>>>>> 73f5e3892bfceb07920f41e41a4aebe3a70c615b
 
         private string _userAgent = UserAgentString;
         ///<summary>
