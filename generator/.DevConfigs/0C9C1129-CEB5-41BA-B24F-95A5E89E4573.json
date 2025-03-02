@@ -1,6 +1,13 @@
 {
   "services": [
     {
+      "serviceName": "CloudFront",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the AmazonCloudFrontUtil utility code that was no longer being used."
+      ]
+    },  
+    {
       "serviceName": "DynamoDBv2",
       "type": "patch",
       "changeLogMessages": [
@@ -30,7 +37,7 @@
       ]
     },
     {
-      "serviceName": "SageMagerRuntime",
+      "serviceName": "SageMakerRuntime",
       "type": "patch",
       "changeLogMessages": [
         "Removed obsolete constructors for PayloadPart."
