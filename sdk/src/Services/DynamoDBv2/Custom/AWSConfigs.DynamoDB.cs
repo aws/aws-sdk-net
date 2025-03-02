@@ -57,6 +57,11 @@ namespace Amazon
 
         #region DynamoDBContext TableNamePrefix
 
+        /// <summary>
+        /// Key for the DynamoDBContextTableNamePrefix property.
+        /// </summary>
+        public const string DynamoDBContextTableNamePrefixKey = "AWS.DynamoDBContext.TableNamePrefix";
+
         #endregion
 
         /// <summary>
@@ -171,7 +176,7 @@ namespace Amazon.Util
 
         internal DynamoDBContextConfig()
         {
-            this.TableNamePrefix = AWSConfigs.GetConfig(AWSConfigsDynamoDB.Context.TableNamePrefix);
+            this.TableNamePrefix = AWSConfigs.GetConfig(AWSConfigsDynamoDB.DynamoDBContextTableNamePrefixKey);
 
             TableAliases = new Dictionary<string, string>(StringComparer.Ordinal);
             TypeMappings = new Dictionary<Type, TypeMapping>();
