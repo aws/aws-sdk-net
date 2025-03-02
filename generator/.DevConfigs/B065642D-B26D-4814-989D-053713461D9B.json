@@ -1,0 +1,19 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudFront",
+      "type": "patch",
+      "changeLogMessages": [
+        "Mark AmazonCloudFrontUtil as obsolete and will be removed in the next major version."
+      ]
+    },
+    {
+      "serviceName": "EC2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Mark ImageUtilities as obsolete and will be removed in the next major version.",
+		"Mark VPCUtilities as obsolete and will be removed in the next major version."
+      ]
+    }	
+  ]
+}
