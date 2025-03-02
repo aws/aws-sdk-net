@@ -30,7 +30,7 @@
       ]
     },
     {
-      "serviceName": "SageMager",
+      "serviceName": "SageMagerRuntime",
       "type": "patch",
       "changeLogMessages": [
         "Removed obsolete constructors for PayloadPart."
