@@ -1,0 +1,47 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the DynamoDBContextTableNamePrefix property. Users should call AWSConfigsDynamoDB.Context.TableNamePrefix instead of AWSConfigsDynamoDB.Context.DynamoDBContextTableNamePrefix."
+      ]
+    },
+    {
+      "serviceName": "EC2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the VPC utilizes code. It was terribly out of date even referring to EC2 instance type that has been deprecated for years.",
+		"Removed the image utilities used for looking up EC2 amis for Windows OS."
+      ]
+    },
+    {
+      "serviceName": "IoT",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed a legacy customization for NextToken override to refer to the actual modeled pagination token."
+      ]
+    },
+    {
+      "serviceName": "Lambda",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed obsolete InvokeAsync service client operation to avoid confusion with the Async suffix added for async .NET methods."
+      ]
+    },
+    {
+      "serviceName": "SageMager",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed obsolete constructors for PayloadPart."
+      ]
+    },
+    {
+      "serviceName": "SecurityToken",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the deprecated STS assume role credential provider since users should be using the one in core."
+      ]
+    }		
+  ]
+}
