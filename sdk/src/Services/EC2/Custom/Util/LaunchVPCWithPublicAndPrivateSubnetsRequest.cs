@@ -28,6 +28,7 @@ namespace Amazon.EC2.Util
     /// The properties used to create a VPC, a public subnet, private subnet and a NAT EC2 instance to allow EC2 instances in the private
     /// subnet to establish outbound connections to the internet.
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public class LaunchVPCWithPublicAndPrivateSubnetsRequest : LaunchVPCWithPublicSubnetRequest
     {
         string privateSubnetCiderBlock = "10.0.1.0/24";
