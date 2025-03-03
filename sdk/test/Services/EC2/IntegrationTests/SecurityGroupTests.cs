@@ -106,13 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         /// Describe operation is performed at the end of each test to ensure actual behavior matches with the expected output.
         /// 1. A new CidrIp is added using Ipv4Ranges property and a AuthorizeSecurityGroupEgressRequest is made. 
         /// Validation is performed to check the updated values appears on Ipv4Ranges property.
-        /// 2. A new IpRange is added to Ipv4Ranges property and a AuthorizeSecurityGroupEgressRequest is made.
-        /// Validation is performed to check the updated values appear on both IpRanges and Ipv4Ranges property.
-        /// 3. Different values are set on both IpRanges and Ipv4Ranges and a AuthorizeSecurityGroupEgressRequest is made.
-        /// Validation is perfomed to ensure that an ArgumentExcpetions is returned.
-        /// 4. A UpdateSecurityGroupRuleDescriptionsEgressRequest is made using the deprecated IpRanges property on a CidrIp for which a description exists.
-        /// Validation is perfomed to ensure that the description is not lost.
-        /// 5. A RevokeSecurityGroupEgressRequest operation is perfomed to remove all the IpPermissions added to the security group.
+        /// 2. A RevokeSecurityGroupEgressRequest operation is perfomed to remove all the IpPermissions added to the security group.
         /// </summary>
         [TestMethod]
         [TestCategory("EC2")]
