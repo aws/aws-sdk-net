@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("encryptionControl", targetDepth))
+                    {
+                        var unmarshaller = VpcEncryptionControlUnmarshaller.Instance;
+                        unmarshalledObject.EncryptionControl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceTenancy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

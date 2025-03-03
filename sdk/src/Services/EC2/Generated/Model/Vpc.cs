@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _cidrBlock;
         private List<VpcCidrBlockAssociation> _cidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<VpcCidrBlockAssociation>() : null;
         private string _dhcpOptionsId;
+        private VpcEncryptionControl _encryptionControl;
         private Tenancy _instanceTenancy;
         private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<VpcIpv6CidrBlockAssociation>() : null;
         private bool? _isDefault;
@@ -116,6 +117,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetDhcpOptionsId()
         {
             return this._dhcpOptionsId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionControl.
+        /// </summary>
+        public VpcEncryptionControl EncryptionControl
+        {
+            get { return this._encryptionControl; }
+            set { this._encryptionControl = value; }
+        }
+
+        // Check to see if EncryptionControl property is set
+        internal bool IsSetEncryptionControl()
+        {
+            return this._encryptionControl != null;
         }
 
         /// <summary>
