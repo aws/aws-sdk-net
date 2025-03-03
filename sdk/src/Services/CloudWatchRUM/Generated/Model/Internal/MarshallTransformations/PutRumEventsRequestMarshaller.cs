@@ -70,6 +70,12 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlias())
+                {
+                    context.Writer.WritePropertyName("Alias");
+                    context.Writer.Write(publicRequest.Alias);
+                }
+
                 if(publicRequest.IsSetAppMonitorDetails())
                 {
                     context.Writer.WritePropertyName("AppMonitorDetails");
