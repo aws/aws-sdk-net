@@ -31,13 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// A user profile in a Amazon Cognito user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter to <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html">ListUsers</a>.
-    /// 
-    /// </para>
     /// </summary>
     public partial class UserType
     {

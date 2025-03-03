@@ -40,8 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserConfirmationNecessary. 
         /// <para>
         /// When <c>true</c>, your user must confirm that they want to remember the device. Prompt
-        /// the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a>
-        /// request that sets the device to <c>remembered</c> or <c>not_remembered</c>.
+        /// the user for an answer.
         /// </para>
         ///  
         /// <para>
@@ -53,10 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// You can configure your user pool to always remember devices, in which case this response
         /// is <c>false</c>, or to allow users to opt in, in which case this response is <c>true</c>.
         /// Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your
-        /// user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a>
-        /// parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-        /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>
-        /// request.
+        /// user pool.
         /// </para>
         /// </summary>
         public bool UserConfirmationNecessary

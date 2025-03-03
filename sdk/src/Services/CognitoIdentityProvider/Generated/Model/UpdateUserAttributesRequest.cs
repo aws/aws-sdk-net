@@ -32,11 +32,14 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserAttributes operation.
-    /// With this operation, your users can update one or more of their attributes with their
-    /// own credentials. You authorize this API request with the user's access token. To delete
-    /// an attribute from your user, submit the attribute in your API request with a blank
-    /// value. Custom attribute values in this request must include the <c>custom:</c> prefix.
+    /// Updates the currently signed-in user's attributes. To delete an attribute from the
+    /// user, submit the attribute in your API request with a blank value.
     /// 
+    ///  
+    /// <para>
+    /// For custom attributes, you must add a <c>custom:</c> prefix to the attribute name,
+    /// for example <c>custom:department</c>.
+    /// </para>
     ///  
     /// <para>
     /// Authorize this action with a signed-in user's access token. It must include the scope
@@ -82,8 +85,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose user attributes
-        /// you want to update.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -119,8 +122,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -163,8 +165,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
-        /// name.
+        /// For custom attributes, you must add a <c>custom:</c> prefix to the attribute name.
         /// </para>
         ///  
         /// <para>

@@ -32,8 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the SignUp operation.
-    /// Registers the user in the specified user pool and creates a user name, password, and
-    /// user attributes.
+    /// Registers a user with an app client and requests a user name, password, and user attributes
+    /// in the user pool.
     /// 
     ///  <note> 
     /// <para>
@@ -69,11 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// You might receive a <c>LimitExceeded</c> exception in response to this request if
     /// you have exceeded a rate quota for email or SMS messages, and if your user pool automatically
     /// verifies email addresses or phone numbers. When you get this exception in the response,
-    /// the user is successfully created and is in an <c>UNCONFIRMED</c> state. You can send
-    /// a new code with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html">
-    /// ResendConfirmationCode</a> request, or confirm the user as an administrator with an
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html">
-    /// AdminConfirmSignUp</a> request.
+    /// the user is successfully created and is in an <c>UNCONFIRMED</c> state.
     /// </para>
     /// </summary>
     public partial class SignUpRequest : AmazonCognitoIdentityProviderRequest
@@ -91,8 +87,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <c>SignUp</c>
-        /// calls.
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -110,7 +107,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The ID of the app client where the user wants to sign up.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -146,8 +143,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -186,16 +182,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password of the user you want to register.
+        /// The user's proposed password. The password must comply with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html">password
+        /// requirements</a> of your user pool.
         /// </para>
         ///  
         /// <para>
         /// Users can sign up without a password when your user pool supports passwordless sign-in
         /// with email or SMS OTPs. To create a user with no password, omit this parameter or
         /// submit a blank value. You can only create a passwordless user when passwordless sign-in
-        /// is available. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
-        /// SignInPolicyType</a> property of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-        /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.
+        /// is available.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=256)]
@@ -240,8 +235,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
-        /// name.
+        /// For custom attributes, include a <c>custom:</c> prefix in the attribute name, for
+        /// example <c>custom:department</c>.
         /// </para>
         /// </summary>
         public List<AttributeType> UserAttributes
@@ -259,8 +254,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data about your user session, such as the device fingerprint, IP address,
-        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
@@ -313,10 +308,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// Your Lambda function can analyze this additional data and act on it. Your function
-        /// might perform external API operations like logging user attributes and validation
-        /// data to Amazon CloudWatch Logs. Validation data might also affect the response that
-        /// your function returns to Amazon Cognito, like automatically confirming the user if
-        /// they sign up from within your network.
+        /// can automatically confirm and verify select users or perform external API operations
+        /// like logging user attributes and validation data to Amazon CloudWatch Logs.
         /// </para>
         ///  
         /// <para>

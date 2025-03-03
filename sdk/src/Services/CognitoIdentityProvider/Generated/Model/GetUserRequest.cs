@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUser operation.
-    /// Gets the user attributes and metadata for a user.
+    /// Gets user attributes and and MFA settings for the currently signed-in user.
     /// 
     ///  
     /// <para>
@@ -56,7 +56,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A non-expired access token for the user whose information you want to query.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

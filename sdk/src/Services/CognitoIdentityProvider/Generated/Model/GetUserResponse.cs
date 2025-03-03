@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreferredMfaSetting. 
         /// <para>
-        /// The user's preferred MFA setting.
+        /// The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -88,8 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
-        /// name.
+        /// Custom attributes are prepended with the <c>custom:</c> prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,7 +126,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you requested.
+        /// The name of the user that you requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

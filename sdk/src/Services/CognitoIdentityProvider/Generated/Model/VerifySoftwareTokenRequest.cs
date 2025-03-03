@@ -32,9 +32,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifySoftwareToken operation.
-    /// Use this API to register a user's entered time-based one-time password (TOTP) code
-    /// and mark the user's software token MFA status as "verified" if successful. The request
-    /// takes an access token or a session string, but not both.
+    /// Registers the current user's time-based one-time password (TOTP) authenticator with
+    /// a code generated in their authenticator app from a private key that's supplied by
+    /// your user pool. Marks the user's software token MFA status as "verified" if successful.
+    /// The request takes an access token or a session string, but not both.
     /// 
     ///  <note> 
     /// <para>
@@ -56,8 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose software token you
-        /// want to verify.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -76,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FriendlyDeviceName. 
         /// <para>
-        /// The friendly device name.
+        /// A friendly name for the device that's running the TOTP authenticator.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -95,7 +96,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
+        /// The session ID from an <c>AssociateSoftwareToken</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]
@@ -114,7 +115,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserCode. 
         /// <para>
-        /// The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.
+        /// A TOTP that the user generated in their configured authenticator app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=6, Max=6)]

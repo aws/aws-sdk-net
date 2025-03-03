@@ -40,10 +40,22 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The user's options in the <c>USER_AUTH</c> flow that they can select in a <c>SELECT_CHALLENGE</c>
-    /// response or request in a <c>PREFERRED_CHALLENGE</c>request.
+    /// The user's options for choice-based authentication with the <c>USER_AUTH</c> flow.
     /// </para>
-    ///  </li> </ol>
+    ///  </li> </ol> 
+    /// <para>
+    /// Authorize this action with a signed-in user's access token. It must include the scope
+    /// <c>aws.cognito.signin.user.admin</c>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you can't use IAM credentials to authorize
+    /// requests, and you can't grant IAM permissions in policies. For more information about
+    /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetUserAuthFactorsRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -52,8 +64,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose authentication factors
-        /// you want to view.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

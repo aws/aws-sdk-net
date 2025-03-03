@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ChangePassword operation.
-    /// Changes the password for a specified user in a user pool.
+    /// Changes the password for the currently signed-in user.
     /// 
     ///  
     /// <para>

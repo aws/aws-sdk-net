@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists users and their basic details in a user pool.
+    /// Given a user pool ID, returns a list of users and their basic details in a user pool.
     /// 
     ///  <note> 
     /// <para>
@@ -204,7 +204,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of users to be returned.
+        /// The maximum number of users that you want Amazon Cognito to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -246,7 +246,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool on which the search should be performed.
+        /// The ID of the user pool where you want to display or search for users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

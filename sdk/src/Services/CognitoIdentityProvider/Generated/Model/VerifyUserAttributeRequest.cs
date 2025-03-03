@@ -32,14 +32,14 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyUserAttribute operation.
-    /// Verifies the specified user attributes in the user pool.
+    /// Submits a verification code for a signed-in user who has added or changed a value
+    /// of an auto-verified attribute. When successful, the user's attribute becomes verified
+    /// and the attribute <c>email_verified</c> or <c>phone_number_verified</c> becomes <c>true</c>.
     /// 
     ///  
     /// <para>
     ///  If your user pool requires verification before Amazon Cognito updates the attribute
-    /// value, VerifyUserAttribute updates the affected attribute to its pending value. For
-    /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
-    /// UserAttributeUpdateSettingsType</a>. 
+    /// value, this operation updates the affected attribute to its pending value.
     /// </para>
     ///  
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose user attributes
-        /// you want to verify.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -85,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name in the request to verify user attributes.
+        /// The name of the attribute that you want to verify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -104,7 +104,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The verification code in the request to verify user attributes.
+        /// The verification code that your user pool sent to the added or changed attribute,
+        /// for example the user's email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

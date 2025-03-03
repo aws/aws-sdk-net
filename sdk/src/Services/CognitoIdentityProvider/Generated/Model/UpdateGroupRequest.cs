@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroup operation.
-    /// Updates the specified group with the specified attributes.
+    /// Given the name of a user pool group, updates any of the properties for precedence,
+    /// IAM role, or description. For more information about user pool groups, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
+    /// groups to a user pool</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -66,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A string containing the new description of the group.
+        /// A new description of the existing group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -85,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the group.
+        /// The name of the group that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -104,8 +106,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Precedence. 
         /// <para>
-        /// The new precedence value for the group. For more information about this parameter,
-        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.
+        /// A non-negative integer value that specifies the precedence of this group relative
+        /// to the other groups that a user can belong to in the user pool. Zero is the highest
+        /// precedence value. Groups with lower <c>Precedence</c> values take precedence over
+        /// groups with higher or null <c>Precedence</c> values. If a user belongs to two or more
+        /// groups, it is the group with the lowest precedence value whose role ARN is given in
+        /// the user's tokens for the <c>cognito:roles</c> and <c>cognito:preferred_role</c> claims.
+        /// </para>
+        ///  
+        /// <para>
+        /// Two groups can have the same <c>Precedence</c> value. If this happens, neither group
+        /// takes precedence over the other. If two groups with the same <c>Precedence</c> have
+        /// the same role ARN, that role is used in the <c>cognito:preferred_role</c> claim in
+        /// tokens for users in each group. If the two groups have different role ARNs, the <c>cognito:preferred_role</c>
+        /// claim isn't set in users' tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default <c>Precedence</c> value is null. The maximum <c>Precedence</c> value is
+        /// <c>2^31-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -124,8 +143,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The new role Amazon Resource Name (ARN) for the group. This is used for setting the
-        /// <c>cognito:roles</c> and <c>cognito:preferred_role</c> claims in the token.
+        /// The Amazon Resource Name (ARN) of an IAM role that you want to associate with the
+        /// group. The role assignment contributes to the <c>cognito:roles</c> and <c>cognito:preferred_role</c>
+        /// claims in group members' tokens.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -144,7 +164,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool.
+        /// The ID of the user pool that contains the group you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

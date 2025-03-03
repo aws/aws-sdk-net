@@ -32,17 +32,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the StartWebAuthnRegistration operation.
-    /// Requests credential creation options from your user pool for registration of a passkey
-    /// authenticator. Returns information about the user pool, the user profile, and authentication
+    /// Requests credential creation options from your user pool for the currently signed-in
+    /// user. Returns information about the user pool, the user profile, and authentication
     /// requirements. Users must provide this information in their request to enroll your
     /// application with their passkey provider.
     /// 
-    ///  
-    /// <para>
-    /// After users present this data and register with their passkey provider, return the
-    /// response to your user pool in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CompleteWebAuthnRegistration.html">
-    /// CompleteWebAuthnRegistration</a> API request.
-    /// </para>
     ///  
     /// <para>
     /// Authorize this action with a signed-in user's access token. It must include the scope
@@ -56,8 +50,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose passkey metadata
-        /// you want to generate.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

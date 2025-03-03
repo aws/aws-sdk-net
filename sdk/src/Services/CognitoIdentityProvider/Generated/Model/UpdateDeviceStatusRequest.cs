@@ -32,9 +32,13 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDeviceStatus operation.
-    /// Updates the device status. For more information about device authentication, see <a
-    /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
-    /// with user devices in your user pool</a>.
+    /// Updates the status of a the currently signed-in user's device so that it is marked
+    /// as remembered or not remembered for the purpose of device authentication. Device authentication
+    /// is a "remember me" mechanism that silently completes sign-in from trusted devices
+    /// with a device key instead of a user-provided MFA code. This operation changes the
+    /// status of a device without deleting it, so you can enable it again later. For more
+    /// information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+    /// with devices</a>.
     /// 
     ///  
     /// <para>
@@ -60,8 +64,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose device status you
-        /// want to update.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -80,7 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceKey. 
         /// <para>
-        /// The device key.
+        /// The device key of the device you want to update, for example <c>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]
@@ -99,7 +103,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceRememberedStatus. 
         /// <para>
-        /// The status of whether a device is remembered.
+        /// To enable device authentication with the specified device, set to <c>remembered</c>.To
+        /// disable, set to <c>not_remembered</c>.
         /// </para>
         /// </summary>
         public DeviceRememberedStatusType DeviceRememberedStatus

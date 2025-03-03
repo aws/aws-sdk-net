@@ -37,19 +37,17 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// user to deactivate is a linked external IdP user, any link between that user and an
     /// existing user is removed. When the external user signs in again, and the user is no
     /// longer attached to the previously linked <c>DestinationUser</c>, the user must create
-    /// a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+    /// a new user account.
     /// 
     ///  
     /// <para>
-    /// The <c>ProviderName</c> must match the value specified when creating an IdP for the
-    /// pool. 
+    /// The value of <c>ProviderName</c> must match the name of a user pool IdP.
     /// </para>
     ///  
     /// <para>
-    /// To deactivate a native username + password user, the <c>ProviderName</c> value must
-    /// be <c>Cognito</c> and the <c>ProviderAttributeName</c> must be <c>Cognito_Subject</c>.
-    /// The <c>ProviderAttributeValue</c> must be the name that is used in the user pool for
-    /// the user.
+    /// To deactivate a local user, set <c>ProviderName</c> to <c>Cognito</c> and the <c>ProviderAttributeName</c>
+    /// to <c>Cognito_Subject</c>. The <c>ProviderAttributeValue</c> must be user's local
+    /// username.
     /// </para>
     ///  
     /// <para>
@@ -62,11 +60,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
     /// not yet been used to sign in, the <c>ProviderAttributeName</c> and <c>ProviderAttributeValue</c>
     /// must be the same values that were used for the <c>SourceUser</c> when the identities
-    /// were originally linked using <c> AdminLinkProviderForUser</c> call. (If the linking
-    /// was done with <c>ProviderAttributeName</c> set to <c>Cognito_Subject</c>, the same
-    /// applies here). However, if the user has already signed in, the <c>ProviderAttributeName</c>
-    /// must be <c>Cognito_Subject</c> and <c>ProviderAttributeValue</c> must be the subject
-    /// of the SAML assertion.
+    /// were originally linked using <c> AdminLinkProviderForUser</c> call. This is also true
+    /// if the linking was done with <c>ProviderAttributeName</c> set to <c>Cognito_Subject</c>.
+    /// If the user has already signed in, the <c>ProviderAttributeName</c> must be <c>Cognito_Subject</c>
+    /// and <c>ProviderAttributeValue</c> must be the <c>NameID</c> from their SAML assertion.
     /// </para>
     ///  <note> 
     /// <para>

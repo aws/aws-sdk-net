@@ -40,8 +40,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDomain. 
         /// <para>
-        /// The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom
-        /// domain to your user pool.
+        /// The fully-qualified domain name (FQDN) of the Amazon CloudFront distribution that
+        /// hosts your managed login or classic hosted UI pages. You domain-name authority must
+        /// have an alias record that points requests for your custom domain to this FQDN. Amazon
+        /// Cognito returns this value if you set a custom domain with <c>CustomDomainConfig</c>.
+        /// If you set an Amazon Cognito prefix domain, this operation returns a blank response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

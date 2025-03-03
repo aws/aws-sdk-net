@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIdentityProvider operation.
-    /// Updates IdP information for a user pool.
+    /// Modifies the configuration and trust relationship between a third-party identity provider
+    /// (IdP) and a user pool. Amazon Cognito accepts sign-in with third-party identity providers
+    /// through managed login and OIDC relying-party libraries. For more information, see
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Third-party
+    /// IdP sign-in</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -66,7 +70,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeMapping. 
         /// <para>
-        /// The IdP attribute mapping to be changed.
+        /// A mapping of IdP attributes to standard and custom user pool attributes. Specify a
+        /// user pool attribute as the key of the key-value pair, and the IdP attribute claim
+        /// name as the value.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AttributeMapping
@@ -84,7 +90,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifiers. 
         /// <para>
-        /// A list of IdP identifiers.
+        /// An array of IdP identifiers, for example <c>"IdPIdentifiers": [ "MyIdP", "MyIdP2"
+        /// ]</c>. Identifiers are friendly names that you can pass in the <c>idp_identifier</c>
+        /// query parameter of requests to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize
+        /// endpoint</a> to silently redirect to sign-in with the associated IdP. Identifiers
+        /// in a domain format also enable the use of <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address
+        /// matching with SAML providers</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -231,7 +242,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The IdP name.
+        /// The name of the IdP that you want to update. You can pass the identity provider name
+        /// in the <c>identity_provider</c> query parameter of requests to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize
+        /// endpoint</a> to silently redirect to sign-in with the associated IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -250,7 +263,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The Id of the user pool where you want to update your IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

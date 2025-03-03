@@ -32,8 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserAttributeVerificationCode operation.
-    /// Generates a user attribute verification code for the specified attribute name. Sends
-    /// a message to a user with a code that they must return in a VerifyUserAttribute request.
+    /// Given an attribute name, sends a user attribute verification code for the specified
+    /// attribute name to the currently signed-in user.
     /// 
     ///  
     /// <para>
@@ -80,8 +80,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A non-expired access token for the user whose attribute verification code you want
-        /// to generate.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -100,8 +100,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name returned by the server response to get the user attribute verification
-        /// code.
+        /// The name of the attribute that the user wants to verify, for example <c>email</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -137,8 +136,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

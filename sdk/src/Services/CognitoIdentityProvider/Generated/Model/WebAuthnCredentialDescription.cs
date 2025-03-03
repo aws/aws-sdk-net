@@ -32,11 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The details of a passkey, or webauthN, biometric or security-key authentication factor
     /// for a user.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.
-    /// </para>
     /// </summary>
     public partial class WebAuthnCredentialDescription
     {

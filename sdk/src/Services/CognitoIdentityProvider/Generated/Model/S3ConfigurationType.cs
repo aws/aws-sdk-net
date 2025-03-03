@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Configuration for the Amazon S3 bucket destination of user activity log export with
-    /// advanced security features.
+    /// threat protection.
     /// </summary>
     public partial class S3ConfigurationType
     {
@@ -40,8 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property BucketArn. 
         /// <para>
-        /// The ARN of an Amazon S3 bucket that's the destination for advanced security features
-        /// log export.
+        /// The ARN of an Amazon S3 bucket that's the destination for threat protection log export.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1024)]

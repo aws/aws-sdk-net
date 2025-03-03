@@ -33,14 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// A user pool identity provider (IdP). Contains information about a third-party IdP
     /// to a user pool, the attributes that it populates to user profiles, and the trust relationship
     /// between the IdP and your user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html">CreateIdentityProvider</a>,
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html">DescribeIdentityProvider</a>,
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html">GetIdentityProviderByIdentifier</a>,
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html">UpdateIdentityProvider</a>.
-    /// </para>
     /// </summary>
     public partial class IdentityProviderType
     {

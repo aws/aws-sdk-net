@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The risk evaluation by adaptive authentication, as displayed in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+    /// The risk evaluation by adaptive authentication, as displayed in an <c>AdminListUserAuthEvents</c>
     /// response. Contains evaluations of compromised-credentials detection and assessed risk
     /// level and action taken by adaptive authentication.
     /// </summary>

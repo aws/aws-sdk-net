@@ -32,12 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The configuration of user event logs to an external Amazon Web Services service like
     /// Amazon Data Firehose, Amazon S3, or Amazon CloudWatch Logs.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html">SetLogDeliveryConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>.
-    /// </para>
     /// </summary>
     public partial class LogConfigurationType
     {
@@ -51,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property CloudWatchLogsConfiguration. 
         /// <para>
         /// The CloudWatch log group destination of user pool detailed activity logs, or of user
-        /// activity log export with advanced security features.
+        /// activity log export with threat protection.
         /// </para>
         /// </summary>
         public CloudWatchLogsConfigurationType CloudWatchLogsConfiguration
@@ -71,7 +65,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The source of events that your user pool sends for logging. To send error-level logs
         /// about user notification activity, set to <c>userNotification</c>. To send info-level
-        /// logs about advanced security features user activity, set to <c>userAuthEvents</c>.
+        /// logs about threat-protection user activity in user pools with the Plus feature plan,
+        /// set to <c>userAuthEvents</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,9 +85,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FirehoseConfiguration. 
         /// <para>
-        /// The Amazon Data Firehose stream destination of user activity log export with advanced
-        /// security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
+        /// The Amazon Data Firehose stream destination of user activity log export with threat
+        /// protection. To activate this setting, your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+        /// Plus tier</a>.
         /// </para>
         /// </summary>
         public FirehoseConfigurationType FirehoseConfiguration
@@ -111,11 +106,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property LogLevel. 
         /// <para>
         /// The <c>errorlevel</c> selection of logs that a user pool sends for detailed activity
-        /// logging. To send <c>userNotification</c> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information
+        /// logging. To send <c>userNotification</c> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">information
         /// about message delivery</a>, choose <c>ERROR</c> with <c>CloudWatchLogsConfiguration</c>.
-        /// To send <c>userAuthEvents</c> activity with user logs from advanced security features,
-        /// choose <c>INFO</c> with one of <c>CloudWatchLogsConfiguration</c>, <c>FirehoseConfiguration</c>,
-        /// or <c>S3Configuration</c>.
+        /// To send <c>userAuthEvents</c> activity with user logs from threat protection with
+        /// the Plus feature plan, choose <c>INFO</c> with one of <c>CloudWatchLogsConfiguration</c>,
+        /// <c>FirehoseConfiguration</c>, or <c>S3Configuration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,9 +129,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The Amazon S3 bucket destination of user activity log export with advanced security
-        /// features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
+        /// The Amazon S3 bucket destination of user activity log export with threat protection.
+        /// To activate this setting, your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+        /// Plus tier</a>.
         /// </para>
         /// </summary>
         public S3ConfigurationType S3Configuration

@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+    /// See <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson">
     /// AuthenticationResponseJSON</a>.
     /// </para>
     ///  </li> <li> 
@@ -144,10 +144,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  <note> 
     /// <para>
     /// In a <c>NEW_PASSWORD_REQUIRED</c> challenge response, you can't modify a required
-    /// attribute that already has a value. In <c>RespondToAuthChallenge</c>, set a value
-    /// for any keys that Amazon Cognito returned in the <c>requiredAttributes</c> parameter,
-    /// then use the <c>UpdateUserAttributes</c> API operation to modify the value of any
-    /// additional attributes.
+    /// attribute that already has a value. In <c>AdminRespondToAuthChallenge</c> or <c>RespondToAuthChallenge</c>,
+    /// set a value for any keys that Amazon Cognito returned in the <c>requiredAttributes</c>
+    /// parameter, then use the <c>AdminUpdateUserAttributes</c> or <c>UpdateUserAttributes</c>
+    /// API operation to modify the value of any additional attributes.
     /// </para>
     ///  </note> </dd> <dt>SOFTWARE_TOKEN_MFA</dt> <dd> 
     /// <para>
@@ -180,11 +180,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// For more information about <c>SECRET_HASH</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
     /// secret hash values</a>. For information about <c>DEVICE_KEY</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
     /// with user devices in your user pool</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
     /// </para>
     /// </summary>
     public partial class ChallengeResponseType

@@ -30,14 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The settings of risk configuration for threat protection with advanced security features
-    /// in a user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>.
-    /// </para>
+    /// The settings of risk configuration for threat protection with threat protection in
+    /// a user pool.
     /// </summary>
     public partial class RiskConfigurationType
     {
@@ -52,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccountTakeoverRiskConfiguration. 
         /// <para>
         /// The settings for automated responses and notification templates for adaptive authentication
-        /// with advanced security features.
+        /// with threat protection.
         /// </para>
         /// </summary>
         public AccountTakeoverRiskConfigurationType AccountTakeoverRiskConfiguration
@@ -91,8 +85,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CompromisedCredentialsRiskConfiguration. 
         /// <para>
-        /// Settings for compromised-credentials actions and authentication types with advanced
-        /// security features in full-function <c>ENFORCED</c> mode.
+        /// Settings for compromised-credentials actions and authentication types with threat
+        /// protection in full-function <c>ENFORCED</c> mode.
         /// </para>
         /// </summary>
         public CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration

@@ -31,36 +31,13 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminUpdateUserAttributes operation.
-    /// <note> 
-    /// <para>
-    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
-    /// carriers require you to register an origination phone number before you can send SMS
-    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
-    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
-    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
-    /// their accounts, or sign in.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Services service, Amazon Simple Notification Service might place your account in the
-    /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
-    /// your app while in the sandbox environment, you can move out of the sandbox and into
-    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
-    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
-    /// Guide</i>.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Updates the specified user's attributes. To delete an attribute from your user, submit
     /// the attribute in your API request with a blank value.
-    /// </para>
+    /// 
     ///  
     /// <para>
-    /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
-    /// name.
+    /// For custom attributes, you must add a <c>custom:</c> prefix to the attribute name,
+    /// for example <c>custom:department</c>.
     /// </para>
     ///  
     /// <para>
@@ -89,7 +66,28 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
     /// the Amazon Cognito user pools API and user pool endpoints</a> 
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> <note> 
+    /// <para>
+    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
+    /// carriers require you to register an origination phone number before you can send SMS
+    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
+    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
+    /// their accounts, or sign in.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
+    /// Services service, Amazon Simple Notification Service might place your account in the
+    /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
+    /// your app while in the sandbox environment, you can move out of the sandbox and into
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
+    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AdminUpdateUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -118,8 +116,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -199,7 +196,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

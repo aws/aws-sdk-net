@@ -96,18 +96,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomDomainConfig. 
         /// <para>
-        /// The configuration for a custom domain that hosts the sign-up and sign-in pages for
-        /// your application. Use this object to specify an SSL certificate that is managed by
-        /// ACM.
+        /// The configuration for a custom domain that hosts managed login for your application.
+        /// In an <c>UpdateUserPoolDomain</c> request, this parameter specifies an SSL certificate
+        /// for the managed login hosted webserver. The certificate must be an ACM ARN in <c>us-east-1</c>.
         /// </para>
         ///  
         /// <para>
         /// When you create a custom domain, the passkey RP ID defaults to the custom domain.
         /// If you had a prefix domain active, this will cause passkey integration for your prefix
         /// domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey
-        /// integration working, you can explicitly set RP ID to the prefix domain. Update the
-        /// RP ID in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-        /// request.
+        /// integration working, you can explicitly set RP ID to the prefix domain.
         /// </para>
         /// </summary>
         public CustomDomainConfigType CustomDomainConfig
@@ -125,13 +123,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name for the custom domain that hosts the sign-up and sign-in pages for
-        /// your application. One example might be <c>auth.example.com</c>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This string can include only lowercase letters, numbers, and hyphens. Don't use a
-        /// hyphen for the first or last character. Use periods to separate subdomain names.
+        /// The name of the domain that you want to update. For custom domains, this is the fully-qualified
+        /// domain name, for example <c>auth.example.com</c>. For prefix domains, this is the
+        /// prefix alone, such as <c>myprefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -171,8 +165,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool that is associated with the custom domain whose certificate
-        /// you're updating.
+        /// The ID of the user pool that is associated with the domain you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

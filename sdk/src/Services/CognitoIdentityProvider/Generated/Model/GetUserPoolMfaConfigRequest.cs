@@ -31,7 +31,46 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserPoolMfaConfig operation.
-    /// Gets the user pool multi-factor authentication (MFA) configuration.
+    /// Given a user pool ID, returns configuration for sign-in with WebAuthn authenticators
+    /// and for multi-factor authentication (MFA). This operation describes the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The WebAuthn relying party (RP) ID and user-verification settings.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The required, optional, or disabled state of MFA for all user pool users.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The message templates for email and SMS MFA.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The enabled or disabled state of time-based one-time password (TOTP) MFA.
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+    /// for this API operation. For this operation, you must use IAM credentials to authorize
+    /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+    /// Amazon Web Services API Requests</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+    /// the Amazon Cognito user pools API and user pool endpoints</a> 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class GetUserPoolMfaConfigRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -40,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to query WebAuthn and MFA configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

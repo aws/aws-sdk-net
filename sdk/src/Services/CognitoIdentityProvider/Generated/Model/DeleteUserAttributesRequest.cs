@@ -32,8 +32,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserAttributes operation.
-    /// Self-deletes attributes for a user. For example, your application can submit a request
-    /// to this operation when a user wants to remove their <c>birthdate</c> attribute value.
+    /// Deletes attributes from the currently signed-in user. For example, your application
+    /// can submit a request to this operation when a user wants to remove their <c>birthdate</c>
+    /// attribute value.
     /// 
     ///  
     /// <para>
@@ -58,8 +59,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose attributes you want
-        /// to delete.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

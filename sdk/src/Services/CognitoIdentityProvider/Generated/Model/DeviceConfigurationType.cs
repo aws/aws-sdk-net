@@ -30,34 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The device-remembering configuration for a user pool. A <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">
-    /// DescribeUserPool</a> request returns a null value for this object when the user pool
-    /// isn't configured to remember devices. When device remembering is active, you can remember
-    /// a user's device with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>
-    /// API request. Additionally. when the property <c>DeviceOnlyRememberedOnUserPrompt</c>
-    /// is <c>true</c>, you must follow <c>ConfirmDevice</c> with an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a>
-    /// API request that sets the user's device to <c>remembered</c> or <c>not_remembered</c>.
+    /// The device-remembering configuration for a user pool.
     /// 
-    ///  
-    /// <para>
-    /// To sign in with a remembered device, include <c>DEVICE_KEY</c> in the authentication
-    /// parameters in your user's <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">
-    /// InitiateAuth</a> request. If your app doesn't include a <c>DEVICE_KEY</c> parameter,
-    /// the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html#API_InitiateAuth_ResponseSyntax">response</a>
-    /// from Amazon Cognito includes newly-generated <c>DEVICE_KEY</c> and <c>DEVICE_GROUP_KEY</c>
-    /// values under <c>NewDeviceMetadata</c>. Store these values to use in future device-authentication
-    /// requests.
-    /// </para>
     ///  <note> 
     /// <para>
     /// When you provide a value for any property of <c>DeviceConfiguration</c>, you activate
     /// the device remembering for the user pool.
-    /// </para>
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -96,10 +74,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property DeviceOnlyRememberedOnUserPrompt. 
         /// <para>
         /// When true, Amazon Cognito doesn't automatically remember a user's device when your
-        /// app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">
-        /// ConfirmDevice</a> API request. In your app, create a prompt for your user to choose
-        /// whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">
-        /// UpdateDeviceStatus</a> API request.
+        /// app sends a <c>ConfirmDevice</c> API request. In your app, create a prompt for your
+        /// user to choose whether they want to remember their device. Return the user's choice
+        /// in an <c>UpdateDeviceStatus</c> API request.
         /// </para>
         ///  
         /// <para>

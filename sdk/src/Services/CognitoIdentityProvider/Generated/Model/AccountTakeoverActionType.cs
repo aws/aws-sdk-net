@@ -31,14 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The automated response to a risk level for adaptive authentication in full-function,
-    /// or <c>ENFORCED</c>, mode. You can assign an action to each risk level that advanced
-    /// security features evaluates.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
-    /// </para>
+    /// or <c>ENFORCED</c>, mode. You can assign an action to each risk level that threat
+    /// protection evaluates.
     /// </summary>
     public partial class AccountTakeoverActionType
     {

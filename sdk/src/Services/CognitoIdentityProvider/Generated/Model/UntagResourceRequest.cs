@@ -31,8 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from an Amazon Cognito user pool. You can use this action
-    /// up to 5 times per second, per account.
+    /// Given tag IDs that you previously assigned to a user pool, removes them.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -61,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The keys of the tags to remove from the user pool.
+        /// An array of tag keys that you want to remove from the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

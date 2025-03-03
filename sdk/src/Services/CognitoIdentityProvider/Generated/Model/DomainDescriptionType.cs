@@ -32,11 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// A container for information about the user pool domain associated with the hosted
     /// UI and OAuth endpoints.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html">DescribeUserPoolDomain</a>.
-    /// </para>
     /// </summary>
     public partial class DomainDescriptionType
     {

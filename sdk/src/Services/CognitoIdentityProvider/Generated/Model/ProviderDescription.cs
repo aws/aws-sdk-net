@@ -31,11 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The details of a user pool identity provider (IdP), including name and type.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html">ListIdentityProviders</a>.
-    /// </para>
     /// </summary>
     public partial class ProviderDescription
     {

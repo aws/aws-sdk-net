@@ -62,18 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// A list of the user pool users, and their attributes, that match your query.
+        /// An array of user pool users who match your query, and their attributes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Cognito creates a profile in your user pool for each native user in your user
-        /// pool, and each unique user ID from your third-party identity providers (IdPs). When
-        /// you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>
-        /// API operation, the output of <c>ListUsers</c> displays both the IdP user and the native
-        /// user that you linked. You can identify IdP users in the <c>Users</c> object of this
-        /// API response by the IdP prefix that Amazon Cognito appends to <c>Username</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<UserType> Users
         {

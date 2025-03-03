@@ -32,12 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The configuration of multi-factor authentication (MFA) with SMS messages in a user
     /// pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
-    /// </para>
     /// </summary>
     public partial class SmsMfaConfigType
     {

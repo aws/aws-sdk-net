@@ -48,9 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether the user is activated for sign-in. The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a>
-        /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a>
-        /// API operations deactivate and activate user sign-in, respectively.
+        /// Indicates whether the user is activated for sign-in.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -168,9 +166,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserMFASettingList. 
         /// <para>
         /// The MFA options that are activated for the user. The possible values in this list
-        /// are <c>SMS_MFA</c>, <c>EMAIL_OTP</c>, and <c>SOFTWARE_TOKEN_MFA</c>. You can change
-        /// the MFA preference for users who have more than one available MFA factor with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
-        /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.
+        /// are <c>SMS_MFA</c>, <c>EMAIL_OTP</c>, and <c>SOFTWARE_TOKEN_MFA</c>.
         /// </para>
         /// </summary>
         public List<string> UserMFASettingList

@@ -31,10 +31,14 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminGetUser operation.
-    /// Given the username, returns details about a user profile in a user pool. This operation
-    /// contributes to your monthly active user (MAU) count for the purpose of billing. You
-    /// can specify alias attributes in the <c>Username</c> parameter.
+    /// Given a username, returns details about a user profile in a user pool. You can specify
+    /// alias attributes in the <c>Username</c> request parameter.
     /// 
+    ///  
+    /// <para>
+    /// This operation contributes to your monthly active user (MAU) count for the purpose
+    /// of billing.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -65,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

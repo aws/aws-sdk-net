@@ -33,13 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// The settings for administrator creation of users in a user pool. Contains settings
     /// for allowing user sign-up, customizing invitation messages to new users, and the amount
     /// of time before temporary passwords expire.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-    /// </para>
     /// </summary>
     public partial class AdminCreateUserConfigType
     {
@@ -52,8 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The setting for allowing self-service sign-up. When <c>true</c>, only administrators
         /// can create new user profiles. When <c>false</c>, users can register themselves and
-        /// create a new user profile with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
-        /// operation.
+        /// create a new user profile with the <c>SignUp</c> operation.
         /// </para>
         /// </summary>
         public bool AllowAdminCreateUserOnly
@@ -96,10 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UnusedAccountValidityDays. 
         /// <para>
-        /// This parameter is no longer in use. Configure the duration of temporary passwords
-        /// with the <c>TemporaryPasswordValidityDays</c> parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_PasswordPolicyType.html">PasswordPolicyType</a>.
-        /// For older user pools that have a <c>UnusedAccountValidityDays</c> configuration, that
-        /// value is effective until you set a value for <c>TemporaryPasswordValidityDays</c>.
+        /// This parameter is no longer in use.
         /// </para>
         ///  
         /// <para>

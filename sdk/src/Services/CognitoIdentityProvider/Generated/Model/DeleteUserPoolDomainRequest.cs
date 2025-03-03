@@ -44,8 +44,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain that you want to delete. For custom domains, this is the fully-qualified
-        /// domain name, such as <c>auth.example.com</c>. For Amazon Cognito prefix domains, this
-        /// is the prefix alone, such as <c>auth</c>.
+        /// domain name like <c>auth.example.com</c>. For Amazon Cognito prefix domains, this
+        /// is the prefix alone, like <c>myprefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

@@ -41,7 +41,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CSVHeader. 
         /// <para>
-        /// The header information of the CSV file for the user import job.
+        /// A comma-separated list of attributes from your user pool. Save this output to a <c>.csv</c>
+        /// file and populate it with the attributes of the users that you want to import.
         /// </para>
         /// </summary>
         public List<string> CSVHeader
@@ -59,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool that the users are to be imported into.
+        /// The ID of the requested user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

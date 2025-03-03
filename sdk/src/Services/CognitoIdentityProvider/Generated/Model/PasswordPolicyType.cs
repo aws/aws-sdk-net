@@ -32,13 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The password policy settings for a user pool, including complexity, history, and length
     /// requirements.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-    /// </para>
     /// </summary>
     public partial class PasswordPolicyType
     {
@@ -76,13 +69,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The number of previous passwords that you want Amazon Cognito to restrict each user
         /// from reusing. Users can't set a password that matches any of <c>n</c> previous passwords,
         /// where <c>n</c> is the value of <c>PasswordHistorySize</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Password history isn't enforced and isn't displayed in <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
-        /// responses when you set this value to <c>0</c> or don't provide it. To activate this
-        /// setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=24)]

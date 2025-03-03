@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWebAuthnCredential operation.
-    /// Deletes a registered passkey, or webauthN, authenticator for the currently signed-in
+    /// Deletes a registered passkey, or WebAuthn, authenticator for the currently signed-in
     /// user.
     /// 
     ///  
@@ -58,8 +58,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose passkey credential
-        /// you want to delete.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -78,8 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CredentialId. 
         /// <para>
-        /// The unique identifier of the passkey that you want to delete. Look up registered devices
-        /// with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.
+        /// The unique identifier of the passkey that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=131072)]

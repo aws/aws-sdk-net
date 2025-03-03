@@ -32,13 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The details of a resource server configuration and associated custom scopes in a user
     /// pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
-    /// 
-    /// </para>
     /// </summary>
     public partial class ResourceServerType
     {
