@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TextSegment Object
+    /// Response Unmarshaller for AudioSourceDetails Object
     /// </summary>  
-    public class TextSegmentUnmarshaller : IUnmarshaller<TextSegment, XmlUnmarshallerContext>, IUnmarshaller<TextSegment, JsonUnmarshallerContext>
+    public class AudioSourceDetailsUnmarshaller : IUnmarshaller<AudioSourceDetails, XmlUnmarshallerContext>, IUnmarshaller<AudioSourceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TextSegment IUnmarshaller<TextSegment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioSourceDetails IUnmarshaller<AudioSourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TextSegment Unmarshall(JsonUnmarshallerContext context)
+        public AudioSourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            TextSegment unmarshalledObject = new TextSegment();
+            AudioSourceDetails unmarshalledObject = new AudioSourceDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("beginOffset", targetDepth))
+                if (context.TestExpression("audioExtractionType", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioExtractionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("endOffset", targetDepth))
+                if (context.TestExpression("endTimeMilliseconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.EndTimeMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mediaId", targetDepth))
@@ -90,16 +90,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("snippetExcerpt", targetDepth))
+                if (context.TestExpression("startTimeMilliseconds", targetDepth))
                 {
-                    var unmarshaller = SnippetExcerptUnmarshaller.Instance;
-                    unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceDetails", targetDepth))
-                {
-                    var unmarshaller = SourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartTimeMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +101,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static TextSegmentUnmarshaller _instance = new TextSegmentUnmarshaller();        
+        private static AudioSourceDetailsUnmarshaller _instance = new AudioSourceDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TextSegmentUnmarshaller Instance
+        public static AudioSourceDetailsUnmarshaller Instance
         {
             get
             {

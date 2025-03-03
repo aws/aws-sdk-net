@@ -66,10 +66,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioExtractionConfiguration", targetDepth))
+                {
+                    var unmarshaller = AudioExtractionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AudioExtractionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageExtractionConfiguration", targetDepth))
                 {
                     var unmarshaller = ImageExtractionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ImageExtractionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoExtractionConfiguration", targetDepth))
+                {
+                    var unmarshaller = VideoExtractionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VideoExtractionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TextSegment Object
+    /// Response Unmarshaller for VideoExtractionConfiguration Object
     /// </summary>  
-    public class TextSegmentUnmarshaller : IUnmarshaller<TextSegment, XmlUnmarshallerContext>, IUnmarshaller<TextSegment, JsonUnmarshallerContext>
+    public class VideoExtractionConfigurationUnmarshaller : IUnmarshaller<VideoExtractionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VideoExtractionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TextSegment IUnmarshaller<TextSegment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoExtractionConfiguration IUnmarshaller<VideoExtractionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TextSegment Unmarshall(JsonUnmarshallerContext context)
+        public VideoExtractionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            TextSegment unmarshalledObject = new TextSegment();
+            VideoExtractionConfiguration unmarshalledObject = new VideoExtractionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("beginOffset", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("endOffset", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediaId", targetDepth))
+                if (context.TestExpression("videoExtractionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediaMimeType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("snippetExcerpt", targetDepth))
-                {
-                    var unmarshaller = SnippetExcerptUnmarshaller.Instance;
-                    unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceDetails", targetDepth))
-                {
-                    var unmarshaller = SourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoExtractionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static TextSegmentUnmarshaller _instance = new TextSegmentUnmarshaller();        
+        private static VideoExtractionConfigurationUnmarshaller _instance = new VideoExtractionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TextSegmentUnmarshaller Instance
+        public static VideoExtractionConfigurationUnmarshaller Instance
         {
             get
             {
