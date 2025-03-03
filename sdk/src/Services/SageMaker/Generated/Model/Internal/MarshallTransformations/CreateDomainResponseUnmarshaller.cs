@@ -58,6 +58,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.DomainArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
