@@ -1,3 +1,20 @@
+### 3.7.994.0 (2025-03-03 19:30 UTC)
+* CloudWatchRUM (3.7.401.0)
+	* Add support for PutResourcePolicy, GetResourcePolicy and DeleteResourcePolicy to support resource based policies for AWS CloudWatch RUM
+* CognitoIdentityProvider (3.7.407.0)
+	* Added the capacity to return available challenges in admin authentication and to set version 3 of the pre token generation event for M2M ATC.
+* EC2 (3.7.433.0)
+	* Update the DescribeVpcs response
+* QBusiness (3.7.411.0)
+	* Adds support for the ingestion of audio and video files by Q Business, which can be configured with the mediaExtractionConfiguration parameter.
+* SageMaker (3.7.428.0)
+	* Add DomainId to CreateDomainResponse
+* TranscribeService (3.7.402.14)
+	* Updating documentation for post call analytics job queueing.
+* Core 3.7.402.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.993.0 (2025-02-28 19:30 UTC)
 * BedrockAgent (3.7.420.0)
 	* This release lets Amazon Bedrock Flows support newer models by increasing the maximum length of output in a prompt configuration. This release also increases the maximum number of prompt variables to 20 and the maximum number of node inputs to 20.
