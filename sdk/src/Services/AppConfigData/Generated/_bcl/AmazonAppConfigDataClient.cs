@@ -134,7 +134,7 @@ namespace Amazon.AppConfigData
         ///
         /// </summary>
         public AmazonAppConfigDataClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppConfigDataConfig()) { }
+            : base(new AmazonAppConfigDataConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppConfigDataClient with the credentials loaded from the application's
@@ -153,7 +153,7 @@ namespace Amazon.AppConfigData
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppConfigDataClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppConfigDataConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppConfigDataConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppConfigDataClient with the credentials loaded from the application's
@@ -172,7 +172,7 @@ namespace Amazon.AppConfigData
         /// </summary>
         /// <param name="config">The AmazonAppConfigDataClient Configuration Object</param>
         public AmazonAppConfigDataClient(AmazonAppConfigDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAppConfigDataClient with AWS Credentials
@@ -275,15 +275,7 @@ namespace Amazon.AppConfigData
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -293,7 +285,9 @@ namespace Amazon.AppConfigData
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppConfigDataEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppConfigDataAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

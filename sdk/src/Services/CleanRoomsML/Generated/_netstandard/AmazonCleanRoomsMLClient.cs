@@ -86,7 +86,7 @@ namespace Amazon.CleanRoomsML
         ///
         /// </summary>
         public AmazonCleanRoomsMLClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCleanRoomsMLConfig()) { }
+            : base(new AmazonCleanRoomsMLConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCleanRoomsMLClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.CleanRoomsML
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCleanRoomsMLClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCleanRoomsMLConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCleanRoomsMLConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCleanRoomsMLClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.CleanRoomsML
         /// </summary>
         /// <param name="config">The AmazonCleanRoomsMLClient Configuration Object</param>
         public AmazonCleanRoomsMLClient(AmazonCleanRoomsMLConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -249,14 +249,6 @@ namespace Amazon.CleanRoomsML
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -264,7 +256,9 @@ namespace Amazon.CleanRoomsML
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCleanRoomsMLEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCleanRoomsMLAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

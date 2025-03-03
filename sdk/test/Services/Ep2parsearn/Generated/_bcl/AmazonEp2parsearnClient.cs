@@ -63,7 +63,7 @@ namespace Amazon.Ep2parsearn
         ///
         /// </summary>
         public AmazonEp2parsearnClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2parsearnConfig()) { }
+            : base(new AmazonEp2parsearnConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEp2parsearnClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.Ep2parsearn
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEp2parsearnClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2parsearnConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEp2parsearnConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEp2parsearnClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.Ep2parsearn
         /// </summary>
         /// <param name="config">The AmazonEp2parsearnClient Configuration Object</param>
         public AmazonEp2parsearnClient(AmazonEp2parsearnConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonEp2parsearnClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.Ep2parsearn
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.Ep2parsearn
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2parsearnEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2parsearnAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

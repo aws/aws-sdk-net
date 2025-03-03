@@ -79,7 +79,7 @@ namespace Amazon.LexModelsV2
         ///
         /// </summary>
         public AmazonLexModelsV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexModelsV2Config()) { }
+            : base(new AmazonLexModelsV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonLexModelsV2Client with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.LexModelsV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLexModelsV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexModelsV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonLexModelsV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLexModelsV2Client with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.LexModelsV2
         /// </summary>
         /// <param name="config">The AmazonLexModelsV2Client Configuration Object</param>
         public AmazonLexModelsV2Client(AmazonLexModelsV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLexModelsV2Client with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.LexModelsV2
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.LexModelsV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexModelsV2EndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexModelsV2AuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

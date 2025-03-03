@@ -125,7 +125,7 @@ namespace Amazon.AWSMarketplaceMetering
         ///
         /// </summary>
         public AmazonAWSMarketplaceMeteringClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceMeteringConfig()) { }
+            : base(new AmazonAWSMarketplaceMeteringConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAWSMarketplaceMeteringClient with the credentials loaded from the application's
@@ -144,7 +144,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAWSMarketplaceMeteringClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceMeteringConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAWSMarketplaceMeteringConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAWSMarketplaceMeteringClient with the credentials loaded from the application's
@@ -163,7 +163,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </summary>
         /// <param name="config">The AmazonAWSMarketplaceMeteringClient Configuration Object</param>
         public AmazonAWSMarketplaceMeteringClient(AmazonAWSMarketplaceMeteringConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAWSMarketplaceMeteringClient with AWS Credentials
@@ -266,15 +266,7 @@ namespace Amazon.AWSMarketplaceMetering
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -284,7 +276,9 @@ namespace Amazon.AWSMarketplaceMetering
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSMarketplaceMeteringEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSMarketplaceMeteringAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

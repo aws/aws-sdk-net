@@ -75,7 +75,7 @@ namespace Amazon.CodeBuild
         ///
         /// </summary>
         public AmazonCodeBuildClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeBuildConfig()) { }
+            : base(new AmazonCodeBuildConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeBuildClient with the credentials loaded from the application's
@@ -94,7 +94,7 @@ namespace Amazon.CodeBuild
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeBuildClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeBuildConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeBuildConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeBuildClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.CodeBuild
         /// </summary>
         /// <param name="config">The AmazonCodeBuildClient Configuration Object</param>
         public AmazonCodeBuildClient(AmazonCodeBuildConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -238,14 +238,6 @@ namespace Amazon.CodeBuild
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -253,7 +245,9 @@ namespace Amazon.CodeBuild
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeBuildEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeBuildAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

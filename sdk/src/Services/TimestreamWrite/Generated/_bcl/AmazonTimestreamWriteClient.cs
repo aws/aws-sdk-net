@@ -96,7 +96,7 @@ namespace Amazon.TimestreamWrite
         ///
         /// </summary>
         public AmazonTimestreamWriteClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamWriteConfig()) { }
+            : base(new AmazonTimestreamWriteConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamWriteClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.TimestreamWrite
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTimestreamWriteClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamWriteConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTimestreamWriteConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamWriteClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.TimestreamWrite
         /// </summary>
         /// <param name="config">The AmazonTimestreamWriteClient Configuration Object</param>
         public AmazonTimestreamWriteClient(AmazonTimestreamWriteConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamWriteClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.TimestreamWrite
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.TimestreamWrite
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamWriteEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamWriteAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

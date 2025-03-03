@@ -87,7 +87,7 @@ namespace Amazon.ConnectContactLens
         ///
         /// </summary>
         public AmazonConnectContactLensClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectContactLensConfig()) { }
+            : base(new AmazonConnectContactLensConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectContactLensClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.ConnectContactLens
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectContactLensClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectContactLensConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectContactLensConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectContactLensClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.ConnectContactLens
         /// </summary>
         /// <param name="config">The AmazonConnectContactLensClient Configuration Object</param>
         public AmazonConnectContactLensClient(AmazonConnectContactLensConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -250,14 +250,6 @@ namespace Amazon.ConnectContactLens
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -265,7 +257,9 @@ namespace Amazon.ConnectContactLens
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectContactLensEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectContactLensAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

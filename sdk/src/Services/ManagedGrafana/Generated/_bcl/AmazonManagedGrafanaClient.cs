@@ -91,7 +91,7 @@ namespace Amazon.ManagedGrafana
         ///
         /// </summary>
         public AmazonManagedGrafanaClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonManagedGrafanaConfig()) { }
+            : base(new AmazonManagedGrafanaConfig()) { }
 
         /// <summary>
         /// Constructs AmazonManagedGrafanaClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonManagedGrafanaClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonManagedGrafanaConfig{RegionEndpoint = region}) { }
+            : base(new AmazonManagedGrafanaConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonManagedGrafanaClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         /// <param name="config">The AmazonManagedGrafanaClient Configuration Object</param>
         public AmazonManagedGrafanaClient(AmazonManagedGrafanaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonManagedGrafanaClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.ManagedGrafana
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.ManagedGrafana
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonManagedGrafanaEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonManagedGrafanaAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

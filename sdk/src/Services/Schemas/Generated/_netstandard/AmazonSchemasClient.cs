@@ -64,7 +64,7 @@ namespace Amazon.Schemas
         ///
         /// </summary>
         public AmazonSchemasClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSchemasConfig()) { }
+            : base(new AmazonSchemasConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSchemasClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Schemas
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSchemasClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSchemasConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSchemasConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSchemasClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Schemas
         /// </summary>
         /// <param name="config">The AmazonSchemasClient Configuration Object</param>
         public AmazonSchemasClient(AmazonSchemasConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Schemas
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Schemas
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSchemasEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSchemasAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

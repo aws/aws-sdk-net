@@ -63,7 +63,7 @@ namespace Amazon.LexRuntimeV2
         ///
         /// </summary>
         public AmazonLexRuntimeV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexRuntimeV2Config()) { }
+            : base(new AmazonLexRuntimeV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonLexRuntimeV2Client with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.LexRuntimeV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLexRuntimeV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexRuntimeV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonLexRuntimeV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLexRuntimeV2Client with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.LexRuntimeV2
         /// </summary>
         /// <param name="config">The AmazonLexRuntimeV2Client Configuration Object</param>
         public AmazonLexRuntimeV2Client(AmazonLexRuntimeV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLexRuntimeV2Client with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.LexRuntimeV2
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.LexRuntimeV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexRuntimeV2EndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexRuntimeV2AuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

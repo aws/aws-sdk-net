@@ -81,7 +81,7 @@ namespace Amazon.WorkSpacesThinClient
         ///
         /// </summary>
         public AmazonWorkSpacesThinClientClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesThinClientConfig()) { }
+            : base(new AmazonWorkSpacesThinClientConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWorkSpacesThinClientClient with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.WorkSpacesThinClient
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWorkSpacesThinClientClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesThinClientConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWorkSpacesThinClientConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWorkSpacesThinClientClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.WorkSpacesThinClient
         /// </summary>
         /// <param name="config">The AmazonWorkSpacesThinClientClient Configuration Object</param>
         public AmazonWorkSpacesThinClientClient(AmazonWorkSpacesThinClientConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -244,14 +244,6 @@ namespace Amazon.WorkSpacesThinClient
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -259,7 +251,9 @@ namespace Amazon.WorkSpacesThinClient
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesThinClientEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkSpacesThinClientAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

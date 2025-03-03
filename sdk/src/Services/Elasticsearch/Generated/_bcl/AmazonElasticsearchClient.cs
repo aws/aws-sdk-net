@@ -96,7 +96,7 @@ namespace Amazon.Elasticsearch
         ///
         /// </summary>
         public AmazonElasticsearchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticsearchConfig()) { }
+            : base(new AmazonElasticsearchConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticsearchClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.Elasticsearch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticsearchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticsearchConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticsearchConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticsearchClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.Elasticsearch
         /// </summary>
         /// <param name="config">The AmazonElasticsearchClient Configuration Object</param>
         public AmazonElasticsearchClient(AmazonElasticsearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonElasticsearchClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.Elasticsearch
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.Elasticsearch
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticsearchEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticsearchAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

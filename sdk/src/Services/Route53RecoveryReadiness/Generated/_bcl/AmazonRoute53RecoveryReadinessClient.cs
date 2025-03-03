@@ -79,7 +79,7 @@ namespace Amazon.Route53RecoveryReadiness
         ///
         /// </summary>
         public AmazonRoute53RecoveryReadinessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryReadinessConfig()) { }
+            : base(new AmazonRoute53RecoveryReadinessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryReadinessClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53RecoveryReadinessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryReadinessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRoute53RecoveryReadinessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryReadinessClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryReadinessClient Configuration Object</param>
         public AmazonRoute53RecoveryReadinessClient(AmazonRoute53RecoveryReadinessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryReadinessClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.Route53RecoveryReadiness
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.Route53RecoveryReadiness
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryReadinessEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryReadinessAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

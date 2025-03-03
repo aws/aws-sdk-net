@@ -441,7 +441,7 @@ namespace Amazon.CodeArtifact
         ///
         /// </summary>
         public AmazonCodeArtifactClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeArtifactConfig()) { }
+            : base(new AmazonCodeArtifactConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeArtifactClient with the credentials loaded from the application's
@@ -460,7 +460,7 @@ namespace Amazon.CodeArtifact
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeArtifactClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeArtifactConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeArtifactConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeArtifactClient with the credentials loaded from the application's
@@ -479,7 +479,7 @@ namespace Amazon.CodeArtifact
         /// </summary>
         /// <param name="config">The AmazonCodeArtifactClient Configuration Object</param>
         public AmazonCodeArtifactClient(AmazonCodeArtifactConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCodeArtifactClient with AWS Credentials
@@ -582,15 +582,7 @@ namespace Amazon.CodeArtifact
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -600,7 +592,9 @@ namespace Amazon.CodeArtifact
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeArtifactEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeArtifactAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

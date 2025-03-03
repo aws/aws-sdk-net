@@ -96,7 +96,7 @@ namespace Amazon.ConnectCases
         ///
         /// </summary>
         public AmazonConnectCasesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectCasesConfig()) { }
+            : base(new AmazonConnectCasesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectCasesClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.ConnectCases
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectCasesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectCasesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectCasesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectCasesClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.ConnectCases
         /// </summary>
         /// <param name="config">The AmazonConnectCasesClient Configuration Object</param>
         public AmazonConnectCasesClient(AmazonConnectCasesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonConnectCasesClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.ConnectCases
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.ConnectCases
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectCasesEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectCasesAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

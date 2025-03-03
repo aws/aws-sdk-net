@@ -146,7 +146,7 @@ namespace Amazon.RDS
         ///
         /// </summary>
         public AmazonRDSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig()) { }
+            : base(new AmazonRDSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -165,7 +165,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRDSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRDSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -184,7 +184,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="config">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with AWS Credentials
@@ -287,15 +287,7 @@ namespace Amazon.RDS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -303,10 +295,12 @@ namespace Amazon.RDS
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

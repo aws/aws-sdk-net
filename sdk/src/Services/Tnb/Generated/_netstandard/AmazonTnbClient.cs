@@ -67,7 +67,7 @@ namespace Amazon.Tnb
         ///
         /// </summary>
         public AmazonTnbClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTnbConfig()) { }
+            : base(new AmazonTnbConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTnbClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.Tnb
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTnbClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTnbConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTnbConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTnbClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.Tnb
         /// </summary>
         /// <param name="config">The AmazonTnbClient Configuration Object</param>
         public AmazonTnbClient(AmazonTnbConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.Tnb
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.Tnb
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTnbEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTnbAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

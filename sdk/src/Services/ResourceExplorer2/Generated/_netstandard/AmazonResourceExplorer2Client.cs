@@ -98,7 +98,7 @@ namespace Amazon.ResourceExplorer2
         ///
         /// </summary>
         public AmazonResourceExplorer2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceExplorer2Config()) { }
+            : base(new AmazonResourceExplorer2Config()) { }
 
         /// <summary>
         /// Constructs AmazonResourceExplorer2Client with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.ResourceExplorer2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonResourceExplorer2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceExplorer2Config{RegionEndpoint = region}) { }
+            : base(new AmazonResourceExplorer2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonResourceExplorer2Client with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.ResourceExplorer2
         /// </summary>
         /// <param name="config">The AmazonResourceExplorer2Client Configuration Object</param>
         public AmazonResourceExplorer2Client(AmazonResourceExplorer2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -261,14 +261,6 @@ namespace Amazon.ResourceExplorer2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -276,7 +268,9 @@ namespace Amazon.ResourceExplorer2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceExplorer2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceExplorer2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

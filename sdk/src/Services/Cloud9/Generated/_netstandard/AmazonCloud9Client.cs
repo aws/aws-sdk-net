@@ -140,7 +140,7 @@ namespace Amazon.Cloud9
         ///
         /// </summary>
         public AmazonCloud9Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloud9Config()) { }
+            : base(new AmazonCloud9Config()) { }
 
         /// <summary>
         /// Constructs AmazonCloud9Client with the credentials loaded from the application's
@@ -159,7 +159,7 @@ namespace Amazon.Cloud9
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloud9Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloud9Config{RegionEndpoint = region}) { }
+            : base(new AmazonCloud9Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloud9Client with the credentials loaded from the application's
@@ -178,7 +178,7 @@ namespace Amazon.Cloud9
         /// </summary>
         /// <param name="config">The AmazonCloud9Client Configuration Object</param>
         public AmazonCloud9Client(AmazonCloud9Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -303,14 +303,6 @@ namespace Amazon.Cloud9
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -318,7 +310,9 @@ namespace Amazon.Cloud9
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloud9EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloud9AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

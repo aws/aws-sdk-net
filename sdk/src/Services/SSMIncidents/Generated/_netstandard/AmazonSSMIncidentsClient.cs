@@ -76,7 +76,7 @@ namespace Amazon.SSMIncidents
         ///
         /// </summary>
         public AmazonSSMIncidentsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMIncidentsConfig()) { }
+            : base(new AmazonSSMIncidentsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSSMIncidentsClient with the credentials loaded from the application's
@@ -95,7 +95,7 @@ namespace Amazon.SSMIncidents
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSSMIncidentsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMIncidentsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSSMIncidentsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSSMIncidentsClient with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.SSMIncidents
         /// </summary>
         /// <param name="config">The AmazonSSMIncidentsClient Configuration Object</param>
         public AmazonSSMIncidentsClient(AmazonSSMIncidentsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -239,14 +239,6 @@ namespace Amazon.SSMIncidents
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -254,7 +246,9 @@ namespace Amazon.SSMIncidents
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMIncidentsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMIncidentsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

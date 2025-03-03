@@ -180,7 +180,7 @@ namespace Amazon.NetworkFirewall
         ///
         /// </summary>
         public AmazonNetworkFirewallClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNetworkFirewallConfig()) { }
+            : base(new AmazonNetworkFirewallConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNetworkFirewallClient with the credentials loaded from the application's
@@ -199,7 +199,7 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNetworkFirewallClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNetworkFirewallConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNetworkFirewallConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNetworkFirewallClient with the credentials loaded from the application's
@@ -218,7 +218,7 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         /// <param name="config">The AmazonNetworkFirewallClient Configuration Object</param>
         public AmazonNetworkFirewallClient(AmazonNetworkFirewallConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -343,14 +343,6 @@ namespace Amazon.NetworkFirewall
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -358,7 +350,9 @@ namespace Amazon.NetworkFirewall
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkFirewallEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNetworkFirewallAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

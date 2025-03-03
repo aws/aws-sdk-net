@@ -112,7 +112,7 @@ namespace Amazon.Appflow
         ///
         /// </summary>
         public AmazonAppflowClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppflowConfig()) { }
+            : base(new AmazonAppflowConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppflowClient with the credentials loaded from the application's
@@ -131,7 +131,7 @@ namespace Amazon.Appflow
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppflowClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppflowConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppflowConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppflowClient with the credentials loaded from the application's
@@ -150,7 +150,7 @@ namespace Amazon.Appflow
         /// </summary>
         /// <param name="config">The AmazonAppflowClient Configuration Object</param>
         public AmazonAppflowClient(AmazonAppflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -275,14 +275,6 @@ namespace Amazon.Appflow
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -290,7 +282,9 @@ namespace Amazon.Appflow
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppflowEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppflowAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

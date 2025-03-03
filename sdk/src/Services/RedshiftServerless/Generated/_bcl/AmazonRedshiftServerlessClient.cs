@@ -96,7 +96,7 @@ namespace Amazon.RedshiftServerless
         ///
         /// </summary>
         public AmazonRedshiftServerlessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftServerlessConfig()) { }
+            : base(new AmazonRedshiftServerlessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.RedshiftServerless
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRedshiftServerlessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftServerlessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRedshiftServerlessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.RedshiftServerless
         /// </summary>
         /// <param name="config">The AmazonRedshiftServerlessClient Configuration Object</param>
         public AmazonRedshiftServerlessClient(AmazonRedshiftServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.RedshiftServerless
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.RedshiftServerless
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftServerlessEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftServerlessAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

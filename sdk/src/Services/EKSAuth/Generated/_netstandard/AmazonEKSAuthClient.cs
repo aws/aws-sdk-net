@@ -65,7 +65,7 @@ namespace Amazon.EKSAuth
         ///
         /// </summary>
         public AmazonEKSAuthClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEKSAuthConfig()) { }
+            : base(new AmazonEKSAuthConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEKSAuthClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.EKSAuth
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEKSAuthClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEKSAuthConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEKSAuthConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEKSAuthClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.EKSAuth
         /// </summary>
         /// <param name="config">The AmazonEKSAuthClient Configuration Object</param>
         public AmazonEKSAuthClient(AmazonEKSAuthConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -210,14 +210,6 @@ namespace Amazon.EKSAuth
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -225,7 +217,9 @@ namespace Amazon.EKSAuth
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEKSAuthEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEKSAuthAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

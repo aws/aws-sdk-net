@@ -149,7 +149,7 @@ namespace Amazon.StorageGateway
         ///
         /// </summary>
         public AmazonStorageGatewayClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStorageGatewayConfig()) { }
+            : base(new AmazonStorageGatewayConfig()) { }
 
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's
@@ -168,7 +168,7 @@ namespace Amazon.StorageGateway
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonStorageGatewayClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonStorageGatewayConfig{RegionEndpoint = region}) { }
+            : base(new AmazonStorageGatewayConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with the credentials loaded from the application's
@@ -187,7 +187,7 @@ namespace Amazon.StorageGateway
         /// </summary>
         /// <param name="config">The AmazonStorageGatewayClient Configuration Object</param>
         public AmazonStorageGatewayClient(AmazonStorageGatewayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -312,14 +312,6 @@ namespace Amazon.StorageGateway
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -327,7 +319,9 @@ namespace Amazon.StorageGateway
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonStorageGatewayEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonStorageGatewayAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

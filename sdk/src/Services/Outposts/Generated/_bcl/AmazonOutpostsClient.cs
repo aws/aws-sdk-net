@@ -84,7 +84,7 @@ namespace Amazon.Outposts
         ///
         /// </summary>
         public AmazonOutpostsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOutpostsConfig()) { }
+            : base(new AmazonOutpostsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOutpostsClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.Outposts
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOutpostsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOutpostsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOutpostsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOutpostsClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.Outposts
         /// </summary>
         /// <param name="config">The AmazonOutpostsClient Configuration Object</param>
         public AmazonOutpostsClient(AmazonOutpostsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonOutpostsClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.Outposts
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.Outposts
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOutpostsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOutpostsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -66,7 +66,7 @@ namespace Amazon.CloudHSMV2
         ///
         /// </summary>
         public AmazonCloudHSMV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudHSMV2Config()) { }
+            : base(new AmazonCloudHSMV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonCloudHSMV2Client with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.CloudHSMV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudHSMV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudHSMV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonCloudHSMV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudHSMV2Client with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.CloudHSMV2
         /// </summary>
         /// <param name="config">The AmazonCloudHSMV2Client Configuration Object</param>
         public AmazonCloudHSMV2Client(AmazonCloudHSMV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -229,14 +229,6 @@ namespace Amazon.CloudHSMV2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -244,7 +236,9 @@ namespace Amazon.CloudHSMV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudHSMV2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudHSMV2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

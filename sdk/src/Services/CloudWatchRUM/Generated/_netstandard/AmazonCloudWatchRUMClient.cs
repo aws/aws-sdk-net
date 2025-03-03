@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchRUM
         ///
         /// </summary>
         public AmazonCloudWatchRUMClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchRUMConfig()) { }
+            : base(new AmazonCloudWatchRUMConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchRUMClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.CloudWatchRUM
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchRUMClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchRUMConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudWatchRUMConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchRUMClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.CloudWatchRUM
         /// </summary>
         /// <param name="config">The AmazonCloudWatchRUMClient Configuration Object</param>
         public AmazonCloudWatchRUMClient(AmazonCloudWatchRUMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -240,14 +240,6 @@ namespace Amazon.CloudWatchRUM
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -255,7 +247,9 @@ namespace Amazon.CloudWatchRUM
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchRUMEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchRUMAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -68,7 +68,7 @@ namespace Amazon.TimestreamInfluxDB
         ///
         /// </summary>
         public AmazonTimestreamInfluxDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamInfluxDBConfig()) { }
+            : base(new AmazonTimestreamInfluxDBConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamInfluxDBClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTimestreamInfluxDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamInfluxDBConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTimestreamInfluxDBConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamInfluxDBClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         /// <param name="config">The AmazonTimestreamInfluxDBClient Configuration Object</param>
         public AmazonTimestreamInfluxDBClient(AmazonTimestreamInfluxDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.TimestreamInfluxDB
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.TimestreamInfluxDB
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamInfluxDBEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamInfluxDBAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

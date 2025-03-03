@@ -63,7 +63,7 @@ namespace Amazon.PinpointSMSVoice
         ///
         /// </summary>
         public AmazonPinpointSMSVoiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointSMSVoiceConfig()) { }
+            : base(new AmazonPinpointSMSVoiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPinpointSMSVoiceClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.PinpointSMSVoice
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPinpointSMSVoiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointSMSVoiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPinpointSMSVoiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPinpointSMSVoiceClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.PinpointSMSVoice
         /// </summary>
         /// <param name="config">The AmazonPinpointSMSVoiceClient Configuration Object</param>
         public AmazonPinpointSMSVoiceClient(AmazonPinpointSMSVoiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPinpointSMSVoiceClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.PinpointSMSVoice
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.PinpointSMSVoice
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointSMSVoiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointSMSVoiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

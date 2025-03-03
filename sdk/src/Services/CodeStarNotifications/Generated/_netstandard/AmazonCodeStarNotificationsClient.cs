@@ -150,7 +150,7 @@ namespace Amazon.CodeStarNotifications
         ///
         /// </summary>
         public AmazonCodeStarNotificationsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeStarNotificationsConfig()) { }
+            : base(new AmazonCodeStarNotificationsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeStarNotificationsClient with the credentials loaded from the application's
@@ -169,7 +169,7 @@ namespace Amazon.CodeStarNotifications
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeStarNotificationsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeStarNotificationsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeStarNotificationsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeStarNotificationsClient with the credentials loaded from the application's
@@ -188,7 +188,7 @@ namespace Amazon.CodeStarNotifications
         /// </summary>
         /// <param name="config">The AmazonCodeStarNotificationsClient Configuration Object</param>
         public AmazonCodeStarNotificationsClient(AmazonCodeStarNotificationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -313,14 +313,6 @@ namespace Amazon.CodeStarNotifications
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -328,7 +320,9 @@ namespace Amazon.CodeStarNotifications
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeStarNotificationsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeStarNotificationsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

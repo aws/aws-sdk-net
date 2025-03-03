@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMessaging
         ///
         /// </summary>
         public AmazonChimeSDKMessagingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKMessagingConfig()) { }
+            : base(new AmazonChimeSDKMessagingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKMessagingClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.ChimeSDKMessaging
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonChimeSDKMessagingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKMessagingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonChimeSDKMessagingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKMessagingClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.ChimeSDKMessaging
         /// </summary>
         /// <param name="config">The AmazonChimeSDKMessagingClient Configuration Object</param>
         public AmazonChimeSDKMessagingClient(AmazonChimeSDKMessagingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.ChimeSDKMessaging
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.ChimeSDKMessaging
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKMessagingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKMessagingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

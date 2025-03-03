@@ -93,7 +93,7 @@ namespace Amazon.DatabaseMigrationService
         ///
         /// </summary>
         public AmazonDatabaseMigrationServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDatabaseMigrationServiceConfig()) { }
+            : base(new AmazonDatabaseMigrationServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.DatabaseMigrationService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDatabaseMigrationServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDatabaseMigrationServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDatabaseMigrationServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with the credentials loaded from the application's
@@ -131,7 +131,7 @@ namespace Amazon.DatabaseMigrationService
         /// </summary>
         /// <param name="config">The AmazonDatabaseMigrationServiceClient Configuration Object</param>
         public AmazonDatabaseMigrationServiceClient(AmazonDatabaseMigrationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDatabaseMigrationServiceClient with AWS Credentials
@@ -234,15 +234,7 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -252,7 +244,9 @@ namespace Amazon.DatabaseMigrationService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDatabaseMigrationServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDatabaseMigrationServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

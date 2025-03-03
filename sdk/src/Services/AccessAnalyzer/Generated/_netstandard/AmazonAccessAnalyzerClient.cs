@@ -99,7 +99,7 @@ namespace Amazon.AccessAnalyzer
         ///
         /// </summary>
         public AmazonAccessAnalyzerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAccessAnalyzerConfig()) { }
+            : base(new AmazonAccessAnalyzerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAccessAnalyzerClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAccessAnalyzerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAccessAnalyzerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAccessAnalyzerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAccessAnalyzerClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         /// <param name="config">The AmazonAccessAnalyzerClient Configuration Object</param>
         public AmazonAccessAnalyzerClient(AmazonAccessAnalyzerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -262,14 +262,6 @@ namespace Amazon.AccessAnalyzer
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -277,7 +269,9 @@ namespace Amazon.AccessAnalyzer
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAccessAnalyzerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAccessAnalyzerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

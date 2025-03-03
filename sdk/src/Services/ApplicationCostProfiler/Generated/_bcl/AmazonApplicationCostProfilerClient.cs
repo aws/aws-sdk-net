@@ -91,7 +91,7 @@ namespace Amazon.ApplicationCostProfiler
         ///
         /// </summary>
         public AmazonApplicationCostProfilerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationCostProfilerConfig()) { }
+            : base(new AmazonApplicationCostProfilerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonApplicationCostProfilerClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.ApplicationCostProfiler
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApplicationCostProfilerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationCostProfilerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonApplicationCostProfilerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApplicationCostProfilerClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.ApplicationCostProfiler
         /// </summary>
         /// <param name="config">The AmazonApplicationCostProfilerClient Configuration Object</param>
         public AmazonApplicationCostProfilerClient(AmazonApplicationCostProfilerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonApplicationCostProfilerClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.ApplicationCostProfiler
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.ApplicationCostProfiler
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationCostProfilerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationCostProfilerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

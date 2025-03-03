@@ -64,7 +64,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         ///
         /// </summary>
         public AmazonAWSMarketplaceCommerceAnalyticsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceCommerceAnalyticsConfig()) { }
+            : base(new AmazonAWSMarketplaceCommerceAnalyticsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAWSMarketplaceCommerceAnalyticsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceCommerceAnalyticsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAWSMarketplaceCommerceAnalyticsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         /// <param name="config">The AmazonAWSMarketplaceCommerceAnalyticsClient Configuration Object</param>
         public AmazonAWSMarketplaceCommerceAnalyticsClient(AmazonAWSMarketplaceCommerceAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,14 +209,6 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -224,7 +216,9 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSMarketplaceCommerceAnalyticsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSMarketplaceCommerceAnalyticsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

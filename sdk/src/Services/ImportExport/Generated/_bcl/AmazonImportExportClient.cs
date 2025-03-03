@@ -68,7 +68,7 @@ namespace Amazon.ImportExport
         ///
         /// </summary>
         public AmazonImportExportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig()) { }
+            : base(new AmazonImportExportConfig()) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig{RegionEndpoint = region}) { }
+            : base(new AmazonImportExportConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="config">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials
@@ -209,15 +209,7 @@ namespace Amazon.ImportExport
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new QueryStringSigner();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -227,7 +219,9 @@ namespace Amazon.ImportExport
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonImportExportEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonImportExportAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

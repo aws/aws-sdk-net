@@ -89,7 +89,7 @@ namespace Amazon.ECRPublic
         ///
         /// </summary>
         public AmazonECRPublicClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRPublicConfig()) { }
+            : base(new AmazonECRPublicConfig()) { }
 
         /// <summary>
         /// Constructs AmazonECRPublicClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.ECRPublic
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonECRPublicClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRPublicConfig{RegionEndpoint = region}) { }
+            : base(new AmazonECRPublicConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonECRPublicClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.ECRPublic
         /// </summary>
         /// <param name="config">The AmazonECRPublicClient Configuration Object</param>
         public AmazonECRPublicClient(AmazonECRPublicConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonECRPublicClient with AWS Credentials
@@ -230,15 +230,7 @@ namespace Amazon.ECRPublic
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -248,7 +240,9 @@ namespace Amazon.ECRPublic
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECRPublicEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECRPublicAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

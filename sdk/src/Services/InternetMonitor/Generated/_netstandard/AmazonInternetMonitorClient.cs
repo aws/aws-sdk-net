@@ -98,7 +98,7 @@ namespace Amazon.InternetMonitor
         ///
         /// </summary>
         public AmazonInternetMonitorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInternetMonitorConfig()) { }
+            : base(new AmazonInternetMonitorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonInternetMonitorClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.InternetMonitor
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonInternetMonitorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInternetMonitorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonInternetMonitorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonInternetMonitorClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.InternetMonitor
         /// </summary>
         /// <param name="config">The AmazonInternetMonitorClient Configuration Object</param>
         public AmazonInternetMonitorClient(AmazonInternetMonitorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -261,14 +261,6 @@ namespace Amazon.InternetMonitor
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -276,7 +268,9 @@ namespace Amazon.InternetMonitor
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInternetMonitorEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInternetMonitorAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

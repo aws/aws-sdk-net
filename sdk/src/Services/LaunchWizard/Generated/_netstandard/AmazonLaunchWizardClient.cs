@@ -67,7 +67,7 @@ namespace Amazon.LaunchWizard
         ///
         /// </summary>
         public AmazonLaunchWizardClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLaunchWizardConfig()) { }
+            : base(new AmazonLaunchWizardConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLaunchWizardClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.LaunchWizard
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLaunchWizardClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLaunchWizardConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLaunchWizardConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLaunchWizardClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.LaunchWizard
         /// </summary>
         /// <param name="config">The AmazonLaunchWizardClient Configuration Object</param>
         public AmazonLaunchWizardClient(AmazonLaunchWizardConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.LaunchWizard
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.LaunchWizard
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLaunchWizardEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLaunchWizardAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

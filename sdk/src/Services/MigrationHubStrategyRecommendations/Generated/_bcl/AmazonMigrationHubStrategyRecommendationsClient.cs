@@ -89,7 +89,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         ///
         /// </summary>
         public AmazonMigrationHubStrategyRecommendationsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubStrategyRecommendationsConfig()) { }
+            : base(new AmazonMigrationHubStrategyRecommendationsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubStrategyRecommendationsClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMigrationHubStrategyRecommendationsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubStrategyRecommendationsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMigrationHubStrategyRecommendationsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubStrategyRecommendationsClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         /// <param name="config">The AmazonMigrationHubStrategyRecommendationsClient Configuration Object</param>
         public AmazonMigrationHubStrategyRecommendationsClient(AmazonMigrationHubStrategyRecommendationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubStrategyRecommendationsClient with AWS Credentials
@@ -230,15 +230,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -248,7 +240,9 @@ namespace Amazon.MigrationHubStrategyRecommendations
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubStrategyRecommendationsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubStrategyRecommendationsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

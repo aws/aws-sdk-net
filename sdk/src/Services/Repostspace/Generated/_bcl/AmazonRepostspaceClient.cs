@@ -86,7 +86,7 @@ namespace Amazon.Repostspace
         ///
         /// </summary>
         public AmazonRepostspaceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRepostspaceConfig()) { }
+            : base(new AmazonRepostspaceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRepostspaceClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.Repostspace
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRepostspaceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRepostspaceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRepostspaceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRepostspaceClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.Repostspace
         /// </summary>
         /// <param name="config">The AmazonRepostspaceClient Configuration Object</param>
         public AmazonRepostspaceClient(AmazonRepostspaceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRepostspaceClient with AWS Credentials
@@ -227,15 +227,7 @@ namespace Amazon.Repostspace
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -245,7 +237,9 @@ namespace Amazon.Repostspace
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRepostspaceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRepostspaceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
