@@ -39,6 +39,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _gatewayName;
         private GatewayPlatform _gatewayPlatform;
+        private string _gatewayVersion;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -77,6 +78,34 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGatewayPlatform()
         {
             return this._gatewayPlatform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayVersion. 
+        /// <para>
+        /// The version of the gateway to create. Specify <c>3</c> to create an MQTT-enabled,
+        /// V3 gateway and <c>2</c> To create a Classic streams, V2 gateway. If the version isn't
+        /// specified, a Classic streams, V2 gateway is created by default.
+        /// </para>
+        ///  
+        /// <para>
+        ///  We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise
+        /// Edge gateways on Siemens Industrial Edge should use gateway version <c>2</c>. For
+        /// more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html">
+        /// Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string GatewayVersion
+        {
+            get { return this._gatewayVersion; }
+            set { this._gatewayVersion = value; }
+        }
+
+        // Check to see if GatewayVersion property is set
+        internal bool IsSetGatewayVersion()
+        {
+            return this._gatewayVersion != null;
         }
 
         /// <summary>

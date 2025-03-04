@@ -88,6 +88,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.GatewayPlatform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gatewayVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GatewayVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdateDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
