@@ -57,6 +57,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIbmDb2LuwSettings())
+            {
+                context.Writer.WritePropertyName("IbmDb2LuwSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IbmDb2LuwDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.IbmDb2LuwSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetIbmDb2zOsSettings())
+            {
+                context.Writer.WritePropertyName("IbmDb2zOsSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IbmDb2zOsDataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.IbmDb2zOsSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMariaDbSettings())
             {
                 context.Writer.WritePropertyName("MariaDbSettings");

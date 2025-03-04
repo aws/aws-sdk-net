@@ -49,13 +49,13 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For regional resources, call <a>ListResourcesForWebACL</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// For Amazon CloudFront distributions, use the CloudFront call <c>ListDistributionsByWebACLId</c>.
     /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
     /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For all other resources, call <a>ListResourcesForWebACL</a>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -63,13 +63,13 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For regional resources, call <a>DisassociateWebACL</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
     /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
     /// in the <i>Amazon CloudFront API Reference</i>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For all other resources, call <a>DisassociateWebACL</a>.
     /// </para>
     ///  </li> </ul> </li> </ul> </note>
     /// </summary>
@@ -148,10 +148,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
-        /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
-        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
+        /// Specifies whether this is for a global resource type, such as a Amazon CloudFront
+        /// distribution. 
         /// </para>
         ///  
         /// <para>

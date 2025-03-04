@@ -23,12 +23,13 @@ using System.Threading.Tasks;
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Identity;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     public enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
 
-    public abstract class AbstractAWSSigner
+    public abstract class AbstractAWSSigner : ISigner
     {
         private readonly object _lock = new object();
         private AWS4Signer _aws4Signer;
@@ -70,7 +71,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Signals to the <see cref="Signer"/> Pipeline Handler
         /// if a Signer requires valid <see cref="ImmutableCredentials"/> in order
-        /// to correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,ImmutableCredentials)"/>.
+        /// to correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,BaseIdentity)"/>.
         /// </summary>
         public virtual bool RequiresCredentials { get; } = true;
 
@@ -107,22 +108,18 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new Amazon.Runtime.SignatureException("Failed to generate signature: " + e.Message, e);
             }
         }
-        public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
-        public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
-        {
-            Sign(request, clientConfig, metrics, credentials?.AccessKey, credentials?.SecretKey);
-        }
+        public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity);
 
 #if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task SignAsync(
             IRequest request, 
             IClientConfig clientConfig,
-            RequestMetrics metrics, 
-            ImmutableCredentials credentials,
+            RequestMetrics metrics,
+            BaseIdentity identity,
             CancellationToken token = default)
         {
-            Sign(request, clientConfig, metrics, credentials);
+            Sign(request, clientConfig, metrics, identity);
 #if NETSTANDARD
             return Task.CompletedTask;
 #else

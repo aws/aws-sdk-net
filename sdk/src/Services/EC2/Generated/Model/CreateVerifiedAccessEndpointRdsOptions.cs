@@ -154,7 +154,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The IDs of the subnets.
+        /// The IDs of the subnets. You can specify only one subnet per Availability Zone.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

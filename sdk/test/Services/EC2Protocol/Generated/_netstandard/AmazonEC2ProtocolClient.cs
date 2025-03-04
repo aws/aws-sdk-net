@@ -64,7 +64,7 @@ namespace Amazon.EC2Protocol
         ///
         /// </summary>
         public AmazonEC2ProtocolClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2ProtocolConfig()) { }
+            : base(new AmazonEC2ProtocolConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEC2ProtocolClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.EC2Protocol
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEC2ProtocolClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2ProtocolConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEC2ProtocolConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEC2ProtocolClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.EC2Protocol
         /// </summary>
         /// <param name="config">The AmazonEC2ProtocolClient Configuration Object</param>
         public AmazonEC2ProtocolClient(AmazonEC2ProtocolConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.EC2Protocol
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2ProtocolAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

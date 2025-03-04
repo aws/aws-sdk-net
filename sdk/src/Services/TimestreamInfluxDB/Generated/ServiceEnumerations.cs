@@ -25,6 +25,118 @@ namespace Amazon.TimestreamInfluxDB
 {
 
     /// <summary>
+    /// Constants used for properties of type ClusterDeploymentType.
+    /// </summary>
+    public class ClusterDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_NODE_READ_REPLICAS for ClusterDeploymentType
+        /// </summary>
+        public static readonly ClusterDeploymentType MULTI_NODE_READ_REPLICAS = new ClusterDeploymentType("MULTI_NODE_READ_REPLICAS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterDeploymentType FindValue(string value)
+        {
+            return FindValue<ClusterDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterStatus.
+    /// </summary>
+    public class ClusterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus AVAILABLE = new ClusterStatus("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus CREATING = new ClusterStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus DELETED = new ClusterStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus DELETING = new ClusterStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterStatus FindValue(string value)
+        {
+            return FindValue<ClusterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DbInstanceType.
     /// </summary>
     public class DbInstanceType : ConstantClass
@@ -254,6 +366,110 @@ namespace Amazon.TimestreamInfluxDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FailoverMode.
+    /// </summary>
+    public class FailoverMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for FailoverMode
+        /// </summary>
+        public static readonly FailoverMode AUTOMATIC = new FailoverMode("AUTOMATIC");
+        /// <summary>
+        /// Constant NO_FAILOVER for FailoverMode
+        /// </summary>
+        public static readonly FailoverMode NO_FAILOVER = new FailoverMode("NO_FAILOVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailoverMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailoverMode FindValue(string value)
+        {
+            return FindValue<FailoverMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailoverMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceMode.
+    /// </summary>
+    public class InstanceMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode PRIMARY = new InstanceMode("PRIMARY");
+        /// <summary>
+        /// Constant REPLICA for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode REPLICA = new InstanceMode("REPLICA");
+        /// <summary>
+        /// Constant STANDBY for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode STANDBY = new InstanceMode("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMode FindValue(string value)
+        {
+            return FindValue<InstanceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMode(string value)
         {
             return FindValue(value);
         }

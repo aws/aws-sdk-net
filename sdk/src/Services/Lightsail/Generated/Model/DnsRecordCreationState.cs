@@ -42,7 +42,7 @@ namespace Amazon.Lightsail.Model
     /// domain if the DNS zone for the domain exists within your Lightsail account. If automatic
     /// record addition fails, or if you manage the DNS of your domain using a third-party
     /// service, then you must manually add the CNAME records to the DNS of your domain. For
-    /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/verify-tls-ssl-certificate-using-dns-cname-https">Verify
+    /// more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/verify-tls-ssl-certificate-using-dns-cname-https">Verify
     /// an SSL/TLS certificate in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>.
     /// </para>

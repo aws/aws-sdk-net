@@ -78,8 +78,9 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// If you have request sampling enabled, the redacted fields configuration for logging
-    /// has no impact on sampling. The only way to exclude fields from request sampling is
-    /// by disabling sampling in the web ACL visibility configuration. 
+    /// has no impact on sampling. You can only exclude fields from request sampling by disabling
+    /// sampling in the web ACL visibility configuration or by configuring data protection
+    /// for the web ACL.
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>

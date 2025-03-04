@@ -803,6 +803,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly ScanStatus IN_PROGRESS = new ScanStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant LIMIT_EXCEEDED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus LIMIT_EXCEEDED = new ScanStatus("LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant PENDING for ScanStatus
         /// </summary>
         public static readonly ScanStatus PENDING = new ScanStatus("PENDING");

@@ -68,7 +68,7 @@ namespace Amazon.Greengrass
         ///
         /// </summary>
         public AmazonGreengrassClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGreengrassConfig()) { }
+            : base(new AmazonGreengrassConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGreengrassClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.Greengrass
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGreengrassClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGreengrassConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGreengrassConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGreengrassClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.Greengrass
         /// </summary>
         /// <param name="config">The AmazonGreengrassClient Configuration Object</param>
         public AmazonGreengrassClient(AmazonGreengrassConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGreengrassClient with AWS Credentials
@@ -209,15 +209,7 @@ namespace Amazon.Greengrass
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -227,7 +219,9 @@ namespace Amazon.Greengrass
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGreengrassEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGreengrassAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -563,10 +563,5 @@ namespace AWSSDK.UnitTests
             : base(credentials, clientConfig)
         {
         }
-        
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }
     }
 }

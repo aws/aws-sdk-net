@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TaxSettings.Model
 {
     /// <summary>
-    /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+    /// Failed to upload the tax exemption document to Amazon Web ServicesSupport case.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

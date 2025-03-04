@@ -36,6 +36,7 @@ namespace Amazon.BedrockDataAutomation.Model
     public partial class UpdateDataAutomationProjectRequest : AmazonBedrockDataAutomationRequest
     {
         private CustomOutputConfiguration _customOutputConfiguration;
+        private EncryptionConfiguration _encryptionConfiguration;
         private OverrideConfiguration _overrideConfiguration;
         private string _projectArn;
         private string _projectDescription;
@@ -55,6 +56,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetCustomOutputConfiguration()
         {
             return this._customOutputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration.
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
@@ -94,7 +110,7 @@ namespace Amazon.BedrockDataAutomation.Model
         /// <summary>
         /// Gets and sets the property ProjectDescription.
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=300)]
         public string ProjectDescription
         {
             get { return this._projectDescription; }

@@ -101,7 +101,7 @@ namespace Amazon.S3Control
         /// <returns>The resolved endpoint for the given request.</returns>
         public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
         {
-            var requestContext = new RequestContext(false, new S3Signer())
+            var requestContext = new RequestContext(false)
             {
                 ClientConfig = this,
                 OriginalRequest = parameters.Request,

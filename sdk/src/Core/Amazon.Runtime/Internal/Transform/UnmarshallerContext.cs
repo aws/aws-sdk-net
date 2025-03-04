@@ -138,6 +138,9 @@ namespace Amazon.Runtime.Internal.Transform
 
             switch (algorithm)
             {
+                case CoreChecksumAlgorithm.CRC64NVME:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperCRC64NVME>(responseStream, checksum, contentLength);
+                    break;
                 case CoreChecksumAlgorithm.CRC32C:
                     FlexibleChecksumStream = new HashStream<HashingWrapperCRC32C>(responseStream, checksum, contentLength);
                     break;

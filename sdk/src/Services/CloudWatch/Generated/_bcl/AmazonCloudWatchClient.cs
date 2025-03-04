@@ -97,7 +97,7 @@ namespace Amazon.CloudWatch
         ///
         /// </summary>
         public AmazonCloudWatchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig()) { }
+            : base(new AmazonCloudWatchConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudWatchConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="config">The AmazonCloudWatchClient Configuration Object</param>
         public AmazonCloudWatchClient(AmazonCloudWatchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Credentials
@@ -238,15 +238,7 @@ namespace Amazon.CloudWatch
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -256,7 +248,9 @@ namespace Amazon.CloudWatch
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

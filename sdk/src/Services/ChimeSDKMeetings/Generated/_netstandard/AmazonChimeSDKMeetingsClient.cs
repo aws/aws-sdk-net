@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMeetings
         ///
         /// </summary>
         public AmazonChimeSDKMeetingsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKMeetingsConfig()) { }
+            : base(new AmazonChimeSDKMeetingsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKMeetingsClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.ChimeSDKMeetings
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonChimeSDKMeetingsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKMeetingsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonChimeSDKMeetingsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKMeetingsClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.ChimeSDKMeetings
         /// </summary>
         /// <param name="config">The AmazonChimeSDKMeetingsClient Configuration Object</param>
         public AmazonChimeSDKMeetingsClient(AmazonChimeSDKMeetingsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.ChimeSDKMeetings
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.ChimeSDKMeetings
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKMeetingsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKMeetingsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

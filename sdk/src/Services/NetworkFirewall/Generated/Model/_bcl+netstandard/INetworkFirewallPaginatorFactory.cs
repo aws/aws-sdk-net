@@ -27,6 +27,16 @@ namespace Amazon.NetworkFirewall.Model
     {
 
         /// <summary>
+        /// Paginator for GetAnalysisReportResults operation
+        ///</summary>
+        IGetAnalysisReportResultsPaginator GetAnalysisReportResults(GetAnalysisReportResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAnalysisReports operation
+        ///</summary>
+        IListAnalysisReportsPaginator ListAnalysisReports(ListAnalysisReportsRequest request);
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         ///</summary>
         IListFirewallPoliciesPaginator ListFirewallPolicies(ListFirewallPoliciesRequest request);

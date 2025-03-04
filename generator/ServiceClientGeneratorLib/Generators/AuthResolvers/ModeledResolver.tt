@@ -1,0 +1,121 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+
+using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Identity;
+using System.Collections.Generic;
+
+namespace <#=this.Config.Namespace#>.Internal
+{
+    /// <inheritdoc cref="IAuthSchemeParameters" />
+    public class Amazon<#=this.Config.ClassName#>AuthSchemeParameters : IAuthSchemeParameters
+    {
+        /// <inheritdoc />
+        public string Operation { get; set; }
+
+<# if (IsSigV4Supported()) { #>
+        /// <summary>
+        /// Region is included as the service supports SigV4.
+        /// </summary>
+        public string Region { get; set; }
+<# } #>
+    }
+
+    /// <summary>
+    /// Handler responsible for converting the request context into the parameters expected by the auth scheme resolver.
+    /// </summary>
+    public class Amazon<#=this.Config.ClassName#>AuthSchemeHandler : BaseAuthResolverHandler
+    {
+<# if (IsServiceAllowListedForRulesBasedResolver()) { #>
+        private readonly Amazon<#=this.Config.ClassName#>EndpointResolver _endpointResolver = new();
+
+<# } #>
+        /// <summary>
+        /// Modeled auth scheme resolver for <#=this.Config.ClassName#>.
+        /// </summary>
+        public Amazon<#=this.Config.ClassName#>AuthSchemeResolver AuthSchemeResolver { get; } = new();
+
+        /// <inheritdoc/>
+        protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)
+        {
+<# if (IsServiceAllowListedForRulesBasedResolver()) { #>
+            // Since <#=this.Config.ClassName#> includes auth schemes in its endpoint rules, we'll attempt to delegate resolution to the endpoint
+            // resolver first (falling back to the modeled resolver if no options are returned).
+            var endpoint = _endpointResolver.GetEndpoint(executionContext);
+
+            // This means the endpoints resolver is executed twice intentionally (at this point and then later in the pipeline
+            // to determine which endpoint the SDK should use for the request).
+            var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);
+            if (endpointAuthSchemes != null)
+            {
+                return endpointAuthSchemes;
+            }
+
+<# } #>
+            var requestContext = executionContext.RequestContext;
+            var mappedParameters = new Amazon<#=this.Config.ClassName#>AuthSchemeParameters
+            {
+                Operation = requestContext.Request.RequestName,
+<# if (IsSigV4Supported()) { #>
+                Region = requestContext.ClientConfig.RegionEndpoint?.SystemName,
+<# } #>
+            };
+
+            return AuthSchemeResolver.ResolveAuthScheme(mappedParameters);
+        }
+<# if (GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion) != null) { #>
+
+        /// <inheritdoc/>
+        protected override ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        {
+            return new <#=GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion)#>();
+        }
+<# } #>
+    }
+
+    /// <inheritdoc cref="IAuthSchemeResolver{T}" />
+    public class Amazon<#=this.Config.ClassName#>AuthSchemeResolver : IAuthSchemeResolver<Amazon<#=this.Config.ClassName#>AuthSchemeParameters>
+    {
+        /// <inheritdoc />
+        public List<IAuthSchemeOption> ResolveAuthScheme(Amazon<#=this.Config.ClassName#>AuthSchemeParameters authParameters)
+        {
+            switch (authParameters.Operation)
+            {
+<# foreach (var operation in GetOperationsWithAuthSchemes()) { #>
+				case "<#=operation.Name#>Request":
+<# if (IsKnownSchemeList(operation.AuthSchemes, out string operationSchemesContent)) { #>
+                    return <#=operationSchemesContent#>;
+<# } else { #>
+                    return new List<IAuthSchemeOption> 
+                    {
+<# foreach (var operationScheme in operation.AuthSchemes) { #>
+                        new AuthSchemeOption { SchemeId = "<#=operationScheme#>" },
+<# } #>
+                    };
+<# }} #>
+                default:
+                    // Default for the service, applies to all remaining operations.
+<# if (IsKnownSchemeList(GetServiceAuthSchemes(), out string serviceSchemesContent)) { #>
+                    return <#=serviceSchemesContent#>;
+<# } else { #>
+                    return new List<IAuthSchemeOption> 
+                    {
+<# foreach (var serviceScheme in GetServiceAuthSchemes()) { #>
+    		            new AuthSchemeOption { SchemeId = "<#=serviceScheme#>" },
+<# } #>
+                    };
+<# } #>
+            }
+        }
+    }
+}

@@ -79,7 +79,7 @@ namespace Amazon.MediaConvert
         ///
         /// </summary>
         public AmazonMediaConvertClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaConvertConfig()) { }
+            : base(new AmazonMediaConvertConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMediaConvertClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.MediaConvert
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaConvertClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaConvertConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMediaConvertConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaConvertClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.MediaConvert
         /// </summary>
         /// <param name="config">The AmazonMediaConvertClient Configuration Object</param>
         public AmazonMediaConvertClient(AmazonMediaConvertConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMediaConvertClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.MediaConvert
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.MediaConvert
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaConvertEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaConvertAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -2204,6 +2198,91 @@ namespace Amazon.MediaConvert
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  Probe
+
+
+        /// <summary>
+        /// The Probe operation analyzes the provided media file and returns comprehensive metadata
+        /// about its container format, tracks, and any encountered errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Probe service method.</param>
+        /// 
+        /// <returns>The response from the Probe service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
+        public virtual ProbeResponse Probe(ProbeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProbeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProbeResponseUnmarshaller.Instance;
+
+            return Invoke<ProbeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The Probe operation analyzes the provided media file and returns comprehensive metadata
+        /// about its container format, tracks, and any encountered errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Probe service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Probe service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
+        public virtual Task<ProbeResponse> ProbeAsync(ProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProbeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProbeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ProbeResponse>(request, options, cancellationToken);
         }
 
         #endregion

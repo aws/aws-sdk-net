@@ -68,7 +68,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         ///
         /// </summary>
         public AmazonKinesisVideoWebRTCStorageClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoWebRTCStorageConfig()) { }
+            : base(new AmazonKinesisVideoWebRTCStorageConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoWebRTCStorageClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisVideoWebRTCStorageClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoWebRTCStorageConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisVideoWebRTCStorageConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoWebRTCStorageClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoWebRTCStorageClient Configuration Object</param>
         public AmazonKinesisVideoWebRTCStorageClient(AmazonKinesisVideoWebRTCStorageConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoWebRTCStorageClient with AWS Credentials
@@ -209,15 +209,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -227,7 +219,9 @@ namespace Amazon.KinesisVideoWebRTCStorage
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoWebRTCStorageEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoWebRTCStorageAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

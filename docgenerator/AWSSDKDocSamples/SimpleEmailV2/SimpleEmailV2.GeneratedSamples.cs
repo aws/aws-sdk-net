@@ -146,6 +146,21 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmailV2.Generated
             #endregion
         }
 
+        public void SimpleEmailServiceV2PutConfigurationSetArchivingOptions()
+        {
+            #region put-configuration-set-archiving-options-example-1737363685
+
+            var client = new AmazonSimpleEmailServiceV2Client();
+            var response = client.PutConfigurationSetArchivingOptions(new PutConfigurationSetArchivingOptionsRequest 
+            {
+                ArchiveArn = "arn:aws:ses:us-west-2:123456789012:mailmanager-archive/a-abcdefghijklmnopqrstuvwxyz",
+                ConfigurationSetName = "sample-configuration-name"
+            });
+
+
+            #endregion
+        }
+
         public void SimpleEmailServiceV2PutDedicatedIpPoolScalingAttributes()
         {
             #region put-dedicated-ip-pool-scaling-attributes-example-1683639172

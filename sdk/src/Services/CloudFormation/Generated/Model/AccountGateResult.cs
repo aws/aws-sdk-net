@@ -46,7 +46,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring
-    /// a target account gate</a>.
+    /// a target account gate in StackSets</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AccountGateResult

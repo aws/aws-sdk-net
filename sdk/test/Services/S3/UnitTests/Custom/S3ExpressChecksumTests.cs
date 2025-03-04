@@ -250,6 +250,7 @@ namespace AWSSDK.UnitTests
                 new CompressionHandler(),
                 new AmazonS3PostMarshallHandler(),
                 new AmazonS3EndpointResolver(),
+                new AmazonS3AuthSchemeHandler(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),
             });

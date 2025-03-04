@@ -85,7 +85,7 @@ namespace Amazon.QLDBSession
         ///
         /// </summary>
         public AmazonQLDBSessionClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQLDBSessionConfig()) { }
+            : base(new AmazonQLDBSessionConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQLDBSessionClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.QLDBSession
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQLDBSessionClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQLDBSessionConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQLDBSessionConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQLDBSessionClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.QLDBSession
         /// </summary>
         /// <param name="config">The AmazonQLDBSessionClient Configuration Object</param>
         public AmazonQLDBSessionClient(AmazonQLDBSessionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonQLDBSessionClient with AWS Credentials
@@ -226,15 +226,7 @@ namespace Amazon.QLDBSession
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -244,7 +236,9 @@ namespace Amazon.QLDBSession
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQLDBSessionEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQLDBSessionAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

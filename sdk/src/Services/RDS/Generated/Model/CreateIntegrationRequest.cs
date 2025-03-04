@@ -72,11 +72,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DataFilter. 
         /// <para>
         /// Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
-        /// filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid for: Integrations with Aurora MySQL source DB clusters only
+        /// filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data
+        /// filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25600)]

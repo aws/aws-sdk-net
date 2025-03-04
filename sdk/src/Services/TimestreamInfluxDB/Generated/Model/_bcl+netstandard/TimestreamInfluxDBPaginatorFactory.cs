@@ -37,11 +37,27 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Paginator for ListDbClusters operation
+        ///</summary>
+        public IListDbClustersPaginator ListDbClusters(ListDbClustersRequest request) 
+        {
+            return new ListDbClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDbInstances operation
         ///</summary>
         public IListDbInstancesPaginator ListDbInstances(ListDbInstancesRequest request) 
         {
             return new ListDbInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDbInstancesForCluster operation
+        ///</summary>
+        public IListDbInstancesForClusterPaginator ListDbInstancesForCluster(ListDbInstancesForClusterRequest request) 
+        {
+            return new ListDbInstancesForClusterPaginator(this.client, request);
         }
 
         /// <summary>

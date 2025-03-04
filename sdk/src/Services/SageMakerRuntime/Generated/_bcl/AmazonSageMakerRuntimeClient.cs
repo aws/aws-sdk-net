@@ -63,7 +63,7 @@ namespace Amazon.SageMakerRuntime
         ///
         /// </summary>
         public AmazonSageMakerRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerRuntimeConfig()) { }
+            : base(new AmazonSageMakerRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerRuntimeClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.SageMakerRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSageMakerRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSageMakerRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerRuntimeClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.SageMakerRuntime
         /// </summary>
         /// <param name="config">The AmazonSageMakerRuntimeClient Configuration Object</param>
         public AmazonSageMakerRuntimeClient(AmazonSageMakerRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerRuntimeClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.SageMakerRuntime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.SageMakerRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerRuntimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerRuntimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

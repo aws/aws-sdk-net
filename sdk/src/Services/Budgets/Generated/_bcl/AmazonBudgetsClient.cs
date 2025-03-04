@@ -148,7 +148,7 @@ namespace Amazon.Budgets
         ///
         /// </summary>
         public AmazonBudgetsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBudgetsConfig()) { }
+            : base(new AmazonBudgetsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBudgetsClient with the credentials loaded from the application's
@@ -167,7 +167,7 @@ namespace Amazon.Budgets
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBudgetsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBudgetsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBudgetsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBudgetsClient with the credentials loaded from the application's
@@ -186,7 +186,7 @@ namespace Amazon.Budgets
         /// </summary>
         /// <param name="config">The AmazonBudgetsClient Configuration Object</param>
         public AmazonBudgetsClient(AmazonBudgetsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBudgetsClient with AWS Credentials
@@ -289,15 +289,7 @@ namespace Amazon.Budgets
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -307,7 +299,9 @@ namespace Amazon.Budgets
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBudgetsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBudgetsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

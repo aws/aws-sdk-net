@@ -42,6 +42,12 @@ namespace Amazon.FIS.Model
         /// </summary>
         public IPaginatedEnumerable<ListTargetAccountConfigurationsResponse> Responses => new PaginatedResponse<ListTargetAccountConfigurationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TargetAccountConfigurations
+        /// </summary>
+        public IPaginatedEnumerable<TargetAccountConfigurationSummary> TargetAccountConfigurations => 
+            new PaginatedResultKeyResponse<ListTargetAccountConfigurationsResponse, TargetAccountConfigurationSummary>(this, (i) => i.TargetAccountConfigurations ?? new List<TargetAccountConfigurationSummary>());
+
         internal ListTargetAccountConfigurationsPaginator(IAmazonFIS client, ListTargetAccountConfigurationsRequest request)
         {
             this._client = client;

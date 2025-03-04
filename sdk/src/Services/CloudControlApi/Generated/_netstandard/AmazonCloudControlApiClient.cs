@@ -65,7 +65,7 @@ namespace Amazon.CloudControlApi
         ///
         /// </summary>
         public AmazonCloudControlApiClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudControlApiConfig()) { }
+            : base(new AmazonCloudControlApiConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudControlApiClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.CloudControlApi
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudControlApiClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudControlApiConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudControlApiConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudControlApiClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.CloudControlApi
         /// </summary>
         /// <param name="config">The AmazonCloudControlApiClient Configuration Object</param>
         public AmazonCloudControlApiClient(AmazonCloudControlApiConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.CloudControlApi
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.CloudControlApi
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudControlApiEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudControlApiAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

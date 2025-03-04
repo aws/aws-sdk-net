@@ -79,7 +79,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///
         /// </summary>
         public AmazonResourceGroupsTaggingAPIClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceGroupsTaggingAPIConfig()) { }
+            : base(new AmazonResourceGroupsTaggingAPIConfig()) { }
 
         /// <summary>
         /// Constructs AmazonResourceGroupsTaggingAPIClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonResourceGroupsTaggingAPIClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceGroupsTaggingAPIConfig{RegionEndpoint = region}) { }
+            : base(new AmazonResourceGroupsTaggingAPIConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonResourceGroupsTaggingAPIClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </summary>
         /// <param name="config">The AmazonResourceGroupsTaggingAPIClient Configuration Object</param>
         public AmazonResourceGroupsTaggingAPIClient(AmazonResourceGroupsTaggingAPIConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonResourceGroupsTaggingAPIClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.ResourceGroupsTaggingAPI
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceGroupsTaggingAPIEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceGroupsTaggingAPIAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

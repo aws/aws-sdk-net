@@ -87,6 +87,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEnabledAnalysisTypes())
+            {
+                context.Writer.WritePropertyName("EnabledAnalysisTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnabledAnalysisTypesListValue in publicRequest.EnabledAnalysisTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestEnabledAnalysisTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");

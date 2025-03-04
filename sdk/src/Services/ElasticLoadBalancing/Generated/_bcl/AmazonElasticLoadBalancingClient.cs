@@ -111,7 +111,7 @@ namespace Amazon.ElasticLoadBalancing
         ///
         /// </summary>
         public AmazonElasticLoadBalancingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig()) { }
+            : base(new AmazonElasticLoadBalancingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticLoadBalancingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticLoadBalancingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticLoadBalancingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with the credentials loaded from the application's
@@ -149,7 +149,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </summary>
         /// <param name="config">The AmazonElasticLoadBalancingClient Configuration Object</param>
         public AmazonElasticLoadBalancingClient(AmazonElasticLoadBalancingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Credentials
@@ -252,15 +252,7 @@ namespace Amazon.ElasticLoadBalancing
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -271,7 +263,9 @@ namespace Amazon.ElasticLoadBalancing
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticLoadBalancing.Internal.ProcessRequestHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticLoadBalancingEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticLoadBalancingAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

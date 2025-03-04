@@ -104,7 +104,7 @@ namespace Amazon.FreeTier
         ///
         /// </summary>
         public AmazonFreeTierClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFreeTierConfig()) { }
+            : base(new AmazonFreeTierConfig()) { }
 
         /// <summary>
         /// Constructs AmazonFreeTierClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.FreeTier
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonFreeTierClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFreeTierConfig{RegionEndpoint = region}) { }
+            : base(new AmazonFreeTierConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonFreeTierClient with the credentials loaded from the application's
@@ -142,7 +142,7 @@ namespace Amazon.FreeTier
         /// </summary>
         /// <param name="config">The AmazonFreeTierClient Configuration Object</param>
         public AmazonFreeTierClient(AmazonFreeTierConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonFreeTierClient with AWS Credentials
@@ -245,15 +245,7 @@ namespace Amazon.FreeTier
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -263,7 +255,9 @@ namespace Amazon.FreeTier
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFreeTierEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFreeTierAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

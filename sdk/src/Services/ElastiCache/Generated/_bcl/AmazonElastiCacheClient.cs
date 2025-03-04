@@ -96,7 +96,7 @@ namespace Amazon.ElastiCache
         ///
         /// </summary>
         public AmazonElastiCacheClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig()) { }
+            : base(new AmazonElastiCacheConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElastiCacheConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.ElastiCache
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.ElastiCache
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElastiCacheEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElastiCacheAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -2352,8 +2346,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -2394,8 +2388,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
@@ -2443,7 +2437,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user group.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
@@ -2488,7 +2482,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+        /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user group.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>

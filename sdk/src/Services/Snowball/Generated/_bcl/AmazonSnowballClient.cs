@@ -87,7 +87,7 @@ namespace Amazon.Snowball
         ///
         /// </summary>
         public AmazonSnowballClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSnowballConfig()) { }
+            : base(new AmazonSnowballConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSnowballClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.Snowball
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSnowballClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSnowballConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSnowballConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSnowballClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.Snowball
         /// </summary>
         /// <param name="config">The AmazonSnowballClient Configuration Object</param>
         public AmazonSnowballClient(AmazonSnowballConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSnowballClient with AWS Credentials
@@ -228,15 +228,7 @@ namespace Amazon.Snowball
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -246,7 +238,9 @@ namespace Amazon.Snowball
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSnowballEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSnowballAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

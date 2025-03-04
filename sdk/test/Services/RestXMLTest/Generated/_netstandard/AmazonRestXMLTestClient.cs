@@ -64,7 +64,7 @@ namespace Amazon.RestXMLTest
         ///
         /// </summary>
         public AmazonRestXMLTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXMLTestConfig()) { }
+            : base(new AmazonRestXMLTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRestXMLTestClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.RestXMLTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRestXMLTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRestXMLTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRestXMLTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRestXMLTestClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.RestXMLTest
         /// </summary>
         /// <param name="config">The AmazonRestXMLTestClient Configuration Object</param>
         public AmazonRestXMLTestClient(AmazonRestXMLTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.RestXMLTest
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRestXMLTestAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

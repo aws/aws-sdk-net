@@ -37,6 +37,13 @@ namespace Amazon.NetworkFirewall.Model
     /// functionality. For example, if Network Firewall detects a rule that's routing traffic
     /// asymmetrically, which impacts the service's ability to properly process traffic, the
     /// service includes the rule in a list of analysis results.
+    /// 
+    ///  
+    /// <para>
+    /// The <c>AnalysisResult</c> data type is not related to traffic analysis reports you
+    /// generate using <a>StartAnalysisReport</a>. For information on traffic analysis report
+    /// results, see <a>AnalysisTypeReportResult</a>.
+    /// </para>
     /// </summary>
     public partial class AnalysisResult
     {

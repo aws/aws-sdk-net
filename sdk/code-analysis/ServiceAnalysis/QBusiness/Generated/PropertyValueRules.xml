@@ -471,6 +471,28 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.DeleteAttachmentRequest.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.DeleteAttachmentRequest.AttachmentId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.DeleteAttachmentRequest.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.DeleteAttachmentRequest.UserId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteChatControlsConfigurationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>

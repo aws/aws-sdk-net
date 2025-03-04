@@ -82,6 +82,12 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.CreateWorkgroupRequest.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.CreateWorkgroupRequest.WorkgroupName</property>
     <min>3</min>
     <max>64</max>
@@ -170,6 +176,12 @@
     <min>3</min>
     <max>60</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.GetTrackRequest.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.GetWorkgroupRequest.WorkgroupName</property>
@@ -318,6 +330,21 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListTracksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListTracksRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListTracksResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListUsageLimitsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -430,6 +457,12 @@
     <pattern>^(ipv4|dualstack)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateWorkgroupRequest.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.UpdateWorkgroupRequest.WorkgroupName</property>
     <min>3</min>
     <max>64</max>
@@ -527,6 +560,12 @@
     <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ServerlessTrack.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.SnapshotCopyConfiguration.NamespaceName</property>
     <min>3</min>
     <max>64</max>
@@ -548,6 +587,12 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.UpdateTarget.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Workgroup.CustomDomainCertificateArn</property>
     <min>20</min>
     <max>2048</max>
@@ -562,6 +607,18 @@
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Workgroup.IpAddressType</property>
     <pattern>^(ipv4|dualstack)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Workgroup.PendingTrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.Workgroup.TrackName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Workgroup.WorkgroupName</property>

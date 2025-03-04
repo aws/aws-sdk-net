@@ -73,7 +73,7 @@ namespace Amazon.AppFabric
         ///
         /// </summary>
         public AmazonAppFabricClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppFabricConfig()) { }
+            : base(new AmazonAppFabricConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppFabricClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.AppFabric
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppFabricClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppFabricConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppFabricConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppFabricClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.AppFabric
         /// </summary>
         /// <param name="config">The AmazonAppFabricClient Configuration Object</param>
         public AmazonAppFabricClient(AmazonAppFabricConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.AppFabric
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -251,7 +243,9 @@ namespace Amazon.AppFabric
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppFabricEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppFabricAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

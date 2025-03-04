@@ -35,6 +35,8 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DataProviderSettings
     {
         private DocDbDataProviderSettings _docDbSettings;
+        private IbmDb2LuwDataProviderSettings _ibmDb2LuwSettings;
+        private IbmDb2zOsDataProviderSettings _ibmDb2zOsSettings;
         private MariaDbDataProviderSettings _mariaDbSettings;
         private MicrosoftSqlServerDataProviderSettings _microsoftSqlServerSettings;
         private MongoDbDataProviderSettings _mongoDbSettings;
@@ -56,6 +58,42 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDocDbSettings()
         {
             return this._docDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IbmDb2LuwSettings. 
+        /// <para>
+        /// Provides information that defines an IBM DB2 LUW data provider.
+        /// </para>
+        /// </summary>
+        public IbmDb2LuwDataProviderSettings IbmDb2LuwSettings
+        {
+            get { return this._ibmDb2LuwSettings; }
+            set { this._ibmDb2LuwSettings = value; }
+        }
+
+        // Check to see if IbmDb2LuwSettings property is set
+        internal bool IsSetIbmDb2LuwSettings()
+        {
+            return this._ibmDb2LuwSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IbmDb2zOsSettings. 
+        /// <para>
+        /// Provides information that defines an IBM DB2 for z/OS data provider.
+        /// </para>
+        /// </summary>
+        public IbmDb2zOsDataProviderSettings IbmDb2zOsSettings
+        {
+            get { return this._ibmDb2zOsSettings; }
+            set { this._ibmDb2zOsSettings = value; }
+        }
+
+        // Check to see if IbmDb2zOsSettings property is set
+        internal bool IsSetIbmDb2zOsSettings()
+        {
+            return this._ibmDb2zOsSettings != null;
         }
 
         /// <summary>

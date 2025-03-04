@@ -79,9 +79,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
-        /// The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend
+        /// The maximum hourly price you're willing to pay for a Spot Instance. We do not recommend
         /// using this parameter because it can lead to increased interruptions. If you do not
-        /// specify this parameter, you will pay the current Spot price.
+        /// specify this parameter, you will pay the current Spot price. If you do specify this
+        /// parameter, it must be more than USD $0.001. Specifying a value below USD $0.001 will
+        /// result in an <c>InvalidParameterValue</c> error message when the launch template is
+        /// used to launch an instance.
         /// </para>
         ///  <important> 
         /// <para>

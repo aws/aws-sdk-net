@@ -93,7 +93,7 @@ namespace Amazon.ECR
         ///
         /// </summary>
         public AmazonECRClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRConfig()) { }
+            : base(new AmazonECRConfig()) { }
 
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.ECR
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonECRClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRConfig{RegionEndpoint = region}) { }
+            : base(new AmazonECRConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's
@@ -131,7 +131,7 @@ namespace Amazon.ECR
         /// </summary>
         /// <param name="config">The AmazonECRClient Configuration Object</param>
         public AmazonECRClient(AmazonECRConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonECRClient with AWS Credentials
@@ -234,15 +234,7 @@ namespace Amazon.ECR
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -252,7 +244,9 @@ namespace Amazon.ECR
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECREndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECRAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -3484,10 +3478,16 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Starts an image vulnerability scan. An image scan can only be started once per 24
-        /// hours on an individual image. This limit includes if an image was scanned on initial
-        /// push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Starts a basic image vulnerability scan.
+        /// 
+        ///  
+        /// <para>
+        ///  A basic image scan can only be started once per 24 hours on an individual image.
+        /// This limit includes if an image was scanned on initial push. You can start up to 100,000
+        /// basic scans per 24 hours. This limit includes both scans on initial push and scans
+        /// initiated by the StartImageScan API. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-basic.html">Basic
         /// scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// 
@@ -3528,10 +3528,16 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Starts an image vulnerability scan. An image scan can only be started once per 24
-        /// hours on an individual image. This limit includes if an image was scanned on initial
-        /// push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+        /// Starts a basic image vulnerability scan.
+        /// 
+        ///  
+        /// <para>
+        ///  A basic image scan can only be started once per 24 hours on an individual image.
+        /// This limit includes if an image was scanned on initial push. You can start up to 100,000
+        /// basic scans per 24 hours. This limit includes both scans on initial push and scans
+        /// initiated by the StartImageScan API. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning-basic.html">Basic
         /// scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// <param name="cancellationToken">

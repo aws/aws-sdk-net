@@ -32,6 +32,24 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// The event criteria for the pull request trigger configuration, such as the lists of
     /// branches or file paths to include and exclude.
+    /// 
+    ///  
+    /// <para>
+    /// The following are valid values for the events for this filter:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// CLOSED
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// OPEN
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UPDATED
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GitPullRequestFilter
     {
@@ -60,8 +78,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// The field that specifies which pull request events to filter on (opened, updated,
-        /// closed) for the trigger configuration.
+        /// The field that specifies which pull request events to filter on (OPEN, UPDATED, CLOSED)
+        /// for the trigger configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _dataEncryptionKeyId;
         private string _description;
         private bool? _encrypted;
+        private long? _fullSnapshotSizeInBytes;
         private string _kmsKeyId;
         private string _outpostArn;
         private string _ownerAlias;
@@ -173,6 +174,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncrypted()
         {
             return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullSnapshotSizeInBytes. 
+        /// <para>
+        /// The full size of the snapshot, in bytes.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This is <b>not</b> the incremental size of the snapshot. This is the full snapshot
+        /// size and represents the size of all the blocks that were written to the source volume
+        /// at the time the snapshot was created.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public long? FullSnapshotSizeInBytes
+        {
+            get { return this._fullSnapshotSizeInBytes; }
+            set { this._fullSnapshotSizeInBytes = value; }
+        }
+
+        // Check to see if FullSnapshotSizeInBytes property is set
+        internal bool IsSetFullSnapshotSizeInBytes()
+        {
+            return this._fullSnapshotSizeInBytes.HasValue; 
         }
 
         /// <summary>

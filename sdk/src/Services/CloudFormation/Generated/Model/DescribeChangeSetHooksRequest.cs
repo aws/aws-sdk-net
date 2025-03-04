@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
         /// <para>
-        /// If specified, lists only the hooks related to the specified <c>LogicalResourceId</c>.
+        /// If specified, lists only the Hooks related to the specified <c>LogicalResourceId</c>.
         /// </para>
         /// </summary>
         public string LogicalResourceId

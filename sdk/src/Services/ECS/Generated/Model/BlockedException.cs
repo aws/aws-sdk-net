@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-    /// Amazon Web Services Support</a>.
+    /// Amazon Web ServicesSupport</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -71,7 +71,7 @@ namespace Amazon.IoTEventsData
         ///
         /// </summary>
         public AmazonIoTEventsDataClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTEventsDataConfig()) { }
+            : base(new AmazonIoTEventsDataConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTEventsDataClient with the credentials loaded from the application's
@@ -90,7 +90,7 @@ namespace Amazon.IoTEventsData
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTEventsDataClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTEventsDataConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTEventsDataConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTEventsDataClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.IoTEventsData
         /// </summary>
         /// <param name="config">The AmazonIoTEventsDataClient Configuration Object</param>
         public AmazonIoTEventsDataClient(AmazonIoTEventsDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIoTEventsDataClient with AWS Credentials
@@ -212,15 +212,7 @@ namespace Amazon.IoTEventsData
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -230,7 +222,9 @@ namespace Amazon.IoTEventsData
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEventsDataEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTEventsDataAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

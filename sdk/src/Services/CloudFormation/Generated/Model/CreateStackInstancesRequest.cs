@@ -50,8 +50,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of one or more Amazon Web Services accounts that
-        /// you want to create stack instances in the specified Region(s) for.
+        /// [Self-managed permissions] The account IDs of one or more Amazon Web Services accounts
+        /// that you want to create stack instances in the specified Region(s) for.
         /// </para>
         ///  
         /// <para>

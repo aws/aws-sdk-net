@@ -80,7 +80,7 @@ namespace Amazon.SageMaker
         ///
         /// </summary>
         public AmazonSageMakerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerConfig()) { }
+            : base(new AmazonSageMakerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSageMakerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSageMakerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.SageMaker
         /// </summary>
         /// <param name="config">The AmazonSageMakerClient Configuration Object</param>
         public AmazonSageMakerClient(AmazonSageMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -243,14 +243,6 @@ namespace Amazon.SageMaker
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -258,7 +250,9 @@ namespace Amazon.SageMaker
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -14301,6 +14295,142 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateHubResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateHubResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHubContent
+
+        internal virtual UpdateHubContentResponse UpdateHubContent(UpdateHubContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHubContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates SageMaker hub content (either a <c>Model</c> or <c>Notebook</c> resource).
+        /// 
+        ///  
+        /// <para>
+        /// You can update the metadata that describes the resource. In addition to the required
+        /// request fields, specify at least one of the following fields to update:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>HubContentDescription</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentDisplayName</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentMarkdown</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HubContentSearchKeywords</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportStatus</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about hubs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html">Private
+        /// curated hubs for foundation model access control in JumpStart</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to update a <c>ModelReference</c> resource in your hub, use the <c>UpdateHubContentResource</c>
+        /// API instead.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHubContent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContent">REST API Reference for UpdateHubContent Operation</seealso>
+        public virtual Task<UpdateHubContentResponse> UpdateHubContentAsync(UpdateHubContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHubContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHubContentReference
+
+        internal virtual UpdateHubContentReferenceResponse UpdateHubContentReference(UpdateHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHubContentReferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the contents of a SageMaker hub for a <c>ModelReference</c> resource. A <c>ModelReference</c>
+        /// allows you to access public SageMaker JumpStart models from within your private hub.
+        /// 
+        ///  
+        /// <para>
+        /// When using this API, you can update the <c>MinVersion</c> field for additional flexibility
+        /// in the model version. You shouldn't update any additional fields when using this API,
+        /// because the metadata in your private hub should match the public JumpStart model's
+        /// metadata.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to update a <c>Model</c> or <c>Notebook</c> resource in your hub, use
+        /// the <c>UpdateHubContent</c> API instead.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about adding model references to your hub, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs-admin-guide-add-models.html">
+        /// Add models to a private hub</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHubContentReference">REST API Reference for UpdateHubContentReference Operation</seealso>
+        public virtual Task<UpdateHubContentReferenceResponse> UpdateHubContentReferenceAsync(UpdateHubContentReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHubContentReferenceResponse>(request, options, cancellationToken);
         }
 
         #endregion

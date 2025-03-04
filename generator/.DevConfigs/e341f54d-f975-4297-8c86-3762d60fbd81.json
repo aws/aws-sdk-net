@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Do not send null values, but do send empty strings and empty lists over the wire in headers for restxml and restjson protocols"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

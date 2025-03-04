@@ -30,12 +30,11 @@ namespace Amazon.Runtime.Internal.Util
     public static class ChecksumUtils
     {
         private const string _checksumHeaderPrefix = "x-amz-checksum-";
-
-        // TODO: Once CRC64 is available in the CRT, update the supported algorithms list.
-        private static CoreChecksumAlgorithm _defaultAlgorithm = CoreChecksumAlgorithm.CRC32;
         private readonly static List<CoreChecksumAlgorithm> _responseChecksumsInPriorityOrder = ChecksumCRTWrapper.IsCrtAvailable() ?
             new List<CoreChecksumAlgorithm>
             {
+                // TODO: Re-enable CRC64 for responses once the CRT issue is resolved.
+                // CoreChecksumAlgorithm.CRC64NVME,
                 CoreChecksumAlgorithm.CRC32C,
                 CoreChecksumAlgorithm.CRC32,
                 CoreChecksumAlgorithm.SHA1,
@@ -51,7 +50,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <summary>
         /// Returns the current default checksum algorithm used by the SDK.
         /// </summary>
-        public static CoreChecksumAlgorithm DefaultAlgorithm => _defaultAlgorithm;
+        public static CoreChecksumAlgorithm DefaultAlgorithm => CoreChecksumAlgorithm.CRC32;
 
         /// <summary>
         /// Generates the name of the header key to use for a given checksum algorithm

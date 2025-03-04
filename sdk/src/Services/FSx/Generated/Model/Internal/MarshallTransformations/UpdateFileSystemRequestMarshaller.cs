@@ -92,6 +92,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FileSystemId);
             }
 
+            if(publicRequest.IsSetFileSystemTypeVersion())
+            {
+                context.Writer.WritePropertyName("FileSystemTypeVersion");
+                context.Writer.WriteStringValue(publicRequest.FileSystemTypeVersion);
+            }
+
             if(publicRequest.IsSetLustreConfiguration())
             {
                 context.Writer.WritePropertyName("LustreConfiguration");

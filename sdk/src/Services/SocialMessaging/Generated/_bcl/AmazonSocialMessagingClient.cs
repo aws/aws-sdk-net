@@ -126,7 +126,7 @@ namespace Amazon.SocialMessaging
         ///
         /// </summary>
         public AmazonSocialMessagingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSocialMessagingConfig()) { }
+            : base(new AmazonSocialMessagingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSocialMessagingClient with the credentials loaded from the application's
@@ -145,7 +145,7 @@ namespace Amazon.SocialMessaging
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSocialMessagingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSocialMessagingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSocialMessagingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSocialMessagingClient with the credentials loaded from the application's
@@ -164,7 +164,7 @@ namespace Amazon.SocialMessaging
         /// </summary>
         /// <param name="config">The AmazonSocialMessagingClient Configuration Object</param>
         public AmazonSocialMessagingClient(AmazonSocialMessagingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSocialMessagingClient with AWS Credentials
@@ -267,15 +267,7 @@ namespace Amazon.SocialMessaging
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -285,7 +277,9 @@ namespace Amazon.SocialMessaging
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSocialMessagingEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSocialMessagingAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

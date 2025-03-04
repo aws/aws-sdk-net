@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USWest1
             };
 
-            signer.Sign(request, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
+            signer.Sign(request, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
             return request;
         }
 
@@ -157,6 +157,7 @@ namespace AWSSDK.UnitTests
                 new CompressionHandler(),
                 new AmazonS3PostMarshallHandler(),
                 new AmazonS3EndpointResolver(),
+                new AmazonS3AuthSchemeHandler(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),
             });

@@ -574,8 +574,8 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The network type associated with the cluster, either <c>ipv4</c> | <c>ipv6</c>. IPv6
         /// is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2
-        /// and above or Memcached engine version 1.6.6 and above on all instances built on the
-        /// <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+        /// to 7.1 or Memcached engine version 1.6.6 and above on all instances built on the <a
+        /// href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -612,7 +612,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached
+        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 7.1 or Memcached
         /// engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>

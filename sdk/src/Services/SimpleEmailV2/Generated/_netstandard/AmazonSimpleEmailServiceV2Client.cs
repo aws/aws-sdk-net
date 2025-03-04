@@ -75,7 +75,7 @@ namespace Amazon.SimpleEmailV2
         ///
         /// </summary>
         public AmazonSimpleEmailServiceV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceV2Config()) { }
+            : base(new AmazonSimpleEmailServiceV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceV2Client with the credentials loaded from the application's
@@ -94,7 +94,7 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleEmailServiceV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonSimpleEmailServiceV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceV2Client with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailServiceV2Client Configuration Object</param>
         public AmazonSimpleEmailServiceV2Client(AmazonSimpleEmailServiceV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -238,14 +238,6 @@ namespace Amazon.SimpleEmailV2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWSEndpointAuthSchemeSigner();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -253,7 +245,9 @@ namespace Amazon.SimpleEmailV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleEmailServiceV2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleEmailServiceV2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -3571,6 +3565,51 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = PutAccountVdmAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAccountVdmAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutConfigurationSetArchivingOptions
+
+        internal virtual PutConfigurationSetArchivingOptionsResponse PutConfigurationSetArchivingOptions(PutConfigurationSetArchivingOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetArchivingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetArchivingOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationSetArchivingOptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate the configuration set with a MailManager archive. When you send email using
+        /// the <c>SendEmail</c> or <c>SendBulkEmail</c> operations the message as it will be
+        /// given to the receiving SMTP server will be archived, along with the recipient information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetArchivingOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetArchivingOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetArchivingOptions">REST API Reference for PutConfigurationSetArchivingOptions Operation</seealso>
+        public virtual Task<PutConfigurationSetArchivingOptionsResponse> PutConfigurationSetArchivingOptionsAsync(PutConfigurationSetArchivingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetArchivingOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetArchivingOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConfigurationSetArchivingOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

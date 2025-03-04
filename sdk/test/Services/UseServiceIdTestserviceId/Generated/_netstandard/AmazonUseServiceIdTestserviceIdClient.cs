@@ -64,7 +64,7 @@ namespace Amazon.UseServiceIdTestserviceId
         ///
         /// </summary>
         public AmazonUseServiceIdTestserviceIdClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonUseServiceIdTestserviceIdConfig()) { }
+            : base(new AmazonUseServiceIdTestserviceIdConfig()) { }
 
         /// <summary>
         /// Constructs AmazonUseServiceIdTestserviceIdClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.UseServiceIdTestserviceId
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonUseServiceIdTestserviceIdClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonUseServiceIdTestserviceIdConfig{RegionEndpoint = region}) { }
+            : base(new AmazonUseServiceIdTestserviceIdConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonUseServiceIdTestserviceIdClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.UseServiceIdTestserviceId
         /// </summary>
         /// <param name="config">The AmazonUseServiceIdTestserviceIdClient Configuration Object</param>
         public AmazonUseServiceIdTestserviceIdClient(AmazonUseServiceIdTestserviceIdConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.UseServiceIdTestserviceId
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonUseServiceIdTestserviceIdAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

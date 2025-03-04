@@ -74,7 +74,7 @@ namespace Amazon.Billing
         ///
         /// </summary>
         public AmazonBillingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBillingConfig()) { }
+            : base(new AmazonBillingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBillingClient with the credentials loaded from the application's
@@ -93,7 +93,7 @@ namespace Amazon.Billing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBillingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBillingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBillingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBillingClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.Billing
         /// </summary>
         /// <param name="config">The AmazonBillingClient Configuration Object</param>
         public AmazonBillingClient(AmazonBillingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -237,14 +237,6 @@ namespace Amazon.Billing
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -252,7 +244,9 @@ namespace Amazon.Billing
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBillingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBillingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

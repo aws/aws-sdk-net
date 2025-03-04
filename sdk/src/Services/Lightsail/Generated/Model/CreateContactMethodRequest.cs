@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// You can add one email address and one mobile phone number contact method in each Amazon
     /// Web Services Region. However, SMS text messaging is not supported in some Amazon Web
     /// Services Regions, and SMS text messages cannot be sent to some countries/regions.
-    /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+    /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
     /// in Amazon Lightsail</a>.
     /// </para>
     /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+        /// For more information about notifications in Amazon Lightsail, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
         /// in Amazon Lightsail</a>.
         /// </para>
         /// </summary>

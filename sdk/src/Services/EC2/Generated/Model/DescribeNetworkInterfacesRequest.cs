@@ -31,13 +31,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNetworkInterfaces operation.
-    /// Describes one or more of your network interfaces.
+    /// Describes the specified network interfaces or all your network interfaces.
     /// 
     ///  
     /// <para>
     /// If you have a large number of network interfaces, the operation fails unless you use
     /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
-    /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
+    /// <c>private-ip-address</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -191,6 +191,16 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>network-interface-id</c> - The ID of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.managed</c> - A Boolean that indicates whether this is a managed network
+        /// interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.principal</c> - The principal that manages the network interface. Only
+        /// valid for managed network interfaces, where <c>managed</c> is <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

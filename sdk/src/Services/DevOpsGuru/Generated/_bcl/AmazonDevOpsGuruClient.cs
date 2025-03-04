@@ -100,7 +100,7 @@ namespace Amazon.DevOpsGuru
         ///
         /// </summary>
         public AmazonDevOpsGuruClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDevOpsGuruConfig()) { }
+            : base(new AmazonDevOpsGuruConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDevOpsGuruClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.DevOpsGuru
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDevOpsGuruClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDevOpsGuruConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDevOpsGuruConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDevOpsGuruClient with the credentials loaded from the application's
@@ -138,7 +138,7 @@ namespace Amazon.DevOpsGuru
         /// </summary>
         /// <param name="config">The AmazonDevOpsGuruClient Configuration Object</param>
         public AmazonDevOpsGuruClient(AmazonDevOpsGuruConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDevOpsGuruClient with AWS Credentials
@@ -241,15 +241,7 @@ namespace Amazon.DevOpsGuru
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -259,7 +251,9 @@ namespace Amazon.DevOpsGuru
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDevOpsGuruEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDevOpsGuruAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -37,6 +37,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private int? _allocatedStorage;
         private string _arn;
         private string _availabilityZone;
+        private string _dbClusterId;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
@@ -44,6 +45,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _endpoint;
         private string _id;
         private string _influxAuthParametersSecretArn;
+        private InstanceMode _instanceMode;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
         private NetworkType _networkType;
@@ -60,7 +62,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// The amount of storage allocated for your DB storage type (in gibibytes).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=16384)]
+        [AWSProperty(Min=20, Max=15360)]
         public int? AllocatedStorage
         {
             get { return this._allocatedStorage; }
@@ -108,6 +110,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbClusterId. 
+        /// <para>
+        /// Specifies the DbCluster to which this DbInstance belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=64)]
+        public string DbClusterId
+        {
+            get { return this._dbClusterId; }
+            set { this._dbClusterId = value; }
+        }
+
+        // Check to see if DbClusterId property is set
+        internal bool IsSetDbClusterId()
+        {
+            return this._dbClusterId != null;
         }
 
         /// <summary>
@@ -240,6 +261,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetInfluxAuthParametersSecretArn()
         {
             return this._influxAuthParametersSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMode. 
+        /// <para>
+        /// Specifies the DbInstance's role in the cluster.
+        /// </para>
+        /// </summary>
+        public InstanceMode InstanceMode
+        {
+            get { return this._instanceMode; }
+            set { this._instanceMode = value; }
+        }
+
+        // Check to see if InstanceMode property is set
+        internal bool IsSetInstanceMode()
+        {
+            return this._instanceMode != null;
         }
 
         /// <summary>

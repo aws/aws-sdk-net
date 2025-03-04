@@ -131,7 +131,7 @@ namespace Amazon.RDS
         ///
         /// </summary>
         public AmazonRDSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig()) { }
+            : base(new AmazonRDSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -150,7 +150,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRDSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRDSConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRDSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRDSClient with the credentials loaded from the application's
@@ -169,7 +169,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="config">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -294,23 +294,17 @@ namespace Amazon.RDS
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -1862,19 +1856,6 @@ namespace Amazon.RDS
         /// <para>
         /// This command doesn't apply to RDS Custom.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB parameter group, you should wait at least 5 minutes before creating
-        /// your first DB instance that uses that DB parameter group as the default parameter
-        /// group. This allows Amazon RDS to fully complete the create action before the parameter
-        /// group is used as the default for a new DB instance. This is especially important for
-        /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
-        /// parameter group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -7601,14 +7582,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies a zero-ETL integration with Amazon Redshift.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
-        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
-        /// the integration.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// <param name="cancellationToken">

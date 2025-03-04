@@ -502,7 +502,7 @@ namespace Amazon.CodeCommit
         ///
         /// </summary>
         public AmazonCodeCommitClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeCommitConfig()) { }
+            : base(new AmazonCodeCommitConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeCommitClient with the credentials loaded from the application's
@@ -521,7 +521,7 @@ namespace Amazon.CodeCommit
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeCommitClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeCommitConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeCommitConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeCommitClient with the credentials loaded from the application's
@@ -540,7 +540,7 @@ namespace Amazon.CodeCommit
         /// </summary>
         /// <param name="config">The AmazonCodeCommitClient Configuration Object</param>
         public AmazonCodeCommitClient(AmazonCodeCommitConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -665,14 +665,6 @@ namespace Amazon.CodeCommit
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -680,7 +672,9 @@ namespace Amazon.CodeCommit
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeCommitEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeCommitAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

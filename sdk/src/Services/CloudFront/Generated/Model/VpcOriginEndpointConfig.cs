@@ -63,7 +63,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HTTPPort. 
         /// <para>
-        /// The HTTP port for the CloudFront VPC origin endpoint configuration.
+        /// The HTTP port for the CloudFront VPC origin endpoint configuration. The default value
+        /// is <c>80</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HTTPSPort. 
         /// <para>
-        /// The HTTPS port of the CloudFront VPC origin endpoint configuration.
+        /// The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value
+        /// is <c>443</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

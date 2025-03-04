@@ -101,7 +101,7 @@ namespace Amazon.Pricing
         ///
         /// </summary>
         public AmazonPricingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPricingConfig()) { }
+            : base(new AmazonPricingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPricingClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.Pricing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPricingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPricingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPricingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPricingClient with the credentials loaded from the application's
@@ -139,7 +139,7 @@ namespace Amazon.Pricing
         /// </summary>
         /// <param name="config">The AmazonPricingClient Configuration Object</param>
         public AmazonPricingClient(AmazonPricingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -264,14 +264,6 @@ namespace Amazon.Pricing
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -279,7 +271,9 @@ namespace Amazon.Pricing
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPricingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPricingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

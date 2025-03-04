@@ -107,7 +107,7 @@ namespace Amazon.PinpointEmail
         ///
         /// </summary>
         public AmazonPinpointEmailClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointEmailConfig()) { }
+            : base(new AmazonPinpointEmailConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPinpointEmailClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.PinpointEmail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPinpointEmailClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointEmailConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPinpointEmailConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPinpointEmailClient with the credentials loaded from the application's
@@ -145,7 +145,7 @@ namespace Amazon.PinpointEmail
         /// </summary>
         /// <param name="config">The AmazonPinpointEmailClient Configuration Object</param>
         public AmazonPinpointEmailClient(AmazonPinpointEmailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -270,14 +270,6 @@ namespace Amazon.PinpointEmail
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -285,7 +277,9 @@ namespace Amazon.PinpointEmail
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointEmailEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointEmailAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

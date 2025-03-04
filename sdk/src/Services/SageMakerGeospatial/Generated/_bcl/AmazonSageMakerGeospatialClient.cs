@@ -79,7 +79,7 @@ namespace Amazon.SageMakerGeospatial
         ///
         /// </summary>
         public AmazonSageMakerGeospatialClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerGeospatialConfig()) { }
+            : base(new AmazonSageMakerGeospatialConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerGeospatialClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.SageMakerGeospatial
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSageMakerGeospatialClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerGeospatialConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSageMakerGeospatialConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerGeospatialClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.SageMakerGeospatial
         /// </summary>
         /// <param name="config">The AmazonSageMakerGeospatialClient Configuration Object</param>
         public AmazonSageMakerGeospatialClient(AmazonSageMakerGeospatialConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerGeospatialClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.SageMakerGeospatial
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.SageMakerGeospatial
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerGeospatialEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerGeospatialAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

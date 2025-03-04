@@ -393,6 +393,12 @@ namespace Amazon.S3.Transfer.Internal
         {
             chosenAlgorithm = null;
 
+            if (this._fileTransporterRequest.IsSetChecksumCRC64NVME())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.CRC64NVME;
+                return true;
+            }
+
             if (this._fileTransporterRequest.IsSetChecksumCRC32())
             {
                 chosenAlgorithm = ChecksumAlgorithm.CRC32;

@@ -124,6 +124,10 @@
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetFindingsStatisticsRequest.AnalyzerArn</property>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetFindingV2Request.AnalyzerArn</property>
     <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
   </property-value-rule>

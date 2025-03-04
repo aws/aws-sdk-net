@@ -109,7 +109,7 @@ namespace Amazon.AppIntegrationsService
         ///
         /// </summary>
         public AmazonAppIntegrationsServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppIntegrationsServiceConfig()) { }
+            : base(new AmazonAppIntegrationsServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppIntegrationsServiceClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppIntegrationsServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppIntegrationsServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppIntegrationsServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppIntegrationsServiceClient with the credentials loaded from the application's
@@ -147,7 +147,7 @@ namespace Amazon.AppIntegrationsService
         /// </summary>
         /// <param name="config">The AmazonAppIntegrationsServiceClient Configuration Object</param>
         public AmazonAppIntegrationsServiceClient(AmazonAppIntegrationsServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAppIntegrationsServiceClient with AWS Credentials
@@ -250,15 +250,7 @@ namespace Amazon.AppIntegrationsService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -268,7 +260,9 @@ namespace Amazon.AppIntegrationsService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppIntegrationsServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppIntegrationsServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

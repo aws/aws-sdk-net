@@ -63,6 +63,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _marker;
         private int? _maxRecords;
         private MigrationTypeValue _migrationType;
+        private string _replicationConfigArn;
         private string _replicationInstanceArn;
         private string _replicationTaskArn;
         private string _sourceEngineName;
@@ -124,6 +125,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMigrationType()
         {
             return this._migrationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationConfigArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of a serverless replication on which you want to base the
+        /// default list of individual assessments.
+        /// </para>
+        /// </summary>
+        public string ReplicationConfigArn
+        {
+            get { return this._replicationConfigArn; }
+            set { this._replicationConfigArn = value; }
+        }
+
+        // Check to see if ReplicationConfigArn property is set
+        internal bool IsSetReplicationConfigArn()
+        {
+            return this._replicationConfigArn != null;
         }
 
         /// <summary>

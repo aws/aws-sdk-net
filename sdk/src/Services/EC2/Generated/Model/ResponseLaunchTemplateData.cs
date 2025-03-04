@@ -107,8 +107,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuOptions. 
         /// <para>
-        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
-        /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU
+        /// options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateCpuOptions CpuOptions
@@ -146,7 +146,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the instance is enabled for stop protection. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
-        /// stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool? DisableApiStop
@@ -345,7 +345,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
         /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -514,8 +514,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MetadataOptions. 
         /// <para>
-        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public LaunchTemplateInstanceMetadataOptions MetadataOptions

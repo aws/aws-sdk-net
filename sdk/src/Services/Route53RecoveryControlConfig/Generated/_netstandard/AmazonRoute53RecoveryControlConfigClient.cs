@@ -65,7 +65,7 @@ namespace Amazon.Route53RecoveryControlConfig
         ///
         /// </summary>
         public AmazonRoute53RecoveryControlConfigClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryControlConfigConfig()) { }
+            : base(new AmazonRoute53RecoveryControlConfigConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryControlConfigClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53RecoveryControlConfigClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53RecoveryControlConfigConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRoute53RecoveryControlConfigConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryControlConfigClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryControlConfigClient Configuration Object</param>
         public AmazonRoute53RecoveryControlConfigClient(AmazonRoute53RecoveryControlConfigConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.Route53RecoveryControlConfig
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.Route53RecoveryControlConfig
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryControlConfigEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53RecoveryControlConfigAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

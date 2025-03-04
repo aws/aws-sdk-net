@@ -47,7 +47,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>os-upgrade</c>, <c>system-update</c>, <c>db-upgrade</c> 
+        /// Valid values: <c>os-upgrade</c>, <c>system-update</c>, <c>db-upgrade</c>, <c>os-patch</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

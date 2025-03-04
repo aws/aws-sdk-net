@@ -32,6 +32,21 @@ namespace Amazon.BedrockAgentRuntime.Model
         IGetAgentMemoryPaginator GetAgentMemory(GetAgentMemoryRequest request);
 
         /// <summary>
+        /// Paginator for ListInvocations operation
+        ///</summary>
+        IListInvocationsPaginator ListInvocations(ListInvocationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInvocationSteps operation
+        ///</summary>
+        IListInvocationStepsPaginator ListInvocationSteps(ListInvocationStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
+
+        /// <summary>
         /// Paginator for Rerank operation
         ///</summary>
         IRerankPaginator Rerank(RerankRequest request);
