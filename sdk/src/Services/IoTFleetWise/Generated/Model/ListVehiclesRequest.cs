@@ -44,6 +44,7 @@ namespace Amazon.IoTFleetWise.Model
     {
         private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _attributeValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ListResponseScope _listResponseScope;
         private int? _maxResults;
         private string _modelManifestArn;
         private string _nextToken;
@@ -101,6 +102,26 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetAttributeValues()
         {
             return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListResponseScope. 
+        /// <para>
+        /// When you set the <c>listResponseScope</c> parameter to <c>METADATA_ONLY</c>, the list
+        /// response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last
+        /// modification time.
+        /// </para>
+        /// </summary>
+        public ListResponseScope ListResponseScope
+        {
+            get { return this._listResponseScope; }
+            set { this._listResponseScope = value; }
+        }
+
+        // Check to see if ListResponseScope property is set
+        internal bool IsSetListResponseScope()
+        {
+            return this._listResponseScope != null;
         }
 
         /// <summary>

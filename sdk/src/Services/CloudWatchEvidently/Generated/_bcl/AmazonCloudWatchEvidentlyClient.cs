@@ -92,7 +92,7 @@ namespace Amazon.CloudWatchEvidently
         ///
         /// </summary>
         public AmazonCloudWatchEvidentlyClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchEvidentlyConfig()) { }
+            : base(new AmazonCloudWatchEvidentlyConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchEvidentlyClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.CloudWatchEvidently
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchEvidentlyClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchEvidentlyConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudWatchEvidentlyConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchEvidentlyClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.CloudWatchEvidently
         /// </summary>
         /// <param name="config">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
         public AmazonCloudWatchEvidentlyClient(AmazonCloudWatchEvidentlyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchEvidentlyClient with AWS Credentials
@@ -233,15 +233,7 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -251,7 +243,9 @@ namespace Amazon.CloudWatchEvidently
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchEvidentlyEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudWatchEvidentlyAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -148,7 +148,7 @@
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.GetPolicyResponse.Policy</property>
     <min>1</min>
-    <max>20480</max>
+    <max>81920</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -256,7 +256,7 @@
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.PutPolicyRequest.Policy</property>
     <min>1</min>
-    <max>20480</max>
+    <max>81920</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -398,6 +398,12 @@
     <pattern>[-a-zA-Z0-9;/?:@&amp;=+$,%_.!~*()']*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ACMPCA.Model.CrlConfiguration.CustomPath</property>
+    <min>0</min>
+    <max>253</max>
+    <pattern>[-a-zA-Z0-9;?:@&amp;=+$,%_.!~*()']+(/[-a-zA-Z0-9;?:@&amp;=+$,%_.!~*()']+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ACMPCA.Model.CrlConfiguration.ExpirationInDays</property>
     <min>1</min>
     <max>5000</max>
@@ -499,7 +505,7 @@
   <property-value-rule>
     <property>Amazon.ACMPCA.Model.Permission.Policy</property>
     <min>1</min>
-    <max>20480</max>
+    <max>81920</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>

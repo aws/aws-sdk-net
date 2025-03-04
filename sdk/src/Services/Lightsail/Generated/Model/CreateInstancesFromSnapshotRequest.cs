@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// The <c>create instances from snapshot</c> operation supports tag-based access control
     /// via request tags and resource tags applied to the resource identified by <c>instance
-    /// snapshot name</c>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// snapshot name</c>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -253,7 +253,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -288,7 +288,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -345,7 +345,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -372,7 +372,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// Depending on the machine image you choose, the command to get software on your instance
         /// varies. Amazon Linux and CentOS use <c>yum</c>, Debian and Ubuntu use <c>apt-get</c>,
-        /// and FreeBSD uses <c>pkg</c>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+        /// and FreeBSD uses <c>pkg</c>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </note>

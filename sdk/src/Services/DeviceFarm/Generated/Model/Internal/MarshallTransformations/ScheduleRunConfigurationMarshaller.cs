@@ -74,6 +74,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDeviceProxy())
+            {
+                context.Writer.WritePropertyName("deviceProxy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeviceProxyMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeviceProxy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExtraDataPackageArn())
             {
                 context.Writer.WritePropertyName("extraDataPackageArn");

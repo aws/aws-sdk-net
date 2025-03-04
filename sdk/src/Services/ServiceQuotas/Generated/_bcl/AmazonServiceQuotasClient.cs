@@ -83,7 +83,7 @@ namespace Amazon.ServiceQuotas
         ///
         /// </summary>
         public AmazonServiceQuotasClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceQuotasConfig()) { }
+            : base(new AmazonServiceQuotasConfig()) { }
 
         /// <summary>
         /// Constructs AmazonServiceQuotasClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.ServiceQuotas
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonServiceQuotasClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceQuotasConfig{RegionEndpoint = region}) { }
+            : base(new AmazonServiceQuotasConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonServiceQuotasClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.ServiceQuotas
         /// </summary>
         /// <param name="config">The AmazonServiceQuotasClient Configuration Object</param>
         public AmazonServiceQuotasClient(AmazonServiceQuotasConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonServiceQuotasClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.ServiceQuotas
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.ServiceQuotas
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceQuotasEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceQuotasAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

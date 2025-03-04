@@ -32,7 +32,7 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the DisableAddOn operation.
     /// Disables an add-on for an Amazon Lightsail resource. For more information, see the
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+    /// <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
     /// Lightsail Developer Guide</a>.
     /// </summary>
     public partial class DisableAddOnRequest : AmazonLightsailRequest

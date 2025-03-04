@@ -80,7 +80,7 @@ namespace Amazon.HealthLake
         ///
         /// </summary>
         public AmazonHealthLakeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonHealthLakeConfig()) { }
+            : base(new AmazonHealthLakeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonHealthLakeClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.HealthLake
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonHealthLakeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonHealthLakeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonHealthLakeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonHealthLakeClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.HealthLake
         /// </summary>
         /// <param name="config">The AmazonHealthLakeClient Configuration Object</param>
         public AmazonHealthLakeClient(AmazonHealthLakeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonHealthLakeClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.HealthLake
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.HealthLake
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonHealthLakeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonHealthLakeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

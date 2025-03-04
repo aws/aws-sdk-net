@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TaxSettings.Model
 {
     /// <summary>
-    /// The access is denied for the Amazon Web Services Support API.
+    /// The access is denied for the Amazon Web ServicesSupport API.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

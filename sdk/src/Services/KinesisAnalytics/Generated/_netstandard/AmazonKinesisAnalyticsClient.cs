@@ -79,7 +79,7 @@ namespace Amazon.KinesisAnalytics
         ///
         /// </summary>
         public AmazonKinesisAnalyticsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisAnalyticsConfig()) { }
+            : base(new AmazonKinesisAnalyticsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisAnalyticsClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalytics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisAnalyticsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisAnalyticsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisAnalyticsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisAnalyticsClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.KinesisAnalytics
         /// </summary>
         /// <param name="config">The AmazonKinesisAnalyticsClient Configuration Object</param>
         public AmazonKinesisAnalyticsClient(AmazonKinesisAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -224,14 +224,6 @@ namespace Amazon.KinesisAnalytics
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -239,7 +231,9 @@ namespace Amazon.KinesisAnalytics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisAnalyticsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisAnalyticsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

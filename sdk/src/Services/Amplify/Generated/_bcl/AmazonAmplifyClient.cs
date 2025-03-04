@@ -84,7 +84,7 @@ namespace Amazon.Amplify
         ///
         /// </summary>
         public AmazonAmplifyClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyConfig()) { }
+            : base(new AmazonAmplifyConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.Amplify
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAmplifyClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAmplifyConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.Amplify
         /// </summary>
         /// <param name="config">The AmazonAmplifyClient Configuration Object</param>
         public AmazonAmplifyClient(AmazonAmplifyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.Amplify
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.Amplify
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

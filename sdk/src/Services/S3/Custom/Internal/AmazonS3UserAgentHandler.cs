@@ -45,6 +45,11 @@ namespace Amazon.S3.Internal
         private const string FLEXIBLE_CHECKSUMS_REQ_CRC32C = "V";
 
         /// <summary>
+        /// Operation included a CRC-64 checksum for request payload
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_CRC64 = "W";
+
+        /// <summary>
         /// Operation included a SHA-1 checksum for request payload
         /// </summary>
         private const string FLEXIBLE_CHECKSUMS_REQ_SHA1 = "X";
@@ -113,6 +118,9 @@ namespace Amazon.S3.Internal
                     break;
                 case CoreChecksumAlgorithm.CRC32:
                     features.Add(FLEXIBLE_CHECKSUMS_REQ_CRC32);
+                    break;
+                case CoreChecksumAlgorithm.CRC64NVME:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_CRC64);
                     break;
                 case CoreChecksumAlgorithm.SHA256:
                     features.Add(FLEXIBLE_CHECKSUMS_REQ_SHA256);

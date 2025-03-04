@@ -79,7 +79,7 @@ namespace Amazon.Kendra
         ///
         /// </summary>
         public AmazonKendraClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKendraConfig()) { }
+            : base(new AmazonKendraConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKendraClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.Kendra
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKendraClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKendraConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKendraConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKendraClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.Kendra
         /// </summary>
         /// <param name="config">The AmazonKendraClient Configuration Object</param>
         public AmazonKendraClient(AmazonKendraConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonKendraClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.Kendra
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.Kendra
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKendraEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKendraAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

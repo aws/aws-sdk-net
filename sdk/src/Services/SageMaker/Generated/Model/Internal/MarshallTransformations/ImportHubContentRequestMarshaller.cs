@@ -140,6 +140,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.HubName);
             }
 
+            if(publicRequest.IsSetSupportStatus())
+            {
+                context.Writer.WritePropertyName("SupportStatus");
+                context.Writer.WriteStringValue(publicRequest.SupportStatus);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

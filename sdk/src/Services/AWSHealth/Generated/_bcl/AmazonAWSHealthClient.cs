@@ -144,7 +144,7 @@ namespace Amazon.AWSHealth
         ///
         /// </summary>
         public AmazonAWSHealthClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSHealthConfig()) { }
+            : base(new AmazonAWSHealthConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAWSHealthClient with the credentials loaded from the application's
@@ -163,7 +163,7 @@ namespace Amazon.AWSHealth
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAWSHealthClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSHealthConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAWSHealthConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAWSHealthClient with the credentials loaded from the application's
@@ -182,7 +182,7 @@ namespace Amazon.AWSHealth
         /// </summary>
         /// <param name="config">The AmazonAWSHealthClient Configuration Object</param>
         public AmazonAWSHealthClient(AmazonAWSHealthConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAWSHealthClient with AWS Credentials
@@ -285,15 +285,7 @@ namespace Amazon.AWSHealth
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -303,7 +295,9 @@ namespace Amazon.AWSHealth
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSHealthEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSHealthAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

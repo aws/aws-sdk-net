@@ -91,7 +91,7 @@ namespace Amazon.SSMContacts
         ///
         /// </summary>
         public AmazonSSMContactsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMContactsConfig()) { }
+            : base(new AmazonSSMContactsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSSMContactsClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.SSMContacts
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSSMContactsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMContactsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSSMContactsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSSMContactsClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.SSMContacts
         /// </summary>
         /// <param name="config">The AmazonSSMContactsClient Configuration Object</param>
         public AmazonSSMContactsClient(AmazonSSMContactsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSSMContactsClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.SSMContacts
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.SSMContacts
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMContactsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMContactsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

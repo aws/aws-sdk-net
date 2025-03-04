@@ -79,7 +79,7 @@ namespace Amazon.MTurk
         ///
         /// </summary>
         public AmazonMTurkClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMTurkConfig()) { }
+            : base(new AmazonMTurkConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMTurkClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.MTurk
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMTurkClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMTurkConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMTurkConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMTurkClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.MTurk
         /// </summary>
         /// <param name="config">The AmazonMTurkClient Configuration Object</param>
         public AmazonMTurkClient(AmazonMTurkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMTurkClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.MTurk
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.MTurk
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMTurkEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMTurkAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

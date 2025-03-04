@@ -167,7 +167,7 @@ namespace Amazon.Organizations
         ///
         /// </summary>
         public AmazonOrganizationsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOrganizationsConfig()) { }
+            : base(new AmazonOrganizationsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOrganizationsClient with the credentials loaded from the application's
@@ -186,7 +186,7 @@ namespace Amazon.Organizations
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOrganizationsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOrganizationsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOrganizationsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOrganizationsClient with the credentials loaded from the application's
@@ -205,7 +205,7 @@ namespace Amazon.Organizations
         /// </summary>
         /// <param name="config">The AmazonOrganizationsClient Configuration Object</param>
         public AmazonOrganizationsClient(AmazonOrganizationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -330,14 +330,6 @@ namespace Amazon.Organizations
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -345,7 +337,9 @@ namespace Amazon.Organizations
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOrganizationsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOrganizationsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -76,11 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransitGatewayId. <note> 
-        /// <para>
-        /// This parameter is in preview and may not be available for your account.
-        /// </para>
-        ///  </note> 
+        /// Gets and sets the property TransitGatewayId. 
         /// <para>
         /// The ID of the transit gateway (if applicable).
         /// </para>

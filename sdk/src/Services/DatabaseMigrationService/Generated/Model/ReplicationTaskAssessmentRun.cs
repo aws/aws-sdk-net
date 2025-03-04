@@ -356,7 +356,8 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>"warning"</c> – At least one individual assessment completed with a <c>warning</c>
-        /// status.
+        /// status or all individual assessments were skipped (completed with a <c>skipped</c>
+        /// status).
         /// </para>
         ///  </li> </ul>
         /// </summary>

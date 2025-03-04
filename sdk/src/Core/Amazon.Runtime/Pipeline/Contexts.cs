@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -31,10 +32,9 @@ namespace Amazon.Runtime
         ResponseUnmarshaller Unmarshaller { get; }
         InvokeOptionsBase Options { get; }        
         RequestMetrics Metrics { get; }
-        AbstractAWSSigner Signer { get; }
+        ISigner Signer { get; set; }
+        BaseIdentity Identity { get; set; }
         IClientConfig ClientConfig { get; }
-        ImmutableCredentials ImmutableCredentials { get; set; }
-
         IRequest Request { get; set; }
         bool IsSigned { get; set; }
         bool IsAsync { get; }
@@ -93,15 +93,16 @@ namespace Amazon.Runtime.Internal
     public class RequestContext : IRequestContext
     {
         private IServiceMetadata _serviceMetadata;
-        AbstractAWSSigner clientSigner;
         IDictionary<string, object> _contextAttributes;
 
-        public RequestContext(bool enableMetrics, AbstractAWSSigner clientSigner)
+        public RequestContext(bool enableMetric)
+            : this (enableMetric, null)
         {
-            if (clientSigner == null)
-                throw new ArgumentNullException("clientSigner");
+        }
 
-            this.clientSigner = clientSigner;
+        public RequestContext(bool enableMetrics, ISigner clientSigner)
+        {
+            this.Signer = clientSigner;
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
             this.InvocationId = Guid.NewGuid();
@@ -119,18 +120,8 @@ namespace Amazon.Runtime.Internal
         public IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; set; }
         public ResponseUnmarshaller Unmarshaller { get; set; }
         public InvokeOptionsBase Options { get; set; }        
-        public ImmutableCredentials ImmutableCredentials { get; set; }
-        public AbstractAWSSigner Signer
-        {
-            get
-            {
-                var requestSigner = OriginalRequest == null ? null : OriginalRequest.GetSigner();
-                if (requestSigner == null)
-                    return clientSigner;
-                else
-                    return requestSigner;
-            }
-        }
+        public ISigner Signer { get; set; }
+        public BaseIdentity Identity { get; set; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
@@ -185,7 +176,7 @@ namespace Amazon.Runtime.Internal
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext
     {
-        public AsyncRequestContext(bool enableMetrics, AbstractAWSSigner clientSigner):
+        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner):
             base(enableMetrics, clientSigner)
         {
         }
@@ -209,7 +200,7 @@ namespace Amazon.Runtime.Internal
         public IRequestContext RequestContext { get; private set; }
         public IResponseContext ResponseContext { get; private set; }
 
-        public ExecutionContext(bool enableMetrics, AbstractAWSSigner clientSigner)
+        public ExecutionContext(bool enableMetrics, ISigner clientSigner)
         {
             this.RequestContext = new RequestContext(enableMetrics, clientSigner);
             this.ResponseContext = new ResponseContext();
@@ -233,7 +224,7 @@ namespace Amazon.Runtime.Internal
         public IAsyncRequestContext RequestContext { get; private set; }
         public object RuntimeState { get; set; }
 
-        public AsyncExecutionContext(bool enableMetrics, AbstractAWSSigner clientSigner)
+        public AsyncExecutionContext(bool enableMetrics, ISigner clientSigner)
         {
             this.RequestContext = new AsyncRequestContext(enableMetrics, clientSigner);
             this.ResponseContext = new AsyncResponseContext();

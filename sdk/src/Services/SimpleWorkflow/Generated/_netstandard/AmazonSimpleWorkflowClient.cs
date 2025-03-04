@@ -83,7 +83,7 @@ namespace Amazon.SimpleWorkflow
         ///
         /// </summary>
         public AmazonSimpleWorkflowClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig()) { }
+            : base(new AmazonSimpleWorkflowConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleWorkflowClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSimpleWorkflowConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="config">The AmazonSimpleWorkflowClient Configuration Object</param>
         public AmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -246,14 +246,6 @@ namespace Amazon.SimpleWorkflow
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -261,7 +253,9 @@ namespace Amazon.SimpleWorkflow
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleWorkflowEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleWorkflowAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

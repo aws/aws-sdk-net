@@ -13,12 +13,15 @@
  * permissions and limitations under the License.
  */
 
+
+using Amazon.Runtime.Identity;
+
 namespace Amazon.Runtime
 {
     /// <summary>
     /// Abstract class that represents a credentials object for AWS services.
     /// </summary>
-    public abstract class AWSCredentials
+    public abstract class AWSCredentials : BaseIdentity
     {
         /// <summary>
         /// Returns a copy of ImmutableCredentials

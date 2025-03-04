@@ -70,7 +70,7 @@ namespace Amazon.DirectConnect
         ///
         /// </summary>
         public AmazonDirectConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig()) { }
+            : base(new AmazonDirectConnectConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -89,7 +89,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDirectConnectConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="config">The AmazonDirectConnectClient Configuration Object</param>
         public AmazonDirectConnectClient(AmazonDirectConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with AWS Credentials
@@ -211,15 +211,7 @@ namespace Amazon.DirectConnect
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -229,7 +221,9 @@ namespace Amazon.DirectConnect
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDirectConnectEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDirectConnectAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

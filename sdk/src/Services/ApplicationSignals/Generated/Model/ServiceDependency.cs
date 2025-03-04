@@ -70,7 +70,7 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public Dictionary<string, string> DependencyKeyAttributes
         {
             get { return this._dependencyKeyAttributes; }

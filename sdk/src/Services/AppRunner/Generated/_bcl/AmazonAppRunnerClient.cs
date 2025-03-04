@@ -113,7 +113,7 @@ namespace Amazon.AppRunner
         ///
         /// </summary>
         public AmazonAppRunnerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppRunnerConfig()) { }
+            : base(new AmazonAppRunnerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppRunnerClient with the credentials loaded from the application's
@@ -132,7 +132,7 @@ namespace Amazon.AppRunner
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppRunnerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppRunnerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppRunnerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppRunnerClient with the credentials loaded from the application's
@@ -151,7 +151,7 @@ namespace Amazon.AppRunner
         /// </summary>
         /// <param name="config">The AmazonAppRunnerClient Configuration Object</param>
         public AmazonAppRunnerClient(AmazonAppRunnerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAppRunnerClient with AWS Credentials
@@ -254,15 +254,7 @@ namespace Amazon.AppRunner
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -272,7 +264,9 @@ namespace Amazon.AppRunner
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppRunnerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppRunnerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

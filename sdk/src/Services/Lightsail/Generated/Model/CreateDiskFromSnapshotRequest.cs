@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// The <c>create disk from snapshot</c> operation supports tag-based access control via
     /// request tags and resource tags applied to the resource identified by <c>disk snapshot
-    /// name</c>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// name</c>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -171,7 +171,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -225,7 +225,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>
@@ -282,7 +282,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> <li> 
         /// <para>
         /// Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon
+        /// more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon
         /// Lightsail Developer Guide</a>.
         /// </para>
         ///  </li> </ul>

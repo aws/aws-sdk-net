@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     /// If the source volume is in a Local Zone, you can create the snapshot in the same Local
-    /// Zone or in parent Amazon Web Services Region.
+    /// Zone or in its parent Amazon Web Services Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
     /// Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes
     /// that are created from encrypted snapshots are also automatically encrypted. Your encrypted
     /// volumes and any associated snapshots always remain protected. For more information,
-    /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+    /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
     /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>

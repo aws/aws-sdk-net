@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.RawResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("reasoningContent", targetDepth))
+                {
+                    var unmarshaller = ReasoningContentBlockUnmarshaller.Instance;
+                    unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("traceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

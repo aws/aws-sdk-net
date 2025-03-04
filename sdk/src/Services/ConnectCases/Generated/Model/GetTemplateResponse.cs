@@ -41,6 +41,7 @@ namespace Amazon.ConnectCases.Model
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
         private List<RequiredField> _requiredFields = AWSConfigs.InitializeCollections ? new List<RequiredField>() : null;
+        private List<TemplateRule> _rules = AWSConfigs.InitializeCollections ? new List<TemplateRule>() : null;
         private TemplateStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateArn;
@@ -174,6 +175,26 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetRequiredFields()
         {
             return this._requiredFields != null && (this._requiredFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rules. 
+        /// <para>
+        /// A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
+        /// field conditions</a>) on a template. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TemplateRule> Rules
+        {
+            get { return this._rules; }
+            set { this._rules = value; }
+        }
+
+        // Check to see if Rules property is set
+        internal bool IsSetRules()
+        {
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

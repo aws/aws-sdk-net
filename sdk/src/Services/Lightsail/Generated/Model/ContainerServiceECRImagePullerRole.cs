@@ -41,7 +41,7 @@ namespace Amazon.Lightsail.Model
     /// a trust relationship between your Lightsail container service and an Amazon ECR private
     /// repository in your Amazon Web Services account. This allows your container service
     /// to pull images from Amazon ECR private repositories. For more information, see <a
-    /// href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+    /// href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
     /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
     /// in the <i>Amazon Lightsail Developer Guide</i>.
     /// </para>

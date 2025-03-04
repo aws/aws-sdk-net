@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
         private string _dataSetId;
         private string _resourceShareArn;
         private string _resourceShareId;
+        private string _resourceShareStatus;
         private string _targetAccountId;
 
         /// <summary>
@@ -98,6 +99,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetResourceShareId()
         {
             return this._resourceShareId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareStatus. 
+        /// <para>
+        /// The Amazon Web Services Resource Access Manager status of association.
+        /// </para>
+        /// </summary>
+        public string ResourceShareStatus
+        {
+            get { return this._resourceShareStatus; }
+            set { this._resourceShareStatus = value; }
+        }
+
+        // Check to see if ResourceShareStatus property is set
+        internal bool IsSetResourceShareStatus()
+        {
+            return this._resourceShareStatus != null;
         }
 
         /// <summary>

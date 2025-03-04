@@ -94,7 +94,7 @@ namespace Amazon.AppStream
         ///
         /// </summary>
         public AmazonAppStreamClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppStreamConfig()) { }
+            : base(new AmazonAppStreamConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppStreamClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.AppStream
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppStreamClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppStreamConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppStreamConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppStreamClient with the credentials loaded from the application's
@@ -132,7 +132,7 @@ namespace Amazon.AppStream
         /// </summary>
         /// <param name="config">The AmazonAppStreamClient Configuration Object</param>
         public AmazonAppStreamClient(AmazonAppStreamConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -257,14 +257,6 @@ namespace Amazon.AppStream
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -272,7 +264,9 @@ namespace Amazon.AppStream
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppStreamEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppStreamAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -3749,6 +3743,9 @@ namespace Amazon.AppStream
         /// <returns>The response from the UpdateDirectoryConfig service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image can't be updated because it's not compatible for updates.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.

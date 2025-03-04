@@ -42,7 +42,7 @@ namespace Amazon.IoTJobsDataPlane
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonIoTJobsDataPlaneClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonIoTJobsDataPlaneConfig { ServiceURL = serviceUrl })
+            : base(new AmazonIoTJobsDataPlaneConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.IoTJobsDataPlane
         /// </summary>
         /// <param name="config">The AmazonIoTJobsDataPlaneClient Configuration Object</param>
         public AmazonIoTJobsDataPlaneClient(AmazonIoTJobsDataPlaneConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config)
+            : base(config)
         {
         }
 

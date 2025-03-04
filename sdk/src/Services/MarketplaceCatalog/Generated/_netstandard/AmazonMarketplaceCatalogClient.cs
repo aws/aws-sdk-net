@@ -73,7 +73,7 @@ namespace Amazon.MarketplaceCatalog
         ///
         /// </summary>
         public AmazonMarketplaceCatalogClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceCatalogConfig()) { }
+            : base(new AmazonMarketplaceCatalogConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceCatalogClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMarketplaceCatalogClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceCatalogConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMarketplaceCatalogConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceCatalogClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         /// <param name="config">The AmazonMarketplaceCatalogClient Configuration Object</param>
         public AmazonMarketplaceCatalogClient(AmazonMarketplaceCatalogConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.MarketplaceCatalog
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -251,7 +243,9 @@ namespace Amazon.MarketplaceCatalog
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceCatalogEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceCatalogAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

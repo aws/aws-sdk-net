@@ -92,7 +92,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         ///
         /// </summary>
         public AmazonSageMakerFeatureStoreRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerFeatureStoreRuntimeConfig()) { }
+            : base(new AmazonSageMakerFeatureStoreRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerFeatureStoreRuntimeClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSageMakerFeatureStoreRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSageMakerFeatureStoreRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSageMakerFeatureStoreRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSageMakerFeatureStoreRuntimeClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </summary>
         /// <param name="config">The AmazonSageMakerFeatureStoreRuntimeClient Configuration Object</param>
         public AmazonSageMakerFeatureStoreRuntimeClient(AmazonSageMakerFeatureStoreRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -237,14 +237,6 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -252,7 +244,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerFeatureStoreRuntimeEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSageMakerFeatureStoreRuntimeAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

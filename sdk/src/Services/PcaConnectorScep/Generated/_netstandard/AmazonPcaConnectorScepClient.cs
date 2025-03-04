@@ -66,7 +66,7 @@ namespace Amazon.PcaConnectorScep
         ///
         /// </summary>
         public AmazonPcaConnectorScepClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPcaConnectorScepConfig()) { }
+            : base(new AmazonPcaConnectorScepConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPcaConnectorScepClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.PcaConnectorScep
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPcaConnectorScepClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPcaConnectorScepConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPcaConnectorScepConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPcaConnectorScepClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.PcaConnectorScep
         /// </summary>
         /// <param name="config">The AmazonPcaConnectorScepClient Configuration Object</param>
         public AmazonPcaConnectorScepClient(AmazonPcaConnectorScepConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -229,14 +229,6 @@ namespace Amazon.PcaConnectorScep
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -244,7 +236,9 @@ namespace Amazon.PcaConnectorScep
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPcaConnectorScepEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPcaConnectorScepAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

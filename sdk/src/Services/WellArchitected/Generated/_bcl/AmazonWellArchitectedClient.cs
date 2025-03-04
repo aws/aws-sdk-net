@@ -87,7 +87,7 @@ namespace Amazon.WellArchitected
         ///
         /// </summary>
         public AmazonWellArchitectedClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWellArchitectedConfig()) { }
+            : base(new AmazonWellArchitectedConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWellArchitectedClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.WellArchitected
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWellArchitectedClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWellArchitectedConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWellArchitectedConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWellArchitectedClient with the credentials loaded from the application's
@@ -125,7 +125,7 @@ namespace Amazon.WellArchitected
         /// </summary>
         /// <param name="config">The AmazonWellArchitectedClient Configuration Object</param>
         public AmazonWellArchitectedClient(AmazonWellArchitectedConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonWellArchitectedClient with AWS Credentials
@@ -228,15 +228,7 @@ namespace Amazon.WellArchitected
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -246,7 +238,9 @@ namespace Amazon.WellArchitected
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWellArchitectedEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWellArchitectedAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

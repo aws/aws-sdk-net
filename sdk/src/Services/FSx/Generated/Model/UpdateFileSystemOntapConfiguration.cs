@@ -126,7 +126,7 @@ namespace Amazon.FSx.Model
         /// Update the password for the <c>fsxadmin</c> user by entering a new password. You use
         /// the <c>fsxadmin</c> user to access the NetApp ONTAP CLI and REST API to manage your
         /// file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
-        /// resources using NetApp Applicaton</a>.
+        /// resources using NetApp Application</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=8, Max=50)]

@@ -42,6 +42,7 @@ namespace Amazon.TranscribeService.Model
     public partial class MedicalScribeSettings
     {
         private bool? _channelIdentification;
+        private ClinicalNoteGenerationSettings _clinicalNoteGenerationSettings;
         private int? _maxSpeakerLabels;
         private bool? _showSpeakerLabels;
         private VocabularyFilterMethod _vocabularyFilterMethod;
@@ -74,6 +75,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetChannelIdentification()
         {
             return this._channelIdentification.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClinicalNoteGenerationSettings. 
+        /// <para>
+        /// Specify settings for the clinical note generation.
+        /// </para>
+        /// </summary>
+        public ClinicalNoteGenerationSettings ClinicalNoteGenerationSettings
+        {
+            get { return this._clinicalNoteGenerationSettings; }
+            set { this._clinicalNoteGenerationSettings = value; }
+        }
+
+        // Check to see if ClinicalNoteGenerationSettings property is set
+        internal bool IsSetClinicalNoteGenerationSettings()
+        {
+            return this._clinicalNoteGenerationSettings != null;
         }
 
         /// <summary>

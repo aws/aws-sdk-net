@@ -83,7 +83,7 @@ namespace Amazon.ConnectWisdomService
         ///
         /// </summary>
         public AmazonConnectWisdomServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectWisdomServiceConfig()) { }
+            : base(new AmazonConnectWisdomServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectWisdomServiceClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.ConnectWisdomService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectWisdomServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectWisdomServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectWisdomServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectWisdomServiceClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.ConnectWisdomService
         /// </summary>
         /// <param name="config">The AmazonConnectWisdomServiceClient Configuration Object</param>
         public AmazonConnectWisdomServiceClient(AmazonConnectWisdomServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonConnectWisdomServiceClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.ConnectWisdomService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectWisdomServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectWisdomServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -191,7 +191,7 @@ namespace Amazon.KeyManagementService
         ///
         /// </summary>
         public AmazonKeyManagementServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyManagementServiceConfig()) { }
+            : base(new AmazonKeyManagementServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's
@@ -210,7 +210,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKeyManagementServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyManagementServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKeyManagementServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's
@@ -229,7 +229,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="config">The AmazonKeyManagementServiceClient Configuration Object</param>
         public AmazonKeyManagementServiceClient(AmazonKeyManagementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -354,14 +354,6 @@ namespace Amazon.KeyManagementService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -369,7 +361,9 @@ namespace Amazon.KeyManagementService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKeyManagementServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKeyManagementServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

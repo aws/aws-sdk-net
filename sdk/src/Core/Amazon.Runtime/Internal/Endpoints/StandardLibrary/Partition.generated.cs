@@ -149,6 +149,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 implicitGlobalRegion = "us-isof-south-1"
             };
             _partitionsByRegex.Add(@"^us\-isof\-\w+\-\d+$", aws_iso_f);
+            _partitionsByRegionName.Add("aws-iso-f-global", aws_iso_f);
+            _partitionsByRegionName.Add("us-isof-east-1", aws_iso_f);
+            _partitionsByRegionName.Add("us-isof-south-1", aws_iso_f);
 
             _defaultPartition = aws;
         }

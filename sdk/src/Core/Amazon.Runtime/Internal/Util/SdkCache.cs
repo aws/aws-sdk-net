@@ -227,7 +227,7 @@ namespace Amazon.Runtime.Internal.Util
 
                 var key = new CacheKey();
 
-                var credentials = client.Credentials;
+                var credentials = client.Config.DefaultAWSCredentials;
                 key.ImmutableCredentials = credentials == null ?
                     null : credentials.GetCredentials();
                 key.RegionEndpoint = client.Config.RegionEndpoint;

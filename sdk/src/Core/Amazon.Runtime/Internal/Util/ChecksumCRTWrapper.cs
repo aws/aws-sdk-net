@@ -147,5 +147,26 @@ namespace AWSSDK.Runtime.Internal.Util
         {
             return Instance.Crc32C(source, previous);
         }
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <returns>CRC64NVME hash as a base64-encoded string</returns>
+        public static string Crc64NVME(byte[] source)
+        {
+            return Instance.Crc64NVME(source);
+        }
+
+        /// <summary>
+        /// Computes a CRC64NVME hash
+        /// </summary>
+        /// <param name="source">Data to hash</param>
+        /// <param name="previous">Previous value of a rolling checksum</param>
+        /// <returns>Updated CRC64NVME hash as 64-bit integer</returns>
+        public static ulong Crc64NVME(byte[] source, ulong previous)
+        {
+            return Instance.Crc64NVME(source, previous);
+        }
     }
 }

@@ -146,12 +146,13 @@ namespace Amazon.Connect.Model
         /// <c>BOT_VERSION</c> | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c>
         /// | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> |<c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c>
         /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>DISCONNECT_REASON</c>
-        /// | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
-        /// | <c>FLOWS_NEXT_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c>
-        /// | <c>FLOWS_RESOURCE_ID</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
-        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c>
-        /// | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c>
-        /// | 
+        /// | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> | <c>EVALUATION_QUESTION</c>
+        /// | <c>EVALUATION_SOURCE</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c>
+        /// | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c>
+        /// | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c>
+        /// | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
+        /// | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
+        /// | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c> | 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -235,11 +236,25 @@ namespace Amazon.Connect.Model
         /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>BOT_ID</c> | <c>BOT_ALIAS</c> | <c>BOT_VERSION</c>
         /// | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
         /// | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
-        /// | <c>DISCONNECT_REASON</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
-        /// | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>INITIATION_METHOD</c>
-        /// | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
-        /// | <c>Q_CONNECT_ENABLED</c> | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> |
-        /// <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> 
+        /// | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> |
+        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>FLOWS_RESOURCE_ID</c> |
+        /// <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c>
+        /// | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>Q_CONNECT_ENABLED</c>
+        /// | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Array of strings
+        /// </para>
+        ///  
+        /// <para>
+        /// Array Members: Maximum number of 4 items
+        /// </para>
+        ///  
+        /// <para>
+        /// Required: No
         /// </para>
         /// </summary>
         [AWSProperty(Max=4)]
@@ -695,6 +710,21 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average
         /// dials per minute</a> 
         /// </para>
+        ///  </dd> <dt>AVG_EVALUATION_SCORE</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID,
+        /// Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue,
+        /// Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-evaluation-score-historical">Average
+        /// agent evaluation score</a> 
+        /// </para>
         ///  </dd> <dt>AVG_FLOW_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
@@ -996,6 +1026,21 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average
         /// wait time after customer connection</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_WEIGHTED_EVALUATION_SCORE</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id,
+        /// Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue,
+        /// Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-weighted-agent-evaluation-score-historical">Average
+        /// weighted agent evaluation score</a> 
         /// </para>
         ///  </dd> <dt>BOT_CONVERSATIONS_COMPLETED</dt> <dd> 
         /// <para>
@@ -1471,7 +1516,21 @@ namespace Amazon.Connect.Model
         /// Status and Disconnect Reason are only available for agent assisted voice and automated
         /// voice delivery modes. 
         /// </para>
-        ///  </note> </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
+        ///  </note> </dd> <dt>EVALUATIONS_PERFORMED</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID,
+        /// Evaluation Source, Form Version, Queue, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#evaluations-performed-historical">Evaluations
+        /// performed</a> 
+        /// </para>
+        ///  </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -1563,6 +1622,20 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum
         /// flow time</a> 
+        /// </para>
+        ///  </dd> <dt>PERCENT_AUTOMATIC_FAILS</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID,
+        /// Evaluation Source, Form Version, Queue, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#percent-evaluation-automatic-failures-historical">Automatic
+        /// fails percent</a> 
         /// </para>
         ///  </dd> <dt>PERCENT_BOT_CONVERSATIONS_OUTCOME</dt> <dd> 
         /// <para>

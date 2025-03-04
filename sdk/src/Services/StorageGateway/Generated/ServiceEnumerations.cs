@@ -199,6 +199,118 @@ namespace Amazon.StorageGateway
 
 
     /// <summary>
+    /// Constants used for properties of type CacheReportFilterName.
+    /// </summary>
+    public class CacheReportFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UploadFailureReason for CacheReportFilterName
+        /// </summary>
+        public static readonly CacheReportFilterName UploadFailureReason = new CacheReportFilterName("UploadFailureReason");
+        /// <summary>
+        /// Constant UploadState for CacheReportFilterName
+        /// </summary>
+        public static readonly CacheReportFilterName UploadState = new CacheReportFilterName("UploadState");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheReportFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheReportFilterName FindValue(string value)
+        {
+            return FindValue<CacheReportFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheReportFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CacheReportStatus.
+    /// </summary>
+    public class CacheReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for CacheReportStatus
+        /// </summary>
+        public static readonly CacheReportStatus CANCELED = new CacheReportStatus("CANCELED");
+        /// <summary>
+        /// Constant COMPLETED for CacheReportStatus
+        /// </summary>
+        public static readonly CacheReportStatus COMPLETED = new CacheReportStatus("COMPLETED");
+        /// <summary>
+        /// Constant ERROR for CacheReportStatus
+        /// </summary>
+        public static readonly CacheReportStatus ERROR = new CacheReportStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for CacheReportStatus
+        /// </summary>
+        public static readonly CacheReportStatus FAILED = new CacheReportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CacheReportStatus
+        /// </summary>
+        public static readonly CacheReportStatus IN_PROGRESS = new CacheReportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheReportStatus FindValue(string value)
+        {
+            return FindValue<CacheReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CaseSensitivity.
     /// </summary>
     public class CaseSensitivity : ConstantClass

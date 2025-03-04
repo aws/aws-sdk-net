@@ -82,7 +82,7 @@ namespace Amazon.GlueDataBrew
         ///
         /// </summary>
         public AmazonGlueDataBrewClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlueDataBrewConfig()) { }
+            : base(new AmazonGlueDataBrewConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGlueDataBrewClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.GlueDataBrew
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGlueDataBrewClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlueDataBrewConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGlueDataBrewConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGlueDataBrewClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.GlueDataBrew
         /// </summary>
         /// <param name="config">The AmazonGlueDataBrewClient Configuration Object</param>
         public AmazonGlueDataBrewClient(AmazonGlueDataBrewConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGlueDataBrewClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.GlueDataBrew
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.GlueDataBrew
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlueDataBrewEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlueDataBrewAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

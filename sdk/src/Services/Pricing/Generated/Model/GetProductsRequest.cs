@@ -48,6 +48,7 @@ namespace Amazon.Pricing.Model
         /// filters are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public List<Filter> Filters
         {
             get { return this._filters; }
@@ -70,6 +71,7 @@ namespace Amazon.Pricing.Model
         /// Valid values are: <c>aws_v1</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string FormatVersion
         {
             get { return this._formatVersion; }

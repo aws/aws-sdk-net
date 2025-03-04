@@ -232,5 +232,15 @@ namespace Amazon
         /// The EU ISOE West endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUIsoeWest1 = GetRegionEndpoint("eu-isoe-west-1", "EU ISOE West", "aws-iso-e", "cloud.adc-e.uk", @"^eu\-isoe\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The US ISOF EAST endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofEast1 = GetRegionEndpoint("us-isof-east-1", "US ISOF EAST", "aws-iso-f", "csp.hci.ic.gov", @"^us\-isof\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The US ISOF SOUTH endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofSouth1 = GetRegionEndpoint("us-isof-south-1", "US ISOF SOUTH", "aws-iso-f", "csp.hci.ic.gov", @"^us\-isof\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
     }
 }

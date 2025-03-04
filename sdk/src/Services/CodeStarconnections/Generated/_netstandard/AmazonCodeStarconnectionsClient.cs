@@ -160,7 +160,7 @@ namespace Amazon.CodeStarconnections
         ///
         /// </summary>
         public AmazonCodeStarconnectionsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeStarconnectionsConfig()) { }
+            : base(new AmazonCodeStarconnectionsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeStarconnectionsClient with the credentials loaded from the application's
@@ -179,7 +179,7 @@ namespace Amazon.CodeStarconnections
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeStarconnectionsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeStarconnectionsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeStarconnectionsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeStarconnectionsClient with the credentials loaded from the application's
@@ -198,7 +198,7 @@ namespace Amazon.CodeStarconnections
         /// </summary>
         /// <param name="config">The AmazonCodeStarconnectionsClient Configuration Object</param>
         public AmazonCodeStarconnectionsClient(AmazonCodeStarconnectionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -323,14 +323,6 @@ namespace Amazon.CodeStarconnections
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -338,7 +330,9 @@ namespace Amazon.CodeStarconnections
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeStarconnectionsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeStarconnectionsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -82,7 +82,7 @@ namespace Amazon.Imagebuilder
         ///
         /// </summary>
         public AmazonImagebuilderClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImagebuilderConfig()) { }
+            : base(new AmazonImagebuilderConfig()) { }
 
         /// <summary>
         /// Constructs AmazonImagebuilderClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.Imagebuilder
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonImagebuilderClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImagebuilderConfig{RegionEndpoint = region}) { }
+            : base(new AmazonImagebuilderConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonImagebuilderClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.Imagebuilder
         /// </summary>
         /// <param name="config">The AmazonImagebuilderClient Configuration Object</param>
         public AmazonImagebuilderClient(AmazonImagebuilderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonImagebuilderClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.Imagebuilder
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.Imagebuilder
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonImagebuilderEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonImagebuilderAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Specifies <c>RESOURCE</c> type target details for activated hooks.
+    /// Specifies <c>RESOURCE</c> type target details for activated Hooks.
     /// </summary>
     public partial class ChangeSetHookResourceTargetDetails
     {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// The Instance configuration used for recommendations.
+    /// The instance configuration used for recommendations.
     /// </summary>
     public partial class InstanceConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Details about the type.
+        /// The instance type of the configuration.
         /// </para>
         /// </summary>
         public string Type

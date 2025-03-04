@@ -46,10 +46,10 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDataAutomationArn())
+            if(requestObject.IsSetDataAutomationProjectArn())
             {
-                context.Writer.WritePropertyName("dataAutomationArn");
-                context.Writer.WriteStringValue(requestObject.DataAutomationArn);
+                context.Writer.WritePropertyName("dataAutomationProjectArn");
+                context.Writer.WriteStringValue(requestObject.DataAutomationProjectArn);
             }
 
             if(requestObject.IsSetStage())

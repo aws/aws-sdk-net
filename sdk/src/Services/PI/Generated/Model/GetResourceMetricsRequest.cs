@@ -109,9 +109,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in the response. If more items exist than the
-        /// specified <c>MaxRecords</c> value, a pagination token is included in the response
-        /// so that the remaining results can be retrieved. 
+        /// The maximum number of items to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

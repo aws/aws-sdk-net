@@ -79,7 +79,7 @@ namespace Amazon.ForecastService
         ///
         /// </summary>
         public AmazonForecastServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonForecastServiceConfig()) { }
+            : base(new AmazonForecastServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonForecastServiceClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.ForecastService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonForecastServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonForecastServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonForecastServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonForecastServiceClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.ForecastService
         /// </summary>
         /// <param name="config">The AmazonForecastServiceClient Configuration Object</param>
         public AmazonForecastServiceClient(AmazonForecastServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonForecastServiceClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.ForecastService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.ForecastService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonForecastServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonForecastServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

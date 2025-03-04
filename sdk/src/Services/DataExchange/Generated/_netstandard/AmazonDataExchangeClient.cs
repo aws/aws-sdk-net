@@ -91,7 +91,7 @@ namespace Amazon.DataExchange
         ///
         /// </summary>
         public AmazonDataExchangeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataExchangeConfig()) { }
+            : base(new AmazonDataExchangeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDataExchangeClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.DataExchange
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDataExchangeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataExchangeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDataExchangeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDataExchangeClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.DataExchange
         /// </summary>
         /// <param name="config">The AmazonDataExchangeClient Configuration Object</param>
         public AmazonDataExchangeClient(AmazonDataExchangeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -254,14 +254,6 @@ namespace Amazon.DataExchange
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -269,7 +261,9 @@ namespace Amazon.DataExchange
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataExchangeEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataExchangeAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.MediaStoreData
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonMediaStoreDataClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonMediaStoreDataConfig { ServiceURL = serviceUrl })
+            : base(new AmazonMediaStoreDataConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.MediaStoreData
         /// </summary>
         /// <param name="config">The AmazonMediaStoreDataClient Configuration Object</param>
         public AmazonMediaStoreDataClient(AmazonMediaStoreDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config)
+            : base(config)
         {
         }
 

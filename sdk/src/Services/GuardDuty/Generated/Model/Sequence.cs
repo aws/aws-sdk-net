@@ -143,7 +143,7 @@ namespace Amazon.GuardDuty.Model
         /// Contains information about the signals involved in the attack sequence.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<Signal> Signals
         {
             get { return this._signals; }

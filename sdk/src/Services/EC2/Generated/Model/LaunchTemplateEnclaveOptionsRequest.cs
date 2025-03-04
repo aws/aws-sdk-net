@@ -32,8 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
     /// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
-    /// is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves
-    /// User Guide</i>.
+    /// is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateEnclaveOptionsRequest
     {

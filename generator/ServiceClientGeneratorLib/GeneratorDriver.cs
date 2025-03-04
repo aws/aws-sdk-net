@@ -15,6 +15,8 @@ using System.Collections.Concurrent;
 using ServiceClientGenerator.Generators.Endpoints;
 using ServiceClientGenerator.Endpoints.Partitions;
 using EventStreamExceptionGenerator = ServiceClientGenerator.Generators.SourceFiles.Exceptions.EventStreamExceptions;
+using ServiceClientGenerator.Generators.AuthResolvers;
+
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -109,6 +111,7 @@ namespace ServiceClientGenerator
         public HashSet<string> FilesWrittenToGeneratorFolder { get; private set; }
 
         private static ConcurrentBag<string> codeGeneratedServiceNames = new ConcurrentBag<string>();
+
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
             FilesWrittenToGeneratorFolder = new HashSet<string>();
@@ -193,6 +196,8 @@ namespace ServiceClientGenerator
             {
                 ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
             }
+
+            ExecuteGenerator(new ModeledResolver(), "Amazon" + Configuration.ClassName + "AuthResolver.cs", "Internal");
 
             if (Configuration.Namespace == "Amazon.S3")
             {

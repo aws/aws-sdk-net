@@ -36,12 +36,38 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class PromptConfiguration
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private string _basePromptTemplate;
         private InferenceConfiguration _inferenceConfiguration;
         private CreationMode _parserMode;
         private CreationMode _promptCreationMode;
         private PromptState _promptState;
         private PromptType _promptType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// If the Converse or ConverseStream operations support the model, <c>additionalModelRequestFields</c>
+        /// contains additional inference parameters, beyond the base set of inference parameters
+        /// in the <c>inferenceConfiguration</c> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Inference request parameters and response fields for
+        /// foundation models</i> in the Amazon Bedrock user guide.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property BasePromptTemplate. 
@@ -92,8 +118,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         /// Specifies whether to override the default parser Lambda function when parsing the
         /// raw foundation model output in the part of the agent sequence defined by the <c>promptType</c>.
-        /// If you set the field as <c>OVERRIDEN</c>, the <c>overrideLambda</c> field in the <a
-        /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// If you set the field as <c>OVERRIDDEN</c>, the <c>overrideLambda</c> field in the
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
         /// must be specified with the ARN of a Lambda function.
         /// </para>
         /// </summary>

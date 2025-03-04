@@ -97,7 +97,7 @@ namespace Amazon.TaxSettings
         ///
         /// </summary>
         public AmazonTaxSettingsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTaxSettingsConfig()) { }
+            : base(new AmazonTaxSettingsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.TaxSettings
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTaxSettingsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTaxSettingsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTaxSettingsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.TaxSettings
         /// </summary>
         /// <param name="config">The AmazonTaxSettingsClient Configuration Object</param>
         public AmazonTaxSettingsClient(AmazonTaxSettingsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTaxSettingsClient with AWS Credentials
@@ -238,15 +238,7 @@ namespace Amazon.TaxSettings
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -256,7 +248,9 @@ namespace Amazon.TaxSettings
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTaxSettingsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTaxSettingsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -366,7 +360,7 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Get the active tax exemptions for a given list of accounts.
+        /// Get the active tax exemptions for a given list of accounts. The IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions service method.</param>
         /// 
@@ -393,7 +387,7 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Get the active tax exemptions for a given list of accounts.
+        /// Get the active tax exemptions for a given list of accounts. The IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions service method.</param>
         /// <param name="cancellationToken">
@@ -1088,7 +1082,7 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Get supported tax exemption types.
+        /// Get supported tax exemption types. The IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes service method.</param>
         /// 
@@ -1115,7 +1109,7 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Get supported tax exemption types.
+        /// Get supported tax exemption types. The IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1387,7 +1381,8 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+        /// Retrieves the tax exemption of accounts listed in a consolidated billing family. The
+        /// IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions service method.</param>
         /// 
@@ -1414,7 +1409,8 @@ namespace Amazon.TaxSettings
 
 
         /// <summary>
-        /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+        /// Retrieves the tax exemption of accounts listed in a consolidated billing family. The
+        /// IAM action is <c>tax:GetExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions service method.</param>
         /// <param name="cancellationToken">
@@ -1575,19 +1571,19 @@ namespace Amazon.TaxSettings
 
         /// <summary>
         /// Adds the tax exemption for a single account or all accounts listed in a consolidated
-        /// billing family.
+        /// billing family. The IAM action is <c>tax:UpdateExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption service method.</param>
         /// 
         /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
         /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
-        /// The access is denied for the Amazon Web Services Support API.
+        /// The access is denied for the Amazon Web ServicesSupport API.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
-        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+        /// Failed to upload the tax exemption document to Amazon Web ServicesSupport case.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
-        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+        /// You've exceeded the Amazon Web ServicesSupport case creation limit for your account.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
         /// The exception thrown when an unexpected error occurs when processing a request.
@@ -1612,7 +1608,7 @@ namespace Amazon.TaxSettings
 
         /// <summary>
         /// Adds the tax exemption for a single account or all accounts listed in a consolidated
-        /// billing family.
+        /// billing family. The IAM action is <c>tax:UpdateExemptions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption service method.</param>
         /// <param name="cancellationToken">
@@ -1621,13 +1617,13 @@ namespace Amazon.TaxSettings
         /// 
         /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
         /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
-        /// The access is denied for the Amazon Web Services Support API.
+        /// The access is denied for the Amazon Web ServicesSupport API.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
-        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+        /// Failed to upload the tax exemption document to Amazon Web ServicesSupport case.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
-        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+        /// You've exceeded the Amazon Web ServicesSupport case creation limit for your account.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
         /// The exception thrown when an unexpected error occurs when processing a request.

@@ -226,7 +226,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify
         /// <c>efa</c> or <c>efa</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-        /// Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>

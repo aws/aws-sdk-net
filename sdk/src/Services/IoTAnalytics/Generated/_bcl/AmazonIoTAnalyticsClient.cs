@@ -104,7 +104,7 @@ namespace Amazon.IoTAnalytics
         ///
         /// </summary>
         public AmazonIoTAnalyticsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTAnalyticsConfig()) { }
+            : base(new AmazonIoTAnalyticsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTAnalyticsClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.IoTAnalytics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTAnalyticsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTAnalyticsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTAnalyticsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTAnalyticsClient with the credentials loaded from the application's
@@ -142,7 +142,7 @@ namespace Amazon.IoTAnalytics
         /// </summary>
         /// <param name="config">The AmazonIoTAnalyticsClient Configuration Object</param>
         public AmazonIoTAnalyticsClient(AmazonIoTAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIoTAnalyticsClient with AWS Credentials
@@ -245,15 +245,7 @@ namespace Amazon.IoTAnalytics
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -263,7 +255,9 @@ namespace Amazon.IoTAnalytics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTAnalyticsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTAnalyticsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

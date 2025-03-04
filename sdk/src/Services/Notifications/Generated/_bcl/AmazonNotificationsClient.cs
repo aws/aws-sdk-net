@@ -101,7 +101,7 @@ namespace Amazon.Notifications
         ///
         /// </summary>
         public AmazonNotificationsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNotificationsConfig()) { }
+            : base(new AmazonNotificationsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.Notifications
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNotificationsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNotificationsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNotificationsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsClient with the credentials loaded from the application's
@@ -139,7 +139,7 @@ namespace Amazon.Notifications
         /// </summary>
         /// <param name="config">The AmazonNotificationsClient Configuration Object</param>
         public AmazonNotificationsClient(AmazonNotificationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsClient with AWS Credentials
@@ -242,15 +242,7 @@ namespace Amazon.Notifications
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -260,7 +252,9 @@ namespace Amazon.Notifications
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNotificationsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNotificationsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

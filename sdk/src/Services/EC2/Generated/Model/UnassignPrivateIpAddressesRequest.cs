@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignPrivateIpAddresses operation.
-    /// Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes
+    /// Unassigns the specified secondary private IP addresses or IPv4 Prefix Delegation prefixes
     /// from a network interface.
     /// </summary>
     public partial class UnassignPrivateIpAddressesRequest : AmazonEC2Request

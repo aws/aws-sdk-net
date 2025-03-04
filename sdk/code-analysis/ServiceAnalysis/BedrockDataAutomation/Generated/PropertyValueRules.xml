@@ -16,7 +16,6 @@
     <property>Amazon.BedrockDataAutomation.Model.CreateBlueprintRequest.Schema</property>
     <min>1</min>
     <max>100000</max>
-    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.CreateBlueprintVersionRequest.BlueprintArn</property>
@@ -35,6 +34,11 @@
     <min>33</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationProjectRequest.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationProjectRequest.ProjectName</property>
@@ -131,6 +135,24 @@
     <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(|-cn|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project)/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.TagResourceRequest.ResourceARN</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(|-cn|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project)/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UntagResourceRequest.ResourceARN</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(|-cn|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project)/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UpdateBlueprintRequest.BlueprintArn</property>
     <min>0</min>
     <max>128</max>
@@ -140,13 +162,17 @@
     <property>Amazon.BedrockDataAutomation.Model.UpdateBlueprintRequest.Schema</property>
     <min>1</min>
     <max>100000</max>
-    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationProjectRequest.ProjectArn</property>
     <min>0</min>
     <max>128</max>
     <pattern>arn:aws(|-cn|-us-gov):bedrock:[a-zA-Z0-9-]*:(aws|[0-9]{12}):data-automation-project/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationProjectRequest.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationProjectResponse.ProjectArn</property>
@@ -176,12 +202,12 @@
     <property>Amazon.BedrockDataAutomation.Model.Blueprint.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.Blueprint.Schema</property>
     <min>1</min>
     <max>100000</max>
-    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.BlueprintFilter.BlueprintArn</property>
@@ -229,12 +255,18 @@
     <property>Amazon.BedrockDataAutomation.Model.DataAutomationProject.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.DataAutomationProject.ProjectArn</property>
     <min>0</min>
     <max>128</max>
     <pattern>arn:aws(|-cn|-us-gov):bedrock:[a-zA-Z0-9-]*:(aws|[0-9]{12}):data-automation-project/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationProject.ProjectDescription</property>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.DataAutomationProject.ProjectName</property>
@@ -264,6 +296,17 @@
     <property>Amazon.BedrockDataAutomation.Model.EncryptionConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.ValidationExceptionField.Message</property>

@@ -40,6 +40,13 @@ namespace CrtIntegrationTests
             new object[] {"Hello world", "crUfeA=="}
         };
 
+        public static IEnumerable<object[]> Crc64NVMETestCases => new List<object[]>
+        {
+            new object[] { "", "AAAAAAAAAAA=" },
+            new object[] { "abc", "BeXKuz/B+us=" },
+            new object[] { "Hello world", "OOJZ0D8xKts=" },
+        };
+
         [Theory]
         [MemberData(nameof(Crc32TestCases))]
         public void Crc32Test(string content, string expectedHash)
@@ -90,6 +97,34 @@ namespace CrtIntegrationTests
 
             var bytes = BitConverter.GetBytes(rollingChecksum);
 
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bytes);
+            }
+
+            Assert.Equal(expectedHash, Convert.ToBase64String(bytes));
+        }
+
+        [Theory]
+        [MemberData(nameof(Crc64NVMETestCases))]
+        public void Crc64NVMETest(string content, string expectedHash)
+        {
+            Assert.Equal(expectedHash, new CrtChecksums().Crc64NVME(Encoding.Default.GetBytes(content)));
+        }
+
+        [Theory]
+        [MemberData(nameof(Crc64NVMETestCases))]
+        public void RollingCrc64NVMETest(string content, string expectedHash)
+        {
+            ulong rollingChecksum = 0;
+            var crtChecksum = new CrtChecksums();
+
+            foreach (var c in content)
+            {
+                rollingChecksum = crtChecksum.Crc64NVME(Encoding.Default.GetBytes(new char[] { c }), rollingChecksum);
+            }
+
+            var bytes = BitConverter.GetBytes(rollingChecksum);
             if (BitConverter.IsLittleEndian)
             {
                 Array.Reverse(bytes);

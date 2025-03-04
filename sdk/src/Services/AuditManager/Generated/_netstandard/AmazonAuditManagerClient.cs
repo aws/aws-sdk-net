@@ -111,7 +111,7 @@ namespace Amazon.AuditManager
         ///
         /// </summary>
         public AmazonAuditManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAuditManagerConfig()) { }
+            : base(new AmazonAuditManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAuditManagerClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.AuditManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAuditManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAuditManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAuditManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAuditManagerClient with the credentials loaded from the application's
@@ -149,7 +149,7 @@ namespace Amazon.AuditManager
         /// </summary>
         /// <param name="config">The AmazonAuditManagerClient Configuration Object</param>
         public AmazonAuditManagerClient(AmazonAuditManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -274,14 +274,6 @@ namespace Amazon.AuditManager
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -289,7 +281,9 @@ namespace Amazon.AuditManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAuditManagerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAuditManagerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

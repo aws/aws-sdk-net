@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private Metadata _metadata;
         private RawResponse _rawResponse;
+        private ReasoningContentBlock _reasoningContent;
         private string _traceId;
 
         /// <summary>
@@ -74,6 +75,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetRawResponse()
         {
             return this._rawResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReasoningContent. 
+        /// <para>
+        /// Contains content about the reasoning that the model made during the orchestration
+        /// step. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ReasoningContentBlock ReasoningContent
+        {
+            get { return this._reasoningContent; }
+            set { this._reasoningContent = value; }
+        }
+
+        // Check to see if ReasoningContent property is set
+        internal bool IsSetReasoningContent()
+        {
+            return this._reasoningContent != null;
         }
 
         /// <summary>

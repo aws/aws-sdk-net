@@ -91,7 +91,7 @@ namespace Amazon.ComputeOptimizer
         ///
         /// </summary>
         public AmazonComputeOptimizerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComputeOptimizerConfig()) { }
+            : base(new AmazonComputeOptimizerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonComputeOptimizerClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonComputeOptimizerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComputeOptimizerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonComputeOptimizerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonComputeOptimizerClient with the credentials loaded from the application's
@@ -129,7 +129,7 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         /// <param name="config">The AmazonComputeOptimizerClient Configuration Object</param>
         public AmazonComputeOptimizerClient(AmazonComputeOptimizerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonComputeOptimizerClient with AWS Credentials
@@ -232,15 +232,7 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -250,7 +242,9 @@ namespace Amazon.ComputeOptimizer
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComputeOptimizerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComputeOptimizerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

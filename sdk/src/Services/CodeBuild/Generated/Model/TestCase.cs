@@ -43,6 +43,7 @@ namespace Amazon.CodeBuild.Model
         private string _reportArn;
         private string _status;
         private string _testRawDataPath;
+        private string _testSuiteName;
 
         /// <summary>
         /// Gets and sets the property DurationInNanoSeconds. 
@@ -191,6 +192,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetTestRawDataPath()
         {
             return this._testRawDataPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestSuiteName. 
+        /// <para>
+        /// The name of the test suite that the test case is a part of.
+        /// </para>
+        /// </summary>
+        public string TestSuiteName
+        {
+            get { return this._testSuiteName; }
+            set { this._testSuiteName = value; }
+        }
+
+        // Check to see if TestSuiteName property is set
+        internal bool IsSetTestSuiteName()
+        {
+            return this._testSuiteName != null;
         }
 
     }

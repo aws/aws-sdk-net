@@ -75,7 +75,7 @@ namespace Amazon.Deadline
         ///
         /// </summary>
         public AmazonDeadlineClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDeadlineConfig()) { }
+            : base(new AmazonDeadlineConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDeadlineClient with the credentials loaded from the application's
@@ -94,7 +94,7 @@ namespace Amazon.Deadline
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDeadlineClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDeadlineConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDeadlineConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDeadlineClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.Deadline
         /// </summary>
         /// <param name="config">The AmazonDeadlineClient Configuration Object</param>
         public AmazonDeadlineClient(AmazonDeadlineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -238,14 +238,6 @@ namespace Amazon.Deadline
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -253,7 +245,9 @@ namespace Amazon.Deadline
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDeadlineEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDeadlineAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -35,10 +35,29 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class MetricReference
     {
+        private string _accountId;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _metricName;
         private string _metricType;
         private string _awsNamespace;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Amazon Web Services account ID.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 

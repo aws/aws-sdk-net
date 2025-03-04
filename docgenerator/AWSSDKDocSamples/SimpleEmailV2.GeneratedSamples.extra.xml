@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.PutConfigurationSetArchivingOptions(Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.PutConfigurationSetArchivingOptions(Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates an archive arn with a configuration set.
+                </para>
+                <code
+                    title="Used to associate an MailManager archive with a ConfigurationSet."
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="put-configuration-set-archiving-options-example-1737363685" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
             <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.PutDedicatedIpPoolScalingAttributes(Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest)" />
             <member name="T:Amazon.SimpleEmailV2.Model.PutDedicatedIpPoolScalingAttributesRequest" />

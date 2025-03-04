@@ -97,7 +97,7 @@ namespace Amazon.Invoicing
         ///
         /// </summary>
         public AmazonInvoicingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInvoicingConfig()) { }
+            : base(new AmazonInvoicingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonInvoicingClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.Invoicing
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonInvoicingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonInvoicingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonInvoicingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonInvoicingClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.Invoicing
         /// </summary>
         /// <param name="config">The AmazonInvoicingClient Configuration Object</param>
         public AmazonInvoicingClient(AmazonInvoicingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -260,14 +260,6 @@ namespace Amazon.Invoicing
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -275,7 +267,9 @@ namespace Amazon.Invoicing
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInvoicingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonInvoicingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

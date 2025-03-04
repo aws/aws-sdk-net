@@ -41,6 +41,7 @@ using Amazon.Runtime.Endpoints;
 using System.Diagnostics.CodeAnalysis;
 using System.ComponentModel.Design;
 using System.Threading;
+using Amazon.Runtime.Credentials.Internal;
 
 namespace Amazon.S3
 {
@@ -101,7 +102,9 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
-            if (Credentials == null)
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+
+            if(credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
 
             if (request == null)
@@ -111,7 +114,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
             Arn arn = null;
             var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn);
-            var immutableCredentials = Credentials.GetCredentials();
+            var immutableCredentials = credentials.GetCredentials();
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
             var context = new Amazon.Runtime.Internal.ExecutionContext(new Amazon.Runtime.Internal.RequestContext(true, new NullSigner()) { Request = irequest, ClientConfig = this.Config }, null);
@@ -162,7 +165,9 @@ namespace Amazon.S3
         [SuppressMessage("AWSSDKRules", "CR1004")]
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
-            if (Credentials == null)
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+
+            if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
 
             if (request == null)
@@ -172,7 +177,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
             Arn arn = null;
             var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn);
-            var immutableCredentials = await Credentials.GetCredentialsAsync().ConfigureAwait(false);
+            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
 

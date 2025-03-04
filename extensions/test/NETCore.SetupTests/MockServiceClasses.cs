@@ -34,11 +34,6 @@ namespace NETCore.SetupTests
         {
 
         }
-
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }
     }
 
     public class MockServiceConfig : AmazonS3Config

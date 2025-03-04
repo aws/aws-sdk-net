@@ -65,7 +65,7 @@ namespace Amazon.SecurityIR
         ///
         /// </summary>
         public AmazonSecurityIRClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityIRConfig()) { }
+            : base(new AmazonSecurityIRConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityIRClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.SecurityIR
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityIRClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityIRConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSecurityIRConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityIRClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.SecurityIR
         /// </summary>
         /// <param name="config">The AmazonSecurityIRClient Configuration Object</param>
         public AmazonSecurityIRClient(AmazonSecurityIRConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.SecurityIR
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.SecurityIR
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityIREndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityIRAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

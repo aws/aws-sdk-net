@@ -437,7 +437,7 @@ namespace Amazon.Rekognition
         ///
         /// </summary>
         public AmazonRekognitionClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRekognitionConfig()) { }
+            : base(new AmazonRekognitionConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRekognitionClient with the credentials loaded from the application's
@@ -456,7 +456,7 @@ namespace Amazon.Rekognition
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRekognitionClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRekognitionConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRekognitionConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRekognitionClient with the credentials loaded from the application's
@@ -475,7 +475,7 @@ namespace Amazon.Rekognition
         /// </summary>
         /// <param name="config">The AmazonRekognitionClient Configuration Object</param>
         public AmazonRekognitionClient(AmazonRekognitionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -600,14 +600,6 @@ namespace Amazon.Rekognition
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -615,7 +607,9 @@ namespace Amazon.Rekognition
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRekognitionEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRekognitionAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
