@@ -145,6 +145,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>"skipped"</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>"running"</c> 
         /// </para>
         ///  </li> </ul>

@@ -84,7 +84,7 @@ namespace Amazon.LexModelBuildingService
         ///
         /// </summary>
         public AmazonLexModelBuildingServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexModelBuildingServiceConfig()) { }
+            : base(new AmazonLexModelBuildingServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLexModelBuildingServiceClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLexModelBuildingServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexModelBuildingServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLexModelBuildingServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLexModelBuildingServiceClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         /// <param name="config">The AmazonLexModelBuildingServiceClient Configuration Object</param>
         public AmazonLexModelBuildingServiceClient(AmazonLexModelBuildingServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLexModelBuildingServiceClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.LexModelBuildingService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexModelBuildingServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexModelBuildingServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

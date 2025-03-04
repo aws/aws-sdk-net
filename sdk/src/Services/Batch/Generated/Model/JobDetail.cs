@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
     {
         private ArrayPropertiesDetail _arrayProperties;
         private List<AttemptDetail> _attempts = AWSConfigs.InitializeCollections ? new List<AttemptDetail>() : null;
+        private ConsumableResourceProperties _consumableResourceProperties;
         private ContainerDetail _container;
         private long? _createdAt;
         private List<JobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<JobDependency>() : null;
@@ -98,6 +99,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetAttempts()
         {
             return this._attempts != null && (this._attempts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumableResourceProperties. 
+        /// <para>
+        /// Contains a list of consumable resources required by the job.
+        /// </para>
+        /// </summary>
+        public ConsumableResourceProperties ConsumableResourceProperties
+        {
+            get { return this._consumableResourceProperties; }
+            set { this._consumableResourceProperties = value; }
+        }
+
+        // Check to see if ConsumableResourceProperties property is set
+        internal bool IsSetConsumableResourceProperties()
+        {
+            return this._consumableResourceProperties != null;
         }
 
         /// <summary>

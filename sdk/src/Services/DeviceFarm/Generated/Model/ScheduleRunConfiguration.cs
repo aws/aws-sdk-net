@@ -38,6 +38,7 @@ namespace Amazon.DeviceFarm.Model
         private List<string> _auxiliaryApps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BillingMethod _billingMethod;
         private CustomerArtifactPaths _customerArtifactPaths;
+        private DeviceProxy _deviceProxy;
         private string _extraDataPackageArn;
         private string _locale;
         private Location _location;
@@ -104,6 +105,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetCustomerArtifactPaths()
         {
             return this._customerArtifactPaths != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceProxy. 
+        /// <para>
+        /// The device proxy to be configured on the device for the run.
+        /// </para>
+        /// </summary>
+        public DeviceProxy DeviceProxy
+        {
+            get { return this._deviceProxy; }
+            set { this._deviceProxy = value; }
+        }
+
+        // Check to see if DeviceProxy property is set
+        internal bool IsSetDeviceProxy()
+        {
+            return this._deviceProxy != null;
         }
 
         /// <summary>

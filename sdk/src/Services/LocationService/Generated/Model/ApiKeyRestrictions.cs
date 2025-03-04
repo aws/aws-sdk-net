@@ -98,7 +98,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=7)]
+        [AWSProperty(Required=true, Min=1, Max=24)]
         public List<string> AllowActions
         {
             get { return this._allowActions; }
@@ -194,7 +194,7 @@ namespace Amazon.LocationService.Model
         /// Resource Names (ARNs)</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=8)]
         public List<string> AllowResources
         {
             get { return this._allowResources; }

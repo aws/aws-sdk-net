@@ -179,7 +179,7 @@ namespace Amazon.CodeDeploy
         ///
         /// </summary>
         public AmazonCodeDeployClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeDeployConfig()) { }
+            : base(new AmazonCodeDeployConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeDeployClient with the credentials loaded from the application's
@@ -198,7 +198,7 @@ namespace Amazon.CodeDeploy
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeDeployClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeDeployConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeDeployConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeDeployClient with the credentials loaded from the application's
@@ -217,7 +217,7 @@ namespace Amazon.CodeDeploy
         /// </summary>
         /// <param name="config">The AmazonCodeDeployClient Configuration Object</param>
         public AmazonCodeDeployClient(AmazonCodeDeployConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCodeDeployClient with AWS Credentials
@@ -320,15 +320,7 @@ namespace Amazon.CodeDeploy
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -338,7 +330,9 @@ namespace Amazon.CodeDeploy
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeDeployEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeDeployAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

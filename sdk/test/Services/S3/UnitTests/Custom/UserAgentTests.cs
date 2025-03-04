@@ -49,6 +49,11 @@ namespace AWSSDK.UnitTests
         [DataRow("CRC32C", RequestChecksumCalculation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_REQUIRED, "m/V,Z,c")]
         [DataRow("CRC32C", RequestChecksumCalculation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_SUPPORTED, "m/a,b")]
         [DataRow("CRC32C", RequestChecksumCalculation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_REQUIRED, "m/a,c")]
+
+        [DataRow("CRC64NVME", RequestChecksumCalculation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_SUPPORTED, "m/W,Z,b")]
+        [DataRow("CRC64NVME", RequestChecksumCalculation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_REQUIRED, "m/W,Z,c")]
+        [DataRow("CRC64NVME", RequestChecksumCalculation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_SUPPORTED, "m/a,b")]
+        [DataRow("CRC64NVME", RequestChecksumCalculation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_REQUIRED, "m/a,c")]
         public void Test_AddsFeatureIdsToUserAgent(
             string checksumAlgorithm, 
             RequestChecksumCalculation requestChecksumCalculation,

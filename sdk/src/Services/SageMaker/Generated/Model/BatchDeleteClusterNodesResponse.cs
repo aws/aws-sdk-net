@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// A list of errors encountered when deleting the specified nodes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=99)]
+        [AWSProperty(Min=1, Max=3000)]
         public List<BatchDeleteClusterNodesError> Failed
         {
             get { return this._failed; }
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// A list of node IDs that were successfully deleted from the specified cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=99)]
+        [AWSProperty(Min=1, Max=3000)]
         public List<string> Successful
         {
             get { return this._successful; }

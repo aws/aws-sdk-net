@@ -73,7 +73,7 @@ namespace Amazon.KinesisFirehose
         ///
         /// </summary>
         public AmazonKinesisFirehoseClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisFirehoseConfig()) { }
+            : base(new AmazonKinesisFirehoseConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisFirehoseClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisFirehoseClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisFirehoseConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisFirehoseConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisFirehoseClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// <param name="config">The AmazonKinesisFirehoseClient Configuration Object</param>
         public AmazonKinesisFirehoseClient(AmazonKinesisFirehoseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -218,14 +218,6 @@ namespace Amazon.KinesisFirehose
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -233,7 +225,9 @@ namespace Amazon.KinesisFirehose
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisFirehoseEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisFirehoseAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

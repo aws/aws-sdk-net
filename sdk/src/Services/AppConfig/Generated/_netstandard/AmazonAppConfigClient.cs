@@ -230,7 +230,7 @@ namespace Amazon.AppConfig
         ///
         /// </summary>
         public AmazonAppConfigClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppConfigConfig()) { }
+            : base(new AmazonAppConfigConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppConfigClient with the credentials loaded from the application's
@@ -249,7 +249,7 @@ namespace Amazon.AppConfig
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppConfigClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppConfigConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppConfigConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppConfigClient with the credentials loaded from the application's
@@ -268,7 +268,7 @@ namespace Amazon.AppConfig
         /// </summary>
         /// <param name="config">The AmazonAppConfigClient Configuration Object</param>
         public AmazonAppConfigClient(AmazonAppConfigConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -393,14 +393,6 @@ namespace Amazon.AppConfig
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -408,7 +400,9 @@ namespace Amazon.AppConfig
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppConfigEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppConfigAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

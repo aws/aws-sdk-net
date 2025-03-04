@@ -75,7 +75,7 @@ namespace Amazon.DSQL
         ///
         /// </summary>
         public AmazonDSQLClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDSQLConfig()) { }
+            : base(new AmazonDSQLConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDSQLClient with the credentials loaded from the application's
@@ -94,7 +94,7 @@ namespace Amazon.DSQL
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDSQLClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDSQLConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDSQLConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDSQLClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.DSQL
         /// </summary>
         /// <param name="config">The AmazonDSQLClient Configuration Object</param>
         public AmazonDSQLClient(AmazonDSQLConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -238,14 +238,6 @@ namespace Amazon.DSQL
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -253,7 +245,9 @@ namespace Amazon.DSQL
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDSQLEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDSQLAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

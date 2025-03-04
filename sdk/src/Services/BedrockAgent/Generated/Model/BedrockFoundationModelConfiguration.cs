@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Settings for a foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-    /// profile</a> used to parse documents for a data source.
+    /// Settings for a foundation model used to parse documents for a data source.
     /// </summary>
     public partial class BedrockFoundationModelConfiguration
     {
@@ -42,8 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The ARN of the foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-        /// profile</a> to use for parsing.
+        /// The ARN of the foundation model to use for parsing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

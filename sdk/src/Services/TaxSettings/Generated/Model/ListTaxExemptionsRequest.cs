@@ -31,7 +31,8 @@ namespace Amazon.TaxSettings.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTaxExemptions operation.
-    /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+    /// Retrieves the tax exemption of accounts listed in a consolidated billing family. The
+    /// IAM action is <c>tax:GetExemptions</c>.
     /// </summary>
     public partial class ListTaxExemptionsRequest : AmazonTaxSettingsRequest
     {

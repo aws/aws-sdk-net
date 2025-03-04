@@ -83,7 +83,7 @@ namespace Amazon.MarketplaceEntitlementService
         ///
         /// </summary>
         public AmazonMarketplaceEntitlementServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceEntitlementServiceConfig()) { }
+            : base(new AmazonMarketplaceEntitlementServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceEntitlementServiceClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMarketplaceEntitlementServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceEntitlementServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMarketplaceEntitlementServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceEntitlementServiceClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// </summary>
         /// <param name="config">The AmazonMarketplaceEntitlementServiceClient Configuration Object</param>
         public AmazonMarketplaceEntitlementServiceClient(AmazonMarketplaceEntitlementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -246,14 +246,6 @@ namespace Amazon.MarketplaceEntitlementService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -261,7 +253,9 @@ namespace Amazon.MarketplaceEntitlementService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceEntitlementServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceEntitlementServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

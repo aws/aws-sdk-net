@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgent.Model
         /// An array of objects, each of which contains information about an input into the node.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=20)]
         public List<FlowNodeInput> Inputs
         {
             get { return this._inputs; }

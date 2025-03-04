@@ -35,9 +35,9 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         public static readonly AudioExtractionCategoryType AUDIO_CONTENT_MODERATION = new AudioExtractionCategoryType("AUDIO_CONTENT_MODERATION");
         /// <summary>
-        /// Constant CHAPTER_CONTENT_MODERATION for AudioExtractionCategoryType
+        /// Constant TOPIC_CONTENT_MODERATION for AudioExtractionCategoryType
         /// </summary>
-        public static readonly AudioExtractionCategoryType CHAPTER_CONTENT_MODERATION = new AudioExtractionCategoryType("CHAPTER_CONTENT_MODERATION");
+        public static readonly AudioExtractionCategoryType TOPIC_CONTENT_MODERATION = new AudioExtractionCategoryType("TOPIC_CONTENT_MODERATION");
         /// <summary>
         /// Constant TRANSCRIPT for AudioExtractionCategoryType
         /// </summary>
@@ -89,13 +89,13 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         public static readonly AudioStandardGenerativeFieldType AUDIO_SUMMARY = new AudioStandardGenerativeFieldType("AUDIO_SUMMARY");
         /// <summary>
-        /// Constant CHAPTER_SUMMARY for AudioStandardGenerativeFieldType
-        /// </summary>
-        public static readonly AudioStandardGenerativeFieldType CHAPTER_SUMMARY = new AudioStandardGenerativeFieldType("CHAPTER_SUMMARY");
-        /// <summary>
         /// Constant IAB for AudioStandardGenerativeFieldType
         /// </summary>
         public static readonly AudioStandardGenerativeFieldType IAB = new AudioStandardGenerativeFieldType("IAB");
+        /// <summary>
+        /// Constant TOPIC_SUMMARY for AudioStandardGenerativeFieldType
+        /// </summary>
+        public static readonly AudioStandardGenerativeFieldType TOPIC_SUMMARY = new AudioStandardGenerativeFieldType("TOPIC_SUMMARY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -525,6 +525,10 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         public static readonly ImageExtractionCategoryType CONTENT_MODERATION = new ImageExtractionCategoryType("CONTENT_MODERATION");
         /// <summary>
+        /// Constant LOGOS for ImageExtractionCategoryType
+        /// </summary>
+        public static readonly ImageExtractionCategoryType LOGOS = new ImageExtractionCategoryType("LOGOS");
+        /// <summary>
         /// Constant TEXT_DETECTION for ImageExtractionCategoryType
         /// </summary>
         public static readonly ImageExtractionCategoryType TEXT_DETECTION = new ImageExtractionCategoryType("TEXT_DETECTION");
@@ -775,6 +779,10 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         public static readonly VideoExtractionCategoryType CONTENT_MODERATION = new VideoExtractionCategoryType("CONTENT_MODERATION");
         /// <summary>
+        /// Constant LOGOS for VideoExtractionCategoryType
+        /// </summary>
+        public static readonly VideoExtractionCategoryType LOGOS = new VideoExtractionCategoryType("LOGOS");
+        /// <summary>
         /// Constant TEXT_DETECTION for VideoExtractionCategoryType
         /// </summary>
         public static readonly VideoExtractionCategoryType TEXT_DETECTION = new VideoExtractionCategoryType("TEXT_DETECTION");
@@ -825,13 +833,13 @@ namespace Amazon.BedrockDataAutomation
     {
 
         /// <summary>
+        /// Constant CHAPTER_SUMMARY for VideoStandardGenerativeFieldType
+        /// </summary>
+        public static readonly VideoStandardGenerativeFieldType CHAPTER_SUMMARY = new VideoStandardGenerativeFieldType("CHAPTER_SUMMARY");
+        /// <summary>
         /// Constant IAB for VideoStandardGenerativeFieldType
         /// </summary>
         public static readonly VideoStandardGenerativeFieldType IAB = new VideoStandardGenerativeFieldType("IAB");
-        /// <summary>
-        /// Constant SCENE_SUMMARY for VideoStandardGenerativeFieldType
-        /// </summary>
-        public static readonly VideoStandardGenerativeFieldType SCENE_SUMMARY = new VideoStandardGenerativeFieldType("SCENE_SUMMARY");
         /// <summary>
         /// Constant VIDEO_SUMMARY for VideoStandardGenerativeFieldType
         /// </summary>

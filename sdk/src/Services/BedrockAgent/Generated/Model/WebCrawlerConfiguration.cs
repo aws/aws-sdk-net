@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgent.Model
         private List<string> _inclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WebScopeType _scope;
         private string _userAgent;
+        private string _userAgentHeader;
 
         /// <summary>
         /// Gets and sets the property CrawlerLimits. 
@@ -130,10 +131,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UserAgent. 
         /// <para>
-        /// A string used for identifying the crawler or a bot when it accesses a web server.
-        /// By default, this is set to <c>bedrockbot_UUID</c> for your crawler. You can optionally
-        /// append a custom string to <c>bedrockbot_UUID</c> to allowlist a specific user agent
-        /// permitted to access your source URLs. 
+        /// Returns the user agent suffix for your web crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=15, Max=40)]
@@ -147,6 +145,29 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetUserAgent()
         {
             return this._userAgent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAgentHeader. 
+        /// <para>
+        /// A string used for identifying the crawler or bot when it accesses a web server. The
+        /// user agent header value consists of the <c>bedrockbot</c>, UUID, and a user agent
+        /// suffix for your crawler (if one is provided). By default, it is set to <c>bedrockbot_UUID</c>.
+        /// You can optionally append a custom suffix to <c>bedrockbot_UUID</c> to allowlist a
+        /// specific user agent permitted to access your source URLs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=61, Max=86)]
+        public string UserAgentHeader
+        {
+            get { return this._userAgentHeader; }
+            set { this._userAgentHeader = value; }
+        }
+
+        // Check to see if UserAgentHeader property is set
+        internal bool IsSetUserAgentHeader()
+        {
+            return this._userAgentHeader != null;
         }
 
     }

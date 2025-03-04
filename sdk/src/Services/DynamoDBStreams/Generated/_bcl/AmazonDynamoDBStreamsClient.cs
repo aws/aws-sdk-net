@@ -68,7 +68,7 @@ namespace Amazon.DynamoDBStreams
         ///
         /// </summary>
         public AmazonDynamoDBStreamsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBStreamsConfig()) { }
+            : base(new AmazonDynamoDBStreamsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDynamoDBStreamsClient with the credentials loaded from the application's
@@ -87,7 +87,7 @@ namespace Amazon.DynamoDBStreams
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDynamoDBStreamsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDynamoDBStreamsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDynamoDBStreamsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDynamoDBStreamsClient with the credentials loaded from the application's
@@ -106,7 +106,7 @@ namespace Amazon.DynamoDBStreams
         /// </summary>
         /// <param name="config">The AmazonDynamoDBStreamsClient Configuration Object</param>
         public AmazonDynamoDBStreamsClient(AmazonDynamoDBStreamsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDynamoDBStreamsClient with AWS Credentials
@@ -209,15 +209,7 @@ namespace Amazon.DynamoDBStreams
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -227,7 +219,9 @@ namespace Amazon.DynamoDBStreams
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDynamoDBStreamsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDynamoDBStreamsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

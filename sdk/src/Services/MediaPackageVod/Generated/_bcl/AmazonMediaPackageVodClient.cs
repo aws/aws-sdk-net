@@ -79,7 +79,7 @@ namespace Amazon.MediaPackageVod
         ///
         /// </summary>
         public AmazonMediaPackageVodClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaPackageVodConfig()) { }
+            : base(new AmazonMediaPackageVodConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMediaPackageVodClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.MediaPackageVod
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaPackageVodClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaPackageVodConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMediaPackageVodConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaPackageVodClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.MediaPackageVod
         /// </summary>
         /// <param name="config">The AmazonMediaPackageVodClient Configuration Object</param>
         public AmazonMediaPackageVodClient(AmazonMediaPackageVodConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMediaPackageVodClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.MediaPackageVod
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.MediaPackageVod
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaPackageVodEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaPackageVodAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

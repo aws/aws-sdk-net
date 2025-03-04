@@ -100,8 +100,8 @@ namespace Amazon.SimpleEmailV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>REPLICATION_PRIMARY_INVALID_REGION</c> – The verification failed due to an invalid
-        /// primary region specified. Ensure you provide a valid AWS region where Amazon SES is
-        /// available and different from the replica region. 
+        /// primary region specified. Ensure you provide a valid Amazon Web Services region where
+        /// Amazon SES is available and different from the replica region. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

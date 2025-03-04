@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateRemoteAccessSessionConfiguration
     {
         private BillingMethod _billingMethod;
+        private DeviceProxy _deviceProxy;
         private List<string> _vpceConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetBillingMethod()
         {
             return this._billingMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceProxy. 
+        /// <para>
+        /// The device proxy to be configured on the device for the remote access session.
+        /// </para>
+        /// </summary>
+        public DeviceProxy DeviceProxy
+        {
+            get { return this._deviceProxy; }
+            set { this._deviceProxy = value; }
+        }
+
+        // Check to see if DeviceProxy property is set
+        internal bool IsSetDeviceProxy()
+        {
+            return this._deviceProxy != null;
         }
 
         /// <summary>

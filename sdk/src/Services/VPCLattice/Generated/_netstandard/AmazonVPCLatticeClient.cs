@@ -69,7 +69,7 @@ namespace Amazon.VPCLattice
         ///
         /// </summary>
         public AmazonVPCLatticeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVPCLatticeConfig()) { }
+            : base(new AmazonVPCLatticeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonVPCLatticeClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.VPCLattice
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonVPCLatticeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVPCLatticeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonVPCLatticeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonVPCLatticeClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.VPCLattice
         /// </summary>
         /// <param name="config">The AmazonVPCLatticeClient Configuration Object</param>
         public AmazonVPCLatticeClient(AmazonVPCLatticeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -232,14 +232,6 @@ namespace Amazon.VPCLattice
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -247,7 +239,9 @@ namespace Amazon.VPCLattice
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVPCLatticeEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVPCLatticeAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

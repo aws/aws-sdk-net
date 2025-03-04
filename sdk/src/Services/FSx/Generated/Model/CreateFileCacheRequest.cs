@@ -45,7 +45,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
+    /// Creates a new, empty Amazon File Cache resource with an assigned ID, and an initial
     /// lifecycle state of <c>CREATING</c>.
     /// </para>
     ///  </li> <li> 

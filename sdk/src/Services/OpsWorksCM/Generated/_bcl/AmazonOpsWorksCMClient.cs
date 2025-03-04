@@ -183,7 +183,7 @@ namespace Amazon.OpsWorksCM
         ///
         /// </summary>
         public AmazonOpsWorksCMClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksCMConfig()) { }
+            : base(new AmazonOpsWorksCMConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksCMClient with the credentials loaded from the application's
@@ -202,7 +202,7 @@ namespace Amazon.OpsWorksCM
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksCMClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksCMConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOpsWorksCMConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksCMClient with the credentials loaded from the application's
@@ -221,7 +221,7 @@ namespace Amazon.OpsWorksCM
         /// </summary>
         /// <param name="config">The AmazonOpsWorksCMClient Configuration Object</param>
         public AmazonOpsWorksCMClient(AmazonOpsWorksCMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksCMClient with AWS Credentials
@@ -324,15 +324,7 @@ namespace Amazon.OpsWorksCM
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -342,7 +334,9 @@ namespace Amazon.OpsWorksCM
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpsWorksCMEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOpsWorksCMAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

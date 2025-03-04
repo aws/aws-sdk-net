@@ -65,7 +65,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         ///
         /// </summary>
         public AmazonLicenseManagerLinuxSubscriptionsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerLinuxSubscriptionsConfig()) { }
+            : base(new AmazonLicenseManagerLinuxSubscriptionsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerLinuxSubscriptionsClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLicenseManagerLinuxSubscriptionsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerLinuxSubscriptionsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLicenseManagerLinuxSubscriptionsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerLinuxSubscriptionsClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerLinuxSubscriptionsClient Configuration Object</param>
         public AmazonLicenseManagerLinuxSubscriptionsClient(AmazonLicenseManagerLinuxSubscriptionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerLinuxSubscriptionsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerLinuxSubscriptionsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

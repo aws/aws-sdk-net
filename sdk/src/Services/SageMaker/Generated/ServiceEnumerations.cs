@@ -6837,6 +6837,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly HubContentSupportStatus Deprecated = new HubContentSupportStatus("Deprecated");
         /// <summary>
+        /// Constant Restricted for HubContentSupportStatus
+        /// </summary>
+        public static readonly HubContentSupportStatus Restricted = new HubContentSupportStatus("Restricted");
+        /// <summary>
         /// Constant Supported for HubContentSupportStatus
         /// </summary>
         public static readonly HubContentSupportStatus Supported = new HubContentSupportStatus("Supported");
@@ -7828,6 +7832,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InferenceComponentCapacitySizeType.
+    /// </summary>
+    public class InferenceComponentCapacitySizeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAPACITY_PERCENT for InferenceComponentCapacitySizeType
+        /// </summary>
+        public static readonly InferenceComponentCapacitySizeType CAPACITY_PERCENT = new InferenceComponentCapacitySizeType("CAPACITY_PERCENT");
+        /// <summary>
+        /// Constant COPY_COUNT for InferenceComponentCapacitySizeType
+        /// </summary>
+        public static readonly InferenceComponentCapacitySizeType COPY_COUNT = new InferenceComponentCapacitySizeType("COPY_COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceComponentCapacitySizeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceComponentCapacitySizeType FindValue(string value)
+        {
+            return FindValue<InferenceComponentCapacitySizeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceComponentCapacitySizeType(string value)
         {
             return FindValue(value);
         }
@@ -13678,6 +13732,14 @@ namespace Amazon.SageMaker
         /// Constant Al2AmiSagemakerInferenceGpu2 for ProductionVariantInferenceAmiVersion
         /// </summary>
         public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu2 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-2");
+        /// <summary>
+        /// Constant Al2AmiSagemakerInferenceGpu21 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu21 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-2-1");
+        /// <summary>
+        /// Constant Al2AmiSagemakerInferenceGpu31 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu31 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-3-1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -14544,6 +14606,46 @@ namespace Amazon.SageMaker
         /// Constant MlR7iXlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlR7iXlarge = new ProductionVariantInstanceType("ml.r7i.xlarge");
+        /// <summary>
+        /// Constant MlR8g12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g12xlarge = new ProductionVariantInstanceType("ml.r8g.12xlarge");
+        /// <summary>
+        /// Constant MlR8g16xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g16xlarge = new ProductionVariantInstanceType("ml.r8g.16xlarge");
+        /// <summary>
+        /// Constant MlR8g24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g24xlarge = new ProductionVariantInstanceType("ml.r8g.24xlarge");
+        /// <summary>
+        /// Constant MlR8g2xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g2xlarge = new ProductionVariantInstanceType("ml.r8g.2xlarge");
+        /// <summary>
+        /// Constant MlR8g48xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g48xlarge = new ProductionVariantInstanceType("ml.r8g.48xlarge");
+        /// <summary>
+        /// Constant MlR8g4xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g4xlarge = new ProductionVariantInstanceType("ml.r8g.4xlarge");
+        /// <summary>
+        /// Constant MlR8g8xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8g8xlarge = new ProductionVariantInstanceType("ml.r8g.8xlarge");
+        /// <summary>
+        /// Constant MlR8gLarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gLarge = new ProductionVariantInstanceType("ml.r8g.large");
+        /// <summary>
+        /// Constant MlR8gMedium for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gMedium = new ProductionVariantInstanceType("ml.r8g.medium");
+        /// <summary>
+        /// Constant MlR8gXlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlR8gXlarge = new ProductionVariantInstanceType("ml.r8g.xlarge");
         /// <summary>
         /// Constant MlT22xlarge for ProductionVariantInstanceType
         /// </summary>

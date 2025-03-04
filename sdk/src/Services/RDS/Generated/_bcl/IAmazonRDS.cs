@@ -2280,19 +2280,6 @@ namespace Amazon.RDS
         /// <para>
         /// This command doesn't apply to RDS Custom.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB parameter group, you should wait at least 5 minutes before creating
-        /// your first DB instance that uses that DB parameter group as the default parameter
-        /// group. This allows Amazon RDS to fully complete the create action before the parameter
-        /// group is used as the default for a new DB instance. This is especially important for
-        /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
-        /// parameter group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// 
@@ -2326,19 +2313,6 @@ namespace Amazon.RDS
         /// <para>
         /// This command doesn't apply to RDS Custom.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// After you create a DB parameter group, you should wait at least 5 minutes before creating
-        /// your first DB instance that uses that DB parameter group as the default parameter
-        /// group. This allows Amazon RDS to fully complete the create action before the parameter
-        /// group is used as the default for a new DB instance. This is especially important for
-        /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
-        /// parameter group has been created or modified.
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -9352,14 +9326,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies a zero-ETL integration with Amazon Redshift.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
-        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
-        /// the integration.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// 
@@ -9382,14 +9348,6 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies a zero-ETL integration with Amazon Redshift.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
-        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
-        /// the integration.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// <param name="cancellationToken">

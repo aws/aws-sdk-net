@@ -43,6 +43,8 @@ namespace Amazon.CodeBuild.Model
         private string _payloadUrl;
         private ScopeConfiguration _scopeConfiguration;
         private string _secret;
+        private WebhookStatus _status;
+        private string _statusMessage;
         private string _url;
 
         /// <summary>
@@ -76,6 +78,14 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// Specifies the type of build this webhook will trigger.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>RUNNER_BUILDKITE_BUILD</c> is only available for <c>NO_SOURCE</c> source type
+        /// projects configured for Buildkite runner builds. For more information about CodeBuild-hosted
+        /// Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial:
+        /// Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public WebhookBuildType BuildType
         {
@@ -224,6 +234,59 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetSecret()
         {
             return this._secret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the webhook. Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CREATING</c>: The webhook is being created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED</c>: The webhook has failed to create.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACTIVE</c>: The webhook has succeeded and is active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETING</c>: The webhook is being deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public WebhookStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A message associated with the status of a webhook.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

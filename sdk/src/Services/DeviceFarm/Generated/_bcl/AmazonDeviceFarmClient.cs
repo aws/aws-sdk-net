@@ -102,7 +102,7 @@ namespace Amazon.DeviceFarm
         ///
         /// </summary>
         public AmazonDeviceFarmClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDeviceFarmConfig()) { }
+            : base(new AmazonDeviceFarmConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.DeviceFarm
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDeviceFarmClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDeviceFarmConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDeviceFarmConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with the credentials loaded from the application's
@@ -140,7 +140,7 @@ namespace Amazon.DeviceFarm
         /// </summary>
         /// <param name="config">The AmazonDeviceFarmClient Configuration Object</param>
         public AmazonDeviceFarmClient(AmazonDeviceFarmConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDeviceFarmClient with AWS Credentials
@@ -243,15 +243,7 @@ namespace Amazon.DeviceFarm
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -261,7 +253,9 @@ namespace Amazon.DeviceFarm
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDeviceFarmEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDeviceFarmAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

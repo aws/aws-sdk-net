@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Logging
         int eventId = 0;
         private TraceSource _trace;
 
-        public bool IsEnabled(SdkLogLevel level) => true;
+        public bool IsEnabled(SdkLogLevel level) => _trace != null;
 
         internal DiagnosticAdaptorLogger(TraceSource trace)
         {

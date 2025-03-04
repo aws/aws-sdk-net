@@ -83,7 +83,7 @@ namespace Amazon.TimestreamInfluxDB
         ///
         /// </summary>
         public AmazonTimestreamInfluxDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamInfluxDBConfig()) { }
+            : base(new AmazonTimestreamInfluxDBConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamInfluxDBClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTimestreamInfluxDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTimestreamInfluxDBConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTimestreamInfluxDBConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamInfluxDBClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         /// <param name="config">The AmazonTimestreamInfluxDBClient Configuration Object</param>
         public AmazonTimestreamInfluxDBClient(AmazonTimestreamInfluxDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTimestreamInfluxDBClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.TimestreamInfluxDB
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamInfluxDBEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTimestreamInfluxDBAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -269,6 +263,89 @@ namespace Amazon.TimestreamInfluxDB
         #endregion
 
 
+        #region  CreateDbCluster
+
+
+        /// <summary>
+        /// Creates a new Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
+        public virtual CreateDbClusterResponse CreateDbCluster(CreateDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDbClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
+        public virtual Task<CreateDbClusterResponse> CreateDbClusterAsync(CreateDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDbClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDbInstance
 
 
@@ -435,6 +512,83 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  DeleteDbCluster
+
+
+        /// <summary>
+        /// Deletes a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
+        public virtual DeleteDbClusterResponse DeleteDbCluster(DeleteDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDbClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
+        public virtual Task<DeleteDbClusterResponse> DeleteDbClusterAsync(DeleteDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDbClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDbInstance
 
 
@@ -508,6 +662,77 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = DeleteDbInstanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDbInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDbCluster
+
+
+        /// <summary>
+        /// Retrieves information about a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the GetDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
+        public virtual GetDbClusterResponse GetDbCluster(GetDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<GetDbClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
+        public virtual Task<GetDbClusterResponse> GetDbClusterAsync(GetDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDbClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -654,6 +879,77 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  ListDbClusters
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB DB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbClusters service method.</param>
+        /// 
+        /// <returns>The response from the ListDbClusters service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
+        public virtual ListDbClustersResponse ListDbClusters(ListDbClustersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListDbClustersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB DB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbClusters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDbClusters service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
+        public virtual Task<ListDbClustersResponse> ListDbClustersAsync(ListDbClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDbClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDbInstances
 
 
@@ -721,6 +1017,77 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = ListDbInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDbInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDbInstancesForCluster
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbInstancesForCluster service method.</param>
+        /// 
+        /// <returns>The response from the ListDbInstancesForCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
+        public virtual ListDbInstancesForClusterResponse ListDbInstancesForCluster(ListDbInstancesForClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ListDbInstancesForClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbInstancesForCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDbInstancesForCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
+        public virtual Task<ListDbInstancesForClusterResponse> ListDbInstancesForClusterAsync(ListDbInstancesForClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDbInstancesForClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -941,6 +1308,83 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDbCluster
+
+
+        /// <summary>
+        /// Updates a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
+        public virtual UpdateDbClusterResponse UpdateDbCluster(UpdateDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDbClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDbCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
+        public virtual Task<UpdateDbClusterResponse> UpdateDbClusterAsync(UpdateDbClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDbClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion

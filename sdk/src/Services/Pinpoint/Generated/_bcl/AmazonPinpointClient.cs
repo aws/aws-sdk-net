@@ -63,7 +63,7 @@ namespace Amazon.Pinpoint
         ///
         /// </summary>
         public AmazonPinpointClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointConfig()) { }
+            : base(new AmazonPinpointConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPinpointClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.Pinpoint
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPinpointClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPinpointConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPinpointConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPinpointClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.Pinpoint
         /// </summary>
         /// <param name="config">The AmazonPinpointClient Configuration Object</param>
         public AmazonPinpointClient(AmazonPinpointConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPinpointClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.Pinpoint
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.Pinpoint
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPinpointAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

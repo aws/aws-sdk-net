@@ -67,7 +67,7 @@ namespace Amazon.ApiGatewayManagementApi
         ///
         /// </summary>
         public AmazonApiGatewayManagementApiClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApiGatewayManagementApiConfig()) { }
+            : base(new AmazonApiGatewayManagementApiConfig()) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayManagementApiClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApiGatewayManagementApiClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApiGatewayManagementApiConfig{RegionEndpoint = region}) { }
+            : base(new AmazonApiGatewayManagementApiConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayManagementApiClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// </summary>
         /// <param name="config">The AmazonApiGatewayManagementApiClient Configuration Object</param>
         public AmazonApiGatewayManagementApiClient(AmazonApiGatewayManagementApiConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayManagementApiClient with AWS Credentials
@@ -208,15 +208,7 @@ namespace Amazon.ApiGatewayManagementApi
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -226,7 +218,9 @@ namespace Amazon.ApiGatewayManagementApi
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApiGatewayManagementApiEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApiGatewayManagementApiAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

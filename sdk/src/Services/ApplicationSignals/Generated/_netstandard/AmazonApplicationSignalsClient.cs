@@ -95,7 +95,7 @@ namespace Amazon.ApplicationSignals
         ///
         /// </summary>
         public AmazonApplicationSignalsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationSignalsConfig()) { }
+            : base(new AmazonApplicationSignalsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonApplicationSignalsClient with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.ApplicationSignals
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApplicationSignalsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationSignalsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonApplicationSignalsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApplicationSignalsClient with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.ApplicationSignals
         /// </summary>
         /// <param name="config">The AmazonApplicationSignalsClient Configuration Object</param>
         public AmazonApplicationSignalsClient(AmazonApplicationSignalsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -258,14 +258,6 @@ namespace Amazon.ApplicationSignals
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -273,7 +265,9 @@ namespace Amazon.ApplicationSignals
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationSignalsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationSignalsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -395,7 +389,12 @@ namespace Amazon.ApplicationSignals
         /// using critical metrics such as latency and availability. You can also set SLOs against
         /// any CloudWatch metric or math expression that produces a time series.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can't create an SLO for a service operation that was discovered by Application
+        /// Signals until after that operation has reported standard metrics to Application Signals.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you create an SLO, you specify whether it is a <i>period-based SLO</i> or a <i>request-based
         /// SLO</i>. Each type of SLO has a different way of evaluating your application's performance

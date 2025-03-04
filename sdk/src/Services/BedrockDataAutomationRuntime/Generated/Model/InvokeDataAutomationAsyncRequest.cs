@@ -38,10 +38,12 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         private List<Blueprint> _blueprints = AWSConfigs.InitializeCollections ? new List<Blueprint>() : null;
         private string _clientToken;
         private DataAutomationConfiguration _dataAutomationConfiguration;
+        private string _dataAutomationProfileArn;
         private EncryptionConfiguration _encryptionConfiguration;
         private InputConfiguration _inputConfiguration;
         private NotificationConfiguration _notificationConfiguration;
         private OutputConfiguration _outputConfiguration;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Blueprints. 
@@ -49,7 +51,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         /// Blueprint list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=40)]
         public List<Blueprint> Blueprints
         {
             get { return this._blueprints; }
@@ -97,6 +99,25 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         internal bool IsSetDataAutomationConfiguration()
         {
             return this._dataAutomationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataAutomationProfileArn. 
+        /// <para>
+        /// Data automation profile ARN
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string DataAutomationProfileArn
+        {
+            get { return this._dataAutomationProfileArn; }
+            set { this._dataAutomationProfileArn = value; }
+        }
+
+        // Check to see if DataAutomationProfileArn property is set
+        internal bool IsSetDataAutomationProfileArn()
+        {
+            return this._dataAutomationProfileArn != null;
         }
 
         /// <summary>
@@ -171,6 +192,25 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         internal bool IsSetOutputConfiguration()
         {
             return this._outputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// List of tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

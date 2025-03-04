@@ -109,6 +109,14 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListTracks operation
+        ///</summary>
+        public IListTracksPaginator ListTracks(ListTracksRequest request) 
+        {
+            return new ListTracksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUsageLimits operation
         ///</summary>
         public IListUsageLimitsPaginator ListUsageLimits(ListUsageLimitsRequest request) 

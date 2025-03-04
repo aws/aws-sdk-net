@@ -98,7 +98,7 @@ namespace Amazon.IoTFleetWise
         ///
         /// </summary>
         public AmazonIoTFleetWiseClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTFleetWiseConfig()) { }
+            : base(new AmazonIoTFleetWiseConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTFleetWiseClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTFleetWiseClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTFleetWiseConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTFleetWiseConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTFleetWiseClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         /// <param name="config">The AmazonIoTFleetWiseClient Configuration Object</param>
         public AmazonIoTFleetWiseClient(AmazonIoTFleetWiseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIoTFleetWiseClient with AWS Credentials
@@ -239,15 +239,7 @@ namespace Amazon.IoTFleetWise
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -257,7 +249,9 @@ namespace Amazon.IoTFleetWise
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTFleetWiseEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTFleetWiseAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

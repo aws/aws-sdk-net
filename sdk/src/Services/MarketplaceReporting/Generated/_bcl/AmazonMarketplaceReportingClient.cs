@@ -127,7 +127,7 @@ namespace Amazon.MarketplaceReporting
         ///
         /// </summary>
         public AmazonMarketplaceReportingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceReportingConfig()) { }
+            : base(new AmazonMarketplaceReportingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceReportingClient with the credentials loaded from the application's
@@ -146,7 +146,7 @@ namespace Amazon.MarketplaceReporting
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMarketplaceReportingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMarketplaceReportingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMarketplaceReportingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceReportingClient with the credentials loaded from the application's
@@ -165,7 +165,7 @@ namespace Amazon.MarketplaceReporting
         /// </summary>
         /// <param name="config">The AmazonMarketplaceReportingClient Configuration Object</param>
         public AmazonMarketplaceReportingClient(AmazonMarketplaceReportingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMarketplaceReportingClient with AWS Credentials
@@ -268,15 +268,7 @@ namespace Amazon.MarketplaceReporting
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -286,7 +278,9 @@ namespace Amazon.MarketplaceReporting
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceReportingEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMarketplaceReportingAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

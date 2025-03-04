@@ -83,7 +83,7 @@ namespace Amazon.Kinesis
         ///
         /// </summary>
         public AmazonKinesisClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisConfig()) { }
+            : base(new AmazonKinesisConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Kinesis
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.Kinesis
         /// </summary>
         /// <param name="config">The AmazonKinesisClient Configuration Object</param>
         public AmazonKinesisClient(AmazonKinesisConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonKinesisClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.Kinesis
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.Kinesis
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

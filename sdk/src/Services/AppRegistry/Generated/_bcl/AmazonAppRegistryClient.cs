@@ -82,7 +82,7 @@ namespace Amazon.AppRegistry
         ///
         /// </summary>
         public AmazonAppRegistryClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppRegistryConfig()) { }
+            : base(new AmazonAppRegistryConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppRegistryClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.AppRegistry
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppRegistryClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppRegistryConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppRegistryConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppRegistryClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.AppRegistry
         /// </summary>
         /// <param name="config">The AmazonAppRegistryClient Configuration Object</param>
         public AmazonAppRegistryClient(AmazonAppRegistryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAppRegistryClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.AppRegistry
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.AppRegistry
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppRegistryEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppRegistryAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

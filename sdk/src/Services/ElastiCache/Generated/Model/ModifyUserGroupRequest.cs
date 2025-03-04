@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine for a user group. 
+        /// Modifies the engine listed in a user group. The options are valkey or redis.
         /// </para>
         /// </summary>
         public string Engine

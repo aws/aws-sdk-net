@@ -60,7 +60,7 @@ namespace Amazon.S3.Util
         private static string GetBucketRegionNoPipeline(string bucketName, IRequestContext requestContext)
         {
             var headBucketPreSignedUrl = GetHeadBucketPreSignedUrl(bucketName, requestContext);
-            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ImmutableCredentials))
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ClientConfig.DefaultAWSCredentials))
             {
                 var response = AmazonS3HttpUtil.GetHead(s3Client, s3Client.Config, headBucketPreSignedUrl, HeaderKeys.XAmzBucketRegion);
                 return response.HeaderValue;

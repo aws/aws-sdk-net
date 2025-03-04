@@ -28,6 +28,7 @@ using System.IO;
 using System.Net;
 using System.Data.SqlTypes;
 using System.Reflection;
+using Moq;
 
 namespace AWSSDK.ProtocolTests.Utils
 {
@@ -45,6 +46,9 @@ namespace AWSSDK.ProtocolTests.Utils
                 new Marshaller(),
             });
 
+            var awsCredentials = new Mock<AWSCredentials>();
+            awsCredentials.Setup(e => e.GetCredentials()).Returns(new ImmutableCredentials("access key", "secret", "token"));
+
             var requestContext = new RequestContext(config.LogMetrics, new Amazon.Runtime.Internal.Auth.AWS4Signer())
             {
                 ClientConfig = config,
@@ -52,7 +56,7 @@ namespace AWSSDK.ProtocolTests.Utils
                 OriginalRequest = request,
                 Unmarshaller = null,
                 IsAsync = false,
-                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token")
+                Identity = awsCredentials.Object,
             };
 
             // Create and set the internal ServiceMetadata via reflection

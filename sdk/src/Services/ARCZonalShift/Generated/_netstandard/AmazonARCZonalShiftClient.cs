@@ -120,7 +120,7 @@ namespace Amazon.ARCZonalShift
         ///
         /// </summary>
         public AmazonARCZonalShiftClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonARCZonalShiftConfig()) { }
+            : base(new AmazonARCZonalShiftConfig()) { }
 
         /// <summary>
         /// Constructs AmazonARCZonalShiftClient with the credentials loaded from the application's
@@ -139,7 +139,7 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonARCZonalShiftClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonARCZonalShiftConfig{RegionEndpoint = region}) { }
+            : base(new AmazonARCZonalShiftConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonARCZonalShiftClient with the credentials loaded from the application's
@@ -158,7 +158,7 @@ namespace Amazon.ARCZonalShift
         /// </summary>
         /// <param name="config">The AmazonARCZonalShiftClient Configuration Object</param>
         public AmazonARCZonalShiftClient(AmazonARCZonalShiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -283,14 +283,6 @@ namespace Amazon.ARCZonalShift
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -298,7 +290,9 @@ namespace Amazon.ARCZonalShift
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonARCZonalShiftEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonARCZonalShiftAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

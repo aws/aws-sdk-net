@@ -179,7 +179,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///
         /// </summary>
         public AmazonApplicationDiscoveryServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationDiscoveryServiceConfig()) { }
+            : base(new AmazonApplicationDiscoveryServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonApplicationDiscoveryServiceClient with the credentials loaded from the application's
@@ -198,7 +198,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApplicationDiscoveryServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApplicationDiscoveryServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonApplicationDiscoveryServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApplicationDiscoveryServiceClient with the credentials loaded from the application's
@@ -217,7 +217,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// </summary>
         /// <param name="config">The AmazonApplicationDiscoveryServiceClient Configuration Object</param>
         public AmazonApplicationDiscoveryServiceClient(AmazonApplicationDiscoveryServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -342,14 +342,6 @@ namespace Amazon.ApplicationDiscoveryService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -357,7 +349,9 @@ namespace Amazon.ApplicationDiscoveryService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationDiscoveryServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApplicationDiscoveryServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -72,6 +72,11 @@ namespace Amazon.RedshiftServerless.Model
         IListTableRestoreStatusPaginator ListTableRestoreStatus(ListTableRestoreStatusRequest request);
 
         /// <summary>
+        /// Paginator for ListTracks operation
+        ///</summary>
+        IListTracksPaginator ListTracks(ListTracksRequest request);
+
+        /// <summary>
         /// Paginator for ListUsageLimits operation
         ///</summary>
         IListUsageLimitsPaginator ListUsageLimits(ListUsageLimitsRequest request);

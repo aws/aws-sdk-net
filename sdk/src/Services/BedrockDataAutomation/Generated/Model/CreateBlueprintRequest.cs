@@ -40,6 +40,7 @@ namespace Amazon.BedrockDataAutomation.Model
         private string _clientToken;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _schema;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private Type _type;
 
         /// <summary>
@@ -118,6 +119,22 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetSchema()
         {
             return this._schema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The current supported value is Redis user. 
+        /// The options are valkey or redis.
         /// </para>
         /// </summary>
         public string Engine

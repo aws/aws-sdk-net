@@ -72,7 +72,7 @@ namespace Amazon.Lex
         ///
         /// </summary>
         public AmazonLexClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexConfig()) { }
+            : base(new AmazonLexConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLexClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.Lex
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLexClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLexConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLexConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLexClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.Lex
         /// </summary>
         /// <param name="config">The AmazonLexClient Configuration Object</param>
         public AmazonLexClient(AmazonLexConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLexClient with AWS Credentials
@@ -213,15 +213,7 @@ namespace Amazon.Lex
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -231,7 +223,9 @@ namespace Amazon.Lex
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLexAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

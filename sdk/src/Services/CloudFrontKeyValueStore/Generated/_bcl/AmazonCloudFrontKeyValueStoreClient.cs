@@ -79,7 +79,7 @@ namespace Amazon.CloudFrontKeyValueStore
         ///
         /// </summary>
         public AmazonCloudFrontKeyValueStoreClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontKeyValueStoreConfig()) { }
+            : base(new AmazonCloudFrontKeyValueStoreConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontKeyValueStoreClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontKeyValueStoreClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontKeyValueStoreConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudFrontKeyValueStoreConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontKeyValueStoreClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// </summary>
         /// <param name="config">The AmazonCloudFrontKeyValueStoreClient Configuration Object</param>
         public AmazonCloudFrontKeyValueStoreClient(AmazonCloudFrontKeyValueStoreConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontKeyValueStoreClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.CloudFrontKeyValueStore
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4aSignerCRTWrapper();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.CloudFrontKeyValueStore
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFrontKeyValueStoreEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFrontKeyValueStoreAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

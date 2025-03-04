@@ -17569,7 +17569,8 @@
         "MEDIAPACKAGE_CHANNEL",
         "MEDIAPACKAGE_ORIGIN_ENDPOINT",
         "MEDIACONNECT_FLOW",
-        "S3_BUCKET"
+        "S3_BUCKET",
+        "MEDIATAILOR_PLAYBACK_CONFIGURATION"
       ]
     },
     "CloudWatchAlarmTemplateTreatMissingData": {
@@ -17604,6 +17605,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -17624,6 +17630,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -17756,6 +17767,11 @@
         "TreatMissingData": {
           "shape": "CloudWatchAlarmTemplateTreatMissingData",
           "locationName": "treatMissingData"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -17825,6 +17841,11 @@
         "TreatMissingData": {
           "shape": "CloudWatchAlarmTemplateTreatMissingData",
           "locationName": "treatMissingData"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18015,6 +18036,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18035,6 +18061,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18139,6 +18170,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18173,6 +18209,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18305,6 +18346,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -18338,6 +18384,11 @@
         "Tags": {
           "shape": "TagMap",
           "locationName": "tags"
+        },
+        "RequestId": {
+          "shape": "__stringMin1Max256PatternS",
+          "locationName": "requestId",
+          "idempotencyToken": true
         }
       },
       "required": [
@@ -23849,6 +23900,12 @@
       "required": [
         "Id3"
       ]
+    },
+    "__stringMin1Max256PatternS": {
+      "type": "string",
+      "min": 1,
+      "max": 256,
+      "pattern": "^[\\S]+$"
     }
   }
 }

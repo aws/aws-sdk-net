@@ -31,7 +31,9 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// The ID for the rule type, which is made up of the combined values for category, owner,
-    /// provider, and version.
+    /// provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+    /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+    /// rule reference</a>.
     /// </summary>
     public partial class RuleTypeId
     {
@@ -82,7 +84,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The rule provider, such as the <c>DeploymentWindow</c> rule.
+        /// The rule provider, such as the <c>DeploymentWindow</c> rule. For a list of rule provider
+        /// names, see the rules listed in the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// rule reference</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

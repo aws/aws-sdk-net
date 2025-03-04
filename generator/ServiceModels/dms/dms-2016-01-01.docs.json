@@ -60,7 +60,7 @@
     "DescribeMetadataModelImports": "<p>Returns a paginated list of metadata model imports.</p>",
     "DescribeMigrationProjects": "<p>Returns a paginated list of migration projects for your account in the current region.</p>",
     "DescribeOrderableReplicationInstances": "<p>Returns information about the replication instance types that can be created in the specified region.</p>",
-    "DescribePendingMaintenanceActions": "<p>For internal use only</p>",
+    "DescribePendingMaintenanceActions": "<p>Returns a list of upcoming maintenance events for replication instances in your account in the current Region.</p>",
     "DescribeRecommendationLimitations": "<p>Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.</p>",
     "DescribeRecommendations": "<p>Returns a paginated list of target engine recommendations for your source databases.</p>",
     "DescribeRefreshSchemasStatus": "<p>Returns the status of the RefreshSchemas operation.</p>",
@@ -231,6 +231,7 @@
         "EventSubscription$Enabled": "<p>Boolean value that indicates if the event subscription is enabled.</p>",
         "ModifyReplicationInstanceMessage$ApplyImmediately": "<p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>",
         "ModifyReplicationInstanceMessage$AllowMajorVersionUpgrade": "<p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p> <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>",
+        "PremigrationAssessmentStatus$FailOnAssessmentFailure": "<p>A configurable setting you can set to <code>true</code> (the defualt setting) or <code>false</code>. Use this setting to to stop the replication from starting automatically if the assessment fails. This can help you evaluate the issue that is preventing the replication from running successfully.</p>",
         "ProvisionData$IsNewProvisioningAvailable": "<p>Whether the new provisioning is available to the replication.</p>",
         "ReplicationInstance$MultiAZ": "<p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>",
         "ReplicationInstance$AutoMinorVersionUpgrade": "<p>Boolean value indicating if minor version upgrades will be automatically applied to the instance.</p>",
@@ -1308,6 +1309,8 @@
         "CreateEndpointMessage$SslMode": "<p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>",
         "DocDbDataProviderSettings$SslMode": "<p>The SSL mode used to connect to the DocumentDB data provider. The default value is <code>none</code>.</p>",
         "Endpoint$SslMode": "<p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>",
+        "IbmDb2LuwDataProviderSettings$SslMode": "<p>The SSL mode used to connect to the DB2 LUW data provider. The default value is <code>none</code>. Valid Values: <code>none</code> and <code>verify-ca</code>.</p>",
+        "IbmDb2zOsDataProviderSettings$SslMode": "<p>The SSL mode used to connect to the DB2 for z/OS data provider. The default value is <code>none</code>. Valid Values: <code>none</code> and <code>verify-ca</code>.</p>",
         "MariaDbDataProviderSettings$SslMode": "<p>The SSL mode used to connect to the MariaDB data provider. The default value is <code>none</code>.</p>",
         "MicrosoftSqlServerDataProviderSettings$SslMode": "<p>The SSL mode used to connect to the Microsoft SQL Server data provider. The default value is <code>none</code>.</p>",
         "ModifyEndpointMessage$SslMode": "<p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>",
@@ -1646,6 +1649,18 @@
         "ModifyEndpointMessage$IBMDb2Settings": "<p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib\">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>"
       }
     },
+    "IbmDb2LuwDataProviderSettings": {
+      "base": "<p>Provides information about an IBM DB2 LUW data provider.</p>",
+      "refs": {
+        "DataProviderSettings$IbmDb2LuwSettings": "<p>Provides information that defines an IBM DB2 LUW data provider.</p>"
+      }
+    },
+    "IbmDb2zOsDataProviderSettings": {
+      "base": "<p>Provides information about an IBM DB2 for z/OS data provider.</p>",
+      "refs": {
+        "DataProviderSettings$IbmDb2zOsSettings": "<p>Provides information that defines an IBM DB2 for z/OS data provider.</p>"
+      }
+    },
     "ImportCertificateMessage": {
       "base": null,
       "refs": {
@@ -1717,6 +1732,7 @@
         "ReplicationTaskAssessmentRunResultStatistic$Error": "<p>The number of individual assessments that encountered a critical error and could not complete properly.</p>",
         "ReplicationTaskAssessmentRunResultStatistic$Warning": "<p>Indicates that the recent completed AssessmentRun triggered a warning.</p>",
         "ReplicationTaskAssessmentRunResultStatistic$Cancelled": "<p> The number of individual assessments that were cancelled during the assessment run. </p>",
+        "ReplicationTaskAssessmentRunResultStatistic$Skipped": "<p>The number of individual assessments that were skipped during the assessment run.</p>",
         "ReplicationTaskStats$FullLoadProgressPercent": "<p>The percent complete for the full load migration task.</p>",
         "ReplicationTaskStats$TablesLoaded": "<p>The number of tables loaded for this task.</p>",
         "ReplicationTaskStats$TablesLoading": "<p>The number of tables currently loading for this task.</p>",
@@ -1799,6 +1815,8 @@
         "IBMDb2Settings$LoadTimeout": "<p>The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>",
         "IBMDb2Settings$WriteBufferSize": "<p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS replication instance. The default value is 1024 (1 MB).</p>",
         "IBMDb2Settings$MaxFileSize": "<p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.</p>",
+        "IbmDb2LuwDataProviderSettings$Port": "<p>The port value for the DB2 LUW data provider.</p>",
+        "IbmDb2zOsDataProviderSettings$Port": "<p>The port value for the DB2 for z/OS data provider.</p>",
         "InventoryData$NumberOfDatabases": "<p>The number of databases in the Fleet Advisor collector inventory.</p>",
         "InventoryData$NumberOfSchemas": "<p>The number of schemas in the Fleet Advisor collector inventory.</p>",
         "KafkaSettings$MessageMaxBytes": "<p>The maximum size in bytes for records created on the endpoint The default is 1,000,000.</p>",
@@ -1964,9 +1982,9 @@
     "KerberosAuthenticationSettings": {
       "base": "<p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>",
       "refs": {
-        "CreateReplicationInstanceMessage$KerberosAuthenticationSettings": "<p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>",
-        "ModifyReplicationInstanceMessage$KerberosAuthenticationSettings": "<p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when modifying a replication instance.</p>",
-        "ReplicationInstance$KerberosAuthenticationSettings": "<p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when replicating an instance.</p>"
+        "CreateReplicationInstanceMessage$KerberosAuthenticationSettings": "<p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>",
+        "ModifyReplicationInstanceMessage$KerberosAuthenticationSettings": "<p>Specifies the settings required for kerberos authentication when modifying a replication instance.</p>",
+        "ReplicationInstance$KerberosAuthenticationSettings": "<p>Specifies the settings required for kerberos authentication when replicating an instance.</p>"
       }
     },
     "KeyList": {
@@ -2358,6 +2376,18 @@
         "DataProviderSettings$PostgreSqlSettings": null
       }
     },
+    "PremigrationAssessmentStatus": {
+      "base": "<p>The results returned in <code>describe-replications</code> to display the results of the premigration assessment from the replication configuration.</p>",
+      "refs": {
+        "PremigrationAssessmentStatusList$member": null
+      }
+    },
+    "PremigrationAssessmentStatusList": {
+      "base": null,
+      "refs": {
+        "Replication$PremigrationAssessmentStatuses": "<p>The status output of premigration assessment in describe-replications.</p>"
+      }
+    },
     "ProvisionData": {
       "base": "<p>Information about provisioning resources for an DMS serverless replication.</p>",
       "refs": {
@@ -2694,12 +2724,14 @@
     "ReplicationTaskAssessmentRunProgress": {
       "base": "<p>The progress values reported by the <code>AssessmentProgress</code> response element.</p>",
       "refs": {
+        "PremigrationAssessmentStatus$AssessmentProgress": null,
         "ReplicationTaskAssessmentRun$AssessmentProgress": "<p>Indication of the completion progress for the individual assessments specified to run.</p>"
       }
     },
     "ReplicationTaskAssessmentRunResultStatistic": {
       "base": "<p>The object containing the result statistics for a completed assessment run.</p>",
       "refs": {
+        "PremigrationAssessmentStatus$ResultStatistic": null,
         "ReplicationTaskAssessmentRun$ResultStatistic": "<p> Result statistics for a completed assessment run, showing aggregated statistics of IndividualAssessments for how many assessments were passed, failed, or encountered issues such as errors or warnings. </p>"
       }
     },
@@ -3091,7 +3123,7 @@
         "AccountQuota$AccountQuotaName": "<p>The name of the DMS quota for this Amazon Web Services account.</p>",
         "AddTagsToResourceMessage$ResourceArn": "<p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>",
         "ApplyPendingMaintenanceActionMessage$ReplicationInstanceArn": "<p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>",
-        "ApplyPendingMaintenanceActionMessage$ApplyAction": "<p>The pending maintenance action to apply to this resource.</p> <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>",
+        "ApplyPendingMaintenanceActionMessage$ApplyAction": "<p>The pending maintenance action to apply to this resource.</p> <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>, <code>os-patch</code> </p>",
         "ApplyPendingMaintenanceActionMessage$OptInType": "<p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p> <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li> </ul>",
         "ArnList$member": null,
         "AvailabilityZone$Name": "<p>The name of the Availability Zone.</p>",
@@ -3134,7 +3166,7 @@
         "CreateDataMigrationMessage$ServiceAccessRoleArn": "<p>The Amazon Resource Name (ARN) for the service access role that you want to use to create the data migration.</p>",
         "CreateDataProviderMessage$DataProviderName": "<p>A user-friendly name for the data provider.</p>",
         "CreateDataProviderMessage$Description": "<p>A user-friendly description of the data provider.</p>",
-        "CreateDataProviderMessage$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
+        "CreateDataProviderMessage$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
         "CreateEndpointMessage$EndpointIdentifier": "<p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>",
         "CreateEndpointMessage$EngineName": "<p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"mariadb\"</code>, <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"opensearch\"</code>, <code>\"redshift\"</code>, <code>\"s3\"</code>, <code>\"db2\"</code>, <code>\"db2-zos\"</code>, <code>\"azuredb\"</code>, <code>\"sybase\"</code>, <code>\"dynamodb\"</code>, <code>\"mongodb\"</code>, <code>\"kinesis\"</code>, <code>\"kafka\"</code>, <code>\"elasticsearch\"</code>, <code>\"docdb\"</code>, <code>\"sqlserver\"</code>, <code>\"neptune\"</code>, <code>\"babelfish\"</code>, <code>redshift-serverless</code>, <code>aurora-serverless</code>, <code>aurora-postgresql-serverless</code>, <code>gcp-mysql</code>, <code>azure-sql-managed-instance</code>, <code>redis</code>, <code>dms-transfer</code>.</p>",
         "CreateEndpointMessage$Username": "<p>The user name to be used to log in to the endpoint database.</p>",
@@ -3207,7 +3239,7 @@
         "DataProvider$DataProviderName": "<p>The name of the data provider.</p>",
         "DataProvider$DataProviderArn": "<p>The Amazon Resource Name (ARN) string that uniquely identifies the data provider.</p>",
         "DataProvider$Description": "<p>A description of the data provider. Descriptions can have up to 31 characters. A description can contain only ASCII letters, digits, and hyphens ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter.</p>",
-        "DataProvider$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
+        "DataProvider$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
         "DataProviderDescriptor$SecretsManagerSecretId": "<p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>",
         "DataProviderDescriptor$SecretsManagerAccessRoleArn": "<p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>",
         "DataProviderDescriptor$DataProviderName": "<p>The user-friendly name of the data provider.</p>",
@@ -3247,6 +3279,7 @@
         "DescribeAccountAttributesResponse$UniqueAccountIdentifier": "<p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note> <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p> </note>",
         "DescribeApplicableIndividualAssessmentsMessage$ReplicationTaskArn": "<p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>",
         "DescribeApplicableIndividualAssessmentsMessage$ReplicationInstanceArn": "<p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>",
+        "DescribeApplicableIndividualAssessmentsMessage$ReplicationConfigArn": "<p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>",
         "DescribeApplicableIndividualAssessmentsMessage$SourceEngineName": "<p>Name of a database engine that the specified replication instance supports as a source.</p>",
         "DescribeApplicableIndividualAssessmentsMessage$TargetEngineName": "<p>Name of a database engine that the specified replication instance supports as a target.</p>",
         "DescribeApplicableIndividualAssessmentsMessage$Marker": "<p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>",
@@ -3423,6 +3456,12 @@
         "IBMDb2Settings$Username": "<p>Endpoint connection user name.</p>",
         "IBMDb2Settings$SecretsManagerAccessRoleArn": "<p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note> <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager\">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> </note>",
         "IBMDb2Settings$SecretsManagerSecretId": "<p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>",
+        "IbmDb2LuwDataProviderSettings$ServerName": "<p>The name of the DB2 LUW server.</p>",
+        "IbmDb2LuwDataProviderSettings$DatabaseName": "<p>The database name on the DB2 LUW data provider.</p>",
+        "IbmDb2LuwDataProviderSettings$CertificateArn": "<p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>",
+        "IbmDb2zOsDataProviderSettings$ServerName": "<p>The name of the DB2 for z/OS server.</p>",
+        "IbmDb2zOsDataProviderSettings$DatabaseName": "<p>The database name on the DB2 for z/OS data provider.</p>",
+        "IbmDb2zOsDataProviderSettings$CertificateArn": "<p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>",
         "ImportCertificateMessage$CertificateIdentifier": "<p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>",
         "IncludeTestList$member": null,
         "IndividualAssessmentNameList$member": null,
@@ -3478,7 +3517,7 @@
         "ModifyDataProviderMessage$DataProviderIdentifier": "<p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>",
         "ModifyDataProviderMessage$DataProviderName": "<p>The name of the data provider.</p>",
         "ModifyDataProviderMessage$Description": "<p>A user-friendly description of the data provider.</p>",
-        "ModifyDataProviderMessage$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
+        "ModifyDataProviderMessage$Engine": "<p>The type of database engine for the data provider. Valid values include <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"sqlserver\"</code>, <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, <code>db2</code>, <code>db2-zos</code> and <code>docdb</code>. A value of <code>\"aurora\"</code> represents Amazon Aurora MySQL-Compatible Edition.</p>",
         "ModifyEndpointMessage$EndpointArn": "<p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>",
         "ModifyEndpointMessage$EndpointIdentifier": "<p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>",
         "ModifyEndpointMessage$EngineName": "<p>The database engine name. Valid values, depending on the EndpointType, include <code>\"mysql\"</code>, <code>\"oracle\"</code>, <code>\"postgres\"</code>, <code>\"mariadb\"</code>, <code>\"aurora\"</code>, <code>\"aurora-postgresql\"</code>, <code>\"redshift\"</code>, <code>\"s3\"</code>, <code>\"db2\"</code>, <code>\"db2-zos\"</code>, <code>\"azuredb\"</code>, <code>\"sybase\"</code>, <code>\"dynamodb\"</code>, <code>\"mongodb\"</code>, <code>\"kinesis\"</code>, <code>\"kafka\"</code>, <code>\"elasticsearch\"</code>, <code>\"documentdb\"</code>, <code>\"sqlserver\"</code>, <code>\"neptune\"</code>, and <code>\"babelfish\"</code>.</p>",
@@ -3591,6 +3630,13 @@
         "PostgreSqlDataProviderSettings$ServerName": "<p>The name of the PostgreSQL server.</p>",
         "PostgreSqlDataProviderSettings$DatabaseName": "<p>The database name on the PostgreSQL data provider.</p>",
         "PostgreSqlDataProviderSettings$CertificateArn": "<p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>",
+        "PremigrationAssessmentStatus$PremigrationAssessmentRunArn": "<p>The Amazon Resource Name (ARN) of this assessment run.</p>",
+        "PremigrationAssessmentStatus$Status": "<p>This describes the assessment run status. The status can be one of the following values:</p> <ul> <li> <p> <code>cancelling</code>: The assessment run was canceled.</p> </li> <li> <p> <code>deleting</code>: The assessment run was deleted.</p> </li> <li> <p> <code>failed</code>: At least one individual assessment completed with a failed status. </p> </li> <li> <p> <code>error-provisioning</code>: An internal error occurred while resources were provisioned (during the <code>provisioning</code> status).</p> </li> <li> <p> <code>error-executing</code> An internal error occurred while individual assessments ran (during the <code>running</code> status).</p> </li> <li> <p> <code>invalid state</code>: The assessment run is in an unknown state. </p> </li> <li> <p> <code>passed</code>: All individual assessments have completed and none have a failed status.</p> </li> <li> <p> <code>provisioning</code>: The resources required to run individual assessments are being provisioned. </p> </li> <li> <p> <code>running</code>: Individual assessments are being run. </p> </li> <li> <p> <code>starting</code>: The assessment run is starting, but resources are not yet being provisioned for individual assessments. </p> </li> <li> <p> <code>warning</code>: At least one individual assessment completed with a warning status. </p> </li> </ul>",
+        "PremigrationAssessmentStatus$LastFailureMessage": "<p>The last message generated by an individual assessment failure.</p>",
+        "PremigrationAssessmentStatus$ResultLocationBucket": "<p>The Amazon S3 bucket that Database Migration Service Serverless created to store the results of this assessment run.</p>",
+        "PremigrationAssessmentStatus$ResultLocationFolder": "<p>The folder within an Amazon S3 bucket where you want Database Migration Service to store the results of this assessment run.</p>",
+        "PremigrationAssessmentStatus$ResultEncryptionMode": "<p>The supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not provided, then the files are not encrypted at rest. For more information, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys\">Creating Amazon Web Services KMS keys to encrypt Amazon S3 target objects</a>.</p>",
+        "PremigrationAssessmentStatus$ResultKmsKeyArn": "<p>The ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p>",
         "ProvisionData$ProvisionState": "<p>The current provisioning state </p>",
         "ProvisionData$ReasonForNewProvisioningData": "<p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>",
         "PublicIpAddressList$member": null,
@@ -3700,7 +3746,7 @@
         "ReplicationTaskAssessmentResult$AssessmentResults": "<p> The task assessment results in JSON format. </p> <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a> in the request.</p>",
         "ReplicationTaskAssessmentRun$ReplicationTaskAssessmentRunArn": "<p>Amazon Resource Name (ARN) of this assessment run.</p>",
         "ReplicationTaskAssessmentRun$ReplicationTaskArn": "<p>ARN of the migration task associated with this premigration assessment run.</p>",
-        "ReplicationTaskAssessmentRun$Status": "<p>Assessment run status. </p> <p>This status can have one of the following values:</p> <ul> <li> <p> <code>\"cancelling\"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>\"deleting\"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>\"failed\"</code> – At least one individual assessment completed with a <code>failed</code> status.</p> </li> <li> <p> <code>\"error-provisioning\"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p> </li> <li> <p> <code>\"error-executing\"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p> </li> <li> <p> <code>\"invalid state\"</code> – The assessment run is in an unknown state.</p> </li> <li> <p> <code>\"passed\"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p> </li> <li> <p> <code>\"provisioning\"</code> – Resources required to run individual assessments are being provisioned.</p> </li> <li> <p> <code>\"running\"</code> – Individual assessments are being run.</p> </li> <li> <p> <code>\"starting\"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p> </li> <li> <p> <code>\"warning\"</code> – At least one individual assessment completed with a <code>warning</code> status.</p> </li> </ul>",
+        "ReplicationTaskAssessmentRun$Status": "<p>Assessment run status. </p> <p>This status can have one of the following values:</p> <ul> <li> <p> <code>\"cancelling\"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>\"deleting\"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p> </li> <li> <p> <code>\"failed\"</code> – At least one individual assessment completed with a <code>failed</code> status.</p> </li> <li> <p> <code>\"error-provisioning\"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p> </li> <li> <p> <code>\"error-executing\"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p> </li> <li> <p> <code>\"invalid state\"</code> – The assessment run is in an unknown state.</p> </li> <li> <p> <code>\"passed\"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p> </li> <li> <p> <code>\"provisioning\"</code> – Resources required to run individual assessments are being provisioned.</p> </li> <li> <p> <code>\"running\"</code> – Individual assessments are being run.</p> </li> <li> <p> <code>\"starting\"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p> </li> <li> <p> <code>\"warning\"</code> – At least one individual assessment completed with a <code>warning</code> status or all individual assessments were skipped (completed with a <code>skipped</code> status).</p> </li> </ul>",
         "ReplicationTaskAssessmentRun$LastFailureMessage": "<p>Last message generated by an individual assessment failure.</p>",
         "ReplicationTaskAssessmentRun$ServiceAccessRoleArn": "<p>ARN of the service role used to start the assessment run using the <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the <code>iam:PassRole</code> action.</p>",
         "ReplicationTaskAssessmentRun$ResultLocationBucket": "<p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>",
@@ -3711,7 +3757,7 @@
         "ReplicationTaskIndividualAssessment$ReplicationTaskIndividualAssessmentArn": "<p>Amazon Resource Name (ARN) of this individual assessment.</p>",
         "ReplicationTaskIndividualAssessment$ReplicationTaskAssessmentRunArn": "<p>ARN of the premigration assessment run that is created to run this individual assessment.</p>",
         "ReplicationTaskIndividualAssessment$IndividualAssessmentName": "<p>Name of this individual assessment.</p>",
-        "ReplicationTaskIndividualAssessment$Status": "<p>Individual assessment status.</p> <p>This status can have one of the following values:</p> <ul> <li> <p> <code>\"cancelled\"</code> </p> </li> <li> <p> <code>\"error\"</code> </p> </li> <li> <p> <code>\"failed\"</code> </p> </li> <li> <p> <code>\"passed\"</code> </p> </li> <li> <p> <code>\"pending\"</code> </p> </li> <li> <p> <code>\"running\"</code> </p> </li> </ul>",
+        "ReplicationTaskIndividualAssessment$Status": "<p>Individual assessment status.</p> <p>This status can have one of the following values:</p> <ul> <li> <p> <code>\"cancelled\"</code> </p> </li> <li> <p> <code>\"error\"</code> </p> </li> <li> <p> <code>\"failed\"</code> </p> </li> <li> <p> <code>\"passed\"</code> </p> </li> <li> <p> <code>\"pending\"</code> </p> </li> <li> <p> <code>\"skipped\"</code> </p> </li> <li> <p> <code>\"running\"</code> </p> </li> </ul>",
         "ResourcePendingMaintenanceActions$ResourceIdentifier": "<p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to. For information about creating an ARN, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html\"> Constructing an Amazon Resource Name (ARN) for DMS</a> in the DMS documentation.</p>",
         "RunFleetAdvisorLsaAnalysisResponse$LsaAnalysisId": "<p>The ID of the LSA analysis run.</p>",
         "RunFleetAdvisorLsaAnalysisResponse$Status": "<p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>",
@@ -3771,6 +3817,7 @@
         "StartRecommendationsRequestEntry$DatabaseId": "<p>The identifier of the source database.</p>",
         "StartReplicationMessage$ReplicationConfigArn": "<p>The Amazon Resource Name of the replication for which to start replication.</p>",
         "StartReplicationMessage$StartReplicationType": "<p>The replication type.</p> <p>When the replication type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the replication is <code>start-replication</code>. This option will start the replication.</p> <p>You can also use <a>ReloadTables</a> to reload specific tables that failed during replication instead of restarting the replication.</p> <p>The <code>resume-processing</code> option isn't applicable for a full-load replication, because you can't resume partially loaded tables during the full load phase.</p> <p>For a <code>full-load-and-cdc</code> replication, DMS migrates table data, and then applies data changes that occur on the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.</p>",
+        "StartReplicationMessage$PremigrationAssessmentSettings": "<p>User-defined settings for the premigration assessment. The possible values are:</p> <ul> <li> <p> <code>ResultLocationFolder</code>: The folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p> </li> <li> <p> <code>ResultEncryptionMode</code>: The supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not provided, then the files are not encrypted at rest. For more information, see <a href=\"https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys\">Creating Amazon Web Services KMS keys to encrypt Amazon S3 target objects</a>.</p> </li> <li> <p> <code>ResultKmsKeyArn</code>: The ARN of a customer KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p> </li> <li> <p> <code>IncludeOnly</code>: A space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p> </li> <li> <p> <code>Exclude</code>: A space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p> </li> <li> <p> <code>FailOnAssessmentFailure</code>: A configurable setting you can set to <code>true</code> (the default setting) or <code>false</code>. Use this setting to to stop the replication from starting automatically if the assessment fails. This can help you evaluate the issue that is preventing the replication from running successfully.</p> </li> </ul>",
         "StartReplicationMessage$CdcStartPosition": "<p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p> <p>The value can be in date, checkpoint, or LSN/SCN format.</p>",
         "StartReplicationMessage$CdcStopPosition": "<p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>",
         "StartReplicationTaskAssessmentMessage$ReplicationTaskArn": "<p> The Amazon Resource Name (ARN) of the replication task. </p>",
@@ -3893,6 +3940,7 @@
         "PendingMaintenanceAction$AutoAppliedAfterDate": "<p>The date of the maintenance window when the action is to be applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>",
         "PendingMaintenanceAction$ForcedApplyDate": "<p>The date when the maintenance action will be automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>",
         "PendingMaintenanceAction$CurrentApplyDate": "<p>The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>",
+        "PremigrationAssessmentStatus$PremigrationAssessmentRunCreationDate": "<p>The date which the assessment run was created.</p>",
         "ProvisionData$DateProvisioned": "<p>The timestamp when DMS provisioned replication resources.</p>",
         "ProvisionData$DateNewProvisioningDataAvailable": "<p>The timestamp when provisioning became available.</p>",
         "RefreshSchemasStatus$LastRefreshDate": "<p>The date the schema was last refreshed.</p>",

@@ -285,7 +285,7 @@ namespace Amazon.CodePipeline
         ///
         /// </summary>
         public AmazonCodePipelineClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodePipelineConfig()) { }
+            : base(new AmazonCodePipelineConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodePipelineClient with the credentials loaded from the application's
@@ -304,7 +304,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodePipelineClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodePipelineConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodePipelineConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodePipelineClient with the credentials loaded from the application's
@@ -323,7 +323,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="config">The AmazonCodePipelineClient Configuration Object</param>
         public AmazonCodePipelineClient(AmazonCodePipelineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -448,14 +448,6 @@ namespace Amazon.CodePipeline
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -463,7 +455,9 @@ namespace Amazon.CodePipeline
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodePipelineEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodePipelineAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -1875,7 +1869,8 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
-        /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+        /// do stage conditions work?</a>.For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
         /// rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
@@ -2013,7 +2008,10 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Used to override a stage condition.
+        /// Used to override a stage condition. For more information about conditions, see <a
+        /// href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+        /// do stage conditions work?</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition service method.</param>
         /// <param name="cancellationToken">

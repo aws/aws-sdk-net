@@ -148,7 +148,9 @@ namespace Amazon.ACMPCA.Model
     public partial class CrlConfiguration
     {
         private CrlDistributionPointExtensionConfiguration _crlDistributionPointExtensionConfiguration;
+        private CrlType _crlType;
         private string _customCname;
+        private string _customPath;
         private bool? _enabled;
         private int? _expirationInDays;
         private string _s3BucketName;
@@ -172,6 +174,48 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCrlDistributionPointExtensionConfiguration()
         {
             return this._crlDistributionPointExtensionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrlType. 
+        /// <para>
+        /// Specifies whether to create a complete or partitioned CRL. This setting determines
+        /// the maximum number of certificates that the certificate authority can issue and revoke.
+        /// For more information, see <a href="privateca/latest/userguide/pca.html#limits_pca">Amazon
+        /// Web Services Private CA quotas</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COMPLETE</c> - The default setting. Amazon Web Services Private CA maintains a
+        /// single CRL ﬁle for all unexpired certiﬁcates issued by a CA that have been revoked
+        /// for any reason. Each certiﬁcate that Amazon Web Services Private CA issues is bound
+        /// to a speciﬁc CRL through its CRL distribution point (CDP) extension, deﬁned in <a
+        /// href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.9"> RFC 5280</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PARTITIONED</c> - Compared to complete CRLs, partitioned CRLs dramatically increase
+        /// the number of certiﬁcates your private CA can issue. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  When using partitioned CRLs, you must validate that the CRL's associated issuing
+        /// distribution point (IDP) URI matches the certiﬁcate's CDP URI to ensure the right
+        /// CRL has been fetched. Amazon Web Services Private CA marks the IDP extension as critical,
+        /// which your client must be able to process. 
+        /// </para>
+        ///  </important> </li> </ul>
+        /// </summary>
+        public CrlType CrlType
+        {
+            get { return this._crlType; }
+            set { this._crlType = value; }
+        }
+
+        // Check to see if CrlType property is set
+        internal bool IsSetCrlType()
+        {
+            return this._crlType != null;
         }
 
         /// <summary>
@@ -200,6 +244,26 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCustomCname()
         {
             return this._customCname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPath. 
+        /// <para>
+        /// Designates a custom ﬁle path in S3 for CRL(s). For example, <c>http://&lt;CustomName&gt;/
+        /// &lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=253)]
+        public string CustomPath
+        {
+            get { return this._customPath; }
+            set { this._customPath = value; }
+        }
+
+        // Check to see if CustomPath property is set
+        internal bool IsSetCustomPath()
+        {
+            return this._customPath != null;
         }
 
         /// <summary>

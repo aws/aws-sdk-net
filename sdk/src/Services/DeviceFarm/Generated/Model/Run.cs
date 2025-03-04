@@ -44,6 +44,7 @@ namespace Amazon.DeviceFarm.Model
         private CustomerArtifactPaths _customerArtifactPaths;
         private DeviceMinutes _deviceMinutes;
         private string _devicePoolArn;
+        private DeviceProxy _deviceProxy;
         private DeviceSelectionResult _deviceSelectionResult;
         private int? _eventCount;
         private int? _jobTimeoutMinutes;
@@ -238,6 +239,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceProxy. 
+        /// <para>
+        /// The device proxy configured for the devices in the run.
+        /// </para>
+        /// </summary>
+        public DeviceProxy DeviceProxy
+        {
+            get { return this._deviceProxy; }
+            set { this._deviceProxy = value; }
+        }
+
+        // Check to see if DeviceProxy property is set
+        internal bool IsSetDeviceProxy()
+        {
+            return this._deviceProxy != null;
         }
 
         /// <summary>

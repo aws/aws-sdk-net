@@ -45,6 +45,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Paginator for ListInvocations operation
+        ///</summary>
+        public IListInvocationsPaginator ListInvocations(ListInvocationsRequest request) 
+        {
+            return new ListInvocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInvocationSteps operation
+        ///</summary>
+        public IListInvocationStepsPaginator ListInvocationSteps(ListInvocationStepsRequest request) 
+        {
+            return new ListInvocationStepsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for Rerank operation
         ///</summary>
         public IRerankPaginator Rerank(RerankRequest request) 

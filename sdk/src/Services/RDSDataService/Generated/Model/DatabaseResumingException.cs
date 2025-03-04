@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// A request was canceled because the Aurora Serverless v2 DB instance was in a paused
-    /// state. The Data API request automatically causes the DB instance to begin resuming.
-    /// Wait a few seconds and try again.
+    /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+    /// Data API request automatically resumes the DB instance. Wait a few seconds and try
+    /// again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

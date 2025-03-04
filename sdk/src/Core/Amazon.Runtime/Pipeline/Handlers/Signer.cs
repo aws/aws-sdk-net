@@ -102,15 +102,16 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContext">The request context.</param>
         public static void SignRequest(IRequestContext requestContext)
         {
-            ImmutableCredentials immutableCredentials = requestContext.ImmutableCredentials;
-
-            // credentials would be null in the case of anonymous users getting public resources from S3
-            if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            if (requestContext.Identity == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
+                var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
+
                 if (immutableCredentials?.UseToken == true && 
                     !(requestContext.Signer is NullSigner) && 
                     !(requestContext.Signer is BearerTokenSigner))
@@ -128,7 +129,13 @@ namespace Amazon.Runtime.Internal
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                requestContext.Signer.Sign(requestContext.Request, requestContext.ClientConfig, requestContext.Metrics, immutableCredentials);
+
+                requestContext.Signer.Sign(
+                    requestContext.Request,
+                    requestContext.ClientConfig,
+                    requestContext.Metrics,
+                    requestContext.Identity
+                );
             }
         }
 
@@ -139,15 +146,17 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContext">The request context.</param>
         private static async Task SignRequestAsync(IRequestContext requestContext)
         {
-            ImmutableCredentials immutableCredentials = requestContext.ImmutableCredentials;
-
-            // credentials would be null in the case of anonymous users getting public resources from S3
-            if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            if (requestContext.Identity == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
+                var awsCredentials = requestContext.Identity as AWSCredentials;
+                var immutableCredentials = awsCredentials != null ? await awsCredentials.GetCredentialsAsync().ConfigureAwait(false) : null;
+
                 if (immutableCredentials?.UseToken == true &&
                     !(requestContext.Signer is NullSigner) &&
                     !(requestContext.Signer is BearerTokenSigner))
@@ -168,10 +177,10 @@ namespace Amazon.Runtime.Internal
 
                 await requestContext.Signer
                     .SignAsync(
-                        requestContext.Request, 
-                        requestContext.ClientConfig, 
-                        requestContext.Metrics, 
-                        immutableCredentials)
+                        requestContext.Request,
+                        requestContext.ClientConfig,
+                        requestContext.Metrics,
+                        requestContext.Identity)
                     .ConfigureAwait(false);
             }
         }

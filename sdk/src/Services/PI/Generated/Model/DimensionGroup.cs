@@ -96,6 +96,36 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <c>db.blocking_sql.id</c> - The ID for each of the SQL queries blocking the most
+        /// DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_sql.sql</c> - The SQL text for each of the SQL queries blocking the
+        /// most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_session.id</c> - The ID for each of the sessions blocking the most
+        /// DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_object.id</c> - The ID for each of the object resources acquired by
+        /// other sessions that are blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_object.type</c> - The object type for each of the object resources
+        /// acquired by other sessions that are blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_object.value</c> - The value for each of the object resources acquired
+        /// by other sessions that are blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db.host.id</c> - The host ID of the connected client (all engines).
         /// </para>
         ///  </li> <li> 
@@ -306,7 +336,24 @@ namespace Amazon.PI.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <c>db.blocking_sql</c> - The SQL queries blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_session</c> - The sessions blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.blocking_object</c> - The object resources acquired by other sessions that
+        /// are blocking the most DB load.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db.host</c> - The host name of the connected client (all engines).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.plans</c> - The execution plans for the query (only Aurora PostgreSQL).
         /// </para>
         ///  </li> <li> 
         /// <para>

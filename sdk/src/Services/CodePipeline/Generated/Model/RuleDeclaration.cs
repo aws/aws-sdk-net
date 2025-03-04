@@ -34,7 +34,8 @@ namespace Amazon.CodePipeline.Model
     /// example would be creating a new rule for an entry condition, such as a rule that checks
     /// for a test result before allowing the run to enter the deployment stage. For more
     /// information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
-    /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+    /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+    /// do stage conditions work?</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
     /// rule reference</a>.
     /// </summary>
     public partial class RuleDeclaration

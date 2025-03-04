@@ -83,7 +83,7 @@ namespace Amazon.Scheduler
         ///
         /// </summary>
         public AmazonSchedulerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSchedulerConfig()) { }
+            : base(new AmazonSchedulerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSchedulerClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Scheduler
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSchedulerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSchedulerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSchedulerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSchedulerClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.Scheduler
         /// </summary>
         /// <param name="config">The AmazonSchedulerClient Configuration Object</param>
         public AmazonSchedulerClient(AmazonSchedulerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSchedulerClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.Scheduler
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.Scheduler
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSchedulerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSchedulerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

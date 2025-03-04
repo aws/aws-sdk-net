@@ -35,6 +35,14 @@ namespace Amazon.OAM
         /// </summary>
         public static readonly ResourceType AWSApplicationInsightsApplication = new ResourceType("AWS::ApplicationInsights::Application");
         /// <summary>
+        /// Constant AWSApplicationSignalsService for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSApplicationSignalsService = new ResourceType("AWS::ApplicationSignals::Service");
+        /// <summary>
+        /// Constant AWSApplicationSignalsServiceLevelObjective for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSApplicationSignalsServiceLevelObjective = new ResourceType("AWS::ApplicationSignals::ServiceLevelObjective");
+        /// <summary>
         /// Constant AWSCloudWatchMetric for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudWatchMetric = new ResourceType("AWS::CloudWatch::Metric");

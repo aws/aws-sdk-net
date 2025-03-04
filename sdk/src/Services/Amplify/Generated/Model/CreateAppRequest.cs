@@ -41,6 +41,7 @@ namespace Amazon.Amplify.Model
         private string _basicAuthCredentials;
         private string _buildSpec;
         private CacheConfig _cacheConfig;
+        private string _computeRoleArn;
         private string _customHeaders;
         private List<CustomRule> _customRules = AWSConfigs.InitializeCollections ? new List<CustomRule>() : null;
         private string _description;
@@ -186,6 +187,29 @@ namespace Amazon.Amplify.Model
         internal bool IsSetCacheConfig()
         {
             return this._cacheConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute
+        /// role allows the Amplify Hosting compute service to securely access specific Amazon
+        /// Web Services resources based on the role's permissions. For more information about
+        /// the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding
+        /// an SSR Compute role</a> in the <i>Amplify User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string ComputeRoleArn
+        {
+            get { return this._computeRoleArn; }
+            set { this._computeRoleArn = value; }
+        }
+
+        // Check to see if ComputeRoleArn property is set
+        internal bool IsSetComputeRoleArn()
+        {
+            return this._computeRoleArn != null;
         }
 
         /// <summary>
@@ -345,7 +369,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property IamServiceRoleArn. 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) service role for an Amplify app. 
+        /// The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

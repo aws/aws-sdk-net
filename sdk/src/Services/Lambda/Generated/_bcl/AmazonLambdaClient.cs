@@ -176,7 +176,7 @@ namespace Amazon.Lambda
         ///
         /// </summary>
         public AmazonLambdaClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLambdaConfig()) { }
+            : base(new AmazonLambdaConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLambdaClient with the credentials loaded from the application's
@@ -195,7 +195,7 @@ namespace Amazon.Lambda
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLambdaClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLambdaConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLambdaConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLambdaClient with the credentials loaded from the application's
@@ -214,7 +214,7 @@ namespace Amazon.Lambda
         /// </summary>
         /// <param name="config">The AmazonLambdaClient Configuration Object</param>
         public AmazonLambdaClient(AmazonLambdaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLambdaClient with AWS Credentials
@@ -317,15 +317,7 @@ namespace Amazon.Lambda
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -335,7 +327,9 @@ namespace Amazon.Lambda
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLambdaEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLambdaAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

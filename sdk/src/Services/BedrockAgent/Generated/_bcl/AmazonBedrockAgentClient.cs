@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgent
         ///
         /// </summary>
         public AmazonBedrockAgentClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockAgentConfig()) { }
+            : base(new AmazonBedrockAgentConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.BedrockAgent
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBedrockAgentClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockAgentConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBedrockAgentConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.BedrockAgent
         /// </summary>
         /// <param name="config">The AmazonBedrockAgentClient Configuration Object</param>
         public AmazonBedrockAgentClient(AmazonBedrockAgentConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBedrockAgentClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.BedrockAgent
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.BedrockAgent
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockAgentEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockAgentAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -2265,8 +2259,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Deletes documents from a data source and syncs the changes to the knowledge base that
-        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments service method.</param>
         /// 
@@ -2303,8 +2297,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Deletes documents from a data source and syncs the changes to the knowledge base that
-        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments service method.</param>
         /// <param name="cancellationToken">
@@ -3477,8 +3471,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Retrieves specific documents from a data source that is connected to a knowledge base.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments service method.</param>
         /// 
@@ -3515,8 +3509,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Retrieves specific documents from a data source that is connected to a knowledge base.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments service method.</param>
         /// <param name="cancellationToken">
@@ -3643,8 +3637,8 @@ namespace Amazon.BedrockAgent
         /// Ingests documents directly into the knowledge base that is connected to the data source.
         /// The <c>dataSourceType</c> specified in the content for each document must match the
         /// type of the data source that you specify in the header. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments service method.</param>
         /// 
@@ -3683,8 +3677,8 @@ namespace Amazon.BedrockAgent
         /// Ingests documents directly into the knowledge base that is connected to the data source.
         /// The <c>dataSourceType</c> specified in the content for each document must match the
         /// type of the data source that you specify in the header. For more information, see
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments service method.</param>
         /// <param name="cancellationToken">
@@ -4523,8 +4517,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Retrieves all the documents contained in a data source that is connected to a knowledge
-        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments service method.</param>
         /// 
@@ -4561,8 +4555,8 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Retrieves all the documents contained in a data source that is connected to a knowledge
-        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
-        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest
+        /// changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments service method.</param>
         /// <param name="cancellationToken">

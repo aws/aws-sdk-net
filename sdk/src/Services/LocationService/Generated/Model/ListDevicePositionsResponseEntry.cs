@@ -102,7 +102,7 @@ namespace Amazon.LocationService.Model
         /// The properties associated with the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4)]
         public Dictionary<string, string> PositionProperties
         {
             get { return this._positionProperties; }

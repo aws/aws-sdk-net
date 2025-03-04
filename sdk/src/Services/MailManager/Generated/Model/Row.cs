@@ -47,6 +47,7 @@ namespace Amazon.MailManager.Model
         private DateTime? _receivedTimestamp;
         private string _senderHostname;
         private string _senderIpAddress;
+        private string _sourceArn;
         private string _subject;
         private string _to;
         private string _xMailer;
@@ -271,10 +272,17 @@ namespace Amazon.MailManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderIpAddress. 
+        /// Gets and sets the property SenderIpAddress. <ul> <li> 
         /// <para>
-        /// The IP address of the host from which the email was received.
+        /// Mail archived with Mail Manager: The IP address of the client that connects to the
+        /// ingress endpoint.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Mail sent through a configuration set with the archiving option enabled: The IP address
+        /// of the client that makes the SendEmail API call.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string SenderIpAddress
@@ -287,6 +295,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetSenderIpAddress()
         {
             return this._senderIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// Specifies the archived email source, identified by either a Rule Set's ARN with an
+        /// Archive action, or a Configuration Set's Archive ARN.
+        /// </para>
+        /// </summary>
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
         }
 
         /// <summary>

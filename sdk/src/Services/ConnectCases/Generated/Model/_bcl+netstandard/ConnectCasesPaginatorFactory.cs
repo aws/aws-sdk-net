@@ -53,6 +53,14 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Paginator for ListCaseRules operation
+        ///</summary>
+        public IListCaseRulesPaginator ListCaseRules(ListCaseRulesRequest request) 
+        {
+            return new ListCaseRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCasesForContact operation
         ///</summary>
         public IListCasesForContactPaginator ListCasesForContact(ListCasesForContactRequest request) 

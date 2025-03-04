@@ -1406,6 +1406,7 @@
         "endOfStandardSupportDate":{"shape":"Timestamp"},
         "endOfExtendedSupportDate":{"shape":"Timestamp"},
         "status":{"shape":"ClusterVersionStatus"},
+        "versionStatus":{"shape":"VersionStatus"},
         "kubernetesPatchVersion":{"shape":"String"}
       }
     },
@@ -2110,8 +2111,16 @@
         },
         "status":{
           "shape":"ClusterVersionStatus",
+          "deprecated":true,
+          "deprecatedMessage":"status has been replaced by versionStatus",
+          "deprecatedSince":"2025-02-15",
           "location":"querystring",
           "locationName":"status"
+        },
+        "versionStatus":{
+          "shape":"VersionStatus",
+          "location":"querystring",
+          "locationName":"versionStatus"
         }
       }
     },
@@ -2364,6 +2373,7 @@
         "status":{"shape":"String"},
         "autoRenew":{"shape":"Boolean"},
         "licenseArns":{"shape":"StringList"},
+        "licenses":{"shape":"LicenseList"},
         "tags":{"shape":"TagMap"}
       }
     },
@@ -2714,6 +2724,17 @@
         "version":{"shape":"String"},
         "id":{"shape":"String"}
       }
+    },
+    "License":{
+      "type":"structure",
+      "members":{
+        "id":{"shape":"String"},
+        "token":{"shape":"String"}
+      }
+    },
+    "LicenseList":{
+      "type":"list",
+      "member":{"shape":"License"}
     },
     "ListAccessEntriesRequest":{
       "type":"structure",
@@ -4058,6 +4079,14 @@
       "members":{
         "supportType":{"shape":"SupportType"}
       }
+    },
+    "VersionStatus":{
+      "type":"string",
+      "enum":[
+        "UNSUPPORTED",
+        "STANDARD_SUPPORT",
+        "EXTENDED_SUPPORT"
+      ]
     },
     "VpcConfigRequest":{
       "type":"structure",

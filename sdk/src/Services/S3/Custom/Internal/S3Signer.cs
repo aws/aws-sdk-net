@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Util;
+using Amazon.Runtime.Identity;
 
 #pragma warning disable 1591
 
@@ -43,14 +44,9 @@ namespace Amazon.S3.Internal
             get { return _s3Signer.Protocol; }
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
-            Sign(request, clientConfig, metrics, new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, ""));
-        }
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
-        {
-            _s3Signer.Sign(request, clientConfig, metrics, credentials);
+            _s3Signer.Sign(request, clientConfig, metrics, identity);
         }
 
         internal static void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)

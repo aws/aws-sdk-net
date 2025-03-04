@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-    /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
+    /// The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Use
+    /// instance metadata to manage your EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateInstanceMetadataOptionsRequest
     {
@@ -156,8 +156,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Set to <c>enabled</c> to allow access to instance tags from the instance metadata.
         /// Set to <c>disabled</c> to turn off access to instance tags from the instance metadata.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-        /// with instance tags using the instance metadata</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View
+        /// tags for your EC2 instances using instance metadata</a>.
         /// </para>
         ///  
         /// <para>

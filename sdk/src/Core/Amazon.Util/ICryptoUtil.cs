@@ -34,5 +34,6 @@ namespace Amazon.Util
 
         string ComputeCRC32Hash(byte[] data);
         string ComputeCRC32CHash(byte[] data);
+        string ComputeCRC64NVMEHash(byte[] data);
     }
 }

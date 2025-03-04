@@ -73,7 +73,7 @@ namespace Amazon.CloudDirectory
         ///
         /// </summary>
         public AmazonCloudDirectoryClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudDirectoryConfig()) { }
+            : base(new AmazonCloudDirectoryConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudDirectoryClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.CloudDirectory
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudDirectoryClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudDirectoryConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudDirectoryConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudDirectoryClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.CloudDirectory
         /// </summary>
         /// <param name="config">The AmazonCloudDirectoryClient Configuration Object</param>
         public AmazonCloudDirectoryClient(AmazonCloudDirectoryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.CloudDirectory
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -251,7 +243,9 @@ namespace Amazon.CloudDirectory
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudDirectoryEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudDirectoryAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
