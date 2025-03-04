@@ -31,14 +31,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssignPrivateIpAddresses operation.
-    /// Assigns one or more secondary private IP addresses to the specified network interface.
+    /// Assigns the specified secondary private IP addresses to the specified network interface.
     /// 
     ///  
     /// <para>
-    /// You can specify one or more specific secondary IP addresses, or you can specify the
-    /// number of secondary IP addresses to be automatically assigned within the subnet's
-    /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
-    /// varies by instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// You can specify specific secondary IP addresses, or you can specify the number of
+    /// secondary IP addresses to be automatically assigned from the subnet's CIDR block range.
+    /// The number of secondary IP addresses that you can assign to an instance varies by
+    /// instance type. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
     /// IP Addresses</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
@@ -96,8 +96,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
         /// The number of IPv4 prefixes that Amazon Web Services automatically assigns to the
-        /// network interface. You cannot use this option if you use the <c>Ipv4 Prefixes</c>
-        /// option.
+        /// network interface. You can't use this option if you use the <c>Ipv4 Prefixes</c> option.
         /// </para>
         /// </summary>
         public int? Ipv4PrefixCount
@@ -115,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or more IPv4 prefixes assigned to the network interface. You cannot use this option
+        /// One or more IPv4 prefixes assigned to the network interface. You can't use this option
         /// if you use the <c>Ipv4PrefixCount</c> option.
         /// </para>
         /// </summary>

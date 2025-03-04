@@ -63,7 +63,7 @@ namespace Amazon.ApiGatewayV2
         ///
         /// </summary>
         public AmazonApiGatewayV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApiGatewayV2Config()) { }
+            : base(new AmazonApiGatewayV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayV2Client with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.ApiGatewayV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonApiGatewayV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonApiGatewayV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonApiGatewayV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayV2Client with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.ApiGatewayV2
         /// </summary>
         /// <param name="config">The AmazonApiGatewayV2Client Configuration Object</param>
         public AmazonApiGatewayV2Client(AmazonApiGatewayV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonApiGatewayV2Client with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.ApiGatewayV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApiGatewayV2EndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonApiGatewayV2AuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

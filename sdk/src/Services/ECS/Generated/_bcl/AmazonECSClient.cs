@@ -101,7 +101,7 @@ namespace Amazon.ECS
         ///
         /// </summary>
         public AmazonECSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECSConfig()) { }
+            : base(new AmazonECSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonECSClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.ECS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonECSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECSConfig{RegionEndpoint = region}) { }
+            : base(new AmazonECSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonECSClient with the credentials loaded from the application's
@@ -139,7 +139,7 @@ namespace Amazon.ECS
         /// </summary>
         /// <param name="config">The AmazonECSClient Configuration Object</param>
         public AmazonECSClient(AmazonECSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonECSClient with AWS Credentials
@@ -242,15 +242,7 @@ namespace Amazon.ECS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -260,7 +252,9 @@ namespace Amazon.ECS
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECSEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECSAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -5297,7 +5291,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web Services Support</a>.
+        /// Amazon Web ServicesSupport</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -5438,7 +5432,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web Services Support</a>.
+        /// Amazon Web ServicesSupport</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using

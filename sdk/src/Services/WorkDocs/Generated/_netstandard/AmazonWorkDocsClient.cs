@@ -127,7 +127,7 @@ namespace Amazon.WorkDocs
         ///
         /// </summary>
         public AmazonWorkDocsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkDocsConfig()) { }
+            : base(new AmazonWorkDocsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWorkDocsClient with the credentials loaded from the application's
@@ -146,7 +146,7 @@ namespace Amazon.WorkDocs
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWorkDocsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkDocsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWorkDocsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWorkDocsClient with the credentials loaded from the application's
@@ -165,7 +165,7 @@ namespace Amazon.WorkDocs
         /// </summary>
         /// <param name="config">The AmazonWorkDocsClient Configuration Object</param>
         public AmazonWorkDocsClient(AmazonWorkDocsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -290,14 +290,6 @@ namespace Amazon.WorkDocs
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -305,7 +297,9 @@ namespace Amazon.WorkDocs
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkDocsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkDocsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

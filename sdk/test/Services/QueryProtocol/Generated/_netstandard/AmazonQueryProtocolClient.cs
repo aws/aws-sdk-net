@@ -64,7 +64,7 @@ namespace Amazon.QueryProtocol
         ///
         /// </summary>
         public AmazonQueryProtocolClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQueryProtocolConfig()) { }
+            : base(new AmazonQueryProtocolConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQueryProtocolClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.QueryProtocol
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQueryProtocolClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQueryProtocolConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQueryProtocolConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQueryProtocolClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.QueryProtocol
         /// </summary>
         /// <param name="config">The AmazonQueryProtocolClient Configuration Object</param>
         public AmazonQueryProtocolClient(AmazonQueryProtocolConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.QueryProtocol
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQueryProtocolAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

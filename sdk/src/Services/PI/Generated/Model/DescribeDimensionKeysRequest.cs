@@ -63,7 +63,10 @@ namespace Amazon.PI.Model
         /// group in the <c>GroupBy</c> parameter is <c>db.sql_tokenized</c>, you can specify
         /// per-SQL metrics to get the values for the top <c>N</c> SQL digests. The response syntax
         /// is as follows: <c>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</c>.
-        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported statistic function is <c>.avg</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30)]

@@ -75,7 +75,7 @@ namespace Amazon.Panorama
         ///
         /// </summary>
         public AmazonPanoramaClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPanoramaConfig()) { }
+            : base(new AmazonPanoramaConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPanoramaClient with the credentials loaded from the application's
@@ -94,7 +94,7 @@ namespace Amazon.Panorama
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPanoramaClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPanoramaConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPanoramaConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPanoramaClient with the credentials loaded from the application's
@@ -113,7 +113,7 @@ namespace Amazon.Panorama
         /// </summary>
         /// <param name="config">The AmazonPanoramaClient Configuration Object</param>
         public AmazonPanoramaClient(AmazonPanoramaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -238,14 +238,6 @@ namespace Amazon.Panorama
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -253,7 +245,9 @@ namespace Amazon.Panorama
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPanoramaEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPanoramaAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

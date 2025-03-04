@@ -217,7 +217,7 @@ namespace Amazon.Ivschat
         ///
         /// </summary>
         public AmazonIvschatClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIvschatConfig()) { }
+            : base(new AmazonIvschatConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIvschatClient with the credentials loaded from the application's
@@ -236,7 +236,7 @@ namespace Amazon.Ivschat
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIvschatClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIvschatConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIvschatConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIvschatClient with the credentials loaded from the application's
@@ -255,7 +255,7 @@ namespace Amazon.Ivschat
         /// </summary>
         /// <param name="config">The AmazonIvschatClient Configuration Object</param>
         public AmazonIvschatClient(AmazonIvschatConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -380,14 +380,6 @@ namespace Amazon.Ivschat
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -395,7 +387,9 @@ namespace Amazon.Ivschat
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIvschatEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIvschatAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

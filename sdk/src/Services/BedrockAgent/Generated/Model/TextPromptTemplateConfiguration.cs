@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgent.Model
         /// An array of the variables in the prompt template.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=10)]
+        [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public List<PromptInputVariable> InputVariables
         {
             get { return this._inputVariables; }
@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgent.Model
         /// The message for the prompt.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text
         {
             get { return this._text; }

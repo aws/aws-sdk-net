@@ -113,7 +113,7 @@ namespace Amazon.Redshift
         ///
         /// </summary>
         public AmazonRedshiftClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftConfig()) { }
+            : base(new AmazonRedshiftConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftClient with the credentials loaded from the application's
@@ -132,7 +132,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRedshiftClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRedshiftConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftClient with the credentials loaded from the application's
@@ -151,7 +151,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// <param name="config">The AmazonRedshiftClient Configuration Object</param>
         public AmazonRedshiftClient(AmazonRedshiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftClient with AWS Credentials
@@ -254,15 +254,7 @@ namespace Amazon.Redshift
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -272,7 +264,9 @@ namespace Amazon.Redshift
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

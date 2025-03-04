@@ -90,7 +90,7 @@ namespace Amazon.EMRServerless
         ///
         /// </summary>
         public AmazonEMRServerlessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEMRServerlessConfig()) { }
+            : base(new AmazonEMRServerlessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEMRServerlessClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.EMRServerless
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEMRServerlessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEMRServerlessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEMRServerlessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEMRServerlessClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.EMRServerless
         /// </summary>
         /// <param name="config">The AmazonEMRServerlessClient Configuration Object</param>
         public AmazonEMRServerlessClient(AmazonEMRServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.EMRServerless
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -268,7 +260,9 @@ namespace Amazon.EMRServerless
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRServerlessEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRServerlessAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

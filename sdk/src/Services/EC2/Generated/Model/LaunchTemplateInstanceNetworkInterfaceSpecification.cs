@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// Use this option when you launch an instance in a Wavelength Zone and want to associate
         /// a Carrier IP address with the network interface. For more information about Carrier
         /// IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
-        /// IP addresses</a> in the <i>Wavelength Developer Guide</i>.
+        /// IP address</a> in the <i>Wavelength Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool? AssociateCarrierIpAddress

@@ -98,7 +98,7 @@ namespace Amazon.B2bi
         ///
         /// </summary>
         public AmazonB2biClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonB2biConfig()) { }
+            : base(new AmazonB2biConfig()) { }
 
         /// <summary>
         /// Constructs AmazonB2biClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.B2bi
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonB2biClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonB2biConfig{RegionEndpoint = region}) { }
+            : base(new AmazonB2biConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonB2biClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.B2bi
         /// </summary>
         /// <param name="config">The AmazonB2biClient Configuration Object</param>
         public AmazonB2biClient(AmazonB2biConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonB2biClient with AWS Credentials
@@ -239,15 +239,7 @@ namespace Amazon.B2bi
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -257,7 +249,9 @@ namespace Amazon.B2bi
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonB2biEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonB2biAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

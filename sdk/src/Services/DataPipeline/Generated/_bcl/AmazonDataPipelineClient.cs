@@ -102,7 +102,7 @@ namespace Amazon.DataPipeline
         ///
         /// </summary>
         public AmazonDataPipelineClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig()) { }
+            : base(new AmazonDataPipelineConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDataPipelineClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDataPipelineConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with the credentials loaded from the application's
@@ -140,7 +140,7 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// <param name="config">The AmazonDataPipelineClient Configuration Object</param>
         public AmazonDataPipelineClient(AmazonDataPipelineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with AWS Credentials
@@ -243,15 +243,7 @@ namespace Amazon.DataPipeline
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -261,7 +253,9 @@ namespace Amazon.DataPipeline
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataPipelineEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataPipelineAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

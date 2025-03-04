@@ -49,7 +49,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// A unique, service-generated identifier.
+        /// The unique ID of the state template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

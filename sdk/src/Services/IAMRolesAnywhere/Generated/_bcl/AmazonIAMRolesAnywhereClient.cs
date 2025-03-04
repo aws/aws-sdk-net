@@ -100,7 +100,7 @@ namespace Amazon.IAMRolesAnywhere
         ///
         /// </summary>
         public AmazonIAMRolesAnywhereClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIAMRolesAnywhereConfig()) { }
+            : base(new AmazonIAMRolesAnywhereConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIAMRolesAnywhereClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.IAMRolesAnywhere
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIAMRolesAnywhereClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIAMRolesAnywhereConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIAMRolesAnywhereConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIAMRolesAnywhereClient with the credentials loaded from the application's
@@ -138,7 +138,7 @@ namespace Amazon.IAMRolesAnywhere
         /// </summary>
         /// <param name="config">The AmazonIAMRolesAnywhereClient Configuration Object</param>
         public AmazonIAMRolesAnywhereClient(AmazonIAMRolesAnywhereConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIAMRolesAnywhereClient with AWS Credentials
@@ -241,15 +241,7 @@ namespace Amazon.IAMRolesAnywhere
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -259,7 +251,9 @@ namespace Amazon.IAMRolesAnywhere
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIAMRolesAnywhereEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIAMRolesAnywhereAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

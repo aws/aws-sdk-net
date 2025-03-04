@@ -7,6 +7,7 @@ using Amazon.BearerTokenAuthTest.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,7 +20,7 @@ namespace AWSSDK.UnitTests.Runtime
     /// <see cref="Signer.SignRequest"/>.  These tests combine as much real plumbing together as possible
     /// to ensure the plumbing is working.
     /// <para />
-    /// A Bearer Auth Service is when <see cref="AmazonServiceClient.CreateSigner"/> returns
+    /// A Bearer Auth Service is when <see cref="BaseAuthResolverHandler"/> resolves
     /// <see cref="BearerTokenSigner"/>.
     /// </summary>
     [TestClass]

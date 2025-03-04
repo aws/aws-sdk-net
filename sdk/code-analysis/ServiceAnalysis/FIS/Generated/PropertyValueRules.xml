@@ -482,9 +482,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfigurationOutputsS3Configuration.Prefix</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\s\S]+</pattern>
+    <max>256</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportError.Code</property>
@@ -513,7 +512,7 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.Prefix</property>
     <min>1</min>
-    <max>1024</max>
+    <max>700</max>
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -669,7 +668,7 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.Prefix</property>
     <min>1</min>
-    <max>1024</max>
+    <max>700</max>
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -681,7 +680,7 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfigurationInput.Prefix</property>
     <min>1</min>
-    <max>1024</max>
+    <max>700</max>
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -744,9 +743,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3Output.Prefix</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\s\S]+</pattern>
+    <max>256</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.BucketName</property>
@@ -756,9 +754,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.Prefix</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\s\S]+</pattern>
+    <max>256</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ResolvedTarget.ResourceType</property>

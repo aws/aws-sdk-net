@@ -41,7 +41,7 @@ namespace Amazon.CloudSearchDomain
         ///
         /// </summary>
         public AmazonCloudSearchDomainClient()
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig())
+            : base(new AmazonCloudSearchDomainConfig())
         {
         }
 
@@ -62,7 +62,7 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonCloudSearchDomainClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
+            : base(new AmazonCloudSearchDomainConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -83,7 +83,7 @@ namespace Amazon.CloudSearchDomain
         /// </summary>
         /// <param name="config">The AmazonCloudSearchDomainClient Configuration Object</param>
         public AmazonCloudSearchDomainClient(AmazonCloudSearchDomainConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config)
+            : base(config)
         {
         }
 

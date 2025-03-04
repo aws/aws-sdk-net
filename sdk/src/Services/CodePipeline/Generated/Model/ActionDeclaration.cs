@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
         private ActionTypeId _actionTypeId;
         private List<string> _commands = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private List<InputArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<InputArtifact>() : null;
         private string _name;
         private string _awsNamespace;
@@ -128,6 +129,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// The environment variables for the action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<EnvironmentVariable> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

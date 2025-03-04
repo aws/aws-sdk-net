@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             
+            if (publicRequest.IsSetClientToken())
+                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            else            
+                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
+                
+            
             if (publicRequest.IsSetFunctionArn())
                 request.Parameters.Add("functionArn", StringUtils.FromString(publicRequest.FunctionArn));
             request.ResourcePath = "/instance/{InstanceId}/lambda-function";

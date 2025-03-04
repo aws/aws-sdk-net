@@ -1373,7 +1373,7 @@
     <property>Amazon.LocationService.Model.WiFiAccessPoint.MacAddress</property>
     <min>12</min>
     <max>17</max>
-    <pattern>([0-9A-Fa-f]{2}[:-]?){5}([0-9A-Fa-f]{2})</pattern>
+    <pattern>([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.WiFiAccessPoint.Rss</property>

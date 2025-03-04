@@ -128,7 +128,7 @@ namespace Amazon.AWSSupport
         ///
         /// </summary>
         public AmazonAWSSupportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig()) { }
+            : base(new AmazonAWSSupportConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
@@ -147,7 +147,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAWSSupportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAWSSupportConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
@@ -166,7 +166,7 @@ namespace Amazon.AWSSupport
         /// </summary>
         /// <param name="config">The AmazonAWSSupportClient Configuration Object</param>
         public AmazonAWSSupportClient(AmazonAWSSupportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -291,14 +291,6 @@ namespace Amazon.AWSSupport
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -306,7 +298,9 @@ namespace Amazon.AWSSupport
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSSupportEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAWSSupportAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

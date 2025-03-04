@@ -67,7 +67,7 @@ namespace Amazon.MQ
         ///
         /// </summary>
         public AmazonMQClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMQConfig()) { }
+            : base(new AmazonMQConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMQClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.MQ
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMQClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMQConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMQConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMQClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.MQ
         /// </summary>
         /// <param name="config">The AmazonMQClient Configuration Object</param>
         public AmazonMQClient(AmazonMQConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.MQ
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.MQ
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMQEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMQAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -18,6 +18,12 @@
     <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateAppRequest.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.CustomHeaders</property>
     <min>0</min>
     <max>25000</max>
@@ -102,6 +108,12 @@
     <min>1</min>
     <max>25000</max>
     <pattern>(?s).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBranchRequest.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.Description</property>
@@ -619,6 +631,12 @@
     <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateAppRequest.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.CustomHeaders</property>
     <min>0</min>
     <max>25000</max>
@@ -679,6 +697,12 @@
     <min>1</min>
     <max>25000</max>
     <pattern>(?s).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateBranchRequest.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.Description</property>
@@ -758,6 +782,12 @@
     <min>1</min>
     <max>25000</max>
     <pattern>(?s).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.App.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.CustomHeaders</property>
@@ -883,6 +913,12 @@
     <min>1</min>
     <max>25000</max>
     <pattern>(?s).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.Branch.ComputeRoleArn</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.Description</property>

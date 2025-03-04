@@ -84,6 +84,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetConsumableResourcePropertiesOverride())
+            {
+                context.Writer.WritePropertyName("consumableResourcePropertiesOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConsumableResourcePropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConsumableResourcePropertiesOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetContainerOverrides())
             {
                 context.Writer.WritePropertyName("containerOverrides");

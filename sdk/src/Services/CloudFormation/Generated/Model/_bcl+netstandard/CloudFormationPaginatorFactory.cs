@@ -133,6 +133,22 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Paginator for ListStackRefactorActions operation
+        ///</summary>
+        public IListStackRefactorActionsPaginator ListStackRefactorActions(ListStackRefactorActionsRequest request) 
+        {
+            return new ListStackRefactorActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStackRefactors operation
+        ///</summary>
+        public IListStackRefactorsPaginator ListStackRefactors(ListStackRefactorsRequest request) 
+        {
+            return new ListStackRefactorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStackResources operation
         ///</summary>
         public IListStackResourcesPaginator ListStackResources(ListStackResourcesRequest request) 

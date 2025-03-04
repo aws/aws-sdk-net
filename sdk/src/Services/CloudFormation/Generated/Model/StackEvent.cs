@@ -166,7 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookInvocationPoint. 
         /// <para>
-        /// Invocation points are points in provisioning logic where hooks are initiated.
+        /// Invocation points are points in provisioning logic where Hooks are initiated.
         /// </para>
         /// </summary>
         public HookInvocationPoint HookInvocationPoint

@@ -88,7 +88,7 @@ namespace Amazon.WAFRegional
         ///
         /// </summary>
         public AmazonWAFRegionalClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWAFRegionalConfig()) { }
+            : base(new AmazonWAFRegionalConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWAFRegionalClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.WAFRegional
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWAFRegionalClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWAFRegionalConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWAFRegionalConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWAFRegionalClient with the credentials loaded from the application's
@@ -126,7 +126,7 @@ namespace Amazon.WAFRegional
         /// </summary>
         /// <param name="config">The AmazonWAFRegionalClient Configuration Object</param>
         public AmazonWAFRegionalClient(AmazonWAFRegionalConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonWAFRegionalClient with AWS Credentials
@@ -229,15 +229,7 @@ namespace Amazon.WAFRegional
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -247,7 +239,9 @@ namespace Amazon.WAFRegional
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWAFRegionalEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWAFRegionalAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

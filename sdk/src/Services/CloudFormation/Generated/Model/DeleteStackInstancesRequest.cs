@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// [Self-managed permissions] The names of the Amazon Web Services accounts that you
-        /// want to delete stack instances for.
+        /// [Self-managed permissions] The account IDs of the Amazon Web Services accounts that
+        /// you want to delete stack instances for.
         /// </para>
         ///  
         /// <para>

@@ -56,7 +56,7 @@ namespace Amazon.Pricing.Model
         /// attribute name to get the prices for only Amazon EC2 volumes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Field
         {
             get { return this._field; }
@@ -102,7 +102,7 @@ namespace Amazon.Pricing.Model
         /// products to match, such as a <c>Provisioned IOPS</c> volume.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

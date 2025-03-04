@@ -226,7 +226,7 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// The severity associated with the signal. For more information about severity, see
         /// <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
-        /// severity levels</a> in the <i>GuardDuty User Guide</i>.
+        /// severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         /// </summary>
         public double? Severity
@@ -269,7 +269,7 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Signals can be GuardDuty findings or activities observed in data sources that GuardDuty
         /// monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational
-        /// data sources</a> in the <i>GuardDuty User Guide</i>.
+        /// data sources</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -290,7 +290,7 @@ namespace Amazon.GuardDuty.Model
         /// associated with this type will show up only when you have enabled GuardDuty S3 Protection
         /// feature in your account. For more information about S3 Protection and steps to enable
         /// it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3
-        /// Protection</a> in the <i>GuardDuty User Guide</i>.
+        /// Protection</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

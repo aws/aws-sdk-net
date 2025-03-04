@@ -121,7 +121,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Nodes. An array with one item, which is the signle Node
+        /// Gets and sets the property Nodes. An array with one item, which is the single Node
         /// that is associated with the ChannelPlacementGroup.
         /// </summary>
         public List<string> Nodes

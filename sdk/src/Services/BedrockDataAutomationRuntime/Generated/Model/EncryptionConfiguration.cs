@@ -59,10 +59,10 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key id.
+        /// Customer KMS key used for encryption
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

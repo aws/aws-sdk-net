@@ -30,12 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// A bock of content in a streaming response.
+    /// A block of content in a streaming response.
     /// </summary>
     public partial class ContentBlockDelta
     {
+        private ReasoningContentBlockDelta _reasoningContent;
         private string _text;
         private ToolUseBlockDelta _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property ReasoningContent. 
+        /// <para>
+        /// Contains content regarding the reasoning that is carried out by the model. Reasoning
+        /// refers to a Chain of Thought (CoT) that the model generates to enhance the accuracy
+        /// of its final response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ReasoningContentBlockDelta ReasoningContent
+        {
+            get { return this._reasoningContent; }
+            set { this._reasoningContent = value; }
+        }
+
+        // Check to see if ReasoningContent property is set
+        internal bool IsSetReasoningContent()
+        {
+            return this._reasoningContent != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

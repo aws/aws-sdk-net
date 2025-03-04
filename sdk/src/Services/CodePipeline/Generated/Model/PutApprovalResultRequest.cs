@@ -129,9 +129,9 @@ namespace Amazon.CodePipeline.Model
         ///  <important> 
         /// <para>
         /// For a pipeline where the execution mode is set to PARALLEL, the token required to
-        /// approve/reject approval request as detailed above is not available. Instead, use the
-        /// <c>externalExecutionId</c> from the <c>GetPipelineState</c> action as the token in
-        /// the approval request.
+        /// approve/reject an approval request as detailed above is not available. Instead, use
+        /// the <c>externalExecutionId</c> in the response output from the <a>ListActionExecutions</a>
+        /// action as the token in the approval request.
         /// </para>
         ///  </important>
         /// </summary>

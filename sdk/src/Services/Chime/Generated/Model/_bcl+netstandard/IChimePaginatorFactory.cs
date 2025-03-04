@@ -32,74 +32,9 @@ namespace Amazon.Chime.Model
         IListAccountsPaginator ListAccounts(ListAccountsRequest request);
 
         /// <summary>
-        /// Paginator for ListAppInstanceAdmins operation
-        ///</summary>
-        IListAppInstanceAdminsPaginator ListAppInstanceAdmins(ListAppInstanceAdminsRequest request);
-
-        /// <summary>
-        /// Paginator for ListAppInstances operation
-        ///</summary>
-        IListAppInstancesPaginator ListAppInstances(ListAppInstancesRequest request);
-
-        /// <summary>
-        /// Paginator for ListAppInstanceUsers operation
-        ///</summary>
-        IListAppInstanceUsersPaginator ListAppInstanceUsers(ListAppInstanceUsersRequest request);
-
-        /// <summary>
-        /// Paginator for ListAttendees operation
-        ///</summary>
-        IListAttendeesPaginator ListAttendees(ListAttendeesRequest request);
-
-        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelBans operation
-        ///</summary>
-        IListChannelBansPaginator ListChannelBans(ListChannelBansRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelMemberships operation
-        ///</summary>
-        IListChannelMembershipsPaginator ListChannelMemberships(ListChannelMembershipsRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelMembershipsForAppInstanceUser operation
-        ///</summary>
-        IListChannelMembershipsForAppInstanceUserPaginator ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelMessages operation
-        ///</summary>
-        IListChannelMessagesPaginator ListChannelMessages(ListChannelMessagesRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelModerators operation
-        ///</summary>
-        IListChannelModeratorsPaginator ListChannelModerators(ListChannelModeratorsRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannels operation
-        ///</summary>
-        IListChannelsPaginator ListChannels(ListChannelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannelsModeratedByAppInstanceUser operation
-        ///</summary>
-        IListChannelsModeratedByAppInstanceUserPaginator ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request);
-
-        /// <summary>
-        /// Paginator for ListMediaCapturePipelines operation
-        ///</summary>
-        IListMediaCapturePipelinesPaginator ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request);
-
-        /// <summary>
-        /// Paginator for ListMeetings operation
-        ///</summary>
-        IListMeetingsPaginator ListMeetings(ListMeetingsRequest request);
 
         /// <summary>
         /// Paginator for ListPhoneNumberOrders operation
@@ -112,11 +47,6 @@ namespace Amazon.Chime.Model
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
 
         /// <summary>
-        /// Paginator for ListProxySessions operation
-        ///</summary>
-        IListProxySessionsPaginator ListProxySessions(ListProxySessionsRequest request);
-
-        /// <summary>
         /// Paginator for ListRoomMemberships operation
         ///</summary>
         IListRoomMembershipsPaginator ListRoomMemberships(ListRoomMembershipsRequest request);
@@ -127,29 +57,9 @@ namespace Amazon.Chime.Model
         IListRoomsPaginator ListRooms(ListRoomsRequest request);
 
         /// <summary>
-        /// Paginator for ListSipMediaApplications operation
-        ///</summary>
-        IListSipMediaApplicationsPaginator ListSipMediaApplications(ListSipMediaApplicationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListSipRules operation
-        ///</summary>
-        IListSipRulesPaginator ListSipRules(ListSipRulesRequest request);
-
-        /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
-
-        /// <summary>
-        /// Paginator for ListVoiceConnectorGroups operation
-        ///</summary>
-        IListVoiceConnectorGroupsPaginator ListVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request);
-
-        /// <summary>
-        /// Paginator for ListVoiceConnectors operation
-        ///</summary>
-        IListVoiceConnectorsPaginator ListVoiceConnectors(ListVoiceConnectorsRequest request);
 
         /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation

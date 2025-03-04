@@ -57,6 +57,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEgyptAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("egyptAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EgyptAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.EgyptAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEstoniaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("estoniaAdditionalInfo");
@@ -75,6 +86,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = GeorgiaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeorgiaAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetGreeceAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("greeceAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GreeceAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.GreeceAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -196,6 +218,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = UkraineAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.UkraineAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVietnamAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("vietnamAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VietnamAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.VietnamAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -907,7 +907,8 @@
         "fileSystemLocations":{"shape":"ProjectFileSystemLocations"},
         "buildBatchConfig":{"shape":"ProjectBuildBatchConfig"},
         "buildGroups":{"shape":"BuildGroups"},
-        "debugSessionEnabled":{"shape":"WrapperBoolean"}
+        "debugSessionEnabled":{"shape":"WrapperBoolean"},
+        "reportArns":{"shape":"BuildReportArns"}
       }
     },
     "BuildBatchFilter":{
@@ -2801,7 +2802,8 @@
         "status":{"shape":"String"},
         "durationInNanoSeconds":{"shape":"WrapperLong"},
         "message":{"shape":"String"},
-        "expired":{"shape":"Timestamp"}
+        "expired":{"shape":"Timestamp"},
+        "testSuiteName":{"shape":"String"}
       }
     },
     "TestCaseFilter":{
@@ -2969,7 +2971,9 @@
         "buildType":{"shape":"WebhookBuildType"},
         "manualCreation":{"shape":"WrapperBoolean"},
         "lastModifiedSecret":{"shape":"Timestamp"},
-        "scopeConfiguration":{"shape":"ScopeConfiguration"}
+        "scopeConfiguration":{"shape":"ScopeConfiguration"},
+        "status":{"shape":"WebhookStatus"},
+        "statusMessage":{"shape":"String"}
       }
     },
     "WebhookBuildType":{
@@ -3013,6 +3017,15 @@
         "GITHUB_ORGANIZATION",
         "GITHUB_GLOBAL",
         "GITLAB_GROUP"
+      ]
+    },
+    "WebhookStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "CREATE_FAILED",
+        "ACTIVE",
+        "DELETING"
       ]
     },
     "WrapperBoolean":{"type":"boolean"},

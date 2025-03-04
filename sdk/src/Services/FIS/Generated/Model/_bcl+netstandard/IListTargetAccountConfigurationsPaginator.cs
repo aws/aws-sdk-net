@@ -30,5 +30,10 @@ namespace Amazon.FIS.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTargetAccountConfigurationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TargetAccountConfigurations
+        /// </summary>
+        IPaginatedEnumerable<TargetAccountConfigurationSummary> TargetAccountConfigurations { get; }
     }
 }

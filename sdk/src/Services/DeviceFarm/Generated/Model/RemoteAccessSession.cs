@@ -40,6 +40,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _created;
         private Device _device;
         private DeviceMinutes _deviceMinutes;
+        private DeviceProxy _deviceProxy;
         private string _deviceUdid;
         private string _endpoint;
         private string _hostAddress;
@@ -174,6 +175,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDeviceMinutes()
         {
             return this._deviceMinutes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceProxy. 
+        /// <para>
+        /// The device proxy configured for the remote access session.
+        /// </para>
+        /// </summary>
+        public DeviceProxy DeviceProxy
+        {
+            get { return this._deviceProxy; }
+            set { this._deviceProxy = value; }
+        }
+
+        // Check to see if DeviceProxy property is set
+        internal bool IsSetDeviceProxy()
+        {
+            return this._deviceProxy != null;
         }
 
         /// <summary>

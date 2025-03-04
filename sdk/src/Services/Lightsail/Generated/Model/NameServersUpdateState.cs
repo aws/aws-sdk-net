@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/understanding-dns-in-amazon-lightsail">DNS
+    /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/understanding-dns-in-amazon-lightsail">DNS
     /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
     /// </para>
     /// </summary>

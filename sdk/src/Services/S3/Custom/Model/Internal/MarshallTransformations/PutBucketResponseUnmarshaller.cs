@@ -37,8 +37,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketResponse response = new PutBucketResponse();
+            UnmarshallResult(context, response);
 
             return response;
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, PutBucketResponse response)
+        {
+            IWebResponseData responseData = context.ResponseData;
+
+            if (responseData.IsHeaderPresent("Location"))
+                response.Location = BucketLocationConstraint.FindValue(responseData.GetHeaderValue("Location"));
+            return;
         }
 
         /// <summary>

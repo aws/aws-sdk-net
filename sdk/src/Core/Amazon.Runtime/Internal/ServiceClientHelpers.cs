@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Internal
             where TConfig : ClientConfig, new ()
             where TClient : AmazonServiceClient
         {
-            var credentials = originalServiceClient.Credentials;
+            var credentials = originalServiceClient.Config.DefaultAWSCredentials;
             var newConfig = originalServiceClient.CloneConfig<TConfig>();
 
             var newServiceClientTypeInfo = typeof(TClient);
@@ -116,7 +116,7 @@ namespace Amazon.Runtime.Internal
                     config.GetType()
                 });
 
-            var newServiceClient = constructor.Invoke(new object[] { originalServiceClient.Credentials, config }) as TClient;
+            var newServiceClient = constructor.Invoke(new object[] { originalServiceClient.Config.DefaultAWSCredentials, config }) as TClient;
 
             return newServiceClient;
         }

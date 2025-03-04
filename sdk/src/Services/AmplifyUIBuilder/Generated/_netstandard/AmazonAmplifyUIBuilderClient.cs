@@ -82,7 +82,7 @@ namespace Amazon.AmplifyUIBuilder
         ///
         /// </summary>
         public AmazonAmplifyUIBuilderClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyUIBuilderConfig()) { }
+            : base(new AmazonAmplifyUIBuilderConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyUIBuilderClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.AmplifyUIBuilder
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAmplifyUIBuilderClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyUIBuilderConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAmplifyUIBuilderConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyUIBuilderClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.AmplifyUIBuilder
         /// </summary>
         /// <param name="config">The AmazonAmplifyUIBuilderClient Configuration Object</param>
         public AmazonAmplifyUIBuilderClient(AmazonAmplifyUIBuilderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -245,14 +245,6 @@ namespace Amazon.AmplifyUIBuilder
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -260,7 +252,9 @@ namespace Amazon.AmplifyUIBuilder
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyUIBuilderEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyUIBuilderAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

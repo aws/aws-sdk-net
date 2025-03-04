@@ -66,7 +66,7 @@ namespace Amazon.SSMQuickSetup
         ///
         /// </summary>
         public AmazonSSMQuickSetupClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMQuickSetupConfig()) { }
+            : base(new AmazonSSMQuickSetupConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSSMQuickSetupClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.SSMQuickSetup
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSSMQuickSetupClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSMQuickSetupConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSSMQuickSetupConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSSMQuickSetupClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.SSMQuickSetup
         /// </summary>
         /// <param name="config">The AmazonSSMQuickSetupClient Configuration Object</param>
         public AmazonSSMQuickSetupClient(AmazonSSMQuickSetupConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -229,14 +229,6 @@ namespace Amazon.SSMQuickSetup
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -244,7 +236,9 @@ namespace Amazon.SSMQuickSetup
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMQuickSetupEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSMQuickSetupAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

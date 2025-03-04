@@ -97,7 +97,7 @@ namespace Amazon.Synthetics
         ///
         /// </summary>
         public AmazonSyntheticsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSyntheticsConfig()) { }
+            : base(new AmazonSyntheticsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSyntheticsClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.Synthetics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSyntheticsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSyntheticsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSyntheticsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSyntheticsClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.Synthetics
         /// </summary>
         /// <param name="config">The AmazonSyntheticsClient Configuration Object</param>
         public AmazonSyntheticsClient(AmazonSyntheticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSyntheticsClient with AWS Credentials
@@ -238,15 +238,7 @@ namespace Amazon.Synthetics
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -256,7 +248,9 @@ namespace Amazon.Synthetics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSyntheticsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSyntheticsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

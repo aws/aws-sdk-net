@@ -75,6 +75,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeploymentConfig())
+            {
+                context.Writer.WritePropertyName("DeploymentConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceComponentDeploymentConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInferenceComponentName())
             {
                 context.Writer.WritePropertyName("InferenceComponentName");

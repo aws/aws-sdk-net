@@ -80,6 +80,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PremigrationAssessmentStatuses", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PremigrationAssessmentStatus, PremigrationAssessmentStatusUnmarshaller>(PremigrationAssessmentStatusUnmarshaller.Instance);
+                    unmarshalledObject.PremigrationAssessmentStatuses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ProvisionData", targetDepth))
                 {
                     var unmarshaller = ProvisionDataUnmarshaller.Instance;

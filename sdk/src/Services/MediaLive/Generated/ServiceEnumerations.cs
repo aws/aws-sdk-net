@@ -2785,6 +2785,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly CloudWatchAlarmTemplateTargetResourceType MEDIAPACKAGE_ORIGIN_ENDPOINT = new CloudWatchAlarmTemplateTargetResourceType("MEDIAPACKAGE_ORIGIN_ENDPOINT");
         /// <summary>
+        /// Constant MEDIATAILOR_PLAYBACK_CONFIGURATION for CloudWatchAlarmTemplateTargetResourceType
+        /// </summary>
+        public static readonly CloudWatchAlarmTemplateTargetResourceType MEDIATAILOR_PLAYBACK_CONFIGURATION = new CloudWatchAlarmTemplateTargetResourceType("MEDIATAILOR_PLAYBACK_CONFIGURATION");
+        /// <summary>
         /// Constant S3_BUCKET for CloudWatchAlarmTemplateTargetResourceType
         /// </summary>
         public static readonly CloudWatchAlarmTemplateTargetResourceType S3_BUCKET = new CloudWatchAlarmTemplateTargetResourceType("S3_BUCKET");

@@ -95,7 +95,7 @@ namespace Amazon.MediaPackageV2
         ///
         /// </summary>
         public AmazonMediaPackageV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaPackageV2Config()) { }
+            : base(new AmazonMediaPackageV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonMediaPackageV2Client with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaPackageV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaPackageV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonMediaPackageV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaPackageV2Client with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         /// <param name="config">The AmazonMediaPackageV2Client Configuration Object</param>
         public AmazonMediaPackageV2Client(AmazonMediaPackageV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -258,14 +258,6 @@ namespace Amazon.MediaPackageV2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -273,7 +265,9 @@ namespace Amazon.MediaPackageV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaPackageV2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaPackageV2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

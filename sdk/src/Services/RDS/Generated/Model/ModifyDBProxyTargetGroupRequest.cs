@@ -85,6 +85,10 @@ namespace Amazon.RDS.Model
         /// a letter and must contain only ASCII letters, digits, and hyphens; it can't end with
         /// a hyphen or contain two consecutive hyphens.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't rename the <c>default</c> target group.
+        /// </para>
         /// </summary>
         public string NewName
         {

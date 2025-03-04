@@ -69,7 +69,7 @@ namespace Amazon.ComprehendMedical
         ///
         /// </summary>
         public AmazonComprehendMedicalClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComprehendMedicalConfig()) { }
+            : base(new AmazonComprehendMedicalConfig()) { }
 
         /// <summary>
         /// Constructs AmazonComprehendMedicalClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonComprehendMedicalClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonComprehendMedicalConfig{RegionEndpoint = region}) { }
+            : base(new AmazonComprehendMedicalConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonComprehendMedicalClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         /// <param name="config">The AmazonComprehendMedicalClient Configuration Object</param>
         public AmazonComprehendMedicalClient(AmazonComprehendMedicalConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -214,14 +214,6 @@ namespace Amazon.ComprehendMedical
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -229,7 +221,9 @@ namespace Amazon.ComprehendMedical
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComprehendMedicalEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonComprehendMedicalAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

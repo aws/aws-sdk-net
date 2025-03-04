@@ -91,6 +91,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+                if(publicRequest.IsSetSnapshotCopyCompletionDurationMinutes())
+                {
+                    request.Parameters.Add("SnapshotCopyCompletionDurationMinutes", StringUtils.FromLong(publicRequest.SnapshotCopyCompletionDurationMinutes));
+                }
                 if(publicRequest.IsSetSourceImageId())
                 {
                     request.Parameters.Add("SourceImageId", StringUtils.FromString(publicRequest.SourceImageId));

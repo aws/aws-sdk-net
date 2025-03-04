@@ -68,6 +68,8 @@ namespace UnitTests
             "AccountIdEndpointMode",
             "RequestChecksumCalculation",
             "ResponseChecksumValidation",
+            "IdentityResolverConfiguration",
+            "DefaultAWSCredentials"
         };
 
         [Fact]

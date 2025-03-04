@@ -73,7 +73,7 @@ namespace Amazon.ElasticFileSystem
         ///
         /// </summary>
         public AmazonElasticFileSystemClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticFileSystemConfig()) { }
+            : base(new AmazonElasticFileSystemConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's
@@ -92,7 +92,7 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticFileSystemClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticFileSystemConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticFileSystemConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         /// <param name="config">The AmazonElasticFileSystemClient Configuration Object</param>
         public AmazonElasticFileSystemClient(AmazonElasticFileSystemConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -236,14 +236,6 @@ namespace Amazon.ElasticFileSystem
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -252,7 +244,9 @@ namespace Amazon.ElasticFileSystem
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticFileSystem.Internal.IdempotencyHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticFileSystemEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticFileSystemAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

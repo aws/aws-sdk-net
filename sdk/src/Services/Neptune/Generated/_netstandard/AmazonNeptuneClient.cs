@@ -85,7 +85,7 @@ namespace Amazon.Neptune
         ///
         /// </summary>
         public AmazonNeptuneClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNeptuneConfig()) { }
+            : base(new AmazonNeptuneConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNeptuneClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.Neptune
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNeptuneClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNeptuneConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNeptuneConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNeptuneClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.Neptune
         /// </summary>
         /// <param name="config">The AmazonNeptuneClient Configuration Object</param>
         public AmazonNeptuneClient(AmazonNeptuneConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -248,23 +248,17 @@ namespace Amazon.Neptune
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.Neptune.Internal.PreSignedUrlRequestHandler(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.Neptune.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNeptuneEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNeptuneAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

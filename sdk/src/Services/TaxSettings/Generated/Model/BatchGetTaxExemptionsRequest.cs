@@ -31,7 +31,7 @@ namespace Amazon.TaxSettings.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetTaxExemptions operation.
-    /// Get the active tax exemptions for a given list of accounts.
+    /// Get the active tax exemptions for a given list of accounts. The IAM action is <c>tax:GetExemptions</c>.
     /// </summary>
     public partial class BatchGetTaxExemptionsRequest : AmazonTaxSettingsRequest
     {

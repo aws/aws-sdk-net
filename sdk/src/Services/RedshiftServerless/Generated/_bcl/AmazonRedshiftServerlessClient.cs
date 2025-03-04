@@ -96,7 +96,7 @@ namespace Amazon.RedshiftServerless
         ///
         /// </summary>
         public AmazonRedshiftServerlessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftServerlessConfig()) { }
+            : base(new AmazonRedshiftServerlessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.RedshiftServerless
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRedshiftServerlessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftServerlessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRedshiftServerlessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.RedshiftServerless
         /// </summary>
         /// <param name="config">The AmazonRedshiftServerlessClient Configuration Object</param>
         public AmazonRedshiftServerlessClient(AmazonRedshiftServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftServerlessClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.RedshiftServerless
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.RedshiftServerless
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftServerlessEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftServerlessAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -2201,6 +2195,83 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  GetTrack
+
+
+        /// <summary>
+        /// Get the Redshift Serverless version for a specified track.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrack service method.</param>
+        /// 
+        /// <returns>The response from the GetTrack service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
+        public virtual GetTrackResponse GetTrack(GetTrackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrackResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the Redshift Serverless version for a specified track.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrack service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
+        public virtual Task<GetTrackResponse> GetTrackAsync(GetTrackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTrackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUsageLimit
 
 
@@ -2937,6 +3008,77 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTracks
+
+
+        /// <summary>
+        /// List the Amazon Redshift Serverless versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTracks service method.</param>
+        /// 
+        /// <returns>The response from the ListTracks service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
+        public virtual ListTracksResponse ListTracks(ListTracksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTracksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTracksResponseUnmarshaller.Instance;
+
+            return Invoke<ListTracksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List the Amazon Redshift Serverless versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTracks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTracks service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InvalidPaginationException">
+        /// The provided pagination token is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
+        public virtual Task<ListTracksResponse> ListTracksAsync(ListTracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTracksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTracksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTracksResponse>(request, options, cancellationToken);
         }
 
         #endregion

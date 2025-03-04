@@ -100,7 +100,7 @@ namespace Amazon.FraudDetector
         ///
         /// </summary>
         public AmazonFraudDetectorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFraudDetectorConfig()) { }
+            : base(new AmazonFraudDetectorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonFraudDetectorClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.FraudDetector
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonFraudDetectorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFraudDetectorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonFraudDetectorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonFraudDetectorClient with the credentials loaded from the application's
@@ -138,7 +138,7 @@ namespace Amazon.FraudDetector
         /// </summary>
         /// <param name="config">The AmazonFraudDetectorClient Configuration Object</param>
         public AmazonFraudDetectorClient(AmazonFraudDetectorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonFraudDetectorClient with AWS Credentials
@@ -241,15 +241,7 @@ namespace Amazon.FraudDetector
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -259,7 +251,9 @@ namespace Amazon.FraudDetector
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFraudDetectorEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFraudDetectorAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

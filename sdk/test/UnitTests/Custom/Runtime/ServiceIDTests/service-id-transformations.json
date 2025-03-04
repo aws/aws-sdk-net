@@ -495,11 +495,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_EKS"
   },
   {
-    "service_id": "Elastic Inference",
-    "services_section_name": "elastic_inference",
-    "service_envvar_name": "AWS_ENDPOINT_URL_ELASTIC_INFERENCE"
-  },
-  {
     "service_id": "ElastiCache",
     "services_section_name": "elasticache",
     "service_envvar_name": "AWS_ENDPOINT_URL_ELASTICACHE"

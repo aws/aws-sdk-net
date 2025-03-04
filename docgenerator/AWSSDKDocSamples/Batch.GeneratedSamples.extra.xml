@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateConsumableResource(Amazon.Batch.Model.CreateConsumableResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateConsumableResource(Amazon.Batch.Model.CreateConsumableResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateConsumableResourceRequest" />
+            <member name="T:Amazon.Batch.Model.CreateConsumableResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a Batch consumable resource.
+                </para>
+                <code
+                    title="To create a consumable resource"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-consumable-resource-1739494856623" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
             <member name="T:Amazon.Batch.Model.CreateJobQueueRequest" />
@@ -111,6 +130,25 @@
                     title="To delete a compute environment"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-delete-a-compute-environment-1481153105644" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DeleteConsumableResource(Amazon.Batch.Model.DeleteConsumableResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DeleteConsumableResource(Amazon.Batch.Model.DeleteConsumableResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.DeleteConsumableResourceRequest" />
+            <member name="T:Amazon.Batch.Model.DeleteConsumableResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified consumable resource.
+                </para>
+                <code
+                    title="To delete a consumable resource"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-delete-a-consumable-resource-1739495667751" />
             </example>
         </value>
     </doc>
@@ -173,6 +211,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DescribeConsumableResource(Amazon.Batch.Model.DescribeConsumableResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DescribeConsumableResource(Amazon.Batch.Model.DescribeConsumableResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.DescribeConsumableResourceRequest" />
+            <member name="T:Amazon.Batch.Model.DescribeConsumableResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a description of the specified consumable resource.
+                </para>
+                <code
+                    title="To get a description of a consumable resource"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-get-a-description-of-a-consumable-resource-1739495864808" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.DescribeJobDefinitions(Amazon.Batch.Model.DescribeJobDefinitionsRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.DescribeJobDefinitions(Amazon.Batch.Model.DescribeJobDefinitionsRequest)" />
             <member name="T:Amazon.Batch.Model.DescribeJobDefinitionsRequest" />
@@ -230,6 +287,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.ListConsumableResources(Amazon.Batch.Model.ListConsumableResourcesRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.ListConsumableResources(Amazon.Batch.Model.ListConsumableResourcesRequest)" />
+            <member name="T:Amazon.Batch.Model.ListConsumableResourcesRequest" />
+            <member name="T:Amazon.Batch.Model.ListConsumableResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of the consumable resources for your account.
+                </para>
+                <code
+                    title="To get a list of a consumable resources"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-get-a-list-of-a-consumable-resources-1739496071960" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
             <member name="T:Amazon.Batch.Model.ListJobsRequest" />
@@ -263,6 +339,25 @@
                     title="To list submitted jobs"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-list-submitted-jobs-1481154251623" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.ListJobsByConsumableResource(Amazon.Batch.Model.ListJobsByConsumableResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.ListJobsByConsumableResource(Amazon.Batch.Model.ListJobsByConsumableResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.ListJobsByConsumableResourceRequest" />
+            <member name="T:Amazon.Batch.Model.ListJobsByConsumableResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of Batch jobs that require a specific consumable resource.
+                </para>
+                <code
+                    title="To get a list of Batch jobs by consumable resource"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-get-a-list-of-batch-jobs-by-consumable-resource-1739496640347" />
             </example>
         </value>
     </doc>
@@ -415,6 +510,25 @@
                     title="To update a compute environment"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-update-a-compute-environment-1481154702731" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.UpdateConsumableResource(Amazon.Batch.Model.UpdateConsumableResourceRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.UpdateConsumableResource(Amazon.Batch.Model.UpdateConsumableResourceRequest)" />
+            <member name="T:Amazon.Batch.Model.UpdateConsumableResourceRequest" />
+            <member name="T:Amazon.Batch.Model.UpdateConsumableResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates a consumable resource.
+                </para>
+                <code
+                    title="To update a consumable resource"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-update-a-consumable-resource-1739497761692" />
             </example>
         </value>
     </doc>

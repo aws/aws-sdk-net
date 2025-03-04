@@ -42,7 +42,7 @@ namespace Amazon.ACMPCA.Model
         /// The policy attached to the private CA as a JSON document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20480)]
+        [AWSProperty(Min=1, Max=81920)]
         public string Policy
         {
             get { return this._policy; }

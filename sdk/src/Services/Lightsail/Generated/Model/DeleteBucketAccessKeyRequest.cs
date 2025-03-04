@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating
+    /// For more information about access keys, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-creating-bucket-access-keys">Creating
     /// access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>.
     /// </para>

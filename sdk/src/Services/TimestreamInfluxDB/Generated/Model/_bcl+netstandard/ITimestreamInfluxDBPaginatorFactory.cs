@@ -27,9 +27,19 @@ namespace Amazon.TimestreamInfluxDB.Model
     {
 
         /// <summary>
+        /// Paginator for ListDbClusters operation
+        ///</summary>
+        IListDbClustersPaginator ListDbClusters(ListDbClustersRequest request);
+
+        /// <summary>
         /// Paginator for ListDbInstances operation
         ///</summary>
         IListDbInstancesPaginator ListDbInstances(ListDbInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDbInstancesForCluster operation
+        ///</summary>
+        IListDbInstancesForClusterPaginator ListDbInstancesForCluster(ListDbInstancesForClusterRequest request);
 
         /// <summary>
         /// Paginator for ListDbParameterGroups operation

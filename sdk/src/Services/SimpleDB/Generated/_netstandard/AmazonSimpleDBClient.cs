@@ -81,7 +81,7 @@ namespace Amazon.SimpleDB
         ///
         /// </summary>
         public AmazonSimpleDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig()) { }
+            : base(new AmazonSimpleDBConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSimpleDBConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="config">The AmazonSimpleDBClient Configuration Object</param>
         public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -226,14 +226,6 @@ namespace Amazon.SimpleDB
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new QueryStringSigner();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -241,7 +233,9 @@ namespace Amazon.SimpleDB
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleDBEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimpleDBAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

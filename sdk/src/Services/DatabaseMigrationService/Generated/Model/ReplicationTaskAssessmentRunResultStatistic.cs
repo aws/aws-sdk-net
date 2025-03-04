@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _error;
         private int? _failed;
         private int? _passed;
+        private int? _skipped;
         private int? _warning;
 
         /// <summary>
@@ -114,6 +115,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetPassed()
         {
             return this._passed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Skipped. 
+        /// <para>
+        /// The number of individual assessments that were skipped during the assessment run.
+        /// </para>
+        /// </summary>
+        public int? Skipped
+        {
+            get { return this._skipped; }
+            set { this._skipped = value; }
+        }
+
+        // Check to see if Skipped property is set
+        internal bool IsSetSkipped()
+        {
+            return this._skipped.HasValue; 
         }
 
         /// <summary>

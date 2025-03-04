@@ -301,7 +301,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, this setting is not supported.
+        /// This setting isn't supported.
         /// </para>
         ///  </note>
         /// </summary>

@@ -79,7 +79,7 @@ namespace Amazon.AmplifyBackend
         ///
         /// </summary>
         public AmazonAmplifyBackendClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyBackendConfig()) { }
+            : base(new AmazonAmplifyBackendConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyBackendClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.AmplifyBackend
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAmplifyBackendClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAmplifyBackendConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAmplifyBackendConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyBackendClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.AmplifyBackend
         /// </summary>
         /// <param name="config">The AmazonAmplifyBackendClient Configuration Object</param>
         public AmazonAmplifyBackendClient(AmazonAmplifyBackendConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAmplifyBackendClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.AmplifyBackend
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.AmplifyBackend
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyBackendEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAmplifyBackendAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

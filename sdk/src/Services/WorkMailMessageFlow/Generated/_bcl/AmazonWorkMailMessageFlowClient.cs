@@ -64,7 +64,7 @@ namespace Amazon.WorkMailMessageFlow
         ///
         /// </summary>
         public AmazonWorkMailMessageFlowClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkMailMessageFlowConfig()) { }
+            : base(new AmazonWorkMailMessageFlowConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailMessageFlowClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.WorkMailMessageFlow
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWorkMailMessageFlowClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkMailMessageFlowConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWorkMailMessageFlowConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailMessageFlowClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.WorkMailMessageFlow
         /// </summary>
         /// <param name="config">The AmazonWorkMailMessageFlowClient Configuration Object</param>
         public AmazonWorkMailMessageFlowClient(AmazonWorkMailMessageFlowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailMessageFlowClient with AWS Credentials
@@ -205,15 +205,7 @@ namespace Amazon.WorkMailMessageFlow
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -223,7 +215,9 @@ namespace Amazon.WorkMailMessageFlow
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkMailMessageFlowEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkMailMessageFlowAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

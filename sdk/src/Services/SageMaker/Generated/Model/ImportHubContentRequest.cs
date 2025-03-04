@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private HubContentType _hubContentType;
         private string _hubContentVersion;
         private string _hubName;
+        private HubContentSupportStatus _supportStatus;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -237,6 +238,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubName()
         {
             return this._hubName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportStatus. 
+        /// <para>
+        /// The status of the hub content resource.
+        /// </para>
+        /// </summary>
+        public HubContentSupportStatus SupportStatus
+        {
+            get { return this._supportStatus; }
+            set { this._supportStatus = value; }
+        }
+
+        // Check to see if SupportStatus property is set
+        internal bool IsSetSupportStatus()
+        {
+            return this._supportStatus != null;
         }
 
         /// <summary>

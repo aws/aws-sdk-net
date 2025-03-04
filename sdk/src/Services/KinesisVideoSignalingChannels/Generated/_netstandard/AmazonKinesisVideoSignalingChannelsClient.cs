@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         ///
         /// </summary>
         public AmazonKinesisVideoSignalingChannelsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoSignalingChannelsConfig()) { }
+            : base(new AmazonKinesisVideoSignalingChannelsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoSignalingChannelsClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisVideoSignalingChannelsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoSignalingChannelsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisVideoSignalingChannelsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoSignalingChannelsClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoSignalingChannelsClient Configuration Object</param>
         public AmazonKinesisVideoSignalingChannelsClient(AmazonKinesisVideoSignalingChannelsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -211,14 +211,6 @@ namespace Amazon.KinesisVideoSignalingChannels
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -226,7 +218,9 @@ namespace Amazon.KinesisVideoSignalingChannels
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoSignalingChannelsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoSignalingChannelsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

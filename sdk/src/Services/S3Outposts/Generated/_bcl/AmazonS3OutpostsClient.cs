@@ -79,7 +79,7 @@ namespace Amazon.S3Outposts
         ///
         /// </summary>
         public AmazonS3OutpostsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3OutpostsConfig()) { }
+            : base(new AmazonS3OutpostsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonS3OutpostsClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.S3Outposts
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3OutpostsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3OutpostsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonS3OutpostsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonS3OutpostsClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.S3Outposts
         /// </summary>
         /// <param name="config">The AmazonS3OutpostsClient Configuration Object</param>
         public AmazonS3OutpostsClient(AmazonS3OutpostsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonS3OutpostsClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.S3Outposts
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.S3Outposts
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3OutpostsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3OutpostsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

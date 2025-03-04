@@ -199,6 +199,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly ApiCachingBehavior FULL_REQUEST_CACHING = new ApiCachingBehavior("FULL_REQUEST_CACHING");
         /// <summary>
+        /// Constant OPERATION_LEVEL_CACHING for ApiCachingBehavior
+        /// </summary>
+        public static readonly ApiCachingBehavior OPERATION_LEVEL_CACHING = new ApiCachingBehavior("OPERATION_LEVEL_CACHING");
+        /// <summary>
         /// Constant PER_RESOLVER_CACHING for ApiCachingBehavior
         /// </summary>
         public static readonly ApiCachingBehavior PER_RESOLVER_CACHING = new ApiCachingBehavior("PER_RESOLVER_CACHING");

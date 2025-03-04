@@ -703,6 +703,10 @@ namespace Amazon.LocationService
         /// </summary>
         public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("Other");
         /// <summary>
+        /// Constant UnknownField for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnknownField = new ValidationExceptionReason("UnknownField");
+        /// <summary>
         /// Constant UnknownOperation for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UnknownOperation = new ValidationExceptionReason("UnknownOperation");

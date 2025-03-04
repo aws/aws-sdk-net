@@ -20,12 +20,6 @@ using Amazon.Runtime.Internal;
 bool structureIsNotEventStream = this.Structure != null && !this.Structure.IsEventStream;
 bool structureIsEventStream = this.Structure != null && this.Structure.IsEventStream;
 bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
-if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasValue)
-{
-#>
-using Amazon.Runtime.Internal.Auth;
-<#
-}
 #>
 <#
 if(structureIsEvent || structureIsEventStream)
@@ -235,8 +229,21 @@ namespace <#=this.Config.Namespace#>.Model
 
                     // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
                     // The Retryable is there because the CloudHsmServiceException exception from CloudHSM models Retryable with a different return then what comes from the base class.
+                    var memberModifier = string.Empty;
+                    if (member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")))
+                    {
+                        memberModifier = "new ";
+                    }
+                    // Cognito and SecurityToken also have a modeled property named Expiration, which conflicts with the interface used in SRA.
+                    else if (
+                        member.PropertyName.Equals("Expiration") && 
+                        this.ClassName.Equals("Credentials") &&
+                        (this.Config.Namespace.Equals("Amazon.CognitoIdentity") || this.Config.Namespace.Equals("Amazon.SecurityToken")))
+                    {
+                        memberModifier = "override ";
+                    }
 #>
-        <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=memberModifier#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
             get { return this.<#=member.VariableName#>; }
             set { this.<#=member.VariableName#> = value; }
@@ -339,45 +346,6 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                 }
 
-                if (this.StructureType == StructureType.Request && this.Operation.AuthType.HasValue)
-                {
-#>
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-<#
-                    switch (this.Operation.AuthType.Value)
-                    {
-                        case OperationAuthType.None:
-#>
-            return new NullSigner();
-<#
-                        break;
-                        case OperationAuthType.V4:
-#>
-            return new AWS4Signer();
-<#
-                        break;
-                        case OperationAuthType.V4UnsignedBody:
-#>
-            return new AWS4Signer(false);
-<#
-                        break;
-                        case OperationAuthType.Bearer:
-#>
-            return new BearerTokenSigner();
-<#
-                        break;
-                        default:
-                            throw new ArgumentException("Unhandled value for operation authtype:" + this.Operation.AuthType.Value);
-                    }
-#>
-        }
-<#
-                }
                 // Flexible checksum overrides to allow response validation configuration on the request
                 if (this.StructureType == StructureType.Request && !string.IsNullOrEmpty(this.Operation.ChecksumConfiguration?.RequestValidationModeMember))
                 {

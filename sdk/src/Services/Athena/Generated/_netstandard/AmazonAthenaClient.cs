@@ -78,7 +78,7 @@ namespace Amazon.Athena
         ///
         /// </summary>
         public AmazonAthenaClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAthenaConfig()) { }
+            : base(new AmazonAthenaConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAthenaClient with the credentials loaded from the application's
@@ -97,7 +97,7 @@ namespace Amazon.Athena
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAthenaClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAthenaConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAthenaConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAthenaClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.Athena
         /// </summary>
         /// <param name="config">The AmazonAthenaClient Configuration Object</param>
         public AmazonAthenaClient(AmazonAthenaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -241,14 +241,6 @@ namespace Amazon.Athena
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -256,7 +248,9 @@ namespace Amazon.Athena
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAthenaEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAthenaAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -16,10 +16,10 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
+using System.Globalization;
 
 
 using Amazon.Util;
-using System.Globalization;
 using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
@@ -27,6 +27,11 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Identity;
+using Amazon.Runtime.Credentials;
+
+
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -86,7 +91,9 @@ namespace Amazon.Runtime
         private const int MaxRetriesDefault = 2;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
-        private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
+        private AWSCredentials _defaultAWSCredentials = null;
+        private IIdentityResolverConfiguration _identityResolverConfiguration = DefaultIdentityResolverConfiguration.Instance;
+        private IAWSTokenProvider _awsTokenProvider;
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
         private AccountIdEndpointMode? accountIdEndpointMode = null;
         private RequestChecksumCalculation? requestChecksumCalculation = null;
@@ -178,6 +185,20 @@ namespace Amazon.Runtime
             }
 
             return null;
+        }
+
+        /// <inheritdoc />
+        public AWSCredentials DefaultAWSCredentials
+        {
+            get { return this._defaultAWSCredentials; }
+            set { this._defaultAWSCredentials = value; }
+        }
+
+        /// <inheritdoc />
+        public IIdentityResolverConfiguration IdentityResolverConfiguration
+        {
+            get { return this._identityResolverConfiguration; }
+            set { this._identityResolverConfiguration = value; }
         }
 
         /// <inheritdoc />
@@ -323,7 +344,7 @@ namespace Amazon.Runtime
                         }
                         else
                         {
-                            CredentialProfileStoreChain.TryGetProfile(FallbackCredentialsFactory.GetProfileName(), out profile);
+                            CredentialProfileStoreChain.TryGetProfile(DefaultAWSCredentialsIdentityResolver.GetProfileName(), out profile);
                         }
                         if(profile != null)
                         {

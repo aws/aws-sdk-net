@@ -531,8 +531,15 @@ namespace Amazon.EKS
         /// You can only create a node group for your cluster that is equal to the current Kubernetes
         /// version for the cluster. All node groups are created with the latest AMI release version
         /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
-        /// AMI using a launch template. For more information about using launch templates, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+        /// AMI using a launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// For later updates, you will only be able to update a node group using a launch template
+        /// only if it was originally deployed with a launch template. Additionally, the launch
+        /// template ID or name must match what was used when the node group was created. You
+        /// can update the launch template version with necessary changes. For more information
+        /// about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
         /// managed nodes with launch templates</a>.
         /// </para>
         ///  
@@ -1438,9 +1445,9 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When the status of the update is <c>Succeeded</c>, the update is complete. If an update
-        /// fails, the status is <c>Failed</c>, and an error detail explains the reason for the
-        /// failure.
+        /// When the status of the update is <c>Successful</c>, the update is complete. If an
+        /// update fails, the status is <c>Failed</c>, and an error detail explains the reason
+        /// for the failure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
@@ -1999,8 +2006,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
-        /// </c> to add it to the Amazon EKS control plane.
+        /// Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+        /// <c>RegisterClusterRequest</c> </a> to add it to the Amazon EKS control plane.
         /// </para>
         ///  
         /// <para>
@@ -2283,8 +2290,8 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your cluster update with the <a>DescribeUpdate</a>
-        /// API operation.
+        /// can use to track the status of your cluster update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation.
         /// 
         ///  
         /// <para>
@@ -2382,9 +2389,9 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. You can update the Kubernetes labels and taints for a node group and
-        /// the scaling and version update configuration.
+        /// can use to track the status of your node group update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation. You can update the Kubernetes labels and
+        /// taints for a node group and the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2431,10 +2438,15 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// You can update a node group using a launch template only if the node group was originally
-        /// deployed with a launch template. If you need to update a custom AMI in a node group
-        /// that was deployed with a launch template, then update your custom AMI, specify the
-        /// new ID in a new version of the launch template, and then update the node group to
-        /// the new version of the launch template.
+        /// deployed with a launch template. Additionally, the launch template ID or name must
+        /// match what was used when the node group was created. You can update the launch template
+        /// version with necessary changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to update a custom AMI in a node group that was deployed with a launch
+        /// template, then update your custom AMI, specify the new ID in a new version of the
+        /// launch template, and then update the node group to the new version of the launch template.
         /// </para>
         ///  
         /// <para>

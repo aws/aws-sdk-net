@@ -180,7 +180,7 @@ namespace Amazon.PI
         /// For example, if you specify a SQL ID, <c>GetDimensionKeyDetails</c> retrieves the
         /// full text of the dimension <c>db.sql.statement</c> associated with this ID. This operation
         /// is useful because <c>GetResourceMetrics</c> and <c>DescribeDimensionKeys</c> don't
-        /// support retrieval of large SQL statement text.
+        /// support retrieval of large SQL statement text, lock snapshots, and execution plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDimensionKeyDetails service method.</param>
         /// <param name="cancellationToken">

@@ -2215,4 +2215,58 @@ namespace Amazon.EKS
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type VersionStatus.
+    /// </summary>
+    public class VersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTENDED_SUPPORT for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus EXTENDED_SUPPORT = new VersionStatus("EXTENDED_SUPPORT");
+        /// <summary>
+        /// Constant STANDARD_SUPPORT for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus STANDARD_SUPPORT = new VersionStatus("STANDARD_SUPPORT");
+        /// <summary>
+        /// Constant UNSUPPORTED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UNSUPPORTED = new VersionStatus("UNSUPPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionStatus FindValue(string value)
+        {
+            return FindValue<VersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -38,25 +38,19 @@ namespace Amazon.Runtime.Logging
 
         public void Log(SdkLogLevel level, string message, Exception ex, params object[] parameters)
         {
-            TextWriter writer;
-            if (level == SdkLogLevel.Error || level == SdkLogLevel.Fatal)
-                writer = Console.Error;
-            else
-                writer = Console.Out;
+            var formatted = string.Format(CultureInfo.CurrentCulture, message, parameters);
+            string logMessage;
 
-            writer.WriteLine(message, parameters);
-
-            string formatted = null;
             long sequence = Interlocked.Increment(ref _sequenceId);
             string dt = AWSSDKUtils.CorrectedUtcNow.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
             string asString = level.ToString().ToUpper(CultureInfo.InvariantCulture);
 
             if (ex != null)
-                formatted = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3} --> {4}", sequence, dt, asString, message, ex.ToString());
+                logMessage = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3} --> {4}", sequence, dt, asString, formatted, ex.ToString());
             else
-                formatted = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3}", sequence, dt, asString, message);
+                logMessage = string.Format(CultureInfo.CurrentCulture, "{0}|{1}|{2}|{3}", sequence, dt, asString, formatted);
 
-            Console.WriteLine(@"{0} {1}", _declaredLoggerType.Name, formatted);
+            Console.WriteLine(@"{0} {1}", _declaredLoggerType.Name, logMessage);
         }
     }
 

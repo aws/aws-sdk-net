@@ -156,7 +156,7 @@ namespace Amazon.GlobalAccelerator
         ///
         /// </summary>
         public AmazonGlobalAcceleratorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlobalAcceleratorConfig()) { }
+            : base(new AmazonGlobalAcceleratorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGlobalAcceleratorClient with the credentials loaded from the application's
@@ -175,7 +175,7 @@ namespace Amazon.GlobalAccelerator
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGlobalAcceleratorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlobalAcceleratorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGlobalAcceleratorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGlobalAcceleratorClient with the credentials loaded from the application's
@@ -194,7 +194,7 @@ namespace Amazon.GlobalAccelerator
         /// </summary>
         /// <param name="config">The AmazonGlobalAcceleratorClient Configuration Object</param>
         public AmazonGlobalAcceleratorClient(AmazonGlobalAcceleratorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGlobalAcceleratorClient with AWS Credentials
@@ -297,15 +297,7 @@ namespace Amazon.GlobalAccelerator
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -315,7 +307,9 @@ namespace Amazon.GlobalAccelerator
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlobalAcceleratorEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGlobalAcceleratorAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

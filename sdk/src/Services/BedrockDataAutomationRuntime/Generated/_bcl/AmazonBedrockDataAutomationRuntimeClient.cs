@@ -63,7 +63,7 @@ namespace Amazon.BedrockDataAutomationRuntime
         ///
         /// </summary>
         public AmazonBedrockDataAutomationRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockDataAutomationRuntimeConfig()) { }
+            : base(new AmazonBedrockDataAutomationRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBedrockDataAutomationRuntimeClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.BedrockDataAutomationRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBedrockDataAutomationRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockDataAutomationRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBedrockDataAutomationRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBedrockDataAutomationRuntimeClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.BedrockDataAutomationRuntime
         /// </summary>
         /// <param name="config">The AmazonBedrockDataAutomationRuntimeClient Configuration Object</param>
         public AmazonBedrockDataAutomationRuntimeClient(AmazonBedrockDataAutomationRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBedrockDataAutomationRuntimeClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.BedrockDataAutomationRuntime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.BedrockDataAutomationRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockDataAutomationRuntimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockDataAutomationRuntimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -387,6 +381,225 @@ namespace Amazon.BedrockDataAutomationRuntime
             options.ResponseUnmarshaller = InvokeDataAutomationAsyncResponseUnmarshaller.Instance;
             
             return InvokeAsync<InvokeDataAutomationAsyncResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List tags for an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List tags for an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Tag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ServiceQuotaExceededException">
+        /// This exception will be thrown when service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Tag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ServiceQuotaExceededException">
+        /// This exception will be thrown when service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Untag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Untag an Amazon Bedrock Data Automation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockDataAutomationRuntime.</returns>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.AccessDeniedException">
+        /// This exception will be thrown when customer does not have access to API.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.InternalServerException">
+        /// This exception is for any internal un-expected service errors.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ResourceNotFoundException">
+        /// This exception will be thrown when resource provided from customer not found.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ThrottlingException">
+        /// This exception will be thrown when customer reached API TPS limit.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockDataAutomationRuntime.Model.ValidationException">
+        /// This exception will be thrown when customer provided invalid parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-runtime-2024-06-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
