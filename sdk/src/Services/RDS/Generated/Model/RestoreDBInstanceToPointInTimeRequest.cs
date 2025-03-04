@@ -1384,7 +1384,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>io1</c>, if the <c>Iops</c> parameter is specified. Otherwise, <c>gp2</c>.
+        /// Default: <c>io1</c>, if the <c>Iops</c> parameter is specified. Otherwise, <c>gp3</c>.
         /// </para>
         ///  
         /// <para>
