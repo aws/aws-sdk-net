@@ -42,7 +42,7 @@ namespace Amazon.ApplicationSignals.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>burn rate = error rate over the look-back window / (1 - attainment goal percentage)</i>
+    ///  <i>burn rate = error rate over the look-back window / (100% - attainment goal percentage)</i>
     /// 
     /// </para>
     ///  

@@ -181,7 +181,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
         /// associations are gated under. The associations only run when that change calendar
         /// is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon
-        /// Web Services Systems Manager Change Calendar</a>.
+        /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> CalendarNames

@@ -203,8 +203,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KerberosAuthenticationSettings. 
         /// <para>
-        /// Specifies the ID of the secret that stores the key cache file required for kerberos
-        /// authentication, when replicating an instance.
+        /// Specifies the settings required for kerberos authentication when replicating an instance.
         /// </para>
         /// </summary>
         public KerberosAuthenticationSettings KerberosAuthenticationSettings

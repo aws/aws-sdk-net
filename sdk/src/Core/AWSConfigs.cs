@@ -528,11 +528,6 @@ namespace Amazon
         None = 0,
 
         /// <summary>
-        /// Log using log4net
-        /// </summary>
-        Log4Net = 1,
-
-        /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
         SystemDiagnostics = 2,

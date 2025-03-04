@@ -139,7 +139,7 @@ namespace Amazon.PartnerCentralSelling
         ///
         /// </summary>
         public AmazonPartnerCentralSellingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPartnerCentralSellingConfig()) { }
+            : base(new AmazonPartnerCentralSellingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPartnerCentralSellingClient with the credentials loaded from the application's
@@ -158,7 +158,7 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPartnerCentralSellingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPartnerCentralSellingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPartnerCentralSellingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPartnerCentralSellingClient with the credentials loaded from the application's
@@ -177,7 +177,7 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         /// <param name="config">The AmazonPartnerCentralSellingClient Configuration Object</param>
         public AmazonPartnerCentralSellingClient(AmazonPartnerCentralSellingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPartnerCentralSellingClient with AWS Credentials
@@ -280,15 +280,7 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -298,7 +290,9 @@ namespace Amazon.PartnerCentralSelling
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPartnerCentralSellingEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPartnerCentralSellingAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

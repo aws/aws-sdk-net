@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CommonPrefixesItem Unmarshaller
      /// </summary>
-    public class CommonPrefixesItemUnmarshaller : IXmlUnmarshaller<string, XmlUnmarshallerContext>, IXmlUnmarshaller<string, JsonUnmarshallerContext> 
+    public class CommonPrefixesItemUnmarshaller : IXmlUnmarshaller<string, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,16 +57,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return prefix;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public string Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static CommonPrefixesItemUnmarshaller _instance;

@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DefaultRetention Object
     /// </summary>  
-    public class DefaultRetentionUnmarshaller : IXmlUnmarshaller<DefaultRetention, XmlUnmarshallerContext>, IXmlUnmarshaller<DefaultRetention, JsonUnmarshallerContext>
+    public class DefaultRetentionUnmarshaller : IXmlUnmarshaller<DefaultRetention, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,16 +80,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DefaultRetention Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static DefaultRetentionUnmarshaller _instance;

@@ -96,7 +96,7 @@ namespace Amazon.CodeGuruSecurity
         ///
         /// </summary>
         public AmazonCodeGuruSecurityClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeGuruSecurityConfig()) { }
+            : base(new AmazonCodeGuruSecurityConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruSecurityClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.CodeGuruSecurity
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeGuruSecurityClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeGuruSecurityConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeGuruSecurityConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruSecurityClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.CodeGuruSecurity
         /// </summary>
         /// <param name="config">The AmazonCodeGuruSecurityClient Configuration Object</param>
         public AmazonCodeGuruSecurityClient(AmazonCodeGuruSecurityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruSecurityClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.CodeGuruSecurity
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.CodeGuruSecurity
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeGuruSecurityEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeGuruSecurityAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

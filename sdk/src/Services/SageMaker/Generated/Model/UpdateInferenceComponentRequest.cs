@@ -35,9 +35,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateInferenceComponentRequest : AmazonSageMakerRequest
     {
+        private InferenceComponentDeploymentConfig _deploymentConfig;
         private string _inferenceComponentName;
         private InferenceComponentRuntimeConfig _runtimeConfig;
         private InferenceComponentSpecification _specification;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for the inference component. The configuration contains
+        /// the desired deployment strategy and rollback settings.
+        /// </para>
+        /// </summary>
+        public InferenceComponentDeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceComponentName. 

@@ -70,7 +70,7 @@ namespace Amazon.CloudTrailData
         ///
         /// </summary>
         public AmazonCloudTrailDataClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailDataConfig()) { }
+            : base(new AmazonCloudTrailDataConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudTrailDataClient with the credentials loaded from the application's
@@ -89,7 +89,7 @@ namespace Amazon.CloudTrailData
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudTrailDataClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailDataConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudTrailDataConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudTrailDataClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.CloudTrailData
         /// </summary>
         /// <param name="config">The AmazonCloudTrailDataClient Configuration Object</param>
         public AmazonCloudTrailDataClient(AmazonCloudTrailDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -215,14 +215,6 @@ namespace Amazon.CloudTrailData
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -230,7 +222,9 @@ namespace Amazon.CloudTrailData
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudTrailDataEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudTrailDataAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

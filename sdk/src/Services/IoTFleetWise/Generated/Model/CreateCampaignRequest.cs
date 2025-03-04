@@ -142,7 +142,7 @@ namespace Amazon.IoTFleetWise.Model
         /// to query vehicle data so that you can identify trends and patterns.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=3)]
         public List<DataDestinationConfig> DataDestinationConfigs
         {
             get { return this._dataDestinationConfigs; }
@@ -390,7 +390,7 @@ namespace Amazon.IoTFleetWise.Model
         /// A list of information about signals to fetch.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2)]
         public List<SignalFetchInformation> SignalsToFetch
         {
             get { return this._signalsToFetch; }

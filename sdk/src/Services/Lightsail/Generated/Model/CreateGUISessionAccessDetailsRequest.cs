@@ -32,9 +32,9 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the CreateGUISessionAccessDetails operation.
     /// Creates two URLs that are used to access a virtual computer’s graphical user interface
-    /// (GUI) session. The primary URL initiates a web-based NICE DCV session to the virtual
-    /// computer's application. The secondary URL initiates a web-based NICE DCV session to
-    /// the virtual computer's operating session. 
+    /// (GUI) session. The primary URL initiates a web-based Amazon DCV session to the virtual
+    /// computer's application. The secondary URL initiates a web-based Amazon DCV session
+    /// to the virtual computer's operating session. 
     /// 
     ///  
     /// <para>

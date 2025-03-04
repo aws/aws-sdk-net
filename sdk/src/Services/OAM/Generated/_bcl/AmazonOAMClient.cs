@@ -44,7 +44,8 @@ namespace Amazon.OAM
     /// source accounts and monitoring accounts by using <i>CloudWatch cross-account observability</i>.
     /// With CloudWatch cross-account observability, you can monitor and troubleshoot applications
     /// that span multiple accounts within a Region. Seamlessly search, visualize, and analyze
-    /// your metrics, logs, traces, and Application Insights applications in any of the linked
+    /// your metrics, logs, traces, Application Signals services, service level objectives
+    /// (SLOs), Application Insights applications, and internet monitors in any of the linked
     /// accounts without account boundaries.
     /// 
     ///  
@@ -56,7 +57,16 @@ namespace Amazon.OAM
     /// that generates observability data for the resources that reside in it. Source accounts
     /// share their observability data with the monitoring account. The shared observability
     /// data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs, traces
-    /// in X-Ray, and applications in Amazon CloudWatch Application Insights.
+    /// in X-Ray, Application Signals services, service level objectives (SLOs), applications
+    /// in Amazon CloudWatch Application Insights, and internet monitors in CloudWatch Internet
+    /// Monitor.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you set up a link, you can choose to share the metrics from all namespaces with
+    /// the monitoring account, or filter to a subset of namespaces. And for CloudWatch Logs,
+    /// you can choose to share all log groups with the monitoring account, or filter to a
+    /// subset of log groups. 
     /// </para>
     /// </summary>
     public partial class AmazonOAMClient : AmazonServiceClient, IAmazonOAM
@@ -96,7 +106,7 @@ namespace Amazon.OAM
         ///
         /// </summary>
         public AmazonOAMClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOAMConfig()) { }
+            : base(new AmazonOAMConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOAMClient with the credentials loaded from the application's
@@ -115,7 +125,7 @@ namespace Amazon.OAM
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOAMClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOAMConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOAMConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOAMClient with the credentials loaded from the application's
@@ -134,7 +144,7 @@ namespace Amazon.OAM
         /// </summary>
         /// <param name="config">The AmazonOAMClient Configuration Object</param>
         public AmazonOAMClient(AmazonOAMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonOAMClient with AWS Credentials
@@ -237,15 +247,7 @@ namespace Amazon.OAM
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +257,9 @@ namespace Amazon.OAM
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOAMEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOAMAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

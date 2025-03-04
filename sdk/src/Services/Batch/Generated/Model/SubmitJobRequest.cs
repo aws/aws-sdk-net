@@ -54,6 +54,7 @@ namespace Amazon.Batch.Model
     public partial class SubmitJobRequest : AmazonBatchRequest
     {
         private ArrayProperties _arrayProperties;
+        private ConsumableResourceProperties _consumableResourcePropertiesOverride;
         private ContainerOverrides _containerOverrides;
         private List<JobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<JobDependency>() : null;
         private EcsPropertiesOverride _ecsPropertiesOverride;
@@ -89,6 +90,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetArrayProperties()
         {
             return this._arrayProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumableResourcePropertiesOverride. 
+        /// <para>
+        /// An object that contains overrides for the consumable resources of a job.
+        /// </para>
+        /// </summary>
+        public ConsumableResourceProperties ConsumableResourcePropertiesOverride
+        {
+            get { return this._consumableResourcePropertiesOverride; }
+            set { this._consumableResourcePropertiesOverride = value; }
+        }
+
+        // Check to see if ConsumableResourcePropertiesOverride property is set
+        internal bool IsSetConsumableResourcePropertiesOverride()
+        {
+            return this._consumableResourcePropertiesOverride != null;
         }
 
         /// <summary>

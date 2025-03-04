@@ -64,7 +64,7 @@ namespace Amazon.Ep2s3hostlabel
         ///
         /// </summary>
         public AmazonEp2s3hostlabelClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2s3hostlabelConfig()) { }
+            : base(new AmazonEp2s3hostlabelConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEp2s3hostlabelClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Ep2s3hostlabel
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEp2s3hostlabelClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEp2s3hostlabelConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEp2s3hostlabelConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEp2s3hostlabelClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Ep2s3hostlabel
         /// </summary>
         /// <param name="config">The AmazonEp2s3hostlabelClient Configuration Object</param>
         public AmazonEp2s3hostlabelClient(AmazonEp2s3hostlabelConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,14 +209,6 @@ namespace Amazon.Ep2s3hostlabel
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -224,7 +216,9 @@ namespace Amazon.Ep2s3hostlabel
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2s3hostlabelEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEp2s3hostlabelAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

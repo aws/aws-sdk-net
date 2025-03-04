@@ -43,7 +43,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  <important> 
     /// <para>
-    ///  <b>This API is is not available in a dedicated namespace.</b> 
+    ///  <b>This API is not available in a dedicated namespace.</b> 
     /// </para>
     ///  </important>
     /// </summary>

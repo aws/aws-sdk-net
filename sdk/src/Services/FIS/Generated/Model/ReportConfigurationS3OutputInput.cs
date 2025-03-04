@@ -62,7 +62,7 @@ namespace Amazon.FIS.Model
         /// The prefix of the S3 bucket where the experiment report will be stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Max=256)]
         public string Prefix
         {
             get { return this._prefix; }

@@ -9,7 +9,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Metrics unmarshaller
     /// </summary>
-    public class MetricsUnmarshaller : IXmlUnmarshaller<Metrics, XmlUnmarshallerContext>, IXmlUnmarshaller<Metrics, JsonUnmarshallerContext>
+    public class MetricsUnmarshaller : IXmlUnmarshaller<Metrics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,16 +47,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return metrics;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Metrics Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static MetricsUnmarshaller _instance;

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   InventoryS3BucketDestination Unmarshaller
     /// </summary>
-    public class InventoryS3BucketDestinationUnmarshaller : IXmlUnmarshaller<InventoryS3BucketDestination, XmlUnmarshallerContext>, IXmlUnmarshaller<InventoryS3BucketDestination, JsonUnmarshallerContext> 
+    public class InventoryS3BucketDestinationUnmarshaller : IXmlUnmarshaller<InventoryS3BucketDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,16 +80,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return condition;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InventoryS3BucketDestination Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static InventoryS3BucketDestinationUnmarshaller _instance;

@@ -81,7 +81,7 @@ namespace Amazon.SimSpaceWeaver
         ///
         /// </summary>
         public AmazonSimSpaceWeaverClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimSpaceWeaverConfig()) { }
+            : base(new AmazonSimSpaceWeaverConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSimSpaceWeaverClient with the credentials loaded from the application's
@@ -100,7 +100,7 @@ namespace Amazon.SimSpaceWeaver
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimSpaceWeaverClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimSpaceWeaverConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSimSpaceWeaverConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSimSpaceWeaverClient with the credentials loaded from the application's
@@ -119,7 +119,7 @@ namespace Amazon.SimSpaceWeaver
         /// </summary>
         /// <param name="config">The AmazonSimSpaceWeaverClient Configuration Object</param>
         public AmazonSimSpaceWeaverClient(AmazonSimSpaceWeaverConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -244,14 +244,6 @@ namespace Amazon.SimSpaceWeaver
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -259,7 +251,9 @@ namespace Amazon.SimSpaceWeaver
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimSpaceWeaverEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSimSpaceWeaverAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

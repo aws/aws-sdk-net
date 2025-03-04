@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Unmarshaller for ReplicaModifications
     /// </summary>
-    public class ReplicaModificationsUnmarshaller : IXmlUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>, IXmlUnmarshaller<ReplicaModifications, JsonUnmarshallerContext>
+    public class ReplicaModificationsUnmarshaller : IXmlUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,16 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return response;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicaModifications Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static ReplicaModificationsUnmarshaller _instance;

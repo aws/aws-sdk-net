@@ -324,6 +324,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\AuthResolvers\ModeledResolver.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModeledResolver.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\CodeAnalysis\NullCollectionInitializerAnalyzer.cs">
       <DependentUpon>NullCollectionInitializerAnalyzer.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -590,6 +595,10 @@
     <None Update="Generators/Marshallers/RestXmlStructureUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RestXmlStructureUnmarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\AuthResolvers\ModeledResolver.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModeledResolver.cs</LastGenOutput>
     </None>
     <None Update="Generators\CodeAnalysis\NullCollectionInitializerAnalyzer.tt">
       <LastGenOutput>NullCollectionInitializerAnalyzer.cs</LastGenOutput>

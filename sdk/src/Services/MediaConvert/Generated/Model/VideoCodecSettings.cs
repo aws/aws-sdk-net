@@ -34,9 +34,10 @@ namespace Amazon.MediaConvert.Model
     /// settings in this group vary depending on the value that you choose for Video codec.
     /// For each codec enum that you choose, define the corresponding settings object. The
     /// following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
-    /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265,
-    /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings
-    /// * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264,
+    /// H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+    /// * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9,
+    /// Vp9Settings * XAVC, XavcSettings
     /// </summary>
     public partial class VideoCodecSettings
     {
@@ -44,6 +45,7 @@ namespace Amazon.MediaConvert.Model
         private AvcIntraSettings _avcIntraSettings;
         private VideoCodec _codec;
         private FrameCaptureSettings _frameCaptureSettings;
+        private GifSettings _gifSettings;
         private H264Settings _h264Settings;
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
@@ -123,6 +125,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFrameCaptureSettings()
         {
             return this._frameCaptureSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GifSettings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value GIF
+        /// </summary>
+        public GifSettings GifSettings
+        {
+            get { return this._gifSettings; }
+            set { this._gifSettings = value; }
+        }
+
+        // Check to see if GifSettings property is set
+        internal bool IsSetGifSettings()
+        {
+            return this._gifSettings != null;
         }
 
         /// <summary>

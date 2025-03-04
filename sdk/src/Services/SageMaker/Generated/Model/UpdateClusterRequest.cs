@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
+        private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterNodeRecovery _nodeRecovery;
 
         /// <summary>
@@ -75,6 +76,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupsToDelete. 
+        /// <para>
+        /// Specify the names of the instance groups to delete. Use a single <c>,</c> as the separator
+        /// between multiple names.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> InstanceGroupsToDelete
+        {
+            get { return this._instanceGroupsToDelete; }
+            set { this._instanceGroupsToDelete = value; }
+        }
+
+        // Check to see if InstanceGroupsToDelete property is set
+        internal bool IsSetInstanceGroupsToDelete()
+        {
+            return this._instanceGroupsToDelete != null && (this._instanceGroupsToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

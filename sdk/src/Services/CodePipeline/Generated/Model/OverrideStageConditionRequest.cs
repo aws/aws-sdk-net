@@ -31,7 +31,10 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the OverrideStageCondition operation.
-    /// Used to override a stage condition.
+    /// Used to override a stage condition. For more information about conditions, see <a
+    /// href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+    /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+    /// do stage conditions work?</a>.
     /// </summary>
     public partial class OverrideStageConditionRequest : AmazonCodePipelineRequest
     {

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      /// PolicyStatus Unmarshaller
      /// </summary>
-    public class PolicyStatusUnmarshaller : IXmlUnmarshaller<PolicyStatus, XmlUnmarshallerContext>, IXmlUnmarshaller<PolicyStatus, JsonUnmarshallerContext> 
+    public class PolicyStatusUnmarshaller : IXmlUnmarshaller<PolicyStatus, XmlUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,16 +55,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return policyStatus;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PolicyStatus Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static PolicyStatusUnmarshaller _instance;

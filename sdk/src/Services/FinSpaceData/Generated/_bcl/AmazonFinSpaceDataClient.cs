@@ -79,7 +79,7 @@ namespace Amazon.FinSpaceData
         ///
         /// </summary>
         public AmazonFinSpaceDataClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFinSpaceDataConfig()) { }
+            : base(new AmazonFinSpaceDataConfig()) { }
 
         /// <summary>
         /// Constructs AmazonFinSpaceDataClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.FinSpaceData
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonFinSpaceDataClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonFinSpaceDataConfig{RegionEndpoint = region}) { }
+            : base(new AmazonFinSpaceDataConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonFinSpaceDataClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.FinSpaceData
         /// </summary>
         /// <param name="config">The AmazonFinSpaceDataClient Configuration Object</param>
         public AmazonFinSpaceDataClient(AmazonFinSpaceDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonFinSpaceDataClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.FinSpaceData
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.FinSpaceData
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFinSpaceDataEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonFinSpaceDataAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

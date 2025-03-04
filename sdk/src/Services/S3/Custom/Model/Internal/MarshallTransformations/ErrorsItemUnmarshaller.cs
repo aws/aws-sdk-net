@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ErrorsItem Unmarshaller
      /// </summary>
-    public class ErrorsItemUnmarshaller : IXmlUnmarshaller<DeleteError, XmlUnmarshallerContext>, IXmlUnmarshaller<DeleteError, JsonUnmarshallerContext> 
+    public class ErrorsItemUnmarshaller : IXmlUnmarshaller<DeleteError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,15 +78,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return errorsItem;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeleteError Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static ErrorsItemUnmarshaller _instance;
 

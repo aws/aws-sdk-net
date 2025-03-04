@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   AnalyticsS3BucketDestination Unmarshaller
     /// </summary>
-    public class AnalyticsS3BucketDestinationUnmarshaller : IXmlUnmarshaller<AnalyticsS3BucketDestination, XmlUnmarshallerContext>, IXmlUnmarshaller<AnalyticsS3BucketDestination, JsonUnmarshallerContext>
+    public class AnalyticsS3BucketDestinationUnmarshaller : IXmlUnmarshaller<AnalyticsS3BucketDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,16 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return AnalyticsS3BucketDestination;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalyticsS3BucketDestination Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static AnalyticsS3BucketDestinationUnmarshaller _instance;

@@ -42,6 +42,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specify the Key Management Service key ID for the Fargate ephemeral storage.
         /// </para>
+        ///  
+        /// <para>
+        /// The key must be a single Region key.
+        /// </para>
         /// </summary>
         public string FargateEphemeralStorageKmsKeyId
         {
@@ -59,6 +63,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specify a Key Management Service key ID to encrypt the managed storage.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key must be a single Region key.
         /// </para>
         /// </summary>
         public string KmsKeyId

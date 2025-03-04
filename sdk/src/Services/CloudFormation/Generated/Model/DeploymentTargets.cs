@@ -99,8 +99,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The names of one or more Amazon Web Services accounts for which you want to deploy
-        /// stack set updates.
+        /// The account IDs of the Amazon Web Services accounts. If you have many account numbers,
+        /// you can provide those accounts using the <c>AccountsUrl</c> property instead.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -118,7 +118,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AccountsUrl. 
         /// <para>
-        /// Returns the value of the <c>AccountsUrl</c> property.
+        /// The Amazon S3 URL path to a file that contains a list of Amazon Web Services account
+        /// IDs. The file format must be either <c>.csv</c> or <c>.txt</c>, and the data can be
+        /// comma-separated or new-line-separated. There is currently a 10MB limit for the data
+        /// (approximately 800,000 accounts).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]
@@ -137,7 +140,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
+        /// The organization root ID or organizational unit (OU) IDs.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitIds

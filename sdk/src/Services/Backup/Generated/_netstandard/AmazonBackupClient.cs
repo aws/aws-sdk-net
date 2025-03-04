@@ -69,7 +69,7 @@ namespace Amazon.Backup
         ///
         /// </summary>
         public AmazonBackupClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupConfig()) { }
+            : base(new AmazonBackupConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBackupClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.Backup
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBackupClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBackupConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBackupClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.Backup
         /// </summary>
         /// <param name="config">The AmazonBackupClient Configuration Object</param>
         public AmazonBackupClient(AmazonBackupConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -232,14 +232,6 @@ namespace Amazon.Backup
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -247,7 +239,9 @@ namespace Amazon.Backup
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -17,6 +17,8 @@ using System;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using System.Linq;
+using Amazon.Runtime.Credentials;
+
 #if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
@@ -188,7 +190,7 @@ namespace Amazon.Runtime.Internal
             value = Environment.GetEnvironmentVariable(environmentVariableName);
             if (string.IsNullOrEmpty(value))
             {
-                _logger.InfoFormat($"The environment variable {environmentVariableName} was not set with a value.");
+                _logger.DebugFormat($"The environment variable {environmentVariableName} was not set with a value.");
                 value = null;
                 return false;
             }
@@ -303,7 +305,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileInternalConfiguration(ICredentialProfileSource source)
         {
-            var profileName = FallbackCredentialsFactory.GetProfileName();
+            var profileName = DefaultAWSCredentialsIdentityResolver.GetProfileName();
             Setup(source, profileName);
         }
 
@@ -367,7 +369,7 @@ namespace Amazon.Runtime.Internal
 
             foreach(var item in items)
             {
-                _logger.InfoFormat(item.Value == null
+                _logger.DebugFormat(item.Value == null
                 ? $"There is no {item.Key} set in the profile named '{profileName}' in store {source.GetType()}"
                 : $"{item.Key} found in profile '{profileName}' in store {source.GetType()}"
                 );

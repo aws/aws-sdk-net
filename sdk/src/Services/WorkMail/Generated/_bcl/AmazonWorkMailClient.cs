@@ -117,7 +117,7 @@ namespace Amazon.WorkMail
         ///
         /// </summary>
         public AmazonWorkMailClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkMailConfig()) { }
+            : base(new AmazonWorkMailConfig()) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.WorkMail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWorkMailClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkMailConfig{RegionEndpoint = region}) { }
+            : base(new AmazonWorkMailConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailClient with the credentials loaded from the application's
@@ -155,7 +155,7 @@ namespace Amazon.WorkMail
         /// </summary>
         /// <param name="config">The AmazonWorkMailClient Configuration Object</param>
         public AmazonWorkMailClient(AmazonWorkMailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonWorkMailClient with AWS Credentials
@@ -258,15 +258,7 @@ namespace Amazon.WorkMail
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -276,7 +268,9 @@ namespace Amazon.WorkMail
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkMailEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWorkMailAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

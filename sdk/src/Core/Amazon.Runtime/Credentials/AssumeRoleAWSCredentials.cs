@@ -133,7 +133,7 @@ namespace Amazon.Runtime
 
 
             var credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
-            _logger.InfoFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            _logger.DebugFormat("New credentials created for assume role that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
     }

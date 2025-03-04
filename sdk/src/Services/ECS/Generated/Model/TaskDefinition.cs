@@ -114,12 +114,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the EC2 launch type, this field is optional. Supported values are between
-        /// <c>128</c> CPU units (<c>0.125</c> vCPUs) and <c>10240</c> CPU units (<c>10</c> vCPUs).
+        /// If you're using the EC2 launch type or the external launch type, this field is optional.
+        /// Supported values are between <c>128</c> CPU units (<c>0.125</c> vCPUs) and <c>196608</c>
+        /// CPU units (<c>192</c> vCPUs). 
         /// </para>
         ///  
         /// <para>
-        /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
+        /// If you're using the Fargate launch type, this field is required and you must use one
+        /// of the following values, which determines your range of supported values for the <c>memory</c>
+        /// parameter. The CPU units cannot be less than 1 vCPU when you use Windows containers
+        /// on Fargate.
         /// </para>
         ///  <ul> <li> 
         /// <para>

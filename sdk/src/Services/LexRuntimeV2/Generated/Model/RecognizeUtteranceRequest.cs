@@ -25,7 +25,6 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
@@ -387,13 +386,5 @@ namespace Amazon.LexRuntimeV2.Model
             return this._sessionStateValue != null;
         }
 
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer(false);
-        }
     }
 }

@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// QueueConfiguration unmarshaller
     /// </summary>
-    public class QueueConfigurationUnmarshaller : IXmlUnmarshaller<QueueConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<QueueConfiguration, JsonUnmarshallerContext> 
+    public class QueueConfigurationUnmarshaller : IXmlUnmarshaller<QueueConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,16 +81,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return queueConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public QueueConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static QueueConfigurationUnmarshaller _instance;

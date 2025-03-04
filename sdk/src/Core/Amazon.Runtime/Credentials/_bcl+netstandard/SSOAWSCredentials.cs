@@ -131,7 +131,7 @@ namespace Amazon.Runtime
                 throw new NotSupportedException("Unable to get credentials from SSO");
             }
 
-            _logger.InfoFormat("New SSO credentials created that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            _logger.DebugFormat("New SSO credentials created that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
 #else
@@ -158,7 +158,7 @@ namespace Amazon.Runtime
                 throw new NotSupportedException("Unable to get credentials from SSO");
             }
 
-            _logger.InfoFormat("New SSO credentials created that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
+            _logger.DebugFormat("New SSO credentials created that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
 

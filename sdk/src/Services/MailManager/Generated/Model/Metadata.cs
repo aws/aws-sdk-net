@@ -34,14 +34,38 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class Metadata
     {
+        private string _configurationSet;
         private string _ingressPointId;
         private string _ruleSetId;
         private string _senderHostname;
         private string _senderIpAddress;
+        private string _sendingMethod;
+        private string _sendingPool;
+        private string _sourceArn;
+        private string _sourceIdentity;
         private DateTime? _timestamp;
         private string _tlsCipherSuite;
         private string _tlsProtocol;
         private string _trafficPolicyId;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSet. 
+        /// <para>
+        /// The name of the configuration set used when sent through a configuration set with
+        /// archiving enabled.
+        /// </para>
+        /// </summary>
+        public string ConfigurationSet
+        {
+            get { return this._configurationSet; }
+            set { this._configurationSet = value; }
+        }
+
+        // Check to see if ConfigurationSet property is set
+        internal bool IsSetConfigurationSet()
+        {
+            return this._configurationSet != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IngressPointId. 
@@ -116,6 +140,82 @@ namespace Amazon.MailManager.Model
         internal bool IsSetSenderIpAddress()
         {
             return this._senderIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SendingMethod. 
+        /// <para>
+        /// The name of the API call used when sent through a configuration set with archiving
+        /// enabled.
+        /// </para>
+        /// </summary>
+        public string SendingMethod
+        {
+            get { return this._sendingMethod; }
+            set { this._sendingMethod = value; }
+        }
+
+        // Check to see if SendingMethod property is set
+        internal bool IsSetSendingMethod()
+        {
+            return this._sendingMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SendingPool. 
+        /// <para>
+        /// The name of the dedicated IP pool used when sent through a configuration set with
+        /// archiving enabled.
+        /// </para>
+        /// </summary>
+        public string SendingPool
+        {
+            get { return this._sendingPool; }
+            set { this._sendingPool = value; }
+        }
+
+        // Check to see if SendingPool property is set
+        internal bool IsSetSendingPool()
+        {
+            return this._sendingPool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// Specifies the archived email source, identified by either a Rule Set's ARN with an
+        /// Archive action, or a Configuration Set's Archive ARN.
+        /// </para>
+        /// </summary>
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceIdentity. 
+        /// <para>
+        /// The identity name used to authorize the sending action when sent through a configuration
+        /// set with archiving enabled.
+        /// </para>
+        /// </summary>
+        public string SourceIdentity
+        {
+            get { return this._sourceIdentity; }
+            set { this._sourceIdentity = value; }
+        }
+
+        // Check to see if SourceIdentity property is set
+        internal bool IsSetSourceIdentity()
+        {
+            return this._sourceIdentity != null;
         }
 
         /// <summary>

@@ -108,7 +108,7 @@ namespace Amazon.EMRContainers
         ///
         /// </summary>
         public AmazonEMRContainersClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEMRContainersConfig()) { }
+            : base(new AmazonEMRContainersConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEMRContainersClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.EMRContainers
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEMRContainersClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEMRContainersConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEMRContainersConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEMRContainersClient with the credentials loaded from the application's
@@ -146,7 +146,7 @@ namespace Amazon.EMRContainers
         /// </summary>
         /// <param name="config">The AmazonEMRContainersClient Configuration Object</param>
         public AmazonEMRContainersClient(AmazonEMRContainersConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonEMRContainersClient with AWS Credentials
@@ -249,15 +249,7 @@ namespace Amazon.EMRContainers
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -267,7 +259,9 @@ namespace Amazon.EMRContainers
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRContainersEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEMRContainersAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

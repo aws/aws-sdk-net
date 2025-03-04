@@ -36,11 +36,30 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class NodePropertyOverride
     {
+        private ConsumableResourceProperties _consumableResourcePropertiesOverride;
         private ContainerOverrides _containerOverrides;
         private EcsPropertiesOverride _ecsPropertiesOverride;
         private EksPropertiesOverride _eksPropertiesOverride;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
+
+        /// <summary>
+        /// Gets and sets the property ConsumableResourcePropertiesOverride. 
+        /// <para>
+        /// An object that contains overrides for the consumable resources of a job.
+        /// </para>
+        /// </summary>
+        public ConsumableResourceProperties ConsumableResourcePropertiesOverride
+        {
+            get { return this._consumableResourcePropertiesOverride; }
+            set { this._consumableResourcePropertiesOverride = value; }
+        }
+
+        // Check to see if ConsumableResourcePropertiesOverride property is set
+        internal bool IsSetConsumableResourcePropertiesOverride()
+        {
+            return this._consumableResourcePropertiesOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 

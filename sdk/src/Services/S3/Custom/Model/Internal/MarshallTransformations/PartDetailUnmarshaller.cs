@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PartsItem Unmarshaller
      /// </summary>
-    public class PartDetailUnmarshaller : IXmlUnmarshaller<PartDetail, XmlUnmarshallerContext>, IXmlUnmarshaller<PartDetail, JsonUnmarshallerContext> 
+    public class PartDetailUnmarshaller : IXmlUnmarshaller<PartDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -101,16 +101,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return partsItem;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PartDetail Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static PartDetailUnmarshaller _instance;

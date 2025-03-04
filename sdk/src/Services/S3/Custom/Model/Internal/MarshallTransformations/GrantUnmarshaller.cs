@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Grant Unmarshaller
      /// </summary>
-    public class GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>, IXmlUnmarshaller<S3Grant, JsonUnmarshallerContext> 
+    public class GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,15 +66,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return grant;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3Grant Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static GrantUnmarshaller _instance;
 

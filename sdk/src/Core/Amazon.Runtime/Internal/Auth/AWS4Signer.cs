@@ -22,6 +22,7 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
+using Amazon.Runtime.Identity;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -105,44 +106,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="awsAccessKeyId">
-        /// The AWS public key for the account making the service call.
-        /// </param>
-        /// <param name="awsSecretAccessKey">
-        /// The AWS secret key for the account making the call, in clear text.
-        /// </param>
-        /// <exception cref="Amazon.Runtime.SignatureException">
-        /// If any problems are encountered while signing the request.
-        /// </exception>
-        public override void Sign(IRequest request, 
-                                  IClientConfig clientConfig, 
-                                  RequestMetrics metrics, 
-                                  string awsAccessKeyId, 
-                                  string awsSecretAccessKey)
-        {
-            var signingResult = SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
-            request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
-        }
-
-        /// <summary>
-        /// Calculates and signs the specified request using the AWS4 signing protocol by using the
-        /// AWS account credentials given in the method parameters. The resulting signature is added
-        /// to the request headers as 'Authorization'. Parameters supplied in the request, either in
-        /// the resource path as a query string or in the Parameters collection must not have been
-        /// uri encoded. If they have, use the SignRequest method to obtain a signature.
-        /// </summary>
-        /// <param name="request">
-        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
-        /// ('host' and 'x-amz-date') will be added to the request before signing.
-        /// </param>
-        /// <param name="clientConfig">
-        /// Client configuration data encompassing the service call (notably authentication
-        /// region, endpoint and service name).
-        /// </param>
-        /// <param name="metrics">
-        /// Metrics for the request
-        /// </param>
-        /// <param name="credentials">
+        /// <param name="identity">
         /// The AWS credentials for the account making the service call.
         /// </param>
         /// <exception cref="Amazon.Runtime.SignatureException">
@@ -150,10 +114,19 @@ namespace Amazon.Runtime.Internal.Auth
         /// </exception>
         public override void Sign(IRequest request, 
                                   IClientConfig clientConfig, 
-                                  RequestMetrics metrics, 
-                                  ImmutableCredentials credentials)
+                                  RequestMetrics metrics,
+                                  BaseIdentity identity)
         {
-            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+            var credentials = identity as AWSCredentials;
+            if (credentials is null)
+            {
+                throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(AWS4Signer)}.");
+            }
+
+            var immutableCredentials = credentials.GetCredentials();
+
+            var signingResult = SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+            request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;            
         }
 
         /// <summary>
@@ -1051,39 +1024,6 @@ namespace Amazon.Runtime.Internal.Auth
             "s3express"
         };
 
-        /// <summary>
-        /// Calculates and signs the specified request using the AWS4 signing protocol by using the
-        /// AWS account credentials given in the method parameters. The resulting signature is added
-        /// to the request headers as 'Authorization'.
-        /// </summary>
-        /// <param name="request">
-        /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
-        /// ('host' and 'x-amz-date') will be added to the request before signing.
-        /// </param>
-        /// <param name="clientConfig">
-        /// Adding supporting data for the service call required by the signer (notably authentication
-        /// region, endpoint and service name).
-        /// </param>
-        /// <param name="metrics">
-        /// Metrics for the request
-        /// </param>
-        /// <param name="awsAccessKeyId">
-        /// The AWS public key for the account making the service call.
-        /// </param>
-        /// <param name="awsSecretAccessKey">
-        /// The AWS secret key for the account making the call, in clear text
-        /// </param>
-        /// <exception cref="Amazon.Runtime.SignatureException">
-        /// If any problems are encountered while signing the request.
-        /// </exception>
-        public override void Sign(IRequest request,
-                                  IClientConfig clientConfig,
-                                  RequestMetrics metrics,
-                                  string awsAccessKeyId,
-                                  string awsSecretAccessKey)
-        {
-            throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
-        }
 
         /// <summary>
         /// Calculates and signs the specified request using the AWS4 signing protocol by using the
@@ -1101,7 +1041,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="credentials">
+        /// <param name="identity">
         /// The AWS credentials for the account making the service call.
         /// </param>
         /// <exception cref="Amazon.Runtime.SignatureException">
@@ -1110,7 +1050,7 @@ namespace Amazon.Runtime.Internal.Auth
         public override void Sign(IRequest request,
                                   IClientConfig clientConfig,
                                   RequestMetrics metrics,
-                                  ImmutableCredentials credentials)
+                                  BaseIdentity identity)
         {
             throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
         }

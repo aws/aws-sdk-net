@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// EncryptionConfiguration unmarshaller
     /// </summary>
-    public class EncryptionConfigurationUnmarshaller : IXmlUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
+    public class EncryptionConfigurationUnmarshaller : IXmlUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,16 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return EncryptionConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static EncryptionConfigurationUnmarshaller _instance;

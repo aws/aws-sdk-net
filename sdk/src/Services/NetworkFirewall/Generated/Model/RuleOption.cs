@@ -42,7 +42,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The keyword for the Suricata compatible rule option. You must include a <c>sid</c>
         /// (signature ID), and can optionally include other keywords. For information about Suricata
-        /// compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+        /// compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html#rule-options">Rule
         /// options</a> in the Suricata documentation.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The settings of the Suricata compatible rule option. Rule options have zero or more
         /// setting values, and the number of possible and required settings depends on the <c>Keyword</c>.
-        /// For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+        /// For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-7.0.3/rules/intro.html#rule-options">Rule
         /// options</a>.
         /// </para>
         /// </summary>

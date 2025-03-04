@@ -87,6 +87,16 @@ namespace Amazon.CloudFormation.Model
         IListStackInstancesPaginator ListStackInstances(ListStackInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListStackRefactorActions operation
+        ///</summary>
+        IListStackRefactorActionsPaginator ListStackRefactorActions(ListStackRefactorActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStackRefactors operation
+        ///</summary>
+        IListStackRefactorsPaginator ListStackRefactors(ListStackRefactorsRequest request);
+
+        /// <summary>
         /// Paginator for ListStackResources operation
         ///</summary>
         IListStackResourcesPaginator ListStackResources(ListStackResourcesRequest request);

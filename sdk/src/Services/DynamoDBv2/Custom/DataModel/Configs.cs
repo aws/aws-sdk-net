@@ -140,6 +140,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Service calls made via <see cref="AmazonDynamoDBClient"/> will always return 
         /// <see cref="DateTime"/> attributes in UTC.</remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
+
+        /// <summary>
+        /// Gets or sets the attribute name used to store the type discriminator for polymorphic types in DynamoDB.
+        /// </summary>
+        /// <remarks>
+        /// When working with polymorphic types—where a base class or interface has multiple derived implementations
+        /// it's essential to preserve the specific type information during serialization and deserialization
+        /// when using the <see cref="DynamoDBPolymorphicTypeAttribute"/>.
+        ///
+        /// By default, the SDK uses a predefined attribute name of "$type" to store this type discriminator in your DynamoDB items.
+        /// However, you can customize this attribute name to align with your application's naming conventions or to avoid
+        /// conflicts with existing attributes.
+        /// </remarks>
+        public string DerivedTypeAttributeName { get; set; }
+
     }
 
     /// <summary>
@@ -434,6 +449,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
+            string derivedTypeAttributeName =
+                //!string.IsNullOrEmpty(operationConfig.DerivedTypeAttributeName) ? operationConfig.DerivedTypeAttributeName :
+                !string.IsNullOrEmpty(contextConfig.DerivedTypeAttributeName) ? contextConfig.DerivedTypeAttributeName : "$type";
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -449,6 +467,7 @@ namespace Amazon.DynamoDBv2.DataModel
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
+            DerivedTypeAttributeName = derivedTypeAttributeName;
 
             State = new OperationState();
         }
@@ -549,6 +568,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         // State of the operation using this config
         internal OperationState State { get; private set; }
+
+        /// <summary>
+        /// Property indicating the name of the attribute used to store the type discriminator for polymorphic types in DynamoDB.
+        /// Default value is "$type" if not set in the config.
+        /// </summary>
+        /// <remarks>
+        /// When working with polymorphic types—where a base class or interface has multiple derived implementations
+        /// it's essential to preserve the specific type information during serialization and deserialization
+        /// when using the <see cref="DynamoDBPolymorphicTypeAttribute"/>.
+        ///
+        /// By default, the SDK uses a predefined attribute name of "$type" to store this type discriminator in your DynamoDB items.
+        /// However, you can customize this attribute name to align with your application's naming conventions or to avoid
+        /// conflicts with existing attributes.
+        /// </remarks>
+        public string DerivedTypeAttributeName { get; set; }
 
         public class OperationState
         {

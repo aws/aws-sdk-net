@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The text of the document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=9000)]
+        [AWSProperty(Min=1, Max=32000)]
         public string Text
         {
             get { return this._text; }

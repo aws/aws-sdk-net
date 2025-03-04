@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutParameter operation.
-    /// Add a parameter to the system.
+    /// Create or update a parameter in Parameter Store.
     /// </summary>
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -161,7 +161,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// If you don't specify a key ID, the system uses the default key associated with your
-        /// Amazon Web Services account which is not as secure as using a custom key.
+        /// Amazon Web Services account, which is not as secure as using a custom key.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -186,7 +186,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully qualified name of the parameter that you want to add to the system.
+        /// The fully qualified name of the parameter that you want to create or update.
         /// </para>
         ///  <note> 
         /// <para>
@@ -482,7 +482,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter that you want to add to the system.
+        /// The type of parameter that you want to create.
         /// </para>
         ///  <note> 
         /// <para>

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Initiator Unmarshaller
      /// </summary>
-    public class InitiatorUnmarshaller : IXmlUnmarshaller<Initiator, XmlUnmarshallerContext>, IXmlUnmarshaller<Initiator, JsonUnmarshallerContext> 
+    public class InitiatorUnmarshaller : IXmlUnmarshaller<Initiator, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return initiator;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Initiator Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static InitiatorUnmarshaller _instance;

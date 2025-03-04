@@ -34,26 +34,26 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
     /// </summary>
     public partial class DataAutomationConfiguration
     {
-        private string _dataAutomationArn;
+        private string _dataAutomationProjectArn;
         private DataAutomationStage _stage;
 
         /// <summary>
-        /// Gets and sets the property DataAutomationArn. 
+        /// Gets and sets the property DataAutomationProjectArn. 
         /// <para>
-        /// Data automation arn.
+        /// Data automation project arn.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string DataAutomationArn
+        public string DataAutomationProjectArn
         {
-            get { return this._dataAutomationArn; }
-            set { this._dataAutomationArn = value; }
+            get { return this._dataAutomationProjectArn; }
+            set { this._dataAutomationProjectArn = value; }
         }
 
-        // Check to see if DataAutomationArn property is set
-        internal bool IsSetDataAutomationArn()
+        // Check to see if DataAutomationProjectArn property is set
+        internal bool IsSetDataAutomationProjectArn()
         {
-            return this._dataAutomationArn != null;
+            return this._dataAutomationProjectArn != null;
         }
 
         /// <summary>

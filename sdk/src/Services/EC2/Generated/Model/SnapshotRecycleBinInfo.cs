@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RecycleBinEnterTime. 
         /// <para>
-        /// The date and time when the snaphsot entered the Recycle Bin.
+        /// The date and time when the snapshot entered the Recycle Bin.
         /// </para>
         /// </summary>
         public DateTime? RecycleBinEnterTime

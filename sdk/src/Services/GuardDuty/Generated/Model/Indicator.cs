@@ -42,7 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Specific indicator keys observed in the attack sequence.
+        /// Specific indicator keys observed in the attack sequence. For description of the valid
+        /// values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack
+        /// sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,11 +85,6 @@ namespace Amazon.GuardDuty.Model
         /// Values associated with each indicator key. For example, if the indicator key is <c>SUSPICIOUS_NETWORK</c>,
         /// then the value will be the name of the network. If the indicator key is <c>ATTACK_TACTIC</c>,
         /// then the value will be one of the MITRE tactics. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about the values associated with the key, see GuardDuty Extended
-        /// Threat Detection in the <i>GuardDuty User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

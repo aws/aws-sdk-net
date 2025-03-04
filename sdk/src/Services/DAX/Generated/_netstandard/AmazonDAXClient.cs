@@ -69,7 +69,7 @@ namespace Amazon.DAX
         ///
         /// </summary>
         public AmazonDAXClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDAXConfig()) { }
+            : base(new AmazonDAXConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDAXClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.DAX
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDAXClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDAXConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDAXConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDAXClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.DAX
         /// </summary>
         /// <param name="config">The AmazonDAXClient Configuration Object</param>
         public AmazonDAXClient(AmazonDAXConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -214,14 +214,6 @@ namespace Amazon.DAX
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -229,7 +221,9 @@ namespace Amazon.DAX
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDAXEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDAXAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

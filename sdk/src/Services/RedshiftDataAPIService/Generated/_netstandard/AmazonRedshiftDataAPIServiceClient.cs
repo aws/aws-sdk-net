@@ -72,7 +72,7 @@ namespace Amazon.RedshiftDataAPIService
         ///
         /// </summary>
         public AmazonRedshiftDataAPIServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftDataAPIServiceConfig()) { }
+            : base(new AmazonRedshiftDataAPIServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftDataAPIServiceClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.RedshiftDataAPIService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRedshiftDataAPIServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRedshiftDataAPIServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRedshiftDataAPIServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRedshiftDataAPIServiceClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.RedshiftDataAPIService
         /// </summary>
         /// <param name="config">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
         public AmazonRedshiftDataAPIServiceClient(AmazonRedshiftDataAPIServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -235,14 +235,6 @@ namespace Amazon.RedshiftDataAPIService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -250,7 +242,9 @@ namespace Amazon.RedshiftDataAPIService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftDataAPIServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRedshiftDataAPIServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

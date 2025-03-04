@@ -64,7 +64,7 @@ namespace AWSSDK.UnitTests.Mocking
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
             ResponseUnmarshaller unmarshaller,
             ClientConfig config,
-            AbstractAWSSigner signer)
+            ISigner signer)
         {
             var pipelineHandlers = new List<IPipelineHandler>
             {
@@ -94,7 +94,7 @@ namespace AWSSDK.UnitTests.Mocking
             IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
             ResponseUnmarshaller unmarshaller,
             ClientConfig config,
-            AbstractAWSSigner signer)
+            ISigner signer)
         {
             var pipeline = new RuntimePipeline(pipelineHandlers);
 
@@ -105,7 +105,6 @@ namespace AWSSDK.UnitTests.Mocking
                 OriginalRequest = request,
                 Unmarshaller = unmarshaller,
                 IsAsync = false,
-                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token")
             };
             
             var executionContext = new ExecutionContext(

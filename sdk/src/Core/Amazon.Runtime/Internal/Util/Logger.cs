@@ -24,6 +24,8 @@ using System.ComponentModel;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
 using ThirdParty.RuntimeBackports;
+using Amazon.Runtime.Logging;
+using System.Collections.Concurrent;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -33,53 +35,38 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class Logger : ILogger
     {
-        private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
-        private List<InternalLogger> loggers;
+        private readonly static ConcurrentDictionary<string, IAdaptorLoggerFactory> _adaptorFactories = new ConcurrentDictionary<string, IAdaptorLoggerFactory>();
+        private readonly static ConcurrentDictionary<Type, Logger> _cachedLoggers = new ConcurrentDictionary<Type, Logger>();
+
+        private List<IAdaptorLogger> _loggers;
         private static Logger emptyLogger = new Logger();
 
         private Logger()
         {
-            loggers = new List<InternalLogger>();
+            _loggers = new List<IAdaptorLogger>();
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Constructor looks to see if running in a NativeAOT environment and if so skips the Log4net internal logger which is not Native AOT complaint.")]
         private Logger(Type type)
         {
-            loggers = new List<InternalLogger>();
+            _loggers = new List<IAdaptorLogger>();
 
-            if(!InternalSDKUtils.IsRunningNativeAot())
+            foreach (var factory in _adaptorFactories.Values)
             {
-#pragma warning disable
-                InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-                loggers.Add(log4netLogger);
-#pragma warning restore
-            }
-
-            loggers.Add(new InternalConsoleLogger(type));
-            InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
-            loggers.Add(sdLogger);
-            ConfigureLoggers();
-            AWSConfigs.PropertyChanged += ConfigsChanged;
-        }
-        private void ConfigsChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e != null && string.Equals(e.PropertyName, AWSConfigs.LoggingDestinationProperty, StringComparison.Ordinal))
-            {
-                ConfigureLoggers();
+                _loggers.Add(factory.CreateAdaptorLogger(type));
             }
         }
-        private void ConfigureLoggers()
+
+        internal static void RegisterAdaptorLoggerFactory(IAdaptorLoggerFactory factory)
         {
-            LoggingOptions logging = AWSConfigs.LoggingConfig.LogTo;
-            foreach (InternalLogger il in loggers)
+            _adaptorFactories.AddOrUpdate(factory.Name, factory, (key, oldValue) => factory);
+            _cachedLoggers.Clear();
+        }
+
+        internal static void DeregisterAdaptorLoggerFactory(string factoryName)
+        {
+            if (_adaptorFactories.TryRemove(factoryName, out _))
             {
-                if (il is InternalLog4netLogger)
-                    il.IsEnabled = (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net;
-                if (il is InternalConsoleLogger)
-                    il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
-                if (il is InternalSystemDiagnosticsLogger)
-                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+                _cachedLoggers.Clear();
             }
         }
 
@@ -90,12 +77,12 @@ namespace Amazon.Runtime.Internal.Util
             if (type == null) throw new ArgumentNullException("type");
 
             Logger l;
-            lock (cachedLoggers)
+            lock (_cachedLoggers)
             {
-                if (!cachedLoggers.TryGetValue(type, out l))
+                if (!_cachedLoggers.TryGetValue(type, out l))
                 {
                     l = new Logger(type);
-                    cachedLoggers[type] = l;
+                    _cachedLoggers[type] = l;
                 }
             }
             return l;
@@ -103,10 +90,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public static void ClearLoggerCache()
         {
-            lock (cachedLoggers)
-            {
-                cachedLoggers = new Dictionary<Type, Logger>();
-            }
+            _cachedLoggers.Clear();
         }
 
         public static Logger EmptyLogger { get { return emptyLogger; } }
@@ -115,122 +99,51 @@ namespace Amazon.Runtime.Internal.Util
 
         #region Logging methods
 
-        public void Flush()
-        {
-            foreach (InternalLogger logger in loggers)
-            {
-                logger.Flush();
-            }
-        }
-
         public void Error(Exception exception, string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (var logger in _loggers)
             {
-                if (logger.IsEnabled && logger.IsErrorEnabled)
-                    logger.Error(exception, messageFormat, args);
+                if (logger.IsEnabled(SdkLogLevel.Error))
+                {
+                    logger.Log(SdkLogLevel.Error, messageFormat, exception, args);
+                }
             }
         }
 
         public void Debug(Exception exception, string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (var logger in _loggers)
             {
-                if (logger.IsEnabled && logger.IsDebugEnabled)
-                    logger.Debug(exception, messageFormat, args);
+                if (logger.IsEnabled(SdkLogLevel.Debug))
+                {
+                    logger.Log(SdkLogLevel.Debug, messageFormat, exception, args);
+                }
             }
         }
 
         public void DebugFormat(string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (var logger in _loggers)
             {
-                if (logger.IsEnabled && logger.IsDebugEnabled)
-                    logger.DebugFormat(messageFormat, args);
+                if (logger.IsEnabled(SdkLogLevel.Debug))
+                {
+                    logger.Log(SdkLogLevel.Debug, messageFormat, null, args);
+                }
             }
         }
 
         public void InfoFormat(string messageFormat, params object[] args)
         {
-            foreach (InternalLogger logger in loggers)
+            foreach (var logger in _loggers)
             {
-                if (logger.IsEnabled && logger.IsInfoEnabled)
-                    logger.InfoFormat(messageFormat, args);
+                if (logger.IsEnabled(SdkLogLevel.Info))
+                {
+                    logger.Log(SdkLogLevel.Info, messageFormat, null, args);
+                }
             }
         }
 
         #endregion
 
     }
-
-    /// <summary>
-    /// Abstract logger class, base for any custom/specific loggers.
-    /// </summary>
-    internal abstract class InternalLogger
-    {
-        public Type DeclaringType { get; private set; }
-
-        public bool IsEnabled { get; set; }
-
-        public InternalLogger(Type declaringType)
-        {
-            DeclaringType = declaringType;
-            IsEnabled = true;
-        }
-
-        #region Logging methods
-
-        /// <summary>
-        /// Flushes the logger contents.
-        /// </summary>
-        public abstract void Flush();
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsErrorEnabled property.
-        /// </summary>
-        public virtual bool IsErrorEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsDebugEnabled property.
-        /// </summary>
-        public virtual bool IsDebugEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net IsInfoEnabled property.
-        /// </summary>
-        public virtual bool IsInfoEnabled { get { return true; } }
-
-        /// <summary>
-        /// Simple wrapper around the log4net Error method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public abstract void Error(Exception exception, string messageFormat, params object[] args);
-
-        /// <summary>
-        /// Simple wrapper around the log4net Debug method.
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <param name="messageFormat"></param>
-        /// <param name="args"></param>
-        public abstract void Debug(Exception exception, string messageFormat, params object[] args);
-
-        /// <summary>
-        /// Simple wrapper around the log4net DebugFormat method.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="arguments"></param>
-        public abstract void DebugFormat(string message, params object[] arguments);
-
-        /// <summary>
-        /// Simple wrapper around the log4net InfoFormat method.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="arguments"></param>
-        public abstract void InfoFormat(string message, params object[] arguments);
-
-        #endregion
-    }
-
 }

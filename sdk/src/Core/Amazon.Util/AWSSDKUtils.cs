@@ -1579,7 +1579,7 @@ namespace Amazon.Util
                 logger.InfoFormat("Starting a process with the following ProcessInfo: UseShellExecute - {0} RedirectStandardError - {1}, RedirectStandardOutput - {2}, CreateNoWindow - {3}",  
                     processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);
                 process.Start();
-                logger.InfoFormat("Process started");
+                logger.DebugFormat("Process started");
                 string standardOutput = null;
                 var thread = new Thread(() => standardOutput = process.StandardOutput.ReadToEnd());
                 thread.Start();
@@ -1611,7 +1611,7 @@ namespace Amazon.Util
                 logger.InfoFormat("Starting a process with the following ProcessInfo: UseShellExecute - {0} RedirectStandardError - {1}, RedirectStandardOutput - {2}, CreateNoWindow - {3}",  
                     processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);    
                 process.Start();
-                logger.InfoFormat("Process started");
+                logger.DebugFormat("Process started");
 
                 var standardErrorTask = process.StandardError.ReadToEndAsync();
                 var standardOutputTask = process.StandardOutput.ReadToEndAsync();

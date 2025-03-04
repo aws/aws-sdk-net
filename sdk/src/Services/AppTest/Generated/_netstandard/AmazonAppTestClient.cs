@@ -65,7 +65,7 @@ namespace Amazon.AppTest
         ///
         /// </summary>
         public AmazonAppTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppTestConfig()) { }
+            : base(new AmazonAppTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppTestClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.AppTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppTestClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.AppTest
         /// </summary>
         /// <param name="config">The AmazonAppTestClient Configuration Object</param>
         public AmazonAppTestClient(AmazonAppTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.AppTest
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.AppTest
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppTestEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppTestAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

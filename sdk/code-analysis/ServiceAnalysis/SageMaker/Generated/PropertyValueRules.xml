@@ -6626,6 +6626,70 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubContentDescription</property>
+    <max>1023</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubContentDisplayName</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubContentMarkdown</property>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubContentName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubContentVersion</property>
+    <min>5</min>
+    <max>14</max>
+    <pattern>^\d{1,4}.\d{1,4}.\d{1,4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentRequest.HubName</property>
+    <pattern>^(arn:[a-z0-9-\.]{1,63}:sagemaker:\w+(?:-\w+)+:(\d{12}|aws):hub\/)?[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentResponse.HubArn</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentResponse.HubContentArn</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentReferenceRequest.HubContentName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentReferenceRequest.HubName</property>
+    <pattern>^(arn:[a-z0-9-\.]{1,63}:sagemaker:\w+(?:-\w+)+:(\d{12}|aws):hub\/)?[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentReferenceRequest.MinVersion</property>
+    <min>5</min>
+    <max>14</max>
+    <pattern>^\d{1,4}.\d{1,4}.\d{1,4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentReferenceResponse.HubArn</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateHubContentReferenceResponse.HubContentArn</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateImageRequest.Description</property>
     <min>1</min>
     <max>512</max>
@@ -8992,6 +9056,11 @@
     <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.HubAccessConfig.HubContentArn</property>
+    <max>255</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.HubContentDependency.DependencyCopyPath</property>
     <max>1023</max>
     <pattern>.*</pattern>
@@ -9350,6 +9419,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentCapacitySize.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentComputeResourceRequirements.MaxMemoryRequiredInMb</property>
     <min>128</min>
   </property-value-rule>
@@ -9375,6 +9448,16 @@
     <property>Amazon.SageMaker.Model.InferenceComponentContainerSpecificationSummary.ArtifactUrl</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentRollingUpdatePolicy.MaximumExecutionTimeoutInSeconds</property>
+    <min>600</min>
+    <max>28800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentRollingUpdatePolicy.WaitIntervalInSeconds</property>
+    <min>0</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentRuntimeConfig.CopyCount</property>

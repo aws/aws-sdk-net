@@ -291,6 +291,80 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type MaxDisplayResolution.
+    /// </summary>
+    public class MaxDisplayResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Size1024X768 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size1024X768 = new MaxDisplayResolution("size1024X768");
+        /// <summary>
+        /// Constant Size1280X720 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size1280X720 = new MaxDisplayResolution("size1280X720");
+        /// <summary>
+        /// Constant Size1920X1080 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size1920X1080 = new MaxDisplayResolution("size1920X1080");
+        /// <summary>
+        /// Constant Size2560X1440 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size2560X1440 = new MaxDisplayResolution("size2560X1440");
+        /// <summary>
+        /// Constant Size3440X1440 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size3440X1440 = new MaxDisplayResolution("size3440X1440");
+        /// <summary>
+        /// Constant Size3840X2160 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size3840X2160 = new MaxDisplayResolution("size3840X2160");
+        /// <summary>
+        /// Constant Size4096X2160 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size4096X2160 = new MaxDisplayResolution("size4096X2160");
+        /// <summary>
+        /// Constant Size800X600 for MaxDisplayResolution
+        /// </summary>
+        public static readonly MaxDisplayResolution Size800X600 = new MaxDisplayResolution("size800X600");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaxDisplayResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaxDisplayResolution FindValue(string value)
+        {
+            return FindValue<MaxDisplayResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaxDisplayResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PortalStatus.
     /// </summary>
     public class PortalStatus : ConstantClass
@@ -537,6 +611,118 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type ToolbarItem.
+    /// </summary>
+    public class ToolbarItem : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DualMonitor for ToolbarItem
+        /// </summary>
+        public static readonly ToolbarItem DualMonitor = new ToolbarItem("DualMonitor");
+        /// <summary>
+        /// Constant FullScreen for ToolbarItem
+        /// </summary>
+        public static readonly ToolbarItem FullScreen = new ToolbarItem("FullScreen");
+        /// <summary>
+        /// Constant Microphone for ToolbarItem
+        /// </summary>
+        public static readonly ToolbarItem Microphone = new ToolbarItem("Microphone");
+        /// <summary>
+        /// Constant Webcam for ToolbarItem
+        /// </summary>
+        public static readonly ToolbarItem Webcam = new ToolbarItem("Webcam");
+        /// <summary>
+        /// Constant Windows for ToolbarItem
+        /// </summary>
+        public static readonly ToolbarItem Windows = new ToolbarItem("Windows");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolbarItem(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolbarItem FindValue(string value)
+        {
+            return FindValue<ToolbarItem>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolbarItem(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolbarType.
+    /// </summary>
+    public class ToolbarType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Docked for ToolbarType
+        /// </summary>
+        public static readonly ToolbarType Docked = new ToolbarType("Docked");
+        /// <summary>
+        /// Constant Floating for ToolbarType
+        /// </summary>
+        public static readonly ToolbarType Floating = new ToolbarType("Floating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolbarType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolbarType FindValue(string value)
+        {
+            return FindValue<ToolbarType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolbarType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
@@ -588,6 +774,56 @@ namespace Amazon.WorkSpacesWeb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VisualMode.
+    /// </summary>
+    public class VisualMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dark for VisualMode
+        /// </summary>
+        public static readonly VisualMode Dark = new VisualMode("Dark");
+        /// <summary>
+        /// Constant Light for VisualMode
+        /// </summary>
+        public static readonly VisualMode Light = new VisualMode("Light");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VisualMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VisualMode FindValue(string value)
+        {
+            return FindValue<VisualMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VisualMode(string value)
         {
             return FindValue(value);
         }

@@ -114,6 +114,28 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchCreateConsumableResource()
+        {
+            #region to-create-a-consumable-resource-1739494856623
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateConsumableResource(new CreateConsumableResourceRequest 
+            {
+                ConsumableResourceName = "myConsumableResource",
+                ResourceType = "REPLENISHABLE",
+                Tags = new Dictionary<string, string> {
+                    { "Department", "Engineering" },
+                    { "User", "JaneDoe" }
+                },
+                TotalQuantity = 123
+            });
+
+            string consumableResourceArn = response.ConsumableResourceArn;
+            string consumableResourceName = response.ConsumableResourceName;
+
+            #endregion
+        }
+
         public void BatchCreateJobQueue()
         {
             #region to-create-a-job-queue-with-a-single-compute-environment-1481152967946
@@ -180,6 +202,20 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchDeleteConsumableResource()
+        {
+            #region to-delete-a-consumable-resource-1739495667751
+
+            var client = new AmazonBatchClient();
+            var response = client.DeleteConsumableResource(new DeleteConsumableResourceRequest 
+            {
+                ConsumableResource = "myConsumableResource"
+            });
+
+
+            #endregion
+        }
+
         public void BatchDeleteJobQueue()
         {
             #region to-delete-a-job-queue-1481153508134
@@ -221,6 +257,28 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             });
 
             List<ComputeEnvironmentDetail> computeEnvironments = response.ComputeEnvironments;
+
+            #endregion
+        }
+
+        public void BatchDescribeConsumableResource()
+        {
+            #region to-get-a-description-of-a-consumable-resource-1739495864808
+
+            var client = new AmazonBatchClient();
+            var response = client.DescribeConsumableResource(new DescribeConsumableResourceRequest 
+            {
+                ConsumableResource = "myConsumableResource"
+            });
+
+            long availableQuantity = response.AvailableQuantity;
+            string consumableResourceArn = response.ConsumableResourceArn;
+            string consumableResourceName = response.ConsumableResourceName;
+            long createdAt = response.CreatedAt;
+            long inUseQuantity = response.InUseQuantity;
+            string resourceType = response.ResourceType;
+            Dictionary<string, string> tags = response.Tags;
+            long totalQuantity = response.TotalQuantity;
 
             #endregion
         }
@@ -274,6 +332,29 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchListConsumableResources()
+        {
+            #region to-get-a-list-of-a-consumable-resources-1739496071960
+
+            var client = new AmazonBatchClient();
+            var response = client.ListConsumableResources(new ListConsumableResourcesRequest 
+            {
+                Filters = new List<KeyValuesPair> {
+                    new KeyValuesPair {
+                        Name = "CONSUMABLE_RESOURCE_NAME",
+                        Values = new List<string> {
+                            "my*"
+                        }
+                    }
+                },
+                MaxResults = 123
+            });
+
+            List<ConsumableResourceSummary> consumableResources = response.ConsumableResources;
+
+            #endregion
+        }
+
         public void BatchListJobs()
         {
             #region to-list-running-jobs-1481154202164
@@ -301,6 +382,30 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             });
 
             List<JobSummary> jobSummaryList = response.JobSummaryList;
+
+            #endregion
+        }
+
+        public void BatchListJobsByConsumableResource()
+        {
+            #region to-get-a-list-of-batch-jobs-by-consumable-resource-1739496640347
+
+            var client = new AmazonBatchClient();
+            var response = client.ListJobsByConsumableResource(new ListJobsByConsumableResourceRequest 
+            {
+                ConsumableResource = "myConsumableResource",
+                Filters = new List<KeyValuesPair> {
+                    new KeyValuesPair {
+                        Name = "CONSUMABLE_RESOURCE_NAME",
+                        Values = new List<string> {
+                            "my*"
+                        }
+                    }
+                },
+                MaxResults = 123
+            });
+
+            List<ListJobsByConsumableResourceSummary> jobs = response.Jobs;
 
             #endregion
         }
@@ -474,6 +579,25 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
             string computeEnvironmentArn = response.ComputeEnvironmentArn;
             string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
+        public void BatchUpdateConsumableResource()
+        {
+            #region to-update-a-consumable-resource-1739497761692
+
+            var client = new AmazonBatchClient();
+            var response = client.UpdateConsumableResource(new UpdateConsumableResourceRequest 
+            {
+                ConsumableResource = "myConsumableResource",
+                Operation = "ADD",
+                Quantity = 12
+            });
+
+            string consumableResourceArn = response.ConsumableResourceArn;
+            string consumableResourceName = response.ConsumableResourceName;
+            long totalQuantity = response.TotalQuantity;
 
             #endregion
         }

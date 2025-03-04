@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private HubContentType _hubContentType;
         private string _hubContentVersion;
         private string _hubName;
+        private DateTime? _lastModifiedTime;
         private string _referenceMinVersion;
         private string _sageMakerPublicHubContentArn;
         private HubContentSupportStatus _supportStatus;
@@ -359,6 +360,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubName()
         {
             return this._hubName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The last modified time of the hub content.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime
+        {
+            get { return this._lastModifiedTime; }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

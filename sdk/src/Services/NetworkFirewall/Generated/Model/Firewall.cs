@@ -46,6 +46,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private bool? _deleteProtection;
         private string _description;
+        private List<string> _enabledAnalysisTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallArn;
         private string _firewallId;
@@ -95,6 +96,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledAnalysisTypes. 
+        /// <para>
+        /// An optional setting indicating the specific traffic analysis types to enable on the
+        /// firewall. 
+        /// </para>
+        /// </summary>
+        public List<string> EnabledAnalysisTypes
+        {
+            get { return this._enabledAnalysisTypes; }
+            set { this._enabledAnalysisTypes = value; }
+        }
+
+        // Check to see if EnabledAnalysisTypes property is set
+        internal bool IsSetEnabledAnalysisTypes()
+        {
+            return this._enabledAnalysisTypes != null && (this._enabledAnalysisTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

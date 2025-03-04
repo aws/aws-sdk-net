@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// <summary>
 	///   Tiering Unmarshaller
 	/// </summary>
-	public class TieringUnmarshaller : IXmlUnmarshaller<Tiering, XmlUnmarshallerContext>, IXmlUnmarshaller<Tiering, JsonUnmarshallerContext>
+	public class TieringUnmarshaller : IXmlUnmarshaller<Tiering, XmlUnmarshallerContext>
 	{
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,16 +64,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return tiering;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Tiering Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static TieringUnmarshaller _instance;

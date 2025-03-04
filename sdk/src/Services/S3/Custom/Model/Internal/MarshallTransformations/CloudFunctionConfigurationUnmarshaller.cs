@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// LambdaFunction unmarshaller
     /// </summary>
-    public class LambdaFunctionConfigurationUnmarshaller : IXmlUnmarshaller<LambdaFunctionConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<LambdaFunctionConfiguration, JsonUnmarshallerContext> 
+    public class LambdaFunctionConfigurationUnmarshaller : IXmlUnmarshaller<LambdaFunctionConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,16 +81,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return cloudFunctionConfiguration;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LambdaFunctionConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
         }
 
         private static LambdaFunctionConfigurationUnmarshaller _instance;

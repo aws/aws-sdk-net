@@ -44,6 +44,7 @@ namespace Amazon.Pricing.Model
         /// The format version of the response. For example, aws_v1.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32)]
         public string FormatVersion
         {
             get { return this._formatVersion; }

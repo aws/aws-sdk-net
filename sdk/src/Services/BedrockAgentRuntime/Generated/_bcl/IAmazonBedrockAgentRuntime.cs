@@ -43,6 +43,288 @@ namespace Amazon.BedrockAgentRuntime
         IBedrockAgentRuntimePaginatorFactory Paginators { get; }
 
         
+        #region  CreateInvocation
+
+
+        /// <summary>
+        /// Creates a new invocation within a session. An invocation groups the related invocation
+        /// steps that store the content from a conversation. For more information about sessions,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Related APIs
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvocation service method.</param>
+        /// 
+        /// <returns>The response from the CreateInvocation service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateInvocation">REST API Reference for CreateInvocation Operation</seealso>
+        CreateInvocationResponse CreateInvocation(CreateInvocationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new invocation within a session. An invocation groups the related invocation
+        /// steps that store the content from a conversation. For more information about sessions,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Related APIs
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInvocation service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateInvocation">REST API Reference for CreateInvocation Operation</seealso>
+        Task<CreateInvocationResponse> CreateInvocationAsync(CreateInvocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSession
+
+
+        /// <summary>
+        /// Creates a session to temporarily store conversations for generative AI (GenAI) applications
+        /// built with open-source frameworks such as LangGraph and LlamaIndex. Sessions enable
+        /// you to save the state of conversations at checkpoints, with the added security and
+        /// infrastructure of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, Amazon Bedrock uses Amazon Web Services-managed keys for session encryption,
+        /// including session metadata, or you can use your own KMS key. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
+        /// Bedrock session encryption</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You use a session to store state and conversation history for generative AI applications
+        /// built with open-source frameworks. For Amazon Bedrock Agents, the service automatically
+        /// manages conversation context and associates them with the agent-specific sessionId
+        /// you specify in the <a href="https://docs.aws.amazon.com/bedrock/latest/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// API operation. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related APIs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteSession.html">DeleteSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateSession">REST API Reference for CreateSession Operation</seealso>
+        CreateSessionResponse CreateSession(CreateSessionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a session to temporarily store conversations for generative AI (GenAI) applications
+        /// built with open-source frameworks such as LangGraph and LlamaIndex. Sessions enable
+        /// you to save the state of conversations at checkpoints, with the added security and
+        /// infrastructure of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, Amazon Bedrock uses Amazon Web Services-managed keys for session encryption,
+        /// including session metadata, or you can use your own KMS key. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/session-encryption.html">Amazon
+        /// Bedrock session encryption</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You use a session to store state and conversation history for generative AI applications
+        /// built with open-source frameworks. For Amazon Bedrock Agents, the service automatically
+        /// manages conversation context and associates them with the agent-specific sessionId
+        /// you specify in the <a href="https://docs.aws.amazon.com/bedrock/latest/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// API operation. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Related APIs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListSessions.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetSession.html">GetSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_DeleteSession.html">DeleteSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CreateSession">REST API Reference for CreateSession Operation</seealso>
+        Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAgentMemory
 
 
@@ -130,6 +412,158 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteAgentMemory">REST API Reference for DeleteAgentMemory Operation</seealso>
         Task<DeleteAgentMemoryResponse> DeleteAgentMemoryAsync(DeleteAgentMemoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSession
+
+
+        /// <summary>
+        /// Deletes a session that you ended. You can't delete a session with an <c>ACTIVE</c>
+        /// status. To delete an active session, you must first end it with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+        /// API operation. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        DeleteSessionResponse DeleteSession(DeleteSessionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a session that you ended. You can't delete a session with an <c>ACTIVE</c>
+        /// status. To delete an active session, you must first end it with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_EndSession.html">EndSession</a>
+        /// API operation. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EndSession
+
+
+        /// <summary>
+        /// Ends the session. After you end a session, you can still access its content but you
+        /// can’t add to it. To delete the session and it's content, you use the DeleteSession
+        /// API operation. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EndSession service method.</param>
+        /// 
+        /// <returns>The response from the EndSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/EndSession">REST API Reference for EndSession Operation</seealso>
+        EndSessionResponse EndSession(EndSessionRequest request);
+
+
+
+        /// <summary>
+        /// Ends the session. After you end a session, you can still access its content but you
+        /// can’t add to it. To delete the session and it's content, you use the DeleteSession
+        /// API operation. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EndSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EndSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/EndSession">REST API Reference for EndSession Operation</seealso>
+        Task<EndSessionResponse> EndSessionAsync(EndSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -314,6 +748,138 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">REST API Reference for GetAgentMemory Operation</seealso>
         Task<GetAgentMemoryResponse> GetAgentMemoryAsync(GetAgentMemoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetInvocationStep
+
+
+        /// <summary>
+        /// Retrieves the details of a specific invocation step within an invocation in a session.
+        /// For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvocationStep service method.</param>
+        /// 
+        /// <returns>The response from the GetInvocationStep service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetInvocationStep">REST API Reference for GetInvocationStep Operation</seealso>
+        GetInvocationStepResponse GetInvocationStep(GetInvocationStepRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific invocation step within an invocation in a session.
+        /// For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvocationStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvocationStep service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetInvocationStep">REST API Reference for GetInvocationStep Operation</seealso>
+        Task<GetInvocationStepResponse> GetInvocationStepAsync(GetInvocationStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSession
+
+
+        /// <summary>
+        /// Retrieves details about a specific session. For more information about sessions, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetSession">REST API Reference for GetSession Operation</seealso>
+        GetSessionResponse GetSession(GetSessionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details about a specific session. For more information about sessions, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetSession">REST API Reference for GetSession Operation</seealso>
+        Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -823,6 +1389,258 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
         
+        #region  ListInvocations
+
+
+        /// <summary>
+        /// Lists all invocations associated with a specific session. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvocations service method.</param>
+        /// 
+        /// <returns>The response from the ListInvocations service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocations">REST API Reference for ListInvocations Operation</seealso>
+        ListInvocationsResponse ListInvocations(ListInvocationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all invocations associated with a specific session. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvocations service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocations">REST API Reference for ListInvocations Operation</seealso>
+        Task<ListInvocationsResponse> ListInvocationsAsync(ListInvocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInvocationSteps
+
+
+        /// <summary>
+        /// Lists all invocation steps associated with a session and optionally, an invocation
+        /// within the session. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvocationSteps service method.</param>
+        /// 
+        /// <returns>The response from the ListInvocationSteps service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocationSteps">REST API Reference for ListInvocationSteps Operation</seealso>
+        ListInvocationStepsResponse ListInvocationSteps(ListInvocationStepsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all invocation steps associated with a session and optionally, an invocation
+        /// within the session. For more information about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvocationSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvocationSteps service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListInvocationSteps">REST API Reference for ListInvocationSteps Operation</seealso>
+        Task<ListInvocationStepsResponse> ListInvocationStepsAsync(ListInvocationStepsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSessions
+
+
+        /// <summary>
+        /// Lists all sessions in your Amazon Web Services account. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        ListSessionsResponse ListSessions(ListSessionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all sessions in your Amazon Web Services account. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List all the tags for the resource you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// List all the tags for the resource you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  OptimizePrompt
 
 
@@ -892,6 +1710,140 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/OptimizePrompt">REST API Reference for OptimizePrompt Operation</seealso>
         Task<OptimizePromptResponse> OptimizePromptAsync(OptimizePromptRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutInvocationStep
+
+
+        /// <summary>
+        /// Add an invocation step to an invocation in a session. An invocation step stores fine-grained
+        /// state checkpoints, including text and images, for each interaction. For more information
+        /// about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Related APIs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetInvocationStep.html">GetInvocationStep</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocationSteps.html">ListInvocationSteps</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInvocationStep service method.</param>
+        /// 
+        /// <returns>The response from the PutInvocationStep service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/PutInvocationStep">REST API Reference for PutInvocationStep Operation</seealso>
+        PutInvocationStepResponse PutInvocationStep(PutInvocationStepRequest request);
+
+
+
+        /// <summary>
+        /// Add an invocation step to an invocation in a session. An invocation step stores fine-grained
+        /// state checkpoints, including text and images, for each interaction. For more information
+        /// about sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Related APIs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_GetInvocationStep.html">GetInvocationStep</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocationSteps.html">ListInvocationSteps</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListInvocations</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ListInvocations.html">ListSessions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInvocationStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutInvocationStep service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/PutInvocationStep">REST API Reference for PutInvocationStep Operation</seealso>
+        Task<PutInvocationStepResponse> PutInvocationStepAsync(PutInvocationStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1278,6 +2230,212 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateStream">REST API Reference for RetrieveAndGenerateStream Operation</seealso>
         Task<RetrieveAndGenerateStreamResponse> RetrieveAndGenerateStreamAsync(RetrieveAndGenerateStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+        /// resources</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSession
+
+
+        /// <summary>
+        /// Updates the metadata or encryption settings of a session. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSession service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
+        UpdateSessionResponse UpdateSession(UpdateSessionRequest request);
+
+
+
+        /// <summary>
+        /// Updates the metadata or encryption settings of a session. For more information about
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html">Store
+        /// and retrieve conversation history and context with Amazon Bedrock sessions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSession service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
+        Task<UpdateSessionResponse> UpdateSessionAsync(UpdateSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

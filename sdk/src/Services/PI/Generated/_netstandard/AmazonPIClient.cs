@@ -103,7 +103,7 @@ namespace Amazon.PI
         ///
         /// </summary>
         public AmazonPIClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPIConfig()) { }
+            : base(new AmazonPIConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPIClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.PI
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPIClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPIConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPIConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPIClient with the credentials loaded from the application's
@@ -141,7 +141,7 @@ namespace Amazon.PI
         /// </summary>
         /// <param name="config">The AmazonPIClient Configuration Object</param>
         public AmazonPIClient(AmazonPIConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -266,14 +266,6 @@ namespace Amazon.PI
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -281,7 +273,9 @@ namespace Amazon.PI
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPIEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPIAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -463,7 +457,7 @@ namespace Amazon.PI
         /// For example, if you specify a SQL ID, <c>GetDimensionKeyDetails</c> retrieves the
         /// full text of the dimension <c>db.sql.statement</c> associated with this ID. This operation
         /// is useful because <c>GetResourceMetrics</c> and <c>DescribeDimensionKeys</c> don't
-        /// support retrieval of large SQL statement text.
+        /// support retrieval of large SQL statement text, lock snapshots, and execution plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDimensionKeyDetails service method.</param>
         /// <param name="cancellationToken">

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   VersionsItem Unmarshaller
      /// </summary>
-    public class VersionsItemUnmarshaller : IXmlUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IXmlUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
+    public class VersionsItemUnmarshaller : IXmlUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -121,16 +121,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 
             return versionsItem;
-        }
-
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3ObjectVersion Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
         }
 
         private static VersionsItemUnmarshaller _instance;

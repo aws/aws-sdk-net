@@ -79,7 +79,7 @@ namespace Amazon.RoboMaker
         ///
         /// </summary>
         public AmazonRoboMakerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoboMakerConfig()) { }
+            : base(new AmazonRoboMakerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoboMakerClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.RoboMaker
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoboMakerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoboMakerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRoboMakerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoboMakerClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.RoboMaker
         /// </summary>
         /// <param name="config">The AmazonRoboMakerClient Configuration Object</param>
         public AmazonRoboMakerClient(AmazonRoboMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRoboMakerClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.RoboMaker
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.RoboMaker
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoboMakerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoboMakerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

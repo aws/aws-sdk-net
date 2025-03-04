@@ -45,7 +45,11 @@ namespace Amazon.ConnectCases.Model
     /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
     /// permission on the ARN of the user that you provide.
     /// </para>
-    ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
+    ///  </li> <li> 
+    /// <para>
+    /// The <c>type</c> field is reserved for internal use only.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest
     {

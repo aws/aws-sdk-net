@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using Amazon.Util;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
 
 namespace Amazon.Runtime
 {
@@ -136,7 +137,7 @@ namespace Amazon.Runtime
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileAWSRegion(ICredentialProfileSource source)
         {
-            var profileName = FallbackCredentialsFactory.GetProfileName();
+            var profileName = DefaultAWSCredentialsIdentityResolver.GetProfileName();
             Setup(source, profileName);
         }
 

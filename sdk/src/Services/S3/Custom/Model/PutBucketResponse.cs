@@ -26,7 +26,22 @@ namespace Amazon.S3.Model
     /// </summary>
     public class PutBucketResponse : AmazonWebServiceResponse
     {
+        private string _location;
 
+        /// <summary>
+        /// Gets and sets the property Location.
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
     }
 }
-    
+

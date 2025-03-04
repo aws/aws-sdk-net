@@ -174,7 +174,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The IDs of one or more security groups.
+        /// The IDs of the security groups.
         /// </para>
         /// </summary>
         public List<string> Groups

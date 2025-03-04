@@ -110,9 +110,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If you're using the EC2 launch type, this field is optional. Supported values are
-        /// between <c>128</c> CPU units (<c>0.125</c> vCPUs) and <c>10240</c> CPU units (<c>10</c>
-        /// vCPUs). If you do not specify a value, the parameter is ignored.
+        /// If you're using the EC2 launch type or external launch type, this field is optional.
+        /// Supported values are between <c>128</c> CPU units (<c>0.125</c> vCPUs) and <c>196608</c>
+        /// CPU units (<c>192</c> vCPUs). If you do not specify a value, the parameter is ignored.
         /// </para>
         ///  
         /// <para>

@@ -2845,4 +2845,62 @@ namespace Amazon.CodeBuild
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type WebhookStatus.
+    /// </summary>
+    public class WebhookStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WebhookStatus
+        /// </summary>
+        public static readonly WebhookStatus ACTIVE = new WebhookStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for WebhookStatus
+        /// </summary>
+        public static readonly WebhookStatus CREATE_FAILED = new WebhookStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for WebhookStatus
+        /// </summary>
+        public static readonly WebhookStatus CREATING = new WebhookStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for WebhookStatus
+        /// </summary>
+        public static readonly WebhookStatus DELETING = new WebhookStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebhookStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookStatus FindValue(string value)
+        {
+            return FindValue<WebhookStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

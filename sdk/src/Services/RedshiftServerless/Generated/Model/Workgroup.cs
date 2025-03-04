@@ -47,12 +47,14 @@ namespace Amazon.RedshiftServerless.Model
         private int? _maxCapacity;
         private string _namespaceName;
         private string _patchVersion;
+        private string _pendingTrackName;
         private int? _port;
         private PerformanceTarget _pricePerformanceTarget;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkgroupStatus _status;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _trackName;
         private string _workgroupArn;
         private string _workgroupId;
         private string _workgroupName;
@@ -307,6 +309,27 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PendingTrackName. 
+        /// <para>
+        /// The name for the track that you want to assign to the workgroup. When the track changes,
+        /// the workgroup is switched to the latest workgroup release available for the track.
+        /// At this point, the track name is applied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string PendingTrackName
+        {
+            get { return this._pendingTrackName; }
+            set { this._pendingTrackName = value; }
+        }
+
+        // Check to see if PendingTrackName property is set
+        internal bool IsSetPendingTrackName()
+        {
+            return this._pendingTrackName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455
@@ -413,6 +436,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrackName. 
+        /// <para>
+        /// The name of the track for the workgroup.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TrackName
+        {
+            get { return this._trackName; }
+            set { this._trackName = value; }
+        }
+
+        // Check to see if TrackName property is set
+        internal bool IsSetTrackName()
+        {
+            return this._trackName != null;
         }
 
         /// <summary>

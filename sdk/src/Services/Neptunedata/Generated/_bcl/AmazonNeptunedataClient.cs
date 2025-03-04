@@ -72,7 +72,7 @@ namespace Amazon.Neptunedata
         ///
         /// </summary>
         public AmazonNeptunedataClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNeptunedataConfig()) { }
+            : base(new AmazonNeptunedataConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNeptunedataClient with the credentials loaded from the application's
@@ -91,7 +91,7 @@ namespace Amazon.Neptunedata
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNeptunedataClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNeptunedataConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNeptunedataConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNeptunedataClient with the credentials loaded from the application's
@@ -110,7 +110,7 @@ namespace Amazon.Neptunedata
         /// </summary>
         /// <param name="config">The AmazonNeptunedataClient Configuration Object</param>
         public AmazonNeptunedataClient(AmazonNeptunedataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonNeptunedataClient with AWS Credentials
@@ -213,15 +213,7 @@ namespace Amazon.Neptunedata
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -231,7 +223,9 @@ namespace Amazon.Neptunedata
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNeptunedataEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNeptunedataAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

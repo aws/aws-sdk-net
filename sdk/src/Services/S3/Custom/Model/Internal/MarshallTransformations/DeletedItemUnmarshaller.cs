@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
     ///   DeletedObject Unmarshaller
      /// </summary>
-    public class DeletedObjectUnmarshaller : IXmlUnmarshaller<DeletedObject, XmlUnmarshallerContext>, IXmlUnmarshaller<DeletedObject, JsonUnmarshallerContext> 
+    public class DeletedObjectUnmarshaller : IXmlUnmarshaller<DeletedObject, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,15 +78,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return deletedItem;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeletedObject Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
 
         private static DeletedObjectUnmarshaller _instance;
 

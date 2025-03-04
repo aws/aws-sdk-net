@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
         /// built on the Nitro System</a>. On other instances, you can achieve performance up
         /// to 32,000 IOPS.
         /// </para>

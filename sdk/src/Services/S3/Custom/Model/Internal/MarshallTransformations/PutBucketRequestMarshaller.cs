@@ -87,6 +87,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if(regionCode == null)
                         xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                    if (putBucketRequest.PutBucketConfiguration.IsSetLocationConstraint())
+                    {
+                        xmlWriter.WriteElementString("LocationConstraint", S3Constants.S3RequestXmlNamespace, StringUtils.FromString(putBucketRequest.PutBucketConfiguration.LocationConstraint));
+                    }
                     if (putBucketRequest.PutBucketConfiguration.BucketInfo != null)
                     {
                         xmlWriter.WriteStartElement("Bucket", S3Constants.S3RequestXmlNamespace);

@@ -38,8 +38,15 @@ namespace Amazon.EKS.Model
     /// You can only create a node group for your cluster that is equal to the current Kubernetes
     /// version for the cluster. All node groups are created with the latest AMI release version
     /// for the respective minor Kubernetes version of the cluster, unless you deploy a custom
-    /// AMI using a launch template. For more information about using launch templates, see
-    /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+    /// AMI using a launch template.
+    /// </para>
+    ///  
+    /// <para>
+    /// For later updates, you will only be able to update a node group using a launch template
+    /// only if it was originally deployed with a launch template. Additionally, the launch
+    /// template ID or name must match what was used when the node group was created. You
+    /// can update the launch template version with necessary changes. For more information
+    /// about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
     /// managed nodes with launch templates</a>.
     /// </para>
     ///  
@@ -233,6 +240,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// An object representing a node group's launch template specification. When using this
         /// object, don't directly specify <c>instanceTypes</c>, <c>diskSize</c>, or <c>remoteAccess</c>.
+        /// You cannot later specify a different launch template ID or name than what was used
+        /// to create the node group.
+        /// </para>
+        ///  
+        /// <para>
         /// Make sure that the launch template meets the requirements in <c>launchTemplateSpecification</c>.
         /// Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
         /// managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.

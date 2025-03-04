@@ -249,7 +249,7 @@ namespace Amazon.IVS
         ///
         /// </summary>
         public AmazonIVSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIVSConfig()) { }
+            : base(new AmazonIVSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIVSClient with the credentials loaded from the application's
@@ -268,7 +268,7 @@ namespace Amazon.IVS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIVSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIVSConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIVSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIVSClient with the credentials loaded from the application's
@@ -287,7 +287,7 @@ namespace Amazon.IVS
         /// </summary>
         /// <param name="config">The AmazonIVSClient Configuration Object</param>
         public AmazonIVSClient(AmazonIVSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIVSClient with AWS Credentials
@@ -390,15 +390,7 @@ namespace Amazon.IVS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -408,7 +400,9 @@ namespace Amazon.IVS
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIVSEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIVSAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

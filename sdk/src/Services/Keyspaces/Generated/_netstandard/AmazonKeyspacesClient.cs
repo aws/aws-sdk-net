@@ -95,7 +95,7 @@ namespace Amazon.Keyspaces
         ///
         /// </summary>
         public AmazonKeyspacesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyspacesConfig()) { }
+            : base(new AmazonKeyspacesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKeyspacesClient with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.Keyspaces
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKeyspacesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyspacesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKeyspacesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKeyspacesClient with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.Keyspaces
         /// </summary>
         /// <param name="config">The AmazonKeyspacesClient Configuration Object</param>
         public AmazonKeyspacesClient(AmazonKeyspacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -258,14 +258,6 @@ namespace Amazon.Keyspaces
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -273,7 +265,9 @@ namespace Amazon.Keyspaces
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKeyspacesEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKeyspacesAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

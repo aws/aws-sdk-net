@@ -92,7 +92,7 @@ namespace Amazon.ACMPCA.Model
         /// of JSON Policies</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20480)]
+        [AWSProperty(Required=true, Min=1, Max=81920)]
         public string Policy
         {
             get { return this._policy; }

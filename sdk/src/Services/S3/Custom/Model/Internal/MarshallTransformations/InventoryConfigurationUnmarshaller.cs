@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   InventoryConfiguration Unmarshaller
     /// </summary>
-    public class InventoryConfigurationUnmarshaller : IXmlUnmarshaller<InventoryConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<InventoryConfiguration, JsonUnmarshallerContext> 
+    public class InventoryConfigurationUnmarshaller : IXmlUnmarshaller<InventoryConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,15 +99,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        /// <summary>
-        /// Not implemented and always returns null.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InventoryConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
 
         private static InventoryConfigurationUnmarshaller _instance;
 

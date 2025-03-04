@@ -32,10 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAttribute operation.
     /// Describes the specified attribute of the specified instance. You can specify only
-    /// one attribute at a time. Valid attribute values are: <c>instanceType</c> | <c>kernel</c>
-    /// | <c>ramdisk</c> | <c>userData</c> | <c>disableApiTermination</c> | <c>instanceInitiatedShutdownBehavior</c>
-    /// | <c>rootDeviceName</c> | <c>blockDeviceMapping</c> | <c>productCodes</c> | <c>sourceDestCheck</c>
-    /// | <c>groupSet</c> | <c>ebsOptimized</c> | <c>sriovNetSupport</c>
+    /// one attribute at a time.
     /// </summary>
     public partial class DescribeInstanceAttributeRequest : AmazonEC2Request
     {
@@ -52,7 +49,7 @@ namespace Amazon.EC2.Model
         /// Instantiates DescribeInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The instance attribute. Note: The <c>enaSupport</c> attribute is not supported at this time.</param>
+        /// <param name="attribute">The instance attribute. Note that the <c>enaSupport</c> attribute is not supported.</param>
         public DescribeInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -66,7 +63,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: The <c>enaSupport</c> attribute is not supported at this time.
+        /// Note that the <c>enaSupport</c> attribute is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

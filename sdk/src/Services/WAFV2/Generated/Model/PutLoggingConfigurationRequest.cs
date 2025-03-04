@@ -34,6 +34,11 @@ namespace Amazon.WAFV2.Model
     /// Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL,
     /// according to the configuration provided. 
     /// 
+    ///  
+    /// <para>
+    /// If you configure data protection for the web ACL, the protection applies to the data
+    /// that WAF sends to the logs. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// This operation completely replaces any mutable specifications that you already have

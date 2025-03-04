@@ -124,11 +124,6 @@ namespace Amazon.S3.Transfer.Internal
                     {
                         this._fileTransporterRequest.InputStream.Dispose();
                     }
-
-                    if (Logger != null)
-                    {
-                        Logger.Flush();
-                    }
                 } 
             }
         }
@@ -289,13 +284,6 @@ namespace Amazon.S3.Transfer.Internal
                 }).ConfigureAwait(false);
                 Logger.Error(ex, ex.Message);
                 throw;
-            }
-            finally
-            {
-                if (Logger != null)
-                {
-                    Logger.Flush();
-                }
             }
         }
     }

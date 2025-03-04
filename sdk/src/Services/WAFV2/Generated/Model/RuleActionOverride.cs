@@ -34,7 +34,13 @@ namespace Amazon.WAFV2.Model
     /// rule group. You specify one override for each rule whose action you want to change.
     /// 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Take care to verify the rule names in your overrides. If you provide a rule name that
+    /// doesn't match the name of any rule in the rule group, WAF doesn't return an error
+    /// and doesn't apply the override setting.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can use overrides for testing, for example you can override all of rule actions
     /// to <c>Count</c> and then monitor the resulting count metrics to understand how the
@@ -72,6 +78,13 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The name of the rule to override.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Take care to verify the rule names in your overrides. If you provide a rule name that
+        /// doesn't match the name of any rule in the rule group, WAF doesn't return an error
+        /// and doesn't apply the override setting.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name

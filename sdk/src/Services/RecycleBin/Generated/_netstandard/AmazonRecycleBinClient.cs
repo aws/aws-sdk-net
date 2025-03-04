@@ -82,7 +82,7 @@ namespace Amazon.RecycleBin
         ///
         /// </summary>
         public AmazonRecycleBinClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRecycleBinConfig()) { }
+            : base(new AmazonRecycleBinConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRecycleBinClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.RecycleBin
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRecycleBinClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRecycleBinConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRecycleBinConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRecycleBinClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.RecycleBin
         /// </summary>
         /// <param name="config">The AmazonRecycleBinClient Configuration Object</param>
         public AmazonRecycleBinClient(AmazonRecycleBinConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -245,14 +245,6 @@ namespace Amazon.RecycleBin
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -260,7 +252,9 @@ namespace Amazon.RecycleBin
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRecycleBinEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRecycleBinAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

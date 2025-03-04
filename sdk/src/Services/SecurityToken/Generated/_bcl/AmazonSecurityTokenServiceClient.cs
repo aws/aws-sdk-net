@@ -69,7 +69,7 @@ namespace Amazon.SecurityToken
         ///
         /// </summary>
         public AmazonSecurityTokenServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig()) { }
+            : base(new AmazonSecurityTokenServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSecurityTokenServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSecurityTokenServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="config">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials
@@ -210,15 +210,7 @@ namespace Amazon.SecurityToken
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -236,7 +228,9 @@ namespace Amazon.SecurityToken
             }
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityTokenServiceEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityTokenServiceAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

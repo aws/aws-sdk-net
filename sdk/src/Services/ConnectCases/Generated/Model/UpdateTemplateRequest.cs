@@ -36,6 +36,32 @@ namespace Amazon.ConnectCases.Model
     /// and <c>status</c>. At least one of these attributes must not be null. If a null value
     /// is provided for a given attribute, that attribute is ignored and its current value
     /// is preserved.
+    /// 
+    ///  
+    /// <para>
+    /// Other template APIs are:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateTemplateRequest : AmazonConnectCasesRequest
     {
@@ -44,6 +70,7 @@ namespace Amazon.ConnectCases.Model
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
         private List<RequiredField> _requiredFields = AWSConfigs.InitializeCollections ? new List<RequiredField>() : null;
+        private List<TemplateRule> _rules = AWSConfigs.InitializeCollections ? new List<TemplateRule>() : null;
         private TemplateStatus _status;
         private string _templateId;
 
@@ -140,6 +167,26 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetRequiredFields()
         {
             return this._requiredFields != null && (this._requiredFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rules. 
+        /// <para>
+        /// A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case
+        /// field conditions</a>) on a template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<TemplateRule> Rules
+        {
+            get { return this._rules; }
+            set { this._rules = value; }
+        }
+
+        // Check to see if Rules property is set
+        internal bool IsSetRules()
+        {
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

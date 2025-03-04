@@ -31,7 +31,9 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// The configuration that specifies the result, such as rollback, to occur upon stage
-    /// failure.
+    /// failure. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+    /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+    /// do stage conditions work?</a>.
     /// </summary>
     public partial class FailureConditions
     {
@@ -42,7 +44,10 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Conditions. 
         /// <para>
-        /// The conditions that are configured as failure conditions.
+        /// The conditions that are configured as failure conditions. For more information about
+        /// conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
+        /// do stage conditions work?</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

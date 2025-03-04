@@ -92,7 +92,7 @@ namespace Amazon.MediaTailor
         ///
         /// </summary>
         public AmazonMediaTailorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaTailorConfig()) { }
+            : base(new AmazonMediaTailorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMediaTailorClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.MediaTailor
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMediaTailorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMediaTailorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMediaTailorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMediaTailorClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.MediaTailor
         /// </summary>
         /// <param name="config">The AmazonMediaTailorClient Configuration Object</param>
         public AmazonMediaTailorClient(AmazonMediaTailorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMediaTailorClient with AWS Credentials
@@ -233,15 +233,7 @@ namespace Amazon.MediaTailor
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -251,7 +243,9 @@ namespace Amazon.MediaTailor
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaTailorEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMediaTailorAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

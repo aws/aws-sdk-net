@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation
         ///
         /// </summary>
         public AmazonCloudFormationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig()) { }
+            : base(new AmazonCloudFormationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFormationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFormationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCloudFormationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with the credentials loaded from the application's
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="config">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(AmazonCloudFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Credentials
@@ -246,15 +246,7 @@ namespace Amazon.CloudFormation
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -265,7 +257,9 @@ namespace Amazon.CloudFormation
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudFormation.Internal.ProcessRequestHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFormationEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCloudFormationAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -1025,6 +1019,49 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateStackInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStackRefactor
+
+
+        /// <summary>
+        /// Creates a refactor across multiple stacks, with the list of stacks and resources that
+        /// are affected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the CreateStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
+        public virtual CreateStackRefactorResponse CreateStackRefactor(CreateStackRefactorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStackRefactorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStackRefactorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a refactor across multiple stacks, with the list of stacks and resources that
+        /// are affected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackRefactor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
+        public virtual Task<CreateStackRefactorResponse> CreateStackRefactorAsync(CreateStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStackRefactorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateStackRefactorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2248,6 +2285,53 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeStackRefactor
+
+
+        /// <summary>
+        /// Describes the stack refactor status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackRefactorNotFoundException">
+        /// The specified stack refactor can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
+        public virtual DescribeStackRefactorResponse DescribeStackRefactor(DescribeStackRefactorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStackRefactorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackRefactorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the stack refactor status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackRefactor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackRefactorNotFoundException">
+        /// The specified stack refactor can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
+        public virtual Task<DescribeStackRefactorResponse> DescribeStackRefactorAsync(DescribeStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeStackRefactorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeStackRefactorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeStackResource
 
 
@@ -3004,8 +3088,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Detect drift on a stack set. When CloudFormation performs drift detection on a stack
         /// set, it performs drift detection on the stack associated with each stack instance
-        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
-        /// CloudFormation performs drift detection on a stack set</a>.
+        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+        /// drift detection on CloudFormation StackSets</a>.
         /// 
         ///  
         /// <para>
@@ -3036,12 +3120,6 @@ namespace Amazon.CloudFormation
         /// instance, including its drift status and last drift time checked.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// For more information about performing a drift detection operation on a stack set,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// unmanaged changes in stack sets</a>.
-        /// </para>
-        ///  
         /// <para>
         /// You can only run a single drift detection operation on a given stack set at one time.
         /// </para>
@@ -3077,8 +3155,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Detect drift on a stack set. When CloudFormation performs drift detection on a stack
         /// set, it performs drift detection on the stack associated with each stack instance
-        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
-        /// CloudFormation performs drift detection on a stack set</a>.
+        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+        /// drift detection on CloudFormation StackSets</a>.
         /// 
         ///  
         /// <para>
@@ -3109,12 +3187,6 @@ namespace Amazon.CloudFormation
         /// instance, including its drift status and last drift time checked.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// For more information about performing a drift detection operation on a stack set,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// unmanaged changes in stack sets</a>.
-        /// </para>
-        ///  
         /// <para>
         /// You can only run a single drift detection operation on a given stack set at one time.
         /// </para>
@@ -3301,6 +3373,47 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<ExecuteChangeSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExecuteStackRefactor
+
+
+        /// <summary>
+        /// Executes the stack refactor operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
+        public virtual ExecuteStackRefactorResponse ExecuteStackRefactor(ExecuteStackRefactorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStackRefactorResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteStackRefactorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Executes the stack refactor operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStackRefactor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
+        public virtual Task<ExecuteStackRefactorResponse> ExecuteStackRefactorAsync(ExecuteStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStackRefactorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStackRefactorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExecuteStackRefactorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4190,6 +4303,90 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListStackInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStackRefactorActions
+
+
+        /// <summary>
+        /// Lists the stack refactor actions that will be taken after calling the <a>ExecuteStackRefactor</a>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactorActions service method.</param>
+        /// 
+        /// <returns>The response from the ListStackRefactorActions service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
+        public virtual ListStackRefactorActionsResponse ListStackRefactorActions(ListStackRefactorActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackRefactorActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackRefactorActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackRefactorActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the stack refactor actions that will be taken after calling the <a>ExecuteStackRefactor</a>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactorActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStackRefactorActions service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
+        public virtual Task<ListStackRefactorActionsResponse> ListStackRefactorActionsAsync(ListStackRefactorActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackRefactorActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackRefactorActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStackRefactorActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStackRefactors
+
+
+        /// <summary>
+        /// Lists all account stack refactor operations and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactors service method.</param>
+        /// 
+        /// <returns>The response from the ListStackRefactors service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
+        public virtual ListStackRefactorsResponse ListStackRefactors(ListStackRefactorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackRefactorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackRefactorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackRefactorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all account stack refactor operations and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStackRefactors service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
+        public virtual Task<ListStackRefactorsResponse> ListStackRefactorsAsync(ListStackRefactorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackRefactorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackRefactorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStackRefactorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
