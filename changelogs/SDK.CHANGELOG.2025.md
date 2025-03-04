@@ -1,3 +1,24 @@
+### 3.7.995.0 (2025-03-04 21:22 UTC)
+* CloudFront (3.7.404.41)
+	* Mark AmazonCloudFrontUtil as obsolete and will be removed in the next major version.
+* DynamoDBv2 (3.7.405.33)
+	* Fixed an issue for incorrect DateTime epoch serialization when date falls out of epoch supported range. (Thanks @sander1095 for initial contribution)
+* EC2 (3.7.433.1)
+	* Mark ImageUtilities as obsolete and will be removed in the next major version.
+	* Mark VPCUtilities as obsolete and will be removed in the next major version.
+* ElastiCache (3.7.402.50)
+	* Doc only update, listing 'valkey7' and 'valkey8' as engine options for parameter groups.
+* IoTManagedIntegrations (3.7.400.0)
+	* Adding managed integrations APIs for IoT Device Management to setup and control devices across different manufacturers and connectivity protocols. APIs include managedthing operations, credential and provisioning profile management, notification configuration, and OTA update.
+* IoTSiteWise (3.7.404.0)
+	* AWS IoT SiteWise now supports MQTT-enabled, V3 gateways. Configure data destinations for real-time ingestion into AWS IoT SiteWise or buffered ingestion using Amazon S3 storage. You can also use path filters for precise data collection from specific MQTT topics.
+* RDS (3.7.410.44)
+	* Note support for Database Insights for Amazon RDS.
+* Core 3.7.402.12
+	* Added method AWSSDKUtils.ConvertFromUnixLongEpochSeconds() for converting Unix epoch seconds to DateTime structure.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.994.0 (2025-03-03 19:30 UTC)
 * CloudWatchRUM (3.7.401.0)
 	* Add support for PutResourcePolicy, GetResourcePolicy and DeleteResourcePolicy to support resource based policies for AWS CloudWatch RUM
