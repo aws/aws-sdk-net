@@ -145,12 +145,6 @@ namespace Amazon.S3
         {
             this.PutBucket(bucketName);
         }
-
-        [Obsolete("This method is obsolete: its behavior is inconsistent and always uses HTTP.")]
-        bool ICoreAmazonS3.DoesS3BucketExist(string bucketName)
-        {
-            return Amazon.S3.Util.AmazonS3Util.DoesS3BucketExist(this, bucketName);
-        }
         #endregion
     }
 }

@@ -395,28 +395,6 @@ namespace Amazon.S3.Util
             return false;
         }
 
-        internal static DateTime? ParseExpiresHeader(string rawValue, string requestId)
-        {
-            if (!string.IsNullOrEmpty(rawValue))
-            {
-                try
-                {
-                    return S3Transforms.ToDateTime(rawValue);
-                }
-                catch (FormatException e)
-                {
-                    var logger = Logger.GetLogger(typeof(AmazonS3Util));
-                    logger.Error(e, "The value {0} cannot be converted to a DateTime instance.", rawValue);
-
-                    return null;
-                }
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         /// <summary>
         /// Version2 S3 buckets adhere to RFC 1035:
         /// <list type="number">
@@ -615,13 +593,6 @@ namespace Amazon.S3.Util
                 key.EndsWith(S3Constants.EncryptionInstructionfileSuffixV2, StringComparison.Ordinal);
         }
 
-        internal static string RemoveLeadingSlash(string key)
-        {
-            return key.StartsWith("/", StringComparison.Ordinal)
-                                    ? key.Substring(1)
-                                    : key;
-        }
-
         /// <summary>
         /// Check if the request resource is an outpost resource
         /// </summary>
@@ -667,79 +638,6 @@ namespace Amazon.S3.Util
                 }
             }
             return true;
-        }
-
-        /// <summary>
-        /// Determines whether an S3 bucket exists or not.
-        /// This is done by:
-        /// 1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
-        /// well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
-        /// (which is one week).
-        /// 2. Making a HEAD request to the Url
-        /// </summary>
-        /// <param name="bucketName">The name of the bucket to check.</param>
-        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        /// <returns></returns>
-        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use DoesS3BucketExistV2Async instead.")]
-        public static async System.Threading.Tasks.Task<bool> DoesS3BucketExistAsync(IAmazonS3 s3Client, string bucketName)
-        {
-            if (s3Client == null)
-            {
-                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
-            }
-
-            if (String.IsNullOrEmpty(bucketName))
-            {
-                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
-            }
-
-            var request = new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Verb = HttpVerb.HEAD,
-                Protocol = Protocol.HTTP
-            };
-
-            var parameters = new ServiceOperationEndpointParameters(request);
-            var endpoint = s3Client.Config.DetermineServiceOperationEndpoint(parameters);
-            request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).AddDays(1);
-
-            var url = s3Client.GetPreSignedURL(request);
-            var uri = new Uri(url);
-
-            var httpRequest = WebRequest.Create(uri) as HttpWebRequest;
-            httpRequest.Method = "HEAD";
-            var concreteClient = s3Client as AmazonS3Client;
-            if (concreteClient != null)
-            {
-
-                concreteClient.ConfigureProxy(httpRequest);
-            }
-
-            try
-            {
-                using (var httpResponse = await httpRequest.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)        
-                {
-                    // If all went well, the bucket was found!
-                    return true;
-                }
-            }
-            catch (WebException we)
-            {
-                using (var errorResponse = we.Response as HttpWebResponse)
-                {
-                    if (errorResponse != null)
-                    {
-                        var code = errorResponse.StatusCode;
-                        return code != HttpStatusCode.NotFound &&
-                            code != HttpStatusCode.BadRequest;
-                    }
-
-                    // The Error Response is null which is indicative of either
-                    // a bad request or some other problem
-                    return false;
-                }
-            }
         }
 #endif
     }

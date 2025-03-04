@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 runner.USWest1Client.DeleteBucket(new DeleteBucketRequest
                 {
                     BucketName = bucketName,
-                    BucketRegion = S3Region.US
+                    BucketRegion = S3Region.USEast1
                 });
             }
         }

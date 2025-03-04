@@ -22,47 +22,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         [TestMethod]
         [TestCategory("S3")]
-        public void TestLocation()
-        {
-            // Disable EUW2 for now until we figure out why we are hitting the bucket number limit.
-            foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1, S3Region.EUW1/*, S3Region.EUW2*/})
-            {
-                string bucketName = null;
-                var region = RegionEndpoint.GetBySystemName(location.Value);
-
-                using (var client = new AmazonS3Client(region))
-                {
-                    try
-                    {
-                        bucketName = S3TestUtils.CreateBucketWithWait(client);
-                        var returnedLocation = client.GetBucketLocation(new GetBucketLocationRequest
-                        {
-                            BucketName = bucketName
-                        }).Location;
-
-                        //Map S3Region.EUW1 to S3Region.EU
-                        //S3 considers this as the same region.
-                        if (location == S3Region.EUW1)
-                        {
-                            Assert.AreEqual(S3Region.EU, returnedLocation);
-                        }
-                        else
-                        {
-                            Assert.AreEqual(location, returnedLocation);
-                        }
-                        
-                    }
-                    finally
-                    {
-                        if (bucketName != null)
-                            AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
-                    }
-                }
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         
         public void TestPostUpload()
         {
@@ -72,10 +31,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 var bucketName = S3TestUtils.CreateBucketWithWait(client, true);
 
-                client.PutACL(new PutACLRequest
+                client.PutBucketAcl(new PutBucketAclRequest
                 {
                     BucketName = bucketName,
-                    CannedACL = S3CannedACL.BucketOwnerFullControl
+                    ACL = S3CannedACL.BucketOwnerFullControl
                 });
 
                 var credentials = GetCredentials(client);

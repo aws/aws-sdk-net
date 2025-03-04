@@ -55,12 +55,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
-                    if (context.TestExpression("Prefix", targetDepth))
-                    {
-                        rule.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
                     if (context.TestExpression("Filter", targetDepth))
                     {
                         rule.Filter = ReplicationRuleFilterUnmarshaller.Instance.Unmarshall(context);

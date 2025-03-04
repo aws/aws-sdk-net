@@ -157,16 +157,6 @@ namespace Amazon.S3.Model
     public class SelectObjectContentRequest : AmazonWebServiceRequest
     {
         /// <summary>
-        /// The S3 Bucket.
-        /// </summary>
-        [Obsolete("Use BucketName instead")]
-        public string Bucket
-        {
-            get { return BucketName; }
-            set { BucketName = value; }
-        }
-
-        /// <summary>
         /// The S3 Bucket name.
         /// </summary>
         public string BucketName { get; set; }

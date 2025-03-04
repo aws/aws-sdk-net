@@ -96,23 +96,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_PutObjectRequest_RegularBucket_DisableMD5Stream_Is_True_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
-        {
-            var request = new PutObjectRequest
-            {
-                BucketName = regularBucketName,
-                Key = "foo.txt",
-                ContentBody = "mystring",
-                DisableMD5Stream = true,
-            };
-
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
-            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void TestS3_PutObjectRequest_RegularBucket_DisableDefaultChecksumValidation_Is_True_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
         {
             var request = new PutObjectRequest
@@ -142,23 +125,6 @@ namespace AWSSDK.UnitTests
             var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
             Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestS3_PutObjectRequest_RegularBucket_CalculateContentMD5Header_Should_Use_MD5Stream_And_MD5Header()
-        {
-            var request = new PutObjectRequest
-            {
-                BucketName = regularBucketName,
-                Key = "foo.txt",
-                ContentBody = "mystring",
-                CalculateContentMD5Header = true
-            };
-
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
-            Assert.IsTrue(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
         }
 
         [TestMethod]
@@ -198,40 +164,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_PutObjectRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream()
-        {
-            var request = new PutObjectRequest
-            {
-                BucketName = S3ExpressBucketName,
-                Key = "foo.txt",
-                ContentBody = "mystring",
-                CalculateContentMD5Header = true
-            };
-
-            var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
-            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_RegularBucket_DisableMD5Stream_Is_True_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
-        {
-            var request = new UploadPartRequest
-            {
-                BucketName = regularBucketName,
-                Key = "foo.txt",
-                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring")),
-                DisableMD5Stream = true,
-            };
-
-            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void TestS3_UploadPartRequest_RegularBucket_DisableDefaultChecksumValidation_Is_True_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
         {
             var request = new UploadPartRequest
@@ -266,24 +198,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_RegularBucket_CalculateContentMD5Header_Should_Use_MD5Stream_And_MD5Header()
-        {
-            var request = new UploadPartRequest
-            {
-                BucketName = regularBucketName,
-                Key = "foo.txt",
-                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring")),
-                CalculateContentMD5Header = true
-            };
-
-            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
-            Assert.IsTrue(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
-        }
-
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void TestS3_UploadPartRequest_S3ExpressBucket_Should_Use_ChecksumHeader()
         {
             var request = new UploadPartRequest
@@ -297,23 +211,6 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
             Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
             Assert.IsTrue(internalRequest.TrailingHeaders.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream()
-        {
-            var request = new UploadPartRequest
-            {
-                BucketName = S3ExpressBucketName,
-                Key = "foo.txt",
-                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring")),
-                CalculateContentMD5Header = true
-            };
-
-            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
         }
 
         [TestMethod]

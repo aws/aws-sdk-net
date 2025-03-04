@@ -53,7 +53,6 @@ namespace Amazon.S3.Transfer
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private List<Tag> tagset;
-        private bool calculateContentMD5Header = false;
         private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
         private ObjectLockMode objectLockMode;
         private bool disablePayloadSigning;
@@ -328,19 +327,6 @@ namespace Amazon.S3.Transfer
         }
 
         #endregion
-
-        /// <summary>
-        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
-        /// </summary>
-        /// <remarks>
-        /// If set, the SDK populates the Content-MD5 header but S3 will prioritize the checksum headers (for example, <c>x-amz-checksum-crc32</c>).
-        /// </remarks>
-        [Obsolete("This property is redundant in the latest version of the AWSSDK.S3 package, which automatically calculates a checksum to verify data integrity (using CRC32 by default).")]
-        public bool CalculateContentMD5Header
-        {
-            get { return this.calculateContentMD5Header; }
-            set { this.calculateContentMD5Header = value; }
-        }
 
         /// <summary>
         /// Gets and sets the property ObjectLockLegalHoldStatus. 

@@ -92,9 +92,6 @@ namespace Amazon.S3.Transfer.Internal
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)putRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
-#pragma warning disable CS0618 // Type or member is obsolete
-            putRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
-#pragma warning restore CS0618 // Type or member is obsolete
             putRequest.ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus;
             putRequest.ObjectLockMode = this._fileTransporterRequest.ObjectLockMode;
 

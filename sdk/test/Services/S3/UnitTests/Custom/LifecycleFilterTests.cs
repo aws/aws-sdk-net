@@ -29,22 +29,6 @@ namespace AWSSDK.UnitTests
         private readonly string ExpectedRequestFormat = "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Rule><Transition><Days>1</Days><StorageClass>GLACIER" +
             "</StorageClass></Transition>{0}<Status>Disabled</Status></Rule></LifecycleConfiguration>";
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public void MarshallRequestFilterAndPrefix()
-        {
-            AssertExtensions.ExpectException(() =>
-            {
-                MarshallRequest(new LifecycleFilter()
-                {
-                    LifecycleFilterPredicate = new LifecyclePrefixPredicate()
-                    {
-                        Prefix = "thePrefix"
-                    } 
-                }, "theOtherPrefix");
-            },
-            typeof(AmazonClientException), "LifecycleRule.Prefix is deprecated.  Please only use LifecycleRule.Filter.");
-        }
 
         [TestMethod]
         [TestCategory("S3")]
@@ -144,10 +128,10 @@ namespace AWSSDK.UnitTests
 
         private string MarshallPredicate(LifecycleFilterPredicate predicate)
         {
-            return MarshallRequest(new LifecycleFilter() { LifecycleFilterPredicate = predicate }, null);
+            return MarshallRequest(new LifecycleFilter() { LifecycleFilterPredicate = predicate });
         }
 
-        private string MarshallRequest(LifecycleFilter filter, string prefix = null)
+        private string MarshallRequest(LifecycleFilter filter)
         {
             var request = new PutLifecycleConfigurationRequest()
             {
@@ -158,7 +142,6 @@ namespace AWSSDK.UnitTests
                     {
                         new LifecycleRule()
                         {
-                            Prefix = prefix,
                             Filter = filter,
                             Transitions = new List<LifecycleTransition>()
                             {

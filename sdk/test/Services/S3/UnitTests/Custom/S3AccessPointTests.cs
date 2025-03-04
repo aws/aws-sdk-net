@@ -338,7 +338,7 @@ namespace AWSSDK.UnitTests
 
             var request = new SelectObjectContentRequest
             {
-                Bucket = accessPointArn,
+                BucketName = accessPointArn,
                 Key = "foo.txt",
                 Expression = "crazy expression",
                 ExpressionType = ExpressionType.SQL,

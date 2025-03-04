@@ -63,7 +63,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests)),
-                CalculateContentMD5Header = true,
                 InputStream = contentStream
             };
 
@@ -96,7 +95,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                CalculateContentMD5Header = true,
                 FilePath = filePath
             };
 
@@ -122,7 +120,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests)),
-                CalculateContentMD5Header = true,
                 InputStream = contentStream,
             };
 
@@ -148,7 +145,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests)),
-                CalculateContentMD5Header = true,
                 InputStream = contentStream,
             };
             uploadRequest.Headers.ContentMD5 = AWSSDKUtils.GenerateMD5ChecksumForStream(contentStream);
@@ -182,7 +178,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                CalculateContentMD5Header = true,
                 FilePath = filePath
             };
 
@@ -215,7 +210,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                CalculateContentMD5Header = true,
                 FilePath = filePath
             };
 
@@ -263,8 +257,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var uploadDirectoryRequest = new TransferUtilityUploadDirectoryRequest
             {
                 BucketName = bucketName,
-                Directory = directoryPath,
-                CalculateContentMD5Header = true
+                Directory = directoryPath
             };
 
             transfer.UploadDirectory(uploadDirectoryRequest);
@@ -305,7 +298,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                CalculateContentMD5Header = true,
                 FilePath = filePath,
                 ObjectLockLegalHoldStatus = desiredObjectLockLegalHoldStatus,
                 ObjectLockMode = desiredObjectLockMode,
@@ -360,7 +352,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Directory = directoryPath,
-                CalculateContentMD5Header = true,
                 ObjectLockLegalHoldStatus = desiredObjectLockLegalHoldStatus,
                 ObjectLockMode = desiredObjectLockMode,
                 ObjectLockRetainUntilDate = desiredObjectLockRetainUntilDate
@@ -407,7 +398,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                CalculateContentMD5Header = true,
                 FilePath = filePath,
                 ObjectLockLegalHoldStatus = desiredObjectLockLegalHoldStatus,
                 ObjectLockMode = desiredObjectLockMode,

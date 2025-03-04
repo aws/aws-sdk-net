@@ -77,16 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var contentRead = reader.ReadToEnd();
                 Assert.IsTrue(content.Equals(contentRead));
 
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(getObjectResponse.Expires, DateTime.SpecifyKind(default, DateTimeKind.Utc));
-#pragma warning restore CS0618 // Type or member is obsolete
                 Assert.AreEqual(getObjectResponse.ExpiresString, invalidValue);
-
-#pragma warning disable CS0618 // Type or member is obsolete
-                // Test getObjectResponse.Expires being overwritten by user code                
-                getObjectResponse.Expires = newExpires;
-                Assert.AreEqual(newExpires, getObjectResponse.Expires);
-#pragma warning restore CS0618 // Type or member is obsolete
             }
             var getObjectMetadataResponse = Client.GetObjectMetadata(bucketName, key);
 
@@ -380,9 +371,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 CannedACL = S3CannedACL.AuthenticatedRead,
             };
             request.Metadata.Add("Subject", "Content-As-Object");
-#pragma warning disable CS0618 // Type or member is obsolete
             request.Headers.Expires = expires;
-#pragma warning restore CS0618 // Type or member is obsolete
             PutObjectResponse response = Client.PutObject(request);
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
@@ -390,9 +379,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var getResponse = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
             {
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires.Value));
-#pragma warning restore CS0618 // Type or member is obsolete
+                Assert.IsTrue(expires.ApproximatelyEqual(DateTime.Parse(getResponse.ExpiresString, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeUniversal).ToUniversalTime()));
             }
         }
 
@@ -537,7 +524,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var bucket = client.PutBucket(new PutBucketRequest
                 {
                     BucketName = testBucketName,
-                    BucketRegion = S3Region.USW2
+                    BucketRegion = S3Region.USWest2
                 });
                 S3TestUtils.WaitForBucket(client, testBucketName);
 

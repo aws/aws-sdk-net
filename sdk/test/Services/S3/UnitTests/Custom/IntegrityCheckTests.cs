@@ -85,23 +85,6 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequestMarshaller_DisableMD5Stream_Is_True()
-        {
-            var request = new UploadPartRequest
-            {
-                BucketName = "mybucketname",
-                Key = "foo.txt",
-                PartNumber = 1,
-                DisableMD5Stream = true,
-                InputStream = new MemoryStream(Encoding.UTF8.GetBytes("mystring"))
-            };
-
-            var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is PartialWrapperStream);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void TestS3_UploadPartRequestMarshaller_DisableDefaultChecksumValidation_Is_True()
         {
             var request = new UploadPartRequest

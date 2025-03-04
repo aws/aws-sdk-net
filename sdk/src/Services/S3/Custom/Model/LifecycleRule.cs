@@ -33,7 +33,6 @@ namespace Amazon.S3.Model
         private string id;
         private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
         private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<LifecycleRuleNoncurrentVersionTransition>() : null;
-        private string prefix;
         private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
         private List<LifecycleTransition> transitions = AWSConfigs.InitializeCollections ? new List<LifecycleTransition>() : null;
 
@@ -132,80 +131,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The transition rule that describes when objects transition to a different storage class.
-        /// <para>
-        /// Lifecycle rules can now contain multiple transitions. This property is obsolete in favor of the Transitions property.
-        /// This property will always get or set the the zeroth element in the Transitions collection.
-        /// </para>
-        /// </summary>
-        [Obsolete("The Transition property is now obsolete in favor the Transitions property.")]
-        public LifecycleTransition Transition
-        {
-            get
-            {
-                if (!this.IsSetTransitions())
-                    return null;
-
-                return this.Transitions[0];
-            }
-            set
-            {
-                if (this.Transitions == null)
-                {
-                    this.Transitions = new List<LifecycleTransition>();
-                }
-
-                if (this.Transitions.Count == 0)
-                    this.Transitions.Add(value);
-                else
-                    this.Transitions[0] = value;
-            }
-        }
-
-        // Check to see if Transition property is set
-        internal bool IsSetTransition()
-        {
-            return this.Transitions != null && this.Transitions.Count > 0 && this.Transitions[0] != null;
-        }
-
-        /// <summary>
-        /// The transition rule that describes when noncurrent versions transition to
-        /// a different storage class.
-        /// <para>
-        /// Lifecycle rules can now contain multiple noncurrent version transitions. This property
-        /// is obsolete in favor of the NoncurrentVersionTransitions property.
-        /// This property will always get or set the the zeroth element in the NoncurrentVersionTransitions collection.
-        /// </para>
-        /// </summary>
-        [Obsolete("The NoncurrentVersionTransition property is now obsolete in favor the NoncurrentVersionTransitions property.")]
-        public LifecycleRuleNoncurrentVersionTransition NoncurrentVersionTransition
-        {
-            get
-            {
-                if (!this.IsSetNoncurrentVersionTransitions())
-                    return null;
-
-                return this.NoncurrentVersionTransitions[0];
-            }
-            set
-            {
-                if (this.NoncurrentVersionTransitions == null)
-                {
-                    this.NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
-                }
-
-                if (this.NoncurrentVersionTransitions.Count == 0)
-                {
-                    this.NoncurrentVersionTransitions.Add(value);
-                }
-                else
-                {
-                    this.NoncurrentVersionTransitions[0] = value;
-                }
-            }
-        }
-
-        /// <summary>
         /// The transition rules that describe when noncurrent versions transition to
         /// a different storage class.
         /// </summary>
@@ -219,23 +144,6 @@ namespace Amazon.S3.Model
         internal bool IsSetNoncurrentVersionTransitions()
         {
             return this.noncurrentVersionTransitions != null && (this.noncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections);
-        }
-
-        /// <summary>
-        /// Prefix identifying one or more objects to which the rule applies.
-        ///  
-        /// </summary>
-        [Obsolete("This property is obsolete.  Use the Filter property instead.")]
-        public string Prefix
-        {
-            get { return this.prefix; }
-            set { this.prefix = value; }
-        }
-
-        // Check to see if Prefix property is set
-        internal bool IsSetPrefix()
-        {
-            return this.prefix != null;
         }
 
         /// <summary>
