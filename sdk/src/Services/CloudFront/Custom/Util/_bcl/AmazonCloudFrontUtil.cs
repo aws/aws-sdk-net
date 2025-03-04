@@ -20,6 +20,7 @@
  *
  */
 
+using System;
 using System.Collections.Specialized;
 
 using Amazon.Util;
@@ -29,6 +30,7 @@ namespace Amazon.CloudFront.Util
     /// <summary>
     /// Provides utilities used by the Amazon CloudFront client implementation.
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public static class AmazonCloudFrontUtil
     {
         /// <summary>

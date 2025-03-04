@@ -28,6 +28,7 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// Request class to launch a NAT instance
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public class LaunchNATInstanceRequest
     {
         string subnetId;

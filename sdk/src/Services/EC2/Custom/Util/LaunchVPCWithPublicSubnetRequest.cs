@@ -27,6 +27,7 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// The properties used to create a VPC with a subnet that will have an internet gateway attached making instances available to the internet.
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public class LaunchVPCWithPublicSubnetRequest
     {
         string vpcName;
