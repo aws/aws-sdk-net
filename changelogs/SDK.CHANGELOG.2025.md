@@ -1,3 +1,19 @@
+### 4.0.0.0-preview.9 (2025-03-04 14:29 UTC)
+* DynamoDBv2 (4.0.0.0)
+	* Implement DynamoDBDerivedTypeAttribute to enable polymorphism support for nested items on save and load data.
+* S3 (4.0.0.0)
+	* Manual sweep of S3 for protocol test compliance.
+* Core 4.0.0.0
+	* [Breaking Change] Rework how SDK logs can be outputted. The AWSSDK.Extensions.Logging.ILoggerAdaptor and AWSSDK.Extensions.Logging.Log4NetAdaptor adaptor packages were added to support outputting the SDK logs to Microsoft.Extensions.Logging or log4net.
+	* Do not send null values, but do send empty strings and empty lists over the wire in headers for restxml and restjson protocols
+	* Improved error message when searching for AWS credentials and no credentials were found.
+	* The `CredentialsRetriever` pipeline handler has been removed and each signer now retrieves credentials from the `Identity` property directly instead.
+	* The `FallbackCredentialsFactory` has been marked as deprecated, and the `DefaultAWSCredentialsIdentityResolver` class should be used instead. This new class follows the credential resolution order as the other AWS SDKs and will re-evaluate credentials when environment variables (such as `AWS_PROFILE`) change - which can happen in interactive PowerShell sessions.
+	* The `ImmutableCredentials` property of the `RequestContext` has been removed - as it's only applicable to AWS credentials. A new property named `Identity` is available instead (it'll be used for anonymous and token credentials as well).
+	* The AWS SDK for .NET has been updated to resolve credentials at request time, instead of resolving them when a client is instantiated (note: credentials are still cached between executions, the SDK won't attempt to retrieve them again - e.g. by calling `AssumeRole` - if they're valid from a previous call).
+	* The signature for the signer classes (such as `AWS4Signer`) has been changed as they now implement a new interface.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.8 (2025-02-25 13:38 UTC)
 * DataExchange (4.0.0.0)
 	* Updated `SendApiAsset` operation to set correct `Content-Type` header
