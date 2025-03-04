@@ -28,6 +28,7 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// This object contains the VPC objects that were created as part of the launch VPC with public and private subnets operation.
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public class LaunchVPCWithPublicAndPrivateSubnetsResponse : LaunchVPCWithPublicSubnetResponse
     {
         /// <summary>

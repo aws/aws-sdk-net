@@ -165,13 +165,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var config = new TableConfig(numericHashRangeTable.TableName)
             {
-                AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
+                AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" },
+                AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate" }
             };
             var numericEpochTable = Table.LoadTable(Client, config);
 
             // Capture current time
             var currTime = DateTime.Now;
             var currTimeUtc = currTime.ToUniversalTime();
+            var longEpochTimeUtc = new DateTime(2039, 1, 1, 13, 56, 34).ToUniversalTime();
 
             // Save Item
             var doc = new Document();
@@ -180,6 +182,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["CreationTime"] = currTime;
             doc["EpochDate2"] = currTime;
             doc["NonEpochDate"] = currTime;
+            doc["LongEpochDate"] = longEpochTimeUtc;
             numericEpochTable.PutItem(doc);
 
             // Load Item
@@ -187,6 +190,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(currTimeUtc, storedDoc["CreationTime"].AsDateTimeUtc());
             ApproximatelyEqual(currTimeUtc, storedDoc["EpochDate2"].AsDateTimeUtc());
             ApproximatelyEqual(currTimeUtc, storedDoc["NonEpochDate"].AsDateTimeUtc());
+            ApproximatelyEqual(longEpochTimeUtc, storedDoc["LongEpochDate"].AsDateTimeUtc());
         }
 
         private void TestEmptyString(Table hashTable)

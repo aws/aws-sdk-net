@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal DynamoDBEntryConversion Conversion { get { return Config.Conversion; } }
         internal bool IsEmptyStringValueEnabled { get { return Config.IsEmptyStringValueEnabled; } }
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
+        internal IEnumerable<string> StoreAsEpochLong { get { return Config.AttributesToStoreAsEpochLong; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
         internal TracerProvider TracerProvider { get; private set; }
 
@@ -231,6 +232,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (StoreAsEpoch.Contains(keyName))
                     value = Document.DateTimeToEpochSeconds(value, keyName);
 
+                if (StoreAsEpochLong.Contains(keyName))
+                    value = Document.DateTimeToEpochSecondsLong(value, keyName);
+
                 Primitive primitive = value.AsPrimitive();
                 if (primitive == null)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Key attribute {0} must be a Primitive type", keyName));
@@ -399,7 +403,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Dictionary<string, AttributeValue> ToAttributeMap(Document doc, DynamoDBEntryConversion conversion)
         {
-            return doc.ToAttributeMap(conversion, this.StoreAsEpoch, Config.IsEmptyStringValueEnabled);
+            return doc.ToAttributeMap(conversion, this.StoreAsEpoch, this.StoreAsEpochLong, Config.IsEmptyStringValueEnabled);
         }
 
         #endregion
@@ -448,7 +452,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
             var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
-            using(DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 Table table = new Table(ddbClient, config);
                 var tableDescriptionCache = table.GetTableDescriptionCache();
@@ -721,7 +725,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
             using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
+                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, storeAsEpochLong: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
                 return LoadTable(ddbClient, config);
             }
         }
@@ -746,7 +750,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
             using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
+                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, storeAsEpochLong: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
                 return LoadTable(ddbClient, config);
             }
         }
@@ -877,6 +881,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                          conversion,
                                          DynamoDBConsumer.DocumentModel,
                                          storeAsEpoch: null,
+                                         storeAsEpochLong: null,
                                          isEmptyStringValueEnabled: isEmptyStringValueEnabled,
                                          metadataCachingMode: metadataCachingMode);
 
@@ -928,7 +933,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document representing the data.</returns>
         public Document FromAttributeMap(Dictionary<string, AttributeValue> data)
         {
-            return Document.FromAttributeMap(data, this.StoreAsEpoch);
+            return Document.FromAttributeMap(data, this.StoreAsEpoch, this.StoreAsEpochLong);
         }
 
         /// <summary>
@@ -938,7 +943,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap(Document doc)
         {
-            return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
+            return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch, this.StoreAsEpochLong, this.IsEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -947,7 +952,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Document doc)
         {
-            return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
+            return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch, this.StoreAsEpochLong, this.IsEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -958,7 +963,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly)
         {
-            return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
+            return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.StoreAsEpochLong, this.IsEmptyStringValueEnabled);
         }
 
 

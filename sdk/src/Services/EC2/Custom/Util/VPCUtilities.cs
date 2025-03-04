@@ -33,6 +33,7 @@ namespace Amazon.EC2.Util
     /// <summary>
     /// This class has utility methods used for setting up a VPC.
     /// </summary>
+    [Obsolete("This utility class is no longer maintained and will be removed in the next major version.")]
     public static partial class VPCUtilities
     {
         /// <summary>
