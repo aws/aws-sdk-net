@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetSchemaVersion happy path for an example schema version."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetSchemaVersion happy path for an example schema version."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.GetSchemaVersion(Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetSchemaVersion error path for an example schema version that does not exist."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListSchemaVersions happy path for an example schema version."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListSchemaVersions by version."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoTManagedIntegrations.IAmazonIoTManagedIntegrations.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="M:Amazon.IoTManagedIntegrations.AmazonIoTManagedIntegrationsClient.ListSchemaVersions(Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest)" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest" />
+            <member name="T:Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListSchemaVersions error  for invalid input."
+                    source=".\AWSSDKDocSamples\IoTManagedIntegrations\IoTManagedIntegrations.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+</docs>

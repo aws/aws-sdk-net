@@ -484,6 +484,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* General availability (GA) for AWS IoT Fleetwise. It adds AWS IoT Fleetwise to AWS SDK. For more information, see https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/Welcome.html.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
 	* This release adds support for new the service called Iot Jobs. This client is built for the device SDK to use Iot Jobs Device specific APIs.
+* [AWSSDK.IoTManagedIntegrations](https://www.nuget.org/packages/AWSSDK.IoTManagedIntegrations/)
+	* Adding managed integrations APIs for IoT Device Management to setup and control devices across different manufacturers and connectivity protocols. APIs include managedthing operations, credential and provisioning profile management, notification configuration, and OTA update.
 * [AWSSDK.IoTSecureTunneling](https://www.nuget.org/packages/AWSSDK.IoTSecureTunneling/)
 	* This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.
 * [AWSSDK.IoTSiteWise](https://www.nuget.org/packages/AWSSDK.IoTSiteWise/)
