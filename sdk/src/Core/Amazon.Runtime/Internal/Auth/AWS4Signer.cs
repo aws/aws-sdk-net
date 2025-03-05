@@ -118,13 +118,16 @@ namespace Amazon.Runtime.Internal.Auth
                                   RequestMetrics metrics,
                                   BaseIdentity identity)
         {
-            var credentials = identity as AWSCredentials;
-            if (credentials is null)
+            if (identity is not AWSCredentials credentials)
             {
                 throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(AWS4Signer)}.");
             }
 
             var immutableCredentials = credentials.GetCredentials();
+            if (immutableCredentials is null)
+            {
+                return;
+            }
 
             var signingResult = SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;            
