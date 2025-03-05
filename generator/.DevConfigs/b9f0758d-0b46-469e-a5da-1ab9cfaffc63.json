@@ -1,0 +1,10 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update the SDK checksum component to better validate whether the AWS Common Runtime dependency can be used."
+        ],
+        "backwardIncompatibilitiesToIgnore": [],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}

@@ -15,6 +15,7 @@
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces.Internal;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
@@ -36,19 +37,48 @@ namespace AWSSDK.Runtime.Internal.Util
 
         private static readonly object _lock = new object();
         private static volatile IChecksumProvider _instance;
+        private static bool? _isAvailable;
+        private static readonly byte[] _emptyArray = new byte[0];
 
         /// <summary>
         /// Returns whether the CRT checksum implementation is available for the .NET SDK to use.
         /// </summary>
+        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "The CRT may fail to load for several reasons so we need to catch all possible exceptions")]
         public static bool IsCrtAvailable()
         {
-            try
+            if (_isAvailable != null)
             {
-                return Instance != null;
+                return _isAvailable.Value;
             }
-            catch (AWSCommonRuntimeException)
+
+            lock (_lock)
             {
-                return false;
+                if (_isAvailable != null)
+                {
+                    return _isAvailable.Value;
+                }
+
+                try
+                {
+                    // We cannot rely only on the dependency being available, the CRT may fail if native components are missing in customer's environments.
+                    if (Instance != null)
+                    {
+                        // So we'll attempt to actually calculate a checksum to verify the CRT can be used.
+                        Instance.Crc64NVME(_emptyArray);
+                        _isAvailable = true;
+                    }
+                    else
+                    {
+                        _isAvailable = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.GetLogger(typeof(ChecksumCRTWrapper)).Debug(ex, "Unable to use the AWS Common Runtime checksum implementation: {0}", ex.Message);
+                    _isAvailable = false;
+                }
+
+                return _isAvailable.Value;
             }
         }
 

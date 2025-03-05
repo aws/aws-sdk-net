@@ -33,8 +33,7 @@ namespace Amazon.Runtime.Internal.Util
         private readonly static List<CoreChecksumAlgorithm> _responseChecksumsInPriorityOrder = ChecksumCRTWrapper.IsCrtAvailable() ?
             new List<CoreChecksumAlgorithm>
             {
-                // TODO: Re-enable CRC64 for responses once the CRT issue is resolved.
-                // CoreChecksumAlgorithm.CRC64NVME,
+                CoreChecksumAlgorithm.CRC64NVME,
                 CoreChecksumAlgorithm.CRC32C,
                 CoreChecksumAlgorithm.CRC32,
                 CoreChecksumAlgorithm.SHA1,
