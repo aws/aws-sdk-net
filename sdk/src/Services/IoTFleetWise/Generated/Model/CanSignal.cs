@@ -42,6 +42,7 @@ namespace Amazon.IoTFleetWise.Model
         private int? _messageId;
         private string _name;
         private double? _offset;
+        private SignalValueType _signalValueType;
         private int? _startBit;
 
         /// <summary>
@@ -85,7 +86,10 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property IsSigned. 
         /// <para>
-        /// Whether the message data is specified as a signed value.
+        /// Determines whether the message is signed (<c>true</c>) or not (<c>false</c>). If it's
+        /// signed, the message can represent both positive and negative numbers. The <c>isSigned</c>
+        /// parameter only applies to the <c>INTEGER</c> raw signal type, and it doesn't affect
+        /// the <c>FLOATING_POINT</c> raw signal type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -176,6 +180,24 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetOffset()
         {
             return this._offset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignalValueType. 
+        /// <para>
+        /// The value type of the signal. The default value is <c>INTEGER</c>.
+        /// </para>
+        /// </summary>
+        public SignalValueType SignalValueType
+        {
+            get { return this._signalValueType; }
+            set { this._signalValueType = value; }
+        }
+
+        // Check to see if SignalValueType property is set
+        internal bool IsSetSignalValueType()
+        {
+            return this._signalValueType != null;
         }
 
         /// <summary>

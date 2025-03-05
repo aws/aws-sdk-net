@@ -38,11 +38,13 @@ namespace Amazon.IoTFleetWise.Model
         private int? _bitMaskLength;
         private int? _bitRightShift;
         private int? _byteLength;
+        private bool? _isSigned;
         private double? _offset;
         private int? _pid;
         private int? _pidResponseLength;
         private double? _scaling;
         private int? _serviceMode;
+        private SignalValueType _signalValueType;
         private int? _startByte;
 
         /// <summary>
@@ -100,6 +102,27 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetByteLength()
         {
             return this._byteLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSigned. 
+        /// <para>
+        /// Determines whether the message is signed (<c>true</c>) or not (<c>false</c>). If it's
+        /// signed, the message can represent both positive and negative numbers. The <c>isSigned</c>
+        /// parameter only applies to the <c>INTEGER</c> raw signal type, and it doesn't affect
+        /// the <c>FLOATING_POINT</c> raw signal type. The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool IsSigned
+        {
+            get { return this._isSigned.GetValueOrDefault(); }
+            set { this._isSigned = value; }
+        }
+
+        // Check to see if IsSigned property is set
+        internal bool IsSetIsSigned()
+        {
+            return this._isSigned.HasValue; 
         }
 
         /// <summary>
@@ -196,6 +219,24 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetServiceMode()
         {
             return this._serviceMode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignalValueType. 
+        /// <para>
+        /// The value type of the signal. The default value is <c>INTEGER</c>.
+        /// </para>
+        /// </summary>
+        public SignalValueType SignalValueType
+        {
+            get { return this._signalValueType; }
+            set { this._signalValueType = value; }
+        }
+
+        // Check to see if SignalValueType property is set
+        internal bool IsSetSignalValueType()
+        {
+            return this._signalValueType != null;
         }
 
         /// <summary>

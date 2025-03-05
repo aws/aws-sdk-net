@@ -104,6 +104,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetSignalValueType())
+            {
+                context.Writer.WritePropertyName("signalValueType");
+                context.Writer.Write(requestObject.SignalValueType);
+            }
+
             if(requestObject.IsSetStartBit())
             {
                 context.Writer.WritePropertyName("startBit");
