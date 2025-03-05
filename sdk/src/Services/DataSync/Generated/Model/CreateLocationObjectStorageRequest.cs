@@ -188,8 +188,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerHostname. 
         /// <para>
-        /// Specifies the domain name or IP address of the object storage server. A DataSync agent
-        /// uses this hostname to mount the object storage server in a network.
+        /// Specifies the domain name or IP version 4 (IPv4) address of the object storage server
+        /// that your DataSync agent connects to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

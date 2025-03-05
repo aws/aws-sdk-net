@@ -47,6 +47,7 @@ namespace Amazon.DataSync.Model
         private string _locationArn;
         private string _secretKey;
         private MemoryStream _serverCertificate;
+        private string _serverHostname;
         private int? _serverPort;
         private ObjectStorageServerProtocol _serverProtocol;
         private string _subdirectory;
@@ -185,6 +186,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetServerCertificate()
         {
             return this._serverCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerHostname. 
+        /// <para>
+        /// Specifies the domain name or IP version 4 (IPv4) address of the object storage server
+        /// that your DataSync agent connects to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string ServerHostname
+        {
+            get { return this._serverHostname; }
+            set { this._serverHostname = value; }
+        }
+
+        // Check to see if ServerHostname property is set
+        internal bool IsSetServerHostname()
+        {
+            return this._serverHostname != null;
         }
 
         /// <summary>

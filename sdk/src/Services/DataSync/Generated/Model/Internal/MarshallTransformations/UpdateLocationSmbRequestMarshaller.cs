@@ -144,6 +144,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Password);
                 }
 
+                if(publicRequest.IsSetServerHostname())
+                {
+                    context.Writer.WritePropertyName("ServerHostname");
+                    context.Writer.Write(publicRequest.ServerHostname);
+                }
+
                 if(publicRequest.IsSetSubdirectory())
                 {
                     context.Writer.WritePropertyName("Subdirectory");
