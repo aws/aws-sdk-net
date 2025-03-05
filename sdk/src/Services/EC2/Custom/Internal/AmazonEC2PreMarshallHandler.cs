@@ -31,17 +31,6 @@ namespace Amazon.EC2.Internal
     /// </summary>
     public class AmazonEC2PreMarshallHandler : PipelineHandler
     {
-        /// <summary>
-        /// Internal enum IpRangeValue to determine which of IpRange or Ipv4Ranges property will be used
-        /// to make a request. If both properties are set differently, an exception will be thrown.
-        /// </summary>
-        internal enum IpRangeValue
-        {
-            Invalid,
-            IpRanges,
-            Ipv4Ranges
-        }
-
         private readonly AWSCredentials _credentials;
 
         /// <summary>
@@ -178,68 +167,6 @@ namespace Amazon.EC2.Internal
                 var url = AmazonServiceClient.ComposeUrl(irequest);
 
                 copySnapshotRequest.PresignedUrl = url.AbsoluteUri + authorization;
-            }
-
-            var authorizeSecurityGroupEgressRequest = request as AuthorizeSecurityGroupEgressRequest;
-            if (authorizeSecurityGroupEgressRequest != null)
-                if (authorizeSecurityGroupEgressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(authorizeSecurityGroupEgressRequest.IpPermissions);
-
-            var authorizeSecurityGroupIngressRequest = request as AuthorizeSecurityGroupIngressRequest;
-            if (authorizeSecurityGroupIngressRequest != null)
-                if (authorizeSecurityGroupIngressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(authorizeSecurityGroupIngressRequest.IpPermissions);
-
-            var revokeSecurityGroupEgressRequest = request as RevokeSecurityGroupEgressRequest;
-            if (revokeSecurityGroupEgressRequest != null)
-                if (revokeSecurityGroupEgressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(revokeSecurityGroupEgressRequest.IpPermissions);
-
-            var revokeSecurityGroupIngressRequest = request as RevokeSecurityGroupIngressRequest;
-            if (revokeSecurityGroupIngressRequest != null)
-                if (revokeSecurityGroupIngressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(revokeSecurityGroupIngressRequest.IpPermissions);
-
-            var updateSecurityGroupRuleDescriptionsEgressRequest = request as UpdateSecurityGroupRuleDescriptionsEgressRequest;
-            if (updateSecurityGroupRuleDescriptionsEgressRequest != null)
-                if (updateSecurityGroupRuleDescriptionsEgressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(updateSecurityGroupRuleDescriptionsEgressRequest.IpPermissions);
-
-            var updateSecurityGroupRuleDescriptionsIngressRequest = request as UpdateSecurityGroupRuleDescriptionsIngressRequest;
-            if (updateSecurityGroupRuleDescriptionsIngressRequest != null)
-                if (updateSecurityGroupRuleDescriptionsIngressRequest.IsSetIpPermissions())
-                    SelectModifiedIpRange(updateSecurityGroupRuleDescriptionsIngressRequest.IpPermissions);
-        }
-
-        /// <summary>
-        /// Analyse the user provided IpPermissions in the request to determine which of IpRanges/Ipv4ranges property will be used to make the final request.
-        /// If both IpRanges and Ipv4Ranges are set with the same Cidr values, Ipv4Range property is selected. 
-        /// If no modifications have been made on either of IpRanges Ipv4ranges properties, Ipv4Ranges property is selected.
-        /// If both IpRanges and Ipv4Ranges are set differently, an ArgumentException is thrown.
-        /// </summary>
-        /// <param name="IpPermissions"></param>
-        private static void SelectModifiedIpRange(List<IpPermission> IpPermissions)
-        {
-            if (IpPermissions == null)
-                return;
-
-            foreach (var ipPermission in IpPermissions)
-            {
-                switch (ipPermission.CanModify())
-                {
-                    case IpRangeValue.Invalid:
-                        throw new ArgumentException("Cannot set values for both Ipv4Ranges and IpRanges properties on the IpPermission type which is part of the request. Consider using only Ipv4Ranges as IpRanges has been marked obsolete.");
-                    case IpRangeValue.IpRanges:
-#pragma warning disable CS0618
-                        ipPermission.SelectIpRangeForMarshalling(ipPermission.IpRanges);
-#pragma warning restore CS0618
-                        break;
-                    case IpRangeValue.Ipv4Ranges:
-                        ipPermission.SelectIpV4RangeForMarshalling(ipPermission.Ipv4Ranges);
-                        break;
-                    default:
-                        break;
-                }
             }
         }
     }
