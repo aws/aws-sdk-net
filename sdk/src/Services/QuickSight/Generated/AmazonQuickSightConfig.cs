@@ -32,7 +32,7 @@ namespace Amazon.QuickSight
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QuickSight", "3.7.413.23");
+            InternalSDKUtils.BuildUserAgentString("QuickSight", "3.7.413.24");
 
         private string _userAgent = UserAgentString;
         ///<summary>

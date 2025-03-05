@@ -1,3 +1,19 @@
+### 3.7.996.0 (2025-03-05 19:30 UTC)
+* BedrockRuntime (3.7.414.0)
+	* This releases adds support for Custom Prompt Router ARN
+* DataSync (3.7.404.0)
+	* AWS DataSync now supports modifying ServerHostname while updating locations SMB, NFS, and ObjectStorage.
+* GameLiftStreams (3.7.400.0)
+	* New Service: Amazon GameLift Streams delivers low-latency game streaming from AWS global infrastructure to virtually any device with a browser at up to 1080p resolution and 60 fps.
+* IoTFleetWise (3.7.405.0)
+	* This release adds floating point support for CAN/OBD signals and adds support for signed OBD signals.
+* WorkSpaces (3.7.409.0)
+	* Added DeviceTypeWorkSpacesThinClient type to allow users to access their WorkSpaces through a WorkSpaces Thin Client.
+* Core 3.7.402.13
+	* Update the SDK checksum component to better validate whether the AWS Common Runtime dependency can be used.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.995.0 (2025-03-04 21:22 UTC)
 * CloudFront (3.7.404.41)
 	* Mark AmazonCloudFrontUtil as obsolete and will be removed in the next major version.
