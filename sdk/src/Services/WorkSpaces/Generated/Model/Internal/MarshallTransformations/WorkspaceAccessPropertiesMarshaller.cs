@@ -90,6 +90,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeviceTypeWindows);
             }
 
+            if(requestObject.IsSetDeviceTypeWorkSpacesThinClient())
+            {
+                context.Writer.WritePropertyName("DeviceTypeWorkSpacesThinClient");
+                context.Writer.Write(requestObject.DeviceTypeWorkSpacesThinClient);
+            }
+
             if(requestObject.IsSetDeviceTypeZeroClient())
             {
                 context.Writer.WritePropertyName("DeviceTypeZeroClient");
