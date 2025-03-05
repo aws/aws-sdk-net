@@ -244,6 +244,59 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedList, entry);
         }
 
+#if NET8_0_OR_GREATER
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertToEntry_DateOnly(DynamoDBEntryConversion conversion)
+        {
+            var dateOnly = new DateOnly(2024, 07, 03);
+            var entry = conversion.ConvertToEntry(dateOnly);
+            Assert.AreEqual(new Primitive("2024-07-03", false), entry);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_DateOnly(DynamoDBEntryConversion conversion)
+        {
+            var entry = new Primitive("2024-07-03", false);
+            var actualDateOnly = conversion.ConvertFromEntry<DateOnly>(entry);
+            var expectedDateOnly = new DateOnly(2024, 07, 03);
+            Assert.AreEqual(expectedDateOnly, actualDateOnly);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertToEntry_TimeOnly(DynamoDBEntryConversion conversion)
+        {
+            var timeOnly = new TimeOnly(18, 31, 56, 123);
+            var entry = conversion.ConvertToEntry(timeOnly);
+            Assert.AreEqual(new Primitive("18:31:56.123", false), entry);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_TimeOnly(DynamoDBEntryConversion conversion)
+        {
+            var entry = new Primitive("18:31:56.123", false);
+            var actualTimeOnly = conversion.ConvertFromEntry<TimeOnly>(entry);
+            var expectedTimeOnly = new TimeOnly(18, 31, 56, 123);
+            Assert.AreEqual(expectedTimeOnly, actualTimeOnly);
+        }
+
+        [DataTestMethod]
+        [DynamicData((nameof(DynamoDBEntryConversions)))]
+        public void ConvertFromEntry_ShouldBeAbleToReadDateOnlyAsDateTime(DynamoDBEntryConversion conversion)
+        {
+            var dateOnly = new DateOnly(2024, 07, 03);
+            var entry = conversion.ConvertToEntry(dateOnly);
+
+            var actualDateTime = conversion.ConvertFromEntry<DateTime>(entry);
+            var expectedDateTime = new DateTime(2024, 07, 03, 0, 0, 0, DateTimeKind.Utc);
+
+            Assert.AreEqual(expectedDateTime, actualDateTime);
+        }
+#endif
+
         private void AssertAllConvertersAreRegistered(DynamoDBEntryConversion conversion, string suffix)
         {
             var converters = GetConverters(suffix);

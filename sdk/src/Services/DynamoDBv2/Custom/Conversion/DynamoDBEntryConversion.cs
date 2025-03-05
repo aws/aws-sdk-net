@@ -322,7 +322,7 @@ namespace Amazon.DynamoDBv2
             return converter.TryFromEntry(entry, outputType, out value);
         }
 
-#endregion
+        #endregion
 
         #region Internal members
 
@@ -378,7 +378,7 @@ namespace Amazon.DynamoDBv2
             return pl;
         }
 
-#endregion
+        #endregion
 
         #region Private members
 
@@ -413,6 +413,10 @@ namespace Amazon.DynamoDBv2
             AddConverter(new BoolConverterV1());
             AddConverter(new PrimitiveCollectionConverterV1());
             AddConverter(new DictionaryConverterV1());
+#if NET8_0_OR_GREATER
+            AddConverter(new DateOnlyConverterV1());
+            AddConverter(new TimeOnlyConverterV1());
+#endif
         }
 
         private void SetV2Converters()
@@ -438,6 +442,10 @@ namespace Amazon.DynamoDBv2
             AddConverter(new EnumConverterV2());
             AddConverter(new BoolConverterV2());
             AddConverter(new CollectionConverterV2());
+#if NET8_0_OR_GREATER
+            AddConverter(new DateOnlyConverterV2());
+            AddConverter(new TimeOnlyConverterV2());
+#endif
         }
 
         // Converts items to Primitives.
