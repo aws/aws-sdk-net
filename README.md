@@ -422,6 +422,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
+* [AWSSDK.GameLiftStreams](https://www.nuget.org/packages/AWSSDK.GameLiftStreams/)
+	* New Service: Amazon GameLift Streams delivers low-latency game streaming from AWS global infrastructure to virtually any device with a browser at up to 1080p resolution and 60 fps.
 * [AWSSDK.GeoMaps](https://www.nuget.org/packages/AWSSDK.GeoMaps/)
 	* Release of Amazon Location Maps API. Maps enables you to build digital maps that showcase your locations, visualize your data, and unlock insights to drive your business
 * [AWSSDK.GeoPlaces](https://www.nuget.org/packages/AWSSDK.GeoPlaces/)
