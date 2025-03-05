@@ -127,6 +127,11 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var credentials = identity as AWSCredentials;
             var immutableCredentials = credentials.GetCredentials();
+            if (immutableCredentials is null)
+            {
+                return;
+            }
+
             _awsSigV4AProvider.Sign(request, clientConfig, metrics, immutableCredentials);
         }
 

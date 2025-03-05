@@ -6,6 +6,7 @@ using Amazon.QuickSight;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -226,5 +227,33 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(1, signer.SignCount);
         }
 #endif
+
+        [TestMethod]
+        [TestCategory("Runtime")]
+        [TestCategory("Signer")]
+        public void TestV4SignerHandlesAnonymousCredentials()
+        {
+            var mock = new Moq.Mock<IRequest>().SetupAllProperties();
+            var requestMock = new Moq.Mock<AmazonWebServiceRequest>().SetupAllProperties();
+            var request = mock.Object;
+            var config = new AmazonIotDataConfig();
+
+            mock.SetupGet(x => x.Headers).Returns(new Dictionary<string, string>());
+            mock.SetupGet(x => x.OriginalRequest).Returns(requestMock.Object);
+            request.Endpoint = EndpointResolver.DetermineEndpoint(config, request);
+
+            var signer = new AWS4Signer();
+            var credentials = new AnonymousAWSCredentials();
+
+            // After the SRA changes, the signers were updated to retrieve credentials themselves (instead of
+            // relying on a pipeline handler to place the value in the request context). One miss from the original
+            // implementation is that customers may call the signer indirectly with anonymous credentials (for example, if
+            // their environment is set to assume a role with web identity).
+            signer.Sign(request, config, new RequestMetrics(), credentials);
+
+            // This test verifies the signer does not fail with a null reference exception, but doesn't add the authorization
+            // header either.
+            Assert.IsFalse(request.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
+        }
     }
 }
