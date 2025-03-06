@@ -92,6 +92,7 @@ namespace Amazon.WAFV2.Model
         private HeaderOrder _headerOrder;
         private Headers _headers;
         private JA3Fingerprint _ja3Fingerprint;
+        private JA4Fingerprint _ja4Fingerprint;
         private JsonBody _jsonBody;
         private Method _method;
         private QueryString _queryString;
@@ -275,6 +276,46 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetJA3Fingerprint()
         {
             return this._ja3Fingerprint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JA4Fingerprint. 
+        /// <para>
+        /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
+        /// Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character
+        /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
+        /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
+        /// this fingerprint for each request that has enough TLS Client Hello information for
+        /// the calculation. Almost all web requests include this information.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this choice only with a string match <c>ByteMatchStatement</c> with the
+        /// <c>PositionalConstraint</c> set to <c>EXACTLY</c>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF
+        /// is able to calculate the fingerprint, it includes it in the logs. For information
+        /// about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// fields</a> in the <i>WAF Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide the JA4 fingerprint string from the logs in your string match statement specification,
+        /// to match with any future requests that have the same TLS configuration.
+        /// </para>
+        /// </summary>
+        public JA4Fingerprint JA4Fingerprint
+        {
+            get { return this._ja4Fingerprint; }
+            set { this._ja4Fingerprint = value; }
+        }
+
+        // Check to see if JA4Fingerprint property is set
+        internal bool IsSetJA4Fingerprint()
+        {
+            return this._ja4Fingerprint != null;
         }
 
         /// <summary>

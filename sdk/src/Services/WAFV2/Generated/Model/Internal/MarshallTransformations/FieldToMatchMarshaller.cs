@@ -114,6 +114,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetJA4Fingerprint())
+            {
+                context.Writer.WritePropertyName("JA4Fingerprint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JA4FingerprintMarshaller.Instance;
+                marshaller.Marshall(requestObject.JA4Fingerprint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetJsonBody())
             {
                 context.Writer.WritePropertyName("JsonBody");
