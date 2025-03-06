@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// The criteria's response quality difference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public double ResponseQualityDifference
         {
             get { return this._responseQualityDifference.GetValueOrDefault(); }

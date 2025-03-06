@@ -30,30 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The target model for a prompt router.
+    /// This is the response object from the DeletePromptRouter operation.
     /// </summary>
-    public partial class PromptRouterTargetModel
+    public partial class DeletePromptRouterResponse : AmazonWebServiceResponse
     {
-        private string _modelArn;
-
-        /// <summary>
-        /// Gets and sets the property ModelArn. 
-        /// <para>
-        /// The target model's ARN.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string ModelArn
-        {
-            get { return this._modelArn; }
-            set { this._modelArn = value; }
-        }
-
-        // Check to see if ModelArn property is set
-        internal bool IsSetModelArn()
-        {
-            return this._modelArn != null;
-        }
 
     }
 }

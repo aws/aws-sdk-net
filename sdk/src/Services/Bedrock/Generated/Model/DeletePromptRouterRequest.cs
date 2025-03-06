@@ -30,29 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// The target model for a prompt router.
+    /// Container for the parameters to the DeletePromptRouter operation.
+    /// Deletes a specified prompt router. This action cannot be undone.
     /// </summary>
-    public partial class PromptRouterTargetModel
+    public partial class DeletePromptRouterRequest : AmazonBedrockRequest
     {
-        private string _modelArn;
+        private string _promptRouterArn;
 
         /// <summary>
-        /// Gets and sets the property ModelArn. 
+        /// Gets and sets the property PromptRouterArn. 
         /// <para>
-        /// The target model's ARN.
+        /// The Amazon Resource Name (ARN) of the prompt router to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string ModelArn
+        public string PromptRouterArn
         {
-            get { return this._modelArn; }
-            set { this._modelArn = value; }
+            get { return this._promptRouterArn; }
+            set { this._promptRouterArn = value; }
         }
 
-        // Check to see if ModelArn property is set
-        internal bool IsSetModelArn()
+        // Check to see if PromptRouterArn property is set
+        internal bool IsSetPromptRouterArn()
         {
-            return this._modelArn != null;
+            return this._promptRouterArn != null;
         }
 
     }

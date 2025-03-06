@@ -1128,6 +1128,88 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreatePromptRouter
+
+        /// <summary>
+        /// Creates a prompt router that manages the routing of requests between multiple foundation
+        /// models based on the routing criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePromptRouter service method.</param>
+        /// 
+        /// <returns>The response from the CreatePromptRouter service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">REST API Reference for CreatePromptRouter Operation</seealso>
+        public virtual CreatePromptRouterResponse CreatePromptRouter(CreatePromptRouterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptRouterResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePromptRouterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePromptRouter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePromptRouter operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePromptRouter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">REST API Reference for CreatePromptRouter Operation</seealso>
+        public virtual IAsyncResult BeginCreatePromptRouter(CreatePromptRouterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptRouterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePromptRouter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePromptRouter.</param>
+        /// 
+        /// <returns>Returns a  CreatePromptRouterResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">REST API Reference for CreatePromptRouter Operation</seealso>
+        public virtual CreatePromptRouterResponse EndCreatePromptRouter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePromptRouterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateProvisionedModelThroughput
 
         /// <summary>
@@ -1649,6 +1731,76 @@ namespace Amazon.Bedrock
         public virtual DeleteModelInvocationLoggingConfigurationResponse EndDeleteModelInvocationLoggingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteModelInvocationLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePromptRouter
+
+        /// <summary>
+        /// Deletes a specified prompt router. This action cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePromptRouter service method.</param>
+        /// 
+        /// <returns>The response from the DeletePromptRouter service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">REST API Reference for DeletePromptRouter Operation</seealso>
+        public virtual DeletePromptRouterResponse DeletePromptRouter(DeletePromptRouterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptRouterResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePromptRouterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePromptRouter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePromptRouter operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePromptRouter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">REST API Reference for DeletePromptRouter Operation</seealso>
+        public virtual IAsyncResult BeginDeletePromptRouter(DeletePromptRouterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRouterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptRouterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePromptRouter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePromptRouter.</param>
+        /// 
+        /// <returns>Returns a  DeletePromptRouterResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">REST API Reference for DeletePromptRouter Operation</seealso>
+        public virtual DeletePromptRouterResponse EndDeletePromptRouter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePromptRouterResponse>(asyncResult);
         }
 
         #endregion

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListPromptRouters Request Marshaller
+    /// DeletePromptRouter Request Marshaller
     /// </summary>       
-    public class ListPromptRoutersRequestMarshaller : IMarshaller<IRequest, ListPromptRoutersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeletePromptRouterRequestMarshaller : IMarshaller<IRequest, DeletePromptRouterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListPromptRoutersRequest)input);
+            return this.Marshall((DeletePromptRouterRequest)input);
         }
 
         /// <summary>
@@ -53,29 +53,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListPromptRoutersRequest publicRequest)
+        public IRequest Marshall(DeletePromptRouterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Bedrock");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetType())
-                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
-            request.ResourcePath = "/prompt-routers";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetPromptRouterArn())
+                throw new AmazonBedrockException("Request object does not have required field PromptRouterArn set");
+            request.AddPathResource("{promptRouterArn}", StringUtils.FromString(publicRequest.PromptRouterArn));
+            request.ResourcePath = "/prompt-routers/{promptRouterArn}";
 
             return request;
         }
-        private static ListPromptRoutersRequestMarshaller _instance = new ListPromptRoutersRequestMarshaller();        
+        private static DeletePromptRouterRequestMarshaller _instance = new DeletePromptRouterRequestMarshaller();        
 
-        internal static ListPromptRoutersRequestMarshaller GetInstance()
+        internal static DeletePromptRouterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +76,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPromptRoutersRequestMarshaller Instance
+        public static DeletePromptRouterRequestMarshaller Instance
         {
             get
             {

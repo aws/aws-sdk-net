@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private PromptRouterType _type;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -75,6 +76,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the prompt routers, such as whether it's default or custom.
+        /// </para>
+        /// </summary>
+        public PromptRouterType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
