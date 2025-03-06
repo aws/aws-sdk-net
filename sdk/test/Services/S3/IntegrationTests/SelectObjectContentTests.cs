@@ -263,7 +263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             SelectObjectContentRequest selectObjectContentRequest = new SelectObjectContentRequest()
             {
-                Bucket = bucketName,
+                BucketName = bucketName,
                 Key = key,
                 ExpressionType = ExpressionType.SQL,
                 Expression = selectQuery,
@@ -280,7 +280,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             return Client.SelectObjectContent(new SelectObjectContentRequest()
             {
-                Bucket = _bucketName,
+                BucketName = _bucketName,
                 Key = _keyName,
                 ExpressionType = ExpressionType.SQL,
                 Expression = SelectQuery,

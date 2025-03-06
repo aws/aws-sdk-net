@@ -60,9 +60,6 @@ namespace Amazon.DNXCore.IntegrationTests
                     Assert.Single(getResponse.TopicConfigurations[0].Events);
                     Assert.Equal(EventType.ObjectCreatedPut, getResponse.TopicConfigurations[0].Events[0]);
 
-#pragma warning disable 618
-                    Assert.Equal("s3:ObjectCreated:Put", getResponse.TopicConfigurations[0].Event);
-#pragma warning restore 618
                     Assert.Equal("the-topic-test", getResponse.TopicConfigurations[0].Id);
                     Assert.Equal(snsCreateResponse.TopicArn, getResponse.TopicConfigurations[0].Topic);
 

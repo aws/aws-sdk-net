@@ -78,7 +78,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             new ReplicationRule 
                             {
                                 Id = UtilityMethods.GenerateName(),
-                                Prefix = prefix,
+                                Filter = new ReplicationRuleFilter
+                                {
+                                    Prefix = prefix
+                                },
                                 Status = ReplicationRuleStatus.Enabled,
                                 Destination = new ReplicationDestination
                                 {
@@ -110,11 +113,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 Assert.IsNotNull(rule);
                 Assert.IsNotNull(rule.Id);
-                Assert.IsNotNull(rule.Prefix);
+                Assert.IsNotNull(rule.Filter.Prefix);
                 if (string.IsNullOrEmpty(prefix))
-                    Assert.AreEqual(string.Empty, rule.Prefix);
+                    Assert.AreEqual(string.Empty, rule.Filter.Prefix);
                 else
-                    Assert.AreEqual(prefix, rule.Prefix);
+                    Assert.AreEqual(prefix, rule.Filter.Prefix);
                 Assert.AreEqual(destinationBucketArn, rule.Destination.BucketArn);
                 Assert.AreEqual(storageClass, rule.Destination.StorageClass);
 

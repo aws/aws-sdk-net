@@ -48,49 +48,5 @@ namespace AWSSDK.UnitTests
                 DeleteObjectRequestMarshaller.Instance.Marshall(request);
             }
         }
-
-        [DataRow(null, null)]
-        [DataRow("", "")]
-        [DataRow("bucket", null)]
-        [DataRow(null, "key")]
-        [DataRow("bucket", "")]
-        [DataRow("", "key")]
-        [DataRow("bucket", "key")]
-        [DataTestMethod]
-        [TestCategory("S3")]
-        public void RequiredUriParameterBucketForGetAcl(string bucket, string key)
-        {
-            var request = new GetACLRequest() { BucketName = bucket, Key = key };
-            if (string.IsNullOrEmpty(bucket)) //Key can be null
-            {
-                Assert.ThrowsException<ArgumentException>(() => GetACLRequestMarshaller.Instance.Marshall(request));
-            }
-            else
-            {
-                GetACLRequestMarshaller.Instance.Marshall(request);
-            }
-        }
-
-        [DataRow(null, null)]
-        [DataRow("", "")]
-        [DataRow("bucket", null)]
-        [DataRow(null, "key")]
-        [DataRow("bucket", "")]
-        [DataRow("", "key")]
-        [DataRow("bucket", "key")]
-        [DataTestMethod]
-        [TestCategory("S3")]
-        public void RequiredUriParameterBucketForPutAcl(string bucket, string key)
-        {
-            var request = new PutACLRequest() { BucketName = bucket, Key = key };
-            if (string.IsNullOrEmpty(bucket)) //Key can be null
-            {
-                Assert.ThrowsException<ArgumentException>(() => PutACLRequestMarshaller.Instance.Marshall(request));
-            }
-            else
-            {
-                PutACLRequestMarshaller.Instance.Marshall(request);
-            }
-        }
     }
 }

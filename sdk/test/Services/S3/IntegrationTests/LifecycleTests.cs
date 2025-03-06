@@ -115,16 +115,22 @@ namespace S3UnitTest
                             NewerNoncurrentVersions = 10,
                         },
 #pragma warning disable 618
-                        Transition = new LifecycleTransition
+                        Transitions = new List<LifecycleTransition>
                         {
-                            Days = 1,
-                            StorageClass = S3StorageClass.Glacier
+                            new LifecycleTransition
+                            {
+                                Days = 1,
+                                StorageClass = S3StorageClass.Glacier
+                            }
                         },
-                        NoncurrentVersionTransition = new LifecycleRuleNoncurrentVersionTransition
+                        NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>()
                         {
-                            NoncurrentDays = 14,
-                            NewerNoncurrentVersions = 10,
-                            StorageClass = S3StorageClass.Glacier
+                            new LifecycleRuleNoncurrentVersionTransition
+                            {
+                                NoncurrentDays = 14,
+                                NewerNoncurrentVersions = 10,
+                                StorageClass = S3StorageClass.Glacier
+                            }
                         },
 #pragma warning restore 618
                         AbortIncompleteMultipartUpload = new LifecycleRuleAbortIncompleteMultipartUpload
@@ -462,9 +468,6 @@ namespace S3UnitTest
         {
             Assert.IsFalse(string.IsNullOrEmpty(actual.Id));
 
-#pragma warning disable 618
-            Assert.AreEqual(expected.Prefix, actual.Prefix);
-#pragma warning restore 618
             AssertFiltersAreEqual(expected.Filter, actual.Filter);
 
             Assert.AreEqual(expected.Transitions.Count, actual.Transitions.Count);
@@ -511,18 +514,18 @@ namespace S3UnitTest
             }
 
 #pragma warning disable 618
-            Assert.AreEqual(expected.Transition.Days, actual.Transition.Days);
-            if (expected.NoncurrentVersionTransition == null)
+            Assert.AreEqual(expected.Transitions[0].Days, actual.Transitions[0].Days);
+            if (expected.NoncurrentVersionTransitions == null)
             {
-                Assert.IsNull(actual.NoncurrentVersionTransition);
+                Assert.IsNull(actual.NoncurrentVersionTransitions);
             }
             else
             {
-                Assert.AreEqual(expected.NoncurrentVersionTransition.NoncurrentDays,
-                    actual.NoncurrentVersionTransition.NoncurrentDays);
+                Assert.AreEqual(expected.NoncurrentVersionTransitions[0].NoncurrentDays,
+                    actual.NoncurrentVersionTransitions[0].NoncurrentDays);
 
-                Assert.AreEqual(expected.NoncurrentVersionTransition.NewerNoncurrentVersions,
-                    actual.NoncurrentVersionTransition.NewerNoncurrentVersions);
+                Assert.AreEqual(expected.NoncurrentVersionTransitions[0].NewerNoncurrentVersions,
+                    actual.NoncurrentVersionTransitions[0].NewerNoncurrentVersions);
             }
 #pragma warning restore 618
         }

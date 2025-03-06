@@ -483,6 +483,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
+        [Obsolete("PutACL combines both PutBucketAcl and PutObjectAcl and is deprecated. Please use the separated PutObjectAcl and PutBucketAcl operations.")]
         PutACLResponse PutACL(PutACLRequest request);
 
         /// <summary>

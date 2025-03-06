@@ -70,62 +70,6 @@ namespace Amazon.S3.Util
             return true;
         }
 
-        /// <summary>
-        /// Determines whether an S3 bucket exists or not.
-        /// This is done by:
-        /// 1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
-        /// well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
-        /// (which is one week).
-        /// 2. Making a HEAD request to the Url
-        /// </summary>
-        /// <param name="bucketName">The name of the bucket to check.</param>
-        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        /// <returns></returns>
-        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use DoesS3BucketExistV2 instead.")]
-        public static bool DoesS3BucketExist(IAmazonS3 s3Client, string bucketName)
-        {
-            if (s3Client == null)
-            {
-                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
-            }
-
-            if (String.IsNullOrEmpty(bucketName))
-            {
-                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
-            }
-
-            var config = s3Client.Config;
-            var request = new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName, 
-                Verb = HttpVerb.HEAD, 
-                Protocol = Protocol.HTTP
-            };
-
-            var parameters = new ServiceOperationEndpointParameters(request);
-            var endpoint = config.DetermineServiceOperationEndpoint(parameters);
-            request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).AddDays(1);
-
-            var url = s3Client.GetPreSignedURL(request);
-            var uri = new Uri(url);
-            
-            var response = AmazonS3HttpUtil.GetHead(s3Client, config, url, HeaderKeys.XAmzBucketRegion);
-            if (response.StatusCode == null)
-            {
-                // there was a problem with the request and we weren't able
-                // conclusively determine if the bucket exists
-                return false;
-            }
-            else
-            {
-                AmazonS3Uri s3Uri;
-                var mismatchDetected = AmazonS3Uri.TryParseAmazonS3Uri(uri, out s3Uri) &&
-                            BucketRegionDetector.GetCorrectRegion(s3Uri, response.StatusCode.Value, response.HeaderValue) != null;
-                var statusCodeAcceptable = response.StatusCode != HttpStatusCode.NotFound && response.StatusCode != HttpStatusCode.BadRequest;
-                return statusCodeAcceptable || mismatchDetected;
-            }
-        }
-
         ///// <summary>
         ///// Sets the storage class for the S3 Object to the value
         ///// specified.

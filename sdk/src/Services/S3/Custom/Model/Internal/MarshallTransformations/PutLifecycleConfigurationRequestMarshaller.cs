@@ -174,17 +174,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Id));
                                 }
 
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix() &&
-                                    lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetFilter())
-                                {
-                                    throw new AmazonClientException("LifecycleRule.Prefix is deprecated.  Please only use LifecycleRule.Filter.");
-                                }
-
-                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix())
-                                {
-                                    xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Prefix));
-                                }
-
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetFilter())
                                 {
                                     xmlWriter.WriteStartElement("Filter");

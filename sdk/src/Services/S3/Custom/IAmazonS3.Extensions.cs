@@ -13,9 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.S3;
 using Amazon.S3.Model;
 
@@ -49,7 +47,7 @@ namespace Amazon.S3
         string GetPreSignedURL(GetPreSignedUrlRequest request);
 
         #endregion
-#if AWS_ASYNC_API
+
         #region GetPresignedURLAsync
 
         /// <summary>
@@ -76,6 +74,5 @@ namespace Amazon.S3
         Task<string> GetPreSignedURLAsync(GetPreSignedUrlRequest request);
 
         #endregion
-#endif
     }
 }

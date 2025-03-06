@@ -57,11 +57,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
-                    if (context.TestExpression("Prefix", targetDepth))
-                    {
-                        rulesItem.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("Filter", targetDepth))
                     {
                         var predicateList = LifecycleFilterPredicateListUnmarshaller.Instance.Unmarshall(context);

@@ -130,26 +130,7 @@ namespace Amazon.S3.Internal
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
 
                 request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
-
-#pragma warning disable CS0618 // Type or member is obsolete
-                if (!uploadPartRequest.IsSetMD5Digest() && uploadPartRequest.CalculateContentMD5Header && !request.IsDirectoryBucket())
-#pragma warning restore CS0618 // Type or member is obsolete
-                {
-                    // Calculate Content-MD5 if not already set and customer opted in
-                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(partialStream);
-                    if (!string.IsNullOrEmpty(md5))
-                    {
-                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
-                    }
-
-                    // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
-                    var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
-                    uploadPartRequest.InputStream = hashStream;
-                }
-                else
-                {
-                    uploadPartRequest.InputStream = partialStream;
-                }
+                uploadPartRequest.InputStream = partialStream;
             }
 
             var defaultChecksumValidationDisabled = uploadPartRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
@@ -184,26 +165,7 @@ namespace Amazon.S3.Internal
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
 
                 request.DisablePayloadSigning = putObjectRequest.DisablePayloadSigning;
-
-#pragma warning disable CS0618 // Type or member is obsolete
-                if (!putObjectRequest.IsSetMD5Digest() && putObjectRequest.CalculateContentMD5Header && !request.IsDirectoryBucket())
-#pragma warning restore CS0618 // Type or member is obsolete
-                {
-                    // Calculate Content-MD5 if not already set and customer opted in
-                    string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(putObjectRequest.InputStream);
-                    if (!string.IsNullOrEmpty(md5))
-                    {
-                        request.Headers[HeaderKeys.ContentMD5Header] = md5;
-                    }
-
-                    // Wrap input stream in MD5Stream
-                    var hashStream = new MD5Stream(streamWithLength, null, length);
-                    putObjectRequest.InputStream = hashStream;
-                }
-                else
-                {
-                    putObjectRequest.InputStream = streamWithLength;
-                }
+                putObjectRequest.InputStream = streamWithLength;
             }
 
             var defaultChecksumValidationDisabled = putObjectRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
