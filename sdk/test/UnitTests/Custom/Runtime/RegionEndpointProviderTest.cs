@@ -13,33 +13,13 @@
  * permissions and limitations under the License.
  */
 using Amazon;
-using Amazon.Runtime;
-using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Amazon.Internal;
-using Amazon.S3.Model;
 
 namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class RegionEndpointProviderTest
     {
-        /// These test cases pre-dated variants being added to endpoints.json
-        /// The test data was updated to use variants because hardcoded dual-stack 
-        /// support was remove, but the test cases were left the same.
-        [DataTestMethod]
-        [DataRow("xx-northeast-1", "svc", "svc.xx-northeast-1.amazonaws.com")]
-        [DataRow("xx-northeast-2", "svc", "svc.xx-northeast-2.amazonaws.com")]
-        [DataRow("xx-northeast-1", "s3", "s3.xx-northeast-1.amazonaws.com")]
-        [DataRow("xx-west-1", "s3", "s3.xx-west-1.amazonaws.com")]
-        [DataRow("xx-east-1", "s3", "s3.xx-east-1.amazonaws.com")]
-        [DataRow("xx-northeast-1", "s3-control", "s3-control.xx-northeast-1.amazonaws.com")]
-        [DataRow("xx-northeast-2", "s3-control", "s3-control.xx-northeast-2.amazonaws.com")]
-        public void GetEndpointForService(string region, string service, string expectedHostname)
-        {
-            GetEndpointForServiceHelper(service, region, expectedHostname);
-        }
 
         [DataTestMethod]
         [DataRow("us-east-1", "US East (Virginia)")]
@@ -72,17 +52,6 @@ namespace AWSSDK.UnitTests
             {
                 Assert.AreNotEqual("Unknown", regionEndpoint.DisplayName);
             }
-        }
-
-        private void GetEndpointForServiceHelper(string service, string region, string expectedEndpoint)
-        {
-            var regionEndpoint = RegionEndpoint.GetBySystemName(region);
-#pragma warning disable CS0612, CS0618
-            var hostname = regionEndpoint?.GetEndpointForService(service).Hostname;
-#pragma warning restore CS0612, CS0618
-            
-            Assert.IsNotNull(regionEndpoint);
-            Assert.AreEqual(expectedEndpoint, hostname);
         }
     }
 }

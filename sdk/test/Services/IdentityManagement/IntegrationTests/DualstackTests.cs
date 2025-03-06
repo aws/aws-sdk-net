@@ -1,11 +1,8 @@
 using Amazon;
-using Amazon.Internal;
-using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Net.Sockets;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {

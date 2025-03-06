@@ -15,8 +15,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Amazon.Internal;
-using Amazon.Util;
 using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

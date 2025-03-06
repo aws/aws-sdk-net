@@ -480,28 +480,7 @@ namespace Amazon.Util
 
             return uriComponentSegments;
         }
-
-        /// <summary>
-        /// Joins all path segments with the / character and encodes each segment before joining.
-        /// </summary>
-        /// <param name="pathSegments">The segments of a URL path split at each / character</param>
-        /// <param name="path">If the path property is specified,
-        /// the accepted path characters {/+:} are not encoded.</param>
-        /// <returns>A joined URL with encoded segments</returns>
-        [Obsolete("This method has been deprecated due to an issue with not encoding special characters. Use JoinResourcePathSegmentsV2 instead.")]
-        public static string JoinResourcePathSegments(IEnumerable<string> pathSegments, bool path)
-        {
-            // Encode for canonicalization
-            pathSegments = pathSegments.Select(segment => UrlEncode(segment, path));
-
-            if (path)
-            {
-                pathSegments = pathSegments.Select(segment => segment.Replace(Slash, EncodedSlash));
-            }
-
-            // join the encoded segments with /
-            return string.Join(Slash, pathSegments.ToArray());
-        }
+        
         /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining
         /// </summary>

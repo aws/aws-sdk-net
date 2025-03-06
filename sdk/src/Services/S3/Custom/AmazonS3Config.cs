@@ -14,10 +14,7 @@
  */
 using Amazon.Runtime;
 using System;
-using System.Globalization;
-using Amazon.Internal;
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.S3
 {

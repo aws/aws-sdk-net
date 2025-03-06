@@ -17,15 +17,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Amazon.Internal;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util.Internal
 {
     /// <summary>
     /// Finds region string in the endpoint string using predefined rules
-    /// If predefined rules fail to match the region, regular expression strings provided in
-    /// endpoints.json are used to find the region.
+    /// If predefined rules fail to match the region, regular expression are used to find the region.
     /// If regular expressions also fail, then a default region is returned.
     /// </summary>
     public class RegionFinder
@@ -67,7 +65,7 @@ namespace Amazon.Util.Internal
 
         /// <summary>
         /// Finds the region in the provided endpoint parsing from right to left
-        /// Try to find exact match of the region in endpoints.json
+        /// Try to find exact match of the region from the SDK's known regions.
         /// If there doesn't exist an exact match, find a fuzzy match
         /// Else return default region
         /// </summary>
@@ -131,7 +129,7 @@ namespace Amazon.Util.Internal
         }
 
         /// <summary>
-        /// Find region in the endpoint using endpoints.json region regexs
+        /// Find region in the endpoint using regexs
         /// If there doesn't exist a match, return null
         /// </summary>
         /// <param name="endpoint"></param>

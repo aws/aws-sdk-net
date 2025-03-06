@@ -452,7 +452,7 @@ namespace Amazon.Runtime
             if (isDefiniteClockSkewErrorCode && serverTimeDetermined)
             {
                 Logger.InfoFormat(clockSkewMessageFormat,
-                    realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);
+                    realNow, correctedNow, CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint), serverTime, endpoint);
                 var newCorrection = serverTime - realNow;
                 CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
                 if (shouldRetry)

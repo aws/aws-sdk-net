@@ -1,0 +1,10 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Remove obsolete endpoint logic code",
+		"Remove obsolete global ClockSkew property"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

@@ -12,22 +12,6 @@ namespace AWSSDK_DotNet.UnitTests
     [TestClass]
     public class RegionEndpointTests
     {
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Util")]
-        [DataRow("us-east-1", "s3", "s3.us-east-1.amazonaws.com")]
-        [DataRow("us-west-2", "s3", "s3.us-west-2.amazonaws.com")]
-        [DataRow("aws-global", "s3", "s3.amazonaws.com")]
-        [DataRow("us-east-1", "organizations", "organizations.us-east-1.amazonaws.com")]
-        public void ResolveRegion(string region, string service, string expectedHostname)
-        {
-            var regionEndpoint = RegionEndpoint.GetBySystemName(region);
-            var endpoint = regionEndpoint.GetEndpointForService(service);
-
-            Assert.IsNotNull(endpoint);
-            Assert.AreEqual(expectedHostname, endpoint.Hostname);
-        }
-
 
         [TestMethod]
         [TestCategory("UnitTest")]

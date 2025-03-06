@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.Internal
         {
             var config = (AmazonDynamoDBConfig)requestContext.ClientConfig;
             var result = new DynamoDBEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

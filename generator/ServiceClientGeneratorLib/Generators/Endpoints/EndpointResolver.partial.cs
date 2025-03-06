@@ -14,7 +14,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
         {
             switch (parameter.builtIn)
             {
-                case "AWS::Region": return "config.RegionEndpoint?.SystemName";
+                case "AWS::Region": return "requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;";
                 case "AWS::UseFIPS": return "config.UseFIPSEndpoint";
                 case "AWS::UseDualStack": return "config.UseDualstackEndpoint";
                 case "SDK::Endpoint": return "config.ServiceURL";
