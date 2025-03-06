@@ -1,3 +1,22 @@
+### 3.7.997.0 (2025-03-06 19:25 UTC)
+* Bedrock (3.7.414.0)
+	* This releases adds support for Custom Prompt Router
+* CloudTrail (3.7.403.24)
+	* Doc-only update for CloudTrail.
+* IVSRealTime (3.7.404.0)
+	* IVS Real-Time now offers customers the ability to merge fragmented recordings in the event of a participant disconnect.
+* NetworkFlowMonitor (3.7.401.0)
+	* This release contains 2 changes. 1: DeleteScope/GetScope/UpdateScope operations now return 404 instead of 500 when the resource does not exist. 2: Expected string format for clientToken fields of CreateMonitorInput/CreateScopeInput/UpdateMonitorInput have been updated to be an UUID based string.
+* RedshiftDataAPIService (3.7.403.0)
+	* This release adds support for ListStatements API to filter statements by ClusterIdentifier, WorkgroupName, and Database.
+* WAFV2 (3.7.404.0)
+	* You can now perform an exact match or rate limit aggregation against the web request's JA4 fingerprint.
+* WorkSpaces (3.7.410.0)
+	* Added a new ModifyEndpointEncryptionMode API for managing endpoint encryption settings.
+* Core 3.7.402.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.996.0 (2025-03-05 19:30 UTC)
 * BedrockRuntime (3.7.414.0)
 	* This releases adds support for Custom Prompt Router ARN
