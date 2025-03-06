@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         private string _directoryName;
         private WorkspaceDirectoryType _directoryType;
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private EndpointEncryptionMode _endpointEncryptionMode;
         private string _errorMessage;
         private string _iamRoleId;
         private IDCConfig _idcConfig;
@@ -207,6 +208,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDnsIpAddresses()
         {
             return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointEncryptionMode. 
+        /// <para>
+        /// Endpoint encryption mode that allows you to configure the specified directory between
+        /// Standard TLS and FIPS 140-2 validated mode.
+        /// </para>
+        /// </summary>
+        public EndpointEncryptionMode EndpointEncryptionMode
+        {
+            get { return this._endpointEncryptionMode; }
+            set { this._endpointEncryptionMode = value; }
+        }
+
+        // Check to see if EndpointEncryptionMode property is set
+        internal bool IsSetEndpointEncryptionMode()
+        {
+            return this._endpointEncryptionMode != null;
         }
 
         /// <summary>

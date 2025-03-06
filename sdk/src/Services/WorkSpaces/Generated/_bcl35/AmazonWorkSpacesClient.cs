@@ -693,7 +693,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web Services Support.
+        /// Amazon Web ServicesSupport.
         /// </para>
         ///  <important> 
         /// <para>
@@ -4733,6 +4733,70 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifyEndpointEncryptionMode
+
+        /// <summary>
+        /// Modifies the endpoint encryption mode that allows you to configure the specified directory
+        /// between Standard TLS and FIPS 140-2 validated mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointEncryptionMode service method.</param>
+        /// 
+        /// <returns>The response from the ModifyEndpointEncryptionMode service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyEndpointEncryptionMode">REST API Reference for ModifyEndpointEncryptionMode Operation</seealso>
+        public virtual ModifyEndpointEncryptionModeResponse ModifyEndpointEncryptionMode(ModifyEndpointEncryptionModeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyEndpointEncryptionModeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEndpointEncryptionMode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyEndpointEncryptionMode operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEndpointEncryptionMode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyEndpointEncryptionMode">REST API Reference for ModifyEndpointEncryptionMode Operation</seealso>
+        public virtual IAsyncResult BeginModifyEndpointEncryptionMode(ModifyEndpointEncryptionModeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyEndpointEncryptionMode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEndpointEncryptionMode.</param>
+        /// 
+        /// <returns>Returns a  ModifyEndpointEncryptionModeResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyEndpointEncryptionMode">REST API Reference for ModifyEndpointEncryptionMode Operation</seealso>
+        public virtual ModifyEndpointEncryptionModeResponse EndModifyEndpointEncryptionMode(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyEndpointEncryptionModeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifySamlProperties
 
         /// <summary>
@@ -5959,7 +6023,7 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
+        /// is destroyed. If you need to archive any user data, contact Amazon Web ServicesSupport
         /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
@@ -6509,7 +6573,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-        /// Amazon Web Services Support.
+        /// Amazon Web ServicesSupport.
         /// </para>
         ///  
         /// <para>
@@ -6525,8 +6589,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
         /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
-        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
-        /// Support.
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web ServicesSupport.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

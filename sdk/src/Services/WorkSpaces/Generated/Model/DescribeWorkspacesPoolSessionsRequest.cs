@@ -43,7 +43,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of items to return.
+        /// The maximum size of each page of results. The default value is 20 and the maximum
+        /// value is 50.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
