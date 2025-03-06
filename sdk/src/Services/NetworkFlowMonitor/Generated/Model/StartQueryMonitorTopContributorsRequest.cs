@@ -70,8 +70,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>AWS_SERVICES</c>: Top contributor network flows to or from Amazon Web Services
-        /// services
+        ///  <c>AMAZON_S3</c>: Top contributor network flows to or from Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AMAZON_DYNAMODB</c>: Top contributor network flows to or from Amazon Dynamo DB
         /// </para>
         ///  </li> <li> 
         /// <para>

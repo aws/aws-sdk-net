@@ -266,6 +266,9 @@ namespace Amazon.NetworkFlowMonitor
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
         /// The request exceeded a service quota.
         /// </exception>
@@ -441,8 +444,14 @@ namespace Amazon.NetworkFlowMonitor
         /// <summary>
         /// Return the data for a query with the Network Flow Monitor query interface. You specify
         /// the query that you want to return results for by providing a query ID and a monitor
-        /// name. This query returns the top contributors for a specific monitor.
+        /// name.
         /// 
+        ///  
+        /// <para>
+        /// This query returns the top contributors for a scope for workload insights. Workload
+        /// insights provide a high level view of network flow performance data collected by agents.
+        /// To return the data for the top contributors, see <c>GetQueryResultsWorkloadInsightsTopContributorsData</c>.
+        /// </para>
         ///  
         /// <para>
         /// Create a query ID for this call by calling the corresponding API call to start the
@@ -513,10 +522,14 @@ namespace Amazon.NetworkFlowMonitor
         /// <summary>
         /// Return the data for a query with the Network Flow Monitor query interface. Specify
         /// the query that you want to return results for by providing a query ID and a scope
-        /// ID. This query returns data for the top contributors for workload insights. Workload
-        /// insights provide a high level view of network flow performance data collected by agents
-        /// for a scope.
+        /// ID.
         /// 
+        ///  
+        /// <para>
+        /// This query returns the data for top contributors for workload insights for a specific
+        /// scope. Workload insights provide a high level view of network flow performance data
+        /// collected by agents for a scope. To return just the top contributors, see <c>GetQueryResultsWorkloadInsightsTopContributors</c>.
+        /// </para>
         ///  
         /// <para>
         /// Create a query ID for this call by calling the corresponding API call to start the
@@ -597,8 +610,9 @@ namespace Amazon.NetworkFlowMonitor
         ///  
         /// <para>
         /// When you start a query, use this call to check the status of the query to make sure
-        /// that it has has <c>SUCCEEDED</c> before you review the results. Use the same query
-        /// ID that you used for the corresponding API call to start the query, <c>StartQueryMonitorTopContributors</c>.
+        /// that it has has <c>SUCCEEDED</c> before you reviewStartQueryWorkloadInsightsTopContributorsData
+        /// the results. Use the same query ID that you used for the corresponding API call to
+        /// start the query, <c>StartQueryMonitorTopContributors</c>.
         /// </para>
         ///  
         /// <para>
@@ -813,6 +827,9 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
         /// The request exceeded a service quota.
@@ -1150,26 +1167,14 @@ namespace Amazon.NetworkFlowMonitor
 
 
         /// <summary>
-        /// Return the data for a query with the Network Flow Monitor query interface. Specify
-        /// the query that you want to return results for by providing a query ID and a scope
-        /// ID. This query returns data for the top contributors for workload insights. Workload
-        /// insights provide a high level view of network flow performance data collected by agents
-        /// for a scope.
+        /// Start a query to return the with the Network Flow Monitor query interface. Specify
+        /// the query that you want to start by providing a query ID and a monitor name. This
+        /// query returns the data for top contributors for workload insights.
         /// 
-        ///  
-        /// <para>
-        /// A query ID is returned from an API call to start a query of a specific type; for example
-        /// 
-        /// </para>
         ///  
         /// <para>
         /// Top contributors in Network Flow Monitor are network flows with the highest values
         /// for a specific metric type, related to a scope (for workload insights) or a monitor.
-        /// </para>
-        ///  
-        /// <para>
-        /// The top contributor network flows overall for a specific metric type, for example,
-        /// the number of retransmissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQueryWorkloadInsightsTopContributorsData service method.</param>
@@ -1604,6 +1609,9 @@ namespace Amazon.NetworkFlowMonitor
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ResourceNotFoundException">
+        /// The request specifies a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.ServiceQuotaExceededException">
         /// The request exceeded a service quota.
