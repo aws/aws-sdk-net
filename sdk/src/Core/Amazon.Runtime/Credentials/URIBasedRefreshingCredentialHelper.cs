@@ -51,28 +51,6 @@ namespace Amazon.Runtime
             }
         }
 
-        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        protected static T GetObjectFromResponse<T>(Uri uri)
-        {
-            return GetObjectFromResponse<T>(uri, null, null);
-        }
-
-        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
-        {
-            return GetObjectFromResponse<T>(uri, proxy, null);
-        }
-
-        [Obsolete("This method is not compatible with Native AOT builds. The GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        [RequiresUnreferencedCode("GetObjectFromResponse overload using the generic parameter taking in a JsonSerializerContext should be used instead.")]
-        protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
-        {
-            string json = GetContents(uri, proxy, headers);
-            return JsonSerializer.Deserialize<T>(json);
-        }
-
         protected static T GetObjectFromResponse<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
             where TC :
 #if NET8_0_OR_GREATER

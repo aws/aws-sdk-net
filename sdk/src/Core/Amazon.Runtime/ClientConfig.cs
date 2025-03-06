@@ -20,7 +20,6 @@ using System.Globalization;
 
 
 using Amazon.Util;
-using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
@@ -415,18 +414,6 @@ namespace Amazon.Runtime
         {
             get { return this.useHttp; }
             set { this.useHttp = value; }
-        }
-
-        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
-        {
-#pragma warning disable CS0612,CS0618
-            var endpoint = 
-                regionEndpoint.GetEndpointForService(
-                    config.RegionEndpointServiceName, 
-                    config.ToGetEndpointForServiceOptions());
-#pragma warning restore CS0612,CS0618
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
-            return url;
         }
 
         /// <summary>
@@ -956,18 +943,6 @@ namespace Amazon.Runtime
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Interval, "TcpKeepAlive.Interval");
             }
 #endif
-        }
-
-        /// <summary>
-        /// Wrapper around <seealso cref="AWSConfigs.ManualClockCorrection"/>
-        /// </summary>
-        [Obsolete("Please use CorrectClockSkew.GetClockCorrectionForEndpoint(string endpoint) instead.", false)]
-        public TimeSpan ClockOffset
-        {
-            get
-            {
-                return AWSConfigs.ManualClockCorrection.GetValueOrDefault();
-            }
         }
 
         /// <summary>

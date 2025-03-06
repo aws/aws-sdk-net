@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Endpoints
 {
@@ -27,9 +28,20 @@ namespace Amazon.Runtime.Endpoints
             Request = request;
         }
 
+        public ServiceOperationEndpointParameters(AmazonWebServiceRequest request, RegionEndpoint alternateEndpoint)
+            : this(request)
+        {
+            AlternateEndpoint = alternateEndpoint;
+        }
+
         /// <summary>
         /// Request for the desired service operation.
         /// </summary>
         public AmazonWebServiceRequest Request { get; }
+
+        /// <summary>
+        /// Alternate endpoint that overrides the endpoint configured for service client.
+        /// </summary>
+        public RegionEndpoint AlternateEndpoint { get; }
     }
 }

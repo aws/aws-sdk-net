@@ -18,7 +18,6 @@
  *  AWS SDK for .NET
  *
  */
-using Amazon.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -158,7 +157,7 @@ namespace Amazon
             }
 
             // no region key in the entry, but it matches the pattern in this partition.
-            // we can try to construct an endpoint based on the heuristics described in endpoints.json
+            // we can try to construct an endpoint based on the heuristics.
             else if (new Regex(partitionRegionPattern).Match(regionName).Success)
             {
                 description = GetUnknownRegionDescription(regionName);
@@ -185,21 +184,6 @@ namespace Amazon
             }
         }
 
-        /// <summary>
-        /// Gets the region endpoint override if exists
-        /// </summary>
-        /// <param name="regionEndpoint">The region endpoint to find the possible override for</param>
-        /// <returns></returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public static RegionEndpoint GetRegionEndpointOverride(RegionEndpoint regionEndpoint)
-        {
-            // We only override the .NET/S3-specific legacy USEast1Regional region
-            if (regionEndpoint.SystemName == USEast1Regional.SystemName)
-                return GetBySystemName(USEast1.SystemName);
-
-            return null;
-        }
-
         #endregion
 
         public string SystemName { get; private set; }
@@ -219,116 +203,9 @@ namespace Amazon
             HostnameTemplate = hostnameTemplate;
         }
 
-
-        /// <summary>
-        /// Gets the endpoint for a service in a region.
-        /// </summary>
-        /// <param name="serviceName">
-        /// The services system name. Service system names can be obtained from the
-        /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
-        /// </param>
-        /// <param>
-        /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
-        /// will generate an endpoint using the AWS endpoint heuristics. In this case, it is not guaranteed the
-        /// endpoint will point to a valid service endpoint.
-        /// </param>
-        /// <returns></returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public Endpoint GetEndpointForService(string serviceName)
-        {
-            return GetEndpointForService(serviceName, new GetEndpointForServiceOptions());
-        }
-
-        /// <summary>
-        /// Gets the endpoint for a service in a region.
-        /// <para />
-        /// For forwards compatibility, if the service being requested for isn't known in the region, this method 
-        /// will generate an endpoint using the AWS endpoint heuristics. In this case, it is not guaranteed the
-        /// endpoint will point to a valid service endpoint.
-        /// </summary>
-        /// <param name="serviceName">
-        /// The services system name. Service system names can be obtained from the
-        /// RegionEndpointServiceName member of the ClientConfig-derived class for the service.
-        /// </param>
-        /// <param name="options">
-        /// Specify additional requirements on the <see cref="Endpoint"/> to be returned.
-        /// </param>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options)
-        {
-            // Do a fallback of creating an unknown endpoint based on the
-            // current region's hostname template.
-
-            // Remove aws prefix and global suffix from the region name
-            // as they don't appear in the hostname.
-            var regionName = SystemName.Replace("aws-", "").Replace("-global", "").Replace("global", "");
-
-            var hostname = HostnameTemplate.Replace("{service}", serviceName)
-                                 .Replace("{region}", regionName)
-                                 .Replace("{dnsSuffix}", PartitionDnsSuffix).Replace("..", ".");
-
-            return new RegionEndpoint.Endpoint(hostname, null, PartitionDnsSuffix, deprecated: false);
-        }
-
         public override string ToString()
         {
             return string.Format(CultureInfo.InvariantCulture, "{0} ({1})", this.DisplayName, this.SystemName);
-        }
-
-        /// <summary>
-        /// This class defines an endpoints hostname and which protocols it supports.
-        /// </summary>
-        [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public class Endpoint
-        {
-            internal Endpoint(string hostname, string authregion, string dnsSuffix, bool deprecated)
-            {
-                this.Hostname = hostname;
-                this.AuthRegion = authregion;
-                this.Deprecated = deprecated;
-                this.DnsSuffix = dnsSuffix;
-            }
-
-            /// <summary>
-            /// Gets the hostname for the service.
-            /// </summary>
-            public string Hostname
-            {
-                get;
-                private set;
-            }
-
-            /// <summary>
-            /// Gets the DNS suffix for the service.
-            /// </summary>
-            public string DnsSuffix
-            {
-                get;
-                private set;
-            }
-
-            /// <summary>
-            /// The authentication region to be used in request signing.
-            /// </summary>
-            public string AuthRegion
-            {
-                get;
-                private set;
-            }
-
-            public override string ToString()
-            {
-                return this.Hostname;
-            }
-
-            /// <summary>
-            /// Gets the hostname for the service.
-            /// </summary>
-            public bool Deprecated
-            {
-                get;
-                private set;
-            }
         }
     }
 }

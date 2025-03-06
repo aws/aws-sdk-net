@@ -76,10 +76,8 @@ namespace Amazon.Runtime.Internal
 
         public static Uri DetermineEndpoint(IClientConfig config, IRequest request)
         {
-            Uri endpoint = request.AlternateEndpoint != null
-                ? new Uri(ClientConfig.GetUrl(config, request.AlternateEndpoint))
-                : new Uri(config.DetermineServiceOperationEndpoint(
-                    new ServiceOperationEndpointParameters(request.OriginalRequest)).URL);
+            Uri endpoint = new Uri(config.DetermineServiceOperationEndpoint(
+                    new ServiceOperationEndpointParameters(request.OriginalRequest, request.AlternateEndpoint)).URL);
 
             return InjectHostPrefix(config, request, endpoint);
         }

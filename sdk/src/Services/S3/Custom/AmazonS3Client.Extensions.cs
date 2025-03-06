@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Net;
 using System.Text;
 
@@ -23,7 +22,6 @@ using System.Text;
 using System.Threading.Tasks;
 #endif
 
-using Amazon.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -36,10 +34,8 @@ using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3.Util;
 using Amazon.Util.Internal;
 using Amazon.S3.Internal.S3Express;
-using System.Collections;
 using Amazon.Runtime.Endpoints;
 using System.Diagnostics.CodeAnalysis;
-using System.ComponentModel.Design;
 using System.Threading;
 using Amazon.Runtime.Credentials.Internal;
 
