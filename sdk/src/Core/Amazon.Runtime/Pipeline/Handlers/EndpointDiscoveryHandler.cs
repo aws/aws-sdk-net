@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -39,14 +39,14 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
             PreInvoke(executionContext);
-            
+
             try
             {
                 base.InvokeSync(executionContext);
                 return;
             }
             catch (Exception exception)
-            {        
+            {
                 if (IsInvalidEndpointException(exception))
                 {
                     EvictCacheKeyForRequest(requestContext, regionalEndpoint);
@@ -69,14 +69,11 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
+            PreInvoke(executionContext);
 
-            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentialsAsync();
-
-            PreInvoke(executionContext, immutableCredentials);
-                        
             try
             {
-                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
+                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             }
             catch (Exception exception)
             {
@@ -87,7 +84,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 capturedException.Throw();
-            }                        
+            }
 
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime EndpointDiscoveryResolver.");
         }
@@ -100,7 +97,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>                
         protected static void PreInvoke(IExecutionContext executionContext)
-        {    
+        {
             DiscoverEndpoints(executionContext.RequestContext, false);
         }
 
@@ -110,7 +107,7 @@ namespace Amazon.Runtime.Internal
             requestContext.Request.Endpoint = regionalEndpoint;
         }
 
-        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey, ImmutableCredentials credentials)
+        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey)
         {
             var discoveryEndpoints = ProcessEndpointDiscovery(requestContext, evictCacheKey, requestContext.Request.Endpoint);
             if (discoveryEndpoints != null)
@@ -121,7 +118,7 @@ namespace Amazon.Runtime.Internal
                     //and we couldn't get an endpoint back during an asynchronous discovery
                     //attempt. The null address endpoint will be evicted after 60 seconds but will
                     //prevent multiple server requests during this time.
-                    if(endpoint.Address == null)
+                    if (endpoint.Address == null)
                     {
                         continue;
                     }
@@ -133,9 +130,10 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri, ImmutableCredentials immutableCredentials)
-        {    
+        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
+        {
             var options = requestContext.Options;
+            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
 
             if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && immutableCredentials != null)
             {
@@ -150,7 +148,7 @@ namespace Amazon.Runtime.Internal
             }
 
             return null;
-        }                
+        }
 
         private static bool IsInvalidEndpointException(Exception exception)
         {
