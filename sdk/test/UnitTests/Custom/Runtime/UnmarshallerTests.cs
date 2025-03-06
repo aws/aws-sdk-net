@@ -290,7 +290,6 @@ namespace AWSSDK.UnitTests
         [DataRow("x-amz-checksum-sha1", "e1AsOh9IyGCa4hLN+2Od7jlnP14=", CoreChecksumAlgorithm.SHA1)]
         [DataRow("x-amz-checksum-sha256", "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw=", CoreChecksumAlgorithm.SHA256)]
         [DataRow("x-amz-checksum-crc32", "i9aeUg==", CoreChecksumAlgorithm.CRC32)]
-        [DataRow("x-amz-checksum-crc32c", "crUfeA==", CoreChecksumAlgorithm.CRC32C)]
         public void TestGetObjectResponseValidChecksum(string header, string checksumValue, CoreChecksumAlgorithm expectedAlgorithm)
         {
             Tester.Reset();
@@ -333,7 +332,6 @@ namespace AWSSDK.UnitTests
         [DataRow("x-amz-checksum-sha1", "invalid=", CoreChecksumAlgorithm.SHA1)]
         [DataRow("x-amz-checksum-sha256", "invalid=", CoreChecksumAlgorithm.SHA256)]
         [DataRow("x-amz-checksum-crc32", "invalid=", CoreChecksumAlgorithm.CRC32)]
-        [DataRow("x-amz-checksum-crc32c", "invalid=", CoreChecksumAlgorithm.CRC32C)]
         public void TestGetObjectResponseInvalidChecksum_ThrowsException(string header, string checksumValue, CoreChecksumAlgorithm expectedAlgorithm)
         {
             Exception exception = null;

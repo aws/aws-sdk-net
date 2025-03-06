@@ -42,8 +42,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static IEnumerable<object[]> GetAlgorithmsToTest =>
             new List<object[]> {
-                new object[] { CoreChecksumAlgorithm.CRC64NVME },
-                new object[] { CoreChecksumAlgorithm.CRC32C },
+                // TODO: Disabling CRT algorithms since we're still seeing issues with native dependencies in customer environments.
+                //new object[] { CoreChecksumAlgorithm.CRC64NVME },
+                //new object[] { CoreChecksumAlgorithm.CRC32C },
+
                 new object[] { CoreChecksumAlgorithm.CRC32 },
                 new object[] { CoreChecksumAlgorithm.SHA1 },
                 new object[] { CoreChecksumAlgorithm.SHA256 }
@@ -233,6 +235,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             Assert.IsNotNull(response.ChecksumSHA256);
             Assert.IsNull(response.ChecksumCRC32);
+        }
+
+        [TestCategory("S3")]
+        [DataTestMethod]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME)]
+        [DataRow(CoreChecksumAlgorithm.CRC32C)]
+        public void TestCrtChecksumIsCalculated(CoreChecksumAlgorithm algorithm)
+        {
+            var putResponse = Client.PutObject(new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = $"test-file-{algorithm}.txt",
+                ContentBody = "Hello world",
+                ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
+            });
+
+            if (algorithm == CoreChecksumAlgorithm.CRC32C)
+            {
+                Assert.IsNotNull(putResponse.ChecksumCRC32C);
+            }
+            else if (algorithm == CoreChecksumAlgorithm.CRC64NVME)
+            {
+                Assert.IsNotNull(putResponse.ChecksumCRC64NVME);
+            }
         }
 
         /// <summary>
