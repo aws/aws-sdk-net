@@ -4,7 +4,7 @@ using Amazon.RestXMLTest.Model.Internal.MarshallTransformations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace AWSSDK.UnitTests.RestJsonTest.Net35
+namespace AWSSDK.UnitTests.RestJsonTest
 {
     [TestClass]
     public class HeaderListMarshallingTests
