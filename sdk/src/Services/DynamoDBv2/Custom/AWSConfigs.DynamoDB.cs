@@ -57,32 +57,10 @@ namespace Amazon
 
         #region DynamoDBContext TableNamePrefix
 
-
         /// <summary>
         /// Key for the DynamoDBContextTableNamePrefix property.
-        /// <seealso cref="AWSConfigsDynamoDB.DynamoDBContextTableNamePrefix"/>
         /// </summary>
         public const string DynamoDBContextTableNamePrefixKey = "AWS.DynamoDBContext.TableNamePrefix";
-
-        /// <summary>
-        /// Configures the default TableNamePrefix that the DynamoDBContext will use if
-        /// not manually configured.
-        /// Changes to this setting will only take effect in newly-constructed instances of
-        /// DynamoDBContextConfig and DynamoDBContext.
-        /// 
-        /// The setting can be configured through App.config, for example:
-        /// <code>
-        /// &lt;appSettings&gt;
-        ///   &lt;add key="AWS.DynamoDBContext.TableNamePrefix" value="Test-"/&gt;
-        /// &lt;/appSettings&gt;
-        /// </code>
-        /// </summary>
-        [Obsolete("This property is obsolete. Use DynamoDBConfig.Context.TableNamePrefix instead.")]
-        public static string DynamoDBContextTableNamePrefix
-        {
-            get { return Context.TableNamePrefix; }
-            set { Context.TableNamePrefix = value; }
-        }
 
         #endregion
 

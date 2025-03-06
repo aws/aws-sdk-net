@@ -367,6 +367,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string InterpolateJson(string json, Dictionary<string, object> refs)
         {
+            if (string.IsNullOrEmpty(json))
+                return string.Empty;
             try
             {
                 using JsonDocument doc = JsonDocument.Parse(json);
@@ -381,7 +383,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             }
             catch (JsonException)
             {
-                return "";
+                return string.Empty;
             }
         }
 

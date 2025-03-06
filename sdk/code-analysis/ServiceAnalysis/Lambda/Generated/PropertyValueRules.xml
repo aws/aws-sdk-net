@@ -841,12 +841,6 @@
     <pattern>(\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Lambda.Model.InvokeAsyncRequest.FunctionName</property>
-    <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.FunctionName</property>
     <min>1</min>
     <max>170</max>
@@ -1742,6 +1736,12 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.ImageConfig.WorkingDirectory</property>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.InvokeAsyncRequest.FunctionName</property>
+    <min>1</min>
+    <max>170</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.Layer.Arn</property>

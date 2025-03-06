@@ -6,7 +6,6 @@ using System.Threading;
 
 using Amazon.EC2;
 using Amazon.EC2.Model;
-using Amazon.EC2.Util;
 
 using System.Threading.Tasks;
 using Xunit;
