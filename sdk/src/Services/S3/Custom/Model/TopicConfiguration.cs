@@ -43,35 +43,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Bucket event for which to send notifications.
-        /// <para>
-        /// Topic configurations can now contain multiple events. This property is obsolete in favor of the Events property.
-        /// This property will always get or set the the zeroth element in the Events collection.
-        /// </para>
-        /// </summary>
-        [Obsolete("The Event property is now obsolete in favor the Events property.")]
-        public string Event 
-        { 
-            get
-            {
-                if (!this.IsSetEvents())
-                    return null;
-
-                return this.Events[0];
-            }
-            set
-            {
-                if (this.Events == null)
-                    this.Events = new List<EventType>();
-
-                if (this.Events.Count == 0)
-                    this.Events.Add(value);
-                else
-                    this.Events[0] = value;
-            }
-        }
-
-        /// <summary>
         /// Gets and sets the Topic property. Amazon SNS topic to which Amazon S3 will publish a message to report the 
         /// specified events for the bucket.
         /// <para>

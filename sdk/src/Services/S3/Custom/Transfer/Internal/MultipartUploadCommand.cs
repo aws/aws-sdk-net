@@ -259,9 +259,6 @@ namespace Amazon.S3.Transfer.Internal
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
-#pragma warning disable CS0618 // Type or member is obsolete
-                CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header,
-#pragma warning restore CS0618 // Type or member is obsolete
                 RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 

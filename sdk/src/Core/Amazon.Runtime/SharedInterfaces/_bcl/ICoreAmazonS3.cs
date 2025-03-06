@@ -89,12 +89,5 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </summary>
         /// <param name="bucketName"></param>
         void EnsureBucketExists(string bucketName);
-
-        /// <summary>
-        /// Check to see if the bucket exists.
-        /// </summary>
-        /// <param name="bucketName"></param>
-        /// <returns></returns>
-        bool DoesS3BucketExist(string bucketName);
     }
 }

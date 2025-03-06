@@ -1,0 +1,21 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+				"Remove obsolete DisableMD5Stream property. Code should be updated to use DisableDefaultChecksumValidation property.",
+				"Remove obsolete ServerSideEncryptionMethod and ServerSideEncryptionKeyManagementServiceKeyId from CopyPart. This should be set in the InitiateMultipartUpload method.",
+				"Remove obsolete Expires property from GetObjectResponse. Code should be updated to use ExpiresString. Since the string may not be in a valid timestamp format code shoud use TryParse when converting to DateTime.",
+				"Remove obsolete region identifiers from S3Region enumeration",
+				"Remove obsolete Prefix property from LifecycleConfiguration. Code should be updated to use Filter property.",
+				"Remove obsolete Transition and NoncurrentVersionTransition from LifecycleRule. Could should be updated to use the collection versions Transitions and NoncurrentVersionTransitions.",
+				"Remove obsolete Event property from TopicConfiguration. Code should be updated to use the collection property Events.",
+				"Remove obsolete CalculateContentMD5Header property. This property no longer needed to be set because the SDK will compute a checksum by default.",
+				"Remove obsolete Bucket property from SelectObjectContentRequest. Code should be updated to use BucketName.",
+				"Remove obsolete NumberOfUploadThreads property from TransferUtilityConfig. Code should be updated to use ConcurrentServiceRequests.",
+				"Remove obsolete DoesS3BucketExist method. Code should be updated to use DoesS3BucketExistV2"
+            ]
+        }
+    ]
+}

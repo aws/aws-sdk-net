@@ -86,6 +86,14 @@ namespace Amazon.DynamoDBv2
     internal class EnumConverterV2 : EnumConverterV1
     { }
 
+#if NET8_0_OR_GREATER
+    internal class DateOnlyConverterV2 : DateOnlyConverterV1
+    { }
+
+    internal class TimeOnlyConverterV2 : TimeOnlyConverterV1
+    { }
+#endif
+
     #endregion
 
     /// <summary>

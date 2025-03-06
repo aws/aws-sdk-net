@@ -38,13 +38,17 @@ namespace Amazon.Runtime.Internal.Auth
             var aws4Signer = signer as AWS4Signer;
             var useV4a = aws4aSigner != null;
             var useV4 = aws4Signer != null;
-            var credentials = identity as AWSCredentials;
-            if (credentials is null)
+
+            if (identity is not AWSCredentials credentials)
             {
                 throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(AWSEndpointAuthSchemeSigner)}.");
             }
 
             var immutableCredentials = credentials.GetCredentials();
+            if (immutableCredentials is null)
+            {
+                return;
+            }
 
             AWSSigningResultBase signingResult;
             

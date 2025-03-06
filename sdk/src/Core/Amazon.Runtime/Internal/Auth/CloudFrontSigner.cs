@@ -42,7 +42,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var immutableCredentials = credentials.GetCredentials();
-            if (String.IsNullOrEmpty(immutableCredentials.AccessKey))
+            if (string.IsNullOrEmpty(immutableCredentials?.AccessKey))
             {
                 throw new ArgumentOutOfRangeException("awsAccessKeyId", "The AWS Access Key ID cannot be NULL or a Zero length string");
             }

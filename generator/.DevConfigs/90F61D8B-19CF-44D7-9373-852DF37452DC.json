@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Remove the obsolete ReadWriteTimeout property from ClientConfig all targets except .NET Framework 4.7.2."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+}

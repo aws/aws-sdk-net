@@ -236,7 +236,6 @@ namespace Amazon.S3.Model
         private long? filePosition;
         private bool useChunkEncoding = true;
         private bool lastPart;
-        private bool calculateContentMD5Header = false;
 
         /// <summary>
         /// Input stream for the request; content for the request will be read from the stream.
@@ -641,29 +640,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
-        /// on upload requests.This property has been deprecated in favor of <see cref="DisableDefaultChecksumValidation"/>
-        /// Setting the value of DisableMD5Stream will set DisableDefaultChecksumValidation to the same value 
-        /// and vice versa. This property was left here for backwards compatibility.</b></para>
-        /// <para> 
-        /// When true, MD5Stream will not be used in upload requests. This may increase upload 
-        /// performance under high CPU loads. The default value is false. Set this value to true to 
-        /// disable MD5Stream use in all S3 upload requests or override this value per request by 
-        /// setting the DisableMD5Stream property on PutObjectRequest, UploadPartRequest, or 
-        /// TransferUtilityUploadRequest.</para>
-        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
-        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
-        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
-        /// source of data integrity verification.</para>
-        /// </summary>
-        [Obsolete("This property is deprecated in favor of DisableDefaultChecksumValidation.")]
-        public bool? DisableMD5Stream 
-        {
-            get { return DisableDefaultChecksumValidation; }
-            set { DisableDefaultChecksumValidation = value; }
-        }
-
-        /// <summary>
         /// <para><b>WARNING: Setting DisableDefaultChecksumValidation to true disables the default data 
         /// integrity check on upload requests.</b></para>
         /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
@@ -673,7 +649,6 @@ namespace Amazon.S3.Model
         /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
         /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
         /// source of data integrity verification.</para>
-        /// <para>This flag is a rename of the <see cref="DisableMD5Stream"/> property</para>
         /// </summary>
         public bool? DisableDefaultChecksumValidation { get; set; }
 
@@ -830,23 +805,6 @@ namespace Amazon.S3.Model
         }
 
         internal int IVSize { get; set; }
-
-        /// <summary>
-        /// Gets or sets whether the Content-MD5 header should be calculated for upload.
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        /// </summary>
-        /// <remarks>
-        /// If set, the SDK populates the Content-MD5 header but S3 will prioritize the checksum headers (for example, <c>x-amz-checksum-crc32</c>).
-        /// You can also control the behavior of the checksum calculation for all S3 operations by setting the <see cref="ClientConfig.RequestChecksumCalculation"/> option.
-        /// </remarks>
-        [Obsolete("This property is redundant in the latest version of the AWSSDK.S3 package, which automatically calculates a checksum to verify data integrity (using CRC32 by default).")]
-        public bool CalculateContentMD5Header
-        {
-            get { return this.calculateContentMD5Header; }
-            set { this.calculateContentMD5Header = value; }
-        }
     }
 }
 

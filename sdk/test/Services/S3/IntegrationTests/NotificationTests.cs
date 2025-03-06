@@ -100,9 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(1, getResponse.TopicConfigurations[0].Events.Count);
                     Assert.AreEqual(EventType.ObjectCreatedPut, getResponse.TopicConfigurations[0].Events[0]);
 
-#pragma warning disable 618
-                    Assert.AreEqual("s3:ObjectCreated:Put", getResponse.TopicConfigurations[0].Event);
-#pragma warning restore 618
+                    Assert.AreEqual("s3:ObjectCreated:Put", getResponse.TopicConfigurations[0].Events[0].Value);
                     Assert.AreEqual("the-topic-test", getResponse.TopicConfigurations[0].Id);
                     Assert.AreEqual(snsCreateResponse.TopicArn, getResponse.TopicConfigurations[0].Topic);
 

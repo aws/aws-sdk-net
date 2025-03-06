@@ -28,7 +28,6 @@ namespace Amazon.S3.Model
     {
         private string id;
         private int? priority;
-        private string prefix;
         private ReplicationRuleFilter filter;
         private ReplicationRuleStatus status;
         private ReplicationDestination destination;
@@ -76,26 +75,6 @@ namespace Amazon.S3.Model
         internal bool IsSetPriority()
         {
             return this.priority.HasValue;
-        }
-
-        /// <summary>
-        /// Object keyname prefix identifying one or more objects to which the
-        /// rule applies. Maximum prefix length can be up to 1,024 characters.
-        /// </summary>
-        [Obsolete("This property is deprecated. Use Filter instead.")]
-        public string Prefix
-        {
-            get { return this.prefix; }
-            set { this.prefix = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if Prefix property is set.
-        /// </summary>
-        /// <returns>true if Prefix property is set.</returns>
-        internal bool IsSetPrefix()
-        {
-            return !System.String.IsNullOrEmpty(this.prefix);
         }
 
         /// <summary>

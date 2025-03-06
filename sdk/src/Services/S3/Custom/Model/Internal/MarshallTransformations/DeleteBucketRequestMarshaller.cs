@@ -47,14 +47,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (deleteBucketRequest.BucketRegion != null)
             {
-// Disable error preventing using explicit RegionEndpoints in the SDK since the code is mapping S3Regions to RegionEndpoints with a fallback default.
-#pragma warning disable CR1004,CS0612,CS0618
                 RegionEndpoint regionEndpoint;
-                if(deleteBucketRequest.BucketRegion == S3Region.US)
+#pragma warning disable CR1004
+                if (deleteBucketRequest.BucketRegion == S3Region.USEast1)
                 {
                     regionEndpoint = RegionEndpoint.USEast1;
                 }
-                else if (deleteBucketRequest.BucketRegion == S3Region.EU)
+                else if (deleteBucketRequest.BucketRegion == S3Region.EUWest1)
                 {
                     regionEndpoint = RegionEndpoint.EUWest1;
                 }
@@ -62,7 +61,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     regionEndpoint = RegionEndpoint.GetBySystemName(deleteBucketRequest.BucketRegion.Value);
                 }
-#pragma warning restore CR1004,CS0612,CS0618
+#pragma warning restore CR1004
                 request.AlternateEndpoint = regionEndpoint;
             }
                 

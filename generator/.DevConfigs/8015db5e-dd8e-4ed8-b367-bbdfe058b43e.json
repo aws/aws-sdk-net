@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update SDK signers to handle scenarios where anonymous credentials are provided."
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}

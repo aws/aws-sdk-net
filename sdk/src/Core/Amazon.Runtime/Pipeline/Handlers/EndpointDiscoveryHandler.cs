@@ -69,7 +69,10 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
-            PreInvoke(executionContext);
+
+            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentialsAsync();
+
+            PreInvoke(executionContext, immutableCredentials);
                         
             try
             {
@@ -107,7 +110,7 @@ namespace Amazon.Runtime.Internal
             requestContext.Request.Endpoint = regionalEndpoint;
         }
 
-        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey)
+        public static void DiscoverEndpoints(IRequestContext requestContext, bool evictCacheKey, ImmutableCredentials credentials)
         {
             var discoveryEndpoints = ProcessEndpointDiscovery(requestContext, evictCacheKey, requestContext.Request.Endpoint);
             if (discoveryEndpoints != null)
@@ -130,10 +133,9 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
+        private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri, ImmutableCredentials immutableCredentials)
         {    
             var options = requestContext.Options;
-            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
 
             if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && immutableCredentials != null)
             {

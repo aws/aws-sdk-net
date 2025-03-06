@@ -85,10 +85,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteElementString("Priority", S3Transforms.ToXmlStringValue(rule.Priority));
                             }
-                            if (rule.IsSetPrefix())
-                            {
-                                xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(rule.Prefix));
-                            }
 
                             if (rule.IsSetFilter())
                             {

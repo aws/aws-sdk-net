@@ -234,13 +234,9 @@ namespace Amazon.S3.Model
         private string expectedSourceBucketOwner;
         private RequestPayer requestPayer;
 
-        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
-        private ServerSideEncryptionMethod serverSideEncryption;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
-        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
-        private string serverSideEncryptionKeyManagementServiceKeyId;
 
         private ServerSideEncryptionCustomerMethod copySourceServerSideCustomerEncryption;
         private string copySourceServerSideEncryptionCustomerProvidedKey;
@@ -600,31 +596,6 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>
-        /// This property is obsolete. Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.
-        /// </para>
-        /// <para>
-        /// Default: None
-        /// </para>
-        /// </summary>
-        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
-        public ServerSideEncryptionMethod ServerSideEncryptionMethod
-        {
-            get { return this.serverSideEncryption; }
-            set { this.serverSideEncryption = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionMethod property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionMethod property is set.</returns>
-        [Obsolete("Use ServerSideEncryptionMethod in InitiateMultipartUploadRequest instead.")]
-        internal bool IsSetServerSideEncryptionMethod()
-        {
-            return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;
-        }
-
-        /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
         ///  
         /// </summary>
@@ -688,27 +659,6 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
-        }
-
-        /// <summary>
-        /// This property is obsolete. Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.
-        /// </summary>
-        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
-        [AWSProperty(Sensitive=true)]
-        public string ServerSideEncryptionKeyManagementServiceKeyId
-        {
-            get { return this.serverSideEncryptionKeyManagementServiceKeyId; }
-            set { this.serverSideEncryptionKeyManagementServiceKeyId = value; }
-        }
-
-        /// <summary>
-        /// Checks if ServerSideEncryptionKeyManagementServiceKeyId property is set.
-        /// </summary>
-        /// <returns>true if ServerSideEncryptionKeyManagementServiceKeyId property is set.</returns>
-        [Obsolete("Use ServerSideEncryptionKeyManagementServiceKeyId in InitiateMultipartUploadRequest instead.")]
-        internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
-        {
-            return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
         }
 
         /// <summary>

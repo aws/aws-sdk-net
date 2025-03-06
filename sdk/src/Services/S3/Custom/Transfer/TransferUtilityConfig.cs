@@ -81,20 +81,5 @@ namespace Amazon.S3.Transfer
                 this._concurrentServiceRequests = value;
             }
         }
-
-        /// <summary>
-        /// 	Gets or sets the number of executing threads.
-        /// 	This property determines how many active threads will be used to upload 
-        /// 	the file. The default value is 10 threads.
-        /// </summary>
-        /// <remarks>
-        /// 	A value less than or equal to 0 will be silently ignored.
-        /// </remarks>
-        [Obsolete("This property has been deprecated, use TransferUtilityConfig.ConcurrentServiceRequests instead.")]
-        public int NumberOfUploadThreads
-        {
-            get { return this.ConcurrentServiceRequests; }
-            set { this.ConcurrentServiceRequests = value;}
-        }
     }
 }
