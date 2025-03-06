@@ -37,7 +37,15 @@ namespace Amazon.IVSRealTime.Model
     #endif
     public partial class ConflictException : AmazonIVSRealTimeException
     {
+        private string _accessControlAllowOrigin;
+        private string _accessControlExposeHeaders;
+        private string _cacheControl;
+        private string _contentSecurityPolicy;
         private string _exceptionMessage;
+        private string _strictTransportSecurity;
+        private string _xAmznErrorType;
+        private string _xContentTypeOptions;
+        private string _xFrameOptions;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -99,7 +107,15 @@ namespace Amazon.IVSRealTime.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.AccessControlAllowOrigin = (string)info.GetValue("AccessControlAllowOrigin", typeof(string));
+            this.AccessControlExposeHeaders = (string)info.GetValue("AccessControlExposeHeaders", typeof(string));
+            this.CacheControl = (string)info.GetValue("CacheControl", typeof(string));
+            this.ContentSecurityPolicy = (string)info.GetValue("ContentSecurityPolicy", typeof(string));
             this.ExceptionMessage = (string)info.GetValue("ExceptionMessage", typeof(string));
+            this.StrictTransportSecurity = (string)info.GetValue("StrictTransportSecurity", typeof(string));
+            this.XAmznErrorType = (string)info.GetValue("XAmznErrorType", typeof(string));
+            this.XContentTypeOptions = (string)info.GetValue("XContentTypeOptions", typeof(string));
+            this.XFrameOptions = (string)info.GetValue("XFrameOptions", typeof(string));
         }
 
         /// <summary>
@@ -120,9 +136,77 @@ namespace Amazon.IVSRealTime.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("AccessControlAllowOrigin", this.AccessControlAllowOrigin);
+            info.AddValue("AccessControlExposeHeaders", this.AccessControlExposeHeaders);
+            info.AddValue("CacheControl", this.CacheControl);
+            info.AddValue("ContentSecurityPolicy", this.ContentSecurityPolicy);
             info.AddValue("ExceptionMessage", this.ExceptionMessage);
+            info.AddValue("StrictTransportSecurity", this.StrictTransportSecurity);
+            info.AddValue("XAmznErrorType", this.XAmznErrorType);
+            info.AddValue("XContentTypeOptions", this.XContentTypeOptions);
+            info.AddValue("XFrameOptions", this.XFrameOptions);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property AccessControlAllowOrigin.
+        /// </summary>
+        public string AccessControlAllowOrigin
+        {
+            get { return this._accessControlAllowOrigin; }
+            set { this._accessControlAllowOrigin = value; }
+        }
+
+        // Check to see if AccessControlAllowOrigin property is set
+        internal bool IsSetAccessControlAllowOrigin()
+        {
+            return !string.IsNullOrEmpty(this._accessControlAllowOrigin);
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccessControlExposeHeaders.
+        /// </summary>
+        public string AccessControlExposeHeaders
+        {
+            get { return this._accessControlExposeHeaders; }
+            set { this._accessControlExposeHeaders = value; }
+        }
+
+        // Check to see if AccessControlExposeHeaders property is set
+        internal bool IsSetAccessControlExposeHeaders()
+        {
+            return !string.IsNullOrEmpty(this._accessControlExposeHeaders);
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheControl.
+        /// </summary>
+        public string CacheControl
+        {
+            get { return this._cacheControl; }
+            set { this._cacheControl = value; }
+        }
+
+        // Check to see if CacheControl property is set
+        internal bool IsSetCacheControl()
+        {
+            return !string.IsNullOrEmpty(this._cacheControl);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentSecurityPolicy.
+        /// </summary>
+        public string ContentSecurityPolicy
+        {
+            get { return this._contentSecurityPolicy; }
+            set { this._contentSecurityPolicy = value; }
+        }
+
+        // Check to see if ContentSecurityPolicy property is set
+        internal bool IsSetContentSecurityPolicy()
+        {
+            return !string.IsNullOrEmpty(this._contentSecurityPolicy);
+        }
 
         /// <summary>
         /// Gets and sets the property ExceptionMessage. 
@@ -140,6 +224,66 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetExceptionMessage()
         {
             return this._exceptionMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StrictTransportSecurity.
+        /// </summary>
+        public string StrictTransportSecurity
+        {
+            get { return this._strictTransportSecurity; }
+            set { this._strictTransportSecurity = value; }
+        }
+
+        // Check to see if StrictTransportSecurity property is set
+        internal bool IsSetStrictTransportSecurity()
+        {
+            return !string.IsNullOrEmpty(this._strictTransportSecurity);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XAmznErrorType.
+        /// </summary>
+        public string XAmznErrorType
+        {
+            get { return this._xAmznErrorType; }
+            set { this._xAmznErrorType = value; }
+        }
+
+        // Check to see if XAmznErrorType property is set
+        internal bool IsSetXAmznErrorType()
+        {
+            return !string.IsNullOrEmpty(this._xAmznErrorType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XContentTypeOptions.
+        /// </summary>
+        public string XContentTypeOptions
+        {
+            get { return this._xContentTypeOptions; }
+            set { this._xContentTypeOptions = value; }
+        }
+
+        // Check to see if XContentTypeOptions property is set
+        internal bool IsSetXContentTypeOptions()
+        {
+            return !string.IsNullOrEmpty(this._xContentTypeOptions);
+        }
+
+        /// <summary>
+        /// Gets and sets the property XFrameOptions.
+        /// </summary>
+        public string XFrameOptions
+        {
+            get { return this._xFrameOptions; }
+            set { this._xFrameOptions = value; }
+        }
+
+        // Check to see if XFrameOptions property is set
+        internal bool IsSetXFrameOptions()
+        {
+            return !string.IsNullOrEmpty(this._xFrameOptions);
         }
 
     }

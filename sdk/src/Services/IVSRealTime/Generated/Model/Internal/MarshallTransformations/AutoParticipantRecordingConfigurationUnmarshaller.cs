@@ -72,6 +72,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("storageConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

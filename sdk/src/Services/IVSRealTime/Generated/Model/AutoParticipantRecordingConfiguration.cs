@@ -35,6 +35,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class AutoParticipantRecordingConfiguration
     {
         private List<string> _mediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _recordingReconnectWindowSeconds;
         private string _storageConfigurationArn;
         private ParticipantThumbnailConfiguration _thumbnailConfiguration;
 
@@ -58,12 +59,38 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordingReconnectWindowSeconds. 
+        /// <para>
+        /// If a stage publisher disconnects and then reconnects within the specified interval,
+        /// the multiple recordings will be considered a single recording and merged together.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 0, which disables merging.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int RecordingReconnectWindowSeconds
+        {
+            get { return this._recordingReconnectWindowSeconds.GetValueOrDefault(); }
+            set { this._recordingReconnectWindowSeconds = value; }
+        }
+
+        // Check to see if RecordingReconnectWindowSeconds property is set
+        internal bool IsSetRecordingReconnectWindowSeconds()
+        {
+            return this._recordingReconnectWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageConfigurationArn. 
         /// <para>
         /// ARN of the <a>StorageConfiguration</a> resource to use for individual participant
         /// recording. Default: <c>""</c> (empty string, no storage configuration is specified).
         /// Individual participant recording cannot be started unless a storage configuration
-        /// is specified, when a <a>Stage</a> is created or updated.
+        /// is specified, when a <a>Stage</a> is created or updated. To disable individual participant
+        /// recording, set this to <c>""</c>; other fields in this object will get reset to their
+        /// defaults when sending <c>""</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

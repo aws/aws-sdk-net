@@ -266,7 +266,10 @@ namespace Amazon.IVSRealTime.Model
         /// <para>
         /// S3 prefix of the S3 bucket where the participant is being recorded, if individual
         /// participant recording is enabled, or <c>""</c> (empty string), if recording is not
-        /// enabled.
+        /// enabled. If individual participant recording merge is enabled, and if a stage publisher
+        /// disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix
+        /// as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag">
+        /// Merge Fragmented Individual Participant Recordings</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
