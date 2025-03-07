@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// This operation is not supported in this region.
+    /// This operation is not supported in this Amazon Web Services Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

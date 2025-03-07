@@ -70,7 +70,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ICPRecordalStatus. 
         /// <para>
         /// The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus
-        /// is set to APPROVED for all CNAMEs (aliases) in regions outside of China.
+        /// is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside
+        /// of China.
         /// </para>
         ///  
         /// <para>
@@ -80,8 +81,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number.
         /// Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to
-        /// different ICP recordals. To be marked as APPROVED, that is, valid to use with China
-        /// region, a CNAME must have one ICP recordal number associated with it.
+        /// different ICP recordals. To be marked as APPROVED, that is, valid to use with the
+        /// China Regions, a CNAME must have one ICP recordal number associated with it.
         /// </para>
         ///  </li> <li> 
         /// <para>

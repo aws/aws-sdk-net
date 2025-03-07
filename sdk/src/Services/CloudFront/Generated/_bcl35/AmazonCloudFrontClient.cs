@@ -702,7 +702,7 @@ namespace Amazon.CloudFront
         /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
         public virtual CreateAnycastIpListResponse CreateAnycastIpList(CreateAnycastIpListRequest request)
@@ -1846,7 +1846,7 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
@@ -2082,7 +2082,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
         public virtual CreateKeyValueStoreResponse CreateKeyValueStore(CreateKeyValueStoreRequest request)
@@ -2133,8 +2133,8 @@ namespace Amazon.CloudFront
         #region  CreateMonitoringSubscription
 
         /// <summary>
-        /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
-        /// additional metrics incur an additional cost.
+        /// Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront
+        /// distribution. The additional metrics incur an additional cost.
         /// 
         ///  
         /// <para>
@@ -2156,7 +2156,7 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
         public virtual CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request)
@@ -2908,7 +2908,7 @@ namespace Amazon.CloudFront
         /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
         public virtual CreateVpcOriginResponse CreateVpcOrigin(CreateVpcOriginRequest request)
@@ -2986,7 +2986,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
         public virtual DeleteAnycastIpListResponse DeleteAnycastIpList(DeleteAnycastIpListRequest request)
@@ -3561,7 +3561,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
@@ -3711,7 +3711,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
         public virtual DeleteKeyValueStoreResponse DeleteKeyValueStore(DeleteKeyValueStoreRequest request)
@@ -3777,7 +3777,7 @@ namespace Amazon.CloudFront
         /// A monitoring subscription does not exist for the specified distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
         public virtual DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request)
@@ -4457,7 +4457,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
         public virtual DeleteVpcOriginResponse DeleteVpcOrigin(DeleteVpcOriginRequest request)
@@ -4524,7 +4524,7 @@ namespace Amazon.CloudFront
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
         public virtual DescribeFunctionResponse DescribeFunction(DescribeFunctionRequest request)
@@ -4590,7 +4590,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
         public virtual DescribeKeyValueStoreResponse DescribeKeyValueStore(DescribeKeyValueStoreRequest request)
@@ -4656,7 +4656,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
         public virtual GetAnycastIpListResponse GetAnycastIpList(GetAnycastIpListRequest request)
@@ -5536,7 +5536,7 @@ namespace Amazon.CloudFront
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
@@ -5797,7 +5797,7 @@ namespace Amazon.CloudFront
         /// A monitoring subscription does not exist for the specified distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
         public virtual GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request)
@@ -6612,7 +6612,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
         public virtual GetVpcOriginResponse GetVpcOrigin(GetVpcOriginRequest request)
@@ -6678,7 +6678,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
         public virtual ListAnycastIpListsResponse ListAnycastIpLists(ListAnycastIpListsRequest request)
@@ -7128,7 +7128,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
         public virtual ListDistributionsByAnycastIpListIdResponse ListDistributionsByAnycastIpListId(ListDistributionsByAnycastIpListIdRequest request)
@@ -7556,7 +7556,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
         public virtual ListDistributionsByVpcOriginIdResponse ListDistributionsByVpcOriginId(ListDistributionsByVpcOriginIdRequest request)
@@ -7808,7 +7808,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
@@ -8000,7 +8000,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
         public virtual ListKeyValueStoresResponse ListKeyValueStores(ListKeyValueStoresRequest request)
@@ -8561,7 +8561,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
         public virtual ListVpcOriginsResponse ListVpcOrigins(ListVpcOriginsRequest request)
@@ -8643,7 +8643,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
         public virtual PublishFunctionResponse PublishFunction(PublishFunctionRequest request)
@@ -8796,7 +8796,7 @@ namespace Amazon.CloudFront
         /// The CloudFront function failed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
         public virtual TestFunctionResponse TestFunction(TestFunctionRequest request)
@@ -10067,7 +10067,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
@@ -10236,7 +10236,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
         public virtual UpdateKeyValueStoreResponse UpdateKeyValueStore(UpdateKeyValueStoreRequest request)
@@ -10903,7 +10903,7 @@ namespace Amazon.CloudFront
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
-        /// This operation is not supported in this region.
+        /// This operation is not supported in this Amazon Web Services Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
         public virtual UpdateVpcOriginResponse UpdateVpcOrigin(UpdateVpcOriginRequest request)
