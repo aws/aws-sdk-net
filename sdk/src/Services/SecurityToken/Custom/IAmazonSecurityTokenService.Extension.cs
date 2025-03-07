@@ -21,6 +21,9 @@ namespace Amazon.SecurityToken
 #if NETSTANDARD20 || NETCOREAPP3_1_OR_GREATER
         , ICoreAmazonSTS_SAML
 #endif
+#if AWS_ASYNC_API
+        , ICoreAmazonSTSAsync
+#endif
     {
     }
 }
