@@ -32,7 +32,7 @@ namespace Amazon.NetworkFlowMonitor
     public partial class AmazonNetworkFlowMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NetworkFlowMonitor", "3.7.401.0");
+            InternalSDKUtils.BuildUserAgentString("NetworkFlowMonitor", "3.7.401.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>

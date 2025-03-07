@@ -1,3 +1,22 @@
+### 3.7.998.0 (2025-03-07 19:30 UTC)
+* BedrockAgent (3.7.421.0)
+	* Introduces support for Neptune Analytics as a vector data store and adds Context Enrichment Configurations, enabling use cases such as GraphRAG.
+* BedrockAgentRuntime (3.7.422.0)
+	* Support Multi Agent Collaboration within Inline Agents
+* CloudFront (3.7.404.44)
+	* Documentation updates for Amazon CloudFront.
+* EC2 (3.7.434.0)
+	* Add serviceManaged field to DescribeAddresses API response.
+* ElasticLoadBalancingV2 (3.7.409.0)
+	* This release adds support for assigning IP addresses to Application Load Balancers from VPC IP Address Manager pools.
+* NeptuneGraph (3.7.404.21)
+	* Several small updates to resolve customer requests.
+* Core 3.7.402.15
+	* Update the SDK's checksum component to skip adding headers when a request is made with anonymous credentials.
+	* Update the SDK's checksum component to skip algorithms that require the AWS Common Runtime dependency, as those may cause issues in customer's environments.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.997.0 (2025-03-06 19:25 UTC)
 * Bedrock (3.7.414.0)
 	* This releases adds support for Custom Prompt Router

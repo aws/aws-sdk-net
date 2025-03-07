@@ -32,7 +32,7 @@ namespace Amazon.MediaStoreData
     public partial class AmazonMediaStoreDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaStore Data", "3.7.400.108");
+            InternalSDKUtils.BuildUserAgentString("MediaStore Data", "3.7.400.109");
 
         private string _userAgent = UserAgentString;
         ///<summary>
