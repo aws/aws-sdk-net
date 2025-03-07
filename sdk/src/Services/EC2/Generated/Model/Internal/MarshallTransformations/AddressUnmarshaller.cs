@@ -133,6 +133,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PublicIpv4Pool = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("serviceManaged", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceManaged = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
