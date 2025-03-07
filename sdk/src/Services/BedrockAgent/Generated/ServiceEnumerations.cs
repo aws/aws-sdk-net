@@ -569,6 +569,52 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type ContextEnrichmentType.
+    /// </summary>
+    public class ContextEnrichmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_FOUNDATION_MODEL for ContextEnrichmentType
+        /// </summary>
+        public static readonly ContextEnrichmentType BEDROCK_FOUNDATION_MODEL = new ContextEnrichmentType("BEDROCK_FOUNDATION_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContextEnrichmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextEnrichmentType FindValue(string value)
+        {
+            return FindValue<ContextEnrichmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextEnrichmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConversationRole.
     /// </summary>
     public class ConversationRole : ConstantClass
@@ -1118,6 +1164,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EmbeddingDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnrichmentStrategyMethod.
+    /// </summary>
+    public class EnrichmentStrategyMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHUNK_ENTITY_EXTRACTION for EnrichmentStrategyMethod
+        /// </summary>
+        public static readonly EnrichmentStrategyMethod CHUNK_ENTITY_EXTRACTION = new EnrichmentStrategyMethod("CHUNK_ENTITY_EXTRACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnrichmentStrategyMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnrichmentStrategyMethod FindValue(string value)
+        {
+            return FindValue<EnrichmentStrategyMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnrichmentStrategyMethod(string value)
         {
             return FindValue(value);
         }
@@ -2018,6 +2110,10 @@ namespace Amazon.BedrockAgent
         /// Constant MONGO_DB_ATLAS for KnowledgeBaseStorageType
         /// </summary>
         public static readonly KnowledgeBaseStorageType MONGO_DB_ATLAS = new KnowledgeBaseStorageType("MONGO_DB_ATLAS");
+        /// <summary>
+        /// Constant NEPTUNE_ANALYTICS for KnowledgeBaseStorageType
+        /// </summary>
+        public static readonly KnowledgeBaseStorageType NEPTUNE_ANALYTICS = new KnowledgeBaseStorageType("NEPTUNE_ANALYTICS");
         /// <summary>
         /// Constant OPENSEARCH_SERVERLESS for KnowledgeBaseStorageType
         /// </summary>

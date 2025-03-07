@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VectorIngestionConfiguration Object
+    /// Response Unmarshaller for ContextEnrichmentConfiguration Object
     /// </summary>  
-    public class VectorIngestionConfigurationUnmarshaller : IUnmarshaller<VectorIngestionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VectorIngestionConfiguration, JsonUnmarshallerContext>
+    public class ContextEnrichmentConfigurationUnmarshaller : IUnmarshaller<ContextEnrichmentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ContextEnrichmentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VectorIngestionConfiguration IUnmarshaller<VectorIngestionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContextEnrichmentConfiguration IUnmarshaller<ContextEnrichmentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VectorIngestionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ContextEnrichmentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            VectorIngestionConfiguration unmarshalledObject = new VectorIngestionConfiguration();
+            ContextEnrichmentConfiguration unmarshalledObject = new ContextEnrichmentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("chunkingConfiguration", targetDepth))
+                if (context.TestExpression("bedrockFoundationModelConfiguration", targetDepth))
                 {
-                    var unmarshaller = ChunkingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BedrockFoundationModelContextEnrichmentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BedrockFoundationModelConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("contextEnrichmentConfiguration", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = ContextEnrichmentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContextEnrichmentConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("customTransformationConfiguration", targetDepth))
-                {
-                    var unmarshaller = CustomTransformationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CustomTransformationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parsingConfiguration", targetDepth))
-                {
-                    var unmarshaller = ParsingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ParsingConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static VectorIngestionConfigurationUnmarshaller _instance = new VectorIngestionConfigurationUnmarshaller();        
+        private static ContextEnrichmentConfigurationUnmarshaller _instance = new ContextEnrichmentConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VectorIngestionConfigurationUnmarshaller Instance
+        public static ContextEnrichmentConfigurationUnmarshaller Instance
         {
             get
             {

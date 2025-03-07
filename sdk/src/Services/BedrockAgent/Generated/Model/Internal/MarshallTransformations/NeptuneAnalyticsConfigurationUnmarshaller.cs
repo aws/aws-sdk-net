@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VectorIngestionConfiguration Object
+    /// Response Unmarshaller for NeptuneAnalyticsConfiguration Object
     /// </summary>  
-    public class VectorIngestionConfigurationUnmarshaller : IUnmarshaller<VectorIngestionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VectorIngestionConfiguration, JsonUnmarshallerContext>
+    public class NeptuneAnalyticsConfigurationUnmarshaller : IUnmarshaller<NeptuneAnalyticsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NeptuneAnalyticsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VectorIngestionConfiguration IUnmarshaller<VectorIngestionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NeptuneAnalyticsConfiguration IUnmarshaller<NeptuneAnalyticsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VectorIngestionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public NeptuneAnalyticsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            VectorIngestionConfiguration unmarshalledObject = new VectorIngestionConfiguration();
+            NeptuneAnalyticsConfiguration unmarshalledObject = new NeptuneAnalyticsConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("chunkingConfiguration", targetDepth))
+                if (context.TestExpression("fieldMapping", targetDepth))
                 {
-                    var unmarshaller = ChunkingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NeptuneAnalyticsFieldMappingUnmarshaller.Instance;
+                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("contextEnrichmentConfiguration", targetDepth))
+                if (context.TestExpression("graphArn", targetDepth))
                 {
-                    var unmarshaller = ContextEnrichmentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContextEnrichmentConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("customTransformationConfiguration", targetDepth))
-                {
-                    var unmarshaller = CustomTransformationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CustomTransformationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parsingConfiguration", targetDepth))
-                {
-                    var unmarshaller = ParsingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ParsingConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static VectorIngestionConfigurationUnmarshaller _instance = new VectorIngestionConfigurationUnmarshaller();        
+        private static NeptuneAnalyticsConfigurationUnmarshaller _instance = new NeptuneAnalyticsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VectorIngestionConfigurationUnmarshaller Instance
+        public static NeptuneAnalyticsConfigurationUnmarshaller Instance
         {
             get
             {

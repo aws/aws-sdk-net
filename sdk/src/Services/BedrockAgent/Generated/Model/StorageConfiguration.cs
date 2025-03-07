@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class StorageConfiguration
     {
         private MongoDbAtlasConfiguration _mongoDbAtlasConfiguration;
+        private NeptuneAnalyticsConfiguration _neptuneAnalyticsConfiguration;
         private OpenSearchServerlessConfiguration _opensearchServerlessConfiguration;
         private PineconeConfiguration _pineconeConfiguration;
         private RdsConfiguration _rdsConfiguration;
@@ -57,6 +58,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMongoDbAtlasConfiguration()
         {
             return this._mongoDbAtlasConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeptuneAnalyticsConfiguration. 
+        /// <para>
+        /// Contains details about the Neptune Analytics configuration of the knowledge base in
+        /// Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create
+        /// a vector index in Amazon Neptune Analytics.</a>.
+        /// </para>
+        /// </summary>
+        public NeptuneAnalyticsConfiguration NeptuneAnalyticsConfiguration
+        {
+            get { return this._neptuneAnalyticsConfiguration; }
+            set { this._neptuneAnalyticsConfiguration = value; }
+        }
+
+        // Check to see if NeptuneAnalyticsConfiguration property is set
+        internal bool IsSetNeptuneAnalyticsConfiguration()
+        {
+            return this._neptuneAnalyticsConfiguration != null;
         }
 
         /// <summary>
