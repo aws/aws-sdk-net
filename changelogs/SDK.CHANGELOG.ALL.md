@@ -1,3 +1,40 @@
+### 4.0.0.0-preview.10 (2025-03-07 14:25 UTC)
+* CloudFront (4.0.0.0)
+	* Removed the AmazonCloudFrontUtil utility code that was no longer being used.
+* DynamoDBv2 (4.0.0.0)
+	* Removed the DynamoDBContextTableNamePrefix property. Users should call AWSConfigsDynamoDB.Context.TableNamePrefix instead of AWSConfigsDynamoDB.Context.DynamoDBContextTableNamePrefix.
+	* Add Support for DateOnly and TimeOnly in DynamoDB high level libraries. This support is available in .NET 8 and above.
+* EC2 (4.0.0.0)
+	* Removed the VPC utilizes code. It was terribly out of date even referring to EC2 instance type that has been deprecated for years.
+	* Removed the image utilities used for looking up EC2 amis for Windows OS.
+	* [Breaking Change] Remove obsolete IPRanges behavior from EC2. IPV4Ranges or IPV6Ranges should be used instead.
+* IoT (4.0.0.0)
+	* Removed a legacy customization for NextToken override to refer to the actual modeled pagination token.
+* Lambda (4.0.0.0)
+	* Removed obsolete InvokeAsync service client operation to avoid confusion with the Async suffix added for async .NET methods.
+* S3 (4.0.0.0)
+	* Remove obsolete DisableMD5Stream property. Code should be updated to use DisableDefaultChecksumValidation property.
+	* Remove obsolete ServerSideEncryptionMethod and ServerSideEncryptionKeyManagementServiceKeyId from CopyPart. This should be set in the InitiateMultipartUpload method.
+	* Remove obsolete Expires property from GetObjectResponse. Code should be updated to use ExpiresString. Since the string may not be in a valid timestamp format code shoud use TryParse when converting to DateTime.
+	* Remove obsolete region identifiers from S3Region enumeration
+	* Remove obsolete Prefix property from LifecycleConfiguration. Code should be updated to use Filter property.
+	* Remove obsolete Transition and NoncurrentVersionTransition from LifecycleRule. Could should be updated to use the collection versions Transitions and NoncurrentVersionTransitions.
+	* Remove obsolete Event property from TopicConfiguration. Code should be updated to use the collection property Events.
+	* Remove obsolete CalculateContentMD5Header property. This property no longer needed to be set because the SDK will compute a checksum by default.
+	* Remove obsolete Bucket property from SelectObjectContentRequest. Code should be updated to use BucketName.
+	* Remove obsolete NumberOfUploadThreads property from TransferUtilityConfig. Code should be updated to use ConcurrentServiceRequests.
+	* Remove obsolete DoesS3BucketExist method. Code should be updated to use DoesS3BucketExistV2
+* SageMakerRuntime (4.0.0.0)
+	* Removed obsolete constructors for PayloadPart.
+* SecurityToken (4.0.0.0)
+	* Removed the deprecated STS assume role credential provider since users should be using the one in core.
+* Core 4.0.0.0
+	* Remove obsolete endpoint logic code
+	* Remove obsolete global `ClockSkew` property
+	* Remove the obsolete `ReadWriteTimeout` property from `ClientConfig` all targets except .NET Framework 4.7.2.
+	* Update SDK signers to handle scenarios where anonymous credentials are provided.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.9 (2025-03-04 14:29 UTC)
 * DynamoDBv2 (4.0.0.0)
 	* Implement DynamoDBDerivedTypeAttribute to enable polymorphism support for nested items on save and load data.
