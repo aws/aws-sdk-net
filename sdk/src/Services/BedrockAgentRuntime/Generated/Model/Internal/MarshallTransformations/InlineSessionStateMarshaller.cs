@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConversationHistory())
+            {
+                context.Writer.WritePropertyName("conversationHistory");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConversationHistoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConversationHistory, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFiles())
             {
                 context.Writer.WritePropertyName("files");
