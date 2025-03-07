@@ -209,7 +209,8 @@ namespace AWSSDK.UnitTests
                 ClientConfig = new AmazonCloudWatchConfig
                 {
                     RequestChecksumCalculation = requestChecksumCalculation,
-                }
+                },
+                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token"),
             };
 
             return new ExecutionContext(requestContext, null);
