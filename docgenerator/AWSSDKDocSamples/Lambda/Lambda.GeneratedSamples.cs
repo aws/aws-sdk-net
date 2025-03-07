@@ -559,21 +559,6 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             #endregion
         }
 
-        public void LambdaInvokeAsync()
-        {
-            #region to-invoke-a-lambda-function-asynchronously-1481649694923
-
-            var client = new AmazonLambdaClient();
-            var response = client.InvokeAsync(new InvokeAsyncRequest 
-            {
-                FunctionName = "my-function",
-            });
-
-            int status = response.Status;
-
-            #endregion
-        }
-
         public void LambdaListAliases()
         {
             #region to-list-a-functions-aliases-1481650199732

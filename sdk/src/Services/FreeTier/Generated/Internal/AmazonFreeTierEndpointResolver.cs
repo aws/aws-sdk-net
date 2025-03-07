@@ -50,7 +50,7 @@ namespace Amazon.FreeTier.Internal
         {
             var config = (AmazonFreeTierConfig)requestContext.ClientConfig;
             var result = new FreeTierEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
 

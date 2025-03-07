@@ -106,6 +106,9 @@ namespace Amazon.OpenSearchServerless
                 ClientConfig = this,
                 OriginalRequest = parameters.Request,
                 Request = new DefaultRequest(parameters.Request, ServiceId)
+                {
+                    AlternateEndpoint = parameters.AlternateEndpoint
+                }
             };
 
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);

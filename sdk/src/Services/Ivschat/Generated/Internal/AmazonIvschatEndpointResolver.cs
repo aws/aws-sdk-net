@@ -50,7 +50,7 @@ namespace Amazon.Ivschat.Internal
         {
             var config = (AmazonIvschatConfig)requestContext.ClientConfig;
             var result = new IvschatEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

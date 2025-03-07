@@ -50,7 +50,7 @@ namespace Amazon.Inspector.Internal
         {
             var config = (AmazonInspectorConfig)requestContext.ClientConfig;
             var result = new InspectorEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

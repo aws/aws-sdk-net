@@ -50,7 +50,7 @@ namespace Amazon.Schemas.Internal
         {
             var config = (AmazonSchemasConfig)requestContext.ClientConfig;
             var result = new SchemasEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

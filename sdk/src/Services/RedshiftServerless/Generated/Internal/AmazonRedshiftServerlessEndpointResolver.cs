@@ -50,7 +50,7 @@ namespace Amazon.RedshiftServerless.Internal
         {
             var config = (AmazonRedshiftServerlessConfig)requestContext.ClientConfig;
             var result = new RedshiftServerlessEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

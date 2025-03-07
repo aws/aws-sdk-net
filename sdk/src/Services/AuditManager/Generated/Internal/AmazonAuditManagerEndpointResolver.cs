@@ -50,7 +50,7 @@ namespace Amazon.AuditManager.Internal
         {
             var config = (AmazonAuditManagerConfig)requestContext.ClientConfig;
             var result = new AuditManagerEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

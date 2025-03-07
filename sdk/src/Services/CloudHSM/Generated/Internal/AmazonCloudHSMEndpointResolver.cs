@@ -50,7 +50,7 @@ namespace Amazon.CloudHSM.Internal
         {
             var config = (AmazonCloudHSMConfig)requestContext.ClientConfig;
             var result = new CloudHSMEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

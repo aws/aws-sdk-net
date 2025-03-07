@@ -49,7 +49,7 @@ namespace Amazon.S3Control.Internal
         {
             var config = (AmazonS3ControlConfig)requestContext.ClientConfig;
             var result = new S3ControlEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.Endpoint = config.ServiceURL;

@@ -515,25 +515,6 @@
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsync(Amazon.Lambda.Model.InvokeAsyncRequest)" />
-            <member name="M:Amazon.Lambda.AmazonLambdaClient.InvokeAsync(Amazon.Lambda.Model.InvokeAsyncRequest)" />
-            <member name="T:Amazon.Lambda.Model.InvokeAsyncRequest" />
-            <member name="T:Amazon.Lambda.Model.InvokeAsyncResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    The following example invokes a Lambda function asynchronously
-                </para>
-                <code
-                    title="To invoke a Lambda function asynchronously"
-                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
-                    region="to-invoke-a-lambda-function-asynchronously-1481649694923" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.Lambda.IAmazonLambda.ListAliases(Amazon.Lambda.Model.ListAliasesRequest)" />
             <member name="M:Amazon.Lambda.AmazonLambdaClient.ListAliases(Amazon.Lambda.Model.ListAliasesRequest)" />
             <member name="T:Amazon.Lambda.Model.ListAliasesRequest" />

@@ -50,7 +50,7 @@ namespace Amazon.PinpointEmail.Internal
         {
             var config = (AmazonPinpointEmailConfig)requestContext.ClientConfig;
             var result = new PinpointEmailEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

@@ -50,7 +50,7 @@ namespace Amazon.OpenSearchServerless.Internal
         {
             var config = (AmazonOpenSearchServerlessConfig)requestContext.ClientConfig;
             var result = new OpenSearchServerlessEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

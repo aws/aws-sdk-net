@@ -50,7 +50,7 @@ namespace Amazon.Route53Domains.Internal
         {
             var config = (AmazonRoute53DomainsConfig)requestContext.ClientConfig;
             var result = new Route53DomainsEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Internal
         {
             var config = (AmazonElasticBeanstalkConfig)requestContext.ClientConfig;
             var result = new ElasticBeanstalkEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

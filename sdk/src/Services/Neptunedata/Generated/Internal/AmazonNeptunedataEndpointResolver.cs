@@ -50,7 +50,7 @@ namespace Amazon.Neptunedata.Internal
         {
             var config = (AmazonNeptunedataConfig)requestContext.ClientConfig;
             var result = new NeptunedataEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

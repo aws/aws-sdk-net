@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralSelling.Internal
             var result = new PartnerCentralSellingEndpointParameters();
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

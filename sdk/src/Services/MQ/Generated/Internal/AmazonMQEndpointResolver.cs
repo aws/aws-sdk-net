@@ -50,7 +50,7 @@ namespace Amazon.MQ.Internal
         {
             var config = (AmazonMQConfig)requestContext.ClientConfig;
             var result = new MQEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

@@ -50,7 +50,7 @@ namespace Amazon.QBusiness.Internal
         {
             var config = (AmazonQBusinessConfig)requestContext.ClientConfig;
             var result = new QBusinessEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
 

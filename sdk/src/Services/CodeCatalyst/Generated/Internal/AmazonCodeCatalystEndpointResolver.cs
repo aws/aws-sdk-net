@@ -51,7 +51,7 @@ namespace Amazon.CodeCatalyst.Internal
             var config = (AmazonCodeCatalystConfig)requestContext.ClientConfig;
             var result = new CodeCatalystEndpointParameters();
             result.UseFIPS = config.UseFIPSEndpoint;
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.Endpoint = config.ServiceURL;
 
 

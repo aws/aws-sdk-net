@@ -50,7 +50,7 @@ namespace Amazon.Route53RecoveryCluster.Internal
         {
             var config = (AmazonRoute53RecoveryClusterConfig)requestContext.ClientConfig;
             var result = new Route53RecoveryClusterEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

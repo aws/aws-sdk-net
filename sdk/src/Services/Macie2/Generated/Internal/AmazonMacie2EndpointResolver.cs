@@ -50,7 +50,7 @@ namespace Amazon.Macie2.Internal
         {
             var config = (AmazonMacie2Config)requestContext.ClientConfig;
             var result = new Macie2EndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

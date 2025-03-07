@@ -50,7 +50,7 @@ namespace Amazon.Ep2parsearn.Internal
         {
             var config = (AmazonEp2parsearnConfig)requestContext.ClientConfig;
             var result = new Ep2parsearnEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

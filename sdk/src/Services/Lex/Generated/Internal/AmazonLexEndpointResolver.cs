@@ -50,7 +50,7 @@ namespace Amazon.Lex.Internal
         {
             var config = (AmazonLexConfig)requestContext.ClientConfig;
             var result = new LexEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

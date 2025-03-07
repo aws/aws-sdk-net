@@ -64,7 +64,7 @@ namespace Amazon.S3.Internal
         {
             var config = (AmazonS3Config)requestContext.ClientConfig;
             var result = new S3EndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.Endpoint = config.ServiceURL;

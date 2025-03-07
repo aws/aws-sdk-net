@@ -50,7 +50,7 @@ namespace Amazon.NeptuneGraph.Internal
         {
             var config = (AmazonNeptuneGraphConfig)requestContext.ClientConfig;
             var result = new NeptuneGraphEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.Endpoint = config.ServiceURL;

@@ -50,7 +50,7 @@ namespace Amazon.MediaPackageV2.Internal
         {
             var config = (AmazonMediaPackageV2Config)requestContext.ClientConfig;
             var result = new MediaPackageV2EndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;

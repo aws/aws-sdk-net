@@ -50,7 +50,7 @@ namespace Amazon.Ep2hostlabel.Internal
         {
             var config = (AmazonEp2hostlabelConfig)requestContext.ClientConfig;
             var result = new Ep2hostlabelEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
 
 
             // The region needs to be determined from the ServiceURL if not set.

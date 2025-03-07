@@ -50,7 +50,7 @@ namespace Amazon.TrustedAdvisor.Internal
         {
             var config = (AmazonTrustedAdvisorConfig)requestContext.ClientConfig;
             var result = new TrustedAdvisorEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
