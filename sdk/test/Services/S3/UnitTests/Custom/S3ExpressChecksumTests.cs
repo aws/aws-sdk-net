@@ -366,7 +366,8 @@ namespace AWSSDK.UnitTests
                 Marshaller = marshaller,
                 OriginalRequest = request,
                 Unmarshaller = null,
-                IsAsync = false
+                IsAsync = false,
+                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token"),
             };
             var executionContext = new ExecutionContext(
                 requestContext,
