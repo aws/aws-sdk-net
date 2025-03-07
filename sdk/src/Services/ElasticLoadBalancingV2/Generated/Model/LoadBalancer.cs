@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private EnablePrefixForIpv6SourceNatEnum _enablePrefixForIpv6SourceNat;
         private string _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private IpAddressType _ipAddressType;
+        private IpamPools _ipamPools;
         private string _loadBalancerArn;
         private string _loadBalancerName;
         private LoadBalancerSchemeEnum _scheme;
@@ -208,6 +209,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamPools. 
+        /// <para>
+        /// [Application Load Balancers] The IPAM pool in use by the load balancer, if configured.
+        /// </para>
+        /// </summary>
+        public IpamPools IpamPools
+        {
+            get { return this._ipamPools; }
+            set { this._ipamPools = value; }
+        }
+
+        // Check to see if IpamPools property is set
+        internal bool IsSetIpamPools()
+        {
+            return this._ipamPools != null;
         }
 
         /// <summary>

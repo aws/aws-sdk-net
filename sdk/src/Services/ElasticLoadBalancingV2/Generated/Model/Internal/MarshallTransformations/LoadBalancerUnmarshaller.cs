@@ -108,6 +108,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IpamPools", targetDepth))
+                    {
+                        var unmarshaller = IpamPoolsUnmarshaller.Instance;
+                        unmarshalledObject.IpamPools = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LoadBalancerArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

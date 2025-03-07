@@ -201,7 +201,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <c>target_health_state.unhealthy.connection_termination.enabled</c> - Indicates whether
         /// the load balancer terminates connections to unhealthy targets. The value is <c>true</c>
-        /// or <c>false</c>. The default is <c>true</c>.
+        /// or <c>false</c>. The default is <c>true</c>. This attribute can't be enabled for UDP
+        /// and TCP_UDP target groups.
         /// </para>
         ///  </li> <li> 
         /// <para>

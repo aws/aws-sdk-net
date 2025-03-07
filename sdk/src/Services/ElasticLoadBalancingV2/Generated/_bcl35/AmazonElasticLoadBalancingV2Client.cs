@@ -2866,6 +2866,63 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  ModifyIpPools
+
+        /// <summary>
+        /// [Application Load Balancers] Modify the IP pool associated to a load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpPools service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpPools service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
+        public virtual ModifyIpPoolsResponse ModifyIpPools(ModifyIpPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpPoolsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpPools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpPools operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpPools
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
+        public virtual IAsyncResult BeginModifyIpPools(ModifyIpPoolsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpPools operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpPools.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpPoolsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
+        public virtual ModifyIpPoolsResponse EndModifyIpPools(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyIpPoolsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyListener
 
         /// <summary>
