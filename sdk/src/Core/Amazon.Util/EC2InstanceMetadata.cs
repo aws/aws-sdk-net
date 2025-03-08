@@ -27,6 +27,7 @@ using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Amazon.Util
 {
@@ -355,30 +356,7 @@ namespace Amazon.Util
         {
             get
             {
-                var list = GetItems("/iam/security-credentials");
-                if (list == null)
-                    return null;
-
-                var creds = new Dictionary<string, IAMSecurityCredentialMetadata>();
-                foreach (var item in list)
-                {
-                    var json = GetData("/iam/security-credentials/" + item);
-                    try
-                    {
-                        var cred = JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
-                        creds[item] = cred;
-                    }
-                    catch
-                    {
-                        creds[item] = new IAMSecurityCredentialMetadata
-                        {
-                            Code = "Failed",
-                            Message = "Could not parse response from metadata service."
-                        };
-                    }
-                }
-
-                return creds;
+                return GetIAMSecurityCredentials();
             }
         }
 
@@ -481,6 +459,64 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Returns the temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken, and Expiration) 
+        /// associated with the IAM roles on the instance.
+        /// </summary>
+        /// <returns>Temporary security credentials</returns>
+        public static IDictionary<string, IAMSecurityCredentialMetadata> GetIAMSecurityCredentials()
+        {
+            var list = GetItems("/iam/security-credentials");
+            if (list == null)
+                return null;
+
+            var creds = new Dictionary<string, IAMSecurityCredentialMetadata>();
+            foreach (var item in list)
+            {
+                var json = GetData("/iam/security-credentials/" + item);
+                creds[item] = DeserializeCredentials(json);
+            }
+
+            return creds;
+        }
+
+        /// <summary>
+        /// Returns the temporary security credentials (AccessKeyId, SecretAccessKey, SessionToken, and Expiration) 
+        /// associated with the IAM roles on the instance.
+        /// </summary>
+        /// <returns>Temporary security credentials</returns>
+        public static async Task<IDictionary<string, IAMSecurityCredentialMetadata>> GetIAMSecurityCredentialsAsync()
+        {
+            var list = await GetItemsAsync("/iam/security-credentials").ConfigureAwait(false);
+            if (list == null)
+                return null;
+
+            var creds = new Dictionary<string, IAMSecurityCredentialMetadata>();
+            foreach (var item in list)
+            {
+                var json = await GetDataAsync("/iam/security-credentials/" + item).ConfigureAwait(false);
+                creds[item] = DeserializeCredentials(json);
+            }
+
+            return creds;
+        }
+
+        private static IAMSecurityCredentialMetadata DeserializeCredentials(string json)
+        {
+            try
+            {
+                return JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
+            }
+            catch
+            {
+                return new IAMSecurityCredentialMetadata
+                {
+                    Code = "Failed",
+                    Message = "Could not parse response from metadata service."
+                };
+            }
+        }
+
+        /// <summary>
         /// Return the list of items in the metadata at path.
         /// </summary>
         /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
@@ -488,6 +524,16 @@ namespace Amazon.Util
         public static IEnumerable<string> GetItems(string path)
         {
             return GetItems(path, DEFAULT_RETRIES, false);
+        }
+
+        /// <summary>
+        /// Return the list of items in the metadata at path.
+        /// </summary>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
+        /// <returns>List of items returned by the metadata service</returns>
+        public static async Task<IEnumerable<string>> GetItemsAsync(string path)
+        {
+            return await GetItemsAsync(path, DEFAULT_RETRIES, false).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -504,11 +550,35 @@ namespace Amazon.Util
         /// Return the metadata at the path
         /// </summary>
         /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
+        /// <returns>Data returned by the metadata service</returns>
+        public static async Task<string> GetDataAsync(string path)
+        {
+            return await GetDataAsync(path, DEFAULT_RETRIES).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Return the metadata at the path
+        /// </summary>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
         /// <param name="tries">Number of attempts to make</param>
         /// <returns>Data returned by the metadata service</returns>
         public static string GetData(string path, int tries)
         {
             var items = GetItems(path, tries, true);
+            if (items != null && items.Count > 0)
+                return items[0];
+            return null;
+        }
+
+        /// <summary>
+        /// Return the metadata at the path
+        /// </summary>
+        /// <param name="path">Path at which to query the metadata; may be relative or absolute.</param>
+        /// <param name="tries">Number of attempts to make</param>
+        /// <returns>Data returned by the metadata service</returns>
+        public static async Task<string> GetDataAsync(string path, int tries)
+        {
+            var items = await GetItemsAsync(path, tries, true).ConfigureAwait(false);
             if (items != null && items.Count > 0)
                 return items[0];
             return null;
@@ -620,6 +690,15 @@ namespace Amazon.Util
 
         /// <summary>
         /// Fetches the api token to use with metadata requests.
+        /// </summary>        
+        /// <returns>The API token or null</returns>
+        public static async Task<string> FetchApiTokenAsync()
+        {
+            return await FetchApiTokenAsync(DEFAULT_RETRIES).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Fetches the api token to use with metadata requests.
         /// </summary>
         /// <param name="tries">The number of tries to fetch the api token before giving up and throwing the web exception</param>
         /// <returns>The API token or null if an API token couldn't be obtained and doesn't need to be used</returns>
@@ -674,9 +753,70 @@ namespace Amazon.Util
             throw new InvalidOperationException(errorMessage);
         }
 
+        /// <summary>
+        /// Fetches the api token to use with metadata requests.
+        /// </summary>
+        /// <param name="tries">The number of tries to fetch the api token before giving up and throwing the web exception</param>
+        /// <returns>The API token or null if an API token couldn't be obtained and doesn't need to be used</returns>
+        private static async Task<string> FetchApiTokenAsync(int tries)
+        {
+            const string errorFailFastMessage = "IMDS rejected request to get API token.";
+            const string errorMessage = "Unable to retrieve token for use in IMDSv2.";
+            for (int retry = 1; retry <= tries; retry++)
+            {
+                if (!IsIMDSEnabled)
+                {
+                    return null;
+                }
+
+                try
+                {
+                    var uriForToken = new Uri(EC2ApiTokenUrl);
+
+                    var headers = new Dictionary<string, string>();
+                    headers.Add(HeaderKeys.UserAgentHeader, _userAgent);
+                    headers.Add(HeaderKeys.XAwsEc2MetadataTokenTtlSeconds, DEFAULT_APITOKEN_TTL.ToString(CultureInfo.InvariantCulture));
+                    var content = await AWSSDKUtils.ExecuteHttpRequestAsync(uriForToken, "PUT", null, TimeSpan.FromSeconds(5), Proxy, headers).ConfigureAwait(false);
+                    return content.Trim();
+                }
+                catch (Exception e)
+                {
+                    HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                    if (httpStatusCode == HttpStatusCode.NotFound
+                        || httpStatusCode == HttpStatusCode.MethodNotAllowed
+                        || httpStatusCode == HttpStatusCode.Forbidden)
+                    {
+                        throw new InvalidOperationException(errorFailFastMessage);
+                    }
+
+                    if (retry >= tries)
+                    {
+                        if (httpStatusCode == HttpStatusCode.BadRequest)
+                        {
+                            Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, errorMessage);
+                            throw;
+                        }
+
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, errorMessage);
+                        throw new InvalidOperationException(errorMessage);
+                    }
+
+                    PauseExponentially(retry - 1);
+                }
+            }
+
+            throw new InvalidOperationException(errorMessage);
+        }
+
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
         {
             return GetItems(relativeOrAbsolutePath, tries, slurp, null);
+        }
+
+        private static async Task<List<string>> GetItemsAsync(string relativeOrAbsolutePath, int tries, bool slurp)
+        {
+            return await GetItemsAsync(relativeOrAbsolutePath, tries, slurp, null).ConfigureAwait(false);
         }
 
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp, string token)
@@ -762,6 +902,91 @@ namespace Amazon.Util
 
                 PauseExponentially(DEFAULT_RETRIES - tries);
                 return GetItems(relativeOrAbsolutePath, tries - 1, slurp, token);
+            }
+
+            return items;
+        }
+
+        private static async Task<List<string>> GetItemsAsync(string relativeOrAbsolutePath, int tries, bool slurp, string token)
+        {
+            var items = new List<string>();
+            //For all meta-data queries we need to fetch an api token to use. In the event a 
+            //token cannot be obtained we will fallback to not using a token.
+            if (token == null)
+            {
+                try
+                {
+                    token = await FetchApiTokenAsync(DEFAULT_RETRIES).ConfigureAwait(false);
+                }
+                catch (InvalidOperationException e)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).InfoFormat("Failed to retrieve IMDS data \"{0}\" because IMDS API token could not be retrieved: {1}", relativeOrAbsolutePath, e.Message);
+                    return null; // If we could not get a token then assume we are not running in an EC2 instance and return null.
+                }
+            }
+
+            var headers = new Dictionary<string, string>();
+            headers.Add(HeaderKeys.UserAgentHeader, _userAgent);
+            headers.Add(HeaderKeys.XAwsEc2MetadataToken, token);
+
+            try
+            {
+                if (!IsIMDSEnabled)
+                {
+                    throw new IMDSDisabledException();
+                }
+
+                // if we are given a relative path, we assume the data we need exists under the
+                // main metadata root
+                var uri = relativeOrAbsolutePath.StartsWith(ServiceEndpoint, StringComparison.Ordinal)
+                            ? new Uri(relativeOrAbsolutePath)
+                            : new Uri(EC2MetadataRoot + relativeOrAbsolutePath);
+
+                var content = await AWSSDKUtils.ExecuteHttpRequestAsync(uri, "GET", null, TimeSpan.FromSeconds(5), Proxy, headers).ConfigureAwait(false);
+                using (var stream = new StringReader(content))
+                {
+                    if (slurp)
+                        items.Add(stream.ReadToEnd());
+                    else
+                    {
+                        string line;
+                        do
+                        {
+                            line = stream.ReadLine();
+                            if (line != null)
+                                items.Add(line.Trim());
+                        }
+                        while (line != null);
+                    }
+                }
+            }
+            catch (IMDSDisabledException)
+            {
+                // Keep this behavior identical to when HttpStatusCode.NotFound is returned.
+                return null;
+            }
+            catch (Exception e)
+            {
+                HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
+
+                if (httpStatusCode == HttpStatusCode.NotFound)
+                {
+                    return null;
+                }
+                else if (httpStatusCode == HttpStatusCode.Unauthorized)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
+                    throw;
+                }
+
+                if (tries <= 1)
+                {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "Unable to contact EC2 Metadata service.");
+                    return null;
+                }
+
+                PauseExponentially(DEFAULT_RETRIES - tries);
+                return await GetItemsAsync(relativeOrAbsolutePath, tries - 1, slurp, token).ConfigureAwait(false);
             }
 
             return items;

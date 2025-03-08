@@ -1435,6 +1435,77 @@ namespace Amazon.Util
 #endif
         }
 
+        /// <summary>
+        /// Executes an HTTP request and returns the response as a string. This method
+        /// throws WebException and HttpRequestException. In the event HttpRequestException
+        /// is thrown the StatusCode is sent as user defined data on the exception under
+        /// the key "StatusCode".
+        /// </summary>
+        /// <param name="uri">The URI to make the request to</param>
+        /// <param name="requestType">The request type: GET, PUT, POST</param>
+        /// <param name="content">null or the content to send with the request</param>
+        /// <param name="timeout">Timeout for the request</param>
+        /// <param name="proxy">Proxy for the request</param>
+        /// <param name="headers">null or any headers to send with the request</param>
+        /// <returns>The response as a string.</returns>
+        public static async Task<string> ExecuteHttpRequestAsync(Uri uri, string requestType, string content, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
+        {
+#if NETSTANDARD
+            using (var client = CreateClient(uri, timeout, proxy, headers))
+            {
+                var requestMessage = new HttpRequestMessage(new HttpMethod(requestType), uri);
+                if (!string.IsNullOrEmpty(content))
+                {
+                    requestMessage.Content = new StringContent(content);
+                }
+                var response = await client.SendAsync(requestMessage).ConfigureAwait(false);
+
+                try
+                {
+                    response.EnsureSuccessStatusCode();
+                }
+                catch (HttpRequestException e)
+                {
+                    var httpRequestException = new HttpRequestException(e.Message, e);
+                    httpRequestException.Data.Add(nameof(response.StatusCode), response.StatusCode);
+
+                    response.Dispose();
+                    throw httpRequestException;
+                }
+
+                try
+                {
+                        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                }
+                finally
+                {
+                    response.Dispose();
+                }
+            }
+#else
+            var request = CreateClient(uri, timeout, proxy, headers);
+            request.Method = requestType;
+            request.ContentLength = 0;
+                        
+            if (!string.IsNullOrEmpty(content))
+            {
+                var contentBytes = Encoding.UTF8.GetBytes(content);
+                request.ContentLength = contentBytes.Length;
+                using (var requestStream = request.GetRequestStream())
+                {
+                    requestStream.Write(contentBytes, 0, contentBytes.Length);
+                }                
+            }
+                        
+            using (var response = await request.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)
+            {
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                {
+                    return await reader.ReadToEndAsync().ConfigureAwait(false);
+                }
+            }            
+#endif
+        }
 
 #if NETSTANDARD
         private static HttpClient CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)

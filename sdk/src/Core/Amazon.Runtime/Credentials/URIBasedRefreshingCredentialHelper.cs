@@ -22,6 +22,7 @@ using System.IO;
 using System.Net;
 using ThirdParty.RuntimeBackports;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
@@ -51,6 +52,18 @@ namespace Amazon.Runtime
             }
         }
 
+        protected static async Task<string> GetContentsAsync(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
+        {
+            try
+            {
+                return await AWSSDKUtils.ExecuteHttpRequestAsync(uri, "GET", null, TimeSpan.Zero, proxy, headers).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                throw new AmazonServiceException("Unable to reach credentials server", e);
+            }
+        }
+
         protected static T GetObjectFromResponse<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
             where TC :
 #if NET8_0_OR_GREATER
@@ -61,6 +74,19 @@ namespace Amazon.Runtime
                 new()
         {
             string json = GetContents(uri, proxy, headers);
+            return JsonSerializerHelper.Deserialize<T>(json, new TC());
+        }
+
+        protected static async Task<T> GetObjectFromResponseAsync<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
+            where TC :
+#if NET8_0_OR_GREATER
+                System.Text.Json.Serialization.JsonSerializerContext,
+#else
+                Amazon.Util.Internal.JsonSerializerContext,
+#endif
+                new()
+        {
+            string json = await GetContentsAsync(uri, proxy, headers).ConfigureAwait(false);
             return JsonSerializerHelper.Deserialize<T>(json, new TC());
         }
 

@@ -15,6 +15,7 @@
 
 using System;
 using System.Net;
+using System.Threading.Tasks;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Util;
 
@@ -41,6 +42,26 @@ namespace Amazon.SecurityToken.SAML
         /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
         /// <returns>The raw response data from the authentication request.</returns>
         string Authenticate(Uri identityProvider, ICredentials credentials, string authenticationType,
+#if NETSTANDARD
+            IWebProxy proxySettings);
+#else
+            WebProxy proxySettings);
+#endif
+
+        /// <summary>
+        /// Calls the specified endpoint, optionally providing custom credentials.
+        /// </summary>
+        /// <param name="identityProvider">The endpoint providing </param>
+        /// <param name="credentials">
+        /// Optional, if not supplied the token for the currently logged-in user is supplied to the authentication endpoint.
+        /// </param>
+        /// <param name="authenticationType">
+        /// The authentication type expected by the endpoint. Valid values are 'NTLM',
+        /// 'Digest', 'Kerberos' and 'Negotiate'.
+        /// </param>
+        /// <param name="proxySettings">Null or configured proxy settings for the HTTPS call.</param>
+        /// <returns>The raw response data from the authentication request.</returns>
+        Task<string> AuthenticateAsync(Uri identityProvider, ICredentials credentials, string authenticationType,
 #if NETSTANDARD
             IWebProxy proxySettings);
 #else
@@ -184,6 +205,27 @@ namespace Amazon.SecurityToken.SAML
         /// is 'Kerberos'. Valid values are 'NTLM', 'Digest', 'Kerberos' and 'Negotiate'.
         /// </param>
         /// <returns>SAMLAssertion instance wrapping the returned document on successful authentication.</returns>
+        public async Task<SAMLAssertion> GetSAMLAssertionAsync(string identityProviderUrl,
+                                              ICredentials credentials,
+                                              string authenticationType)
+        {
+            return await GetSAMLAssertionAsync(new Uri(identityProviderUrl), credentials, authenticationType).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Authenticates the specified network credentials with a provider endpoint and
+        /// returns the SAML assertion data from which temporary AWS credentials can be obtained.
+        /// </summary>
+        /// <param name="identityProviderUrl">The authentication endpoint to be called.</param>
+        /// <param name="credentials">
+        /// Credentials for the call. If null, the users default network credentials will be used
+        /// in a temporary impersonation context.
+        /// </param>
+        /// <param name="authenticationType">
+        /// The authentication type expected by the endpoint. The default value if not specified
+        /// is 'Kerberos'. Valid values are 'NTLM', 'Digest', 'Kerberos' and 'Negotiate'.
+        /// </param>
+        /// <returns>SAMLAssertion instance wrapping the returned document on successful authentication.</returns>
         public SAMLAssertion GetSAMLAssertion(Uri identityProviderUrl, 
                                               ICredentials credentials, 
                                               string authenticationType)
@@ -193,6 +235,33 @@ namespace Amazon.SecurityToken.SAML
                                                                  string.IsNullOrEmpty(authenticationType) 
                                                                     ? SAMLAuthenticationType.Kerberos.ToString() : authenticationType,
                                                                  ProxySettings);
+
+            return ResponseParser.Parse(response);
+        }
+
+        /// <summary>
+        /// Authenticates the specified network credentials with a provider endpoint and
+        /// returns the SAML assertion data from which temporary AWS credentials can be obtained.
+        /// </summary>
+        /// <param name="identityProviderUrl">The authentication endpoint to be called.</param>
+        /// <param name="credentials">
+        /// Credentials for the call. If null, the users default network credentials will be used
+        /// in a temporary impersonation context.
+        /// </param>
+        /// <param name="authenticationType">
+        /// The authentication type expected by the endpoint. The default value if not specified
+        /// is 'Kerberos'. Valid values are 'NTLM', 'Digest', 'Kerberos' and 'Negotiate'.
+        /// </param>
+        /// <returns>SAMLAssertion instance wrapping the returned document on successful authentication.</returns>
+        public async Task<SAMLAssertion> GetSAMLAssertionAsync(Uri identityProviderUrl,
+                                              ICredentials credentials,
+                                              string authenticationType)
+        {
+            var response = await AuthenticationController.AuthenticateAsync(identityProviderUrl,
+                                                                 credentials,
+                                                                 string.IsNullOrEmpty(authenticationType)
+                                                                    ? SAMLAuthenticationType.Kerberos.ToString() : authenticationType,
+                                                                 ProxySettings).ConfigureAwait(false);
 
             return ResponseParser.Parse(response);
         }

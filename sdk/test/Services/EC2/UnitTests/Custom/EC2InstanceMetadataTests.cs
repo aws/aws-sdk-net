@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
+using System.Threading.Tasks;
 using Amazon.Util;
 using AWSSDK.UnitTests;
 using AWSSDK_DotNet.CommonTest.Utils;
@@ -120,6 +121,32 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                 servlet.AddMetadataGetSecurityCredentialsResponse(_fakeValidIamSecurityCredentialMetadata, token);
 
                 var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
+
+                Assert.IsNotNull(metadata);
+                Assert.AreEqual(1, metadata.Count);
+                Assert.IsTrue(metadata.ContainsKey("Item1"));
+                var creds = metadata["Item1"];
+                Assert.AreEqual("value1", creds.AccessKeyId);
+                Assert.AreEqual("value2", creds.SecretAccessKey);
+                Assert.AreEqual("value3", creds.Token);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public async Task TestEC2InstanceMetadataSecureCredentialsSuccessAsync()
+        {
+            var token = "ValidToken";
+
+            using (var servlet = new EC2InstanceMetadataServlet())
+            {
+                servlet.AddTokenFetchResponse(token);
+                servlet.AddMetadataGenericResponse("Item1", token, HttpStatusCode.OK);
+                servlet.AddTokenFetchResponse(token);
+                servlet.AddMetadataGetSecurityCredentialsResponse(_fakeValidIamSecurityCredentialMetadata, token);
+
+                var metadata = await EC2InstanceMetadata.GetIAMSecurityCredentialsAsync();
 
                 Assert.IsNotNull(metadata);
                 Assert.AreEqual(1, metadata.Count);

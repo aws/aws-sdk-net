@@ -25,9 +25,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -181,7 +179,6 @@ namespace Amazon.Runtime
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
 
-#if AWS_ASYNC_API
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             string token = null;
@@ -218,7 +215,6 @@ namespace Amazon.Runtime
             _logger.DebugFormat("New credentials created using assume role with web identity that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
-#endif
 
         /// <summary>
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.

@@ -17,9 +17,7 @@ using Amazon.Util;
 using System;
 using System.Collections;
 using System.Diagnostics;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
@@ -96,12 +94,10 @@ namespace Amazon.Runtime
             return DetermineProcessCredential();
         }
 
-#if AWS_ASYNC_API
         protected override Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             return DetermineProcessCredentialAsync();
         }
-#endif
 
         #endregion
 
@@ -128,7 +124,6 @@ namespace Amazon.Runtime
             }
         }
 
-#if AWS_ASYNC_API
         public async Task<CredentialsRefreshState> DetermineProcessCredentialAsync()
         {    
             try
@@ -146,7 +141,6 @@ namespace Amazon.Runtime
                 throw new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture,"AWS credential process terminated with {0}", e.GetType()), e);
             }
         }
-#endif
         #endregion
 
         #region Private methods

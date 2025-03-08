@@ -23,11 +23,7 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.SAML;
 using Amazon.Util.Internal;
-
-
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.SecurityToken
 {
@@ -44,25 +40,11 @@ namespace Amazon.SecurityToken
             TimeSpan credentialDuration,
             ICredentials userCredential)
         {
-            const string httpPrefix = "http://";
-            const string httpsPrefix = "https://";
             SAMLAssertion assertion;
 
             try
             {
-                var proxy = Config.GetWebProxy();
-                if (proxy == null && !NoProxyFilter.Instance.Match(new Uri(endpoint)))
-                {
-                    if (endpoint.StartsWith(httpPrefix))
-                    {
-                        proxy = Config.GetHttpProxy();
-                    }
-                    else if (endpoint.StartsWith(httpsPrefix))
-                    {
-                        proxy = Config.GetHttpsProxy();
-                    }
-                }
-                var authController = new SAMLAuthenticationController(proxy);
+                SAMLAuthenticationController authController = CreateSAMLAuthenticationController(endpoint);
                 assertion = authController.GetSAMLAssertion(endpoint, userCredential, authenticationType);
             }
             catch (Exception e)
@@ -78,6 +60,61 @@ namespace Amazon.SecurityToken
             {
                 throw new AmazonClientException("Credential generation failed following successful authentication.", e);
             }
+        }
+
+#if !BCL
+        async Task<SAMLImmutableCredentials> ICoreAmazonSTS_SAML.CredentialsFromSAMLAuthenticationAsync(
+#else
+        async Task<SAMLImmutableCredentials> ICoreAmazonSTS.CredentialsFromSAMLAuthenticationAsync(
+#endif
+            string endpoint,
+            string authenticationType,
+            string roleARN,
+            TimeSpan credentialDuration,
+            ICredentials userCredential)
+        {
+            SAMLAssertion assertion;
+
+            try
+            {
+                SAMLAuthenticationController authController = CreateSAMLAuthenticationController(endpoint);
+                assertion = await authController.GetSAMLAssertionAsync(endpoint, userCredential, authenticationType)
+                                                .ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                throw new FederatedAuthenticationFailureException("Authentication failure, unable to obtain SAML assertion.", e);
+            }
+
+            try
+            {
+                return await assertion.GetRoleCredentialsAsync(this, roleARN, credentialDuration).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                throw new AmazonClientException("Credential generation failed following successful authentication.", e);
+            }
+        }
+
+        private SAMLAuthenticationController CreateSAMLAuthenticationController(string endpoint)
+        {
+            const string httpPrefix = "http://";
+            const string httpsPrefix = "https://";
+
+            var proxy = Config.GetWebProxy();
+            if (proxy == null && !NoProxyFilter.Instance.Match(new Uri(endpoint)))
+            {
+                if (endpoint.StartsWith(httpPrefix))
+                {
+                    proxy = Config.GetHttpProxy();
+                }
+                else if (endpoint.StartsWith(httpsPrefix))
+                {
+                    proxy = Config.GetHttpsProxy();
+                }
+            }
+            var authController = new SAMLAuthenticationController(proxy);
+            return authController;
         }
 
         private AssumeRoleWithWebIdentityRequest SetupAssumeRoleWithWebIdentityRequest(string webIdentityToken, string roleArn,
@@ -130,7 +167,6 @@ namespace Amazon.SecurityToken
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// <see cref="ICoreAmazonSTS_WebIdentity"/>
         /// </summary>
@@ -157,7 +193,6 @@ namespace Amazon.SecurityToken
                 throw exception;
             }
         }
-#endif
 
         /// <summary>
         /// <see cref="ICoreAmazonSTS"/>
@@ -171,34 +206,7 @@ namespace Amazon.SecurityToken
         {
             try
             {
-                var request = new AssumeRoleRequest
-                {
-                    RoleArn = roleArn,
-                    RoleSessionName = roleSessionName
-                };
-                if (options != null)
-                {
-                    request.ExternalId = options.ExternalId;
-                    request.SerialNumber = options.MfaSerialNumber;
-                    request.TokenCode = options.MfaTokenCode;
-                    request.Policy = options.Policy;
-                    request.SourceIdentity = options.SourceIdentity;
-
-                    if (options.DurationSeconds.HasValue)
-                    {
-                        request.DurationSeconds = options.DurationSeconds.Value;
-                    }
-
-                    if (options.Tags != null && options.Tags.Count > 0)
-                    {
-                        request.Tags = options.Tags.Select(kv => new Tag() { Key = kv.Key, Value = kv.Value }).ToList();
-                    }
-
-                    if (options.TransitiveTagKeys != null && options.TransitiveTagKeys.Count > 0)
-                    {
-                        request.TransitiveTagKeys = options.TransitiveTagKeys;
-                    }
-                }
+                AssumeRoleRequest request = CreateAssumeRoleRequest(roleArn, roleSessionName, options);
 
                 var response = AssumeRole(request);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
@@ -211,6 +219,67 @@ namespace Amazon.SecurityToken
                 Logger.GetLogger(typeof(AmazonSecurityTokenServiceClient)).Error(exception, exception.Message);
                 throw exception;
             }
+        }
+
+        /// <summary>
+        /// <see cref="ICoreAmazonSTS"/>
+        /// </summary>
+        /// <param name="roleArn"></param>
+        /// <param name="roleSessionName"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        async Task<AssumeRoleImmutableCredentials> ICoreAmazonSTS.CredentialsFromAssumeRoleAuthenticationAsync(string roleArn,
+            string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            try
+            {
+                AssumeRoleRequest request = CreateAssumeRoleRequest(roleArn, roleSessionName, options);
+
+                var response = await AssumeRoleAsync(request).ConfigureAwait(false);
+                return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
+            }
+            catch (Exception e)
+            {
+                var msg = "Error calling AssumeRole for role " + roleArn;
+                var exception = new AmazonClientException(msg, e);
+                Logger.GetLogger(typeof(AmazonSecurityTokenServiceClient)).Error(exception, exception.Message);
+                throw exception;
+            }
+        }
+
+        private static AssumeRoleRequest CreateAssumeRoleRequest(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            var request = new AssumeRoleRequest
+            {
+                RoleArn = roleArn,
+                RoleSessionName = roleSessionName
+            };
+            if (options != null)
+            {
+                request.ExternalId = options.ExternalId;
+                request.SerialNumber = options.MfaSerialNumber;
+                request.TokenCode = options.MfaTokenCode;
+                request.Policy = options.Policy;
+                request.SourceIdentity = options.SourceIdentity;
+
+                if (options.DurationSeconds.HasValue)
+                {
+                    request.DurationSeconds = options.DurationSeconds.Value;
+                }
+
+                if (options.Tags != null && options.Tags.Count > 0)
+                {
+                    request.Tags = options.Tags.Select(kv => new Tag() { Key = kv.Key, Value = kv.Value }).ToList();
+                }
+
+                if (options.TransitiveTagKeys != null && options.TransitiveTagKeys.Count > 0)
+                {
+                    request.TransitiveTagKeys = options.TransitiveTagKeys;
+                }
+            }
+
+            return request;
         }
     }
 }
