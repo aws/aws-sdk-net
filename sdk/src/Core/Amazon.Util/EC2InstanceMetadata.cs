@@ -473,19 +473,7 @@ namespace Amazon.Util
             foreach (var item in list)
             {
                 var json = GetData("/iam/security-credentials/" + item);
-                try
-                {
-                    var cred = JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
-                    creds[item] = cred;
-                }
-                catch
-                {
-                    creds[item] = new IAMSecurityCredentialMetadata
-                    {
-                        Code = "Failed",
-                        Message = "Could not parse response from metadata service."
-                    };
-                }
+                creds[item] = DeserializeCredentials(json);
             }
 
             return creds;
@@ -506,22 +494,26 @@ namespace Amazon.Util
             foreach (var item in list)
             {
                 var json = await GetDataAsync("/iam/security-credentials/" + item).ConfigureAwait(false);
-                try
-                {
-                    var cred = JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
-                    creds[item] = cred;
-                }
-                catch
-                {
-                    creds[item] = new IAMSecurityCredentialMetadata
-                    {
-                        Code = "Failed",
-                        Message = "Could not parse response from metadata service."
-                    };
-                }
+                creds[item] = DeserializeCredentials(json);
             }
 
             return creds;
+        }
+
+        private static IAMSecurityCredentialMetadata DeserializeCredentials(string json)
+        {
+            try
+            {
+                return JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
+            }
+            catch
+            {
+                return new IAMSecurityCredentialMetadata
+                {
+                    Code = "Failed",
+                    Message = "Could not parse response from metadata service."
+                };
+            }
         }
 
         /// <summary>

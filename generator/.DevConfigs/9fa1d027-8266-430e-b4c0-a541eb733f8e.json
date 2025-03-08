@@ -11,7 +11,7 @@
             "serviceName": "SecurityToken",
             "type": "patch",
             "changeLogMessages": [
-                "Added implementation for ICoreAmazonSTS_SAML/ICoreAmazonSTS.CredentialsFromSAMLAuthenticationAsync() and ICoreAmazonSTS.CredentialsFromAssumeRoleAuthenticationAsync()."
+                "Added async code paths for the SAML and Assume role credentials providers."
             ]
         }
     ]

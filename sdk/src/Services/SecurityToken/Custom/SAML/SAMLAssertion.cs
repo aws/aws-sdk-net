@@ -183,12 +183,7 @@ namespace Amazon.SecurityToken.SAML
                 DurationSeconds = (int)duration.TotalSeconds
             };
 
-#if NETSTANDARD
-            //In the NetStandard SDK flavor the sync operations are internal only.
-            var response = await ((AmazonSecurityTokenServiceClient)stsClient).AssumeRoleWithSAMLAsync(assumeSamlRequest).ConfigureAwait(false);
-#else
             var response = await stsClient.AssumeRoleWithSAMLAsync(assumeSamlRequest).ConfigureAwait(false);
-#endif
 
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(),
                                                 response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),

@@ -146,7 +146,7 @@ namespace Amazon.Runtime
                 }
                 ;
 
-                AWSSDKUtils.Sleep(retry.Next());
+                await Task.Delay(retry.Next()).ConfigureAwait(false);
             }
 
             return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
