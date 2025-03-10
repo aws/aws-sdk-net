@@ -34,7 +34,26 @@ namespace Amazon.PcaConnectorAd.Model
     /// </summary>
     public partial class VpcInformation
     {
+        private IpAddressType _ipAddressType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The VPC IP address type.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

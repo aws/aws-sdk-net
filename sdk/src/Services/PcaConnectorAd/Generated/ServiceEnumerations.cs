@@ -631,13 +631,25 @@ namespace Amazon.PcaConnectorAd
     {
 
         /// <summary>
+        /// Constant CA_CERTIFICATE_REGISTRATION_FAILED for ConnectorStatusReason
+        /// </summary>
+        public static readonly ConnectorStatusReason CA_CERTIFICATE_REGISTRATION_FAILED = new ConnectorStatusReason("CA_CERTIFICATE_REGISTRATION_FAILED");
+        /// <summary>
         /// Constant DIRECTORY_ACCESS_DENIED for ConnectorStatusReason
         /// </summary>
         public static readonly ConnectorStatusReason DIRECTORY_ACCESS_DENIED = new ConnectorStatusReason("DIRECTORY_ACCESS_DENIED");
         /// <summary>
+        /// Constant INSUFFICIENT_FREE_ADDRESSES for ConnectorStatusReason
+        /// </summary>
+        public static readonly ConnectorStatusReason INSUFFICIENT_FREE_ADDRESSES = new ConnectorStatusReason("INSUFFICIENT_FREE_ADDRESSES");
+        /// <summary>
         /// Constant INTERNAL_FAILURE for ConnectorStatusReason
         /// </summary>
         public static readonly ConnectorStatusReason INTERNAL_FAILURE = new ConnectorStatusReason("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant INVALID_SUBNET_IP_PROTOCOL for ConnectorStatusReason
+        /// </summary>
+        public static readonly ConnectorStatusReason INVALID_SUBNET_IP_PROTOCOL = new ConnectorStatusReason("INVALID_SUBNET_IP_PROTOCOL");
         /// <summary>
         /// Constant PRIVATECA_ACCESS_DENIED for ConnectorStatusReason
         /// </summary>
@@ -870,6 +882,56 @@ namespace Amazon.PcaConnectorAd
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HashAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpAddressType.
+    /// </summary>
+    public class IpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType DUALSTACK = new IpAddressType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType IPV4 = new IpAddressType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpAddressType FindValue(string value)
+        {
+            return FindValue<IpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpAddressType(string value)
         {
             return FindValue(value);
         }
@@ -1114,6 +1176,10 @@ namespace Amazon.PcaConnectorAd
         /// Constant SPN_EXISTS_ON_DIFFERENT_AD_OBJECT for ServicePrincipalNameStatusReason
         /// </summary>
         public static readonly ServicePrincipalNameStatusReason SPN_EXISTS_ON_DIFFERENT_AD_OBJECT = new ServicePrincipalNameStatusReason("SPN_EXISTS_ON_DIFFERENT_AD_OBJECT");
+        /// <summary>
+        /// Constant SPN_LIMIT_EXCEEDED for ServicePrincipalNameStatusReason
+        /// </summary>
+        public static readonly ServicePrincipalNameStatusReason SPN_LIMIT_EXCEEDED = new ServicePrincipalNameStatusReason("SPN_LIMIT_EXCEEDED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1210,6 +1276,10 @@ namespace Amazon.PcaConnectorAd
         /// Constant FIELD_VALIDATION_FAILED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
+        /// <summary>
+        /// Constant INVALID_CA_SUBJECT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_CA_SUBJECT = new ValidationExceptionReason("INVALID_CA_SUBJECT");
         /// <summary>
         /// Constant INVALID_PERMISSION for ValidationExceptionReason
         /// </summary>
