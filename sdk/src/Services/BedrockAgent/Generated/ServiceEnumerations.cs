@@ -38,6 +38,18 @@ namespace Amazon.BedrockAgent
         /// Constant AMAZONUserInput for ActionGroupSignature
         /// </summary>
         public static readonly ActionGroupSignature AMAZONUserInput = new ActionGroupSignature("AMAZON.UserInput");
+        /// <summary>
+        /// Constant ANTHROPICBash for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICBash = new ActionGroupSignature("ANTHROPIC.Bash");
+        /// <summary>
+        /// Constant ANTHROPICComputer for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICComputer = new ActionGroupSignature("ANTHROPIC.Computer");
+        /// <summary>
+        /// Constant ANTHROPICTextEditor for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICTextEditor = new ActionGroupSignature("ANTHROPIC.TextEditor");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
