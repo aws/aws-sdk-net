@@ -72,6 +72,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyrightHolder = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultFontSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DefaultFontSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("defaultLineHeight", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DefaultLineHeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fillLineGap", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

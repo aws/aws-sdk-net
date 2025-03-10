@@ -54,6 +54,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CopyrightHolder);
             }
 
+            if(requestObject.IsSetDefaultFontSize())
+            {
+                context.Writer.WritePropertyName("defaultFontSize");
+                context.Writer.Write(requestObject.DefaultFontSize);
+            }
+
+            if(requestObject.IsSetDefaultLineHeight())
+            {
+                context.Writer.WritePropertyName("defaultLineHeight");
+                context.Writer.Write(requestObject.DefaultLineHeight);
+            }
+
             if(requestObject.IsSetFillLineGap())
             {
                 context.Writer.WritePropertyName("fillLineGap");
