@@ -179,7 +179,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// This customer-supplied name uniquely identifies the DB instance when interacting with
-        /// the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.
+        /// the Amazon Timestream for InfluxDB API and CLI commands.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=40)]

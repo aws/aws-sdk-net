@@ -333,7 +333,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: false
+        /// Default: true
         /// </para>
         /// </summary>
         public bool PprofDisabled

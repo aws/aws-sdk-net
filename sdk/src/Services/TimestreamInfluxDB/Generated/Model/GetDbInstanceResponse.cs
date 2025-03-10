@@ -245,10 +245,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property InfluxAuthParametersSecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing
-        /// the initial InfluxDB authorization parameters. The secret value is a JSON formatted
-        /// key-value pair holding InfluxDB authorization values: organization, bucket, username,
-        /// and password.
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial
+        /// InfluxDB authorization parameters. The secret value is a JSON formatted key-value
+        /// pair holding InfluxDB authorization values: organization, bucket, username, and password.
         /// </para>
         /// </summary>
         public string InfluxAuthParametersSecretArn
