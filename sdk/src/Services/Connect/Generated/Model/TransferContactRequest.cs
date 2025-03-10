@@ -31,11 +31,11 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the TransferContact operation.
-    /// Transfers contacts from one agent or queue to another agent or queue at any point
-    /// after a contact is created. You can transfer a contact to another queue by providing
-    /// the flow which orchestrates the contact to the destination queue. This gives you more
-    /// control over contact handling and helps you adhere to the service level agreement
-    /// (SLA) guaranteed to your customers.
+    /// Transfers <c>TASK</c> or <c>EMAIL</c> contacts from one agent or queue to another
+    /// agent or queue at any point after a contact is created. You can transfer a contact
+    /// to another queue by providing the flow which orchestrates the contact to the destination
+    /// queue. This gives you more control over contact handling and helps you adhere to the
+    /// service level agreement (SLA) guaranteed to your customers.
     /// 
     ///  
     /// <para>
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Transfer is supported for only <c>TASK</c> contacts.
+    /// Transfer is supported for only <c>TASK</c> and <c>EMAIL</c> contacts.
     /// </para>
     ///  </li> <li> 
     /// <para>

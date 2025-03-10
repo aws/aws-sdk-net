@@ -134,6 +134,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPreviousContactId())
+                {
+                    context.Writer.WritePropertyName("PreviousContactId");
+                    context.Writer.Write(publicRequest.PreviousContactId);
+                }
+
                 if(publicRequest.IsSetReferences())
                 {
                     context.Writer.WritePropertyName("References");

@@ -52,6 +52,7 @@ namespace Amazon.Connect.Model
         private ContactInitiationMethod _initiationMethod;
         private string _instanceId;
         private string _name;
+        private string _previousContactId;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
@@ -249,6 +250,28 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreviousContactId. 
+        /// <para>
+        /// The ID of the previous contact when creating a transfer contact. This value can be
+        /// provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate
+        /// Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string PreviousContactId
+        {
+            get { return this._previousContactId; }
+            set { this._previousContactId = value; }
+        }
+
+        // Check to see if PreviousContactId property is set
+        internal bool IsSetPreviousContactId()
+        {
+            return this._previousContactId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property References. 
         /// <para>
         /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks
@@ -271,7 +294,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The unique identifier for an Amazon Connect contact. This identifier is related to
+        /// the contact starting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

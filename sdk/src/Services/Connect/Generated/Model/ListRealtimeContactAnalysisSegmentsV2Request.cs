@@ -31,7 +31,15 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRealtimeContactAnalysisSegmentsV2 operation.
-    /// Provides a list of analysis segments for a real-time analysis session.
+    /// Provides a list of analysis segments for a real-time chat analysis session. This API
+    /// supports CHAT channels only. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This API does not support VOICE. If you attempt to use it for VOICE, an <c>InvalidRequestException</c>
+    /// occurs.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListRealtimeContactAnalysisSegmentsV2Request : AmazonConnectRequest
     {

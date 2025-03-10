@@ -12686,7 +12686,15 @@ namespace Amazon.Connect
         #region  ListRealtimeContactAnalysisSegmentsV2
 
         /// <summary>
-        /// Provides a list of analysis segments for a real-time analysis session.
+        /// Provides a list of analysis segments for a real-time chat analysis session. This API
+        /// supports CHAT channels only. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API does not support VOICE. If you attempt to use it for VOICE, an <c>InvalidRequestException</c>
+        /// occurs.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeContactAnalysisSegmentsV2 service method.</param>
         /// 
@@ -17657,11 +17665,11 @@ namespace Amazon.Connect
         #region  TransferContact
 
         /// <summary>
-        /// Transfers contacts from one agent or queue to another agent or queue at any point
-        /// after a contact is created. You can transfer a contact to another queue by providing
-        /// the flow which orchestrates the contact to the destination queue. This gives you more
-        /// control over contact handling and helps you adhere to the service level agreement
-        /// (SLA) guaranteed to your customers.
+        /// Transfers <c>TASK</c> or <c>EMAIL</c> contacts from one agent or queue to another
+        /// agent or queue at any point after a contact is created. You can transfer a contact
+        /// to another queue by providing the flow which orchestrates the contact to the destination
+        /// queue. This gives you more control over contact handling and helps you adhere to the
+        /// service level agreement (SLA) guaranteed to your customers.
         /// 
         ///  
         /// <para>
@@ -17669,7 +17677,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Transfer is supported for only <c>TASK</c> contacts.
+        /// Transfer is supported for only <c>TASK</c> and <c>EMAIL</c> contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
