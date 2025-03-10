@@ -1,3 +1,24 @@
+### 3.7.999.0 (2025-03-10 18:29 UTC)
+* BedrockAgent (3.7.422.0)
+	* Add support for computer use tools
+* BedrockAgentRuntime (3.7.423.0)
+	* Add support for computer use tools
+* Connect (3.7.419.0)
+	* Add support for contact transfers in external voice systems.
+* CostExplorer (3.7.405.0)
+	* Releasing minor partition endpoint updates.
+* MediaLive (3.7.412.0)
+	* Adds defaultFontSize and defaultLineHeight as options in the EbuTtDDestinationSettings within the caption descriptions for an output stream.
+* PcaConnectorAd (3.7.401.0)
+	* PrivateCA Connector for Active Directory now supports dual stack endpoints. This release adds the IpAddressType option to the VpcInformation on a Connector which determines whether the endpoint supports IPv4 only or IPv4 and IPv6 traffic.
+* SecurityHub (3.7.403.0)
+	* This release adds new StandardsControlsUpdatable field to the StandardsSubscription resource
+* TimestreamInfluxDB (3.7.406.14)
+	* This release updates the default value of pprof-disabled from false to true.
+* Core 3.7.402.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.998.0 (2025-03-07 19:30 UTC)
 * BedrockAgent (3.7.421.0)
 	* Introduces support for Neptune Analytics as a vector data store and adds Context Enrichment Configurations, enabling use cases such as GraphRAG.
