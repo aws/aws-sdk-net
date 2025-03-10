@@ -507,7 +507,14 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// For a batch of security controls and standards, identifies whether each control is
-        /// currently enabled or disabled in a standard.
+        /// currently enabled or disabled in a standard. 
+        /// 
+        ///  
+        /// <para>
+        ///  Calls to this operation return a <c>RESOURCE_NOT_FOUND_EXCEPTION</c> error when the
+        /// standard subscription for the association has a <c>NOT_READY_FOR_UPDATES</c> value
+        /// for <c>StandardsControlsUpdatable</c>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetStandardsControlAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -1635,6 +1642,11 @@ namespace Amazon.SecurityHub
         /// <para>
         /// For each control, the results include information about whether it is currently enabled,
         /// the severity, and a link to remediation information.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns an empty list for standard subscriptions where <c>StandardsControlsUpdatable</c>
+        /// has value <c>NOT_READY_FOR_UPDATES</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStandardsControls service method.</param>
@@ -3028,7 +3040,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Specifies whether a control is currently enabled or disabled in each enabled standard
-        /// in the calling account.
+        /// in the calling account. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation omits standards control associations for standard subscriptions where
+        /// <c>StandardsControlsUpdatable</c> has value <c>NOT_READY_FOR_UPDATES</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStandardsControlAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -3571,6 +3589,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Used to control whether an individual security standard control is enabled or disabled.
+        /// 
+        ///  
+        /// <para>
+        /// Calls to this operation return a <c>RESOURCE_NOT_FOUND_EXCEPTION</c> error when the
+        /// standard subscription for the control has <c>StandardsControlsUpdatable</c> value
+        /// <c>NOT_READY_FOR_UPDATES</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStandardsControl service method.</param>
         /// <param name="cancellationToken">

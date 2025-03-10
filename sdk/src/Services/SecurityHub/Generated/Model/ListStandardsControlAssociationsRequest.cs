@@ -32,7 +32,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListStandardsControlAssociations operation.
     /// Specifies whether a control is currently enabled or disabled in each enabled standard
-    /// in the calling account.
+    /// in the calling account. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation omits standards control associations for standard subscriptions where
+    /// <c>StandardsControlsUpdatable</c> has value <c>NOT_READY_FOR_UPDATES</c>.
+    /// </para>
     /// </summary>
     public partial class ListStandardsControlAssociationsRequest : AmazonSecurityHubRequest
     {
