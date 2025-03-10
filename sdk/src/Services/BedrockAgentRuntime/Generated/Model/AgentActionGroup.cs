@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _description;
         private FunctionSchema _functionSchema;
         private ActionGroupSignature _parentActionGroupSignature;
+        private Dictionary<string, string> _parentActionGroupSignatureParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionGroupExecutor. 
@@ -142,24 +143,49 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ParentActionGroupSignature. 
         /// <para>
-        ///  To allow your agent to request the user for additional information when trying to
-        /// complete a task, set this field to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>,
-        /// <c>apiSchema</c>, and <c>actionGroupExecutor</c> fields blank for this action group.
-        /// 
+        /// Specify a built-in or computer use action for this action group. If you specify a
+        /// value, you must leave the <c>description</c>, <c>apiSchema</c>, and <c>actionGroupExecutor</c>
+        /// fields empty for this action group. 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// To allow your agent to request the user for additional information when trying to
+        /// complete a task, set this field to <c>AMAZON.UserInput</c>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// To allow your agent to generate, run, and troubleshoot code when trying to complete
-        /// a task, set this field to <c>AMAZON.CodeInterpreter</c>. You must leave the <c>description</c>,
-        /// <c>apiSchema</c>, and <c>actionGroupExecutor</c> fields blank for this action group.
+        /// a task, set this field to <c>AMAZON.CodeInterpreter</c>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// During orchestration, if your agent determines that it needs to invoke an API in an
-        /// action group, but doesn't have enough information to complete the API request, it
-        /// will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
-        /// reprompting the user for more information.
+        /// To allow your agent to use an Anthropic computer use tool, specify one of the following
+        /// values. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Computer use is a new Anthropic Claude model capability (in beta) available with
+        /// Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. When operating computer
+        /// use functionality, we recommend taking additional security precautions, such as executing
+        /// computer actions in virtual environments with restricted data access and limited internet
+        /// connectivity. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>. 
+        /// </para>
+        ///  </important> <ul> <li> 
+        /// <para>
+        ///  <c>ANTHROPIC.Computer</c> - Gives the agent permission to use the mouse and keyboard
+        /// and take screenshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ANTHROPIC.TextEditor</c> - Gives the agent permission to view, create and edit
+        /// files.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ANTHROPIC.Bash</c> - Gives the agent permission to run commands in a bash shell.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public ActionGroupSignature ParentActionGroupSignature
         {
@@ -171,6 +197,31 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetParentActionGroupSignature()
         {
             return this._parentActionGroupSignature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentActionGroupSignatureParams. 
+        /// <para>
+        ///  The configuration settings for a computer use action. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Computer use is a new Anthropic Claude model capability (in beta) available with Claude
+        /// 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public Dictionary<string, string> ParentActionGroupSignatureParams
+        {
+            get { return this._parentActionGroupSignatureParams; }
+            set { this._parentActionGroupSignatureParams = value; }
+        }
+
+        // Check to see if ParentActionGroupSignatureParams property is set
+        internal bool IsSetParentActionGroupSignatureParams()
+        {
+            return this._parentActionGroupSignatureParams != null && (this._parentActionGroupSignatureParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

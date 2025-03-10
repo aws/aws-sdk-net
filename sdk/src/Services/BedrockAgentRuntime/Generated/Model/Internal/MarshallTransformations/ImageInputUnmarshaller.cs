@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBody Object
+    /// Response Unmarshaller for ImageInput Object
     /// </summary>  
-    public class ContentBodyUnmarshaller : IUnmarshaller<ContentBody, XmlUnmarshallerContext>, IUnmarshaller<ContentBody, JsonUnmarshallerContext>
+    public class ImageInputUnmarshaller : IUnmarshaller<ImageInput, XmlUnmarshallerContext>, IUnmarshaller<ImageInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBody IUnmarshaller<ContentBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageInput IUnmarshaller<ImageInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBody Unmarshall(JsonUnmarshallerContext context)
+        public ImageInput Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBody unmarshalledObject = new ContentBody();
+            ImageInput unmarshalledObject = new ImageInput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("body", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("images", targetDepth))
+                if (context.TestExpression("source", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ImageInput, ImageInputUnmarshaller>(ImageInputUnmarshaller.Instance);
-                    unmarshalledObject.Images = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ImageInputSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBodyUnmarshaller _instance = new ContentBodyUnmarshaller();        
+        private static ImageInputUnmarshaller _instance = new ImageInputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBodyUnmarshaller Instance
+        public static ImageInputUnmarshaller Instance
         {
             get
             {

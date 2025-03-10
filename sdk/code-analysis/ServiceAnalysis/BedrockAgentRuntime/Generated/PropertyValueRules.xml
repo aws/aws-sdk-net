@@ -646,6 +646,10 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.ImageInputSource.Bytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.ImageSource.Bytes</property>
     <min>1</min>
   </property-value-rule>

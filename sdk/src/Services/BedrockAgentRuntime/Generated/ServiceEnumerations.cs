@@ -38,6 +38,18 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant AMAZONUserInput for ActionGroupSignature
         /// </summary>
         public static readonly ActionGroupSignature AMAZONUserInput = new ActionGroupSignature("AMAZON.UserInput");
+        /// <summary>
+        /// Constant ANTHROPICBash for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICBash = new ActionGroupSignature("ANTHROPIC.Bash");
+        /// <summary>
+        /// Constant ANTHROPICComputer for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICComputer = new ActionGroupSignature("ANTHROPIC.Computer");
+        /// <summary>
+        /// Constant ANTHROPICTextEditor for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature ANTHROPICTextEditor = new ActionGroupSignature("ANTHROPIC.TextEditor");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1454,6 +1466,64 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageInputFormat.
+    /// </summary>
+    public class ImageInputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gif for ImageInputFormat
+        /// </summary>
+        public static readonly ImageInputFormat Gif = new ImageInputFormat("gif");
+        /// <summary>
+        /// Constant Jpeg for ImageInputFormat
+        /// </summary>
+        public static readonly ImageInputFormat Jpeg = new ImageInputFormat("jpeg");
+        /// <summary>
+        /// Constant Png for ImageInputFormat
+        /// </summary>
+        public static readonly ImageInputFormat Png = new ImageInputFormat("png");
+        /// <summary>
+        /// Constant Webp for ImageInputFormat
+        /// </summary>
+        public static readonly ImageInputFormat Webp = new ImageInputFormat("webp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageInputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageInputFormat FindValue(string value)
+        {
+            return FindValue<ImageInputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageInputFormat(string value)
         {
             return FindValue(value);
         }

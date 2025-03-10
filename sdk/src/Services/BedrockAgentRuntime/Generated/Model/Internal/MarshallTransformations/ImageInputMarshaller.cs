@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ContentBody Marshaller
+    /// ImageInput Marshaller
     /// </summary>
-    public class ContentBodyMarshaller : IRequestMarshaller<ContentBody, JsonMarshallerContext> 
+    public class ImageInputMarshaller : IRequestMarshaller<ImageInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,25 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContentBody requestObject, JsonMarshallerContext context)
+        public void Marshall(ImageInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBody())
+            if(requestObject.IsSetFormat())
             {
-                context.Writer.WritePropertyName("body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WritePropertyName("format");
+                context.Writer.Write(requestObject.Format);
             }
 
-            if(requestObject.IsSetImages())
+            if(requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("images");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectImagesListValue in requestObject.Images)
-                {
-                    context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteObjectStart();
 
-                    var marshaller = ImageInputMarshaller.Instance;
-                    marshaller.Marshall(requestObjectImagesListValue, context);
+                var marshaller = ImageInputSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Source, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -75,7 +70,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ContentBodyMarshaller Instance = new ContentBodyMarshaller();
+        public readonly static ImageInputMarshaller Instance = new ImageInputMarshaller();
 
     }
 }
