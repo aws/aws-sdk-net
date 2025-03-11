@@ -339,6 +339,11 @@ namespace Amazon.Util
         public bool StoreAsEpoch { get; set; }
 
         /// <summary>
+        /// Whether this property should be stored as epoch seconds integer (with support for dates AFTER 2038).
+        /// </summary>
+        public bool StoreAsEpochLong { get; set; }
+
+        /// <summary>
         /// Initializes a PropertyConfig object for a specific property
         /// </summary>
         /// <param name="propertyName"></param>
@@ -356,6 +361,7 @@ namespace Amazon.Util
             Version = prop.Version.GetValueOrDefault(false);
             Converter = prop.Converter;
             StoreAsEpoch = prop.StoreAsEpoch.GetValueOrDefault(false);
+            StoreAsEpochLong = prop.StoreAsEpochLong.GetValueOrDefault(false);
         }
 #endif
     }
@@ -582,6 +588,7 @@ namespace Amazon.Util
         private const string versionKey = "version";
         private const string converterKey = "converter";
         private const string storeAsEpochKey = "storeAsEpoch";
+        private const string storeAsEpochLongKey = "storeAsEpochLong";
 
         [ConfigurationProperty(nameKey, IsRequired = true)]
         public string Name
@@ -624,6 +631,13 @@ namespace Amazon.Util
         {
             get { return (bool?)this[storeAsEpochKey]; }
             set { this[storeAsEpochKey] = value; }
+        }
+
+        [ConfigurationProperty(storeAsEpochLongKey)]
+        public bool? StoreAsEpochLong
+        {
+            get { return (bool?)this[storeAsEpochLongKey]; }
+            set { this[storeAsEpochLongKey] = value; }
         }
     }
 

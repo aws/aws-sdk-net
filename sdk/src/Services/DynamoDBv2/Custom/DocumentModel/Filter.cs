@@ -115,7 +115,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             /// <returns></returns>
             public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, string attributeName)
             {
-                return ToCondition(conversion, shouldConvertToEpochSeconds, attributeName, false);
+                return ToCondition(conversion, shouldConvertToEpochSeconds, false, attributeName, false);
             }
 
             /// <summary>
@@ -129,6 +129,46 @@ namespace Amazon.DynamoDBv2.DocumentModel
             public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds,
                 string attributeName, bool isEmptyStringValueEnabled)
             {
+                return ToCondition(conversion, shouldConvertToEpochSeconds, false, attributeName, isEmptyStringValueEnabled);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <param name="shouldConvertToEpochSecondsLong"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, bool shouldConvertToEpochSecondsLong)
+            {
+                return ToCondition(conversion, shouldConvertToEpochSeconds: false, attributeName: null, isEmptyStringValueEnabled: shouldConvertToEpochSeconds);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <param name="shouldConvertToEpochSecondsLong"></param>
+            /// <param name="attributeName"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, bool shouldConvertToEpochSecondsLong, string attributeName)
+            {
+                return ToCondition(conversion, shouldConvertToEpochSeconds, attributeName, false);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <param name="shouldConvertToEpochSecondsLong"></param>
+            /// <param name="attributeName"></param>
+            /// <param name="isEmptyStringValueEnabled"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, bool shouldConvertToEpochSecondsLong,
+                string attributeName, bool isEmptyStringValueEnabled)
+            {
                 var attributeValues = AttributeValues;
                 if (attributeValues == null)
                 {
@@ -138,7 +178,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         var entry = DynamoDBEntries[i];
                         if (shouldConvertToEpochSeconds)
                             entry = Document.DateTimeToEpochSeconds(entry, attributeName);
-                        
+
+                        if (shouldConvertToEpochSecondsLong)
+                            entry = Document.DateTimeToEpochSecondsLong(entry, attributeName);
+
                         var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
                         var attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
                         attributeValues.Add(attributeValue);
@@ -192,7 +235,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion)
         {
-            return ToConditions(conversion, epochAttributes: null, isEmptyStringValueEnabled: false);
+            return ToConditions(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: false);
         }
 
         /// <summary>
@@ -203,7 +246,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            return ToConditions(conversion, epochAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
+            return ToConditions(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled);
         }
 
         /// <summary>
@@ -213,11 +256,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(Table table)
         {
-            return ToConditions(table.Conversion, table.StoreAsEpoch, table.IsEmptyStringValueEnabled);
+            return ToConditions(table.Conversion, table.StoreAsEpoch, table.StoreAsEpochLong, table.IsEmptyStringValueEnabled);
         }
 
         private Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion,
-            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
+            IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes, bool isEmptyStringValueEnabled)
         {
             var dic = new Dictionary<string, Condition>();
             foreach (var kvp in Conditions)
@@ -225,7 +268,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 string name = kvp.Key;
                 FilterCondition fc = kvp.Value;
                 bool convertToEpochSeconds = epochAttributes != null && epochAttributes.Contains(name);
-                Condition condition = fc.ToCondition(conversion, convertToEpochSeconds, name, isEmptyStringValueEnabled);
+                bool convertToEpochSecondsLong = epochLongAttributes != null && epochLongAttributes.Contains(name);
+                Condition condition = fc.ToCondition(conversion, convertToEpochSeconds, convertToEpochSecondsLong, name, isEmptyStringValueEnabled);
 
                 dic[name] = condition;
             }

@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixed an issue where for a Nullable DateTime property decorated with StoreAsEpochLong attribute, null value was incorrectly stored as -62135596800 in DynamoDB."
+            ]
+        }
+    ]
+}

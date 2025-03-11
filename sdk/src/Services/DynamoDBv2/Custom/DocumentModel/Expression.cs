@@ -236,6 +236,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (table.StoreAsEpoch.Contains(attributeName))
                             entry = Document.DateTimeToEpochSeconds(entry, attributeName);
 
+                        if (table.StoreAsEpochLong.Contains(attributeName))
+                            entry = Document.DateTimeToEpochSecondsLong(entry, attributeName);
+
                         var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
                         convertedValues[attributeName] = entry.ConvertToAttributeValue(attributeConversionConfig);
                     }
