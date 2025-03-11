@@ -86,6 +86,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>group-long-name</c> - The long name of the zone group for the Availability Zone
+        /// (for example, <c>US West (Oregon) 1</c>), the Local Zone (for example, for Zone group
+        /// <c>us-west-2-lax-1</c>, it is <c>US West (Los Angeles)</c>, or the Wavelength Zone
+        /// (for example, for Zone group <c>us-east-1-wl1</c>, it is <c>US East (Verizon)</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>group-name</c> - The name of the zone group for the Availability Zone (for example,
         /// <c>us-east-1-zg-1</c>), the Local Zone (for example, <c>us-west-2-lax-1</c>), or the
         /// Wavelength Zone (for example, <c>us-east-1-wl1</c>).

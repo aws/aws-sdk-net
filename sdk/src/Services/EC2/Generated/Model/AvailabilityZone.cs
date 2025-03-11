@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AvailabilityZone
     {
+        private string _groupLongName;
         private string _groupName;
         private List<AvailabilityZoneMessage> _messages = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneMessage>() : null;
         private string _networkBorderGroup;
@@ -45,6 +46,25 @@ namespace Amazon.EC2.Model
         private string _zoneId;
         private string _zoneName;
         private string _zoneType;
+
+        /// <summary>
+        /// Gets and sets the property GroupLongName. 
+        /// <para>
+        /// The long name of the Availability Zone group, Local Zone group, or Wavelength Zone
+        /// group.
+        /// </para>
+        /// </summary>
+        public string GroupLongName
+        {
+            get { return this._groupLongName; }
+            set { this._groupLongName = value; }
+        }
+
+        // Check to see if GroupLongName property is set
+        internal bool IsSetGroupLongName()
+        {
+            return this._groupLongName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupName. 

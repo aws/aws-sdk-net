@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("groupLongName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GroupLongName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
