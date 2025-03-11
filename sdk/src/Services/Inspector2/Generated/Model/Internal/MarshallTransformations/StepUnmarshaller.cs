@@ -66,6 +66,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("componentArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComponentArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("componentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
