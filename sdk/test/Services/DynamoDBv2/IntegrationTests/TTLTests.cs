@@ -41,7 +41,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 NonEpochDate1 = EpochDate,
                 NonEpochDate2 = EpochDate,
                 LongEpochDate1 = LongEpochDate,
-                LongEpochDate2 = LongEpochDate.AddMonths(3)
+                LongEpochDate2 = LongEpochDate.AddMonths(3),
+                NullableLongEpochDate2 = LongEpochDate.AddMonths(-3)
             };
             EpochEmployee employee = numericEmployee;
 
@@ -51,11 +52,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
             ApproximatelyEqual(LongEpochDate, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(LongEpochDate.AddMonths(3), storedEmployee.LongEpochDate2);
+            Assert.IsNull(storedEmployee.NullableLongEpochDate1);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), storedEmployee.NullableLongEpochDate2.Value);
             storedEmployee = Context.Load<EpochEmployee>(employee);
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
             ApproximatelyEqual(LongEpochDate, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(LongEpochDate.AddMonths(3), storedEmployee.LongEpochDate2);
+            Assert.IsNull(storedEmployee.NullableLongEpochDate1);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), storedEmployee.NullableLongEpochDate2.Value);
 
             Context.Save(numericEmployee);
             var storedNumericEmployee = Context.Load<NumericEpochEmployee>(employee.CreationTime, employee.Name);
@@ -63,12 +68,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, storedNumericEmployee.CreationTime);
             ApproximatelyEqual(LongEpochDate, storedNumericEmployee.LongEpochDate1);
             ApproximatelyEqual(LongEpochDate.AddMonths(3), storedNumericEmployee.LongEpochDate2);
+            Assert.IsNull(storedEmployee.NullableLongEpochDate1);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), storedEmployee.NullableLongEpochDate2.Value);
 
             storedNumericEmployee = Context.Load<NumericEpochEmployee>(numericEmployee);
             Assert.IsNotNull(storedNumericEmployee);
             ApproximatelyEqual(EpochDate, storedNumericEmployee.CreationTime);
             ApproximatelyEqual(LongEpochDate, storedNumericEmployee.LongEpochDate1);
             ApproximatelyEqual(LongEpochDate.AddMonths(3), storedNumericEmployee.LongEpochDate2);
+            Assert.IsNull(storedEmployee.NullableLongEpochDate1);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), storedNumericEmployee.NullableLongEpochDate2.Value);
 
             var doc = Context.ToDocument(employee);
             ApproximatelyEqual(EpochDate, doc["CreationTime"].AsDateTime());
@@ -77,6 +86,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, doc["NonEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate, doc["LongEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate.AddMonths(3), doc["LongEpochDate2"].AsDateTime());
+            Assert.IsNull(doc["NullableLongEpochDate1"].AsPrimitive().Value);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), doc["NullableLongEpochDate2"].AsDateTime());
 
             var docV1 = doc.ForceConversion(DynamoDBEntryConversion.V1);
             ApproximatelyEqual(EpochDate, docV1["CreationTime"].AsDateTime());
@@ -85,6 +96,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, docV1["NonEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate, docV1["LongEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate.AddMonths(3), docV1["LongEpochDate2"].AsDateTime());
+            Assert.IsNull(docV1["NullableLongEpochDate1"].AsPrimitive().Value);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), docV1["NullableLongEpochDate2"].AsDateTime());
 
             var docV2 = doc.ForceConversion(DynamoDBEntryConversion.V2);
             ApproximatelyEqual(EpochDate, docV2["CreationTime"].AsDateTime());
@@ -93,6 +106,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate, docV2["LongEpochDate1"].AsDateTime());
             ApproximatelyEqual(LongEpochDate.AddMonths(3), docV2["LongEpochDate2"].AsDateTime());
+            Assert.IsNull(docV2["NullableLongEpochDate1"].AsPrimitive().Value);
+            ApproximatelyEqual(LongEpochDate.AddMonths(-3), docV2["NullableLongEpochDate2"].AsDateTime());
 
             var epochTable = Context.GetTargetTable<EpochEmployee>();
             var epochAttributes = epochTable.GetStoreAsEpoch().ToList();
@@ -107,6 +122,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(epochMap["NonEpochDate2"].S);
             Assert.IsNotNull(epochMap["LongEpochDate1"].N);
             Assert.IsNotNull(epochMap["LongEpochDate2"].N);
+            Assert.IsFalse(epochMap.ContainsKey("NullableLongEpochDate1"));
+            Assert.IsNotNull(epochMap["NullableLongEpochDate2"].N);
 
             var exceptionThrown = Assert.ThrowsException<InvalidOperationException>(() =>
             {
@@ -156,7 +173,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var config = new TableConfig(hashRangeTable.TableName)
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" },
-                AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate" }
+                AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate", "NullableLongEpochDate1", "NullableLongEpochDate2" }
             };
             var epochTable = Table.LoadTable(Client, config);
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
@@ -165,7 +182,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             config = new TableConfig(numericHashRangeTable.TableName)
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" },
-                AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate" }
+                AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate", "NullableLongEpochDate1", "NullableLongEpochDate2" }
             };
             var numericEpochTable = Table.LoadTable(Client, config);
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, numericEpochTable.GetStoreAsEpoch().ToList());
@@ -177,6 +194,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(map["EpochDate2"].S);
             Assert.IsNotNull(map["NonEpochDate"].S);
             Assert.IsNotNull(map["LongEpochDate"].S);
+            Assert.IsNotNull(map["NullableLongEpochDate1"].S);
+            Assert.IsFalse(map.ContainsKey("NullableLongEpochDate2"));
 
             var epochMap = epochTable.ToAttributeMap(CreateTestDocument());
             Assert.IsNotNull(epochMap["CreationTime"].N);
@@ -190,7 +209,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             numericEpochTable.PutItem(CreateTestDocument());
             // accessing this item with non-epoch table will throw an exception
             TestWrittenData(EpochDate, "Bob", null, numericEpochTable);
-            var exception = AssertExtensions.ExpectException < InvalidOperationException>(() => numericHashRangeTable.GetItem(EpochDate, "Bob"));
+            var exception = AssertExtensions.ExpectException<InvalidOperationException>(() => numericHashRangeTable.GetItem(EpochDate, "Bob"));
             Assert.IsTrue(exception.Message.Contains("hash key CreationTime, is inconsistent with specified hash key value."));
 
             // conditional put
@@ -223,6 +242,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc2["EpochDate2"] = EpochDate;
             doc2["NonEpochDate"] = EpochDate;
             doc2["LongEpochDate"] = LongEpochDate;
+            doc2["NullableLongEpochDate1"] = (DateTime?) LongEpochDate;
+            doc2["NullableLongEpochDate2"] = (DateTime?) null;
 
             // batchWrite epoch seconds
             var batchWrite = epochTable.CreateBatchWrite();
@@ -315,6 +336,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["EpochDate2"] = EpochDate;
             doc["NonEpochDate"] = EpochDate;
             doc["LongEpochDate"] = LongEpochDate;
+            doc["NullableLongEpochDate1"] = (DateTime?) LongEpochDate;
+            doc["NullableLongEpochDate2"] = (DateTime?) null;
             return doc;
         }
         private static void TestWrittenData(Primitive hash, Primitive range, Table hashRangeTable, Table epochTable, bool checkForConditionalUpdate = false)
@@ -326,6 +349,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(EpochSeconds, nonEpochDoc["EpochDate2"].AsInt());
                 ApproximatelyEqual(EpochDate, nonEpochDoc["NonEpochDate"].AsDateTime());
                 Assert.AreEqual(LongEpochSeconds, nonEpochDoc["LongEpochDate"].AsLong());
+                Assert.AreEqual(LongEpochSeconds, nonEpochDoc["NullableLongEpochDate1"].AsLong());
+                Assert.IsFalse(nonEpochDoc.ContainsKey("NullableLongEpochDate2"));
                 if (checkForConditionalUpdate)
                     Assert.AreEqual("yes", nonEpochDoc["ConditionalUpdate"].AsString());
             }
@@ -335,6 +360,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, epochDoc["EpochDate2"].AsDateTime());
             ApproximatelyEqual(EpochDate, epochDoc["NonEpochDate"].AsDateTime());
             ApproximatelyEqual(LongEpochDate, epochDoc["LongEpochDate"].AsDateTime());
+            ApproximatelyEqual(LongEpochDate, epochDoc["NullableLongEpochDate1"].AsDateTime());
             if (checkForConditionalUpdate)
                 Assert.AreEqual("yes", epochDoc["ConditionalUpdate"].AsString());
 
@@ -349,6 +375,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(EpochSeconds, ed["EpochDate2"].AsInt());
                 ApproximatelyEqual(EpochDate, ed["NonEpochDate"].AsDateTime());
                 Assert.AreEqual(LongEpochSeconds, ed["LongEpochDate"].AsLong());
+                Assert.AreEqual(LongEpochSeconds, ed["NullableLongEpochDate1"].AsLong());
             }
         }
         private static void TestForDateTime(List<Document> epochDocs)
@@ -360,6 +387,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ApproximatelyEqual(EpochDate, ed["EpochDate2"].AsDateTime());
                 ApproximatelyEqual(EpochDate, ed["NonEpochDate"].AsDateTime());
                 ApproximatelyEqual(LongEpochDate, ed["LongEpochDate"].AsDateTime());
+                ApproximatelyEqual(LongEpochDate, ed["NullableLongEpochDate1"].AsDateTime());
             }
         }
 

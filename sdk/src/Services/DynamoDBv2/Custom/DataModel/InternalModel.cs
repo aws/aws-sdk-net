@@ -932,6 +932,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     propertyStorage.IsIgnored = propertyConfig.Ignore;
                     propertyStorage.IsVersion = propertyConfig.Version;
                     propertyStorage.StoreAsEpoch = propertyConfig.StoreAsEpoch;
+                    propertyStorage.StoreAsEpochLong = propertyConfig.StoreAsEpochLong;
                 }
             }
         }
