@@ -36,9 +36,11 @@ namespace Amazon.ECR.Model
     {
         private DateTime? _createdAt;
         private string _credentialArn;
+        private string _customRoleArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
         private string _upstreamRegistryUrl;
+        private string _upstreamRepositoryPrefix;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -76,6 +78,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetCredentialArn()
         {
             return this._credentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomRoleArn. 
+        /// <para>
+        /// The ARN of the IAM role associated with the pull through cache rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string CustomRoleArn
+        {
+            get { return this._customRoleArn; }
+            set { this._customRoleArn = value; }
+        }
+
+        // Check to see if CustomRoleArn property is set
+        internal bool IsSetCustomRoleArn()
+        {
+            return this._customRoleArn != null;
         }
 
         /// <summary>
@@ -131,6 +152,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetUpstreamRegistryUrl()
         {
             return this._upstreamRegistryUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRepositoryPrefix. 
+        /// <para>
+        /// The upstream repository prefix associated with the pull through cache rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=30)]
+        public string UpstreamRepositoryPrefix
+        {
+            get { return this._upstreamRepositoryPrefix; }
+            set { this._upstreamRepositoryPrefix = value; }
+        }
+
+        // Check to see if UpstreamRepositoryPrefix property is set
+        internal bool IsSetUpstreamRepositoryPrefix()
+        {
+            return this._upstreamRepositoryPrefix != null;
         }
 
     }

@@ -39,10 +39,12 @@ namespace Amazon.ECR.Model
     public partial class CreatePullThroughCacheRuleRequest : AmazonECRRequest
     {
         private string _credentialArn;
+        private string _customRoleArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
         private UpstreamRegistry _upstreamRegistry;
         private string _upstreamRegistryUrl;
+        private string _upstreamRepositoryPrefix;
 
         /// <summary>
         /// Gets and sets the property CredentialArn. 
@@ -65,10 +67,37 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomRoleArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate
+        /// to the ECR upstream registry. This role must be in the same account as the registry
+        /// that you are configuring.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string CustomRoleArn
+        {
+            get { return this._customRoleArn; }
+            set { this._customRoleArn = value; }
+        }
+
+        // Check to see if CustomRoleArn property is set
+        internal bool IsSetCustomRoleArn()
+        {
+            return this._customRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EcrRepositoryPrefix. 
         /// <para>
         /// The repository name prefix to use when caching images from the source registry.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// There is always an assumed <c>/</c> applied to the end of the prefix. If you specify
+        /// <c>ecr-public</c> as the prefix, Amazon ECR treats that as <c>ecr-public/</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=30)]
         public string EcrRepositoryPrefix
@@ -130,28 +159,37 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon ECR Public (<c>ecr-public</c>) - <c>public.ecr.aws</c> 
+        /// Amazon ECR (<c>ecr</c>) – <c>dkr.ecr.&lt;region&gt;.amazonaws.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Docker Hub (<c>docker-hub</c>) - <c>registry-1.docker.io</c> 
+        /// Amazon ECR Public (<c>ecr-public</c>) – <c>public.ecr.aws</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Quay (<c>quay</c>) - <c>quay.io</c> 
+        /// Docker Hub (<c>docker-hub</c>) – <c>registry-1.docker.io</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Kubernetes (<c>k8s</c>) - <c>registry.k8s.io</c> 
+        /// GitHub Container Registry (<c>github-container-registry</c>) – <c>ghcr.io</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// GitHub Container Registry (<c>github-container-registry</c>) - <c>ghcr.io</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) - <c>&lt;custom&gt;.azurecr.io</c>
+        /// GitLab Container Registry (<c>gitlab-container-registry</c>) – <c>registry.gitlab.com</c>
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Kubernetes (<c>k8s</c>) – <c>registry.k8s.io</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Azure Container Registry (<c>azure-container-registry</c>) – <c>&lt;custom&gt;.azurecr.io</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Quay (<c>quay</c>) – <c>quay.io</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -166,6 +204,26 @@ namespace Amazon.ECR.Model
         internal bool IsSetUpstreamRegistryUrl()
         {
             return this._upstreamRegistryUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpstreamRepositoryPrefix. 
+        /// <para>
+        /// The repository name prefix of the upstream registry to match with the upstream repository
+        /// name. When this field isn't specified, Amazon ECR will use the <c>ROOT</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=30)]
+        public string UpstreamRepositoryPrefix
+        {
+            get { return this._upstreamRepositoryPrefix; }
+            set { this._upstreamRepositoryPrefix = value; }
+        }
+
+        // Check to see if UpstreamRepositoryPrefix property is set
+        internal bool IsSetUpstreamRepositoryPrefix()
+        {
+            return this._upstreamRepositoryPrefix != null;
         }
 
     }

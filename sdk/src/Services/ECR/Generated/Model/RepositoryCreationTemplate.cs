@@ -205,7 +205,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryPolicy. 
         /// <para>
-        /// he repository policy to apply to repositories created using the template. A repository
+        /// The repository policy to apply to repositories created using the template. A repository
         /// policy is a permissions policy associated with a repository to control access permissions.
         /// 
         /// </para>

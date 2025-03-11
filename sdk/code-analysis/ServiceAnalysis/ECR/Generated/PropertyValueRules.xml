@@ -69,14 +69,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.CredentialArn</property>
@@ -85,14 +95,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreateRepositoryRequest.RegistryId</property>
@@ -161,7 +181,7 @@
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleRequest.RegistryId</property>
@@ -174,14 +194,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeleteRegistryPolicyResponse.PolicyText</property>
@@ -684,10 +714,14 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.RegistryId</property>
@@ -700,14 +734,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UpdateRepositoryCreationTemplateRequest.CustomRoleArn</property>
@@ -786,7 +830,7 @@
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleRequest.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleRequest.RegistryId</property>
@@ -799,14 +843,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.Attribute.Key</property>
@@ -929,14 +983,24 @@
     <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.PullThroughCacheRule.CustomRoleArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.PullThroughCacheRule.EcrRepositoryPrefix</property>
     <min>2</min>
     <max>30</max>
-    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PullThroughCacheRule.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PullThroughCacheRule.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>^((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*/?|ROOT)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.ReplicationDestination.Region</property>
