@@ -194,9 +194,7 @@ namespace ServiceClientGenerator
             return path.Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
         }
 
-
         private static readonly Regex JMESMapRegex = new Regex(@"keys\(([^)]*)\)", RegexOptions.Compiled);
-        private static readonly string[] JMESWildcards = { "*", "[*]" };
         
         /// <summary>
         /// Converts a JMESPath expression into a corresponding C# code path
@@ -211,34 +209,97 @@ namespace ServiceClientGenerator
         /// </returns>
         public static string JMESPathToNativeValue(string jmesPath, Shape topShape)
         {
-            var nestedMembers = jmesPath.Split('.');
+            // Base case: If the path is empty, return empty
+            if (string.IsNullOrEmpty(jmesPath))
+            {
+                return string.Empty;
+            }
+
+            var nestedMembers = SplitJMESPath(jmesPath);
             var mainPathBuilder = new StringBuilder();
             var closingPathBuilder = new StringBuilder();
             var currentShape = topShape;
 
-            foreach (var nestedMember in nestedMembers)
+            foreach (var originalNestedMember in nestedMembers)
             {
                 if (mainPathBuilder.Length > 0)
                 {
                     mainPathBuilder.Append('.');
                 }
 
-                var memberName = nestedMember;
+                var nestedMember = originalNestedMember;
+
+                // Handle wildcard expressions
+                if (nestedMember == "[*]" || nestedMember == "*")
+                {
+                    if (nestedMember == "[*]") // List wildcard expression
+                    {
+                        currentShape = currentShape.ModelListShape;
+                        mainPathBuilder.Append("Select(element => element");
+                    }
+                    else if (nestedMember == "*") // Map wildcard expression
+                    {
+                        currentShape = currentShape.ValueShape;
+                        mainPathBuilder.Append("Values.Select(element => element");
+                    }
+
+                    // Append closing parenthesis to close the Select call
+                    closingPathBuilder.Append(")");
+                    continue;
+                }
+
+                // Check for flattening operator []
+                if (nestedMember == "[]")
+                {
+                    // Flatten the nested lists into a single list using LINQ SelectMany
+                    mainPathBuilder.Append($"SelectMany(element => element)");
+                    continue;
+                }
+
+                // Check for array index expressions
+                if (nestedMember.StartsWith("[") && nestedMember.EndsWith("]")
+                    && int.TryParse(nestedMember.Substring(1, nestedMember.Length - 2), out int index)) // Extract the index from the brackets
+                {
+                    mainPathBuilder.Append($"ElementAtOrDefault({index})");
+                    continue;
+                }
+
+                // Check for multi-select list expressions (before regex map matching)
+                if (nestedMember.StartsWith("[") && nestedMember.EndsWith("]"))
+                {
+                    // Strip off the outer brackets and split the inner expressions
+                    var multiSelectExpressions = SplitMultiSelectExpression(nestedMember.Substring(1, nestedMember.Length - 2));
+
+                    // Skip element. since we will create an array rather than selecting a property of the element
+                    if (mainPathBuilder.ToString().EndsWith("element."))
+                        mainPathBuilder.Length -= "element.".Length;
+
+                    mainPathBuilder.Append("new [] { ");
+                    for (int i = 0; i < multiSelectExpressions.Count; i++)
+                    {
+                        string expr = multiSelectExpressions[i];
+                        var expressionValue = JMESPathToNativeValue(expr, currentShape);
+
+                        // Append the expression as part of the new anonymous object
+                        mainPathBuilder.Append($"element.{expressionValue}");
+
+                        if (i < multiSelectExpressions.Count - 1)
+                        {
+                            mainPathBuilder.Append(", ");
+                        }
+                    }
+                    mainPathBuilder.Append(" }").Append(closingPathBuilder);
+                    closingPathBuilder.Clear();
+                    continue; // Skip the regex match as we've handled multi-select separately
+                }
 
                 var mapMatch = JMESMapRegex.Match(nestedMember);
                 if (mapMatch.Success)
                 {
-                    memberName = mapMatch.Groups[1].Value;
+                    nestedMember = mapMatch.Groups[1].Value;
                 }
 
-                var wildcardExpression = JMESWildcards.FirstOrDefault(w => nestedMember.EndsWith(w));
-                if (wildcardExpression != null)
-                {
-                    // Remove wildcard expression from the member name to be able to find it at the next step.
-                    memberName = nestedMember.Replace(wildcardExpression, "");
-                }
-
-                var currentMember = currentShape.Members.FirstOrDefault(x => string.Equals(x.ModeledName, memberName));
+                var currentMember = currentShape.Members.FirstOrDefault(x => string.Equals(x.ModeledName, nestedMember));
                 if (currentMember == null)
                 {
                     return null;
@@ -252,27 +313,130 @@ namespace ServiceClientGenerator
                 }
 
                 currentShape = currentMember.Shape;
-
-                if (wildcardExpression != null)
-                {
-                    if (wildcardExpression == "[*]") // List wildcard expression
-                    {
-                        currentShape = currentShape.ModelListShape;
-                        mainPathBuilder.Append(".Select(element => element");
-                    }
-                    else if (wildcardExpression == "*") // Map wildcard expression
-                    {
-                        currentShape = currentShape.ValueShape;
-                        mainPathBuilder.Append(".Values.Select(element => element");
-                    }
-
-                    // Append closing parenthesis to close the Select call
-                    closingPathBuilder.Append(")");
-                }
             }
 
             // Combine the constructed code path and any closing code path and return the result
             return mainPathBuilder.ToString() + closingPathBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Splits a JMESPath expression into its individual components, skipping nested structures like arrays.
+        /// Given the input: "listOfUnions[*][string, object.key][]"
+        /// The output will be: [ "listOfUnions", "[*]", "[string, object.key]", "[]" ]
+        /// </summary>
+        /// <param name="input">The JMESPath expression to be split.</param>
+        /// <returns>A list of individual path segments extracted from the expression.</returns>
+        private static List<string> SplitJMESPath(string input)
+        {
+            var parts = new List<string>();
+            var currentPart = "";
+            bool insideArray = false;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                char currentChar = input[i];
+
+                if (currentChar == '[')
+                {
+                    // Start of an array, push the current part (if any) and start a new one
+                    if (!insideArray)
+                    {
+                        if (!string.IsNullOrEmpty(currentPart))
+                        {
+                            parts.Add(currentPart);
+                        }
+                        currentPart = "["; // Begin the array part
+                        insideArray = true;
+                    }
+                    else
+                    {
+                        // Inside an array but we are encountering a nested bracket
+                        currentPart += currentChar;
+                    }
+                }
+                else if (currentChar == ']')
+                {
+                    // End of an array
+                    currentPart += currentChar;
+                    if (insideArray)
+                    {
+                        parts.Add(currentPart);
+                        currentPart = ""; // Reset the current part
+                        insideArray = false; // Exiting the array
+                    }
+                }
+                else if ((currentChar == '.' || currentChar == '*') && !insideArray)
+                {
+                    // Split on "." or "*" if we're outside of an array
+                    if (!string.IsNullOrEmpty(currentPart))
+                    {
+                        parts.Add(currentPart);
+                        currentPart = "";
+                    }
+                    if (currentChar == '*')
+                        parts.Add("*"); // Add "*" separately if it's the asterisk symbol
+                }
+                else
+                {
+                    // Add the current character to the ongoing part
+                    currentPart += currentChar;
+                }
+            }
+
+            // Add any remaining part after the loop
+            if (!string.IsNullOrEmpty(currentPart))
+            {
+                parts.Add(currentPart);
+            }
+
+            return parts;
+        }
+
+        /// <summary>
+        /// Splits a multi-select expression (e.g., "foo, bar[0], bar.baz") into individual expressions.
+        /// </summary>
+        /// <param name="expression">The multi-select expression to be split (without the enclosing brackets).</param>
+        /// <returns>A list of individual expressions from the multi-select expression.</returns>
+        private static List<string> SplitMultiSelectExpression(string expression)
+        {
+            var parts = new List<string>();
+            var currentPart = "";
+            int bracketCount = 0;
+
+            // Iterate over each character in the expression
+            for (int i = 0; i < expression.Length; i++)
+            {
+                char currentChar = expression[i];
+
+                // Track the number of opening and closing brackets to handle nested arrays/objects
+                if (currentChar == '[')
+                {
+                    bracketCount++;
+                }
+                else if (currentChar == ']')
+                {
+                    bracketCount--;
+                }
+
+                // If we are at a comma outside of any array/object brackets, split the expression
+                if (currentChar == ',' && bracketCount == 0)
+                {
+                    parts.Add(currentPart.Trim());
+                    currentPart = ""; // Reset for the next expression
+                }
+                else
+                {
+                    currentPart += currentChar; // Continue building the current expression part
+                }
+            }
+
+            // Add the last part (after the final comma or the end of the string)
+            if (!string.IsNullOrEmpty(currentPart))
+            {
+                parts.Add(currentPart.Trim());
+            }
+
+            return parts;
         }
     }
 }

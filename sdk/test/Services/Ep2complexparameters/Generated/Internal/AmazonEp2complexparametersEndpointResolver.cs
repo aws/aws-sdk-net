@@ -63,6 +63,11 @@ namespace Amazon.Ep2complexparameters.Internal
                 result.stringArrayParam = request.Nested.ListOfObjects.Select(element => element.Key);
                 return result;
             }
+            if (requestContext.RequestName == "ListOfUnionsOperationRequest") {
+                var request = (ListOfUnionsOperationRequest)requestContext.OriginalRequest;
+                result.stringArrayParam = request.ListOfUnions.Select(element => new [] { element.String, element.Object.Key }).SelectMany(element => element);
+                return result;
+            }
             if (requestContext.RequestName == "MapOperationRequest") {
                 var request = (MapOperationRequest)requestContext.OriginalRequest;
                 result.stringArrayParam = request.Map.Keys.ToList();
