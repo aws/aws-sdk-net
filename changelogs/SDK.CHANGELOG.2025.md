@@ -1,3 +1,18 @@
+### 3.7.1000.0 (2025-03-11 18:40 UTC)
+* EC2 (3.7.435.0)
+	* This release adds the GroupLongName field to the response of the DescribeAvailabilityZones API.
+* ECR (3.7.410.0)
+	* This release adds Amazon ECR to Amazon ECR pull through cache rules support.
+* ECS (3.7.408.47)
+	* This is a documentation only update for Amazon ECS to address various tickets.
+* Inspector2 (3.7.405.0)
+	* Adding componentArn to network reachability details
+* MediaLive (3.7.413.0)
+	* Add an enum option DISABLED for Output Locking Mode under Global Configuration.
+* Core 3.7.402.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.999.0 (2025-03-10 18:29 UTC)
 * BedrockAgent (3.7.422.0)
 	* Add support for computer use tools

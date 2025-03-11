@@ -32,7 +32,7 @@ namespace Amazon.EventBridge
     public partial class AmazonEventBridgeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EventBridge", "3.7.402.52");
+            InternalSDKUtils.BuildUserAgentString("EventBridge", "3.7.402.53");
 
         private string _userAgent = UserAgentString;
         ///<summary>
