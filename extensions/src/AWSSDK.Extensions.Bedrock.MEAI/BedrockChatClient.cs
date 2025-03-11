@@ -64,18 +64,18 @@ internal sealed partial class BedrockChatClient : IChatClient
 
     /// <inheritdoc />
     public async Task<ChatResponse> GetResponseAsync(
-        IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
+        IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
-        if (chatMessages is null)
+        if (messages is null)
         {
-            throw new ArgumentNullException(nameof(chatMessages));
+            throw new ArgumentNullException(nameof(messages));
         }
 
         ConverseRequest request = new()
         {
             ModelId = options?.ModelId ?? _modelId,
-            Messages = CreateMessages(chatMessages),
-            System = CreateSystem(chatMessages),
+            Messages = CreateMessages(messages),
+            System = CreateSystem(messages),
             ToolConfig = CreateToolConfig(options),
             InferenceConfig = CreateInferenceConfiguration(options),
             AdditionalModelRequestFields = CreateAdditionalModelRequestFields(options),
@@ -138,18 +138,18 @@ internal sealed partial class BedrockChatClient : IChatClient
 
     /// <inheritdoc />
     public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(
-        IList<ChatMessage> chatMessages, ChatOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        IEnumerable<ChatMessage> messages, ChatOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        if (chatMessages is null)
+        if (messages is null)
         {
-            throw new ArgumentNullException(nameof(chatMessages));
+            throw new ArgumentNullException(nameof(messages));
         }
 
         ConverseStreamRequest request = new()
         {
             ModelId = options?.ModelId ?? _modelId,
-            Messages = CreateMessages(chatMessages),
-            System = CreateSystem(chatMessages),
+            Messages = CreateMessages(messages),
+            System = CreateSystem(messages),
             ToolConfig = CreateToolConfig(options),
             InferenceConfig = CreateInferenceConfiguration(options),
             AdditionalModelRequestFields = CreateAdditionalModelRequestFields(options),
@@ -186,11 +186,9 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                     if (contentBlockDelta.Delta.Text is string text)
                     {
-                        yield return new()
+                        yield return new(ChatRole.Assistant, text)
                         {
-                            Role = ChatRole.Assistant,
                             FinishReason = finishReason,
-                            Text = text,
                         };
                     }
                     break;
@@ -281,9 +279,9 @@ internal sealed partial class BedrockChatClient : IChatClient
             _ => new(stopReason.Value),
         };
 
-    /// <summary>Creates a list of <see cref="SystemContentBlock"/> from the system messages in the provided <paramref name="chatMessages"/>.</summary>
-    private static List<SystemContentBlock> CreateSystem(IList<ChatMessage> chatMessages) =>
-        chatMessages
+    /// <summary>Creates a list of <see cref="SystemContentBlock"/> from the system messages in the provided <paramref name="messages"/>.</summary>
+    private static List<SystemContentBlock> CreateSystem(IEnumerable<ChatMessage> messages) =>
+        messages
             .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent))
             .Select(m => new SystemContentBlock() { Text = string.Concat(m.Contents.OfType<TextContent>()) })
             .ToList();
@@ -308,7 +306,7 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <summary>Creates a list of <see cref="Message"/> from the provided <paramref name="chatMessages"/>.</summary>
-    private static List<Message> CreateMessages(IList<ChatMessage> chatMessages)
+    private static List<Message> CreateMessages(IEnumerable<ChatMessage> chatMessages)
     {
         List<Message> messages = [];
 
@@ -342,14 +340,14 @@ internal sealed partial class BedrockChatClient : IChatClient
                     contents.Add(new() { Text = tc.Text });
                     break;
 
-                case DataContent dc when dc.Data.HasValue:
+                case DataContent dc:
                     if (GetImageFormat(dc.MediaType) is ImageFormat imageFormat)
                     {
                         contents.Add(new()
                         {
                             Image = new()
                             {
-                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Source = new() { Bytes = new(dc.Data.ToArray()) },
                                 Format = imageFormat,
                             }
                         });
@@ -360,7 +358,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                         {
                             Video = new()
                             {
-                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Source = new() { Bytes = new(dc.Data.ToArray()) },
                                 Format = videoFormat,
                             }
                         });
@@ -371,7 +369,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                         {
                             Document = new()
                             {
-                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Source = new() { Bytes = new(dc.Data.ToArray()) },
                                 Format = docFormat,
                             }
                         });
@@ -436,19 +434,18 @@ internal sealed partial class BedrockChatClient : IChatClient
         };
 
     /// <summary>Gets the MIME type for a <see cref="DocumentFormat"/>.</summary>
-    private static string? GetMimeType(DocumentFormat? format) =>
+    private static string GetMimeType(DocumentFormat? format) =>
         format?.Value switch
         {
             "csv" => "text/csv",
             "html" => "text/html",
             "md" => "text/markdown",
-            "txt" => "text/plain",
             "pdf" => "application/pdf",
             "doc" => "application/msword",
             "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
             "xls" => "application/vnd.ms-excel",
             "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            _ => null,
+            _ => "text/plain",
         };
 
     /// <summary>Gets the <see cref="ImageFormat"/> for the specified MIME type.</summary>
@@ -463,14 +460,13 @@ internal sealed partial class BedrockChatClient : IChatClient
         };
 
     /// <summary>Gets the MIME type for a <see cref="ImageFormat"/>.</summary>
-    private static string? GetMimeType(ImageFormat? format) =>
+    private static string GetMimeType(ImageFormat? format) =>
         format?.Value switch
         {
-            "jpeg" => "image/jpeg",
             "png" => "image/png",
             "gif" => "image/gif",
             "webp" => "image/webp",
-            _ => null,
+            _ => "image/jpeg",
         };
 
     /// <summary>Gets the <see cref="VideoFormat"/> for the specified MIME type.</summary>
@@ -489,18 +485,17 @@ internal sealed partial class BedrockChatClient : IChatClient
         };
 
     /// <summary>Gets the MIME type for a <see cref="VideoFormat"/>.</summary>
-    private static string? GetMimeType(VideoFormat? format) =>
+    private static string GetMimeType(VideoFormat? format) =>
         format?.Value switch
         {
             "flv" => "video/x-flv",
             "mkv" => "video/x-matroska",
             "mov" => "video/quicktime",
-            "mp4" => "video/mp4",
             "mpeg" or "mpg" => "video/mpeg",
             "three_gp" => "video/3gpp",
             "webm" => "video/webm",
             "wmv" => "video/x-ms-wmv",
-            _ => null,
+            _ => "video/mp4",
         };
 
     /// <summary>Converts a <see cref="Dictionary{String, Object}"/> to a <see cref="Document"/>.</summary>
