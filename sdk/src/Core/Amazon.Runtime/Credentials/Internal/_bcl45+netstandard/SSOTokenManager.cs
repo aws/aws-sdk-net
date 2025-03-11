@@ -351,21 +351,21 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (string.IsNullOrEmpty(options.ClientName))
             {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
+                throw new ArgumentNullException(nameof(options.ClientName));
             }
 
             if (options.PkceFlowOptions == null)
             {
                 if (options.SsoVerificationCallback == null)
                 {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                    throw new ArgumentNullException(nameof(options.SsoVerificationCallback));
                 }
             }
             else
             {
                 if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallback == null)
                 {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallback)}");
+                    throw new ArgumentNullException(nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallback));
                 }
             }
 
@@ -620,21 +620,21 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (string.IsNullOrEmpty(options.ClientName))
             {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
+                throw new ArgumentNullException(nameof(options.ClientName));
             }
 
             if (options.PkceFlowOptions == null)
             {
                 if (options.SsoVerificationCallback == null)
                 {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                    throw new ArgumentNullException(nameof(options.SsoVerificationCallback));
                 }
             }
             else
             {
                 if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync == null)
                 {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync)}");
+                    throw new ArgumentNullException(nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync));
                 }
             }
 
