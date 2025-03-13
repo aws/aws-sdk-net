@@ -1485,6 +1485,9 @@ namespace Amazon.ACMPCA
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The state of the private CA does not allow this action to occur.
         /// </exception>
+        /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
+        /// The request has failed for an unspecified reason.
+        /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot
         /// be found.
