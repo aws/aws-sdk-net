@@ -130,6 +130,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.OriginEndpointName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResetAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ResetAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Segment", targetDepth))
                 {
                     var unmarshaller = SegmentUnmarshaller.Instance;

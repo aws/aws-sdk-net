@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetChannel operation
+    /// Response Unmarshaller for ResetChannelState operation
     /// </summary>  
-    public class GetChannelResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ResetChannelStateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetChannelResponse response = new GetChannelResponse();
+            ResetChannelStateResponse response = new ResetChannelStateResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -70,64 +70,10 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.ChannelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ETag", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ETag = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IngestEndpoints", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<IngestEndpoint, IngestEndpointUnmarshaller>(IngestEndpointUnmarshaller.Instance);
-                    response.IngestEndpoints = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InputSwitchConfiguration", targetDepth))
-                {
-                    var unmarshaller = InputSwitchConfigurationUnmarshaller.Instance;
-                    response.InputSwitchConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InputType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModifiedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ModifiedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OutputHeaderConfiguration", targetDepth))
-                {
-                    var unmarshaller = OutputHeaderConfigurationUnmarshaller.Instance;
-                    response.OutputHeaderConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ResetAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.ResetAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -157,6 +103,10 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -177,9 +127,9 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             return new AmazonMediaPackageV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetChannelResponseUnmarshaller _instance = new GetChannelResponseUnmarshaller();        
+        private static ResetChannelStateResponseUnmarshaller _instance = new ResetChannelStateResponseUnmarshaller();        
 
-        internal static GetChannelResponseUnmarshaller GetInstance()
+        internal static ResetChannelStateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -187,7 +137,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetChannelResponseUnmarshaller Instance
+        public static ResetChannelStateResponseUnmarshaller Instance
         {
             get
             {

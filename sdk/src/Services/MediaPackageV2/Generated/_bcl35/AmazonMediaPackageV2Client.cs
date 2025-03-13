@@ -1502,8 +1502,7 @@ namespace Amazon.MediaPackageV2
         #region  ListChannelGroups
 
         /// <summary>
-        /// Retrieves all channel groups that are configured in AWS Elemental MediaPackage, including
-        /// the channels and origin endpoints that are associated with it.
+        /// Retrieves all channel groups that are configured in Elemental MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannelGroups service method.</param>
         /// 
@@ -1993,6 +1992,173 @@ namespace Amazon.MediaPackageV2
         public virtual PutOriginEndpointPolicyResponse EndPutOriginEndpointPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutOriginEndpointPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetChannelState
+
+        /// <summary>
+        /// Resetting the channel can help to clear errors from misconfigurations in the encoder.
+        /// A reset refreshes the ingest stream and removes previous content. 
+        /// 
+        ///  
+        /// <para>
+        ///  Be sure to stop the encoder before you reset the channel, and wait at least 30 seconds
+        /// before you restart the encoder. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetChannelState service method.</param>
+        /// 
+        /// <returns>The response from the ResetChannelState service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">REST API Reference for ResetChannelState Operation</seealso>
+        public virtual ResetChannelStateResponse ResetChannelState(ResetChannelStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetChannelStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetChannelStateResponseUnmarshaller.Instance;
+
+            return Invoke<ResetChannelStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetChannelState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetChannelState operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetChannelState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">REST API Reference for ResetChannelState Operation</seealso>
+        public virtual IAsyncResult BeginResetChannelState(ResetChannelStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetChannelStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetChannelStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetChannelState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetChannelState.</param>
+        /// 
+        /// <returns>Returns a  ResetChannelStateResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">REST API Reference for ResetChannelState Operation</seealso>
+        public virtual ResetChannelStateResponse EndResetChannelState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetChannelStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetOriginEndpointState
+
+        /// <summary>
+        /// Resetting the origin endpoint can help to resolve unexpected behavior and other content
+        /// packaging issues. It also helps to preserve special events when you don't want the
+        /// previous content to be available for viewing. A reset clears out all previous content
+        /// from the origin endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// MediaPackage might return old content from this endpoint in the first 30 seconds after
+        /// the endpoint reset. For best results, when possible, wait 30 seconds from endpoint
+        /// reset to send playback requests to this endpoint. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetOriginEndpointState service method.</param>
+        /// 
+        /// <returns>The response from the ResetOriginEndpointState service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">REST API Reference for ResetOriginEndpointState Operation</seealso>
+        public virtual ResetOriginEndpointStateResponse ResetOriginEndpointState(ResetOriginEndpointStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetOriginEndpointStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetOriginEndpointStateResponseUnmarshaller.Instance;
+
+            return Invoke<ResetOriginEndpointStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetOriginEndpointState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetOriginEndpointState operation on AmazonMediaPackageV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetOriginEndpointState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">REST API Reference for ResetOriginEndpointState Operation</seealso>
+        public virtual IAsyncResult BeginResetOriginEndpointState(ResetOriginEndpointStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetOriginEndpointStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetOriginEndpointStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetOriginEndpointState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetOriginEndpointState.</param>
+        /// 
+        /// <returns>Returns a  ResetOriginEndpointStateResult from MediaPackageV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">REST API Reference for ResetOriginEndpointState Operation</seealso>
+        public virtual ResetOriginEndpointStateResponse EndResetOriginEndpointState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetOriginEndpointStateResponse>(asyncResult);
         }
 
         #endregion

@@ -114,6 +114,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UrlEncodeChildManifest", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UrlEncodeChildManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
