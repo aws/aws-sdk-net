@@ -258,6 +258,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (this.StoreAsEpoch.Contains(hashKeyName))
                 hashKey = KeyDateTimeToEpochSeconds(hashKey, hashKeyName);
 
+            if (this.StoreAsEpochLong.Contains(hashKeyName))
+                hashKey = KeyDateTimeToEpochSecondsLong(hashKey, hashKeyName);
+
             if (hashKeyDescription.Type != hashKey.Type)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Schema for table {0}, hash key {1}, is inconsistent with specified hash key value.", TableName, hashKeyName));
@@ -279,6 +282,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (this.StoreAsEpoch.Contains(rangeKeyName))
                     rangeKey = KeyDateTimeToEpochSeconds(rangeKey, rangeKeyName);
 
+                if (this.StoreAsEpochLong.Contains(rangeKeyName))
+                    rangeKey = KeyDateTimeToEpochSecondsLong(rangeKey, rangeKeyName);
+
                 if (rangeKeyDescription.Type != rangeKey.Type)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
@@ -293,6 +299,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private static Primitive KeyDateTimeToEpochSeconds(Primitive key, string attributeName)
         {
             DynamoDBEntry entry = Document.DateTimeToEpochSeconds(key, attributeName);
+            Primitive converted = entry as Primitive;
+            return converted;
+        }
+
+        private static Primitive KeyDateTimeToEpochSecondsLong(Primitive key, string attributeName)
+        {
+            DynamoDBEntry entry = Document.DateTimeToEpochSecondsLong(key, attributeName);
             Primitive converted = entry as Primitive;
             return converted;
         }
@@ -469,7 +482,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns><see cref="DynamoDBEntryType"/> if it can be determined for the given property, otherwise an exception will be thrown</returns>
         private static DynamoDBEntryType GetPrimitiveEntryTypeForProperty(PropertyStorage property, DynamoDBFlatConfig flatConfig)
         {
-            if (property.StoreAsEpoch)
+            if (property.StoreAsEpoch || property.StoreAsEpochLong)
             {
                 return DynamoDBEntryType.Numeric;
             }
