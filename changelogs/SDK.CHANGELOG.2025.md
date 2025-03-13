@@ -1,3 +1,29 @@
+### 3.7.1001.0 (2025-03-13 22:07 UTC)
+* ACMPCA (3.7.402.0)
+	* Private Certificate Authority service now supports P521 and RSA3072 key algorithms.
+* Amplify (3.7.405.0)
+	* Introduced support for Skew Protection. Added enableSkewProtection field to createBranch and updateBranch API.
+* CloudWatchLogs (3.7.410.0)
+	* Updated CreateLogAnomalyDetector to accept only kms key arn
+* CodeBuild (3.7.413.0)
+	* AWS CodeBuild now supports webhook filtering by organization name
+* DataZone (3.7.409.0)
+	* This release adds support to update projects and environments
+* DynamoDBv2 (3.7.406.0)
+	* Generate account endpoints for DynamoDB requests using ARN-sourced account ID when available
+	* Fixed an issue where for a Nullable DateTime property decorated with StoreAsEpochLong attribute, null value was incorrectly stored as -62135596800 in DynamoDB.
+* EC2 (3.7.436.0)
+	* This release changes the CreateLaunchTemplate, CreateLaunchTemplateVersion, ModifyLaunchTemplate CLI and SDKs such that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+* IVSRealTime (3.7.405.0)
+	* IVS Real-Time now offers customers the ability to adjust the participant & composition recording segment duration
+* MediaPackageV2 (3.7.404.0)
+	* This release adds the ResetChannelState and ResetOriginEndpointState operation to reset MediaPackage V2 channel and origin endpoint. This release also adds a new field, UrlEncodeChildManifest, for HLS/LL-HLS to allow URL-encoding child manifest query string based on the requirements of AWS SigV4.
+* S3Control (3.7.406.0)
+	* Updating GetDataAccess response for S3 Access Grants to include the matched Grantee for the requested prefix
+* Core 3.7.402.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1000.0 (2025-03-11 18:40 UTC)
 * EC2 (3.7.435.0)
 	* This release adds the GroupLongName field to the response of the DescribeAvailabilityZones API.
