@@ -150,6 +150,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnablePullRequestPreview);
                 }
 
+                if(publicRequest.IsSetEnableSkewProtection())
+                {
+                    context.Writer.WritePropertyName("enableSkewProtection");
+                    context.Writer.Write(publicRequest.EnableSkewProtection);
+                }
+
                 if(publicRequest.IsSetEnvironmentVariables())
                 {
                     context.Writer.WritePropertyName("environmentVariables");
