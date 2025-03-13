@@ -14103,6 +14103,7 @@
             "ap-southeast-3": {},
             "ap-southeast-4": {},
             "ap-southeast-5": {},
+            "ap-southeast-7": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -14328,6 +14329,7 @@
                 }
               ]
             },
+            "mx-central-1": {},
             "sa-east-1": {
               "variants": [
                 {
@@ -15170,6 +15172,16 @@
                 }
               ]
             },
+            "ap-southeast-7": {
+              "variants": [
+                {
+                  "hostname": "glue.ap-southeast-7.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "variants": [
                 {
@@ -15322,6 +15334,16 @@
               "variants": [
                 {
                   "hostname": "glue.me-south-1.api.aws",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "mx-central-1": {
+              "variants": [
+                {
+                  "hostname": "glue.mx-central-1.api.aws",
                   "tags": [
                     "dualstack"
                   ]
@@ -23459,6 +23481,19 @@
             "ca-central-1": {
               "variants": [
                 {
+                  "hostname": "polly-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                },
+                {
+                  "hostname": "polly-fips.ca-central-1.api.aws",
+                  "tags": [
+                    "dualstack",
+                    "fips"
+                  ]
+                },
+                {
                   "hostname": "polly.ca-central-1.api.aws",
                   "tags": [
                     "dualstack"
@@ -23525,6 +23560,13 @@
                   ]
                 }
               ]
+            },
+            "fips-ca-central-1": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "polly-fips.ca-central-1.amazonaws.com"
             },
             "fips-us-east-1": {
               "credentialScope": {
@@ -24135,6 +24177,7 @@
             "eu-central-2": {},
             "eu-north-1": {},
             "eu-south-1": {},
+            "eu-south-2": {},
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
@@ -33032,8 +33075,26 @@
             "ap-southeast-4": {},
             "ap-southeast-5": {},
             "ap-southeast-7": {},
-            "ca-central-1": {},
-            "ca-west-1": {},
+            "ca-central-1": {
+              "variants": [
+                {
+                  "hostname": "states-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-west-1": {
+              "variants": [
+                {
+                  "hostname": "states-fips.ca-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
@@ -33042,6 +33103,20 @@
             "eu-west-1": {},
             "eu-west-2": {},
             "eu-west-3": {},
+            "fips-ca-central-1": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "states-fips.ca-central-1.amazonaws.com"
+            },
+            "fips-ca-west-1": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "hostname": "states-fips.ca-west-1.amazonaws.com"
+            },
             "fips-us-east-1": {
               "credentialScope": {
                 "region": "us-east-1"
@@ -47612,8 +47687,40 @@
         },
         "states": {
           "endpoints": {
-            "us-iso-east-1": {},
-            "us-iso-west-1": {}
+            "fips-us-iso-east-1": {
+              "credentialScope": {
+                "region": "us-iso-east-1"
+              },
+              "deprecated": true,
+              "hostname": "states-fips.us-iso-east-1.c2s.ic.gov"
+            },
+            "fips-us-iso-west-1": {
+              "credentialScope": {
+                "region": "us-iso-west-1"
+              },
+              "deprecated": true,
+              "hostname": "states-fips.us-iso-west-1.c2s.ic.gov"
+            },
+            "us-iso-east-1": {
+              "variants": [
+                {
+                  "hostname": "states-fips.us-iso-east-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-iso-west-1": {
+              "variants": [
+                {
+                  "hostname": "states-fips.us-iso-west-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            }
           }
         },
         "streams.dynamodb": {
@@ -48566,7 +48673,23 @@
         },
         "states": {
           "endpoints": {
-            "us-isob-east-1": {}
+            "fips-us-isob-east-1": {
+              "credentialScope": {
+                "region": "us-isob-east-1"
+              },
+              "deprecated": true,
+              "hostname": "states-fips.us-isob-east-1.sc2s.sgov.gov"
+            },
+            "us-isob-east-1": {
+              "variants": [
+                {
+                  "hostname": "states-fips.us-isob-east-1.sc2s.sgov.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            }
           }
         },
         "storagegateway": {
