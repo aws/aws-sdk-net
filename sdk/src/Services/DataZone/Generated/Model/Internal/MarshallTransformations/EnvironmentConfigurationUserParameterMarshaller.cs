@@ -54,6 +54,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnvironmentConfigurationName);
             }
 
+            if(requestObject.IsSetEnvironmentId())
+            {
+                context.Writer.WritePropertyName("environmentId");
+                context.Writer.Write(requestObject.EnvironmentId);
+            }
+
             if(requestObject.IsSetEnvironmentParameters())
             {
                 context.Writer.WritePropertyName("environmentParameters");

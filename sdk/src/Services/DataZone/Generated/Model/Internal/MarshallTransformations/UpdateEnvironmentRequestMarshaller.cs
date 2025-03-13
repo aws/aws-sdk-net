@@ -73,6 +73,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlueprintVersion())
+                {
+                    context.Writer.WritePropertyName("blueprintVersion");
+                    context.Writer.Write(publicRequest.BlueprintVersion);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -94,6 +100,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetUserParameters())
+                {
+                    context.Writer.WritePropertyName("userParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

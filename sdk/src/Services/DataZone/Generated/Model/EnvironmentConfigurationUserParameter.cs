@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class EnvironmentConfigurationUserParameter
     {
         private string _environmentConfigurationName;
+        private string _environmentId;
         private List<EnvironmentParameter> _environmentParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentConfigurationName()
         {
             return this._environmentConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentId. 
+        /// <para>
+        /// The ID of the environment.
+        /// </para>
+        /// </summary>
+        public string EnvironmentId
+        {
+            get { return this._environmentId; }
+            set { this._environmentId = value; }
+        }
+
+        // Check to see if EnvironmentId property is set
+        internal bool IsSetEnvironmentId()
+        {
+            return this._environmentId != null;
         }
 
         /// <summary>

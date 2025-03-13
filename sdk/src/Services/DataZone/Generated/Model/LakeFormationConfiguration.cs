@@ -61,7 +61,7 @@ namespace Amazon.DataZone.Model
         /// Gets and sets the property LocationRegistrationRole. 
         /// <para>
         /// The role that is used to manage read/write access to the chosen Amazon S3 bucket(s)
-        /// for Data Lake using AWS Lake Formation hybrid access mode.
+        /// for Data Lake using Amazon Web Services Lake Formation hybrid access mode.
         /// </para>
         /// </summary>
         public string LocationRegistrationRole

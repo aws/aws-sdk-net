@@ -3170,6 +3170,14 @@ namespace Amazon.DataZone
         /// Constant DELETING for ProjectStatus
         /// </summary>
         public static readonly ProjectStatus DELETING = new ProjectStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus UPDATE_FAILED = new ProjectStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus UPDATING = new ProjectStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -35,11 +35,32 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class UpdateEnvironmentRequest : AmazonDataZoneRequest
     {
+        private string _blueprintVersion;
         private string _description;
         private string _domainIdentifier;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
+        private List<EnvironmentParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BlueprintVersion. 
+        /// <para>
+        /// The blueprint version to which the environment should be updated. You can only specify
+        /// the following string for this parameter: <c>latest</c>.
+        /// </para>
+        /// </summary>
+        public string BlueprintVersion
+        {
+            get { return this._blueprintVersion; }
+            set { this._blueprintVersion = value; }
+        }
+
+        // Check to see if BlueprintVersion property is set
+        internal bool IsSetBlueprintVersion()
+        {
+            return this._blueprintVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -132,6 +153,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserParameters. 
+        /// <para>
+        /// The user parameters of the environment.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentParameter> UserParameters
+        {
+            get { return this._userParameters; }
+            set { this._userParameters = value; }
+        }
+
+        // Check to see if UserParameters property is set
+        internal bool IsSetUserParameters()
+        {
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
