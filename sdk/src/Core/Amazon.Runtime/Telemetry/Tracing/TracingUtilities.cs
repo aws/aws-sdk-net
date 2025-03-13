@@ -39,7 +39,7 @@ namespace Amazon.Runtime.Telemetry.Tracing
             SpanKind spanKind = SpanKind.INTERNAL,
             SpanContext parentContext = null)
         {
-            var serviceId = requestContext.ServiceMetaData.ServiceId;
+            var serviceId = requestContext.ClientConfig.ServiceId;
 
             if (initialAttributes == null)
                 initialAttributes = new Attributes();

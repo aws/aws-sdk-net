@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Add telemetry data for Credentials retrieval"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
