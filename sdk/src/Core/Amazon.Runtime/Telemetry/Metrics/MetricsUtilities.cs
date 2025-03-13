@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Telemetry.Metrics
         /// <param name="initialAttributes">The attributes associated with the metric.</param>
         public static void AddMonotonicCounterValue(IRequestContext requestContext, string metricName, string unit, long value = 1, Attributes initialAttributes = null)
         {
-            var serviceId = requestContext.ServiceMetaData.ServiceId;
+            var serviceId = requestContext.ClientConfig.ServiceId;
 
             if (initialAttributes == null)
                 initialAttributes = new Attributes();
