@@ -89,6 +89,251 @@ namespace Amazon.DynamoDBv2.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "BatchGetItemRequest") {
+                var request = (BatchGetItemRequest)requestContext.OriginalRequest;
+                result.ResourceArnList = request.RequestItems.Keys.ToList();
+                return result;
+            }
+            if (requestContext.RequestName == "BatchWriteItemRequest") {
+                var request = (BatchWriteItemRequest)requestContext.OriginalRequest;
+                result.ResourceArnList = request.RequestItems.Keys.ToList();
+                return result;
+            }
+            if (requestContext.RequestName == "CreateBackupRequest") {
+                var request = (CreateBackupRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateGlobalTableRequest") {
+                var request = (CreateGlobalTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.GlobalTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "CreateTableRequest") {
+                var request = (CreateTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteBackupRequest") {
+                var request = (DeleteBackupRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.BackupArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteItemRequest") {
+                var request = (DeleteItemRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteResourcePolicyRequest") {
+                var request = (DeleteResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteTableRequest") {
+                var request = (DeleteTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeBackupRequest") {
+                var request = (DescribeBackupRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.BackupArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeContinuousBackupsRequest") {
+                var request = (DescribeContinuousBackupsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeContributorInsightsRequest") {
+                var request = (DescribeContributorInsightsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeExportRequest") {
+                var request = (DescribeExportRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ExportArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeGlobalTableRequest") {
+                var request = (DescribeGlobalTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.GlobalTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeGlobalTableSettingsRequest") {
+                var request = (DescribeGlobalTableSettingsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.GlobalTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeImportRequest") {
+                var request = (DescribeImportRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ImportArn;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeKinesisStreamingDestinationRequest") {
+                var request = (DescribeKinesisStreamingDestinationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeTableRequest") {
+                var request = (DescribeTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeTableReplicaAutoScalingRequest") {
+                var request = (DescribeTableReplicaAutoScalingRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeTimeToLiveRequest") {
+                var request = (DescribeTimeToLiveRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "DisableKinesisStreamingDestinationRequest") {
+                var request = (DisableKinesisStreamingDestinationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "EnableKinesisStreamingDestinationRequest") {
+                var request = (EnableKinesisStreamingDestinationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "ExportTableToPointInTimeRequest") {
+                var request = (ExportTableToPointInTimeRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableArn;
+                return result;
+            }
+            if (requestContext.RequestName == "GetItemRequest") {
+                var request = (GetItemRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetResourcePolicyRequest") {
+                var request = (GetResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "ImportTableRequest") {
+                var request = (ImportTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableCreationParameters.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "ListBackupsRequest") {
+                var request = (ListBackupsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "ListContributorInsightsRequest") {
+                var request = (ListContributorInsightsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "ListExportsRequest") {
+                var request = (ListExportsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableArn;
+                return result;
+            }
+            if (requestContext.RequestName == "ListImportsRequest") {
+                var request = (ListImportsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableArn;
+                return result;
+            }
+            if (requestContext.RequestName == "ListTagsOfResourceRequest") {
+                var request = (ListTagsOfResourceRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "PutItemRequest") {
+                var request = (PutItemRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "PutResourcePolicyRequest") {
+                var request = (PutResourcePolicyRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "QueryRequest") {
+                var request = (QueryRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "RestoreTableFromBackupRequest") {
+                var request = (RestoreTableFromBackupRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TargetTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "RestoreTableToPointInTimeRequest") {
+                var request = (RestoreTableToPointInTimeRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TargetTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "ScanRequest") {
+                var request = (ScanRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "TagResourceRequest") {
+                var request = (TagResourceRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "TransactGetItemsRequest") {
+                var request = (TransactGetItemsRequest)requestContext.OriginalRequest;
+                result.ResourceArnList = request.TransactItems.Select(element => element.Get.TableName);
+                return result;
+            }
+            if (requestContext.RequestName == "UntagResourceRequest") {
+                var request = (UntagResourceRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.ResourceArn;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateContinuousBackupsRequest") {
+                var request = (UpdateContinuousBackupsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateContributorInsightsRequest") {
+                var request = (UpdateContributorInsightsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateGlobalTableRequest") {
+                var request = (UpdateGlobalTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.GlobalTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateGlobalTableSettingsRequest") {
+                var request = (UpdateGlobalTableSettingsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.GlobalTableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateItemRequest") {
+                var request = (UpdateItemRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateKinesisStreamingDestinationRequest") {
+                var request = (UpdateKinesisStreamingDestinationRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateTableRequest") {
+                var request = (UpdateTableRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateTableReplicaAutoScalingRequest") {
+                var request = (UpdateTableReplicaAutoScalingRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateTimeToLiveRequest") {
+                var request = (UpdateTimeToLiveRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
 
             return result;
         }
