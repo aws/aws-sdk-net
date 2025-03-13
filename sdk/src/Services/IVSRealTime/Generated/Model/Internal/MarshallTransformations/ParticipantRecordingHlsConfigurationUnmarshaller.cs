@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecordingConfiguration Object
+    /// Response Unmarshaller for ParticipantRecordingHlsConfiguration Object
     /// </summary>  
-    public class RecordingConfigurationUnmarshaller : IUnmarshaller<RecordingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RecordingConfiguration, JsonUnmarshallerContext>
+    public class ParticipantRecordingHlsConfigurationUnmarshaller : IUnmarshaller<ParticipantRecordingHlsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ParticipantRecordingHlsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecordingConfiguration IUnmarshaller<RecordingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParticipantRecordingHlsConfiguration IUnmarshaller<ParticipantRecordingHlsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecordingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ParticipantRecordingHlsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            RecordingConfiguration unmarshalledObject = new RecordingConfiguration();
+            ParticipantRecordingHlsConfiguration unmarshalledObject = new ParticipantRecordingHlsConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("targetSegmentDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hlsConfiguration", targetDepth))
-                {
-                    var unmarshaller = CompositionRecordingHlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetSegmentDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecordingConfigurationUnmarshaller _instance = new RecordingConfigurationUnmarshaller();        
+        private static ParticipantRecordingHlsConfigurationUnmarshaller _instance = new ParticipantRecordingHlsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecordingConfigurationUnmarshaller Instance
+        public static ParticipantRecordingHlsConfigurationUnmarshaller Instance
         {
             get
             {

@@ -34,10 +34,29 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class AutoParticipantRecordingConfiguration
     {
+        private ParticipantRecordingHlsConfiguration _hlsConfiguration;
         private List<string> _mediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _recordingReconnectWindowSeconds;
         private string _storageConfigurationArn;
         private ParticipantThumbnailConfiguration _thumbnailConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property HlsConfiguration. 
+        /// <para>
+        /// HLS configuration object for individual participant recording.
+        /// </para>
+        /// </summary>
+        public ParticipantRecordingHlsConfiguration HlsConfiguration
+        {
+            get { return this._hlsConfiguration; }
+            set { this._hlsConfiguration = value; }
+        }
+
+        // Check to see if HlsConfiguration property is set
+        internal bool IsSetHlsConfiguration()
+        {
+            return this._hlsConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MediaTypes. 

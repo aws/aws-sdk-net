@@ -476,6 +476,11 @@
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.CompositionRecordingHlsConfiguration.TargetSegmentDurationSeconds</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.CompositionSummary.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -664,6 +669,11 @@
     <property>Amazon.IVSRealTime.Model.Participant.UserId</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantRecordingHlsConfiguration.TargetSegmentDurationSeconds</property>
+    <min>2</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.ParticipantId</property>

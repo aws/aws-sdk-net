@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecordingConfiguration Marshaller
+    /// CompositionRecordingHlsConfiguration Marshaller
     /// </summary>
-    public class RecordingConfigurationMarshaller : IRequestMarshaller<RecordingConfiguration, JsonMarshallerContext> 
+    public class CompositionRecordingHlsConfigurationMarshaller : IRequestMarshaller<CompositionRecordingHlsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecordingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CompositionRecordingHlsConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetTargetSegmentDurationSeconds())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
-            }
-
-            if(requestObject.IsSetHlsConfiguration())
-            {
-                context.Writer.WritePropertyName("hlsConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CompositionRecordingHlsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.HlsConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("targetSegmentDurationSeconds");
+                context.Writer.Write(requestObject.TargetSegmentDurationSeconds);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecordingConfigurationMarshaller Instance = new RecordingConfigurationMarshaller();
+        public readonly static CompositionRecordingHlsConfigurationMarshaller Instance = new CompositionRecordingHlsConfigurationMarshaller();
 
     }
 }

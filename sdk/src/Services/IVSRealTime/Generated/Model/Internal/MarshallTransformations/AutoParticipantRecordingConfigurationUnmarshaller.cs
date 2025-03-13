@@ -66,6 +66,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("hlsConfiguration", targetDepth))
+                {
+                    var unmarshaller = ParticipantRecordingHlsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mediaTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
