@@ -36,6 +36,7 @@ namespace Amazon.Runtime
         public const string ENVIRONMENT_VARIABLE_ACCESSKEY = "AWS_ACCESS_KEY_ID";
         public const string ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_ACCESS_KEY";
         public const string ENVIRONMENT_VARIABLE_SESSION_TOKEN = "AWS_SESSION_TOKEN";
+        public const string ENVIRONMENT_VARIABLE_ACCOUNT_ID = "AWS_ACCOUNT_ID";
 
         // this legacy key was used by previous versions of the AWS SDK for .NET and is
         // used if no value exists for the standard key for backwards compatibility.
@@ -83,10 +84,10 @@ namespace Amazon.Runtime
             }
 
             string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
-
+            string accountId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCOUNT_ID);
             logger.InfoFormat("Credentials found using environment variables.");
 
-            return new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
+            return new ImmutableCredentials(accessKeyId, secretKey, sessionToken, accountId);
         }
 
         /// <summary>

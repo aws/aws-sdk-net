@@ -89,7 +89,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         SessionWithServices,
         SessionWithGlobalEndpoint,
         SessionWithServicesAndGlobalEndpoint,
-        
+        BasicWithAccountId,
+        SessionWithAccountId
 
     }
 
@@ -107,7 +108,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string AssumeRoleCredentials = "Assume Role";
         private const string AssumeRoleWithWebIdentityCredentials = "Assume Role with OIDC Web Identity";
         private const string SAMLCredentials = "SAML";
-        
+
         private const string Services = "Services";
         private const string AccessKey = "AccessKey";
         private const string CredentialSource = "CredentialSource";
@@ -117,12 +118,13 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string RoleArn = "RoleArn";
         private const string RoleSessionName = "RoleSessionName";
         private const string SecretKey = "SecretKey";
-        private const string SourceProfile = "SourceProfile";        
+        private const string SourceProfile = "SourceProfile";
         private const string Token = "Token";
         private const string WebIdentityTokenFile = "WebIdentityTokenFile";
         private const string UserIdentity = "UserIdentity";
         private const string CredentialProcess = "CredentialProcess";
         private const string EndpointUrl = "EndpointUrl";
+        private const string AwsAccountId = "AwsAccountId";
 
         private const string SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId);
         private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
@@ -132,608 +134,243 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string SsoSession = nameof(CredentialProfileOptions.SsoSession);
 
         private static HashSet<string> SsoProperties = new HashSet<string>(
-            new string[] {SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession},
+            new string[] { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession },
             StringComparer.OrdinalIgnoreCase);
-
-        private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
-            new Dictionary<CredentialProfileType, HashSet<string>>()
+        private static Dictionary<CredentialProfileType, List<HashSet<string>>> TypePropertyDictionary =
+            new Dictionary<CredentialProfileType, List<HashSet<string>>>()
             {
-                {
-                    CredentialProfileType.CredentialProcess, new HashSet<string>()
-                    {
-                        CredentialProcess
-                    }
+                { 
+                    CredentialProfileType.CredentialProcess, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { CredentialProcess } ,
+                        new HashSet<string> { CredentialProcess, AwsAccountId }
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRole, new HashSet<string>()
-                    {
-                        RoleArn,
-                        SourceProfile,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithServices, new HashSet<string>()
-                    {
-                        RoleArn,
-                        SourceProfile,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        SourceProfile,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSource, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithServices, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternal, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalWithServices, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFA, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFAWithServices, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentity, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentityWithServices, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        EndpointUrl,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentitySessionName, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        RoleSessionName
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        RoleSessionName,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        WebIdentityTokenFile,
-                        RoleSessionName,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFA, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFAWithServices, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        EndpointUrl,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.Basic, new HashSet<string>()
-                    {
-                        AccessKey,
-                        SecretKey,
-                    }
-                },
-                {
-                    CredentialProfileType.BasicWithServices, new HashSet<string>()
-                    {
-                        AccessKey,
-                        SecretKey,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.BasicWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        AccessKey,
-                        SecretKey,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.BasicWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        AccessKey,
-                        SecretKey,
-                        EndpointUrl,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRole, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleWithServices, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleUserIdentity, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        UserIdentity,
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleUserIdentityWithServices, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        UserIdentity,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleUserIdentityWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        EndpointName,
-                        RoleArn,
-                        UserIdentity,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.SAMLRoleUserIdentityWithServicesAndGlobalEndpoint, new HashSet<string>()
 
+                { 
+                    CredentialProfileType.AssumeRole, new List<HashSet<string>>() 
                     {
-                        EndpointName,
-                        RoleArn,
-                        UserIdentity,
-                        EndpointUrl,
-                        Services
-                    }
+                        new HashSet<string> { RoleArn, SourceProfile },
+                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, Services },
+                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, Services, EndpointUrl },
+                    } 
+                },
 
+                { CredentialProfileType.AssumeRoleWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, Services } } },
+
+                { CredentialProfileType.AssumeRoleWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, EndpointUrl } } },
+
+                { CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, Services, EndpointUrl } } },
+
+                { 
+                    CredentialProfileType.AssumeRoleCredentialSource, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { RoleArn, CredentialSource },
+                        new HashSet<string> { RoleArn, CredentialSource, AwsAccountId }
+                    } 
                 },
                 {
-                    CredentialProfileType.Session, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint, new List<HashSet<string>>()
                     {
-                        AccessKey,
-                        SecretKey,
-                        Token,
+                        new HashSet<string>{ RoleArn, CredentialSource, EndpointUrl }
                     }
                 },
                 {
-                    CredentialProfileType.SessionWithServices, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleCredentialSourceWithServices, new List<HashSet<string>>()
                     {
-                        AccessKey,
-                        SecretKey,
-                        Token,
-                        Services
+                        new HashSet<string>{ RoleArn, CredentialSource, Services}
                     }
                 },
                 {
-                    CredentialProfileType.SessionWithGlobalEndpoint, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint, new List<HashSet<string>>()
                     {
-                        AccessKey,
-                        SecretKey,
-                        Token,
-                        EndpointUrl
-                        
+                        new HashSet<string>{ RoleArn, CredentialSource, EndpointUrl, Services}
                     }
                 },
                 {
-                    CredentialProfileType.SessionWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        AccessKey,
-                        SecretKey,
-                        Token,
-                        EndpointUrl,
-                        Services
-                    }
+                    CredentialProfileType.AssumeRoleExternal, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, Services },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, EndpointUrl, Services }
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleSessionName, new HashSet<string>()
+
+                { CredentialProfileType.AssumeRoleExternalWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, Services } } },
+
+                { CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, EndpointUrl } } },
+
+                { CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, Services, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleExternalMFA, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial } } },
+                { CredentialProfileType.AssumeRoleExternalMFAWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, Services } } },
+                { CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, EndpointUrl, Services } } },
+                { 
+                    CredentialProfileType.AssumeRoleWithWebIdentity, new List<HashSet<string>>() 
                     {
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName
-                    }
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource, AwsAccountId },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, Services },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, EndpointUrl, Services },
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleSessionNameWithServices, new HashSet<string>()
+                { CredentialProfileType.AssumeRoleWithWebIdentityWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, Services } } },
+                { CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, Services, EndpointUrl } } },
+                { 
+                    CredentialProfileType.AssumeRoleWithWebIdentitySessionName, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName },
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId } ,
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, Services } ,
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, EndpointUrl } ,
+                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, Services, EndpointUrl } ,
+
+                    } 
+                },
+                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, Services } } },
+                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, EndpointUrl} } },
+                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, EndpointUrl, Services} } },
+                { 
+                    CredentialProfileType.AssumeRoleMFA, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, Services },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, Services, EndpointUrl},
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, EndpointUrl }
+                    } 
+                },
+
+                { CredentialProfileType.AssumeRoleMFAWithServices, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, Services } } },
+                { CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, EndpointUrl, Services } } },
+                { CredentialProfileType.Basic, new List<HashSet<string>>() 
                     {
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services
-                    }
+                        new HashSet<string> { AccessKey, SecretKey },
+                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId },
+                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, Services, EndpointUrl },
+                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, Services }
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint, new HashSet<string>()
+
+                { CredentialProfileType.BasicWithServices, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Services } } },
+
+                { CredentialProfileType.BasicWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, EndpointUrl } } },
+
+                { CredentialProfileType.BasicWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Services, EndpointUrl } } },
+
+                { 
+                    CredentialProfileType.SAMLRole, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { EndpointName, RoleArn },
+                        new HashSet<string> { EndpointName, RoleArn, AwsAccountId },
+                        new HashSet<string> { EndpointName, RoleArn, AwsAccountId, Services },
+                        new HashSet<string> { EndpointName, RoleArn, AwsAccountId, Services, EndpointUrl }
+                    } 
+                },
+
+                { CredentialProfileType.SAMLRoleWithServices, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, Services } } },
+
+                { CredentialProfileType.SAMLRoleWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, EndpointUrl } } },
+
+                { CredentialProfileType.SAMLRoleWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, Services, EndpointUrl } } },
+                { CredentialProfileType.SAMLRoleUserIdentity, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity } } },
+                { CredentialProfileType.SAMLRoleUserIdentityWithServices, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, Services } } },
+                { CredentialProfileType.SAMLRoleUserIdentityWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, EndpointUrl } } },
+                { CredentialProfileType.SAMLRoleUserIdentityWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, EndpointUrl, Services } } },
+                { 
+                    CredentialProfileType.Session, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { AccessKey, SecretKey, Token },
+                        new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId },
+                        new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId, Services, EndpointUrl }
+                    } 
+                },
+
+                { CredentialProfileType.SessionWithServices, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, Services } } },
+
+                { CredentialProfileType.SessionWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, EndpointUrl } } },
+
+                { CredentialProfileType.SessionWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, Services, EndpointUrl } } },
+
+                { 
+                    CredentialProfileType.AssumeRoleSessionName, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
+                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl }
+                    } 
+                },
+
+                { CredentialProfileType.AssumeRoleSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, Services } } },
+
+                { CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
+
+                { CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, Services, EndpointUrl } } },
+                { 
+                    CredentialProfileType.AssumeRoleCredentialSourceSessionName, new List<HashSet<string>>() 
                     {
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName },
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId},
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, Services},
+                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, Services, EndpointUrl},
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        EndpointUrl,
-                        Services
-                    }
+                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, Services } } },
+                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, EndpointUrl, Services } } },
+                { 
+                    CredentialProfileType.AssumeRoleExternalSessionName, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl, Services },
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceSessionName, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        RoleSessionName
-                    }
+
+                { CredentialProfileType.AssumeRoleExternalSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, Services } } },
+
+                { CredentialProfileType.AssumeRoleExternalSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
+
+                { CredentialProfileType.AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, Services, EndpointUrl } } },
+                { 
+                    CredentialProfileType.AssumeRoleExternalMFASessionName, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        RoleSessionName,
-                        Services
-                    }
+                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, Services } } },
+                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl, Services} } },
+                { CredentialProfileType.SSO, new List<HashSet<string>>() { new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession } } },
+                { 
+                    CredentialProfileType.AssumeRoleMFASessionName, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
+                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
+                    } 
                 },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        RoleArn,
-                        CredentialSource,
-                        RoleSessionName,
-                        EndpointUrl,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalSessionName, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalSessionNameWithServices, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalSessionNameWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFASessionName, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFASessionName, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFASessionNameWithServices, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint, new HashSet<string>()
-                    {
-                        MfaSerial,
-                        RoleArn,
-                        SourceProfile,
-                        RoleSessionName,
-                        Services,
-                        EndpointUrl
-                    }
-                },
-                {
-                    CredentialProfileType.SSO, new HashSet<string>()
-                    {
-                        SsoAccountId,
-                        SsoRegion,
-                        SsoRegistrationScopes,
-                        SsoRoleName,
-                        SsoStartUrl,
-                        SsoSession
-                    }
-                },
+                { CredentialProfileType.AssumeRoleMFASessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, Services } } },
+                { CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
+                { CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl, Services } } },
             };
 
         private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
@@ -757,7 +394,9 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.CredentialProcess, CredentialProcess },
                 { CredentialProfileType.BasicWithServices, BasicCredentials },
                 { CredentialProfileType.BasicWithGlobalEndpoint, BasicCredentials },
-                {CredentialProfileType.BasicWithServicesAndGlobalEndpoint, BasicCredentials },
+                { CredentialProfileType.BasicWithServicesAndGlobalEndpoint, BasicCredentials },
+                { CredentialProfileType.BasicWithAccountId, BasicCredentials },
+                { CredentialProfileType.SessionWithAccountId, SessionCredentials }
 
             };
 
@@ -788,10 +427,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
             // brute force algorithm - but it's a very small set
             foreach (var pair in TypePropertyDictionary)
             {
-                if (pair.Value.SetEquals(propertyNames))
+                foreach (var item in pair.Value)
                 {
-                    // exact match
-                    profileType = pair.Key;
+                    if (item.SetEquals(propertyNames))
+                    {
+                        profileType = pair.Key;
+                    }
                 }
             }
 
@@ -800,7 +441,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
         public static HashSet<string> GetPropertiesForProfileType(CredentialProfileType profileType)
         {
-            return new HashSet<string>(TypePropertyDictionary[profileType]);
+            return new HashSet<string>(TypePropertyDictionary[profileType].FirstOrDefault());
         }
 
         private static HashSet<string> GetPropertyNames(CredentialProfileOptions profileOptions)

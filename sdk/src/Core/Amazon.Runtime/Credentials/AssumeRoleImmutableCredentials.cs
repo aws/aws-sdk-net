@@ -41,15 +41,20 @@ namespace Amazon.Runtime
         {
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException("token");
             Expiration = expiration;
+            
         }
 
+        public AssumeRoleImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : this (awsAccessKeyId, awsSecretAccessKey, token, expiration)
+        {
+            AccountId = accountId;
+        }
         /// <summary>
         /// Get a copy of this AssumeRoleImmutableCredentials object.
         /// </summary>
         /// <returns>A copy of this object.</returns>
         new public AssumeRoleImmutableCredentials Copy()
         {
-            return new AssumeRoleImmutableCredentials(AccessKey, SecretKey, Token, Expiration);
+            return new AssumeRoleImmutableCredentials(AccessKey, SecretKey, Token, Expiration, AccountId);
         }
 
         public override int GetHashCode()

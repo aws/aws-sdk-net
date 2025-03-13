@@ -31,13 +31,16 @@ namespace Amazon.Runtime
         /// <param name="awsAccessKeyId"></param>
         /// <param name="awsSecretAccessKey"></param>
         /// <param name="token"></param>
-        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token)
+        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token) : this(awsAccessKeyId, awsSecretAccessKey, token, null)
+        {
+        }
+
+        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, string accountId)
         {
             if (string.IsNullOrEmpty(awsAccessKeyId)) throw new ArgumentNullException("awsAccessKeyId");
             if (string.IsNullOrEmpty(awsSecretAccessKey)) throw new ArgumentNullException("awsSecretAccessKey");
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException("token");
-
-            _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token);
+            _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token, accountId);
         }
 
         #endregion

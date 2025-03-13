@@ -139,7 +139,12 @@ namespace Amazon.Runtime.CredentialManagement
         /// Provided by the SSO service via the web console.
         /// </summary>
         public string SsoStartUrl { get; set; }
-      
+
+        /// <summary>
+        /// The account id to use for account id based endpoint routing
+        /// </summary>
+        public string AwsAccountId { get; set; }
+
         /// <summary>
         /// Return true the properties are all null or empty, false otherwise.
         /// </summary>
@@ -167,7 +172,8 @@ namespace Amazon.Runtime.CredentialManagement
                     string.IsNullOrEmpty(SsoRoleName) &&
                     string.IsNullOrEmpty(SsoStartUrl) &&
                     string.IsNullOrEmpty(SsoSession) &&
-                    string.IsNullOrEmpty(WebIdentityTokenFile);
+                    string.IsNullOrEmpty(WebIdentityTokenFile) &&
+                    string.IsNullOrEmpty(AwsAccountId);
             }
         }
         public override string ToString()
@@ -193,6 +199,7 @@ namespace Amazon.Runtime.CredentialManagement
                 ", " + "SsoRoleName=" + SsoRoleName +
                 ", " + "SsoStartUrl=" + SsoStartUrl +
                 ", " + "SsoSession=" + SsoSession +
+                ", " + "AwsAccountId=" + AwsAccountId +
                 "]";
         }
 
@@ -206,13 +213,13 @@ namespace Amazon.Runtime.CredentialManagement
                 return false;
 
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl },
-                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile, po.SsoAccountId, po.SsoRegion, po.SsoRegistrationScopes, po.SsoRoleName, po.SsoStartUrl, po.SsoSession, po.Services, po.EndpointUrl });
+                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl, AwsAccountId },
+                new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.RoleSessionName, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity, po.CredentialProcess, po.WebIdentityTokenFile, po.SsoAccountId, po.SsoRegion, po.SsoRegistrationScopes, po.SsoRoleName, po.SsoStartUrl, po.SsoSession, po.Services, po.EndpointUrl, po.AwsAccountId });
         }
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl);
+            return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, RoleSessionName, SecretKey, SourceProfile, Token, UserIdentity, CredentialProcess, WebIdentityTokenFile, SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession, Services, EndpointUrl, AwsAccountId);
         }
     }
 }

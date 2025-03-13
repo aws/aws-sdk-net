@@ -161,6 +161,8 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public string ClientAppId { get; set; }
 
+        public string AwsAccountId { get; set; }
+
 
         /// <summary>
         /// Determines the behavior for calculating checksums for request payloads.

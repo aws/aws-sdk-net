@@ -50,7 +50,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets the AccountId property for the current credentials.
         /// </summary>
-        public string AccountId { get; private set; }
+        public string AccountId { get; protected set; }
         #endregion
 
 
@@ -104,6 +104,7 @@ namespace Amazon.Runtime
                 AccessKey = this.AccessKey,
                 SecretKey = this.SecretKey,
                 Token = this.Token,
+                AccountId = this.AccountId
             };
             return credentials;
         }

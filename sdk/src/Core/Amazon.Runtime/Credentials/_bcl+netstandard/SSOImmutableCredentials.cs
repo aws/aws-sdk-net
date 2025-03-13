@@ -46,6 +46,11 @@ namespace Amazon.Runtime
             Expiration = expiration;
         }
 
+        public SSOImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : this(awsAccessKeyId, awsSecretAccessKey, token, expiration)
+        {
+            AccountId = accountId;
+        }
+
         /// <summary>
         /// Get a copy of this SSOImmutableCredentials object.
         /// </summary>
@@ -70,8 +75,8 @@ namespace Amazon.Runtime
                 return false;
 
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey, SecretKey, Token, Expiration },
-                new object[] { ssoImmutableCredentials.AccessKey, ssoImmutableCredentials.SecretKey, ssoImmutableCredentials.Token, Expiration });
+                new object[] { AccessKey, SecretKey, Token, Expiration, AccountId },
+                new object[] { ssoImmutableCredentials.AccessKey, ssoImmutableCredentials.SecretKey, ssoImmutableCredentials.Token, Expiration, AccountId });
         }
     }
 }
