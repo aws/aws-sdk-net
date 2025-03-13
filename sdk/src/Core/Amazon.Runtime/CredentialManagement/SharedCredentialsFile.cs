@@ -71,6 +71,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
         private const string RequestChecksumCalculationField = "request_checksum_calculation";
         private const string ResponseChecksumValidationField = "response_checksum_validation";
+        private const string AwsAccountIdField = "aws_account_id";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -105,6 +106,7 @@ namespace Amazon.Runtime.CredentialManagement
             AccountIdEndpointModeField,
             RequestChecksumCalculationField,
             ResponseChecksumValidationField,
+            AwsAccountIdField
         };
 
         /// <summary>
@@ -172,6 +174,8 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.BasicWithServices,
                 CredentialProfileType.BasicWithServicesAndGlobalEndpoint,
                 CredentialProfileType.SSO,
+                CredentialProfileType.BasicWithAccountId,
+                CredentialProfileType.SessionWithAccountId
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -193,6 +197,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "WebIdentityTokenFile", "web_identity_token_file" },
                     { "Services", "services" },
                     { "EndpointUrl", "endpoint_url" },
+                    { "AwsAccountId", "aws_account_id" },
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
@@ -439,6 +444,7 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.ClientAppId != null)
                 reservedProperties[ClientAppIdField] = profile.ClientAppId;
+
             if (profile.AccountIdEndpointMode != null)
                 reservedProperties[AccountIdEndpointModeField] = profile.AccountIdEndpointMode.ToString().ToLowerInvariant();
 
@@ -957,8 +963,8 @@ namespace Amazon.Runtime.CredentialManagement
                     ClientAppId = clientAppId,
                     AccountIdEndpointMode = accountIdEndpointMode,
                     RequestChecksumCalculation = requestChecksumCalculation,
-                    ResponseChecksumValidation = responseChecksumValidation,
-                };
+                    ResponseChecksumValidation = responseChecksumValidation
+                    };
 
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {

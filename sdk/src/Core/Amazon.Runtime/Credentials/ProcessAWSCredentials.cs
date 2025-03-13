@@ -43,6 +43,7 @@ namespace Amazon.Runtime
     {
         #region Private members
         private const string _versionString = "Version";
+        private string _accountId;
         private Logger _logger = Logger.GetLogger(typeof(ProcessAWSCredentials));
         private readonly ProcessStartInfo _processStartInfo;
         private static JsonDocumentOptions _options = new JsonDocumentOptions
@@ -52,15 +53,15 @@ namespace Amazon.Runtime
         #endregion
 
         #region Public constructors
-
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
-        public ProcessAWSCredentials(string processCredentialInfo)
+        public ProcessAWSCredentials(string processCredentialInfo, string accountId)
         {
             processCredentialInfo = processCredentialInfo.Trim();
-            
+
             //Default to cmd on Windows since that is the only thing BCL runs on.
             var fileName = "cmd.exe";
             var arguments = $@"/c {processCredentialInfo}";
+            _accountId = accountId;
 #if NETSTANDARD
             //If it is netstandard and not running on Windows use sh.
             if(!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))            
@@ -79,10 +80,16 @@ namespace Amazon.Runtime
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
-
+            
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
+        }
+
+
+        public ProcessAWSCredentials(string processCredentialInfo) : this(processCredentialInfo, null)
+        {
+
         }
 
         #endregion
@@ -182,10 +189,10 @@ namespace Amazon.Runtime
                             {
                                 throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", e);
                             }
-
+                            string accountId = processCredentialDataV1.AccountId == null ? _accountId : processCredentialDataV1.AccountId;
                             return new CredentialsRefreshState(
                                 new ImmutableCredentials(processCredentialDataV1.AccessKeyId,
-                                    processCredentialDataV1.SecretAccessKey, processCredentialDataV1.SessionToken), processCredentialDataV1.Expiration);
+                                    processCredentialDataV1.SecretAccessKey, processCredentialDataV1.SessionToken, accountId), processCredentialDataV1.Expiration);
                         default:
                             throw new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture, "Unsupported credential version: {0}" + version));
                     }

@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.Json;
 
+//Add constructor for account id here?
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -58,7 +59,41 @@ namespace Amazon.Runtime
                                         string token,
                                         DateTime expires,
                                         string subject)
-            : base(awsAccessKeyId, awsSecretAccessKey, token)
+            : this(awsAccessKeyId, awsSecretAccessKey, token, expires, subject, null)
+        {
+        }
+
+        /// <summary>
+        /// Constructs an instance with supplied keys and SAML assertion data.
+        /// </summary>
+        /// <param name="awsAccessKeyId"></param>
+        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="token"></param>
+        /// <param name="expires"></param>
+        /// <param name="subject"></param>
+        /// <param name="accountId"></param>
+        public SAMLImmutableCredentials(string awsAccessKeyId,
+                                        string awsSecretAccessKey,
+                                        string token,
+                                        DateTime expires,
+                                        string subject,
+                                        string accountId)
+            : base(awsAccessKeyId, awsSecretAccessKey, token, accountId)
+        {
+            Expires = expires;
+            Subject = subject;
+        }
+        /// <summary>
+        /// Constructs an instance with supplied keys and SAML assertion data and an accountId.
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="expires"></param>
+        /// <param name="subject"></param>
+        /// <param name="accountId"></param>
+        public SAMLImmutableCredentials(ImmutableCredentials credentials,
+                                        DateTime expires,
+                                        string subject,
+                                        string accountId) : base(credentials.AccessKey, credentials.SecretKey, credentials.Token, accountId) 
         {
             Expires = expires;
             Subject = subject;
@@ -73,11 +108,10 @@ namespace Amazon.Runtime
         public SAMLImmutableCredentials(ImmutableCredentials credentials,
                                         DateTime expires,
                                         string subject)
-            : base(credentials.AccessKey, credentials.SecretKey, credentials.Token)
+            : this(credentials, expires, subject, null)
         {
-            Expires = expires;
-            Subject = subject;
         }
+
 
         #endregion
 
@@ -110,7 +144,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials Copy()
         {
-            return new SAMLImmutableCredentials(AccessKey, SecretKey, Token, Expires, Subject);
+            return new SAMLImmutableCredentials(AccessKey, SecretKey, Token, Expires, Subject, AccountId);
         }
         #endregion
 

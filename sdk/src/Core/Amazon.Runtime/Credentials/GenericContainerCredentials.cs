@@ -108,7 +108,7 @@ namespace Amazon.Runtime
                 AWSSDKUtils.Sleep(retry.Next());
             }
 
-            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
+            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token, credentials.AccountId), credentials.Expiration);
         }
 
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()

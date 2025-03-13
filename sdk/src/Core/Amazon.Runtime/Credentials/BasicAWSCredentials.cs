@@ -38,11 +38,21 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="accessKey"></param>
         /// <param name="secretKey"></param>
-        public BasicAWSCredentials(string accessKey, string secretKey)
+        public BasicAWSCredentials(string accessKey, string secretKey) : this (accessKey, secretKey, null)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a BasicAWSCredentials object for the specified accessKey, secretKey, and accountId
+        /// </summary>
+        /// <param name="accessKey"></param>
+        /// <param name="secretKey"></param>
+        /// <param name="accountId"></param>
+        public BasicAWSCredentials(string accessKey, string secretKey, string accountId)
         {
             if (!string.IsNullOrEmpty(accessKey))
             {
-                _credentials = new ImmutableCredentials(accessKey, secretKey, null);
+                _credentials = new ImmutableCredentials(accessKey, secretKey, null, accountId);
             }
         }
 

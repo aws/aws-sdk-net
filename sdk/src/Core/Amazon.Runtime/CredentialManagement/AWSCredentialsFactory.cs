@@ -205,12 +205,12 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.BasicWithServices:
                     case CredentialProfileType.BasicWithGlobalEndpoint:
                     case CredentialProfileType.BasicWithServicesAndGlobalEndpoint:
-                        return new BasicAWSCredentials(options.AccessKey, options.SecretKey);
+                        return string.IsNullOrEmpty(options.AwsAccountId) ? new BasicAWSCredentials(options.AccessKey, options.SecretKey) : new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
                     case CredentialProfileType.Session:
                     case CredentialProfileType.SessionWithServices:
                     case CredentialProfileType.SessionWithGlobalEndpoint:
                     case CredentialProfileType.SessionWithServicesAndGlobalEndpoint:
-                        return new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token);
+                        return string.IsNullOrEmpty(options.AwsAccountId) ? new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token) : new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId); ; 
                     case CredentialProfileType.AssumeRole:
                     case CredentialProfileType.AssumeRoleWithServices:
                     case CredentialProfileType.AssumeRoleWithGlobalEndpoint:
@@ -353,7 +353,7 @@ namespace Amazon.Runtime.CredentialManagement
                             return ThrowOrReturnNull("Federated credentials are not available on this platform.", null, throwIfInvalid);
                         }
                     case CredentialProfileType.CredentialProcess:
-                        return new ProcessAWSCredentials(options.CredentialProcess);
+                        return new ProcessAWSCredentials(options.CredentialProcess, options.AwsAccountId);
 
                     default:
                         var defaultMessage = profileName == null
