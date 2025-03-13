@@ -286,6 +286,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// For instance types with Inference accelerators, specify <c>inference</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Inference accelerators, specify <c>inference</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default: Any accelerator type

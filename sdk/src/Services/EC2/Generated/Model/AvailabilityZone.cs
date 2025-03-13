@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible
-        /// values are <c>opted-in</c>, and <c>not-opted-in</c>.
+        /// values are <c>opted-in</c> and <c>not-opted-in</c>.
         /// </para>
         /// </summary>
         public AvailabilityZoneOptInStatus OptInStatus
@@ -215,8 +215,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is
-        /// always <c>available</c>.
+        /// The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values
+        /// are <c>available</c>, <c>unavailable</c>, and <c>constrained</c>.
         /// </para>
         /// </summary>
         public AvailabilityZoneState State
@@ -270,8 +270,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneType. 
         /// <para>
-        /// The type of zone. The valid values are <c>availability-zone</c>, <c>local-zone</c>,
-        /// and <c>wavelength-zone</c>.
+        /// The type of zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>availability-zone</c> | <c>local-zone</c> | <c>wavelength-zone</c>
+        /// 
         /// </para>
         /// </summary>
         public string ZoneType

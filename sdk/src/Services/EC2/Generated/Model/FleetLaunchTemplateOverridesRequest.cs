@@ -71,6 +71,35 @@ namespace Amazon.EC2.Model
         /// device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User
         /// Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// To override a block device mapping specified in the launch template:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the exact same <c>DeviceName</c> here as specified in the launch template.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only specify the parameters you want to change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any parameters you don't specify here will keep their original launch template values.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To add a new block device mapping:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a <c>DeviceName</c> that doesn't exist in the launch template.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify all desired parameters here.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<FleetBlockDeviceMappingRequest> BlockDeviceMappings
         {
