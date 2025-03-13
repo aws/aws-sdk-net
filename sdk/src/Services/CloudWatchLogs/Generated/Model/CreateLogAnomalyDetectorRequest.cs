@@ -181,8 +181,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using a KMS key and to see the required IAM policy, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html">Use
+        ///  Make sure the value provided is a valid KMS key ARN. For more information about using
+        /// a KMS key and to see the required IAM policy, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html">Use
         /// a KMS key with an anomaly detector</a>.
         /// </para>
         /// </summary>

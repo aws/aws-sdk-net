@@ -180,7 +180,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key assigned to this anomaly detector, if any.
+        /// The ARN of the KMS key assigned to this anomaly detector, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
