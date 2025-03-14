@@ -1,3 +1,16 @@
+### 3.7.1002.0 (2025-03-14 18:14 UTC)
+* CognitoIdentity (3.7.402.33)
+	* Updated API model build artifacts for identity pools
+* CognitoIdentityProvider (3.7.407.8)
+	* Minor description updates to API parameters
+* Glue (3.7.414.0)
+	* This release added AllowFullTableExternalDataAccess to glue catalog resource.
+* LakeFormation (3.7.403.0)
+	* This release added "condition" to LakeFormation OptIn APIs, also added WithPrivilegedAccess flag to RegisterResource and DescribeResource.
+* Core 3.7.402.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1001.0 (2025-03-13 22:07 UTC)
 * ACMPCA (3.7.402.0)
 	* Private Certificate Authority service now supports P521 and RSA3072 key algorithms.
