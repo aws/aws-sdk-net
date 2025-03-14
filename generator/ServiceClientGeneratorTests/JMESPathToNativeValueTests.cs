@@ -9,7 +9,6 @@ namespace ServiceClientGeneratorTests
     public class JMESPathToNativeValueTests
     {
         private const string _modelsPath = "../../Content/TestModelComplexParameters.json";
-        private const string _paginatorsPath = "../../Content/TestPaginators.json";
 
         private ServiceModel testModel = new ServiceModel(_modelsPath, null, null);
 
@@ -131,6 +130,24 @@ namespace ServiceClientGeneratorTests
             var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("list[*].inner", topShape);
 
             Assert.Equal("List.Select(element => element.Inner)", nativeValue);
+        }
+
+        [Fact]
+        public void ComplexPathWithMultiSelectAndFlattenOperator()
+        {
+            var topShapeJson = @"
+                {
+                    ""type"": ""structure"",
+                    ""members"": {
+                            ""listOfUnions"":{""shape"":""ListOfUnions""}
+                        }
+                    }";
+
+            var topShape = Shape.CreateShape(testModel, "topShape", JsonMapper.ToObject(topShapeJson));
+
+            var nativeValue = ServiceClientGenerator.Utils.JMESPathToNativeValue("listOfUnions[*][string, object.key][]", topShape);
+
+            Assert.Equal("ListOfUnions.Select(element => new [] { element.String, element.Object.Key }).SelectMany(element => element)", nativeValue);
         }
     }
 }

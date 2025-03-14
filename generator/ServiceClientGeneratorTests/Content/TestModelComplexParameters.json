@@ -38,6 +38,23 @@
     },
     "String": {
       "type": "string"
+    },
+    "ListOfUnions": {
+      "type": "list",
+      "member": { "shape": "UnionMember" }
+    },
+    "UnionMember": {
+      "type": "structure",
+      "members": {
+        "string": { "shape": "String" },
+        "object": { "shape": "ObjectMember" }
+      }
+    },
+    "ObjectMember": {
+      "type": "structure",
+      "members": {
+        "key": { "shape": "String" }
+      }
     }
   }
 }

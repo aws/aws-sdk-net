@@ -54,6 +54,18 @@
         "requestUri": "/"
       }
     },
+    "ListOfUnionsOperation": {
+      "input": { "shape": "ListOfUnionsOperationRequest" },
+      "operationContextParams": {
+        "stringArrayParam": {
+          "path": "listOfUnions[*][string, object.key][]"
+        }
+      },
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      }
+    },
     "MapOperation": {
       "input": { "shape": "MapOperationRequest" },
       "operationContextParams": {
@@ -92,6 +104,23 @@
       "type": "structure",
       "members": {
         "key":{"shape":"String"}
+      }
+    },
+    "ListOfUnionsOperationRequest": {
+      "type": "structure",
+      "members": {
+        "listOfUnions":{"shape":"ListOfUnions"}
+      }
+    },
+    "ListOfUnions": {
+      "type": "list",
+      "member":{"shape":"UnionMember"}
+    },
+    "UnionMember": {
+      "type": "structure",
+      "members": {
+        "string":{"shape":"String"},
+        "object":{"shape":"ObjectMember"}
       }
     },
     "MapOperationRequest": {

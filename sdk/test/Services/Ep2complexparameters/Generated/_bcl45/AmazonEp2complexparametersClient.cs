@@ -330,6 +330,47 @@ namespace Amazon.Ep2complexparameters
 
         #endregion
         
+        #region  ListOfUnionsOperation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation service method.</param>
+        /// 
+        /// <returns>The response from the ListOfUnionsOperation service method, as returned by Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        public virtual ListOfUnionsOperationResponse ListOfUnionsOperation(ListOfUnionsOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfUnionsOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOfUnionsOperation service method, as returned by Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        public virtual Task<ListOfUnionsOperationResponse> ListOfUnionsOperationAsync(ListOfUnionsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListOfUnionsOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MapOperation
 
 

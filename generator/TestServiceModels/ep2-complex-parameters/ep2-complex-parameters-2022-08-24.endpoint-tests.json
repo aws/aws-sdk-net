@@ -73,6 +73,21 @@
                     }
                 },
                 {
+                    "operationName": "ListOfUnionsOperation",
+                    "operationParams": {
+                        "listOfUnions": [
+                            {
+                                "string": "key1"
+                            },
+                            {
+                                "object": {
+                                    "key": "key2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
                     "operationName": "MapOperation",
                     "operationParams": {
                         "map": {
