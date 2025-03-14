@@ -144,6 +144,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 EpochDate2 = EpochDate,
                 NonEpochDate1 = EpochDate,
                 NonEpochDate2 = EpochDate,
+                NullableEpochDate1 = null,
+                NullableEpochDate2 = EpochDate,
                 LongEpochDate1 = LongEpochDate,
                 LongEpochDate2 = LongEpochDate.AddDays(12),
                 NullableLongEpochDate1 = null,
@@ -157,6 +159,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, storedEmployee.EpochDate2);
             ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(EpochDate, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(LongEpochDate, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(LongEpochDate.AddDays(12), storedEmployee.LongEpochDate2);
             Assert.IsNull(storedEmployee.NullableLongEpochDate1);
@@ -293,6 +297,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 EpochDate2 = currTime,
                 NonEpochDate1 = currTime,
                 NonEpochDate2 = currTime,
+                NullableEpochDate1 = null,
+                NullableEpochDate2 = currTime,
                 LongEpochDate1 = longEpochTime,
                 LongEpochDate2 = longEpochTimeBefore1970,
                 NullableLongEpochDate1 = longEpochTime,
@@ -311,6 +317,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -327,6 +335,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -341,6 +351,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -386,6 +398,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 EpochDate2 = currTime,
                 NonEpochDate1 = currTime,
                 NonEpochDate2 = currTime,
+                NullableEpochDate1 = null,
+                NullableEpochDate2 = currTime,
                 LongEpochDate1 = longEpochTime,
                 LongEpochDate2 = longEpochTimeBefore1970,
                 NullableLongEpochDate1 = longEpochTime,
@@ -406,6 +420,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -422,6 +438,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -436,6 +454,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
+            Assert.IsNull(storedEmployee.NullableEpochDate1);
+            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -2132,6 +2152,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime NonEpochDate1 { get; set; }
 
             public DateTime NonEpochDate2 { get; set; }
+
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime? NullableEpochDate1 { get; set; }
+
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime? NullableEpochDate2 { get; set; }
 
             [DynamoDBProperty(StoreAsEpochLong = true)]
             public DateTime LongEpochDate1 { get; set; }

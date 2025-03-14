@@ -290,6 +290,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             int? epochSeconds = null;
             try
             {
+                var primitiveValue = entry.AsPrimitive();
+
+                // entry.AsPrimitive() could return null for UnconvertedDynamoDBEntry. UnconvertedDynamoDBEntry will always have a value due to check in it's constructor. Hence, we can process it further for epoch conversion.
+                if (primitiveValue != null
+                        && primitiveValue.Value == null)
+                    return entry;
+
                 var dateTime = entry.AsDateTime();
                 epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(dateTime);
             }
