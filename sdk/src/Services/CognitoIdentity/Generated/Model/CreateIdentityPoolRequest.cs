@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// <summary>
     /// Container for the parameters to the CreateIdentityPool operation.
     /// Creates a new identity pool. The identity pool is a store of user identity information
-    /// that is specific to your AWS account. The keys for <c>SupportedLoginProviders</c>
+    /// that is specific to your Amazon Web Services account. The keys for <c>SupportedLoginProviders</c>
     /// are as follows:
     /// 
     ///  <ul> <li> 
@@ -42,6 +42,10 @@ namespace Amazon.CognitoIdentity.Model
     ///  </li> <li> 
     /// <para>
     /// Google: <c>accounts.google.com</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sign in With Apple: <c>appleid.apple.com</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -55,9 +59,14 @@ namespace Amazon.CognitoIdentity.Model
     /// <para>
     /// Digits: <c>www.digits.com</c> 
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <important> 
     /// <para>
-    /// You must use AWS Developer credentials to call this API.
+    /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
+    /// value. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// You must use Amazon Web Services developer credentials to call this operation.
     /// </para>
     /// </summary>
     public partial class CreateIdentityPoolRequest : AmazonCognitoIdentityRequest

@@ -43,8 +43,8 @@ namespace Amazon.CognitoIdentity
     /// or more third-party identity providers (Facebook, Google, or Login with Amazon) or
     /// an Amazon Cognito user pool, and you can also choose to support unauthenticated access
     /// from your app. Cognito delivers a unique identifier for each user and acts as an OpenID
-    /// token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege
-    /// AWS credentials.
+    /// token provider trusted by Security Token Service (STS) to access temporary, limited-privilege
+    /// Amazon Web Services credentials.
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
-        /// that is specific to your AWS account. The keys for <c>SupportedLoginProviders</c>
+        /// that is specific to your Amazon Web Services account. The keys for <c>SupportedLoginProviders</c>
         /// are as follows:
         /// 
         ///  <ul> <li> 
@@ -86,6 +86,10 @@ namespace Amazon.CognitoIdentity
         ///  </li> <li> 
         /// <para>
         /// Google: <c>accounts.google.com</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sign in With Apple: <c>appleid.apple.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -99,9 +103,14 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// Digits: <c>www.digits.com</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <important> 
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
+        /// value. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
@@ -165,7 +174,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentities service method.</param>
@@ -220,7 +229,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
@@ -250,7 +259,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityPool service method.</param>
@@ -311,7 +320,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
@@ -341,7 +350,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentity service method.</param>
@@ -402,7 +411,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
@@ -432,7 +441,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityPool service method.</param>
@@ -489,9 +498,9 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Returns credentials for the provided identity ID. Any provided logins will be validated
-        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
-        /// it will be passed through to AWS Security Token Service with the appropriate role
-        /// for the token.
+        /// against supported login providers. If the token is for <c>cognito-identity.amazonaws.com</c>,
+        /// it will be passed through to Security Token Service with the appropriate role for
+        /// the token.
         /// 
         ///  
         /// <para>
@@ -508,8 +517,18 @@ namespace Amazon.CognitoIdentity
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-        /// or if the AssumeRole fails.
+        /// If you provided authentication information in the request, the identity pool has no
+        /// authenticated role configured, or STS returned an error response to the request to
+        /// assume the authenticated role from the identity pool. If you provided no authentication
+        /// information in the request, the identity pool has no unauthenticated role configured,
+        /// or STS returned an error response to the request to assume the unauthenticated role
+        /// from the identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// Your role trust policy must grant <c>AssumeRoleWithWebIdentity</c> permissions to
+        /// <c>cognito-identity.amazonaws.com</c>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
@@ -531,9 +550,9 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Returns credentials for the provided identity ID. Any provided logins will be validated
-        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
-        /// it will be passed through to AWS Security Token Service with the appropriate role
-        /// for the token.
+        /// against supported login providers. If the token is for <c>cognito-identity.amazonaws.com</c>,
+        /// it will be passed through to Security Token Service with the appropriate role for
+        /// the token.
         /// 
         ///  
         /// <para>
@@ -551,8 +570,18 @@ namespace Amazon.CognitoIdentity
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-        /// or if the AssumeRole fails.
+        /// If you provided authentication information in the request, the identity pool has no
+        /// authenticated role configured, or STS returned an error response to the request to
+        /// assume the authenticated role from the identity pool. If you provided no authentication
+        /// information in the request, the identity pool has no unauthenticated role configured,
+        /// or STS returned an error response to the request to assume the unauthenticated role
+        /// from the identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// Your role trust policy must grant <c>AssumeRoleWithWebIdentity</c> permissions to
+        /// <c>cognito-identity.amazonaws.com</c>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
@@ -574,9 +603,9 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Returns credentials for the provided identity ID. Any provided logins will be validated
-        /// against supported login providers. If the token is for cognito-identity.amazonaws.com,
-        /// it will be passed through to AWS Security Token Service with the appropriate role
-        /// for the token.
+        /// against supported login providers. If the token is for <c>cognito-identity.amazonaws.com</c>,
+        /// it will be passed through to Security Token Service with the appropriate role for
+        /// the token.
         /// 
         ///  
         /// <para>
@@ -593,8 +622,18 @@ namespace Amazon.CognitoIdentity
         /// Thrown when the service encounters an error during processing the request.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidIdentityPoolConfigurationException">
-        /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-        /// or if the AssumeRole fails.
+        /// If you provided authentication information in the request, the identity pool has no
+        /// authenticated role configured, or STS returned an error response to the request to
+        /// assume the authenticated role from the identity pool. If you provided no authentication
+        /// information in the request, the identity pool has no unauthenticated role configured,
+        /// or STS returned an error response to the request to assume the unauthenticated role
+        /// from the identity pool.
+        /// 
+        ///  
+        /// <para>
+        /// Your role trust policy must grant <c>AssumeRoleWithWebIdentity</c> permissions to
+        /// <c>cognito-identity.amazonaws.com</c>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
         /// Thrown for missing or bad input parameter(s).
@@ -646,7 +685,7 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
+        /// Generates (or retrieves) IdentityID. Supplying multiple logins will create an implicit
         /// linked account.
         /// 
         ///  
@@ -720,7 +759,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
@@ -752,7 +791,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityPoolRoles service method.</param>
@@ -941,7 +980,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOpenIdTokenForDeveloperIdentity service method.</param>
@@ -1064,7 +1103,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method.</param>
@@ -1124,7 +1163,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityPools service method.</param>
@@ -1252,7 +1291,7 @@ namespace Amazon.CognitoIdentity
         /// searched in the database and returned as a part of the response. If you supply both,
         /// <c>DeveloperUserIdentifier</c> will be matched against <c>IdentityID</c>. If the values
         /// are verified against the database, the response returns both values and is the same
-        /// as the request. Otherwise a <c>ResourceConflictException</c> is thrown.
+        /// as the request. Otherwise, a <c>ResourceConflictException</c> is thrown.
         /// 
         ///  
         /// <para>
@@ -1264,7 +1303,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupDeveloperIdentity service method.</param>
@@ -1339,7 +1378,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergeDeveloperIdentities service method.</param>
@@ -1403,7 +1442,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="identityPoolId">An identity pool ID in the format REGION:GUID.</param>
@@ -1440,7 +1479,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIdentityPoolRoles service method.</param>
@@ -1643,7 +1682,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnlinkDeveloperIdentity service method.</param>
@@ -1826,11 +1865,16 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Updates an identity pool.
+        /// Updates the configuration of an identity pool.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// You must use AWS Developer credentials to call this API.
+        /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
+        /// value. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You must use Amazon Web Services developer credentials to call this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityPool service method.</param>

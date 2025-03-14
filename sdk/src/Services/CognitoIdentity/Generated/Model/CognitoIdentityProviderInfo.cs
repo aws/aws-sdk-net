@@ -86,7 +86,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Once you set <c>ServerSideTokenCheck</c> to TRUE for an identity pool, that identity
         /// pool will check with the integrated user pools to make sure that the user has not
         /// been globally signed out or deleted before the identity pool provides an OIDC token
-        /// or AWS credentials for the user.
+        /// or Amazon Web Services credentials for the user.
         /// </para>
         ///  
         /// <para>

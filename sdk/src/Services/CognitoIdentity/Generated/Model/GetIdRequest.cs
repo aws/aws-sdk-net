@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the GetId operation.
-    /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
+    /// Generates (or retrieves) IdentityID. Supplying multiple logins will create an implicit
     /// linked account.
     /// 
     ///  
@@ -49,7 +49,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// A standard AWS account ID (9+ digits).
+        /// A standard Amazon Web Services account ID (9+ digits).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
