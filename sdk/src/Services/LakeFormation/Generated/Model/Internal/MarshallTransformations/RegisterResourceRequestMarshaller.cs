@@ -97,6 +97,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WithFederation);
                 }
 
+                if(publicRequest.IsSetWithPrivilegedAccess())
+                {
+                    context.Writer.WritePropertyName("WithPrivilegedAccess");
+                    context.Writer.Write(publicRequest.WithPrivilegedAccess);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

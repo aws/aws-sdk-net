@@ -39,6 +39,7 @@ namespace Amazon.LakeFormation.Model
         private string _resourceArn;
         private string _roleArn;
         private bool? _withFederation;
+        private bool? _withPrivilegedAccess;
 
         /// <summary>
         /// Gets and sets the property HybridAccessEnabled. 
@@ -129,6 +130,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetWithFederation()
         {
             return this._withFederation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithPrivilegedAccess. 
+        /// <para>
+        /// Grants the calling principal the permissions to perform all supported Lake Formation
+        /// operations on the registered data location. 
+        /// </para>
+        /// </summary>
+        public bool WithPrivilegedAccess
+        {
+            get { return this._withPrivilegedAccess.GetValueOrDefault(); }
+            set { this._withPrivilegedAccess = value; }
+        }
+
+        // Check to see if WithPrivilegedAccess property is set
+        internal bool IsSetWithPrivilegedAccess()
+        {
+            return this._withPrivilegedAccess.HasValue; 
         }
 
     }
