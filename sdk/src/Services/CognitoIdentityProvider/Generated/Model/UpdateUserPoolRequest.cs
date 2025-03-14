@@ -210,7 +210,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <note> 
         /// <para>
         /// When you provide a value for any <c>DeviceConfiguration</c> field, you activate the
-        /// Amazon Cognito device-remembering feature. For more infor
+        /// Amazon Cognito device-remembering feature. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with devices</a>.
         /// </para>
         ///  </note>
         /// </summary>

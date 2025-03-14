@@ -88,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Provide this parameter only if you want to use a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">custom
         /// domain</a> for your user pool. Otherwise, you can omit this parameter and use a <a
-        /// href="cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html">prefix
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html">prefix
         /// domain</a> instead.
         /// </para>
         ///  

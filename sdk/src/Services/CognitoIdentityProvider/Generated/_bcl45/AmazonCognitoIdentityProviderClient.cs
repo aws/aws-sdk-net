@@ -7859,7 +7859,7 @@ namespace Amazon.CognitoIdentityProvider
         /// When you delete a user pool, it's no longer visible or operational in your Amazon
         /// Web Services account. Amazon Cognito retains deleted user pools in an inactive state
         /// for 14 days, then begins a cleanup process that fully removes them from Amazon Web
-        /// Services systems. In case of accidental deletion, contact Amazon Web Services Support
+        /// Services systems. In case of accidental deletion, contact Amazon Web ServicesSupport
         /// within 14 days for restoration assistance.
         /// </para>
         ///  
@@ -7912,7 +7912,7 @@ namespace Amazon.CognitoIdentityProvider
         /// When you delete a user pool, it's no longer visible or operational in your Amazon
         /// Web Services account. Amazon Cognito retains deleted user pools in an inactive state
         /// for 14 days, then begins a cleanup process that fully removes them from Amazon Web
-        /// Services systems. In case of accidental deletion, contact Amazon Web Services Support
+        /// Services systems. In case of accidental deletion, contact Amazon Web ServicesSupport
         /// within 14 days for restoration assistance.
         /// </para>
         ///  
@@ -13191,7 +13191,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Sets up or modifies the logging configuration of a user pool. User pools can export
         /// user notification logs and, when threat protection is active, user-activity logs.
-        /// For more information, see <a href="cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
         /// user pool logs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLogDeliveryConfiguration service method.</param>
@@ -13231,7 +13231,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Sets up or modifies the logging configuration of a user pool. User pools can export
         /// user notification logs and, when threat protection is active, user-activity logs.
-        /// For more information, see <a href="cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting
         /// user pool logs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLogDeliveryConfiguration service method.</param>

@@ -320,13 +320,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <dl> <dt>email</dt> <dd> 
         /// <para>
         /// The email address where you want the user to receive their confirmation code and username.
-        /// You must provide a value for the <c>email</c> when you want to set <c>email_verified</c>
+        /// You must provide a value for <c>email</c> when you want to set <c>email_verified</c>
         /// to <c>true</c>, or if you set <c>EMAIL</c> in the <c>DesiredDeliveryMediums</c> parameter.
         /// </para>
         ///  </dd> <dt>phone_number</dt> <dd> 
         /// <para>
         /// The phone number where you want the user to receive their confirmation code and username.
-        /// You must provide a value for the <c>email</c> when you want to set <c>phone_number</c>
+        /// You must provide a value for <c>phone_number</c> when you want to set <c>phone_number_verified</c>
         /// to <c>true</c>, or if you set <c>SMS</c> in the <c>DesiredDeliveryMediums</c> parameter.
         /// </para>
         ///  </dd> </dl>

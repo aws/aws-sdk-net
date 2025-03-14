@@ -162,32 +162,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// UNCONFIRMED - User has been created but not confirmed.
+        ///  <c>UNCONFIRMED</c>: User has been created but not confirmed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CONFIRMED - User has been confirmed.
+        ///  <c>CONFIRMED</c>: User has been confirmed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// EXTERNAL_PROVIDER - User signed in with a third-party IdP.
+        ///  <c>EXTERNAL_PROVIDER</c>: User signed in with a third-party IdP.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNKNOWN - User status isn't known.
+        ///  <c>RESET_REQUIRED</c>: User is confirmed, but the user must request a code and reset
+        /// their password before they can sign in.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RESET_REQUIRED - User is confirmed, but the user must request a code and reset their
-        /// password before they can sign in.
+        ///  <c>FORCE_CHANGE_PASSWORD</c>: The user is confirmed and the user can sign in using
+        /// a temporary password, but on first sign-in, the user must change their password to
+        /// a new value before doing anything else. 
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        /// FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary
-        /// password, but on first sign-in, the user must change their password to a new value
-        /// before doing anything else. 
+        /// The statuses <c>ARCHIVED</c>, <c>UNKNOWN</c>, and <c>COMPROMISED</c> are no longer
+        /// used.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public UserStatusType UserStatus
         {
