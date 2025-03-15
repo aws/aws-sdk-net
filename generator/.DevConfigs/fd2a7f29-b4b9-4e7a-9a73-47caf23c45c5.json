@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBStreams",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update documentation for code generated from DynamoDB Streams models"
+            ]
+        }
+    ]
+}
