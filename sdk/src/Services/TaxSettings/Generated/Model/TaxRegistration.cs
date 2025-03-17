@@ -140,7 +140,7 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property RegistrationType. 
         /// <para>
-        /// Type of your tax registration. This can be either <c>VAT</c> or <c>GST</c>. 
+        /// Type of your tax registration. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
