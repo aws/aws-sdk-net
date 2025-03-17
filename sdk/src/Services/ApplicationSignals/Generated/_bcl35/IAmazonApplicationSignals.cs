@@ -141,6 +141,55 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  BatchUpdateExclusionWindows
+
+
+        /// <summary>
+        /// Add or remove time window exclusions for one or more Service Level Objectives (SLOs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateExclusionWindows service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateExclusionWindows service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
+        BatchUpdateExclusionWindowsResponse BatchUpdateExclusionWindows(BatchUpdateExclusionWindowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateExclusionWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateExclusionWindows operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateExclusionWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
+        IAsyncResult BeginBatchUpdateExclusionWindows(BatchUpdateExclusionWindowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateExclusionWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateExclusionWindows.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateExclusionWindowsResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
+        BatchUpdateExclusionWindowsResponse EndBatchUpdateExclusionWindows(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateServiceLevelObjective
 
 
@@ -551,6 +600,55 @@ namespace Amazon.ApplicationSignals
         /// <returns>Returns a  ListServiceDependentsResult from ApplicationSignals.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceDependents">REST API Reference for ListServiceDependents Operation</seealso>
         ListServiceDependentsResponse EndListServiceDependents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListServiceLevelObjectiveExclusionWindows
+
+
+        /// <summary>
+        /// Retrieves all exclusion windows configured for a specific SLO.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceLevelObjectiveExclusionWindows service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceLevelObjectiveExclusionWindows service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">REST API Reference for ListServiceLevelObjectiveExclusionWindows Operation</seealso>
+        ListServiceLevelObjectiveExclusionWindowsResponse ListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceLevelObjectiveExclusionWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceLevelObjectiveExclusionWindows operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceLevelObjectiveExclusionWindows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">REST API Reference for ListServiceLevelObjectiveExclusionWindows Operation</seealso>
+        IAsyncResult BeginListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceLevelObjectiveExclusionWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceLevelObjectiveExclusionWindows.</param>
+        /// 
+        /// <returns>Returns a  ListServiceLevelObjectiveExclusionWindowsResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">REST API Reference for ListServiceLevelObjectiveExclusionWindows Operation</seealso>
+        ListServiceLevelObjectiveExclusionWindowsResponse EndListServiceLevelObjectiveExclusionWindows(IAsyncResult asyncResult);
 
         #endregion
         

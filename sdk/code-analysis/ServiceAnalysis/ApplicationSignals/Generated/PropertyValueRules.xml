@@ -28,6 +28,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.Id</property>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectivesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -80,6 +89,10 @@
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.BatchUpdateExclusionWindowsError.SloId</property>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BurnRateConfiguration.LookBackWindowMinutes</property>
     <min>1</min>
     <max>10080</max>
@@ -95,6 +108,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.Dimension.Value</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ExclusionWindow.Reason</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -150,6 +168,11 @@
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.MetricStat.Period</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.RecurrenceRule.Expression</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.RequestBasedServiceLevelIndicatorMetric.OperationName</property>
@@ -270,5 +293,9 @@
     <property>Amazon.ApplicationSignals.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.Window.Duration</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>
