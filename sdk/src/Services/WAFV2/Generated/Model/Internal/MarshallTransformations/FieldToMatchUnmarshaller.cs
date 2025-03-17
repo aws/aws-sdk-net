@@ -138,6 +138,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SingleQueryArgument = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UriFragment", targetDepth))
+                {
+                    var unmarshaller = UriFragmentUnmarshaller.Instance;
+                    unmarshalledObject.UriFragment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UriPath", targetDepth))
                 {
                     var unmarshaller = UriPathUnmarshaller.Instance;

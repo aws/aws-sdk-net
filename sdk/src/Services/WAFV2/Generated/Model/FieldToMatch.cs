@@ -98,6 +98,7 @@ namespace Amazon.WAFV2.Model
         private QueryString _queryString;
         private SingleHeader _singleHeader;
         private SingleQueryArgument _singleQueryArgument;
+        private UriFragment _uriFragment;
         private UriPath _uriPath;
 
         /// <summary>
@@ -449,6 +450,34 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetSingleQueryArgument()
         {
             return this._singleQueryArgument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriFragment. 
+        /// <para>
+        /// Inspect fragments of the request URI. You must configure scope and pattern matching
+        /// filters in the <c>UriFragment</c> object, to define the fragment of a URI that WAF
+        /// inspects. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200
+        /// URI fragments are forwarded to WAF for inspection by the underlying host service.
+        /// You must configure how to handle any oversize URI fragment content in the <c>UriFragment</c>
+        /// object. WAF applies the pattern matching filters to the cookies that it receives from
+        /// the underlying host service. 
+        /// </para>
+        /// </summary>
+        public UriFragment UriFragment
+        {
+            get { return this._uriFragment; }
+            set { this._uriFragment = value; }
+        }
+
+        // Check to see if UriFragment property is set
+        internal bool IsSetUriFragment()
+        {
+            return this._uriFragment != null;
         }
 
         /// <summary>

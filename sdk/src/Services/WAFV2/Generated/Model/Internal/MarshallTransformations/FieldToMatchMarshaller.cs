@@ -180,6 +180,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUriFragment())
+            {
+                context.Writer.WritePropertyName("UriFragment");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UriFragmentMarshaller.Instance;
+                marshaller.Marshall(requestObject.UriFragment, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUriPath())
             {
                 context.Writer.WritePropertyName("UriPath");
