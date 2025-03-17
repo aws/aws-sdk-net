@@ -72,8 +72,14 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetCenter())
                 request.Parameters.Add("center", StringUtils.FromString(publicRequest.Center));
             
+            if (publicRequest.IsSetColorScheme())
+                request.Parameters.Add("color-scheme", StringUtils.FromString(publicRequest.ColorScheme));
+            
             if (publicRequest.IsSetCompactOverlay())
                 request.Parameters.Add("compact-overlay", StringUtils.FromString(publicRequest.CompactOverlay));
+            
+            if (publicRequest.IsSetCropLabels())
+                request.Parameters.Add("crop-labels", StringUtils.FromBool(publicRequest.CropLabels));
             
             if (publicRequest.IsSetGeoJsonOverlay())
                 request.Parameters.Add("geojson-overlay", StringUtils.FromString(publicRequest.GeoJsonOverlay));
@@ -84,8 +90,20 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             
+            if (publicRequest.IsSetLabelSize())
+                request.Parameters.Add("label-size", StringUtils.FromString(publicRequest.LabelSize));
+            
+            if (publicRequest.IsSetLanguage())
+                request.Parameters.Add("lang", StringUtils.FromString(publicRequest.Language));
+            
             if (publicRequest.IsSetPadding())
                 request.Parameters.Add("padding", StringUtils.FromInt(publicRequest.Padding));
+            
+            if (publicRequest.IsSetPointsOfInterests())
+                request.Parameters.Add("pois", StringUtils.FromString(publicRequest.PointsOfInterests));
+            
+            if (publicRequest.IsSetPoliticalView())
+                request.Parameters.Add("political-view", StringUtils.FromString(publicRequest.PoliticalView));
             
             if (publicRequest.IsSetRadius())
                 request.Parameters.Add("radius", StringUtils.FromLong(publicRequest.Radius));

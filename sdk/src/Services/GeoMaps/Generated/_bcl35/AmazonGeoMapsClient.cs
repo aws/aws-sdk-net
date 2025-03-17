@@ -283,7 +283,7 @@ namespace Amazon.GeoMaps
         #region  GetGlyphs
 
         /// <summary>
-        /// Returns the map's glyphs.
+        /// <c>GetGlyphs</c> returns the map's glyphs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlyphs service method.</param>
         /// 
@@ -337,7 +337,7 @@ namespace Amazon.GeoMaps
         #region  GetSprites
 
         /// <summary>
-        /// Returns the map's sprites.
+        /// <c>GetSprites</c> returns the map's sprites.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSprites service method.</param>
         /// 
@@ -391,9 +391,9 @@ namespace Amazon.GeoMaps
         #region  GetStaticMap
 
         /// <summary>
-        /// Provides high-quality static map images with customizable options. You can modify
-        /// the map's appearance and overlay additional information. It's an ideal solution for
-        /// applications requiring tailored static map snapshots.
+        /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
+        /// You can modify the map's appearance and overlay additional information. It's an ideal
+        /// solution for applications requiring tailored static map snapshots.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticMap service method.</param>
         /// 
@@ -460,7 +460,7 @@ namespace Amazon.GeoMaps
         #region  GetStyleDescriptor
 
         /// <summary>
-        /// Returns information about the style.
+        /// <c>GetStyleDescriptor</c> returns information about the style.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStyleDescriptor service method.</param>
         /// 
@@ -514,8 +514,9 @@ namespace Amazon.GeoMaps
         #region  GetTile
 
         /// <summary>
-        /// Returns a tile. Map tiles are used by clients to render a map. they're addressed using
-        /// a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
+        /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
+        /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
+        /// level.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTile service method.</param>
         /// 
