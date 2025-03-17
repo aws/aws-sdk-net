@@ -1,3 +1,18 @@
+### 3.7.1003.0 (2025-03-17 18:32 UTC)
+* ApplicationSignals (3.7.405.0)
+	* This release adds support for adding, removing, and listing SLO time exclusion windows with the BatchUpdateExclusionWindows and ListServiceLevelObjectiveExclusionWindows APIs.
+* CloudWatchRUM (3.7.402.0)
+	* CloudWatch RUM now supports unminification of JS error stack traces.
+* GeoMaps (3.7.401.0)
+	* Provide support for vector map styles in the GetStaticMap operation.
+* TaxSettings (3.7.404.0)
+	* Adjust Vietnam PaymentVoucherNumber regex and minor API change.
+* WAFV2 (3.7.405.0)
+	* AWS WAF now lets you inspect fragments of request URIs. You can specify the scope of the URI to inspect and narrow the set of URI fragments.
+* Core 3.7.402.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1002.0 (2025-03-14 18:14 UTC)
 * CognitoIdentity (3.7.402.33)
 	* Updated API model build artifacts for identity pools
