@@ -40,7 +40,7 @@ if (this.Config.ServiceModel.HasPaginators)
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
-            if(operation.IsInternal)
+            if(operation.IsInternal || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput))
                 continue;
 		#>
 

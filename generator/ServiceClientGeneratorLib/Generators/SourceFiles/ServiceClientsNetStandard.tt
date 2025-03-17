@@ -385,6 +385,12 @@ namespace <#=this.Config.Namespace#>
         #region  <#=operation.Name#>
 
 <#
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+        {
+#>
+#if NET8_0_OR_GREATER
+<#
+        }
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
 		if(operation.IsDeprecated)
@@ -476,7 +482,14 @@ namespace <#=this.Config.Namespace#>
 
             return InvokeAsync<<#=operation.Name#>Response>(request, options, cancellationToken);
         }
-
+<#
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+        {
+#>
+#endif
+<#
+        }
+#>
         #endregion
         <#
         }

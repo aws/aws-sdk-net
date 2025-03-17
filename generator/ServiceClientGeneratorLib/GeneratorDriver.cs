@@ -139,12 +139,6 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            if (Configuration.ServiceModel.H2Support == H2SupportDegree.Required)
-            {
-                Console.WriteLine("This service requires HTTP2 for all operations. The AWS SDK for .NET does not yet support this functionality. Not generating service.");
-                return;
-            }
-
             ValidateServiceModel();
 
             this.FilesWrittenToGeneratorFolder.Clear();
