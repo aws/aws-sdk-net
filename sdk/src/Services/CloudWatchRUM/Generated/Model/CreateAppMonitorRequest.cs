@@ -54,7 +54,9 @@ namespace Amazon.CloudWatchRUM.Model
         private AppMonitorConfiguration _appMonitorConfiguration;
         private CustomEvents _customEvents;
         private bool? _cwLogEnabled;
+        private DeobfuscationConfiguration _deobfuscationConfiguration;
         private string _domain;
+        private List<string> _domainList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -136,12 +138,31 @@ namespace Amazon.CloudWatchRUM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeobfuscationConfiguration. 
+        /// <para>
+        ///  A structure that contains the configuration for how an app monitor can deobfuscate
+        /// stack traces. 
+        /// </para>
+        /// </summary>
+        public DeobfuscationConfiguration DeobfuscationConfiguration
+        {
+            get { return this._deobfuscationConfiguration; }
+            set { this._deobfuscationConfiguration = value; }
+        }
+
+        // Check to see if DeobfuscationConfiguration property is set
+        internal bool IsSetDeobfuscationConfiguration()
+        {
+            return this._deobfuscationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
         /// The top-level internet domain name for which your application has administrative authority.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=253)]
+        [AWSProperty(Min=1, Max=253)]
         public string Domain
         {
             get { return this._domain; }
@@ -152,6 +173,26 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainList. 
+        /// <para>
+        ///  List the domain names for which your application has administrative authority. The
+        /// <c>CreateAppMonitor</c> requires either the domain or the domain list. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> DomainList
+        {
+            get { return this._domainList; }
+            set { this._domainList = value; }
+        }
+
+        // Check to see if DomainList property is set
+        internal bool IsSetDomainList()
+        {
+            return this._domainList != null && (this._domainList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
