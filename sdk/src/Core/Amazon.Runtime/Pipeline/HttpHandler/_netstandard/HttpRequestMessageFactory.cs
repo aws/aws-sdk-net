@@ -245,8 +245,14 @@ namespace Amazon.Runtime
          /// <returns></returns>
         private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
         {
+#if NET8_0_OR_GREATER
+            var httpMessageHandler = new SocketsHttpHandler()
+            {
+                EnableMultipleHttp2Connections = true
+            };
+#else
             var httpMessageHandler = new HttpClientHandler();
-
+#endif
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
 
@@ -439,6 +445,25 @@ namespace Amazon.Runtime
         public Uri RequestUri
         {
             get { return _request.RequestUri; }
+        }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion
+        {
+            get { return _request.Version; }
+            set
+            {
+                _request.Version = value;
+
+#if NET8_0_OR_GREATER
+                if (_request.Version == HttpVersion.Version20)
+                {
+                    _request.VersionPolicy = HttpVersionPolicy.RequestVersionExact;
+                }
+#endif
+            }
         }
 
         /// <summary>

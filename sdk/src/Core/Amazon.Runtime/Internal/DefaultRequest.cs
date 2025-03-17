@@ -558,5 +558,10 @@ namespace Amazon.Runtime.Internal
         /// Custom endpoint attributes
         /// </summary>
         public IPropertyBag EndpointAttributes { get; set; }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion { get; set; } = HttpVersion.Version11;
     }
 }

@@ -368,6 +368,10 @@ namespace Amazon.Runtime.Internal
             var httpRequest = _requestFactory.CreateHttpRequest(url);
             httpRequest.ConfigureRequest(requestContext);
 
+#if NET8_0_OR_GREATER
+            httpRequest.HttpProtocolVersion = request.HttpProtocolVersion;
+#endif
+
             httpRequest.Method = request.HttpMethod;
             if (request.MayContainRequestBody())
             {

@@ -384,5 +384,10 @@ namespace Amazon.Runtime.Internal
         /// The time which the request was signed at.
         /// </summary>
         DateTime? SignedAt { get; set; }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        Version HttpProtocolVersion { get; set; }
     }
 }

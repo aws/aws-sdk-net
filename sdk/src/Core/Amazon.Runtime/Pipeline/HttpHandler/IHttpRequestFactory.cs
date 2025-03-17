@@ -107,6 +107,11 @@ namespace Amazon.Runtime
         /// </summary>
         void Abort();
 
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        Version HttpProtocolVersion { get; set; }
+
 #if AWS_ASYNC_API
         /// <summary>
         /// Gets a handle to the request content.
