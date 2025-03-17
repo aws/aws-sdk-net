@@ -73,7 +73,7 @@ namespace <#=this.Config.Namespace#>.Model
 
     if(this.Structure != null && this.Structure.IsEventStream)
     {
-        string EventStreamOutput = new ServiceClientGenerator.Generators.SourceFiles.EventStreamGenerator()
+        string EventStreamOutput = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
         {
           Structure = this.Structure,
           Operation = this.Operation,
