@@ -97,9 +97,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property SystemIds. Relates to SPEKE implementation. DRM system
-        /// identifiers. DASH output groups support a max of two system ids. Other group types
-        /// support one system id. See https://dashif.org/identifiers/content_protection/ for
-        /// more details.
+        /// identifiers. DASH output groups support a max of two system ids. HLS output groups
+        /// support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/
+        /// for more details.
         /// </summary>
         public List<string> SystemIds
         {

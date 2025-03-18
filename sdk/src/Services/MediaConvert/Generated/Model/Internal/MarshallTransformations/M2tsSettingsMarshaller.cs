@@ -77,6 +77,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetAudioPtsOffsetDelta())
+            {
+                context.Writer.WritePropertyName("audioPtsOffsetDelta");
+                context.Writer.Write(requestObject.AudioPtsOffsetDelta);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
