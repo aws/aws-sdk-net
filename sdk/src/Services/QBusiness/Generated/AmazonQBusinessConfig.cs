@@ -32,7 +32,7 @@ namespace Amazon.QBusiness
     public partial class AmazonQBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QBusiness", "3.7.411.9");
+            InternalSDKUtils.BuildUserAgentString("QBusiness", "3.7.411.10");
 
         private string _userAgent = UserAgentString;
         ///<summary>

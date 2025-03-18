@@ -1,3 +1,18 @@
+### 3.7.1004.0 (2025-03-18 18:27 UTC)
+* AppSync (3.7.407.0)
+	* Providing Tagging support for DomainName in AppSync
+* CleanRooms (3.7.404.0)
+	* This release adds support for PySpark jobs. Customers can now analyze data by running jobs using approved PySpark analysis templates.
+* DynamoDBv2 (3.7.406.3)
+	* Update documentation for code generated from DynamoDB Streams models
+* MediaConvert (3.7.410.0)
+	* This release adds support for AVC passthrough, the ability to specify PTS offset without padding, and an A/V segment matching feature.
+* Route53 (3.7.406.0)
+	* Amazon Route 53 now supports the iso-f regions for private DNS Amazon VPCs and cloudwatch healthchecks.
+* Core 3.7.402.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1003.0 (2025-03-17 18:32 UTC)
 * ApplicationSignals (3.7.405.0)
 	* This release adds support for adding, removing, and listing SLO time exclusion windows with the BatchUpdateExclusionWindows and ListServiceLevelObjectiveExclusionWindows APIs.
