@@ -467,6 +467,16 @@ namespace ServiceClientGenerator
             }
         }
 
+        public Member RequestEventStreamingMember
+        {
+            get
+            {
+                return this.RequestStructure == null ?
+                    null :
+                    this.RequestStructure.Members.SingleOrDefault(m => m.Shape.IsEventStream);
+            }
+        }
+
         /// <summary>
         /// Members who are part of the request's body
         /// </summary>
@@ -528,7 +538,11 @@ namespace ServiceClientGenerator
         public bool IsEventStreamOutput => ResponseStructure?.Members?.Any(
                                                member => member.Shape?.IsEventStream ?? false)
                                            ?? false;
-        
+
+        public bool IsEventStreamInput => RequestStructure?.Members?.Any(
+                                               member => member.Shape?.IsEventStream ?? false)
+                                           ?? false;
+
         /// <summary>
         /// Determines if the request structure will have members in the header
         /// </summary>

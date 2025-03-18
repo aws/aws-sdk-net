@@ -257,7 +257,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line 108 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
   
 
-    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
+    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString && !payload.Shape.IsEventStream);
 	// Process any members which are marshalled as part of the request body
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{

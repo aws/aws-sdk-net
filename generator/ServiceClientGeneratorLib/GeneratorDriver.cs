@@ -539,7 +539,7 @@ namespace ServiceClientGenerator
                     if (nestedStructure.IsDocument)
                         continue;
 
-                    if (!this._processedMarshallers.Contains(nestedStructure.Name))
+                    if (!this._processedMarshallers.Contains(nestedStructure.Name) && !nestedStructure.IsEventStream)
                     {
                         var structureGenerator = GetStructureMarshaller();
                         structureGenerator.Structure = nestedStructure;

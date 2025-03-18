@@ -1,0 +1,13 @@
+﻿<#@ template language="C#" inherits="StructureGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    bool isRequest = this.Operation.RequestStructure.Members.Any(x => x.ModelShape.MarshallName == this.Structure.Name);
+    bool isResponse = this.Operation.ResponseStructure.Members.Any(x => x.ModelShape.MarshallName == this.Structure.Name);
+#>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<#=this.Structure.Name#>Collection is not descriptive")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
+    public sealed class <#=this.Structure.Name#>
+    {

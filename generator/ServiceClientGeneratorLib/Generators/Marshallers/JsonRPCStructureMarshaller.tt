@@ -44,6 +44,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	{
 		foreach(var member in members)
 		{
+			if (member.ModelShape.IsEventStream)
+				continue;
 #>
 <#=new string(' ', level * 4)#>            if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#=new string(' ', level * 4)#>            {

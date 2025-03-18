@@ -334,6 +334,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Generators\SourceFiles\EventStreamInputGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamInputGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\EventStreamOutputGenerator.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -602,6 +607,10 @@
     </None>
     <None Update="Generators\CodeAnalysis\NullCollectionInitializerAnalyzer.tt">
       <LastGenOutput>NullCollectionInitializerAnalyzer.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\SourceFiles\EventStreamInputGenerator.tt">
+      <LastGenOutput>EventStreamInputGenerator.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Generators\SourceFiles\ServiceClientsNetFramework.tt">

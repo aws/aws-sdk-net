@@ -73,14 +73,27 @@ namespace <#=this.Config.Namespace#>.Model
 
     if(this.Structure != null && this.Structure.IsEventStream)
     {
-        string EventStreamOutput = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
+        string eventStreamContent;
+        if (this.Operation.ResponseStructure.Members.FirstOrDefault(m => m.ModelShape.Name == this.Structure.Name) != null)
         {
-          Structure = this.Structure,
-          Operation = this.Operation,
-          Config = this.Config
-        }.TransformText();
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
+            {
+              Structure = this.Structure,
+              Operation = this.Operation,
+              Config = this.Config
+            }.TransformText();
+        }
+        else
+        {
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamInputGenerator()
+            {
+              Structure = this.Structure,
+              Operation = this.Operation,
+              Config = this.Config
+            }.TransformText();
+        }
 #>
-    <#=EventStreamOutput#>
+    <#=eventStreamContent#>
 <#
     }
 #>
@@ -145,7 +158,7 @@ namespace <#=this.Config.Namespace#>.Model
             {
                 foreach(var member in this.Structure.Members)
                 {
-                    if (member.IsExcluded)
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
@@ -157,6 +170,16 @@ namespace <#=this.Config.Namespace#>.Model
                         continue;
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+<#
+                }
+
+                if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
+                {
+                    var member = this.Operation.RequestEventStreamingMember;
+#>
+
+        // Input event stream
+        private <#=member.DetermineType()#> <#=member.VariableName#>;
 <#
                 }
 #>
@@ -181,9 +204,16 @@ namespace <#=this.Config.Namespace#>.Model
 <#@ include file=".\Exceptions\ExceptionSerialization.t4" once="true" #>
 <#
                 }
-                foreach(var member in this.Structure.Members)
+
+                var structureMembers = this.Structure.Members;
+                if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
                 {
-                    if (member.IsExcluded)
+                    structureMembers = structureMembers.Concat(new Member[]{this.Operation.RequestEventStreamingMember}).ToList();
+                }
+
+                foreach(var member in structureMembers)
+                {
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.

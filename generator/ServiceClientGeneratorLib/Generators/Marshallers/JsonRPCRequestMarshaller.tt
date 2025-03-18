@@ -107,7 +107,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
 <#  
 
-    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
+    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString && !payload.Shape.IsEventStream);
 	// Process any members which are marshalled as part of the request body
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
