@@ -34,7 +34,26 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisSource
     {
+        private AnalysisTemplateArtifacts _artifacts;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Artifacts. 
+        /// <para>
+        ///  The artifacts of the analysis source.
+        /// </para>
+        /// </summary>
+        public AnalysisTemplateArtifacts Artifacts
+        {
+            get { return this._artifacts; }
+            set { this._artifacts = value; }
+        }
+
+        // Check to see if Artifacts property is set
+        internal bool IsSetArtifacts()
+        {
+            return this._artifacts != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 
@@ -42,7 +61,7 @@ namespace Amazon.CleanRooms.Model
         /// The query text.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=90000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=90000)]
         public string Text
         {
             get { return this._text; }

@@ -35,9 +35,42 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class UpdateConfiguredTableRequest : AmazonCleanRoomsRequest
     {
+        private AnalysisMethod _analysisMethod;
         private string _configuredTableIdentifier;
         private string _description;
         private string _name;
+        private List<string> _selectedAnalysisMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisMethod. 
+        /// <para>
+        ///  The analysis method for the configured table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_QUERY</c> allows SQL queries to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_JOB</c> allows PySpark jobs to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>MULTIPLE</c> allows both SQL queries and PySpark jobs to be run directly on this
+        /// table.
+        /// </para>
+        /// </summary>
+        public AnalysisMethod AnalysisMethod
+        {
+            get { return this._analysisMethod; }
+            set { this._analysisMethod = value; }
+        }
+
+        // Check to see if AnalysisMethod property is set
+        internal bool IsSetAnalysisMethod()
+        {
+            return this._analysisMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfiguredTableIdentifier. 
@@ -95,6 +128,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedAnalysisMethods. 
+        /// <para>
+        ///  The selected analysis methods for the table configuration update.
+        /// </para>
+        /// </summary>
+        public List<string> SelectedAnalysisMethods
+        {
+            get { return this._selectedAnalysisMethods; }
+            set { this._selectedAnalysisMethods = value; }
+        }
+
+        // Check to see if SelectedAnalysisMethods property is set
+        internal bool IsSetSelectedAnalysisMethods()
+        {
+            return this._selectedAnalysisMethods != null && (this._selectedAnalysisMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -129,6 +129,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetJobLogStatus())
+                {
+                    context.Writer.WritePropertyName("jobLogStatus");
+                    context.Writer.Write(publicRequest.JobLogStatus);
+                }
+
                 if(publicRequest.IsSetMembers())
                 {
                     context.Writer.WritePropertyName("members");

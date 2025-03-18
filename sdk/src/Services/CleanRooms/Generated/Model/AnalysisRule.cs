@@ -35,6 +35,8 @@ namespace Amazon.CleanRooms.Model
     public partial class AnalysisRule
     {
         private string _collaborationId;
+        private ConfiguredTableAssociationAnalysisRulePolicy _collaborationPolicy;
+        private ConsolidatedPolicy _consolidatedPolicy;
         private DateTime? _createTime;
         private string _name;
         private AnalysisRulePolicy _policy;
@@ -58,6 +60,39 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCollaborationId()
         {
             return this._collaborationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollaborationPolicy.
+        /// </summary>
+        public ConfiguredTableAssociationAnalysisRulePolicy CollaborationPolicy
+        {
+            get { return this._collaborationPolicy; }
+            set { this._collaborationPolicy = value; }
+        }
+
+        // Check to see if CollaborationPolicy property is set
+        internal bool IsSetCollaborationPolicy()
+        {
+            return this._collaborationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsolidatedPolicy. 
+        /// <para>
+        ///  The consolidated policy for the analysis rule.
+        /// </para>
+        /// </summary>
+        public ConsolidatedPolicy ConsolidatedPolicy
+        {
+            get { return this._consolidatedPolicy; }
+            set { this._consolidatedPolicy = value; }
+        }
+
+        // Check to see if ConsolidatedPolicy property is set
+        internal bool IsSetConsolidatedPolicy()
+        {
+            return this._consolidatedPolicy != null;
         }
 
         /// <summary>

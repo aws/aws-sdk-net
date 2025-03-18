@@ -165,6 +165,14 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListProtectedJobs operation
+        ///</summary>
+        public IListProtectedJobsPaginator ListProtectedJobs(ListProtectedJobsRequest request) 
+        {
+            return new ListProtectedJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProtectedQueries operation
         ///</summary>
         public IListProtectedQueriesPaginator ListProtectedQueries(ListProtectedQueriesRequest request) 

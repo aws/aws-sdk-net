@@ -48,6 +48,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetJobCompute())
+            {
+                context.Writer.WritePropertyName("jobCompute");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MembershipJobComputePaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.JobCompute, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMachineLearning())
             {
                 context.Writer.WritePropertyName("machineLearning");

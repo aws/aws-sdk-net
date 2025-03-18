@@ -42,8 +42,8 @@ namespace Amazon.CleanRooms
     /// <para>
     /// Clean Rooms is an Amazon Web Services service that helps multiple parties to join
     /// their data together in a secure collaboration workspace. In the collaboration, members
-    /// who can query and receive results can get insights into the collective datasets without
-    /// either party getting access to the other party's raw data.
+    /// who can run queries and jobs and receive results can get insights into the collective
+    /// datasets without either party getting access to the other party's raw data.
     /// </para>
     ///  
     /// <para>
@@ -806,6 +806,9 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -3184,6 +3187,75 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  GetProtectedJob
+
+        /// <summary>
+        /// Returns job processing metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectedJob service method.</param>
+        /// 
+        /// <returns>The response from the GetProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
+        public virtual GetProtectedJobResponse GetProtectedJob(GetProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetProtectedJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProtectedJob operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProtectedJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
+        public virtual IAsyncResult BeginGetProtectedJob(GetProtectedJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProtectedJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProtectedJob.</param>
+        /// 
+        /// <returns>Returns a  GetProtectedJobResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetProtectedJob">REST API Reference for GetProtectedJob Operation</seealso>
+        public virtual GetProtectedJobResponse EndGetProtectedJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProtectedJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetProtectedQuery
 
         /// <summary>
@@ -4488,6 +4560,75 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  ListProtectedJobs
+
+        /// <summary>
+        /// Lists protected jobs, sorted by most recent job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListProtectedJobs service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
+        public virtual ListProtectedJobsResponse ListProtectedJobs(ListProtectedJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProtectedJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProtectedJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProtectedJobs operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProtectedJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
+        public virtual IAsyncResult BeginListProtectedJobs(ListProtectedJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProtectedJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProtectedJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProtectedJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProtectedJobs.</param>
+        /// 
+        /// <returns>Returns a  ListProtectedJobsResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListProtectedJobs">REST API Reference for ListProtectedJobs Operation</seealso>
+        public virtual ListProtectedJobsResponse EndListProtectedJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProtectedJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProtectedQueries
 
         /// <summary>
@@ -4827,6 +4968,78 @@ namespace Amazon.CleanRooms
         public virtual PreviewPrivacyImpactResponse EndPreviewPrivacyImpact(IAsyncResult asyncResult)
         {
             return EndInvoke<PreviewPrivacyImpactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartProtectedJob
+
+        /// <summary>
+        /// Creates a protected job that is started by Clean Rooms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartProtectedJob service method.</param>
+        /// 
+        /// <returns>The response from the StartProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
+        public virtual StartProtectedJobResponse StartProtectedJob(StartProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartProtectedJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartProtectedJob operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartProtectedJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
+        public virtual IAsyncResult BeginStartProtectedJob(StartProtectedJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartProtectedJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartProtectedJob.</param>
+        /// 
+        /// <returns>Returns a  StartProtectedJobResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedJob">REST API Reference for StartProtectedJob Operation</seealso>
+        public virtual StartProtectedJobResponse EndStartProtectedJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartProtectedJobResponse>(asyncResult);
         }
 
         #endregion
@@ -5793,6 +6006,78 @@ namespace Amazon.CleanRooms
         public virtual UpdatePrivacyBudgetTemplateResponse EndUpdatePrivacyBudgetTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePrivacyBudgetTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateProtectedJob
+
+        /// <summary>
+        /// Updates the processing of a currently running job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectedJob service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProtectedJob service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
+        public virtual UpdateProtectedJobResponse UpdateProtectedJob(UpdateProtectedJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProtectedJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProtectedJob operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProtectedJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
+        public virtual IAsyncResult BeginUpdateProtectedJob(UpdateProtectedJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProtectedJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProtectedJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProtectedJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProtectedJob.</param>
+        /// 
+        /// <returns>Returns a  UpdateProtectedJobResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateProtectedJob">REST API Reference for UpdateProtectedJob Operation</seealso>
+        public virtual UpdateProtectedJobResponse EndUpdateProtectedJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateProtectedJobResponse>(asyncResult);
         }
 
         #endregion

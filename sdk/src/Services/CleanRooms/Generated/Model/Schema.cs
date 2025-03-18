@@ -46,13 +46,27 @@ namespace Amazon.CleanRooms.Model
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
         private SchemaTypeProperties _schemaTypeProperties;
+        private List<string> _selectedAnalysisMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SchemaType _type;
         private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property AnalysisMethod. 
         /// <para>
-        /// The analysis method for the schema. The only valid value is currently <c>DIRECT_QUERY</c>.
+        /// The analysis method for the schema. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_QUERY</c> allows SQL queries to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_JOB</c> allows PySpark jobs to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>MULTIPLE</c> allows both SQL queries and PySpark jobs to be run directly on this
+        /// table.
         /// </para>
         /// </summary>
         public AnalysisMethod AnalysisMethod
@@ -276,6 +290,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSchemaTypeProperties()
         {
             return this._schemaTypeProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedAnalysisMethods. 
+        /// <para>
+        ///  The selected analysis methods for the schema.
+        /// </para>
+        /// </summary>
+        public List<string> SelectedAnalysisMethods
+        {
+            get { return this._selectedAnalysisMethods; }
+            set { this._selectedAnalysisMethods = value; }
+        }
+
+        // Check to see if SelectedAnalysisMethods property is set
+        internal bool IsSetSelectedAnalysisMethods()
+        {
+            return this._selectedAnalysisMethods != null && (this._selectedAnalysisMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

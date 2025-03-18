@@ -103,12 +103,6 @@ namespace Amazon.CleanRooms.Model
         /// <para>
         /// The ML abilities granted to the collaboration member.
         /// </para>
-        ///  
-        /// <para>
-        /// Custom ML modeling is in beta release and is subject to change. For beta terms and
-        /// conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon
-        /// Web Services Service Terms</a>.
-        /// </para>
         /// </summary>
         public MLMemberAbilities MlMemberAbilities
         {

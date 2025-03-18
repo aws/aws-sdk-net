@@ -31,13 +31,6 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// The ML member abilities for a collaboration member.
-    /// 
-    ///  
-    /// <para>
-    /// Custom ML modeling is in beta release and is subject to change. For beta terms and
-    /// conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon
-    /// Web Services Service Terms</a>.
-    /// </para>
     /// </summary>
     public partial class MLMemberAbilities
     {
@@ -46,14 +39,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property CustomMLMemberAbilities. 
         /// <para>
-        /// The custom ML member abilities for a collaboration member. The inference feature is
-        /// not available in the custom ML modeling beta.
-        /// </para>
-        ///  
-        /// <para>
-        /// Custom ML modeling is in beta release and is subject to change. For beta terms and
-        /// conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon
-        /// Web Services Service Terms</a>.
+        /// The custom ML member abilities for a collaboration member. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

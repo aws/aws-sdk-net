@@ -48,6 +48,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetArtifacts())
+            {
+                context.Writer.WritePropertyName("artifacts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnalysisTemplateArtifactsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Artifacts, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");

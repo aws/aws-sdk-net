@@ -70,6 +70,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultJobResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultJobResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultResultConfiguration())
                 {
                     context.Writer.WritePropertyName("defaultResultConfiguration");
@@ -79,6 +90,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetJobLogStatus())
+                {
+                    context.Writer.WritePropertyName("jobLogStatus");
+                    context.Writer.Write(publicRequest.JobLogStatus);
                 }
 
                 if(publicRequest.IsSetQueryLogStatus())

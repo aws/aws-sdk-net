@@ -72,6 +72,18 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.CollaborationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("collaborationPolicy", targetDepth))
+                {
+                    var unmarshaller = ConfiguredTableAssociationAnalysisRulePolicyUnmarshaller.Instance;
+                    unmarshalledObject.CollaborationPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("consolidatedPolicy", targetDepth))
+                {
+                    var unmarshaller = ConsolidatedPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ConsolidatedPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

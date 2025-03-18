@@ -114,6 +114,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("selectedAnalysisMethods", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SelectedAnalysisMethods = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tableReference", targetDepth))
                 {
                     var unmarshaller = TableReferenceUnmarshaller.Instance;

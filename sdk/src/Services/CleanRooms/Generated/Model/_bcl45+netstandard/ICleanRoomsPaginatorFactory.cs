@@ -107,6 +107,11 @@ namespace Amazon.CleanRooms.Model
         IListPrivacyBudgetTemplatesPaginator ListPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListProtectedJobs operation
+        ///</summary>
+        IListProtectedJobsPaginator ListProtectedJobs(ListProtectedJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListProtectedQueries operation
         ///</summary>
         IListProtectedQueriesPaginator ListProtectedQueries(ListProtectedQueriesRequest request);

@@ -108,6 +108,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultJobResultConfiguration", targetDepth))
+                {
+                    var unmarshaller = MembershipProtectedJobResultConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultJobResultConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultResultConfiguration", targetDepth))
                 {
                     var unmarshaller = MembershipProtectedQueryResultConfigurationUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobLogStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobLogStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("memberAbilities", targetDepth))
