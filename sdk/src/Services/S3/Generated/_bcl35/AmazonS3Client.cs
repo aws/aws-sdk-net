@@ -9944,7 +9944,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
-        internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
+        public virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
@@ -9965,7 +9965,7 @@ namespace Amazon.S3
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHeadBucket
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
-        internal virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
+        public virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
@@ -9982,7 +9982,7 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  HeadBucketResult from S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
-        internal virtual HeadBucketResponse EndHeadBucket(IAsyncResult asyncResult)
+        public virtual HeadBucketResponse EndHeadBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<HeadBucketResponse>(asyncResult);
         }
