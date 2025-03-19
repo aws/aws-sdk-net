@@ -21,7 +21,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.TaskId</property>
@@ -37,7 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelImportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelImportTaskResponse.TaskId</property>
@@ -158,7 +158,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskRequest.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskResponse.GraphId</property>
@@ -166,7 +166,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskResponse.TaskId</property>
@@ -287,7 +287,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.TaskId</property>
@@ -365,7 +365,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetImportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetImportTaskResponse.TaskId</property>
@@ -589,7 +589,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.Destination</property>
@@ -608,7 +608,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.TaskId</property>
@@ -620,7 +620,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartImportTaskRequest.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.GraphId</property>
@@ -628,7 +628,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartImportTaskResponse.TaskId</property>
@@ -711,7 +711,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.TaskId</property>
@@ -763,7 +763,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ImportTaskSummary.RoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)(/[\w+=,.@-]+)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ImportTaskSummary.TaskId</property>
