@@ -389,7 +389,7 @@ namespace Amazon.S3
                     Amazon.S3.Internal.S3Signer.SignRequest(iRequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                     signingResult.Authorization = iRequest.Headers[HeaderKeys.AuthorizationHeader];
                     signingResult.Authorization = signingResult.Authorization.Substring(signingResult.Authorization.IndexOf(":", StringComparison.Ordinal) + 1);
-                    signingResult.Authorization = "&Signature=" + AmazonS3Util.UrlEncode(signingResult.Authorization, false);
+                    signingResult.Authorization = "&Signature=" + AWSSDKUtils.UrlEncode(signingResult.Authorization, false);
                     signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
             }

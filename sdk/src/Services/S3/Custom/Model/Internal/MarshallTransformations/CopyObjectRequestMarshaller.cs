@@ -164,15 +164,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var isAccessPoint = S3ArnUtils.IsS3AccessPointsArn(bucket) || S3ArnUtils.IsS3OutpostsArn(bucket);
                 // 'object/' needed appended to key for copy header with access points
-                source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
+
+                source = AWSSDKUtils.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), false);
                 if (!String.IsNullOrEmpty(version))
                 {
-                    source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AmazonS3Util.UrlEncode(version, true));
+                    source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AWSSDKUtils.UrlEncode(version, true));
                 }
             }
             else
             {
-                source = AmazonS3Util.UrlEncode(bucket, true);
+                source = AWSSDKUtils.UrlEncode(bucket, true);
             }
 
             return source;
