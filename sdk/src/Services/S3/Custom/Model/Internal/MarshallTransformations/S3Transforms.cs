@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (value == null)
                 return string.Empty;
 
-            return AmazonS3Util.UrlEncode(value, path);
+            return AWSSDKUtils.UrlEncode(value, path);
         }
 
         internal static string ToURLEncodedValue(int value, bool path)

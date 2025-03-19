@@ -72,18 +72,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             
             BaseClean();
         }
-
-        [TestMethod]
+        [DataTestMethod]
+        [DataRow("ObjectWithAllSpecialCharacters/'()!*$+,;=&", "DestinationObjectWithAllSpecialCharacters/'()!*$+,;=&")]
         [TestCategory("S3")]
-        public void TestCopyObject()
+        public void TestCopyObject(string sourceKey, string destinationKey)
         {
+            var putObjectResponse = usEastClient.PutObject(new PutObjectRequest
+            {
+                BucketName = eastBucketName,
+                Key = sourceKey,
+                ContentBody = testContent
+            });
             var response = usEastClient.CopyObject(new CopyObjectRequest
             {
                 SourceBucket = eastBucketName,
-                SourceKey = testKey,
+                SourceKey = sourceKey,
                 DestinationBucket = westBucketName,
-                DestinationKey = testKey
+                DestinationKey = destinationKey
             });
+
+            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
+
+            var getObjectResponse = usWestClient.GetObject(new GetObjectRequest
+            {
+                BucketName = westBucketName,
+                Key = destinationKey
+            });
+
+            using (getObjectResponse.ResponseStream)
+            using (var reader = new StreamReader(getObjectResponse.ResponseStream))
+            {
+                var actualText = reader.ReadToEnd();
+                Assert.AreEqual(testContent, actualText);
+            }
         }
 
         [TestMethod]
