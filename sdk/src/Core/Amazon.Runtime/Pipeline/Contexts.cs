@@ -17,6 +17,7 @@ using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,8 @@ namespace Amazon.Runtime
         Guid InvocationId { get; }
 
         IDictionary<string, object> ContextAttributes { get; }
+
+        UserAgentDetails UserAgentDetails { get; }
     }
 
     public interface IResponseContext
@@ -106,6 +109,7 @@ namespace Amazon.Runtime.Internal
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
             this.InvocationId = Guid.NewGuid();
+            this.UserAgentDetails = new UserAgentDetails();
         }
 
         public IRequest Request { get; set; }
@@ -122,6 +126,7 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }        
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
+        public UserAgentDetails UserAgentDetails { get; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
