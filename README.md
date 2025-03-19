@@ -911,20 +911,3 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 
 All low-level service clients are created using the code generator found in the **generator** folder. The code generator 
 uses the service models defined in the **generator\ServiceModels** folder.
-
-[nuget-info]: https://nuget.org/
-[aws]: http://aws.amazon.com/
-[sdk-website]: http://aws.amazon.com/sdkfornet
-[sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=61
-[sdk-source]: https://github.com/aws/aws-sdk-net
-[sdk-issues]: https://github.com/aws/aws-sdk-net/issues
-[sdk-license]: http://aws.amazon.com/apache2.0/
-[docs-api]: http://docs.aws.amazon.com/sdkfornet/v3/apidocs/Index.html
-[docs-signup]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-setup.html
-[aws-iam-credentials]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-hosm.html
-[docs-guide]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html
-[credentials-management]: http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-config-creds.html
-[dotnet-blog]: http://blogs.aws.amazon.com/net/
-[github-aws-sdk-net-v2]: https://github.com/aws/aws-sdk-net/tree/aws-sdk-net-v2
-
-
