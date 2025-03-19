@@ -326,7 +326,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="input">The JMESPath expression to be split.</param>
         /// <returns>A list of individual path segments extracted from the expression.</returns>
-        private static List<string> SplitJMESPath(string input)
+        public static List<string> SplitJMESPath(string input)
         {
             var parts = new List<string>();
             var currentPart = "";
@@ -397,7 +397,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="expression">The multi-select expression to be split (without the enclosing brackets).</param>
         /// <returns>A list of individual expressions from the multi-select expression.</returns>
-        private static List<string> SplitMultiSelectExpression(string expression)
+        public static List<string> SplitMultiSelectExpression(string expression)
         {
             var parts = new List<string>();
             var currentPart = "";
