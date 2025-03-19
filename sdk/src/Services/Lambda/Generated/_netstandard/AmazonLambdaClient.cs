@@ -2560,7 +2560,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
-        /// The request body could not be parsed as JSON.
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
         /// The runtime or runtime version specified is not supported.
@@ -2684,7 +2685,8 @@ namespace Amazon.Lambda
         /// 
         /// <returns>The response from the InvokeAsync service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
-        /// The request body could not be parsed as JSON.
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
         /// The runtime or runtime version specified is not supported.
@@ -2778,7 +2780,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
-        /// The request body could not be parsed as JSON.
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
         /// The runtime or runtime version specified is not supported.

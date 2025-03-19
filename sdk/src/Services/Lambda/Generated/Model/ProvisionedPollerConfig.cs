@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">
-    /// Provisioned Mode</a> configuration for the event source. Use Provisioned Mode to customize
+    /// provisioned mode</a> configuration for the event source. Use Provisioned Mode to customize
     /// the minimum and maximum number of event pollers for your event source. An event poller
     /// is a compute unit that provides approximately 5 MBps of throughput.
     /// </summary>
