@@ -254,9 +254,6 @@
         "GetObjectAcl": {
             "exclude": true
         },
-        "HeadBucket": {
-            "internal": true
-        },
         "HeadObject": {
             "name": "GetObjectMetadata"
         },

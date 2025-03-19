@@ -14566,6 +14566,166 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  HeadBucket
+
+
+        /// <summary>
+        /// You can use this operation to determine if a bucket exists and if you have permission
+        /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
+        /// permission to access it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
+        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
+        /// Found</c> code. A message body is not included, so you cannot determine the exception
+        /// beyond these HTTP response codes.
+        /// </para>
+        ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket
+        /// permission publicly do not need to be signed. All other <c>HeadBucket</c> requests
+        /// must be authenticated and signed by using IAM credentials (access key ID and secret
+        /// access key for the IAM identities). All headers with the <c>x-amz-</c> prefix, including
+        /// <c>x-amz-copy-source</c>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        /// Authentication</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize
+        /// your access to the <c>HeadBucket</c> API operation, instead of using the temporary
+        /// security credentials through the <c>CreateSession</c> API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services CLI or SDKs handles authentication and authorization on your behalf.
+        /// </para>
+        ///  </dd> <dt>Permissions</dt> <dd>  <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
+        /// permissions to perform the <c>s3:ListBucket</c> action. The bucket owner has this
+        /// permission by default and can grant this permission to others. For more information
+        /// about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// access permissions to your Amazon S3 resources</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <b> <c>s3express:CreateSession</c>
+        /// </b> permission in the <c>Action</c> element of a policy. By default, the session
+        /// is in the <c>ReadWrite</c> mode. If you want to restrict the access, you can explicitly
+        /// set the <c>s3express:SessionMode</c> condition key to <c>ReadOnly</c> on the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about example bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+        /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
+        /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
+        /// One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information about endpoints in Availability
+        /// Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+        /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
+        /// 
+        /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
+        HeadBucketResponse HeadBucket(HeadBucketRequest request);
+
+
+
+        /// <summary>
+        /// You can use this operation to determine if a bucket exists and if you have permission
+        /// to access it. The action returns a <c>200 OK</c> if the bucket exists and you have
+        /// permission to access it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the bucket does not exist or you do not have permission to access it, the <c>HEAD</c>
+        /// request returns a generic <c>400 Bad Request</c>, <c>403 Forbidden</c> or <c>404 Not
+        /// Found</c> code. A message body is not included, so you cannot determine the exception
+        /// beyond these HTTP response codes.
+        /// </para>
+        ///  </note> <dl> <dt>Authentication and authorization</dt> <dd> 
+        /// <para>
+        ///  <b>General purpose buckets</b> - Request to public buckets that grant the s3:ListBucket
+        /// permission publicly do not need to be signed. All other <c>HeadBucket</c> requests
+        /// must be authenticated and signed by using IAM credentials (access key ID and secret
+        /// access key for the IAM identities). All headers with the <c>x-amz-</c> prefix, including
+        /// <c>x-amz-copy-source</c>, must be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+        /// Authentication</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets</b> - You must use IAM credentials to authenticate and authorize
+        /// your access to the <c>HeadBucket</c> API operation, instead of using the temporary
+        /// security credentials through the <c>CreateSession</c> API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services CLI or SDKs handles authentication and authorization on your behalf.
+        /// </para>
+        ///  </dd> <dt>Permissions</dt> <dd>  <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - To use this operation, you must have
+        /// permissions to perform the <c>s3:ListBucket</c> action. The bucket owner has this
+        /// permission by default and can grant this permission to others. For more information
+        /// about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// access permissions to your Amazon S3 resources</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <b> <c>s3express:CreateSession</c>
+        /// </b> permission in the <c>Action</c> element of a policy. By default, the session
+        /// is in the <c>ReadWrite</c> mode. If you want to restrict the access, you can explicitly
+        /// set the <c>s3express:SessionMode</c> condition key to <c>ReadOnly</c> on the bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about example bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+        /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
+        /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
+        /// One Zone</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+        /// support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. For more information about endpoints in Availability
+        /// Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+        /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+        /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+        /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HeadBucket service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
+        Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  InitiateMultipartUpload
 
 
