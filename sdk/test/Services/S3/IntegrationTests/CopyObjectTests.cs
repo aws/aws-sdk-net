@@ -73,6 +73,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
         [DataTestMethod]
+        [DataRow(testKey, testKey)]
         [DataRow("ObjectWithAllSpecialCharacters/'()!*$+,;=&", "DestinationObjectWithAllSpecialCharacters/'()!*$+,;=&")]
         [TestCategory("S3")]
         public void TestCopyObject(string sourceKey, string destinationKey)
