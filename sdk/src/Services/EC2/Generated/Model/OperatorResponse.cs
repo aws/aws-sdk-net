@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes whether the resource is managed by an service provider and, if so, describes
+    /// Describes whether the resource is managed by a service provider and, if so, describes
     /// the service provider that manages it.
     /// </summary>
     public partial class OperatorResponse
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Managed. 
         /// <para>
-        /// If <c>true</c>, the resource is managed by an service provider.
+        /// If <c>true</c>, the resource is managed by a service provider.
         /// </para>
         /// </summary>
         public bool Managed

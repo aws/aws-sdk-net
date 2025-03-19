@@ -533,25 +533,35 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> - (<i>Future-dated Capacity Reservations only</i>) The future-dated
-        /// Capacity Reservation request was approved and the Capacity Reservation is scheduled
-        /// for delivery on the requested start date.
+        ///  <c>scheduled</c> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity
+        /// Reservation request was approved and the Capacity Reservation is scheduled for delivery
+        /// on the requested start date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>assessing</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is
-        /// assessing your request for a future-dated Capacity Reservation.
+        ///  <c>payment-pending</c> - (<i>Capacity Blocks</i>) The upfront payment has not been
+        /// processed yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>delayed</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered
+        ///  <c>payment-failed</c> - (<i>Capacity Blocks</i>) The upfront payment was not processed
+        /// in the 12-hour time frame. Your Capacity Block was released.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>assessing</c> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing
+        /// your request for a future-dated Capacity Reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered
         /// a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2
         /// is unable to deliver the requested capacity by the requested start date and time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>unsupported</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2
-        /// can't support the future-dated Capacity Reservation request due to capacity constraints.
+        ///  <c>unsupported</c> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't
+        /// support the future-dated Capacity Reservation request due to capacity constraints.
         /// You can view unsupported requests for 30 days. The Capacity Reservation will not be
         /// delivered.
         /// </para>
