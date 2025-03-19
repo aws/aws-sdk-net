@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBridge operation.
-    /// Updates the bridge
+    /// Updates the bridge.
     /// </summary>
     public partial class UpdateBridgeRequest : AmazonMediaConnectRequest
     {
@@ -41,8 +41,10 @@ namespace Amazon.MediaConnect.Model
         private UpdateFailoverConfig _sourceFailoverConfig;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge
-        /// that you want to update.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  TheAmazon Resource Name (ARN) of the bridge that you want to update. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -58,7 +60,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EgressGatewayBridge.
+        /// Gets and sets the property EgressGatewayBridge. 
+        /// <para>
+        ///  A cloud-to-ground bridge. The content comes from an existing MediaConnect flow and
+        /// is delivered to your premises. 
+        /// </para>
         /// </summary>
         public UpdateEgressGatewayBridgeRequest EgressGatewayBridge
         {
@@ -73,7 +79,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngressGatewayBridge.
+        /// Gets and sets the property IngressGatewayBridge. 
+        /// <para>
+        ///  A ground-to-cloud bridge. The content originates at your premises and is delivered
+        /// to the cloud. 
+        /// </para>
         /// </summary>
         public UpdateIngressGatewayBridgeRequest IngressGatewayBridge
         {
@@ -88,7 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFailoverConfig.
+        /// Gets and sets the property SourceFailoverConfig. 
+        /// <para>
+        ///  The settings for source failover. 
+        /// </para>
         /// </summary>
         public UpdateFailoverConfig SourceFailoverConfig
         {

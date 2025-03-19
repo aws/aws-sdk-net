@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private BridgeNetworkSource _networkSource;
 
         /// <summary>
-        /// Gets and sets the property FlowSource.
+        /// Gets and sets the property FlowSource. 
+        /// <para>
+        ///  The source of the associated flow. 
+        /// </para>
         /// </summary>
         public BridgeFlowSource FlowSource
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkSource.
+        /// Gets and sets the property NetworkSource. 
+        /// <para>
+        ///  The network source for the bridge. 
+        /// </para>
         /// </summary>
         public BridgeNetworkSource NetworkSource
         {

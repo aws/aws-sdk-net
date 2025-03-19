@@ -39,11 +39,14 @@ namespace Amazon.MediaConnect.Model
         private EncoderProfile _encoderProfile;
 
         /// <summary>
-        /// Gets and sets the property CompressionFactor. A value that is used to calculate compression
-        /// for an output. The bitrate of the output is calculated as follows: Output bitrate
-        /// = (1 / compressionFactor) * (source bitrate) This property only applies to outputs
-        /// that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
-        /// Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+        /// Gets and sets the property CompressionFactor. 
+        /// <para>
+        ///  A value that is used to calculate compression for an output. The bitrate of the output
+        /// is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate)
+        /// This property only applies to outputs that use the ST 2110 JPEG XS protocol, with
+        /// a flow source that uses the CDI protocol. Valid values are floating point numbers
+        /// in the range of 3.0 to 10.0, inclusive.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public double CompressionFactor
@@ -59,9 +62,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncoderProfile. A setting on the encoder that drives compression
-        /// settings. This property only applies to video media streams associated with outputs
-        /// that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+        /// Gets and sets the property EncoderProfile. 
+        /// <para>
+        ///  A setting on the encoder that drives compression settings. This property only applies
+        /// to video media streams associated with outputs that use the ST 2110 JPEG XS protocol,
+        /// with a flow source that uses the CDI protocol.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EncoderProfile EncoderProfile

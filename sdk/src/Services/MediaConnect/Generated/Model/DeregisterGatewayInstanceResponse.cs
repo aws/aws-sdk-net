@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private InstanceState _instanceState;
 
         /// <summary>
-        /// Gets and sets the property GatewayInstanceArn. The Amazon Resource Name (ARN) of the
-        /// instance.
+        /// Gets and sets the property GatewayInstanceArn. 
+        /// <para>
+        ///  The ARN of the instance.
+        /// </para>
         /// </summary>
         public string GatewayInstanceArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceState. The status of the instance.
+        /// Gets and sets the property InstanceState. 
+        /// <para>
+        ///  The status of the instance.
+        /// </para>
         /// </summary>
         public InstanceState InstanceState
         {

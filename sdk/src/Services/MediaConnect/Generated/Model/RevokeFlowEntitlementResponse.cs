@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property EntitlementArn. The ARN of the entitlement that was revoked.
+        /// Gets and sets the property EntitlementArn. 
+        /// <para>
+        ///  The ARN of the entitlement that was revoked.
+        /// </para>
         /// </summary>
         public string EntitlementArn
         {
@@ -53,8 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that the entitlement was revoked
-        /// from.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that the entitlement was revoked from.
+        /// </para>
         /// </summary>
         public string FlowArn
         {

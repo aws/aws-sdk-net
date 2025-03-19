@@ -30,10 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// A single track or stream of media that contains video, audio, or ancillary data. After
-    /// you add a media stream to a flow, you can associate it with sources and outputs on
-    /// that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each
-    /// source or output can consist of one or many media streams.
+    /// A media stream represents one component of your content, such as video, audio, or
+    /// ancillary data. After you add a media stream to your flow, you can associate it with
+    /// sources and outputs that use the ST 2110 JPEG XS or CDI protocol.
     /// </summary>
     public partial class MediaStream
     {
@@ -47,7 +46,10 @@ namespace Amazon.MediaConnect.Model
         private string _videoFormat;
 
         /// <summary>
-        /// Gets and sets the property Attributes. Attributes that are related to the media stream.
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        ///  Attributes that are related to the media stream.
+        /// </para>
         /// </summary>
         public MediaStreamAttributes Attributes
         {
@@ -62,8 +64,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClockRate. The sample rate for the stream. This value is
-        /// measured in Hz.
+        /// Gets and sets the property ClockRate. 
+        /// <para>
+        ///  The sample rate for the stream. This value is measured in Hz.
+        /// </para>
         /// </summary>
         public int ClockRate
         {
@@ -78,8 +82,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description that can help you quickly identify
-        /// what your media stream is used for.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description that can help you quickly identify what your media stream is used for.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -94,9 +100,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Fmt. The format type number (sometimes referred to as RTP
-        /// payload type) of the media stream. MediaConnect assigns this value to the media stream.
-        /// For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
+        /// Gets and sets the property Fmt. 
+        /// <para>
+        ///  The format type number (sometimes referred to as RTP payload type) of the media stream.
+        /// MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs,
+        /// you need to provide this value to the receiver.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int Fmt
@@ -112,7 +121,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamId. A unique identifier for the media stream.
+        /// Gets and sets the property MediaStreamId. 
+        /// <para>
+        ///  A unique identifier for the media stream. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int MediaStreamId
@@ -128,8 +140,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. A name that helps you distinguish one
-        /// media stream from another.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        ///  A name that helps you distinguish one media stream from another. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName
@@ -145,7 +159,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamType. The type of media stream.
+        /// Gets and sets the property MediaStreamType. 
+        /// <para>
+        ///  The type of media stream. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MediaStreamType MediaStreamType
@@ -161,7 +178,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoFormat. The resolution of the video.
+        /// Gets and sets the property VideoFormat. 
+        /// <para>
+        ///  The resolution of the video. 
+        /// </para>
         /// </summary>
         public string VideoFormat
         {

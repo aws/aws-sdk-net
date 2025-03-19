@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// 
+    /// Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud
+    /// bridge. The content originates at your premises and is delivered to the cloud.
     /// </summary>
     public partial class AddIngressGatewayBridgeRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private int? _maxOutputs;
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The maximum expected bitrate (in bps).
+        /// Gets and sets the property MaxBitrate. 
+        /// <para>
+        ///  The maximum expected bitrate (in bps) of the ingress bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int MaxBitrate
@@ -54,7 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxOutputs. The maximum number of expected outputs.
+        /// Gets and sets the property MaxOutputs. 
+        /// <para>
+        ///  The maximum number of expected outputs on the ingress bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int MaxOutputs

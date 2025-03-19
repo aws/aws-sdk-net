@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private List<Source> _sources = AWSConfigs.InitializeCollections ? new List<Source>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that these sources were added
-        /// to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that these sources were added to.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. The details of the newly added sources.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        ///  The details of the newly added sources.
+        /// </para>
         /// </summary>
         public List<Source> Sources
         {

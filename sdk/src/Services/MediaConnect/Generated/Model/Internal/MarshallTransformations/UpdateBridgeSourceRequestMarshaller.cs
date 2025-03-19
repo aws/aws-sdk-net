@@ -62,11 +62,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBridgeArn())
                 throw new AmazonMediaConnectException("Request object does not have required field BridgeArn set");
-            request.AddPathResource("{bridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
+            request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
             if (!publicRequest.IsSetSourceName())
                 throw new AmazonMediaConnectException("Request object does not have required field SourceName set");
-            request.AddPathResource("{sourceName}", StringUtils.FromString(publicRequest.SourceName));
-            request.ResourcePath = "/v1/bridges/{bridgeArn}/sources/{sourceName}";
+            request.AddPathResource("{SourceName}", StringUtils.FromString(publicRequest.SourceName));
+            request.ResourcePath = "/v1/bridges/{BridgeArn}/sources/{SourceName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

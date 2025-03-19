@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private List<BridgeSource> _sources = AWSConfigs.InitializeCollections ? new List<BridgeSource>() : null;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge that you added sources to.
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. The sources that you added to this bridge.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        ///  The sources that you added to this bridge.
+        /// </para>
         /// </summary>
         public List<BridgeSource> Sources
         {

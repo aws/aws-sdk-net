@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Update maintenance setting for a flow
+    /// Update maintenance setting for a flow.
     /// </summary>
     public partial class UpdateMaintenance
     {
@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _maintenanceStartHour;
 
         /// <summary>
-        /// Gets and sets the property MaintenanceDay. A day of a week when the maintenance will
-        /// happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        /// Gets and sets the property MaintenanceDay. 
+        /// <para>
+        ///  A day of a week when the maintenance will happen.
+        /// </para>
         /// </summary>
         public MaintenanceDay MaintenanceDay
         {
@@ -55,8 +57,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaintenanceScheduledDate. A scheduled date in ISO UTC format
-        /// when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+        /// Gets and sets the property MaintenanceScheduledDate. 
+        /// <para>
+        ///  A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD
+        /// format. Example: 2021-01-30.
+        /// </para>
         /// </summary>
         public string MaintenanceScheduledDate
         {
@@ -71,9 +76,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaintenanceStartHour. UTC time when the maintenance will
-        /// happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default
-        /// value is 02:00.
+        /// Gets and sets the property MaintenanceStartHour. 
+        /// <para>
+        ///  UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must
+        /// be 00. Example: 13:00. The default value is 02:00.
+        /// </para>
         /// </summary>
         public string MaintenanceStartHour
         {

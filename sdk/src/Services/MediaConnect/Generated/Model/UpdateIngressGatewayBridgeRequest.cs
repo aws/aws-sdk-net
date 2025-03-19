@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// 
+    /// Update an existing ingress-type bridge.
     /// </summary>
     public partial class UpdateIngressGatewayBridgeRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private int? _maxOutputs;
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The maximum expected bitrate (in bps).
+        /// Gets and sets the property MaxBitrate. 
+        /// <para>
+        ///  The maximum expected bitrate (in bps).
+        /// </para>
         /// </summary>
         public int MaxBitrate
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxOutputs. The maximum number of expected outputs.
+        /// Gets and sets the property MaxOutputs. 
+        /// <para>
+        ///  The maximum number of expected outputs.
+        /// </para>
         /// </summary>
         public int MaxOutputs
         {

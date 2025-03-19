@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// An entitlement that has been granted to you from other AWS accounts.
+    /// An entitlement that has been granted to you from other Amazon Web Services accounts.
     /// </summary>
     public partial class ListedEntitlement
     {
@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _entitlementName;
 
         /// <summary>
-        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
-        /// of the data transfer cost to be billed to the subscriber.
+        /// Gets and sets the property DataTransferSubscriberFeePercent. 
+        /// <para>
+        ///  Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        /// </para>
         /// </summary>
         public int DataTransferSubscriberFeePercent
         {
@@ -55,7 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementArn. The ARN of the entitlement.
+        /// Gets and sets the property EntitlementArn. 
+        /// <para>
+        ///  The ARN of the entitlement.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EntitlementArn
@@ -71,7 +76,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementName. The name of the entitlement.
+        /// Gets and sets the property EntitlementName. 
+        /// <para>
+        ///  The name of the entitlement.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EntitlementName

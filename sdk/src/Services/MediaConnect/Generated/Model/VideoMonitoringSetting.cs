@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private FrozenFrames _frozenFrames;
 
         /// <summary>
-        /// Gets and sets the property BlackFrames. Detects video frames that are black.
+        /// Gets and sets the property BlackFrames. 
+        /// <para>
+        /// Detects video frames that are black. 
+        /// </para>
         /// </summary>
         public BlackFrames BlackFrames
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrozenFrames. Detects video frames that have not changed.
+        /// Gets and sets the property FrozenFrames. 
+        /// <para>
+        /// Detects video frames that have not changed. 
+        /// </para>
         /// </summary>
         public FrozenFrames FrozenFrames
         {

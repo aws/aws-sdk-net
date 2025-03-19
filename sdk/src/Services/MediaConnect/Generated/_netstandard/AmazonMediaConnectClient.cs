@@ -39,7 +39,40 @@ namespace Amazon.MediaConnect
     /// <summary>
     /// <para>Implementation for accessing MediaConnect</para>
     ///
-    /// API for AWS Elemental MediaConnect
+    /// Welcome to the Elemental MediaConnect API reference. 
+    /// 
+    ///  
+    /// <para>
+    /// MediaConnect is a service that lets you ingest live video content into the cloud and
+    /// distribute it to destinations all over the world, both inside and outside the Amazon
+    /// Web Services cloud. This API reference provides descriptions, syntax, and usage examples
+    /// for each of the actions and data types that are supported by MediaConnect. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Use the following links to get started with the MediaConnect API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mediaconnect/latest/api/API_Operations.html">Actions</a>:
+    /// An alphabetical list of all MediaConnect API operations.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mediaconnect/latest/api/API_Types.html">Data
+    /// types</a>: An alphabetical list of all MediaConnect data types.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mediaconnect/latest/api/CommonParameters.html">Common
+    /// parameters</a>: Parameters that all operations can use.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mediaconnect/latest/api/CommonErrors.html">Common
+    /// errors</a>: Client and server errors that all operations can return.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonMediaConnectClient : AmazonServiceClient, IAmazonMediaConnect
     {
@@ -291,32 +324,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddBridgeOutputs service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs">REST API Reference for AddBridgeOutputs Operation</seealso>
         public virtual Task<AddBridgeOutputsResponse> AddBridgeOutputsAsync(AddBridgeOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -353,32 +381,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddBridgeSources service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources">REST API Reference for AddBridgeSources Operation</seealso>
         public virtual Task<AddBridgeSourcesResponse> AddBridgeSourcesAsync(AddBridgeSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -417,28 +440,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddFlowMediaStreams service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">REST API Reference for AddFlowMediaStreams Operation</seealso>
         public virtual Task<AddFlowMediaStreamsResponse> AddFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -475,32 +493,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddFlowOutputs service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.AddFlowOutputs420Exception">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// Exception raised by Elemental MediaConnect when adding the flow output. See the error
+        /// message for the operation for more information on the cause of this exception.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowOutputs">REST API Reference for AddFlowOutputs Operation</seealso>
         public virtual Task<AddFlowOutputsResponse> AddFlowOutputsAsync(AddFlowOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -528,7 +541,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Adds Sources to flow
+        /// Adds sources to a flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddFlowSources service method.</param>
         /// <param name="cancellationToken">
@@ -537,28 +550,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddFlowSources service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources">REST API Reference for AddFlowSources Operation</seealso>
         public virtual Task<AddFlowSourcesResponse> AddFlowSourcesAsync(AddFlowSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -586,7 +594,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Adds VPC interfaces to flow
+        /// Adds VPC interfaces to a flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddFlowVpcInterfaces service method.</param>
         /// <param name="cancellationToken">
@@ -595,28 +603,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the AddFlowVpcInterfaces service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">REST API Reference for AddFlowVpcInterfaces Operation</seealso>
         public virtual Task<AddFlowVpcInterfacesResponse> AddFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -653,32 +656,28 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the CreateBridge service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.CreateBridge420Exception">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// Exception raised by Elemental MediaConnect when creating the bridge. See the error
+        /// message for the operation for more information on the cause of this exception.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">REST API Reference for CreateBridge Operation</seealso>
         public virtual Task<CreateBridgeResponse> CreateBridgeAsync(CreateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -716,28 +715,24 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the CreateFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.CreateFlow420Exception">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
+        /// Exception raised by Elemental MediaConnect when creating the flow. See the error message
         /// for the operation for more information on the cause of this exception.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
         public virtual Task<CreateFlowResponse> CreateFlowAsync(CreateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -765,7 +760,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Creates a new gateway. The request must include at least one network (up to 4).
+        /// Creates a new gateway. The request must include at least one network (up to four).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGateway service method.</param>
         /// <param name="cancellationToken">
@@ -774,32 +769,28 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the CreateGateway service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.CreateGateway420Exception">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// Exception raised by Elemental MediaConnect when creating the gateway. See the error
+        /// message for the operation for more information on the cause of this exception.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -836,32 +827,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DeleteBridge service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">REST API Reference for DeleteBridge Operation</seealso>
         public virtual Task<DeleteBridgeResponse> DeleteBridgeAsync(DeleteBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -898,28 +884,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DeleteFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
         public virtual Task<DeleteFlowResponse> DeleteFlowAsync(DeleteFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -957,32 +938,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DeleteGateway service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1021,32 +997,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DeregisterGatewayInstance service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">REST API Reference for DeregisterGatewayInstance Operation</seealso>
         public virtual Task<DeregisterGatewayInstanceResponse> DeregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1083,32 +1054,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeBridge service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge">REST API Reference for DescribeBridge Operation</seealso>
         public virtual Task<DescribeBridgeResponse> DescribeBridgeAsync(DescribeBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1136,8 +1102,9 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays the details of a flow. The response includes the flow ARN, name, and Availability
-        /// Zone, as well as details about the source, outputs, and entitlements.
+        /// Displays the details of a flow. The response includes the flow Amazon Resource Name
+        /// (ARN), name, and Availability Zone, as well as details about the source, outputs,
+        /// and entitlements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFlow service method.</param>
         /// <param name="cancellationToken">
@@ -1146,28 +1113,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlow">REST API Reference for DescribeFlow Operation</seealso>
         public virtual Task<DescribeFlowResponse> DescribeFlowAsync(DescribeFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1195,8 +1157,9 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays details of the flow's source stream. The response contains information about
-        /// the contents of the stream and its programs.
+        /// The <c>DescribeFlowSourceMetadata</c> API is used to view information about the flow's
+        /// source transport stream and programs. This API displays status messages about the
+        /// flow's source as well as details about the program's video, audio, and other data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFlowSourceMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -1205,28 +1168,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeFlowSourceMetadata service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata">REST API Reference for DescribeFlowSourceMetadata Operation</seealso>
         public virtual Task<DescribeFlowSourceMetadataResponse> DescribeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1254,7 +1212,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays the thumbnail details of a flow's source stream.
+        /// Describes the thumbnail for the flow source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFlowSourceThumbnail service method.</param>
         /// <param name="cancellationToken">
@@ -1263,28 +1221,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeFlowSourceThumbnail service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceThumbnail">REST API Reference for DescribeFlowSourceThumbnail Operation</seealso>
         public virtual Task<DescribeFlowSourceThumbnailResponse> DescribeFlowSourceThumbnailAsync(DescribeFlowSourceThumbnailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1312,8 +1265,8 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays the details of a gateway. The response includes the gateway ARN, name, and
-        /// CIDR blocks, as well as details about the networks.
+        /// Displays the details of a gateway. The response includes the gateway Amazon Resource
+        /// Name (ARN), name, and CIDR blocks, as well as details about the networks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1322,32 +1275,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeGateway service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual Task<DescribeGatewayResponse> DescribeGatewayAsync(DescribeGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1384,32 +1332,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeGatewayInstance service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance">REST API Reference for DescribeGatewayInstance Operation</seealso>
         public virtual Task<DescribeGatewayInstanceResponse> DescribeGatewayInstanceAsync(DescribeGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1447,24 +1390,20 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeOffering service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual Task<DescribeOfferingResponse> DescribeOfferingAsync(DescribeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1503,24 +1442,20 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the DescribeReservation service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual Task<DescribeReservationResponse> DescribeReservationAsync(DescribeReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1557,32 +1492,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the GrantFlowEntitlements service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.GrantFlowEntitlements420Exception">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// Exception raised by Elemental MediaConnect when granting the entitlement. See the
+        /// error message for the operation for more information on the cause of this exception.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">REST API Reference for GrantFlowEntitlements Operation</seealso>
         public virtual Task<GrantFlowEntitlementsResponse> GrantFlowEntitlementsAsync(GrantFlowEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1611,7 +1541,7 @@ namespace Amazon.MediaConnect
 
         /// <summary>
         /// Displays a list of bridges that are associated with this account and an optionally
-        /// specified Arn. This request returns a paginated result.
+        /// specified Amazon Resource Name (ARN). This request returns a paginated result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBridges service method.</param>
         /// <param name="cancellationToken">
@@ -1620,24 +1550,21 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListBridges service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">REST API Reference for ListBridges Operation</seealso>
         public virtual Task<ListBridgesResponse> ListBridgesAsync(ListBridgesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1665,8 +1592,8 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays a list of all entitlements that have been granted to this account. This request
-        /// returns 20 results per page.
+        /// Displays a list of all entitlements that have been granted to this account. This
+        /// request returns 20 results per page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEntitlements service method.</param>
         /// <param name="cancellationToken">
@@ -1675,20 +1602,17 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListEntitlements service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListEntitlements">REST API Reference for ListEntitlements Operation</seealso>
         public virtual Task<ListEntitlementsResponse> ListEntitlementsAsync(ListEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1726,20 +1650,17 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListFlows service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListFlows">REST API Reference for ListFlows Operation</seealso>
         public virtual Task<ListFlowsResponse> ListFlowsAsync(ListFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1767,9 +1688,9 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Displays a list of instances associated with the AWS account. This request returns
-        /// a paginated result. You can use the filterArn property to display only the instances
-        /// associated with the selected Gateway Amazon Resource Name (ARN).
+        /// Displays a list of instances associated with the Amazon Web Services account. This
+        /// request returns a paginated result. You can use the filterArn property to display
+        /// only the instances associated with the selected Gateway Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGatewayInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1778,24 +1699,21 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListGatewayInstances service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances">REST API Reference for ListGatewayInstances Operation</seealso>
         public virtual Task<ListGatewayInstancesResponse> ListGatewayInstancesAsync(ListGatewayInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1833,24 +1751,21 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListGateways service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1879,9 +1794,9 @@ namespace Amazon.MediaConnect
 
         /// <summary>
         /// Displays a list of all offerings that are available to this account in the current
-        /// AWS Region. If you have an active reservation (which means you've purchased an offering
-        /// that has already started and hasn't expired yet), your account isn't eligible for
-        /// other offerings.
+        /// Amazon Web Services Region. If you have an active reservation (which means you've
+        /// purchased an offering that has already started and hasn't expired yet), your account
+        /// isn't eligible for other offerings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -1890,20 +1805,17 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListOfferings service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1932,8 +1844,8 @@ namespace Amazon.MediaConnect
 
         /// <summary>
         /// Displays a list of all reservations that have been purchased by this account in the
-        /// current AWS Region. This list includes all reservations in all states (such as active
-        /// and expired).
+        /// current Amazon Web Services Region. This list includes all reservations in all states
+        /// (such as active and expired).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReservations service method.</param>
         /// <param name="cancellationToken">
@@ -1942,20 +1854,17 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListReservations service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1983,7 +1892,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// List all tags on an AWS Elemental MediaConnect resource
+        /// List all tags on a MediaConnect resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1992,16 +1901,14 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2039,28 +1946,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the PurchaseOffering service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2097,32 +1999,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveBridgeOutput service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput">REST API Reference for RemoveBridgeOutput Operation</seealso>
         public virtual Task<RemoveBridgeOutputResponse> RemoveBridgeOutputAsync(RemoveBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2159,32 +2056,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveBridgeSource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource">REST API Reference for RemoveBridgeSource Operation</seealso>
         public virtual Task<RemoveBridgeSourceResponse> RemoveBridgeSourceAsync(RemoveBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2222,28 +2114,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveFlowMediaStream service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">REST API Reference for RemoveFlowMediaStream Operation</seealso>
         public virtual Task<RemoveFlowMediaStreamResponse> RemoveFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2283,28 +2170,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveFlowOutput service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowOutput">REST API Reference for RemoveFlowOutput Operation</seealso>
         public virtual Task<RemoveFlowOutputResponse> RemoveFlowOutputAsync(RemoveFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2342,28 +2224,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveFlowSource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource">REST API Reference for RemoveFlowSource Operation</seealso>
         public virtual Task<RemoveFlowSourceResponse> RemoveFlowSourceAsync(RemoveFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2403,28 +2280,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RemoveFlowVpcInterface service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">REST API Reference for RemoveFlowVpcInterface Operation</seealso>
         public virtual Task<RemoveFlowVpcInterfaceResponse> RemoveFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2462,28 +2334,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the RevokeFlowEntitlement service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RevokeFlowEntitlement">REST API Reference for RevokeFlowEntitlement Operation</seealso>
         public virtual Task<RevokeFlowEntitlementResponse> RevokeFlowEntitlementAsync(RevokeFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2520,28 +2387,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the StartFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartFlow">REST API Reference for StartFlow Operation</seealso>
         public virtual Task<StartFlowResponse> StartFlowAsync(StartFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2578,28 +2440,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the StopFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">REST API Reference for StopFlow Operation</seealso>
         public virtual Task<StopFlowResponse> StopFlowAsync(StopFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2627,10 +2484,10 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified resourceArn. If existing
-        /// tags on a resource are not specified in the request parameters, they are not changed.
-        /// When a resource is deleted, the tags associated with that resource are deleted as
-        /// well.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
+        /// If existing tags on a resource are not specified in the request parameters, they are
+        /// not changed. When a resource is deleted, the tags associated with that resource are
+        /// deleted as well.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2639,16 +2496,14 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the TagResource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2685,16 +2540,14 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UntagResource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2722,7 +2575,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Updates the bridge
+        /// Updates the bridge.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBridge service method.</param>
         /// <param name="cancellationToken">
@@ -2731,32 +2584,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateBridge service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge">REST API Reference for UpdateBridge Operation</seealso>
         public virtual Task<UpdateBridgeResponse> UpdateBridgeAsync(UpdateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2793,32 +2641,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateBridgeOutput service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput">REST API Reference for UpdateBridgeOutput Operation</seealso>
         public virtual Task<UpdateBridgeOutputResponse> UpdateBridgeOutputAsync(UpdateBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2855,32 +2698,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateBridgeSource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource">REST API Reference for UpdateBridgeSource Operation</seealso>
         public virtual Task<UpdateBridgeSourceResponse> UpdateBridgeSourceAsync(UpdateBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2908,7 +2746,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Updates the bridge state
+        /// Updates the bridge state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBridgeState service method.</param>
         /// <param name="cancellationToken">
@@ -2917,32 +2755,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateBridgeState service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState">REST API Reference for UpdateBridgeState Operation</seealso>
         public virtual Task<UpdateBridgeStateResponse> UpdateBridgeStateAsync(UpdateBridgeStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2970,7 +2803,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Updates flow
+        /// Updates an existing flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFlow service method.</param>
         /// <param name="cancellationToken">
@@ -2979,28 +2812,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateFlow service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
         public virtual Task<UpdateFlowResponse> UpdateFlowAsync(UpdateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3028,9 +2856,9 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// You can change an entitlement's description, subscribers, and encryption. If you change
-        /// the subscribers, the service will remove the outputs that are are used by the subscribers
-        /// that are removed.
+        /// Updates an entitlement. You can change an entitlement's description, subscribers,
+        /// and encryption. If you change the subscribers, the service will remove the outputs
+        /// that are are used by the subscribers that are removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFlowEntitlement service method.</param>
         /// <param name="cancellationToken">
@@ -3039,28 +2867,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateFlowEntitlement service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlement">REST API Reference for UpdateFlowEntitlement Operation</seealso>
         public virtual Task<UpdateFlowEntitlementResponse> UpdateFlowEntitlementAsync(UpdateFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3097,28 +2920,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateFlowMediaStream service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">REST API Reference for UpdateFlowMediaStream Operation</seealso>
         public virtual Task<UpdateFlowMediaStreamResponse> UpdateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3155,28 +2973,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateFlowOutput service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutput">REST API Reference for UpdateFlowOutput Operation</seealso>
         public virtual Task<UpdateFlowOutputResponse> UpdateFlowOutputAsync(UpdateFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3213,28 +3026,23 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateFlowSource service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSource">REST API Reference for UpdateFlowSource Operation</seealso>
         public virtual Task<UpdateFlowSourceResponse> UpdateFlowSourceAsync(UpdateFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3262,7 +3070,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Updates the configuration of an existing Gateway Instance.
+        /// Updates an existing gateway instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayInstance service method.</param>
         /// <param name="cancellationToken">
@@ -3271,32 +3079,27 @@ namespace Amazon.MediaConnect
         /// 
         /// <returns>The response from the UpdateGatewayInstance service method, as returned by MediaConnect.</returns>
         /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The service is currently unavailable or busy.
         /// </exception>
         /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
-        /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-        /// for the operation for more information on the cause of this exception.
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">REST API Reference for UpdateGatewayInstance Operation</seealso>
         public virtual Task<UpdateGatewayInstanceResponse> UpdateGatewayInstanceAsync(UpdateGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

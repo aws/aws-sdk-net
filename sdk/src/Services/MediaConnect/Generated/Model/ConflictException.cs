@@ -30,14 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-    /// for the operation for more information on the cause of this exception.
+    /// The requested operation would cause a conflict with the current state of a service
+    /// resource associated with the request. Resolve the conflict before retrying this request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ConflictException : AmazonMediaConnectException
     {
+
+        private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -122,5 +124,16 @@ namespace Amazon.MediaConnect.Model
         }
 #endif
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

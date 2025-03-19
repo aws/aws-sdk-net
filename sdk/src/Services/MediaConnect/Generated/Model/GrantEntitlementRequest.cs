@@ -42,8 +42,10 @@ namespace Amazon.MediaConnect.Model
         private List<string> _subscribers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
-        /// of the data transfer cost to be billed to the subscriber.
+        /// Gets and sets the property DataTransferSubscriberFeePercent. 
+        /// <para>
+        ///  Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        /// </para>
         /// </summary>
         public int DataTransferSubscriberFeePercent
         {
@@ -58,9 +60,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the entitlement. This description
-        /// appears only on the AWS Elemental MediaConnect console and will not be seen by the
-        /// subscriber or end user.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the entitlement. This description appears only on the MediaConnect
+        /// console and will not be seen by the subscriber or end user. 
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -75,9 +79,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption. The type of encryption that will be used on
-        /// the output that is associated with this entitlement. Allowable encryption types: static-key,
-        /// speke.
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        ///  The type of encryption that will be used on the output that is associated with this
+        /// entitlement. Allowable encryption types: static-key, speke.
+        /// </para>
         /// </summary>
         public Encryption Encryption
         {
@@ -92,9 +98,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementStatus. An indication of whether the new entitlement
-        /// should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus
-        /// field in your request, MediaConnect sets it to ENABLED.
+        /// Gets and sets the property EntitlementStatus. 
+        /// <para>
+        ///  An indication of whether the new entitlement should be enabled or disabled as soon
+        /// as it is created. If you don’t specify the entitlementStatus field in your request,
+        /// MediaConnect sets it to ENABLED.
+        /// </para>
         /// </summary>
         public EntitlementStatus EntitlementStatus
         {
@@ -109,8 +118,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the entitlement. This value must be unique
-        /// within the current flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the entitlement. This value must be unique within the current flow.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -125,9 +136,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscribers. The AWS account IDs that you want to share
-        /// your content with. The receiving accounts (subscribers) will be allowed to create
-        /// their own flows using your content as the source.
+        /// Gets and sets the property Subscribers. 
+        /// <para>
+        ///  The Amazon Web Services account IDs that you want to share your content with. The
+        /// receiving accounts (subscribers) will be allowed to create their own flows using your
+        /// content as the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Subscribers

@@ -62,8 +62,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}/vpcInterfaces";
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/vpcInterfaces";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

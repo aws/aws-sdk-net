@@ -38,9 +38,12 @@ namespace Amazon.MediaConnect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property CidrBlock. A unique IP address range to use for this network.
-        /// These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR)
-        /// block; for example, 10.0.0.0/16.
+        /// Gets and sets the property CidrBlock. 
+        /// <para>
+        /// A unique IP address range to use for this network. These IP addresses should be in
+        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CidrBlock
@@ -56,8 +59,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the network. This name is used to reference
-        /// the network and must be unique among networks in this gateway.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the network. This name is used to reference the network and must be unique
+        /// among networks in this gateway. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

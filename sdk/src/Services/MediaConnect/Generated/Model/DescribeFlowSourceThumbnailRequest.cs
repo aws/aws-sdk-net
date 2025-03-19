@@ -31,14 +31,17 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFlowSourceThumbnail operation.
-    /// Displays the thumbnail details of a flow's source stream.
+    /// Describes the thumbnail for the flow source.
     /// </summary>
     public partial class DescribeFlowSourceThumbnailRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn

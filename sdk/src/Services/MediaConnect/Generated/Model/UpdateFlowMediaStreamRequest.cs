@@ -44,8 +44,10 @@ namespace Amazon.MediaConnect.Model
         private string _videoFormat;
 
         /// <summary>
-        /// Gets and sets the property Attributes. The attributes that you want to assign to the
-        /// media stream.
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        ///  The attributes that you want to assign to the media stream.
+        /// </para>
         /// </summary>
         public MediaStreamAttributesRequest Attributes
         {
@@ -60,9 +62,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClockRate. The sample rate (in Hz) for the stream. If the
-        /// media stream type is video or ancillary data, set this value to 90000. If the media
-        /// stream type is audio, set this value to either 48000 or 96000.
+        /// Gets and sets the property ClockRate. 
+        /// <para>
+        /// The sample rate for the stream. This value in measured in kHz. 
+        /// </para>
         /// </summary>
         public int ClockRate
         {
@@ -77,7 +80,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. Description
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description that can help you quickly identify what your media stream is used for.
+        /// 
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -92,7 +99,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that is associated with the media stream
+        /// that you updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -108,8 +119,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. The name of the media stream that you
-        /// want to update.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        ///  The media stream that you updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName
@@ -125,7 +138,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamType. The type of media stream.
+        /// Gets and sets the property MediaStreamType. 
+        /// <para>
+        /// The type of media stream. 
+        /// </para>
         /// </summary>
         public MediaStreamType MediaStreamType
         {
@@ -140,7 +156,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoFormat. The resolution of the video.
+        /// Gets and sets the property VideoFormat. 
+        /// <para>
+        /// The resolution of the video. 
+        /// </para>
         /// </summary>
         public string VideoFormat
         {

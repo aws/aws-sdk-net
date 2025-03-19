@@ -43,7 +43,10 @@ namespace Amazon.MediaConnect.Model
         private Tcs _tcs;
 
         /// <summary>
-        /// Gets and sets the property ChannelOrder. The format of the audio channel.
+        /// Gets and sets the property ChannelOrder. 
+        /// <para>
+        ///  The format of the audio channel.
+        /// </para>
         /// </summary>
         public string ChannelOrder
         {
@@ -58,8 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Colorimetry. The format that is used for the representation
-        /// of color.
+        /// Gets and sets the property Colorimetry. 
+        /// <para>
+        ///  The format that is used for the representation of color.
+        /// </para>
         /// </summary>
         public Colorimetry Colorimetry
         {
@@ -74,10 +79,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExactFramerate. The frame rate for the video stream, in
-        /// frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect
-        /// uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the
-        /// exactFramerate.
+        /// Gets and sets the property ExactFramerate. 
+        /// <para>
+        ///  The frame rate for the video stream, in frames/second. For example: 60000/1001. If
+        /// you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you
+        /// specify 60, MediaConnect uses 60/1 as the <c>exactFramerate</c>.
+        /// </para>
         /// </summary>
         public string ExactFramerate
         {
@@ -92,7 +99,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Par. The pixel aspect ratio (PAR) of the video.
+        /// Gets and sets the property Par. 
+        /// <para>
+        ///  The pixel aspect ratio (PAR) of the video.
+        /// </para>
         /// </summary>
         public string Par
         {
@@ -107,7 +117,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Range. The encoding range of the video.
+        /// Gets and sets the property Range. 
+        /// <para>
+        ///  The encoding range of the video.
+        /// </para>
         /// </summary>
         public Range Range
         {
@@ -122,8 +135,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScanMode. The type of compression that was used to smooth
-        /// the video’s appearance.
+        /// Gets and sets the property ScanMode. 
+        /// <para>
+        ///  The type of compression that was used to smooth the video’s appearance.
+        /// </para>
         /// </summary>
         public ScanMode ScanMode
         {
@@ -138,8 +153,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tcs. The transfer characteristic system (TCS) that is used
-        /// in the video.
+        /// Gets and sets the property Tcs. 
+        /// <para>
+        ///  The transfer characteristic system (TCS) that is used in the video.
+        /// </para>
         /// </summary>
         public Tcs Tcs
         {

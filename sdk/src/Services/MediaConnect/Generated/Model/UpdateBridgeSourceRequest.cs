@@ -41,7 +41,10 @@ namespace Amazon.MediaConnect.Model
         private string _sourceName;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to update.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the bridge that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -57,7 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowSource.
+        /// Gets and sets the property FlowSource. 
+        /// <para>
+        ///  The name of the flow that you want to update.
+        /// </para>
         /// </summary>
         public UpdateBridgeFlowSourceRequest FlowSource
         {
@@ -72,7 +78,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkSource.
+        /// Gets and sets the property NetworkSource. 
+        /// <para>
+        ///  The network for the bridge source. 
+        /// </para>
         /// </summary>
         public UpdateBridgeNetworkSourceRequest NetworkSource
         {
@@ -87,7 +96,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceName. The name of the source that you want to update.
+        /// Gets and sets the property SourceName. 
+        /// <para>
+        ///  The name of the source that you want to update. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SourceName

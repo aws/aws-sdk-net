@@ -39,6 +39,8 @@ namespace Amazon.MediaConnect.Model
         private int? _maxLatency;
         private int? _maxSyncBuffer;
         private int? _minLatency;
+        private string _ndiProgramName;
+        private int? _ndiSpeedHqQuality;
         private Protocol _protocol;
         private string _remoteId;
         private int? _senderControlPort;
@@ -49,9 +51,12 @@ namespace Amazon.MediaConnect.Model
         private string _streamId;
 
         /// <summary>
-        /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
-        /// allowed to initiate output requests to this flow. These IP addresses should be in
-        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// Gets and sets the property CidrAllowList. 
+        /// <para>
+        ///  The range of IP addresses that should be allowed to initiate output requests to this
+        /// flow. These IP addresses should be in the form of a Classless Inter-Domain Routing
+        /// (CIDR) block; for example, 10.0.0.0/16
+        /// </para>
         /// </summary>
         public List<string> CidrAllowList
         {
@@ -66,8 +71,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The smoothing max bitrate (in bps) for RIST,
-        /// RTP, and RTP-FEC streams.
+        /// Gets and sets the property MaxBitrate. 
+        /// <para>
+        ///  The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+        /// </para>
         /// </summary>
         public int MaxBitrate
         {
@@ -82,8 +89,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
-        /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+        /// Gets and sets the property MaxLatency. 
+        /// <para>
+        ///  The maximum latency in milliseconds. This parameter applies only to RIST-based and
+        /// Zixi-based streams.
+        /// </para>
         /// </summary>
         public int MaxLatency
         {
@@ -98,8 +108,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxSyncBuffer. The size of the buffer (in milliseconds)
-        /// to use to sync incoming source data.
+        /// Gets and sets the property MaxSyncBuffer. 
+        /// <para>
+        ///  The size of the buffer (in milliseconds) to use to sync incoming source data.
+        /// </para>
         /// </summary>
         public int MaxSyncBuffer
         {
@@ -114,11 +126,14 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinLatency. The minimum latency in milliseconds for SRT-based
-        /// streams. In streams that use the SRT protocol, this value that you set on your MediaConnect
-        /// source or output represents the minimal potential latency of that connection. The
-        /// latency of the stream is set to the highest number between the sender’s minimum latency
-        /// and the receiver’s minimum latency.
+        /// Gets and sets the property MinLatency. 
+        /// <para>
+        ///  The minimum latency in milliseconds for SRT-based streams. In streams that use the
+        /// SRT protocol, this value that you set on your MediaConnect source or output represents
+        /// the minimal potential latency of that connection. The latency of the stream is set
+        /// to the highest number between the sender’s minimum latency and the receiver’s minimum
+        /// latency.
+        /// </para>
         /// </summary>
         public int MinLatency
         {
@@ -133,7 +148,53 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol. The protocol that is used by the source or output.
+        /// Gets and sets the property NdiProgramName. 
+        /// <para>
+        /// A suffix for the names of the NDI sources that the flow creates. If a custom name
+        /// isn't specified, MediaConnect uses the output name. 
+        /// </para>
+        /// </summary>
+        public string NdiProgramName
+        {
+            get { return this._ndiProgramName; }
+            set { this._ndiProgramName = value; }
+        }
+
+        // Check to see if NdiProgramName property is set
+        internal bool IsSetNdiProgramName()
+        {
+            return this._ndiProgramName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiSpeedHqQuality. 
+        /// <para>
+        /// A quality setting for the NDI Speed HQ encoder. 
+        /// </para>
+        /// </summary>
+        public int NdiSpeedHqQuality
+        {
+            get { return this._ndiSpeedHqQuality.GetValueOrDefault(); }
+            set { this._ndiSpeedHqQuality = value; }
+        }
+
+        // Check to see if NdiSpeedHqQuality property is set
+        internal bool IsSetNdiSpeedHqQuality()
+        {
+            return this._ndiSpeedHqQuality.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        ///  The protocol that is used by the source or output.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference
+        /// is maintained for legacy purposes only.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public Protocol Protocol
@@ -149,7 +210,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteId. The remote ID for the Zixi-pull stream.
+        /// Gets and sets the property RemoteId. 
+        /// <para>
+        ///  The remote ID for the Zixi-pull stream.
+        /// </para>
         /// </summary>
         public string RemoteId
         {
@@ -164,8 +228,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
-        /// outbound requests to initiate connection with the sender.
+        /// Gets and sets the property SenderControlPort. 
+        /// <para>
+        ///  The port that the flow uses to send outbound requests to initiate connection with
+        /// the sender.
+        /// </para>
         /// </summary>
         public int SenderControlPort
         {
@@ -180,8 +247,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
-        /// with to initiate connection with the sender.
+        /// Gets and sets the property SenderIpAddress. 
+        /// <para>
+        ///  The IP address that the flow communicates with to initiate connection with the sender.
+        /// </para>
         /// </summary>
         public string SenderIpAddress
         {
@@ -196,8 +265,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
-        /// for RIST, RTP, and RTP-FEC streams.
+        /// Gets and sets the property SmoothingLatency. 
+        /// <para>
+        ///  The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+        /// </para>
         /// </summary>
         public int SmoothingLatency
         {
@@ -212,8 +283,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceListenerAddress. Source IP or domain name for SRT-caller
-        /// protocol.
+        /// Gets and sets the property SourceListenerAddress. 
+        /// <para>
+        ///  Source IP or domain name for SRT-caller protocol.
+        /// </para>
         /// </summary>
         public string SourceListenerAddress
         {
@@ -228,7 +301,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceListenerPort. Source port for SRT-caller protocol.
+        /// Gets and sets the property SourceListenerPort. 
+        /// <para>
+        ///  Source port for SRT-caller protocol.
+        /// </para>
         /// </summary>
         public int SourceListenerPort
         {
@@ -243,8 +319,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi and SRT caller-based streams.
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        ///  The stream ID that you want to use for this transport. This parameter applies only
+        /// to Zixi and SRT caller-based streams.
+        /// </para>
         /// </summary>
         public string StreamId
         {

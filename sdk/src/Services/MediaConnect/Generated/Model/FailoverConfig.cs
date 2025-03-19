@@ -40,9 +40,12 @@ namespace Amazon.MediaConnect.Model
         private State _state;
 
         /// <summary>
-        /// Gets and sets the property FailoverMode. The type of failover you choose for this
-        /// flow. MERGE combines the source streams into a single stream, allowing graceful recovery
-        /// from any single-source loss. FAILOVER allows switching between different streams.
+        /// Gets and sets the property FailoverMode. 
+        /// <para>
+        ///  The type of failover you choose for this flow. MERGE combines the source streams
+        /// into a single stream, allowing graceful recovery from any single-source loss. FAILOVER
+        /// allows switching between different streams.
+        /// </para>
         /// </summary>
         public FailoverMode FailoverMode
         {
@@ -57,7 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryWindow. Search window time to look for dash-7 packets
+        /// Gets and sets the property RecoveryWindow. 
+        /// <para>
+        ///  Search window time to look for dash-7 packets.
+        /// </para>
         /// </summary>
         public int RecoveryWindow
         {
@@ -72,8 +78,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourcePriority. The priority you want to assign to a source.
-        /// You can have a primary stream and a backup stream or two equally prioritized streams.
+        /// Gets and sets the property SourcePriority. 
+        /// <para>
+        ///  The priority you want to assign to a source. You can have a primary stream and a
+        /// backup stream or two equally prioritized streams.
+        /// </para>
         /// </summary>
         public SourcePriority SourcePriority
         {
@@ -88,7 +97,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of source failover on the flow. If the state is inactive, the flow can have
+        /// only one source. If the state is active, the flow can have one or two sources. 
+        /// </para>
         /// </summary>
         public State State
         {

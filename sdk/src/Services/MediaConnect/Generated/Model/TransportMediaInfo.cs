@@ -37,8 +37,10 @@ namespace Amazon.MediaConnect.Model
         private List<TransportStreamProgram> _programs = AWSConfigs.InitializeCollections ? new List<TransportStreamProgram>() : null;
 
         /// <summary>
-        /// Gets and sets the property Programs. The list of transport stream programs in the
-        /// current flow's source.
+        /// Gets and sets the property Programs. 
+        /// <para>
+        ///  The list of transport stream programs in the current flow's source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<TransportStreamProgram> Programs

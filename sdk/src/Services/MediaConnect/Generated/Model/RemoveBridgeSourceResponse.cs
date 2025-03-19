@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _sourceName;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge from which the source was removed. 
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceName.
+        /// Gets and sets the property SourceName. 
+        /// <para>
+        ///  The name of the bridge source that was removed. 
+        /// </para>
         /// </summary>
         public string SourceName
         {

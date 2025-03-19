@@ -51,8 +51,10 @@ namespace Amazon.MediaConnect.Model
         private string _whitelistCidr;
 
         /// <summary>
-        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
-        /// of the data transfer cost to be billed to the subscriber.
+        /// Gets and sets the property DataTransferSubscriberFeePercent. 
+        /// <para>
+        ///  Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        /// </para>
         /// </summary>
         public int DataTransferSubscriberFeePercent
         {
@@ -67,8 +69,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Decryption. The type of encryption that is used on the
-        /// content ingested from this source.
+        /// Gets and sets the property Decryption. 
+        /// <para>
+        ///  The type of encryption that is used on the content ingested from this source.
+        /// </para>
         /// </summary>
         public Encryption Decryption
         {
@@ -83,8 +87,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description for the source. This value is
-        /// not used or seen outside of the current AWS Elemental MediaConnect account.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description for the source. This value is not used or seen outside of the current
+        /// MediaConnect account.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -99,10 +106,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementArn. The ARN of the entitlement that allows
-        /// you to subscribe to content that comes from another AWS account. The entitlement is
-        /// set by the content originator and the ARN is generated as part of the originator's
-        /// flow.
+        /// Gets and sets the property EntitlementArn. 
+        /// <para>
+        ///  The ARN of the entitlement that allows you to subscribe to content that comes from
+        /// another Amazon Web Services account. The entitlement is set by the content originator
+        /// and the ARN is generated as part of the originator's flow.
+        /// </para>
         /// </summary>
         public string EntitlementArn
         {
@@ -117,8 +126,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayBridgeSource. The source configuration for cloud
-        /// flows receiving a stream from a bridge.
+        /// Gets and sets the property GatewayBridgeSource. 
+        /// <para>
+        ///  The source configuration for cloud flows receiving a stream from a bridge.
+        /// </para>
         /// </summary>
         public GatewayBridgeSource GatewayBridgeSource
         {
@@ -133,8 +144,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngestIp. The IP address that the flow will be listening
-        /// on for incoming content.
+        /// Gets and sets the property IngestIp. 
+        /// <para>
+        ///  The IP address that the flow will be listening on for incoming content.
+        /// </para>
         /// </summary>
         public string IngestIp
         {
@@ -149,8 +162,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngestPort. The port that the flow will be listening on
-        /// for incoming content.
+        /// Gets and sets the property IngestPort. 
+        /// <para>
+        ///  The port that the flow will be listening on for incoming content.
+        /// </para>
         /// </summary>
         public int IngestPort
         {
@@ -165,8 +180,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamSourceConfigurations. The media streams that
-        /// are associated with the source, and the parameters for those associations.
+        /// Gets and sets the property MediaStreamSourceConfigurations. 
+        /// <para>
+        ///  The media streams that are associated with the source, and the parameters for those
+        /// associations.
+        /// </para>
         /// </summary>
         public List<MediaStreamSourceConfiguration> MediaStreamSourceConfigurations
         {
@@ -181,7 +199,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the source.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -197,8 +218,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
-        /// outbound requests to initiate connection with the sender.
+        /// Gets and sets the property SenderControlPort. 
+        /// <para>
+        ///  The IP address that the flow communicates with to initiate connection with the sender.
+        /// </para>
         /// </summary>
         public int SenderControlPort
         {
@@ -213,8 +236,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
-        /// with to initiate connection with the sender.
+        /// Gets and sets the property SenderIpAddress. 
+        /// <para>
+        ///  The port that the flow uses to send outbound requests to initiate connection with
+        /// the sender.
+        /// </para>
         /// </summary>
         public string SenderIpAddress
         {
@@ -229,7 +255,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceArn. The ARN of the source.
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        ///  The ARN of the source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SourceArn
@@ -245,8 +274,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Transport. Attributes related to the transport stream that
-        /// are used in the source.
+        /// Gets and sets the property Transport. 
+        /// <para>
+        ///  Attributes related to the transport stream that are used in the source.
+        /// </para>
         /// </summary>
         public Transport Transport
         {
@@ -261,8 +292,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceName. The name of the VPC interface that is
-        /// used for this source.
+        /// Gets and sets the property VpcInterfaceName. 
+        /// <para>
+        ///  The name of the VPC interface that is used for this source.
+        /// </para>
         /// </summary>
         public string VpcInterfaceName
         {
@@ -277,9 +310,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WhitelistCidr. The range of IP addresses that should be
-        /// allowed to contribute content to your source. These IP addresses should be in the
-        /// form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// Gets and sets the property WhitelistCidr. 
+        /// <para>
+        ///  The range of IP addresses that should be allowed to contribute content to your source.
+        /// These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR)
+        /// block; for example, 10.0.0.0/16.
+        /// </para>
         /// </summary>
         public string WhitelistCidr
         {

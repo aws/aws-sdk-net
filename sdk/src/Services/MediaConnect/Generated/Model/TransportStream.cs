@@ -44,7 +44,10 @@ namespace Amazon.MediaConnect.Model
         private string _streamType;
 
         /// <summary>
-        /// Gets and sets the property Channels. The number of channels in the audio stream.
+        /// Gets and sets the property Channels. 
+        /// <para>
+        ///  The number of channels in the audio stream.
+        /// </para>
         /// </summary>
         public int Channels
         {
@@ -59,7 +62,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Codec. The codec used by the stream.
+        /// Gets and sets the property Codec. 
+        /// <para>
+        ///  The codec used by the stream.
+        /// </para>
         /// </summary>
         public string Codec
         {
@@ -74,7 +80,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. The frame rate used by the video stream.
+        /// Gets and sets the property FrameRate. 
+        /// <para>
+        ///  The frame rate used by the video stream.
+        /// </para>
         /// </summary>
         public string FrameRate
         {
@@ -89,7 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameResolution.
+        /// Gets and sets the property FrameResolution. 
+        /// <para>
+        /// The frame resolution used by the video stream. 
+        /// </para>
         /// </summary>
         public FrameResolution FrameResolution
         {
@@ -104,8 +116,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pid. The Packet ID (PID) as it is reported in the Program
-        /// Map Table.
+        /// Gets and sets the property Pid. 
+        /// <para>
+        ///  The Packet ID (PID) as it is reported in the Program Map Table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int Pid
@@ -121,7 +135,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleRate. The sample rate used by the audio stream.
+        /// Gets and sets the property SampleRate. 
+        /// <para>
+        ///  The sample rate used by the audio stream.
+        /// </para>
         /// </summary>
         public int SampleRate
         {
@@ -136,7 +153,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleSize. The sample bit size used by the audio stream.
+        /// Gets and sets the property SampleSize. 
+        /// <para>
+        ///  The sample bit size used by the audio stream.
+        /// </para>
         /// </summary>
         public int SampleSize
         {
@@ -151,8 +171,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamType. The Stream Type as it is reported in the Program
-        /// Map Table.
+        /// Gets and sets the property StreamType. 
+        /// <para>
+        ///  The Stream Type as it is reported in the Program Map Table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string StreamType

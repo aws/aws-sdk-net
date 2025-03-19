@@ -61,8 +61,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetOfferingArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OfferingArn set");
-            request.AddPathResource("{offeringArn}", StringUtils.FromString(publicRequest.OfferingArn));
-            request.ResourcePath = "/v1/offerings/{offeringArn}";
+            request.AddPathResource("{OfferingArn}", StringUtils.FromString(publicRequest.OfferingArn));
+            request.ResourcePath = "/v1/offerings/{OfferingArn}";
 
             return request;
         }

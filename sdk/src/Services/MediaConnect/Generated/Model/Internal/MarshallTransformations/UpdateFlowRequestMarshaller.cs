@@ -62,8 +62,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}";
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -77,6 +77,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
                     var marshaller = UpdateMaintenanceMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Maintenance, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetNdiConfig())
+                {
+                    context.Writer.WritePropertyName("ndiConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NdiConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NdiConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge feeding this flow.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge feeding this flow.
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,8 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceAttachment. The name of the VPC interface attachment
-        /// to use for this bridge source.
+        /// Gets and sets the property VpcInterfaceAttachment. 
+        /// <para>
+        ///  The name of the VPC interface attachment to use for this bridge source.
+        /// </para>
         /// </summary>
         public VpcInterfaceAttachment VpcInterfaceAttachment
         {

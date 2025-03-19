@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Create maintenance setting for a flow
+    /// Create a maintenance setting for a flow.
     /// </summary>
     public partial class AddMaintenance
     {
@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _maintenanceStartHour;
 
         /// <summary>
-        /// Gets and sets the property MaintenanceDay. A day of a week when the maintenance will
-        /// happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+        /// Gets and sets the property MaintenanceDay. 
+        /// <para>
+        ///  A day of a week when the maintenance will happen. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MaintenanceDay MaintenanceDay
@@ -55,9 +57,26 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaintenanceStartHour. UTC time when the maintenance will
-        /// happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default
-        /// value is 02:00.
+        /// Gets and sets the property MaintenanceStartHour. 
+        /// <para>
+        ///  UTC time when the maintenance will happen. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use 24-hour HH:MM format. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Minutes must be 00. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: 13:00. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 02:00.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MaintenanceStartHour

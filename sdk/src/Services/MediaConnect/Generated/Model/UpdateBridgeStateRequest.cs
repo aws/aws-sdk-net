@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBridgeState operation.
-    /// Updates the bridge state
+    /// Updates the bridge state.
     /// </summary>
     public partial class UpdateBridgeStateRequest : AmazonMediaConnectRequest
     {
@@ -39,7 +39,11 @@ namespace Amazon.MediaConnect.Model
         private DesiredState _desiredState;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to update.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the bridge that you want to update the state of.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -55,7 +59,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DesiredState.
+        /// Gets and sets the property DesiredState. 
+        /// <para>
+        ///  The desired state for the bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DesiredState DesiredState

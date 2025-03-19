@@ -61,8 +61,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}/source-thumbnail";
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/source-thumbnail";
 
             return request;
         }

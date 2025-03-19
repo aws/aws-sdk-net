@@ -40,8 +40,10 @@ namespace Amazon.MediaConnect.Model
         private List<VideoMonitoringSetting> _videoMonitoringSettings = AWSConfigs.InitializeCollections ? new List<VideoMonitoringSetting>() : null;
 
         /// <summary>
-        /// Gets and sets the property AudioMonitoringSettings. Contains the settings for audio
-        /// stream metrics monitoring.
+        /// Gets and sets the property AudioMonitoringSettings. 
+        /// <para>
+        ///  Contains the settings for audio stream metrics monitoring.
+        /// </para>
         /// </summary>
         public List<AudioMonitoringSetting> AudioMonitoringSettings
         {
@@ -56,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentQualityAnalysisState. Indicates whether content
-        /// quality analysis is enabled or disabled.
+        /// Gets and sets the property ContentQualityAnalysisState. 
+        /// <para>
+        ///  Indicates whether content quality analysis is enabled or disabled.
+        /// </para>
         /// </summary>
         public ContentQualityAnalysisState ContentQualityAnalysisState
         {
@@ -72,7 +76,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThumbnailState. The state of thumbnail monitoring.
+        /// Gets and sets the property ThumbnailState. 
+        /// <para>
+        ///  Indicates whether thumbnails are enabled or disabled.
+        /// </para>
         /// </summary>
         public ThumbnailState ThumbnailState
         {
@@ -87,8 +94,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoMonitoringSettings. Contains the settings for video
-        /// stream metrics monitoring.
+        /// Gets and sets the property VideoMonitoringSettings. 
+        /// <para>
+        ///  Contains the settings for video stream metrics monitoring.
+        /// </para>
         /// </summary>
         public List<VideoMonitoringSetting> VideoMonitoringSettings
         {

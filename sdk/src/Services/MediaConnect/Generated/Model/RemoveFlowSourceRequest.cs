@@ -40,7 +40,10 @@ namespace Amazon.MediaConnect.Model
         private string _sourceArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to remove a source from.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to remove a source from.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -56,7 +59,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceArn. The ARN of the source that you want to remove.
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        ///  The ARN of the source that you want to remove.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SourceArn

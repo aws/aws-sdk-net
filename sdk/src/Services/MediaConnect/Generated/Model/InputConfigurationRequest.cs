@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private InterfaceRequest _interface;
 
         /// <summary>
-        /// Gets and sets the property InputPort. The port that you want the flow to listen on
-        /// for an incoming media stream.
+        /// Gets and sets the property InputPort. 
+        /// <para>
+        ///  The port that you want the flow to listen on for an incoming media stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int InputPort
@@ -55,8 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Interface. The VPC interface that you want to use for the
-        /// incoming media stream.
+        /// Gets and sets the property Interface. 
+        /// <para>
+        ///  The VPC interface that you want to use for the incoming media stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InterfaceRequest Interface

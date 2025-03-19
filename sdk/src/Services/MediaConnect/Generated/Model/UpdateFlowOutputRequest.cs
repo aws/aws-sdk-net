@@ -43,6 +43,8 @@ namespace Amazon.MediaConnect.Model
         private int? _maxLatency;
         private List<MediaStreamOutputConfigurationRequest> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfigurationRequest>() : null;
         private int? _minLatency;
+        private string _ndiProgramName;
+        private int? _ndiSpeedHqQuality;
         private string _outputArn;
         private OutputStatus _outputStatus;
         private int? _port;
@@ -55,9 +57,12 @@ namespace Amazon.MediaConnect.Model
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
 
         /// <summary>
-        /// Gets and sets the property CidrAllowList. The range of IP addresses that should be
-        /// allowed to initiate output requests to this flow. These IP addresses should be in
-        /// the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// Gets and sets the property CidrAllowList. 
+        /// <para>
+        ///  The range of IP addresses that should be allowed to initiate output requests to this
+        /// flow. These IP addresses should be in the form of a Classless Inter-Domain Routing
+        /// (CIDR) block; for example, 10.0.0.0/16.
+        /// </para>
         /// </summary>
         public List<string> CidrAllowList
         {
@@ -72,9 +77,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the output. This description
-        /// appears only on the AWS Elemental MediaConnect console and will not be seen by the
-        /// end user.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the output. This description appears only on the MediaConnect console
+        /// and will not be seen by the end user.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -89,8 +96,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. The IP address where you want to send the
-        /// output.
+        /// Gets and sets the property Destination. 
+        /// <para>
+        ///  The IP address where you want to send the output.
+        /// </para>
         /// </summary>
         public string Destination
         {
@@ -105,9 +114,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption. The type of key used for the encryption. If
-        /// no keyType is provided, the service will use the default setting (static-key). Allowable
-        /// encryption types: static-key.
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        ///  The type of key used for the encryption. If no <c>keyType</c> is provided, the service
+        /// will use the default setting (static-key). Allowable encryption types: static-key.
+        /// </para>
         /// </summary>
         public UpdateEncryption Encryption
         {
@@ -122,8 +133,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that is associated with the output that
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that is associated with the output that
         /// you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -139,8 +153,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
-        /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+        /// Gets and sets the property MaxLatency. 
+        /// <para>
+        ///  The maximum latency in milliseconds. This parameter applies only to RIST-based and
+        /// Zixi-based streams.
+        /// </para>
         /// </summary>
         public int MaxLatency
         {
@@ -155,8 +172,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamOutputConfigurations. The media streams that
-        /// are associated with the output, and the parameters for those associations.
+        /// Gets and sets the property MediaStreamOutputConfigurations. 
+        /// <para>
+        ///  The media streams that are associated with the output, and the parameters for those
+        /// associations.
+        /// </para>
         /// </summary>
         public List<MediaStreamOutputConfigurationRequest> MediaStreamOutputConfigurations
         {
@@ -171,11 +191,14 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinLatency. The minimum latency in milliseconds for SRT-based
-        /// streams. In streams that use the SRT protocol, this value that you set on your MediaConnect
-        /// source or output represents the minimal potential latency of that connection. The
-        /// latency of the stream is set to the highest number between the sender’s minimum latency
-        /// and the receiver’s minimum latency.
+        /// Gets and sets the property MinLatency. 
+        /// <para>
+        ///  The minimum latency in milliseconds for SRT-based streams. In streams that use the
+        /// SRT protocol, this value that you set on your MediaConnect source or output represents
+        /// the minimal potential latency of that connection. The latency of the stream is set
+        /// to the highest number between the sender’s minimum latency and the receiver’s minimum
+        /// latency.
+        /// </para>
         /// </summary>
         public int MinLatency
         {
@@ -190,7 +213,47 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputArn. The ARN of the output that you want to update.
+        /// Gets and sets the property NdiProgramName. 
+        /// <para>
+        ///  A suffix for the names of the NDI sources that the flow creates. If a custom name
+        /// isn't specified, MediaConnect uses the output name. 
+        /// </para>
+        /// </summary>
+        public string NdiProgramName
+        {
+            get { return this._ndiProgramName; }
+            set { this._ndiProgramName = value; }
+        }
+
+        // Check to see if NdiProgramName property is set
+        internal bool IsSetNdiProgramName()
+        {
+            return this._ndiProgramName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiSpeedHqQuality. 
+        /// <para>
+        /// A quality setting for the NDI Speed HQ encoder. 
+        /// </para>
+        /// </summary>
+        public int NdiSpeedHqQuality
+        {
+            get { return this._ndiSpeedHqQuality.GetValueOrDefault(); }
+            set { this._ndiSpeedHqQuality = value; }
+        }
+
+        // Check to see if NdiSpeedHqQuality property is set
+        internal bool IsSetNdiSpeedHqQuality()
+        {
+            return this._ndiSpeedHqQuality.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputArn. 
+        /// <para>
+        ///  The ARN of the output that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OutputArn
@@ -206,9 +269,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputStatus. An indication of whether the output should
-        /// transmit data or not. If you don't specify the outputStatus field in your request,
-        /// MediaConnect leaves the value unchanged.
+        /// Gets and sets the property OutputStatus. 
+        /// <para>
+        ///  An indication of whether the output should transmit data or not. If you don't specify
+        /// the <c>outputStatus</c> field in your request, MediaConnect leaves the value unchanged.
+        /// </para>
         /// </summary>
         public OutputStatus OutputStatus
         {
@@ -223,8 +288,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. The port to use when content is distributed to this
-        /// output.
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The port to use when content is distributed to this output.
+        /// </para>
         /// </summary>
         public int Port
         {
@@ -239,7 +306,16 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol. The protocol to use for the output.
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        ///  The protocol to use for the output.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference
+        /// is maintained for legacy purposes only.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Protocol Protocol
         {
@@ -254,7 +330,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RemoteId. The remote ID for the Zixi-pull stream.
+        /// Gets and sets the property RemoteId. 
+        /// <para>
+        ///  The remote ID for the Zixi-pull stream.
+        /// </para>
         /// </summary>
         public string RemoteId
         {
@@ -269,8 +348,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
-        /// outbound requests to initiate connection with the sender.
+        /// Gets and sets the property SenderControlPort. 
+        /// <para>
+        ///  The port that the flow uses to send outbound requests to initiate connection with
+        /// the sender.
+        /// </para>
         /// </summary>
         public int SenderControlPort
         {
@@ -285,8 +367,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
-        /// with to initiate connection with the sender.
+        /// Gets and sets the property SenderIpAddress. 
+        /// <para>
+        ///  The IP address that the flow communicates with to initiate connection with the sender.
+        /// </para>
         /// </summary>
         public string SenderIpAddress
         {
@@ -301,8 +385,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
-        /// for RIST, RTP, and RTP-FEC streams.
+        /// Gets and sets the property SmoothingLatency. 
+        /// <para>
+        ///  The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+        /// </para>
         /// </summary>
         public int SmoothingLatency
         {
@@ -317,8 +403,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi and SRT caller-based streams.
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        ///  The stream ID that you want to use for this transport. This parameter applies only
+        /// to Zixi and SRT caller-based streams.
+        /// </para>
         /// </summary>
         public string StreamId
         {
@@ -333,8 +422,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceAttachment. The name of the VPC interface attachment
-        /// to use for this output.
+        /// Gets and sets the property VpcInterfaceAttachment. 
+        /// <para>
+        ///  The name of the VPC interface attachment to use for this output.
+        /// </para>
         /// </summary>
         public VpcInterfaceAttachment VpcInterfaceAttachment
         {

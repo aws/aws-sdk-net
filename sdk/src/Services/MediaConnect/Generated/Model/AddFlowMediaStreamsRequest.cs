@@ -41,7 +41,10 @@ namespace Amazon.MediaConnect.Model
         private List<AddMediaStreamRequest> _mediaStreams = AWSConfigs.InitializeCollections ? new List<AddMediaStreamRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -57,8 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreams. The media streams that you want to add to
-        /// the flow.
+        /// Gets and sets the property MediaStreams. 
+        /// <para>
+        ///  The media streams that you want to add to the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AddMediaStreamRequest> MediaStreams

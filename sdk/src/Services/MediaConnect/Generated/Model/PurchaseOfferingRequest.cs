@@ -41,7 +41,10 @@ namespace Amazon.MediaConnect.Model
         private string _start;
 
         /// <summary>
-        /// Gets and sets the property OfferingArn. The Amazon Resource Name (ARN) of the offering.
+        /// Gets and sets the property OfferingArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingArn
@@ -57,8 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservationName. The name that you want to use for the
-        /// reservation.
+        /// Gets and sets the property ReservationName. 
+        /// <para>
+        ///  The name that you want to use for the reservation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReservationName
@@ -74,12 +79,19 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. The date and time that you want the reservation
-        /// to begin, in Coordinated Universal Time (UTC). You can specify any date and time between
-        /// 12:00am on the first day of the current month to the current time on today's date,
-        /// inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ,
-        /// where T and Z are literal characters. For example, to specify 11:30pm on March 5,
-        /// 2020, enter 2020-03-05T23:30:00Z.
+        /// Gets and sets the property Start. 
+        /// <para>
+        ///  The date and time that you want the reservation to begin, in Coordinated Universal
+        /// Time (UTC). 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify any date and time between 12:00am on the first day of the current
+        /// month to the current time on today's date, inclusive. Specify the start in a 24-hour
+        /// notation. Use the following format: <c>YYYY-MM-DDTHH:mm:SSZ</c>, where <c>T</c> and
+        /// <c>Z</c> are literal characters. For example, to specify 11:30pm on March 5, 2020,
+        /// enter <c>2020-03-05T23:30:00Z</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Start

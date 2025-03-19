@@ -31,9 +31,9 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFlowEntitlement operation.
-    /// You can change an entitlement's description, subscribers, and encryption. If you change
-    /// the subscribers, the service will remove the outputs that are are used by the subscribers
-    /// that are removed.
+    /// Updates an entitlement. You can change an entitlement's description, subscribers,
+    /// and encryption. If you change the subscribers, the service will remove the outputs
+    /// that are are used by the subscribers that are removed.
     /// </summary>
     public partial class UpdateFlowEntitlementRequest : AmazonMediaConnectRequest
     {
@@ -45,9 +45,11 @@ namespace Amazon.MediaConnect.Model
         private List<string> _subscribers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the entitlement. This description
-        /// appears only on the AWS Elemental MediaConnect console and will not be seen by the
-        /// subscriber or end user.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the entitlement. This description appears only on the MediaConnect
+        /// console and will not be seen by the subscriber or end user.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -62,9 +64,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption. The type of encryption that will be used on
-        /// the output associated with this entitlement. Allowable encryption types: static-key,
-        /// speke.
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        ///  The type of encryption that will be used on the output associated with this entitlement.
+        /// Allowable encryption types: static-key, speke.
+        /// </para>
         /// </summary>
         public UpdateEncryption Encryption
         {
@@ -79,8 +83,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementArn. The ARN of the entitlement that you want
-        /// to update.
+        /// Gets and sets the property EntitlementArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the entitlement that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EntitlementArn
@@ -96,10 +102,13 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementStatus. An indication of whether you want to
-        /// enable the entitlement to allow access, or disable it to stop streaming content to
-        /// the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field
-        /// in your request, MediaConnect leaves the value unchanged.
+        /// Gets and sets the property EntitlementStatus. 
+        /// <para>
+        ///  An indication of whether you want to enable the entitlement to allow access, or disable
+        /// it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify
+        /// the <c>entitlementStatus</c> field in your request, MediaConnect leaves the value
+        /// unchanged.
+        /// </para>
         /// </summary>
         public EntitlementStatus EntitlementStatus
         {
@@ -114,8 +123,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that is associated with the entitlement
-        /// that you want to update.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that is associated with the entitlement that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -131,9 +142,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscribers. The AWS account IDs that you want to share
-        /// your content with. The receiving accounts (subscribers) will be allowed to create
-        /// their own flow using your content as the source.
+        /// Gets and sets the property Subscribers. 
+        /// <para>
+        ///  The Amazon Web Services account IDs that you want to share your content with. The
+        /// receiving accounts (subscribers) will be allowed to create their own flow using your
+        /// content as the source.
+        /// </para>
         /// </summary>
         public List<string> Subscribers
         {

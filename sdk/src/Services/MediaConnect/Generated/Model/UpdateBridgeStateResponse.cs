@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private DesiredState _desiredState;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        /// The ARN of the updated bridge. 
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DesiredState. The state of the bridge. ACTIVE or STANDBY.
+        /// Gets and sets the property DesiredState. 
+        /// <para>
+        ///  The new state of the bridge. 
+        /// </para>
         /// </summary>
         public DesiredState DesiredState
         {

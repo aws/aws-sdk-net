@@ -89,6 +89,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFlowSize())
+                {
+                    context.Writer.WritePropertyName("flowSize");
+                    context.Writer.Write(publicRequest.FlowSize);
+                }
+
                 if(publicRequest.IsSetMaintenance())
                 {
                     context.Writer.WritePropertyName("maintenance");
@@ -120,6 +126,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetNdiConfig())
+                {
+                    context.Writer.WritePropertyName("ndiConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NdiConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NdiConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetOutputs())

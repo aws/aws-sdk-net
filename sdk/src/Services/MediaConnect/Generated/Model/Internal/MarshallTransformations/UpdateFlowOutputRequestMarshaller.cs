@@ -62,11 +62,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetOutputArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OutputArn set");
-            request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
-            request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
+            request.AddPathResource("{OutputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/outputs/{OutputArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -133,6 +133,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("minLatency");
                     context.Writer.Write(publicRequest.MinLatency);
+                }
+
+                if(publicRequest.IsSetNdiProgramName())
+                {
+                    context.Writer.WritePropertyName("ndiProgramName");
+                    context.Writer.Write(publicRequest.NdiProgramName);
+                }
+
+                if(publicRequest.IsSetNdiSpeedHqQuality())
+                {
+                    context.Writer.WritePropertyName("ndiSpeedHqQuality");
+                    context.Writer.Write(publicRequest.NdiSpeedHqQuality);
                 }
 
                 if(publicRequest.IsSetOutputStatus())

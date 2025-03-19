@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _offeringArn;
 
         /// <summary>
-        /// Gets and sets the property OfferingArn. The Amazon Resource Name (ARN) of the offering.
+        /// Gets and sets the property OfferingArn. 
+        /// <para>
+        ///  The ARN of the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingArn

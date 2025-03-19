@@ -61,11 +61,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetGatewayInstanceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field GatewayInstanceArn set");
-            request.AddPathResource("{gatewayInstanceArn}", StringUtils.FromString(publicRequest.GatewayInstanceArn));
+            request.AddPathResource("{GatewayInstanceArn}", StringUtils.FromString(publicRequest.GatewayInstanceArn));
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
-            request.ResourcePath = "/v1/gateway-instances/{gatewayInstanceArn}";
+            request.ResourcePath = "/v1/gateway-instances/{GatewayInstanceArn}";
             request.UseQueryString = true;
 
             return request;

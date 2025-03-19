@@ -31,17 +31,21 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFlow operation.
-    /// Updates flow
+    /// Updates an existing flow.
     /// </summary>
     public partial class UpdateFlowRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
         private UpdateMaintenance _maintenance;
+        private NdiConfig _ndiConfig;
         private UpdateFailoverConfig _sourceFailoverConfig;
         private MonitoringConfig _sourceMonitoringConfig;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to update.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -57,7 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Maintenance.
+        /// Gets and sets the property Maintenance. 
+        /// <para>
+        ///  The maintenance setting of the flow. 
+        /// </para>
         /// </summary>
         public UpdateMaintenance Maintenance
         {
@@ -72,7 +79,29 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFailoverConfig.
+        /// Gets and sets the property NdiConfig. 
+        /// <para>
+        ///  Specifies the configuration settings for NDI outputs. Required when the flow includes
+        /// NDI outputs. 
+        /// </para>
+        /// </summary>
+        public NdiConfig NdiConfig
+        {
+            get { return this._ndiConfig; }
+            set { this._ndiConfig = value; }
+        }
+
+        // Check to see if NdiConfig property is set
+        internal bool IsSetNdiConfig()
+        {
+            return this._ndiConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceFailoverConfig. 
+        /// <para>
+        ///  The settings for source failover. 
+        /// </para>
         /// </summary>
         public UpdateFailoverConfig SourceFailoverConfig
         {
@@ -87,7 +116,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceMonitoringConfig.
+        /// Gets and sets the property SourceMonitoringConfig. 
+        /// <para>
+        ///  The settings for source monitoring. 
+        /// </para>
         /// </summary>
         public MonitoringConfig SourceMonitoringConfig
         {

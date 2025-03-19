@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private int? _frameWidth;
 
         /// <summary>
-        /// Gets and sets the property FrameHeight. The number of pixels in the height of the
-        /// video frame.
+        /// Gets and sets the property FrameHeight. 
+        /// <para>
+        ///  The number of pixels in the height of the video frame.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int FrameHeight
@@ -55,8 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameWidth. The number of pixels in the width of the video
-        /// frame.
+        /// Gets and sets the property FrameWidth. 
+        /// <para>
+        ///  The number of pixels in the width of the video frame.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int FrameWidth

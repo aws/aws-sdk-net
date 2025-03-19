@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private Messages _messages;
 
         /// <summary>
-        /// Gets and sets the property Flow.
+        /// Gets and sets the property Flow. 
+        /// <para>
+        /// The flow that you requested a description of. 
+        /// </para>
         /// </summary>
         public Flow Flow
         {
@@ -53,7 +56,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Messages.
+        /// Gets and sets the property Messages. 
+        /// <para>
+        ///  Any errors that apply currently to the flow. If there are no errors, MediaConnect
+        /// will not include this field in the response. 
+        /// </para>
         /// </summary>
         public Messages Messages
         {

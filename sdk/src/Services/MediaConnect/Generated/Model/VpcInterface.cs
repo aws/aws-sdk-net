@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The settings for a VPC Source.
+    /// The settings for a VPC source.
     /// </summary>
     public partial class VpcInterface
     {
@@ -42,8 +42,10 @@ namespace Amazon.MediaConnect.Model
         private string _subnetId;
 
         /// <summary>
-        /// Gets and sets the property Name. Immutable and has to be a unique against other VpcInterfaces
-        /// in this Flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  Immutable and has to be a unique against other VpcInterfaces in this Flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -59,8 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceIds. IDs of the network interfaces created
-        /// in customer's account by MediaConnect.
+        /// Gets and sets the property NetworkInterfaceIds. 
+        /// <para>
+        ///  IDs of the network interfaces created in customer's account by MediaConnect.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> NetworkInterfaceIds
@@ -76,7 +80,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceType. The type of network interface.
+        /// Gets and sets the property NetworkInterfaceType. 
+        /// <para>
+        ///  The type of network interface.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public NetworkInterfaceType NetworkInterfaceType
@@ -92,8 +99,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. Role Arn MediaConnect can assumes to create ENIs
-        /// in customer's account
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        ///  A role Arn MediaConnect can assume to create ENIs in your account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RoleArn
@@ -109,7 +118,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupIds. Security Group IDs to be used on ENI.
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        ///  Security Group IDs to be used on ENI.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
@@ -125,7 +137,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetId. Subnet must be in the AZ of the Flow
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        ///  Subnet must be in the AZ of the Flow. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SubnetId

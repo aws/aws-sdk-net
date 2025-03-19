@@ -41,8 +41,11 @@ namespace Amazon.MediaConnect.Model
         private List<TransportStream> _streams = AWSConfigs.InitializeCollections ? new List<TransportStream>() : null;
 
         /// <summary>
-        /// Gets and sets the property PcrPid. The Program Clock Reference (PCR) Packet ID (PID)
-        /// as it is reported in the Program Association Table.
+        /// Gets and sets the property PcrPid. 
+        /// <para>
+        ///  The Program Clock Reference (PCR) Packet ID (PID) as it is reported in the Program
+        /// Association Table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int PcrPid
@@ -58,8 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramName. The program name as it is reported in the
-        /// Program Association Table.
+        /// Gets and sets the property ProgramName. 
+        /// <para>
+        ///  The program name as it is reported in the Program Association Table.
+        /// </para>
         /// </summary>
         public string ProgramName
         {
@@ -74,8 +79,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramNumber. The program number as it is reported in
-        /// the Program Association Table.
+        /// Gets and sets the property ProgramNumber. 
+        /// <para>
+        ///  The program number as it is reported in the Program Association Table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ProgramNumber
@@ -91,8 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramPid. The program Packet ID (PID) as it is reported
-        /// in the Program Association Table.
+        /// Gets and sets the property ProgramPid. 
+        /// <para>
+        ///  The program Packet ID (PID) as it is reported in the Program Association Table.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ProgramPid
@@ -108,8 +117,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Streams. The list of elementary transport streams in the
-        /// program. The list includes video, audio, and data streams.
+        /// Gets and sets the property Streams. 
+        /// <para>
+        ///  The list of elementary transport streams in the program. The list includes video,
+        /// audio, and data streams.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<TransportStream> Streams

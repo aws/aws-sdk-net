@@ -42,7 +42,10 @@ namespace Amazon.MediaConnect.Model
         private Protocol _protocol;
 
         /// <summary>
-        /// Gets and sets the property MulticastIp. The network source multicast IP.
+        /// Gets and sets the property MulticastIp. 
+        /// <para>
+        ///  The network source multicast IP.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MulticastIp
@@ -58,7 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MulticastSourceSettings.
+        /// Gets and sets the property MulticastSourceSettings. 
+        /// <para>
+        ///  The settings related to the multicast source. 
+        /// </para>
         /// </summary>
         public MulticastSourceSettings MulticastSourceSettings
         {
@@ -73,8 +79,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the network source. This name is used
-        /// to reference the source and must be unique among sources in this bridge.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the network source. This name is used to reference the source and must
+        /// be unique among sources in this bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -90,7 +99,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkName. The network source's gateway network name.
+        /// Gets and sets the property NetworkName. 
+        /// <para>
+        ///  The network source's gateway network name.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string NetworkName
@@ -106,7 +118,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. The network source port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The network source port.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int Port
@@ -122,7 +137,16 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol. The network source protocol.
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        ///  The network source protocol.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference
+        /// is maintained for legacy purposes only.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public Protocol Protocol

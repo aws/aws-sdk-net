@@ -42,8 +42,10 @@ namespace Amazon.MediaConnect.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that DescribeFlowSourceThumbnail
-        /// was performed on.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that DescribeFlowSourceThumbnail was performed on.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -59,7 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Thumbnail. Thumbnail Base64 string.
+        /// Gets and sets the property Thumbnail. 
+        /// <para>
+        /// Thumbnail Base64 string. 
+        /// </para>
         /// </summary>
         public string Thumbnail
         {
@@ -74,8 +79,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThumbnailMessages. Status code and messages about the flow
-        /// source thumbnail.
+        /// Gets and sets the property ThumbnailMessages. 
+        /// <para>
+        ///  Status code and messages about the flow source thumbnail.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<MessageDetail> ThumbnailMessages
@@ -91,7 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timecode. Timecode of thumbnail.
+        /// Gets and sets the property Timecode. 
+        /// <para>
+        ///  Timecode of thumbnail.
+        /// </para>
         /// </summary>
         public string Timecode
         {
@@ -106,7 +116,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. The timestamp of when thumbnail was generated.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        ///  The timestamp of when thumbnail was generated.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {

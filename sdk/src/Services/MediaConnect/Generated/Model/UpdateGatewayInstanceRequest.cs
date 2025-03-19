@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewayInstance operation.
-    /// Updates the configuration of an existing Gateway Instance.
+    /// Updates an existing gateway instance.
     /// </summary>
     public partial class UpdateGatewayInstanceRequest : AmazonMediaConnectRequest
     {
@@ -39,10 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayInstanceArn;
 
         /// <summary>
-        /// Gets and sets the property BridgePlacement. The availability of the instance to host
-        /// new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED,
-        /// no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can
-        /// be added to this instance.
+        /// Gets and sets the property BridgePlacement. 
+        /// <para>
+        /// The state of the instance. <c>ACTIVE</c> or <c>INACTIVE</c>. 
+        /// </para>
         /// </summary>
         public BridgePlacement BridgePlacement
         {
@@ -57,8 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayInstanceArn. The Amazon Resource Name (ARN) of the
-        /// instance that you want to update.
+        /// Gets and sets the property GatewayInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the gateway instance that you want to update. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayInstanceArn

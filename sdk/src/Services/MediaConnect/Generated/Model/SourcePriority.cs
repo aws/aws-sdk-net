@@ -30,16 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The priority you want to assign to a source. You can have a primary stream and a backup
-    /// stream or two equally prioritized streams.
+    /// The priority you want to assign to a source. You can have a primary stream and a
+    /// backup stream or two equally prioritized streams.
     /// </summary>
     public partial class SourcePriority
     {
         private string _primarySource;
 
         /// <summary>
-        /// Gets and sets the property PrimarySource. The name of the source you choose as the
-        /// primary source for this flow.
+        /// Gets and sets the property PrimarySource. 
+        /// <para>
+        ///  The name of the source you choose as the primary source for this flow.
+        /// </para>
         /// </summary>
         public string PrimarySource
         {

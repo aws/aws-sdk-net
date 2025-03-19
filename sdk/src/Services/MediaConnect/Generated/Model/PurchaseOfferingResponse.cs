@@ -37,7 +37,11 @@ namespace Amazon.MediaConnect.Model
         private Reservation _reservation;
 
         /// <summary>
-        /// Gets and sets the property Reservation.
+        /// Gets and sets the property Reservation. 
+        /// <para>
+        /// The details of the reservation that you just created when you purchased the offering.
+        /// 
+        /// </para>
         /// </summary>
         public Reservation Reservation
         {

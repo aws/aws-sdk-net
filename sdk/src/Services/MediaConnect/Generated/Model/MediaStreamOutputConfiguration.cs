@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The media stream that is associated with the output, and the parameters for that association.
+    /// The media stream that is associated with the output, and the parameters for that
+    /// association.
     /// </summary>
     public partial class MediaStreamOutputConfiguration
     {
@@ -40,8 +41,10 @@ namespace Amazon.MediaConnect.Model
         private string _mediaStreamName;
 
         /// <summary>
-        /// Gets and sets the property DestinationConfigurations. The transport parameters that
-        /// are associated with each outbound media stream.
+        /// Gets and sets the property DestinationConfigurations. 
+        /// <para>
+        ///  The transport parameters that are associated with each outbound media stream.
+        /// </para>
         /// </summary>
         public List<DestinationConfiguration> DestinationConfigurations
         {
@@ -56,10 +59,13 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncodingName. The format that was used to encode the data.
-        /// For ancillary data streams, set the encoding name to smpte291. For audio streams,
-        /// set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw.
-        /// For video, JPEG XS streams, set the encoding name to jxsv.
+        /// Gets and sets the property EncodingName. 
+        /// <para>
+        ///  The format that was used to encode the data. For ancillary data streams, set the
+        /// encoding name to smpte291. For audio streams, set the encoding name to pcm. For video,
+        /// 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding
+        /// name to jxsv.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EncodingName EncodingName
@@ -75,7 +81,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncodingParameters. Encoding parameters
+        /// Gets and sets the property EncodingParameters. 
+        /// <para>
+        /// A collection of parameters that determine how MediaConnect will convert the content.
+        /// These fields only apply to outputs on flows that have a CDI source. 
+        /// </para>
         /// </summary>
         public EncodingParameters EncodingParameters
         {
@@ -90,7 +100,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. The name of the media stream.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        ///  The name of the media stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName

@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private List<AddOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddOutputRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to add outputs to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to add outputs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -55,7 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. A list of outputs that you want to add.
+        /// Gets and sets the property Outputs. 
+        /// <para>
+        ///  A list of outputs that you want to add to the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AddOutputRequest> Outputs
