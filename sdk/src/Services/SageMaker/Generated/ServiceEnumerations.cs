@@ -13055,6 +13055,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProcessingInstanceType MlC5Xlarge = new ProcessingInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlC6i12xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i12xlarge = new ProcessingInstanceType("ml.c6i.12xlarge");
+        /// <summary>
+        /// Constant MlC6i16xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i16xlarge = new ProcessingInstanceType("ml.c6i.16xlarge");
+        /// <summary>
+        /// Constant MlC6i24xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i24xlarge = new ProcessingInstanceType("ml.c6i.24xlarge");
+        /// <summary>
+        /// Constant MlC6i2xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i2xlarge = new ProcessingInstanceType("ml.c6i.2xlarge");
+        /// <summary>
+        /// Constant MlC6i32xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i32xlarge = new ProcessingInstanceType("ml.c6i.32xlarge");
+        /// <summary>
+        /// Constant MlC6i4xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i4xlarge = new ProcessingInstanceType("ml.c6i.4xlarge");
+        /// <summary>
+        /// Constant MlC6i8xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6i8xlarge = new ProcessingInstanceType("ml.c6i.8xlarge");
+        /// <summary>
+        /// Constant MlC6iXlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlC6iXlarge = new ProcessingInstanceType("ml.c6i.xlarge");
+        /// <summary>
         /// Constant MlG4dn12xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlG4dn12xlarge = new ProcessingInstanceType("ml.g4dn.12xlarge");
@@ -13111,6 +13143,70 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProcessingInstanceType MlG5Xlarge = new ProcessingInstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG612xlarge = new ProcessingInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG616xlarge = new ProcessingInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG624xlarge = new ProcessingInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG62xlarge = new ProcessingInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG648xlarge = new ProcessingInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG64xlarge = new ProcessingInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG68xlarge = new ProcessingInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e12xlarge = new ProcessingInstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e16xlarge = new ProcessingInstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e24xlarge = new ProcessingInstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e2xlarge = new ProcessingInstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e48xlarge = new ProcessingInstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e4xlarge = new ProcessingInstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6e8xlarge = new ProcessingInstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6eXlarge = new ProcessingInstanceType("ml.g6e.xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG6Xlarge = new ProcessingInstanceType("ml.g6.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlM410xlarge = new ProcessingInstanceType("ml.m4.10xlarge");
@@ -13154,6 +13250,42 @@ namespace Amazon.SageMaker
         /// Constant MlM5Xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlM5Xlarge = new ProcessingInstanceType("ml.m5.xlarge");
+        /// <summary>
+        /// Constant MlM6i12xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i12xlarge = new ProcessingInstanceType("ml.m6i.12xlarge");
+        /// <summary>
+        /// Constant MlM6i16xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i16xlarge = new ProcessingInstanceType("ml.m6i.16xlarge");
+        /// <summary>
+        /// Constant MlM6i24xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i24xlarge = new ProcessingInstanceType("ml.m6i.24xlarge");
+        /// <summary>
+        /// Constant MlM6i2xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i2xlarge = new ProcessingInstanceType("ml.m6i.2xlarge");
+        /// <summary>
+        /// Constant MlM6i32xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i32xlarge = new ProcessingInstanceType("ml.m6i.32xlarge");
+        /// <summary>
+        /// Constant MlM6i4xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i4xlarge = new ProcessingInstanceType("ml.m6i.4xlarge");
+        /// <summary>
+        /// Constant MlM6i8xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6i8xlarge = new ProcessingInstanceType("ml.m6i.8xlarge");
+        /// <summary>
+        /// Constant MlM6iLarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6iLarge = new ProcessingInstanceType("ml.m6i.large");
+        /// <summary>
+        /// Constant MlM6iXlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlM6iXlarge = new ProcessingInstanceType("ml.m6i.xlarge");
         /// <summary>
         /// Constant MlP216xlarge for ProcessingInstanceType
         /// </summary>

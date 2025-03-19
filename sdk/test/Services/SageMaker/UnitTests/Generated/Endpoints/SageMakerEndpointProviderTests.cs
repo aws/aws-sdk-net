@@ -535,7 +535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonSageMakerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.sagemaker.us-gov-west-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://api-fips.sagemaker.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -565,7 +565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonSageMakerEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.sagemaker.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://api-fips.sagemaker.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
