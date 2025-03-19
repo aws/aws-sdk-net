@@ -33,7 +33,7 @@ namespace Amazon.Util.Internal
         #region UserAgent
         static string _overrideVersionNumber;
         static string _customData;
-        const string USER_AGENT_VERSION = "ua/2.0";
+        const string USER_AGENT_VERSION = "ua/2.1";
 
         // Define a regular expression to match disallowed characters
         private const string DisallowedCharactersRegexPattern = "[^ /!#$%&'*+-.^_`|~\\w\\d]";
