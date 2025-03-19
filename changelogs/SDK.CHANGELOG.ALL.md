@@ -1,3 +1,25 @@
+### 3.7.1005.0 (2025-03-19 19:05 UTC)
+* Bedrock (3.7.415.0)
+	* Support custom prompt routers for evaluation jobs
+* DynamoDBv2 (3.7.406.4)
+	* Update paginators to use the latest paginators model file.
+	* Added check in DateTimeToEpochSeconds to inspect null value for Nullable DateTime property decorated with StoreAsEpoch attribute, where it was incorrectly relying on exception to return the entry.
+* EC2 (3.7.436.4)
+	* Doc-only updates for EC2 for March 2025.
+* Lambda (3.7.412.0)
+	* Add Ruby 3.4 (ruby3.4) support to AWS Lambda.
+* MediaConnect (3.7.404.0)
+	* This release adds support for NDI flow outputs in AWS Elemental MediaConnect. You can now send content from your MediaConnect transport streams directly to your NDI environment using the new NDI output type.
+* NeptuneGraph (3.7.405.0)
+	* Update IAM Role ARN Validation to Support Role Paths
+* RDS (3.7.410.54)
+	* Update paginators to use the latest paginators model file.
+* SageMaker (3.7.429.0)
+	* Added support for g6, g6e, m6i, c6i instance types in SageMaker Processing Jobs.
+* Core 3.7.402.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1004.0 (2025-03-18 18:27 UTC)
 * AppSync (3.7.407.0)
 	* Providing Tagging support for DomainName in AppSync

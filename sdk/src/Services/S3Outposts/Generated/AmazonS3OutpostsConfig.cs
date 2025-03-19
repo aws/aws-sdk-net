@@ -32,7 +32,7 @@ namespace Amazon.S3Outposts
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Outposts", "3.7.400.115");
+            InternalSDKUtils.BuildUserAgentString("S3Outposts", "3.7.400.116");
 
         private string _userAgent = UserAgentString;
         ///<summary>
