@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "RDS",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update paginators to use the latest paginators model file."
+            ]
+        },
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update paginators to use the latest paginators model file."
+            ]
+        }
+    ]
+}
