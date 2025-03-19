@@ -161,8 +161,21 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public string ClientAppId { get; set; }
 
-        public string AwsAccountId { get; set; }
-
+        /// <summary>
+        /// The name of the section which contains the custom endpoints for a service or services.
+        /// For example: 
+        /// [profile foo]
+        /// services = bar
+        /// [services bar]
+        /// s3 = 
+        ///   endpoint_url = https://custom-endpoint-s3:80
+        /// ec2 = 
+        ///   endpoint_url = https://custome-endpoint_ec2:80
+        /// This will tell the SDK to look for custom endpoints in "bar" for the profile "foo.
+        /// A single Services section can contain configurations for multiple services.
+        /// </summary>
+        public string Services { get; set; }
+        
 
         /// <summary>
         /// Determines the behavior for calculating checksums for request payloads.

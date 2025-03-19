@@ -954,7 +954,7 @@ namespace AWSSDK.UnitTests
     }
 
     // A testable implementation of ICoreAmazonSTS which can accept an injected mocked client
-    public class TestableAmazonSTSClient : ICoreAmazonSTS, ICoreAmazonSTS_WebIdentity
+    public class TestableAmazonSTSClient : ICoreAmazonSTS
     {
         private readonly IAmazonSecurityTokenService _stsClient;
 
@@ -1013,6 +1013,10 @@ namespace AWSSDK.UnitTests
                 throw exception;
             }
         }
+        public Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleAuthenticationAsync(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            throw new NotImplementedException();
+        }
 
         public AssumeRoleImmutableCredentials CredentialsFromAssumeRoleWithWebIdentityAuthentication(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
         {
@@ -1049,6 +1053,15 @@ namespace AWSSDK.UnitTests
                                                 response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
                                                 response.Subject,
                                                 Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
+        }
+
+        public Task<SAMLImmutableCredentials> CredentialsFromSAMLAuthenticationAsync(string endpoint,
+                                                                   string authenticationType,
+                                                                   string roleARN,
+                                                                   TimeSpan credentialDuration,
+                                                                   ICredentials userCredential)
+        {
+            throw new NotImplementedException();
         }
 
         public void Dispose()

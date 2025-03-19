@@ -202,44 +202,17 @@ namespace Amazon.Runtime.CredentialManagement
                 switch (profileType)
                 {
                     case CredentialProfileType.Basic:
-                    case CredentialProfileType.BasicWithServices:
-                    case CredentialProfileType.BasicWithGlobalEndpoint:
-                    case CredentialProfileType.BasicWithServicesAndGlobalEndpoint:
                         return string.IsNullOrEmpty(options.AwsAccountId) ? new BasicAWSCredentials(options.AccessKey, options.SecretKey) : new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
                     case CredentialProfileType.Session:
-                    case CredentialProfileType.SessionWithServices:
-                    case CredentialProfileType.SessionWithGlobalEndpoint:
-                    case CredentialProfileType.SessionWithServicesAndGlobalEndpoint:
                         return string.IsNullOrEmpty(options.AwsAccountId) ? new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token) : new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId); ; 
                     case CredentialProfileType.AssumeRole:
-                    case CredentialProfileType.AssumeRoleWithServices:
-                    case CredentialProfileType.AssumeRoleWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleExternal:
-                    case CredentialProfileType.AssumeRoleExternalWithServices:
-                    case CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleMFA:
-                    case CredentialProfileType.AssumeRoleMFAWithServices:
-                    case CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleExternalMFA:
-                    case CredentialProfileType.AssumeRoleExternalMFAWithServices:
-                    case CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleSessionName:
-                    case CredentialProfileType.AssumeRoleSessionNameWithServices:
-                    case CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleMFASessionNameWithServices:
-                    case CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleExternalSessionName:
                     case CredentialProfileType.AssumeRoleMFASessionName:
                     case CredentialProfileType.AssumeRoleExternalMFASessionName:
-                    case CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices:
-                    case CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint:
                         if (profileName != null)
                         {
                             if (profileLoopAvoidance == null)
@@ -278,13 +251,7 @@ namespace Amazon.Runtime.CredentialManagement
                         };
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
                     case CredentialProfileType.AssumeRoleCredentialSource:
-                    case CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleCredentialSourceWithServices:
-                    case CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleCredentialSourceSessionName:
-                    case CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices:
-                    case CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint:
                         // get credentials specified by credentialSource
                         try
                         {
@@ -304,13 +271,7 @@ namespace Amazon.Runtime.CredentialManagement
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
                     case CredentialProfileType.AssumeRoleWithWebIdentity:
-                    case CredentialProfileType.AssumeRoleWithWebIdentityWithServices:
-                    case CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
-                    case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices:
-                    case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint:
-                    case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint:
                         return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
                     
                     case CredentialProfileType.SSO:
@@ -329,13 +290,7 @@ namespace Amazon.Runtime.CredentialManagement
                     }
       
                     case CredentialProfileType.SAMLRole:
-                    case CredentialProfileType.SAMLRoleWithServices:
-                    case CredentialProfileType.SAMLRoleWithGlobalEndpoint:
-                    case CredentialProfileType.SAMLRoleWithServicesAndGlobalEndpoint:
                     case CredentialProfileType.SAMLRoleUserIdentity:
-                    case CredentialProfileType.SAMLRoleUserIdentityWithServices:
-                    case CredentialProfileType.SAMLRoleUserIdentityWithGlobalEndpoint:
-                    case CredentialProfileType.SAMLRoleUserIdentityWithServicesAndGlobalEndpoint:
 
                         if (UserCrypto.IsUserCryptAvailable)
                         {

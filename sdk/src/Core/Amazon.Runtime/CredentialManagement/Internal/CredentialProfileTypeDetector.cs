@@ -41,57 +41,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalMFASessionName,
         AssumeRoleMFASessionName,
         SSO,
-        AssumeRoleWithServices,
-        AssumeRoleWithGlobalEndpoint,
-        AssumeRoleWithServicesAndGlobalEndpoint,
-        AssumeRoleCredentialSourceWithGlobalEndpoint,
-        AssumeRoleCredentialSourceWithServices,
-        AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint,
-        AssumeRoleExternalWithServices,
-        AssumeRoleExternalWithGlobalEndpoint,
-        AssumeRoleExternalWithServicesAndGlobalEndpoint,
-        AssumeRoleExternalMFAWithServices,
-        AssumeRoleExternalMFAWithGlobalEndpoint,
-        AssumeRoleExternalMFAWithServicesAndGlobalEndpoint,
-        AssumeRoleMFAWithServices,
-        AssumeRoleMFAWithGlobalEndpoint,
-        AssumeRoleMFAWithServicesAndGlobalEndpoint,
-        BasicWithServices,
-        BasicWithGlobalEndpoint,
-        BasicWithServicesAndGlobalEndpoint,
-        AssumeRoleWithWebIdentityWithServices,
-        AssumeRoleWithWebIdentityWithGlobalEndpoint,
-        AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint,
-        AssumeRoleWithWebIdentitySessionNameWithServices,
-        AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint,
-        AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint,
-        AssumeRoleSessionNameWithServices,
-        AssumeRoleSessionNameWithGlobalEndpoint,
-        AssumeRoleSessionNameWithServicesAndGlobalEndpoint,
-        AssumeRoleCredentialSourceSessionNameWithServices,
-        AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint,
-        AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint,
-        AssumeRoleExternalSessionNameWithServices,
-        AssumeRoleExternalSessionNameWithGlobalEndpoint,
-        AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint,
-        AssumeRoleExternalMFASessionNameWithServices,
-        AssumeRoleExternalMFASessionNameWithGlobalEndpoint,
-        AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint,
-        AssumeRoleMFASessionNameWithServices,
-        AssumeRoleMFASessionNameWithGlobalEndpoint,
-        AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint,
-        SAMLRoleWithServices,
-        SAMLRoleWithGlobalEndpoint,
-        SAMLRoleWithServicesAndGlobalEndpoint,
-        SAMLRoleUserIdentityWithServices,
-        SAMLRoleUserIdentityWithGlobalEndpoint,
-        SAMLRoleUserIdentityWithServicesAndGlobalEndpoint,
-        SessionWithServices,
-        SessionWithGlobalEndpoint,
-        SessionWithServicesAndGlobalEndpoint,
-        BasicWithAccountId,
-        SessionWithAccountId
-
     }
 
     public enum CredentialSourceType
@@ -157,37 +106,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
-
-                { CredentialProfileType.AssumeRoleWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, Services } } },
-
-                { CredentialProfileType.AssumeRoleWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, EndpointUrl } } },
-
-                { CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, Services, EndpointUrl } } },
-
                 { 
                     CredentialProfileType.AssumeRoleCredentialSource, new List<HashSet<string>>() 
                     { 
                         new HashSet<string> { RoleArn, CredentialSource },
                         new HashSet<string> { RoleArn, CredentialSource, AwsAccountId }
                     } 
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint, new List<HashSet<string>>()
-                    {
-                        new HashSet<string>{ RoleArn, CredentialSource, EndpointUrl }
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithServices, new List<HashSet<string>>()
-                    {
-                        new HashSet<string>{ RoleArn, CredentialSource, Services}
-                    }
-                },
-                {
-                    CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint, new List<HashSet<string>>()
-                    {
-                        new HashSet<string>{ RoleArn, CredentialSource, EndpointUrl, Services}
-                    }
                 },
                 {
                     CredentialProfileType.AssumeRoleExternal, new List<HashSet<string>>() 
@@ -199,16 +123,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, EndpointUrl, Services }
                     } 
                 },
-
-                { CredentialProfileType.AssumeRoleExternalWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, Services } } },
-
-                { CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, EndpointUrl } } },
-
-                { CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, Services, EndpointUrl } } },
                 { CredentialProfileType.AssumeRoleExternalMFA, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial } } },
-                { CredentialProfileType.AssumeRoleExternalMFAWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, Services } } },
-                { CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial, EndpointUrl, Services } } },
                 { 
                     CredentialProfileType.AssumeRoleWithWebIdentity, new List<HashSet<string>>() 
                     {
@@ -220,9 +135,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, EndpointUrl, Services },
                     } 
                 },
-                { CredentialProfileType.AssumeRoleWithWebIdentityWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, Services } } },
-                { CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, Services, EndpointUrl } } },
                 { 
                     CredentialProfileType.AssumeRoleWithWebIdentitySessionName, new List<HashSet<string>>() 
                     { 
@@ -234,9 +146,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
                     } 
                 },
-                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, Services } } },
-                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, EndpointUrl} } },
-                { CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, EndpointUrl, Services} } },
                 { 
                     CredentialProfileType.AssumeRoleMFA, new List<HashSet<string>>() 
                     { 
@@ -247,10 +156,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, EndpointUrl }
                     } 
                 },
-
-                { CredentialProfileType.AssumeRoleMFAWithServices, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, Services } } },
-                { CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, EndpointUrl, Services } } },
                 { CredentialProfileType.Basic, new List<HashSet<string>>() 
                     {
                         new HashSet<string> { AccessKey, SecretKey },
@@ -260,13 +165,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { AccessKey, SecretKey, AwsAccountId, Services }
                     } 
                 },
-
-                { CredentialProfileType.BasicWithServices, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Services } } },
-
-                { CredentialProfileType.BasicWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, EndpointUrl } } },
-
-                { CredentialProfileType.BasicWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Services, EndpointUrl } } },
-
                 { 
                     CredentialProfileType.SAMLRole, new List<HashSet<string>>() 
                     { 
@@ -276,16 +174,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { EndpointName, RoleArn, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
-
-                { CredentialProfileType.SAMLRoleWithServices, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, Services } } },
-
-                { CredentialProfileType.SAMLRoleWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, EndpointUrl } } },
-
-                { CredentialProfileType.SAMLRoleWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, Services, EndpointUrl } } },
                 { CredentialProfileType.SAMLRoleUserIdentity, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity } } },
-                { CredentialProfileType.SAMLRoleUserIdentityWithServices, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, Services } } },
-                { CredentialProfileType.SAMLRoleUserIdentityWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, EndpointUrl } } },
-                { CredentialProfileType.SAMLRoleUserIdentityWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity, EndpointUrl, Services } } },
                 { 
                     CredentialProfileType.Session, new List<HashSet<string>>() 
                     { 
@@ -295,13 +184,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
-
-                { CredentialProfileType.SessionWithServices, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, Services } } },
-
-                { CredentialProfileType.SessionWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, EndpointUrl } } },
-
-                { CredentialProfileType.SessionWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { AccessKey, SecretKey, Token, Services, EndpointUrl } } },
-
                 { 
                     CredentialProfileType.AssumeRoleSessionName, new List<HashSet<string>>() 
                     { 
@@ -311,12 +193,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
-
-                { CredentialProfileType.AssumeRoleSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, Services } } },
-
-                { CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
-
-                { CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, Services, EndpointUrl } } },
                 { 
                     CredentialProfileType.AssumeRoleCredentialSourceSessionName, new List<HashSet<string>>() 
                     {
@@ -326,9 +202,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, Services, EndpointUrl},
                     } 
                 },
-                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, Services } } },
-                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, EndpointUrl, Services } } },
                 { 
                     CredentialProfileType.AssumeRoleExternalSessionName, new List<HashSet<string>>() 
                     { 
@@ -338,12 +211,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl, Services },
                     } 
                 },
-
-                { CredentialProfileType.AssumeRoleExternalSessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, Services } } },
-
-                { CredentialProfileType.AssumeRoleExternalSessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
-
-                { CredentialProfileType.AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, Services, EndpointUrl } } },
                 { 
                     CredentialProfileType.AssumeRoleExternalMFASessionName, new List<HashSet<string>>() 
                     { 
@@ -354,9 +221,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
-                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, Services } } },
-                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl, Services} } },
                 { CredentialProfileType.SSO, new List<HashSet<string>>() { new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession } } },
                 { 
                     CredentialProfileType.AssumeRoleMFASessionName, new List<HashSet<string>>() 
@@ -368,16 +232,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
-                { CredentialProfileType.AssumeRoleMFASessionNameWithServices, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, Services } } },
-                { CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl } } },
-                { CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint, new List<HashSet<string>>() { new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, EndpointUrl, Services } } },
             };
 
         private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
             new Dictionary<CredentialProfileType, string>()
             {
                 { CredentialProfileType.AssumeRole, AssumeRoleCredentials },
-                { CredentialProfileType.AssumeRoleWithServices, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleExternal, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleExternalMFA, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleMFA, AssumeRoleCredentials },
@@ -392,11 +252,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                 { CredentialProfileType.SAMLRoleUserIdentity, SAMLCredentials },
                 { CredentialProfileType.Session, SessionCredentials },
                 { CredentialProfileType.CredentialProcess, CredentialProcess },
-                { CredentialProfileType.BasicWithServices, BasicCredentials },
-                { CredentialProfileType.BasicWithGlobalEndpoint, BasicCredentials },
-                { CredentialProfileType.BasicWithServicesAndGlobalEndpoint, BasicCredentials },
-                { CredentialProfileType.BasicWithAccountId, BasicCredentials },
-                { CredentialProfileType.SessionWithAccountId, SessionCredentials }
 
             };
 
