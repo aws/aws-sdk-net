@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluationModelConfig Marshaller
+    /// EvaluationPrecomputedRetrieveAndGenerateSourceConfig Marshaller
     /// </summary>
-    public class EvaluationModelConfigMarshaller : IRequestMarshaller<EvaluationModelConfig, JsonMarshallerContext> 
+    public class EvaluationPrecomputedRetrieveAndGenerateSourceConfigMarshaller : IRequestMarshaller<EvaluationPrecomputedRetrieveAndGenerateSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluationModelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EvaluationPrecomputedRetrieveAndGenerateSourceConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBedrockModel())
+            if(requestObject.IsSetRagSourceIdentifier())
             {
-                context.Writer.WritePropertyName("bedrockModel");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EvaluationBedrockModelMarshaller.Instance;
-                marshaller.Marshall(requestObject.BedrockModel, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPrecomputedInferenceSource())
-            {
-                context.Writer.WritePropertyName("precomputedInferenceSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EvaluationPrecomputedInferenceSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.PrecomputedInferenceSource, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ragSourceIdentifier");
+                context.Writer.Write(requestObject.RagSourceIdentifier);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluationModelConfigMarshaller Instance = new EvaluationModelConfigMarshaller();
+        public readonly static EvaluationPrecomputedRetrieveAndGenerateSourceConfigMarshaller Instance = new EvaluationPrecomputedRetrieveAndGenerateSourceConfigMarshaller();
 
     }
 }

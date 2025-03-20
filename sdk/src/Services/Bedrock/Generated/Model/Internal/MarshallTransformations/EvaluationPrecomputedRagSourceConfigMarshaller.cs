@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluationModelConfig Marshaller
+    /// EvaluationPrecomputedRagSourceConfig Marshaller
     /// </summary>
-    public class EvaluationModelConfigMarshaller : IRequestMarshaller<EvaluationModelConfig, JsonMarshallerContext> 
+    public class EvaluationPrecomputedRagSourceConfigMarshaller : IRequestMarshaller<EvaluationPrecomputedRagSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,28 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluationModelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(EvaluationPrecomputedRagSourceConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBedrockModel())
+            if(requestObject.IsSetRetrieveAndGenerateSourceConfig())
             {
-                context.Writer.WritePropertyName("bedrockModel");
+                context.Writer.WritePropertyName("retrieveAndGenerateSourceConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EvaluationBedrockModelMarshaller.Instance;
-                marshaller.Marshall(requestObject.BedrockModel, context);
+                var marshaller = EvaluationPrecomputedRetrieveAndGenerateSourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetrieveAndGenerateSourceConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPrecomputedInferenceSource())
+            if(requestObject.IsSetRetrieveSourceConfig())
             {
-                context.Writer.WritePropertyName("precomputedInferenceSource");
+                context.Writer.WritePropertyName("retrieveSourceConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EvaluationPrecomputedInferenceSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.PrecomputedInferenceSource, context);
+                var marshaller = EvaluationPrecomputedRetrieveSourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetrieveSourceConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +75,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluationModelConfigMarshaller Instance = new EvaluationModelConfigMarshaller();
+        public readonly static EvaluationPrecomputedRagSourceConfigMarshaller Instance = new EvaluationPrecomputedRagSourceConfigMarshaller();
 
     }
 }

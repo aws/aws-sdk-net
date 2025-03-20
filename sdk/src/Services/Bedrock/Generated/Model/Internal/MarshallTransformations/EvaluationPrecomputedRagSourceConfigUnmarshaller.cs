@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RAGConfig Object
+    /// Response Unmarshaller for EvaluationPrecomputedRagSourceConfig Object
     /// </summary>  
-    public class RAGConfigUnmarshaller : IUnmarshaller<RAGConfig, XmlUnmarshallerContext>, IUnmarshaller<RAGConfig, JsonUnmarshallerContext>
+    public class EvaluationPrecomputedRagSourceConfigUnmarshaller : IUnmarshaller<EvaluationPrecomputedRagSourceConfig, XmlUnmarshallerContext>, IUnmarshaller<EvaluationPrecomputedRagSourceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RAGConfig IUnmarshaller<RAGConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EvaluationPrecomputedRagSourceConfig IUnmarshaller<EvaluationPrecomputedRagSourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RAGConfig Unmarshall(JsonUnmarshallerContext context)
+        public EvaluationPrecomputedRagSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            RAGConfig unmarshalledObject = new RAGConfig();
+            EvaluationPrecomputedRagSourceConfig unmarshalledObject = new EvaluationPrecomputedRagSourceConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("knowledgeBaseConfig", targetDepth))
+                if (context.TestExpression("retrieveAndGenerateSourceConfig", targetDepth))
                 {
-                    var unmarshaller = KnowledgeBaseConfigUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EvaluationPrecomputedRetrieveAndGenerateSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.RetrieveAndGenerateSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("precomputedRagSourceConfig", targetDepth))
+                if (context.TestExpression("retrieveSourceConfig", targetDepth))
                 {
-                    var unmarshaller = EvaluationPrecomputedRagSourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.PrecomputedRagSourceConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EvaluationPrecomputedRetrieveSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.RetrieveSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static RAGConfigUnmarshaller _instance = new RAGConfigUnmarshaller();        
+        private static EvaluationPrecomputedRagSourceConfigUnmarshaller _instance = new EvaluationPrecomputedRagSourceConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RAGConfigUnmarshaller Instance
+        public static EvaluationPrecomputedRagSourceConfigUnmarshaller Instance
         {
             get
             {

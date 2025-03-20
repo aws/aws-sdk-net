@@ -59,6 +59,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPrecomputedRagSourceConfig())
+            {
+                context.Writer.WritePropertyName("precomputedRagSourceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluationPrecomputedRagSourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrecomputedRagSourceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

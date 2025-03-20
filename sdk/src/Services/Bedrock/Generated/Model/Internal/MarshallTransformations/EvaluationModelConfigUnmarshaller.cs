@@ -72,6 +72,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.BedrockModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("precomputedInferenceSource", targetDepth))
+                {
+                    var unmarshaller = EvaluationPrecomputedInferenceSourceUnmarshaller.Instance;
+                    unmarshalledObject.PrecomputedInferenceSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

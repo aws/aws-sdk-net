@@ -90,6 +90,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluatorModelIdentifiers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceConfigSummary", targetDepth))
+                {
+                    var unmarshaller = EvaluationInferenceConfigSummaryUnmarshaller.Instance;
+                    unmarshalledObject.InferenceConfigSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
