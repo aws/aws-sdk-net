@@ -43,7 +43,8 @@ namespace AWSSDK.UnitTests
         [TestCategory("SecurityToken")]
         public void LookForProfileTypeChanges()
         {
-            var expectedHash = "E15E66896846B0235881B8623AF005AA80B9DEDF4303348FC494290E0D6E2732";
+            //1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB
+            var expectedHash = "1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB";
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),
                 expectedHash,
@@ -63,16 +64,19 @@ namespace AWSSDK.UnitTests
             // avoid making TypePropertyDictionary public just for unit testing
             var field = typeof(CredentialProfileTypeDetector).GetFields(BindingFlags.Static | BindingFlags.NonPublic).
                 Where((fi) => fi.Name == "TypePropertyDictionary").First();
-            var typePropertyDictionary = (Dictionary<CredentialProfileType, HashSet<string>>)field.GetValue(null);
+            var typePropertyDictionary = (Dictionary<CredentialProfileType, List<HashSet<string>>>)field.GetValue(null);
 
             foreach (var pair in typePropertyDictionary)
             {
                 referencedProfileTypes.Add(pair.Key);
-                foreach (var propertyName in pair.Value)
+                foreach (var propertyType in pair.Value)
                 {
-                    if (!referencedProfileOptionsProperties.Contains(propertyName))
+                    foreach (var propertyName in propertyType)
                     {
-                        referencedProfileOptionsProperties.Add(propertyName);
+                        if (!referencedProfileOptionsProperties.Contains(propertyName))
+                        {
+                            referencedProfileOptionsProperties.Add(propertyName);
+                        }
                     }
                 }
             }
