@@ -13,15 +13,12 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.Extensions.DependencyInjection;
-
 using Amazon.Runtime;
 using Amazon.Extensions.NETCore.Setup;
+using AWSSDK.Extensions.NETCore.Setup;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -43,8 +40,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, AWSOptions options)
         {
-            collection.Add(new ServiceDescriptor(typeof(AWSOptions), options));
-            return collection;
+            return collection.AddDefaultAWSOptions(_ => options);
         }
 
         /// <summary>
@@ -67,6 +63,38 @@ namespace Microsoft.Extensions.DependencyInjection
         }
 
         /// <summary>
+        /// Adds the DefaultAWSCredentialsFactory object to the dependency injection framework
+        /// This factory will be used to create the credentials for the Amazon service clients.
+        /// </summary>
+        public static IServiceCollection AddCredentialsFactory(this IServiceCollection collection)
+        {
+            return collection.AddCredentialsFactoryInternal();
+        }
+
+        /// <summary>
+        /// Adds the DefaultAWSCredentialsFactory object to the dependency injection framework
+        /// if no IAWSCredentialsFactory is already registered.
+        /// This factory will be used to create the credentials for the Amazon service clients.
+        /// </summary>
+        public static IServiceCollection TryAddCredentialsFactory(this IServiceCollection collection)
+        {
+            return collection.AddCredentialsFactoryInternal(tryAdd: true);
+        }
+
+        /// <summary>
+        /// Adds a IAWSCredentialsFactory object obtained via th provided awsCredentialsFactoryFunc to the dependency
+        /// injection framework. This factory will be used to create the credentials for the Amazon service clients.
+        /// </summary>
+        public static IServiceCollection AddCredentialsFactory(
+            this IServiceCollection collection,
+            Func<IServiceProvider, IAWSCredentialsFactory> awsCredentialsFactoryFunc,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton,
+            bool tryAdd = false)
+        {
+            return collection.AddCredentialsFactoryInternal(awsCredentialsFactoryFunc, lifetime, tryAdd);
+        }
+
+        /// <summary>
         /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
         /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.
@@ -77,7 +105,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
-            return AddAWSService<T>(collection, null, lifetime);
+            return collection.AddAWSServiceInternal<T>(lifetime: lifetime);
         }
 
         /// <summary>
@@ -89,15 +117,38 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
+        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
+        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// </param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
-        public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton, Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null) where T : IAmazonService
         {
-            Func<IServiceProvider, object> factory =
-                new ClientFactory(typeof(T), options).CreateServiceClient;
+            return collection.AddAWSServiceInternal<T>(_ => options, credentialsFactoryFunc: credentialsFactoryFunc, lifetime: lifetime);
+        }
 
-            var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
-            collection.Add(descriptor);
-            return collection;
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="optionsFunc">A func which returns the AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
+        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
+        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// </param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddAWSService<T>(
+            this IServiceCollection collection,
+            Func<IServiceProvider, AWSOptions> optionsFunc,
+            Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where T : IAmazonService
+        {
+            return collection.AddAWSServiceInternal<T>(optionsFunc, credentialsFactoryFunc, lifetime);
         }
 
         /// <summary>
@@ -111,7 +162,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
         {
-            return TryAddAWSService<T>(collection, null, lifetime);
+            return collection.AddAWSServiceInternal<T>(lifetime: lifetime, tryAdd: true);
         }
 
         /// <summary>
@@ -123,15 +174,129 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
+        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
+        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// </param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
-        public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton, Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null) where T : IAmazonService
         {
-            Func<IServiceProvider, object> factory =
-                new ClientFactory(typeof(T), options).CreateServiceClient;
+            return collection.AddAWSServiceInternal<T>(_ => options, lifetime: lifetime, credentialsFactoryFunc: credentialsFactoryFunc, tryAdd: true);
+        }
 
-            var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
-            collection.TryAdd(descriptor);
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="optionsFunc">A func which returns the AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
+        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
+        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// </param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<T>(
+            this IServiceCollection collection,
+            Func<IServiceProvider, AWSOptions> optionsFunc,
+            Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where T : IAmazonService
+        {
+            return collection.AddAWSServiceInternal<T>(optionsFunc, credentialsFactoryFunc, lifetime, tryAdd: true);
+        }
+
+        private static IServiceCollection AddCredentialsFactoryInternal(
+            this IServiceCollection collection,
+            Func<IServiceProvider, IAWSCredentialsFactory> awsCredentialsFactoryFunc = null,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton,
+            bool tryAdd = false)
+        {
+            if (awsCredentialsFactoryFunc != null)
+            {
+                collection.SetCustomCredentialsFactoryRegistered();
+            }
+
+            awsCredentialsFactoryFunc = awsCredentialsFactoryFunc ?? (sp => new DefaultAWSCredentialsFactory(sp.GetService<AWSOptions>(), sp.GetService<ILoggerFactory>()?.CreateLogger<DefaultAWSCredentialsFactory>()));
+
+            var serviceDescriptor = new ServiceDescriptor(typeof(IAWSCredentialsFactory), awsCredentialsFactoryFunc, lifetime);
+
+            if (tryAdd)
+            {
+                collection.TryAdd(serviceDescriptor);
+            }
+            else
+            {
+                collection.Add(serviceDescriptor);
+            }
+
+            collection.TryAddTransient<AWSCredentials>(sp => sp.GetRequiredService<IAWSCredentialsFactory>().Create());
+
             return collection;
         }
+
+        private static IServiceCollection AddAWSServiceInternal<T>(
+            this IServiceCollection collection,
+            Func<IServiceProvider, AWSOptions> optionsFunc = null,
+            Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton,
+            bool tryAdd = false)
+            where T : IAmazonService
+        {
+            var descriptor = new ServiceDescriptor(
+                typeof(T),
+                sp => CreateServiceClient<T>(sp, optionsFunc, credentialsFactoryFunc),
+                lifetime);
+
+            if (tryAdd)
+            {
+                collection.TryAdd(descriptor);
+            }
+            else
+            {
+                collection.Add(descriptor);
+            }
+
+            return collection;
+        }
+
+        private static object CreateServiceClient<T>(
+            IServiceProvider sp,
+            Func<IServiceProvider, AWSOptions> optionsFunc = null,
+            Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null)
+        {
+            var options = optionsFunc?.Invoke(sp)
+                          ?? sp.GetService<AWSOptions>()
+                          ?? sp.GetService<IConfiguration>()?.GetAWSOptions();
+
+            if (optionsFunc != null && credentialsFactoryFunc == null && sp.CustomCredentialsFactoryRegistered() && options?.Equals(sp.GetService<AWSOptions>()) != true)
+            {
+                throw new ArgumentNullException(
+                    nameof(credentialsFactoryFunc),
+                    "A credentialsFactoryFunc must be provided when options(Func) is provided and [Try]AddCredentialsFactory is called with a custom IAWSCredentialsFactory. " +
+                    "Not doing this would result in the ServiceClient using a different AWSOptions object than the IAWSCredentialsFactory");
+            }
+
+            var awsCredentialsFactory = credentialsFactoryFunc?.Invoke(sp, options)
+                                        ?? sp.GetService<IAWSCredentialsFactory>()
+                                        ?? new DefaultAWSCredentialsFactory(options, sp.GetService<ILoggerFactory>()?.CreateLogger<DefaultAWSCredentialsFactory>());
+
+            var clientFactory = new ClientFactory(
+                typeof(T),
+                options,
+                awsCredentialsFactory,
+                sp.GetService<ILoggerFactory>(),
+                sp.GetService<IConfiguration>());
+
+            return clientFactory.CreateServiceClient();
+        }
+
+        private static bool CustomCredentialsFactoryRegistered(this IServiceProvider sp) => sp.GetService<CustomCredentialsFactoryRegisteredType>() != null;
+
+        private static void SetCustomCredentialsFactoryRegistered(this IServiceCollection collection) => collection.AddSingleton<CustomCredentialsFactoryRegisteredType>();
+
+        private class CustomCredentialsFactoryRegisteredType { }
     }
 }

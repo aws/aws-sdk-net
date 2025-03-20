@@ -21,6 +21,7 @@ using Amazon;
 using Amazon.Runtime;
 
 using Amazon.Extensions.NETCore.Setup;
+using AWSSDK.Extensions.NETCore.Setup;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
@@ -110,7 +111,7 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <returns>The service client that implements the service interface.</returns>
         public T CreateServiceClient<T>() where T : IAmazonService
         {
-            return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
+            return (T)ClientFactory.CreateServiceClient(null, typeof(T), this, new DefaultAWSCredentialsFactory(this));
         }
 
         /// <summary>
