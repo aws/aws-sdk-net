@@ -1,3 +1,18 @@
+### 3.7.1006.0 (2025-03-20 18:39 UTC)
+* Amplify (3.7.406.0)
+	* Added appId field to Webhook responses
+* Bedrock (3.7.416.0)
+	* With this release, Bedrock Evaluation will now support bring your own inference responses.
+* ControlCatalog (3.7.402.70)
+	* Add ExemptAssumeRoot parameter to adapt for new AWS AssumeRoot capability.
+* MailManager (3.7.406.0)
+	* Amazon SES Mail Manager. Extended rule string and boolean expressions to support analysis in condition evaluation. Extended ingress point string expression to support analysis in condition evaluation
+* NetworkFirewall (3.7.404.0)
+	* You can now use flow operations to either flush or capture traffic monitored in your firewall's flow table.
+* Core 3.7.402.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1005.0 (2025-03-19 19:05 UTC)
 * Bedrock (3.7.415.0)
 	* Support custom prompt routers for evaluation jobs
