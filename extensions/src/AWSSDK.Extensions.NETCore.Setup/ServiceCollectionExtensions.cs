@@ -219,7 +219,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 collection.SetCustomCredentialsFactoryRegistered();
             }
 
-            awsCredentialsFactoryFunc = awsCredentialsFactoryFunc ?? (sp => new DefaultAWSCredentialsFactory(sp.GetService<AWSOptions>(), sp.GetService<ILoggerFactory>()?.CreateLogger<DefaultAWSCredentialsFactory>()));
+            awsCredentialsFactoryFunc = awsCredentialsFactoryFunc ?? (sp => sp.CreateDefaultCredentialsFactory(sp.GetService<AWSOptions>()));
 
             var serviceDescriptor = new ServiceDescriptor(typeof(IAWSCredentialsFactory), awsCredentialsFactoryFunc, lifetime);
 
@@ -271,7 +271,10 @@ namespace Microsoft.Extensions.DependencyInjection
                           ?? sp.GetService<AWSOptions>()
                           ?? sp.GetService<IConfiguration>()?.GetAWSOptions();
 
-            if (optionsFunc != null && credentialsFactoryFunc == null && sp.CustomCredentialsFactoryRegistered() && options?.Equals(sp.GetService<AWSOptions>()) != true)
+            if (optionsFunc != null &&
+                credentialsFactoryFunc == null &&
+                sp.CustomCredentialsFactoryRegistered() && // If we're using the default credentials factory, no harm done since we're creating one with the provided AWSOptions below.
+                options?.Equals(sp.GetService<AWSOptions>()) != true)
             {
                 throw new ArgumentNullException(
                     nameof(credentialsFactoryFunc),
@@ -281,7 +284,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             var awsCredentialsFactory = credentialsFactoryFunc?.Invoke(sp, options)
                                         ?? sp.GetService<IAWSCredentialsFactory>()
-                                        ?? new DefaultAWSCredentialsFactory(options, sp.GetService<ILoggerFactory>()?.CreateLogger<DefaultAWSCredentialsFactory>());
+                                        ?? sp.CreateDefaultCredentialsFactory(options);
 
             var clientFactory = new ClientFactory(
                 typeof(T),
@@ -292,6 +295,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             return clientFactory.CreateServiceClient();
         }
+
+        private static IAWSCredentialsFactory CreateDefaultCredentialsFactory(this IServiceProvider sp, AWSOptions options) =>
+            new DefaultAWSCredentialsFactory(options, sp.GetService<ILoggerFactory>()?.CreateLogger<DefaultAWSCredentialsFactory>());
 
         private static bool CustomCredentialsFactoryRegistered(this IServiceProvider sp) => sp.GetService<CustomCredentialsFactoryRegisteredType>() != null;
 
