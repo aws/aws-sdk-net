@@ -29,6 +29,9 @@ using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 namespace AWSSDK.UnitTests
 {
+    /// <summary>
+    /// Test cases can be found in accountid-source-testcases.json file in the same folder
+    /// </summary>
     [TestClass]
     public class AccountIdBasedEndpointsTest
     {
@@ -38,7 +41,6 @@ namespace AWSSDK.UnitTests
 
         public static readonly string Executable = Path.Combine(ProjectPath, @"Custom\Util\get_credentials.sh");
         private static bool _isWindows = false;
-        //AssumeRoleAWSCredentials.GetCredentials() calls CredentialsFromAssumeRoleAuthentication
 
         static AccountIdBasedEndpointsTest()
         {
@@ -49,7 +51,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-
+        //STS:1
         [TestMethod]
         public void StsAssumeRoleAccountId()
         {
@@ -76,14 +78,16 @@ namespace AWSSDK.UnitTests
             var mockStsClient = new Mock<IAmazonSecurityTokenService>();
             mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
+            //doesn't matter what we pass in here since the assumerole call is mocked
             var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("arn:aws:sts::123456789001:assumed-role/assume-role-integration-test-role/Name", "testSession", new AssumeRoleAWSCredentialsOptions());
+
             Assert.AreEqual<string>("123456789001", actualCreds.AccountId);
             Assert.AreEqual<string>("foo", actualCreds.AccessKey);
             Assert.AreEqual<string>("bar", actualCreds.SecretKey);
             Assert.AreEqual<string>("baz", actualCreds.Token);
         }
 
-        //GetCredentials on 
+        //STS:2
         [TestMethod]
         public void StsAssumeRoleWithSamlAccountId()
         {
@@ -112,6 +116,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual<string>("baz", actualCreds.Token);
         }
 
+        //STS:3
+        /// <summary>
+        /// When calling Sts::AssumeRoleWithWebIdentity successfully, find account ID in response
+        /// </summary>
         [TestMethod]
         public void StsAssumeRoleWithWebIdentityAccountId()
         {
@@ -139,6 +147,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual<string>("bar", actualCreds.SecretKey);
             Assert.AreEqual<string>("baz", actualCreds.Token);
         }
+        //STS:4 (SKIP) none of our credential providers call GetFederationToken and there is no point in asserting a mocked response returns what is expected
 
         /// <summary>
         /// When environment is configured with web identity, find account ID in response
@@ -246,7 +255,6 @@ namespace AWSSDK.UnitTests
             var expectedResponse = new ResourceNotFoundException("The request resource doesn't exist");
             mockSsoClient.Setup(client => client.GetRoleCredentials(It.IsAny<GetRoleCredentialsRequest>())).Throws(expectedResponse);
             ImmutableCredentials credentials = null;
-            // expecting this call to fail and assert that credentials is null
             try
             {
                 credentials = CoreAmazonSSO.CredentialsFromSsoAccessToken(
@@ -264,6 +272,9 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// When profile is configured with role, accountid and call is successful, find account ID in call response
+        /// </summary>
         private static string cfg1 = new StringBuilder().AppendLine("[profile assume-role]")
             .AppendLine("role_arn = arn:aws:iam::123456789002:role/MyRole")
             .AppendLine("source_profile = assume-creds")
@@ -318,6 +329,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_secret_access_key = def456")
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
+        /// <summary>
+        /// When profile is configured with chained roles, accountid and calls are successful, find account ID in call response
+        /// </summary>
         [TestMethod]
         public void AssumeRoleChainedProfilesReturnCorrectAccountId()
         {
@@ -328,7 +342,6 @@ namespace AWSSDK.UnitTests
                 chain.TryGetAWSCredentials("final-role", out AWSCredentials creds);
                 Assert.IsNotNull(creds);
                 Assert.IsInstanceOfType(creds, typeof(AssumeRoleAWSCredentials));
-                //AssumeRoleAWSCredentials.GetCredentials() will call CredentialsFromAssumeRoleAuthentication
                 var mockStsClient = new Mock<IAmazonSecurityTokenService>();
                 var expectedResponse = new AssumeRoleResponse
                 {
@@ -359,7 +372,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("credential_source = Environment")
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
-        // When profile is configured with role, accountid and env var credentials_source, find account ID in call response
+        //CFG:3
+        /// <summary>
+        /// When profile is configured with role, accountid and env var credentials_source, find account ID in call response
+        /// </summary>
         [TestMethod]
         public void AccountIdInResponseTakesPrecedenceOverEnvVariables()
         {
@@ -418,7 +434,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
 
-        // When profile is configured with web identity, find account ID in response
+        // CFG:4
+        /// <summary>
+        /// When profile is configured with web identity, find account ID in response
+        /// </summary>
         [TestMethod]
         public void FindAccountIdInResponseWhenProfileIsConfiguredWithWebIdentity()
         {
@@ -464,7 +483,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_secret_access_key = bar")
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
-        
+        /// <summary>
+        /// When profile is configured with static credentials and accountid, find account id in profile
+        /// </summary>
         [TestMethod]
         public void AccountIdConfiguredInProfileWorks()
         {
@@ -486,7 +507,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id = foo")
             .AppendLine("aws_secret_access_key = bar")
             .ToString();
-
+        /// <summary>
+        /// When profile is configured with static credentials but no accountid, does not find accountid
+        /// </summary>
         [TestMethod]
         public void AccountIdNotFoundInProfileIfUnavailable()
         {
@@ -509,6 +532,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_session_token = baz")
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
+        /// <summary>
+        /// When profile is configured with static credentials, session token and accountid, find account id in profile
+        /// </summary>
         [TestMethod]
         public void AccountIdFoundInSessionProfile()
         {
@@ -532,7 +558,9 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_secret_access_key = bar")
             .AppendLine("aws_session_token = baz")
             .ToString();
-
+        /// <summary>
+        /// When profile is configured with static credentials, session token but no accountid, does not find accountid
+        /// </summary>
         [TestMethod]
         public void AccountIdNotFoundInSessionProfileIfUnavailable()
         {
@@ -549,7 +577,10 @@ namespace AWSSDK.UnitTests
                 Assert.IsNull(actualCreds.AccountId);
             }
         }
-
+        /// <summary>
+        /// STA:2
+        /// When static credentials and accountid are configured, finds accountid
+        /// </summary>
         [TestMethod]
         public void StaticCredsWithAcctIdWorks()
         {
@@ -559,6 +590,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual<string>("bar", creds.SecretKey);
         }
 
+        /// <summary>
+        /// STA:3
+        /// When static credentials but no accountid are configured, does not find accountid
+        /// </summary>
         [TestMethod]
         public void StaticCredsWithNoAcctIdWorks()
         {
@@ -568,6 +603,10 @@ namespace AWSSDK.UnitTests
             Assert.IsNull(creds.AccountId);
         }
 
+        /// <summary>
+        /// STA:4
+        /// When session credentials and accountid are configured, finds accountid
+        /// </summary>
         [TestMethod]
         public void SessionCredsWithAcctIdWorks()
         {
@@ -579,6 +618,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual<string>("baz", creds.Token);
         }
 
+        /// <summary>
+        /// ENV:1
+        /// When environment variables contain static credentials and accountid, find account id in env vars
+        /// </summary>
         [TestMethod]
         public void EnvVarsContainingAcctIdWorks()
         {
@@ -604,6 +647,11 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
             }
         }
+
+        /// <summary>
+        /// ENV:2
+        /// When environment variables contain static credentials but no accountid, does not find accountid
+        /// </summary>
         [TestMethod]
         public void EnvVarsContainingNoAcctIdWorks()
         {
@@ -626,6 +674,11 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
             }
         }
+
+        /// <summary>
+        /// ENV:3
+        /// When environment variables contain static credentials, session token and accountid, find account id in env vars
+        /// </summary>
         [TestMethod]
         public void EnvVarsContainingAcctIdAndTokenWorks()
         {
@@ -656,6 +709,10 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// ENV:4
+        /// When environment variables contain static credentials, session token but no accountid, does not find accountid
+        /// </summary>
         [TestMethod]
         public void EnvVarsContainingTokenAndNoAcctIdWorks()
         {
@@ -692,7 +749,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("}")
             .ToString();
 
-        //PRO:1
+        /// <summary>
+        /// PRO:1
+        /// When you use process credentials provider and process returns session credentials and accountid, find accountid in response
+        /// </summary>
         [TestMethod]
         public void ProcessCredentialsProviderWithAccountIdWorks()
         {
@@ -711,7 +771,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("}")
             .ToString();
 
-        //PRO:2
+        /// <summary>
+        /// PRO:2
+        /// When you use process credentials provider and process returns session credentials but not accountid, does not find accountid
+        /// </summary>
         [TestMethod]
         public void ProcessCredsWithNoAcctIdWorks()
         {
@@ -723,6 +786,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual<string>("baz", immutableCreds.Token);
         }
 
+        /// <summary>
+        /// CFG:10
+        /// When profile is configured with process source and process returns session credentials and accountid, find accountid in response
+        /// </summary>
         [TestMethod]
         public void ProcessCredsFromCredentialProcess()
         {
@@ -760,7 +827,8 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// CFG11
+        /// CFG:11
+        /// When profile is configured with process source, accountid and process returns session credentials and accountid, find accountid in response
         /// </summary>
         [TestMethod]
         public void ProcessCredsFromCredentialProcessWithAccountId()
@@ -798,6 +866,10 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// When profile is configured with process source, accountid and process returns session credentials but no accountid, find accountid in profile
+        /// CFG:12
+        /// </summary>
         [TestMethod]
         public void ProcessCredsNoAcctIdWorks()
         {
@@ -831,6 +903,10 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// When profile is configured with process source and process returns session credentials but no accountid, does not find accountid
+        /// CFG:13
+        /// </summary>
         [TestMethod]
         public void ProcessWithTokenAndNoAcctIdWorks()
         {
@@ -864,6 +940,10 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        /// <summary>
+        /// When profile is configured with process source and process returns static credentials and accountid, find accountid in response
+        /// CFG:14
+        /// </summary>
         [TestMethod]
         public void ProcessWithAcctIdWorks()
         {
@@ -952,6 +1032,11 @@ namespace AWSSDK.UnitTests
             public string AccountId { get; set; }
         }
     }
+
+    // It felt more correct to mock the API Call given the test case definitions, rather than mock these methods
+    // to return the correct immutable credentials so I went with this path
+    // instead of creating a testable credential inheriting from the base class. The test cases explicitly call out
+    // API call. It isn't an exact 1:1 mapping of the logic, but it does the important part of making the API call.
 
     // A testable implementation of ICoreAmazonSTS which can accept an injected mocked client
     public class TestableAmazonSTSClient : ICoreAmazonSTS

@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Support Account ID based endpoints. Credential Providers will now attach the account ID to credentials if available and also read from the shared credentials file if set."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

@@ -107,8 +107,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
                     { "UserIdentity", SettingsConstants.UserIdentityField },
-                    { "Services", SettingsConstants.Services },
-                    { "EndpointUrl", SettingsConstants.EndpointUrl },
+                    { "AwsAccountId", SettingsConstants.AwsAccountId },
                     // Not implemented for NetSDKCredentials. Applicable only
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
