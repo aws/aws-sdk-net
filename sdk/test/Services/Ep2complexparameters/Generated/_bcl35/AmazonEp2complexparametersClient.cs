@@ -354,6 +354,60 @@ namespace Amazon.Ep2complexparameters
 
         #endregion
         
+        #region  ListOfUnionsOperation
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation service method.</param>
+        /// 
+        /// <returns>The response from the ListOfUnionsOperation service method, as returned by Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        public virtual ListOfUnionsOperationResponse ListOfUnionsOperation(ListOfUnionsOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfUnionsOperationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfUnionsOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation operation on AmazonEp2complexparametersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfUnionsOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        public virtual IAsyncResult BeginListOfUnionsOperation(ListOfUnionsOperationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOfUnionsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOfUnionsOperationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOfUnionsOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOfUnionsOperation.</param>
+        /// 
+        /// <returns>Returns a  ListOfUnionsOperationResult from Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        public virtual ListOfUnionsOperationResponse EndListOfUnionsOperation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOfUnionsOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  MapOperation
 
         /// <summary>
