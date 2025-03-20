@@ -51,6 +51,14 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestCleanup]
+        public void Cleanup()
+        {
+            if (File.Exists(Executable))
+                File.Delete(Executable);
+
+        }
+
         //STS:1
         [TestMethod]
         public void StsAssumeRoleAccountId()

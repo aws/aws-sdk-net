@@ -119,7 +119,7 @@ namespace Amazon.SecurityToken.SAML
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
                                                 response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
                                                 response.Subject,
-                                                Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
+                                                response.AssumedRoleUser != null ? Arn.Parse(response.AssumedRoleUser.Arn).AccountId : null);
         }
 
         /// <summary>

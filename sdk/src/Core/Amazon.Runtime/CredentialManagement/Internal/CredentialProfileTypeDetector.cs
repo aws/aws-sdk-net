@@ -101,9 +101,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     {
                         new HashSet<string> { RoleArn, SourceProfile },
                         new HashSet<string> { RoleArn, SourceProfile, AwsAccountId },
-                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, Services },
-                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { RoleArn, SourceProfile, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
                 { 
@@ -118,9 +115,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile },
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId },
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, Services },
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, AwsAccountId, EndpointUrl, Services }
                     } 
                 },
                 { CredentialProfileType.AssumeRoleExternalMFA, new List<HashSet<string>>() { new HashSet<string> { ExternalID, RoleArn, SourceProfile, MfaSerial } } },
@@ -130,9 +124,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { RoleArn, WebIdentityTokenFile },
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource },
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, CredentialSource, AwsAccountId },
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, Services },
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, AwsAccountId, EndpointUrl, Services },
                     } 
                 },
                 { 
@@ -140,10 +131,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName },
                         new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId } ,
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, Services } ,
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, EndpointUrl } ,
-                        new HashSet<string> { RoleArn, WebIdentityTokenFile, RoleSessionName, AwsAccountId, Services, EndpointUrl } ,
-
                     } 
                 },
                 { 
@@ -151,18 +138,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile },
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId },
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, Services },
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, Services, EndpointUrl},
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, AwsAccountId, EndpointUrl }
                     } 
                 },
                 { CredentialProfileType.Basic, new List<HashSet<string>>() 
                     {
                         new HashSet<string> { AccessKey, SecretKey },
                         new HashSet<string> { AccessKey, SecretKey, AwsAccountId },
-                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, Services, EndpointUrl },
-                        new HashSet<string> { AccessKey, SecretKey, AwsAccountId, Services }
                     } 
                 },
                 { 
@@ -170,8 +151,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { EndpointName, RoleArn },
                         new HashSet<string> { EndpointName, RoleArn, AwsAccountId },
-                        new HashSet<string> { EndpointName, RoleArn, AwsAccountId, Services },
-                        new HashSet<string> { EndpointName, RoleArn, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
                 { CredentialProfileType.SAMLRoleUserIdentity, new List<HashSet<string>>() { new HashSet<string> { EndpointName, RoleArn, UserIdentity } } },
@@ -180,8 +159,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { AccessKey, SecretKey, Token },
                         new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId },
-                        new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { AccessKey, SecretKey, Token, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
                 { 
@@ -189,8 +166,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { RoleArn, SourceProfile, RoleSessionName },
                         new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
-                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
-                        new HashSet<string> { RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl }
                     } 
                 },
                 { 
@@ -198,8 +173,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     {
                         new HashSet<string> { RoleArn, CredentialSource, RoleSessionName },
                         new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId},
-                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, Services},
-                        new HashSet<string> { RoleArn, CredentialSource, RoleSessionName, AwsAccountId, Services, EndpointUrl},
                     } 
                 },
                 { 
@@ -207,8 +180,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName },
                         new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { ExternalID, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl, Services },
                     } 
                 },
                 { 
@@ -216,9 +187,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName },
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
-                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
-                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
                 { CredentialProfileType.SSO, new List<HashSet<string>>() { new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession } } },
@@ -227,9 +195,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName },
                         new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId },
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, EndpointUrl },
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services },
-                        new HashSet<string> { MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, Services, EndpointUrl },
                     } 
                 },
             };
