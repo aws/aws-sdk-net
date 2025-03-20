@@ -88,10 +88,22 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddCredentialsFactory(
             this IServiceCollection collection,
             Func<IServiceProvider, IAWSCredentialsFactory> awsCredentialsFactoryFunc,
-            ServiceLifetime lifetime = ServiceLifetime.Singleton,
-            bool tryAdd = false)
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
         {
-            return collection.AddCredentialsFactoryInternal(awsCredentialsFactoryFunc, lifetime, tryAdd);
+            return collection.AddCredentialsFactoryInternal(awsCredentialsFactoryFunc, lifetime, tryAdd: false);
+        }
+
+        /// <summary>
+        /// Adds a IAWSCredentialsFactory object obtained via th provided awsCredentialsFactoryFunc to the dependency
+        /// injection framework if no IAWSCredentialsFactory is already registered.
+        /// This factory will be used to create the credentials for the Amazon service clients.
+        /// </summary>
+        public static IServiceCollection TryAddCredentialsFactory(
+            this IServiceCollection collection,
+            Func<IServiceProvider, IAWSCredentialsFactory> awsCredentialsFactoryFunc,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {
+            return collection.AddCredentialsFactoryInternal(awsCredentialsFactoryFunc, lifetime, tryAdd: true);
         }
 
         /// <summary>
