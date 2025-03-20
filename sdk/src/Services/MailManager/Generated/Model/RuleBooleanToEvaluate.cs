@@ -34,8 +34,27 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class RuleBooleanToEvaluate
     {
+        private Analysis _analysis;
         private RuleBooleanEmailAttribute _attribute;
         private RuleIsInAddressList _isInAddressList;
+
+        /// <summary>
+        /// Gets and sets the property Analysis. 
+        /// <para>
+        /// The Add On ARN and its returned value to evaluate in a boolean condition expression.
+        /// </para>
+        /// </summary>
+        public Analysis Analysis
+        {
+            get { return this._analysis; }
+            set { this._analysis = value; }
+        }
+
+        // Check to see if Analysis property is set
+        internal bool IsSetAnalysis()
+        {
+            return this._analysis != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attribute. 
