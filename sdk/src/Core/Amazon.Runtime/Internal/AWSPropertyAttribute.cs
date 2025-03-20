@@ -2,6 +2,8 @@
 
 namespace Amazon.Runtime.Internal
 {
+
+
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public sealed class AWSPropertyAttribute : Attribute
     {
@@ -9,7 +11,10 @@ namespace Amazon.Runtime.Internal
         private long max;
         public bool Sensitive { get; set; }
         public bool Required { get; set; }
-        public bool PaginationRequestKey { get; set; }
+        public bool PaginationInputToken { get; set; }
+        public bool PaginationOutputToken { get; set; }
+        public bool PaginationLimitKey { get; set; }
+
 
         public bool IsMinSet { get; private set; }
         public long Min

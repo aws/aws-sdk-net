@@ -220,16 +220,25 @@ namespace <#=this.Config.Namespace#>.Model
                     {
                         propertyAttributes.Add("Max=" + member.Shape.Max);
                     }
-                    if (this.StructureType == StructureType.Request)
+                    
+                    // Add PaginationRequestKey attribute to Request Pagination properties that will be used by PowerShell for Auto-Iteration
+                    bool hasPaginatorInputToken = this.StructureType == StructureType.Request && this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
+                    bool hasPaginatorLimitKey = this.StructureType == StructureType.Request  && this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
+                    bool hasPaginatorOutputToken = this.StructureType == StructureType.Response && this.Operation?.Paginators?.OutputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
+
+                    if (hasPaginatorInputToken)
                     {
-                        // Add PaginationRequestKey attribute to Request Pagination properties that will be used by PowerShell for Auto-Iteration
-                        bool hasPaginatorInputToken = this.StructureType == StructureType.Request && this.Operation?.Paginators?.InputTokens.Any(x => x.PropertyName == member.PropertyName) == true;
-                        bool hasPaginatorLimitKey = this.StructureType == StructureType.Request  && this.Operation?.Paginators?.LimitKey?.PropertyName == member.PropertyName;
-                        if (hasPaginatorInputToken || hasPaginatorLimitKey)
-                        {
-                            propertyAttributes.Add("PaginationRequestKey=true");
-                        }
+                        propertyAttributes.Add("PaginationInputToken=true");
                     }
+                    else if (hasPaginatorLimitKey)
+                    {
+                        propertyAttributes.Add("PaginationLimitKey=true");
+                    }
+                    else if (hasPaginatorOutputToken)
+                    {
+                        propertyAttributes.Add("PaginationOutputToken=true");
+                    }
+                    
 
                     if (propertyAttributes.Count > 0)
                     {
