@@ -129,9 +129,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
-        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
-        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
-        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// <param name="credentialsFactoryFunc">
+        /// A func which takes an IServiceProvider and the AWSOptions provided to this call and returns an IAWSCredentialsFactory used to create the service client.
+        /// Must be provided if options are provided to this call _and_ a custom IAWSCredentialsFactory is registered via [Try]AddCredentialsFactory; otherwise the
+        /// default will be used.
         /// </param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection AddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton, Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null) where T : IAmazonService
@@ -147,9 +148,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
         /// <param name="collection"></param>
         /// <param name="optionsFunc">A func which returns the AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
-        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
-        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
-        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// <param name="credentialsFactoryFunc">
+        /// A func which takes an IServiceProvider and the AWSOptions resolved by optionsFunc and returns an IAWSCredentialsFactory used to create the service client.
+        /// Must be provided if options are provided to this call _and_ a custom IAWSCredentialsFactory is registered via [Try]AddCredentialsFactory; otherwise the
+        /// default will be used.
         /// </param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
@@ -186,9 +188,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="collection"></param>
         /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
-        /// /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
-        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
-        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// <param name="credentialsFactoryFunc">
+        /// A func which takes an IServiceProvider and the AWSOptions resolved by optionsFunc and returns an IAWSCredentialsFactory used to create the service client.
+        /// Must be provided if options are provided to this call _and_ a custom IAWSCredentialsFactory is registered via [Try]AddCredentialsFactory; otherwise the
+        /// default will be used.
         /// </param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
         public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton, Func<IServiceProvider, AWSOptions, IAWSCredentialsFactory> credentialsFactoryFunc = null) where T : IAmazonService
@@ -204,9 +207,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
         /// <param name="collection"></param>
         /// <param name="optionsFunc">A func which returns the AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
-        /// <param name="credentialsFactoryFunc">A func which takes an IServiceProvider and the AWSOptions resolved via the optionsFunc and
-        /// returns the IAWSCredentialsFactory used to create the service client overriding the default added using AddCredentialsFactory. If none is provided, the registered IAWSCredentialsFactory will be used,
-        /// and if none has been registered a new instance of DefaultAWSCredentialsFactory will be used.
+        /// <param name="credentialsFactoryFunc">
+        /// A func which takes an IServiceProvider and the AWSOptions resolved by optionsFunc and returns an IAWSCredentialsFactory used to create the service client.
+        /// Must be provided if options are provided to this call _and_ a custom IAWSCredentialsFactory is registered via [Try]AddCredentialsFactory; otherwise the
+        /// default will be used.
         /// </param>
         /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
         /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
