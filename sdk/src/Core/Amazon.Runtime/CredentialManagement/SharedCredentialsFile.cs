@@ -151,8 +151,6 @@ namespace Amazon.Runtime.CredentialManagement
                     { "UserIdentity", null },
                     { "CredentialProcess" , "credential_process" },
                     { "WebIdentityTokenFile", "web_identity_token_file" },
-                    { "Services", "services" },
-                    { "EndpointUrl", "endpoint_url" },
                     { "AwsAccountId", "aws_account_id" },
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
