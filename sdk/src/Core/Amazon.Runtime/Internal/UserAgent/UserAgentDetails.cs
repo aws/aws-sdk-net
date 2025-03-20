@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System.Text;
 using System.Collections.Generic;
 
 namespace Amazon.Runtime.Internal.UserAgent
@@ -48,12 +49,41 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// Ensures the final string does not exceed 1024 bytes.
         /// </summary>
         /// <returns>The formatted User-Agent metrics string.</returns>
-#pragma warning disable CA1822 // Mark members as static
         public string GenerateMetricsUserAgent()
-#pragma warning restore CA1822 // Mark members as static
         {
-            // TODO
-            return "m/{metricsString}";
+            if (_trackedFeatureIds.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            var metricsString = $"m/{string.Join(",", _trackedFeatureIds)}";
+
+            // Truncate to fit within 1 KB limit, ensuring we cut at a comma boundary
+            metricsString = TruncateToSize(metricsString);
+
+            return metricsString;
+        }
+
+        /// <summary>
+        /// Truncates a comma-separated string to ensure it fits within a given byte limit.
+        /// </summary>
+        /// <param name="input">The input string.</param>
+        /// <returns>A truncated version of the string within the byte limit.</returns>
+        private static string TruncateToSize(string input)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
+            if (bytes.Length <= MaxSizeBytes)
+            {
+                return input;
+            }
+
+            var cutOffIndex = MaxSizeBytes;
+            while (cutOffIndex > 0 && bytes[cutOffIndex - 1] != ',')
+            {
+                cutOffIndex--;
+            }
+
+            return Encoding.UTF8.GetString(bytes, 0, cutOffIndex - 1); // Remove last comma
         }
     }
 }
