@@ -87,8 +87,12 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        /// The protocols to decrypt for inspection, specified using each protocol's assigned
-        /// internet protocol number (IANA). Network Firewall currently supports only TCP.
+        /// The protocols to inspect for, specified using the assigned internet protocol number
+        /// (IANA) for each protocol. If not specified, this matches with any protocol.
+        /// </para>
+        ///  
+        /// <para>
+        /// Network Firewall currently supports only TCP.
         /// </para>
         /// </summary>
         public List<int> Protocols

@@ -47,6 +47,16 @@ namespace Amazon.NetworkFirewall.Model
         IListFirewallsPaginator ListFirewalls(ListFirewallsRequest request);
 
         /// <summary>
+        /// Paginator for ListFlowOperationResults operation
+        ///</summary>
+        IListFlowOperationResultsPaginator ListFlowOperationResults(ListFlowOperationResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFlowOperations operation
+        ///</summary>
+        IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request);
+
+        /// <summary>
         /// Paginator for ListRuleGroups operation
         ///</summary>
         IListRuleGroupsPaginator ListRuleGroups(ListRuleGroupsRequest request);

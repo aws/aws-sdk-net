@@ -1991,6 +1991,103 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DescribeFlowOperation
+
+
+        /// <summary>
+        /// Returns key information about a specific flow operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFlowOperation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">REST API Reference for DescribeFlowOperation Operation</seealso>
+        public virtual DescribeFlowOperationResponse DescribeFlowOperation(DescribeFlowOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFlowOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns key information about a specific flow operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFlowOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFlowOperation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">REST API Reference for DescribeFlowOperation Operation</seealso>
+        public virtual Task<DescribeFlowOperationResponse> DescribeFlowOperationAsync(DescribeFlowOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeFlowOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeLoggingConfiguration
 
 
@@ -2999,6 +3096,252 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  ListFlowOperationResults
+
+
+        /// <summary>
+        /// Returns the results of a specific flow operation. 
+        /// 
+        ///  
+        /// <para>
+        /// Flow operations let you manage the flows tracked in the flow table, also known as
+        /// the firewall table.
+        /// </para>
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowOperationResults service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowOperationResults service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">REST API Reference for ListFlowOperationResults Operation</seealso>
+        public virtual ListFlowOperationResultsResponse ListFlowOperationResults(ListFlowOperationResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowOperationResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the results of a specific flow operation. 
+        /// 
+        ///  
+        /// <para>
+        /// Flow operations let you manage the flows tracked in the flow table, also known as
+        /// the firewall table.
+        /// </para>
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowOperationResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlowOperationResults service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">REST API Reference for ListFlowOperationResults Operation</seealso>
+        public virtual Task<ListFlowOperationResultsResponse> ListFlowOperationResultsAsync(ListFlowOperationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFlowOperationResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFlowOperations
+
+
+        /// <summary>
+        /// Returns a list of all flow operations ran in a specific firewall. You can optionally
+        /// narrow the request scope by specifying the operation type or Availability Zone associated
+        /// with a firewall's flow operations. 
+        /// 
+        ///  
+        /// <para>
+        /// Flow operations let you manage the flows tracked in the flow table, also known as
+        /// the firewall table.
+        /// </para>
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListFlowOperations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
+        public virtual ListFlowOperationsResponse ListFlowOperations(ListFlowOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlowOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of all flow operations ran in a specific firewall. You can optionally
+        /// narrow the request scope by specifying the operation type or Availability Zone associated
+        /// with a firewall's flow operations. 
+        /// 
+        ///  
+        /// <para>
+        /// Flow operations let you manage the flows tracked in the flow table, also known as
+        /// the firewall table.
+        /// </para>
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlowOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlowOperations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
+        public virtual Task<ListFlowOperationsResponse> ListFlowOperationsAsync(ListFlowOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFlowOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRuleGroups
 
 
@@ -3574,6 +3917,254 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartAnalysisReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFlowCapture
+
+
+        /// <summary>
+        /// Begins capturing the flows in a firewall, according to the filters you define. Captures
+        /// are similar, but not identical to snapshots. Capture operations provide visibility
+        /// into flows that are not closed and are tracked by a firewall's flow table. Unlike
+        /// snapshots, captures are a time-boxed view. 
+        /// 
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To avoid encountering operation limits, you should avoid starting captures with broad
+        /// filters, like wide IP ranges. Instead, we recommend you define more specific criteria
+        /// with <c>FlowFilters</c>, like narrow IP ranges, ports, or protocols.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowCapture service method.</param>
+        /// 
+        /// <returns>The response from the StartFlowCapture service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">REST API Reference for StartFlowCapture Operation</seealso>
+        public virtual StartFlowCaptureResponse StartFlowCapture(StartFlowCaptureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
+
+            return Invoke<StartFlowCaptureResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Begins capturing the flows in a firewall, according to the filters you define. Captures
+        /// are similar, but not identical to snapshots. Capture operations provide visibility
+        /// into flows that are not closed and are tracked by a firewall's flow table. Unlike
+        /// snapshots, captures are a time-boxed view. 
+        /// 
+        ///  
+        /// <para>
+        /// A flow is network traffic that is monitored by a firewall, either by stateful or stateless
+        /// rules. For traffic to be considered part of a flow, it must share Destination, DestinationPort,
+        /// Direction, Protocol, Source, and SourcePort. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To avoid encountering operation limits, you should avoid starting captures with broad
+        /// filters, like wide IP ranges. Instead, we recommend you define more specific criteria
+        /// with <c>FlowFilters</c>, like narrow IP ranges, ports, or protocols.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowCapture service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartFlowCapture service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">REST API Reference for StartFlowCapture Operation</seealso>
+        public virtual Task<StartFlowCaptureResponse> StartFlowCaptureAsync(StartFlowCaptureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartFlowCaptureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFlowFlush
+
+
+        /// <summary>
+        /// Begins the flushing of traffic from the firewall, according to the filters you define.
+        /// When the operation starts, impacted flows are temporarily marked as timed out before
+        /// the Suricata engine prunes, or flushes, the flows from the firewall table.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// While the flush completes, impacted flows are processed as midstream traffic. This
+        /// may result in a temporary increase in midstream traffic metrics. We recommend that
+        /// you double check your stream exception policy before you perform a flush operation.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowFlush service method.</param>
+        /// 
+        /// <returns>The response from the StartFlowFlush service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">REST API Reference for StartFlowFlush Operation</seealso>
+        public virtual StartFlowFlushResponse StartFlowFlush(StartFlowFlushRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
+
+            return Invoke<StartFlowFlushResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Begins the flushing of traffic from the firewall, according to the filters you define.
+        /// When the operation starts, impacted flows are temporarily marked as timed out before
+        /// the Suricata engine prunes, or flushes, the flows from the firewall table.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// While the flush completes, impacted flows are processed as midstream traffic. This
+        /// may result in a temporary increase in midstream traffic metrics. We recommend that
+        /// you double check your stream exception policy before you perform a flush operation.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFlowFlush service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartFlowFlush service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">REST API Reference for StartFlowFlush Operation</seealso>
+        public virtual Task<StartFlowFlushResponse> StartFlowFlushAsync(StartFlowFlushRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartFlowFlushResponse>(request, options, cancellationToken);
         }
 
         #endregion
