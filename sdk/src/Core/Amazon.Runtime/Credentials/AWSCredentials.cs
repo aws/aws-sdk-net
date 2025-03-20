@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 
-
 using Amazon.Runtime.Identity;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime
 {
@@ -23,6 +23,16 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract class AWSCredentials : BaseIdentity
     {
+        /// <summary>
+        /// Internal property that can be used to specify how this instance of AWS credentials were resolved.
+        /// </summary>
+        /// <remarks>
+        /// Credential providers MUST override this property to have their specific feature ID tracked.
+        /// <para />
+        /// If null, no value will be included in the user agent header.
+        /// </remarks>
+        internal virtual UserAgentFeatureId FeatureIdSource { get; set; }
+
         /// <summary>
         /// Returns a copy of ImmutableCredentials
         /// </summary>

@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -85,6 +86,7 @@ namespace Amazon.Runtime
         }
 
         #region Overrides
+        
         /// <summary>
         /// Returns a copy of the most recent instance profile credentials.
         /// </summary>
@@ -262,7 +264,10 @@ namespace Amazon.Runtime
 
             return credentials;
         }
-#endregion
+
+        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_IMDS;
+
+        #endregion
 
         #region Private members
         private void RenewCredentials(object unused)
@@ -366,7 +371,8 @@ namespace Amazon.Runtime
         }
 #endregion
 
-#region IDisposable Support
+        #region IDisposable Support
+
         private bool _isDisposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -395,6 +401,7 @@ namespace Amazon.Runtime
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-#endregion
+
+        #endregion
     }
 }

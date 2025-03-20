@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
@@ -74,6 +75,16 @@ namespace Amazon.Runtime.Internal
                 {
                     // Set CoreChecksumMode to enabled to validate the integrity of this request's response if it is supported.
                     requestContext.OriginalRequest.CoreChecksumMode = CoreChecksumResponseBehavior.ENABLED;
+                }
+
+                switch (requestContext.ClientConfig.ResponseChecksumValidation)
+                {
+                    case ResponseChecksumValidation.WHEN_SUPPORTED:
+                        requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_RES_WHEN_SUPPORTED);
+                        break;
+                    case ResponseChecksumValidation.WHEN_REQUIRED:
+                        requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED);
+                        break;
                 }
 
                 requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);

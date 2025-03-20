@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -64,6 +65,8 @@ namespace Amazon.Runtime
         private const string InvalidHostErrorMessage = "Cannot fetch credentials from container - the full URI contains an invalid host: {0}";
 
         internal Uri ResolvedEndpointUri { get; private set; }
+
+        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_HTTP;
 
         public GenericContainerCredentials()
         {

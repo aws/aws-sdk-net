@@ -19,6 +19,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using System.Diagnostics.CodeAnalysis;
@@ -88,6 +89,8 @@ namespace Amazon.Runtime
         #endregion
 
         #region Protected overridden methods
+
+        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_PROCESS;
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {

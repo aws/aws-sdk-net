@@ -13,10 +13,8 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.CredentialManagement.Internal;
-using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -30,6 +28,8 @@ namespace Amazon.Runtime
     /// </summary>
     public class AppConfigAWSCredentials : AWSCredentials
     {
+        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_CODE;
+
         private const string ACCESSKEY = "AWSAccessKey";
         private const string SECRETKEY = "AWSSecretKey";
 

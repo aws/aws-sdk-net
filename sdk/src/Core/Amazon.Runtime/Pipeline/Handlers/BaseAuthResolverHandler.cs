@@ -17,6 +17,7 @@ using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.UserAgent;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -128,6 +129,8 @@ namespace Amazon.Runtime.Internal
             {
                 throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
+
+            AddUserAgentDetails(executionContext);
         }
 
         protected async Task PreInvokeAsync(IExecutionContext executionContext)
@@ -207,6 +210,8 @@ namespace Amazon.Runtime.Internal
             {
                 throw new AmazonClientException($"Could not determine which authentication scheme to use for {executionContext.RequestContext.RequestName}");
             }
+
+            AddUserAgentDetails(executionContext);
         }
 
         protected virtual ISigner GetSigner(IAuthScheme<BaseIdentity> scheme)
@@ -275,5 +280,16 @@ namespace Amazon.Runtime.Internal
         /// Invokes the service auth scheme resolver to determine which auth options we should consider for this request.
         /// </summary>
         protected abstract List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext);
+
+        private static void AddUserAgentDetails(IExecutionContext executionContext)
+        {
+            var requestContext = executionContext.RequestContext;
+            if (requestContext.Identity == null || requestContext.Identity is not AWSCredentials credentials)
+            {
+                return;
+            }
+
+            requestContext.UserAgentDetails.AddFeature(credentials.FeatureIdSource);
+        }
     }
 }
