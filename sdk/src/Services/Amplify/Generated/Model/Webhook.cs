@@ -34,6 +34,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class Webhook
     {
+        private string _appId;
         private string _branchName;
         private DateTime? _createTime;
         private string _description;
@@ -41,6 +42,25 @@ namespace Amazon.Amplify.Model
         private string _webhookArn;
         private string _webhookId;
         private string _webhookUrl;
+
+        /// <summary>
+        /// Gets and sets the property AppId. 
+        /// <para>
+        /// The unique ID of an Amplify app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string AppId
+        {
+            get { return this._appId; }
+            set { this._appId = value; }
+        }
+
+        // Check to see if AppId property is set
+        internal bool IsSetAppId()
+        {
+            return this._appId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BranchName. 
