@@ -122,6 +122,12 @@
     <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.UpdateClusterRequest.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.UpdateControlPanelRequest.ControlPanelArn</property>
     <min>1</min>
     <max>256</max>

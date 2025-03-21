@@ -1402,6 +1402,61 @@ namespace Amazon.Route53RecoveryControlConfig
 
         #endregion
         
+        #region  UpdateCluster
+
+        internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing cluster. You can only update the network type of a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
+        /// 403 response - You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
+        /// 409 response - ConflictException. You might be using a predefined variable.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
+        /// 429 response - LimitExceededException or TooManyRequestsException.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
+        /// 400 response - Multiple causes. For example, you might have a malformed query string
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateControlPanel
 
         internal virtual UpdateControlPanelResponse UpdateControlPanel(UpdateControlPanelRequest request)

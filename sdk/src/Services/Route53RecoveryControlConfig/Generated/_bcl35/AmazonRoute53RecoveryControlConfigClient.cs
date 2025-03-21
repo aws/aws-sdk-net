@@ -1818,6 +1818,81 @@ namespace Amazon.Route53RecoveryControlConfig
 
         #endregion
         
+        #region  UpdateCluster
+
+        /// <summary>
+        /// Updates an existing cluster. You can only update the network type of a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
+        /// 403 response - You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
+        /// 409 response - ConflictException. You might be using a predefined variable.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
+        /// 429 response - LimitExceededException or TooManyRequestsException.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
+        /// 400 response - Multiple causes. For example, you might have a malformed query string
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation on AmazonRoute53RecoveryControlConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterResult from Route53RecoveryControlConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
+        public virtual UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateControlPanel
 
         /// <summary>

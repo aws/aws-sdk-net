@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCluster Request Marshaller
+    /// UpdateCluster Request Marshaller
     /// </summary>       
-    public class CreateClusterRequestMarshaller : IMarshaller<IRequest, CreateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateClusterRequestMarshaller : IMarshaller<IRequest, UpdateClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateClusterRequest)input);
+            return this.Marshall((UpdateClusterRequest)input);
         }
 
         /// <summary>
@@ -53,12 +53,12 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateClusterRequest publicRequest)
+        public IRequest Marshall(UpdateClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53RecoveryControlConfig");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-02";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
             request.ResourcePath = "/cluster";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
@@ -67,41 +67,16 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                if(publicRequest.IsSetClusterArn())
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetClusterName())
-                {
-                    context.Writer.WritePropertyName("ClusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
+                    context.Writer.WritePropertyName("ClusterArn");
+                    context.Writer.Write(publicRequest.ClusterArn);
                 }
 
                 if(publicRequest.IsSetNetworkType())
                 {
                     context.Writer.WritePropertyName("NetworkType");
                     context.Writer.Write(publicRequest.NetworkType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -112,9 +87,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
             return request;
         }
-        private static CreateClusterRequestMarshaller _instance = new CreateClusterRequestMarshaller();        
+        private static UpdateClusterRequestMarshaller _instance = new UpdateClusterRequestMarshaller();        
 
-        internal static CreateClusterRequestMarshaller GetInstance()
+        internal static UpdateClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +97,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateClusterRequestMarshaller Instance
+        public static UpdateClusterRequestMarshaller Instance
         {
             get
             {
