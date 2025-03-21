@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class GetImportedModelResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private CustomModelUnits _customModelUnits;
         private bool? _instructSupported;
         private string _jobArn;
         private string _jobName;
@@ -60,6 +61,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomModelUnits. 
+        /// <para>
+        /// Information about the hardware utilization for a single copy of the model.
+        /// </para>
+        /// </summary>
+        public CustomModelUnits CustomModelUnits
+        {
+            get { return this._customModelUnits; }
+            set { this._customModelUnits = value; }
+        }
+
+        // Check to see if CustomModelUnits property is set
+        internal bool IsSetCustomModelUnits()
+        {
+            return this._customModelUnits != null;
         }
 
         /// <summary>

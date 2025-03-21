@@ -1363,6 +1363,10 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.CustomModelUnits.CustomModelUnitsVersion</property>
+    <pattern>v\d+.\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.EvaluationBedrockModel.InferenceParams</property>
     <min>1</min>
     <max>1023</max>
