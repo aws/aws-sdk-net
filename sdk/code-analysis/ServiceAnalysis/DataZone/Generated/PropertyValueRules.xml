@@ -5741,6 +5741,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.SingleSignOn.IdcInstanceArn</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.ComputeArn</property>
     <min>0</min>
     <max>256</max>

@@ -48,6 +48,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIdcInstanceArn())
+            {
+                context.Writer.WritePropertyName("idcInstanceArn");
+                context.Writer.Write(requestObject.IdcInstanceArn);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
