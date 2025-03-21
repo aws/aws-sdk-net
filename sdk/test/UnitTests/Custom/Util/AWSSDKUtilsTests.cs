@@ -12,11 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.CloudFront.Model;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.CodeDom;
 using System.IO;
 using System.Reflection;
 using System.Text;

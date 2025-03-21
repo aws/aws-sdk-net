@@ -39,15 +39,22 @@ namespace Amazon.Runtime
         /// <param name="expiration">The expiration time for the credentials.</param>
         public SSOImmutableCredentials(
             string awsAccessKeyId, string awsSecretAccessKey,
-            string token, DateTime expiration)
-            : base(awsAccessKeyId, awsSecretAccessKey, token)
+            string token, DateTime expiration) : this(awsAccessKeyId, awsSecretAccessKey, token, expiration, null)
         {
-            if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
-            Expiration = expiration;
         }
 
-        public SSOImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : this(awsAccessKeyId, awsSecretAccessKey, token, expiration)
+        /// <summary>
+        /// Constructs an instance with supplied keys, token, expiration, and account id
+        /// </summary>
+        /// <param name="awsAccessKeyId"></param>
+        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="token"></param>
+        /// <param name="expiration"></param>
+        /// <param name="accountId"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public SSOImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : base(awsAccessKeyId, awsSecretAccessKey, token)
         {
+            if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
             AccountId = accountId;
         }
 
@@ -57,12 +64,12 @@ namespace Amazon.Runtime
         /// <returns>A copy of this object.</returns>
         public new SSOImmutableCredentials Copy()
         {
-            return new SSOImmutableCredentials(AccessKey, SecretKey, Token, Expiration);
+            return new SSOImmutableCredentials(AccessKey, SecretKey, Token, Expiration, AccountId);
         }
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(AccessKey, SecretKey, Token, Expiration);
+            return Hashing.Hash(AccessKey, SecretKey, Token, Expiration, AccountId);
         }
 
         public override bool Equals(object obj)

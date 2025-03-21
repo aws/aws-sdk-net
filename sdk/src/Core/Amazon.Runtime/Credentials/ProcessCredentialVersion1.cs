@@ -57,7 +57,7 @@ namespace Amazon.Runtime.Internal
         public DateTime Expiration { get; set; } = DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc);
 
         /// <summary>
-        /// The AccountId used for accountId based endpoints
+        /// The AccountId used for AccountId based endpoints.
         /// </summary>
         public string AccountId { get; set; }
     }

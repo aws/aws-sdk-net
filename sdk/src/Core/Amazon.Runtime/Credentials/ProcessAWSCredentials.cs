@@ -54,7 +54,13 @@ namespace Amazon.Runtime
 
         #region Public constructors
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
-        public ProcessAWSCredentials(string processCredentialInfo, string accountId)
+        public ProcessAWSCredentials(string processCredentialInfo)
+        {
+
+        }
+
+
+        public ProcessAWSCredentials(string processCredentialInfo, string accountId) : this(processCredentialInfo, null)
         {
             processCredentialInfo = processCredentialInfo.Trim();
 
@@ -80,16 +86,10 @@ namespace Amazon.Runtime
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
-            
+
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
-        }
-
-
-        public ProcessAWSCredentials(string processCredentialInfo) : this(processCredentialInfo, null)
-        {
-
         }
 
         #endregion
