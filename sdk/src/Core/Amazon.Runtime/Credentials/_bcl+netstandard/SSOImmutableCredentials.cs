@@ -52,9 +52,10 @@ namespace Amazon.Runtime
         /// <param name="expiration"></param>
         /// <param name="accountId"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public SSOImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : base(awsAccessKeyId, awsSecretAccessKey, token)
+        public SSOImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, DateTime expiration, string accountId) : base(awsAccessKeyId, awsSecretAccessKey, token, accountId)
         {
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
+            Expiration = expiration;
             AccountId = accountId;
         }
 
