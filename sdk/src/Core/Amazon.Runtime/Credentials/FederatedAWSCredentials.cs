@@ -14,20 +14,19 @@
  */
 
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.CredentialManagement.Internal;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
-using Amazon.Util;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
-using ThirdParty.RuntimeBackports;
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Net;
 using System.Threading.Tasks;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime
 {
@@ -45,7 +44,6 @@ namespace Amazon.Runtime
         private static readonly RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
         private static readonly TimeSpan MaximumCredentialTimespan = TimeSpan.FromHours(1);
         private static readonly TimeSpan DefaultPreemptExpiryTime = TimeSpan.FromMinutes(15);
-
         private readonly SAMLRoleSessionManager sessionManager = new SAMLRoleSessionManager();
 
         /// <summary>
@@ -79,6 +77,7 @@ namespace Amazon.Runtime
             SAMLEndpoint = samlEndpoint ?? throw new ArgumentNullException("samlEndpoint");
             RoleArn = roleArn;
             PreemptExpiryTime = DefaultPreemptExpiryTime;
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_FEDERATION_TOKEN;
         }
 
         /// <summary>

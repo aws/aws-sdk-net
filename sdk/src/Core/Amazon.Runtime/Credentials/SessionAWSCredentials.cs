@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -38,17 +39,16 @@ namespace Amazon.Runtime
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException("token");
 
             _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token);
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_SESSION_TOKEN;
         }
 
         #endregion
-
 
         #region Credentials data
 
         private ImmutableCredentials _lastCredentials;
 
         #endregion
-
 
         #region Abstract class overrides
 

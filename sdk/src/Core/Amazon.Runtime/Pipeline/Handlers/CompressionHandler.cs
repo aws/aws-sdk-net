@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Compression;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime.Internal
 {
@@ -74,8 +75,16 @@ namespace Amazon.Runtime.Internal
                 return;
             }
 
-            var compressionAlgorithm = CompressionFactory.GetCompressionAlgorithm(request.CompressionAlgorithm);
+            switch (request.CompressionAlgorithm)
+            {
+                case CompressionEncodingAlgorithm.gzip:
+                    executionContext.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.GZIP_REQUEST_COMPRESSION);
+                    break;
+                default:
+                    break;
+            }
 
+            var compressionAlgorithm = CompressionFactory.GetCompressionAlgorithm(request.CompressionAlgorithm);
             if (request.ContentStream != null)
             {
                 request.ContentStream = new CompressionWrapperStream(request.ContentStream, compressionAlgorithm);

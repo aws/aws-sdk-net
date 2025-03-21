@@ -21,24 +21,9 @@ namespace Amazon.Runtime.Internal.UserAgent
     public class UserAgentFeatureId : ConstantClass
     {
         /// <summary>
-        /// An operation called using a C2j Resource model.
-        /// </summary>
-        public static readonly UserAgentFeatureId RESOURCE_MODEL = new UserAgentFeatureId("A");
-
-        /// <summary>
-        /// An operation called using a waiter.
-        /// </summary>
-        public static readonly UserAgentFeatureId WAITER = new UserAgentFeatureId("B");
-
-        /// <summary>
         /// An operation called using a paginator.
         /// </summary>
         public static readonly UserAgentFeatureId PAGINATOR = new UserAgentFeatureId("C");
-
-        /// <summary>
-        /// An operation called using the legacy retry mode.
-        /// </summary>
-        public static readonly UserAgentFeatureId RETRY_MODE_LEGACY = new UserAgentFeatureId("D");
 
         /// <summary>
         /// An operation called using the standard retry mode.
@@ -56,34 +41,14 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId S3_TRANSFER = new UserAgentFeatureId("G");
 
         /// <summary>
-        /// An operation called using the S3 Encryption Client V1.
-        /// </summary>
-        public static readonly UserAgentFeatureId S3_CRYPTO_V1N = new UserAgentFeatureId("H");
-
-        /// <summary>
-        /// An operation called using the S3 Encryption Client V2.
-        /// </summary>
-        public static readonly UserAgentFeatureId S3_CRYPTO_V2 = new UserAgentFeatureId("I");
-
-        /// <summary>
         /// An operation called using the S3 Express feature.
         /// </summary>
         public static readonly UserAgentFeatureId S3_EXPRESS_BUCKET = new UserAgentFeatureId("J");
 
         /// <summary>
-        /// An operation called using the S3 Access Grants feature.
-        /// </summary>
-        public static readonly UserAgentFeatureId S3_ACCESS_GRANTS = new UserAgentFeatureId("K");
-
-        /// <summary>
         /// An operation called using GZIP request compression.
         /// </summary>
         public static readonly UserAgentFeatureId GZIP_REQUEST_COMPRESSION = new UserAgentFeatureId("L");
-
-        /// <summary>
-        /// An operation called using the Smithy RPC v2 CBOR protocol.
-        /// </summary>
-        public static readonly UserAgentFeatureId PROTOCOL_RPC_V2_CBOR = new UserAgentFeatureId("M");
 
         /// <summary>
         /// An operation called using a user provided endpoint URL.
@@ -171,11 +136,6 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId CREDENTIALS_CODE = new UserAgentFeatureId("e");
 
         /// <summary>
-        /// An operation called using credentials resolved from JVM system properties.
-        /// </summary>
-        public static readonly UserAgentFeatureId CREDENTIALS_JVM_SYSTEM_PROPERTIES = new UserAgentFeatureId("f");
-
-        /// <summary>
         /// An operation called using credentials resolved from environment variables.
         /// </summary>
         public static readonly UserAgentFeatureId CREDENTIALS_ENV_VARS = new UserAgentFeatureId("g");
@@ -189,11 +149,6 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// An operation called using credentials resolved from STS using assume role.
         /// </summary>
         public static readonly UserAgentFeatureId CREDENTIALS_STS_ASSUME_ROLE = new UserAgentFeatureId("i");
-
-        /// <summary>
-        /// An operation called using credentials resolved from STS using assume role with SAML.
-        /// </summary>
-        public static readonly UserAgentFeatureId CREDENTIALS_STS_ASSUME_ROLE_SAML = new UserAgentFeatureId("j");
 
         /// <summary>
         /// An operation called using credentials resolved from STS using assume role with web identity.
@@ -259,11 +214,6 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// An operation called using credentials resolved from a process.
         /// </summary>
         public static readonly UserAgentFeatureId CREDENTIALS_PROCESS = new UserAgentFeatureId("w");
-
-        /// <summary>
-        /// An operation called using credentials resolved from the credentials section of a boto2 config file.
-        /// </summary>
-        public static readonly UserAgentFeatureId CREDENTIALS_BOTO2_CONFIG_FILE = new UserAgentFeatureId("x");
 
         /// <summary>
         /// An operation called using credentials resolved from a profile in an AWS SDK store.
