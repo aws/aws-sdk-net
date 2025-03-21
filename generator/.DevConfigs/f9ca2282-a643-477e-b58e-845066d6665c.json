@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Added PaginatorKey attributes to Request properties that PowerShell consumes for Auto-Iteration."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
