@@ -60,7 +60,8 @@ namespace Amazon.SSO.Internal
                 response.RoleCredentials.AccessKeyId,
                 response.RoleCredentials.SecretAccessKey,
                 response.RoleCredentials.SessionToken,
-                credentialsExpiration);
+                credentialsExpiration,
+                accountId);
         }
 
         /// <summary>
@@ -105,7 +106,8 @@ namespace Amazon.SSO.Internal
                 response.RoleCredentials.AccessKeyId,
                 response.RoleCredentials.SecretAccessKey,
                 response.RoleCredentials.SessionToken,
-                credentialsExpiration);
+                credentialsExpiration,
+                accountId);
         }
 
         /// <summary>

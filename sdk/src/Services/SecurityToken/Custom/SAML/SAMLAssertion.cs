@@ -116,10 +116,10 @@ namespace Amazon.SecurityToken.SAML
 #else
             var response =  stsClient.AssumeRoleWithSAML(assumeSamlRequest);
 #endif
-
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
                                                 response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
-                                                response.Subject);
+                                                response.Subject,
+                                                response.AssumedRoleUser != null ? Arn.Parse(response.AssumedRoleUser.Arn).AccountId : null);
         }
 
         /// <summary>

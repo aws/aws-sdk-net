@@ -214,7 +214,6 @@ namespace AWSSDK.UnitTests
         {
             AccessKey = "basic_aws_access_key_id",
             SecretKey = "basic_aws_secret_access_key",
-            Services = "foo"
         };
 
         private static readonly string BasicProfileTextCredentialsPrecedence = new StringBuilder()
@@ -541,7 +540,7 @@ namespace AWSSDK.UnitTests
                     { "name", "value" },
                     { "name2", "value2" }
                 };
-                tester.ReadAndAssertProfile("bar", BasicProfileOptionsWithServices, expectedProperties);
+                tester.ReadAndAssertProfile("bar", BasicProfileOptions, expectedProperties);
             }
         }
 
