@@ -20,7 +20,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.Json;
 
-//Add constructor for account id here?
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -64,7 +63,7 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Constructs an instance with supplied keys and SAML assertion data.
+        /// Constructs an instance with supplied keys SAML assertion data, and an account id
         /// </summary>
         /// <param name="awsAccessKeyId"></param>
         /// <param name="awsSecretAccessKey"></param>
@@ -84,7 +83,7 @@ namespace Amazon.Runtime
             Subject = subject;
         }
         /// <summary>
-        /// Constructs an instance with supplied keys and SAML assertion data and an accountId.
+        /// Constructs an instance with supplied keys and SAML assertion data and an account id.
         /// </summary>
         /// <param name="credentials"></param>
         /// <param name="expires"></param>
@@ -111,7 +110,6 @@ namespace Amazon.Runtime
             : this(credentials, expires, subject, null)
         {
         }
-
 
         #endregion
 

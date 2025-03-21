@@ -15,7 +15,6 @@
 **/Temp/
 **/buildlogs/
 **/.vs/
-sdk/test/UnitTests/Custom/Util/get_credentials.bat
 
 **/*project.lock.json
 **/project.lock.json

@@ -37,8 +37,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
-using System.CodeDom;
-
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -838,30 +836,6 @@ namespace Amazon.Util
         public static void CopyStream(Stream source, Stream destination, int bufferSize)
         {
             source.CopyTo(destination, bufferSize);
-        }
-
-        /// <summary>
-        /// Utility method to get an account id from an assume role arn. For example
-        /// arn:aws:sts::account_id:assumed-role/assume-role-integration-test-role
-        /// </summary>
-        /// <param name="assumeRoleArn"></param>
-        /// <returns></returns>
-        public static string GetAccountIdFromAssumeRoleArn(string assumeRoleArn)
-        {
-            if (string.IsNullOrEmpty(assumeRoleArn))
-                throw new ArgumentNullException("assumeRoleArn");
-            
-            // everything between the first :: and the next :
-            int start = assumeRoleArn.IndexOf("::");
-            if (start == 0)
-                throw new InvalidDataException("Arn not in expected format. please pass in a properly formatted arn");
-                
-            //all aws account id's are 12 digits
-            string accountId = assumeRoleArn.Substring(start + 2, 12);
-            //validate
-            if (accountId.Any(x => (int)x < 48 || (int)x > 57 ))
-                throw new InvalidDataException("account id's must only contain integers");
-            return accountId;
         }
 #endregion
 

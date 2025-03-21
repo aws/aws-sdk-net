@@ -43,7 +43,6 @@ namespace AWSSDK.UnitTests
         [TestCategory("SecurityToken")]
         public void LookForProfileTypeChanges()
         {
-            //1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB
             var expectedHash = "1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB";
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),
