@@ -28,8 +28,6 @@ namespace Amazon.Runtime
     /// </summary>
     public class AppConfigAWSCredentials : AWSCredentials
     {
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_CODE;
-
         private const string ACCESSKEY = "AWSAccessKey";
         private const string SECRETKEY = "AWSSecretKey";
 
@@ -69,7 +67,10 @@ namespace Amazon.Runtime
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "The app.config/web.config files for the application did not contain credential information"));
             }
+
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_CODE;
         }
+
         #endregion
 
         #region Abstract class overrides

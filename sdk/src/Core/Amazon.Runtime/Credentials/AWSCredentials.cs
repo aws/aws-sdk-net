@@ -27,11 +27,11 @@ namespace Amazon.Runtime
         /// Internal property that can be used to specify how this instance of AWS credentials were resolved.
         /// </summary>
         /// <remarks>
-        /// Credential providers MUST override this property to have their specific feature ID tracked.
+        /// Credential providers MUST set this property to have their specific feature ID tracked.
         /// <para />
         /// If null, no value will be included in the user agent header.
         /// </remarks>
-        internal virtual UserAgentFeatureId FeatureIdSource { get; set; }
+        internal UserAgentFeatureId FeatureIdSource { get; set; }
 
         /// <summary>
         /// Returns a copy of ImmutableCredentials

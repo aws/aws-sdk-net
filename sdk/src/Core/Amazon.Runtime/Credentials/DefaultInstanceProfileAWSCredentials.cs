@@ -78,11 +78,14 @@ namespace Amazon.Runtime
         private DefaultInstanceProfileAWSCredentials()
         {
             // if IMDS is turned off, no need to spin up the timer task
-            if (!EC2InstanceMetadata.IsIMDSEnabled) return;
+            if (!EC2InstanceMetadata.IsIMDSEnabled)
+            {
+                return;
+            }
 
             _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
-            
             _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_IMDS;
         }
 
         #region Overrides
@@ -264,8 +267,6 @@ namespace Amazon.Runtime
 
             return credentials;
         }
-
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_IMDS;
 
         #endregion
 

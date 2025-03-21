@@ -84,13 +84,13 @@ namespace Amazon.Runtime
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
+
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROCESS;
         }
 
         #endregion
 
         #region Protected overridden methods
-
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_PROCESS;
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {

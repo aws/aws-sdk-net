@@ -32,8 +32,6 @@ namespace Amazon.Runtime
     /// </remarks>
     public class EnvironmentVariablesAWSCredentials : AWSCredentials
     {
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_ENV_VARS;
-
         // these variable names are standard across all AWS SDKs that support reading keys from
         // environment variables
         public const string ENVIRONMENT_VARIABLE_ACCESSKEY = "AWS_ACCESS_KEY_ID";
@@ -58,6 +56,8 @@ namespace Amazon.Runtime
 
             // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
             FetchCredentials();
+
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_ENV_VARS;
         }
 
         #endregion

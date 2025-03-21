@@ -66,12 +66,11 @@ namespace Amazon.Runtime
 
         internal Uri ResolvedEndpointUri { get; private set; }
 
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_HTTP;
-
         public GenericContainerCredentials()
         {
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
             DetermineEndpoint();
+            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_HTTP;
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

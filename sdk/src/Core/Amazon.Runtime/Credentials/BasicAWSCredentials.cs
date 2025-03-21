@@ -42,6 +42,7 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(accessKey))
             {
                 _credentials = new ImmutableCredentials(accessKey, secretKey, null);
+                FeatureIdSource = UserAgentFeatureId.CREDENTIALS_CODE;
             }
         }
 
@@ -60,8 +61,6 @@ namespace Amazon.Runtime
 
             return _credentials.Copy();
         }
-
-        internal override UserAgentFeatureId FeatureIdSource => UserAgentFeatureId.CREDENTIALS_CODE;
 
         #endregion
 
