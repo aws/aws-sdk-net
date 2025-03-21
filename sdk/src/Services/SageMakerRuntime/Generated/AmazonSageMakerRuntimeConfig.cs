@@ -32,7 +32,7 @@ namespace Amazon.SageMakerRuntime
     public partial class AmazonSageMakerRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime", "3.7.401.100");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Runtime", "3.7.401.101");
 
         private string _userAgent = UserAgentString;
         ///<summary>

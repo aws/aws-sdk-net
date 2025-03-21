@@ -1,3 +1,19 @@
+### 3.7.1007.0 (2025-03-21 18:25 UTC)
+* Bedrock (3.7.417.0)
+	* A CustomModelUnit(CMU) is an abstract view of the hardware utilization that Bedrock needs to host a a single copy of your custom imported model. Bedrock determines the number of CMUs that a model copy needs when you import the custom model. You can use CMUs to estimate the cost of Inference's.
+* DataZone (3.7.410.0)
+	* Add support for overriding selection of default AWS IAM Identity Center instance as part of Amazon DataZone domain APIs.
+* Route53RecoveryControlConfig (3.7.401.0)
+	* Adds dual-stack (IPv4 and IPv6) endpoint support for route53-recovery-control-config operations, opt-in dual-stack addresses for cluster endpoints, and UpdateCluster API to update the network-type of clusters between IPv4 and dual-stack.
+* S3 (3.7.415.23)
+	* Removed customization for S3 HeadBucket to make it public.
+* SageMaker (3.7.430.0)
+	* This release does the following: 1.) Adds DurationHours as a required field to the SearchTrainingPlanOfferings action in the SageMaker AI API; 2.) Adds support for G6e instance types for SageMaker AI inference optimization jobs.
+* Core 3.7.402.24
+	* Implement MultiSelect List and Flatten Operator in operation context param expressions
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1006.0 (2025-03-20 18:39 UTC)
 * Amplify (3.7.406.0)
 	* Added appId field to Webhook responses

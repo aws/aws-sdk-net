@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Implement MultiSelect List and Flatten Operator in operation context param expressions"
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
