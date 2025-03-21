@@ -66,7 +66,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sparseSetMap", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.SparseSetMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
