@@ -54,13 +54,13 @@ namespace Amazon.Runtime
 
         #region Public constructors
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
-        public ProcessAWSCredentials(string processCredentialInfo)
+        public ProcessAWSCredentials(string processCredentialInfo) : this(processCredentialInfo, null)
         {
 
         }
 
 
-        public ProcessAWSCredentials(string processCredentialInfo, string accountId) : this(processCredentialInfo, null)
+        public ProcessAWSCredentials(string processCredentialInfo, string accountId)
         {
             processCredentialInfo = processCredentialInfo.Trim();
 
