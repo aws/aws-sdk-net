@@ -41,6 +41,7 @@ namespace SDKDocGenerator
         public const string RedirectFileName = @"package.redirects.conf";
         public const string DocPathPrefix    = @"/sdkfornet/v3/apidocs/index.html?page=";
         public const string ToolId           = @"DotNetSDKV3";
+        private const string DocIndexPath = @"sdkfornet/v3/apidocs";
         
         private static Regex UrlPattern = new Regex(".*/WebAPI/(.*)/(.*)");
         private static IDictionary<string, ISet<RewriteRule>> _rulesForServices = new SortedDictionary<string, ISet<RewriteRule>>();
@@ -49,6 +50,10 @@ namespace SDKDocGenerator
         {
             using (StreamWriter writer = new StreamWriter(stream))
             {
+                // Rule to redirect Index.html requests to index.html instead.
+                writer.WriteLine(string.Format(@"RewriteCond ""%{{REQUEST_URI}}"" ""^/{0}/Index.html$""", DocIndexPath));
+                writer.WriteLine(string.Format(@"RewriteRule ^{0}/Index.html$ ""{0}/index.html"" [L,R,NE]", DocIndexPath));
+
                 int totalRuleCount = 0;
                 foreach (var service in _rulesForServices)
                 {
