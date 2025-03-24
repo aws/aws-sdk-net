@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _bridgeArn;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to delete.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the bridge that you want to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn

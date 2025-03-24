@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Configures settings for the FrozenFrames metric.
+    /// Configures settings for the <c>FrozenFrames</c> metric.
     /// </summary>
     public partial class FrozenFrames
     {
@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private int? _thresholdSeconds;
 
         /// <summary>
-        /// Gets and sets the property State. Indicates whether the FrozenFrames metric is enabled
-        /// or disabled.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Indicates whether the <c>FrozenFrames</c> metric is enabled or disabled.
+        /// </para>
         /// </summary>
         public State State
         {
@@ -54,8 +56,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThresholdSeconds. Specifies the number of consecutive seconds
-        /// of a static image that triggers an event or alert.
+        /// Gets and sets the property ThresholdSeconds. 
+        /// <para>
+        ///  Specifies the number of consecutive seconds of a static image that triggers an event
+        /// or alert.
+        /// </para>
         /// </summary>
         public int? ThresholdSeconds
         {

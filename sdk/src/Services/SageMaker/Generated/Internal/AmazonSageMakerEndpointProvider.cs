@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Internal
                             }
                             if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
-                                return new Endpoint(Interpolate(@"https://api.sagemaker.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                return new Endpoint(Interpolate(@"https://api-fips.sagemaker.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
                             return new Endpoint(Interpolate(@"https://api.sagemaker-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }

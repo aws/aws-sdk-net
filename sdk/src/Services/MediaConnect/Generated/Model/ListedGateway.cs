@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Provides a summary of a gateway, including its name, ARN, and status.
+    /// A summary of a gateway, including its name, ARN, and status.
     /// </summary>
     public partial class ListedGateway
     {
@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property GatewayArn. The Amazon Resource Name (ARN) of the gateway.
+        /// Gets and sets the property GatewayArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the gateway.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayArn
@@ -55,7 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayState.
+        /// Gets and sets the property GatewayState. 
+        /// <para>
+        ///  The status of the gateway.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public GatewayState GatewayState
@@ -71,7 +77,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the gateway.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the gateway.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

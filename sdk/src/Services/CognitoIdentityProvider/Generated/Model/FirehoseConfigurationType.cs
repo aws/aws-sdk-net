@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Configuration for the Amazon Data Firehose stream destination of user activity log
-    /// export with advanced security features.
+    /// export with threat protection.
     /// </summary>
     public partial class FirehoseConfigurationType
     {
@@ -40,8 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property StreamArn. 
         /// <para>
-        /// The ARN of an Amazon Data Firehose stream that's the destination for advanced security
-        /// features log export.
+        /// The ARN of an Amazon Data Firehose stream that's the destination for threat protection
+        /// log export.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

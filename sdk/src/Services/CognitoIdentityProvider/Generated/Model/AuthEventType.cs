@@ -30,14 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// One authentication event that Amazon Cognito logged in a user pool with advanced security
-    /// features active. Contains user and device metadata and a risk assessment from your
-    /// user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.
-    /// </para>
+    /// One authentication event that Amazon Cognito logged in a user pool with threat protection
+    /// active. Contains user and device metadata and a risk assessment from your user pool.
     /// </summary>
     public partial class AuthEventType
     {
@@ -111,13 +105,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventFeedback. 
         /// <para>
-        /// The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html">UpdateAuthEventFeedback</a>
-        /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html">AdminUpdateAuthEventFeedback</a>
-        /// feedback that you or your user provided in response to the event. A value of <c>Valid</c>
-        /// indicates that you disagreed with the level of risk that your user pool assigned,
-        /// and evaluated a session to be valid, or likely safe. A value of <c>Invalid</c> indicates
-        /// that you agreed with the user pool risk level and evaluated a session to be invalid,
-        /// or likely malicious.
+        /// The <c>UpdateAuthEventFeedback</c> or <c>AdminUpdateAuthEventFeedback</c> feedback
+        /// that you or your user provided in response to the event. A value of <c>Valid</c> indicates
+        /// that you disagreed with the level of risk that your user pool assigned, and evaluated
+        /// a session to be valid, or likely safe. A value of <c>Invalid</c> indicates that you
+        /// agreed with the user pool risk level and evaluated a session to be invalid, or likely
+        /// malicious.
         /// </para>
         /// </summary>
         public EventFeedbackType EventFeedback

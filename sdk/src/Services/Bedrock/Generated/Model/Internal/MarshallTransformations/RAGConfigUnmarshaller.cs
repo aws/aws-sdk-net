@@ -62,6 +62,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.KnowledgeBaseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("precomputedRagSourceConfig", targetDepth))
+                {
+                    var unmarshaller = EvaluationPrecomputedRagSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.PrecomputedRagSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

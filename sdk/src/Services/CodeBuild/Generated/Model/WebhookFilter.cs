@@ -91,9 +91,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are nine webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
+        ///  The type of webhook filter. There are 11 webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
         /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, <c>COMMIT_MESSAGE</c>, <c>TAG_NAME</c>,
-        /// <c>RELEASE_NAME</c>, and <c>WORKFLOW_NAME</c>. 
+        /// <c>RELEASE_NAME</c>, <c>REPOSITORY_NAME</c>, <c>ORGANIZATION_NAME</c>, and <c>WORKFLOW_NAME</c>.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -163,9 +164,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
-        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-        /// request events. 
+        ///  Works with push and pull request events only. 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
@@ -178,9 +177,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
-        /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-        /// request events. 
+        ///  Works with push and pull request events only. 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
@@ -214,11 +211,24 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         /// A webhook triggers a build when the repository name matches the regular expression
-        /// pattern.
+        /// <c>pattern</c>.
         /// </para>
         ///  <note> 
         /// <para>
         ///  Works with GitHub global or organization webhooks only. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// ORGANIZATION_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the organization name matches the regular expression
+        /// <c>pattern</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with GitHub global webhooks only. 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>

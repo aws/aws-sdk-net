@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayArn;
 
         /// <summary>
-        /// Gets and sets the property GatewayArn. The ARN of the gateway that you want to delete.
+        /// Gets and sets the property GatewayArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the gateway that you want to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayArn

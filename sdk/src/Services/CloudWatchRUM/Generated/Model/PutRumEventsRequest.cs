@@ -42,11 +42,35 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class PutRumEventsRequest : AmazonCloudWatchRUMRequest
     {
+        private string _alias;
         private AppMonitorDetails _appMonitorDetails;
         private string _batchId;
         private string _id;
         private List<RumEvent> _rumEvents = AWSConfigs.InitializeCollections ? new List<RumEvent>() : null;
         private UserDetails _userDetails;
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// If the app monitor uses a resource-based policy that requires <c>PutRumEvents</c>
+        /// requests to specify a certain alias, specify that alias here. This alias will be compared
+        /// to the <c>rum:alias</c> context key in the resource-based policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using
+        /// resource-based policies with CloudWatch RUM</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AppMonitorDetails. 

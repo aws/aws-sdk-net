@@ -38,8 +38,11 @@ namespace Amazon.MediaConnect.Model
         private VpcInterfaceAttachment _flowVpcInterfaceAttachment;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the cloud flow to use as a source of
-        /// this bridge.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that identifies the MediaConnect resource from which
+        /// to delete tags.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,8 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowVpcInterfaceAttachment. The name of the VPC interface
-        /// attachment to use for this source.
+        /// Gets and sets the property FlowVpcInterfaceAttachment. 
+        /// <para>
+        /// The name of the VPC interface attachment to use for this source. 
+        /// </para>
         /// </summary>
         public VpcInterfaceAttachment FlowVpcInterfaceAttachment
         {

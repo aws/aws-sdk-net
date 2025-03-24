@@ -2741,6 +2741,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly WebhookFilterType HEAD_REF = new WebhookFilterType("HEAD_REF");
         /// <summary>
+        /// Constant ORGANIZATION_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType ORGANIZATION_NAME = new WebhookFilterType("ORGANIZATION_NAME");
+        /// <summary>
         /// Constant RELEASE_NAME for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");

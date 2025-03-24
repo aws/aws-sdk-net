@@ -54,7 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the token that you want to revoke.
+        /// The ID of the app client where the token that you want to revoke was issued.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -73,7 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientSecret. 
         /// <para>
-        /// The secret for the client ID. This is required only if the client ID has a secret.
+        /// The client secret of the requested app client, if the client has a secret.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]

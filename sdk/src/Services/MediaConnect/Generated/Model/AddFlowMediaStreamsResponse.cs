@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStream> _mediaStreams = AWSConfigs.InitializeCollections ? new List<MediaStream>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that you added media streams
-        /// to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that you added media streams to.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreams. The media streams that you added to the flow.
+        /// Gets and sets the property MediaStreams. 
+        /// <para>
+        ///  The media streams that you added to the flow.
+        /// </para>
         /// </summary>
         public List<MediaStream> MediaStreams
         {

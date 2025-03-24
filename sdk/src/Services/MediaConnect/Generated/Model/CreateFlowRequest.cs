@@ -38,9 +38,11 @@ namespace Amazon.MediaConnect.Model
     {
         private string _availabilityZone;
         private List<GrantEntitlementRequest> _entitlements = AWSConfigs.InitializeCollections ? new List<GrantEntitlementRequest>() : null;
+        private FlowSize _flowSize;
         private AddMaintenance _maintenance;
         private List<AddMediaStreamRequest> _mediaStreams = AWSConfigs.InitializeCollections ? new List<AddMediaStreamRequest>() : null;
         private string _name;
+        private NdiConfig _ndiConfig;
         private List<AddOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddOutputRequest>() : null;
         private SetSourceRequest _source;
         private FailoverConfig _sourceFailoverConfig;
@@ -49,9 +51,11 @@ namespace Amazon.MediaConnect.Model
         private List<VpcInterfaceRequest> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterfaceRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZone. The Availability Zone that you want to
-        /// create the flow in. These options are limited to the Availability Zones within the
-        /// current AWS Region.
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  The Availability Zone that you want to create the flow in. These options are limited
+        /// to the Availability Zones within the current Amazon Web Services Region.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -66,8 +70,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Entitlements. The entitlements that you want to grant on
-        /// a flow.
+        /// Gets and sets the property Entitlements. 
+        /// <para>
+        ///  The entitlements that you want to grant on a flow.
+        /// </para>
         /// </summary>
         public List<GrantEntitlementRequest> Entitlements
         {
@@ -82,7 +88,29 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Maintenance.
+        /// Gets and sets the property FlowSize. 
+        /// <para>
+        ///  Determines the processing capacity and feature set of the flow. Set this optional
+        /// parameter to <c>LARGE</c> if you want to enable NDI outputs on the flow. 
+        /// </para>
+        /// </summary>
+        public FlowSize FlowSize
+        {
+            get { return this._flowSize; }
+            set { this._flowSize = value; }
+        }
+
+        // Check to see if FlowSize property is set
+        internal bool IsSetFlowSize()
+        {
+            return this._flowSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance. 
+        /// <para>
+        ///  The maintenance settings you want to use for the flow. 
+        /// </para>
         /// </summary>
         public AddMaintenance Maintenance
         {
@@ -97,8 +125,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreams. The media streams that you want to add to
-        /// the flow. You can associate these media streams with sources and outputs on the flow.
+        /// Gets and sets the property MediaStreams. 
+        /// <para>
+        ///  The media streams that you want to add to the flow. You can associate these media
+        /// streams with sources and outputs on the flow.
+        /// </para>
         /// </summary>
         public List<AddMediaStreamRequest> MediaStreams
         {
@@ -113,7 +144,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -129,7 +163,29 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. The outputs that you want to add to this flow.
+        /// Gets and sets the property NdiConfig. 
+        /// <para>
+        ///  Specifies the configuration settings for NDI outputs. Required when the flow includes
+        /// NDI outputs. 
+        /// </para>
+        /// </summary>
+        public NdiConfig NdiConfig
+        {
+            get { return this._ndiConfig; }
+            set { this._ndiConfig = value; }
+        }
+
+        // Check to see if NdiConfig property is set
+        internal bool IsSetNdiConfig()
+        {
+            return this._ndiConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Outputs. 
+        /// <para>
+        ///  The outputs that you want to add to this flow.
+        /// </para>
         /// </summary>
         public List<AddOutputRequest> Outputs
         {
@@ -144,7 +200,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source.
+        /// Gets and sets the property Source. 
+        /// <para>
+        ///  The settings for the source that you want to use for the new flow. 
+        /// </para>
         /// </summary>
         public SetSourceRequest Source
         {
@@ -159,7 +218,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFailoverConfig.
+        /// Gets and sets the property SourceFailoverConfig. 
+        /// <para>
+        ///  The settings for source failover. 
+        /// </para>
         /// </summary>
         public FailoverConfig SourceFailoverConfig
         {
@@ -174,7 +236,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceMonitoringConfig.
+        /// Gets and sets the property SourceMonitoringConfig. 
+        /// <para>
+        ///  The settings for source monitoring. 
+        /// </para>
         /// </summary>
         public MonitoringConfig SourceMonitoringConfig
         {
@@ -189,7 +254,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// The sources that are assigned to the flow. 
+        /// </para>
         /// </summary>
         public List<SetSourceRequest> Sources
         {
@@ -204,7 +272,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaces. The VPC interfaces you want on the flow.
+        /// Gets and sets the property VpcInterfaces. 
+        /// <para>
+        ///  The VPC interfaces you want on the flow.
+        /// </para>
         /// </summary>
         public List<VpcInterfaceRequest> VpcInterfaces
         {

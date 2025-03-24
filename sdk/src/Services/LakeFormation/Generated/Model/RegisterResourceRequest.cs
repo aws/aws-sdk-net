@@ -35,8 +35,8 @@ namespace Amazon.LakeFormation.Model
     /// 
     ///  
     /// <para>
-    /// To add or update data, Lake Formation needs read/write access to the chosen Amazon
-    /// S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
+    /// To add or update data, Lake Formation needs read/write access to the chosen data location.
+    /// Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
     /// service-linked role. When you register the first Amazon S3 path, the service-linked
     /// role and a new inline policy are created on your behalf. Lake Formation adds the first
     /// path to the inline policy and attaches it to the service-linked role. When you register
@@ -67,6 +67,7 @@ namespace Amazon.LakeFormation.Model
         private string _roleArn;
         private bool? _useServiceLinkedRole;
         private bool? _withFederation;
+        private bool? _withPrivilegedAccess;
 
         /// <summary>
         /// Gets and sets the property HybridAccessEnabled. 
@@ -165,6 +166,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetWithFederation()
         {
             return this._withFederation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithPrivilegedAccess. 
+        /// <para>
+        /// Grants the calling principal the permissions to perform all supported Lake Formation
+        /// operations on the registered data location. 
+        /// </para>
+        /// </summary>
+        public bool WithPrivilegedAccess
+        {
+            get { return this._withPrivilegedAccess.GetValueOrDefault(); }
+            set { this._withPrivilegedAccess = value; }
+        }
+
+        // Check to see if WithPrivilegedAccess property is set
+        internal bool IsSetWithPrivilegedAccess()
+        {
+            return this._withPrivilegedAccess.HasValue; 
         }
 
     }

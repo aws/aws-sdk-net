@@ -64,8 +64,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetGatewayArn())
                 throw new AmazonMediaConnectException("Request object does not have required field GatewayArn set");
-            request.AddPathResource("{gatewayArn}", StringUtils.FromString(publicRequest.GatewayArn));
-            request.ResourcePath = "/v1/gateways/{gatewayArn}";
+            request.AddPathResource("{GatewayArn}", StringUtils.FromString(publicRequest.GatewayArn));
+            request.ResourcePath = "/v1/gateways/{GatewayArn}";
 
             return request;
         }

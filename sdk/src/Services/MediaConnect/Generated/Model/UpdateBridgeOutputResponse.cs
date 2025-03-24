@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private BridgeOutput _output;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge that was updated. 
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Output. The output that you updated.
+        /// Gets and sets the property Output. 
+        /// <para>
+        ///  The bridge output that was updated. 
+        /// </para>
         /// </summary>
         public BridgeOutput Output
         {

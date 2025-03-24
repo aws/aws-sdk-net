@@ -18863,6 +18863,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceManaged.
+    /// </summary>
+    public class ServiceManaged : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Alb for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged Alb = new ServiceManaged("alb");
+        /// <summary>
+        /// Constant Nlb for ServiceManaged
+        /// </summary>
+        public static readonly ServiceManaged Nlb = new ServiceManaged("nlb");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceManaged(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceManaged FindValue(string value)
+        {
+            return FindValue<ServiceManaged>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceManaged(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceState.
     /// </summary>
     public class ServiceState : ConstantClass
@@ -23410,6 +23460,184 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcCidrBlockStateCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlExclusionState.
+    /// </summary>
+    public class VpcEncryptionControlExclusionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Disabled = new VpcEncryptionControlExclusionState("disabled");
+        /// <summary>
+        /// Constant Disabling for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Disabling = new VpcEncryptionControlExclusionState("disabling");
+        /// <summary>
+        /// Constant Enabled for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Enabled = new VpcEncryptionControlExclusionState("enabled");
+        /// <summary>
+        /// Constant Enabling for VpcEncryptionControlExclusionState
+        /// </summary>
+        public static readonly VpcEncryptionControlExclusionState Enabling = new VpcEncryptionControlExclusionState("enabling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlExclusionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlExclusionState FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlExclusionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlExclusionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlMode.
+    /// </summary>
+    public class VpcEncryptionControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enforce for VpcEncryptionControlMode
+        /// </summary>
+        public static readonly VpcEncryptionControlMode Enforce = new VpcEncryptionControlMode("enforce");
+        /// <summary>
+        /// Constant Monitor for VpcEncryptionControlMode
+        /// </summary>
+        public static readonly VpcEncryptionControlMode Monitor = new VpcEncryptionControlMode("monitor");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlMode FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEncryptionControlState.
+    /// </summary>
+    public class VpcEncryptionControlState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Available = new VpcEncryptionControlState("available");
+        /// <summary>
+        /// Constant Deleted for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Deleted = new VpcEncryptionControlState("deleted");
+        /// <summary>
+        /// Constant Deleting for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState Deleting = new VpcEncryptionControlState("deleting");
+        /// <summary>
+        /// Constant EnforceFailed for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState EnforceFailed = new VpcEncryptionControlState("enforce-failed");
+        /// <summary>
+        /// Constant EnforceInProgress for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState EnforceInProgress = new VpcEncryptionControlState("enforce-in-progress");
+        /// <summary>
+        /// Constant MonitorFailed for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState MonitorFailed = new VpcEncryptionControlState("monitor-failed");
+        /// <summary>
+        /// Constant MonitorInProgress for VpcEncryptionControlState
+        /// </summary>
+        public static readonly VpcEncryptionControlState MonitorInProgress = new VpcEncryptionControlState("monitor-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEncryptionControlState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEncryptionControlState FindValue(string value)
+        {
+            return FindValue<VpcEncryptionControlState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEncryptionControlState(string value)
         {
             return FindValue(value);
         }

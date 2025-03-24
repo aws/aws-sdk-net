@@ -140,11 +140,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetReferences())
             {
                 context.Writer.WritePropertyName("References");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestReferencesKvp in publicRequest.References)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetReferences())
+=======
+                if(publicRequest.IsSetPreviousContactId())
+                {
+                    context.Writer.WritePropertyName("PreviousContactId");
+                    context.Writer.Write(publicRequest.PreviousContactId);
+                }
+
+                if(publicRequest.IsSetReferences())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
                     var publicRequestReferencesValue = publicRequestReferencesKvp.Value;

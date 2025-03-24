@@ -86,6 +86,18 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("JA3Fingerprint", targetDepth))
+                {
+                    var unmarshaller = RateLimitJA3FingerprintUnmarshaller.Instance;
+                    unmarshalledObject.JA3Fingerprint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JA4Fingerprint", targetDepth))
+                {
+                    var unmarshaller = RateLimitJA4FingerprintUnmarshaller.Instance;
+                    unmarshalledObject.JA4Fingerprint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LabelNamespace", targetDepth))
                 {
                     var unmarshaller = RateLimitLabelNamespaceUnmarshaller.Instance;

@@ -41,7 +41,10 @@ namespace Amazon.MediaConnect.Model
         private string _placementArn;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -57,7 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BridgeState.
+        /// Gets and sets the property BridgeState. 
+        /// <para>
+        /// The state of the bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public BridgeState BridgeState
@@ -73,7 +79,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BridgeType. The type of the bridge.
+        /// Gets and sets the property BridgeType. 
+        /// <para>
+        ///  The type of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeType
@@ -89,7 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the bridge.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -105,8 +117,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementArn. The ARN of the gateway associated with the
-        /// bridge.
+        /// Gets and sets the property PlacementArn. 
+        /// <para>
+        ///  The ARN of the gateway associated with the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PlacementArn

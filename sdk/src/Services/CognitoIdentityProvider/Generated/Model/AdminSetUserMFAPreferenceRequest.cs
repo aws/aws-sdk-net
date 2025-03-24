@@ -37,13 +37,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// activated. If multiple options are activated and no preference is set, a challenge
     /// to choose an MFA option will be returned during sign-in.
     /// 
-    ///  
-    /// <para>
-    /// This operation doesn't reset an existing TOTP MFA for a user. To register a new TOTP
-    /// factor for a user, make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa-totp.html">TOTP
-    /// software token MFA</a>.
-    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -79,8 +72,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// User preferences for email message MFA. Activates or deactivates email MFA and sets
         /// it as the preferred MFA method when multiple methods are available. To activate this
-        /// setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
+        /// setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
         /// </para>
         /// </summary>
         public EmailMfaSettingsType EmailMfaSettings
@@ -119,6 +112,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates
         /// TOTP MFA and sets it as the preferred MFA method when multiple methods are available.
+        /// This operation can set TOTP as a user's preferred MFA method before they register
+        /// a TOTP authenticator.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaSettingsType SoftwareTokenMfaSettings
@@ -136,7 +131,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

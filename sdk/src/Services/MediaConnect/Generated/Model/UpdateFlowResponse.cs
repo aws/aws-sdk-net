@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private Flow _flow;
 
         /// <summary>
-        /// Gets and sets the property Flow.
+        /// Gets and sets the property Flow. 
+        /// <para>
+        ///  The updated flow. 
+        /// </para>
         /// </summary>
         public Flow Flow
         {

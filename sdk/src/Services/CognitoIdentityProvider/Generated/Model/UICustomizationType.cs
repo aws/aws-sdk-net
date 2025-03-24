@@ -31,11 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// A container for the UI customization information for the hosted UI in a user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">GetUICustomization</a>.
-    /// </para>
     /// </summary>
     public partial class UICustomizationType
     {
@@ -90,9 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CSS. 
         /// <para>
-        /// The CSS values in the UI customization. To get a template with your UI customization
-        /// options, make a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUiCustomization.html">GetUiCustomization</a>
-        /// request.
+        /// The CSS values in the UI customization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-    /// for the operation for more information on the cause of this exception.
+    /// Exception raised by Elemental MediaConnect when granting the entitlement. See the
+    /// error message for the operation for more information on the cause of this exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

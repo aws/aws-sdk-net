@@ -43,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         private AccessPropertyValue _deviceTypeOsx;
         private AccessPropertyValue _deviceTypeWeb;
         private AccessPropertyValue _deviceTypeWindows;
+        private AccessPropertyValue _deviceTypeWorkSpacesThinClient;
         private AccessPropertyValue _deviceTypeZeroClient;
 
         /// <summary>
@@ -170,6 +171,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDeviceTypeWindows()
         {
             return this._deviceTypeWindows != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceTypeWorkSpacesThinClient. 
+        /// <para>
+        /// Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.
+        /// </para>
+        /// </summary>
+        public AccessPropertyValue DeviceTypeWorkSpacesThinClient
+        {
+            get { return this._deviceTypeWorkSpacesThinClient; }
+            set { this._deviceTypeWorkSpacesThinClient = value; }
+        }
+
+        // Check to see if DeviceTypeWorkSpacesThinClient property is set
+        internal bool IsSetDeviceTypeWorkSpacesThinClient()
+        {
+            return this._deviceTypeWorkSpacesThinClient != null;
         }
 
         /// <summary>

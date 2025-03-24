@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private GatewayInstance _gatewayInstance;
 
         /// <summary>
-        /// Gets and sets the property GatewayInstance.
+        /// Gets and sets the property GatewayInstance. 
+        /// <para>
+        /// The gateway instance that you requested a description of. 
+        /// </para>
         /// </summary>
         public GatewayInstance GatewayInstance
         {

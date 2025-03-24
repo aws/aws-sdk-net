@@ -30,39 +30,6 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class GeneralTests
     {
-        private static HashSet<string> NamespacesToAnalyze = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-            {
-                "Amazon.S3.Model.Internal.MarshallTransformations"
-            };
-        private static HashSet<string> TypesToIgnore = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-            {
-                "Amazon.S3.Model.Internal.MarshallTransformations.HeadBucketRequestMarshaller",
-                "Amazon.S3.Model.Internal.MarshallTransformations.HeadBucketResponseUnmarshaller"
-            };
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PublicMarshallersTest()
-        {
-            var nonPublicTypes = new List<Type>();
-            var allS3Types = typeof(Amazon.S3.AmazonS3Client).Assembly.GetTypes();
-            foreach(var s3t in allS3Types)
-            {
-                // only check some namespaces
-                if (!NamespacesToAnalyze.Contains(s3t.Namespace))
-                    continue;
-
-                // ignore specific types that we are keeping internal
-                if (TypesToIgnore.Contains(s3t.FullName))
-                    continue;
-
-                if (!s3t.IsPublic)
-                    nonPublicTypes.Add(s3t);
-            }
-
-            Assert.IsTrue(nonPublicTypes.Count == 0, "Non-public types are: " + string.Join(", ", nonPublicTypes));
-        }
-
         [TestMethod]
         [TestCategory("S3")]
         public void HandleS3EventTypeLambdaDiscrepancy()

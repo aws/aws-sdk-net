@@ -37,8 +37,10 @@ namespace Amazon.MediaConnect.Model
         private string _bridgeArn;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the deleted
-        /// bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the deleted bridge.
+        /// </para>
         /// </summary>
         public string BridgeArn
         {

@@ -1392,6 +1392,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.EbuTtDDestinationSettings.DefaultFontSize</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.EbuTtDDestinationSettings.DefaultLineHeight</property>
+    <min>80</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.EmbeddedSourceSettings.Source608ChannelNumber</property>
     <min>1</min>
     <max>4</max>

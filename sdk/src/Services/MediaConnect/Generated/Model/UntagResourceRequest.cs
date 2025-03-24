@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) that identifies
-        /// the AWS Elemental MediaConnect resource from which to delete tags.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the resource that you want to untag. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -56,7 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. The keys of the tags to be removed.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The keys of the tags to be removed. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

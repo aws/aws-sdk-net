@@ -38,6 +38,7 @@ namespace Amazon.Bedrock.Model
         private DateTime? _creationTime;
         private List<string> _evaluationTaskTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _evaluatorModelIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private EvaluationInferenceConfigSummary _inferenceConfigSummary;
         private string _jobArn;
         private string _jobName;
         private EvaluationJobType _jobType;
@@ -123,6 +124,25 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceConfigSummary. 
+        /// <para>
+        /// Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model
+        /// or Knowledge Base evaluation job.
+        /// </para>
+        /// </summary>
+        public EvaluationInferenceConfigSummary InferenceConfigSummary
+        {
+            get { return this._inferenceConfigSummary; }
+            set { this._inferenceConfigSummary = value; }
+        }
+
+        // Check to see if InferenceConfigSummary property is set
+        internal bool IsSetInferenceConfigSummary()
+        {
+            return this._inferenceConfigSummary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the evaluation job.
@@ -185,6 +205,7 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.
         /// </para>
         /// </summary>
+        [Obsolete("Inference identifiers should be retrieved from the inferenceConfigSummary")]
         [AWSProperty(Min=0, Max=2)]
         public List<string> ModelIdentifiers
         {
@@ -205,6 +226,7 @@ namespace Amazon.Bedrock.Model
         /// base evaluation job.
         /// </para>
         /// </summary>
+        [Obsolete("Inference identifiers should be retrieved from the inferenceConfigSummary")]
         [AWSProperty(Min=0, Max=1)]
         public List<string> RagIdentifiers
         {

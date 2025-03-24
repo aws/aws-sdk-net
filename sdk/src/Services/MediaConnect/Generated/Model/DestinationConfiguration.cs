@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The transport parameters that are associated with an outbound media stream.
+    /// The transport parameters that you want to associate with an outbound media stream.
     /// </summary>
     public partial class DestinationConfiguration
     {
@@ -40,8 +40,10 @@ namespace Amazon.MediaConnect.Model
         private string _outboundIp;
 
         /// <summary>
-        /// Gets and sets the property DestinationIp. The IP address where contents of the media
-        /// stream will be sent.
+        /// Gets and sets the property DestinationIp. 
+        /// <para>
+        /// The IP address where you want MediaConnect to send contents of the media stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DestinationIp
@@ -57,8 +59,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationPort. The port to use when the content of the
-        /// media stream is distributed to the output.
+        /// Gets and sets the property DestinationPort. 
+        /// <para>
+        ///  The port that you want MediaConnect to use when it distributes the media stream to
+        /// the output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? DestinationPort
@@ -74,8 +79,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Interface. The VPC interface that is used for the media
-        /// stream associated with the output.
+        /// Gets and sets the property Interface. 
+        /// <para>
+        ///  The VPC interface that you want to use for the media stream associated with the output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Interface Interface
@@ -91,10 +98,13 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundIp. The IP address that the receiver requires in
-        /// order to establish a connection with the flow. This value is represented by the elastic
-        /// network interface IP address of the VPC. This field applies only to outputs that use
-        /// the CDI or ST 2110 JPEG XS protocol.
+        /// Gets and sets the property OutboundIp. 
+        /// <para>
+        /// The IP address that the receiver requires in order to establish a connection with
+        /// the flow. This value is represented by the elastic network interface IP address of
+        /// the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS or
+        /// protocol. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OutboundIp

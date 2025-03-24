@@ -82,7 +82,15 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+<<<<<<< HEAD
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+||||||| Commit version number update changes
+=======
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DeviceKeyExistsException"))
+                {
+                    return DeviceKeyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

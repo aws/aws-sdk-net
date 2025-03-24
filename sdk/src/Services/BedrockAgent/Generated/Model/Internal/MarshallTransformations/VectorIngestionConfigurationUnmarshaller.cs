@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChunkingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("contextEnrichmentConfiguration", targetDepth))
+                {
+                    var unmarshaller = ContextEnrichmentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ContextEnrichmentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customTransformationConfiguration", targetDepth))
                 {
                     var unmarshaller = CustomTransformationConfigurationUnmarshaller.Instance;

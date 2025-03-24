@@ -77,9 +77,49 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetCredentialArn())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("credentialArn");
                 context.Writer.WriteStringValue(publicRequest.CredentialArn);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCredentialArn())
+                {
+                    context.Writer.WritePropertyName("credentialArn");
+                    context.Writer.Write(publicRequest.CredentialArn);
+                }
+
+                if(publicRequest.IsSetEcrRepositoryPrefix())
+                {
+                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
+                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCredentialArn())
+                {
+                    context.Writer.WritePropertyName("credentialArn");
+                    context.Writer.Write(publicRequest.CredentialArn);
+                }
+
+                if(publicRequest.IsSetCustomRoleArn())
+                {
+                    context.Writer.WritePropertyName("customRoleArn");
+                    context.Writer.Write(publicRequest.CustomRoleArn);
+                }
+
+                if(publicRequest.IsSetEcrRepositoryPrefix())
+                {
+                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
+                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
             if(publicRequest.IsSetEcrRepositoryPrefix())
             {
@@ -99,10 +139,26 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.UpstreamRegistry);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetUpstreamRegistryUrl())
             {
                 context.Writer.WritePropertyName("upstreamRegistryUrl");
                 context.Writer.WriteStringValue(publicRequest.UpstreamRegistryUrl);
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetUpstreamRepositoryPrefix())
+                {
+                    context.Writer.WritePropertyName("upstreamRepositoryPrefix");
+                    context.Writer.Write(publicRequest.UpstreamRepositoryPrefix);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             writer.WriteEndObject();

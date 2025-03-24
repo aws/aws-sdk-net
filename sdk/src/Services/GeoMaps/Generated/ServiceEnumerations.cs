@@ -75,6 +75,106 @@ namespace Amazon.GeoMaps
 
 
     /// <summary>
+    /// Constants used for properties of type LabelSize.
+    /// </summary>
+    public class LabelSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Large for LabelSize
+        /// </summary>
+        public static readonly LabelSize Large = new LabelSize("Large");
+        /// <summary>
+        /// Constant Small for LabelSize
+        /// </summary>
+        public static readonly LabelSize Small = new LabelSize("Small");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LabelSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelSize FindValue(string value)
+        {
+            return FindValue<LabelSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MapFeatureMode.
+    /// </summary>
+    public class MapFeatureMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for MapFeatureMode
+        /// </summary>
+        public static readonly MapFeatureMode Disabled = new MapFeatureMode("Disabled");
+        /// <summary>
+        /// Constant Enabled for MapFeatureMode
+        /// </summary>
+        public static readonly MapFeatureMode Enabled = new MapFeatureMode("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MapFeatureMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapFeatureMode FindValue(string value)
+        {
+            return FindValue<MapFeatureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapFeatureMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MapStyle.
     /// </summary>
     public class MapStyle : ConstantClass
@@ -200,6 +300,10 @@ namespace Amazon.GeoMaps
         /// Constant Satellite for StaticMapStyle
         /// </summary>
         public static readonly StaticMapStyle Satellite = new StaticMapStyle("Satellite");
+        /// <summary>
+        /// Constant Standard for StaticMapStyle
+        /// </summary>
+        public static readonly StaticMapStyle Standard = new StaticMapStyle("Standard");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

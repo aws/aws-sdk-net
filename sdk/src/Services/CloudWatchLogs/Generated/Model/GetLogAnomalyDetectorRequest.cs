@@ -31,7 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLogAnomalyDetector operation.
-    /// Retrieves information about the log anomaly detector that you specify.
+    /// Retrieves information about the log anomaly detector that you specify. The KMS key
+    /// ARN detected is valid.
     /// </summary>
     public partial class GetLogAnomalyDetectorRequest : AmazonCloudWatchLogsRequest
     {

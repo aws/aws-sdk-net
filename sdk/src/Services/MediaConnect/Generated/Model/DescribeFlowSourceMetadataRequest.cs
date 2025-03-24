@@ -31,15 +31,19 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFlowSourceMetadata operation.
-    /// Displays details of the flow's source stream. The response contains information about
-    /// the contents of the stream and its programs.
+    /// The <c>DescribeFlowSourceMetadata</c> API is used to view information about the flow's
+    /// source transport stream and programs. This API displays status messages about the
+    /// flow's source as well as details about the program's video, audio, and other data.
     /// </summary>
     public partial class DescribeFlowSourceMetadataRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn

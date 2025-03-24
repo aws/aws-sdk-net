@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _lang;
 
         /// <summary>
-        /// Gets and sets the property Fmtp. A set of parameters that define the media stream.
+        /// Gets and sets the property Fmtp. 
+        /// <para>
+        /// The settings that you want to use to define the media stream. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Fmtp Fmtp
@@ -54,8 +57,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lang. The audio language, in a format that is recognized
-        /// by the receiver.
+        /// Gets and sets the property Lang. 
+        /// <para>
+        /// The audio language, in a format that is recognized by the receiver. 
+        /// </para>
         /// </summary>
         public string Lang
         {

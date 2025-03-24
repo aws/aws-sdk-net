@@ -37,6 +37,7 @@ namespace Amazon.LakeFormation.Model
     public partial class RevokePermissionsRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
+        private Condition _condition;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _permissionsWithGrantOption = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DataLakePrincipal _principal;
@@ -61,6 +62,21 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetCatalogId()
         {
             return this._catalogId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Condition.
+        /// </summary>
+        public Condition Condition
+        {
+            get { return this._condition; }
+            set { this._condition = value; }
+        }
+
+        // Check to see if Condition property is set
+        internal bool IsSetCondition()
+        {
+            return this._condition != null;
         }
 
         /// <summary>

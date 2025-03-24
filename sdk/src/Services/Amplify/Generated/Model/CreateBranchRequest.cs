@@ -49,6 +49,7 @@ namespace Amazon.Amplify.Model
         private bool? _enableNotification;
         private bool? _enablePerformanceMode;
         private bool? _enablePullRequestPreview;
+        private bool? _enableSkewProtection;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _framework;
         private string _pullRequestEnvironmentName;
@@ -189,7 +190,7 @@ namespace Amazon.Amplify.Model
         /// The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app.
         /// The SSR Compute role allows the Amplify Hosting compute service to securely access
         /// specific Amazon Web Services resources based on the role's permissions. For more information
-        /// about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding
+        /// about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding
         /// an SSR Compute role</a> in the <i>Amplify User Guide</i>.
         /// </para>
         /// </summary>
@@ -338,6 +339,33 @@ namespace Amazon.Amplify.Model
         internal bool IsSetEnablePullRequestPreview()
         {
             return this._enablePullRequestPreview.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSkewProtection. 
+        /// <para>
+        /// Specifies whether the skew protection feature is enabled for the branch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Deployment skew protection is available to Amplify applications to eliminate version
+        /// skew issues between client and servers in web applications. When you apply skew protection
+        /// to a branch, you can ensure that your clients always interact with the correct version
+        /// of server-side assets, regardless of when a deployment occurs. For more information
+        /// about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew
+        /// protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableSkewProtection
+        {
+            get { return this._enableSkewProtection.GetValueOrDefault(); }
+            set { this._enableSkewProtection = value; }
+        }
+
+        // Check to see if EnableSkewProtection property is set
+        internal bool IsSetEnableSkewProtection()
+        {
+            return this._enableSkewProtection.HasValue; 
         }
 
         /// <summary>

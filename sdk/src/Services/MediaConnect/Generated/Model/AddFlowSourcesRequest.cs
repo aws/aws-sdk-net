@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AddFlowSources operation.
-    /// Adds Sources to flow
+    /// Adds sources to a flow.
     /// </summary>
     public partial class AddFlowSourcesRequest : AmazonMediaConnectRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private List<SetSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<SetSourceRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to mutate.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -55,7 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. A list of sources that you want to add.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        ///  A list of sources that you want to add to the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<SetSourceRequest> Sources

@@ -65,9 +65,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBridgeArn())
                 throw new AmazonMediaConnectException("Request object does not have required field BridgeArn set");
-            request.AddPathResource("{bridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
+            request.AddPathResource("{BridgeArn}", StringUtils.FromString(publicRequest.BridgeArn));
             if (!publicRequest.IsSetSourceName())
                 throw new AmazonMediaConnectException("Request object does not have required field SourceName set");
+<<<<<<< HEAD
             request.AddPathResource("{sourceName}", StringUtils.FromString(publicRequest.SourceName));
             request.ResourcePath = "/v1/bridges/{bridgeArn}/sources/{sourceName}";
 #if !NETFRAMEWORK
@@ -80,6 +81,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetFlowSource())
+||||||| Commit version number update changes
+            request.AddPathResource("{sourceName}", StringUtils.FromString(publicRequest.SourceName));
+            request.ResourcePath = "/v1/bridges/{bridgeArn}/sources/{sourceName}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{SourceName}", StringUtils.FromString(publicRequest.SourceName));
+            request.ResourcePath = "/v1/bridges/{BridgeArn}/sources/{SourceName}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             {
                 context.Writer.WritePropertyName("flowSource");
                 context.Writer.WriteStartObject();

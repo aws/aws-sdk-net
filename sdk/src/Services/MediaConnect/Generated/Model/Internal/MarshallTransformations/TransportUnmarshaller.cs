@@ -86,6 +86,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinLatency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ndiProgramName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NdiProgramName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ndiSpeedHqQuality", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NdiSpeedHqQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

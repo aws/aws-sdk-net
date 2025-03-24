@@ -44,9 +44,11 @@ namespace Amazon.MediaConnect.Model
         private List<AddBridgeSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<AddBridgeSourceRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property EgressGatewayBridge. Create a bridge with the egress bridge
-        /// type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing
-        /// MediaConnect flow and is delivered to your premises.
+        /// Gets and sets the property EgressGatewayBridge. 
+        /// <para>
+        /// An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect
+        /// flow and is delivered to your premises. 
+        /// </para>
         /// </summary>
         public AddEgressGatewayBridgeRequest EgressGatewayBridge
         {
@@ -61,9 +63,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngressGatewayBridge. Create a bridge with the ingress
-        /// bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates
-        /// at your premises and is delivered to the cloud.
+        /// Gets and sets the property IngressGatewayBridge. 
+        /// <para>
+        /// An ingress bridge is a ground-to-cloud bridge. The content originates at your premises
+        /// and is delivered to the cloud. 
+        /// </para>
         /// </summary>
         public AddIngressGatewayBridgeRequest IngressGatewayBridge
         {
@@ -78,8 +82,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the bridge. This name can not be modified
-        /// after the bridge is created.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the bridge. This name can not be modified after the bridge is created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -95,7 +101,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. The outputs that you want to add to this bridge.
+        /// Gets and sets the property Outputs. 
+        /// <para>
+        ///  The outputs that you want to add to this bridge.
+        /// </para>
         /// </summary>
         public List<AddBridgeOutputRequest> Outputs
         {
@@ -110,8 +119,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementArn. The bridge placement Amazon Resource Number
-        /// (ARN).
+        /// Gets and sets the property PlacementArn. 
+        /// <para>
+        ///  The bridge placement Amazon Resource Number (ARN).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PlacementArn
@@ -127,7 +138,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFailoverConfig. The settings for source failover.
+        /// Gets and sets the property SourceFailoverConfig. 
+        /// <para>
+        ///  The settings for source failover.
+        /// </para>
         /// </summary>
         public FailoverConfig SourceFailoverConfig
         {
@@ -142,7 +156,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. The sources that you want to add to this bridge.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        ///  The sources that you want to add to this bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<AddBridgeSourceRequest> Sources

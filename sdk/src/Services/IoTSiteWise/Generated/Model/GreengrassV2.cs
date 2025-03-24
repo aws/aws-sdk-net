@@ -39,7 +39,26 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class GreengrassV2
     {
+        private CoreDeviceOperatingSystem _coreDeviceOperatingSystem;
         private string _coreDeviceThingName;
+
+        /// <summary>
+        /// Gets and sets the property CoreDeviceOperatingSystem. 
+        /// <para>
+        /// The operating system of the core device in IoT Greengrass V2.
+        /// </para>
+        /// </summary>
+        public CoreDeviceOperatingSystem CoreDeviceOperatingSystem
+        {
+            get { return this._coreDeviceOperatingSystem; }
+            set { this._coreDeviceOperatingSystem = value; }
+        }
+
+        // Check to see if CoreDeviceOperatingSystem property is set
+        internal bool IsSetCoreDeviceOperatingSystem()
+        {
+            return this._coreDeviceOperatingSystem != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 

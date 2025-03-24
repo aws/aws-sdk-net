@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CatalogInput
     {
+        private AllowFullTableExternalDataAccessEnum _allowFullTableExternalDataAccess;
         private CatalogProperties _catalogProperties;
         private List<PrincipalPermissions> _createDatabaseDefaultPermissions = AWSConfigs.InitializeCollections ? new List<PrincipalPermissions>() : null;
         private List<PrincipalPermissions> _createTableDefaultPermissions = AWSConfigs.InitializeCollections ? new List<PrincipalPermissions>() : null;
@@ -41,6 +42,25 @@ namespace Amazon.Glue.Model
         private FederatedCatalog _federatedCatalog;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TargetRedshiftCatalog _targetRedshiftCatalog;
+
+        /// <summary>
+        /// Gets and sets the property AllowFullTableExternalDataAccess. 
+        /// <para>
+        ///  Allows third-party engines to access data in Amazon S3 locations that are registered
+        /// with Lake Formation. 
+        /// </para>
+        /// </summary>
+        public AllowFullTableExternalDataAccessEnum AllowFullTableExternalDataAccess
+        {
+            get { return this._allowFullTableExternalDataAccess; }
+            set { this._allowFullTableExternalDataAccess = value; }
+        }
+
+        // Check to see if AllowFullTableExternalDataAccess property is set
+        internal bool IsSetAllowFullTableExternalDataAccess()
+        {
+            return this._allowFullTableExternalDataAccess != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogProperties. 

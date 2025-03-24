@@ -32,13 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Settings for time-based one-time password (TOTP) multi-factor authentication (MFA)
     /// in a user pool. Enables and disables availability of this feature.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
-    /// 
-    /// </para>
     /// </summary>
     public partial class SoftwareTokenMfaConfigType
     {

@@ -83,6 +83,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetMountOptions())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("MountOptions");
                 context.Writer.WriteStartObject();
 
@@ -90,6 +91,97 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.MountOptions, context);
 
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WritePropertyName("LocationArn");
+                    context.Writer.Write(publicRequest.LocationArn);
+                }
+
+                if(publicRequest.IsSetMountOptions())
+                {
+                    context.Writer.WritePropertyName("MountOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NfsMountOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MountOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOnPremConfig())
+                {
+                    context.Writer.WritePropertyName("OnPremConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnPremConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnPremConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSubdirectory())
+                {
+                    context.Writer.WritePropertyName("Subdirectory");
+                    context.Writer.Write(publicRequest.Subdirectory);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WritePropertyName("LocationArn");
+                    context.Writer.Write(publicRequest.LocationArn);
+                }
+
+                if(publicRequest.IsSetMountOptions())
+                {
+                    context.Writer.WritePropertyName("MountOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NfsMountOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MountOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOnPremConfig())
+                {
+                    context.Writer.WritePropertyName("OnPremConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OnPremConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnPremConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetServerHostname())
+                {
+                    context.Writer.WritePropertyName("ServerHostname");
+                    context.Writer.Write(publicRequest.ServerHostname);
+                }
+
+                if(publicRequest.IsSetSubdirectory())
+                {
+                    context.Writer.WritePropertyName("Subdirectory");
+                    context.Writer.Write(publicRequest.Subdirectory);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             if(publicRequest.IsSetOnPremConfig())

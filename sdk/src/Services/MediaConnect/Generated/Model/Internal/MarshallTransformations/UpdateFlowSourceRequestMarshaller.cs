@@ -65,9 +65,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetSourceArn())
                 throw new AmazonMediaConnectException("Request object does not have required field SourceArn set");
+<<<<<<< HEAD
             request.AddPathResource("{sourceArn}", StringUtils.FromString(publicRequest.SourceArn));
             request.ResourcePath = "/v1/flows/{flowArn}/source/{sourceArn}";
 #if !NETFRAMEWORK
@@ -80,6 +81,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetDecryption())
+||||||| Commit version number update changes
+            request.AddPathResource("{sourceArn}", StringUtils.FromString(publicRequest.SourceArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/source/{sourceArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{SourceArn}", StringUtils.FromString(publicRequest.SourceArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/source/{SourceArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             {
                 context.Writer.WritePropertyName("decryption");
                 context.Writer.WriteStartObject();

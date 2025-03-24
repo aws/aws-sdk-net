@@ -31,15 +31,18 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List all tags on an AWS Elemental MediaConnect resource
+    /// List all tags on a MediaConnect resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonMediaConnectRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) that identifies
-        /// the AWS Elemental MediaConnect resource for which to list the tags.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that identifies the MediaConnect resource for which
+        /// to list the tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn

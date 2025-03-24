@@ -38,8 +38,11 @@ namespace Amazon.MediaConnect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Entitlements. A list of entitlements that have been granted
-        /// to you from other AWS accounts.
+        /// Gets and sets the property Entitlements. 
+        /// <para>
+        /// A list of entitlements that have been granted to you from other Amazon Web Services
+        /// accounts. 
+        /// </para>
         /// </summary>
         public List<ListedEntitlement> Entitlements
         {
@@ -54,11 +57,17 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that identifies which batch of results
-        /// that you want to see. For example, you submit a ListEntitlements request with MaxResults
-        /// set at 5. The service returns the first batch of results (up to 5) and a NextToken
-        /// value. To see the next batch of results, you can submit the ListEntitlements request
-        /// a second time and specify the NextToken value.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies the batch of results that you want to see. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you submit a ListEntitlements request with <c>MaxResults</c> set at 5.
+        /// The service returns the first batch of results (up to 5) and a NextToken value. To
+        /// see the next batch of results, you can submit the <c>ListEntitlements</c> request
+        /// a second time and specify the <c>NextToken</c> value. 
+        /// </para>
         /// </summary>
         public string NextToken
         {

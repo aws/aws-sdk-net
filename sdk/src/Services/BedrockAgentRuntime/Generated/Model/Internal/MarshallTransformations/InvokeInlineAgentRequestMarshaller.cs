@@ -78,9 +78,61 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetActionGroups())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("actionGroups");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestActionGroupsListValue in publicRequest.ActionGroups)
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActionGroups())
+                {
+                    context.Writer.WritePropertyName("actionGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestActionGroupsListValue in publicRequest.ActionGroups)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AgentActionGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequestActionGroupsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetBedrockModelConfigurations())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActionGroups())
+                {
+                    context.Writer.WritePropertyName("actionGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestActionGroupsListValue in publicRequest.ActionGroups)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AgentActionGroupMarshaller.Instance;
+                        marshaller.Marshall(publicRequestActionGroupsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAgentCollaboration())
+                {
+                    context.Writer.WritePropertyName("agentCollaboration");
+                    context.Writer.Write(publicRequest.AgentCollaboration);
+                }
+
+                if(publicRequest.IsSetBedrockModelConfigurations())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WriteStartObject();
 
@@ -92,10 +144,56 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetBedrockModelConfigurations())
             {
                 context.Writer.WritePropertyName("bedrockModelConfigurations");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                }
+=======
+                if(publicRequest.IsSetCollaboratorConfigurations())
+                {
+                    context.Writer.WritePropertyName("collaboratorConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCollaboratorConfigurationsListValue in publicRequest.CollaboratorConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CollaboratorConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCollaboratorConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCollaborators())
+                {
+                    context.Writer.WritePropertyName("collaborators");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCollaboratorsListValue in publicRequest.Collaborators)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CollaboratorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCollaboratorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCustomerEncryptionKeyArn())
+                {
+                    context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                    context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = InlineBedrockModelConfigurationsMarshaller.Instance;
                 marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);

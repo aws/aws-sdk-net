@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private MediaStream _mediaStream;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// media stream that you updated.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        /// The ARN of the flow that is associated with the media stream that you updated. 
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStream. The media stream that you updated.
+        /// Gets and sets the property MediaStream. 
+        /// <para>
+        /// The media stream that you updated. 
+        /// </para>
         /// </summary>
         public MediaStream MediaStream
         {

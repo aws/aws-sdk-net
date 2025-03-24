@@ -410,8 +410,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, <c>instance</c>, and
-        /// <c>slowquery</c>.
+        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, <c>instance</c>, <c>slowquery</c>,
+        /// and <c>iam-db-auth-error</c>.
         /// </para>
         ///  
         /// <para>
@@ -419,7 +419,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible value are <c>instance</c> and <c>postgresql</c>.
+        /// Possible value are <c>instance</c>, <c>postgresql</c>, and <c>iam-db-auth-error</c>.
         /// </para>
         ///  
         /// <para>

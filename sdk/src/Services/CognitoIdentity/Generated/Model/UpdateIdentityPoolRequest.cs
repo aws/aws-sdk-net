@@ -31,11 +31,16 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIdentityPool operation.
-    /// Updates an identity pool.
+    /// Updates the configuration of an identity pool.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    /// You must use AWS Developer credentials to call this API.
+    /// If you don't provide a value for a parameter, Amazon Cognito sets it to its default
+    /// value. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// You must use Amazon Web Services developer credentials to call this operation.
     /// </para>
     /// </summary>
     public partial class UpdateIdentityPoolRequest : AmazonCognitoIdentityRequest

@@ -44,6 +44,23 @@ namespace Amazon.SageMaker.Model
         /// A list of custom SageMaker AI images that are configured to run as a KernelGateway
         /// app.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of custom images are as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// On a domain level: 200
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// On a space level: 5
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// On a user profile level: 5
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=200)]
         public List<CustomImage> CustomImages

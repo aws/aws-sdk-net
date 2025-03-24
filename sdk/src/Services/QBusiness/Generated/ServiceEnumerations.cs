@@ -395,6 +395,106 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type AudioExtractionStatus.
+    /// </summary>
+    public class AudioExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AudioExtractionStatus
+        /// </summary>
+        public static readonly AudioExtractionStatus DISABLED = new AudioExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AudioExtractionStatus
+        /// </summary>
+        public static readonly AudioExtractionStatus ENABLED = new AudioExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioExtractionStatus FindValue(string value)
+        {
+            return FindValue<AudioExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AudioExtractionType.
+    /// </summary>
+    public class AudioExtractionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUMMARY for AudioExtractionType
+        /// </summary>
+        public static readonly AudioExtractionType SUMMARY = new AudioExtractionType("SUMMARY");
+        /// <summary>
+        /// Constant TRANSCRIPT for AudioExtractionType
+        /// </summary>
+        public static readonly AudioExtractionType TRANSCRIPT = new AudioExtractionType("TRANSCRIPT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioExtractionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioExtractionType FindValue(string value)
+        {
+            return FindValue<AudioExtractionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioExtractionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoSubscriptionStatus.
     /// </summary>
     public class AutoSubscriptionStatus : ConstantClass
@@ -2736,6 +2836,106 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoExtractionStatus.
+    /// </summary>
+    public class VideoExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for VideoExtractionStatus
+        /// </summary>
+        public static readonly VideoExtractionStatus DISABLED = new VideoExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for VideoExtractionStatus
+        /// </summary>
+        public static readonly VideoExtractionStatus ENABLED = new VideoExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoExtractionStatus FindValue(string value)
+        {
+            return FindValue<VideoExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoExtractionType.
+    /// </summary>
+    public class VideoExtractionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUMMARY for VideoExtractionType
+        /// </summary>
+        public static readonly VideoExtractionType SUMMARY = new VideoExtractionType("SUMMARY");
+        /// <summary>
+        /// Constant TRANSCRIPT for VideoExtractionType
+        /// </summary>
+        public static readonly VideoExtractionType TRANSCRIPT = new VideoExtractionType("TRANSCRIPT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoExtractionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoExtractionType FindValue(string value)
+        {
+            return FindValue<VideoExtractionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoExtractionType(string value)
         {
             return FindValue(value);
         }

@@ -46,13 +46,13 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property DestinationPorts. 
         /// <para>
-        /// The destination ports to inspect for. If not specified, this matches with any destination
-        /// port. This setting is only used for protocols 6 (TCP) and 17 (UDP). 
+        /// The destination port to inspect for. You can specify an individual port, for example
+        /// <c>1994</c> and you can specify a port range, for example <c>1990:1994</c>. To match
+        /// with any port, specify <c>ANY</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify individual ports, for example <c>1994</c> and you can specify port
-        /// ranges, for example <c>1990:1994</c>. 
+        /// This setting is only used for protocols 6 (TCP) and 17 (UDP). 
         /// </para>
         /// </summary>
         public List<PortRange> DestinationPorts
@@ -89,8 +89,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        /// The protocols to inspect for, specified using each protocol's assigned internet protocol
-        /// number (IANA). If not specified, this matches with any protocol. 
+        /// The protocols to inspect for, specified using the assigned internet protocol number
+        /// (IANA) for each protocol. If not specified, this matches with any protocol.
         /// </para>
         /// </summary>
         public List<int> Protocols
@@ -108,13 +108,17 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SourcePorts. 
         /// <para>
-        /// The source ports to inspect for. If not specified, this matches with any source port.
-        /// This setting is only used for protocols 6 (TCP) and 17 (UDP). 
+        /// The source port to inspect for. You can specify an individual port, for example <c>1994</c>
+        /// and you can specify a port range, for example <c>1990:1994</c>. To match with any
+        /// port, specify <c>ANY</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify individual ports, for example <c>1994</c> and you can specify port
-        /// ranges, for example <c>1990:1994</c>. 
+        ///  If not specified, this matches with any source port.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only used for protocols 6 (TCP) and 17 (UDP).
         /// </para>
         /// </summary>
         public List<PortRange> SourcePorts

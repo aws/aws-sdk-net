@@ -291,10 +291,18 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property NotEquals. 
         /// <para>
-        /// Knowledge base data sources that contain a metadata attribute whose name matches the
-        /// <c>key</c> and whose value doesn't match the <c>value</c> in this object are returned.
+        /// Knowledge base data sources are returned when:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// It contains a metadata attribute whose name matches the <c>key</c> and whose value
+        /// doesn't match the <c>value</c> in this object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key is not present in the document.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The following example would return data sources that don't contain an <c>animal</c>
         /// attribute whose value is <c>cat</c>.

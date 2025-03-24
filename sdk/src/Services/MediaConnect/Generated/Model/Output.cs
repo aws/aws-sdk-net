@@ -52,7 +52,10 @@ namespace Amazon.MediaConnect.Model
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that added this output.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge added to this output.
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -67,7 +70,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BridgePorts. The bridge output ports currently in use.
+        /// Gets and sets the property BridgePorts. 
+        /// <para>
+        ///  The bridge output ports currently in use.
+        /// </para>
         /// </summary>
         public List<int> BridgePorts
         {
@@ -82,8 +88,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
-        /// of the data transfer cost to be billed to the subscriber.
+        /// Gets and sets the property DataTransferSubscriberFeePercent. 
+        /// <para>
+        ///  Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+        /// </para>
         /// </summary>
         public int? DataTransferSubscriberFeePercent
         {
@@ -98,7 +106,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the output.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the output.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -113,7 +124,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destination. The address where you want to send the output.
+        /// Gets and sets the property Destination. 
+        /// <para>
+        ///  The address where you want to send the output.
+        /// </para>
         /// </summary>
         public string Destination
         {
@@ -128,8 +142,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption. The type of key used for the encryption. If
-        /// no keyType is provided, the service will use the default setting (static-key).
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        ///  The type of key used for the encryption. If no keyType is provided, the service will
+        /// use the default setting (static-key).
+        /// </para>
         /// </summary>
         public Encryption Encryption
         {
@@ -144,8 +161,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntitlementArn. The ARN of the entitlement on the originator''s
-        /// flow. This value is relevant only on entitled flows.
+        /// Gets and sets the property EntitlementArn. 
+        /// <para>
+        ///  The ARN of the entitlement on the originator''s flow. This value is relevant only
+        /// on entitled flows.
+        /// </para>
         /// </summary>
         public string EntitlementArn
         {
@@ -160,11 +180,14 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListenerAddress. The IP address that the receiver requires
-        /// in order to establish a connection with the flow. For public networking, the ListenerAddress
-        /// is represented by the elastic IP address of the flow. For private networking, the
-        /// ListenerAddress is represented by the elastic network interface IP address of the
-        /// VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+        /// Gets and sets the property ListenerAddress. 
+        /// <para>
+        ///  The IP address that the receiver requires in order to establish a connection with
+        /// the flow. For public networking, the ListenerAddress is represented by the elastic
+        /// IP address of the flow. For private networking, the ListenerAddress is represented
+        /// by the elastic network interface IP address of the VPC. This field applies only to
+        /// outputs that use the Zixi pull or SRT listener protocol.
+        /// </para>
         /// </summary>
         public string ListenerAddress
         {
@@ -179,9 +202,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaLiveInputArn. The input ARN of the AWS Elemental MediaLive
-        /// channel. This parameter is relevant only for outputs that were added by creating a
-        /// MediaLive input.
+        /// Gets and sets the property MediaLiveInputArn. 
+        /// <para>
+        ///  The input ARN of the MediaLive channel. This parameter is relevant only for outputs
+        /// that were added by creating a MediaLive input.
+        /// </para>
         /// </summary>
         public string MediaLiveInputArn
         {
@@ -196,8 +221,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamOutputConfigurations. The configuration for
-        /// each media stream that is associated with the output.
+        /// Gets and sets the property MediaStreamOutputConfigurations. 
+        /// <para>
+        ///  The configuration for each media stream that is associated with the output.
+        /// </para>
         /// </summary>
         public List<MediaStreamOutputConfiguration> MediaStreamOutputConfigurations
         {
@@ -212,8 +239,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the output. This value must be unique
-        /// within the current flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the output. This value must be unique within the current flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -229,7 +258,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputArn. The ARN of the output.
+        /// Gets and sets the property OutputArn. 
+        /// <para>
+        ///  The ARN of the output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OutputArn
@@ -245,8 +277,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputStatus. An indication of whether the output is transmitting
-        /// data or not.
+        /// Gets and sets the property OutputStatus. 
+        /// <para>
+        ///  An indication of whether the output is transmitting data or not.
+        /// </para>
         /// </summary>
         public OutputStatus OutputStatus
         {
@@ -261,8 +295,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. The port to use when content is distributed to this
-        /// output.
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The port to use when content is distributed to this output.
+        /// </para>
         /// </summary>
         public int? Port
         {
@@ -277,8 +313,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Transport. Attributes related to the transport stream that
-        /// are used in the output.
+        /// Gets and sets the property Transport. 
+        /// <para>
+        ///  Attributes related to the transport stream that are used in the output.
+        /// </para>
         /// </summary>
         public Transport Transport
         {
@@ -293,8 +331,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceAttachment. The name of the VPC interface attachment
-        /// to use for this output.
+        /// Gets and sets the property VpcInterfaceAttachment. 
+        /// <para>
+        ///  The name of the VPC interface attachment to use for this output.
+        /// </para>
         /// </summary>
         public VpcInterfaceAttachment VpcInterfaceAttachment
         {

@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The signing certificate.
+        /// The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

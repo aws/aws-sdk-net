@@ -32,6 +32,21 @@ namespace Amazon.DynamoDBv2.Model
         IBatchGetItemPaginator BatchGetItem(BatchGetItemRequest request);
 
         /// <summary>
+        /// Paginator for ListContributorInsights operation
+        ///</summary>
+        IListContributorInsightsPaginator ListContributorInsights(ListContributorInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        IListExportsPaginator ListExports(ListExportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        IListImportsPaginator ListImports(ListImportsRequest request);
+
+        /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
         IListTablesPaginator ListTables(ListTablesRequest request);

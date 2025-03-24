@@ -35,8 +35,28 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class MembershipPaymentConfiguration
     {
+        private MembershipJobComputePaymentConfig _jobCompute;
         private MembershipMLPaymentConfig _machineLearning;
         private MembershipQueryComputePaymentConfig _queryCompute;
+
+        /// <summary>
+        /// Gets and sets the property JobCompute. 
+        /// <para>
+        /// The payment responsibilities accepted by the collaboration member for job compute
+        /// costs.
+        /// </para>
+        /// </summary>
+        public MembershipJobComputePaymentConfig JobCompute
+        {
+            get { return this._jobCompute; }
+            set { this._jobCompute = value; }
+        }
+
+        // Check to see if JobCompute property is set
+        internal bool IsSetJobCompute()
+        {
+            return this._jobCompute != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MachineLearning. 

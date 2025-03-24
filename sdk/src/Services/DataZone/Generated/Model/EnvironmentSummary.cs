@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
+        private string _environmentConfigurationId;
         private string _environmentProfileId;
         private string _id;
         private string _name;
@@ -157,6 +158,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentConfigurationId. 
+        /// <para>
+        /// The configuration ID with which the environment is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string EnvironmentConfigurationId
+        {
+            get { return this._environmentConfigurationId; }
+            set { this._environmentConfigurationId = value; }
+        }
+
+        // Check to see if EnvironmentConfigurationId property is set
+        internal bool IsSetEnvironmentConfigurationId()
+        {
+            return this._environmentConfigurationId != null;
         }
 
         /// <summary>

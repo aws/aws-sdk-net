@@ -65,9 +65,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetMediaStreamName())
                 throw new AmazonMediaConnectException("Request object does not have required field MediaStreamName set");
+<<<<<<< HEAD
             request.AddPathResource("{mediaStreamName}", StringUtils.FromString(publicRequest.MediaStreamName));
             request.ResourcePath = "/v1/flows/{flowArn}/mediaStreams/{mediaStreamName}";
 #if !NETFRAMEWORK
@@ -103,6 +104,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             }
 
             if(publicRequest.IsSetMediaStreamType())
+||||||| Commit version number update changes
+            request.AddPathResource("{mediaStreamName}", StringUtils.FromString(publicRequest.MediaStreamName));
+            request.ResourcePath = "/v1/flows/{flowArn}/mediaStreams/{mediaStreamName}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{MediaStreamName}", StringUtils.FromString(publicRequest.MediaStreamName));
+            request.ResourcePath = "/v1/flows/{FlowArn}/mediaStreams/{MediaStreamName}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             {
                 context.Writer.WritePropertyName("mediaStreamType");
                 context.Writer.WriteStringValue(publicRequest.MediaStreamType);

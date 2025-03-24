@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-    /// for the operation for more information on the cause of this exception.
+    /// One or more of the resources in the request does not exist in the system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

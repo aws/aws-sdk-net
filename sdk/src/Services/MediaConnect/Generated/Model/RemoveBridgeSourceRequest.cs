@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _sourceName;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to update.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the bridge that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -55,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceName. The name of the bridge source that you want
-        /// to remove.
+        /// Gets and sets the property SourceName. 
+        /// <para>
+        ///  The name of the bridge source that you want to remove.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SourceName

@@ -104,11 +104,31 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SecretKey);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetServerCertificate())
             {
                 context.Writer.WritePropertyName("ServerCertificate");
                 context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
             }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetServerPort())
+                {
+                    context.Writer.WritePropertyName("ServerPort");
+                    context.Writer.Write(publicRequest.ServerPort);
+                }
+=======
+                if(publicRequest.IsSetServerHostname())
+                {
+                    context.Writer.WritePropertyName("ServerHostname");
+                    context.Writer.Write(publicRequest.ServerHostname);
+                }
+
+                if(publicRequest.IsSetServerPort())
+                {
+                    context.Writer.WritePropertyName("ServerPort");
+                    context.Writer.Write(publicRequest.ServerPort);
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
             if(publicRequest.IsSetServerPort())
             {

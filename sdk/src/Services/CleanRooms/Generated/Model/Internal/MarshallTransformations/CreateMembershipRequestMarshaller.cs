@@ -79,10 +79,33 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CollaborationIdentifier);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetDefaultResultConfiguration())
             {
                 context.Writer.WritePropertyName("defaultResultConfiguration");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetDefaultJobResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultJobResultConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDefaultResultConfiguration())
+                {
+                    context.Writer.WritePropertyName("defaultResultConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
@@ -90,10 +113,28 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetPaymentConfiguration())
             {
                 context.Writer.WritePropertyName("paymentConfiguration");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPaymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("paymentConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetJobLogStatus())
+                {
+                    context.Writer.WritePropertyName("jobLogStatus");
+                    context.Writer.Write(publicRequest.JobLogStatus);
+                }
+
+                if(publicRequest.IsSetPaymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("paymentConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = MembershipPaymentConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.PaymentConfiguration, context);

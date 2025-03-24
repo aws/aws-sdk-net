@@ -37,6 +37,11 @@ namespace Amazon.ApplicationSignals.Model
         IListServiceDependentsPaginator ListServiceDependents(ListServiceDependentsRequest request);
 
         /// <summary>
+        /// Paginator for ListServiceLevelObjectiveExclusionWindows operation
+        ///</summary>
+        IListServiceLevelObjectiveExclusionWindowsPaginator ListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request);
+
+        /// <summary>
         /// Paginator for ListServiceLevelObjectives operation
         ///</summary>
         IListServiceLevelObjectivesPaginator ListServiceLevelObjectives(ListServiceLevelObjectivesRequest request);

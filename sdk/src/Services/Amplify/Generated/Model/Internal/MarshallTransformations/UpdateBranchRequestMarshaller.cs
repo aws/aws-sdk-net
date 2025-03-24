@@ -156,11 +156,23 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.EnablePullRequestPreview.Value);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetEnvironmentVariables())
+=======
+                if(publicRequest.IsSetEnableSkewProtection())
+                {
+                    context.Writer.WritePropertyName("enableSkewProtection");
+                    context.Writer.Write(publicRequest.EnableSkewProtection);
+                }
+
+                if(publicRequest.IsSetEnvironmentVariables())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
                     var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;

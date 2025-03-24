@@ -1337,6 +1337,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M2tsSettings.AudioPtsOffsetDelta</property>
+    <min>-10000</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.M2tsSettings.Bitrate</property>
     <min>0</min>
     <max>2147483647</max>
@@ -1415,6 +1420,11 @@
     <property>Amazon.MediaConvert.Model.M3u8Settings.AudioFramesPerPes</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.M3u8Settings.AudioPtsOffsetDelta</property>
+    <min>-10000</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.M3u8Settings.MaxPcrInterval</property>

@@ -79,11 +79,28 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CatalogId);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetPermissions())
             {
                 context.Writer.WritePropertyName("Permissions");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPermissions())
+=======
+                if(publicRequest.IsSetCondition())
+                {
+                    context.Writer.WritePropertyName("Condition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Condition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPermissions())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                         context.Writer.WriteStringValue(publicRequestPermissionsListValue);
                 }

@@ -69,6 +69,22 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Paginator for ListFlowOperationResults operation
+        ///</summary>
+        public IListFlowOperationResultsPaginator ListFlowOperationResults(ListFlowOperationResultsRequest request) 
+        {
+            return new ListFlowOperationResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlowOperations operation
+        ///</summary>
+        public IListFlowOperationsPaginator ListFlowOperations(ListFlowOperationsRequest request) 
+        {
+            return new ListFlowOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRuleGroups operation
         ///</summary>
         public IListRuleGroupsPaginator ListRuleGroups(ListRuleGroupsRequest request) 

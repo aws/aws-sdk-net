@@ -123,6 +123,256 @@
 	* Updated DateTime handling to use UTC instead of local times.
 	* All services packages updated to require new Core
 
+### 3.7.1007.0 (2025-03-21 18:25 UTC)
+* Bedrock (3.7.417.0)
+	* A CustomModelUnit(CMU) is an abstract view of the hardware utilization that Bedrock needs to host a a single copy of your custom imported model. Bedrock determines the number of CMUs that a model copy needs when you import the custom model. You can use CMUs to estimate the cost of Inference's.
+* DataZone (3.7.410.0)
+	* Add support for overriding selection of default AWS IAM Identity Center instance as part of Amazon DataZone domain APIs.
+* Route53RecoveryControlConfig (3.7.401.0)
+	* Adds dual-stack (IPv4 and IPv6) endpoint support for route53-recovery-control-config operations, opt-in dual-stack addresses for cluster endpoints, and UpdateCluster API to update the network-type of clusters between IPv4 and dual-stack.
+* S3 (3.7.415.23)
+	* Removed customization for S3 HeadBucket to make it public.
+* SageMaker (3.7.430.0)
+	* This release does the following: 1.) Adds DurationHours as a required field to the SearchTrainingPlanOfferings action in the SageMaker AI API; 2.) Adds support for G6e instance types for SageMaker AI inference optimization jobs.
+* Core 3.7.402.24
+	* Implement MultiSelect List and Flatten Operator in operation context param expressions
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1006.0 (2025-03-20 18:39 UTC)
+* Amplify (3.7.406.0)
+	* Added appId field to Webhook responses
+* Bedrock (3.7.416.0)
+	* With this release, Bedrock Evaluation will now support bring your own inference responses.
+* ControlCatalog (3.7.402.70)
+	* Add ExemptAssumeRoot parameter to adapt for new AWS AssumeRoot capability.
+* MailManager (3.7.406.0)
+	* Amazon SES Mail Manager. Extended rule string and boolean expressions to support analysis in condition evaluation. Extended ingress point string expression to support analysis in condition evaluation
+* NetworkFirewall (3.7.404.0)
+	* You can now use flow operations to either flush or capture traffic monitored in your firewall's flow table.
+* Core 3.7.402.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1005.0 (2025-03-19 19:05 UTC)
+* Bedrock (3.7.415.0)
+	* Support custom prompt routers for evaluation jobs
+* DynamoDBv2 (3.7.406.4)
+	* Update paginators to use the latest paginators model file.
+	* Added check in DateTimeToEpochSeconds to inspect null value for Nullable DateTime property decorated with StoreAsEpoch attribute, where it was incorrectly relying on exception to return the entry.
+* EC2 (3.7.436.4)
+	* Doc-only updates for EC2 for March 2025.
+* Lambda (3.7.412.0)
+	* Add Ruby 3.4 (ruby3.4) support to AWS Lambda.
+* MediaConnect (3.7.404.0)
+	* This release adds support for NDI flow outputs in AWS Elemental MediaConnect. You can now send content from your MediaConnect transport streams directly to your NDI environment using the new NDI output type.
+* NeptuneGraph (3.7.405.0)
+	* Update IAM Role ARN Validation to Support Role Paths
+* RDS (3.7.410.54)
+	* Update paginators to use the latest paginators model file.
+* SageMaker (3.7.429.0)
+	* Added support for g6, g6e, m6i, c6i instance types in SageMaker Processing Jobs.
+* Core 3.7.402.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1004.0 (2025-03-18 18:27 UTC)
+* AppSync (3.7.407.0)
+	* Providing Tagging support for DomainName in AppSync
+* CleanRooms (3.7.404.0)
+	* This release adds support for PySpark jobs. Customers can now analyze data by running jobs using approved PySpark analysis templates.
+* DynamoDBv2 (3.7.406.3)
+	* Update documentation for code generated from DynamoDB Streams models
+* MediaConvert (3.7.410.0)
+	* This release adds support for AVC passthrough, the ability to specify PTS offset without padding, and an A/V segment matching feature.
+* Route53 (3.7.406.0)
+	* Amazon Route 53 now supports the iso-f regions for private DNS Amazon VPCs and cloudwatch healthchecks.
+* Core 3.7.402.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1003.0 (2025-03-17 18:32 UTC)
+* ApplicationSignals (3.7.405.0)
+	* This release adds support for adding, removing, and listing SLO time exclusion windows with the BatchUpdateExclusionWindows and ListServiceLevelObjectiveExclusionWindows APIs.
+* CloudWatchRUM (3.7.402.0)
+	* CloudWatch RUM now supports unminification of JS error stack traces.
+* GeoMaps (3.7.401.0)
+	* Provide support for vector map styles in the GetStaticMap operation.
+* TaxSettings (3.7.404.0)
+	* Adjust Vietnam PaymentVoucherNumber regex and minor API change.
+* WAFV2 (3.7.405.0)
+	* AWS WAF now lets you inspect fragments of request URIs. You can specify the scope of the URI to inspect and narrow the set of URI fragments.
+* Core 3.7.402.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1002.0 (2025-03-14 18:14 UTC)
+* CognitoIdentity (3.7.402.33)
+	* Updated API model build artifacts for identity pools
+* CognitoIdentityProvider (3.7.407.8)
+	* Minor description updates to API parameters
+* Glue (3.7.414.0)
+	* This release added AllowFullTableExternalDataAccess to glue catalog resource.
+* LakeFormation (3.7.403.0)
+	* This release added "condition" to LakeFormation OptIn APIs, also added WithPrivilegedAccess flag to RegisterResource and DescribeResource.
+* Core 3.7.402.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1001.0 (2025-03-13 22:07 UTC)
+* ACMPCA (3.7.402.0)
+	* Private Certificate Authority service now supports P521 and RSA3072 key algorithms.
+* Amplify (3.7.405.0)
+	* Introduced support for Skew Protection. Added enableSkewProtection field to createBranch and updateBranch API.
+* CloudWatchLogs (3.7.410.0)
+	* Updated CreateLogAnomalyDetector to accept only kms key arn
+* CodeBuild (3.7.413.0)
+	* AWS CodeBuild now supports webhook filtering by organization name
+* DataZone (3.7.409.0)
+	* This release adds support to update projects and environments
+* DynamoDBv2 (3.7.406.0)
+	* Generate account endpoints for DynamoDB requests using ARN-sourced account ID when available
+	* Fixed an issue where for a Nullable DateTime property decorated with StoreAsEpochLong attribute, null value was incorrectly stored as -62135596800 in DynamoDB.
+* EC2 (3.7.436.0)
+	* This release changes the CreateLaunchTemplate, CreateLaunchTemplateVersion, ModifyLaunchTemplate CLI and SDKs such that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+* IVSRealTime (3.7.405.0)
+	* IVS Real-Time now offers customers the ability to adjust the participant & composition recording segment duration
+* MediaPackageV2 (3.7.404.0)
+	* This release adds the ResetChannelState and ResetOriginEndpointState operation to reset MediaPackage V2 channel and origin endpoint. This release also adds a new field, UrlEncodeChildManifest, for HLS/LL-HLS to allow URL-encoding child manifest query string based on the requirements of AWS SigV4.
+* S3Control (3.7.406.0)
+	* Updating GetDataAccess response for S3 Access Grants to include the matched Grantee for the requested prefix
+* Core 3.7.402.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.1000.0 (2025-03-11 18:40 UTC)
+* EC2 (3.7.435.0)
+	* This release adds the GroupLongName field to the response of the DescribeAvailabilityZones API.
+* ECR (3.7.410.0)
+	* This release adds Amazon ECR to Amazon ECR pull through cache rules support.
+* ECS (3.7.408.47)
+	* This is a documentation only update for Amazon ECS to address various tickets.
+* Inspector2 (3.7.405.0)
+	* Adding componentArn to network reachability details
+* MediaLive (3.7.413.0)
+	* Add an enum option DISABLED for Output Locking Mode under Global Configuration.
+* Core 3.7.402.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.999.0 (2025-03-10 18:29 UTC)
+* BedrockAgent (3.7.422.0)
+	* Add support for computer use tools
+* BedrockAgentRuntime (3.7.423.0)
+	* Add support for computer use tools
+* Connect (3.7.419.0)
+	* Add support for contact transfers in external voice systems.
+* CostExplorer (3.7.405.0)
+	* Releasing minor partition endpoint updates.
+* MediaLive (3.7.412.0)
+	* Adds defaultFontSize and defaultLineHeight as options in the EbuTtDDestinationSettings within the caption descriptions for an output stream.
+* PcaConnectorAd (3.7.401.0)
+	* PrivateCA Connector for Active Directory now supports dual stack endpoints. This release adds the IpAddressType option to the VpcInformation on a Connector which determines whether the endpoint supports IPv4 only or IPv4 and IPv6 traffic.
+* SecurityHub (3.7.403.0)
+	* This release adds new StandardsControlsUpdatable field to the StandardsSubscription resource
+* TimestreamInfluxDB (3.7.406.14)
+	* This release updates the default value of pprof-disabled from false to true.
+* Core 3.7.402.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.998.0 (2025-03-07 19:30 UTC)
+* BedrockAgent (3.7.421.0)
+	* Introduces support for Neptune Analytics as a vector data store and adds Context Enrichment Configurations, enabling use cases such as GraphRAG.
+* BedrockAgentRuntime (3.7.422.0)
+	* Support Multi Agent Collaboration within Inline Agents
+* CloudFront (3.7.404.44)
+	* Documentation updates for Amazon CloudFront.
+* EC2 (3.7.434.0)
+	* Add serviceManaged field to DescribeAddresses API response.
+* ElasticLoadBalancingV2 (3.7.409.0)
+	* This release adds support for assigning IP addresses to Application Load Balancers from VPC IP Address Manager pools.
+* NeptuneGraph (3.7.404.21)
+	* Several small updates to resolve customer requests.
+* Core 3.7.402.15
+	* Update the SDK's checksum component to skip adding headers when a request is made with anonymous credentials.
+	* Update the SDK's checksum component to skip algorithms that require the AWS Common Runtime dependency, as those may cause issues in customer's environments.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.997.0 (2025-03-06 19:25 UTC)
+* Bedrock (3.7.414.0)
+	* This releases adds support for Custom Prompt Router
+* CloudTrail (3.7.403.24)
+	* Doc-only update for CloudTrail.
+* IVSRealTime (3.7.404.0)
+	* IVS Real-Time now offers customers the ability to merge fragmented recordings in the event of a participant disconnect.
+* NetworkFlowMonitor (3.7.401.0)
+	* This release contains 2 changes. 1: DeleteScope/GetScope/UpdateScope operations now return 404 instead of 500 when the resource does not exist. 2: Expected string format for clientToken fields of CreateMonitorInput/CreateScopeInput/UpdateMonitorInput have been updated to be an UUID based string.
+* RedshiftDataAPIService (3.7.403.0)
+	* This release adds support for ListStatements API to filter statements by ClusterIdentifier, WorkgroupName, and Database.
+* WAFV2 (3.7.404.0)
+	* You can now perform an exact match or rate limit aggregation against the web request's JA4 fingerprint.
+* WorkSpaces (3.7.410.0)
+	* Added a new ModifyEndpointEncryptionMode API for managing endpoint encryption settings.
+* Core 3.7.402.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.996.0 (2025-03-05 19:30 UTC)
+* BedrockRuntime (3.7.414.0)
+	* This releases adds support for Custom Prompt Router ARN
+* DataSync (3.7.404.0)
+	* AWS DataSync now supports modifying ServerHostname while updating locations SMB, NFS, and ObjectStorage.
+* GameLiftStreams (3.7.400.0)
+	* New Service: Amazon GameLift Streams delivers low-latency game streaming from AWS global infrastructure to virtually any device with a browser at up to 1080p resolution and 60 fps.
+* IoTFleetWise (3.7.405.0)
+	* This release adds floating point support for CAN/OBD signals and adds support for signed OBD signals.
+* WorkSpaces (3.7.409.0)
+	* Added DeviceTypeWorkSpacesThinClient type to allow users to access their WorkSpaces through a WorkSpaces Thin Client.
+* Core 3.7.402.13
+	* Update the SDK checksum component to better validate whether the AWS Common Runtime dependency can be used.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.995.0 (2025-03-04 21:22 UTC)
+* CloudFront (3.7.404.41)
+	* Mark AmazonCloudFrontUtil as obsolete and will be removed in the next major version.
+* DynamoDBv2 (3.7.405.33)
+	* Fixed an issue for incorrect DateTime epoch serialization when date falls out of epoch supported range. (Thanks @sander1095 for initial contribution)
+* EC2 (3.7.433.1)
+	* Mark ImageUtilities as obsolete and will be removed in the next major version.
+	* Mark VPCUtilities as obsolete and will be removed in the next major version.
+* ElastiCache (3.7.402.50)
+	* Doc only update, listing 'valkey7' and 'valkey8' as engine options for parameter groups.
+* IoTManagedIntegrations (3.7.400.0)
+	* Adding managed integrations APIs for IoT Device Management to setup and control devices across different manufacturers and connectivity protocols. APIs include managedthing operations, credential and provisioning profile management, notification configuration, and OTA update.
+* IoTSiteWise (3.7.404.0)
+	* AWS IoT SiteWise now supports MQTT-enabled, V3 gateways. Configure data destinations for real-time ingestion into AWS IoT SiteWise or buffered ingestion using Amazon S3 storage. You can also use path filters for precise data collection from specific MQTT topics.
+* RDS (3.7.410.44)
+	* Note support for Database Insights for Amazon RDS.
+* Core 3.7.402.12
+	* Added method AWSSDKUtils.ConvertFromUnixLongEpochSeconds() for converting Unix epoch seconds to DateTime structure.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
+### 3.7.994.0 (2025-03-03 19:30 UTC)
+* CloudWatchRUM (3.7.401.0)
+	* Add support for PutResourcePolicy, GetResourcePolicy and DeleteResourcePolicy to support resource based policies for AWS CloudWatch RUM
+* CognitoIdentityProvider (3.7.407.0)
+	* Added the capacity to return available challenges in admin authentication and to set version 3 of the pre token generation event for M2M ATC.
+* EC2 (3.7.433.0)
+	* Update the DescribeVpcs response
+* QBusiness (3.7.411.0)
+	* Adds support for the ingestion of audio and video files by Q Business, which can be configured with the mediaExtractionConfiguration parameter.
+* SageMaker (3.7.428.0)
+	* Add DomainId to CreateDomainResponse
+* TranscribeService (3.7.402.14)
+	* Updating documentation for post call analytics job queueing.
+* Core 3.7.402.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.993.0 (2025-02-28 19:30 UTC)
 * BedrockAgent (3.7.420.0)
 	* This release lets Amazon Bedrock Flows support newer models by increasing the maximum length of output in a prompt configuration. This release also increases the maximum number of prompt variables to 20 and the maximum number of node inputs to 20.

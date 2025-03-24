@@ -34,10 +34,16 @@ namespace Amazon.CognitoIdentity
     public partial class AmazonCognitoIdentityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Cognito Identity", "4.0.0.0");
 
         private static readonly AmazonCognitoIdentityEndpointResolver EndpointResolver =
             new AmazonCognitoIdentityEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Cognito Identity", "3.7.402.24");
+=======
+            InternalSDKUtils.BuildUserAgentString("Cognito Identity", "3.7.402.38");
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

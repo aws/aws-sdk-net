@@ -78,14 +78,75 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetDescription())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnalysisMethod())
+                {
+                    context.Writer.WritePropertyName("analysisMethod");
+                    context.Writer.Write(publicRequest.AnalysisMethod);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
+
+<<<<<<< HEAD
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetSelectedAnalysisMethods())
+                {
+                    context.Writer.WritePropertyName("selectedAnalysisMethods");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
+                    {
+                            context.Writer.Write(publicRequestSelectedAnalysisMethodsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             writer.WriteEndObject();

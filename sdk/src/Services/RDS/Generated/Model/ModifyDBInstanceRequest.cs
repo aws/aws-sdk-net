@@ -457,19 +457,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// Aurora MySQL - <c>audit | error | general | slowquery | iam-db-auth-error</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// Aurora PostgreSQL - <c>postgresql | iam-db-auth-error</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <c>error | general | slowquery</c> 
+        /// RDS for MySQL - <c>error | general | slowquery | iam-db-auth-error</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
+        /// RDS for PostgreSQL - <c>postgresql | upgrade | iam-db-auth-error</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

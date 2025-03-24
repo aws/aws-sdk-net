@@ -64,8 +64,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetReservationArn())
                 throw new AmazonMediaConnectException("Request object does not have required field ReservationArn set");
-            request.AddPathResource("{reservationArn}", StringUtils.FromString(publicRequest.ReservationArn));
-            request.ResourcePath = "/v1/reservations/{reservationArn}";
+            request.AddPathResource("{ReservationArn}", StringUtils.FromString(publicRequest.ReservationArn));
+            request.ResourcePath = "/v1/reservations/{ReservationArn}";
 
             return request;
         }

@@ -57,8 +57,8 @@ namespace Amazon.ECS.Model
         /// The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's
         /// used when you create a service and don't specify a Service Connect configuration.
         /// The namespace name can include up to 1024 characters. The name is case-sensitive.
-        /// The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;),
-        /// or slash (/).
+        /// The name can't include greater than (&gt;), less than (&lt;), double quotation marks
+        /// ("), or slash (/).
         /// </para>
         ///  
         /// <para>

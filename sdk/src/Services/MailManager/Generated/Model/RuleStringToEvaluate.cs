@@ -34,8 +34,27 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class RuleStringToEvaluate
     {
+        private Analysis _analysis;
         private RuleStringEmailAttribute _attribute;
         private string _mimeHeaderAttribute;
+
+        /// <summary>
+        /// Gets and sets the property Analysis. 
+        /// <para>
+        /// The Add On ARN and its returned value to evaluate in a string condition expression.
+        /// </para>
+        /// </summary>
+        public Analysis Analysis
+        {
+            get { return this._analysis; }
+            set { this._analysis = value; }
+        }
+
+        // Check to see if Analysis property is set
+        internal bool IsSetAnalysis()
+        {
+            return this._analysis != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attribute. 

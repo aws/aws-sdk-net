@@ -2555,7 +2555,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
-        /// The request body could not be parsed as JSON.
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
         /// The runtime or runtime version specified is not supported.
@@ -2641,6 +2642,141 @@ namespace Amazon.Lambda
 
         #endregion
         
+<<<<<<< HEAD
+||||||| Commit version number update changes
+        #region  InvokeAsync
+
+        [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
+        internal virtual InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeAsyncResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// For asynchronous function invocation, use <a>Invoke</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Invokes a function asynchronously.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
+        /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
+        /// is turned on.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeAsync service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
+        /// The request body could not be parsed as JSON.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
+        /// The runtime or runtime version specified is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
+        [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
+        public virtual Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeAsyncResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+=======
+        #region  InvokeAsync
+
+        [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
+        internal virtual InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeAsyncResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        /// For asynchronous function invocation, use <a>Invoke</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Invokes a function asynchronously.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray
+        /// active tracing. Trace ID is not propagated to the function, even if X-Ray active tracing
+        /// is turned on.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeAsync service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeAsync service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
+        /// The runtime or runtime version specified is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
+        [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
+        public virtual Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeAsyncResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
         #region  InvokeWithResponseStream
 
         internal virtual InvokeWithResponseStreamResponse InvokeWithResponseStream(InvokeWithResponseStreamRequest request)
@@ -2708,7 +2844,8 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRequestContentException">
-        /// The request body could not be parsed as JSON.
+        /// The request body could not be parsed as JSON, or a request header is invalid. For
+        /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidRuntimeException">
         /// The runtime or runtime version specified is not supported.

@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateDomainResponse : AmazonWebServiceResponse
     {
         private string _domainArn;
+        private string _domainId;
         private string _url;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainArn()
         {
             return this._domainArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The ID of the created domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string DomainId
+        {
+            get { return this._domainId; }
+            set { this._domainId = value; }
+        }
+
+        // Check to see if DomainId property is set
+        internal bool IsSetDomainId()
+        {
+            return this._domainId != null;
         }
 
         /// <summary>

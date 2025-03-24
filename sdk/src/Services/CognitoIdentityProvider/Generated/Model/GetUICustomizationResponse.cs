@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UICustomization. 
         /// <para>
-        /// The UI customization information.
+        /// Information about the classic hosted UI custom CSS and logo-image branding that you
+        /// applied to the user pool or app client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

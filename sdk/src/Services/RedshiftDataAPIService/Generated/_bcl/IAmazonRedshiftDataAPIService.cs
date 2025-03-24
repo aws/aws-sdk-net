@@ -1040,6 +1040,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  
         /// <para>
+        /// When you use identity-enhanced role sessions to list statements, you must provide
+        /// either the <c>cluster-identifier</c> or <c>workgroup-name</c> parameter. This ensures
+        /// that the IdC user can only access the Amazon Redshift IdC applications they are assigned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about the Amazon Redshift Data API and CLI usage examples, see
         /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
         /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
@@ -1063,6 +1071,14 @@ namespace Amazon.RedshiftDataAPIService
         /// List of SQL statements. By default, only finished statements are shown. A token is
         /// returned to page through the statement list. 
         /// 
+        ///  
+        /// <para>
+        /// When you use identity-enhanced role sessions to list statements, you must provide
+        /// either the <c>cluster-identifier</c> or <c>workgroup-name</c> parameter. This ensures
+        /// that the IdC user can only access the Amazon Redshift IdC applications they are assigned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
         ///  
         /// <para>
         /// For more information about the Amazon Redshift Data API and CLI usage examples, see

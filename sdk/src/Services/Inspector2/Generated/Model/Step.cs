@@ -34,8 +34,28 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class Step
     {
+        private string _componentArn;
         private string _componentId;
         private string _componentType;
+
+        /// <summary>
+        /// Gets and sets the property ComponentArn. 
+        /// <para>
+        /// The component ARN. The ARN can be null and is not displayed in the Amazon Web Services
+        /// console.
+        /// </para>
+        /// </summary>
+        public string ComponentArn
+        {
+            get { return this._componentArn; }
+            set { this._componentArn = value; }
+        }
+
+        // Check to see if ComponentArn property is set
+        internal bool IsSetComponentArn()
+        {
+            return this._componentArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComponentId. 

@@ -31,11 +31,12 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUICustomization operation.
-    /// Gets the user interface (UI) Customization information for a particular app client's
-    /// app UI, if any such information exists for the client. If nothing is set for the particular
-    /// client, but there is an existing pool level customization (the app <c>clientId</c>
-    /// is <c>ALL</c>), then that information is returned. If nothing is present, then an
-    /// empty shape is returned.
+    /// Given a user pool ID or app client, returns information about classic hosted UI branding
+    /// that you applied, if any. Returns user-pool level branding information if no app client
+    /// branding is applied, or if you don't specify an app client ID. Returns an empty object
+    /// if you haven't applied hosted UI branding to either the client or the user pool. For
+    /// more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/hosted-ui-classic-branding.html">Hosted
+    /// UI (classic) branding</a>.
     /// </summary>
     public partial class GetUICustomizationRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the client app.
+        /// The ID of the app client that you want to query for branding settings.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -64,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool.
+        /// The ID of the user pool that you want to query for branding settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

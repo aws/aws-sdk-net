@@ -42,8 +42,16 @@ namespace Amazon.Bedrock.Model
         /// The criteria's response quality difference.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0, Max=1)]
         public double? ResponseQualityDifference
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0, Max=1)]
+        public double ResponseQualityDifference
+=======
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public double ResponseQualityDifference
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
         {
             get { return this._responseQualityDifference; }
             set { this._responseQualityDifference = value; }

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreateMonitorRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.CreateMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
@@ -23,6 +29,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.CreateScopeRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.CreateScopeResponse.ScopeArn</property>
@@ -125,6 +137,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFlowMonitor.Model.UpdateMonitorRequest.ClientToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFlowMonitor.Model.UpdateMonitorRequest.MonitorName</property>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The logging parameters of a user pool, as returned in the response to a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>
+    /// The logging parameters of a user pool, as returned in the response to a <c>GetLogDeliveryConfiguration</c>
     /// request.
     /// </summary>
     public partial class LogDeliveryConfigurationType

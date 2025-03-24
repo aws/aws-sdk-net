@@ -101,7 +101,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The destination port to inspect for. You can specify an individual port, for example
         /// <c>1994</c> and you can specify a port range, for example <c>1990:1994</c>. To match
-        /// with any port, specify <c>ANY</c>. 
+        /// with any port, specify <c>ANY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -217,7 +217,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The source port to inspect for. You can specify an individual port, for example <c>1994</c>
         /// and you can specify a port range, for example <c>1990:1994</c>. To match with any
-        /// port, specify <c>ANY</c>. 
+        /// port, specify <c>ANY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

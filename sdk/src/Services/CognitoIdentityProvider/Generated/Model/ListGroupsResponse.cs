@@ -40,7 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The group objects for the groups.
+        /// An array of groups and their details. Each entry that's returned includes description,
+        /// precedence, and IAM role values.
         /// </para>
         /// </summary>
         public List<GroupType> Groups
@@ -58,8 +59,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.
+        /// The identifier that Amazon Cognito returned with the previous request to this operation.
+        /// When you include a pagination token in your request, Amazon Cognito returns the next
+        /// set of items in the list. By use of this token, you can paginate through the full
+        /// list of items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]

@@ -71,6 +71,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         response.Credentials = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Grantee", targetDepth))
+                    {
+                        var unmarshaller = GranteeUnmarshaller.Instance;
+                        response.Grantee = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MatchedGrantTarget", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

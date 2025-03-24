@@ -34,10 +34,16 @@ namespace Amazon.ApiGatewayV2
     public partial class AmazonApiGatewayV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ApiGatewayV2", "4.0.0.0");
 
         private static readonly AmazonApiGatewayV2EndpointResolver EndpointResolver =
             new AmazonApiGatewayV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("ApiGatewayV2", "3.7.401.12");
+=======
+            InternalSDKUtils.BuildUserAgentString("ApiGatewayV2", "3.7.401.26");
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

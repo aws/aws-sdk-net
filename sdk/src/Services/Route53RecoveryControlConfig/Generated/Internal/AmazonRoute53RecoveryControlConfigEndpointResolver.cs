@@ -50,10 +50,16 @@ namespace Amazon.Route53RecoveryControlConfig.Internal
         {
             var config = (AmazonRoute53RecoveryControlConfigConfig)requestContext.ClientConfig;
             var result = new Route53RecoveryControlConfigEndpointParameters();
+<<<<<<< HEAD
             result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;
+||||||| Commit version number update changes
+            result.Region = config.RegionEndpoint?.SystemName;
+=======
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.

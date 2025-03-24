@@ -39,7 +39,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetailsList. 
         /// <para>
-        /// The code delivery details list from the server for the request to update user attributes.
+        /// When the attribute-update request includes an email address or phone number attribute,
+        /// Amazon Cognito sends a message to users with a code that confirms ownership of the
+        /// new value that they entered. The <c>CodeDeliveryDetails</c> object is information
+        /// about the delivery destination for that link or code. This behavior happens in user
+        /// pools configured to automatically verify changes to those attributes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying
+        /// when users change their email or phone number</a>.
         /// </para>
         /// </summary>
         public List<CodeDeliveryDetailsType> CodeDeliveryDetailsList

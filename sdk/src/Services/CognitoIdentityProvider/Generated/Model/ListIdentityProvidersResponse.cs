@@ -40,7 +40,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// The identifier that Amazon Cognito returned with the previous request to this operation.
+        /// When you include a pagination token in your request, Amazon Cognito returns the next
+        /// set of items in the list. By use of this token, you can paginate through the full
+        /// list of items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Providers. 
         /// <para>
-        /// A list of IdP objects.
+        /// An array of the IdPs in your user pool. For each, the response includes identifiers,
+        /// the IdP name and type, and trust-relationship details like the issuer URL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

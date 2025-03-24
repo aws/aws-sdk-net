@@ -65,9 +65,10 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetOutputArn())
                 throw new AmazonMediaConnectException("Request object does not have required field OutputArn set");
+<<<<<<< HEAD
             request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
             request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
 #if !NETFRAMEWORK
@@ -80,6 +81,15 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetCidrAllowList())
+||||||| Commit version number update changes
+            request.AddPathResource("{outputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{flowArn}/outputs/{outputArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+=======
+            request.AddPathResource("{OutputArn}", StringUtils.FromString(publicRequest.OutputArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/outputs/{OutputArn}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             {
                 context.Writer.WritePropertyName("cidrAllowList");
                 context.Writer.WriteStartArray();
@@ -130,7 +140,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     var marshaller = MediaStreamOutputConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(publicRequestMediaStreamOutputConfigurationsListValue, context);
 
+<<<<<<< HEAD
                     context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetOutputStatus())
+                {
+                    context.Writer.WritePropertyName("outputStatus");
+                    context.Writer.Write(publicRequest.OutputStatus);
+=======
+                if(publicRequest.IsSetNdiProgramName())
+                {
+                    context.Writer.WritePropertyName("ndiProgramName");
+                    context.Writer.Write(publicRequest.NdiProgramName);
+                }
+
+                if(publicRequest.IsSetNdiSpeedHqQuality())
+                {
+                    context.Writer.WritePropertyName("ndiSpeedHqQuality");
+                    context.Writer.Write(publicRequest.NdiSpeedHqQuality);
+                }
+
+                if(publicRequest.IsSetOutputStatus())
+                {
+                    context.Writer.WritePropertyName("outputStatus");
+                    context.Writer.Write(publicRequest.OutputStatus);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 }
                 context.Writer.WriteEndArray();
             }

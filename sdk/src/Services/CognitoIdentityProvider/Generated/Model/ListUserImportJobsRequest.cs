@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserImportJobs operation.
-    /// Lists user import jobs for a user pool.
+    /// Given a user pool ID, returns user import jobs and their details. Import jobs are
+    /// retained in user pool configuration so that you can stage, stop, start, review, and
+    /// delete them. For more information about user import, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
+    /// users from a CSV file</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -64,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of import jobs you want the request to return.
+        /// The maximum number of import jobs that you want Amazon Cognito to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
@@ -106,7 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool that the users are being imported into.
+        /// The ID of the user pool where you want to list import jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

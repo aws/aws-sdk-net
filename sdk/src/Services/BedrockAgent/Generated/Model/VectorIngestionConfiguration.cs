@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class VectorIngestionConfiguration
     {
         private ChunkingConfiguration _chunkingConfiguration;
+        private ContextEnrichmentConfiguration _contextEnrichmentConfiguration;
         private CustomTransformationConfiguration _customTransformationConfiguration;
         private ParsingConfiguration _parsingConfiguration;
 
@@ -56,6 +57,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetChunkingConfiguration()
         {
             return this._chunkingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextEnrichmentConfiguration. 
+        /// <para>
+        /// The context enrichment configuration used for ingestion of the data into the vector
+        /// store.
+        /// </para>
+        /// </summary>
+        public ContextEnrichmentConfiguration ContextEnrichmentConfiguration
+        {
+            get { return this._contextEnrichmentConfiguration; }
+            set { this._contextEnrichmentConfiguration = value; }
+        }
+
+        // Check to see if ContextEnrichmentConfiguration property is set
+        internal bool IsSetContextEnrichmentConfiguration()
+        {
+            return this._contextEnrichmentConfiguration != null;
         }
 
         /// <summary>

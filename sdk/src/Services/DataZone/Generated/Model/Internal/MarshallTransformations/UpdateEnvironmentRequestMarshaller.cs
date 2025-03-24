@@ -81,9 +81,59 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetDescription())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetGlossaryTerms())
+                {
+                    context.Writer.WritePropertyName("glossaryTerms");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                    {
+                            context.Writer.Write(publicRequestGlossaryTermsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlueprintVersion())
+                {
+                    context.Writer.WritePropertyName("blueprintVersion");
+                    context.Writer.Write(publicRequest.BlueprintVersion);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetGlossaryTerms())
+                {
+                    context.Writer.WritePropertyName("glossaryTerms");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+                    {
+                            context.Writer.Write(publicRequestGlossaryTermsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
             if(publicRequest.IsSetGlossaryTerms())
             {
@@ -96,10 +146,36 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetUserParameters())
+                {
+                    context.Writer.WritePropertyName("userParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             writer.WriteEndObject();

@@ -6466,6 +6466,10 @@
           "shape":"String",
           "locationName":"carrierIp"
         },
+        "ServiceManaged":{
+          "shape":"ServiceManaged",
+          "locationName":"serviceManaged"
+        },
         "InstanceId":{
           "shape":"String",
           "locationName":"instanceId"
@@ -8387,6 +8391,10 @@
         "ParentZoneId":{
           "shape":"String",
           "locationName":"parentZoneId"
+        },
+        "GroupLongName":{
+          "shape":"String",
+          "locationName":"groupLongName"
         },
         "State":{
           "shape":"AvailabilityZoneState",
@@ -11996,7 +12004,10 @@
       ],
       "members":{
         "DryRun":{"shape":"Boolean"},
-        "ClientToken":{"shape":"String"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        },
         "LaunchTemplateName":{"shape":"LaunchTemplateName"},
         "VersionDescription":{"shape":"VersionDescription"},
         "LaunchTemplateData":{"shape":"RequestLaunchTemplateData"},
@@ -12025,7 +12036,10 @@
       "required":["LaunchTemplateData"],
       "members":{
         "DryRun":{"shape":"Boolean"},
-        "ClientToken":{"shape":"String"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        },
         "LaunchTemplateId":{"shape":"LaunchTemplateId"},
         "LaunchTemplateName":{"shape":"LaunchTemplateName"},
         "SourceVersion":{"shape":"String"},
@@ -24627,7 +24641,7 @@
           "locationName":"BlockDeviceMapping"
         },
         "InstanceRequirements":{"shape":"InstanceRequirementsRequest"},
-        "ImageId":{"shape":"ImageId"}
+        "ImageId":{"shape":"String"}
       }
     },
     "FleetLaunchTemplateSpecification":{
@@ -35605,7 +35619,10 @@
       "type":"structure",
       "members":{
         "DryRun":{"shape":"Boolean"},
-        "ClientToken":{"shape":"String"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        },
         "LaunchTemplateId":{"shape":"LaunchTemplateId"},
         "LaunchTemplateName":{"shape":"LaunchTemplateName"},
         "DefaultVersion":{
@@ -43744,6 +43761,13 @@
         "locationName":"item"
       }
     },
+    "ServiceManaged":{
+      "type":"string",
+      "enum":[
+        "alb",
+        "nlb"
+      ]
+    },
     "ServiceNetworkArn":{"type":"string"},
     "ServiceState":{
       "type":"string",
@@ -49702,6 +49726,10 @@
           "shape":"Boolean",
           "locationName":"isDefault"
         },
+        "EncryptionControl":{
+          "shape":"VpcEncryptionControl",
+          "locationName":"encryptionControl"
+        },
         "Tags":{
           "shape":"TagList",
           "locationName":"tagSet"
@@ -49958,6 +49986,106 @@
         "shape":"VpcClassicLink",
         "locationName":"item"
       }
+    },
+    "VpcEncryptionControl":{
+      "type":"structure",
+      "members":{
+        "VpcId":{
+          "shape":"VpcId",
+          "locationName":"vpcId"
+        },
+        "VpcEncryptionControlId":{
+          "shape":"VpcEncryptionControlId",
+          "locationName":"vpcEncryptionControlId"
+        },
+        "Mode":{
+          "shape":"VpcEncryptionControlMode",
+          "locationName":"mode"
+        },
+        "State":{
+          "shape":"VpcEncryptionControlState",
+          "locationName":"state"
+        },
+        "StateMessage":{
+          "shape":"String",
+          "locationName":"stateMessage"
+        },
+        "ResourceExclusions":{
+          "shape":"VpcEncryptionControlExclusions",
+          "locationName":"resourceExclusions"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
+        }
+      }
+    },
+    "VpcEncryptionControlExclusion":{
+      "type":"structure",
+      "members":{
+        "State":{
+          "shape":"VpcEncryptionControlExclusionState",
+          "locationName":"state"
+        },
+        "StateMessage":{
+          "shape":"String",
+          "locationName":"stateMessage"
+        }
+      }
+    },
+    "VpcEncryptionControlExclusionState":{
+      "type":"string",
+      "enum":[
+        "enabling",
+        "enabled",
+        "disabling",
+        "disabled"
+      ]
+    },
+    "VpcEncryptionControlExclusions":{
+      "type":"structure",
+      "members":{
+        "InternetGateway":{
+          "shape":"VpcEncryptionControlExclusion",
+          "locationName":"internetGateway"
+        },
+        "EgressOnlyInternetGateway":{
+          "shape":"VpcEncryptionControlExclusion",
+          "locationName":"egressOnlyInternetGateway"
+        },
+        "NatGateway":{
+          "shape":"VpcEncryptionControlExclusion",
+          "locationName":"natGateway"
+        },
+        "VirtualPrivateGateway":{
+          "shape":"VpcEncryptionControlExclusion",
+          "locationName":"virtualPrivateGateway"
+        },
+        "VpcPeering":{
+          "shape":"VpcEncryptionControlExclusion",
+          "locationName":"vpcPeering"
+        }
+      }
+    },
+    "VpcEncryptionControlId":{"type":"string"},
+    "VpcEncryptionControlMode":{
+      "type":"string",
+      "enum":[
+        "monitor",
+        "enforce"
+      ]
+    },
+    "VpcEncryptionControlState":{
+      "type":"string",
+      "enum":[
+        "enforce-in-progress",
+        "monitor-in-progress",
+        "enforce-failed",
+        "monitor-failed",
+        "deleting",
+        "deleted",
+        "available"
+      ]
     },
     "VpcEndpoint":{
       "type":"structure",

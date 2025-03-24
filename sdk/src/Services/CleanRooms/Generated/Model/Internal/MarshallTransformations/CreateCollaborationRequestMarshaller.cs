@@ -135,11 +135,23 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetMembers())
             {
                 context.Writer.WritePropertyName("members");
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestMembersListValue in publicRequest.Members)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMembers())
+=======
+                if(publicRequest.IsSetJobLogStatus())
+                {
+                    context.Writer.WritePropertyName("jobLogStatus");
+                    context.Writer.Write(publicRequest.JobLogStatus);
+                }
+
+                if(publicRequest.IsSetMembers())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WriteStartObject();
 

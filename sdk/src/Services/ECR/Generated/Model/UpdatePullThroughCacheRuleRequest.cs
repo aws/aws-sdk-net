@@ -36,6 +36,7 @@ namespace Amazon.ECR.Model
     public partial class UpdatePullThroughCacheRuleRequest : AmazonECRRequest
     {
         private string _credentialArn;
+        private string _customRoleArn;
         private string _ecrRepositoryPrefix;
         private string _registryId;
 
@@ -46,7 +47,7 @@ namespace Amazon.ECR.Model
         /// identifies the credentials to authenticate to the upstream registry.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=612)]
+        [AWSProperty(Min=50, Max=612)]
         public string CredentialArn
         {
             get { return this._credentialArn; }
@@ -57,6 +58,27 @@ namespace Amazon.ECR.Model
         internal bool IsSetCredentialArn()
         {
             return this._credentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomRoleArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate
+        /// to the ECR upstream registry. This role must be in the same account as the registry
+        /// that you are configuring.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string CustomRoleArn
+        {
+            get { return this._customRoleArn; }
+            set { this._customRoleArn = value; }
+        }
+
+        // Check to see if CustomRoleArn property is set
+        internal bool IsSetCustomRoleArn()
+        {
+            return this._customRoleArn != null;
         }
 
         /// <summary>

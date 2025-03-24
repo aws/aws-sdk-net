@@ -43,7 +43,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Blob. 
         /// <para>
-        /// The blob represents a vector tile in <c>mvt</c> format for the <c>GetTile</c> API.
+        /// The blob represents a vector tile in <c>mvt</c> or a raster tile in an image format.
         /// </para>
         /// </summary>
         public MemoryStream Blob

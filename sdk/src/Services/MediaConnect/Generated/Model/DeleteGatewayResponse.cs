@@ -37,8 +37,10 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayArn;
 
         /// <summary>
-        /// Gets and sets the property GatewayArn. The Amazon Resource Name (ARN) of the gateway
-        /// that was deleted.
+        /// Gets and sets the property GatewayArn. 
+        /// <para>
+        ///  The ARN of the gateway that was deleted.
+        /// </para>
         /// </summary>
         public string GatewayArn
         {

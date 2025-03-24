@@ -42,7 +42,10 @@ namespace Amazon.MediaConnect.Model
         private int? _ttl;
 
         /// <summary>
-        /// Gets and sets the property IpAddress. The network output IP Address.
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        ///  The network output IP Address. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IpAddress
@@ -58,8 +61,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The network output name. This name is used to reference
-        /// the output and must be unique among outputs in this bridge.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The network output name. This name is used to reference the output and must be unique
+        /// among outputs in this bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -75,7 +81,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkName. The network output's gateway network name.
+        /// Gets and sets the property NetworkName. 
+        /// <para>
+        ///  The network output's gateway network name. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string NetworkName
@@ -91,7 +100,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. The network output port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        ///  The network output port. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? Port
@@ -107,7 +119,16 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol. The network output protocol.
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        ///  The network output protocol. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference
+        /// is maintained for legacy purposes only.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public Protocol Protocol
@@ -123,7 +144,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ttl. The network output TTL.
+        /// Gets and sets the property Ttl. 
+        /// <para>
+        ///  The network output TTL. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? Ttl

@@ -86,6 +86,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sourceDetails", targetDepth))
+                {
+                    var unmarshaller = SourceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

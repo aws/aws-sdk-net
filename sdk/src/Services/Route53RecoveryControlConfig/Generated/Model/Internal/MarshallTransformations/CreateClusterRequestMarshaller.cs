@@ -90,11 +90,23 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 context.Writer.WriteStringValue(publicRequest.ClusterName);
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+=======
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
+                if(publicRequest.IsSetTags())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

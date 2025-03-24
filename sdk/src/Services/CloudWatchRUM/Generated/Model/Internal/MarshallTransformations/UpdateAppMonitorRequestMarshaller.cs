@@ -89,6 +89,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetCustomEvents())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("CustomEvents");
                 context.Writer.WriteStartObject();
 
@@ -96,6 +97,113 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.CustomEvents, context);
 
                 context.Writer.WriteEndObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppMonitorConfiguration())
+                {
+                    context.Writer.WritePropertyName("AppMonitorConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AppMonitorConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AppMonitorConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomEvents())
+                {
+                    context.Writer.WritePropertyName("CustomEvents");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomEventsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomEvents, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCwLogEnabled())
+                {
+                    context.Writer.WritePropertyName("CwLogEnabled");
+                    context.Writer.Write(publicRequest.CwLogEnabled);
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppMonitorConfiguration())
+                {
+                    context.Writer.WritePropertyName("AppMonitorConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AppMonitorConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AppMonitorConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCustomEvents())
+                {
+                    context.Writer.WritePropertyName("CustomEvents");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomEventsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomEvents, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCwLogEnabled())
+                {
+                    context.Writer.WritePropertyName("CwLogEnabled");
+                    context.Writer.Write(publicRequest.CwLogEnabled);
+                }
+
+                if(publicRequest.IsSetDeobfuscationConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeobfuscationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeobfuscationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                if(publicRequest.IsSetDomainList())
+                {
+                    context.Writer.WritePropertyName("DomainList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+                    {
+                            context.Writer.Write(publicRequestDomainListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             if(publicRequest.IsSetCwLogEnabled())

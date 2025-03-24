@@ -1890,6 +1890,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant V2_0 for PreTokenGenerationLambdaVersionType
         /// </summary>
         public static readonly PreTokenGenerationLambdaVersionType V2_0 = new PreTokenGenerationLambdaVersionType("V2_0");
+        /// <summary>
+        /// Constant V3_0 for PreTokenGenerationLambdaVersionType
+        /// </summary>
+        public static readonly PreTokenGenerationLambdaVersionType V3_0 = new PreTokenGenerationLambdaVersionType("V3_0");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

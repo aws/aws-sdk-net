@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private ResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property ReservedBitrate. The amount of outbound bandwidth that
-        /// is discounted in the offering.
+        /// Gets and sets the property ReservedBitrate. 
+        /// <para>
+        ///  The amount of outbound bandwidth that is discounted in the offering.
+        /// </para>
         /// </summary>
         public int? ReservedBitrate
         {
@@ -54,8 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. The type of resource and the unit that is
-        /// being billed for.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  The type of resource and the unit that is being billed for.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceType ResourceType

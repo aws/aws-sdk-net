@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AddFlowVpcInterfaces operation.
-    /// Adds VPC interfaces to flow
+    /// Adds VPC interfaces to a flow.
     /// </summary>
     public partial class AddFlowVpcInterfacesRequest : AmazonMediaConnectRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private List<VpcInterfaceRequest> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterfaceRequest>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to mutate.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -55,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaces. A list of VPC interfaces that you want to
-        /// add.
+        /// Gets and sets the property VpcInterfaces. 
+        /// <para>
+        ///  A list of VPC interfaces that you want to add to the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<VpcInterfaceRequest> VpcInterfaces

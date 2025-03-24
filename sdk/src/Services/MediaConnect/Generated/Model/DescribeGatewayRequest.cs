@@ -31,16 +31,18 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGateway operation.
-    /// Displays the details of a gateway. The response includes the gateway ARN, name, and
-    /// CIDR blocks, as well as details about the networks.
+    /// Displays the details of a gateway. The response includes the gateway Amazon Resource
+    /// Name (ARN), name, and CIDR blocks, as well as details about the networks.
     /// </summary>
     public partial class DescribeGatewayRequest : AmazonMediaConnectRequest
     {
         private string _gatewayArn;
 
         /// <summary>
-        /// Gets and sets the property GatewayArn. The Amazon Resource Name (ARN) of the gateway
-        /// that you want to describe.
+        /// Gets and sets the property GatewayArn. 
+        /// <para>
+        ///  The ARN of the gateway that you want to describe.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayArn

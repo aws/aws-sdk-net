@@ -31,10 +31,10 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to a resource with the specified resourceArn. If existing
-    /// tags on a resource are not specified in the request parameters, they are not changed.
-    /// When a resource is deleted, the tags associated with that resource are deleted as
-    /// well.
+    /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
+    /// If existing tags on a resource are not specified in the request parameters, they are
+    /// not changed. When a resource is deleted, the tags associated with that resource are
+    /// deleted as well.
     /// </summary>
     public partial class TagResourceRequest : AmazonMediaConnectRequest
     {
@@ -42,8 +42,11 @@ namespace Amazon.MediaConnect.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) that identifies
-        /// the AWS Elemental MediaConnect resource to which to add tags.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that identifies the MediaConnect resource to which
+        /// to add tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -59,9 +62,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A map from tag keys to values. Tag keys can have
-        /// a maximum character length of 128 characters, and tag values can have a maximum length
-        /// of 256 characters.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A map from tag keys to values. Tag keys can have a maximum character length of 128
+        /// characters, and tag values can have a maximum length of 256 characters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags

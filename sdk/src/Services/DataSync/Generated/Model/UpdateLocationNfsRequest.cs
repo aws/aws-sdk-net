@@ -45,6 +45,7 @@ namespace Amazon.DataSync.Model
         private string _locationArn;
         private NfsMountOptions _mountOptions;
         private OnPremConfig _onPremConfig;
+        private string _serverHostname;
         private string _subdirectory;
 
         /// <summary>
@@ -95,6 +96,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetOnPremConfig()
         {
             return this._onPremConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerHostname. 
+        /// <para>
+        /// Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that
+        /// your DataSync agent connects to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string ServerHostname
+        {
+            get { return this._serverHostname; }
+            set { this._serverHostname = value; }
+        }
+
+        // Check to see if ServerHostname property is set
+        internal bool IsSetServerHostname()
+        {
+            return this._serverHostname != null;
         }
 
         /// <summary>

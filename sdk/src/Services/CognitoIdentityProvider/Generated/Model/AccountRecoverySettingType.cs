@@ -33,13 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// The settings for user message delivery in forgot-password operations. Contains preference
     /// for email or SMS message delivery of password reset codes, or for admin-only password
     /// reset.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-    /// </para>
     /// </summary>
     public partial class AccountRecoverySettingType
     {

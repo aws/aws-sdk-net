@@ -41,11 +41,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class InlineSessionState
     {
+        private ConversationHistory _conversationHistory;
         private List<InputFile> _files = AWSConfigs.InitializeCollections ? new List<InputFile>() : null;
         private string _invocationId;
         private Dictionary<string, string> _promptSessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InvocationResultMember> _returnControlInvocationResults = AWSConfigs.InitializeCollections ? new List<InvocationResultMember>() : null;
         private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConversationHistory. 
+        /// <para>
+        ///  Contains the conversation history that persist across sessions. 
+        /// </para>
+        /// </summary>
+        public ConversationHistory ConversationHistory
+        {
+            get { return this._conversationHistory; }
+            set { this._conversationHistory = value; }
+        }
+
+        // Check to see if ConversationHistory property is set
+        internal bool IsSetConversationHistory()
+        {
+            return this._conversationHistory != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Files. 

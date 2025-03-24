@@ -90,11 +90,23 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+<<<<<<< HEAD
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
                 context.Writer.WriteStartObject();
                 foreach (var publicRequestTagsKvp in publicRequest.Tags)
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+=======
+                if(publicRequest.IsSetGatewayVersion())
+                {
+                    context.Writer.WritePropertyName("gatewayVersion");
+                    context.Writer.Write(publicRequest.GatewayVersion);
+                }
+
+                if(publicRequest.IsSetTags())
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 {
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;

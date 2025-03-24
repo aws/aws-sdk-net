@@ -75,8 +75,45 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetPrincipal())
             {
+<<<<<<< HEAD
                 context.Writer.WritePropertyName("Principal");
                 context.Writer.WriteStartObject();
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPrincipal())
+                {
+                    context.Writer.WritePropertyName("Principal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Principal, context);
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCondition())
+                {
+                    context.Writer.WritePropertyName("Condition");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Condition, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPrincipal())
+                {
+                    context.Writer.WritePropertyName("Principal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataLakePrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Principal, context);
+>>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = DataLakePrincipalMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Principal, context);

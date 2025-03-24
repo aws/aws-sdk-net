@@ -46,6 +46,7 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private AnalysisSchema _schema;
         private AnalysisSource _source;
+        private AnalysisSourceMetadata _sourceMetadata;
         private DateTime? _updateTime;
         private List<AnalysisTemplateValidationStatusDetail> _validations = AWSConfigs.InitializeCollections ? new List<AnalysisTemplateValidationStatusDetail>() : null;
 
@@ -266,7 +267,6 @@ namespace Amazon.CleanRooms.Model
         /// The source of the analysis template within a collaboration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
         public AnalysisSource Source
         {
             get { return this._source; }
@@ -277,6 +277,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMetadata. 
+        /// <para>
+        ///  The source metadata for the collaboration analysis template.
+        /// </para>
+        /// </summary>
+        public AnalysisSourceMetadata SourceMetadata
+        {
+            get { return this._sourceMetadata; }
+            set { this._sourceMetadata = value; }
+        }
+
+        // Check to see if SourceMetadata property is set
+        internal bool IsSetSourceMetadata()
+        {
+            return this._sourceMetadata != null;
         }
 
         /// <summary>

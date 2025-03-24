@@ -42,7 +42,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property ElectronicTransactionCodeNumber. 
         /// <para>
-        /// The electronic transaction code number on the tax return document.
+        /// The electronic transaction code number on the tax return document. This field must
+        /// be provided for successful API operation.
         /// </para>
         /// </summary>
         public string ElectronicTransactionCodeNumber
@@ -60,7 +61,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property EnterpriseIdentificationNumber. 
         /// <para>
-        /// The enterprise identification number for tax registration.
+        /// The enterprise identification number for tax registration. This field must be provided
+        /// for successful API operation.
         /// </para>
         /// </summary>
         public string EnterpriseIdentificationNumber
@@ -78,7 +80,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property PaymentVoucherNumber. 
         /// <para>
-        /// The payment voucher number on the tax return payment document.
+        /// The payment voucher number on the tax return payment document. This field must be
+        /// provided for successful API operation.
         /// </para>
         /// </summary>
         public string PaymentVoucherNumber
@@ -96,7 +99,8 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property PaymentVoucherNumberDate. 
         /// <para>
-        /// The date on the tax return payment document.
+        /// The date on the tax return payment document. This field must be provided for successful
+        /// API operation.
         /// </para>
         /// </summary>
         public string PaymentVoucherNumberDate

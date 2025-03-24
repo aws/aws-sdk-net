@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// The target model's ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelArn
         {
             get { return this._modelArn; }

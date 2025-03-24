@@ -1124,6 +1124,12 @@
     <pattern>^arn:aws:wafv2:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.Webhook.AppId</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>d[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.BranchName</property>
     <min>1</min>
     <max>255</max>

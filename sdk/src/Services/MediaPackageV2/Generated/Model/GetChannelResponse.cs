@@ -45,6 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         private InputType _inputType;
         private DateTime? _modifiedAt;
         private OutputHeaderConfiguration _outputHeaderConfiguration;
+        private DateTime? _resetAt;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -271,6 +272,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetOutputHeaderConfiguration()
         {
             return this._outputHeaderConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResetAt. 
+        /// <para>
+        /// The time that the channel was last reset.
+        /// </para>
+        /// </summary>
+        public DateTime ResetAt
+        {
+            get { return this._resetAt.GetValueOrDefault(); }
+            set { this._resetAt = value; }
+        }
+
+        // Check to see if ResetAt property is set
+        internal bool IsSetResetAt()
+        {
+            return this._resetAt.HasValue; 
         }
 
         /// <summary>

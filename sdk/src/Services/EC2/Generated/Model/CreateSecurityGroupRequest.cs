@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the security group. Constraints: Up to 255 characters in length. Cannot start with <c>sg-</c>. Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</param>
+        /// <param name="groupName">The name of the security group. Names are case-insensitive and must be unique within the VPC. Constraints: Up to 255 characters in length. Can't start with <c>sg-</c>. Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</param>
         /// <param name="description">A description for the security group. Constraints: Up to 255 characters in length Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</param>
         public CreateSecurityGroupRequest(string groupName, string description)
         {
@@ -137,11 +137,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the security group.
+        /// The name of the security group. Names are case-insensitive and must be unique within
+        /// the VPC.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Up to 255 characters in length. Cannot start with <c>sg-</c>.
+        /// Constraints: Up to 255 characters in length. Can't start with <c>sg-</c>.
         /// </para>
         ///  
         /// <para>
