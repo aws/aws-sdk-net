@@ -242,10 +242,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The maximum length constraint of 2048 characters listed below includes 1037 characters
-        /// reserved for internal use by Systems Manager. The maximum length for a parameter name
-        /// that you create is 1011 characters. This includes the characters in the ARN that precede
-        /// the name you specify, such as <c>arn:aws:ssm:us-east-2:111122223333:parameter/</c>.
+        /// The reported maximum length of 2048 characters for a parameter name includes 1037
+        /// characters that are reserved for internal use by Systems Manager. The maximum length
+        /// for a parameter name that you specify is 1011 characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// This count of 1011 characters includes the characters in the ARN that precede the
+        /// name you specify. This ARN length will vary depending on your partition and Region.
+        /// For example, the following 45 characters count toward the 1011 character maximum for
+        /// a parameter created in the US East (Ohio) Region: <c>arn:aws:ssm:us-east-2:111122223333:parameter/</c>.
         /// </para>
         ///  </note>
         /// </summary>

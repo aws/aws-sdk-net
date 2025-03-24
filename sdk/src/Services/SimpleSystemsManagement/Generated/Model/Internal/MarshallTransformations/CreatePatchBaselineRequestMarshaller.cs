@@ -103,6 +103,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity);
                 }
 
+                if(publicRequest.IsSetAvailableSecurityUpdatesComplianceStatus())
+                {
+                    context.Writer.WritePropertyName("AvailableSecurityUpdatesComplianceStatus");
+                    context.Writer.Write(publicRequest.AvailableSecurityUpdatesComplianceStatus);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("ClientToken");

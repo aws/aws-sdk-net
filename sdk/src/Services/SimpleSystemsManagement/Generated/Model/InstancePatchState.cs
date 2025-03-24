@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class InstancePatchState
     {
+        private int? _availableSecurityUpdateCount;
         private string _baselineId;
         private int? _criticalNonCompliantCount;
         private int? _failedCount;
@@ -58,6 +59,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _securityNonCompliantCount;
         private string _snapshotId;
         private int? _unreportedNotApplicableCount;
+
+        /// <summary>
+        /// Gets and sets the property AvailableSecurityUpdateCount. 
+        /// <para>
+        /// The number of security-related patches that are available but not approved because
+        /// they didn't meet the patch baseline requirements. For example, an updated version
+        /// of a patch might have been released before the specified auto-approval period was
+        /// over.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies to Windows Server managed nodes only.
+        /// </para>
+        /// </summary>
+        public int AvailableSecurityUpdateCount
+        {
+            get { return this._availableSecurityUpdateCount.GetValueOrDefault(); }
+            set { this._availableSecurityUpdateCount = value; }
+        }
+
+        // Check to see if AvailableSecurityUpdateCount property is set
+        internal bool IsSetAvailableSecurityUpdateCount()
+        {
+            return this._availableSecurityUpdateCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BaselineId. 

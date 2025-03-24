@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _approvedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private bool? _approvedPatchesEnableNonSecurity;
+        private PatchComplianceStatus _availableSecurityUpdatesComplianceStatus;
         private string _clientToken;
         private string _description;
         private PatchFilterGroup _globalFilters;
@@ -138,6 +139,38 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatchesEnableNonSecurity()
         {
             return this._approvedPatchesEnableNonSecurity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableSecurityUpdatesComplianceStatus. 
+        /// <para>
+        /// Indicates the status you want to assign to security patches that are available but
+        /// not approved because they don't meet the installation criteria specified in the patch
+        /// baseline.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example scenario: Security patches that you might want installed can be skipped if
+        /// you have specified a long period to wait after a patch is released before installation.
+        /// If an update to the patch is released during your specified waiting period, the waiting
+        /// period for installing the patch starts over. If the waiting period is too long, multiple
+        /// versions of the patch could be released but never installed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported for Windows Server managed nodes only.
+        /// </para>
+        /// </summary>
+        public PatchComplianceStatus AvailableSecurityUpdatesComplianceStatus
+        {
+            get { return this._availableSecurityUpdatesComplianceStatus; }
+            set { this._availableSecurityUpdatesComplianceStatus = value; }
+        }
+
+        // Check to see if AvailableSecurityUpdatesComplianceStatus property is set
+        internal bool IsSetAvailableSecurityUpdatesComplianceStatus()
+        {
+            return this._availableSecurityUpdatesComplianceStatus != null;
         }
 
         /// <summary>
