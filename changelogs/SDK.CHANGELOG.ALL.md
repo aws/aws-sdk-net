@@ -1,3 +1,16 @@
+### 3.7.1008.0 (2025-03-24 18:21 UTC)
+* IoTWireless (3.7.402.0)
+	* Mark EutranCid under LteNmr optional.
+* PCS (3.7.401.0)
+	* ClusterName/ClusterIdentifier, ComputeNodeGroupName/ComputeNodeGroupIdentifier, and QueueName/QueueIdentifier can now have 10 characters, and a minimum of 3 characters. The TagResource API action can now return ServiceQuotaExceededException.
+* QConnect (3.7.404.52)
+	* Provides the correct value for supported model ID.
+* SimpleSystemsManagement (3.7.404.0)
+	* This release adds the AvailableSecurityUpdatesComplianceStatus field to patch baseline operations, as well as the AvailableSecurityUpdateCount and InstancesWithAvailableSecurityUpdates to patch state operations. Applies to Windows Server managed nodes only.
+* Core 3.7.402.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1007.0 (2025-03-21 18:25 UTC)
 * Bedrock (3.7.417.0)
 	* A CustomModelUnit(CMU) is an abstract view of the hardware utilization that Bedrock needs to host a a single copy of your custom imported model. Bedrock determines the number of CMUs that a model copy needs when you import the custom model. You can use CMUs to estimate the cost of Inference's.

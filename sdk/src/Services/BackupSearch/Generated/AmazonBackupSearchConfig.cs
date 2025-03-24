@@ -32,7 +32,7 @@ namespace Amazon.BackupSearch
     public partial class AmazonBackupSearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BackupSearch", "3.7.400.53");
+            InternalSDKUtils.BuildUserAgentString("BackupSearch", "3.7.400.54");
 
         private string _userAgent = UserAgentString;
         ///<summary>
