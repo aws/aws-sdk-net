@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed protocol test RestJsonSerializesSparseNullMapValues by adding proper null value handling in sparse map serialization"
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

@@ -1,18 +1,35 @@
 {
     "core": {
         "changeLogMessages": [
-            "Updated credential providers to provide Async version for generating credentials."
+            "Updated credential providers to provide Async version for generating credentials.",
+            "Fixed protocol test `RestJsonSerializesSparseNullMapValues` by adding proper null value handling in sparse map serialization",
+            "Add telemetry data for Credentials retrieval",
+            "Updated `Microsoft.Extensions.AI` to `9.3.0-preview.1.25161.3` in the `AWSSDK.Extensions.Bedrock.MEAI` package"
         ],
-        "type": "patch",
         "updateMinimum": true
     },
     "services": [
+        {
+            "serviceName": "DynamoDBStreams",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update documentation for code generated from DynamoDB Streams models"
+            ]
+        },
         {
             "serviceName": "SecurityToken",
             "type": "patch",
             "changeLogMessages": [
                 "Added async code paths for the SAML and Assume role credentials providers."
             ]
+        },
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fix a bug where `CopyObject` wasn't working with some special characters."
+            ]
         }
-    ]
+    ],
+    "overrideVersion": "4.0.0.0"
 }

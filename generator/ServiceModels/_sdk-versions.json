@@ -5,7 +5,7 @@
     "CoreVersion"       : "4.0.0.0",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : true,
-    "PreviewLabel"        : "preview.10",
+    "PreviewLabel"        : "preview.11",
     "ServiceVersions"     : {
         "CloudHSM" : {
             "Version" : "4.0.0.0",
