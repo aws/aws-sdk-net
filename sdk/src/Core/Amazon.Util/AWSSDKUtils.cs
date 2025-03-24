@@ -610,7 +610,7 @@ namespace Amazon.Util
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixLongEpochSeconds(long seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>

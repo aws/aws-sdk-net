@@ -129,7 +129,7 @@ namespace AWSSDK.UnitTests
                 {
                     RequestChecksumCalculation = requestChecksumCalculation,
                 },
-                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token"),
+                Identity = new BasicAWSCredentials("access key", "secret"),
             };
 
             return new ExecutionContext(requestContext, null);

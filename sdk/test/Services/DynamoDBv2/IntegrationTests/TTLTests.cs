@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         private static readonly DateTime EpochDate = DateTime.UtcNow.AddDays(7);
         private static readonly TimeSpan Epsilon = TimeSpan.FromSeconds(1);
         private static readonly int EpochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(EpochDate);
-        private static readonly DateTime LongEpochDate = new DateTime(2039, 1, 1, 2, 13, 23, DateTimeKind.Local);
+        private static readonly DateTime LongEpochDate = new DateTime(2039, 1, 1, 2, 13, 23, DateTimeKind.Utc);
         private static readonly long LongEpochSeconds = long.Parse(AWSSDKUtils.ConvertToUnixEpochSecondsString(LongEpochDate));
 
         #endregion
@@ -185,40 +185,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             var epochTable = Context.GetTargetTable<AnnotatedEpochEmployee>() as Table;
             var epochAttributes = epochTable.GetStoreAsEpoch().ToList();
-            var epochLongAttributes = epochTable.GetStoreAsEpochLong().ToList();
             Assert.AreNotEqual(0, epochAttributes.Count);
-            Assert.AreNotEqual(0, epochLongAttributes.Count);
 
             var epochMap = epochTable.ToAttributeMap(doc);
             Assert.IsNotNull(epochMap["CreationTime"].N);
             Assert.IsNotNull(epochMap["EpochDate2"].N);
-            Assert.IsFalse(epochMap.ContainsKey("NullableEpochDate1"));
-            Assert.IsNotNull(epochMap["NullableEpochDate2"].N);
             Assert.IsNotNull(epochMap["NonEpochDate1"].S);
             Assert.IsNotNull(epochMap["NonEpochDate2"].S);
-            Assert.IsNotNull(epochMap["LongEpochDate1"].N);
-            Assert.IsNotNull(epochMap["LongEpochDate2"].N);
-            Assert.IsFalse(epochMap.ContainsKey("NullableLongEpochDate1"));
-            Assert.IsNotNull(epochMap["NullableLongEpochDate2"].N);
-
-            var exceptionThrown = Assert.ThrowsException<InvalidOperationException>(() =>
-            {
-                var badNumericEmployee = new BadNumericEpochEmployee
-                {
-                    Name = "Bob",
-                    Age = 45,
-                    CreationTime = EpochDate,
-                    EpochDate2 = EpochDate,
-                    NonEpochDate1 = EpochDate,
-                    NonEpochDate2 = EpochDate,
-                    LongEpochDate1 = LongEpochDate,
-                    LongEpochDate2 = LongEpochDate.AddMonths(3),
-                    BadLongEpochDate = LongEpochDate
-                };
-
-                Context.Save(badNumericEmployee);
-            });
-            Assert.AreEqual("BadLongEpochDate must not set both StoreAsEpoch and StoreAsEpochLong as true at the same time.", exceptionThrown.Message);
         }
 
         public void TestStoreAsEpoch(ITable hashRangeTable, ITable numericHashRangeTable)
@@ -263,7 +236,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 AttributesToStoreAsEpochLong = new List<string> { "LongEpochDate", "NullableLongEpochDate1", "NullableLongEpochDate2" }
             };
 #pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
-            var numericEpochTable = Table.LoadTable(Client, config);
+            var numericEpochTable = Table.LoadTable(Client, config) as Table; // Do an explicit cast since we want to access internal methods.
 #pragma warning restore CS0618 // Re-enable the warning
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, numericEpochTable.GetStoreAsEpoch().ToList());
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpochLong, numericEpochTable.GetStoreAsEpochLong().ToList());

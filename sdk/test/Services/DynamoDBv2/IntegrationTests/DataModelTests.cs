@@ -290,8 +290,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 #pragma warning restore CS0618 // Re-enable the warning
 
             var currTime = DateTime.UtcNow;
-            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Local); // DateTime.Now returns Local kind.
-            var longEpochTimeBefore1970 = new DateTime(1969, 12, 30, 23, 59, 59, DateTimeKind.Local);
+            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Utc);
+            var longEpochTimeBefore1970 = new DateTime(1969, 12, 30, 23, 59, 59, DateTimeKind.Utc);
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -395,8 +395,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context.ConverterCache.Add(typeof(DateTime?), new DateTimeUtcConverter());
 
             var currTime = DateTime.UtcNow;
-            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Local); // DateTime.Now returns Local kind.
-            var longEpochTimeBefore1970 = new DateTime(1950, 12, 30, 19, 43, 30, DateTimeKind.Local);
+            var longEpochTime = new DateTime(2039, 2, 5, 17, 49, 55, DateTimeKind.Utc);
+            var longEpochTimeBefore1970 = new DateTime(1950, 12, 30, 19, 43, 30, DateTimeKind.Utc);
 
             var employee = new AnnotatedNumericEpochEmployee
             {

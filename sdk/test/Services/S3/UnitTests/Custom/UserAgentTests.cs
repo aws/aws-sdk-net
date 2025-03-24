@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
                 OriginalRequest = request,
                 Unmarshaller = null,
                 IsAsync = false,
-                ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token"),
+                Identity = new BasicAWSCredentials("access key", "secret"),
             };
 
             var executionContext = new ExecutionContext(requestContext, new ResponseContext());
