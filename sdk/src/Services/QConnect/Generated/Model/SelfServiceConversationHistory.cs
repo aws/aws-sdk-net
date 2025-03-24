@@ -31,7 +31,7 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// The conversation history data to included in conversation context data before the
-    /// the Amazon Q in Connect session..
+    /// Amazon Q in Connect session.
     /// </summary>
     public partial class SelfServiceConversationHistory
     {

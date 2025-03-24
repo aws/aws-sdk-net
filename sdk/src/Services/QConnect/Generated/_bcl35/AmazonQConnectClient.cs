@@ -5058,7 +5058,7 @@ namespace Amazon.QConnect
         #region  RemoveAssistantAIAgent
 
         /// <summary>
-        /// Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAssistantAIAgent service method.</param>
         /// 
@@ -6081,7 +6081,7 @@ namespace Amazon.QConnect
         #region  UpdateAssistantAIAgent
 
         /// <summary>
-        /// Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.
+        /// Updates the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssistantAIAgent service method.</param>
         /// 
