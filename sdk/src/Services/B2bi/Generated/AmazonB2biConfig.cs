@@ -34,16 +34,10 @@ namespace Amazon.B2bi
     public partial class AmazonB2biConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("b2bi", "4.0.0.0");
 
         private static readonly AmazonB2biEndpointResolver EndpointResolver =
             new AmazonB2biEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("b2bi", "3.7.404.10");
-=======
-            InternalSDKUtils.BuildUserAgentString("b2bi", "3.7.404.24");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

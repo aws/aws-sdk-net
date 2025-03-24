@@ -49,12 +49,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioExtractionConfiguration())
             {
                 context.Writer.WritePropertyName("audioExtractionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioExtractionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioExtractionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageExtractionConfiguration())
@@ -71,12 +71,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVideoExtractionConfiguration())
             {
                 context.Writer.WritePropertyName("videoExtractionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoExtractionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoExtractionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

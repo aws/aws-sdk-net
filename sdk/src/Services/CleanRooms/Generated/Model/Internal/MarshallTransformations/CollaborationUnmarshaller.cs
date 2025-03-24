@@ -107,7 +107,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 if (context.TestExpression("jobLogStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobLogStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobLogStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipArn", targetDepth))

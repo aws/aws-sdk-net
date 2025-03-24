@@ -44,9 +44,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1430)]
-        public int DurationInMinutes
+        public int? DurationInMinutes
         {
-            get { return this._durationInMinutes.GetValueOrDefault(); }
+            get { return this._durationInMinutes; }
             set { this._durationInMinutes = value; }
         }
 

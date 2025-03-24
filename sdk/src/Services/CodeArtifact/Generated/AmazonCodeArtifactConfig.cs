@@ -34,16 +34,10 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("codeartifact", "4.0.0.0");
 
         private static readonly AmazonCodeArtifactEndpointResolver EndpointResolver =
             new AmazonCodeArtifactEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("codeartifact", "3.7.401.77");
-=======
-            InternalSDKUtils.BuildUserAgentString("codeartifact", "3.7.401.91");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

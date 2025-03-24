@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NdiConfig Object
     /// </summary>  
-    public class NdiConfigUnmarshaller : IUnmarshaller<NdiConfig, XmlUnmarshallerContext>, IUnmarshaller<NdiConfig, JsonUnmarshallerContext>
+    public class NdiConfigUnmarshaller : IJsonUnmarshaller<NdiConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NdiConfig IUnmarshaller<NdiConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NdiConfig Unmarshall(JsonUnmarshallerContext context)
+        public NdiConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NdiConfig unmarshalledObject = new NdiConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("machineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MachineName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MachineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ndiDiscoveryServers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NdiDiscoveryServerConfig, NdiDiscoveryServerConfigUnmarshaller>(NdiDiscoveryServerConfigUnmarshaller.Instance);
-                    unmarshalledObject.NdiDiscoveryServers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NdiDiscoveryServerConfig, NdiDiscoveryServerConfigUnmarshaller>(NdiDiscoveryServerConfigUnmarshaller.Instance);
+                    unmarshalledObject.NdiDiscoveryServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ndiState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NdiState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NdiState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

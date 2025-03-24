@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioPtsOffsetDelta())
             {
                 context.Writer.WritePropertyName("audioPtsOffsetDelta");
-                context.Writer.Write(requestObject.AudioPtsOffsetDelta);
+                context.Writer.WriteNumberValue(requestObject.AudioPtsOffsetDelta.Value);
             }
 
             if(requestObject.IsSetDataPTSControl())

@@ -127,9 +127,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value for the completion time of the device discovery.
         /// </para>
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

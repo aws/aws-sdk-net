@@ -83,7 +83,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DeobfuscationConfiguration", targetDepth))
                 {
                     var unmarshaller = DeobfuscationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DeobfuscationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeobfuscationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Domain", targetDepth))
@@ -94,8 +94,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DomainList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DomainList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DomainList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))

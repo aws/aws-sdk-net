@@ -155,7 +155,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if AccessControlAllowOrigin property is set
         internal bool IsSetAccessControlAllowOrigin()
         {
-            return !string.IsNullOrEmpty(this._accessControlAllowOrigin);
+            return this._accessControlAllowOrigin != null;
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if AccessControlExposeHeaders property is set
         internal bool IsSetAccessControlExposeHeaders()
         {
-            return !string.IsNullOrEmpty(this._accessControlExposeHeaders);
+            return this._accessControlExposeHeaders != null;
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if CacheControl property is set
         internal bool IsSetCacheControl()
         {
-            return !string.IsNullOrEmpty(this._cacheControl);
+            return this._cacheControl != null;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if ContentSecurityPolicy property is set
         internal bool IsSetContentSecurityPolicy()
         {
-            return !string.IsNullOrEmpty(this._contentSecurityPolicy);
+            return this._contentSecurityPolicy != null;
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if StrictTransportSecurity property is set
         internal bool IsSetStrictTransportSecurity()
         {
-            return !string.IsNullOrEmpty(this._strictTransportSecurity);
+            return this._strictTransportSecurity != null;
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if XAmznErrorType property is set
         internal bool IsSetXAmznErrorType()
         {
-            return !string.IsNullOrEmpty(this._xAmznErrorType);
+            return this._xAmznErrorType != null;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if XContentTypeOptions property is set
         internal bool IsSetXContentTypeOptions()
         {
-            return !string.IsNullOrEmpty(this._xContentTypeOptions);
+            return this._xContentTypeOptions != null;
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if XFrameOptions property is set
         internal bool IsSetXFrameOptions()
         {
-            return !string.IsNullOrEmpty(this._xFrameOptions);
+            return this._xFrameOptions != null;
         }
 
     }

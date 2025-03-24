@@ -49,7 +49,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("IpAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
             if(requestObject.IsSetSecurityGroupIds())

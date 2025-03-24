@@ -45,9 +45,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long HubTokenTimerExpirySettingInSeconds
+        public long? HubTokenTimerExpirySettingInSeconds
         {
-            get { return this._hubTokenTimerExpirySettingInSeconds.GetValueOrDefault(); }
+            get { return this._hubTokenTimerExpirySettingInSeconds; }
             set { this._hubTokenTimerExpirySettingInSeconds = value; }
         }
 

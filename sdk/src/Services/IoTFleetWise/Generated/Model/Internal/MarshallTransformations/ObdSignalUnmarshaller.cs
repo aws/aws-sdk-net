@@ -76,8 +76,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isSigned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsSigned = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSigned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("offset", targetDepth))
@@ -113,7 +113,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 if (context.TestExpression("signalValueType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignalValueType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignalValueType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startByte", targetDepth))

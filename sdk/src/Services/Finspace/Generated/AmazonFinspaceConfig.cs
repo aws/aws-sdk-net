@@ -34,16 +34,10 @@ namespace Amazon.Finspace
     public partial class AmazonFinspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("finspace", "4.0.0.0");
 
         private static readonly AmazonFinspaceEndpointResolver EndpointResolver =
             new AmazonFinspaceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("finspace", "3.7.401.43");
-=======
-            InternalSDKUtils.BuildUserAgentString("finspace", "3.7.401.57");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

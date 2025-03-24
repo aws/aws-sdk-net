@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuntimeLogConfigurations Object
     /// </summary>  
-    public class RuntimeLogConfigurationsUnmarshaller : IUnmarshaller<RuntimeLogConfigurations, XmlUnmarshallerContext>, IUnmarshaller<RuntimeLogConfigurations, JsonUnmarshallerContext>
+    public class RuntimeLogConfigurationsUnmarshaller : IJsonUnmarshaller<RuntimeLogConfigurations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuntimeLogConfigurations IUnmarshaller<RuntimeLogConfigurations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuntimeLogConfigurations Unmarshall(JsonUnmarshallerContext context)
+        public RuntimeLogConfigurations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuntimeLogConfigurations unmarshalledObject = new RuntimeLogConfigurations();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeleteLocalStoreAfterUpload", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteLocalStoreAfterUpload = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.DeleteLocalStoreAfterUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalStoreFileRotationMaxBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.LocalStoreFileRotationMaxBytes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.LocalStoreFileRotationMaxBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalStoreFileRotationMaxFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.LocalStoreFileRotationMaxFiles = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.LocalStoreFileRotationMaxFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalStoreLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocalStoreLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalStoreLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogFlushLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogFlushLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogFlushLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UploadLog", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UploadLog = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UploadLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UploadPeriodMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UploadPeriodMinutes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.UploadPeriodMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

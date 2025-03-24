@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProtectedJobOutputConfigurationOutput Object
     /// </summary>  
-    public class ProtectedJobOutputConfigurationOutputUnmarshaller : IUnmarshaller<ProtectedJobOutputConfigurationOutput, XmlUnmarshallerContext>, IUnmarshaller<ProtectedJobOutputConfigurationOutput, JsonUnmarshallerContext>
+    public class ProtectedJobOutputConfigurationOutputUnmarshaller : IJsonUnmarshaller<ProtectedJobOutputConfigurationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProtectedJobOutputConfigurationOutput IUnmarshaller<ProtectedJobOutputConfigurationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectedJobOutputConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
+        public ProtectedJobOutputConfigurationOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProtectedJobOutputConfigurationOutput unmarshalledObject = new ProtectedJobOutputConfigurationOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("member", targetDepth))
                 {
                     var unmarshaller = ProtectedJobMemberOutputConfigurationOutputUnmarshaller.Instance;
-                    unmarshalledObject.Member = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Member = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3", targetDepth))
                 {
                     var unmarshaller = ProtectedJobS3OutputConfigurationOutputUnmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

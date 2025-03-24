@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -64,38 +67,46 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 throw new AmazonIoTManagedIntegrationsException("Request object does not have required field ManagedThingId set");
             request.AddPathResource("{ManagedThingId}", StringUtils.FromString(publicRequest.ManagedThingId));
             request.ResourcePath = "/managed-things-command/{ManagedThingId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConnectorAssociationId())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectorAssociationId())
-                {
-                    context.Writer.WritePropertyName("ConnectorAssociationId");
-                    context.Writer.Write(publicRequest.ConnectorAssociationId);
-                }
-
-                if(publicRequest.IsSetEndpoints())
-                {
-                    context.Writer.WritePropertyName("Endpoints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEndpointsListValue in publicRequest.Endpoints)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CommandEndpointMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEndpointsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("ConnectorAssociationId");
+                context.Writer.WriteStringValue(publicRequest.ConnectorAssociationId);
             }
+
+            if(publicRequest.IsSetEndpoints())
+            {
+                context.Writer.WritePropertyName("Endpoints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEndpointsListValue in publicRequest.Endpoints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CommandEndpointMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEndpointsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -172,9 +172,9 @@ namespace Amazon.MediaConnect.Model
         /// A quality setting for the NDI Speed HQ encoder. 
         /// </para>
         /// </summary>
-        public int NdiSpeedHqQuality
+        public int? NdiSpeedHqQuality
         {
-            get { return this._ndiSpeedHqQuality.GetValueOrDefault(); }
+            get { return this._ndiSpeedHqQuality; }
             set { this._ndiSpeedHqQuality = value; }
         }
 

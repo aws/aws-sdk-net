@@ -62,9 +62,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int MinNumberOfRetries
+        public int? MinNumberOfRetries
         {
-            get { return this._minNumberOfRetries.GetValueOrDefault(); }
+            get { return this._minNumberOfRetries; }
             set { this._minNumberOfRetries = value; }
         }
 

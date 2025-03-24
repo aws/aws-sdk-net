@@ -75,57 +75,23 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterIdentifier())
+            {
+                context.Writer.WritePropertyName("ClusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
+            }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("Database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("MaxResults");
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterIdentifier())
-                {
-                    context.Writer.WritePropertyName("ClusterIdentifier");
-                    context.Writer.Write(publicRequest.ClusterIdentifier);
-                }
-
-                if(publicRequest.IsSetDatabase())
-                {
-                    context.Writer.WritePropertyName("Database");
-                    context.Writer.Write(publicRequest.Database);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
             if(publicRequest.IsSetNextToken())
             {
@@ -145,26 +111,16 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StatementName);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
                 context.Writer.WriteStringValue(publicRequest.Status);
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetWorkgroupName())
-                {
-                    context.Writer.WritePropertyName("WorkgroupName");
-                    context.Writer.Write(publicRequest.WorkgroupName);
-                }
+            }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("WorkgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
             }
 
             writer.WriteEndObject();

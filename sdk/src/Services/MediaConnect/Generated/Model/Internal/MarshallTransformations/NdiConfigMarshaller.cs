@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMachineName())
             {
                 context.Writer.WritePropertyName("machineName");
-                context.Writer.Write(requestObject.MachineName);
+                context.Writer.WriteStringValue(requestObject.MachineName);
             }
 
             if(requestObject.IsSetNdiDiscoveryServers())
             {
                 context.Writer.WritePropertyName("ndiDiscoveryServers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNdiDiscoveryServersListValue in requestObject.NdiDiscoveryServers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NdiDiscoveryServerConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectNdiDiscoveryServersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNdiState())
             {
                 context.Writer.WritePropertyName("ndiState");
-                context.Writer.Write(requestObject.NdiState);
+                context.Writer.WriteStringValue(requestObject.NdiState);
             }
 
         }

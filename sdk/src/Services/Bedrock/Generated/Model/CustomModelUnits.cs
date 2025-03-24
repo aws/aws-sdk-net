@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model
         /// The number of custom model units used to host a model copy. 
         /// </para>
         /// </summary>
-        public int CustomModelUnitsPerModelCopy
+        public int? CustomModelUnitsPerModelCopy
         {
-            get { return this._customModelUnitsPerModelCopy.GetValueOrDefault(); }
+            get { return this._customModelUnitsPerModelCopy; }
             set { this._customModelUnitsPerModelCopy = value; }
         }
 

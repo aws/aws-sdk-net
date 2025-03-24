@@ -71,7 +71,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 if (context.TestExpression("customRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ecrRepositoryPrefix", targetDepth))
@@ -107,7 +107,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 if (context.TestExpression("upstreamRepositoryPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpstreamRepositoryPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpstreamRepositoryPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

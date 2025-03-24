@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationAddress())
             {
                 context.Writer.WritePropertyName("DestinationAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("DestinationPort");
-                context.Writer.Write(requestObject.DestinationPort);
+                context.Writer.WriteStringValue(requestObject.DestinationPort);
             }
 
             if(requestObject.IsSetProtocols())
             {
                 context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                        context.Writer.Write(requestObjectProtocolsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtocolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceAddress())
             {
                 context.Writer.WritePropertyName("SourceAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourcePort())
             {
                 context.Writer.WritePropertyName("SourcePort");
-                context.Writer.Write(requestObject.SourcePort);
+                context.Writer.WriteStringValue(requestObject.SourcePort);
             }
 
         }

@@ -76,73 +76,33 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultJobResultConfiguration())
+            {
+                context.Writer.WritePropertyName("defaultJobResultConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDefaultResultConfiguration())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("defaultResultConfiguration");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultResultConfiguration())
-                {
-                    context.Writer.WritePropertyName("defaultResultConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultJobResultConfiguration())
-                {
-                    context.Writer.WritePropertyName("defaultJobResultConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDefaultResultConfiguration())
-                {
-                    context.Writer.WritePropertyName("defaultResultConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = MembershipProtectedQueryResultConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
 
-<<<<<<< HEAD
                 context.Writer.WriteEndObject();
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueryLogStatus())
-                {
-                    context.Writer.WritePropertyName("queryLogStatus");
-                    context.Writer.Write(publicRequest.QueryLogStatus);
-                }
-=======
-                if(publicRequest.IsSetJobLogStatus())
-                {
-                    context.Writer.WritePropertyName("jobLogStatus");
-                    context.Writer.Write(publicRequest.JobLogStatus);
-                }
 
-                if(publicRequest.IsSetQueryLogStatus())
-                {
-                    context.Writer.WritePropertyName("queryLogStatus");
-                    context.Writer.Write(publicRequest.QueryLogStatus);
-                }
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
+            if(publicRequest.IsSetJobLogStatus())
+            {
+                context.Writer.WritePropertyName("jobLogStatus");
+                context.Writer.WriteStringValue(publicRequest.JobLogStatus);
+            }
 
             if(publicRequest.IsSetQueryLogStatus())
             {

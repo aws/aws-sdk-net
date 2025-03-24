@@ -88,8 +88,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WithPrivilegedAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.WithPrivilegedAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.WithPrivilegedAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -50,9 +50,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of canceled things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfCanceledThings
+        public int? NumberOfCanceledThings
         {
-            get { return this._numberOfCanceledThings.GetValueOrDefault(); }
+            get { return this._numberOfCanceledThings; }
             set { this._numberOfCanceledThings = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of failed things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfFailedThings
+        public int? NumberOfFailedThings
         {
-            get { return this._numberOfFailedThings.GetValueOrDefault(); }
+            get { return this._numberOfFailedThings; }
             set { this._numberOfFailedThings = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of in progress things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfInProgressThings
+        public int? NumberOfInProgressThings
         {
-            get { return this._numberOfInProgressThings.GetValueOrDefault(); }
+            get { return this._numberOfInProgressThings; }
             set { this._numberOfInProgressThings = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of queued things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfQueuedThings
+        public int? NumberOfQueuedThings
         {
-            get { return this._numberOfQueuedThings.GetValueOrDefault(); }
+            get { return this._numberOfQueuedThings; }
             set { this._numberOfQueuedThings = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of rejected things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfRejectedThings
+        public int? NumberOfRejectedThings
         {
-            get { return this._numberOfRejectedThings.GetValueOrDefault(); }
+            get { return this._numberOfRejectedThings; }
             set { this._numberOfRejectedThings = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of removed things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfRemovedThings
+        public int? NumberOfRemovedThings
         {
-            get { return this._numberOfRemovedThings.GetValueOrDefault(); }
+            get { return this._numberOfRemovedThings; }
             set { this._numberOfRemovedThings = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of succeeded things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfSucceededThings
+        public int? NumberOfSucceededThings
         {
-            get { return this._numberOfSucceededThings.GetValueOrDefault(); }
+            get { return this._numberOfSucceededThings; }
             set { this._numberOfSucceededThings = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The number of timed out things in an over-the-air (OTA) task.
         /// </para>
         /// </summary>
-        public int NumberOfTimedOutThings
+        public int? NumberOfTimedOutThings
         {
-            get { return this._numberOfTimedOutThings.GetValueOrDefault(); }
+            get { return this._numberOfTimedOutThings; }
             set { this._numberOfTimedOutThings = value; }
         }
 

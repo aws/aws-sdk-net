@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionTraceId())
             {
                 context.Writer.WritePropertyName("actionTraceId");
-                context.Writer.Write(requestObject.ActionTraceId);
+                context.Writer.WriteStringValue(requestObject.ActionTraceId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetParameters())
@@ -69,7 +67,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRef())
             {
                 context.Writer.WritePropertyName("ref");
-                context.Writer.Write(requestObject.Ref);
+                context.Writer.WriteStringValue(requestObject.Ref);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReason())
             {
                 context.Writer.WritePropertyName("Reason");
-                context.Writer.Write(requestObject.Reason);
+                context.Writer.WriteStringValue(requestObject.Reason);
             }
 
             if(requestObject.IsSetRecurrenceRule())
             {
                 context.Writer.WritePropertyName("RecurrenceRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecurrenceRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecurrenceRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTime.Value)));
             }
 
             if(requestObject.IsSetWindow())
             {
                 context.Writer.WritePropertyName("Window");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WindowMarshaller.Instance;
                 marshaller.Marshall(requestObject.Window, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

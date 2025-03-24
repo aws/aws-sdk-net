@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -61,66 +64,74 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/device-discoveries";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuthenticationMaterial())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationMaterial())
-                {
-                    context.Writer.WritePropertyName("AuthenticationMaterial");
-                    context.Writer.Write(publicRequest.AuthenticationMaterial);
-                }
-
-                if(publicRequest.IsSetAuthenticationMaterialType())
-                {
-                    context.Writer.WritePropertyName("AuthenticationMaterialType");
-                    context.Writer.Write(publicRequest.AuthenticationMaterialType);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                if(publicRequest.IsSetConnectorAssociationIdentifier())
-                {
-                    context.Writer.WritePropertyName("ConnectorAssociationIdentifier");
-                    context.Writer.Write(publicRequest.ConnectorAssociationIdentifier);
-                }
-
-                if(publicRequest.IsSetControllerIdentifier())
-                {
-                    context.Writer.WritePropertyName("ControllerIdentifier");
-                    context.Writer.Write(publicRequest.ControllerIdentifier);
-                }
-
-                if(publicRequest.IsSetDiscoveryType())
-                {
-                    context.Writer.WritePropertyName("DiscoveryType");
-                    context.Writer.Write(publicRequest.DiscoveryType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("AuthenticationMaterial");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationMaterial);
             }
+
+            if(publicRequest.IsSetAuthenticationMaterialType())
+            {
+                context.Writer.WritePropertyName("AuthenticationMaterialType");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationMaterialType);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetConnectorAssociationIdentifier())
+            {
+                context.Writer.WritePropertyName("ConnectorAssociationIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ConnectorAssociationIdentifier);
+            }
+
+            if(publicRequest.IsSetControllerIdentifier())
+            {
+                context.Writer.WritePropertyName("ControllerIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ControllerIdentifier);
+            }
+
+            if(publicRequest.IsSetDiscoveryType())
+            {
+                context.Writer.WritePropertyName("DiscoveryType");
+                context.Writer.WriteStringValue(publicRequest.DiscoveryType);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

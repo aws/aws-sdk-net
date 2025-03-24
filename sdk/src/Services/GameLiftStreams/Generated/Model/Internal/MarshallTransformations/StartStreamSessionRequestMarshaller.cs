@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
 {
@@ -64,105 +67,113 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 throw new AmazonGameLiftStreamsException("Request object does not have required field Identifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/streamgroups/{Identifier}/streamsessions";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalEnvironmentVariables())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalEnvironmentVariables())
+                context.Writer.WritePropertyName("AdditionalEnvironmentVariables");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAdditionalEnvironmentVariablesKvp in publicRequest.AdditionalEnvironmentVariables)
                 {
-                    context.Writer.WritePropertyName("AdditionalEnvironmentVariables");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAdditionalEnvironmentVariablesKvp in publicRequest.AdditionalEnvironmentVariables)
-                    {
-                        context.Writer.WritePropertyName(publicRequestAdditionalEnvironmentVariablesKvp.Key);
-                        var publicRequestAdditionalEnvironmentVariablesValue = publicRequestAdditionalEnvironmentVariablesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAdditionalEnvironmentVariablesKvp.Key);
+                    var publicRequestAdditionalEnvironmentVariablesValue = publicRequestAdditionalEnvironmentVariablesKvp.Value;
 
-                            context.Writer.Write(publicRequestAdditionalEnvironmentVariablesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAdditionalEnvironmentVariablesValue);
                 }
-
-                if(publicRequest.IsSetAdditionalLaunchArgs())
-                {
-                    context.Writer.WritePropertyName("AdditionalLaunchArgs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalLaunchArgsListValue in publicRequest.AdditionalLaunchArgs)
-                    {
-                            context.Writer.Write(publicRequestAdditionalLaunchArgsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetApplicationIdentifier())
-                {
-                    context.Writer.WritePropertyName("ApplicationIdentifier");
-                    context.Writer.Write(publicRequest.ApplicationIdentifier);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConnectionTimeoutSeconds())
-                {
-                    context.Writer.WritePropertyName("ConnectionTimeoutSeconds");
-                    context.Writer.Write(publicRequest.ConnectionTimeoutSeconds);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetLocations())
-                {
-                    context.Writer.WritePropertyName("Locations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocationsListValue in publicRequest.Locations)
-                    {
-                            context.Writer.Write(publicRequestLocationsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("Protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                if(publicRequest.IsSetSessionLengthSeconds())
-                {
-                    context.Writer.WritePropertyName("SessionLengthSeconds");
-                    context.Writer.Write(publicRequest.SessionLengthSeconds);
-                }
-
-                if(publicRequest.IsSetSignalRequest())
-                {
-                    context.Writer.WritePropertyName("SignalRequest");
-                    context.Writer.Write(publicRequest.SignalRequest);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAdditionalLaunchArgs())
+            {
+                context.Writer.WritePropertyName("AdditionalLaunchArgs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalLaunchArgsListValue in publicRequest.AdditionalLaunchArgs)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdditionalLaunchArgsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetApplicationIdentifier())
+            {
+                context.Writer.WritePropertyName("ApplicationIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ApplicationIdentifier);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetConnectionTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("ConnectionTimeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.ConnectionTimeoutSeconds.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetLocations())
+            {
+                context.Writer.WritePropertyName("Locations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                {
+                        context.Writer.WriteStringValue(publicRequestLocationsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("Protocol");
+                context.Writer.WriteStringValue(publicRequest.Protocol);
+            }
+
+            if(publicRequest.IsSetSessionLengthSeconds())
+            {
+                context.Writer.WritePropertyName("SessionLengthSeconds");
+                context.Writer.WriteNumberValue(publicRequest.SessionLengthSeconds.Value);
+            }
+
+            if(publicRequest.IsSetSignalRequest())
+            {
+                context.Writer.WritePropertyName("SignalRequest");
+                context.Writer.WriteStringValue(publicRequest.SignalRequest);
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("UserId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

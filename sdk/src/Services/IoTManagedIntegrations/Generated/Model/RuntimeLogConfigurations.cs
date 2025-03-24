@@ -50,9 +50,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// to the cloud.
         /// </para>
         /// </summary>
-        public bool DeleteLocalStoreAfterUpload
+        public bool? DeleteLocalStoreAfterUpload
         {
-            get { return this._deleteLocalStoreAfterUpload.GetValueOrDefault(); }
+            get { return this._deleteLocalStoreAfterUpload; }
             set { this._deleteLocalStoreAfterUpload = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// before the oldest logs are deleted or overwritten.
         /// </para>
         /// </summary>
-        public int LocalStoreFileRotationMaxBytes
+        public int? LocalStoreFileRotationMaxBytes
         {
-            get { return this._localStoreFileRotationMaxBytes.GetValueOrDefault(); }
+            get { return this._localStoreFileRotationMaxBytes; }
             set { this._localStoreFileRotationMaxBytes = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// the device before the oldest files are deleted or overwritten.
         /// </para>
         /// </summary>
-        public int LocalStoreFileRotationMaxFiles
+        public int? LocalStoreFileRotationMaxFiles
         {
-            get { return this._localStoreFileRotationMaxFiles.GetValueOrDefault(); }
+            get { return this._localStoreFileRotationMaxFiles; }
             set { this._localStoreFileRotationMaxFiles = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Configuration to enable or disable uploading of runtime logs to the cloud.
         /// </para>
         /// </summary>
-        public bool UploadLog
+        public bool? UploadLog
         {
-            get { return this._uploadLog.GetValueOrDefault(); }
+            get { return this._uploadLog; }
             set { this._uploadLog = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// that the device uploads to the cloud.
         /// </para>
         /// </summary>
-        public int UploadPeriodMinutes
+        public int? UploadPeriodMinutes
         {
-            get { return this._uploadPeriodMinutes.GetValueOrDefault(); }
+            get { return this._uploadPeriodMinutes; }
             set { this._uploadPeriodMinutes = value; }
         }
 

@@ -118,154 +118,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 
             if(publicRequest.IsSetDescription())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionGroupExecutor())
-                {
-                    context.Writer.WritePropertyName("actionGroupExecutor");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionGroupExecutorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionGroupExecutor, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetActionGroupName())
-                {
-                    context.Writer.WritePropertyName("actionGroupName");
-                    context.Writer.Write(publicRequest.ActionGroupName);
-                }
-
-                if(publicRequest.IsSetActionGroupState())
-                {
-                    context.Writer.WritePropertyName("actionGroupState");
-                    context.Writer.Write(publicRequest.ActionGroupState);
-                }
-
-                if(publicRequest.IsSetApiSchema())
-                {
-                    context.Writer.WritePropertyName("apiSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = APISchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApiSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFunctionSchema())
-                {
-                    context.Writer.WritePropertyName("functionSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FunctionSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FunctionSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParentActionGroupSignature())
-                {
-                    context.Writer.WritePropertyName("parentActionGroupSignature");
-                    context.Writer.Write(publicRequest.ParentActionGroupSignature);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActionGroupExecutor())
-                {
-                    context.Writer.WritePropertyName("actionGroupExecutor");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActionGroupExecutorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActionGroupExecutor, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetActionGroupName())
-                {
-                    context.Writer.WritePropertyName("actionGroupName");
-                    context.Writer.Write(publicRequest.ActionGroupName);
-                }
-
-                if(publicRequest.IsSetActionGroupState())
-                {
-                    context.Writer.WritePropertyName("actionGroupState");
-                    context.Writer.Write(publicRequest.ActionGroupState);
-                }
-
-                if(publicRequest.IsSetApiSchema())
-                {
-                    context.Writer.WritePropertyName("apiSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = APISchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ApiSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFunctionSchema())
-                {
-                    context.Writer.WritePropertyName("functionSchema");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = FunctionSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FunctionSchema, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetParentActionGroupSignature())
-                {
-                    context.Writer.WritePropertyName("parentActionGroupSignature");
-                    context.Writer.Write(publicRequest.ParentActionGroupSignature);
-                }
-
-                if(publicRequest.IsSetParentActionGroupSignatureParams())
-                {
-                    context.Writer.WritePropertyName("parentActionGroupSignatureParams");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParentActionGroupSignatureParamsKvp in publicRequest.ParentActionGroupSignatureParams)
-                    {
-                        context.Writer.WritePropertyName(publicRequestParentActionGroupSignatureParamsKvp.Key);
-                        var publicRequestParentActionGroupSignatureParamsValue = publicRequestParentActionGroupSignatureParamsKvp.Value;
-
-                            context.Writer.Write(publicRequestParentActionGroupSignatureParamsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             if(publicRequest.IsSetFunctionSchema())
@@ -283,6 +137,20 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("parentActionGroupSignature");
                 context.Writer.WriteStringValue(publicRequest.ParentActionGroupSignature);
+            }
+
+            if(publicRequest.IsSetParentActionGroupSignatureParams())
+            {
+                context.Writer.WritePropertyName("parentActionGroupSignatureParams");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParentActionGroupSignatureParamsKvp in publicRequest.ParentActionGroupSignatureParams)
+                {
+                    context.Writer.WritePropertyName(publicRequestParentActionGroupSignatureParamsKvp.Key);
+                    var publicRequestParentActionGroupSignatureParamsValue = publicRequestParentActionGroupSignatureParamsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestParentActionGroupSignatureParamsValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

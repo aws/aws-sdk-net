@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.IoTManagedIntegrations
@@ -67,7 +68,7 @@ namespace Amazon.IoTManagedIntegrations
         ///
         /// </summary>
         public AmazonIoTManagedIntegrationsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTManagedIntegrationsConfig()) { }
+            : base(new AmazonIoTManagedIntegrationsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTManagedIntegrationsClient with the credentials loaded from the application's
@@ -86,7 +87,7 @@ namespace Amazon.IoTManagedIntegrations
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTManagedIntegrationsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTManagedIntegrationsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTManagedIntegrationsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTManagedIntegrationsClient with the credentials loaded from the application's
@@ -105,7 +106,7 @@ namespace Amazon.IoTManagedIntegrations
         /// </summary>
         /// <param name="config">The AmazonIoTManagedIntegrationsClient Configuration Object</param>
         public AmazonIoTManagedIntegrationsClient(AmazonIoTManagedIntegrationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +231,6 @@ namespace Amazon.IoTManagedIntegrations
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +238,9 @@ namespace Amazon.IoTManagedIntegrations
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTManagedIntegrationsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTManagedIntegrationsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -3296,16 +3291,8 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonIoTManagedIntegrationsEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

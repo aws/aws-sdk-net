@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("BaseRatePerMinute");
-                context.Writer.Write(requestObject.BaseRatePerMinute);
+                context.Writer.WriteNumberValue(requestObject.BaseRatePerMinute.Value);
             }
 
             if(requestObject.IsSetIncrementFactor())
             {
                 context.Writer.WritePropertyName("IncrementFactor");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.IncrementFactor);
+                    context.Writer.WriteNumberValue(requestObject.IncrementFactor.Value);
                 }
             }
 
             if(requestObject.IsSetRateIncreaseCriteria())
             {
                 context.Writer.WritePropertyName("RateIncreaseCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RolloutRateIncreaseCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.RateIncreaseCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

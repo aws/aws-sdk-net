@@ -65,9 +65,9 @@ namespace Amazon.MediaConnect.Model
         /// 
         /// </para>
         /// </summary>
-        public int DiscoveryServerPort
+        public int? DiscoveryServerPort
         {
-            get { return this._discoveryServerPort.GetValueOrDefault(); }
+            get { return this._discoveryServerPort; }
             set { this._discoveryServerPort = value; }
         }
 

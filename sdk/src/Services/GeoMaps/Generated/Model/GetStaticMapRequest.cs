@@ -209,9 +209,9 @@ namespace Amazon.GeoMaps.Model
         /// of the image from being cut or obscured.
         /// </para>
         /// </summary>
-        public bool CropLabels
+        public bool? CropLabels
         {
-            get { return this._cropLabels.GetValueOrDefault(); }
+            get { return this._cropLabels; }
             set { this._cropLabels = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.MediaLive.Model
         /// leave this field empty, the default font size is 80% of the cell size.
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
-        public int DefaultFontSize
+        public int? DefaultFontSize
         {
-            get { return this._defaultFontSize.GetValueOrDefault(); }
+            get { return this._defaultFontSize; }
             set { this._defaultFontSize = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DefaultLineHeight. Documentation update needed
         /// </summary>
         [AWSProperty(Min=80, Max=800)]
-        public int DefaultLineHeight
+        public int? DefaultLineHeight
         {
-            get { return this._defaultLineHeight.GetValueOrDefault(); }
+            get { return this._defaultLineHeight; }
             set { this._defaultLineHeight = value; }
         }
 

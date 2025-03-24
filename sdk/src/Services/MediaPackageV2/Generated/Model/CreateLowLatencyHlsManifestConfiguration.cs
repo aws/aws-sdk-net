@@ -191,9 +191,9 @@ namespace Amazon.MediaPackageV2.Model
         /// User Guide</i>.
         /// </para>
         /// </summary>
-        public bool UrlEncodeChildManifest
+        public bool? UrlEncodeChildManifest
         {
-            get { return this._urlEncodeChildManifest.GetValueOrDefault(); }
+            get { return this._urlEncodeChildManifest; }
             set { this._urlEncodeChildManifest = value; }
         }
 

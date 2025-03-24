@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResponseQualityDifference())
             {
                 context.Writer.WritePropertyName("responseQualityDifference");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ResponseQualityDifference))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ResponseQualityDifference.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ResponseQualityDifference));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ResponseQualityDifference.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ResponseQualityDifference);
+                    context.Writer.WriteNumberValue(requestObject.ResponseQualityDifference.Value);
                 }
             }
 

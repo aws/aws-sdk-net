@@ -102,33 +102,21 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetSelectedAnalysisMethods())
+            {
+                context.Writer.WritePropertyName("selectedAnalysisMethods");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
+                {
+                        context.Writer.WriteStringValue(publicRequestSelectedAnalysisMethodsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTableReference())
             {
                 context.Writer.WritePropertyName("tableReference");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTableReference())
-                {
-                    context.Writer.WritePropertyName("tableReference");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSelectedAnalysisMethods())
-                {
-                    context.Writer.WritePropertyName("selectedAnalysisMethods");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
-                    {
-                            context.Writer.Write(publicRequestSelectedAnalysisMethodsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTableReference())
-                {
-                    context.Writer.WritePropertyName("tableReference");
-                    context.Writer.WriteObjectStart();
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = TableReferenceMarshaller.Instance;
                 marshaller.Marshall(publicRequest.TableReference, context);

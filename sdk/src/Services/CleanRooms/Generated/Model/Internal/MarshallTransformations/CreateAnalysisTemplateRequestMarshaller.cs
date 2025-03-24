@@ -98,7 +98,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
-<<<<<<< HEAD
             if(publicRequest.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
@@ -110,28 +109,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetSchema())
-                {
-                    context.Writer.WritePropertyName("schema");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = AnalysisSchemaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schema, context);
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStartObject();
 
-                    context.Writer.WriteObjectEnd();
-                }
+                var marshaller = AnalysisSchemaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schema, context);
 
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
+                context.Writer.WriteEndObject();
+            }
 
             if(publicRequest.IsSetSource())
             {

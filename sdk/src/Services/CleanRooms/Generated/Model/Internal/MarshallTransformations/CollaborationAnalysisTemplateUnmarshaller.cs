@@ -131,7 +131,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 if (context.TestExpression("sourceMetadata", targetDepth))
                 {
                     var unmarshaller = AnalysisSourceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateTime", targetDepth))

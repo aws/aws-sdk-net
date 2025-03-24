@@ -34,16 +34,10 @@ namespace Amazon.KinesisVideoWebRTCStorage
     public partial class AmazonKinesisVideoWebRTCStorageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "4.0.0.0");
 
         private static readonly AmazonKinesisVideoWebRTCStorageEndpointResolver EndpointResolver =
             new AmazonKinesisVideoWebRTCStorageEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "3.7.401.101");
-=======
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video WebRTC Storage", "3.7.401.115");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

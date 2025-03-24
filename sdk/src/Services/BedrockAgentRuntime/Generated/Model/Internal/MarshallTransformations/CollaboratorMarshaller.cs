@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,107 +49,107 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionGroups())
             {
                 context.Writer.WritePropertyName("actionGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionGroupsListValue in requestObject.ActionGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AgentActionGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAgentCollaboration())
             {
                 context.Writer.WritePropertyName("agentCollaboration");
-                context.Writer.Write(requestObject.AgentCollaboration);
+                context.Writer.WriteStringValue(requestObject.AgentCollaboration);
             }
 
             if(requestObject.IsSetAgentName())
             {
                 context.Writer.WritePropertyName("agentName");
-                context.Writer.Write(requestObject.AgentName);
+                context.Writer.WriteStringValue(requestObject.AgentName);
             }
 
             if(requestObject.IsSetCollaboratorConfigurations())
             {
                 context.Writer.WritePropertyName("collaboratorConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCollaboratorConfigurationsListValue in requestObject.CollaboratorConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CollaboratorConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCollaboratorConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomerEncryptionKeyArn())
             {
                 context.Writer.WritePropertyName("customerEncryptionKeyArn");
-                context.Writer.Write(requestObject.CustomerEncryptionKeyArn);
+                context.Writer.WriteStringValue(requestObject.CustomerEncryptionKeyArn);
             }
 
             if(requestObject.IsSetFoundationModel())
             {
                 context.Writer.WritePropertyName("foundationModel");
-                context.Writer.Write(requestObject.FoundationModel);
+                context.Writer.WriteStringValue(requestObject.FoundationModel);
             }
 
             if(requestObject.IsSetGuardrailConfiguration())
             {
                 context.Writer.WritePropertyName("guardrailConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GuardrailConfigurationWithArnMarshaller.Instance;
                 marshaller.Marshall(requestObject.GuardrailConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdleSessionTTLInSeconds())
             {
                 context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                context.Writer.Write(requestObject.IdleSessionTTLInSeconds);
+                context.Writer.WriteNumberValue(requestObject.IdleSessionTTLInSeconds.Value);
             }
 
             if(requestObject.IsSetInstruction())
             {
                 context.Writer.WritePropertyName("instruction");
-                context.Writer.Write(requestObject.Instruction);
+                context.Writer.WriteStringValue(requestObject.Instruction);
             }
 
             if(requestObject.IsSetKnowledgeBases())
             {
                 context.Writer.WritePropertyName("knowledgeBases");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKnowledgeBasesListValue in requestObject.KnowledgeBases)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KnowledgeBaseMarshaller.Instance;
                     marshaller.Marshall(requestObjectKnowledgeBasesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPromptOverrideConfiguration())
             {
                 context.Writer.WritePropertyName("promptOverrideConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptOverrideConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PromptOverrideConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -49,7 +49,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoreDeviceOperatingSystem())
             {
                 context.Writer.WritePropertyName("coreDeviceOperatingSystem");
-                context.Writer.Write(requestObject.CoreDeviceOperatingSystem);
+                context.Writer.WriteStringValue(requestObject.CoreDeviceOperatingSystem);
             }
 
             if(requestObject.IsSetCoreDeviceThingName())

@@ -45,9 +45,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long HubTokenTimerExpirySettingInSeconds
+        public long? HubTokenTimerExpirySettingInSeconds
         {
-            get { return this._hubTokenTimerExpirySettingInSeconds.GetValueOrDefault(); }
+            get { return this._hubTokenTimerExpirySettingInSeconds; }
             set { this._hubTokenTimerExpirySettingInSeconds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the hub configuration was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

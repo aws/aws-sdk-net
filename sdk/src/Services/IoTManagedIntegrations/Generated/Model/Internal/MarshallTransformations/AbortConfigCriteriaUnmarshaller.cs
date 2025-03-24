@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AbortConfigCriteria Object
     /// </summary>  
-    public class AbortConfigCriteriaUnmarshaller : IUnmarshaller<AbortConfigCriteria, XmlUnmarshallerContext>, IUnmarshaller<AbortConfigCriteria, JsonUnmarshallerContext>
+    public class AbortConfigCriteriaUnmarshaller : IJsonUnmarshaller<AbortConfigCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AbortConfigCriteria IUnmarshaller<AbortConfigCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AbortConfigCriteria Unmarshall(JsonUnmarshallerContext context)
+        public AbortConfigCriteria Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AbortConfigCriteria unmarshalledObject = new AbortConfigCriteria();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinNumberOfExecutedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinNumberOfExecutedThings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MinNumberOfExecutedThings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThresholdPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThresholdPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.ThresholdPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

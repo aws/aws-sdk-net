@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if (context.TestExpression("DomainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainId = unmarshaller.Unmarshall(context);
+                    response.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Url", targetDepth))

@@ -107,7 +107,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 if (context.TestExpression("EndpointEncryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointEncryptionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointEncryptionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorMessage", targetDepth))

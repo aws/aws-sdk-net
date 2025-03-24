@@ -89,13 +89,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if (context.TestExpression("ndiProgramName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NdiProgramName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NdiProgramName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ndiSpeedHqQuality", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NdiSpeedHqQuality = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.NdiSpeedHqQuality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocol", targetDepth))

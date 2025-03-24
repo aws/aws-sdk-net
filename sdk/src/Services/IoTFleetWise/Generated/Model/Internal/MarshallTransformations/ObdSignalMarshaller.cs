@@ -67,7 +67,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsSigned())
             {
                 context.Writer.WritePropertyName("isSigned");
-                context.Writer.Write(requestObject.IsSigned);
+                context.Writer.WriteBooleanValue(requestObject.IsSigned.Value);
             }
 
             if(requestObject.IsSetOffset())
@@ -117,7 +117,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSignalValueType())
             {
                 context.Writer.WritePropertyName("signalValueType");
-                context.Writer.Write(requestObject.SignalValueType);
+                context.Writer.WriteStringValue(requestObject.SignalValueType);
             }
 
             if(requestObject.IsSetStartByte())

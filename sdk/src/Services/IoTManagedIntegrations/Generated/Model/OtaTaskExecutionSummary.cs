@@ -47,9 +47,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The execution number of the over-the-air (OTA) task execution summary.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// to start.
         /// </para>
         /// </summary>
-        public DateTime QueuedAt
+        public DateTime? QueuedAt
         {
-            get { return this._queuedAt.GetValueOrDefault(); }
+            get { return this._queuedAt; }
             set { this._queuedAt = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// after a failed attempt.
         /// </para>
         /// </summary>
-        public int RetryAttempt
+        public int? RetryAttempt
         {
-            get { return this._retryAttempt.GetValueOrDefault(); }
+            get { return this._retryAttempt; }
             set { this._retryAttempt = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the over-the-air (OTA) task execution summary started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

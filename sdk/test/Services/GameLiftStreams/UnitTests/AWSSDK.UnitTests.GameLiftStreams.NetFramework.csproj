@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-    <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL35;AWS_APM_API;DEBUG</DefineConstants>
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;ASYNC_AWAIT;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.UnitTests.IoTManagedIntegrations.Net35</AssemblyName>
-    <PackageId>AWSSDK.UnitTests.IoTManagedIntegrations.Net35</PackageId>
+    <AssemblyName>AWSSDK.UnitTests.GameLiftStreams.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.UnitTests.GameLiftStreams.NetFramework</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -20,22 +20,31 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <NoWarn>CS1591,CS0612,CS0618</NoWarn>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>bin\$(Configuration)\net35</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
-    <Compile Remove="**/_bcl45+netstandard/**"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
     <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj"/>
-    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.Net35.csproj"/>
-    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net35.csproj"/>
-    <ProjectReference Include="../../../../src/Services/IoTManagedIntegrations/AWSSDK.IoTManagedIntegrations.Net35.csproj"/>
+    <ProjectReference Include="../../../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
+    <ProjectReference Include="../../../../src/Services/GameLiftStreams/AWSSDK.GameLiftStreams.NetFramework.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">

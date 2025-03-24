@@ -34,16 +34,10 @@ namespace Amazon.DatabaseMigrationService
     public partial class AmazonDatabaseMigrationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Database Migration Service", "4.0.0.0");
 
         private static readonly AmazonDatabaseMigrationServiceEndpointResolver EndpointResolver =
             new AmazonDatabaseMigrationServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "3.7.408.0");
-=======
-            InternalSDKUtils.BuildUserAgentString("Database Migration Service", "3.7.408.14");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

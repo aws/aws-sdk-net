@@ -172,8 +172,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableSkewProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableSkewProtection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableSkewProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environmentVariables", targetDepth))

@@ -65,7 +65,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if (context.TestExpression("environmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environmentParameters", targetDepth))

@@ -60,12 +60,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContextEnrichmentConfiguration())
             {
                 context.Writer.WritePropertyName("contextEnrichmentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContextEnrichmentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContextEnrichmentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomTransformationConfiguration())

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureType())
             {
                 context.Writer.WritePropertyName("FailureType");
-                context.Writer.Write(requestObject.FailureType);
+                context.Writer.WriteStringValue(requestObject.FailureType);
             }
 
             if(requestObject.IsSetMinNumberOfRetries())
             {
                 context.Writer.WritePropertyName("MinNumberOfRetries");
-                context.Writer.Write(requestObject.MinNumberOfRetries);
+                context.Writer.WriteNumberValue(requestObject.MinNumberOfRetries.Value);
             }
 
         }

@@ -60,12 +60,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNeptuneAnalyticsConfiguration())
             {
                 context.Writer.WritePropertyName("neptuneAnalyticsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NeptuneAnalyticsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NeptuneAnalyticsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpensearchServerlessConfiguration())

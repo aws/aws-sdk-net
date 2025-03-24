@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BedrockFoundationModelContextEnrichmentConfiguration Object
     /// </summary>  
-    public class BedrockFoundationModelContextEnrichmentConfigurationUnmarshaller : IUnmarshaller<BedrockFoundationModelContextEnrichmentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BedrockFoundationModelContextEnrichmentConfiguration, JsonUnmarshallerContext>
+    public class BedrockFoundationModelContextEnrichmentConfigurationUnmarshaller : IJsonUnmarshaller<BedrockFoundationModelContextEnrichmentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BedrockFoundationModelContextEnrichmentConfiguration IUnmarshaller<BedrockFoundationModelContextEnrichmentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockFoundationModelContextEnrichmentConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public BedrockFoundationModelContextEnrichmentConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BedrockFoundationModelContextEnrichmentConfiguration unmarshalledObject = new BedrockFoundationModelContextEnrichmentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("enrichmentStrategyConfiguration", targetDepth))
                 {
                     var unmarshaller = EnrichmentStrategyConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EnrichmentStrategyConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnrichmentStrategyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

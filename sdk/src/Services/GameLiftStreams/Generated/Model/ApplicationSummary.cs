@@ -71,9 +71,9 @@ namespace Amazon.GameLiftStreams.Model
         /// using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.GameLiftStreams.Model
         /// using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

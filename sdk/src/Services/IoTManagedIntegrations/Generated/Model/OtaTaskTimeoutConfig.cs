@@ -44,9 +44,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10080)]
-        public long InProgressTimeoutInMinutes
+        public long? InProgressTimeoutInMinutes
         {
-            get { return this._inProgressTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._inProgressTimeoutInMinutes; }
             set { this._inProgressTimeoutInMinutes = value; }
         }
 

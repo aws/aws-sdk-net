@@ -46,9 +46,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
-        public int TargetSegmentDurationSeconds
+        public int? TargetSegmentDurationSeconds
         {
-            get { return this._targetSegmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._targetSegmentDurationSeconds; }
             set { this._targetSegmentDurationSeconds = value; }
         }
 

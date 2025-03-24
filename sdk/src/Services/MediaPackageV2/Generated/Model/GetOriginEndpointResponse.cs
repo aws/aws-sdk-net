@@ -306,9 +306,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The time that the origin endpoint was last reset.
         /// </para>
         /// </summary>
-        public DateTime ResetAt
+        public DateTime? ResetAt
         {
-            get { return this._resetAt.GetValueOrDefault(); }
+            get { return this._resetAt; }
             set { this._resetAt = value; }
         }
 

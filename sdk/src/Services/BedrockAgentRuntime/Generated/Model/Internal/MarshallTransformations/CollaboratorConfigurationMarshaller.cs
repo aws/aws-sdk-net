@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentAliasArn())
             {
                 context.Writer.WritePropertyName("agentAliasArn");
-                context.Writer.Write(requestObject.AgentAliasArn);
+                context.Writer.WriteStringValue(requestObject.AgentAliasArn);
             }
 
             if(requestObject.IsSetCollaboratorInstruction())
             {
                 context.Writer.WritePropertyName("collaboratorInstruction");
-                context.Writer.Write(requestObject.CollaboratorInstruction);
+                context.Writer.WriteStringValue(requestObject.CollaboratorInstruction);
             }
 
             if(requestObject.IsSetCollaboratorName())
             {
                 context.Writer.WritePropertyName("collaboratorName");
-                context.Writer.Write(requestObject.CollaboratorName);
+                context.Writer.WriteStringValue(requestObject.CollaboratorName);
             }
 
             if(requestObject.IsSetRelayConversationHistory())
             {
                 context.Writer.WritePropertyName("relayConversationHistory");
-                context.Writer.Write(requestObject.RelayConversationHistory);
+                context.Writer.WriteStringValue(requestObject.RelayConversationHistory);
             }
 
         }

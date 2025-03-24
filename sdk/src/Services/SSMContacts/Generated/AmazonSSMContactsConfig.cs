@@ -34,16 +34,10 @@ namespace Amazon.SSMContacts
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SSM Contacts", "4.0.0.0");
 
         private static readonly AmazonSSMContactsEndpointResolver EndpointResolver =
             new AmazonSSMContactsEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("SSM Contacts", "3.7.400.104");
-=======
-            InternalSDKUtils.BuildUserAgentString("SSM Contacts", "3.7.400.118");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

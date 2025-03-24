@@ -55,12 +55,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHlsConfiguration())
             {
                 context.Writer.WritePropertyName("hlsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CompositionRecordingHlsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

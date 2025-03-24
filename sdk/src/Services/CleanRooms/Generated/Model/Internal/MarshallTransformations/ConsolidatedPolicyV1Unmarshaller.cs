@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConsolidatedPolicyV1 Object
     /// </summary>  
-    public class ConsolidatedPolicyV1Unmarshaller : IUnmarshaller<ConsolidatedPolicyV1, XmlUnmarshallerContext>, IUnmarshaller<ConsolidatedPolicyV1, JsonUnmarshallerContext>
+    public class ConsolidatedPolicyV1Unmarshaller : IJsonUnmarshaller<ConsolidatedPolicyV1, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConsolidatedPolicyV1 IUnmarshaller<ConsolidatedPolicyV1, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConsolidatedPolicyV1 Unmarshall(JsonUnmarshallerContext context)
+        public ConsolidatedPolicyV1 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConsolidatedPolicyV1 unmarshalledObject = new ConsolidatedPolicyV1();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregation", targetDepth))
                 {
                     var unmarshaller = ConsolidatedPolicyAggregationUnmarshaller.Instance;
-                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("custom", targetDepth))
                 {
                     var unmarshaller = ConsolidatedPolicyCustomUnmarshaller.Instance;
-                    unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Custom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("list", targetDepth))
                 {
                     var unmarshaller = ConsolidatedPolicyListUnmarshaller.Instance;
-                    unmarshalledObject.List = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

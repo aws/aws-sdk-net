@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
                 marker = response.Marker;
                 yield return response;
             }
-            while (response.AdditionalDataPending);
+            while (response.AdditionalDataPending.GetValueOrDefault());
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +85,7 @@ namespace Amazon.RDS.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (response.AdditionalDataPending);
+            while (response.AdditionalDataPending.GetValueOrDefault());
         }
 #endif
     }

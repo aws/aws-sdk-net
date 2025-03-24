@@ -70,68 +70,62 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             if (context.Stream.Length > 0)
             {
-<<<<<<< HEAD
                 while (context.ReadAtDepth(targetDepth, ref reader))
-||||||| Commit version number update changes
-                if (context.TestExpression("exceptionMessage", targetDepth))
-=======
-                if (context.TestExpression("Access-Control-Allow-Origin", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessControlAllowOrigin = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Access-Control-Expose-Headers", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessControlExposeHeaders = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Cache-Control", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CacheControl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Content-Security-Policy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentSecurityPolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("exceptionMessage", targetDepth))
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
-                {
+                    if (context.TestExpression("Access-Control-Allow-Origin", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccessControlAllowOrigin = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("Access-Control-Expose-Headers", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccessControlExposeHeaders = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("Cache-Control", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheControl = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("Content-Security-Policy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ContentSecurityPolicy = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                     if (context.TestExpression("exceptionMessage", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ExceptionMessage = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                }
-                if (context.TestExpression("Strict-Transport-Security", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StrictTransportSecurity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("x-amzn-ErrorType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XAmznErrorType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("X-Content-Type-Options", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XContentTypeOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("X-Frame-Options", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XFrameOptions = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("Strict-Transport-Security", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StrictTransportSecurity = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.XAmznErrorType = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("X-Content-Type-Options", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.XContentTypeOptions = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("X-Frame-Options", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.XFrameOptions = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

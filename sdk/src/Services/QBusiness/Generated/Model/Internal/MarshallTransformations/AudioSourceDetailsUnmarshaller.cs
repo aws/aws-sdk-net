@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioSourceDetails Object
     /// </summary>  
-    public class AudioSourceDetailsUnmarshaller : IUnmarshaller<AudioSourceDetails, XmlUnmarshallerContext>, IUnmarshaller<AudioSourceDetails, JsonUnmarshallerContext>
+    public class AudioSourceDetailsUnmarshaller : IJsonUnmarshaller<AudioSourceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioSourceDetails IUnmarshaller<AudioSourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioSourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public AudioSourceDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioSourceDetails unmarshalledObject = new AudioSourceDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioExtractionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioExtractionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioExtractionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endTimeMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.EndTimeMilliseconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.EndTimeMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaMimeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaMimeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTimeMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StartTimeMilliseconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StartTimeMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

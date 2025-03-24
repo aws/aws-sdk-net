@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogId", targetDepth))

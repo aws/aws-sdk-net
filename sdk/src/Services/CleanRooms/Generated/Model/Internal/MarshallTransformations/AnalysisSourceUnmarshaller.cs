@@ -59,7 +59,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 if (context.TestExpression("artifacts", targetDepth))
                 {
                     var unmarshaller = AnalysisTemplateArtifactsUnmarshaller.Instance;
-                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("text", targetDepth))

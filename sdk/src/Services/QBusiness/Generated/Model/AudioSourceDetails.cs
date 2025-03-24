@@ -64,9 +64,9 @@ namespace Amazon.QBusiness.Model
         /// The ending timestamp in milliseconds for the relevant audio segment.
         /// </para>
         /// </summary>
-        public long EndTimeMilliseconds
+        public long? EndTimeMilliseconds
         {
-            get { return this._endTimeMilliseconds.GetValueOrDefault(); }
+            get { return this._endTimeMilliseconds; }
             set { this._endTimeMilliseconds = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.QBusiness.Model
         /// The starting timestamp in milliseconds for the relevant audio segment.
         /// </para>
         /// </summary>
-        public long StartTimeMilliseconds
+        public long? StartTimeMilliseconds
         {
-            get { return this._startTimeMilliseconds.GetValueOrDefault(); }
+            get { return this._startTimeMilliseconds; }
             set { this._startTimeMilliseconds = value; }
         }
 

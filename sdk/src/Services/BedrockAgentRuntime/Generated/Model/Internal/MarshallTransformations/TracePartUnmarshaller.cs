@@ -88,8 +88,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sessionId", targetDepth))

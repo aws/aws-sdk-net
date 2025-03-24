@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.GameLiftStreams
@@ -82,7 +83,7 @@ namespace Amazon.GameLiftStreams
         ///
         /// </summary>
         public AmazonGameLiftStreamsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGameLiftStreamsConfig()) { }
+            : base(new AmazonGameLiftStreamsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGameLiftStreamsClient with the credentials loaded from the application's
@@ -101,7 +102,7 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGameLiftStreamsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGameLiftStreamsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGameLiftStreamsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGameLiftStreamsClient with the credentials loaded from the application's
@@ -120,7 +121,7 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         /// <param name="config">The AmazonGameLiftStreamsClient Configuration Object</param>
         public AmazonGameLiftStreamsClient(AmazonGameLiftStreamsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -245,14 +246,6 @@ namespace Amazon.GameLiftStreams
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -260,7 +253,9 @@ namespace Amazon.GameLiftStreams
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGameLiftStreamsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGameLiftStreamsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
@@ -1932,16 +1927,8 @@ namespace Amazon.GameLiftStreams
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new Amazon.Runtime.Internal.RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new Amazon.Runtime.Internal.DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonGameLiftStreamsEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

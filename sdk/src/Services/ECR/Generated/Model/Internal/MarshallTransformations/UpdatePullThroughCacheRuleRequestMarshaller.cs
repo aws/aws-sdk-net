@@ -77,49 +77,15 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             var context = new JsonMarshallerContext(request, writer);
             if(publicRequest.IsSetCredentialArn())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("credentialArn");
                 context.Writer.WriteStringValue(publicRequest.CredentialArn);
             }
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentialArn())
-                {
-                    context.Writer.WritePropertyName("credentialArn");
-                    context.Writer.Write(publicRequest.CredentialArn);
-                }
 
-                if(publicRequest.IsSetEcrRepositoryPrefix())
-                {
-                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
-                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
-                }
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCredentialArn())
-                {
-                    context.Writer.WritePropertyName("credentialArn");
-                    context.Writer.Write(publicRequest.CredentialArn);
-                }
-
-                if(publicRequest.IsSetCustomRoleArn())
-                {
-                    context.Writer.WritePropertyName("customRoleArn");
-                    context.Writer.Write(publicRequest.CustomRoleArn);
-                }
-
-                if(publicRequest.IsSetEcrRepositoryPrefix())
-                {
-                    context.Writer.WritePropertyName("ecrRepositoryPrefix");
-                    context.Writer.Write(publicRequest.EcrRepositoryPrefix);
-                }
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
+            if(publicRequest.IsSetCustomRoleArn())
+            {
+                context.Writer.WritePropertyName("customRoleArn");
+                context.Writer.WriteStringValue(publicRequest.CustomRoleArn);
+            }
 
             if(publicRequest.IsSetEcrRepositoryPrefix())
             {

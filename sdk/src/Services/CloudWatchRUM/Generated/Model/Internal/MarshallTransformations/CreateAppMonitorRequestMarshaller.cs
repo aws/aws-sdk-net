@@ -101,67 +101,39 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.CwLogEnabled.Value);
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetDeobfuscationConfiguration())
+            {
+                context.Writer.WritePropertyName("DeobfuscationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeobfuscationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
                 context.Writer.WriteStringValue(publicRequest.Domain);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetDomain())
+
+            if(publicRequest.IsSetDomainList())
+            {
+                context.Writer.WritePropertyName("DomainList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
                 {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
+                        context.Writer.WriteStringValue(publicRequestDomainListListValue);
                 }
-=======
-                if(publicRequest.IsSetDeobfuscationConfiguration())
-                {
-                    context.Writer.WritePropertyName("DeobfuscationConfiguration");
-                    context.Writer.WriteObjectStart();
+                context.Writer.WriteEndArray();
+            }
 
-                    var marshaller = DeobfuscationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDomain())
-                {
-                    context.Writer.WritePropertyName("Domain");
-                    context.Writer.Write(publicRequest.Domain);
-                }
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
-
-<<<<<<< HEAD
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-=======
-                if(publicRequest.IsSetDomainList())
-                {
-                    context.Writer.WritePropertyName("DomainList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
-                    {
-                            context.Writer.Write(publicRequestDomainListListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
             if(publicRequest.IsSetTags())
             {

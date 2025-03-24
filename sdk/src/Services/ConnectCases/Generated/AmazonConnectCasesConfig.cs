@@ -34,16 +34,10 @@ namespace Amazon.ConnectCases
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ConnectCases", "4.0.0.0");
 
         private static readonly AmazonConnectCasesEndpointResolver EndpointResolver =
             new AmazonConnectCasesEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("ConnectCases", "3.7.401.14");
-=======
-            InternalSDKUtils.BuildUserAgentString("ConnectCases", "3.7.401.28");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

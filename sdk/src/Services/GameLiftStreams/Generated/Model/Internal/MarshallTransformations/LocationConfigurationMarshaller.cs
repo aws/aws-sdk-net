@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlwaysOnCapacity())
             {
                 context.Writer.WritePropertyName("AlwaysOnCapacity");
-                context.Writer.Write(requestObject.AlwaysOnCapacity);
+                context.Writer.WriteNumberValue(requestObject.AlwaysOnCapacity.Value);
             }
 
             if(requestObject.IsSetLocationName())
             {
                 context.Writer.WritePropertyName("LocationName");
-                context.Writer.Write(requestObject.LocationName);
+                context.Writer.WriteStringValue(requestObject.LocationName);
             }
 
             if(requestObject.IsSetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandCapacity");
-                context.Writer.Write(requestObject.OnDemandCapacity);
+                context.Writer.WriteNumberValue(requestObject.OnDemandCapacity.Value);
             }
 
         }

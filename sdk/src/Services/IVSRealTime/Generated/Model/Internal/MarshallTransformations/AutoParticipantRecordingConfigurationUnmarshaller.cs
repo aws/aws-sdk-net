@@ -59,7 +59,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 if (context.TestExpression("hlsConfiguration", targetDepth))
                 {
                     var unmarshaller = ParticipantRecordingHlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaTypes", targetDepth))
@@ -70,8 +70,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("storageConfigurationArn", targetDepth))

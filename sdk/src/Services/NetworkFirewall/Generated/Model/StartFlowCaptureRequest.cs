@@ -132,9 +132,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MinimumFlowAgeInSeconds
+        public int? MinimumFlowAgeInSeconds
         {
-            get { return this._minimumFlowAgeInSeconds.GetValueOrDefault(); }
+            get { return this._minimumFlowAgeInSeconds; }
             set { this._minimumFlowAgeInSeconds = value; }
         }
 

@@ -153,9 +153,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///  The time of the trace. 
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 

@@ -113,9 +113,9 @@ namespace Amazon.IoTFleetWise.Model
         /// the <c>FLOATING_POINT</c> raw signal type. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IsSigned
+        public bool? IsSigned
         {
-            get { return this._isSigned.GetValueOrDefault(); }
+            get { return this._isSigned; }
             set { this._isSigned = value; }
         }
 

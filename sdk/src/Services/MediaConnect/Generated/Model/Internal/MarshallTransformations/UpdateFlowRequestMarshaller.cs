@@ -65,9 +65,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-<<<<<<< HEAD
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}";
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -88,6 +87,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetNdiConfig())
+            {
+                context.Writer.WritePropertyName("ndiConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NdiConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NdiConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSourceFailoverConfig())
             {
                 context.Writer.WritePropertyName("sourceFailoverConfig");
@@ -100,17 +110,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             }
 
             if(publicRequest.IsSetSourceMonitoringConfig())
-||||||| Commit version number update changes
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-=======
-            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{FlowArn}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("sourceMonitoringConfig");
                 context.Writer.WriteStartObject();
 
@@ -118,100 +118,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
 
                 context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaintenance())
-                {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateMaintenanceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Maintenance, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceMonitoringConfig())
-                {
-                    context.Writer.WritePropertyName("sourceMonitoringConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaintenance())
-                {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateMaintenanceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Maintenance, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNdiConfig())
-                {
-                    context.Writer.WritePropertyName("ndiConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NdiConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NdiConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceFailoverConfig())
-                {
-                    context.Writer.WritePropertyName("sourceFailoverConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateFailoverConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceMonitoringConfig())
-                {
-                    context.Writer.WritePropertyName("sourceMonitoringConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MonitoringConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
             }
 
             writer.WriteEndObject();

@@ -117,13 +117,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNdiProgramName())
             {
                 context.Writer.WritePropertyName("ndiProgramName");
-                context.Writer.Write(requestObject.NdiProgramName);
+                context.Writer.WriteStringValue(requestObject.NdiProgramName);
             }
 
             if(requestObject.IsSetNdiSpeedHqQuality())
             {
                 context.Writer.WritePropertyName("ndiSpeedHqQuality");
-                context.Writer.Write(requestObject.NdiSpeedHqQuality);
+                context.Writer.WriteNumberValue(requestObject.NdiSpeedHqQuality.Value);
             }
 
             if(requestObject.IsSetOutputStatus())

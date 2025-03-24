@@ -45,9 +45,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int NumberOfNotifiedThings
+        public int? NumberOfNotifiedThings
         {
-            get { return this._numberOfNotifiedThings.GetValueOrDefault(); }
+            get { return this._numberOfNotifiedThings; }
             set { this._numberOfNotifiedThings = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int NumberOfSucceededThings
+        public int? NumberOfSucceededThings
         {
-            get { return this._numberOfSucceededThings.GetValueOrDefault(); }
+            get { return this._numberOfSucceededThings; }
             set { this._numberOfSucceededThings = value; }
         }
 

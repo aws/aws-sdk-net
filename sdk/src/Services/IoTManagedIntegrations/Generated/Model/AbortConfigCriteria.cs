@@ -83,9 +83,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MinNumberOfExecutedThings
+        public int? MinNumberOfExecutedThings
         {
-            get { return this._minNumberOfExecutedThings.GetValueOrDefault(); }
+            get { return this._minNumberOfExecutedThings; }
             set { this._minNumberOfExecutedThings = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public double ThresholdPercentage
+        public double? ThresholdPercentage
         {
-            get { return this._thresholdPercentage.GetValueOrDefault(); }
+            get { return this._thresholdPercentage; }
             set { this._thresholdPercentage = value; }
         }
 

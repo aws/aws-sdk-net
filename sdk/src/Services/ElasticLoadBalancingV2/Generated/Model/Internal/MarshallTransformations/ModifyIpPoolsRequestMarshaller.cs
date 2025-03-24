@@ -72,11 +72,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveIpamPools())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveIpamPools)
+                    if (publicRequest.RemoveIpamPools.Count == 0)
+                        request.Parameters.Add("RemoveIpamPools", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveIpamPools" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveIpamPools)
+                         {
+                             request.Parameters.Add("RemoveIpamPools" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

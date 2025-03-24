@@ -95,28 +95,16 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-<<<<<<< HEAD
+            if(publicRequest.IsSetFlowSize())
+            {
+                context.Writer.WritePropertyName("flowSize");
+                context.Writer.WriteStringValue(publicRequest.FlowSize);
+            }
+
             if(publicRequest.IsSetMaintenance())
             {
                 context.Writer.WritePropertyName("maintenance");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetMaintenance())
-                {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetFlowSize())
-                {
-                    context.Writer.WritePropertyName("flowSize");
-                    context.Writer.Write(publicRequest.FlowSize);
-                }
-
-                if(publicRequest.IsSetMaintenance())
-                {
-                    context.Writer.WritePropertyName("maintenance");
-                    context.Writer.WriteObjectStart();
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = AddMaintenanceMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Maintenance, context);
@@ -135,50 +123,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     var marshaller = AddMediaStreamRequestMarshaller.Instance;
                     marshaller.Marshall(publicRequestMediaStreamsListValue, context);
 
-<<<<<<< HEAD
                     context.Writer.WriteEndObject();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddOutputRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-=======
-                if(publicRequest.IsSetNdiConfig())
-                {
-                    context.Writer.WritePropertyName("ndiConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NdiConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NdiConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOutputs())
-                {
-                    context.Writer.WritePropertyName("outputs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddOutputRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
                 }
                 context.Writer.WriteEndArray();
             }
@@ -187,6 +132,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNdiConfig())
+            {
+                context.Writer.WritePropertyName("ndiConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NdiConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NdiConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetOutputs())

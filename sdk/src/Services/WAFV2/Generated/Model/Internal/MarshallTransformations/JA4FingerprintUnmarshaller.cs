@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JA4Fingerprint Object
     /// </summary>  
-    public class JA4FingerprintUnmarshaller : IUnmarshaller<JA4Fingerprint, XmlUnmarshallerContext>, IUnmarshaller<JA4Fingerprint, JsonUnmarshallerContext>
+    public class JA4FingerprintUnmarshaller : IJsonUnmarshaller<JA4Fingerprint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JA4Fingerprint IUnmarshaller<JA4Fingerprint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JA4Fingerprint Unmarshall(JsonUnmarshallerContext context)
+        public JA4Fingerprint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JA4Fingerprint unmarshalledObject = new JA4Fingerprint();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FallbackBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FallbackBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FallbackBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

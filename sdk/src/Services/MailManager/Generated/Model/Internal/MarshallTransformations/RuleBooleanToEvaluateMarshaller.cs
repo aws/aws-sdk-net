@@ -49,12 +49,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalysis())
             {
                 context.Writer.WritePropertyName("Analysis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.Analysis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttribute())

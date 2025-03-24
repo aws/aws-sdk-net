@@ -59,7 +59,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if (context.TestExpression("idcInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdcInstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdcInstanceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

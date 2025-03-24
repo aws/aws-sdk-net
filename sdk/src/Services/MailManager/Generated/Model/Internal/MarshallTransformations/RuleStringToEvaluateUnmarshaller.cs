@@ -59,7 +59,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if (context.TestExpression("Analysis", targetDepth))
                 {
                     var unmarshaller = AnalysisUnmarshaller.Instance;
-                    unmarshalledObject.Analysis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Attribute", targetDepth))

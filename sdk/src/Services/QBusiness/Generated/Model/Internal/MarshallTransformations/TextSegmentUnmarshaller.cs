@@ -89,7 +89,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 if (context.TestExpression("sourceDetails", targetDepth))
                 {
                     var unmarshaller = SourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

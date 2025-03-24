@@ -49,7 +49,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowFullTableExternalDataAccess())
             {
                 context.Writer.WritePropertyName("AllowFullTableExternalDataAccess");
-                context.Writer.Write(requestObject.AllowFullTableExternalDataAccess);
+                context.Writer.WriteStringValue(requestObject.AllowFullTableExternalDataAccess);
             }
 
             if(requestObject.IsSetCatalogProperties())

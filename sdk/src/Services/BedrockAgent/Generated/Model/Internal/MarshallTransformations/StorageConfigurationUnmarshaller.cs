@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("neptuneAnalyticsConfiguration", targetDepth))
                 {
                     var unmarshaller = NeptuneAnalyticsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NeptuneAnalyticsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NeptuneAnalyticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("opensearchServerlessConfiguration", targetDepth))

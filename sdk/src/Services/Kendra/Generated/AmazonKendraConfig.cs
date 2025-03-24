@@ -34,16 +34,10 @@ namespace Amazon.Kendra
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("kendra", "4.0.0.0");
 
         private static readonly AmazonKendraEndpointResolver EndpointResolver =
             new AmazonKendraEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("kendra", "3.7.401.45");
-=======
-            InternalSDKUtils.BuildUserAgentString("kendra", "3.7.401.59");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

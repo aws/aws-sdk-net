@@ -355,9 +355,9 @@ namespace Amazon.Amplify.Model
         /// protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableSkewProtection
+        public bool? EnableSkewProtection
         {
-            get { return this._enableSkewProtection.GetValueOrDefault(); }
+            get { return this._enableSkewProtection; }
             set { this._enableSkewProtection = value; }
         }
 

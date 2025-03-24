@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -61,116 +64,124 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ota-tasks";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetOtaMechanism())
-                {
-                    context.Writer.WritePropertyName("OtaMechanism");
-                    context.Writer.Write(publicRequest.OtaMechanism);
-                }
-
-                if(publicRequest.IsSetOtaSchedulingConfig())
-                {
-                    context.Writer.WritePropertyName("OtaSchedulingConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OtaTaskSchedulingConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OtaSchedulingConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOtaTargetQueryString())
-                {
-                    context.Writer.WritePropertyName("OtaTargetQueryString");
-                    context.Writer.Write(publicRequest.OtaTargetQueryString);
-                }
-
-                if(publicRequest.IsSetOtaTaskExecutionRetryConfig())
-                {
-                    context.Writer.WritePropertyName("OtaTaskExecutionRetryConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OtaTaskExecutionRetryConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OtaTaskExecutionRetryConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOtaType())
-                {
-                    context.Writer.WritePropertyName("OtaType");
-                    context.Writer.Write(publicRequest.OtaType);
-                }
-
-                if(publicRequest.IsSetProtocol())
-                {
-                    context.Writer.WritePropertyName("Protocol");
-                    context.Writer.Write(publicRequest.Protocol);
-                }
-
-                if(publicRequest.IsSetS3Url())
-                {
-                    context.Writer.WritePropertyName("S3Url");
-                    context.Writer.Write(publicRequest.S3Url);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTarget())
-                {
-                    context.Writer.WritePropertyName("Target");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetListValue in publicRequest.Target)
-                    {
-                            context.Writer.Write(publicRequestTargetListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTaskConfigurationId())
-                {
-                    context.Writer.WritePropertyName("TaskConfigurationId");
-                    context.Writer.Write(publicRequest.TaskConfigurationId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetOtaMechanism())
+            {
+                context.Writer.WritePropertyName("OtaMechanism");
+                context.Writer.WriteStringValue(publicRequest.OtaMechanism);
+            }
+
+            if(publicRequest.IsSetOtaSchedulingConfig())
+            {
+                context.Writer.WritePropertyName("OtaSchedulingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OtaTaskSchedulingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OtaSchedulingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOtaTargetQueryString())
+            {
+                context.Writer.WritePropertyName("OtaTargetQueryString");
+                context.Writer.WriteStringValue(publicRequest.OtaTargetQueryString);
+            }
+
+            if(publicRequest.IsSetOtaTaskExecutionRetryConfig())
+            {
+                context.Writer.WritePropertyName("OtaTaskExecutionRetryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OtaTaskExecutionRetryConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OtaTaskExecutionRetryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOtaType())
+            {
+                context.Writer.WritePropertyName("OtaType");
+                context.Writer.WriteStringValue(publicRequest.OtaType);
+            }
+
+            if(publicRequest.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("Protocol");
+                context.Writer.WriteStringValue(publicRequest.Protocol);
+            }
+
+            if(publicRequest.IsSetS3Url())
+            {
+                context.Writer.WritePropertyName("S3Url");
+                context.Writer.WriteStringValue(publicRequest.S3Url);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTarget())
+            {
+                context.Writer.WritePropertyName("Target");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetListValue in publicRequest.Target)
+                {
+                        context.Writer.WriteStringValue(publicRequestTargetListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTaskConfigurationId())
+            {
+                context.Writer.WritePropertyName("TaskConfigurationId");
+                context.Writer.WriteStringValue(publicRequest.TaskConfigurationId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

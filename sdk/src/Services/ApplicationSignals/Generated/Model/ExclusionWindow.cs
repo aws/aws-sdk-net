@@ -84,9 +84,9 @@ namespace Amazon.ApplicationSignals.Model
         /// The start of the SLO time window exclusion. Defaults to current time if not specified.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

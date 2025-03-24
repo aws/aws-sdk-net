@@ -59,7 +59,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("componentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComponentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("componentId", targetDepth))

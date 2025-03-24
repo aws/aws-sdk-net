@@ -61,9 +61,9 @@ namespace Amazon.CleanRooms.Model
         /// The duration of the protected job, from creation until job completion, in milliseconds.
         /// </para>
         /// </summary>
-        public long TotalDurationInMillis
+        public long? TotalDurationInMillis
         {
-            get { return this._totalDurationInMillis.GetValueOrDefault(); }
+            get { return this._totalDurationInMillis; }
             set { this._totalDurationInMillis = value; }
         }
 

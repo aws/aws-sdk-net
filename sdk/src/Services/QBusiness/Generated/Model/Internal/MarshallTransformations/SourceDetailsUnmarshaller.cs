@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SourceDetails Object
     /// </summary>  
-    public class SourceDetailsUnmarshaller : IUnmarshaller<SourceDetails, XmlUnmarshallerContext>, IUnmarshaller<SourceDetails, JsonUnmarshallerContext>
+    public class SourceDetailsUnmarshaller : IJsonUnmarshaller<SourceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SourceDetails IUnmarshaller<SourceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceDetails Unmarshall(JsonUnmarshallerContext context)
+        public SourceDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SourceDetails unmarshalledObject = new SourceDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioSourceDetails", targetDepth))
                 {
                     var unmarshaller = AudioSourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AudioSourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioSourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageSourceDetails", targetDepth))
                 {
                     var unmarshaller = ImageSourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ImageSourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageSourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoSourceDetails", targetDepth))
                 {
                     var unmarshaller = VideoSourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.VideoSourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

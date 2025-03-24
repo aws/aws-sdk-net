@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnalysisSourceMetadata Object
     /// </summary>  
-    public class AnalysisSourceMetadataUnmarshaller : IUnmarshaller<AnalysisSourceMetadata, XmlUnmarshallerContext>, IUnmarshaller<AnalysisSourceMetadata, JsonUnmarshallerContext>
+    public class AnalysisSourceMetadataUnmarshaller : IJsonUnmarshaller<AnalysisSourceMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnalysisSourceMetadata IUnmarshaller<AnalysisSourceMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalysisSourceMetadata Unmarshall(JsonUnmarshallerContext context)
+        public AnalysisSourceMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnalysisSourceMetadata unmarshalledObject = new AnalysisSourceMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("artifacts", targetDepth))
                 {
                     var unmarshaller = AnalysisTemplateArtifactMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

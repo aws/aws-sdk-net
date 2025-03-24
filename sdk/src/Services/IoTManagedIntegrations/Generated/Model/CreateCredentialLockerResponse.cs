@@ -63,9 +63,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the credential locker request occurred.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

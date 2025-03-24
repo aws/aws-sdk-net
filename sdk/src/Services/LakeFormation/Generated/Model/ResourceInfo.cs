@@ -139,9 +139,9 @@ namespace Amazon.LakeFormation.Model
         /// operations on the registered data location. 
         /// </para>
         /// </summary>
-        public bool WithPrivilegedAccess
+        public bool? WithPrivilegedAccess
         {
-            get { return this._withPrivilegedAccess.GetValueOrDefault(); }
+            get { return this._withPrivilegedAccess; }
             set { this._withPrivilegedAccess = value; }
         }
 

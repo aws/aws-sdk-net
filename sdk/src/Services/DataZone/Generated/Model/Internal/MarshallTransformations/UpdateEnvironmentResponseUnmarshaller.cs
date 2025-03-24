@@ -109,7 +109,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if (context.TestExpression("environmentConfigurationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EnvironmentConfigurationId = unmarshaller.Unmarshall(context);
+                    response.EnvironmentConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environmentProfileId", targetDepth))

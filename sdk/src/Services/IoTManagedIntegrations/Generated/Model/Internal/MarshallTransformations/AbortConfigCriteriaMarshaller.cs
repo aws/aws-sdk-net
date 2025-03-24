@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetFailureType())
             {
                 context.Writer.WritePropertyName("FailureType");
-                context.Writer.Write(requestObject.FailureType);
+                context.Writer.WriteStringValue(requestObject.FailureType);
             }
 
             if(requestObject.IsSetMinNumberOfExecutedThings())
             {
                 context.Writer.WritePropertyName("MinNumberOfExecutedThings");
-                context.Writer.Write(requestObject.MinNumberOfExecutedThings);
+                context.Writer.WriteNumberValue(requestObject.MinNumberOfExecutedThings.Value);
             }
 
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("ThresholdPercentage");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdPercentage);
+                    context.Writer.WriteNumberValue(requestObject.ThresholdPercentage.Value);
                 }
             }
 

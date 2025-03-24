@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetrieveAndGenerateSourceConfig())
             {
                 context.Writer.WritePropertyName("retrieveAndGenerateSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationPrecomputedRetrieveAndGenerateSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetrieveAndGenerateSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetrieveSourceConfig())
             {
                 context.Writer.WritePropertyName("retrieveSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationPrecomputedRetrieveSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetrieveSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

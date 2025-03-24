@@ -59,9 +59,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestampe value of when the managed thing was activated at.
         /// </para>
         /// </summary>
-        public DateTime ActivatedAt
+        public DateTime? ActivatedAt
         {
-            get { return this._activatedAt.GetValueOrDefault(); }
+            get { return this._activatedAt; }
             set { this._activatedAt = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the device creation request occurred.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -392,9 +392,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the managed thing was last updated at.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

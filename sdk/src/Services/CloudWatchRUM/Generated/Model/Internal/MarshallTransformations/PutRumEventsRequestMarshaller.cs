@@ -76,36 +76,16 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlias())
+            {
+                context.Writer.WritePropertyName("Alias");
+                context.Writer.WriteStringValue(publicRequest.Alias);
+            }
+
             if(publicRequest.IsSetAppMonitorDetails())
             {
-<<<<<<< HEAD
                 context.Writer.WritePropertyName("AppMonitorDetails");
                 context.Writer.WriteStartObject();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppMonitorDetails())
-                {
-                    context.Writer.WritePropertyName("AppMonitorDetails");
-                    context.Writer.WriteObjectStart();
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlias())
-                {
-                    context.Writer.WritePropertyName("Alias");
-                    context.Writer.Write(publicRequest.Alias);
-                }
-
-                if(publicRequest.IsSetAppMonitorDetails())
-                {
-                    context.Writer.WritePropertyName("AppMonitorDetails");
-                    context.Writer.WriteObjectStart();
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
                 var marshaller = AppMonitorDetailsMarshaller.Instance;
                 marshaller.Marshall(publicRequest.AppMonitorDetails, context);

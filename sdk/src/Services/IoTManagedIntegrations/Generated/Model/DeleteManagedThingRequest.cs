@@ -47,9 +47,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// set to <c>FALSE</c>, a non-forceful deletion of the managed thing will occur.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

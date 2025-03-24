@@ -51,9 +51,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AllocatedCapacity
+        public int? AllocatedCapacity
         {
-            get { return this._allocatedCapacity.GetValueOrDefault(); }
+            get { return this._allocatedCapacity; }
             set { this._allocatedCapacity = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AlwaysOnCapacity
+        public int? AlwaysOnCapacity
         {
-            get { return this._alwaysOnCapacity.GetValueOrDefault(); }
+            get { return this._alwaysOnCapacity; }
             set { this._alwaysOnCapacity = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int IdleCapacity
+        public int? IdleCapacity
         {
-            get { return this._idleCapacity.GetValueOrDefault(); }
+            get { return this._idleCapacity; }
             set { this._idleCapacity = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int OnDemandCapacity
+        public int? OnDemandCapacity
         {
-            get { return this._onDemandCapacity.GetValueOrDefault(); }
+            get { return this._onDemandCapacity; }
             set { this._onDemandCapacity = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RequestedCapacity
+        public int? RequestedCapacity
         {
-            get { return this._requestedCapacity.GetValueOrDefault(); }
+            get { return this._requestedCapacity; }
             set { this._requestedCapacity = value; }
         }
 

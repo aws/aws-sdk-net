@@ -45,9 +45,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The connectivity status for a managed thing.
         /// </para>
         /// </summary>
-        public bool Connected
+        public bool? Connected
         {
-            get { return this._connected.GetValueOrDefault(); }
+            get { return this._connected; }
             set { this._connected = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the connectivity status for a managed thing was last taken.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

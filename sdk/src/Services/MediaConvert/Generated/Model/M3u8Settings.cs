@@ -125,9 +125,9 @@ namespace Amazon.MediaConvert.Model
         /// Leave blank to keep the default value 0.
         /// </summary>
         [AWSProperty(Min=-10000, Max=10000)]
-        public int AudioPtsOffsetDelta
+        public int? AudioPtsOffsetDelta
         {
-            get { return this._audioPtsOffsetDelta.GetValueOrDefault(); }
+            get { return this._audioPtsOffsetDelta; }
             set { this._audioPtsOffsetDelta = value; }
         }
 

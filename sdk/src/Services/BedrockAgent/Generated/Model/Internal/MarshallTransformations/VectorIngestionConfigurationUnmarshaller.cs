@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if (context.TestExpression("contextEnrichmentConfiguration", targetDepth))
                 {
                     var unmarshaller = ContextEnrichmentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContextEnrichmentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContextEnrichmentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customTransformationConfiguration", targetDepth))

@@ -83,7 +83,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 if (context.TestExpression("inferenceConfigSummary", targetDepth))
                 {
                     var unmarshaller = EvaluationInferenceConfigSummaryUnmarshaller.Instance;
-                    unmarshalledObject.InferenceConfigSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferenceConfigSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jobArn", targetDepth))

@@ -59,7 +59,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionUnmarshaller.Instance;
-                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteLocalStoreAfterUpload())
             {
                 context.Writer.WritePropertyName("DeleteLocalStoreAfterUpload");
-                context.Writer.Write(requestObject.DeleteLocalStoreAfterUpload);
+                context.Writer.WriteBooleanValue(requestObject.DeleteLocalStoreAfterUpload.Value);
             }
 
             if(requestObject.IsSetLocalStoreFileRotationMaxBytes())
             {
                 context.Writer.WritePropertyName("LocalStoreFileRotationMaxBytes");
-                context.Writer.Write(requestObject.LocalStoreFileRotationMaxBytes);
+                context.Writer.WriteNumberValue(requestObject.LocalStoreFileRotationMaxBytes.Value);
             }
 
             if(requestObject.IsSetLocalStoreFileRotationMaxFiles())
             {
                 context.Writer.WritePropertyName("LocalStoreFileRotationMaxFiles");
-                context.Writer.Write(requestObject.LocalStoreFileRotationMaxFiles);
+                context.Writer.WriteNumberValue(requestObject.LocalStoreFileRotationMaxFiles.Value);
             }
 
             if(requestObject.IsSetLocalStoreLocation())
             {
                 context.Writer.WritePropertyName("LocalStoreLocation");
-                context.Writer.Write(requestObject.LocalStoreLocation);
+                context.Writer.WriteStringValue(requestObject.LocalStoreLocation);
             }
 
             if(requestObject.IsSetLogFlushLevel())
             {
                 context.Writer.WritePropertyName("LogFlushLevel");
-                context.Writer.Write(requestObject.LogFlushLevel);
+                context.Writer.WriteStringValue(requestObject.LogFlushLevel);
             }
 
             if(requestObject.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("LogLevel");
-                context.Writer.Write(requestObject.LogLevel);
+                context.Writer.WriteStringValue(requestObject.LogLevel);
             }
 
             if(requestObject.IsSetUploadLog())
             {
                 context.Writer.WritePropertyName("UploadLog");
-                context.Writer.Write(requestObject.UploadLog);
+                context.Writer.WriteBooleanValue(requestObject.UploadLog.Value);
             }
 
             if(requestObject.IsSetUploadPeriodMinutes())
             {
                 context.Writer.WritePropertyName("UploadPeriodMinutes");
-                context.Writer.Write(requestObject.UploadPeriodMinutes);
+                context.Writer.WriteNumberValue(requestObject.UploadPeriodMinutes.Value);
             }
 
         }

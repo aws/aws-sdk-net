@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDiscoveryServerAddress())
             {
                 context.Writer.WritePropertyName("discoveryServerAddress");
-                context.Writer.Write(requestObject.DiscoveryServerAddress);
+                context.Writer.WriteStringValue(requestObject.DiscoveryServerAddress);
             }
 
             if(requestObject.IsSetDiscoveryServerPort())
             {
                 context.Writer.WritePropertyName("discoveryServerPort");
-                context.Writer.Write(requestObject.DiscoveryServerPort);
+                context.Writer.WriteNumberValue(requestObject.DiscoveryServerPort.Value);
             }
 
             if(requestObject.IsSetVpcInterfaceAdapter())
             {
                 context.Writer.WritePropertyName("vpcInterfaceAdapter");
-                context.Writer.Write(requestObject.VpcInterfaceAdapter);
+                context.Writer.WriteStringValue(requestObject.VpcInterfaceAdapter);
             }
 
         }

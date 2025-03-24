@@ -206,9 +206,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int ConnectionTimeoutSeconds
+        public int? ConnectionTimeoutSeconds
         {
-            get { return this._connectionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._connectionTimeoutSeconds; }
             set { this._connectionTimeoutSeconds = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public int SessionLengthSeconds
+        public int? SessionLengthSeconds
         {
-            get { return this._sessionLengthSeconds.GetValueOrDefault(); }
+            get { return this._sessionLengthSeconds; }
             set { this._sessionLengthSeconds = value; }
         }
 

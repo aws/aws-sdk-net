@@ -51,9 +51,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Returned as info about age of the flows identified by the flow operation.
         /// </para>
         /// </summary>
-        public int Age
+        public int? Age
         {
-            get { return this._age.GetValueOrDefault(); }
+            get { return this._age; }
             set { this._age = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Returns the number of bytes received or transmitted in a specific flow.
         /// </para>
         /// </summary>
-        public long ByteCount
+        public long? ByteCount
         {
-            get { return this._byteCount.GetValueOrDefault(); }
+            get { return this._byteCount; }
             set { this._byteCount = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Returns the total number of data packets received or transmitted in a flow.
         /// </para>
         /// </summary>
-        public int PacketCount
+        public int? PacketCount
         {
-            get { return this._packetCount.GetValueOrDefault(); }
+            get { return this._packetCount; }
             set { this._packetCount = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 if (context.TestExpression("hlsConfiguration", targetDepth))
                 {
                     var unmarshaller = CompositionRecordingHlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

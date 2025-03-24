@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OtaTaskSchedulingConfig Object
     /// </summary>  
-    public class OtaTaskSchedulingConfigUnmarshaller : IUnmarshaller<OtaTaskSchedulingConfig, XmlUnmarshallerContext>, IUnmarshaller<OtaTaskSchedulingConfig, JsonUnmarshallerContext>
+    public class OtaTaskSchedulingConfigUnmarshaller : IJsonUnmarshaller<OtaTaskSchedulingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OtaTaskSchedulingConfig IUnmarshaller<OtaTaskSchedulingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OtaTaskSchedulingConfig Unmarshall(JsonUnmarshallerContext context)
+        public OtaTaskSchedulingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OtaTaskSchedulingConfig unmarshalledObject = new OtaTaskSchedulingConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EndBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaintenanceWindows", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ScheduleMaintenanceWindow, ScheduleMaintenanceWindowUnmarshaller>(ScheduleMaintenanceWindowUnmarshaller.Instance);
-                    unmarshalledObject.MaintenanceWindows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ScheduleMaintenanceWindow, ScheduleMaintenanceWindowUnmarshaller>(ScheduleMaintenanceWindowUnmarshaller.Instance);
+                    unmarshalledObject.MaintenanceWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

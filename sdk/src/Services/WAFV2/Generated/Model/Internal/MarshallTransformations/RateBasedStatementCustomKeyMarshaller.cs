@@ -104,23 +104,23 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJA3Fingerprint())
             {
                 context.Writer.WritePropertyName("JA3Fingerprint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitJA3FingerprintMarshaller.Instance;
                 marshaller.Marshall(requestObject.JA3Fingerprint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJA4Fingerprint())
             {
                 context.Writer.WritePropertyName("JA4Fingerprint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitJA4FingerprintMarshaller.Instance;
                 marshaller.Marshall(requestObject.JA4Fingerprint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabelNamespace())

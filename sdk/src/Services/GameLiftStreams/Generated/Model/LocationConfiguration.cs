@@ -51,9 +51,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AlwaysOnCapacity
+        public int? AlwaysOnCapacity
         {
-            get { return this._alwaysOnCapacity.GetValueOrDefault(); }
+            get { return this._alwaysOnCapacity; }
             set { this._alwaysOnCapacity = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int OnDemandCapacity
+        public int? OnDemandCapacity
         {
-            get { return this._onDemandCapacity.GetValueOrDefault(); }
+            get { return this._onDemandCapacity; }
             set { this._onDemandCapacity = value; }
         }
 

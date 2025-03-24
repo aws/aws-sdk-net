@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-    <TargetFramework>net35</TargetFramework>
-    <DefineConstants>$(DefineConstants);BCL;BCL35;AWS_APM_API;CODE_ANALYSIS</DefineConstants>
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);BCL;AWS_ASYNC_API;CODE_ANALYSIS</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.GameLiftStreams</AssemblyName>
-    <PackageId>AWSSDK.GameLiftStreams</PackageId>
+    <AssemblyName>AWSSDK.IoTManagedIntegrations</AssemblyName>
+    <PackageId>AWSSDK.IoTManagedIntegrations</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -19,11 +19,17 @@
     <SignAssembly>true</SignAssembly>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
-    <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
-    <!-- workaround per https://github.com/dotnet/msbuild/issues/5985 -->
-    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
     <NoWarn>CA1822</NoWarn>
+  </PropertyGroup>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">
     <CodeAnalysisRuleSet>../../../AWSDotNetSDK.ruleset</CodeAnalysisRuleSet>
@@ -49,16 +55,13 @@
     <Analyzer Include= "../../../../buildtools/CustomRoslynAnalyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="**/_async/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_bcl45+netstandard/**"/>
     <Compile Remove="**/_netstandard/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../Core/AWSSDK.Core.Net35.csproj"/>
+    <ProjectReference Include="../../Core/AWSSDK.Core.NetFramework.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
@@ -74,9 +77,6 @@
 
   <ItemGroup>
     <Reference Include="System.Configuration"/>
-    <Reference Include="System.Data.Entity">
-        <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Entity.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 

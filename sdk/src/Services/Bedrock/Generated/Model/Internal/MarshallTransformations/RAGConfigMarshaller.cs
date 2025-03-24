@@ -60,12 +60,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecomputedRagSourceConfig())
             {
                 context.Writer.WritePropertyName("precomputedRagSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationPrecomputedRagSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrecomputedRagSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

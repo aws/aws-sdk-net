@@ -59,7 +59,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if (context.TestExpression("appId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("branchName", targetDepth))

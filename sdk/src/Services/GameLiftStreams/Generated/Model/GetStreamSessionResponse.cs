@@ -175,9 +175,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int ConnectionTimeoutSeconds
+        public int? ConnectionTimeoutSeconds
         {
-            get { return this._connectionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._connectionTimeoutSeconds; }
             set { this._connectionTimeoutSeconds = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.GameLiftStreams.Model
         /// using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.GameLiftStreams.Model
         /// using in ISO8601 format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC).
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -332,9 +332,9 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public int SessionLengthSeconds
+        public int? SessionLengthSeconds
         {
-            get { return this._sessionLengthSeconds.GetValueOrDefault(); }
+            get { return this._sessionLengthSeconds; }
             set { this._sessionLengthSeconds = value; }
         }
 

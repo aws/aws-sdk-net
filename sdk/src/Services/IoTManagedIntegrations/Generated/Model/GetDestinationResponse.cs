@@ -49,9 +49,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the destination creation requset occurred.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The timestamp value of when the destination update requset occurred.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

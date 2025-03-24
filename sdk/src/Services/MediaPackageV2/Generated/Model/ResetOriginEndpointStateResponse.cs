@@ -124,9 +124,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ResetAt
+        public DateTime? ResetAt
         {
-            get { return this._resetAt.GetValueOrDefault(); }
+            get { return this._resetAt; }
             set { this._resetAt = value; }
         }
 

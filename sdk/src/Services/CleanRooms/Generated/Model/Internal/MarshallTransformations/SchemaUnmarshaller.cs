@@ -130,8 +130,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("selectedAnalysisMethods", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SelectedAnalysisMethods = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SelectedAnalysisMethods = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

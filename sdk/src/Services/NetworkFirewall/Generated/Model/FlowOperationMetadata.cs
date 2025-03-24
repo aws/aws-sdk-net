@@ -109,9 +109,9 @@ namespace Amazon.NetworkFirewall.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime FlowRequestTimestamp
+        public DateTime? FlowRequestTimestamp
         {
-            get { return this._flowRequestTimestamp.GetValueOrDefault(); }
+            get { return this._flowRequestTimestamp; }
             set { this._flowRequestTimestamp = value; }
         }
 

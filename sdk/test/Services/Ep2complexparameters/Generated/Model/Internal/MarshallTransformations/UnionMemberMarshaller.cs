@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Ep2complexparameters.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Ep2complexparameters.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("object");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObjectMemberMarshaller.Instance;
                 marshaller.Marshall(requestObject.Object, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("string");
-                context.Writer.Write(requestObject.String);
+                context.Writer.WriteStringValue(requestObject.String);
             }
 
         }

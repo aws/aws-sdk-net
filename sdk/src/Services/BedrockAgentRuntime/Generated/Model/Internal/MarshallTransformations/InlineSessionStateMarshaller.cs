@@ -49,12 +49,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConversationHistory())
             {
                 context.Writer.WritePropertyName("conversationHistory");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConversationHistoryMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConversationHistory, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFiles())

@@ -34,16 +34,10 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Cost Explorer", "4.0.0.0");
 
         private static readonly AmazonCostExplorerEndpointResolver EndpointResolver =
             new AmazonCostExplorerEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "3.7.404.36");
-=======
-            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "3.7.405.8");
->>>>>>> f99aaf0517635c39009fed2c01894d0702bca488
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if (context.TestExpression("StandardsControlsUpdatable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StandardsControlsUpdatable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StandardsControlsUpdatable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StandardsInput", targetDepth))

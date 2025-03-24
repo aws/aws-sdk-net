@@ -61,7 +61,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 if (context.TestExpression("customModelUnits", targetDepth))
                 {
                     var unmarshaller = CustomModelUnitsUnmarshaller.Instance;
-                    response.CustomModelUnits = unmarshaller.Unmarshall(context);
+                    response.CustomModelUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instructSupported", targetDepth))
