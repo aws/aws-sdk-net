@@ -1927,6 +1927,31 @@ namespace Amazon.PCS
         ///  <u>Examples</u> 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PCS.Model.ServiceQuotaExceededException">
+        /// You exceeded your service quota. Service quotas, also referred to as limits, are the
+        /// maximum number of service resources or operations for your Amazon Web Services account.
+        /// To learn how to increase your service quota, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">Requesting
+        /// a quota increase</a> in the <i>Service Quotas User Guide</i> 
+        /// 
+        ///  
+        /// <para>
+        ///  <u>Examples</u> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The max number of clusters or queues has been reached for the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The max number of compute node groups has been reached for the associated cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total of <c>maxInstances</c> across all compute node groups has been reached for
+        /// associated cluster.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 

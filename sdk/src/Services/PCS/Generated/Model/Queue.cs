@@ -183,7 +183,7 @@ namespace Amazon.PCS.Model
         /// The name that identifies the queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=3, Max=25)]
         public string Name
         {
             get { return this._name; }
