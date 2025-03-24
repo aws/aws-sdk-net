@@ -31,8 +31,8 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Specify the list of gateways to which you want to send the multicast downlink messages.
-    /// The multicast message will be sent to each gateway in the sequence provided in the
-    /// list.
+    /// The multicast message will be sent to each gateway in the list, with the transmission
+    /// interval as the time interval between each message.
     /// </summary>
     public partial class ParticipatingGatewaysMulticast
     {
@@ -42,10 +42,10 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property GatewayList. 
         /// <para>
-        /// The list of gateways that you want to use for sending the multicast downlink. Each
-        /// downlink will be sent to all the gateways in the list with transmission interval between
-        /// them. If list is empty the gateway list will be dynamically selected similar to the
-        /// case of no ParticipatingGateways 
+        /// The list of gateways that you want to use for sending the multicast downlink message.
+        /// Each downlink message will be sent to all the gateways in the list in the order that
+        /// you provided. If the gateway list is empty, then AWS IoT Core for LoRaWAN chooses
+        /// the gateways that were most recently used by the devices to send an uplink message.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -64,8 +64,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property TransmissionInterval. 
         /// <para>
-        /// The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting
-        /// the multicast payload to the next gateway in the list.
+        /// The duration of time in milliseconds for which AWS IoT Core for LoRaWAN will wait
+        /// before transmitting the multicast payload to the next gateway in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60000)]

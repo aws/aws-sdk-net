@@ -31,7 +31,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMulticastGroupFromFuotaTask operation.
-    /// Disassociates a multicast group from a fuota task.
+    /// Disassociates a multicast group from a FUOTA task.
     /// </summary>
     public partial class DisassociateMulticastGroupFromFuotaTaskRequest : AmazonIoTWirelessRequest
     {
