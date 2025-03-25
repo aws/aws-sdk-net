@@ -85,7 +85,7 @@ namespace Amazon.Runtime
             // any request being made with expired credentials.
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
 
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROCESS;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROCESS);
         }
 
         #endregion

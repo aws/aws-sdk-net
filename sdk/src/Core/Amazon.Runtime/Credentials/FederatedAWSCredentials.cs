@@ -77,7 +77,7 @@ namespace Amazon.Runtime
             SAMLEndpoint = samlEndpoint ?? throw new ArgumentNullException("samlEndpoint");
             RoleArn = roleArn;
             PreemptExpiryTime = DefaultPreemptExpiryTime;
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_FEDERATION_TOKEN;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_FEDERATION_TOKEN);
         }
 
         /// <summary>

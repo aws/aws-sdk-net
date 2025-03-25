@@ -205,10 +205,9 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.BasicWithServices:
                     case CredentialProfileType.BasicWithGlobalEndpoint:
                     case CredentialProfileType.BasicWithServicesAndGlobalEndpoint:
-                        return new BasicAWSCredentials(options.AccessKey, options.SecretKey)
-                        {
-                            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROFILE,
-                        };
+                        var basicCredentials = new BasicAWSCredentials(options.AccessKey, options.SecretKey);
+                        basicCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE);
+                        return basicCredentials;
                     case CredentialProfileType.Session:
                     case CredentialProfileType.SessionWithServices:
                     case CredentialProfileType.SessionWithGlobalEndpoint:
@@ -279,10 +278,10 @@ namespace Amazon.Runtime.CredentialManagement
                             ExternalId = options.ExternalID,
                             MfaSerialNumber = options.MfaSerial
                         };
-                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions)
-                        { 
-                            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROFILE_SOURCE_PROFILE,
-                        };
+
+                        var assumeRoleCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                        assumeRoleCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_SOURCE_PROFILE);
+                        return assumeRoleCredentials;
                     
                     case CredentialProfileType.AssumeRoleCredentialSource:
                     case CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint:
@@ -309,10 +308,10 @@ namespace Amazon.Runtime.CredentialManagement
 
                         roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
-                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions)
-                        {
-                            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROFILE_NAMED_PROVIDER,
-                        };
+
+                        var assumeRoleSourceCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                        assumeRoleSourceCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_NAMED_PROVIDER);
+                        return assumeRoleSourceCredentials;
                     
                     case CredentialProfileType.AssumeRoleWithWebIdentity:
                     case CredentialProfileType.AssumeRoleWithWebIdentityWithServices:
@@ -322,10 +321,9 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint:
-                        return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName)
-                        {
-                            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN,
-                        };
+                        var assumeRoleWebIdentityCredentials = new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
+                        assumeRoleWebIdentityCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN);
+                        return assumeRoleWebIdentityCredentials;
                     
                     case CredentialProfileType.SSO:
                     {
@@ -336,10 +334,10 @@ namespace Amazon.Runtime.CredentialManagement
                         };
 
                         var isLegacyFormat = string.IsNullOrEmpty(options.SsoSession);
-                        return new SSOAWSCredentials(options.SsoAccountId, options.SsoRegion, options.SsoRoleName, options.SsoStartUrl, ssoCredentialsOptions)
-                        {
-                            FeatureIdSource = isLegacyFormat ? UserAgentFeatureId.CREDENTIALS_PROFILE_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_PROFILE_SSO,
-                        };
+                        var ssoCredentials = new SSOAWSCredentials(options.SsoAccountId, options.SsoRegion, options.SsoRoleName, options.SsoStartUrl, ssoCredentialsOptions);
+                        ssoCredentials.FeatureIdSources.Add(isLegacyFormat ? UserAgentFeatureId.CREDENTIALS_PROFILE_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_PROFILE_SSO);
+
+                        return ssoCredentials;
                     }
       
                     case CredentialProfileType.SAMLRole:
@@ -367,10 +365,9 @@ namespace Amazon.Runtime.CredentialManagement
                         }
                     
                     case CredentialProfileType.CredentialProcess:
-                        return new ProcessAWSCredentials(options.CredentialProcess)
-                        {
-                            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_PROFILE_PROCESS,
-                        };
+                        var processCredentials = new ProcessAWSCredentials(options.CredentialProcess);
+                        processCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_PROCESS);
+                        return processCredentials;
 
                     default:
                         var defaultMessage = profileName == null

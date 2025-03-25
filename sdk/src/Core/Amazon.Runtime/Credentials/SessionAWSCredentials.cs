@@ -39,7 +39,7 @@ namespace Amazon.Runtime
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException("token");
 
             _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token);
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_SESSION_TOKEN;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_SESSION_TOKEN);
         }
 
         #endregion

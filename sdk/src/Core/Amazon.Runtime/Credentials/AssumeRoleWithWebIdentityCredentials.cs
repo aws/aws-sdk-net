@@ -126,7 +126,7 @@ namespace Amazon.Runtime
             RoleArn = roleArn;
             RoleSessionName = string.IsNullOrEmpty(roleSessionName) ? _roleSessionNameDefault : roleSessionName;
             _options = options;
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE_WEB_ID;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE_WEB_ID);
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
@@ -143,11 +143,11 @@ namespace Amazon.Runtime
             var webIdentityTokenFile = Environment.GetEnvironmentVariable(WebIdentityTokenFileEnvVariable);
             var roleArn = Environment.GetEnvironmentVariable(RoleArnEnvVariable);
             var roleSessionName = Environment.GetEnvironmentVariable(RoleSessionNameEnvVariable);
+
+            var credentials = new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFile, roleArn, roleSessionName);
+            credentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
             
-            return new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFile, roleArn, roleSessionName)
-            {
-                FeatureIdSource = UserAgentFeatureId.CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN,
-            };
+            return credentials;
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

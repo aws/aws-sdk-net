@@ -85,7 +85,7 @@ namespace Amazon.Runtime
             RoleArn = roleArn;
             RoleSessionName = roleSessionName;
             Options = options;
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE);
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.

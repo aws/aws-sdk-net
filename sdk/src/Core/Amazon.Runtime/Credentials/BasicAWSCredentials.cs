@@ -42,7 +42,7 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(accessKey))
             {
                 _credentials = new ImmutableCredentials(accessKey, secretKey, null);
-                FeatureIdSource = UserAgentFeatureId.CREDENTIALS_CODE;
+                FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_CODE);
             }
         }
 

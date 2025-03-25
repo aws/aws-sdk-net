@@ -68,7 +68,7 @@ namespace Amazon.Runtime
                     "The app.config/web.config files for the application did not contain credential information"));
             }
 
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_CODE;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_CODE);
         }
 
         #endregion

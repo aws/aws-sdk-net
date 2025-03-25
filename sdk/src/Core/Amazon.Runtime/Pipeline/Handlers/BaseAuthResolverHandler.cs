@@ -289,7 +289,10 @@ namespace Amazon.Runtime.Internal
                 return;
             }
 
-            requestContext.UserAgentDetails.AddFeature(credentials.FeatureIdSource);
+            foreach (var featureId in credentials.FeatureIdSources)
+            {
+                requestContext.UserAgentDetails.AddFeature(featureId);
+            }
         }
     }
 }

@@ -103,7 +103,7 @@ namespace Amazon.Runtime
             RoleName = roleName;
             StartUrl = startUrl;
             Options = options;
-            FeatureIdSource = string.IsNullOrEmpty(options.SessionName) ? UserAgentFeatureId.CREDENTIALS_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_SSO;
+            FeatureIdSources.Add(string.IsNullOrEmpty(options.SessionName) ? UserAgentFeatureId.CREDENTIALS_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_SSO);
 
             _ssoTokenManager = new SSOTokenManager(
                 SSOServiceClientHelpers.BuildSSOIDCClient(

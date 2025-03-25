@@ -70,7 +70,7 @@ namespace Amazon.Runtime
         {
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
             DetermineEndpoint();
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_HTTP;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_HTTP);
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

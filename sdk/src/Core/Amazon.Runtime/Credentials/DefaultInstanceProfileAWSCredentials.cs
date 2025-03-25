@@ -85,7 +85,7 @@ namespace Amazon.Runtime
 
             _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_IMDS;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_IMDS);
         }
 
         #region Overrides

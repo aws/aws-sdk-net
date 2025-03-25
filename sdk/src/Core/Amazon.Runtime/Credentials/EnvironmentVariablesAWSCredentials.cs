@@ -57,7 +57,7 @@ namespace Amazon.Runtime
             // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
             FetchCredentials();
 
-            FeatureIdSource = UserAgentFeatureId.CREDENTIALS_ENV_VARS;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_ENV_VARS);
         }
 
         #endregion

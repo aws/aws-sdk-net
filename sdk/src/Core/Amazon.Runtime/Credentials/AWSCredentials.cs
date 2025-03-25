@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.UserAgent;
+using System.Collections.Generic;
 
 namespace Amazon.Runtime
 {
@@ -27,11 +28,11 @@ namespace Amazon.Runtime
         /// Internal property that can be used to specify how this instance of AWS credentials were resolved.
         /// </summary>
         /// <remarks>
-        /// Credential providers MUST set this property to have their specific feature ID tracked.
+        /// Credential providers MUST add to this property to have their specific feature ID tracked.
         /// <para />
-        /// If null, no value will be included in the user agent header.
+        /// If empty, no value will be included in the user agent header.
         /// </remarks>
-        internal UserAgentFeatureId FeatureIdSource { get; set; }
+        internal HashSet<UserAgentFeatureId> FeatureIdSources { get; set; } = new();
 
         /// <summary>
         /// Returns a copy of ImmutableCredentials
