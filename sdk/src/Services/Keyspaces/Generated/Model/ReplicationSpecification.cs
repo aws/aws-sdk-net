@@ -34,7 +34,7 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <c>regionList</c> - up to six Amazon Web Services Regions where the keyspace is replicated
+    ///  <c>regionList</c> - the Amazon Web Services Regions where the keyspace is replicated
     /// in.
     /// </para>
     ///  </li> <li> 
@@ -51,11 +51,11 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property RegionList. 
         /// <para>
-        ///  The <c>regionList</c> can contain up to six Amazon Web Services Regions where the
-        /// keyspace is replicated in. 
+        ///  The <c>regionList</c> contains the Amazon Web Services Regions where the keyspace
+        /// is replicated in. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=6)]
+        [AWSProperty(Min=2)]
         public List<string> RegionList
         {
             get { return this._regionList; }
