@@ -10,7 +10,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace#>.Model
@@ -36,9 +35,6 @@ foreach(var operation in this.Config.ServiceModel.Operations)
         /// <summary>
         /// Paginator for <#=operation.Name#> operation
         ///</summary>
-        [AWSPaginator(InputToken = new[] { <#= string.Join(",", operation.Paginators.InputTokens.Select(x => "\"" + x.PropertyName + "\"")) #> },
-            <#= operation.Paginators.LimitKey != null ? $"    LimitKey = \"{operation.Paginators.LimitKey.PropertyName}\"," : "" #>
-            OutputToken = new[] { <#= string.Join(",", operation.Paginators.OutputTokens.Select(x => "\"" + x.PropertyName + "\"")) #> })]
         public I<#=operation.Name#>Paginator <#=operation.Name#>(<#=operation.Name#>Request request) 
         {
             return new <#=operation.Name#>Paginator(this.client, request);
