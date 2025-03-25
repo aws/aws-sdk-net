@@ -491,8 +491,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
             var currTime = DateTime.UtcNow;
-            var longEpochTime = new DateTime(2039, 7, 23, 2, 3, 4, DateTimeKind.Local);
-            var longEpochTimeBefore1970 = new DateTime(1955, 12, 30, 23, 59, 59, DateTimeKind.Local);
+            var longEpochTime = new DateTime(2039, 7, 23, 2, 3, 4, DateTimeKind.Utc);
+            var longEpochTimeBefore1970 = new DateTime(1955, 12, 30, 23, 59, 59, DateTimeKind.Utc);
 
             var employee = new AnnotatedNumericEpochEmployee
             {
