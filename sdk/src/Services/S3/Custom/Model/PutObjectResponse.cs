@@ -364,9 +364,9 @@ namespace Amazon.S3.Model
         /// </para>
         /// <note><para>This functionality is only supported for objects in the S3; Express One Zone storage class in directory buckets.</para></note>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

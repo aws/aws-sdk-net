@@ -154,9 +154,9 @@ namespace Amazon.S3.Model
         /// In this case, Amazon S3 makes a call to KMS every time a copy request is made for a KMS-encrypted object.
         /// </para>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this._bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this._bucketKeyEnabled }
             set { this._bucketKeyEnabled = value; }
         }
 

@@ -627,9 +627,9 @@ namespace Amazon.S3.Model
         /// The date and time when you want the copied object's Object Lock to expire.
         /// </para>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 
