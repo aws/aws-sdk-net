@@ -45,7 +45,7 @@
     <property>Amazon.CloudWatchRUM.Model.CreateAppMonitorRequest.Domain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\*\.)(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))</pattern>
+    <pattern>^(localhost)$|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|(?=^[a-zA-Z0-9\.\*-]{4,253}$)(?!.*\.-)(?!.*-\.)(?!.*\.\.)(?!.*[^\.]{64,})^(\*\.)?(?![-\.\*])[^\*]{1,}\.(\*|(?!.*--)(?=.*[a-zA-Z])[^\*]{1,}[^\*-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.CreateAppMonitorRequest.Name</property>
@@ -64,6 +64,22 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(?!\.)[\.\-_#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.DeleteResourcePolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.)[\.\-_#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.DeleteResourcePolicyRequest.PolicyRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.DeleteResourcePolicyResponse.PolicyRevisionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.DeleteRumMetricsDestinationRequest.AppMonitorName</property>
@@ -95,6 +111,17 @@
     <pattern>^(?!\.)[\.\-_#A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.GetResourcePolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.)[\.\-_#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.GetResourcePolicyResponse.PolicyRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.ListAppMonitorsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -117,6 +144,27 @@
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.ListTagsForResourceResponse.ResourceArn</property>
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.PutResourcePolicyRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?!\.)[\.\-_#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.PutResourcePolicyRequest.PolicyRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.PutResourcePolicyResponse.PolicyRevisionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.PutRumEventsRequest.Alias</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.PutRumEventsRequest.BatchId</property>
@@ -158,7 +206,7 @@
     <property>Amazon.CloudWatchRUM.Model.UpdateAppMonitorRequest.Domain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\*\.)(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))</pattern>
+    <pattern>^(localhost)$|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|(?=^[a-zA-Z0-9\.\*-]{4,253}$)(?!.*\.-)(?!.*-\.)(?!.*\.\.)(?!.*[^\.]{64,})^(\*\.)?(?![-\.\*])[^\*]{1,}\.(\*|(?!.*--)(?=.*[a-zA-Z])[^\*]{1,}[^\*-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.UpdateAppMonitorRequest.Name</property>
@@ -192,7 +240,7 @@
     <property>Amazon.CloudWatchRUM.Model.AppMonitor.Domain</property>
     <min>1</min>
     <max>253</max>
-    <pattern>^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\*\.)(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))</pattern>
+    <pattern>^(localhost)$|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|(?=^[a-zA-Z0-9\.\*-]{4,253}$)(?!.*\.-)(?!.*-\.)(?!.*\.\.)(?!.*[^\.]{64,})^(\*\.)?(?![-\.\*])[^\*]{1,}\.(\*|(?!.*--)(?=.*[a-zA-Z])[^\*]{1,}[^\*-])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.AppMonitor.Id</property>
@@ -252,6 +300,12 @@
     <property>Amazon.CloudWatchRUM.Model.BatchDeleteRumMetricDefinitionsError.MetricDefinitionId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.JavaScriptSourceMaps.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][-.a-z0-9]{1,61}(?:/[-!_*'().a-z0-9A-Z]+(?:/[-!_*'().a-z0-9A-Z]+)*)?/?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.MetricDefinition.EventPattern</property>

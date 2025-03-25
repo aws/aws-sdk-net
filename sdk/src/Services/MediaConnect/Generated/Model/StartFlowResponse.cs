@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private Status _status;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that you started.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that you started.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -53,8 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of the flow when the StartFlow process
-        /// begins.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of the flow when the <c>StartFlow</c> process begins.
+        /// </para>
         /// </summary>
         public Status Status
         {

@@ -533,7 +533,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.VietnamAdditionalInfo.PaymentVoucherNumber</property>
-    <pattern>^\d{17}$</pattern>
+    <pattern>^(\d{17}|[A-Za-z]{3}\d{13})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.VietnamAdditionalInfo.PaymentVoucherNumberDate</property>

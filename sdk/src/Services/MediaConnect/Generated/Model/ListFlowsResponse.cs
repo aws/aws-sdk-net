@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Flows. A list of flow summaries.
+        /// Gets and sets the property Flows. 
+        /// <para>
+        ///  A list of flow summaries.
+        /// </para>
         /// </summary>
         public List<ListedFlow> Flows
         {
@@ -53,11 +56,17 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that identifies which batch of results
-        /// that you want to see. For example, you submit a ListFlows request with MaxResults
-        /// set at 5. The service returns the first batch of results (up to 5) and a NextToken
-        /// value. To see the next batch of results, you can submit the ListFlows request a second
-        /// time and specify the NextToken value.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  The token that identifies the batch of results that you want to see. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you submit a <c>ListFlows</c> request with MaxResults set at 5. The service
+        /// returns the first batch of results (up to 5) and a <c>NextToken</c> value. To see
+        /// the next batch of results, you can submit the <c>ListFlows</c> request a second time
+        /// and specify the <c>NextToken</c> value.
+        /// </para>
         /// </summary>
         public string NextToken
         {

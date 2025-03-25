@@ -36,7 +36,7 @@ namespace Amazon.CognitoIdentity.Model
     /// 
     ///  
     /// <para>
-    /// You must use AWS Developer credentials to call this API.
+    /// You must use Amazon Web Services developer credentials to call this operation.
     /// </para>
     /// </summary>
     public partial class SetIdentityPoolRolesRequest : AmazonCognitoIdentityRequest
@@ -69,7 +69,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <para>
         /// How users for a specific identity provider are to mapped to roles. This is a string
         /// to <a>RoleMapping</a> object map. The string identifies the identity provider, for
-        /// example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+        /// example, <c>graph.facebook.com</c> or <c>cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id</c>.
         /// </para>
         ///  
         /// <para>

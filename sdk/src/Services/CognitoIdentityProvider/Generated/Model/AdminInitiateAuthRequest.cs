@@ -94,7 +94,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The analytics metadata for collecting Amazon Pinpoint metrics.
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -113,38 +115,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AuthFlow. 
         /// <para>
         /// The authentication flow that you want to initiate. Each <c>AuthFlow</c> has linked
-        /// <c>AuthParameters</c> that you must submit. The following are some example flows and
-        /// their parameters.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>USER_AUTH</c>: Request a preferred authentication type or review available authentication
-        /// types. From the offered authentication types, select one in a challenge response and
-        /// then authenticate with that method in an additional challenge response.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>REFRESH_TOKEN_AUTH</c>: Receive new ID and access tokens when you pass a <c>REFRESH_TOKEN</c>
-        /// parameter with a valid refresh token as the value.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>USER_SRP_AUTH</c>: Receive secure remote password (SRP) variables for the next
-        /// challenge, <c>PASSWORD_VERIFIER</c>, when you pass <c>USERNAME</c> and <c>SRP_A</c>
-        /// parameters..
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ADMIN_USER_PASSWORD_AUTH</c>: Receive new tokens or the next challenge, for example
-        /// <c>SOFTWARE_TOKEN_MFA</c>, when you pass <c>USERNAME</c> and <c>PASSWORD</c> parameters.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <i>All flows</i> 
+        /// <c>AuthParameters</c> that you must submit. The following are some example flows.
         /// </para>
         ///  <dl> <dt>USER_AUTH</dt> <dd> 
         /// <para>
-        /// The entry point for sign-in with passwords, one-time passwords, and WebAuthN authenticators.
+        /// The entry point for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+        /// authentication</a> with passwords, one-time passwords, and WebAuthn authenticators.
+        /// Request a preferred authentication type or review available authentication types.
+        /// From the offered authentication types, select one in a challenge response and then
+        /// authenticate with that method in an additional challenge response. To activate this
+        /// setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
         /// </para>
         ///  </dd> <dt>USER_SRP_AUTH</dt> <dd> 
         /// <para>
@@ -154,8 +135,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </dd> <dt>REFRESH_TOKEN_AUTH and REFRESH_TOKEN</dt> <dd> 
         /// <para>
-        /// Provide a valid refresh token and receive new ID and access tokens. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using
+        /// Receive new ID and access tokens when you pass a <c>REFRESH_TOKEN</c> parameter with
+        /// a valid refresh token as the value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using
         /// the refresh token</a>.
         /// </para>
         ///  </dd> <dt>CUSTOM_AUTH</dt> <dd> 
@@ -165,15 +146,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </dd> <dt>ADMIN_USER_PASSWORD_AUTH</dt> <dd> 
         /// <para>
-        /// Username-password authentication with the password sent directly in the request. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin
-        /// authentication flow</a>.
+        /// Server-side username-password authentication with the password sent directly in the
+        /// request. For more information about client-side and server-side authentication, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html">SDK
+        /// authorization models</a>.
         /// </para>
-        ///  </dd> </dl> 
-        /// <para>
-        ///  <c>USER_PASSWORD_AUTH</c> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
-        /// and isn't valid for AdminInitiateAuth.
-        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
         public AuthFlowType AuthFlow
@@ -192,7 +170,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AuthParameters. 
         /// <para>
         /// The authentication parameters. These are inputs corresponding to the <c>AuthFlow</c>
-        /// that you're invoking. The required values depend on the value of <c>AuthFlow</c>:
+        /// that you're invoking. The required values depend on the value of <c>AuthFlow</c> for
+        /// example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -331,8 +310,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -371,8 +349,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ContextData. 
         /// <para>
-        /// Contextual data about your user session, such as the device fingerprint, IP address,
-        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>

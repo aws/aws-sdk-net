@@ -38,6 +38,11 @@ namespace Amazon.SecurityHub.Model
     /// For each control, the results include information about whether it is currently enabled,
     /// the severity, and a link to remediation information.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation returns an empty list for standard subscriptions where <c>StandardsControlsUpdatable</c>
+    /// has value <c>NOT_READY_FOR_UPDATES</c>.
+    /// </para>
     /// </summary>
     public partial class DescribeStandardsControlsRequest : AmazonSecurityHubRequest
     {

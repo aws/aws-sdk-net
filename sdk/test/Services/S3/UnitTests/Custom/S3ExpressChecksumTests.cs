@@ -264,7 +264,8 @@ namespace AWSSDK.UnitTests
                 Marshaller = marshaller,
                 OriginalRequest = request,
                 Unmarshaller = null,
-                IsAsync = false
+                IsAsync = false,
+                Identity = new BasicAWSCredentials("access key", "secret"),
             };
             var executionContext = new ExecutionContext(
                 requestContext,

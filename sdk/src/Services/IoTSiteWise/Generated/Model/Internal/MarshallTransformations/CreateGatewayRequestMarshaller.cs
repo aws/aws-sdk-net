@@ -90,6 +90,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetGatewayVersion())
+            {
+                context.Writer.WritePropertyName("gatewayVersion");
+                context.Writer.WriteStringValue(publicRequest.GatewayVersion);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

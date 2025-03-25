@@ -46,6 +46,17 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetHlsConfiguration())
+            {
+                context.Writer.WritePropertyName("hlsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParticipantRecordingHlsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMediaTypes())
             {
                 context.Writer.WritePropertyName("mediaTypes");
@@ -55,6 +66,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectMediaTypesListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetRecordingReconnectWindowSeconds())
+            {
+                context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
+                context.Writer.WriteNumberValue(requestObject.RecordingReconnectWindowSeconds.Value);
             }
 
             if(requestObject.IsSetStorageConfigurationArn())

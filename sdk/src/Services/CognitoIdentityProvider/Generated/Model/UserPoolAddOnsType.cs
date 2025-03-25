@@ -30,20 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// User pool add-ons. Contains settings for activation of advanced security features.
-    /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
-    /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
+    /// Contains settings for activation of threat protection, including the operating mode
+    /// and additional authentication types. To log user security information but take no
+    /// action, set to <c>AUDIT</c>. To configure automatic security responses to potentially
+    /// unwanted traffic to your user pool, set to <c>ENFORCED</c>.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-    /// advanced security to a user pool</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// advanced security to a user pool</a>. To activate this setting, your user pool must
+    /// be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+    /// Plus tier</a>.
     /// </para>
     /// </summary>
     public partial class UserPoolAddOnsType
@@ -54,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityAdditionalFlows. 
         /// <para>
-        /// Advanced security configuration options for additional authentication types in your
+        /// Threat protection configuration options for additional authentication types in your
         /// user pool, including custom authentication. 
         /// </para>
         /// </summary>
@@ -73,8 +70,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityMode. 
         /// <para>
-        /// The operating mode of advanced security features for standard authentication types
-        /// in your user pool, including username-password and secure remote password (SRP) authentication.
+        /// The operating mode of threat protection for standard authentication types in your
+        /// user pool, including username-password and secure remote password (SRP) authentication.
         /// 
         /// </para>
         /// </summary>

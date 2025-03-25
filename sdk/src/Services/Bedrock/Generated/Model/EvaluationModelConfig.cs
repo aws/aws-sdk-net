@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class EvaluationModelConfig
     {
         private EvaluationBedrockModel _bedrockModel;
+        private EvaluationPrecomputedInferenceSource _precomputedInferenceSource;
 
         /// <summary>
         /// Gets and sets the property BedrockModel. 
@@ -53,6 +54,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetBedrockModel()
         {
             return this._bedrockModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrecomputedInferenceSource. 
+        /// <para>
+        /// Defines the model used to generate inference response data for a model evaluation
+        /// job where you provide your own inference response data.
+        /// </para>
+        /// </summary>
+        public EvaluationPrecomputedInferenceSource PrecomputedInferenceSource
+        {
+            get { return this._precomputedInferenceSource; }
+            set { this._precomputedInferenceSource = value; }
+        }
+
+        // Check to see if PrecomputedInferenceSource property is set
+        internal bool IsSetPrecomputedInferenceSource()
+        {
+            return this._precomputedInferenceSource != null;
         }
 
     }

@@ -17,12 +17,14 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Head Bucket Request Marshaller
     /// </summary>       
-    internal class HeadBucketRequestMarshaller : IMarshaller<IRequest, HeadBucketRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
+    public class HeadBucketRequestMarshaller : IMarshaller<IRequest, HeadBucketRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
     {
         public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
         {

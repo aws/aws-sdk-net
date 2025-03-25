@@ -37,7 +37,11 @@ namespace Amazon.MediaConnect.Model
         private ThumbnailDetails _thumbnailDetails;
 
         /// <summary>
-        /// Gets and sets the property ThumbnailDetails.
+        /// Gets and sets the property ThumbnailDetails. 
+        /// <para>
+        /// The details of the thumbnail, including thumbnail base64 string, timecode and the
+        /// time when thumbnail was generated. 
+        /// </para>
         /// </summary>
         public ThumbnailDetails ThumbnailDetails
         {

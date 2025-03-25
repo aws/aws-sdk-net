@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private Gateway _gateway;
 
         /// <summary>
-        /// Gets and sets the property Gateway.
+        /// Gets and sets the property Gateway. 
+        /// <para>
+        ///  The gateway that you created. 
+        /// </para>
         /// </summary>
         public Gateway Gateway
         {

@@ -31,12 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The configuration for a hosted UI custom domain.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html">CreateUserPoolDomain</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html">UpdateUserPoolDomain</a>.
-    /// </para>
     /// </summary>
     public partial class CustomDomainConfigType
     {

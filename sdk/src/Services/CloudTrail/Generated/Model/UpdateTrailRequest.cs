@@ -339,8 +339,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
-        /// The maximum length is 256 characters.
+        /// Specifies the name or ARN of the Amazon SNS topic defined for notification of log
+        /// file delivery. The maximum length is 256 characters.
         /// </para>
         /// </summary>
         public string SnsTopicName

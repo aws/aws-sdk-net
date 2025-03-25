@@ -45,8 +45,11 @@ namespace Amazon.MediaConnect.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Algorithm. The type of algorithm that is used for the encryption
-        /// (such as aes128, aes192, or aes256).
+        /// Gets and sets the property Algorithm. 
+        /// <para>
+        ///  The type of algorithm that is used for the encryption (such as aes128, aes192, or
+        /// aes256).
+        /// </para>
         /// </summary>
         public Algorithm Algorithm
         {
@@ -61,9 +64,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConstantInitializationVector. A 128-bit, 16-byte hex value
-        /// represented by a 32-character string, to be used with the key for encrypting content.
-        /// This parameter is not valid for static key encryption.
+        /// Gets and sets the property ConstantInitializationVector. 
+        /// <para>
+        ///  A 128-bit, 16-byte hex value represented by a 32-character string, to be used with
+        /// the key for encrypting content. This parameter is not valid for static key encryption.
+        /// </para>
         /// </summary>
         public string ConstantInitializationVector
         {
@@ -78,9 +83,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceId. The value of one of the devices that you configured
-        /// with your digital rights management (DRM) platform key provider. This parameter is
-        /// required for SPEKE encryption and is not valid for static key encryption.
+        /// Gets and sets the property DeviceId. 
+        /// <para>
+        ///  The value of one of the devices that you configured with your digital rights management
+        /// (DRM) platform key provider. This parameter is required for SPEKE encryption and is
+        /// not valid for static key encryption.
+        /// </para>
         /// </summary>
         public string DeviceId
         {
@@ -95,8 +103,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KeyType. The type of key that is used for the encryption.
-        /// If no keyType is provided, the service will use the default setting (static-key).
+        /// Gets and sets the property KeyType. 
+        /// <para>
+        ///  The type of key that is used for the encryption. If no keyType is provided, the service
+        /// will use the default setting (static-key).
+        /// </para>
         /// </summary>
         public KeyType KeyType
         {
@@ -111,9 +122,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region. The AWS Region that the API Gateway proxy endpoint
-        /// was created in. This parameter is required for SPEKE encryption and is not valid for
-        /// static key encryption.
+        /// Gets and sets the property Region. 
+        /// <para>
+        ///  The Amazon Web Services Region that the API Gateway proxy endpoint was created in.
+        /// This parameter is required for SPEKE encryption and is not valid for static key encryption.
+        /// </para>
         /// </summary>
         public string Region
         {
@@ -128,10 +141,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. An identifier for the content. The service
-        /// sends this value to the key server to identify the current endpoint. The resource
-        /// ID is also known as the content ID. This parameter is required for SPEKE encryption
-        /// and is not valid for static key encryption.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        ///  An identifier for the content. The service sends this value to the key server to
+        /// identify the current endpoint. The resource ID is also known as the content ID. This
+        /// parameter is required for SPEKE encryption and is not valid for static key encryption.
+        /// </para>
         /// </summary>
         public string ResourceId
         {
@@ -146,8 +161,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. The ARN of the role that you created during setup
-        /// (when you set up AWS Elemental MediaConnect as a trusted entity).
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        ///  The ARN of the role that you created during setup (when you set up MediaConnect as
+        /// a trusted entity).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RoleArn
@@ -163,9 +181,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecretArn. The ARN of the secret that you created in AWS
-        /// Secrets Manager to store the encryption key. This parameter is required for static
-        /// key encryption and is not valid for SPEKE encryption.
+        /// Gets and sets the property SecretArn. 
+        /// <para>
+        ///  The ARN of the secret that you created in Secrets Manager to store the encryption
+        /// key. This parameter is required for static key encryption and is not valid for SPEKE
+        /// encryption.
+        /// </para>
         /// </summary>
         public string SecretArn
         {
@@ -180,9 +201,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Url. The URL from the API Gateway proxy that you set up
-        /// to talk to your key server. This parameter is required for SPEKE encryption and is
-        /// not valid for static key encryption.
+        /// Gets and sets the property Url. 
+        /// <para>
+        ///  The URL from the API Gateway proxy that you set up to talk to your key server. This
+        /// parameter is required for SPEKE encryption and is not valid for static key encryption.
+        /// </para>
         /// </summary>
         public string Url
         {

@@ -31,8 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The context data that your application submitted in an authentication request with
-    /// advanced security features, as displayed in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
-    /// response.
+    /// threat protection, as displayed in an <c>AdminListUserAuthEvents</c> response.
     /// </summary>
     public partial class EventContextDataType
     {

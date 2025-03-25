@@ -32,6 +32,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the UpdateStandardsControl operation.
     /// Used to control whether an individual security standard control is enabled or disabled.
+    /// 
+    ///  
+    /// <para>
+    /// Calls to this operation return a <c>RESOURCE_NOT_FOUND_EXCEPTION</c> error when the
+    /// standard subscription for the control has <c>StandardsControlsUpdatable</c> value
+    /// <c>NOT_READY_FOR_UPDATES</c>.
+    /// </para>
     /// </summary>
     public partial class UpdateStandardsControlRequest : AmazonSecurityHubRequest
     {

@@ -45,8 +45,11 @@ namespace Amazon.MediaConnect.Model
         private ResourceSpecification _resourceSpecification;
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode. The type of currency that is used for billing.
-        /// The currencyCode used for all reservations is US dollars.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        ///  The type of currency that is used for billing. The currencyCode used for all reservations
+        /// is US dollars.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CurrencyCode
@@ -62,8 +65,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration. The length of time that your reservation would
-        /// be active.
+        /// Gets and sets the property Duration. 
+        /// <para>
+        ///  The length of time that your reservation would be active.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? Duration
@@ -79,8 +84,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DurationUnits. The unit of measurement for the duration
-        /// of the offering.
+        /// Gets and sets the property DurationUnits. 
+        /// <para>
+        ///  The unit of measurement for the duration of the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DurationUnits DurationUnits
@@ -96,8 +103,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingArn. The Amazon Resource Name (ARN) that MediaConnect
-        /// assigns to the offering.
+        /// Gets and sets the property OfferingArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingArn
@@ -113,7 +122,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingDescription. A description of the offering.
+        /// Gets and sets the property OfferingDescription. 
+        /// <para>
+        ///  A description of the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingDescription
@@ -129,8 +141,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PricePerUnit. The cost of a single unit. This value, in
-        /// combination with priceUnits, makes up the rate.
+        /// Gets and sets the property PricePerUnit. 
+        /// <para>
+        ///  The cost of a single unit. This value, in combination with priceUnits, makes up the
+        /// rate.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PricePerUnit
@@ -146,8 +161,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceUnits. The unit of measurement that is used for billing.
-        /// This value, in combination with pricePerUnit, makes up the rate.
+        /// Gets and sets the property PriceUnits. 
+        /// <para>
+        ///  The unit of measurement that is used for billing. This value, in combination with
+        /// pricePerUnit, makes up the rate.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PriceUnits PriceUnits
@@ -163,8 +181,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSpecification. A definition of the amount of outbound
-        /// bandwidth that you would be reserving if you purchase the offering.
+        /// Gets and sets the property ResourceSpecification. 
+        /// <para>
+        ///  A definition of the amount of outbound bandwidth that you would be reserving if you
+        /// purchase the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceSpecification ResourceSpecification

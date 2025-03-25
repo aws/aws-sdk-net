@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private SilentAudio _silentAudio;
 
         /// <summary>
-        /// Gets and sets the property SilentAudio. Detects periods of silence.
+        /// Gets and sets the property SilentAudio. 
+        /// <para>
+        ///  Detects periods of silence. 
+        /// </para>
         /// </summary>
         public SilentAudio SilentAudio
         {

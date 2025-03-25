@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _vpcInterfaceName;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// VPC interface you removed.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that is associated with the VPC interface you removed.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -55,8 +57,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NonDeletedNetworkInterfaceIds. IDs of network interfaces
-        /// associated with the removed VPC interface that Media Connect was unable to remove.
+        /// Gets and sets the property NonDeletedNetworkInterfaceIds. 
+        /// <para>
+        ///  IDs of network interfaces associated with the removed VPC interface that MediaConnect
+        /// was unable to remove.
+        /// </para>
         /// </summary>
         public List<string> NonDeletedNetworkInterfaceIds
         {
@@ -71,8 +76,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceName. The name of the VPC interface that was
-        /// removed.
+        /// Gets and sets the property VpcInterfaceName. 
+        /// <para>
+        ///  The name of the VPC interface that was removed.
+        /// </para>
         /// </summary>
         public string VpcInterfaceName
         {

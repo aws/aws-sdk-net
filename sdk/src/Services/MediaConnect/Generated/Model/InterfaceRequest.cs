@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the VPC interface.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the VPC interface.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

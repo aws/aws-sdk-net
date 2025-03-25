@@ -47,7 +47,7 @@ namespace Amazon.TaxSettings.Model
         ///  The list of unique account identifiers. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=550)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -95,7 +95,7 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property ExemptionType. 
         /// <para>
-        /// The exemption type. 
+        /// The exemption type. Use the supported tax exemption type description. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

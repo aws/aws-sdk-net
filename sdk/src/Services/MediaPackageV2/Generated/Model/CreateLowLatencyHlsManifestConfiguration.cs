@@ -41,6 +41,7 @@ namespace Amazon.MediaPackageV2.Model
         private int? _programDateTimeIntervalSeconds;
         private ScteHls _scteHls;
         private StartTag _startTag;
+        private bool? _urlEncodeChildManifest;
 
         /// <summary>
         /// Gets and sets the property ChildManifestName. 
@@ -178,6 +179,28 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetStartTag()
         {
             return this._startTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UrlEncodeChildManifest. 
+        /// <para>
+        /// When enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS
+        /// child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature
+        /// signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon
+        /// Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? UrlEncodeChildManifest
+        {
+            get { return this._urlEncodeChildManifest; }
+            set { this._urlEncodeChildManifest = value; }
+        }
+
+        // Check to see if UrlEncodeChildManifest property is set
+        internal bool IsSetUrlEncodeChildManifest()
+        {
+            return this._urlEncodeChildManifest.HasValue; 
         }
 
     }

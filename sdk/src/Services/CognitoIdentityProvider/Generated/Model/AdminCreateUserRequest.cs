@@ -38,6 +38,26 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// If <c>MessageAction</c> isn't set, the default is to send a welcome message via email
     /// or phone (SMS).
     /// </para>
+    ///  
+    /// <para>
+    /// This message is based on a template that you configured in your call to create or
+    /// update a user pool. This template includes your custom sign-up instructions and placeholders
+    /// for user name and temporary password.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can call <c>AdminCreateUser</c> with <c>SUPPRESS</c> for the <c>MessageAction</c>
+    /// parameter, and Amazon Cognito won't send any email. 
+    /// </para>
+    ///  
+    /// <para>
+    /// In either case, if the user has a password, they will be in the <c>FORCE_CHANGE_PASSWORD</c>
+    /// state until they sign in and set their password. Your invitation message template
+    /// must have the <c>{####}</c> password placeholder if your users have passwords. If
+    /// your template doesn't have this placeholder, Amazon Cognito doesn't deliver the invitation
+    /// message. In this case, you must update your message template and resend the password
+    /// with a new <c>AdminCreateUser</c> request with a <c>MessageAction</c> value of <c>RESEND</c>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -59,27 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// This message is based on a template that you configured in your call to create or
-    /// update a user pool. This template includes your custom sign-up instructions and placeholders
-    /// for user name and temporary password.
-    /// </para>
-    ///  
-    /// <para>
-    /// Alternatively, you can call <c>AdminCreateUser</c> with <c>SUPPRESS</c> for the <c>MessageAction</c>
-    /// parameter, and Amazon Cognito won't send any email. 
-    /// </para>
-    ///  
-    /// <para>
-    /// In either case, if the user has a password, they will be in the <c>FORCE_CHANGE_PASSWORD</c>
-    /// state until they sign in and set their password. Your invitation message template
-    /// must have the <c>{####}</c> password placeholder if your users have passwords. If
-    /// your template doesn't have this placeholder, Amazon Cognito doesn't deliver the invitation
-    /// message. In this case, you must update your message template and resend the password
-    /// with a new <c>AdminCreateUser</c> request with a <c>MessageAction</c> value of <c>RESEND</c>.
-    /// </para>
-    ///  <note> 
+    ///  </note> <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
     /// for this API operation. For this operation, you must use IAM credentials to authorize
@@ -133,8 +133,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -252,9 +251,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The exception to the requirement for a password is when your user pool supports passwordless
         /// sign-in with email or SMS OTPs. To create a user with no password, omit this parameter
         /// or submit a blank value. You can only create a passwordless user when passwordless
-        /// sign-in is available. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
-        /// SignInPolicyType</a> property of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-        /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.
+        /// sign-in is available.
         /// </para>
         ///  
         /// <para>
@@ -317,25 +314,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// In your call to <c>AdminCreateUser</c>, you can set the <c>email_verified</c> attribute
-        /// to <c>True</c>, and you can set the <c>phone_number_verified</c> attribute to <c>True</c>.
-        /// You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.
+        /// In your <c>AdminCreateUser</c> request, you can set the <c>email_verified</c> and
+        /// <c>phone_number_verified</c> attributes to <c>true</c>. The following conditions apply:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>email</dt> <dd> 
         /// <para>
-        ///  <b>email</b>: The email address of the user to whom the message that contains the
-        /// code and username will be sent. Required if the <c>email_verified</c> attribute is
-        /// set to <c>True</c>, or if <c>"EMAIL"</c> is specified in the <c>DesiredDeliveryMediums</c>
-        /// parameter.
+        /// The email address where you want the user to receive their confirmation code and username.
+        /// You must provide a value for <c>email</c> when you want to set <c>email_verified</c>
+        /// to <c>true</c>, or if you set <c>EMAIL</c> in the <c>DesiredDeliveryMediums</c> parameter.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>phone_number</dt> <dd> 
         /// <para>
-        ///  <b>phone_number</b>: The phone number of the user to whom the message that contains
-        /// the code and username will be sent. Required if the <c>phone_number_verified</c> attribute
-        /// is set to <c>True</c>, or if <c>"SMS"</c> is specified in the <c>DesiredDeliveryMediums</c>
-        /// parameter.
+        /// The phone number where you want the user to receive their confirmation code and username.
+        /// You must provide a value for <c>phone_number</c> when you want to set <c>phone_number_verified</c>
+        /// to <c>true</c>, or if you set <c>SMS</c> in the <c>DesiredDeliveryMediums</c> parameter.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public List<AttributeType> UserAttributes
         {
@@ -415,10 +409,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// Your Lambda function can analyze this additional data and act on it. Your function
-        /// might perform external API operations like logging user attributes and validation
-        /// data to Amazon CloudWatch Logs. Validation data might also affect the response that
-        /// your function returns to Amazon Cognito, like automatically confirming the user if
-        /// they sign up from within your network.
+        /// can automatically confirm and verify select users or perform external API operations
+        /// like logging user attributes and validation data to Amazon CloudWatch Logs.
         /// </para>
         ///  
         /// <para>

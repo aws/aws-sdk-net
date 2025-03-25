@@ -71,6 +71,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
                 }
+                if(publicRequest.IsSetIpamPools())
+                {
+                    if(publicRequest.IpamPools.IsSetIpv4IpamPoolId())
+                    {
+                        request.Parameters.Add("IpamPools" + "." + "Ipv4IpamPoolId", StringUtils.FromString(publicRequest.IpamPools.Ipv4IpamPoolId));
+                    }
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

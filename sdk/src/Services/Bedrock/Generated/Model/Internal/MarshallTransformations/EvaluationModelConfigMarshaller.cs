@@ -57,6 +57,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPrecomputedInferenceSource())
+            {
+                context.Writer.WritePropertyName("precomputedInferenceSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationPrecomputedInferenceSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrecomputedInferenceSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

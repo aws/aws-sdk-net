@@ -131,10 +131,21 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property PromptSessionAttributes. 
         /// <para>
         /// Contains attributes that persist across a prompt and the values of those attributes.
-        /// These attributes replace the $prompt_session_attributes$ placeholder variable in the
-        /// orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// In orchestration prompt template, these attributes replace the $prompt_session_attributes$
+        /// placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
         /// template placeholder variables</a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent
+        /// collaboration</a>, the <c>promptSessionAttributes</c> will only be used by supervisor
+        /// agent when $prompt_session_attributes$ is present in prompt template. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> PromptSessionAttributes
         {
@@ -179,6 +190,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property SessionAttributes. 
         /// <para>
         /// Contains attributes that persist across a session and the values of those attributes.
+        /// If <c>sessionAttributes</c> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent
+        /// collaboration</a>, it will be forwarded to all agent collaborators.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SessionAttributes

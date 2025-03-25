@@ -6031,6 +6031,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant DISABLED for GlobalConfigurationOutputLockingMode
+        /// </summary>
+        public static readonly GlobalConfigurationOutputLockingMode DISABLED = new GlobalConfigurationOutputLockingMode("DISABLED");
+        /// <summary>
         /// Constant EPOCH_LOCKING for GlobalConfigurationOutputLockingMode
         /// </summary>
         public static readonly GlobalConfigurationOutputLockingMode EPOCH_LOCKING = new GlobalConfigurationOutputLockingMode("EPOCH_LOCKING");

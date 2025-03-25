@@ -31,15 +31,19 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFlow operation.
-    /// Displays the details of a flow. The response includes the flow ARN, name, and Availability
-    /// Zone, as well as details about the source, outputs, and entitlements.
+    /// Displays the details of a flow. The response includes the flow Amazon Resource Name
+    /// (ARN), name, and Availability Zone, as well as details about the source, outputs,
+    /// and entitlements.
     /// </summary>
     public partial class DescribeFlowRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that you want to describe.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that you want to describe.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn

@@ -722,6 +722,9 @@ namespace Amazon.LakeFormation
         /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
         public virtual Task<CreateLakeFormationOptInResponse> CreateLakeFormationOptInAsync(CreateLakeFormationOptInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2650,8 +2653,8 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// To add or update data, Lake Formation needs read/write access to the chosen Amazon
-        /// S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
+        /// To add or update data, Lake Formation needs read/write access to the chosen data location.
+        /// Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
         /// service-linked role. When you register the first Amazon S3 path, the service-linked
         /// role and a new inline policy are created on your behalf. Lake Formation adds the first
         /// path to the inline policy and attaches it to the service-linked role. When you register

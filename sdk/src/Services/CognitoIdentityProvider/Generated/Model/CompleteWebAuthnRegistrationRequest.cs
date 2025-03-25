@@ -31,10 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteWebAuthnRegistration operation.
-    /// Completes registration of a passkey authenticator for the current user. Your application
-    /// provides data from a successful registration request with the data from the output
-    /// of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartWebAuthnRegistration.html">
-    /// StartWebAuthnRegistration</a>.
+    /// Completes registration of a passkey authenticator for the currently signed-in user.
     /// 
     ///  
     /// <para>
@@ -50,8 +47,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose passkey registration
-        /// you want to complete.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -70,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Credential. 
         /// <para>
-        /// A <a href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a>
+        /// A <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a>
         /// public-key credential response from the user's passkey provider.
         /// </para>
         /// </summary>

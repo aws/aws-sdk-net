@@ -43,6 +43,7 @@ namespace Amazon.CleanRooms.Model
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
         private string _id;
+        private CollaborationJobLogStatus _jobLogStatus;
         private string _membershipArn;
         private string _membershipId;
         private MemberStatus _memberStatus;
@@ -202,6 +203,30 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobLogStatus. 
+        /// <para>
+        /// An indicator as to whether job logging has been enabled or disabled for the collaboration.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ENABLED</c>, Clean Rooms logs details about jobs run within this collaboration
+        /// and those logs can be viewed in Amazon CloudWatch Logs. The default value is <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public CollaborationJobLogStatus JobLogStatus
+        {
+            get { return this._jobLogStatus; }
+            set { this._jobLogStatus = value; }
+        }
+
+        // Check to see if JobLogStatus property is set
+        internal bool IsSetJobLogStatus()
+        {
+            return this._jobLogStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MembershipArn. 
         /// <para>
         /// The unique ARN for your membership within the collaboration.
@@ -282,6 +307,11 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property QueryLogStatus. 
         /// <para>
         /// An indicator as to whether query logging has been enabled or disabled for the collaboration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ENABLED</c>, Clean Rooms logs details about queries run within this collaboration
+        /// and those logs can be viewed in Amazon CloudWatch Logs. The default value is <c>DISABLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

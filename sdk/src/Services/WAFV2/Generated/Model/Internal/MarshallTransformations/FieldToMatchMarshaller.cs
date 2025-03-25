@@ -112,6 +112,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetJA4Fingerprint())
+            {
+                context.Writer.WritePropertyName("JA4Fingerprint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JA4FingerprintMarshaller.Instance;
+                marshaller.Marshall(requestObject.JA4Fingerprint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetJsonBody())
             {
                 context.Writer.WritePropertyName("JsonBody");
@@ -163,6 +174,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
                 var marshaller = SingleQueryArgumentMarshaller.Instance;
                 marshaller.Marshall(requestObject.SingleQueryArgument, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetUriFragment())
+            {
+                context.Writer.WritePropertyName("UriFragment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UriFragmentMarshaller.Instance;
+                marshaller.Marshall(requestObject.UriFragment, context);
 
                 context.Writer.WriteEndObject();
             }

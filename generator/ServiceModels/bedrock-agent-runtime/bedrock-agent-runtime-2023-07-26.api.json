@@ -563,8 +563,26 @@
       "type":"string",
       "enum":[
         "AMAZON.UserInput",
-        "AMAZON.CodeInterpreter"
+        "AMAZON.CodeInterpreter",
+        "ANTHROPIC.Computer",
+        "ANTHROPIC.Bash",
+        "ANTHROPIC.TextEditor"
       ]
+    },
+    "ActionGroupSignatureParams":{
+      "type":"map",
+      "key":{"shape":"ActionGroupSignatureParamsKeyString"},
+      "value":{"shape":"ActionGroupSignatureParamsValueString"}
+    },
+    "ActionGroupSignatureParamsKeyString":{
+      "type":"string",
+      "max":100,
+      "min":0
+    },
+    "ActionGroupSignatureParamsValueString":{
+      "type":"string",
+      "max":100,
+      "min":0
     },
     "ActionInvocationType":{
       "type":"string",
@@ -599,7 +617,8 @@
         "apiSchema":{"shape":"APISchema"},
         "description":{"shape":"ResourceDescription"},
         "functionSchema":{"shape":"FunctionSchema"},
-        "parentActionGroupSignature":{"shape":"ActionGroupSignature"}
+        "parentActionGroupSignature":{"shape":"ActionGroupSignature"},
+        "parentActionGroupSignatureParams":{"shape":"ActionGroupSignatureParams"}
       }
     },
     "AgentActionGroups":{
@@ -617,6 +636,14 @@
       "max":10,
       "min":0,
       "pattern":"^[0-9a-zA-Z]+$"
+    },
+    "AgentCollaboration":{
+      "type":"string",
+      "enum":[
+        "SUPERVISOR",
+        "SUPERVISOR_ROUTER",
+        "DISABLED"
+      ]
     },
     "AgentCollaboratorInputPayload":{
       "type":"structure",
@@ -904,6 +931,53 @@
         "files":{"shape":"Files"}
       }
     },
+    "CollaborationInstruction":{
+      "type":"string",
+      "max":4000,
+      "min":1,
+      "sensitive":true
+    },
+    "Collaborator":{
+      "type":"structure",
+      "required":[
+        "foundationModel",
+        "instruction"
+      ],
+      "members":{
+        "actionGroups":{"shape":"AgentActionGroups"},
+        "agentCollaboration":{"shape":"AgentCollaboration"},
+        "agentName":{"shape":"Name"},
+        "collaboratorConfigurations":{"shape":"CollaboratorConfigurations"},
+        "customerEncryptionKeyArn":{"shape":"KmsKeyArn"},
+        "foundationModel":{"shape":"ModelIdentifier"},
+        "guardrailConfiguration":{"shape":"GuardrailConfigurationWithArn"},
+        "idleSessionTTLInSeconds":{"shape":"SessionTTL"},
+        "instruction":{"shape":"Instruction"},
+        "knowledgeBases":{"shape":"KnowledgeBases"},
+        "promptOverrideConfiguration":{"shape":"PromptOverrideConfiguration"}
+      }
+    },
+    "CollaboratorConfiguration":{
+      "type":"structure",
+      "required":[
+        "collaboratorInstruction",
+        "collaboratorName"
+      ],
+      "members":{
+        "agentAliasArn":{"shape":"AgentAliasArn"},
+        "collaboratorInstruction":{"shape":"CollaborationInstruction"},
+        "collaboratorName":{"shape":"Name"},
+        "relayConversationHistory":{"shape":"RelayConversationHistory"}
+      }
+    },
+    "CollaboratorConfigurations":{
+      "type":"list",
+      "member":{"shape":"CollaboratorConfiguration"}
+    },
+    "Collaborators":{
+      "type":"list",
+      "member":{"shape":"Collaborator"}
+    },
     "ConfirmationState":{
       "type":"string",
       "enum":[
@@ -937,7 +1011,8 @@
     "ContentBody":{
       "type":"structure",
       "members":{
-        "body":{"shape":"String"}
+        "body":{"shape":"String"},
+        "images":{"shape":"ImageInputs"}
       }
     },
     "ContentMap":{
@@ -2080,6 +2155,41 @@
         "webp"
       ]
     },
+    "ImageInput":{
+      "type":"structure",
+      "required":[
+        "format",
+        "source"
+      ],
+      "members":{
+        "format":{"shape":"ImageInputFormat"},
+        "source":{"shape":"ImageInputSource"}
+      }
+    },
+    "ImageInputFormat":{
+      "type":"string",
+      "enum":[
+        "png",
+        "jpeg",
+        "gif",
+        "webp"
+      ]
+    },
+    "ImageInputSource":{
+      "type":"structure",
+      "members":{
+        "bytes":{"shape":"ImageInputSourceBytesBlob"}
+      },
+      "union":true
+    },
+    "ImageInputSourceBytesBlob":{
+      "type":"blob",
+      "min":1
+    },
+    "ImageInputs":{
+      "type":"list",
+      "member":{"shape":"ImageInput"}
+    },
     "ImageSource":{
       "type":"structure",
       "members":{
@@ -2181,6 +2291,7 @@
     "InlineSessionState":{
       "type":"structure",
       "members":{
+        "conversationHistory":{"shape":"ConversationHistory"},
         "files":{"shape":"InputFiles"},
         "invocationId":{"shape":"String"},
         "promptSessionAttributes":{"shape":"PromptSessionAttributesMap"},
@@ -2464,7 +2575,10 @@
       ],
       "members":{
         "actionGroups":{"shape":"AgentActionGroups"},
+        "agentCollaboration":{"shape":"AgentCollaboration"},
         "bedrockModelConfigurations":{"shape":"InlineBedrockModelConfigurations"},
+        "collaboratorConfigurations":{"shape":"CollaboratorConfigurations"},
+        "collaborators":{"shape":"Collaborators"},
         "customerEncryptionKeyArn":{"shape":"KmsKeyArn"},
         "enableTrace":{"shape":"Boolean"},
         "endSession":{"shape":"Boolean"},
@@ -3202,6 +3316,7 @@
       "members":{
         "additionalModelRequestFields":{"shape":"Document"},
         "basePromptTemplate":{"shape":"BasePromptTemplate"},
+        "foundationModel":{"shape":"ModelIdentifier"},
         "inferenceConfiguration":{"shape":"InferenceConfiguration"},
         "parserMode":{"shape":"CreationMode"},
         "promptCreationMode":{"shape":"CreationMode"},
@@ -3368,6 +3483,13 @@
         "text":{"shape":"String"}
       },
       "sensitive":true
+    },
+    "RelayConversationHistory":{
+      "type":"string",
+      "enum":[
+        "TO_COLLABORATOR",
+        "DISABLED"
+      ]
     },
     "RepromptResponse":{
       "type":"structure",
@@ -4154,6 +4276,10 @@
       "max":25000000,
       "min":0
     },
+    "SyntheticTimestamp_date_time":{
+      "type":"timestamp",
+      "timestampFormat":"iso8601"
+    },
     "TagKey":{
       "type":"string",
       "max":128,
@@ -4320,6 +4446,7 @@
         "agentVersion":{"shape":"AgentVersion"},
         "callerChain":{"shape":"CallerChain"},
         "collaboratorName":{"shape":"Name"},
+        "eventTime":{"shape":"SyntheticTimestamp_date_time"},
         "sessionId":{"shape":"SessionId"},
         "trace":{"shape":"Trace"}
       },

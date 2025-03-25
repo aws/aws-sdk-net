@@ -85,7 +85,7 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  
         /// <para>
-        /// Min = 128
+        /// Min = 16
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=24576)]

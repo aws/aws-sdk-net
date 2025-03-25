@@ -31,7 +31,7 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGlyphs operation.
-    /// Returns the map's glyphs.
+    /// <c>GetGlyphs</c> returns the map's glyphs.
     /// </summary>
     public partial class GetGlyphsRequest : AmazonGeoMapsRequest
     {

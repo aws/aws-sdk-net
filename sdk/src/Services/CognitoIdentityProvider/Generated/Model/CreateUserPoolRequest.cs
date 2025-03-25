@@ -31,7 +31,15 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserPool operation.
-    /// <note> 
+    /// Creates a new Amazon Cognito user pool. This operation sets basic and advanced configuration
+    /// options.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+    /// value.
+    /// </para>
+    ///  </important> <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
     /// carriers require you to register an origination phone number before you can send SMS
@@ -52,19 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Creates a new Amazon Cognito user pool. This operation sets basic and advanced configuration
-    /// options. You can create a user pool in the Amazon Cognito console to your preferences
-    /// and use the output of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
-    /// to generate requests from that baseline.
-    /// </para>
-    ///  <important> 
-    /// <para>
-    /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
-    /// value.
-    /// </para>
-    ///  </important> <note> 
+    ///  </note> <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
     /// for this API operation. For this operation, you must use IAM credentials to authorize
@@ -120,8 +116,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <c>ForgotPassword</c>. You can use this setting to define a preferred method when
         /// a user has more than one method available. With this setting, SMS doesn't qualify
         /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
-        /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
-        /// to determine the recovery method where SMS is preferred through email.
+        /// (MFA) activated. Email MFA is also disqualifying for account recovery with email.
+        /// In the absence of this setting, Amazon Cognito uses the legacy behavior to determine
+        /// the recovery method where SMS is preferred over email.
+        /// </para>
+        ///  
+        /// <para>
+        /// As a best practice, configure both <c>verified_email</c> and <c>verified_phone_number</c>,
+        /// with one having a higher priority than the other.
         /// </para>
         /// </summary>
         public AccountRecoverySettingType AccountRecoverySetting
@@ -139,9 +141,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
         /// <para>
-        /// The configuration for <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
-        /// requests. Includes the template for the invitation message for new users, the duration
-        /// of temporary passwords, and permitting self-service sign-up.
+        /// The configuration for administrative creation of users. Includes the template for
+        /// the invitation message for new users, the duration of temporary passwords, and permitting
+        /// self-service sign-up.
         /// </para>
         /// </summary>
         public AdminCreateUserConfigType AdminCreateUserConfig
@@ -159,9 +161,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AliasAttributes. 
         /// <para>
-        /// Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>,
-        /// <b>email</b>, or <b>preferred_username</b>. For more information about alias attributes,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+        /// Attributes supported as an alias for this user pool. For more information about alias
+        /// attributes, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
         /// sign-in attributes</a>.
         /// </para>
         /// </summary>
@@ -180,8 +181,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AutoVerifiedAttributes. 
         /// <para>
-        /// The attributes that you want your user pool to automatically verify. Possible values:
-        /// <b>email</b>, <b>phone_number</b>. For more information see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves">Verifying
+        /// The attributes that you want your user pool to automatically verify. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves">Verifying
         /// contact information at sign-up</a>.
         /// </para>
         /// </summary>
@@ -237,7 +238,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <note> 
         /// <para>
         /// When you provide a value for any <c>DeviceConfiguration</c> field, you activate the
-        /// Amazon Cognito device-remembering feature. For more infor
+        /// Amazon Cognito device-remembering feature. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with devices</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -276,7 +278,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationMessage. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -295,7 +297,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]
@@ -339,6 +341,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// must make a client-side determination of whether a user wants to register an MFA device.
         /// For user pools with adaptive authentication with threat protection, choose <c>OPTIONAL</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// When <c>MfaConfiguration</c> is <c>OPTIONAL</c>, managed login doesn't automatically
+        /// prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses
+        /// and in managed login for users who have chosen and configured a preferred MFA factor.
+        /// </para>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {
@@ -376,7 +384,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PoolName. 
         /// <para>
-        /// A friendlhy name for your user pool.
+        /// A friendly name for your user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -417,7 +425,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsAuthenticationMessage. 
         /// <para>
-        /// A string representing the SMS authentication message.
+        /// The contents of the SMS message that your user pool sends to users in SMS OTP and
+        /// MFA authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]
@@ -436,8 +445,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
-        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// The settings for your Amazon Cognito user pool to send SMS messages with Amazon Simple
         /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
         /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
         /// (IAM) role in your Amazon Web Services account. For more information see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
@@ -459,7 +467,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsVerificationMessage. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]
@@ -554,14 +562,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// User pool add-ons. Contains settings for activation of advanced security features.
-        /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
-        /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
+        /// Contains settings for activation of threat protection, including the operating mode
+        /// and additional authentication types. To log user security information but take no
+        /// action, set to <c>AUDIT</c>. To configure automatic security responses to potentially
+        /// unwanted traffic to your user pool, set to <c>ENFORCED</c>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-        /// advanced security to a user pool</a>.
+        /// advanced security to a user pool</a>. To activate this setting, your user pool must
+        /// be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+        /// Plus tier</a>.
         /// </para>
         /// </summary>
         public UserPoolAddOnsType UserPoolAddOns

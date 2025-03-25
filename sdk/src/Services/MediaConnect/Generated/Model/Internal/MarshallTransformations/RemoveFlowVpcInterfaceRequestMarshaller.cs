@@ -64,11 +64,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
             if (!publicRequest.IsSetVpcInterfaceName())
                 throw new AmazonMediaConnectException("Request object does not have required field VpcInterfaceName set");
-            request.AddPathResource("{vpcInterfaceName}", StringUtils.FromString(publicRequest.VpcInterfaceName));
-            request.ResourcePath = "/v1/flows/{flowArn}/vpcInterfaces/{vpcInterfaceName}";
+            request.AddPathResource("{VpcInterfaceName}", StringUtils.FromString(publicRequest.VpcInterfaceName));
+            request.ResourcePath = "/v1/flows/{FlowArn}/vpcInterfaces/{VpcInterfaceName}";
 
             return request;
         }

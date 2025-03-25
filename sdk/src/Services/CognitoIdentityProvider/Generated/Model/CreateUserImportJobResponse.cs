@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserImportJob. 
         /// <para>
-        /// The details of the user import job.
+        /// The details of the user import job. Includes logging destination, status, and the
+        /// Amazon S3 pre-signed URL for CSV upload.
         /// </para>
         /// </summary>
         public UserImportJobType UserImportJob

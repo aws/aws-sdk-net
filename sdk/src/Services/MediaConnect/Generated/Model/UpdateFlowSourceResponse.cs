@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private Source _source;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that you want to update.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        /// The ARN of the flow that you was updated. 
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source. The settings for the source of the flow.
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The details of the sources that are assigned to the flow. 
+        /// </para>
         /// </summary>
         public Source Source
         {

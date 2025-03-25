@@ -100,7 +100,8 @@ namespace AWSSDK.UnitTests
                 Marshaller = PutObjectRequestMarshaller.Instance,
                 OriginalRequest = request,
                 Unmarshaller = null,
-                IsAsync = false
+                IsAsync = false,
+                Identity = new BasicAWSCredentials("access key", "secret"),
             };
 
             var executionContext = new ExecutionContext(requestContext, new ResponseContext());

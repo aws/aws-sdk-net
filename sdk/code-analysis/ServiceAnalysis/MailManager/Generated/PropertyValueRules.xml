@@ -864,7 +864,7 @@
     <property>Amazon.MailManager.Model.Analysis.ResultField</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\sa-zA-Z0-9_]+$</pattern>
+    <pattern>^(addon\.)?[\sa-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Archive.ArchiveId</property>
@@ -944,7 +944,7 @@
     <property>Amazon.MailManager.Model.IngressAnalysis.ResultField</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\sa-zA-Z0-9_]+$</pattern>
+    <pattern>^(addon\.)?[\sa-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPoint.IngressPointId</property>

@@ -103,6 +103,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.WithFederation.Value);
             }
 
+            if(publicRequest.IsSetWithPrivilegedAccess())
+            {
+                context.Writer.WritePropertyName("WithPrivilegedAccess");
+                context.Writer.WriteBooleanValue(publicRequest.WithPrivilegedAccess.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

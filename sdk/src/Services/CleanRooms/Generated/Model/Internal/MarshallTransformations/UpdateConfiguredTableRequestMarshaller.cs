@@ -76,6 +76,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAnalysisMethod())
+            {
+                context.Writer.WritePropertyName("analysisMethod");
+                context.Writer.WriteStringValue(publicRequest.AnalysisMethod);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -86,6 +92,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetSelectedAnalysisMethods())
+            {
+                context.Writer.WritePropertyName("selectedAnalysisMethods");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
+                {
+                        context.Writer.WriteStringValue(publicRequestSelectedAnalysisMethodsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

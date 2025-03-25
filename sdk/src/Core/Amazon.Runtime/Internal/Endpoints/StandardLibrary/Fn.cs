@@ -44,11 +44,11 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// GetAttr(object, "Thing1") returns "foo"
         /// path "Thing2[0]" returns "index0"
         /// path "Thing3.SubThing" returns 42
-        /// Given the input IList list = {"foo", "bar"}
+        /// Given the input IEnumerable list = {"foo", "bar"}
         /// GetAttr(list, "[0]") returns "foo"
         ///
         /// Every path segment must resolve to IPropertyBag
-        /// Every path segment with indexer must resolve to IList
+        /// Every path segment with indexer must resolve to IEnumerable
         /// Indexers must be at the very end of the path
         /// </summary>
         public static object GetAttr(object value, string path)
@@ -80,9 +80,10 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                             propertyValue = ((IPropertyBag)propertyValue)[propertyPath];
                         }
 
-                        if (!(propertyValue is IList)) throw new ArgumentException("Object addressing by pathing segment '{part}' with indexer must be IList");
+                        if (!(propertyValue is IEnumerable)) throw new ArgumentException("Object addressing by pathing segment '{part}' with indexer must be IEnumerable");
 
-                        var list = (IList)propertyValue;
+                        var enumerable = (IEnumerable)propertyValue;
+                        var list = enumerable.Cast<object>().ToList();
                         if (index < 0 || index > list.Count - 1) 
                         {
                             return null;

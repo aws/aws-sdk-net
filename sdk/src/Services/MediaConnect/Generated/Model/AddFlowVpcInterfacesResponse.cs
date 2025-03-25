@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private List<VpcInterface> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterface>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that these VPC interfaces
-        /// were added to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that these VPC interfaces were added to.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaces. The details of the newly added VPC interfaces.
+        /// Gets and sets the property VpcInterfaces. 
+        /// <para>
+        ///  The details of the newly added VPC interfaces.
+        /// </para>
         /// </summary>
         public List<VpcInterface> VpcInterfaces
         {

@@ -1,0 +1,97 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the gameliftstreams-2018-05-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.GameLiftStreams.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AssociateApplications operation.
+    /// When you associate, or link, an application with a stream group, then Amazon GameLift
+    /// Streams can launch the application using the stream group's allocated compute resources.
+    /// The stream group must be in <c>ACTIVE</c> status. You can reverse this action by using
+    /// <a>DisassociateApplications</a>.
+    /// </summary>
+    public partial class AssociateApplicationsRequest : AmazonGameLiftStreamsRequest
+    {
+        private List<string> _applicationIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _identifier;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationIdentifiers. 
+        /// <para>
+        /// A set of applications to associate with the stream group.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format
+        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>
+        /// or ID-<c>9ZY8X7Wv6</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> ApplicationIdentifiers
+        {
+            get { return this._applicationIdentifiers; }
+            set { this._applicationIdentifiers = value; }
+        }
+
+        // Check to see if ApplicationIdentifiers property is set
+        internal bool IsSetApplicationIdentifiers()
+        {
+            return this._applicationIdentifiers != null && (this._applicationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// A stream group to associate to the applications.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource.
+        /// Format example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>
+        /// or ID-<c>1AB2C3De4</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Identifier
+        {
+            get { return this._identifier; }
+            set { this._identifier = value; }
+        }
+
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
+        {
+            return this._identifier != null;
+        }
+
+    }
+}

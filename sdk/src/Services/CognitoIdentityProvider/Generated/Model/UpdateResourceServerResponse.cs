@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ResourceServer. 
         /// <para>
-        /// The resource server.
+        /// The updated details of the requested resource server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -95,6 +95,34 @@ namespace Amazon.Ep2complexparameters
 
         #endregion
         
+        #region  ListOfUnionsOperation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation service method.</param>
+        /// 
+        /// <returns>The response from the ListOfUnionsOperation service method, as returned by Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        ListOfUnionsOperationResponse ListOfUnionsOperation(ListOfUnionsOperationRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfUnionsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOfUnionsOperation service method, as returned by Ep2complexparameters.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-complex-parameters-2022-08-24/ListOfUnionsOperation">REST API Reference for ListOfUnionsOperation Operation</seealso>
+        Task<ListOfUnionsOperationResponse> ListOfUnionsOperationAsync(ListOfUnionsOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  MapOperation
 
 

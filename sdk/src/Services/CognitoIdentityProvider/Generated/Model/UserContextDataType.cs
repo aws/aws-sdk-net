@@ -31,14 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Contextual data, such as the user's device fingerprint, IP address, or location, used
-    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of public-client authentication operations like
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.
-    /// </para>
+    /// for evaluating the risk of an unexpected event by Amazon Cognito threat protection.
     /// </summary>
     public partial class UserContextDataType
     {

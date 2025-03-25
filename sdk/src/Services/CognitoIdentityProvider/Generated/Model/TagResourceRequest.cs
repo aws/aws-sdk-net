@@ -83,7 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the user pool.
+        /// An array of tag keys and values that you want to assign to the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

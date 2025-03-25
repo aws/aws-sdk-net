@@ -57,11 +57,6 @@ namespace Amazon.ECS.Model
         /// When the service <c>deploymentController</c> is <c>ECS</c>, the value must be <c>DISABLED</c>.
         /// 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// When you use <c>create-service</c> or <c>update-service</c>, the default is <c>ENABLED</c>.
-        /// 
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public AssignPublicIp AssignPublicIp

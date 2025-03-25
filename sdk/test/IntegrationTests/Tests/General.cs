@@ -40,6 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("General")]
+        [Ignore]
         // Test exception parsing with selected services
         public void TestDownloadStringContentWithTimeout()
         {

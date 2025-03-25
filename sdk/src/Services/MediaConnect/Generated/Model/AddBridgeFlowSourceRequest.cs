@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Number (ARN) of the cloud
-        /// flow to use as a source of this bridge.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Number (ARN) of the flow to use as a source of this bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -56,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowVpcInterfaceAttachment. The name of the VPC interface
-        /// attachment to use for this source.
+        /// Gets and sets the property FlowVpcInterfaceAttachment. 
+        /// <para>
+        /// The name of the VPC interface attachment to use for this source. 
+        /// </para>
         /// </summary>
         public VpcInterfaceAttachment FlowVpcInterfaceAttachment
         {
@@ -72,8 +76,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the flow source. This name is used to
-        /// reference the source and must be unique among sources in this bridge.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the flow source. This name is used to reference the source and must be
+        /// unique among sources in this bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

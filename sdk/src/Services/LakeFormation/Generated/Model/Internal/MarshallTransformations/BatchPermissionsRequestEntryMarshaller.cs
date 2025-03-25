@@ -46,6 +46,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCondition())
+            {
+                context.Writer.WritePropertyName("Condition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Condition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

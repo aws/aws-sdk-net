@@ -31,8 +31,9 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTile operation.
-    /// Returns a tile. Map tiles are used by clients to render a map. they're addressed using
-    /// a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
+    /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
+    /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
+    /// level.
     /// </summary>
     public partial class GetTileRequest : AmazonGeoMapsRequest
     {

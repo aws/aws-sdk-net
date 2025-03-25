@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _outputName;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the bridge from which the output was removed. 
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputName.
+        /// Gets and sets the property OutputName. 
+        /// <para>
+        ///  The name of the bridge output that was removed. 
+        /// </para>
         /// </summary>
         public string OutputName
         {

@@ -53,6 +53,14 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Paginator for ListServiceLevelObjectiveExclusionWindows operation
+        ///</summary>
+        public IListServiceLevelObjectiveExclusionWindowsPaginator ListServiceLevelObjectiveExclusionWindows(ListServiceLevelObjectiveExclusionWindowsRequest request) 
+        {
+            return new ListServiceLevelObjectiveExclusionWindowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceLevelObjectives operation
         ///</summary>
         public IListServiceLevelObjectivesPaginator ListServiceLevelObjectives(ListServiceLevelObjectivesRequest request) 

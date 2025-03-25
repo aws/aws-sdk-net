@@ -31,13 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Configuration for the CloudWatch log group destination of user pool detailed activity
-    /// logging, or of user activity log export with advanced security features.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html">SetLogDeliveryConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>.
-    /// </para>
+    /// logging, or of user activity log export with threat protection.
     /// </summary>
     public partial class CloudWatchLogsConfigurationType
     {

@@ -31,13 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The configuration of a user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-    /// </para>
     /// </summary>
     public partial class UserPoolType
     {
@@ -334,7 +327,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationMessage. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -353,7 +346,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]
@@ -624,7 +617,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsVerificationMessage. 
         /// <para>
-        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]
@@ -712,10 +705,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// treats any variation in case as the same user, and prevents a case variation from
         /// being assigned to the same attribute for a different user.
         /// </para>
-        ///  
-        /// <para>
-        /// This configuration is immutable after you set it. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
-        /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration
         {
@@ -732,14 +721,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// User pool add-ons. Contains settings for activation of advanced security features.
-        /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
-        /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
+        /// Contains settings for activation of threat protection, including the operating mode
+        /// and additional authentication types. To log user security information but take no
+        /// action, set to <c>AUDIT</c>. To configure automatic security responses to potentially
+        /// unwanted traffic to your user pool, set to <c>ENFORCED</c>.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding
-        /// advanced security to a user pool</a>.
+        /// advanced security to a user pool</a>. To activate this setting, your user pool must
+        /// be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
+        /// Plus tier</a>.
         /// </para>
         /// </summary>
         public UserPoolAddOnsType UserPoolAddOns

@@ -83,6 +83,11 @@ namespace Amazon.DataSync.Model
         /// Specifies the authentication protocol that DataSync uses to connect to your SMB file
         /// server. DataSync supports <c>NTLM</c> (default) and <c>KERBEROS</c> authentication.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+        /// DataSync access to SMB file servers</a>.
+        /// </para>
         /// </summary>
         public SmbAuthenticationType AuthenticationType
         {
@@ -210,7 +215,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// A Kerberos principal might look like <c>HOST/kerberosuser@EXAMPLE.COM</c>.
+        /// A Kerberos principal might look like <c>HOST/kerberosuser@MYDOMAIN.ORG</c>.
         /// </para>
         ///  
         /// <para>
@@ -276,7 +281,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property ServerHostname. 
         /// <para>
         /// Specifies the domain name or IP address of the SMB file server that your DataSync
-        /// agent will mount.
+        /// agent connects to.
         /// </para>
         ///  
         /// <para>

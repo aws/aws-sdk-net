@@ -30,29 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Settings for multi-factor authentication (MFA) with passkey, or webauthN, biometric
-    /// and security-key devices in a user pool. Configures the following:
+    /// Settings for authentication (MFA) with passkey, or webauthN, biometric and security-key
+    /// devices in a user pool. Configures the following:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Configuration at the user-pool level for whether you want to require passkey configuration
-    /// as an MFA factor, or include it as a choice.
+    /// Configuration for requiring user-verification support in passkeys.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The user pool relying-party ID. This is the user pool domain that user's passkey providers
-    /// should trust as a receiver of passkey authentication.
+    /// The user pool relying-party ID. This is the domain, typically your user pool domain,
+    /// that user's passkey providers should trust as a receiver of passkey authentication.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The providers that you want to allow as origins for passkey authentication.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
-    /// 
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class WebAuthnConfigurationType
     {

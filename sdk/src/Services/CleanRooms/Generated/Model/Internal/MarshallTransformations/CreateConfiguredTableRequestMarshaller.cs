@@ -102,6 +102,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetSelectedAnalysisMethods())
+            {
+                context.Writer.WritePropertyName("selectedAnalysisMethods");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSelectedAnalysisMethodsListValue in publicRequest.SelectedAnalysisMethods)
+                {
+                        context.Writer.WriteStringValue(publicRequestSelectedAnalysisMethodsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTableReference())
             {
                 context.Writer.WritePropertyName("tableReference");

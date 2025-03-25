@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
-        /// The logging configuration of the requested user pool.
+        /// The logging configuration of the requested user pool. Includes types of logs configured
+        /// and their destinations.
         /// </para>
         /// </summary>
         public LogDeliveryConfigurationType LogDeliveryConfiguration

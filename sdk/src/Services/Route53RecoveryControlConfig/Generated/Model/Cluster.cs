@@ -39,6 +39,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         private string _clusterArn;
         private List<ClusterEndpoint> _clusterEndpoints = AWSConfigs.InitializeCollections ? new List<ClusterEndpoint>() : null;
         private string _name;
+        private NetworkType _networkType;
         private string _owner;
         private Status _status;
 
@@ -102,6 +103,24 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

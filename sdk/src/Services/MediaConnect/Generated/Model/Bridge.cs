@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud.
-    /// A bridge can be used to send video from the AWS cloud to your datacenter or from your
-    /// datacenter to the AWS cloud.
+    /// A Bridge is the connection between your data center's Instances and the Amazon Web
+    /// Services cloud. A bridge can be used to send video from the Amazon Web Services cloud
+    /// to your data center or from your data center to the Amazon Web Services cloud.
     /// </summary>
     public partial class Bridge
     {
@@ -48,7 +48,10 @@ namespace Amazon.MediaConnect.Model
         private List<BridgeSource> _sources = AWSConfigs.InitializeCollections ? new List<BridgeSource>() : null;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Number (ARN) of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -64,7 +67,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BridgeMessages.
+        /// Gets and sets the property BridgeMessages. 
+        /// <para>
+        ///  Messages with details about the bridge. 
+        /// </para>
         /// </summary>
         public List<MessageDetail> BridgeMessages
         {
@@ -79,7 +85,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BridgeState.
+        /// Gets and sets the property BridgeState. 
+        /// <para>
+        /// The state of the bridge. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public BridgeState BridgeState
@@ -95,7 +104,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EgressGatewayBridge.
+        /// Gets and sets the property EgressGatewayBridge. 
+        /// <para>
+        ///  An egress bridge is a cloud-to-ground bridge. The content comes from an existing
+        /// MediaConnect flow and is delivered to your premises. 
+        /// </para>
         /// </summary>
         public EgressGatewayBridge EgressGatewayBridge
         {
@@ -110,7 +123,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngressGatewayBridge.
+        /// Gets and sets the property IngressGatewayBridge. 
+        /// <para>
+        ///  An ingress bridge is a ground-to-cloud bridge. The content originates at your premises
+        /// and is delivered to the cloud. 
+        /// </para>
         /// </summary>
         public IngressGatewayBridge IngressGatewayBridge
         {
@@ -125,7 +142,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the bridge.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -141,7 +161,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. The outputs on this bridge.
+        /// Gets and sets the property Outputs. 
+        /// <para>
+        ///  The outputs on this bridge.
+        /// </para>
         /// </summary>
         public List<BridgeOutput> Outputs
         {
@@ -156,8 +179,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementArn. The placement Amazon Resource Number (ARN)
-        /// of the bridge.
+        /// Gets and sets the property PlacementArn. 
+        /// <para>
+        ///  The placement Amazon Resource Number (ARN) of the bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PlacementArn
@@ -173,7 +198,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFailoverConfig.
+        /// Gets and sets the property SourceFailoverConfig. 
+        /// <para>
+        ///  The settings for source failover. 
+        /// </para>
         /// </summary>
         public FailoverConfig SourceFailoverConfig
         {
@@ -188,7 +216,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. The sources on this bridge.
+        /// Gets and sets the property Sources. 
+        /// <para>
+        ///  The sources on this bridge.
+        /// </para>
         /// </summary>
         public List<BridgeSource> Sources
         {

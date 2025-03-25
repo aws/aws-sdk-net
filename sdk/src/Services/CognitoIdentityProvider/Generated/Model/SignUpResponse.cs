@@ -42,8 +42,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetails. 
         /// <para>
-        /// The code delivery details returned by the server response to the user registration
-        /// request.
+        /// In user pools that automatically verify and confirm new users, Amazon Cognito sends
+        /// users a message with a code or link that confirms ownership of the phone number or
+        /// email address that they entered. The <c>CodeDeliveryDetails</c> object is information
+        /// about the delivery destination for that link or code.
         /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails
@@ -81,7 +83,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserConfirmed. 
         /// <para>
-        /// A response from the server indicating that a user registration has been confirmed.
+        /// Indicates whether the user was automatically confirmed. You can auto-confirm users
+        /// with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre
+        /// sign-up Lambda trigger</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +104,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserSub. 
         /// <para>
-        /// The 128-bit ID of the authenticated user. This isn't the same as <c>username</c>.
+        /// The unique identifier of the new user, for example <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=131072)]

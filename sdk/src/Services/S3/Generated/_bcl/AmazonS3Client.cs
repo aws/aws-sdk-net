@@ -16021,7 +16021,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
-        internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
+        public virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
@@ -16107,7 +16107,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
-        internal virtual Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;

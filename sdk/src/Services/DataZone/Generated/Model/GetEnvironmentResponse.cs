@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private string _domainId;
         private List<ConfigurableEnvironmentAction> _environmentActions = AWSConfigs.InitializeCollections ? new List<ConfigurableEnvironmentAction>() : null;
         private string _environmentBlueprintId;
+        private string _environmentConfigurationId;
         private string _environmentProfileId;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
@@ -219,6 +220,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentBlueprintId()
         {
             return this._environmentBlueprintId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentConfigurationId. 
+        /// <para>
+        /// The configuration ID that is used to create the environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string EnvironmentConfigurationId
+        {
+            get { return this._environmentConfigurationId; }
+            set { this._environmentConfigurationId = value; }
+        }
+
+        // Check to see if EnvironmentConfigurationId property is set
+        internal bool IsSetEnvironmentConfigurationId()
+        {
+            return this._environmentConfigurationId != null;
         }
 
         /// <summary>

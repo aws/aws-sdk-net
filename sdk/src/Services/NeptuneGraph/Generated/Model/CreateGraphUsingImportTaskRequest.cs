@@ -150,7 +150,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character
         /// must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.
-        /// 
+        /// Only lowercase letters are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -236,7 +236,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property MinProvisionedMemory. 
         /// <para>
         /// The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-        /// the graph. Default: 128
+        /// the graph. Default: 16
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=24576)]

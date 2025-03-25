@@ -112,8 +112,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ReplicaConfiguration. 
         /// <para>
         /// A list of <c>ConfigureShard</c> objects that can be used to configure each shard in
-        /// a Valkey or Redis OSS (cluster mode enabled) replication group. The <c>ConfigureShard</c>
-        /// has three members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
+        /// a Valkey or Redis OSS replication group. The <c>ConfigureShard</c> has three members:
+        /// <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
         /// </para>
         /// </summary>
         public List<ConfigureShard> ReplicaConfiguration

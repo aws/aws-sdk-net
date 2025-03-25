@@ -42,8 +42,14 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Channel. 
         /// <para>
-        /// The channel of the contact. <c>Voice</c> will not be returned. 
+        /// The channel of the contact. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Only <c>CHAT</c> is supported. This API does not support <c>VOICE</c>. If you attempt
+        /// to use it for the VOICE channel, an <c>InvalidRequestException</c> error occurs.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public RealTimeContactAnalysisSupportedChannel Channel

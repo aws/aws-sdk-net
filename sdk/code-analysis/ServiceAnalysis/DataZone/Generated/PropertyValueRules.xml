@@ -712,6 +712,10 @@
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentConfigurationId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentProfileId</property>
     <pattern>^[a-zA-Z0-9_-]{0,36}$</pattern>
   </property-value-rule>
@@ -1923,6 +1927,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentBlueprintId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3932,6 +3940,10 @@
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentConfigurationId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentProfileId</property>
     <pattern>^[a-zA-Z0-9_-]{0,36}$</pattern>
   </property-value-rule>
@@ -4993,6 +5005,10 @@
     <pattern>^[\w -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.EnvironmentConfigurationUserParameter.EnvironmentId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentProfileSummary.AwsAccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -5043,6 +5059,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentConfigurationId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentProfileId</property>
@@ -5719,6 +5739,10 @@
     <property>Amazon.DataZone.Model.SelfGrantStatusDetail.SchemaName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SingleSignOn.IdcInstanceArn</property>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.ComputeArn</property>

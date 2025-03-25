@@ -73,9 +73,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludeRateBasedDetails. 
         /// <para>
-        /// Specifies whether to also protect any rate-based rule details from the web ACL logs
-        /// when applying data protection for this field type and keys. For additional information,
-        /// see the log field <c>rateBasedRuleList</c> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// Specifies whether to also exclude any rate-based rule details from the data protection
+        /// you have enabled for a given field. If you specify this exception, RateBasedDetails
+        /// will show the value of the field. For additional information, see the log field <c>rateBasedRuleList</c>
+        /// at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
         /// fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         ///  
@@ -98,10 +99,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludeRuleMatchDetails. 
         /// <para>
-        /// Specifies whether to also protect any rule match details from the web ACL logs when
-        /// applying data protection this field type and keys. WAF logs these details for non-terminating
-        /// matching rules and for the terminating matching rule. For additional information,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// Specifies whether to also exclude any rule match details from the data protection
+        /// you have enabled for a given field. WAF logs these details for non-terminating matching
+        /// rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
         /// fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         ///  

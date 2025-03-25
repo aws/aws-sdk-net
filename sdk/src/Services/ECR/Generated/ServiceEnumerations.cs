@@ -973,6 +973,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly UpstreamRegistry DockerHub = new UpstreamRegistry("docker-hub");
         /// <summary>
+        /// Constant Ecr for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry Ecr = new UpstreamRegistry("ecr");
+        /// <summary>
         /// Constant EcrPublic for UpstreamRegistry
         /// </summary>
         public static readonly UpstreamRegistry EcrPublic = new UpstreamRegistry("ecr-public");

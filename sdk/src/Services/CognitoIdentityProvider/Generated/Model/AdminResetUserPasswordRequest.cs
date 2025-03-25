@@ -32,25 +32,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminResetUserPassword operation.
     /// Resets the specified user's password in a user pool. This operation doesn't change
-    /// the user's password, but sends a password-reset code. This operation is the administrative
-    /// authentication API equivalent to <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.
+    /// the user's password, but sends a password-reset code.
     /// 
     ///  
     /// <para>
-    /// This operation deactivates a user's password, requiring them to change it. If a user
-    /// tries to sign in after the API request, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
-    /// error. Your app must then complete the forgot-password flow by prompting the user
-    /// for their code and a new password, then submitting those values in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>
-    /// request. In addition, if the user pool has phone verification selected and a verified
-    /// phone number exists for the user, or if email verification is selected and a verified
-    /// email exists for the user, calling this API will also result in sending a message
-    /// to the end user with the code to change their password.
-    /// </para>
-    ///  
-    /// <para>
     /// To use this API operation, your user pool must have self-service account recovery
-    /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
-    /// if you manage passwords as an administrator.
+    /// configured.
     /// </para>
     ///  <note> 
     /// <para>
@@ -121,8 +108,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -161,7 +147,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

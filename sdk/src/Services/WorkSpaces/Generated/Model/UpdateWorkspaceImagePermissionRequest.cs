@@ -48,7 +48,7 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-    /// Amazon Web Services Support.
+    /// Amazon Web ServicesSupport.
     /// </para>
     ///  
     /// <para>
@@ -64,8 +64,7 @@ namespace Amazon.WorkSpaces.Model
     /// <para>
     /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
     /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
-    /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
-    /// Support.
+    /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web ServicesSupport.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>

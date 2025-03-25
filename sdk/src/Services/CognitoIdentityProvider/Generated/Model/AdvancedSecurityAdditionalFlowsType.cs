@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Advanced security configuration options for additional authentication types in your
+    /// Threat protection configuration options for additional authentication types in your
     /// user pool, including custom authentication.
     /// </summary>
     public partial class AdvancedSecurityAdditionalFlowsType
@@ -40,8 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CustomAuthMode. 
         /// <para>
-        /// The operating mode of advanced security features in custom authentication with <a
-        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">
+        /// The operating mode of threat protection in custom authentication with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">
         /// Custom authentication challenge Lambda triggers</a>. 
         /// </para>
         /// </summary>

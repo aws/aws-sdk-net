@@ -40,6 +40,7 @@ namespace Amazon.CleanRooms.Model
         private AnalysisFormat _format;
         private string _membershipIdentifier;
         private string _name;
+        private AnalysisSchema _schema;
         private AnalysisSource _source;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -139,13 +140,28 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Schema.
+        /// </summary>
+        public AnalysisSchema Schema
+        {
+            get { return this._schema; }
+            set { this._schema = value; }
+        }
+
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
+        {
+            return this._schema != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
         /// The information in the analysis template. Currently supports <c>text</c>, the query
         /// text for the analysis template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true)]
         public AnalysisSource Source
         {
             get { return this._source; }

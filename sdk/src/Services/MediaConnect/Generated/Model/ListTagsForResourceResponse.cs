@@ -37,9 +37,11 @@ namespace Amazon.MediaConnect.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Tags. A map from tag keys to values. Tag keys can have
-        /// a maximum character length of 128 characters, and tag values can have a maximum length
-        /// of 256 characters.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A map from tag keys to values. Tag keys can have a maximum character length of 128
+        /// characters, and tag values can have a maximum length of 256 characters.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

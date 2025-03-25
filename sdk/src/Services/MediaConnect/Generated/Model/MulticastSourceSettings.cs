@@ -37,8 +37,10 @@ namespace Amazon.MediaConnect.Model
         private string _multicastSourceIp;
 
         /// <summary>
-        /// Gets and sets the property MulticastSourceIp. The IP address of the source for source-specific
-        /// multicast (SSM).
+        /// Gets and sets the property MulticastSourceIp. 
+        /// <para>
+        ///  The IP address of the source for source-specific multicast (SSM).
+        /// </para>
         /// </summary>
         public string MulticastSourceIp
         {

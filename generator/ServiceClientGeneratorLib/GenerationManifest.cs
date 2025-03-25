@@ -226,22 +226,11 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         private static string GetLatestModel(string serviceDirectory)
         {
-            string latestModelName = string.Empty;
-
-            foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
-            {
-                if (string.Compare(latestModelName, modelName) < 0)
-                {
-                    latestModelName = modelName;
-                }
-            }
-
+            string latestModelName = Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly).OrderBy(x => x).LastOrDefault();
             if (string.IsNullOrEmpty(latestModelName))
-            {
                 throw new FileNotFoundException("Failed to find a model file in " + serviceDirectory);
-            }
 
-            return Path.GetFileName(latestModelName);
+            return latestModelName;
         }
 
         /// <summary>
@@ -253,7 +242,7 @@ namespace ServiceClientGenerator
         private static string GetLatestPaginators(string serviceDirectory)
         {
             var latestPaginatorsName = Directory.GetFiles(serviceDirectory, "*.paginators.json", SearchOption.TopDirectoryOnly)
-                .OrderBy(x => x).FirstOrDefault() ?? "";
+                .OrderBy(x => x).LastOrDefault() ?? "";
             return Path.GetFileName(latestPaginatorsName);
         }
 
@@ -262,17 +251,16 @@ namespace ServiceClientGenerator
 
         private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
         {
-            var modelFullPath = Utils.PathCombineAlt(serviceDirectoryPath, serviceModelFileName);
             var paginatorsFullPath = Utils.PathCombineAlt(serviceDirectoryPath, servicePaginatorsFileName);
 
-            JsonData metadata = JsonMapper.ToObject(File.ReadAllText(modelFullPath))[ServiceModel.MetadataKey];
+            JsonData metadata = JsonMapper.ToObject(File.ReadAllText(serviceModelFileName))[ServiceModel.MetadataKey];
 
             // A new config that the api generates from            
             var modelName = Path.GetFileName(serviceDirectoryPath);
             var config = new ServiceConfiguration
             {
                 ModelName = modelName,
-                ModelPath = modelFullPath,
+                ModelPath = serviceModelFileName,
                 PaginatorsPath = paginatorsFullPath,
                 Namespace = Utils.JsonDataToString(modelNode[ModelsSectionKeys.NamespaceKey]), // Namespace of the service if it's different from basename
                 ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
@@ -282,8 +270,8 @@ namespace ServiceClientGenerator
             };
 
             // Load endpoints ruleset and tests if present
-            var rulesetFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetFile, SearchOption.TopDirectoryOnly).FirstOrDefault();
-            var testsFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetTestsFile, SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var rulesetFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetFile, SearchOption.TopDirectoryOnly).LastOrDefault();
+            var testsFileName = Directory.GetFiles(serviceDirectoryPath, "*." + EndpointRuleSetTestsFile, SearchOption.TopDirectoryOnly).LastOrDefault();
 
             // We have found tests but not rules, something is wrong!
             if (rulesetFileName == null && testsFileName != null)
@@ -478,8 +466,8 @@ namespace ServiceClientGenerator
             {
                 return null;
             }
-            var files = Directory.GetFiles("customizations", serviceKey + ".customizations.json").OrderByDescending(x => x);
-            return !files.Any() ? null : files.Single();
+            var customizationFile = Directory.GetFiles("customizations", serviceKey + ".customizations.json").OrderBy(x => x).LastOrDefault();
+            return customizationFile;
         }
 
         /// <summary>

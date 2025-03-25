@@ -42,8 +42,11 @@ namespace Amazon.MediaConnect.Model
         private string _vpcInterfaceName;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The flow that you want to remove a VPC interface
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface
         /// from.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -59,8 +62,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcInterfaceName. The name of the VPC interface that you
-        /// want to remove.
+        /// Gets and sets the property VpcInterfaceName. 
+        /// <para>
+        ///  The name of the VPC interface that you want to remove.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VpcInterfaceName

@@ -90,6 +90,12 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 context.Writer.WriteStringValue(publicRequest.ClusterName);
             }
 
+            if(publicRequest.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("NetworkType");
+                context.Writer.WriteStringValue(publicRequest.NetworkType);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

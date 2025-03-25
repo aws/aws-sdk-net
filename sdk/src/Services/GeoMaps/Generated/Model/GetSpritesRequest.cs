@@ -31,7 +31,7 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSprites operation.
-    /// Returns the map's sprites.
+    /// <c>GetSprites</c> returns the map's sprites.
     /// </summary>
     public partial class GetSpritesRequest : AmazonGeoMapsRequest
     {

@@ -1106,6 +1106,11 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.ServerHostname</property>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.Subdirectory</property>
     <max>4096</max>
     <pattern>^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$</pattern>
@@ -1130,6 +1135,11 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerCertificate</property>
     <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerHostname</property>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerPort</property>
@@ -1179,6 +1189,11 @@
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Password</property>
     <max>104</max>
     <pattern>^.{0,104}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.ServerHostname</property>
+    <max>255</max>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Subdirectory</property>

@@ -73,6 +73,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCondition())
+            {
+                context.Writer.WritePropertyName("Condition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConditionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Condition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPrincipal())
             {
                 context.Writer.WritePropertyName("Principal");

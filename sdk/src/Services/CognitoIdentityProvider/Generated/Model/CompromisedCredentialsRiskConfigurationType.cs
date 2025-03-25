@@ -31,13 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Settings for compromised-credentials actions and authentication-event sources with
-    /// advanced security features in full-function <c>ENFORCED</c> mode.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
-    /// </para>
+    /// threat protection in full-function <c>ENFORCED</c> mode.
     /// </summary>
     public partial class CompromisedCredentialsRiskConfigurationType
     {

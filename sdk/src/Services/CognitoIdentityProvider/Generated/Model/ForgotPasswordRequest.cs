@@ -31,26 +31,17 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ForgotPassword operation.
-    /// Calling this API causes a message to be sent to the end user with a confirmation code
-    /// that is required to change the user's password. For the <c>Username</c> parameter,
-    /// you can use the username or user alias. The method used to send the confirmation code
-    /// is sent according to the specified AccountRecoverySetting. For more information, see
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
-    /// User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. To use the confirmation
-    /// code for resetting the password, call <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
-    /// 
+    /// Sends a password-reset confirmation code for the currently signed-in user.
     /// 
     ///  
     /// <para>
-    /// If neither a verified phone number nor a verified email exists, this API returns <c>InvalidParameterException</c>.
-    /// If your app client has a client secret and you don't provide a <c>SECRET_HASH</c>
-    /// parameter, this API returns <c>NotAuthorizedException</c>.
+    /// For the <c>Username</c> parameter, you can use the username or user alias.
     /// </para>
     ///  
     /// <para>
-    /// To use this API operation, your user pool must have self-service account recovery
-    /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
-    /// if you manage passwords as an administrator.
+    /// If neither a verified phone number nor a verified email exists, Amazon Cognito responds
+    /// with an <c>InvalidParameterException</c> error . If your app client has a client secret
+    /// and you don't provide a <c>SECRET_HASH</c> parameter, this API returns <c>NotAuthorizedException</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -95,8 +86,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <c>ForgotPassword</c>
-        /// calls.
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -114,7 +106,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The ID of the user pool app client associated with the current signed-in user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -150,8 +142,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -212,8 +203,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data about your user session, such as the device fingerprint, IP address,
-        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
@@ -239,7 +230,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

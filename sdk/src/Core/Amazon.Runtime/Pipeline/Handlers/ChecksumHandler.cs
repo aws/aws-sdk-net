@@ -62,6 +62,13 @@ namespace Amazon.Runtime.Internal
             var request = executionContext.RequestContext.Request;
             var clientConfig = executionContext.RequestContext.ClientConfig;
 
+            // Credentials would be null in the case of anonymous users getting public resources from S3
+            // https://github.com/aws/aws-sdk-net/issues/3696
+            if (executionContext.RequestContext.Identity is AnonymousAWSCredentials && executionContext.RequestContext.Signer.RequiresCredentials)
+            {
+                return;
+            }
+
             if (request.ChecksumData == null)
             {
                 return;

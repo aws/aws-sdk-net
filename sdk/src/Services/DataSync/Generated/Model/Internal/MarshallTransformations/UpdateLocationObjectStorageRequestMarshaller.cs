@@ -110,6 +110,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
             }
 
+            if(publicRequest.IsSetServerHostname())
+            {
+                context.Writer.WritePropertyName("ServerHostname");
+                context.Writer.WriteStringValue(publicRequest.ServerHostname);
+            }
+
             if(publicRequest.IsSetServerPort())
             {
                 context.Writer.WritePropertyName("ServerPort");

@@ -31,9 +31,9 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGatewayInstances operation.
-    /// Displays a list of instances associated with the AWS account. This request returns
-    /// a paginated result. You can use the filterArn property to display only the instances
-    /// associated with the selected Gateway Amazon Resource Name (ARN).
+    /// Displays a list of instances associated with the Amazon Web Services account. This
+    /// request returns a paginated result. You can use the filterArn property to display
+    /// only the instances associated with the selected Gateway Amazon Resource Name (ARN).
     /// </summary>
     public partial class ListGatewayInstancesRequest : AmazonMediaConnectRequest
     {
@@ -42,8 +42,11 @@ namespace Amazon.MediaConnect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property FilterArn. Filter the list results to display only the
-        /// instances associated with the selected Gateway Amazon Resource Name (ARN).
+        /// Gets and sets the property FilterArn. 
+        /// <para>
+        ///  Filter the list results to display only the instances associated with the selected
+        /// Gateway ARN.
+        /// </para>
         /// </summary>
         public string FilterArn
         {
@@ -58,13 +61,23 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of results to return per
-        /// API request. For example, you submit a ListInstances request with MaxResults set at
-        /// 5. Although 20 items match your request, the service returns no more than the first
-        /// 5 items. (The service also returns a NextToken value that you can use to fetch the
-        /// next batch of results.) The service might return fewer results than the MaxResults
-        /// value. If MaxResults is not included in the request, the service defaults to pagination
-        /// with a maximum of 10 results per page.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The maximum number of results to return per API request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you submit a ListInstances request with <c>MaxResults</c> set at 5. Although
+        /// 20 items match your request, the service returns no more than the first 5 items. (The
+        /// service also returns a <c>NextToken</c> value that you can use to fetch the next batch
+        /// of results.) 
+        /// </para>
+        ///  
+        /// <para>
+        /// The service might return fewer results than the <c>MaxResults</c> value. If <c>MaxResults</c>
+        /// is not included in the request, the service defaults to pagination with a maximum
+        /// of 10 results per page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int? MaxResults
@@ -80,11 +93,17 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token that identifies which batch of results
-        /// that you want to see. For example, you submit a ListInstances request with MaxResults
-        /// set at 5. The service returns the first batch of results (up to 5) and a NextToken
-        /// value. To see the next batch of results, you can submit the ListInstances request
-        /// a second time and specify the NextToken value.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  The token that identifies the batch of results that you want to see. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you submit a <c>ListInstances</c> request with <c>MaxResults</c> set
+        /// at 5. The service returns the first batch of results (up to 5) and a <c>NextToken</c>
+        /// value. To see the next batch of results, you can submit the <c>ListInstances</c> request
+        /// a second time and specify the <c>NextToken</c> value.
+        /// </para>
         /// </summary>
         public string NextToken
         {

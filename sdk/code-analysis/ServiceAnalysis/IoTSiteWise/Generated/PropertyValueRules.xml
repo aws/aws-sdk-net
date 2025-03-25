@@ -400,6 +400,12 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateGatewayRequest.GatewayVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreateGatewayResponse.GatewayArn</property>
     <min>1</min>
     <max>1600</max>
@@ -1049,6 +1055,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeGatewayResponse.GatewayVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeGatewayCapabilityConfigurationRequest.CapabilityNamespace</property>
@@ -3138,6 +3150,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.GatewaySummary.GatewayVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.Greengrass.GroupArn</property>

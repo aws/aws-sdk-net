@@ -43,7 +43,6 @@ namespace Amazon.TaxSettings.Model
         /// The list of accounts that failed to get tax exemptions. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
         public List<string> FailedAccounts
         {
             get { return this._failedAccounts; }

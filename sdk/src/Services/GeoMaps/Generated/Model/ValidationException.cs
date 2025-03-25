@@ -144,7 +144,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The field where thebb invalid entry was detected.
+        /// The field where the invalid entry was detected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

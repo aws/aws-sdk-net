@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-    /// for the operation for more information on the cause of this exception.
+    /// You do not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

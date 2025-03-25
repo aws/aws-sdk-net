@@ -52,6 +52,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Body);
             }
 
+            if(requestObject.IsSetImages())
+            {
+                context.Writer.WritePropertyName("images");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectImagesListValue in requestObject.Images)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ImageInputMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

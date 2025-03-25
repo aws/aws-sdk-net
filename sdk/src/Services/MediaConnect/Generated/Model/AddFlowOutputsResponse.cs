@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that these outputs were added
-        /// to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that these outputs were added to.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Outputs. The details of the newly added outputs.
+        /// Gets and sets the property Outputs. 
+        /// <para>
+        ///  The details of the newly added outputs.
+        /// </para>
         /// </summary>
         public List<Output> Outputs
         {

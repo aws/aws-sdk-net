@@ -191,7 +191,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
         {
-            return ToExpectedAttributeMap(conversion, epochAttributes: null, isEmptyStringValueEnabled: false);
+            return ToExpectedAttributeMap(conversion, epochAttributes: null, epochLongAttributes: null, isEmptyStringValueEnabled: false);
         }
 
         /// <summary>
@@ -201,11 +201,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Table table)
         {
-            return ToExpectedAttributeMap(table.Conversion, table.StoreAsEpoch, table.IsEmptyStringValueEnabled);
+            return ToExpectedAttributeMap(table.Conversion, table.StoreAsEpoch, table.StoreAsEpochLong, table.IsEmptyStringValueEnabled);
         }
 
         private Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion,
-            IEnumerable<string> epochAttributes, bool isEmptyStringValueEnabled)
+            IEnumerable<string> epochAttributes, IEnumerable<string> epochLongAttributes, bool isEmptyStringValueEnabled)
         {
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
 
@@ -218,6 +218,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (epochAttributes != null && epochAttributes.Contains(attributeName))
                 {
                     var values = expectedValue.Values.Select(p => Document.DateTimeToEpochSeconds(p, attributeName)).ToList();
+                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion, isEmptyStringValueEnabled);
+                }
+                else if(epochLongAttributes != null && epochLongAttributes.Contains(attributeName))
+                {
+                    var values = expectedValue.Values.Select(p => Document.DateTimeToEpochSecondsLong(p, attributeName)).ToList();
                     eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion, isEmptyStringValueEnabled);
                 }
                 else

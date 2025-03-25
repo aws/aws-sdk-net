@@ -269,7 +269,7 @@ namespace Amazon.TaxSettings.Model
         ///  List of unique account identifiers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=550)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

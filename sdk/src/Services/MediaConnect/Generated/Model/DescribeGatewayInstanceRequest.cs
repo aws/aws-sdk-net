@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayInstanceArn;
 
         /// <summary>
-        /// Gets and sets the property GatewayInstanceArn. The Amazon Resource Name (ARN) of the
-        /// gateway instance that you want to describe.
+        /// Gets and sets the property GatewayInstanceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayInstanceArn

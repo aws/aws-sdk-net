@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The definition of a media stream that you want to associate with the source.
+    /// The media stream that you want to associate with the source, and the parameters for
+    /// that association.
     /// </summary>
     public partial class MediaStreamSourceConfigurationRequest
     {
@@ -39,10 +40,13 @@ namespace Amazon.MediaConnect.Model
         private string _mediaStreamName;
 
         /// <summary>
-        /// Gets and sets the property EncodingName. The format you want to use to encode the
-        /// data. For ancillary data streams, set the encoding name to smpte291. For audio streams,
-        /// set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw.
-        /// For video, JPEG XS streams, set the encoding name to jxsv.
+        /// Gets and sets the property EncodingName. 
+        /// <para>
+        /// The format that was used to encode the data. For ancillary data streams, set the encoding
+        /// name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110
+        /// streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding
+        /// name to jxsv. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EncodingName EncodingName
@@ -58,8 +62,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputConfigurations. The transport parameters that you
-        /// want to associate with the media stream.
+        /// Gets and sets the property InputConfigurations. 
+        /// <para>
+        /// The media streams that you want to associate with the source. 
+        /// </para>
         /// </summary>
         public List<InputConfigurationRequest> InputConfigurations
         {
@@ -74,7 +80,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. The name of the media stream.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        /// The name of the media stream. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName

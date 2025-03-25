@@ -64,11 +64,11 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetEntitlementArn())
                 throw new AmazonMediaConnectException("Request object does not have required field EntitlementArn set");
-            request.AddPathResource("{entitlementArn}", StringUtils.FromString(publicRequest.EntitlementArn));
+            request.AddPathResource("{EntitlementArn}", StringUtils.FromString(publicRequest.EntitlementArn));
             if (!publicRequest.IsSetFlowArn())
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
-            request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
-            request.ResourcePath = "/v1/flows/{flowArn}/entitlements/{entitlementArn}";
+            request.AddPathResource("{FlowArn}", StringUtils.FromString(publicRequest.FlowArn));
+            request.ResourcePath = "/v1/flows/{FlowArn}/entitlements/{EntitlementArn}";
 
             return request;
         }

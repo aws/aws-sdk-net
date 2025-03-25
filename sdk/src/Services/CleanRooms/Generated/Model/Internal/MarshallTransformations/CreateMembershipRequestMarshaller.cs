@@ -79,6 +79,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CollaborationIdentifier);
             }
 
+            if(publicRequest.IsSetDefaultJobResultConfiguration())
+            {
+                context.Writer.WritePropertyName("defaultJobResultConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MembershipProtectedJobResultConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultJobResultConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDefaultResultConfiguration())
             {
                 context.Writer.WritePropertyName("defaultResultConfiguration");
@@ -88,6 +99,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.DefaultResultConfiguration, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobLogStatus())
+            {
+                context.Writer.WritePropertyName("jobLogStatus");
+                context.Writer.WriteStringValue(publicRequest.JobLogStatus);
             }
 
             if(publicRequest.IsSetPaymentConfiguration())

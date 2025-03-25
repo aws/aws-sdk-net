@@ -2249,7 +2249,9 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  
         /// <para>
-        /// Note that job queuing is enabled by default for Call Analytics jobs.
+        /// Job queuing is available for Call Analytics jobs. If you pass a <c>DataAccessRoleArn</c>
+        /// in your request and you exceed your Concurrent Job Limit, your job will automatically
+        /// be added to a queue to be processed once your concurrent job count is below the limit.
         /// </para>
         ///  
         /// <para>
@@ -2266,11 +2268,6 @@ namespace Amazon.TranscribeService
         /// <para>
         ///  <c>CallAnalyticsJobName</c>: A custom name that you create for your transcription
         /// job that's unique within your Amazon Web Services account.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DataAccessRoleArn</c>: The Amazon Resource Name (ARN) of an IAM role that has
-        /// permissions to access the Amazon S3 bucket that contains your input files.
         /// </para>
         ///  </li> <li> 
         /// <para>

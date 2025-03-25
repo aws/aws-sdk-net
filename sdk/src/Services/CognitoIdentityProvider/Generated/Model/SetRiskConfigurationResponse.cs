@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RiskConfiguration. 
         /// <para>
-        /// The risk configuration.
+        /// The API response that contains the risk configuration that you set and the timestamp
+        /// of the most recent change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// The next token specified for listing instances in a SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=8192)]
+        [AWSProperty(Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

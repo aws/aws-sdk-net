@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
     /// Creates a new group in the specified user pool. For more information about user pool
-    /// groups see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
+    /// groups, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding
     /// groups to a user pool</a>.
     /// 
     ///  <note> 

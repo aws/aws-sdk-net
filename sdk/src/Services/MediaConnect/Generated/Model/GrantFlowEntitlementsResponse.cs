@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property Entitlements. The entitlements that were just granted.
+        /// Gets and sets the property Entitlements. 
+        /// <para>
+        ///  The entitlements that were just granted.
+        /// </para>
         /// </summary>
         public List<Entitlement> Entitlements
         {
@@ -53,8 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that these entitlements were
-        /// granted to.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that these entitlements were granted to.
+        /// </para>
         /// </summary>
         public string FlowArn
         {

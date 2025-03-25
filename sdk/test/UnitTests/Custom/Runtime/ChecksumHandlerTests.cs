@@ -128,7 +128,8 @@ namespace AWSSDK.UnitTests
                 ClientConfig = new AmazonCloudWatchConfig
                 {
                     RequestChecksumCalculation = requestChecksumCalculation,
-                }
+                },
+                Identity = new BasicAWSCredentials("access key", "secret"),
             };
 
             return new ExecutionContext(requestContext, null);

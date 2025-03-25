@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// 
+    /// Update an existing egress-type bridge.
     /// </summary>
     public partial class UpdateEgressGatewayBridgeRequest
     {
         private int? _maxBitrate;
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. Update an existing egress-type bridge.
+        /// Gets and sets the property MaxBitrate. 
+        /// <para>
+        /// The maximum expected bitrate (in bps). 
+        /// </para>
         /// </summary>
         public int? MaxBitrate
         {

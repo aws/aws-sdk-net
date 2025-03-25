@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The transport parameters that you want to associate with an outbound media stream.
+    /// The definition of a media stream that you want to associate with the output.
     /// </summary>
     public partial class DestinationConfigurationRequest
     {
@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private InterfaceRequest _interface;
 
         /// <summary>
-        /// Gets and sets the property DestinationIp. The IP address where you want MediaConnect
-        /// to send contents of the media stream.
+        /// Gets and sets the property DestinationIp. 
+        /// <para>
+        /// The IP address where you want MediaConnect to send contents of the media stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DestinationIp
@@ -56,8 +58,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationPort. The port that you want MediaConnect to
-        /// use when it distributes the media stream to the output.
+        /// Gets and sets the property DestinationPort. 
+        /// <para>
+        ///  The port that you want MediaConnect to use when it distributes the media stream to
+        /// the output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? DestinationPort
@@ -73,8 +78,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Interface. The VPC interface that you want to use for the
-        /// media stream associated with the output.
+        /// Gets and sets the property Interface. 
+        /// <para>
+        ///  The VPC interface that you want to use for the media stream associated with the output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InterfaceRequest Interface

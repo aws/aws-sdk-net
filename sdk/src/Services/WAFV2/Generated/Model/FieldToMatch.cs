@@ -92,11 +92,13 @@ namespace Amazon.WAFV2.Model
         private HeaderOrder _headerOrder;
         private Headers _headers;
         private JA3Fingerprint _ja3Fingerprint;
+        private JA4Fingerprint _ja4Fingerprint;
         private JsonBody _jsonBody;
         private Method _method;
         private QueryString _queryString;
         private SingleHeader _singleHeader;
         private SingleQueryArgument _singleQueryArgument;
+        private UriFragment _uriFragment;
         private UriPath _uriPath;
 
         /// <summary>
@@ -278,6 +280,46 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JA4Fingerprint. 
+        /// <para>
+        /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
+        /// Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character
+        /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
+        /// as a unique identifier for the client's TLS configuration. WAF calculates and logs
+        /// this fingerprint for each request that has enough TLS Client Hello information for
+        /// the calculation. Almost all web requests include this information.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use this choice only with a string match <c>ByteMatchStatement</c> with the
+        /// <c>PositionalConstraint</c> set to <c>EXACTLY</c>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF
+        /// is able to calculate the fingerprint, it includes it in the logs. For information
+        /// about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+        /// fields</a> in the <i>WAF Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide the JA4 fingerprint string from the logs in your string match statement specification,
+        /// to match with any future requests that have the same TLS configuration.
+        /// </para>
+        /// </summary>
+        public JA4Fingerprint JA4Fingerprint
+        {
+            get { return this._ja4Fingerprint; }
+            set { this._ja4Fingerprint = value; }
+        }
+
+        // Check to see if JA4Fingerprint property is set
+        internal bool IsSetJA4Fingerprint()
+        {
+            return this._ja4Fingerprint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JsonBody. 
         /// <para>
         /// Inspect the request body as JSON. The request body immediately follows the request
@@ -408,6 +450,34 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetSingleQueryArgument()
         {
             return this._singleQueryArgument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriFragment. 
+        /// <para>
+        /// Inspect fragments of the request URI. You must configure scope and pattern matching
+        /// filters in the <c>UriFragment</c> object, to define the fragment of a URI that WAF
+        /// inspects. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200
+        /// URI fragments are forwarded to WAF for inspection by the underlying host service.
+        /// You must configure how to handle any oversize URI fragment content in the <c>UriFragment</c>
+        /// object. WAF applies the pattern matching filters to the cookies that it receives from
+        /// the underlying host service. 
+        /// </para>
+        /// </summary>
+        public UriFragment UriFragment
+        {
+            get { return this._uriFragment; }
+            set { this._uriFragment = value; }
+        }
+
+        // Check to see if UriFragment property is set
+        internal bool IsSetUriFragment()
+        {
+            return this._uriFragment != null;
         }
 
         /// <summary>

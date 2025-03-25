@@ -39,6 +39,7 @@ namespace Amazon.CleanRooms.Model
         private AnalysisMethod _analysisMethod;
         private string _description;
         private string _name;
+        private List<string> _selectedAnalysisMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TableReference _tableReference;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -65,7 +66,20 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AnalysisMethod. 
         /// <para>
-        /// The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.
+        /// The analysis method allowed for the configured tables.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_QUERY</c> allows SQL queries to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DIRECT_JOB</c> allows PySpark jobs to be run directly on this table.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>MULTIPLE</c> allows both SQL queries and PySpark jobs to be run directly on this
+        /// table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,6 +131,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedAnalysisMethods. 
+        /// <para>
+        ///  The analysis methods to enable for the configured table. When configured, you must
+        /// specify at least two analysis methods.
+        /// </para>
+        /// </summary>
+        public List<string> SelectedAnalysisMethods
+        {
+            get { return this._selectedAnalysisMethods; }
+            set { this._selectedAnalysisMethods = value; }
+        }
+
+        // Check to see if SelectedAnalysisMethods property is set
+        internal bool IsSetSelectedAnalysisMethods()
+        {
+            return this._selectedAnalysisMethods != null && (this._selectedAnalysisMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,7 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
+        /// This session ID satisfies an <c>MFA_SETUP</c> challenge. Supply the session ID in
+        /// your challenge response.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]
@@ -59,7 +60,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the verify software token.
+        /// Amazon Cognito can accept or reject the code that you provide. This response parameter
+        /// indicates the success of TOTP verification. Some reasons that this operation might
+        /// return an error are clock skew on the user's device and excessive retries.
         /// </para>
         /// </summary>
         public VerifySoftwareTokenResponseType Status

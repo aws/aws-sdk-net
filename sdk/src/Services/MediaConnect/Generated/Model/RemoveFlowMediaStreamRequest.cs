@@ -40,7 +40,10 @@ namespace Amazon.MediaConnect.Model
         private string _mediaStreamName;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Name (ARN) of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -56,8 +59,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. The name of the media stream that you
-        /// want to remove.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        ///  The name of the media stream that you want to remove.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName

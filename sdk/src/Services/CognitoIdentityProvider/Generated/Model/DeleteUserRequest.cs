@@ -31,8 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Self-deletes a user profile. A deleted user profile can no longer be used to sign
-    /// in and can't be restored.
+    /// Deletes the profile of the currently signed-in user. A deleted user profile can no
+    /// longer be used to sign in and can't be restored.
     /// 
     ///  
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user whose user profile you
-        /// want to delete.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
