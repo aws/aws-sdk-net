@@ -109,6 +109,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExecutionRoleArn);
                 }
 
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
+                }
+
                 if(publicRequest.IsSetMaintenanceConfig())
                 {
                     context.Writer.WritePropertyName("MaintenanceConfig");

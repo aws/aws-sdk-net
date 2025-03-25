@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _clientToken;
         private bool? _enableIamSessionBasedIdentity;
         private string _executionRoleArn;
+        private string _kmsKeyId;
         private PartnerAppMaintenanceConfig _maintenanceConfig;
         private string _name;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -139,6 +140,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using
+        /// an Amazon Web Services managed key by default. For more control, specify a customer
+        /// managed key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
