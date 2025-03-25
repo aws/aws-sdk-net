@@ -388,6 +388,9 @@ namespace Amazon.EKS
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
         public virtual AssociateEncryptionConfigResponse AssociateEncryptionConfig(AssociateEncryptionConfigRequest request)
         {
@@ -476,6 +479,9 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">REST API Reference for AssociateIdentityProviderConfig Operation</seealso>
         public virtual AssociateIdentityProviderConfigResponse AssociateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request)
@@ -2920,6 +2926,9 @@ namespace Amazon.EKS
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">REST API Reference for DisassociateIdentityProviderConfig Operation</seealso>
         public virtual DisassociateIdentityProviderConfigResponse DisassociateIdentityProviderConfig(DisassociateIdentityProviderConfigRequest request)
         {
@@ -4330,6 +4339,9 @@ namespace Amazon.EKS
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">REST API Reference for UpdateClusterConfig Operation</seealso>
         public virtual UpdateClusterConfigResponse UpdateClusterConfig(UpdateClusterConfigRequest request)
         {
@@ -4414,6 +4426,12 @@ namespace Amazon.EKS
         /// The request is invalid given the state of the cluster. Check the state of the cluster
         /// and the associated operations.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidStateException">
+        /// Amazon EKS detected upgrade readiness issues. Call the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html">
+        /// <c>ListInsights</c> </a> API to view detected upgrade blocking issues. Pass the <a
+        /// href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html#API_UpdateClusterVersion_RequestBody">
+        /// <c>force</c> </a> flag when updating to override upgrade readiness errors.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -4424,6 +4442,9 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
         public virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
