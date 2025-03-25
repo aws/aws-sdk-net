@@ -52,7 +52,7 @@ namespace SDKDocGenerator
             {
                 // Rule to redirect Index.html requests to index.html instead.
                 writer.WriteLine(string.Format(@"RewriteCond ""%{{REQUEST_URI}}"" ""^/{0}/Index.html$""", DocIndexPath));
-                writer.WriteLine(string.Format(@"RewriteRule ^{0}/Index.html$ ""{0}/index.html"" [L,R,NE]", DocIndexPath));
+                writer.WriteLine(string.Format(@"RewriteRule ^{0}/Index.html$ ""{0}/index.html"" [L,R=301,NE]", DocIndexPath));
 
                 int totalRuleCount = 0;
                 foreach (var service in _rulesForServices)
