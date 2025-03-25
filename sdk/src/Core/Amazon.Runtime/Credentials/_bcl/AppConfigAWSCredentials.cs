@@ -13,10 +13,8 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.CredentialManagement;
-using Amazon.Runtime.CredentialManagement.Internal;
-using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -69,7 +67,10 @@ namespace Amazon.Runtime
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "The app.config/web.config files for the application did not contain credential information"));
             }
+
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_CODE);
         }
+
         #endregion
 
         #region Abstract class overrides

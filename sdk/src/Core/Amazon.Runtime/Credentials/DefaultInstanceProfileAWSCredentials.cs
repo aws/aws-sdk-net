@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -77,14 +78,18 @@ namespace Amazon.Runtime
         private DefaultInstanceProfileAWSCredentials()
         {
             // if IMDS is turned off, no need to spin up the timer task
-            if (!EC2InstanceMetadata.IsIMDSEnabled) return;
+            if (!EC2InstanceMetadata.IsIMDSEnabled)
+            {
+                return;
+            }
 
             _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
-            
             _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan); // This invokes synchronous calls in seperate thread.
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_IMDS);
         }
 
         #region Overrides
+        
         /// <summary>
         /// Returns a copy of the most recent instance profile credentials.
         /// </summary>
@@ -262,7 +267,8 @@ namespace Amazon.Runtime
 
             return credentials;
         }
-#endregion
+
+        #endregion
 
         #region Private members
         private void RenewCredentials(object unused)
@@ -366,7 +372,8 @@ namespace Amazon.Runtime
         }
 #endregion
 
-#region IDisposable Support
+        #region IDisposable Support
+
         private bool _isDisposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -395,6 +402,7 @@ namespace Amazon.Runtime
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-#endregion
+
+        #endregion
     }
 }
