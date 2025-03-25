@@ -148,7 +148,7 @@ namespace Amazon.Runtime
                 await Task.Delay(retry.Next()).ConfigureAwait(false);
             }
 
-            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
+            return new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token, credentials.AccountId), credentials.Expiration);
         }
 
         /// <summary>

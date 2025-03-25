@@ -202,9 +202,9 @@ namespace Amazon.Runtime.CredentialManagement
                 switch (profileType)
                 {
                     case CredentialProfileType.Basic:
-                        return string.IsNullOrEmpty(options.AwsAccountId) ? new BasicAWSCredentials(options.AccessKey, options.SecretKey) : new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
+                        return  new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
                     case CredentialProfileType.Session:
-                        return string.IsNullOrEmpty(options.AwsAccountId) ? new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token) : new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId); ; 
+                        return new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId);
                     case CredentialProfileType.AssumeRole:
                     case CredentialProfileType.AssumeRoleExternal:
                     case CredentialProfileType.AssumeRoleMFA:

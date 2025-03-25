@@ -63,14 +63,17 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Constructs an instance with supplied keys SAML assertion data, and an account id
+        /// Constructs an instance with supplied keys SAML assertion data, and an account id.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://<paramref name="accountId"/>.ddb.region.amazonaws.com
         /// </summary>
         /// <param name="awsAccessKeyId"></param>
         /// <param name="awsSecretAccessKey"></param>
         /// <param name="token"></param>
         /// <param name="expires"></param>
         /// <param name="subject"></param>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">The account id for the credentials. The account id is your 12 digit account number with no hyphens. For example: 123456789012.</param>
         public SAMLImmutableCredentials(string awsAccessKeyId,
                                         string awsSecretAccessKey,
                                         string token,
@@ -84,11 +87,14 @@ namespace Amazon.Runtime
         }
         /// <summary>
         /// Constructs an instance with supplied keys and SAML assertion data and an account id.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://<paramref name="accountId"/>.ddb.region.amazonaws.com
         /// </summary>
         /// <param name="credentials"></param>
         /// <param name="expires"></param>
         /// <param name="subject"></param>
-        /// <param name="accountId"></param>
+        /// <param name="accountId">The account id for the credentials. The account id is your 12 digit account number with no hyphens. For example: 123456789012.</param>
         public SAMLImmutableCredentials(ImmutableCredentials credentials,
                                         DateTime expires,
                                         string subject,

@@ -53,13 +53,23 @@ namespace Amazon.Runtime
         #endregion
 
         #region Public constructors
+        /// <summary>
+        /// Constructs an instance of credentials that can be retrieved by running an external process.
+        /// </summary>
+        /// <param name="processCredentialInfo">Contains the executable information to be used by the process credential retriever.</param>
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         public ProcessAWSCredentials(string processCredentialInfo) : this(processCredentialInfo, null)
         {
 
         }
 
-
+        /// <summary>
+        /// Constructs an instance of credentials that can be retrieved by running an external process.
+        /// </summary>
+        /// <param name="processCredentialInfo">Contains the executable information to be used by the process credential retriever</param>
+        /// <param name="accountId">The account id for the credentials. The account id is your 12 digit account number with no hyphens. For example: 123456789012
+        /// If account id is fetched from the executable then that will be used instead of the one set in the constructor.
+        /// </param>
         public ProcessAWSCredentials(string processCredentialInfo, string accountId)
         {
             processCredentialInfo = processCredentialInfo.Trim();
