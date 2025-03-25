@@ -61,7 +61,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the foundation model used for context enrichment.
+        /// The Amazon Resource Name (ARN) of the model used to create vector embeddings for the
+        /// knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

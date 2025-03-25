@@ -294,7 +294,7 @@ namespace Amazon.BedrockAgent.Model
         ///  <important> 
         /// <para>
         ///  Computer use is a new Anthropic Claude model capability (in beta) available with
-        /// Claude 3.7 and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
         /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>. 
         /// </para>
         ///  </important>

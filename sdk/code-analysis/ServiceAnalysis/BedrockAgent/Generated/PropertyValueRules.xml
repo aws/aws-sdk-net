@@ -2468,6 +2468,42 @@
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterConfiguration.DomainArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:aws(|-cn|-us-gov|-iso):es:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:domain/[a-z][a-z0-9-]{3,28}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterConfiguration.DomainEndpoint</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^https://.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterConfiguration.VectorIndexName</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(?![\-_+.])[a-z0-9][a-z0-9\-_\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterFieldMapping.MetadataField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterFieldMapping.TextField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OpenSearchManagedClusterFieldMapping.VectorField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.OpenSearchServerlessConfiguration.CollectionArn</property>
     <min>0</min>
     <max>2048</max>
