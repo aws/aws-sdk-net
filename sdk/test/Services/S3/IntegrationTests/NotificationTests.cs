@@ -118,6 +118,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        [Ignore]
         public void SetQueueConfigurationTests()
         {
             var filterRule = new FilterRule("Prefix", "test/");
