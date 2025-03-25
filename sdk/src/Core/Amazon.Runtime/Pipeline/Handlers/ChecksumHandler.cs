@@ -13,8 +13,8 @@
 * permissions and limitations under the License.
 */
 
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
-using System;
 
 namespace Amazon.Runtime.Internal
 {
@@ -59,6 +59,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context which contains both the request and response context.</param>
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
+            var requestContext = executionContext.RequestContext;
             var request = executionContext.RequestContext.Request;
             var clientConfig = executionContext.RequestContext.ClientConfig;
 
@@ -81,6 +82,35 @@ namespace Amazon.Runtime.Internal
             }
 
             ChecksumUtils.SetRequestChecksumV2(request, clientConfig);
+
+            switch (request.SelectedChecksum)
+            {
+                case CoreChecksumAlgorithm.CRC32C:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_CRC32C);
+                    break;
+                case CoreChecksumAlgorithm.CRC32:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_CRC32);
+                    break;
+                case CoreChecksumAlgorithm.SHA256:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_SHA256);
+                    break;
+                case CoreChecksumAlgorithm.SHA1:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_SHA1);
+                    break;
+                case CoreChecksumAlgorithm.CRC64NVME:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_CRC64);
+                    break;
+            }
+
+            switch (clientConfig.RequestChecksumCalculation)
+            {
+                case RequestChecksumCalculation.WHEN_SUPPORTED:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED);
+                    break;
+                case RequestChecksumCalculation.WHEN_REQUIRED:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_WHEN_REQUIRED);
+                    break;
+            }
         }
     }
 }

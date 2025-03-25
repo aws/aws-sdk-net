@@ -19,6 +19,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using System.Diagnostics.CodeAnalysis;
@@ -100,6 +101,8 @@ namespace Amazon.Runtime
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
+
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROCESS);
         }
 
         #endregion

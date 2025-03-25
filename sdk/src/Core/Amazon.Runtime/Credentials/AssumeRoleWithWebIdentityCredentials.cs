@@ -26,6 +26,7 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime
 {
@@ -65,6 +66,7 @@ namespace Amazon.Runtime
         private AssumeRoleWithWebIdentityCredentialsOptions _options;
 
         #region Properties
+        
         /// <summary>
         /// The absolute path to the file on disk containing an OIDC token
         /// </summary>
@@ -79,7 +81,8 @@ namespace Amazon.Runtime
         /// An identifier for the assumed role session.
         /// </summary>
         public string RoleSessionName { get; }
-#endregion Properties
+
+        #endregion Properties
 
         /// <summary>
         /// Constructs an AssumeRoleWithWebIdentityCredentials object.
@@ -122,6 +125,7 @@ namespace Amazon.Runtime
             RoleArn = roleArn;
             RoleSessionName = string.IsNullOrEmpty(roleSessionName) ? _roleSessionNameDefault : roleSessionName;
             _options = options;
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE_WEB_ID);
 
             // Make sure to fetch new credentials well before the current credentials expire to avoid
             // any request being made with expired credentials.
@@ -138,7 +142,11 @@ namespace Amazon.Runtime
             var webIdentityTokenFile = Environment.GetEnvironmentVariable(WebIdentityTokenFileEnvVariable);
             var roleArn = Environment.GetEnvironmentVariable(RoleArnEnvVariable);
             var roleSessionName = Environment.GetEnvironmentVariable(RoleSessionNameEnvVariable);
-            return new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFile, roleArn, roleSessionName);
+
+            var credentials = new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFile, roleArn, roleSessionName);
+            credentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
+            
+            return credentials;
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()
