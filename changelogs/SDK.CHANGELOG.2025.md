@@ -1,3 +1,24 @@
+### 3.7.1009.0 (2025-03-25 20:24 UTC)
+* AWSMarketplaceMetering (3.7.401.0)
+	* This release enhances the BatchMeterUsage API to support new field CustomerAWSAccountId in request and response and making CustomerIdentifier optional. CustomerAWSAccountId or CustomerIdentifier must be provided in request but not both.
+* BedrockAgent (3.7.423.0)
+	* Adding support for Amazon OpenSearch Managed clusters as a vector database in Knowledge Bases for Amazon Bedrock
+* EKS (3.7.412.0)
+	* Added support to override upgrade-blocking readiness checks via force flag when updating a cluster.
+* GameLiftStreams (3.7.401.0)
+	* Minor updates to improve developer experience.
+* Keyspaces (3.7.403.0)
+	* Removing replication region limitation for Amazon Keyspaces Multi-Region Replication APIs.
+* MarketplaceEntitlementService (3.7.401.0)
+	* This release enhances the GetEntitlements API to support new filter CUSTOMER_AWS_ACCOUNT_ID in request and CustomerAWSAccountId field in response.
+* SageMaker (3.7.431.0)
+	* This release adds support for customer-managed KMS keys in Amazon SageMaker Partner AI Apps
+* WorkSpacesThinClient (3.7.403.0)
+	* Deprecate tags field in Get API responses
+* Core 3.7.402.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1008.0 (2025-03-24 18:21 UTC)
 * IoTWireless (3.7.402.0)
 	* Mark EutranCid under LteNmr optional.
