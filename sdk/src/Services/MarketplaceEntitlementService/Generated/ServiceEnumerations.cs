@@ -31,6 +31,10 @@ namespace Amazon.MarketplaceEntitlementService
     {
 
         /// <summary>
+        /// Constant CUSTOMER_AWS_ACCOUNT_ID for GetEntitlementFilterName
+        /// </summary>
+        public static readonly GetEntitlementFilterName CUSTOMER_AWS_ACCOUNT_ID = new GetEntitlementFilterName("CUSTOMER_AWS_ACCOUNT_ID");
+        /// <summary>
         /// Constant CUSTOMER_IDENTIFIER for GetEntitlementFilterName
         /// </summary>
         public static readonly GetEntitlementFilterName CUSTOMER_IDENTIFIER = new GetEntitlementFilterName("CUSTOMER_IDENTIFIER");

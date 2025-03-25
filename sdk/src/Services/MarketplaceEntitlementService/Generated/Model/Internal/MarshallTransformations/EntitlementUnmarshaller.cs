@@ -66,6 +66,12 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomerAWSAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomerAWSAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

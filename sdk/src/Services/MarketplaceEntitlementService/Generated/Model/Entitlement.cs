@@ -36,11 +36,31 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// </summary>
     public partial class Entitlement
     {
+        private string _customerAWSAccountId;
         private string _customerIdentifier;
         private string _dimension;
         private DateTime? _expirationDate;
         private string _productCode;
         private EntitlementValue _value;
+
+        /// <summary>
+        /// Gets and sets the property CustomerAWSAccountId. 
+        /// <para>
+        ///  The <c>CustomerAWSAccountID</c> parameter specifies the AWS account ID of the buyer.
+        /// 
+        /// </para>
+        /// </summary>
+        public string CustomerAWSAccountId
+        {
+            get { return this._customerAWSAccountId; }
+            set { this._customerAWSAccountId = value; }
+        }
+
+        // Check to see if CustomerAWSAccountId property is set
+        internal bool IsSetCustomerAWSAccountId()
+        {
+            return this._customerAWSAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomerIdentifier. 

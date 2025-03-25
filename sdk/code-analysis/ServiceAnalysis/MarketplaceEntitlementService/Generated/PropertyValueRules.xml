@@ -19,6 +19,10 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.CustomerAWSAccountId</property>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceEntitlementService.Model.Entitlement.CustomerIdentifier</property>
     <pattern>\S+</pattern>
   </property-value-rule>

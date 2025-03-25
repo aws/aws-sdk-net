@@ -69,7 +69,19 @@ namespace Amazon.MarketplaceEntitlementService
 
         /// <summary>
         /// GetEntitlements retrieves entitlement values for a given product. The results can
-        /// be filtered based on customer identifier or product dimensions.
+        /// be filtered based on customer identifier, AWS account ID, or product dimensions.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  The <c>CustomerIdentifier</c> parameter is on path for deprecation. Use <c>CustomerAWSAccountID</c>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
+        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEntitlements service method.</param>
         /// 
