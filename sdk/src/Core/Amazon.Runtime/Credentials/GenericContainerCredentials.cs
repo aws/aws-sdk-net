@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -69,6 +70,7 @@ namespace Amazon.Runtime
         {
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
             DetermineEndpoint();
+            FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_HTTP);
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

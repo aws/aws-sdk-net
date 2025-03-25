@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
@@ -49,7 +50,7 @@ namespace Amazon.Runtime.Internal
         /// a retry should be performed.
         /// </summary>
         public RetryPolicy RetryPolicy { get; private set; }
-        
+
         /// <summary>
         /// Constructor which takes in a retry policy.
         /// </summary>
@@ -68,7 +69,16 @@ namespace Amazon.Runtime.Internal
         public override void InvokeSync(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
+            switch (requestContext.ClientConfig.RetryMode)
+            {
+                case RequestRetryMode.Standard:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
+                    break;
+                case RequestRetryMode.Adaptive:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_ADAPTIVE);
+                    break;
+            }
+
             bool shouldRetry = false;
             this.RetryPolicy.ObtainSendToken(executionContext, null);
             do
@@ -121,16 +131,25 @@ namespace Amazon.Runtime.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
+            switch (requestContext.ClientConfig.RetryMode)
+            {
+                case RequestRetryMode.Standard:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_STANDARD);
+                    break;
+                case RequestRetryMode.Adaptive:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RETRY_MODE_ADAPTIVE);
+                    break;
+            }
+
             bool shouldRetry = false;
             await this.RetryPolicy.ObtainSendTokenAsync(executionContext, null).ConfigureAwait(false);
 
             do
             {
-                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;    
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;
 
                 try
-                {        
+                {
                     SetRetryHeaders(requestContext);
                     T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                     this.RetryPolicy.NotifySuccess(executionContext);
@@ -202,7 +221,7 @@ namespace Amazon.Runtime.Internal
                 seekableStream.Position = requestContext.Request.OriginalStreamPosition;
             }
         }
-        
+
         private void LogForRetry(IRequestContext requestContext, Exception exception)
         {
 #if !NETSTANDARD
@@ -219,12 +238,12 @@ namespace Amazon.Runtime.Internal
             else
             {
 #endif
-            Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
-                          exception.GetType().Name,
-                          requestContext.RequestName,
-                          requestContext.Request.Endpoint.ToString(),
-                          requestContext.Retries,
-                          this.RetryPolicy.MaxRetries);
+                Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
+                              exception.GetType().Name,
+                              requestContext.RequestName,
+                              requestContext.Request.Endpoint.ToString(),
+                              requestContext.Retries,
+                              this.RetryPolicy.MaxRetries);
 #if !NETSTANDARD
             }
 #endif
@@ -237,15 +256,15 @@ namespace Amazon.Runtime.Internal
                           requestContext.RequestName,
                           requestContext.Request.Endpoint.ToString(),
                           requestContext.Retries + 1);
-        }        
+        }
 
         private void SetRetryHeaders(IRequestContext requestContext)
-        {    
+        {
             var request = requestContext.Request;
 
             //The invocation id will be the same for all retry requests for the initial operation invocation.
             if (!request.Headers.ContainsKey(HeaderKeys.AmzSdkInvocationId))
-            {        
+            {
                 request.Headers.Add(HeaderKeys.AmzSdkInvocationId, requestContext.InvocationId.ToString());
             }
 

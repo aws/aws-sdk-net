@@ -13,17 +13,18 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using Amazon.Runtime.Credentials.Internal;
-using Amazon.Util;
-using Amazon.Util.Internal;
 
 namespace Amazon.Runtime
 {
@@ -102,6 +103,7 @@ namespace Amazon.Runtime
             RoleName = roleName;
             StartUrl = startUrl;
             Options = options;
+            FeatureIdSources.Add(string.IsNullOrEmpty(options.SessionName) ? UserAgentFeatureId.CREDENTIALS_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_SSO);
 
             _ssoTokenManager = new SSOTokenManager(
                 SSOServiceClientHelpers.BuildSSOIDCClient(
