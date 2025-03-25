@@ -54,9 +54,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.CustomerIdentifier</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.ProductCode</property>
@@ -82,10 +82,16 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.CustomerIdentifier</property>
+    <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.CustomerAWSAccountId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.CustomerIdentifier</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.Dimension</property>

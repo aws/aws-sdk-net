@@ -39,69 +39,169 @@ namespace Amazon.AWSMarketplaceMetering
     /// <summary>
     /// <para>Implementation for accessing AWSMarketplaceMetering</para>
     ///
-    /// AWS Marketplace Metering Service 
+    /// Amazon Web Services Marketplace Metering Service 
     /// <para>
-    /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
+    /// This reference provides descriptions of the low-level Marketplace Metering Service
     /// API.
     /// </para>
     ///  
     /// <para>
-    /// AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
+    /// Amazon Web Services Marketplace sellers can use this API to submit usage data for
+    /// custom usage dimensions.
     /// </para>
     ///  
     /// <para>
-    /// For information on the permissions you need to use this API, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
-    /// Marketplace metering and entitlement API permissions</a> in the <i>AWS Marketplace
-    /// Seller Guide.</i> 
+    /// For information about the permissions that you need to use this API, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">Amazon
+    /// Web Services Marketplace metering and entitlement API permissions</a> in the <i>Amazon
+    /// Web Services Marketplace Seller Guide.</i> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Submitting Metering Records</b> 
+    ///  <b>Submitting metering records</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>MeterUsage</i> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>MeterUsage</i> - Submits the metering record for an AWS Marketplace product. <c>MeterUsage</c>
-    /// is called from an EC2 instance or a container running on EKS or ECS.
+    /// Submits the metering record for an Amazon Web Services Marketplace product.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>BatchMeterUsage</i> - Submits the metering record for a set of customers. <c>BatchMeterUsage</c>
-    /// is called from a software-as-a-service (SaaS) application.
+    /// Called from: Amazon Elastic Compute Cloud (Amazon EC2) instance or a container running
+    /// on either Amazon Elastic Kubernetes Service (Amazon EKS) or Amazon Elastic Container
+    /// Service (Amazon ECS)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Supported product types: Amazon Machine Images (AMIs) and containers
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Vendor-metered tagging: Supported allocation tagging
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Accepting New Customers</b> 
+    ///  <i>BatchMeterUsage</i> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>ResolveCustomer</i> - Called by a SaaS application during the registration process.
-    /// When a buyer visits your website during the registration process, the buyer submits
-    /// a Registration Token through the browser. The Registration Token is resolved through
-    /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
+    /// Submits the metering record for a set of customers. <c>BatchMeterUsage</c> API calls
+    /// are captured by CloudTrail. You can use CloudTrail to verify that the software as
+    /// a subscription (SaaS) metering records that you sent are accurate by searching for
+    /// records with the <c>eventName</c> of <c>BatchMeterUsage</c>. You can also use CloudTrail
+    /// to audit records over time. For more information, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">CloudTrail
+    /// User Guide</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Called from: SaaS applications
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Supported product type: SaaS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Vendor-metered tagging: Supports allocation tagging
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Accepting new customers</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>ResolveCustomer</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Resolves the registration token that the buyer submits through the browser during
+    /// the registration process. Obtains a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
     /// and <c>ProductCode</c>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Called from: SaaS application during the registration process
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Supported product type: SaaS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Vendor-metered tagging: Not applicable
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Entitlement and Metering for Paid Container Products</b> 
+    ///  <b>Entitlement and metering for paid container products</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>RegisteredUsage</i> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Paid container software products sold through AWS Marketplace must integrate with
-    /// the AWS Marketplace Metering Service and call the <c>RegisterUsage</c> operation for
-    /// software entitlement and metering. Free and BYOL products for Amazon ECS or Amazon
-    /// EKS aren't required to call <c>RegisterUsage</c>, but you can do so if you want to
-    /// receive usage data in your seller reports. For more information on using the <c>RegisterUsage</c>
-    /// operation, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-Based
-    /// Products</a>. 
+    /// Provides software entitlement and metering. Paid container software products sold
+    /// through Amazon Web Services Marketplace must integrate with the Marketplace Metering
+    /// Service and call the <c>RegisterUsage</c> operation. Free and Bring Your Own License
+    /// model (BYOL) products for Amazon ECS or Amazon EKS aren't required to call <c>RegisterUsage</c>.
+    /// However, you can do so if you want to receive usage data in your seller reports. For
+    /// more information about using the <c>RegisterUsage</c> operation, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-based
+    /// products</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Called from: Paid container software products
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Supported product type: Containers
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Vendor-metered tagging: Not applicable
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <c>BatchMeterUsage</c> API calls are captured by AWS CloudTrail. You can use Cloudtrail
-    /// to verify that the SaaS metering records that you sent are accurate by searching for
-    /// records with the <c>eventName</c> of <c>BatchMeterUsage</c>. You can also use CloudTrail
-    /// to audit records over time. For more information, see the <i> <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS
-    /// CloudTrail User Guide</a>.</i> 
+    ///  <b>Entitlement custom metering for container products</b> 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// MeterUsage API is available in GovCloud Regions but only supports AMI FCP products
+    /// in GovCloud Regions. Flexible Consumption Pricing (FCP) Container products aren’t
+    /// supported in GovCloud Regions: us-gov-west-1 and us-gov-east-1. For more information,
+    /// see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-based
+    /// products</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom metering for container products are called using the MeterUsage API. The API
+    /// is used for FCP AMI and FCP Container product metering.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Custom metering for Amazon EKS is available in 17 Amazon Web Services Regions</b>
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The metering service supports Amazon ECS and EKS for Flexible Consumption Pricing
+    /// (FCP) products using MeterUsage API. Amazon ECS is supported in all Amazon Web Services
+    /// Regions that MeterUsage API is available except for GovCloud.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EKS is supported in the following: us-east-1, us-east-2, us-west-1, us-west-2,
+    /// eu-west-1, eu-central-1, eu-west-2, eu-west-3, eu-north-1, ap-east-1, ap-southeast-1,
+    /// ap-northeast-1, ap-southeast-2, ap-northeast-2, ap-south-1, ca-central-1, sa-east-1.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// For questions about adding Amazon Web Services Regions for metering, contact <a href="mailto://aws.amazon.com/marketplace/management/contact-us/">Amazon
+    /// Web Services Marketplace Seller Operations</a>.
+    /// </para>
+    ///  </note> </li> </ul>
     /// </summary>
     public partial class AmazonAWSMarketplaceMeteringClient : AmazonServiceClient, IAmazonAWSMarketplaceMetering
     {
@@ -314,48 +414,51 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// <c>BatchMeterUsage</c> is called from a SaaS application listed on AWS Marketplace
-        /// to post metering records for a set of customers.
-        /// 
-        ///  
+        /// <important> 
         /// <para>
-        /// For identical requests, the API is idempotent; requests can be retried with the same
-        /// records or a subset of the input records.
+        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
+        /// instead.
         /// </para>
         ///  
         /// <para>
-        /// Every request to <c>BatchMeterUsage</c> is for one product. If you need to meter usage
-        /// for multiple products, you must make multiple calls to <c>BatchMeterUsage</c>.
+        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
+        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To post metering records for customers, SaaS applications call <c>BatchMeterUsage</c>,
+        /// which is used for metering SaaS flexible consumption pricing (FCP). Identical requests
+        /// are idempotent and can be retried with the same records or a subset of records. Each
+        /// <c>BatchMeterUsage</c> request is for only one product. If you want to meter usage
+        /// for multiple products, you must make multiple <c>BatchMeterUsage</c> calls.
         /// </para>
         ///  
         /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// Usage records should be submitted in quick succession following a recorded event.
+        /// Usage records aren't accepted 6 hours or more after an event.
         /// </para>
         ///  
         /// <para>
-        ///  <c>BatchMeterUsage</c> can process up to 25 <c>UsageRecords</c> at a time.
+        ///  <c>BatchMeterUsage</c> can process up to 25 <c>UsageRecords</c> at a time, and each
+        /// request must be less than 1 MB in size. Optionally, you can have multiple usage allocations
+        /// for usage data that's split into buckets according to predefined tags.
         /// </para>
         ///  
         /// <para>
-        /// A <c>UsageRecord</c> can optionally include multiple usage allocations, to provide
-        /// customers with usage data split into buckets by tags that you define (or allow the
-        /// customer to define).
+        ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, which
+        /// have each <c>UsageRecord</c>. It also returns a list of <c>UnprocessedRecords</c>,
+        /// which indicate errors on the service side that should be retried.
         /// </para>
         ///  
         /// <para>
-        ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, showing
-        /// the result for each <c>UsageRecord</c>, as well as a list of <c>UnprocessedRecords</c>,
-        /// indicating errors in the service side that you should retry.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>BatchMeterUsage</c> requests must be less than 1MB in size.
+        /// For Amazon Web Services Regions that support <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage
+        /// Region support</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For an example of using <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
-        /// BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.
+        /// For an example of <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
+        /// BatchMeterUsage code example</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -367,7 +470,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
         /// You have metered usage for a <c>CustomerIdentifier</c> that does not exist.
@@ -379,8 +482,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// The usage allocation objects are invalid, or the number of allocations is greater
-        /// than 500 for a single usage record.
+        /// Sum of allocated usage quantities is not equal to the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -410,48 +512,51 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// <c>BatchMeterUsage</c> is called from a SaaS application listed on AWS Marketplace
-        /// to post metering records for a set of customers.
-        /// 
-        ///  
+        /// <important> 
         /// <para>
-        /// For identical requests, the API is idempotent; requests can be retried with the same
-        /// records or a subset of the input records.
+        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
+        /// instead.
         /// </para>
         ///  
         /// <para>
-        /// Every request to <c>BatchMeterUsage</c> is for one product. If you need to meter usage
-        /// for multiple products, you must make multiple calls to <c>BatchMeterUsage</c>.
+        /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
+        /// and <c>CustomerAWSAccountID</c> in the same request. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To post metering records for customers, SaaS applications call <c>BatchMeterUsage</c>,
+        /// which is used for metering SaaS flexible consumption pricing (FCP). Identical requests
+        /// are idempotent and can be retried with the same records or a subset of records. Each
+        /// <c>BatchMeterUsage</c> request is for only one product. If you want to meter usage
+        /// for multiple products, you must make multiple <c>BatchMeterUsage</c> calls.
         /// </para>
         ///  
         /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// Usage records should be submitted in quick succession following a recorded event.
+        /// Usage records aren't accepted 6 hours or more after an event.
         /// </para>
         ///  
         /// <para>
-        ///  <c>BatchMeterUsage</c> can process up to 25 <c>UsageRecords</c> at a time.
+        ///  <c>BatchMeterUsage</c> can process up to 25 <c>UsageRecords</c> at a time, and each
+        /// request must be less than 1 MB in size. Optionally, you can have multiple usage allocations
+        /// for usage data that's split into buckets according to predefined tags.
         /// </para>
         ///  
         /// <para>
-        /// A <c>UsageRecord</c> can optionally include multiple usage allocations, to provide
-        /// customers with usage data split into buckets by tags that you define (or allow the
-        /// customer to define).
+        ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, which
+        /// have each <c>UsageRecord</c>. It also returns a list of <c>UnprocessedRecords</c>,
+        /// which indicate errors on the service side that should be retried.
         /// </para>
         ///  
         /// <para>
-        ///  <c>BatchMeterUsage</c> returns a list of <c>UsageRecordResult</c> objects, showing
-        /// the result for each <c>UsageRecord</c>, as well as a list of <c>UnprocessedRecords</c>,
-        /// indicating errors in the service side that you should retry.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>BatchMeterUsage</c> requests must be less than 1MB in size.
+        /// For Amazon Web Services Regions that support <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage
+        /// Region support</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For an example of using <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
-        /// BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.
+        /// For an example of <c>BatchMeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example">
+        /// BatchMeterUsage code example</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -466,7 +571,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
         /// You have metered usage for a <c>CustomerIdentifier</c> that does not exist.
@@ -478,8 +583,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// The usage allocation objects are invalid, or the number of allocations is greater
-        /// than 500 for a single usage record.
+        /// Sum of allocated usage quantities is not equal to the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -513,13 +617,14 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// API to emit metering records. For identical requests, the API is idempotent. It simply
-        /// returns the metering record ID.
+        /// API to emit metering records. For identical requests, the API is idempotent and returns
+        /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
+        /// Amazon Machine Images (AMI) and container products.
         /// 
         ///  
         /// <para>
-        ///  <c>MeterUsage</c> is authenticated on the buyer's AWS account using credentials from
-        /// the EC2 instance, ECS task, or EKS pod.
+        ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
+        /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
         /// </para>
         ///  
         /// <para>
@@ -531,6 +636,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// <para>
         /// Usage records are expected to be submitted as quickly as possible after the event
         /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services Regions that support <c>MeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
+        /// Region support for Amazon EC2</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage
+        /// Region support for Amazon ECS and Amazon EKS</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
@@ -545,12 +656,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidEndpointRegionException">
-        /// The endpoint being called is in a AWS Region different from your EC2 instance, ECS
-        /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of
-        /// the resource must match.
+        /// The endpoint being called is in a Amazon Web Services Region different from your EC2
+        /// instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the
+        /// Amazon Web Services Region of the resource must match.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -559,8 +670,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// The usage allocation objects are invalid, or the number of allocations is greater
-        /// than 500 for a single usage record.
+        /// Sum of allocated usage quantities is not equal to the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -590,13 +700,14 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// API to emit metering records. For identical requests, the API is idempotent. It simply
-        /// returns the metering record ID.
+        /// API to emit metering records. For identical requests, the API is idempotent and returns
+        /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
+        /// Amazon Machine Images (AMI) and container products.
         /// 
         ///  
         /// <para>
-        ///  <c>MeterUsage</c> is authenticated on the buyer's AWS account using credentials from
-        /// the EC2 instance, ECS task, or EKS pod.
+        ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
+        /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
         /// </para>
         ///  
         /// <para>
@@ -608,6 +719,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// <para>
         /// Usage records are expected to be submitted as quickly as possible after the event
         /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services Regions that support <c>MeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
+        /// Region support for Amazon EC2</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage
+        /// Region support for Amazon ECS and Amazon EKS</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
@@ -625,12 +742,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidEndpointRegionException">
-        /// The endpoint being called is in a AWS Region different from your EC2 instance, ECS
-        /// task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of
-        /// the resource must match.
+        /// The endpoint being called is in a Amazon Web Services Region different from your EC2
+        /// instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the
+        /// Amazon Web Services Region of the resource must match.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -639,8 +756,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// The tag is invalid, or the number of tags is greater than 5.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
-        /// The usage allocation objects are invalid, or the number of allocations is greater
-        /// than 500 for a single usage record.
+        /// Sum of allocated usage quantities is not equal to the usage quantity.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the <c>UsageDimensions</c> associated with
@@ -674,23 +790,23 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// Paid container software products sold through AWS Marketplace must integrate with
-        /// the AWS Marketplace Metering Service and call the <c>RegisterUsage</c> operation for
-        /// software entitlement and metering. Free and BYOL products for Amazon ECS or Amazon
-        /// EKS aren't required to call <c>RegisterUsage</c>, but you may choose to do so if you
-        /// would like to receive usage data in your seller reports. The sections below explain
-        /// the behavior of <c>RegisterUsage</c>. <c>RegisterUsage</c> performs two primary functions:
-        /// metering and entitlement.
+        /// Paid container software products sold through Amazon Web Services Marketplace must
+        /// integrate with the Amazon Web Services Marketplace Metering Service and call the <c>RegisterUsage</c>
+        /// operation for software entitlement and metering. Free and BYOL products for Amazon
+        /// ECS or Amazon EKS aren't required to call <c>RegisterUsage</c>, but you may choose
+        /// to do so if you would like to receive usage data in your seller reports. The sections
+        /// below explain the behavior of <c>RegisterUsage</c>. <c>RegisterUsage</c> performs
+        /// two primary functions: metering and entitlement.
         /// 
         ///  <ul> <li> 
         /// <para>
         ///  <i>Entitlement</i>: <c>RegisterUsage</c> allows you to verify that the customer running
-        /// your paid software is subscribed to your product on AWS Marketplace, enabling you
-        /// to guard against unauthorized use. Your container image that integrates with <c>RegisterUsage</c>
-        /// is only required to guard against unauthorized use at container startup, as such a
-        /// <c>CustomerNotSubscribedException</c> or <c>PlatformNotSupportedException</c> will
-        /// only be thrown on the initial call to <c>RegisterUsage</c>. Subsequent calls from
-        /// the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw
+        /// your paid software is subscribed to your product on Amazon Web Services Marketplace,
+        /// enabling you to guard against unauthorized use. Your container image that integrates
+        /// with <c>RegisterUsage</c> is only required to guard against unauthorized use at container
+        /// startup, as such a <c>CustomerNotSubscribedException</c> or <c>PlatformNotSupportedException</c>
+        /// will only be thrown on the initial call to <c>RegisterUsage</c>. Subsequent calls
+        /// from the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw
         /// a <c>CustomerNotSubscribedException</c>, even if the customer unsubscribes while the
         /// Amazon ECS task or Amazon EKS pod is still running.
         /// </para>
@@ -701,13 +817,22 @@ namespace Amazon.AWSMarketplaceMetering
         /// of usage applies to tasks that are short lived. For example, if a customer has a 10
         /// node Amazon ECS or Amazon EKS cluster and a service configured as a Daemon Set, then
         /// Amazon ECS or Amazon EKS will launch a task on all 10 cluster nodes and the customer
-        /// will be charged: (10 * hourly_rate). Metering for software use is automatically handled
-        /// by the AWS Marketplace Metering Control Plane -- your software is not required to
-        /// perform any metering specific actions, other than call <c>RegisterUsage</c> once for
-        /// metering of software use to commence. The AWS Marketplace Metering Control Plane will
-        /// also continue to bill customers for running ECS tasks and Amazon EKS pods, regardless
-        /// of the customers subscription state, removing the need for your software to perform
-        /// entitlement checks at runtime.
+        /// will be charged for 10 tasks. Software metering is handled by the Amazon Web Services
+        /// Marketplace metering control plane—your software is not required to perform metering-specific
+        /// actions other than to call <c>RegisterUsage</c> to commence metering. The Amazon Web
+        /// Services Marketplace metering control plane will also bill customers for running ECS
+        /// tasks and Amazon EKS pods, regardless of the customer's subscription state, which
+        /// removes the need for your software to run entitlement checks at runtime. For containers,
+        /// <c>RegisterUsage</c> should be called immediately at launch. If you don’t register
+        /// the container within the first 6 hours of the launch, Amazon Web Services Marketplace
+        /// Metering Service doesn’t provide any metering guarantees for previous months. Metering
+        /// will continue, however, for the current month forward until the container ends. <c>RegisterUsage</c>
+        /// is for metering paid hourly container products.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services Regions that support <c>RegisterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#registerusage-region-support">RegisterUsage
+        /// Region support</a>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -722,7 +847,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -731,13 +856,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// Public Key version is invalid.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidRegionException">
-        /// <c>RegisterUsage</c> must be called in the same AWS Region the ECS task was launched
-        /// in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”)
+        /// <c>RegisterUsage</c> must be called in the same Amazon Web Services Region the ECS
+        /// task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”)
         /// when calling <c>RegisterUsage</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.PlatformNotSupportedException">
-        /// AWS Marketplace does not support metering usage from the underlying platform. Currently,
-        /// Amazon ECS, Amazon EKS, and AWS Fargate are supported.
+        /// Amazon Web Services Marketplace does not support metering usage from the underlying
+        /// platform. Currently, Amazon ECS, Amazon EKS, and Fargate are supported.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
         /// The calls to the API are throttled.
@@ -754,23 +879,23 @@ namespace Amazon.AWSMarketplaceMetering
 
 
         /// <summary>
-        /// Paid container software products sold through AWS Marketplace must integrate with
-        /// the AWS Marketplace Metering Service and call the <c>RegisterUsage</c> operation for
-        /// software entitlement and metering. Free and BYOL products for Amazon ECS or Amazon
-        /// EKS aren't required to call <c>RegisterUsage</c>, but you may choose to do so if you
-        /// would like to receive usage data in your seller reports. The sections below explain
-        /// the behavior of <c>RegisterUsage</c>. <c>RegisterUsage</c> performs two primary functions:
-        /// metering and entitlement.
+        /// Paid container software products sold through Amazon Web Services Marketplace must
+        /// integrate with the Amazon Web Services Marketplace Metering Service and call the <c>RegisterUsage</c>
+        /// operation for software entitlement and metering. Free and BYOL products for Amazon
+        /// ECS or Amazon EKS aren't required to call <c>RegisterUsage</c>, but you may choose
+        /// to do so if you would like to receive usage data in your seller reports. The sections
+        /// below explain the behavior of <c>RegisterUsage</c>. <c>RegisterUsage</c> performs
+        /// two primary functions: metering and entitlement.
         /// 
         ///  <ul> <li> 
         /// <para>
         ///  <i>Entitlement</i>: <c>RegisterUsage</c> allows you to verify that the customer running
-        /// your paid software is subscribed to your product on AWS Marketplace, enabling you
-        /// to guard against unauthorized use. Your container image that integrates with <c>RegisterUsage</c>
-        /// is only required to guard against unauthorized use at container startup, as such a
-        /// <c>CustomerNotSubscribedException</c> or <c>PlatformNotSupportedException</c> will
-        /// only be thrown on the initial call to <c>RegisterUsage</c>. Subsequent calls from
-        /// the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw
+        /// your paid software is subscribed to your product on Amazon Web Services Marketplace,
+        /// enabling you to guard against unauthorized use. Your container image that integrates
+        /// with <c>RegisterUsage</c> is only required to guard against unauthorized use at container
+        /// startup, as such a <c>CustomerNotSubscribedException</c> or <c>PlatformNotSupportedException</c>
+        /// will only be thrown on the initial call to <c>RegisterUsage</c>. Subsequent calls
+        /// from the same Amazon ECS task instance (e.g. task-id) or Amazon EKS pod will not throw
         /// a <c>CustomerNotSubscribedException</c>, even if the customer unsubscribes while the
         /// Amazon ECS task or Amazon EKS pod is still running.
         /// </para>
@@ -781,13 +906,22 @@ namespace Amazon.AWSMarketplaceMetering
         /// of usage applies to tasks that are short lived. For example, if a customer has a 10
         /// node Amazon ECS or Amazon EKS cluster and a service configured as a Daemon Set, then
         /// Amazon ECS or Amazon EKS will launch a task on all 10 cluster nodes and the customer
-        /// will be charged: (10 * hourly_rate). Metering for software use is automatically handled
-        /// by the AWS Marketplace Metering Control Plane -- your software is not required to
-        /// perform any metering specific actions, other than call <c>RegisterUsage</c> once for
-        /// metering of software use to commence. The AWS Marketplace Metering Control Plane will
-        /// also continue to bill customers for running ECS tasks and Amazon EKS pods, regardless
-        /// of the customers subscription state, removing the need for your software to perform
-        /// entitlement checks at runtime.
+        /// will be charged for 10 tasks. Software metering is handled by the Amazon Web Services
+        /// Marketplace metering control plane—your software is not required to perform metering-specific
+        /// actions other than to call <c>RegisterUsage</c> to commence metering. The Amazon Web
+        /// Services Marketplace metering control plane will also bill customers for running ECS
+        /// tasks and Amazon EKS pods, regardless of the customer's subscription state, which
+        /// removes the need for your software to run entitlement checks at runtime. For containers,
+        /// <c>RegisterUsage</c> should be called immediately at launch. If you don’t register
+        /// the container within the first 6 hours of the launch, Amazon Web Services Marketplace
+        /// Metering Service doesn’t provide any metering guarantees for previous months. Metering
+        /// will continue, however, for the current month forward until the container ends. <c>RegisterUsage</c>
+        /// is for metering paid hourly container products.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services Regions that support <c>RegisterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#registerusage-region-support">RegisterUsage
+        /// Region support</a>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -805,7 +939,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -814,13 +948,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// Public Key version is invalid.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidRegionException">
-        /// <c>RegisterUsage</c> must be called in the same AWS Region the ECS task was launched
-        /// in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”)
+        /// <c>RegisterUsage</c> must be called in the same Amazon Web Services Region the ECS
+        /// task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”)
         /// when calling <c>RegisterUsage</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.PlatformNotSupportedException">
-        /// AWS Marketplace does not support metering usage from the underlying platform. Currently,
-        /// Amazon ECS, Amazon EKS, and AWS Fargate are supported.
+        /// Amazon Web Services Marketplace does not support metering usage from the underlying
+        /// platform. Currently, Amazon ECS, Amazon EKS, and Fargate are supported.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
         /// The calls to the API are throttled.
@@ -849,15 +983,25 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         ///  <note> 
         /// <para>
-        /// The API needs to called from the seller account id used to publish the SaaS application
-        /// to successfully resolve the token.
+        /// To successfully resolve the token, the API must be called from the account that was
+        /// used to publish the SaaS application. For an example of using <c>ResolveCustomer</c>,
+        /// see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
+        /// ResolveCustomer code example</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Permission is required for this operation. Your IAM role or user performing this operation
+        /// requires a policy to allow the <c>aws-marketplace:ResolveCustomer</c> action. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacemeteringservice.html">Actions,
+        /// resources, and condition keys for Amazon Web Services Marketplace Metering Service</a>
+        /// in the <i>Service Authorization Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// For an example of using <c>ResolveCustomer</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
-        /// ResolveCustomer code example</a> in the <i>AWS Marketplace Seller Guide</i>.
+        /// For Amazon Web Services Regions that support <c>ResolveCustomer</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#resolvecustomer-region-support">ResolveCustomer
+        /// Region support</a>. 
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer service method.</param>
         /// 
@@ -874,7 +1018,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTokenException">
         /// Registration token is invalid.
@@ -902,15 +1046,25 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         ///  <note> 
         /// <para>
-        /// The API needs to called from the seller account id used to publish the SaaS application
-        /// to successfully resolve the token.
+        /// To successfully resolve the token, the API must be called from the account that was
+        /// used to publish the SaaS application. For an example of using <c>ResolveCustomer</c>,
+        /// see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
+        /// ResolveCustomer code example</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Permission is required for this operation. Your IAM role or user performing this operation
+        /// requires a policy to allow the <c>aws-marketplace:ResolveCustomer</c> action. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacemeteringservice.html">Actions,
+        /// resources, and condition keys for Amazon Web Services Marketplace Metering Service</a>
+        /// in the <i>Service Authorization Reference</i>.
         /// </para>
         ///  
         /// <para>
-        /// For an example of using <c>ResolveCustomer</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
-        /// ResolveCustomer code example</a> in the <i>AWS Marketplace Seller Guide</i>.
+        /// For Amazon Web Services Regions that support <c>ResolveCustomer</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#resolvecustomer-region-support">ResolveCustomer
+        /// Region support</a>. 
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer service method.</param>
         /// <param name="cancellationToken">
@@ -930,7 +1084,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
-        /// a message with details on the AWS forums.
+        /// a message with details on the Amazon Web Services forums.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTokenException">
         /// Registration token is invalid.

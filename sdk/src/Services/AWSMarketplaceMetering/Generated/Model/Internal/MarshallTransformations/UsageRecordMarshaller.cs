@@ -48,6 +48,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomerAWSAccountId())
+            {
+                context.Writer.WritePropertyName("CustomerAWSAccountId");
+                context.Writer.Write(requestObject.CustomerAWSAccountId);
+            }
+
             if(requestObject.IsSetCustomerIdentifier())
             {
                 context.Writer.WritePropertyName("CustomerIdentifier");

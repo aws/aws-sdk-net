@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// The usage allocation objects are invalid, or the number of allocations is greater
-    /// than 500 for a single usage record.
+    /// Sum of allocated usage quantities is not equal to the usage quantity.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

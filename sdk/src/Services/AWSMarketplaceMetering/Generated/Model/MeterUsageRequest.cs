@@ -31,13 +31,14 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the MeterUsage operation.
-    /// API to emit metering records. For identical requests, the API is idempotent. It simply
-    /// returns the metering record ID.
+    /// API to emit metering records. For identical requests, the API is idempotent and returns
+    /// the metering record ID. This is used for metering flexible consumption pricing (FCP)
+    /// Amazon Machine Images (AMI) and container products.
     /// 
     ///  
     /// <para>
-    ///  <c>MeterUsage</c> is authenticated on the buyer's AWS account using credentials from
-    /// the EC2 instance, ECS task, or EKS pod.
+    ///  <c>MeterUsage</c> is authenticated on the buyer's Amazon Web Services account using
+    /// credentials from the Amazon EC2 instance, Amazon ECS task, or Amazon EKS pod.
     /// </para>
     ///  
     /// <para>
@@ -49,6 +50,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// <para>
     /// Usage records are expected to be submitted as quickly as possible after the event
     /// that is being recorded, and are not accepted more than 6 hours after the event.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Amazon Web Services Regions that support <c>MeterUsage</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
+    /// Region support for Amazon EC2</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage
+    /// Region support for Amazon ECS and Amazon EKS</a>. 
     /// </para>
     /// </summary>
     public partial class MeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
@@ -84,8 +91,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property ProductCode. 
         /// <para>
-        /// Product code is used to uniquely identify a product in AWS Marketplace. The product
-        /// code should be the same as the one used during the publishing of a new product.
+        /// Product code is used to uniquely identify a product in Amazon Web Services Marketplace.
+        /// The product code should be the same as the one used during the publishing of a new
+        /// product.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -105,7 +113,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Timestamp, in UTC, for which the usage is being reported. Your application can meter
-        /// usage for up to one hour in the past. Make sure the <c>timestamp</c> value is not
+        /// usage for up to six hours in the past. Make sure the <c>timestamp</c> value is not
         /// before the start of the software usage.
         /// </para>
         /// </summary>

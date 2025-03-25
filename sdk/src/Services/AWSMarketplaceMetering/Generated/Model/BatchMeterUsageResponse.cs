@@ -42,8 +42,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property Results. 
         /// <para>
         /// Contains all <c>UsageRecords</c> processed by <c>BatchMeterUsage</c>. These records
-        /// were either honored by AWS Marketplace Metering Service or were invalid. Invalid records
-        /// should be fixed before being resubmitted.
+        /// were either honored by Amazon Web Services Marketplace Metering Service or were invalid.
+        /// Invalid records should be fixed before being resubmitted.
         /// </para>
         /// </summary>
         public List<UsageRecordResult> Results
