@@ -53,8 +53,7 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property ApplicationLogOutputUri. 
         /// <para>
         /// An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save
-        /// application logs. Use the following format for the URI: <c>s3://[bucket name]/[prefix]</c>.
-        /// Required if you specify one or more <c>LogPaths</c>.
+        /// application logs. Required if you specify one or more <c>ApplicationLogPaths</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -75,7 +74,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// Locations of log files that your content generates during a stream session. Amazon
         /// GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <c>ApplicationLogOutputUri</c>
-        /// at the end of a stream session. To retrieve stored log files, call <a>GetStreamSession</a>
+        /// at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>
         /// and get the <c>LogFileLocationUri</c>.
         /// </para>
         /// </summary>
@@ -142,7 +141,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example:
-        /// <c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</c>. 
+        /// <c>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</c>. 
         /// </para>
         /// </summary>
         public List<string> AssociatedStreamGroups
@@ -219,8 +218,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format
-        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>
-        /// or ID-<c>9ZY8X7Wv6</c>. 
+        /// example: ARN-<c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>
+        /// or ID-<c>a-9ZY8X7Wv6</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -276,8 +275,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        ///  A set of configuration settings to run the application on a stream group. This configures
-        /// the operating system, and can include compatibility layers and other drivers. 
+        ///  Configuration settings that identify the operating system for an application resource.
+        /// This can also include a compatibility layer and other drivers. 
         /// </para>
         ///  
         /// <para>
@@ -289,7 +288,7 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Ubuntu 22.04 LTS(<c>Type=UBUNTU, Version=22_04_LTS</c>) 
+        ///  Ubuntu 22.04 LTS (<c>Type=UBUNTU, Version=22_04_LTS</c>) 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

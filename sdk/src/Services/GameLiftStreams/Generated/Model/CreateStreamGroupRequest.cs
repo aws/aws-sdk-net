@@ -56,13 +56,14 @@ namespace Amazon.GameLiftStreams.Model
     /// de-allocate when the session has terminated. This offers a cost control measure at
     /// the expense of a greater startup time (typically under 5 minutes). &lt;/p&gt; &lt;/li&gt;
     /// &lt;/ul&gt; &lt;p&gt; To adjust the capacity of any &lt;code&gt;ACTIVE&lt;/code&gt;
-    /// stream group, call &lt;a&gt;UpdateStreamGroup&lt;/a&gt;. &lt;/p&gt; &lt;p&gt; If the
-    /// request is successful, Amazon GameLift Streams begins creating the stream group. Amazon
-    /// GameLift Streams assigns a unique ID to the stream group resource and sets the status
-    /// to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the stream group reaches &lt;code&gt;ACTIVE&lt;/code&gt;
-    /// status, you can start stream sessions by using &lt;a&gt;StartStreamSession&lt;/a&gt;.
-    /// To check the stream group's status, call &lt;a&gt;GetStreamGroup&lt;/a&gt;. &lt;/p&gt;
-    /// </c></pre>
+    /// stream group, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html&quot;&gt;UpdateStreamGroup&lt;/a&gt;.
+    /// &lt;/p&gt; &lt;p&gt; If the request is successful, Amazon GameLift Streams begins
+    /// creating the stream group. Amazon GameLift Streams assigns a unique ID to the stream
+    /// group resource and sets the status to &lt;code&gt;ACTIVATING&lt;/code&gt;. When the
+    /// stream group reaches &lt;code&gt;ACTIVE&lt;/code&gt; status, you can start stream
+    /// sessions by using &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html&quot;&gt;StartStreamSession&lt;/a&gt;.
+    /// To check the stream group's status, call &lt;a href=&quot;https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html&quot;&gt;GetStreamGroup&lt;/a&gt;.
+    /// &lt;/p&gt; </c></pre>
     /// </summary>
     public partial class CreateStreamGroupRequest : AmazonGameLiftStreamsRequest
     {
@@ -173,8 +174,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications,
-        /// and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -238,8 +239,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen4n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit
-        /// applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -318,12 +319,13 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new stream group resource. Tags are developer-defined
-        /// key-value pairs. It is useful to tag Amazon Web Services resources for resource management,
-        /// access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// key-value pairs. Tagging Amazon Web Services resources is useful for resource management,
+        /// access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
-        /// You can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags on existing resources. The maximum tag limit might be
-        /// lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.
+        /// You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a>
+        /// to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a>
+        /// to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+        /// to view tags on existing resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

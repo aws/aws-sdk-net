@@ -56,7 +56,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         ///  This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group
-        /// resource. Format example: <c>1AB2C3De4</c>. <pre><c> &lt;/p&gt; </c></pre>
+        /// resource. Format example: <c>sg-1AB2C3De4</c>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string Identifier
@@ -79,8 +80,9 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         ///  A set of location names. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon
-        /// GameLift Streams Developer Guide . <pre><c> &lt;/p&gt; </c></pre>
+        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+        /// and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> Locations

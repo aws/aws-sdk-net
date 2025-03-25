@@ -123,7 +123,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> that uniquely identifies the application resource. Format
-        /// example: <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>.
+        /// example: <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>.
         /// 
         /// </para>
         /// </summary>
@@ -266,8 +266,8 @@ namespace Amazon.GameLiftStreams.Model
         ///  
         /// <para>
         ///  A location's name. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon
-        /// GameLift Streams Developer Guide . 
+        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions
+        /// and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

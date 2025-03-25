@@ -77,7 +77,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Names (ARNs)</a> that uniquely identify application resources. Format example:
-        /// <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</c>. 
+        /// <c>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</c>. 
         /// </para>
         /// </summary>
         public List<string> AssociatedApplications
@@ -114,7 +114,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property DefaultApplication. 
         /// <para>
-        /// The Amazon GameLift Streams application that is associated with this stream group.
+        /// The default Amazon GameLift Streams application that is associated with this stream
+        /// group.
         /// </para>
         /// </summary>
         public DefaultApplication DefaultApplication
@@ -152,7 +153,7 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A unique ID value that is assigned to the resource when it's created. Format example:
-        /// <c>1AB2C3De4</c>.
+        /// <c>sg-1AB2C3De4</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -326,8 +327,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications,
-        /// and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -391,8 +392,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         ///  <b> <c>gen4n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
-        /// and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit
-        /// applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
+        /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32
+        /// and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.
         /// </para>
         ///  <ul> <li> 
         /// <para>
