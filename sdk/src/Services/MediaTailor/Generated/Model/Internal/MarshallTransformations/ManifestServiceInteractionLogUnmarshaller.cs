@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogConfiguration Object
+    /// Response Unmarshaller for ManifestServiceInteractionLog Object
     /// </summary>  
-    public class LogConfigurationUnmarshaller : IUnmarshaller<LogConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LogConfiguration, JsonUnmarshallerContext>
+    public class ManifestServiceInteractionLogUnmarshaller : IUnmarshaller<ManifestServiceInteractionLog, XmlUnmarshallerContext>, IUnmarshaller<ManifestServiceInteractionLog, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogConfiguration IUnmarshaller<LogConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ManifestServiceInteractionLog IUnmarshaller<ManifestServiceInteractionLog, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ManifestServiceInteractionLog Unmarshall(JsonUnmarshallerContext context)
         {
-            LogConfiguration unmarshalledObject = new LogConfiguration();
+            ManifestServiceInteractionLog unmarshalledObject = new ManifestServiceInteractionLog();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdsInteractionLog", targetDepth))
-                {
-                    var unmarshaller = AdsInteractionLogUnmarshaller.Instance;
-                    unmarshalledObject.AdsInteractionLog = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EnabledLoggingStrategies", targetDepth))
+                if (context.TestExpression("ExcludeEventTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EnabledLoggingStrategies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ManifestServiceInteractionLog", targetDepth))
-                {
-                    var unmarshaller = ManifestServiceInteractionLogUnmarshaller.Instance;
-                    unmarshalledObject.ManifestServiceInteractionLog = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PercentEnabled", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.PercentEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExcludeEventTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogConfigurationUnmarshaller _instance = new LogConfigurationUnmarshaller();        
+        private static ManifestServiceInteractionLogUnmarshaller _instance = new ManifestServiceInteractionLogUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogConfigurationUnmarshaller Instance
+        public static ManifestServiceInteractionLogUnmarshaller Instance
         {
             get
             {

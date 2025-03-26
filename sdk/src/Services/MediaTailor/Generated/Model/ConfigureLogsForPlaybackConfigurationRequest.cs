@@ -35,9 +35,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class ConfigureLogsForPlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
+        private AdsInteractionLog _adsInteractionLog;
         private List<string> _enabledLoggingStrategies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ManifestServiceInteractionLog _manifestServiceInteractionLog;
         private int? _percentEnabled;
         private string _playbackConfigurationName;
+
+        /// <summary>
+        /// Gets and sets the property AdsInteractionLog. 
+        /// <para>
+        /// The event types that MediaTailor emits in logs for interactions with the ADS.
+        /// </para>
+        /// </summary>
+        public AdsInteractionLog AdsInteractionLog
+        {
+            get { return this._adsInteractionLog; }
+            set { this._adsInteractionLog = value; }
+        }
+
+        // Check to see if AdsInteractionLog property is set
+        internal bool IsSetAdsInteractionLog()
+        {
+            return this._adsInteractionLog != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnabledLoggingStrategies. 
@@ -65,6 +85,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetEnabledLoggingStrategies()
         {
             return this._enabledLoggingStrategies != null && (this._enabledLoggingStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestServiceInteractionLog. 
+        /// <para>
+        /// The event types that MediaTailor emits in logs for interactions with the origin server.
+        /// </para>
+        /// </summary>
+        public ManifestServiceInteractionLog ManifestServiceInteractionLog
+        {
+            get { return this._manifestServiceInteractionLog; }
+            set { this._manifestServiceInteractionLog = value; }
+        }
+
+        // Check to see if ManifestServiceInteractionLog property is set
+        internal bool IsSetManifestServiceInteractionLog()
+        {
+            return this._manifestServiceInteractionLog != null;
         }
 
         /// <summary>

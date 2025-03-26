@@ -67,6 +67,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdsInteractionLog())
+                {
+                    context.Writer.WritePropertyName("AdsInteractionLog");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdsInteractionLogMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdsInteractionLog, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnabledLoggingStrategies())
                 {
                     context.Writer.WritePropertyName("EnabledLoggingStrategies");
@@ -76,6 +87,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestEnabledLoggingStrategiesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetManifestServiceInteractionLog())
+                {
+                    context.Writer.WritePropertyName("ManifestServiceInteractionLog");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManifestServiceInteractionLogMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManifestServiceInteractionLog, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPercentEnabled())

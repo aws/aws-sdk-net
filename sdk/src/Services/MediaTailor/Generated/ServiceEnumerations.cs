@@ -129,6 +129,258 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type AdsInteractionExcludeEventType.
+    /// </summary>
+    public class AdsInteractionExcludeEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AD_MARKER_FOUND for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType AD_MARKER_FOUND = new AdsInteractionExcludeEventType("AD_MARKER_FOUND");
+        /// <summary>
+        /// Constant BEACON_FIRED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType BEACON_FIRED = new AdsInteractionExcludeEventType("BEACON_FIRED");
+        /// <summary>
+        /// Constant EMPTY_VAST_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType EMPTY_VAST_RESPONSE = new AdsInteractionExcludeEventType("EMPTY_VAST_RESPONSE");
+        /// <summary>
+        /// Constant EMPTY_VMAP_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType EMPTY_VMAP_RESPONSE = new AdsInteractionExcludeEventType("EMPTY_VMAP_RESPONSE");
+        /// <summary>
+        /// Constant ERROR_ADS_INVALID_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_ADS_INVALID_RESPONSE = new AdsInteractionExcludeEventType("ERROR_ADS_INVALID_RESPONSE");
+        /// <summary>
+        /// Constant ERROR_ADS_IO for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_ADS_IO = new AdsInteractionExcludeEventType("ERROR_ADS_IO");
+        /// <summary>
+        /// Constant ERROR_ADS_RESPONSE_PARSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_ADS_RESPONSE_PARSE = new AdsInteractionExcludeEventType("ERROR_ADS_RESPONSE_PARSE");
+        /// <summary>
+        /// Constant ERROR_ADS_RESPONSE_UNKNOWN_ROOT_ELEMENT for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_ADS_RESPONSE_UNKNOWN_ROOT_ELEMENT = new AdsInteractionExcludeEventType("ERROR_ADS_RESPONSE_UNKNOWN_ROOT_ELEMENT");
+        /// <summary>
+        /// Constant ERROR_ADS_TIMEOUT for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_ADS_TIMEOUT = new AdsInteractionExcludeEventType("ERROR_ADS_TIMEOUT");
+        /// <summary>
+        /// Constant ERROR_DISALLOWED_HOST for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_DISALLOWED_HOST = new AdsInteractionExcludeEventType("ERROR_DISALLOWED_HOST");
+        /// <summary>
+        /// Constant ERROR_FIRING_BEACON_FAILED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_FIRING_BEACON_FAILED = new AdsInteractionExcludeEventType("ERROR_FIRING_BEACON_FAILED");
+        /// <summary>
+        /// Constant ERROR_PERSONALIZATION_DISABLED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_PERSONALIZATION_DISABLED = new AdsInteractionExcludeEventType("ERROR_PERSONALIZATION_DISABLED");
+        /// <summary>
+        /// Constant ERROR_UNKNOWN for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_UNKNOWN = new AdsInteractionExcludeEventType("ERROR_UNKNOWN");
+        /// <summary>
+        /// Constant ERROR_UNKNOWN_HOST for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_UNKNOWN_HOST = new AdsInteractionExcludeEventType("ERROR_UNKNOWN_HOST");
+        /// <summary>
+        /// Constant ERROR_VAST_INVALID_MEDIA_FILE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_INVALID_MEDIA_FILE = new AdsInteractionExcludeEventType("ERROR_VAST_INVALID_MEDIA_FILE");
+        /// <summary>
+        /// Constant ERROR_VAST_INVALID_VAST_AD_TAG_URI for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_INVALID_VAST_AD_TAG_URI = new AdsInteractionExcludeEventType("ERROR_VAST_INVALID_VAST_AD_TAG_URI");
+        /// <summary>
+        /// Constant ERROR_VAST_MISSING_CREATIVES for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MISSING_CREATIVES = new AdsInteractionExcludeEventType("ERROR_VAST_MISSING_CREATIVES");
+        /// <summary>
+        /// Constant ERROR_VAST_MISSING_IMPRESSION for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MISSING_IMPRESSION = new AdsInteractionExcludeEventType("ERROR_VAST_MISSING_IMPRESSION");
+        /// <summary>
+        /// Constant ERROR_VAST_MISSING_MEDIAFILES for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MISSING_MEDIAFILES = new AdsInteractionExcludeEventType("ERROR_VAST_MISSING_MEDIAFILES");
+        /// <summary>
+        /// Constant ERROR_VAST_MISSING_OVERLAYS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MISSING_OVERLAYS = new AdsInteractionExcludeEventType("ERROR_VAST_MISSING_OVERLAYS");
+        /// <summary>
+        /// Constant ERROR_VAST_MULTIPLE_LINEAR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MULTIPLE_LINEAR = new AdsInteractionExcludeEventType("ERROR_VAST_MULTIPLE_LINEAR");
+        /// <summary>
+        /// Constant ERROR_VAST_MULTIPLE_TRACKING_EVENTS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_MULTIPLE_TRACKING_EVENTS = new AdsInteractionExcludeEventType("ERROR_VAST_MULTIPLE_TRACKING_EVENTS");
+        /// <summary>
+        /// Constant ERROR_VAST_REDIRECT_EMPTY_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_REDIRECT_EMPTY_RESPONSE = new AdsInteractionExcludeEventType("ERROR_VAST_REDIRECT_EMPTY_RESPONSE");
+        /// <summary>
+        /// Constant ERROR_VAST_REDIRECT_FAILED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_REDIRECT_FAILED = new AdsInteractionExcludeEventType("ERROR_VAST_REDIRECT_FAILED");
+        /// <summary>
+        /// Constant ERROR_VAST_REDIRECT_MULTIPLE_VAST for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType ERROR_VAST_REDIRECT_MULTIPLE_VAST = new AdsInteractionExcludeEventType("ERROR_VAST_REDIRECT_MULTIPLE_VAST");
+        /// <summary>
+        /// Constant FILLED_AVAIL for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType FILLED_AVAIL = new AdsInteractionExcludeEventType("FILLED_AVAIL");
+        /// <summary>
+        /// Constant FILLED_OVERLAY_AVAIL for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType FILLED_OVERLAY_AVAIL = new AdsInteractionExcludeEventType("FILLED_OVERLAY_AVAIL");
+        /// <summary>
+        /// Constant INTERSTITIAL_VOD_FAILURE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType INTERSTITIAL_VOD_FAILURE = new AdsInteractionExcludeEventType("INTERSTITIAL_VOD_FAILURE");
+        /// <summary>
+        /// Constant INTERSTITIAL_VOD_SUCCESS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType INTERSTITIAL_VOD_SUCCESS = new AdsInteractionExcludeEventType("INTERSTITIAL_VOD_SUCCESS");
+        /// <summary>
+        /// Constant MAKING_ADS_REQUEST for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType MAKING_ADS_REQUEST = new AdsInteractionExcludeEventType("MAKING_ADS_REQUEST");
+        /// <summary>
+        /// Constant MODIFIED_TARGET_URL for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType MODIFIED_TARGET_URL = new AdsInteractionExcludeEventType("MODIFIED_TARGET_URL");
+        /// <summary>
+        /// Constant NON_AD_MARKER_FOUND for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType NON_AD_MARKER_FOUND = new AdsInteractionExcludeEventType("NON_AD_MARKER_FOUND");
+        /// <summary>
+        /// Constant REDIRECTED_VAST_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType REDIRECTED_VAST_RESPONSE = new AdsInteractionExcludeEventType("REDIRECTED_VAST_RESPONSE");
+        /// <summary>
+        /// Constant VAST_REDIRECT for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType VAST_REDIRECT = new AdsInteractionExcludeEventType("VAST_REDIRECT");
+        /// <summary>
+        /// Constant VAST_RESPONSE for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType VAST_RESPONSE = new AdsInteractionExcludeEventType("VAST_RESPONSE");
+        /// <summary>
+        /// Constant VOD_TIME_BASED_AVAIL_PLAN_SUCCESS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType VOD_TIME_BASED_AVAIL_PLAN_SUCCESS = new AdsInteractionExcludeEventType("VOD_TIME_BASED_AVAIL_PLAN_SUCCESS");
+        /// <summary>
+        /// Constant VOD_TIME_BASED_AVAIL_PLAN_VAST_RESPONSE_FOR_OFFSET for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType VOD_TIME_BASED_AVAIL_PLAN_VAST_RESPONSE_FOR_OFFSET = new AdsInteractionExcludeEventType("VOD_TIME_BASED_AVAIL_PLAN_VAST_RESPONSE_FOR_OFFSET");
+        /// <summary>
+        /// Constant VOD_TIME_BASED_AVAIL_PLAN_WARNING_NO_ADVERTISEMENTS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType VOD_TIME_BASED_AVAIL_PLAN_WARNING_NO_ADVERTISEMENTS = new AdsInteractionExcludeEventType("VOD_TIME_BASED_AVAIL_PLAN_WARNING_NO_ADVERTISEMENTS");
+        /// <summary>
+        /// Constant WARNING_NO_ADVERTISEMENTS for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType WARNING_NO_ADVERTISEMENTS = new AdsInteractionExcludeEventType("WARNING_NO_ADVERTISEMENTS");
+        /// <summary>
+        /// Constant WARNING_URL_VARIABLE_SUBSTITUTION_FAILED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType WARNING_URL_VARIABLE_SUBSTITUTION_FAILED = new AdsInteractionExcludeEventType("WARNING_URL_VARIABLE_SUBSTITUTION_FAILED");
+        /// <summary>
+        /// Constant WARNING_VPAID_AD_DROPPED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType WARNING_VPAID_AD_DROPPED = new AdsInteractionExcludeEventType("WARNING_VPAID_AD_DROPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdsInteractionExcludeEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdsInteractionExcludeEventType FindValue(string value)
+        {
+            return FindValue<AdsInteractionExcludeEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdsInteractionExcludeEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AdsInteractionPublishOptInEventType.
+    /// </summary>
+    public class AdsInteractionPublishOptInEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RAW_ADS_RESPONSE for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType RAW_ADS_RESPONSE = new AdsInteractionPublishOptInEventType("RAW_ADS_RESPONSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdsInteractionPublishOptInEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdsInteractionPublishOptInEventType FindValue(string value)
+        {
+            return FindValue<AdsInteractionPublishOptInEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdsInteractionPublishOptInEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AlertCategory.
     /// </summary>
     public class AlertCategory : ConstantClass
@@ -422,6 +674,176 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManifestServiceExcludeEventType.
+    /// </summary>
+    public class ManifestServiceExcludeEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIG_SECURITY_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType CONFIG_SECURITY_ERROR = new ManifestServiceExcludeEventType("CONFIG_SECURITY_ERROR");
+        /// <summary>
+        /// Constant CONFIG_SYNTAX_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType CONFIG_SYNTAX_ERROR = new ManifestServiceExcludeEventType("CONFIG_SYNTAX_ERROR");
+        /// <summary>
+        /// Constant CONNECTION_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType CONNECTION_ERROR = new ManifestServiceExcludeEventType("CONNECTION_ERROR");
+        /// <summary>
+        /// Constant ERROR_ADS_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_ADS_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_ADS_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_BUMPER_END_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_BUMPER_END_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_BUMPER_END_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_BUMPER_START_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_BUMPER_START_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_BUMPER_START_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_CDN_AD_SEGMENT_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_CDN_AD_SEGMENT_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_CDN_AD_SEGMENT_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_CDN_CONTENT_SEGMENT_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_CDN_CONTENT_SEGMENT_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_CDN_CONTENT_SEGMENT_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_LIVE_PRE_ROLL_ADS_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_LIVE_PRE_ROLL_ADS_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_LIVE_PRE_ROLL_ADS_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_ORIGIN_PREFIX_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_ORIGIN_PREFIX_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_ORIGIN_PREFIX_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_PROFILE_NAME_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_PROFILE_NAME_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_PROFILE_NAME_INTERPOLATION");
+        /// <summary>
+        /// Constant ERROR_SLATE_AD_URL_INTERPOLATION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ERROR_SLATE_AD_URL_INTERPOLATION = new ManifestServiceExcludeEventType("ERROR_SLATE_AD_URL_INTERPOLATION");
+        /// <summary>
+        /// Constant GENERATED_MANIFEST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType GENERATED_MANIFEST = new ManifestServiceExcludeEventType("GENERATED_MANIFEST");
+        /// <summary>
+        /// Constant HOST_DISALLOWED for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType HOST_DISALLOWED = new ManifestServiceExcludeEventType("HOST_DISALLOWED");
+        /// <summary>
+        /// Constant INCOMPATIBLE_HLS_VERSION for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType INCOMPATIBLE_HLS_VERSION = new ManifestServiceExcludeEventType("INCOMPATIBLE_HLS_VERSION");
+        /// <summary>
+        /// Constant INVALID_SINGLE_PERIOD_DASH_MANIFEST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType INVALID_SINGLE_PERIOD_DASH_MANIFEST = new ManifestServiceExcludeEventType("INVALID_SINGLE_PERIOD_DASH_MANIFEST");
+        /// <summary>
+        /// Constant IO_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType IO_ERROR = new ManifestServiceExcludeEventType("IO_ERROR");
+        /// <summary>
+        /// Constant LAST_PERIOD_MISSING_AUDIO for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType LAST_PERIOD_MISSING_AUDIO = new ManifestServiceExcludeEventType("LAST_PERIOD_MISSING_AUDIO");
+        /// <summary>
+        /// Constant LAST_PERIOD_MISSING_AUDIO_WARNING for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType LAST_PERIOD_MISSING_AUDIO_WARNING = new ManifestServiceExcludeEventType("LAST_PERIOD_MISSING_AUDIO_WARNING");
+        /// <summary>
+        /// Constant MANIFEST_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType MANIFEST_ERROR = new ManifestServiceExcludeEventType("MANIFEST_ERROR");
+        /// <summary>
+        /// Constant NO_MASTER_OR_MEDIA_PLAYLIST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType NO_MASTER_OR_MEDIA_PLAYLIST = new ManifestServiceExcludeEventType("NO_MASTER_OR_MEDIA_PLAYLIST");
+        /// <summary>
+        /// Constant NO_MASTER_PLAYLIST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType NO_MASTER_PLAYLIST = new ManifestServiceExcludeEventType("NO_MASTER_PLAYLIST");
+        /// <summary>
+        /// Constant NO_MEDIA_PLAYLIST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType NO_MEDIA_PLAYLIST = new ManifestServiceExcludeEventType("NO_MEDIA_PLAYLIST");
+        /// <summary>
+        /// Constant ORIGIN_MANIFEST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType ORIGIN_MANIFEST = new ManifestServiceExcludeEventType("ORIGIN_MANIFEST");
+        /// <summary>
+        /// Constant PARSING_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType PARSING_ERROR = new ManifestServiceExcludeEventType("PARSING_ERROR");
+        /// <summary>
+        /// Constant SCTE35_PARSING_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType SCTE35_PARSING_ERROR = new ManifestServiceExcludeEventType("SCTE35_PARSING_ERROR");
+        /// <summary>
+        /// Constant SESSION_INITIALIZED for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType SESSION_INITIALIZED = new ManifestServiceExcludeEventType("SESSION_INITIALIZED");
+        /// <summary>
+        /// Constant TIMEOUT_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType TIMEOUT_ERROR = new ManifestServiceExcludeEventType("TIMEOUT_ERROR");
+        /// <summary>
+        /// Constant TRACKING_RESPONSE for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType TRACKING_RESPONSE = new ManifestServiceExcludeEventType("TRACKING_RESPONSE");
+        /// <summary>
+        /// Constant UNKNOWN_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType UNKNOWN_ERROR = new ManifestServiceExcludeEventType("UNKNOWN_ERROR");
+        /// <summary>
+        /// Constant UNKNOWN_HOST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType UNKNOWN_HOST = new ManifestServiceExcludeEventType("UNKNOWN_HOST");
+        /// <summary>
+        /// Constant UNSUPPORTED_SINGLE_PERIOD_DASH_MANIFEST for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType UNSUPPORTED_SINGLE_PERIOD_DASH_MANIFEST = new ManifestServiceExcludeEventType("UNSUPPORTED_SINGLE_PERIOD_DASH_MANIFEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManifestServiceExcludeEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManifestServiceExcludeEventType FindValue(string value)
+        {
+            return FindValue<ManifestServiceExcludeEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManifestServiceExcludeEventType(string value)
         {
             return FindValue(value);
         }
