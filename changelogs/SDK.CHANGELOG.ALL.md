@@ -1,3 +1,17 @@
+### 4.0.0.0-preview.11 (2025-03-26 12:13 UTC)
+* DynamoDBStreams (4.0.0.0)
+	* Update documentation for code generated from DynamoDB Streams models
+* S3 (4.0.0.0)
+	* Fix a bug where `CopyObject` wasn't working with some special characters.
+* SecurityToken (4.0.0.0)
+	* Added async code paths for the SAML and Assume role credentials providers.
+* Core 4.0.0.0
+	* Add telemetry data for Credentials retrieval
+	* Fixed protocol test `RestJsonSerializesSparseNullMapValues` by adding proper null value handling in sparse map serialization
+	* Updated `Microsoft.Extensions.AI` to `9.3.0-preview.1.25161.3` in the `AWSSDK.Extensions.Bedrock.MEAI` package
+	* Updated credential providers to provide Async version for generating credentials.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.10 (2025-03-07 14:25 UTC)
 * CloudFront (4.0.0.0)
 	* Removed the AmazonCloudFrontUtil utility code that was no longer being used.
