@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Information about the container format of the media file.
+    /// The container of your media file. This information helps you understand the overall
+    /// structure and details of your media, including format, duration, and track layout.
     /// </summary>
     public partial class Container
     {
@@ -39,7 +40,7 @@ namespace Amazon.MediaConvert.Model
         private List<Track> _tracks = AWSConfigs.InitializeCollections ? new List<Track>() : null;
 
         /// <summary>
-        /// Gets and sets the property Duration. The duration of the media file in seconds.
+        /// Gets and sets the property Duration. The total duration of your media file, in seconds.
         /// </summary>
         public double Duration
         {
@@ -54,7 +55,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. The format of the container
+        /// Gets and sets the property Format. The format of your media file. For example: MP4,
+        /// QuickTime (MOV), Matroska (MKV), or WebM. Note that this will be blank if your media
+        /// file has a format that the MediaConvert Probe operation does not recognize.
         /// </summary>
         public Format Format
         {
@@ -69,7 +72,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tracks. List of Track objects.
+        /// Gets and sets the property Tracks. Details about each track (video, audio, or data)
+        /// in the media file.
         /// </summary>
         public List<Track> Tracks
         {

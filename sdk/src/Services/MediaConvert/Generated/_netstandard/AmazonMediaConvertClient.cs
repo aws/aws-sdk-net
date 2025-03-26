@@ -1565,8 +1565,10 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// The Probe operation analyzes the provided media file and returns comprehensive metadata
-        /// about its container format, tracks, and any encountered errors.
+        /// Use Probe to obtain detailed information about your input media files. Probe returns
+        /// a JSON that includes container, codec, frame rate, resolution, track count, audio
+        /// layout, captions, and more. You can use this information to learn more about your
+        /// media files, or to help make decisions while automating your transcoding workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Probe service method.</param>
         /// <param name="cancellationToken">

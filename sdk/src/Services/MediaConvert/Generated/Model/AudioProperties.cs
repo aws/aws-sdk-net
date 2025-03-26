@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Properties specific to audio tracks.
+    /// Details about the media file's audio track.
     /// </summary>
     public partial class AudioProperties
     {
@@ -57,7 +57,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BitRate. The bit rate of the audio track in bits per second.
+        /// Gets and sets the property BitRate. The bit rate of the audio track, in bits per second.
         /// </summary>
         public int BitRate
         {
@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Channels. The number of audio channels.
+        /// Gets and sets the property Channels. The number of audio channels in the audio track.
         /// </summary>
         public int Channels
         {
@@ -87,7 +87,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. the calculated frame rate of the asset.
+        /// Gets and sets the property FrameRate. The frame rate of the video or audio track.
         /// </summary>
         public FrameRate FrameRate
         {
@@ -102,7 +102,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. the language code of the track
+        /// Gets and sets the property LanguageCode. The language code of the audio track, in
+        /// three character ISO 639-3 format.
         /// </summary>
         public string LanguageCode
         {

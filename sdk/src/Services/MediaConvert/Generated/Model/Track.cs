@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// The track information such as codec, duration, etc.
+    /// Details about each track (video, audio, or data) in the media file.
     /// </summary>
     public partial class Track
     {
@@ -43,7 +43,7 @@ namespace Amazon.MediaConvert.Model
         private VideoProperties _videoProperties;
 
         /// <summary>
-        /// Gets and sets the property AudioProperties. Properties specific to audio tracks.
+        /// Gets and sets the property AudioProperties. Details about the media file's audio track.
         /// </summary>
         public AudioProperties AudioProperties
         {
@@ -58,7 +58,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Codec. The codec used for the track.
+        /// Gets and sets the property Codec. The codec of the audio or video track, or caption
+        /// format of the data track.
         /// </summary>
         public Codec Codec
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataProperties. Properties specific to data tracks.
+        /// Gets and sets the property DataProperties. Details about the media file's data track.
         /// </summary>
         public DataProperties DataProperties
         {
@@ -88,7 +89,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration. The duration of the track in seconds.
+        /// Gets and sets the property Duration. The duration of the track, in seconds.
         /// </summary>
         public double Duration
         {
@@ -103,7 +104,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Index. The index of the track.
+        /// Gets and sets the property Index. The unique index number of the track, starting at
+        /// 1.
         /// </summary>
         public int Index
         {
@@ -118,7 +120,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrackType. The type of the track (video, audio, or data).
+        /// Gets and sets the property TrackType. The type of track: video, audio, or data.
         /// </summary>
         public TrackType TrackType
         {
@@ -133,7 +135,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VideoProperties. Properties specific to video tracks.
+        /// Gets and sets the property VideoProperties. Details about the media file's video track.
         /// </summary>
         public VideoProperties VideoProperties
         {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Metadata about the file.
+    /// Metadata and other file information.
     /// </summary>
     public partial class Metadata
     {
@@ -40,7 +40,7 @@ namespace Amazon.MediaConvert.Model
         private string _mimeType;
 
         /// <summary>
-        /// Gets and sets the property ETag. The ETag of the file.
+        /// Gets and sets the property ETag. The entity tag (ETag) of the file.
         /// </summary>
         public string ETag
         {
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileSize. The size of the file in bytes.
+        /// Gets and sets the property FileSize. The size of the media file, in bytes.
         /// </summary>
         public long FileSize
         {
@@ -70,7 +70,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModified. The last modification time of the file.
+        /// Gets and sets the property LastModified. The last modification timestamp of the media
+        /// file, in Unix time.
         /// </summary>
         public DateTime LastModified
         {
@@ -85,7 +86,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MimeType. The MIME type of the file.
+        /// Gets and sets the property MimeType. The MIME type of the media file.
         /// </summary>
         public string MimeType
         {
