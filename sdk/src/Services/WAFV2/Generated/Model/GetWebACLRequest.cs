@@ -35,9 +35,29 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class GetWebACLRequest : AmazonWAFV2Request
     {
+        private string _arn;
         private string _id;
         private string _name;
         private Scope _scope;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the web ACL that you want to retrieve. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -46,7 +66,7 @@ namespace Amazon.WAFV2.Model
         /// and list commands. You provide it to operations like update and delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Min=1, Max=36)]
         public string Id
         {
             get { return this._id; }
@@ -66,7 +86,7 @@ namespace Amazon.WAFV2.Model
         /// it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -83,7 +103,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Scope. 
         /// <para>
         /// Specifies whether this is for a global resource type, such as a Amazon CloudFront
-        /// distribution. 
+        /// distribution. For an Amplify application, use <c>CLOUDFRONT</c>.
         /// </para>
         ///  
         /// <para>
@@ -101,7 +121,6 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Scope Scope
         {
             get { return this._scope; }

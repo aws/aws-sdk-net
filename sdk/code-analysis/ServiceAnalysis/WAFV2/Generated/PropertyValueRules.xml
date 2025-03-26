@@ -390,6 +390,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetWebACLRequest.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetWebACLRequest.Id</property>
     <min>1</min>
     <max>36</max>

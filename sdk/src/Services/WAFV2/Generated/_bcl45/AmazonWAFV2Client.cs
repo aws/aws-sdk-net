@@ -64,12 +64,13 @@ namespace Amazon.WAFV2
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to a protected resource. Protected resource types include Amazon
     /// CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync
-    /// GraphQL API, Amazon Cognito user pool, App Runner service, and Amazon Web Services
-    /// Verified Access instance. WAF also lets you control access to your content, to protect
-    /// the Amazon Web Services resource that WAF is monitoring. Based on conditions that
-    /// you specify, such as the IP addresses that requests originate from or the values of
-    /// query strings, the protected resource responds to requests with either the requested
-    /// content, an HTTP 403 status code (Forbidden), or with a custom response. 
+    /// GraphQL API, Amazon Cognito user pool, App Runner service, Amplify application, and
+    /// Amazon Web Services Verified Access instance. WAF also lets you control access to
+    /// your content, to protect the Amazon Web Services resource that WAF is monitoring.
+    /// Based on conditions that you specify, such as the IP addresses that requests originate
+    /// from or the values of query strings, the protected resource responds to requests with
+    /// either the requested content, an HTTP 403 status code (Forbidden), or with a custom
+    /// response. 
     /// </para>
     ///  
     /// <para>
@@ -92,8 +93,8 @@ namespace Amazon.WAFV2
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Amazon CloudFront, you must use the API endpoint listed for US East (N. Virginia):
-    /// us-east-1.
+    /// For Amazon CloudFront and Amplify, you must use the API endpoint listed for US East
+    /// (N. Virginia): us-east-1.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -1411,7 +1412,8 @@ namespace Amazon.WAFV2
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
         /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
+        /// user pool, App Runner service, Amplify application, and Amazon Web Services Verified
+        /// Access instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1540,7 +1542,8 @@ namespace Amazon.WAFV2
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
         /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
+        /// user pool, App Runner service, Amplify application, and Amazon Web Services Verified
+        /// Access instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -8666,7 +8669,8 @@ namespace Amazon.WAFV2
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
         /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
+        /// user pool, App Runner service, Amplify application, and Amazon Web Services Verified
+        /// Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -8846,7 +8850,8 @@ namespace Amazon.WAFV2
         /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
         /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
         /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-        /// user pool, App Runner service, and Amazon Web Services Verified Access instance. 
+        /// user pool, App Runner service, Amplify application, and Amazon Web Services Verified
+        /// Access instance. 
         /// </para>
         ///  
         /// <para>
