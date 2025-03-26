@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime
@@ -9,7 +7,7 @@ namespace Amazon.Runtime
     {
         public static void SetUserAgentAdditionOnRequest(AmazonWebServiceRequest request)
         {
-            request.UserAgentDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
+            ((IAmazonWebServiceRequest)request).UserAgentDetails.AddFeature(UserAgentFeatureId.PAGINATOR);
         }
     }
 }

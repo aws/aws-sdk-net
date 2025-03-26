@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -82,7 +82,7 @@ namespace AWSSDK.UnitTests
                 RequestChecksumCalculation = requestChecksumCalculation,
                 ResponseChecksumValidation = responseChecksumValidation
             };
-            var request = RunMockRequest(putObjectRequest, config, new PutObjectRequestMarshaller(), new PutObjectResponseUnmarshaller());
+            var request = RunMockRequest(putObjectRequest, config, PutObjectRequestMarshaller.Instance, PutObjectResponseUnmarshaller.Instance);
 
             request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
             Assert.IsNotNull(userAgentHeader);
@@ -92,6 +92,24 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(metricsSection.Contains(requestFeatureId));
             Assert.IsTrue(metricsSection.Contains(responseFeatureId));
             Assert.IsTrue(metricsSection.Contains(selectedChecksumFeatureId));
+        }
+
+        [TestMethod]
+        public void TestUserAgentAdditionForPaginators()
+        {
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = "test"
+            };
+            PaginatorUtils.SetUserAgentAdditionOnRequest(listObjectsV2Request);
+            var request = RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+
+            Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.PAGINATOR.Value));
         }
 
         [DataTestMethod]
@@ -152,7 +170,7 @@ namespace AWSSDK.UnitTests
                 ContentBody = "test-content",
             };
 
-            putObjectRequest.UserAgentDetails.AddUserAgentComponent(userAgentAddition);
+            ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails.AddUserAgentComponent(userAgentAddition);
 
             var config = new AmazonS3Config();
             var request = RunMockRequest(putObjectRequest, config, new PutObjectRequestMarshaller(), new PutObjectResponseUnmarshaller());
@@ -242,7 +260,13 @@ namespace AWSSDK.UnitTests
             var factory = new HttpHandlerTests.MockHttpRequestFactory();
             var httpHandler = new HttpHandler<Stream>(factory, new object());
 
-            var retryHandler = new RetryHandler(config.RetryMode == RequestRetryMode.Adaptive? new AmazonS3AdaptiveRetryPolicy(config) : new AmazonS3StandardRetryPolicy(config));
+            RetryPolicy retryPolicy = null;
+            if (config.RetryMode == RequestRetryMode.Adaptive)
+                retryPolicy = new AmazonS3AdaptiveRetryPolicy(config);
+            else
+                retryPolicy = new AmazonS3StandardRetryPolicy(config);
+
+            var retryHandler = new RetryHandler(retryPolicy);
 
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
             {
@@ -251,9 +275,9 @@ namespace AWSSDK.UnitTests
                 retryHandler,
                 new ChecksumHandler(),
                 new AmazonS3PostMarshallHandler(),
+                new AmazonS3EndpointResolver(),
                 new Marshaller(),
-                new AmazonS3PreMarshallHandler(),
-                new Unmarshaller(false)
+                new AmazonS3PreMarshallHandler()
             });
 
             var executionContext = new ExecutionContext(

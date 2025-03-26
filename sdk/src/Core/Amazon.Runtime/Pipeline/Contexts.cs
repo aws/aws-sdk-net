@@ -124,7 +124,7 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
-        public UserAgentDetails UserAgentDetails { get => OriginalRequest.UserAgentDetails; }
+        public UserAgentDetails UserAgentDetails { get => ((IAmazonWebServiceRequest)OriginalRequest).UserAgentDetails; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }

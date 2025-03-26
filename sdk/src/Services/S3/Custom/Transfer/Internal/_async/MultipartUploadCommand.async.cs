@@ -194,7 +194,7 @@ namespace Amazon.S3.Transfer.Internal
                 WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
                 if (wsArgs != null)
                 {
-                    wsArgs.Request.UserAgentDetails.AddUserAgentComponent("ft/s3-transfer md/UploadNonSeekableStream");
+                    ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("ft/s3-transfer md/UploadNonSeekableStream");
                 }
             };
 

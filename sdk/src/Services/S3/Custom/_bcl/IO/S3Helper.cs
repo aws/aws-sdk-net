@@ -45,7 +45,7 @@ namespace Amazon.S3.IO
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
-                wsArgs.Request.UserAgentDetails.AddUserAgentComponent("ft/FileIO");
+                ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("ft/FileIO");
             }
         }
 

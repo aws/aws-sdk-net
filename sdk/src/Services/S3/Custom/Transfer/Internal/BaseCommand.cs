@@ -70,8 +70,8 @@ namespace Amazon.S3.Transfer.Internal
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
-                wsArgs.Request.UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
-                wsArgs.Request.UserAgentDetails.AddUserAgentComponent("md/" + this.GetType().Name);
+                ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
+                ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("md/" + this.GetType().Name);
             }
         }
     }

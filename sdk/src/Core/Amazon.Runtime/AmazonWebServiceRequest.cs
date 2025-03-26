@@ -26,7 +26,7 @@ namespace Amazon.Runtime
         private readonly object _lock = new object();
 
         internal RequestEventHandler mBeforeRequestEvent;
-        public UserAgentDetails UserAgentDetails { get; set; } = new UserAgentDetails();
+        UserAgentDetails Amazon.Runtime.Internal.IAmazonWebServiceRequest.UserAgentDetails { get; } = new UserAgentDetails();
 
         internal event RequestEventHandler BeforeRequestEvent
         {
