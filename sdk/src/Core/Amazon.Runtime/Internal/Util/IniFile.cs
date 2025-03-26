@@ -595,6 +595,9 @@ namespace Amazon.Runtime.Internal.Util
                 nestedProperty = null;
                 if (TryParseProperty(Lines[lineNumber], out propertyName, out propertyValue))
                 {
+                    // Property keys are considered case-insensitive. Property keys SHOULD be stored lower-cased after parsing.
+                    propertyName = propertyName.ToLowerInvariant();
+
                     //if propertyValue is empty, that means that it is a continuation property
                     if (String.IsNullOrEmpty(propertyValue))
                     {
@@ -641,7 +644,9 @@ namespace Amazon.Runtime.Internal.Util
                 else if (StartsWithWhitespace(currentLine))
                 {
                     var separatorIndex = trimmedLine.IndexOf(keyValueSeparator, StringComparison.Ordinal);
-                    subpropertyName = trimmedLine.Substring(0, separatorIndex).Trim();
+
+                    // Property keys are considered case-insensitive. Property keys SHOULD be stored lower-cased after parsing.
+                    subpropertyName = trimmedLine.Substring(0, separatorIndex).ToLowerInvariant().Trim();
                     subpropertyValue = trimmedLine.Substring(separatorIndex + 1).Trim();
                     nestedProperty.SubpropertyKeys.Add(subpropertyName);
                     nestedProperty.SubpropertyValues.Add(subpropertyValue);
