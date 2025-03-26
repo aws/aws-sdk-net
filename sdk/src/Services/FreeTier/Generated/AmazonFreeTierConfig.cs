@@ -32,7 +32,7 @@ namespace Amazon.FreeTier
     public partial class AmazonFreeTierConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FreeTier", "3.7.400.120");
+            InternalSDKUtils.BuildUserAgentString("FreeTier", "3.7.400.121");
 
         private string _userAgent = UserAgentString;
         ///<summary>

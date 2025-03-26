@@ -1,3 +1,22 @@
+### 3.7.1010.0 (2025-03-26 19:20 UTC)
+* ARCZonalShift (3.7.401.0)
+	* Add new shiftType field for ARC zonal shifts.
+* DirectConnect (3.7.402.0)
+	* With this release, AWS Direct Connect allows you to tag your Direct Connect gateways. Tags are metadata that you can create and use to manage your Direct Connect gateways. For more information about tagging, see AWS Tagging Strategies.
+* MediaConvert (3.7.411.0)
+	* This release adds a configurable Quality Level setting for the top rendition of Auto ABR jobs
+* MediaTailor (3.7.403.0)
+	* Add support for log filtering which allow customers to filter out selected event types from logs.
+* Polly (3.7.403.0)
+	* Added support for the new voice - Jihye (ko-KR). Jihye is available as a Neural voice only.
+* RDS (3.7.410.59)
+	* Add note about the Availability Zone where RDS restores the DB cluster for the RestoreDBClusterToPointInTime operation.
+* WAFV2 (3.7.406.0)
+	* This release adds the ability to associate an AWS WAF v2 web ACL with an AWS Amplify App.
+* Core 3.7.402.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1009.0 (2025-03-25 20:24 UTC)
 * AWSMarketplaceMetering (3.7.401.0)
 	* This release enhances the BatchMeterUsage API to support new field CustomerAWSAccountId in request and response and making CustomerIdentifier optional. CustomerAWSAccountId or CustomerIdentifier must be provided in request but not both.
