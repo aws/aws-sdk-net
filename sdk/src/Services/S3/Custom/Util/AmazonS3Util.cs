@@ -231,9 +231,9 @@ namespace Amazon.S3.Util
         /// <returns>The MIME type for the extension, or text/plain</returns>
         public static string MimeTypeFromExtension(string ext)
         {
-            if (extensionToMime.ContainsKey(ext))
+            if (extensionToMime.TryGetValue(ext, out string mimeType))
             {
-                return extensionToMime[ext];
+                return mimeType;
             }
             else
             {
