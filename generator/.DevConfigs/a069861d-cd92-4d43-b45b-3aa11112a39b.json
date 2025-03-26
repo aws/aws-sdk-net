@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Generate and Send the User Agent String with Business Metrics"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

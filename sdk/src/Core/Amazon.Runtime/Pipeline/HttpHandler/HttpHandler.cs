@@ -66,6 +66,8 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
+                SetUserAgentHeader(executionContext.RequestContext);
+
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
@@ -182,6 +184,8 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
+                SetUserAgentHeader(executionContext.RequestContext);
+
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
@@ -481,6 +485,20 @@ namespace Amazon.Runtime.Internal
                 }
             }
             return originalStream;
+        }
+
+        private static void SetUserAgentHeader(IRequestContext requestContext)
+        {
+            var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
+
+            if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
+            {
+                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = metricsUserAgent;
+            }
+            else
+            {
+                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = metricsUserAgent;
+            }
         }
     }
 }

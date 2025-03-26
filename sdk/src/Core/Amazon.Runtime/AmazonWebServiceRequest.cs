@@ -14,7 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Text;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime
 {
@@ -26,7 +26,7 @@ namespace Amazon.Runtime
         private readonly object _lock = new object();
 
         internal RequestEventHandler mBeforeRequestEvent;
-        internal string UserAgentAddition { get; set; } = null;
+        public UserAgentDetails UserAgentDetails { get; set; } = new UserAgentDetails();
 
         internal event RequestEventHandler BeforeRequestEvent
         {

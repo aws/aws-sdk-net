@@ -21,7 +21,6 @@ using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace Amazon.Runtime
 {
@@ -31,7 +30,7 @@ namespace Amazon.Runtime
         string RequestName { get; }
         IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; }
         ResponseUnmarshaller Unmarshaller { get; }
-        InvokeOptionsBase Options { get; }        
+        InvokeOptionsBase Options { get; }
         RequestMetrics Metrics { get; }
         ISigner Signer { get; set; }
         BaseIdentity Identity { get; set; }
@@ -70,7 +69,7 @@ namespace Amazon.Runtime
     {
         AsyncCallback Callback { get; }
         object State { get; }
-    }    
+    }
 
     public interface IAsyncResponseContext : IResponseContext
     {
@@ -99,7 +98,7 @@ namespace Amazon.Runtime.Internal
         IDictionary<string, object> _contextAttributes;
 
         public RequestContext(bool enableMetric)
-            : this (enableMetric, null)
+            : this(enableMetric, null)
         {
         }
 
@@ -109,7 +108,6 @@ namespace Amazon.Runtime.Internal
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
             this.InvocationId = Guid.NewGuid();
-            this.UserAgentDetails = new UserAgentDetails();
         }
 
         public IRequest Request { get; set; }
@@ -123,10 +121,10 @@ namespace Amazon.Runtime.Internal
         public AmazonWebServiceRequest OriginalRequest { get; set; }
         public IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; set; }
         public ResponseUnmarshaller Unmarshaller { get; set; }
-        public InvokeOptionsBase Options { get; set; }        
+        public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
-        public UserAgentDetails UserAgentDetails { get; }
+        public UserAgentDetails UserAgentDetails { get => OriginalRequest.UserAgentDetails; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
@@ -165,11 +163,11 @@ namespace Amazon.Runtime.Internal
 
         public Guid InvocationId { get; private set; }
 
-        public IDictionary<string, object> ContextAttributes 
-        { 
+        public IDictionary<string, object> ContextAttributes
+        {
             get
             {
-                if(_contextAttributes == null)
+                if (_contextAttributes == null)
                 {
                     _contextAttributes = new Dictionary<string, object>();
                 }
@@ -181,7 +179,7 @@ namespace Amazon.Runtime.Internal
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext
     {
-        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner):
+        public AsyncRequestContext(bool enableMetrics, ISigner clientSigner) :
             base(enableMetrics, clientSigner)
         {
         }
@@ -192,7 +190,7 @@ namespace Amazon.Runtime.Internal
 
     public class ResponseContext : IResponseContext
     {
-        public AmazonWebServiceResponse Response { get; set; }        
+        public AmazonWebServiceResponse Response { get; set; }
         public IWebResponseData HttpResponse { get; set; }
     }
 

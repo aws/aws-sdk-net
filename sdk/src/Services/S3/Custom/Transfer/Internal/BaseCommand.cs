@@ -26,6 +26,7 @@ using System.Text;
 using Amazon.S3.Model;
 using Amazon.Runtime;
 using Amazon.Util;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -69,9 +70,8 @@ namespace Amazon.S3.Transfer.Internal
             WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
             if (wsArgs != null)
             {
-                string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                wsArgs.Headers[AWSSDKUtils.UserAgentHeader] =
-                    currentUserAgent + " ft/s3-transfer md/" + this.GetType().Name;
+                wsArgs.Request.UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
+                wsArgs.Request.UserAgentDetails.AddUserAgentComponent("md/" + this.GetType().Name);
             }
         }
     }
