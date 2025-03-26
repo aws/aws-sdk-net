@@ -156,7 +156,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public bool? BucketKeyEnabled
         {
-            get { return this._bucketKeyEnabled }
+            get { return this._bucketKeyEnabled; }
             set { this._bucketKeyEnabled = value; }
         }
 

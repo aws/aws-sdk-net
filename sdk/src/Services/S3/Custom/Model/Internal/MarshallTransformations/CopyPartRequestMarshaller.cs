@@ -54,10 +54,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfNoneMatchHeader, AWSSDKUtils.Join(copyPartRequest.ETagsToNotMatch));
 
             if (copyPartRequest.IsSetModifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, copyPartRequest.ModifiedSinceDate.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, copyPartRequest.ModifiedSinceDate.Value.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
 
             if (copyPartRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, copyPartRequest.UnmodifiedSinceDate.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, copyPartRequest.UnmodifiedSinceDate.Value.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
 
             if (copyPartRequest.IsSetServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, copyPartRequest.ServerSideEncryptionCustomerMethod);

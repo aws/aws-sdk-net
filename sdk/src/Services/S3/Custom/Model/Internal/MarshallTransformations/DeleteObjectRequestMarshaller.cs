@@ -64,7 +64,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(deleteObjectRequest.IfMatch));
 
             if (deleteObjectRequest.IsSetIfMatchLastModifiedTime())
-                request.Headers.Add(S3Constants.AmzHeaderIfMatchLastModifiedTime, S3Transforms.ToStringValue(deleteObjectRequest.IfMatchLastModifiedTime));
+                request.Headers.Add(S3Constants.AmzHeaderIfMatchLastModifiedTime, S3Transforms.ToStringValue(deleteObjectRequest.IfMatchLastModifiedTime.Value));
 
             if (deleteObjectRequest.IsSetIfMatchSize())
                 request.Headers.Add(S3Constants.AmzHeaderIfMatchSize, S3Transforms.ToStringValue(deleteObjectRequest.IfMatchSize));

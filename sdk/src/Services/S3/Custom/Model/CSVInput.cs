@@ -129,7 +129,7 @@ namespace Amazon.S3.Model
                 if (IsSetQuoteCharacter())
                     xmlWriter.WriteElementString("QuoteCharacter", S3Transforms.ToXmlStringValue(QuoteCharacter));
                 if (IsSetAllowQuotedRecordDelimiter())
-                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", S3Transforms.ToXmlStringValue(AllowQuotedRecordDelimiter));
+                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", S3Transforms.ToXmlStringValue(AllowQuotedRecordDelimiter.Value));
             }
             xmlWriter.WriteEndElement();
         }
