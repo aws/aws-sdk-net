@@ -41,6 +41,7 @@ namespace Amazon.DirectConnect.Model
         private DirectConnectGatewayState _directConnectGatewayState;
         private string _ownerAccount;
         private string _stateChangeError;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AmazonSideAsn. 
@@ -165,6 +166,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetStateChangeError()
         {
             return this._stateChangeError != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Information about a tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

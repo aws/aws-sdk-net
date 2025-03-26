@@ -518,6 +518,11 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>testing</c>: A virtual interface is in this state immediately after calling <a>StartBgpFailoverTest</a>
+        /// and remains in this state during the duration of the test.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>deleting</c>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a>
         /// until it can no longer forward traffic.
         /// </para>

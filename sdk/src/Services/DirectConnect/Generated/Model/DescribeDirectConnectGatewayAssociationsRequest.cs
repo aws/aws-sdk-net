@@ -77,6 +77,24 @@ namespace Amazon.DirectConnect.Model
     /// The response contains the association between the Direct Connect gateway and transit
     /// gateway.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A Direct Connect gateway and a virtual private gateway
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the association between the Direct Connect gateway and virtual
+    /// private gateway.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A Direct Connect gateway association to a Cloud WAN core network
+    /// </para>
+    ///  
+    /// <para>
+    /// The response contains the Cloud WAN core network ID that the Direct Connect gateway
+    /// is associated to.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsRequest : AmazonDirectConnectRequest

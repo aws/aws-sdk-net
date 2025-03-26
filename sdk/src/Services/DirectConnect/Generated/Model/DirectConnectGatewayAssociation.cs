@@ -68,7 +68,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AssociatedCoreNetwork. 
         /// <para>
-        /// The ID of the Cloud WAN core network associated with the Direct Connect attachment.
+        /// The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.
         /// </para>
         /// </summary>
         public AssociatedCoreNetwork AssociatedCoreNetwork
