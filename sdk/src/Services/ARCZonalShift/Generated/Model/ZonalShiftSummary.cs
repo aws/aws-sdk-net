@@ -31,15 +31,15 @@ namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
     /// Lists information about zonal shifts in Amazon Route 53 Application Recovery Controller,
-    /// including zonal shifts that you start yourself and zonal shifts that Route 53 ARC
-    /// starts on your behalf for practice runs with zonal autoshift.
+    /// including zonal shifts that you start yourself and zonal shifts that ARC starts on
+    /// your behalf for practice runs with zonal autoshift.
     /// 
     ///  
     /// <para>
     /// Zonal shifts are temporary, including customer-initiated zonal shifts and the zonal
-    /// autoshift practice run zonal shifts that Route 53 ARC starts weekly, on your behalf.
-    /// A zonal shift that a customer starts can be active for up to three days (72 hours).
-    /// A practice run zonal shift has a 30 minute duration.
+    /// autoshift practice run zonal shifts that ARC starts weekly, on your behalf. A zonal
+    /// shift that a customer starts can be active for up to three days (72 hours). A practice
+    /// run zonal shift has a 30 minute duration.
     /// </para>
     /// </summary>
     public partial class ZonalShiftSummary
@@ -49,6 +49,7 @@ namespace Amazon.ARCZonalShift.Model
         private DateTime? _expiryTime;
         private PracticeRunOutcome _practiceRunOutcome;
         private string _resourceIdentifier;
+        private ShiftType _shiftType;
         private DateTime? _startTime;
         private ZonalShiftStatus _status;
         private string _zonalShiftId;
@@ -107,10 +108,9 @@ namespace Amazon.ARCZonalShift.Model
         ///  
         /// <para>
         /// When you start a zonal shift, you specify how long you want it to be active, which
-        /// Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal
-        /// shift when you're ready to restore traffic to the Availability Zone, or just wait
-        /// for it to expire. Or you can update the zonal shift to specify another length of time
-        /// to expire in.
+        /// ARC converts to an expiry time (expiration time). You can cancel a zonal shift when
+        /// you're ready to restore traffic to the Availability Zone, or just wait for it to expire.
+        /// Or you can update the zonal shift to specify another length of time to expire in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -195,6 +195,24 @@ namespace Amazon.ARCZonalShift.Model
         internal bool IsSetResourceIdentifier()
         {
             return this._resourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShiftType. 
+        /// <para>
+        /// Defines the zonal shift type.
+        /// </para>
+        /// </summary>
+        public ShiftType ShiftType
+        {
+            get { return this._shiftType; }
+            set { this._shiftType = value; }
+        }
+
+        // Check to see if ShiftType property is set
+        internal bool IsSetShiftType()
+        {
+            return this._shiftType != null;
         }
 
         /// <summary>

@@ -102,6 +102,12 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("shiftType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShiftType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

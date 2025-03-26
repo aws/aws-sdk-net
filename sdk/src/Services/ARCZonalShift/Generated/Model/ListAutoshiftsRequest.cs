@@ -31,9 +31,9 @@ namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAutoshifts operation.
-    /// Returns a list of autoshifts for an Amazon Web Services Region. By default, the call
-    /// returns only <c>ACTIVE</c> autoshifts. Optionally, you can specify the <c>status</c>
-    /// parameter to return <c>COMPLETED</c> autoshifts.
+    /// Returns the autoshifts for an Amazon Web Services Region. By default, the call returns
+    /// only <c>ACTIVE</c> autoshifts. Optionally, you can specify the <c>status</c> parameter
+    /// to return <c>COMPLETED</c> autoshifts.
     /// </summary>
     public partial class ListAutoshiftsRequest : AmazonARCZonalShiftRequest
     {
@@ -64,9 +64,9 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// a <c>nextToken</c> response in the previous request. If you did, it indicates that
         /// more output is available. Set this parameter to the value provided by the previous
-        /// call's <c>NextToken</c> response to request the next page of results.
+        /// call's <c>nextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

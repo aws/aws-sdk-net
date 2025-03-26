@@ -95,10 +95,9 @@ namespace Amazon.ARCZonalShift.Model
         ///  
         /// <para>
         /// When you start a zonal shift, you specify how long you want it to be active, which
-        /// Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal
-        /// shift when you're ready to restore traffic to the Availability Zone, or just wait
-        /// for it to expire. Or you can update the zonal shift to specify another length of time
-        /// to expire in.
+        /// ARC converts to an expiry time (expiration time). You can cancel a zonal shift when
+        /// you're ready to restore traffic to the Availability Zone, or just wait for it to expire.
+        /// Or you can update the zonal shift to specify another length of time to expire in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
