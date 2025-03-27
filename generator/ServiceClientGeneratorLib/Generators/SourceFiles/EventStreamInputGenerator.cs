@@ -104,7 +104,8 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             this.Write(" event through the request stream to the AWS service.\r\n        /// </summary>\r\n  " +
-                    "      /// <param name=\"evnt\"></param>\r\n        public async Task Write");
+                    "      /// <param name=\"evnt\"></param>\r\n        public async System.Threading.Tas" +
+                    "ks.Task Write");
             
             #line 34 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));

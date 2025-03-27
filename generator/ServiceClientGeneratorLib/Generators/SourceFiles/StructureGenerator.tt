@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 
@@ -100,21 +99,20 @@ namespace <#=this.Config.Namespace#>.Model
     }
 #>
 <#
-    bool hasStreamingMember = this.Structure?.Members.Any(member => member.Shape.IsStreaming) ?? false;
-        
     bool structureContainsEventPayload = this.Structure?.Members.Any(member => member.IsEventPayload) ?? false;
     Member payloadMember = this.Structure?.GetExplicitEventPayloadMember();
     if(structureContainsEventPayload)
     {
         payloadMember = this.Structure?.Members.Single(member => member.IsEventPayload);
     }
-    if (structureIsNotEventStream && this.StructureType == StructureType.Response && hasStreamingMember) 
-        {
+
+    if (structureIsNotEventStream && this.StructureType == StructureType.Response && this.Structure.Members.Any(member => member.Shape.IsStreaming)) 
+    {
 #>
     public partial class <#=this.ClassName#><#=this.BaseClassString#>, IDisposable
     {
 <#
-        }
+    }
     else 
     {
 #>
@@ -124,7 +122,14 @@ namespace <#=this.Config.Namespace#>.Model
         if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamInput)
         {
 #>
-    public partial class <#=this.ClassName#><#=this.BaseClassString#>, Amazon.Runtime.EventStreams.IEventInputStreamResponse
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, Amazon.Runtime.EventStreams.IEventInputStreamResponse, IDisposable
+    {
+<#
+        }
+        else if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamOutput)
+        {
+#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, IDisposable
     {
 <#
         }
@@ -460,7 +465,7 @@ namespace <#=this.Config.Namespace#>.Model
 #pragma warning restore CA1033
 <#
         }
-        if (this.StructureType == StructureType.Response && hasStreamingMember) 
+        if (this.Structure != null && this.StructureType == StructureType.Response && this.Structure.Members.Any(member => member.Shape.IsStreaming || member.Shape.IsEventStream)) 
         {
 #>
         #region Dispose Pattern
@@ -489,9 +494,14 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                 if (this.Structure != null) 
                 {
-                    foreach (var member in this.Structure.Members) 
+                    var structureMembers = this.Structure.Members;
+                    if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
                     {
-                        if (member.Shape.IsStreaming) 
+                        structureMembers = structureMembers.Concat(new Member[]{this.Operation.RequestEventStreamingMember}).ToList();
+                    }
+                    foreach (var member in structureMembers) 
+                    {
+                        if (member.Shape.IsStreaming || member.Shape.IsEventStream) 
                         {
 #>
                 this.<#=member.VariableName#>?.Dispose();

@@ -31,7 +31,7 @@
         /// Write an <#=member.ModelShape.Name#> event through the request stream to the AWS service.
         /// </summary>
         /// <param name="evnt"></param>
-        public async Task Write<#=member.ModelShape.Name#>(<#=member.ModelShape.Name#> evnt)
+        public async System.Threading.Tasks.Task Write<#=member.ModelShape.Name#>(<#=member.ModelShape.Name#> evnt)
         {
             var memoryStream = new MemoryStream();
             var context = CreateJsonMarshallerContext(memoryStream);
