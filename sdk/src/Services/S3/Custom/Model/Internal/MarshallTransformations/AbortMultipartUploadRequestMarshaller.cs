@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(abortMultipartUploadRequest.ExpectedBucketOwner));
 
             if (abortMultipartUploadRequest.IsSetIfMatchInitiatedTime())
-                request.Headers.Add(S3Constants.AmzHeaderIfMatchInitiatedTime, S3Transforms.ToStringValue(abortMultipartUploadRequest.IfMatchInitiatedTime));
+                request.Headers.Add(S3Constants.AmzHeaderIfMatchInitiatedTime, S3Transforms.ToStringValue(abortMultipartUploadRequest.IfMatchInitiatedTime.Value));
 
             if (string.IsNullOrEmpty(abortMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "AbortMultipartUploadRequest.BucketName");

@@ -239,6 +239,10 @@ namespace Amazon.CleanRooms
     {
 
         /// <summary>
+        /// Constant PYSPARK_1_0 for AnalysisFormat
+        /// </summary>
+        public static readonly AnalysisFormat PYSPARK_1_0 = new AnalysisFormat("PYSPARK_1_0");
+        /// <summary>
         /// Constant SQL for AnalysisFormat
         /// </summary>
         public static readonly AnalysisFormat SQL = new AnalysisFormat("SQL");
@@ -285,9 +289,17 @@ namespace Amazon.CleanRooms
     {
 
         /// <summary>
+        /// Constant DIRECT_JOB for AnalysisMethod
+        /// </summary>
+        public static readonly AnalysisMethod DIRECT_JOB = new AnalysisMethod("DIRECT_JOB");
+        /// <summary>
         /// Constant DIRECT_QUERY for AnalysisMethod
         /// </summary>
         public static readonly AnalysisMethod DIRECT_QUERY = new AnalysisMethod("DIRECT_QUERY");
+        /// <summary>
+        /// Constant MULTIPLE for AnalysisMethod
+        /// </summary>
+        public static readonly AnalysisMethod MULTIPLE = new AnalysisMethod("MULTIPLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -576,6 +588,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AnalyticsEngine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CollaborationJobLogStatus.
+    /// </summary>
+    public class CollaborationJobLogStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CollaborationJobLogStatus
+        /// </summary>
+        public static readonly CollaborationJobLogStatus DISABLED = new CollaborationJobLogStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CollaborationJobLogStatus
+        /// </summary>
+        public static readonly CollaborationJobLogStatus ENABLED = new CollaborationJobLogStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CollaborationJobLogStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CollaborationJobLogStatus FindValue(string value)
+        {
+            return FindValue<CollaborationJobLogStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CollaborationJobLogStatus(string value)
         {
             return FindValue(value);
         }
@@ -1116,6 +1178,10 @@ namespace Amazon.CleanRooms
         /// Constant CAN_RECEIVE_RESULTS for MemberAbility
         /// </summary>
         public static readonly MemberAbility CAN_RECEIVE_RESULTS = new MemberAbility("CAN_RECEIVE_RESULTS");
+        /// <summary>
+        /// Constant CAN_RUN_JOB for MemberAbility
+        /// </summary>
+        public static readonly MemberAbility CAN_RUN_JOB = new MemberAbility("CAN_RUN_JOB");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1146,6 +1212,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MemberAbility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MembershipJobLogStatus.
+    /// </summary>
+    public class MembershipJobLogStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for MembershipJobLogStatus
+        /// </summary>
+        public static readonly MembershipJobLogStatus DISABLED = new MembershipJobLogStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for MembershipJobLogStatus
+        /// </summary>
+        public static readonly MembershipJobLogStatus ENABLED = new MembershipJobLogStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MembershipJobLogStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MembershipJobLogStatus FindValue(string value)
+        {
+            return FindValue<MembershipJobLogStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MembershipJobLogStatus(string value)
         {
             return FindValue(value);
         }
@@ -1558,6 +1674,164 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrivacyBudgetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectedJobAnalysisType.
+    /// </summary>
+    public class ProtectedJobAnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT_ANALYSIS for ProtectedJobAnalysisType
+        /// </summary>
+        public static readonly ProtectedJobAnalysisType DIRECT_ANALYSIS = new ProtectedJobAnalysisType("DIRECT_ANALYSIS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectedJobAnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectedJobAnalysisType FindValue(string value)
+        {
+            return FindValue<ProtectedJobAnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectedJobAnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectedJobStatus.
+    /// </summary>
+    public class ProtectedJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus CANCELLED = new ProtectedJobStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus CANCELLING = new ProtectedJobStatus("CANCELLING");
+        /// <summary>
+        /// Constant FAILED for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus FAILED = new ProtectedJobStatus("FAILED");
+        /// <summary>
+        /// Constant STARTED for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus STARTED = new ProtectedJobStatus("STARTED");
+        /// <summary>
+        /// Constant SUBMITTED for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus SUBMITTED = new ProtectedJobStatus("SUBMITTED");
+        /// <summary>
+        /// Constant SUCCESS for ProtectedJobStatus
+        /// </summary>
+        public static readonly ProtectedJobStatus SUCCESS = new ProtectedJobStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectedJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectedJobStatus FindValue(string value)
+        {
+            return FindValue<ProtectedJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectedJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectedJobType.
+    /// </summary>
+    public class ProtectedJobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PYSPARK for ProtectedJobType
+        /// </summary>
+        public static readonly ProtectedJobType PYSPARK = new ProtectedJobType("PYSPARK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectedJobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectedJobType FindValue(string value)
+        {
+            return FindValue<ProtectedJobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectedJobType(string value)
         {
             return FindValue(value);
         }
@@ -2152,6 +2426,102 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchemaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelectedAnalysisMethod.
+    /// </summary>
+    public class SelectedAnalysisMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT_JOB for SelectedAnalysisMethod
+        /// </summary>
+        public static readonly SelectedAnalysisMethod DIRECT_JOB = new SelectedAnalysisMethod("DIRECT_JOB");
+        /// <summary>
+        /// Constant DIRECT_QUERY for SelectedAnalysisMethod
+        /// </summary>
+        public static readonly SelectedAnalysisMethod DIRECT_QUERY = new SelectedAnalysisMethod("DIRECT_QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelectedAnalysisMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelectedAnalysisMethod FindValue(string value)
+        {
+            return FindValue<SelectedAnalysisMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelectedAnalysisMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetProtectedJobStatus.
+    /// </summary>
+    public class TargetProtectedJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for TargetProtectedJobStatus
+        /// </summary>
+        public static readonly TargetProtectedJobStatus CANCELLED = new TargetProtectedJobStatus("CANCELLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetProtectedJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetProtectedJobStatus FindValue(string value)
+        {
+            return FindValue<TargetProtectedJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetProtectedJobStatus(string value)
         {
             return FindValue(value);
         }

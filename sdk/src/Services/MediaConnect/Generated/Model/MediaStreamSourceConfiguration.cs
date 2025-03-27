@@ -39,10 +39,13 @@ namespace Amazon.MediaConnect.Model
         private string _mediaStreamName;
 
         /// <summary>
-        /// Gets and sets the property EncodingName. The format that was used to encode the data.
-        /// For ancillary data streams, set the encoding name to smpte291. For audio streams,
-        /// set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw.
-        /// For video, JPEG XS streams, set the encoding name to jxsv.
+        /// Gets and sets the property EncodingName. 
+        /// <para>
+        ///  The format that was used to encode the data. For ancillary data streams, set the
+        /// encoding name to smpte291. For audio streams, set the encoding name to pcm. For video,
+        /// 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding
+        /// name to jxsv. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EncodingName EncodingName
@@ -58,8 +61,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputConfigurations. The transport parameters that are
-        /// associated with an incoming media stream.
+        /// Gets and sets the property InputConfigurations. 
+        /// <para>
+        /// The media streams that you want to associate with the source. 
+        /// </para>
         /// </summary>
         public List<InputConfiguration> InputConfigurations
         {
@@ -74,7 +79,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaStreamName. The name of the media stream.
+        /// Gets and sets the property MediaStreamName. 
+        /// <para>
+        /// A name that helps you distinguish one media stream from another. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string MediaStreamName

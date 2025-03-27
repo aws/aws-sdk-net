@@ -40,8 +40,10 @@ namespace Amazon.MediaConnect.Model
         private TransportMediaInfo _transportMediaInfo;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that DescribeFlowSourceMetadata
-        /// was performed on.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -56,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Messages. Provides a status code and message regarding
-        /// issues found with the flow source metadata.
+        /// Gets and sets the property Messages. 
+        /// <para>
+        ///  Provides a status code and message regarding issues found with the flow source metadata.
+        /// </para>
         /// </summary>
         public List<MessageDetail> Messages
         {
@@ -72,8 +76,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. The timestamp of the most recent change in metadata
-        /// for this flow’s source.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        ///  The timestamp of the most recent change in metadata for this flow’s source.
+        /// </para>
         /// </summary>
         public DateTime? Timestamp
         {
@@ -88,7 +94,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransportMediaInfo.
+        /// Gets and sets the property TransportMediaInfo. 
+        /// <para>
+        ///  Information about the flow's transport media. 
+        /// </para>
         /// </summary>
         public TransportMediaInfo TransportMediaInfo
         {

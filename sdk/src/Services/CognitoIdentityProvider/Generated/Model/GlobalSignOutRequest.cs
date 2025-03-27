@@ -87,7 +87,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A valid access token that Amazon Cognito issued to the user who you want to sign out.
+        /// A valid access token that Amazon Cognito issued to the currently signed-in user. Must
+        /// include a scope claim for <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

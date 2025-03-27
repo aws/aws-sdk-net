@@ -43,9 +43,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailMfaConfiguration. 
         /// <para>
-        /// Shows user pool email message configuration for MFA. Includes the subject and body
-        /// of the email message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
+        /// Shows configuration for user pool email message MFA and sign-in with one-time passwords
+        /// (OTPs). Includes the subject and body of the email message template for sign-in and
+        /// MFA messages. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
         /// </para>
         /// </summary>
         public EmailMfaConfigType EmailMfaConfiguration
@@ -63,22 +64,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// The multi-factor authentication (MFA) configuration. Valid values include:
+        /// Displays the state of multi-factor authentication (MFA) as on, off, or optional. When
+        /// <c>ON</c>, all users must set up MFA before they can sign in. When <c>OPTIONAL</c>,
+        /// your application must make a client-side determination of whether a user wants to
+        /// register an MFA device. For user pools with adaptive authentication with threat protection,
+        /// choose <c>OPTIONAL</c>.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <c>OFF</c> MFA won't be used for any users.
+        /// When <c>MfaConfiguration</c> is <c>OPTIONAL</c>, managed login doesn't automatically
+        /// prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses
+        /// and in managed login for users who have chosen and configured a preferred MFA factor.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ON</c> MFA is required for all users to sign in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>OPTIONAL</c> MFA will be required only for individual users who have an MFA factor
-        /// activated.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {
@@ -95,7 +92,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsMfaConfiguration. 
         /// <para>
-        /// Shows user pool SMS message configuration for MFA. Includes the message template and
+        /// Shows user pool configuration for SMS message MFA. Includes the message template and
         /// the SMS message sending configuration for Amazon SNS.
         /// </para>
         /// </summary>
@@ -133,8 +130,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property WebAuthnConfiguration. 
         /// <para>
-        /// Shows user pool configuration for MFA with passkeys from biometric devices and security
-        /// keys.
+        /// Shows user pool configuration for sign-in with passkey authenticators like biometric
+        /// devices and security keys. Passkeys are not eligible MFA factors. They are instead
+        /// an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+        /// authentication</a>, or the <c>USER_AUTH</c> flow.
         /// </para>
         /// </summary>
         public WebAuthnConfigurationType WebAuthnConfiguration

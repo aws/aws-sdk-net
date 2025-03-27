@@ -31,13 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// The settings for automated responses and notification templates for adaptive authentication
-    /// with advanced security features.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
-    /// </para>
+    /// with threat protection features.
     /// </summary>
     public partial class AccountTakeoverRiskConfigurationType
     {
@@ -48,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// A list of account-takeover actions for each level of risk that Amazon Cognito might
-        /// assess with advanced security features.
+        /// assess with threat protection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,10 +61,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NotifyConfiguration. 
         /// <para>
-        /// The settings for composing and sending an email message when advanced security features
-        /// assesses a risk level with adaptive authentication. When you choose to notify users
-        /// in <c>AccountTakeoverRiskConfiguration</c>, Amazon Cognito sends an email message
-        /// using the method and template that you set with this data type.
+        /// The settings for composing and sending an email message when threat protection assesses
+        /// a risk level with adaptive authentication. When you choose to notify users in <c>AccountTakeoverRiskConfiguration</c>,
+        /// Amazon Cognito sends an email message using the method and template that you set with
+        /// this data type.
         /// </para>
         /// </summary>
         public NotifyConfigurationType NotifyConfiguration

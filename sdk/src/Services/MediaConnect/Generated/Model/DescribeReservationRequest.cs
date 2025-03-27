@@ -40,7 +40,10 @@ namespace Amazon.MediaConnect.Model
         private string _reservationArn;
 
         /// <summary>
-        /// Gets and sets the property ReservationArn. The Amazon Resource Name (ARN) of the reservation.
+        /// Gets and sets the property ReservationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the offering. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReservationArn

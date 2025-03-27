@@ -31,8 +31,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMonitoringSubscription operation.
-    /// Enables additional CloudWatch metrics for the specified CloudFront distribution. The
-    /// additional metrics incur an additional cost.
+    /// Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront
+    /// distribution. The additional metrics incur an additional cost.
     /// 
     ///  
     /// <para>

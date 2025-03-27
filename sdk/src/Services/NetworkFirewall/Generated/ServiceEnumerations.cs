@@ -299,6 +299,114 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type FlowOperationStatus.
+    /// </summary>
+    public class FlowOperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus COMPLETED = new FlowOperationStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus COMPLETED_WITH_ERRORS = new FlowOperationStatus("COMPLETED_WITH_ERRORS");
+        /// <summary>
+        /// Constant FAILED for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus FAILED = new FlowOperationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for FlowOperationStatus
+        /// </summary>
+        public static readonly FlowOperationStatus IN_PROGRESS = new FlowOperationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowOperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowOperationStatus FindValue(string value)
+        {
+            return FindValue<FlowOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlowOperationType.
+    /// </summary>
+    public class FlowOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLOW_CAPTURE for FlowOperationType
+        /// </summary>
+        public static readonly FlowOperationType FLOW_CAPTURE = new FlowOperationType("FLOW_CAPTURE");
+        /// <summary>
+        /// Constant FLOW_FLUSH for FlowOperationType
+        /// </summary>
+        public static readonly FlowOperationType FLOW_FLUSH = new FlowOperationType("FLOW_FLUSH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowOperationType FindValue(string value)
+        {
+            return FindValue<FlowOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeneratedRulesType.
     /// </summary>
     public class GeneratedRulesType : ConstantClass

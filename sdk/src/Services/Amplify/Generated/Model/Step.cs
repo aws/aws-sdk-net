@@ -49,7 +49,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ArtifactsUrl. 
         /// <para>
-        ///  The URL to the artifact for the execution step. 
+        ///  The URL to the build artifact for the execution step. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

@@ -34,8 +34,27 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SingleSignOn
     {
+        private string _idcInstanceArn;
         private AuthType _type;
         private UserAssignment _userAssignment;
+
+        /// <summary>
+        /// Gets and sets the property IdcInstanceArn. 
+        /// <para>
+        /// The ARN of the IDC instance.
+        /// </para>
+        /// </summary>
+        public string IdcInstanceArn
+        {
+            get { return this._idcInstanceArn; }
+            set { this._idcInstanceArn = value; }
+        }
+
+        // Check to see if IdcInstanceArn property is set
+        internal bool IsSetIdcInstanceArn()
+        {
+            return this._idcInstanceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

@@ -110,6 +110,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalysisSchemaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");

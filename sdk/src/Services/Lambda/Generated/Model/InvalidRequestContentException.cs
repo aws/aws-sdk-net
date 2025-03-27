@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The request body could not be parsed as JSON.
+    /// The request body could not be parsed as JSON, or a request header is invalid. For
+    /// example, the 'x-amzn-RequestId' header is not a valid UUID string.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

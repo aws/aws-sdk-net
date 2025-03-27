@@ -280,10 +280,9 @@ namespace Amazon.Runtime.Internal.Auth
             headers.Remove(HeaderKeys.AuthorizationHeader);
             headers.Remove(HeaderKeys.XAmzContentSha256Header);
 
-            if (headers.ContainsKey(HeaderKeys.XAmzDecodedContentLengthHeader))
+            if (headers.TryGetValue(HeaderKeys.XAmzDecodedContentLengthHeader, out string decodedContentLength))
             {
-                headers[HeaderKeys.ContentLengthHeader] =
-                    headers[HeaderKeys.XAmzDecodedContentLengthHeader];
+                headers[HeaderKeys.ContentLengthHeader] = decodedContentLength;
                 headers.Remove(HeaderKeys.XAmzDecodedContentLengthHeader);
             }
         }
@@ -507,13 +506,13 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 computedContentHash = chunkedBodyHash;
 
-                if (request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+                if (request.Headers.TryGetValue(HeaderKeys.ContentLengthHeader, out string contentLength))
                 {
                     // Set X-Amz-Decoded-Content-Length with the true size of the data
-                    request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = request.Headers[HeaderKeys.ContentLengthHeader];
+                    request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = contentLength;
 
                     // Substitute the originally declared content length with the inflated length due to chunking metadata and/or trailing headers
-                    var originalContentLength = long.Parse(request.Headers[HeaderKeys.ContentLengthHeader], CultureInfo.InvariantCulture);
+                    var originalContentLength = long.Parse(contentLength, CultureInfo.InvariantCulture);
                     request.Headers[HeaderKeys.ContentLengthHeader]
                         = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength, signatureLength, request.TrailingHeaders, request.SelectedChecksum).ToString(CultureInfo.InvariantCulture);
                 }

@@ -46,6 +46,8 @@ namespace Amazon.WAFV2.Model
         private RateLimitHeader _header;
         private RateLimitHTTPMethod _httpMethod;
         private RateLimitIP _ip;
+        private RateLimitJA3Fingerprint _ja3Fingerprint;
+        private RateLimitJA4Fingerprint _ja4Fingerprint;
         private RateLimitLabelNamespace _labelNamespace;
         private RateLimitQueryArgument _queryArgument;
         private RateLimitQueryString _queryString;
@@ -165,6 +167,44 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetIP()
         {
             return this._ip != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JA3Fingerprint. 
+        /// <para>
+        ///  Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint
+        /// as your custom key, then each value fully defines an aggregation instance. 
+        /// </para>
+        /// </summary>
+        public RateLimitJA3Fingerprint JA3Fingerprint
+        {
+            get { return this._ja3Fingerprint; }
+            set { this._ja3Fingerprint = value; }
+        }
+
+        // Check to see if JA3Fingerprint property is set
+        internal bool IsSetJA3Fingerprint()
+        {
+            return this._ja3Fingerprint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JA4Fingerprint. 
+        /// <para>
+        /// Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint
+        /// as your custom key, then each value fully defines an aggregation instance. 
+        /// </para>
+        /// </summary>
+        public RateLimitJA4Fingerprint JA4Fingerprint
+        {
+            get { return this._ja4Fingerprint; }
+            set { this._ja4Fingerprint = value; }
+        }
+
+        // Check to see if JA4Fingerprint property is set
+        internal bool IsSetJA4Fingerprint()
+        {
+            return this._ja4Fingerprint != null;
         }
 
         /// <summary>

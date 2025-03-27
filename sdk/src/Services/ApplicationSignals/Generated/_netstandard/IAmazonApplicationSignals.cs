@@ -117,6 +117,33 @@ namespace Amazon.ApplicationSignals
 
         #endregion
                 
+        #region  BatchUpdateExclusionWindows
+
+
+
+        /// <summary>
+        /// Add or remove time window exclusions for one or more Service Level Objectives (SLOs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateExclusionWindows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateExclusionWindows service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
+        Task<BatchUpdateExclusionWindowsResponse> BatchUpdateExclusionWindowsAsync(BatchUpdateExclusionWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateServiceLevelObjective
 
 
@@ -395,6 +422,33 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceDependents">REST API Reference for ListServiceDependents Operation</seealso>
         Task<ListServiceDependentsResponse> ListServiceDependentsAsync(ListServiceDependentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListServiceLevelObjectiveExclusionWindows
+
+
+
+        /// <summary>
+        /// Retrieves all exclusion windows configured for a specific SLO.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceLevelObjectiveExclusionWindows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceLevelObjectiveExclusionWindows service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectiveExclusionWindows">REST API Reference for ListServiceLevelObjectiveExclusionWindows Operation</seealso>
+        Task<ListServiceLevelObjectiveExclusionWindowsResponse> ListServiceLevelObjectiveExclusionWindowsAsync(ListServiceLevelObjectiveExclusionWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

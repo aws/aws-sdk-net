@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
-    /// Four types of control parameters are supported.
+    /// Five types of control parameters are supported.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -71,6 +71,26 @@ namespace Amazon.ControlCatalog.Model
     ///  
     /// <para>
     /// Example: <c>["arn:aws:s3:::my-bucket-name"]</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ExemptAssumeRoot</b>: A parameter that lets you choose whether to exempt requests
+    /// made with <c>AssumeRoot</c> from this control, for this OU. For member accounts, the
+    /// <c>AssumeRoot</c> property is included in requests initiated by IAM centralized root
+    /// access. This parameter applies only to the <c>AWS-GR_RESTRICT_ROOT_USER</c> control.
+    /// If you add the parameter when enabling the control, the <c>AssumeRoot</c> exemption
+    /// is allowed. If you omit the parameter, the <c>AssumeRoot</c> exception is not permitted.
+    /// The parameter does not accept <c>False</c> as a value.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Example: Enabling the control and allowing <c>AssumeRoot</c> </i> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>{ "controlIdentifier": "arn:aws:controlcatalog:::control/5kvme4m5d2b4d7if2fs5yg2ui",
+    /// "parameters": [ { "key": "ExemptAssumeRoot", "value": true } ], "targetIdentifier":
+    /// "arn:aws:organizations::8633900XXXXX:ou/o-6jmn81636m/ou-qsah-jtiihcla" }</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

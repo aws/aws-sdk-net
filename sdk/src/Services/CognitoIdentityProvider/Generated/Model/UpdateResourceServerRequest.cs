@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResourceServer operation.
-    /// Updates the name and scopes of resource server. All other fields are read-only.
+    /// Updates the name and scopes of a resource server. All other fields are read-only.
+    /// For more information about resource servers, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access
+    /// control with resource servers</a>.
     /// 
     ///  <important> 
     /// <para>
@@ -95,7 +97,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the resource server.
+        /// The updated name of the resource server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -114,7 +116,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// The scope values to be set for the resource server.
+        /// An array of updated custom scope names and descriptions that you want to associate
+        /// with your resource server.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -133,7 +136,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool.
+        /// The ID of the user pool that contains the resource server that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

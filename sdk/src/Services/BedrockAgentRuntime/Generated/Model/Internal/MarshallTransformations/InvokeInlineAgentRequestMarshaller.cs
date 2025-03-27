@@ -92,6 +92,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAgentCollaboration())
+            {
+                context.Writer.WritePropertyName("agentCollaboration");
+                context.Writer.WriteStringValue(publicRequest.AgentCollaboration);
+            }
+
             if(publicRequest.IsSetBedrockModelConfigurations())
             {
                 context.Writer.WritePropertyName("bedrockModelConfigurations");
@@ -101,6 +107,38 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCollaboratorConfigurations())
+            {
+                context.Writer.WritePropertyName("collaboratorConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCollaboratorConfigurationsListValue in publicRequest.CollaboratorConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CollaboratorConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCollaboratorConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCollaborators())
+            {
+                context.Writer.WritePropertyName("collaborators");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCollaboratorsListValue in publicRequest.Collaborators)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CollaboratorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCollaboratorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetCustomerEncryptionKeyArn())

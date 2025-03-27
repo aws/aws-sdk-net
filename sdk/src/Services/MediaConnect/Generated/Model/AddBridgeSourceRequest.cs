@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Add a source to an existing bridge.
+    /// Add an output to a bridge.
     /// </summary>
     public partial class AddBridgeSourceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private AddBridgeNetworkSourceRequest _networkSource;
 
         /// <summary>
-        /// Gets and sets the property FlowSource.
+        /// Gets and sets the property FlowSource. 
+        /// <para>
+        ///  The source of the flow. 
+        /// </para>
         /// </summary>
         public AddBridgeFlowSourceRequest FlowSource
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkSource.
+        /// Gets and sets the property NetworkSource. 
+        /// <para>
+        ///  The source of the network. 
+        /// </para>
         /// </summary>
         public AddBridgeNetworkSourceRequest NetworkSource
         {

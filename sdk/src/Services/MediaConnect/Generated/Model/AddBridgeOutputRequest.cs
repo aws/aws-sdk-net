@@ -30,14 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Add an output to a bridge.
+    /// Add outputs to the specified bridge.
     /// </summary>
     public partial class AddBridgeOutputRequest
     {
         private AddBridgeNetworkOutputRequest _networkOutput;
 
         /// <summary>
-        /// Gets and sets the property NetworkOutput.
+        /// Gets and sets the property NetworkOutput. 
+        /// <para>
+        ///  The network output of the bridge. A network output is delivered to your premises.
+        /// 
+        /// </para>
         /// </summary>
         public AddBridgeNetworkOutputRequest NetworkOutput
         {

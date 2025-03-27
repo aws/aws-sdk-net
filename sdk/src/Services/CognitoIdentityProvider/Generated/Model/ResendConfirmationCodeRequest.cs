@@ -31,8 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ResendConfirmationCode operation.
-    /// Resends the confirmation (for confirmation of registration) to a specific user in
-    /// the user pool.
+    /// Resends the code that confirms a new account for a user who has signed up in your
+    /// user pool. Amazon Cognito sends confirmation codes to the user attribute in the <c>AutoVerifiedAttributes</c>
+    /// property of your user pool. When you prompt new users for the confirmation code, include
+    /// a "Resend code" option that generates a call to this API operation.
     /// 
     ///  <note> 
     /// <para>
@@ -77,8 +79,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <c>ResendConfirmationCode</c>
-        /// calls.
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -96,7 +99,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The ID of the user pool app client where the user signed up.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -132,8 +135,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -194,8 +196,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data about your user session, such as the device fingerprint, IP address,
-        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
@@ -221,7 +223,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

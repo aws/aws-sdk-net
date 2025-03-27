@@ -321,7 +321,12 @@ this.Write("\");\r\n");
         #line 76 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
-			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
+			string memberProperty = variableName + "." + member.PropertyName;
+			// Only append .Value for nullable types that aren't already complex types
+			if (member.IsNullable && !member.IsStructure && !member.IsList && !member.IsMap) 
+			{
+				memberProperty += ".Value";
+			}
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
@@ -334,7 +339,7 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 87 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 92 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
             }
 			else if(member.IsMemoryStream)
@@ -344,35 +349,35 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 92 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 97 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 97 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 97 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 97 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 98 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
@@ -385,49 +390,49 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteStringValue(");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 102 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 				}
 				else if(member.Shape.IsDouble)
@@ -437,161 +442,161 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\tif(StringUtils.IsSpecialDoubleValue(");
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\t\tcontext.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 115 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 110 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t}\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 111 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 111 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\telse\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t{\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t\tcontext.Writer.WriteNumberValue(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
-
-        
-        #line default
-        #line hidden
-        
-        #line 113 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
         #line 115 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 116 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 116 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\telse\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 117 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 117 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t{\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t\tcontext.Writer.WriteNumberValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+
+        
+        #line default
+        #line hidden
+        
+        #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 119 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 119 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 				}
 				else if(member.Shape.IsFloat)
@@ -601,161 +606,161 @@ this.Write("\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\tif(StringUtils.IsSpecialFloatValue(");
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\t{\r\n");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\t\tcontext.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 128 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 123 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t}\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 124 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 124 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\telse\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 125 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t{\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t\tcontext.Writer.WriteNumberValue(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
-
-        
-        #line default
-        #line hidden
-        
-        #line 126 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\t\t\t\t}\r\n");
 
         
         #line default
         #line hidden
         
         #line 128 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 129 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 129 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\telse\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 130 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 130 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t{\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t\tcontext.Writer.WriteNumberValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 133 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 				}
 				else
@@ -766,7 +771,7 @@ this.Write("\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 134 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 139 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 				}
 			}
@@ -775,21 +780,21 @@ this.Write("\t\t\t\t}\r\n");
         #line default
         #line hidden
         
-        #line 138 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 143 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 143 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 145 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			if(member.IsIdempotent)
 			{
@@ -798,119 +803,119 @@ this.Write("            }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(" \t\t   else if(!(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(".IsSet");
-
-        
-        #line default
-        #line hidden
-        
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 144 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("()))\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 145 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 145 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(" \t\t   {\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 146 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 146 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                context.Writer.WritePropertyName(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 146 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 146 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("\");\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 147 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 147 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                context.Writer.WriteStringValue(Guid.NewGuid().ToString());\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 148 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 148 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(" \t\t   }\r\n");
 
         
         #line default
         #line hidden
         
         #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(" \t\t   else if(!(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(".IsSet");
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 149 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("()))\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 150 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 150 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(" \t\t   {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 151 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 151 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                context.Writer.WritePropertyName(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 151 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 151 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 152 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 152 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                context.Writer.WriteStringValue(Guid.NewGuid().ToString());\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 153 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 153 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(" \t\t   }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 154 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 					
 			}
 		}
@@ -923,70 +928,70 @@ this.Write(" \t\t   }\r\n");
         #line default
         #line hidden
         
-        #line 156 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 161 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 158 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 163 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 158 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 163 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 158 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 163 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 158 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 163 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 164 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 164 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 164 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 164 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 165 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
     }
 
@@ -1001,77 +1006,77 @@ this.Write(", context);\r\n");
         #line default
         #line hidden
         
-        #line 170 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 175 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 175 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStartArray();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("ListValue in ");
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 171 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 177 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 177 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 173 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 178 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
 
@@ -1079,222 +1084,40 @@ this.Write("            {\r\n");
         #line default
         #line hidden
         
-        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 181 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 176 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 181 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 177 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 182 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 177 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 182 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            context.Writer.WriteEndArray();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 178 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 183 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMap)
 			{
-
-        
-        #line default
-        #line hidden
-        
-        #line 183 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 183 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("            context.Writer.WriteStartObject();\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("            foreach (var ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("Kvp in ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 184 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(")\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 185 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("            {\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 186 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 186 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                context.Writer.WritePropertyName(");
-
-        
-        #line default
-        #line hidden
-        
-        #line 186 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 186 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("Kvp.Key);\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                var ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("Value = ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("Kvp.Value;\r\n\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 189 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
- 
-				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
-
-        
-        #line default
-        #line hidden
-        
-        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("            }\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 193 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 193 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("            context.Writer.WriteEndObject();\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 194 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-
+				ProcessMap(level, variableName, structure);
 			}
 			else if(structure.IsDocument)
 			{
@@ -1303,14 +1126,14 @@ this.Write("            context.Writer.WriteEndObject();\r\n");
         #line default
         #line hidden
         
-        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instan" +
         "ce.Write(context.Writer, ");
 
@@ -1318,21 +1141,21 @@ this.Write("            Amazon.Runtime.Documents.Internal.Transform.DocumentMars
         #line default
         #line hidden
         
-        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 200 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 193 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 
 			}
@@ -1343,91 +1166,91 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 206 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 206 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 199 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStartObject();\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 201 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 201 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 201 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 201 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 202 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 202 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 202 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 209 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 202 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 204 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 211 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 204 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            context.Writer.WriteEndObject();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 212 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 205 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMemoryStream)
@@ -1437,35 +1260,35 @@ this.Write("            context.Writer.WriteEndObject();\r\n");
         #line default
         #line hidden
         
-        #line 217 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 210 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 210 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            context.Writer.WriteStringValue(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 210 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 217 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 210 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 211 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
@@ -1478,49 +1301,49 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\t\t\t\tcontext.Writer.WriteStringValue(");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 226 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 219 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 227 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 220 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 				}
 				else
@@ -1531,11 +1354,667 @@ this.Write("));\r\n");
 			}
 	}
 
+	protected void ProcessMap(int level, string variableName, Shape structure)
+	{
+		string flatVariableName = variableName.Replace(".", "");
+
+        
+        #line default
+        #line hidden
+        
+        #line 234 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 234 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("            context.Writer.WriteStartObject();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("            foreach (var ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Kvp in ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(")\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 236 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 236 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("            {\r\n");
+
         
         #line default
         #line hidden
         
         #line 237 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 237 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                context.Writer.WritePropertyName(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 237 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 237 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Kvp.Key);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                var ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value = ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 238 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Kvp.Value;\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 240 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+             // Check for null values - only null checks for sparse maps as defined in customizations
+
+                bool isNullableMap = false;
+                if (this.Structure != null)
+                {
+                    var memberWithMap = this.Structure.Members.FirstOrDefault(m => m.PropertyName == variableName.Split('.').Last());
+                    isNullableMap = (memberWithMap != null && memberWithMap.UseNullable);
+                }
+                
+                if (isNullableMap)
+                {
+
+        
+        #line default
+        #line hidden
+        
+        #line 252 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 252 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                if (");
+
+        
+        #line default
+        #line hidden
+        
+        #line 252 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 252 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value == null)\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 253 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 253 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 254 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 254 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteNullValue();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 256 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 256 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                else\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 257 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 257 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 258 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                }
+
+                if(structure.ValueShape.IsBoolean)
+                {
+                    if(isNullableMap)
+                    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 266 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 266 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteBooleanValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 266 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 266 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value.Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 267 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                    }
+                    else
+                    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 272 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 272 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteBooleanValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 272 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 272 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 273 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                    }
+                }
+                else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
+                {
+                    if(isNullableMap)
+                    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 281 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 281 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteNumberValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 281 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 281 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value.Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 282 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                    }
+                    else
+                    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 287 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 287 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteNumberValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 287 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 287 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 288 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                    }
+                }
+                else if(structure.ValueShape.IsTimeStamp)
+                {
+                    if(isNullableMap)
+                    {
+                        if (structure.ValueShape.data[Shape.TimestampFormatKey] != null && !string.Equals(structure.ValueShape.data["timestampFormat"].ToString(), "unixTimestamp"))
+                        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 298 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 298 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteStringValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 298 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 298 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value.Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 299 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                        }
+                        else
+                        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 304 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 304 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.F" +
+        "romDateTimeToUnixTimestamp(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 304 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 304 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value.Value)));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 305 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                        }
+                    }
+                    else
+                    {
+                        if (structure.ValueShape.data[Shape.TimestampFormatKey] != null && !string.Equals(structure.ValueShape.data["timestampFormat"].ToString(), "unixTimestamp"))
+                        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 313 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 313 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteStringValue(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 313 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 313 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 314 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                        }
+                        else
+                        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 319 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 319 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.F" +
+        "romDateTimeToUnixTimestamp(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 319 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 319 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("Value)));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 320 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                        }
+                    }
+                }
+                else
+                {
+                    if(isNullableMap)
+                    {
+                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape);
+                    }
+                    else
+                    {
+                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+                    }
+                }
+
+                // Close the else block for nullable maps
+                if (isNullableMap)
+                {
+
+        
+        #line default
+        #line hidden
+        
+        #line 340 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 340 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 341 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+                }
+
+        
+        #line default
+        #line hidden
+        
+        #line 344 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 344 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("            }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 345 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 345 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("            context.Writer.WriteEndObject();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 346 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+	}
 
 	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
 	{
@@ -1546,49 +2025,49 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteNumberValue(");
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 354 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 244 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 355 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}
 		else
@@ -1598,58 +2077,52 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteStringValue(");
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 249 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 360 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 361 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}	
 	}
-
-        
-        #line default
-        #line hidden
-        
-        #line 254 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 	/// https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html#json-shape-serialization
 	/// timestamps in json protocols use unixtimestamp if none is specified (by default)
@@ -1665,35 +2138,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 265 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 375 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 375 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteStringValue(");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 375 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 375 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 266 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 376 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}
 		else if (shape.IsTimeStamp)
@@ -1705,35 +2178,35 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 273 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 383 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 383 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteStringValue(");
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 383 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 273 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 383 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 384 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
@@ -1743,14 +2216,14 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 279 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 389 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 389 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromD" +
         "ateTimeToUnixTimestamp(");
 
@@ -1758,60 +2231,61 @@ this.Write("                context.Writer.WriteNumberValue(Convert.ToInt64(Stri
         #line default
         #line hidden
         
-        #line 279 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 389 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 389 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(")));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 280 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 390 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 		}
 		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
 		{
+			// Simple numeric value
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 397 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 397 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteNumberValue(");
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 397 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 286 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 397 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 287 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 398 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}
 		else if (shape.IsBoolean)
@@ -1821,35 +2295,35 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 403 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 403 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteBooleanValue(");
 
         
         #line default
         #line hidden
         
-        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 403 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 403 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 293 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 404 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 		}
 		else

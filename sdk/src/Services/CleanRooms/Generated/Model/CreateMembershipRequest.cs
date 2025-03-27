@@ -36,7 +36,9 @@ namespace Amazon.CleanRooms.Model
     public partial class CreateMembershipRequest : AmazonCleanRoomsRequest
     {
         private string _collaborationIdentifier;
+        private MembershipProtectedJobResultConfiguration _defaultJobResultConfiguration;
         private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
+        private MembershipJobLogStatus _jobLogStatus;
         private MembershipPaymentConfiguration _paymentConfiguration;
         private MembershipQueryLogStatus _queryLogStatus;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -61,6 +63,25 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultJobResultConfiguration. 
+        /// <para>
+        /// The default job result configuration that determines how job results are protected
+        /// and managed within this membership. This configuration applies to all jobs.
+        /// </para>
+        /// </summary>
+        public MembershipProtectedJobResultConfiguration DefaultJobResultConfiguration
+        {
+            get { return this._defaultJobResultConfiguration; }
+            set { this._defaultJobResultConfiguration = value; }
+        }
+
+        // Check to see if DefaultJobResultConfiguration property is set
+        internal bool IsSetDefaultJobResultConfiguration()
+        {
+            return this._defaultJobResultConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultResultConfiguration. 
         /// <para>
         /// The default protected query result configuration as specified by the member who can
@@ -77,6 +98,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDefaultResultConfiguration()
         {
             return this._defaultResultConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobLogStatus. 
+        /// <para>
+        /// An indicator as to whether job logging has been enabled or disabled for the collaboration.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ENABLED</c>, Clean Rooms logs details about jobs run within this collaboration
+        /// and those logs can be viewed in Amazon CloudWatch Logs. The default value is <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public MembershipJobLogStatus JobLogStatus
+        {
+            get { return this._jobLogStatus; }
+            set { this._jobLogStatus = value; }
+        }
+
+        // Check to see if JobLogStatus property is set
+        internal bool IsSetJobLogStatus()
+        {
+            return this._jobLogStatus != null;
         }
 
         /// <summary>
@@ -110,6 +155,11 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property QueryLogStatus. 
         /// <para>
         /// An indicator as to whether query logging has been enabled or disabled for the membership.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>ENABLED</c>, Clean Rooms logs details about queries run within this collaboration
+        /// and those logs can be viewed in Amazon CloudWatch Logs. The default value is <c>DISABLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

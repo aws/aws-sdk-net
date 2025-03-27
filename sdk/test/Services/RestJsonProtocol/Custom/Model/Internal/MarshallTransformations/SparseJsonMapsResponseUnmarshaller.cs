@@ -31,7 +31,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
 using Amazon.Util;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -48,7 +47,6 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             SparseJsonMapsResponse response = new SparseJsonMapsResponse();
-
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -106,8 +104,9 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonRestJsonProtocolException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminGetDevice operation.
-    /// Given the device key, returns details for a user' device. For more information, see
+    /// Given the device key, returns details for a user's device. For more information, see
     /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
     /// with devices</a>.
     /// 
@@ -66,9 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceKey. 
         /// <para>
-        /// The key of the device that you want to delete. You can get device IDs in the response
-        /// to an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a>
-        /// request.
+        /// The key of the device that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]
@@ -87,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

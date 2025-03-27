@@ -84,6 +84,12 @@ namespace Amazon.EC2.Model
         /// The instance tags to associate with the event window. Any instances associated with
         /// the tags will be associated with the event window.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that while you can't create tag keys beginning with <c>aws:</c>, you can specify
+        /// existing Amazon Web Services managed tag keys (with the <c>aws:</c> prefix) when specifying
+        /// them as targets to associate with the event window.
+        /// </para>
         /// </summary>
         public List<Tag> InstanceTags
         {

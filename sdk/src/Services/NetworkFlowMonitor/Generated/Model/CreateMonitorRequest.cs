@@ -54,6 +54,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// an idempotent API request. Don't reuse the same client token for other API requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string ClientToken
         {
             get { return this._clientToken; }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Desired VPC Interface for a Flow
+    /// The details of the VPC interfaces that you want to add to the flow.
     /// </summary>
     public partial class VpcInterfaceRequest
     {
@@ -41,8 +41,10 @@ namespace Amazon.MediaConnect.Model
         private string _subnetId;
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the VPC Interface. This value must be
-        /// unique within the current flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name for the VPC interface. This name must be unique within the flow. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -58,8 +60,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceType. The type of network interface. If
-        /// this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
+        /// Gets and sets the property NetworkInterfaceType. 
+        /// <para>
+        /// The type of network interface. 
+        /// </para>
         /// </summary>
         public NetworkInterfaceType NetworkInterfaceType
         {
@@ -74,8 +78,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. Role Arn MediaConnect can assumes to create ENIs
-        /// in customer's account
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the role that you created when you set up MediaConnect
+        /// as a trusted service. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RoleArn
@@ -91,7 +98,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupIds. Security Group IDs to be used on ENI.
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// A virtual firewall to control inbound and outbound traffic. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
@@ -107,7 +117,16 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetId. Subnet must be in the AZ of the Flow
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        ///  The subnet IDs that you want to use for your VPC interface. A range of IP addresses
+        /// in your VPC. When you create your VPC, you specify a range of IPv4 addresses for the
+        /// VPC in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// This is the primary CIDR block for your VPC. When you create a subnet for your VPC,
+        /// you specify the CIDR block for the subnet, which is a subset of the VPC CIDR block.
+        /// The subnets that you use across all VPC interfaces on the flow must be in the same
+        /// Availability Zone as the flow. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SubnetId

@@ -73,7 +73,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (publicRequest.IsSetBucketKeyEnabled())
             {
-                request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled);
+                request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled.Value);
             }
 
             request.AddPathResource("{Bucket}", StringUtils.FromString(publicRequest.BucketName));

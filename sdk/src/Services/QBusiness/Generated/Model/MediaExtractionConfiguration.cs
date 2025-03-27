@@ -34,7 +34,27 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class MediaExtractionConfiguration
     {
+        private AudioExtractionConfiguration _audioExtractionConfiguration;
         private ImageExtractionConfiguration _imageExtractionConfiguration;
+        private VideoExtractionConfiguration _videoExtractionConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AudioExtractionConfiguration. 
+        /// <para>
+        /// Configuration settings for extracting and processing audio content from media files.
+        /// </para>
+        /// </summary>
+        public AudioExtractionConfiguration AudioExtractionConfiguration
+        {
+            get { return this._audioExtractionConfiguration; }
+            set { this._audioExtractionConfiguration = value; }
+        }
+
+        // Check to see if AudioExtractionConfiguration property is set
+        internal bool IsSetAudioExtractionConfiguration()
+        {
+            return this._audioExtractionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageExtractionConfiguration. 
@@ -54,6 +74,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetImageExtractionConfiguration()
         {
             return this._imageExtractionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoExtractionConfiguration. 
+        /// <para>
+        /// Configuration settings for extracting and processing video content from media files.
+        /// </para>
+        /// </summary>
+        public VideoExtractionConfiguration VideoExtractionConfiguration
+        {
+            get { return this._videoExtractionConfiguration; }
+            set { this._videoExtractionConfiguration = value; }
+        }
+
+        // Check to see if VideoExtractionConfiguration property is set
+        internal bool IsSetVideoExtractionConfiguration()
+        {
+            return this._videoExtractionConfiguration != null;
         }
 
     }

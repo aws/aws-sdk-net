@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class RestXmlStructureUnmarshaller : BaseResponseUnmarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 6 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     AddLicenseHeader();
 
@@ -40,7 +40,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
-            #line 13 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 13 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -48,21 +48,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// Response U" +
                     "nmarshaller for ");
             
-            #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" Object\r\n    /// </summary>  \r\n    public class ");
             
-            #line 18 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write("Unmarshaller : IXmlUnmarshaller<");
             
-            #line 18 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
@@ -72,28 +72,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "\n        /// <param name=\"context\"></param>\r\n        /// <returns></returns>\r\n  " +
                     "      public ");
             
-            #line 25 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 25 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" Unmarshall(XmlUnmarshallerContext context)\r\n        {\r\n            ");
             
-            #line 27 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write(" unmarshalledObject = new ");
             
-            #line 27 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 28 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 28 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
     {
@@ -107,14 +107,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            using (var sr = new StreamReader(context.Stream))\r\n            {\r\n   " +
                     "             unmarshalledObject.");
             
-            #line 37 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 37 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventPayloadMember.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = sr.ReadToEnd();\r\n            }\r\n");
             
-            #line 39 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
         }
         else
@@ -125,14 +125,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            unmarshalledObject.");
             
-            #line 44 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 44 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventPayloadMember.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = context.Stream as MemoryStream;\r\n");
             
-            #line 45 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 45 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
         }
     }
@@ -141,7 +141,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 49 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 49 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
      //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
      if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
@@ -162,7 +162,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
                 {
 ");
             
-            #line 64 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     }
 
@@ -170,7 +170,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 67 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 67 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
     {
@@ -186,21 +186,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 77 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 77 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 77 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 77 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(listMarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n\t\t\t\t\t{\r\n                        if (unmarshalledObject.");
             
-            #line 79 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 79 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -208,35 +208,35 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(" == null)\r\n                        {\r\n                            unmarshalledObj" +
                     "ect.");
             
-            #line 81 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 81 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = new ");
             
-            #line 81 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 81 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write("();\r\n                        }\r\n\t\t\t\t\t\tvar unmarshaller = ");
             
-            #line 83 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 83 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tunmarshalledObject.");
             
-            #line 84 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(".Add(unmarshaller.Unmarshall(context));\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 87 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 87 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
 			}
 			else
@@ -249,14 +249,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\t\tif (context.TestExpression(\"");
             
-            #line 94 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 94 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n");
             
-            #line 95 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 95 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
             }
             else
@@ -267,14 +267,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                    if (context.TestExpression(\"@");
             
-            #line 100 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 100 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DetermineXmlMarshallName(member, false)));
             
             #line default
             #line hidden
             this.Write("\", targetDepth - 1))\r\n");
             
-            #line 101 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
             }
 
@@ -283,21 +283,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\t\t{\r\n\t\t\t\t\t\tvar unmarshaller = ");
             
-            #line 105 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 105 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n\t\t\t\t\t\tunmarshalledObject.");
             
-            #line 106 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 106 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n\t\t\t\t\t\tcontinue;\r\n\t\t\t\t\t}\r\n");
             
-            #line 109 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 109 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
 			}
         }
@@ -316,7 +316,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         }
 ");
             
-            #line 122 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 

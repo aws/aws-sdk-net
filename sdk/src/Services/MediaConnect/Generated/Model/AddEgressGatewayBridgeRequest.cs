@@ -30,14 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// 
+    /// Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground
+    /// bridge. The content comes from an existing MediaConnect flow and is delivered to your
+    /// premises.
     /// </summary>
     public partial class AddEgressGatewayBridgeRequest
     {
         private int? _maxBitrate;
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The maximum expected bitrate (in bps).
+        /// Gets and sets the property MaxBitrate. 
+        /// <para>
+        ///  The maximum expected bitrate (in bps) of the egress bridge.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? MaxBitrate

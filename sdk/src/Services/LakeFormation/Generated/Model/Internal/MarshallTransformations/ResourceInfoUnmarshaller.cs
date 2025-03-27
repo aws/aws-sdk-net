@@ -86,6 +86,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.WithFederation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WithPrivilegedAccess", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.WithPrivilegedAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

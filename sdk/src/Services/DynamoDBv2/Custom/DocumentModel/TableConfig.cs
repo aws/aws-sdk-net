@@ -52,6 +52,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public List<string> AttributesToStoreAsEpoch { get; set; }
 
+        /// <summary>
+        /// List of DateTime attributes that should be converted to epoch seconds
+        /// before they are stored in DynamoDB.
+        /// </summary>
+        /// <remarks>
+        /// These attributes will be (de)serialized as long values, which means that they support dates AFTER 2038, as opposed to <see cref="AttributesToStoreAsEpoch"/>
+        /// </remarks>
+        public List<string> AttributesToStoreAsEpochLong { get; set; }
 
         internal Table.DynamoDBConsumer Consumer { get; set; }
         internal bool IsEmptyStringValueEnabled { get; set; }
@@ -63,13 +71,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="tableName">Name of the table.</param>
         public TableConfig(string tableName)
-            : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null,
+            : this(tableName, DynamoDBEntryConversion.CurrentConversion, Table.DynamoDBConsumer.DocumentModel, null, null,
                 false, metadataCachingMode: DynamoDBv2.MetadataCachingMode.Default)
         {
         }
 
         internal TableConfig(string tableName, DynamoDBEntryConversion conversion, Table.DynamoDBConsumer consumer,
-            IEnumerable<string> storeAsEpoch, bool isEmptyStringValueEnabled, MetadataCachingMode? metadataCachingMode)
+            IEnumerable<string> storeAsEpoch, IEnumerable<string> storeAsEpochLong, bool isEmptyStringValueEnabled, MetadataCachingMode? metadataCachingMode)
         {
             if (string.IsNullOrEmpty(tableName)) throw new ArgumentNullException("tableName");
 
@@ -82,6 +90,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (storeAsEpoch != null)
             {
                 AttributesToStoreAsEpoch.AddRange(storeAsEpoch);
+            }
+            AttributesToStoreAsEpochLong = new List<string>();
+            if (storeAsEpochLong != null)
+            {
+                AttributesToStoreAsEpochLong.AddRange(storeAsEpochLong);
             }
         }
     }

@@ -52,6 +52,7 @@ namespace Amazon.DataSync.Model
         private string _locationArn;
         private SmbMountOptions _mountOptions;
         private string _password;
+        private string _serverHostname;
         private string _subdirectory;
         private string _user;
 
@@ -80,6 +81,11 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the authentication protocol that DataSync uses to connect to your SMB file
         /// server. DataSync supports <c>NTLM</c> (default) and <c>KERBEROS</c> authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
+        /// DataSync access to SMB file servers</a>.
         /// </para>
         /// </summary>
         public SmbAuthenticationType AuthenticationType
@@ -207,7 +213,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// A Kerberos principal might look like <c>HOST/kerberosuser@EXAMPLE.COM</c>.
+        /// A Kerberos principal might look like <c>HOST/kerberosuser@MYDOMAIN.ORG</c>.
         /// </para>
         ///  
         /// <para>
@@ -282,6 +288,39 @@ namespace Amazon.DataSync.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerHostname. 
+        /// <para>
+        /// Specifies the domain name or IP address of the SMB file server that your DataSync
+        /// agent connects to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Remember the following when configuring this parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't specify an IP version 6 (IPv6) address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using Kerberos authentication, you must specify a domain name.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string ServerHostname
+        {
+            get { return this._serverHostname; }
+            set { this._serverHostname = value; }
+        }
+
+        // Check to see if ServerHostname property is set
+        internal bool IsSetServerHostname()
+        {
+            return this._serverHostname != null;
         }
 
         /// <summary>

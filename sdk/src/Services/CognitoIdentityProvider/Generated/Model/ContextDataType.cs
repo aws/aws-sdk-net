@@ -32,13 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Contextual user data used for evaluating the risk of an authentication event by user
     /// pool threat protection.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of server-side authentication operations like
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.
-    /// </para>
     /// </summary>
     public partial class ContextDataType
     {

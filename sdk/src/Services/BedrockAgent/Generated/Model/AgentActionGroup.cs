@@ -45,6 +45,7 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _createdAt;
         private string _description;
         private FunctionSchema _functionSchema;
+        private Dictionary<string, string> _parentActionGroupSignatureParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ActionGroupSignature _parentActionSignature;
         private DateTime? _updatedAt;
 
@@ -263,6 +264,31 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetFunctionSchema()
         {
             return this._functionSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentActionGroupSignatureParams. 
+        /// <para>
+        /// The configuration settings for a computer use action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Computer use is a new Anthropic Claude model capability (in beta) available with
+        /// Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public Dictionary<string, string> ParentActionGroupSignatureParams
+        {
+            get { return this._parentActionGroupSignatureParams; }
+            set { this._parentActionGroupSignatureParams = value; }
+        }
+
+        // Check to see if ParentActionGroupSignatureParams property is set
+        internal bool IsSetParentActionGroupSignatureParams()
+        {
+            return this._parentActionGroupSignatureParams != null && (this._parentActionGroupSignatureParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

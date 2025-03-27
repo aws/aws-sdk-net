@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -140,7 +140,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
             var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer,
-                storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled,
+                storageConfig.AttributesToStoreAsEpoch, storageConfig.AttributesToStoreAsEpochLong, flatConfig.IsEmptyStringValueEnabled,
                 flatConfig.MetadataCachingMode);
             var table = unconfiguredTable.Copy(tableConfig);
             return table;
@@ -190,7 +190,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                    storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
+                    storeAsEpoch: null, storeAsEpochLong: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
                 table = Table.LoadTable(Client, emptyConfig) as Table;
                 tablesMap[tableName] = table;
 
@@ -1171,6 +1171,8 @@ namespace Amazon.DynamoDBv2.DataModel
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
             if (storageConfig.AttributesToStoreAsEpoch.Contains(hashKeyProperty.AttributeName))
                 hashKeyEntry = Document.DateTimeToEpochSeconds(hashKeyEntry, hashKeyProperty.AttributeName);
+            if (storageConfig.AttributesToStoreAsEpochLong.Contains(hashKeyProperty.AttributeName))
+                hashKeyEntry = Document.DateTimeToEpochSecondsLong(hashKeyEntry, hashKeyProperty.AttributeName);
             var hashKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue(hashKeyEntryAttributeConversionConfig);
 
@@ -1189,6 +1191,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 if (storageConfig.AttributesToStoreAsEpoch.Contains(rangeKeyProperty.AttributeName))
                     rangeKeyEntry = Document.DateTimeToEpochSeconds(rangeKeyEntry, rangeKeyProperty.AttributeName);
+                if (storageConfig.AttributesToStoreAsEpochLong.Contains(rangeKeyProperty.AttributeName))
+                    rangeKeyEntry = Document.DateTimeToEpochSecondsLong(rangeKeyEntry, rangeKeyProperty.AttributeName);
 
                 var rangeKeyEntryAttributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue(rangeKeyEntryAttributeConversionConfig);
@@ -1202,7 +1206,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorage keyAsStorage = ObjectToItemStorageHelper(keyObject, storageConfig, flatConfig, keysOnly: true, ignoreNullValues: true);
             if (storageConfig.HasVersion) // if version field is defined, it would have been returned, so remove before making the key
                 keyAsStorage.Document[storageConfig.VersionPropertyStorage.AttributeName] = null;
-            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch, flatConfig.IsEmptyStringValueEnabled));
+            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch, storageConfig.AttributesToStoreAsEpochLong, flatConfig.IsEmptyStringValueEnabled));
             ValidateKey(key, storageConfig);
             return key;
         }

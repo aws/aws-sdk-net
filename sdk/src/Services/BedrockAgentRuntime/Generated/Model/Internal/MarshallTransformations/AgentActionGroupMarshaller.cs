@@ -97,6 +97,20 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ParentActionGroupSignature);
             }
 
+            if(requestObject.IsSetParentActionGroupSignatureParams())
+            {
+                context.Writer.WritePropertyName("parentActionGroupSignatureParams");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectParentActionGroupSignatureParamsKvp in requestObject.ParentActionGroupSignatureParams)
+                {
+                    context.Writer.WritePropertyName(requestObjectParentActionGroupSignatureParamsKvp.Key);
+                    var requestObjectParentActionGroupSignatureParamsValue = requestObjectParentActionGroupSignatureParamsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectParentActionGroupSignatureParamsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

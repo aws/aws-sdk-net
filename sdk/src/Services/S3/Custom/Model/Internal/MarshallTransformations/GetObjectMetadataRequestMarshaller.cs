@@ -85,7 +85,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headObjectRequest.ResponseContentType));
 
             if (headObjectRequest.IsSetResponseExpires())
-                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(headObjectRequest.ResponseExpires));
+                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(headObjectRequest.ResponseExpires.Value));
 
             if (string.IsNullOrEmpty(headObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectMetadataRequest.BucketName");

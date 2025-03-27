@@ -35,6 +35,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class RecordingConfiguration
     {
         private RecordingConfigurationFormat _format;
+        private CompositionRecordingHlsConfiguration _hlsConfiguration;
 
         /// <summary>
         /// Gets and sets the property Format. 
@@ -52,6 +53,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HlsConfiguration. 
+        /// <para>
+        /// An HLS configuration object to return information about how the recording will be
+        /// configured.
+        /// </para>
+        /// </summary>
+        public CompositionRecordingHlsConfiguration HlsConfiguration
+        {
+            get { return this._hlsConfiguration; }
+            set { this._hlsConfiguration = value; }
+        }
+
+        // Check to see if HlsConfiguration property is set
+        internal bool IsSetHlsConfiguration()
+        {
+            return this._hlsConfiguration != null;
         }
 
     }

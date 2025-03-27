@@ -93,11 +93,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The type of resource that contains your data for retrieving information and generating
         /// responses.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// If you choose to use <c>EXTERNAL_SOURCES</c>, then currently only Anthropic Claude
         /// 3 Sonnet models for knowledge bases are supported.
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public RetrieveAndGenerateType Type

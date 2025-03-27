@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private Offering _offering;
 
         /// <summary>
-        /// Gets and sets the property Offering.
+        /// Gets and sets the property Offering. 
+        /// <para>
+        /// The offering that you requested a description of. 
+        /// </para>
         /// </summary>
         public Offering Offering
         {

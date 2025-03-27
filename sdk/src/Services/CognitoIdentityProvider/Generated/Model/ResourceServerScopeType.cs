@@ -32,14 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// One custom scope associated with a user pool resource server. This data type is a
     /// member of <c>ResourceServerScopeType</c>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">
-    /// Scopes, M2M, and API authorization with resource servers</a>. 
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
-    /// 
-    /// </para>
+    /// Scopes, M2M, and API authorization with resource servers</a>.
     /// </summary>
     public partial class ResourceServerScopeType
     {

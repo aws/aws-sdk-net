@@ -31,7 +31,7 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStyleDescriptor operation.
-    /// Returns information about the style.
+    /// <c>GetStyleDescriptor</c> returns information about the style.
     /// </summary>
     public partial class GetStyleDescriptorRequest : AmazonGeoMapsRequest
     {
@@ -121,10 +121,6 @@ namespace Amazon.GeoMaps.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>MAR</c>: Morocco's view on Western Sahara
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>PAK</c>: Pakistan's view on Jammu and Kashmir and the Junagadh Area
         /// </para>
         ///  </li> <li> 
         /// <para>

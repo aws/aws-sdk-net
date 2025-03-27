@@ -34,7 +34,27 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class IngressStringToEvaluate
     {
+        private IngressAnalysis _analysis;
         private IngressStringEmailAttribute _attribute;
+
+        /// <summary>
+        /// Gets and sets the property Analysis. 
+        /// <para>
+        /// The structure type for a string condition stating the Add On ARN and its returned
+        /// value.
+        /// </para>
+        /// </summary>
+        public IngressAnalysis Analysis
+        {
+            get { return this._analysis; }
+            set { this._analysis = value; }
+        }
+
+        // Check to see if Analysis property is set
+        internal bool IsSetAnalysis()
+        {
+            return this._analysis != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attribute. 

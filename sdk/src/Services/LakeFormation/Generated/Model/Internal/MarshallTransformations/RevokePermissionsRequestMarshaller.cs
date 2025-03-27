@@ -79,6 +79,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CatalogId);
             }
 
+            if(publicRequest.IsSetCondition())
+            {
+                context.Writer.WritePropertyName("Condition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConditionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Condition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPermissions())
             {
                 context.Writer.WritePropertyName("Permissions");

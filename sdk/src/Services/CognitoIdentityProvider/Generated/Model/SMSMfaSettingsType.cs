@@ -33,14 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// A user's preference for using SMS message multi-factor authentication (MFA). Turns
     /// SMS MFA on and off, and can set SMS as preferred when other MFA options are available.
     /// You can't turn off SMS MFA for any of your users when MFA is required in your user
-    /// pool; you can only set the type that your user prefers. 
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>.
-    /// 
-    /// </para>
+    /// pool; you can only set the type that your user prefers.
     /// </summary>
     public partial class SMSMfaSettingsType
     {

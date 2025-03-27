@@ -37,8 +37,10 @@ namespace Amazon.MediaConnect.Model
         private List<string> _errors = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Errors. A list of errors that might have been generated
-        /// from processes on this flow.
+        /// Gets and sets the property Errors. 
+        /// <para>
+        ///  A list of errors that might have been generated from processes on this flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Errors

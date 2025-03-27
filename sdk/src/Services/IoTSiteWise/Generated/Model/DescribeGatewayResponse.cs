@@ -40,6 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _gatewayId;
         private string _gatewayName;
         private GatewayPlatform _gatewayPlatform;
+        private string _gatewayVersion;
         private DateTime? _lastUpdateDate;
 
         /// <summary>
@@ -160,6 +161,26 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGatewayPlatform()
         {
             return this._gatewayPlatform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayVersion. 
+        /// <para>
+        /// The version of the gateway. A value of <c>3</c> indicates an MQTT-enabled, V3 gateway,
+        /// while <c>2</c> indicates a Classic streams, V2 gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string GatewayVersion
+        {
+            get { return this._gatewayVersion; }
+            set { this._gatewayVersion = value; }
+        }
+
+        // Check to see if GatewayVersion property is set
+        internal bool IsSetGatewayVersion()
+        {
+            return this._gatewayVersion != null;
         }
 
         /// <summary>

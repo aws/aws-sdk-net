@@ -603,9 +603,17 @@ namespace Amazon.ACMPCA
         /// </summary>
         public static readonly KeyAlgorithm EC_secp384r1 = new KeyAlgorithm("EC_secp384r1");
         /// <summary>
+        /// Constant EC_secp521r1 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm EC_secp521r1 = new KeyAlgorithm("EC_secp521r1");
+        /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm RSA_3072 = new KeyAlgorithm("RSA_3072");
         /// <summary>
         /// Constant RSA_4096 for KeyAlgorithm
         /// </summary>

@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CatalogId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

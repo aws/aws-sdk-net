@@ -43,10 +43,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result of the authentication response. This result is only returned if the caller
-        /// doesn't need to pass another challenge. If the caller does need to pass another challenge
-        /// before it gets tokens, <c>ChallengeName</c>, <c>ChallengeParameters</c>, and <c>Session</c>
-        /// are returned.
+        /// The result of a successful and complete authentication request. This result is only
+        /// returned if the user doesn't need to pass another challenge. If they must pass another
+        /// challenge before they get tokens, Amazon Cognito returns a challenge in <c>ChallengeName</c>,
+        /// <c>ChallengeParameters</c>, and <c>Session</c> response parameters.
         /// </para>
         /// </summary>
         public AuthenticationResultType AuthenticationResult
@@ -64,9 +64,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AvailableChallenges. 
         /// <para>
-        /// This response parameter prompts a user to select from multiple available challenges
-        /// that they can complete authentication with. For example, they might be able to continue
-        /// with passwordless authentication or with a one-time password from an SMS message.
+        /// This response parameter lists the available authentication challenges that users can
+        /// select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+        /// authentication</a>. For example, they might be able to choose between passkey authentication,
+        /// a one-time password from an SMS message, and a traditional password.
         /// </para>
         /// </summary>
         public List<string> AvailableChallenges
@@ -84,23 +85,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge that you're responding to with this call. This name is returned
-        /// in the <c>InitiateAuth</c> response if you must pass another challenge.
+        /// The name of an additional authentication challenge that you must respond to.
         /// </para>
         ///  
         /// <para>
-        /// Valid values include the following:
+        /// Possible challenges include the following:
         /// </para>
         ///  <note> 
         /// <para>
-        /// All of the following challenges require <c>USERNAME</c> and <c>SECRET_HASH</c> (if
-        /// applicable) in the parameters.
+        /// All of the following challenges require <c>USERNAME</c> and, when the app client has
+        /// a client secret, <c>SECRET_HASH</c> in the parameters.
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
         ///  <c>WEB_AUTHN</c>: Respond to the challenge with the results of a successful authentication
-        /// with a passkey, or webauthN, factor. These are typically biometric devices or security
-        /// keys.
+        /// with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include
+        /// biometric devices and security keys.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -122,65 +122,58 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SMS_MFA</c>: Next challenge is to supply an <c>SMS_MFA_CODE</c>that your user
-        /// pool delivered in an SMS message.
+        ///  <c>SMS_MFA</c>: Respond with an <c>SMS_MFA_CODE</c> that your user pool delivered
+        /// in an SMS message.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EMAIL_OTP</c>: Next challenge is to supply an <c>EMAIL_OTP_CODE</c> that your
-        /// user pool delivered in an email message.
+        ///  <c>EMAIL_OTP</c>: Respond with an <c>EMAIL_OTP_CODE</c> that your user pool delivered
+        /// in an email message.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PASSWORD_VERIFIER</c>: Next challenge is to supply <c>PASSWORD_CLAIM_SIGNATURE</c>,
-        /// <c>PASSWORD_CLAIM_SECRET_BLOCK</c>, and <c>TIMESTAMP</c> after the client-side SRP
-        /// calculations.
+        ///  <c>PASSWORD_VERIFIER</c>: Respond with <c>PASSWORD_CLAIM_SIGNATURE</c>, <c>PASSWORD_CLAIM_SECRET_BLOCK</c>,
+        /// and <c>TIMESTAMP</c> after client-side SRP calculations.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>CUSTOM_CHALLENGE</c>: This is returned if your custom authentication flow determines
-        /// that the user should pass another challenge before tokens are issued.
+        /// that the user should pass another challenge before tokens are issued. The parameters
+        /// of the challenge are determined by your Lambda function.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DEVICE_SRP_AUTH</c>: If device tracking was activated on your user pool and the
-        /// previous challenges were passed, this challenge is returned so that Amazon Cognito
-        /// can start tracking this device.
+        ///  <c>DEVICE_SRP_AUTH</c>: Respond with the initial parameters of device SRP authentication.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing
+        /// in with a device</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DEVICE_PASSWORD_VERIFIER</c>: Similar to <c>PASSWORD_VERIFIER</c>, but for devices
-        /// only.
+        ///  <c>DEVICE_PASSWORD_VERIFIER</c>: Respond with <c>PASSWORD_CLAIM_SIGNATURE</c>, <c>PASSWORD_CLAIM_SECRET_BLOCK</c>,
+        /// and <c>TIMESTAMP</c> after client-side SRP calculations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing
+        /// in with a device</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>NEW_PASSWORD_REQUIRED</c>: For users who are required to change their passwords
-        /// after successful first login.
-        /// </para>
-        ///  
-        /// <para>
-        /// Respond to this challenge with <c>NEW_PASSWORD</c> and any required attributes that
-        /// Amazon Cognito returned in the <c>requiredAttributes</c> parameter. You can also set
-        /// values for attributes that aren't required by your user pool and that your app client
-        /// can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.
+        /// after successful first login. Respond to this challenge with <c>NEW_PASSWORD</c> and
+        /// any required attributes that Amazon Cognito returned in the <c>requiredAttributes</c>
+        /// parameter. You can also set values for attributes that aren't required by your user
+        /// pool and that your app client can write.
         /// </para>
         ///  
         /// <para>
         /// Amazon Cognito only returns this challenge for users who have temporary passwords.
-        /// Because of this, and because in some cases you can create users who don't have values
-        /// for required attributes, take care to collect and submit required-attribute values
-        /// for all users who don't have passwords. You can create a user in the Amazon Cognito
-        /// console without, for example, a required <c>birthdate</c> attribute. The API response
-        /// from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't
-        /// have a password.
+        /// When you create passwordless users, you must provide values for all required attributes.
         /// </para>
         ///  <note> 
         /// <para>
         /// In a <c>NEW_PASSWORD_REQUIRED</c> challenge response, you can't modify a required
-        /// attribute that already has a value. In <c>RespondToAuthChallenge</c>, set a value
-        /// for any keys that Amazon Cognito returned in the <c>requiredAttributes</c> parameter,
-        /// then use the <c>UpdateUserAttributes</c> API operation to modify the value of any
-        /// additional attributes.
+        /// attribute that already has a value. In <c>AdminRespondToAuthChallenge</c> or <c>RespondToAuthChallenge</c>,
+        /// set a value for any keys that Amazon Cognito returned in the <c>requiredAttributes</c>
+        /// parameter, then use the <c>AdminUpdateUserAttributes</c> or <c>UpdateUserAttributes</c>
+        /// API operation to modify the value of any additional attributes.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -190,12 +183,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        ///  To set up software token MFA, use the session returned here from <c>InitiateAuth</c>
-        /// as an input to <c>AssociateSoftwareToken</c>. Use the session returned by <c>VerifySoftwareToken</c>
-        /// as an input to <c>RespondToAuthChallenge</c> with challenge name <c>MFA_SETUP</c>
-        /// to complete sign-in. To set up SMS MFA, an administrator should help the user to add
-        /// a phone number to their account, and then the user should call <c>InitiateAuth</c>
-        /// again to restart sign-in.
+        /// To set up time-based one-time password (TOTP) MFA, use the session returned in this
+        /// challenge from <c>InitiateAuth</c> or <c>AdminInitiateAuth</c> as an input to <c>AssociateSoftwareToken</c>.
+        /// Then, use the session returned by <c>VerifySoftwareToken</c> as an input to <c>RespondToAuthChallenge</c>
+        /// or <c>AdminRespondToAuthChallenge</c> with challenge name <c>MFA_SETUP</c> to complete
+        /// sign-in. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To set up SMS or email MFA, collect a <c>phone_number</c> or <c>email</c> attribute
+        /// for the user. Then restart the authentication flow with an <c>InitiateAuth</c> or
+        /// <c>AdminInitiateAuth</c> request. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -214,9 +212,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
-        /// The challenge parameters. These are returned in the <c>InitiateAuth</c> response if
-        /// you must pass another challenge. The responses in this parameter should be used to
-        /// compute inputs to the next call (<c>RespondToAuthChallenge</c>). 
+        /// The required parameters of the <c>ChallengeName</c> challenge.
         /// </para>
         ///  
         /// <para>
@@ -239,10 +235,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should pass both ways in challenge-response calls to the service.
-        /// If the caller must pass another challenge, they return a session with other challenge
-        /// parameters. Include this session identifier in a <c>RespondToAuthChallenge</c> API
-        /// request.
+        /// The session identifier that links a challenge response to the initial authentication
+        /// request. If the user must pass another challenge, Amazon Cognito returns a session
+        /// ID and challenge parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

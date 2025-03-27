@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the StopUserImportJob operation.
-    /// Stops the user import job.
+    /// Instructs your user pool to stop a running job that's importing users from a CSV file
+    /// that contains their usernames and attributes. For more information about importing
+    /// users from a CSV file, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
+    /// users from a CSV file</a>.
     /// </summary>
     public partial class StopUserImportJobRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job ID for the user import job.
+        /// The ID of a running user import job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]
@@ -60,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool that the users are being imported into.
+        /// The ID of the user pool that you want to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

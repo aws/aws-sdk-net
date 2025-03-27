@@ -697,6 +697,56 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type FlowSize.
+    /// </summary>
+    public class FlowSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LARGE for FlowSize
+        /// </summary>
+        public static readonly FlowSize LARGE = new FlowSize("LARGE");
+        /// <summary>
+        /// Constant MEDIUM for FlowSize
+        /// </summary>
+        public static readonly FlowSize MEDIUM = new FlowSize("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowSize FindValue(string value)
+        {
+            return FindValue<FlowSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GatewayState.
     /// </summary>
     public class GatewayState : ConstantClass
@@ -1007,6 +1057,56 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type NdiState.
+    /// </summary>
+    public class NdiState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for NdiState
+        /// </summary>
+        public static readonly NdiState DISABLED = new NdiState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for NdiState
+        /// </summary>
+        public static readonly NdiState ENABLED = new NdiState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NdiState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NdiState FindValue(string value)
+        {
+            return FindValue<NdiState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NdiState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkInterfaceType.
     /// </summary>
     public class NetworkInterfaceType : ConstantClass
@@ -1166,6 +1266,10 @@ namespace Amazon.MediaConnect
         /// Constant FujitsuQos for Protocol
         /// </summary>
         public static readonly Protocol FujitsuQos = new Protocol("fujitsu-qos");
+        /// <summary>
+        /// Constant NdiSpeedHq for Protocol
+        /// </summary>
+        public static readonly Protocol NdiSpeedHq = new Protocol("ndi-speed-hq");
         /// <summary>
         /// Constant Rist for Protocol
         /// </summary>

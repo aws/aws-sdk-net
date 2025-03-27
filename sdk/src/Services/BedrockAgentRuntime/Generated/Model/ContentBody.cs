@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class ContentBody
     {
         private string _body;
+        private List<ImageInput> _images = AWSConfigs.InitializeCollections ? new List<ImageInput>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -63,6 +64,27 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Images. 
+        /// <para>
+        /// Lists details, including format and source, for the image in the response from the
+        /// function call. You can specify only one image and the function in the <c>returnControlInvocationResults</c>
+        /// must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>. 
+        /// </para>
+        /// </summary>
+        public List<ImageInput> Images
+        {
+            get { return this._images; }
+            set { this._images = value; }
+        }
+
+        // Check to see if Images property is set
+        internal bool IsSetImages()
+        {
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

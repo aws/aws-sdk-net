@@ -41,6 +41,8 @@ namespace Amazon.DataZone.Model
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
+        private string _projectProfileVersion;
+        private List<EnvironmentConfigurationUserParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentConfigurationUserParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -153,6 +155,43 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectProfileVersion. 
+        /// <para>
+        /// The project profile version to which the project should be updated. You can only specify
+        /// the following string for this parameter: <c>latest</c>.
+        /// </para>
+        /// </summary>
+        public string ProjectProfileVersion
+        {
+            get { return this._projectProfileVersion; }
+            set { this._projectProfileVersion = value; }
+        }
+
+        // Check to see if ProjectProfileVersion property is set
+        internal bool IsSetProjectProfileVersion()
+        {
+            return this._projectProfileVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserParameters. 
+        /// <para>
+        /// The user parameters of the project.
+        /// </para>
+        /// </summary>
+        public List<EnvironmentConfigurationUserParameter> UserParameters
+        {
+            get { return this._userParameters; }
+            set { this._userParameters = value; }
+        }
+
+        // Check to see if UserParameters property is set
+        internal bool IsSetUserParameters()
+        {
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

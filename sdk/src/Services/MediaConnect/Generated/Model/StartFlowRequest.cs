@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _flowArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that you want to start.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the flow that you want to start.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn

@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// The desired duration in hours for the training plan offerings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=87600)]
+        [AWSProperty(Required=true, Min=1, Max=87600)]
         public long? DurationHours
         {
             get { return this._durationHours; }

@@ -66,7 +66,10 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InvokeInlineAgentRequest : AmazonBedrockAgentRuntimeRequest
     {
         private List<AgentActionGroup> _actionGroups = AWSConfigs.InitializeCollections ? new List<AgentActionGroup>() : null;
+        private AgentCollaboration _agentCollaboration;
         private InlineBedrockModelConfigurations _bedrockModelConfigurations;
+        private List<CollaboratorConfiguration> _collaboratorConfigurations = AWSConfigs.InitializeCollections ? new List<CollaboratorConfiguration>() : null;
+        private List<Collaborator> _collaborators = AWSConfigs.InitializeCollections ? new List<Collaborator>() : null;
         private string _customerEncryptionKeyArn;
         private bool? _enableTrace;
         private bool? _endSession;
@@ -101,6 +104,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        ///  Defines how the inline collaborator agent handles information across multiple collaborator
+        /// agents to coordinate a final response. The inline collaborator agent can also be the
+        /// supervisor. 
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BedrockModelConfigurations. 
         /// <para>
         /// Model settings for the request.
@@ -116,6 +139,43 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetBedrockModelConfigurations()
         {
             return this._bedrockModelConfigurations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollaboratorConfigurations. 
+        /// <para>
+        ///  Settings for an inline agent collaborator called with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<CollaboratorConfiguration> CollaboratorConfigurations
+        {
+            get { return this._collaboratorConfigurations; }
+            set { this._collaboratorConfigurations = value; }
+        }
+
+        // Check to see if CollaboratorConfigurations property is set
+        internal bool IsSetCollaboratorConfigurations()
+        {
+            return this._collaboratorConfigurations != null && (this._collaboratorConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Collaborators. 
+        /// <para>
+        ///  List of collaborator inline agents. 
+        /// </para>
+        /// </summary>
+        public List<Collaborator> Collaborators
+        {
+            get { return this._collaborators; }
+            set { this._collaborators = value; }
+        }
+
+        // Check to see if Collaborators property is set
+        internal bool IsSetCollaborators()
+        {
+            return this._collaborators != null && (this._collaborators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

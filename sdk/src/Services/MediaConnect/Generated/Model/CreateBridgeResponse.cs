@@ -37,7 +37,10 @@ namespace Amazon.MediaConnect.Model
         private Bridge _bridge;
 
         /// <summary>
-        /// Gets and sets the property Bridge.
+        /// Gets and sets the property Bridge. 
+        /// <para>
+        ///  The name of the bridge that was created.
+        /// </para>
         /// </summary>
         public Bridge Bridge
         {

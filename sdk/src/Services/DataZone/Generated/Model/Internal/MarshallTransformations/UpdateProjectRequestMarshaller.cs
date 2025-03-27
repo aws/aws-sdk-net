@@ -113,6 +113,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetProjectProfileVersion())
+            {
+                context.Writer.WritePropertyName("projectProfileVersion");
+                context.Writer.WriteStringValue(publicRequest.ProjectProfileVersion);
+            }
+
+            if(publicRequest.IsSetUserParameters())
+            {
+                context.Writer.WritePropertyName("userParameters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EnvironmentConfigurationUserParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation
-    /// for the operation for more information on the cause of this exception.
+    /// This exception is thrown if the request contains a semantic error. The precise meaning
+    /// depends on the API, and is documented in the error message.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

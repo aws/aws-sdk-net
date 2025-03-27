@@ -128,6 +128,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sourceMetadata", targetDepth))
+                {
+                    var unmarshaller = AnalysisSourceMetadataUnmarshaller.Instance;
+                    unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

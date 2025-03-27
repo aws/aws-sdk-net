@@ -35,6 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class StandardsSubscription
     {
         private string _standardsArn;
+        private StandardsControlsUpdatable _standardsControlsUpdatable;
         private Dictionary<string, string> _standardsInput = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private StandardsStatus _standardsStatus;
         private StandardsStatusReason _standardsStatusReason;
@@ -57,6 +58,41 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetStandardsArn()
         {
             return this._standardsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardsControlsUpdatable. 
+        /// <para>
+        /// Indicates whether the controls associated with this standards subscription can be
+        /// viewed and updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// The values are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>READY_FOR_UPDATES</c> - Controls associated with this standards subscription can
+        /// be viewed and updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_READY_FOR_UPDATES</c> - Controls associated with this standards subscription
+        /// cannot be retrieved or updated yet. Security Hub is still processing a request to
+        /// create the controls.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StandardsControlsUpdatable StandardsControlsUpdatable
+        {
+            get { return this._standardsControlsUpdatable; }
+            set { this._standardsControlsUpdatable = value; }
+        }
+
+        // Check to see if StandardsControlsUpdatable property is set
+        internal bool IsSetStandardsControlsUpdatable()
+        {
+            return this._standardsControlsUpdatable != null;
         }
 
         /// <summary>

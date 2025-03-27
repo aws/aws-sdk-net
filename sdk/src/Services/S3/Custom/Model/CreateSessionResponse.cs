@@ -108,9 +108,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Indicates whether to use an S3 Bucket Key for server-side encryption with KMS keys (SSE-KMS).
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this._bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this._bucketKeyEnabled; }
             set { this._bucketKeyEnabled = value; }
         }
 

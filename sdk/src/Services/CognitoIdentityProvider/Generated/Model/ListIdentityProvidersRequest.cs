@@ -31,7 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentityProviders operation.
-    /// Lists information about all IdPs for a user pool.
+    /// Given a user pool ID, returns information about configured identity providers (IdPs).
+    /// For more information about IdPs, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Third-party
+    /// IdP sign-in</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -64,7 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of IdPs to return.
+        /// The maximum number of IdPs that you want Amazon Cognito to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -83,7 +85,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// This API operation returns a limited number of results. The pagination token is an
+        /// identifier that you can present in an additional API request with the same parameters.
+        /// When you include the pagination token, Amazon Cognito returns the next set of items
+        /// after the current list. Subsequent requests return a new pagination token. By use
+        /// of this token, you can paginate through the full list of items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -102,7 +108,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to list IdPs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

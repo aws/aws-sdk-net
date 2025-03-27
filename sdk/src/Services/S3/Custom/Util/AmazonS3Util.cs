@@ -231,9 +231,9 @@ namespace Amazon.S3.Util
         /// <returns>The MIME type for the extension, or text/plain</returns>
         public static string MimeTypeFromExtension(string ext)
         {
-            if (extensionToMime.ContainsKey(ext))
+            if (extensionToMime.TryGetValue(ext, out string mimeType))
             {
-                return extensionToMime[ext];
+                return mimeType;
             }
             else
             {
@@ -241,17 +241,6 @@ namespace Amazon.S3.Util
             }
         }
 
-        /// <summary>
-        /// URL encodes a string. If the path property is specified,
-        /// the accepted path characters {/+:} are not encoded.
-        /// </summary>
-        /// <param name="data">The string to encode</param>
-        /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns></returns>
-        public static string UrlEncode(string data, bool path)
-        {
-            return AWSSDKUtils.UrlEncode(data, path);
-        }
 
         /// <summary>
         /// Converts a non-seekable stream into a System.IO.MemoryStream.

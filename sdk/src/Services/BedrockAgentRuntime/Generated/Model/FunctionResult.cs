@@ -129,9 +129,13 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ResponseBody. 
         /// <para>
-        /// The response from the function call using the parameters. The key of the object is
-        /// the content type (currently, only <c>TEXT</c> is supported). The response may be returned
-        /// directly or from the Lambda function.
+        /// The response from the function call using the parameters. The response might be returned
+        /// directly or from the Lambda function. Specify <c>TEXT</c> or <c>IMAGES</c>. The key
+        /// of the object is the content type. You can only specify one type. If you specify <c>IMAGES</c>,
+        /// you can specify only one image. You can specify images only when the function in the
+        /// <c>returnControlInvocationResults</c> is a computer use action. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
+        /// an Amazon Bedrock Agent to complete tasks with computer use tools</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, ContentBody> ResponseBody

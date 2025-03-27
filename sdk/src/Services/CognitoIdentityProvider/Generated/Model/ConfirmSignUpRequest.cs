@@ -31,22 +31,18 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmSignUp operation.
-    /// This public API operation submits a code that Amazon Cognito sent to your user when
-    /// they signed up in your user pool via the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
-    /// API operation. After your user enters their code, they confirm ownership of the email
-    /// address or phone number that they provided, and their user account becomes active.
-    /// Depending on your user pool configuration, your users will receive their confirmation
-    /// code in an email or SMS message.
+    /// Confirms the account of a new user. This public API operation submits a code that
+    /// Amazon Cognito sent to your user when they signed up in your user pool. After your
+    /// user enters their code, they confirm ownership of the email address or phone number
+    /// that they provided, and their user account becomes active. Depending on your user
+    /// pool configuration, your users will receive their confirmation code in an email or
+    /// SMS message.
     /// 
     ///  
     /// <para>
     /// Local users who signed up in your user pool are the only type of user who can confirm
     /// sign-up with a code. Users who federate through an external identity provider (IdP)
-    /// have already been confirmed by their IdP. Administrator-created users, users created
-    /// with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
-    /// API operation, confirm their accounts when they respond to their invitation email
-    /// message and choose a password. They do not receive a confirmation code. Instead, they
-    /// receive a temporary password.
+    /// have already been confirmed by their IdP.
     /// </para>
     ///  <note> 
     /// <para>
@@ -73,8 +69,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <c>ConfirmSignUp</c>
-        /// calls.
+        /// Information that supports analytics outcomes with Amazon Pinpoint, including the user's
+        /// endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications,
+        /// for example a device identifier, email address, or phone number.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -128,8 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito
-        /// Developer Guide</i>.
+        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -268,8 +264,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserContextData. 
         /// <para>
-        /// Contextual data about your user session, such as the device fingerprint, IP address,
-        /// or location. Amazon Cognito advanced security evaluates the risk of an authentication
+        /// Contextual data about your user session like the device fingerprint, IP address, or
+        /// location. Amazon Cognito threat protection evaluates the risk of an authentication
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
@@ -295,7 +291,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the user that you want to query or modify. The value of this parameter
+        /// The name of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
         /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
         /// <c>sub</c> of a local user or the username of a user from a third-party IdP.

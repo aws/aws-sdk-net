@@ -30,16 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Sets or shows user pool email message configuration for MFA. Includes the subject
-    /// and body of the email message template for MFA messages. To activate this setting,
-    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-    /// advanced security features</a> must be active in your user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
-    /// </para>
+    /// Sets or shows configuration for user pool email message MFA and sign-in with one-time
+    /// passwords (OTPs). Includes the subject and body of the email message template for
+    /// sign-in and MFA messages. To activate this setting, your user pool must be in the
+    /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+    /// Essentials tier</a> or higher.
     /// </summary>
     public partial class EmailMfaConfigType
     {
@@ -49,11 +44,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The template for the email message that your user pool sends to users with a code
-        /// for MFA and sign-in with an email OTP. The message must contain the <c>{####}</c>
-        /// placeholder. In the message, Amazon Cognito replaces this placeholder with the code.
-        /// If you don't provide this parameter, Amazon Cognito sends messages in the default
-        /// format.
+        /// The template for the email messages that your user pool sends to users with codes
+        /// for MFA and sign-in with email OTPs. The message must contain the <c>{####}</c> placeholder.
+        /// In the message, Amazon Cognito replaces this placeholder with the code. If you don't
+        /// provide this parameter, Amazon Cognito sends messages in the default format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -72,7 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject of the email message that your user pool sends to users with a code for
+        /// The subject of the email messages that your user pool sends to users with codes for
         /// MFA and email OTP sign-in.
         /// </para>
         /// </summary>

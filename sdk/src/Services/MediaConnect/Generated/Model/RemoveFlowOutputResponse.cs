@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private string _outputArn;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// output you removed.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that the output was removed from. 
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputArn. The ARN of the output that was removed.
+        /// Gets and sets the property OutputArn. 
+        /// <para>
+        ///  The ARN of the output that was removed. 
+        /// </para>
         /// </summary>
         public string OutputArn
         {

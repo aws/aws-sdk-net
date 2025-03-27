@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The output of the bridge. A flow output is delivered to the AWS cloud.
+    /// The output of the bridge. A flow output is delivered to the Amazon Web Services cloud.
     /// </summary>
     public partial class BridgeFlowOutput
     {
@@ -39,8 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The Amazon Resource Number (ARN) of the cloud
-        /// flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The Amazon Resource Number (ARN) of the cloud flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -56,8 +58,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowSourceArn. The Amazon Resource Number (ARN) of the
-        /// flow source.
+        /// Gets and sets the property FlowSourceArn. 
+        /// <para>
+        ///  The Amazon Resource Number (ARN) of the flow source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowSourceArn
@@ -73,7 +77,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the bridge's output.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the bridge's output.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

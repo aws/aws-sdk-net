@@ -34,6 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ConfiguredTableAssociationSummary
     {
+        private List<string> _analysisRuleTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private string _configuredTableId;
         private DateTime? _createTime;
@@ -42,6 +43,25 @@ namespace Amazon.CleanRooms.Model
         private string _membershipId;
         private string _name;
         private DateTime? _updateTime;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisRuleTypes. 
+        /// <para>
+        /// The analysis rule types that are associated with the configured table associations
+        /// in this summary. 
+        /// </para>
+        /// </summary>
+        public List<string> AnalysisRuleTypes
+        {
+            get { return this._analysisRuleTypes; }
+            set { this._analysisRuleTypes = value; }
+        }
+
+        // Check to see if AnalysisRuleTypes property is set
+        internal bool IsSetAnalysisRuleTypes()
+        {
+            return this._analysisRuleTypes != null && (this._analysisRuleTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

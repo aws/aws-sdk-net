@@ -42,8 +42,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ConfiguredUserAuthFactors. 
         /// <para>
-        /// The authentication types that are available to the user with <c>USER_AUTH</c> sign-in.
-        /// 
+        /// The authentication types that are available to the user with <c>USER_AUTH</c> sign-in,
+        /// for example <c>["PASSWORD", "WEB_AUTHN"]</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8)]
@@ -62,7 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreferredMfaSetting. 
         /// <para>
-        /// The user's preferred MFA setting.
+        /// The challenge method that Amazon Cognito returns to the user in response to sign-in
+        /// requests. Users can prefer SMS message, email message, or TOTP MFA.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -100,7 +101,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username of the currently sign-in user.
+        /// The name of the user who is eligible for the authentication factors in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

@@ -38,7 +38,9 @@ namespace Amazon.AppSync.Model
         private string _certificateArn;
         private string _description;
         private string _domainName;
+        private string _domainNameArn;
         private string _hostedZoneId;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppsyncDomainName. 
@@ -117,6 +119,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainNameArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the domain name.
+        /// </para>
+        /// </summary>
+        public string DomainNameArn
+        {
+            get { return this._domainNameArn; }
+            set { this._domainNameArn = value; }
+        }
+
+        // Check to see if DomainNameArn property is set
+        internal bool IsSetDomainNameArn()
+        {
+            return this._domainNameArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
         /// The ID of your Amazon Route 53 hosted zone.
@@ -132,6 +152,22 @@ namespace Amazon.AppSync.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

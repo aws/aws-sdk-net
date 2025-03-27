@@ -3078,6 +3078,53 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  ModifyIpPools
+
+
+        /// <summary>
+        /// [Application Load Balancers] Modify the IP pool associated to a load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpPools service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpPools service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
+        public virtual ModifyIpPoolsResponse ModifyIpPools(ModifyIpPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpPoolsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// [Application Load Balancers] Modify the IP pool associated to a load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpPools service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
+        public virtual Task<ModifyIpPoolsResponse> ModifyIpPoolsAsync(ModifyIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyIpPoolsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyListener
 
 

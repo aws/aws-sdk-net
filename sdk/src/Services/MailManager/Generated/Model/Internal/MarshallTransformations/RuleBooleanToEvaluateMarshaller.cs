@@ -46,6 +46,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnalysis())
+            {
+                context.Writer.WritePropertyName("Analysis");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalysisMarshaller.Instance;
+                marshaller.Marshall(requestObject.Analysis, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAttribute())
             {
                 context.Writer.WritePropertyName("Attribute");

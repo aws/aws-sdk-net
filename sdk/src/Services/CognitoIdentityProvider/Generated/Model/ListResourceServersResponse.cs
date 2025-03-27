@@ -40,7 +40,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// The identifier that Amazon Cognito returned with the previous request to this operation.
+        /// When you include a pagination token in your request, Amazon Cognito returns the next
+        /// set of items in the list. By use of this token, you can paginate through the full
+        /// list of items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ResourceServers. 
         /// <para>
-        /// The resource servers.
+        /// An array of resource servers and the details of their configuration. For each, the
+        /// response includes names, identifiers, and custom scopes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

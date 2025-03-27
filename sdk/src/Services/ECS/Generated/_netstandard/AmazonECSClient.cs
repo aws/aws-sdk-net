@@ -337,6 +337,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.LimitExceededException">
         /// The limit for the resource was exceeded.
@@ -420,6 +426,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -610,6 +622,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -703,6 +721,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -782,6 +806,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -826,6 +856,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -905,6 +941,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -991,6 +1033,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1082,6 +1130,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1181,6 +1235,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1248,6 +1308,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1347,6 +1413,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1430,6 +1502,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1488,6 +1566,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1552,6 +1636,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1615,6 +1705,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1687,6 +1783,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1771,6 +1873,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1840,6 +1948,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1907,6 +2021,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1980,6 +2100,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2048,6 +2174,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2137,6 +2269,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2225,6 +2363,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -2289,6 +2433,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2338,6 +2488,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2393,6 +2549,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2458,6 +2620,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2530,6 +2698,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2600,6 +2774,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2663,6 +2843,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -2728,6 +2914,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2795,6 +2987,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2855,6 +3053,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2924,6 +3128,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -2994,6 +3204,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3053,6 +3269,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3106,6 +3328,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -3190,6 +3418,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceInUseException">
         /// The specified resource is in-use and can't be removed.
@@ -3279,6 +3513,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3424,6 +3664,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
         /// The specified platform version doesn't satisfy the required capabilities of the task
@@ -3520,6 +3766,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3610,6 +3862,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3679,6 +3937,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3744,6 +4008,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -3809,6 +4079,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -3870,6 +4146,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3932,6 +4214,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -3997,6 +4285,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -4087,6 +4381,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.MissingVersionException">
         /// Amazon ECS can't determine the current version of the Amazon ECS container agent on
@@ -4231,6 +4531,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -4469,6 +4775,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
@@ -4559,6 +4871,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -4678,6 +4996,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -4751,6 +5075,12 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.

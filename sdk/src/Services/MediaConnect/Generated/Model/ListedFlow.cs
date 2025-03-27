@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
+    /// A summary of a flow, including its ARN, Availability Zone, and source type.
     /// </summary>
     public partial class ListedFlow
     {
@@ -43,8 +43,10 @@ namespace Amazon.MediaConnect.Model
         private Status _status;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZone. The Availability Zone that the flow was
-        /// created in.
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        ///  The Availability Zone that the flow was created in.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AvailabilityZone
@@ -60,7 +62,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. A description of the flow.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Description
@@ -76,7 +81,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string FlowArn
@@ -92,7 +100,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Maintenance.
+        /// Gets and sets the property Maintenance. 
+        /// <para>
+        ///  The maintenance settings for the flow. 
+        /// </para>
         /// </summary>
         public Maintenance Maintenance
         {
@@ -107,7 +118,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the flow.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -123,10 +137,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceType. The type of source. This value is either owned
-        /// (originated somewhere other than an AWS Elemental MediaConnect flow owned by another
-        /// AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by
-        /// another AWS account).
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        ///  The type of source. This value is either owned (originated somewhere other than an
+        /// MediaConnect flow owned by another Amazon Web Services account) or entitled (originated
+        /// at a MediaConnect flow owned by another Amazon Web Services account).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SourceType SourceType
@@ -142,7 +158,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The current status of the flow.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The current status of the flow.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Status Status

@@ -30,9 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The feedback that your application submitted to an advanced security features event
-    /// log, as displayed in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
-    /// response.
+    /// The feedback that your application submitted to a threat protection event log, as
+    /// displayed in an <c>AdminListUserAuthEvents</c> response.
     /// </summary>
     public partial class EventFeedbackType
     {
@@ -61,9 +60,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FeedbackValue. 
         /// <para>
-        /// The authentication event feedback value. When you provide a <c>FeedbackValue</c> value
-        /// of <c>valid</c>, you tell Amazon Cognito that you trust a user session where Amazon
-        /// Cognito has evaluated some level of risk. When you provide a <c>FeedbackValue</c>
+        /// Your feedback to the authentication event. When you provide a <c>FeedbackValue</c>
+        /// value of <c>valid</c>, you tell Amazon Cognito that you trust a user session where
+        /// Amazon Cognito has evaluated some level of risk. When you provide a <c>FeedbackValue</c>
         /// value of <c>invalid</c>, you tell Amazon Cognito that you don't trust a user session,
         /// or you don't believe that Amazon Cognito evaluated a high-enough risk level.
         /// </para>

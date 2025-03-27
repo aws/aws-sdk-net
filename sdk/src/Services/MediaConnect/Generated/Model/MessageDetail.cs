@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// 
+    /// The details of an error message.
     /// </summary>
     public partial class MessageDetail
     {
@@ -39,7 +39,10 @@ namespace Amazon.MediaConnect.Model
         private string _resourceName;
 
         /// <summary>
-        /// Gets and sets the property Code. The error code.
+        /// Gets and sets the property Code. 
+        /// <para>
+        ///  The error code.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Code
@@ -55,8 +58,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message. The specific error message that MediaConnect returns
-        /// to help you understand the reason that the request did not succeed.
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///  The specific error message that MediaConnect returns to help you understand the reason
+        /// that the request did not succeed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Message
@@ -72,7 +78,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceName. The name of the resource.
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        ///  The name of the resource.
+        /// </para>
         /// </summary>
         public string ResourceName
         {

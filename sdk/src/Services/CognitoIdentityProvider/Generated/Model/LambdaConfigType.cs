@@ -33,13 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several
     /// possible stages of user pool operations. Triggers can modify the outcome of the operations
     /// that invoked them.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
-    /// </para>
     /// </summary>
     public partial class LambdaConfigType
     {

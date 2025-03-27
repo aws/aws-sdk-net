@@ -775,6 +775,46 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             #endregion
         }
 
+        public void MediaPackageV2ResetChannelState()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ResetChannelState(new ResetChannelStateRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannel"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime resetAt = response.ResetAt;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ResetOriginEndpointState()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ResetOriginEndpointState(new ResetOriginEndpointStateRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannel",
+                OriginEndpointName = "exampleOriginEndpoint"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            string originEndpointName = response.OriginEndpointName;
+            DateTime resetAt = response.ResetAt;
+
+            #endregion
+        }
+
         public void MediaPackageV2TagResource()
         {
             #region example-1

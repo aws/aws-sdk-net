@@ -36,6 +36,14 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// 
     ///  
     /// <para>
+    /// When you use identity-enhanced role sessions to list statements, you must provide
+    /// either the <c>cluster-identifier</c> or <c>workgroup-name</c> parameter. This ensures
+    /// that the IdC user can only access the Amazon Redshift IdC applications they are assigned.
+    /// For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+    /// Trusted identity propagation overview</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about the Amazon Redshift Data API and CLI usage examples, see
     /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
     /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
@@ -43,11 +51,53 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// </summary>
     public partial class ListStatementsRequest : AmazonRedshiftDataAPIServiceRequest
     {
+        private string _clusterIdentifier;
+        private string _database;
         private int? _maxResults;
         private string _nextToken;
         private bool? _roleLevel;
         private string _statementName;
         private StatusString _status;
+        private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property ClusterIdentifier. 
+        /// <para>
+        /// The cluster identifier. Only statements that ran on this cluster are returned. When
+        /// providing <c>ClusterIdentifier</c>, then <c>WorkgroupName</c> can't be specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string ClusterIdentifier
+        {
+            get { return this._clusterIdentifier; }
+            set { this._clusterIdentifier = value; }
+        }
+
+        // Check to see if ClusterIdentifier property is set
+        internal bool IsSetClusterIdentifier()
+        {
+            return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Database. 
+        /// <para>
+        /// The name of the database when listing statements run against a <c>ClusterIdentifier</c>
+        /// or <c>WorkgroupName</c>. 
+        /// </para>
+        /// </summary>
+        public string Database
+        {
+            get { return this._database; }
+            set { this._database = value; }
+        }
+
+        // Check to see if Database property is set
+        internal bool IsSetDatabase()
+        {
+            return this._database != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -182,6 +232,27 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The serverless workgroup name or Amazon Resource Name (ARN). Only statements that
+        /// ran on this workgroup are returned. When providing <c>WorkgroupName</c>, then <c>ClusterIdentifier</c>
+        /// can't be specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=128)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

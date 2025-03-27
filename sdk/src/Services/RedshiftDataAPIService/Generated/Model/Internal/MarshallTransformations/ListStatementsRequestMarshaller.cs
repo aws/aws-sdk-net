@@ -75,6 +75,18 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterIdentifier())
+            {
+                context.Writer.WritePropertyName("ClusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
+            }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("Database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
@@ -103,6 +115,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Status");
                 context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("WorkgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
             }
 
             writer.WriteEndObject();

@@ -488,9 +488,9 @@ namespace Amazon.S3.Model
         /// Constraints: This property can be used with ETagToNotMatch,
         /// but cannot be used with other conditional copy properties.
         /// </remarks>
-        public DateTime ModifiedSinceDate
+        public DateTime? ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate.GetValueOrDefault(); }
+            get { return this.modifiedSinceDate; }
             set { this.modifiedSinceDate = value; }
         }
 
@@ -513,9 +513,9 @@ namespace Amazon.S3.Model
         /// Constraints: This property can be used with ETagToMatch,
         /// but cannot be used with other conditional copy properties.
         /// </remarks>
-        public DateTime UnmodifiedSinceDate
+        public DateTime? UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
+            get { return this.unmodifiedSinceDate; }
             set { this.unmodifiedSinceDate = value; }
         }
 

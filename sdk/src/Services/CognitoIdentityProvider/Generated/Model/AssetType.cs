@@ -31,13 +31,6 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// An image file from a managed login branding style in a user pool.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateManagedLoginBranding.html">CreateManagedLoginBranding</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateManagedLoginBranding.html">UpdateManagedLoginBranding</a>,
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBranding.html">DescribeManagedLoginBranding</a>.
-    /// </para>
     /// </summary>
     public partial class AssetType
     {

@@ -120,7 +120,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// <summary>
         /// Gets and sets the property VpcInformation. 
         /// <para>
-        /// Security group IDs that describe the inbound and outbound rules.
+        /// Information about your VPC and security groups used with the connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

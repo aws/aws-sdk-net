@@ -42,10 +42,12 @@ namespace Amazon.MediaConnect.Model
         private List<GatewayNetwork> _networks = AWSConfigs.InitializeCollections ? new List<GatewayNetwork>() : null;
 
         /// <summary>
-        /// Gets and sets the property EgressCidrBlocks. The range of IP addresses that contribute
-        /// content or initiate output requests for flows communicating with this gateway. These
-        /// IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block;
-        /// for example, 10.0.0.0/16.
+        /// Gets and sets the property EgressCidrBlocks. 
+        /// <para>
+        ///  The range of IP addresses that contribute content or initiate output requests for
+        /// flows communicating with this gateway. These IP addresses should be in the form of
+        /// a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> EgressCidrBlocks
@@ -61,7 +63,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayArn. The Amazon Resource Name (ARN) of the gateway.
+        /// Gets and sets the property GatewayArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the gateway.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayArn
@@ -77,7 +82,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayMessages.
+        /// Gets and sets the property GatewayMessages. 
+        /// <para>
+        /// Messages with information about the gateway. 
+        /// </para>
         /// </summary>
         public List<MessageDetail> GatewayMessages
         {
@@ -92,7 +100,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayState. The current status of the gateway.
+        /// Gets and sets the property GatewayState. 
+        /// <para>
+        ///  The current status of the gateway.
+        /// </para>
         /// </summary>
         public GatewayState GatewayState
         {
@@ -107,8 +118,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the gateway. This name can not be modified
-        /// after the gateway is created.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the gateway. This name can not be modified after the gateway is created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -124,7 +137,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Networks. The list of networks in the gateway.
+        /// Gets and sets the property Networks. 
+        /// <para>
+        ///  The list of networks in the gateway.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<GatewayNetwork> Networks

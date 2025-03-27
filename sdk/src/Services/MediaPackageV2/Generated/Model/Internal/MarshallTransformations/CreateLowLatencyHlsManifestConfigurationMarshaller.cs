@@ -103,6 +103,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetUrlEncodeChildManifest())
+            {
+                context.Writer.WritePropertyName("UrlEncodeChildManifest");
+                context.Writer.WriteBooleanValue(requestObject.UrlEncodeChildManifest.Value);
+            }
+
         }
 
         /// <summary>

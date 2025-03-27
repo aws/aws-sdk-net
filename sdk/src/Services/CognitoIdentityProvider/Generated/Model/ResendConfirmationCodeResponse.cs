@@ -40,8 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetails. 
         /// <para>
-        /// The code delivery details returned by the server in response to the request to resend
-        /// the confirmation code.
+        /// Information about the phone number or email address that Amazon Cognito sent the confirmation
+        /// code to.
         /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails

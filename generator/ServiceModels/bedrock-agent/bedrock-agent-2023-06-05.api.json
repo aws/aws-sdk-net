@@ -1366,8 +1366,26 @@
       "type":"string",
       "enum":[
         "AMAZON.UserInput",
-        "AMAZON.CodeInterpreter"
+        "AMAZON.CodeInterpreter",
+        "ANTHROPIC.Computer",
+        "ANTHROPIC.Bash",
+        "ANTHROPIC.TextEditor"
       ]
+    },
+    "ActionGroupSignatureParams":{
+      "type":"map",
+      "key":{"shape":"ActionGroupSignatureParamsKeyString"},
+      "value":{"shape":"ActionGroupSignatureParamsValueString"}
+    },
+    "ActionGroupSignatureParamsKeyString":{
+      "type":"string",
+      "max":100,
+      "min":0
+    },
+    "ActionGroupSignatureParamsValueString":{
+      "type":"string",
+      "max":100,
+      "min":0
     },
     "ActionGroupState":{
       "type":"string",
@@ -1460,6 +1478,7 @@
         "createdAt":{"shape":"DateTimestamp"},
         "description":{"shape":"Description"},
         "functionSchema":{"shape":"FunctionSchema"},
+        "parentActionGroupSignatureParams":{"shape":"ActionGroupSignatureParams"},
         "parentActionSignature":{"shape":"ActionGroupSignature"},
         "updatedAt":{"shape":"DateTimestamp"}
       }
@@ -1917,6 +1936,17 @@
         "parsingPrompt":{"shape":"ParsingPrompt"}
       }
     },
+    "BedrockFoundationModelContextEnrichmentConfiguration":{
+      "type":"structure",
+      "required":[
+        "enrichmentStrategyConfiguration",
+        "modelArn"
+      ],
+      "members":{
+        "enrichmentStrategyConfiguration":{"shape":"EnrichmentStrategyConfiguration"},
+        "modelArn":{"shape":"BedrockModelArn"}
+      }
+    },
     "BedrockModelArn":{
       "type":"string",
       "max":2048,
@@ -2096,6 +2126,18 @@
         "S3"
       ]
     },
+    "ContextEnrichmentConfiguration":{
+      "type":"structure",
+      "required":["type"],
+      "members":{
+        "bedrockFoundationModelConfiguration":{"shape":"BedrockFoundationModelContextEnrichmentConfiguration"},
+        "type":{"shape":"ContextEnrichmentType"}
+      }
+    },
+    "ContextEnrichmentType":{
+      "type":"string",
+      "enum":["BEDROCK_FOUNDATION_MODEL"]
+    },
     "ConversationRole":{
       "type":"string",
       "enum":[
@@ -2143,7 +2185,8 @@
         },
         "description":{"shape":"Description"},
         "functionSchema":{"shape":"FunctionSchema"},
-        "parentActionGroupSignature":{"shape":"ActionGroupSignature"}
+        "parentActionGroupSignature":{"shape":"ActionGroupSignature"},
+        "parentActionGroupSignatureParams":{"shape":"ActionGroupSignatureParams"}
       }
     },
     "CreateAgentActionGroupResponse":{
@@ -3183,6 +3226,17 @@
       "max":1,
       "min":1
     },
+    "EnrichmentStrategyConfiguration":{
+      "type":"structure",
+      "required":["method"],
+      "members":{
+        "method":{"shape":"EnrichmentStrategyMethod"}
+      }
+    },
+    "EnrichmentStrategyMethod":{
+      "type":"string",
+      "enum":["CHUNK_ENTITY_EXTRACTION"]
+    },
     "ErrorMessage":{
       "type":"string",
       "max":2048,
@@ -4142,6 +4196,13 @@
         "version":{"shape":"Version"}
       }
     },
+    "GraphArn":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^arn:aws(|-cn|-us-gov):neptune-graph:[a-zA-Z0-9-]*:[0-9]{12}:graph/g-[a-zA-Z0-9]{10}$",
+      "sensitive":true
+    },
     "GuardrailConfiguration":{
       "type":"structure",
       "members":{
@@ -4584,7 +4645,8 @@
         "PINECONE",
         "REDIS_ENTERPRISE_CLOUD",
         "RDS",
-        "MONGO_DB_ATLAS"
+        "MONGO_DB_ATLAS",
+        "NEPTUNE_ANALYTICS"
       ]
     },
     "KnowledgeBaseSummaries":{
@@ -5303,6 +5365,28 @@
       "type":"string",
       "max":1000,
       "min":1
+    },
+    "NeptuneAnalyticsConfiguration":{
+      "type":"structure",
+      "required":[
+        "fieldMapping",
+        "graphArn"
+      ],
+      "members":{
+        "fieldMapping":{"shape":"NeptuneAnalyticsFieldMapping"},
+        "graphArn":{"shape":"GraphArn"}
+      }
+    },
+    "NeptuneAnalyticsFieldMapping":{
+      "type":"structure",
+      "required":[
+        "metadataField",
+        "textField"
+      ],
+      "members":{
+        "metadataField":{"shape":"FieldName"},
+        "textField":{"shape":"FieldName"}
+      }
     },
     "NextToken":{
       "type":"string",
@@ -6489,6 +6573,7 @@
       "required":["type"],
       "members":{
         "mongoDbAtlasConfiguration":{"shape":"MongoDbAtlasConfiguration"},
+        "neptuneAnalyticsConfiguration":{"shape":"NeptuneAnalyticsConfiguration"},
         "opensearchServerlessConfiguration":{"shape":"OpenSearchServerlessConfiguration"},
         "pineconeConfiguration":{"shape":"PineconeConfiguration"},
         "rdsConfiguration":{"shape":"RdsConfiguration"},
@@ -6907,7 +6992,8 @@
         "apiSchema":{"shape":"APISchema"},
         "description":{"shape":"Description"},
         "functionSchema":{"shape":"FunctionSchema"},
-        "parentActionGroupSignature":{"shape":"ActionGroupSignature"}
+        "parentActionGroupSignature":{"shape":"ActionGroupSignature"},
+        "parentActionGroupSignatureParams":{"shape":"ActionGroupSignatureParams"}
       }
     },
     "UpdateAgentActionGroupResponse":{
@@ -7319,6 +7405,7 @@
       "type":"structure",
       "members":{
         "chunkingConfiguration":{"shape":"ChunkingConfiguration"},
+        "contextEnrichmentConfiguration":{"shape":"ContextEnrichmentConfiguration"},
         "customTransformationConfiguration":{"shape":"CustomTransformationConfiguration"},
         "parsingConfiguration":{"shape":"ParsingConfiguration"}
       }

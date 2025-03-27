@@ -238,9 +238,9 @@ namespace Amazon.S3.Model
         /// </para>
         /// </note>
         /// </summary>
-        public DateTime IfMatchInitiatedTime
+        public DateTime? IfMatchInitiatedTime
         {
-            get { return this.ifMatchInitiatedTime.GetValueOrDefault();  }
+            get { return this.ifMatchInitiatedTime;  }
             set { this.ifMatchInitiatedTime = value;}
         }
 

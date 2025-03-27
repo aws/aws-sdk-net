@@ -40,6 +40,7 @@ namespace Amazon.QBusiness.Model
         private string _mediaId;
         private string _mediaMimeType;
         private SnippetExcerpt _snippetExcerpt;
+        private SourceDetails _sourceDetails;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
@@ -84,6 +85,7 @@ namespace Amazon.QBusiness.Model
         /// attribution.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated in favor of using mediaId within the respective sourceDetails field.")]
         [AWSProperty(Min=36, Max=36)]
         public string MediaId
         {
@@ -104,6 +106,7 @@ namespace Amazon.QBusiness.Model
         /// the source attribution.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated in favor of using mediaMimeType within the respective sourceDetails field.")]
         [AWSProperty(Min=1, Max=2048)]
         public string MediaMimeType
         {
@@ -134,6 +137,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetSnippetExcerpt()
         {
             return this._snippetExcerpt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDetails. 
+        /// <para>
+        /// Source information for a segment of extracted text, including its media type.
+        /// </para>
+        /// </summary>
+        public SourceDetails SourceDetails
+        {
+            get { return this._sourceDetails; }
+            set { this._sourceDetails = value; }
+        }
+
+        // Check to see if SourceDetails property is set
+        internal bool IsSetSourceDetails()
+        {
+            return this._sourceDetails != null;
         }
 
     }

@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class RAGConfig
     {
         private KnowledgeBaseConfig _knowledgeBaseConfig;
+        private EvaluationPrecomputedRagSourceConfig _precomputedRagSourceConfig;
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseConfig. 
@@ -52,6 +53,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetKnowledgeBaseConfig()
         {
             return this._knowledgeBaseConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrecomputedRagSourceConfig. 
+        /// <para>
+        /// Contains configuration details about the RAG source used to generate inference response
+        /// data for a Knowledge Base evaluation job.
+        /// </para>
+        /// </summary>
+        public EvaluationPrecomputedRagSourceConfig PrecomputedRagSourceConfig
+        {
+            get { return this._precomputedRagSourceConfig; }
+            set { this._precomputedRagSourceConfig = value; }
+        }
+
+        // Check to see if PrecomputedRagSourceConfig property is set
+        internal bool IsSetPrecomputedRagSourceConfig()
+        {
+            return this._precomputedRagSourceConfig != null;
         }
 
     }

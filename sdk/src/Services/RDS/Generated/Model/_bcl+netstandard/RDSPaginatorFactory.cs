@@ -37,6 +37,78 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeBlueGreenDeployments operation
+        ///</summary>
+        public IDescribeBlueGreenDeploymentsPaginator DescribeBlueGreenDeployments(DescribeBlueGreenDeploymentsRequest request) 
+        {
+            return new DescribeBlueGreenDeploymentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeCertificates operation
+        ///</summary>
+        public IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request) 
+        {
+            return new DescribeCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterAutomatedBackups operation
+        ///</summary>
+        public IDescribeDBClusterAutomatedBackupsPaginator DescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request) 
+        {
+            return new DescribeDBClusterAutomatedBackupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterBacktracks operation
+        ///</summary>
+        public IDescribeDBClusterBacktracksPaginator DescribeDBClusterBacktracks(DescribeDBClusterBacktracksRequest request) 
+        {
+            return new DescribeDBClusterBacktracksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterEndpoints operation
+        ///</summary>
+        public IDescribeDBClusterEndpointsPaginator DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) 
+        {
+            return new DescribeDBClusterEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameterGroups operation
+        ///</summary>
+        public IDescribeDBClusterParameterGroupsPaginator DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request) 
+        {
+            return new DescribeDBClusterParameterGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameters operation
+        ///</summary>
+        public IDescribeDBClusterParametersPaginator DescribeDBClusterParameters(DescribeDBClusterParametersRequest request) 
+        {
+            return new DescribeDBClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusters operation
+        ///</summary>
+        public IDescribeDBClustersPaginator DescribeDBClusters(DescribeDBClustersRequest request) 
+        {
+            return new DescribeDBClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterSnapshots operation
+        ///</summary>
+        public IDescribeDBClusterSnapshotsPaginator DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request) 
+        {
+            return new DescribeDBClusterSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBEngineVersions operation
         ///</summary>
         public IDescribeDBEngineVersionsPaginator DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request) 
@@ -45,11 +117,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBInstanceAutomatedBackups operation
+        ///</summary>
+        public IDescribeDBInstanceAutomatedBackupsPaginator DescribeDBInstanceAutomatedBackups(DescribeDBInstanceAutomatedBackupsRequest request) 
+        {
+            return new DescribeDBInstanceAutomatedBackupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBInstances operation
         ///</summary>
         public IDescribeDBInstancesPaginator DescribeDBInstances(DescribeDBInstancesRequest request) 
         {
             return new DescribeDBInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBLogFiles operation
+        ///</summary>
+        public IDescribeDBLogFilesPaginator DescribeDBLogFiles(DescribeDBLogFilesRequest request) 
+        {
+            return new DescribeDBLogFilesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -69,6 +157,46 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDBProxies operation
+        ///</summary>
+        public IDescribeDBProxiesPaginator DescribeDBProxies(DescribeDBProxiesRequest request) 
+        {
+            return new DescribeDBProxiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBProxyEndpoints operation
+        ///</summary>
+        public IDescribeDBProxyEndpointsPaginator DescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request) 
+        {
+            return new DescribeDBProxyEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBProxyTargetGroups operation
+        ///</summary>
+        public IDescribeDBProxyTargetGroupsPaginator DescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request) 
+        {
+            return new DescribeDBProxyTargetGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBProxyTargets operation
+        ///</summary>
+        public IDescribeDBProxyTargetsPaginator DescribeDBProxyTargets(DescribeDBProxyTargetsRequest request) 
+        {
+            return new DescribeDBProxyTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBRecommendations operation
+        ///</summary>
+        public IDescribeDBRecommendationsPaginator DescribeDBRecommendations(DescribeDBRecommendationsRequest request) 
+        {
+            return new DescribeDBRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBSecurityGroups operation
         ///</summary>
         public IDescribeDBSecurityGroupsPaginator DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request) 
@@ -82,6 +210,14 @@ namespace Amazon.RDS.Model
         public IDescribeDBSnapshotsPaginator DescribeDBSnapshots(DescribeDBSnapshotsRequest request) 
         {
             return new DescribeDBSnapshotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBSnapshotTenantDatabases operation
+        ///</summary>
+        public IDescribeDBSnapshotTenantDatabasesPaginator DescribeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request) 
+        {
+            return new DescribeDBSnapshotTenantDatabasesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -117,6 +253,30 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeExportTasks operation
+        ///</summary>
+        public IDescribeExportTasksPaginator DescribeExportTasks(DescribeExportTasksRequest request) 
+        {
+            return new DescribeExportTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeGlobalClusters operation
+        ///</summary>
+        public IDescribeGlobalClustersPaginator DescribeGlobalClusters(DescribeGlobalClustersRequest request) 
+        {
+            return new DescribeGlobalClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIntegrations operation
+        ///</summary>
+        public IDescribeIntegrationsPaginator DescribeIntegrations(DescribeIntegrationsRequest request) 
+        {
+            return new DescribeIntegrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeOptionGroupOptions operation
         ///</summary>
         public IDescribeOptionGroupOptionsPaginator DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request) 
@@ -141,6 +301,14 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribePendingMaintenanceActions operation
+        ///</summary>
+        public IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request) 
+        {
+            return new DescribePendingMaintenanceActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReservedDBInstances operation
         ///</summary>
         public IDescribeReservedDBInstancesPaginator DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request) 
@@ -154,6 +322,30 @@ namespace Amazon.RDS.Model
         public IDescribeReservedDBInstancesOfferingsPaginator DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request) 
         {
             return new DescribeReservedDBInstancesOfferingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSourceRegions operation
+        ///</summary>
+        public IDescribeSourceRegionsPaginator DescribeSourceRegions(DescribeSourceRegionsRequest request) 
+        {
+            return new DescribeSourceRegionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTenantDatabases operation
+        ///</summary>
+        public IDescribeTenantDatabasesPaginator DescribeTenantDatabases(DescribeTenantDatabasesRequest request) 
+        {
+            return new DescribeTenantDatabasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DownloadDBLogFilePortion operation
+        ///</summary>
+        public IDownloadDBLogFilePortionPaginator DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request) 
+        {
+            return new DownloadDBLogFilePortionPaginator(this.client, request);
         }
     }
 }

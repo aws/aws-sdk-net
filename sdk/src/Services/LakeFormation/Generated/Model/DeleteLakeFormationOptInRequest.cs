@@ -36,8 +36,24 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class DeleteLakeFormationOptInRequest : AmazonLakeFormationRequest
     {
+        private Condition _condition;
         private DataLakePrincipal _principal;
         private Resource _resource;
+
+        /// <summary>
+        /// Gets and sets the property Condition.
+        /// </summary>
+        public Condition Condition
+        {
+            get { return this._condition; }
+            set { this._condition = value; }
+        }
+
+        // Check to see if Condition property is set
+        internal bool IsSetCondition()
+        {
+            return this._condition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Principal.

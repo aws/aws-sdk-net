@@ -87,7 +87,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(copyObjectRequest.IsSetObjectLockMode())
                 request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockMode));        
             if(copyObjectRequest.IsSetObjectLockRetainUntilDate())
-                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockRetainUntilDate, AWSSDKUtils.ISO8601DateFormat));
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockRetainUntilDate.Value, AWSSDKUtils.ISO8601DateFormat));
 
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));
@@ -164,15 +164,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 var isAccessPoint = S3ArnUtils.IsS3AccessPointsArn(bucket) || S3ArnUtils.IsS3OutpostsArn(bucket);
                 // 'object/' needed appended to key for copy header with access points
-                source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
+
+                source = AWSSDKUtils.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), false);
                 if (!String.IsNullOrEmpty(version))
                 {
-                    source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AmazonS3Util.UrlEncode(version, true));
+                    source = string.Format(CultureInfo.InvariantCulture, "{0}?versionId={1}", source, AWSSDKUtils.UrlEncode(version, true));
                 }
             }
             else
             {
-                source = AmazonS3Util.UrlEncode(bucket, true);
+                source = AWSSDKUtils.UrlEncode(bucket, true);
             }
 
             return source;

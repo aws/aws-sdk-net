@@ -47,6 +47,7 @@ namespace Amazon.MediaPackageV2.Model
         private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<GetLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
         private string _originEndpointName;
+        private DateTime? _resetAt;
         private Segment _segment;
         private int? _startoverWindowSeconds;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -297,6 +298,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetOriginEndpointName()
         {
             return this._originEndpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResetAt. 
+        /// <para>
+        /// The time that the origin endpoint was last reset.
+        /// </para>
+        /// </summary>
+        public DateTime? ResetAt
+        {
+            get { return this._resetAt; }
+            set { this._resetAt = value; }
+        }
+
+        // Check to see if ResetAt property is set
+        internal bool IsSetResetAt()
+        {
+            return this._resetAt.HasValue; 
         }
 
         /// <summary>

@@ -30,8 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Thrown if the identity pool has no role associated for the given auth type (auth/unauth)
-    /// or if the AssumeRole fails.
+    /// If you provided authentication information in the request, the identity pool has no
+    /// authenticated role configured, or STS returned an error response to the request to
+    /// assume the authenticated role from the identity pool. If you provided no authentication
+    /// information in the request, the identity pool has no unauthenticated role configured,
+    /// or STS returned an error response to the request to assume the unauthenticated role
+    /// from the identity pool.
+    /// 
+    ///  
+    /// <para>
+    /// Your role trust policy must grant <c>AssumeRoleWithWebIdentity</c> permissions to
+    /// <c>cognito-identity.amazonaws.com</c>.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

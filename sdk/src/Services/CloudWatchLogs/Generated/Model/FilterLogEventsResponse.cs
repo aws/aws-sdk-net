@@ -62,6 +62,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// The token to use when requesting the next set of items. The token expires after 24
         /// hours.
         /// </para>
+        ///  
+        /// <para>
+        /// If the results don't include a <c>nextToken</c>, then pagination is finished. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string NextToken

@@ -40,7 +40,10 @@ namespace Amazon.MediaConnect.Model
         private string _outputName;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The ARN of the bridge that you want to update.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the bridge that you want to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BridgeArn
@@ -56,7 +59,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkOutput.
+        /// Gets and sets the property NetworkOutput. 
+        /// <para>
+        ///  The network of the bridge output. 
+        /// </para>
         /// </summary>
         public UpdateBridgeNetworkOutputRequest NetworkOutput
         {
@@ -71,8 +77,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputName. The name of the bridge output that you want
-        /// to update.
+        /// Gets and sets the property OutputName. 
+        /// <para>
+        ///  Tname of the output that you want to update. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OutputName

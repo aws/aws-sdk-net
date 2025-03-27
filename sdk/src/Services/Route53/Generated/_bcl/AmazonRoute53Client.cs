@@ -6786,7 +6786,11 @@ namespace Amazon.Route53
         /// The results begin with the first resource record set in the list whose name is greater
         /// than or equal to <c>Name</c>, and whose type is greater than or equal to <c>Type</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// Type is only used to sort between records with the same record Name.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         ///  <b>Resource record sets that are PENDING</b> 
         /// </para>
@@ -6900,7 +6904,11 @@ namespace Amazon.Route53
         /// The results begin with the first resource record set in the list whose name is greater
         /// than or equal to <c>Name</c>, and whose type is greater than or equal to <c>Type</c>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  <note> 
+        /// <para>
+        /// Type is only used to sort between records with the same record Name.
+        /// </para>
+        ///  </note> </dd> </dl> 
         /// <para>
         ///  <b>Resource record sets that are PENDING</b> 
         /// </para>

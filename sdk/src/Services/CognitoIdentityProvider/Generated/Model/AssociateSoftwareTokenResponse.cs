@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Session. 
         /// <para>
         /// The session identifier that maintains the state of authentication requests and challenge
-        /// responses. This session ID is valid for the next request in this flow, <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html">VerifySoftwareToken</a>.
+        /// responses.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

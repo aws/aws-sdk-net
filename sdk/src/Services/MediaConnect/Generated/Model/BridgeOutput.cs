@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private BridgeNetworkOutput _networkOutput;
 
         /// <summary>
-        /// Gets and sets the property FlowOutput.
+        /// Gets and sets the property FlowOutput. 
+        /// <para>
+        ///  The output of the associated flow. 
+        /// </para>
         /// </summary>
         public BridgeFlowOutput FlowOutput
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkOutput.
+        /// Gets and sets the property NetworkOutput. 
+        /// <para>
+        ///  The network output for the bridge. 
+        /// </para>
         /// </summary>
         public BridgeNetworkOutput NetworkOutput
         {

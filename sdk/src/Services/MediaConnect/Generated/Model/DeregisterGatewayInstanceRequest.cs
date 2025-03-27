@@ -41,8 +41,11 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayInstanceArn;
 
         /// <summary>
-        /// Gets and sets the property Force. Force the deregistration of an instance. Force will
-        /// deregister an instance, even if there are bridges running on it.
+        /// Gets and sets the property Force. 
+        /// <para>
+        ///  Force the deregistration of an instance. Force will deregister an instance, even
+        /// if there are bridges running on it.
+        /// </para>
         /// </summary>
         public bool? Force
         {
@@ -57,8 +60,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GatewayInstanceArn. The Amazon Resource Name (ARN) of the
-        /// gateway that contains the instance that you want to deregister.
+        /// Gets and sets the property GatewayInstanceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the gateway that contains the instance that you
+        /// want to deregister.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string GatewayInstanceArn

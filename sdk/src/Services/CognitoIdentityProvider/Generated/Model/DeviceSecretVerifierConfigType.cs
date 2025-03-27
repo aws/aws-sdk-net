@@ -33,11 +33,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// A Secure Remote Password (SRP) value that your application generates when you register
     /// a user's device. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-getting-a-device-key">Getting
     /// a device key</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>.
-    /// </para>
     /// </summary>
     public partial class DeviceSecretVerifierConfigType
     {

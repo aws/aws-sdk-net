@@ -30,14 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The template for email messages that advanced security features sends to a user when
-    /// your threat protection automated response has a <i>Notify</i> action.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
-    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
-    /// </para>
+    /// The template for email messages that threat protection sends to a user when your threat
+    /// protection automated response has a <i>Notify</i> action.
     /// </summary>
     public partial class NotifyEmailType
     {

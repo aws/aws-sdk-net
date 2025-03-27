@@ -147,6 +147,20 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ParentActionGroupSignature);
             }
 
+            if(publicRequest.IsSetParentActionGroupSignatureParams())
+            {
+                context.Writer.WritePropertyName("parentActionGroupSignatureParams");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParentActionGroupSignatureParamsKvp in publicRequest.ParentActionGroupSignatureParams)
+                {
+                    context.Writer.WritePropertyName(publicRequestParentActionGroupSignatureParamsKvp.Key);
+                    var publicRequestParentActionGroupSignatureParamsValue = publicRequestParentActionGroupSignatureParamsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestParentActionGroupSignatureParamsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

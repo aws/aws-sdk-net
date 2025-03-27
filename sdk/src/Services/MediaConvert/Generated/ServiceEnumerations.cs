@@ -4574,6 +4574,10 @@ namespace Amazon.MediaConvert
         /// Constant GOP_MULTIPLE for CmafSegmentLengthControl
         /// </summary>
         public static readonly CmafSegmentLengthControl GOP_MULTIPLE = new CmafSegmentLengthControl("GOP_MULTIPLE");
+        /// <summary>
+        /// Constant MATCH for CmafSegmentLengthControl
+        /// </summary>
+        public static readonly CmafSegmentLengthControl MATCH = new CmafSegmentLengthControl("MATCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6568,6 +6572,10 @@ namespace Amazon.MediaConvert
         /// Constant GOP_MULTIPLE for DashIsoSegmentLengthControl
         /// </summary>
         public static readonly DashIsoSegmentLengthControl GOP_MULTIPLE = new DashIsoSegmentLengthControl("GOP_MULTIPLE");
+        /// <summary>
+        /// Constant MATCH for DashIsoSegmentLengthControl
+        /// </summary>
+        public static readonly DashIsoSegmentLengthControl MATCH = new DashIsoSegmentLengthControl("MATCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -13962,6 +13970,10 @@ namespace Amazon.MediaConvert
         /// Constant GOP_MULTIPLE for HlsSegmentLengthControl
         /// </summary>
         public static readonly HlsSegmentLengthControl GOP_MULTIPLE = new HlsSegmentLengthControl("GOP_MULTIPLE");
+        /// <summary>
+        /// Constant MATCH for HlsSegmentLengthControl
+        /// </summary>
+        public static readonly HlsSegmentLengthControl MATCH = new HlsSegmentLengthControl("MATCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -21940,6 +21952,10 @@ namespace Amazon.MediaConvert
         /// Constant AUTO for TsPtsOffset
         /// </summary>
         public static readonly TsPtsOffset AUTO = new TsPtsOffset("AUTO");
+        /// <summary>
+        /// Constant MILLISECONDS for TsPtsOffset
+        /// </summary>
+        public static readonly TsPtsOffset MILLISECONDS = new TsPtsOffset("MILLISECONDS");
         /// <summary>
         /// Constant SECONDS for TsPtsOffset
         /// </summary>

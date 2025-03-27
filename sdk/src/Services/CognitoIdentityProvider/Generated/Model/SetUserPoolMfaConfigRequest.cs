@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the SetUserPoolMfaConfig operation.
-    /// Sets the user pool multi-factor authentication (MFA) and passkey configuration.
+    /// Sets user pool multi-factor authentication (MFA) and passkey configuration. For more
+    /// information about user pool MFA, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+    /// MFA</a>. For more information about WebAuthn passkeys see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html#amazon-cognito-user-pools-authentication-flow-methods-passkey">Authentication
+    /// flows</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -68,9 +71,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailMfaConfiguration. 
         /// <para>
-        /// Configures user pool email messages for MFA. Sets the subject and body of the email
-        /// message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
-        /// advanced security features</a> must be active in your user pool.
+        /// Sets configuration for user pool email message MFA and sign-in with one-time passwords
+        /// (OTPs). Includes the subject and body of the email message template for sign-in and
+        /// MFA messages. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
         /// </para>
         /// </summary>
         public EmailMfaConfigType EmailMfaConfiguration
@@ -88,24 +92,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who
-        /// have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-        /// Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:
+        /// Sets multi-factor authentication (MFA) to be on, off, or optional. When <c>ON</c>,
+        /// all users must set up MFA before they can sign in. When <c>OPTIONAL</c>, your application
+        /// must make a client-side determination of whether a user wants to register an MFA device.
+        /// For user pools with adaptive authentication with threat protection, choose <c>OPTIONAL</c>.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <c>OFF</c> MFA won't be used for any users.
+        /// When <c>MfaConfiguration</c> is <c>OPTIONAL</c>, managed login doesn't automatically
+        /// prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses
+        /// and in managed login for users who have chosen and configured a preferred MFA factor.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ON</c> MFA is required for all users to sign in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>OPTIONAL</c> MFA will be required only for individual users who have an MFA factor
-        /// activated.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {
@@ -179,7 +176,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property WebAuthnConfiguration. 
         /// <para>
-        /// The configuration of your user pool for passkey, or webauthN, authentication and registration.
+        /// The configuration of your user pool for passkey, or WebAuthn, authentication and registration.
         /// You can set this configuration independent of the MFA configuration options in this
         /// operation.
         /// </para>

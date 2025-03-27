@@ -241,9 +241,6 @@
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
         },
-        "HeadBucket": {
-            "internal": true
-        },
         "HeadObject": {
             "name": "GetObjectMetadata"
         },

@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdentityProviderByIdentifier operation.
-    /// Gets the specified IdP.
+    /// Given the identifier of an identity provider (IdP), for example <c>examplecorp</c>,
+    /// returns information about the user pool configuration for that IdP. For more information
+    /// about IdPs, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Third-party
+    /// IdP sign-in</a>.
     /// </summary>
     public partial class GetIdentityProviderByIdentifierRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifier. 
         /// <para>
-        /// The IdP identifier.
+        /// The identifier that you assigned to your user pool. The identifier is an alternative
+        /// name for an IdP that is distinct from the IdP name. For example, an IdP with a name
+        /// of <c>MyIdP</c> might have an identifier of the email domain <c>example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]
@@ -60,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to get information about the IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

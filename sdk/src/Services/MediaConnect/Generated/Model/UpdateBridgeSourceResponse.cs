@@ -38,7 +38,10 @@ namespace Amazon.MediaConnect.Model
         private BridgeSource _source;
 
         /// <summary>
-        /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
+        /// Gets and sets the property BridgeArn. 
+        /// <para>
+        ///  The ARN of the updated bridge source. 
+        /// </para>
         /// </summary>
         public string BridgeArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source.
+        /// Gets and sets the property Source. 
+        /// <para>
+        ///  The updated bridge source. 
+        /// </para>
         /// </summary>
         public BridgeSource Source
         {

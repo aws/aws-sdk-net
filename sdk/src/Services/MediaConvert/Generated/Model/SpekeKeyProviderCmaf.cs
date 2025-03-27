@@ -99,10 +99,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HlsSignaledSystemIds. Specify the DRM system ID that you
-        /// want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package.
-        /// The HLS manifest can currently signal only one system ID. For more information, see
-        /// https://dashif.org/identifiers/content_protection/.
+        /// Gets and sets the property HlsSignaledSystemIds. Specify up to 3 DRM system IDs that
+        /// you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF
+        /// package. For more information, see https://dashif.org/identifiers/content_protection/.
         /// </summary>
         public List<string> HlsSignaledSystemIds
         {

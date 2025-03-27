@@ -45,6 +45,30 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListContributorInsights operation
+        ///</summary>
+        public IListContributorInsightsPaginator ListContributorInsights(ListContributorInsightsRequest request) 
+        {
+            return new ListContributorInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        public IListExportsPaginator ListExports(ListExportsRequest request) 
+        {
+            return new ListExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        public IListImportsPaginator ListImports(ListImportsRequest request) 
+        {
+            return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTables operation
         ///</summary>
         public IListTablesPaginator ListTables(ListTablesRequest request) 

@@ -101,10 +101,32 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.CwLogEnabled.Value);
             }
 
+            if(publicRequest.IsSetDeobfuscationConfiguration())
+            {
+                context.Writer.WritePropertyName("DeobfuscationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeobfuscationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeobfuscationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
                 context.Writer.WriteStringValue(publicRequest.Domain);
+            }
+
+            if(publicRequest.IsSetDomainList())
+            {
+                context.Writer.WritePropertyName("DomainList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainListListValue in publicRequest.DomainList)
+                {
+                        context.Writer.WriteStringValue(publicRequestDomainListListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetName())

@@ -174,16 +174,16 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property DataProtectionConfig. 
         /// <para>
-        /// Specifies data protection to apply to the web request data that WAF stores for the
-        /// web ACL. This is a web ACL level data protection option. 
+        /// Specifies data protection to apply to the web request data for the web ACL. This is
+        /// a web ACL level data protection option. 
         /// </para>
         ///  
         /// <para>
         /// The data protection that you configure for the web ACL alters the data that's available
-        /// for any other data collection activity, including WAF logging, web ACL request sampling,
-        /// Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management.
-        /// Your other option for data protection is in the logging configuration, which only
-        /// affects logging. 
+        /// for any other data collection activity, including your WAF logging destinations, web
+        /// ACL request sampling, and Amazon Security Lake data collection and management. Your
+        /// other option for data protection is in the logging configuration, which only affects
+        /// logging. 
         /// </para>
         /// </summary>
         public DataProtectionConfig DataProtectionConfig

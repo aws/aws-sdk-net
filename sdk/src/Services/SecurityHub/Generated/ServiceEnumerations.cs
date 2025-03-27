@@ -1671,6 +1671,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type StandardsControlsUpdatable.
+    /// </summary>
+    public class StandardsControlsUpdatable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_READY_FOR_UPDATES for StandardsControlsUpdatable
+        /// </summary>
+        public static readonly StandardsControlsUpdatable NOT_READY_FOR_UPDATES = new StandardsControlsUpdatable("NOT_READY_FOR_UPDATES");
+        /// <summary>
+        /// Constant READY_FOR_UPDATES for StandardsControlsUpdatable
+        /// </summary>
+        public static readonly StandardsControlsUpdatable READY_FOR_UPDATES = new StandardsControlsUpdatable("READY_FOR_UPDATES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandardsControlsUpdatable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardsControlsUpdatable FindValue(string value)
+        {
+            return FindValue<StandardsControlsUpdatable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardsControlsUpdatable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StandardsStatus.
     /// </summary>
     public class StandardsStatus : ConstantClass
@@ -1742,6 +1792,10 @@ namespace Amazon.SecurityHub
         /// Constant INTERNAL_ERROR for StatusReasonCode
         /// </summary>
         public static readonly StatusReasonCode INTERNAL_ERROR = new StatusReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED = new StatusReasonCode("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
         /// <summary>
         /// Constant NO_AVAILABLE_CONFIGURATION_RECORDER for StatusReasonCode
         /// </summary>

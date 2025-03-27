@@ -42,9 +42,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static IEnumerable<object[]> GetAlgorithmsToTest =>
             new List<object[]> {
-                // TODO: Re-enable CRC64 once the CRT issue is resolved.
-                // new object[] { CoreChecksumAlgorithm.CRC64NVME },
-                new object[] { CoreChecksumAlgorithm.CRC32C },
+                // TODO: Disabling CRT algorithms since we're still seeing issues with native dependencies in customer environments.
+                //new object[] { CoreChecksumAlgorithm.CRC64NVME },
+                //new object[] { CoreChecksumAlgorithm.CRC32C },
+
                 new object[] { CoreChecksumAlgorithm.CRC32 },
                 new object[] { CoreChecksumAlgorithm.SHA1 },
                 new object[] { CoreChecksumAlgorithm.SHA256 }
@@ -236,19 +237,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ChecksumCRC32);
         }
 
-        [TestMethod]
         [TestCategory("S3")]
-        public void TestCRC64ChecksumIsCalculated()
+        [DataTestMethod]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME)]
+        [DataRow(CoreChecksumAlgorithm.CRC32C)]
+        public void TestCrtChecksumIsCalculated(CoreChecksumAlgorithm algorithm)
         {
-            var response = Client.PutObject(new PutObjectRequest
+            var putResponse = Client.PutObject(new PutObjectRequest
             {
                 BucketName = _bucketName,
-                Key = "test-file-crc64.txt",
+                Key = $"test-file-{algorithm}.txt",
                 ContentBody = "Hello world",
-                ChecksumAlgorithm = ChecksumAlgorithm.CRC64NVME,
+                ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
             });
 
-            Assert.IsNotNull(response.ChecksumCRC64NVME);
+            if (algorithm == CoreChecksumAlgorithm.CRC32C)
+            {
+                Assert.IsNotNull(putResponse.ChecksumCRC32C);
+            }
+            else if (algorithm == CoreChecksumAlgorithm.CRC64NVME)
+            {
+                Assert.IsNotNull(putResponse.ChecksumCRC64NVME);
+            }
         }
 
         /// <summary>

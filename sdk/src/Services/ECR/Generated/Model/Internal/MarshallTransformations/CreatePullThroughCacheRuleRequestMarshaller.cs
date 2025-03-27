@@ -81,6 +81,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CredentialArn);
             }
 
+            if(publicRequest.IsSetCustomRoleArn())
+            {
+                context.Writer.WritePropertyName("customRoleArn");
+                context.Writer.WriteStringValue(publicRequest.CustomRoleArn);
+            }
+
             if(publicRequest.IsSetEcrRepositoryPrefix())
             {
                 context.Writer.WritePropertyName("ecrRepositoryPrefix");
@@ -103,6 +109,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("upstreamRegistryUrl");
                 context.Writer.WriteStringValue(publicRequest.UpstreamRegistryUrl);
+            }
+
+            if(publicRequest.IsSetUpstreamRepositoryPrefix())
+            {
+                context.Writer.WritePropertyName("upstreamRepositoryPrefix");
+                context.Writer.WriteStringValue(publicRequest.UpstreamRepositoryPrefix);
             }
 
             writer.WriteEndObject();

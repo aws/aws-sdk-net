@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _privateIpAddress;
         private string _publicIp;
         private string _publicIpv4Pool;
+        private ServiceManaged _serviceManaged;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -283,6 +284,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIpv4Pool()
         {
             return this._publicIpv4Pool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceManaged. 
+        /// <para>
+        /// The service that manages the elastic IP address.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only option supported today is <c>alb</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ServiceManaged ServiceManaged
+        {
+            get { return this._serviceManaged; }
+            set { this._serviceManaged = value; }
+        }
+
+        // Check to see if ServiceManaged property is set
+        internal bool IsSetServiceManaged()
+        {
+            return this._serviceManaged != null;
         }
 
         /// <summary>

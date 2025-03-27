@@ -379,9 +379,9 @@ namespace Amazon.S3.Model
         /// <para>This functionality is only supported for directory buckets.</para>
         /// </note>
         /// </summary>
-        public DateTime IfMatchLastModifiedTime
+        public DateTime? IfMatchLastModifiedTime
         {
-            get { return this.ifMatchLastModifiedTime.GetValueOrDefault(); }
+            get { return this.ifMatchLastModifiedTime; }
             set { this.ifMatchLastModifiedTime = value; }
         }
 

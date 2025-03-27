@@ -1911,6 +1911,12 @@
     <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.BedrockFoundationModelContextEnrichmentConfiguration.ModelArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ByteContentDoc.Data</property>
     <min>1</min>
     <max>5242880</max>
@@ -2442,6 +2448,24 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MultipleNodeInputConnectionsFlowValidationDetails.Node</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.NeptuneAnalyticsConfiguration.GraphArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws(|-cn|-us-gov):neptune-graph:[a-zA-Z0-9-]*:[0-9]{12}:graph/g-[a-zA-Z0-9]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.NeptuneAnalyticsFieldMapping.MetadataField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.NeptuneAnalyticsFieldMapping.TextField</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.OpenSearchServerlessConfiguration.CollectionArn</property>

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your
-    /// MediaConnect account will use each month over a specific time period. The discounted
+    /// A pricing agreement for a discounted rate for a specific outbound bandwidth that
+    /// your MediaConnect account will use each month over a specific time period. The discounted
     /// rate in the reservation applies to outbound bandwidth for all flows from your account
     /// until your account reaches the amount of bandwidth in your reservation. If you use
     /// more outbound bandwidth than the agreed upon amount in a single month, the overage
@@ -54,8 +54,11 @@ namespace Amazon.MediaConnect.Model
         private string _start;
 
         /// <summary>
-        /// Gets and sets the property CurrencyCode. The type of currency that is used for billing.
-        /// The currencyCode used for your reservation is US dollars.
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        ///  The type of currency that is used for billing. The currencyCode used for your reservation
+        /// is US dollars.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CurrencyCode
@@ -71,8 +74,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Duration. The length of time that this reservation is active.
-        /// MediaConnect defines this value in the offering.
+        /// Gets and sets the property Duration. 
+        /// <para>
+        ///  The length of time that this reservation is active. MediaConnect defines this value
+        /// in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int? Duration
@@ -88,8 +94,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DurationUnits. The unit of measurement for the duration
-        /// of the reservation. MediaConnect defines this value in the offering.
+        /// Gets and sets the property DurationUnits. 
+        /// <para>
+        ///  The unit of measurement for the duration of the reservation. MediaConnect defines
+        /// this value in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DurationUnits DurationUnits
@@ -105,9 +114,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property End. The day and time that this reservation expires. This
-        /// value is calculated based on the start date and time that you set and the offering's
-        /// duration.
+        /// Gets and sets the property End. 
+        /// <para>
+        ///  The day and time that this reservation expires. This value is calculated based on
+        /// the start date and time that you set and the offering's duration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string End
@@ -123,8 +134,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingArn. The Amazon Resource Name (ARN) that MediaConnect
-        /// assigns to the offering.
+        /// Gets and sets the property OfferingArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingArn
@@ -140,8 +153,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OfferingDescription. A description of the offering. MediaConnect
-        /// defines this value in the offering.
+        /// Gets and sets the property OfferingDescription. 
+        /// <para>
+        ///  A description of the offering. MediaConnect defines this value in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string OfferingDescription
@@ -157,9 +172,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PricePerUnit. The cost of a single unit. This value, in
-        /// combination with priceUnits, makes up the rate. MediaConnect defines this value in
-        /// the offering.
+        /// Gets and sets the property PricePerUnit. 
+        /// <para>
+        ///  The cost of a single unit. This value, in combination with priceUnits, makes up the
+        /// rate. MediaConnect defines this value in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PricePerUnit
@@ -175,9 +192,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceUnits. The unit of measurement that is used for billing.
-        /// This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines
-        /// this value in the offering.
+        /// Gets and sets the property PriceUnits. 
+        /// <para>
+        ///  The unit of measurement that is used for billing. This value, in combination with
+        /// pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PriceUnits PriceUnits
@@ -193,8 +212,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservationArn. The Amazon Resource Name (ARN) that MediaConnect
-        /// assigns to the reservation when you purchase an offering.
+        /// Gets and sets the property ReservationArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when
+        /// you purchase an offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReservationArn
@@ -210,8 +232,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservationName. The name that you assigned to the reservation
-        /// when you purchased the offering.
+        /// Gets and sets the property ReservationName. 
+        /// <para>
+        ///  The name that you assigned to the reservation when you purchased the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReservationName
@@ -227,7 +251,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservationState. The status of your reservation.
+        /// Gets and sets the property ReservationState. 
+        /// <para>
+        ///  The status of your reservation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ReservationState ReservationState
@@ -243,9 +270,12 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSpecification. A definition of the amount of outbound
-        /// bandwidth that you would be reserving if you purchase the offering. MediaConnect defines
-        /// the values that make up the resourceSpecification in the offering.
+        /// Gets and sets the property ResourceSpecification. 
+        /// <para>
+        ///  A definition of the amount of outbound bandwidth that you would be reserving if you
+        /// purchase the offering. MediaConnect defines the values that make up the resourceSpecification
+        /// in the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceSpecification ResourceSpecification
@@ -261,8 +291,11 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. The day and time that the reservation becomes active.
-        /// You set this value when you purchase the offering.
+        /// Gets and sets the property Start. 
+        /// <para>
+        ///  The day and time that the reservation becomes active. You set this value when you
+        /// purchase the offering.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Start

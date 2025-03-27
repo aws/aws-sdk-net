@@ -32,17 +32,6 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// The minimum and maximum length values of an attribute that is of the string type,
     /// for example <c>custom:department</c>.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is part of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SchemaAttributeType.html">SchemaAttributeType</a>.
-    /// It defines the length constraints on string-type attributes that you configure in
-    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
-    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
-    /// and displays the length constraints of all string-type attributes in the response
-    /// to <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
-    /// 
-    /// </para>
     /// </summary>
     public partial class StringAttributeConstraintsType
     {

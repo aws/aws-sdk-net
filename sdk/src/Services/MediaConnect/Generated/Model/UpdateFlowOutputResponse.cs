@@ -38,8 +38,10 @@ namespace Amazon.MediaConnect.Model
         private Output _output;
 
         /// <summary>
-        /// Gets and sets the property FlowArn. The ARN of the flow that is associated with the
-        /// updated output.
+        /// Gets and sets the property FlowArn. 
+        /// <para>
+        ///  The ARN of the flow that is associated with the updated output.
+        /// </para>
         /// </summary>
         public string FlowArn
         {
@@ -54,7 +56,10 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Output. The new settings of the output that you updated.
+        /// Gets and sets the property Output. 
+        /// <para>
+        ///  The new settings of the output that you updated.
+        /// </para>
         /// </summary>
         public Output Output
         {
