@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainId);
                 }
 
+                if(publicRequest.IsSetRecoveryMode())
+                {
+                    context.Writer.WritePropertyName("RecoveryMode");
+                    context.Writer.Write(publicRequest.RecoveryMode);
+                }
+
                 if(publicRequest.IsSetResourceSpec())
                 {
                     context.Writer.WritePropertyName("ResourceSpec");
