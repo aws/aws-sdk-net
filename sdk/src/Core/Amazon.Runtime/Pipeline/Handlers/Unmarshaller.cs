@@ -232,7 +232,7 @@ namespace Amazon.Runtime.Internal
                 (requestContext.ClientConfig.LogResponse || AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
         }
 
-        private void InitializeEventInputStream(AmazonWebServiceResponse response, IRequestContext requestContext)
+        private static void InitializeEventInputStream(AmazonWebServiceResponse response, IRequestContext requestContext)
         {
             var eventInputStreamResponse = response as IEventInputStreamResponse;
             if (eventInputStreamResponse != null)

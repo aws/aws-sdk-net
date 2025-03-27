@@ -282,6 +282,13 @@ namespace AWSSDK_DotNet.IntegrationTests
                 return new MemoryStream();
             }
 
+            public Version HttpProtocolVersion { get; set; }
+
+            public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+            {
+                throw new NotImplementedException();
+            }
+
             public void WriteToRequestBody(Stream requestContent, Stream contentStream, IDictionary<string, string> contentHeaders, IRequestContext requestContext)
             {
                 bool gotException = false;

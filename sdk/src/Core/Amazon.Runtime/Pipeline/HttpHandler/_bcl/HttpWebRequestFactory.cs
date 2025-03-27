@@ -216,6 +216,18 @@ namespace Amazon.Runtime.Internal
             }
         }
 
+        /// <summary>
+        /// Configures the HttpRequest to for request streaming where events will be written
+        /// after the initial request has been made.
+        /// </summary>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <returns></returns>
+        public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+        {
+            // Only .NET 8+ will ever call this method.
+            throw new NotImplementedException();
+        }
+
 #if AWS_ASYNC_API
         /// <summary>
         /// Writes a stream to the request body.
