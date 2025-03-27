@@ -35,6 +35,7 @@ namespace Amazon.SSOOIDC.Model
     public partial class CreateTokenWithIAMResponse : AmazonWebServiceResponse
     {
         private string _accessToken;
+        private AwsAdditionalDetails _awsAdditionalDetails;
         private int? _expiresIn;
         private string _idToken;
         private string _issuedTokenType;
@@ -60,6 +61,26 @@ namespace Amazon.SSOOIDC.Model
         internal bool IsSetAccessToken()
         {
             return this._accessToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAdditionalDetails. 
+        /// <para>
+        /// A structure containing information from the <c>idToken</c>. Only the <c>identityContext</c>
+        /// is in it, which is a value extracted from the <c>idToken</c>. This provides direct
+        /// access to identity information without requiring JWT parsing.
+        /// </para>
+        /// </summary>
+        public AwsAdditionalDetails AwsAdditionalDetails
+        {
+            get { return this._awsAdditionalDetails; }
+            set { this._awsAdditionalDetails = value; }
+        }
+
+        // Check to see if AwsAdditionalDetails property is set
+        internal bool IsSetAwsAdditionalDetails()
+        {
+            return this._awsAdditionalDetails != null;
         }
 
         /// <summary>
