@@ -32,7 +32,7 @@ namespace Amazon.LaunchWizard
     public partial class AmazonLaunchWizardConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Launch Wizard", "3.7.400.121");
+            InternalSDKUtils.BuildUserAgentString("Launch Wizard", "3.7.400.122");
 
         private string _userAgent = UserAgentString;
         ///<summary>

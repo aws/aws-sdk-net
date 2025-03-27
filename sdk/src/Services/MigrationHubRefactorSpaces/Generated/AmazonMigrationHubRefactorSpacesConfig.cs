@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "3.7.400.121");
+            InternalSDKUtils.BuildUserAgentString("Migration Hub Refactor Spaces", "3.7.400.122");
 
         private string _userAgent = UserAgentString;
         ///<summary>

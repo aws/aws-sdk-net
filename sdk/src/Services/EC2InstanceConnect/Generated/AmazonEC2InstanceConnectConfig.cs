@@ -32,7 +32,7 @@ namespace Amazon.EC2InstanceConnect
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EC2 Instance Connect", "3.7.400.121");
+            InternalSDKUtils.BuildUserAgentString("EC2 Instance Connect", "3.7.400.122");
 
         private string _userAgent = UserAgentString;
         ///<summary>
