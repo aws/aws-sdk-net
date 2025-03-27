@@ -60,7 +60,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property InitContainers. 
         /// <para>
         /// The overrides for the <c>initContainers</c> defined in the Amazon EKS pod. These containers
-        /// run before application containers, always runs to completion, and must complete successfully
+        /// run before application containers, always run to completion, and must complete successfully
         /// before the next container starts. These containers are registered with the Amazon
         /// EKS Connector agent and persists the registration information in the Kubernetes backend
         /// data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init

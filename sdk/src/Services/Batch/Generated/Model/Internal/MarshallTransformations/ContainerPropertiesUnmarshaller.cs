@@ -72,6 +72,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enableExecuteCommand", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("environment", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);

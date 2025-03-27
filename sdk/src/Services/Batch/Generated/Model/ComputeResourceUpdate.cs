@@ -592,8 +592,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Key-value pair tags to be applied to Amazon EC2 resources that are launched in the
         /// compute environment. For Batch, these take the form of <c>"String1": "String2"</c>,
-        /// where <c>String1</c> is the tag key and <c>String2</c> is the tag value-for example,
-        /// <c>{ "Name": "Batch Instance - C4OnDemand" }</c>. This is helpful for recognizing
+        /// where <c>String1</c> is the tag key and <c>String2</c> is the tag value (for example,
+        /// <c>{ "Name": "Batch Instance - C4OnDemand" }</c>). This is helpful for recognizing
         /// your Batch instances in the Amazon EC2 console. These tags aren't seen when using
         /// the Batch <c>ListTagsForResource</c> API operation.
         /// </para>

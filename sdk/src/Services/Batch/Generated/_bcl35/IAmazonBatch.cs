@@ -1374,8 +1374,8 @@ namespace Amazon.Batch
         /// 
         ///  <note> 
         /// <para>
-        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
-        /// at a time. 
+        /// Job queues with a scheduling policy are limited to 500 active share identifiers at
+        /// a time. 
         /// </para>
         ///  </note> <important> 
         /// <para>

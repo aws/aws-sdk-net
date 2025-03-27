@@ -59,6 +59,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEnableExecuteCommand())
+            {
+                context.Writer.WritePropertyName("enableExecuteCommand");
+                context.Writer.Write(requestObject.EnableExecuteCommand);
+            }
+
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("environment");

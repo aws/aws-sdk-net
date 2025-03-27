@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
     public partial class ContainerProperties
     {
         private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _enableExecuteCommand;
         private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
@@ -79,6 +80,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetCommand()
         {
             return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExecuteCommand. 
+        /// <para>
+        /// Determines whether execute command functionality is turned on for this task. If <c>true</c>,
+        /// execute command functionality is turned on all the containers in the task.
+        /// </para>
+        /// </summary>
+        public bool EnableExecuteCommand
+        {
+            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            set { this._enableExecuteCommand = value; }
+        }
+
+        // Check to see if EnableExecuteCommand property is set
+        internal bool IsSetEnableExecuteCommand()
+        {
+            return this._enableExecuteCommand.HasValue; 
         }
 
         /// <summary>
