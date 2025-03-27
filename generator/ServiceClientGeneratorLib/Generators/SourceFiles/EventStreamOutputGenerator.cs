@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             this.Write(@"Collection is not descriptive"")]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1063"", Justification = ""IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose."")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1063"", Justification = ""IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose."")]
     public sealed class ");
             
             #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
@@ -54,7 +54,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write(" : EnumerableEventStream<IEventStreamEvent, ");
+            this.Write(" : EnumerableEventOutputStream<IEventStreamEvent, ");
             
             #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));

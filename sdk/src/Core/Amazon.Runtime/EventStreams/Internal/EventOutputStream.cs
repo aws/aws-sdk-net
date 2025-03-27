@@ -20,20 +20,17 @@ using System.IO;
 using System.Threading;
 using ThirdParty.RuntimeBackports;
 
-#if AWS_ASYNC_API
+
 using System.Threading.Tasks;
-#else
-using System.Threading;
-#endif
 
 namespace Amazon.Runtime.EventStreams.Internal
 {
     /// <summary>
-    /// The contract for the <see cref="EventStream{T,TE}"/>.
+    /// The contract for the <see cref="EventOutputStream{T,TE}"/>.
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
-    public interface IEventStream<T, TE> : IDisposable where T : IEventStreamEvent where TE : EventStreamException, new()
+    public interface IEventOutputStream<T, TE> : IDisposable where T : IEventStreamEvent where TE : EventStreamException, new()
     {
         /// <summary>
         /// The size of the buffer for reading from the network stream.
@@ -52,14 +49,12 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// </summary>
         void StartProcessing();
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Starts the background thread to start reading events from the network stream.
         /// 
         /// The Task will be completed when all of the events from the stream have been processed.
         /// </summary>
         Task StartProcessingAsync();
-#endif
     }
 
     /// <summary>
@@ -68,7 +63,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
-    public abstract class EventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : IEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
+    public abstract class EventOutputStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : IEventOutputStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
     {
         /// <summary>
         /// "Unique" key for unknown event lookup.
@@ -160,14 +155,14 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// <summary>
         /// A Stream of Events. Events can be retrieved from this stream by attaching handlers to listen events, and then calling StartProcessing.
         /// </summary>
-        protected EventStream(Stream stream) : this(stream, null)
+        protected EventOutputStream(Stream stream) : this(stream, null)
         {
         }
 
         /// <summary>
         /// A Stream of Events. Events can be retrieved from this stream by attaching handlers to listen events, and then calling StartProcessing.
         /// </summary>
-        protected EventStream(Stream stream, IEventStreamDecoder eventStreamDecoder)
+        protected EventOutputStream(Stream stream, IEventStreamDecoder eventStreamDecoder)
         {
             NetworkStream = stream;
             Decoder = eventStreamDecoder ?? new EventStreamDecoder();
@@ -259,16 +254,10 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// </summary>
         protected void Process()
         {
-#if AWS_ASYNC_API
             // Task only exists in framework 4.5 and up, and Standard.
             Task.Run(() => ProcessLoopAsync());
-#else
-            // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
-            ThreadPool.QueueUserWorkItem(ProcessLoop);
-#endif
         }
 
-#if AWS_ASYNC_API
         private async Task ProcessLoopAsync()
         {
             var buffer = new byte[BufferSize];
@@ -293,7 +282,6 @@ namespace Amazon.Runtime.EventStreams.Internal
                     new EventStreamExceptionReceivedArgs<TE>(surfaceException));
             }
         }
-#endif
 
         /// <summary>
         /// Reads from the stream into the buffer. It then passes the buffer to the decoder, which raises an event for
@@ -314,7 +302,6 @@ namespace Amazon.Runtime.EventStreams.Internal
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Reads from the stream into the buffer. It then passes the buffer to the decoder, which raises an event for
         /// each message it decodes.
@@ -345,7 +332,6 @@ namespace Amazon.Runtime.EventStreams.Internal
                 IsProcessing = false;
             }
         }
-#endif
 
         /// <summary>
         /// Wraps exceptions in an outer exception so they can be passed to event handlers. If the Exception is already of a compatable type,
@@ -383,7 +369,6 @@ namespace Amazon.Runtime.EventStreams.Internal
             Process();
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Starts the background thread to start reading events from the network stream.
         /// 
@@ -397,8 +382,6 @@ namespace Amazon.Runtime.EventStreams.Internal
             IsProcessing = true;
             await ProcessLoopAsync().ConfigureAwait(false);
         }
-#endif
-
 
         #region Dispose Pattern
         private bool _disposed;

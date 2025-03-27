@@ -728,7 +728,7 @@ namespace ServiceClientGenerator
         private void GenerateExceptions(Operation operation)
         {
             //Generate a special EventStreamException class that extends EventStreamException
-            //We need a parameterless constructor to use it in EnumerableEventStream. Only once per service
+            //We need a parameterless constructor to use it in EnumerableEventOutputStream. Only once per service
             if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
             {
                 var eventStreamExceptionGenerator = new EventStreamExceptionGenerator();
