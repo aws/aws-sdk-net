@@ -91,9 +91,9 @@ namespace Amazon.S3.Model
         /// <para>This functionality is only supported for directory buckets.</para>
         /// </note>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this.size.GetValueOrDefault(); }
+            get { return this.size; }
             set { this.size = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.S3.Model
         /// <para>This functionality is only supported for directory buckets.</para>
         /// </note>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this.lastModifiedTime.GetValueOrDefault(); }
+            get { return this.lastModifiedTime; }
             set { this.lastModifiedTime = value; }
         }
 

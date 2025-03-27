@@ -88,11 +88,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }
                         if (deleteDeleteobjectsListValue.IsSetLastModifiedTime())
                         {
-                            xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime));
+                            xmlWriter.WriteElementString("LastModifiedTime", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.LastModifiedTime.Value));
                         }
                         if (deleteDeleteobjectsListValue.IsSetSize())
                         {
-                            xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size));
+                            xmlWriter.WriteElementString("Size", "", S3Transforms.ToXmlStringValue(deleteDeleteobjectsListValue.Size.Value));
                         }
 
                         xmlWriter.WriteEndElement();

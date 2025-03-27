@@ -666,9 +666,9 @@ namespace Amazon.S3.Model
         /// Sets the <c>Expires</c> header of the response.
         /// </para>
         /// </summary>
-        public DateTime ResponseExpires
+        public DateTime? ResponseExpires
         {
-            get { return this._responseExpires.GetValueOrDefault(); }
+            get { return this._responseExpires; }
             set { this._responseExpires = value; }
         }
 

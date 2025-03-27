@@ -95,11 +95,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.
         /// </summary>
-        public bool AllowQuotedRecordDelimiter
+        public bool? AllowQuotedRecordDelimiter
         {
             get
             {
-                return _allowQuotedRecordDelimiter ?? default(bool);
+                return _allowQuotedRecordDelimiter;
             }
             set
             {
@@ -109,7 +109,7 @@ namespace Amazon.S3.Model
 
         internal bool IsSetAllowQuotedRecordDelimiter()
         {
-            return _allowQuotedRecordDelimiter != null;
+            return _allowQuotedRecordDelimiter.HasValue;
         }
         
         internal void Marshall(string memberName, XmlWriter xmlWriter)
@@ -129,7 +129,7 @@ namespace Amazon.S3.Model
                 if (IsSetQuoteCharacter())
                     xmlWriter.WriteElementString("QuoteCharacter", S3Transforms.ToXmlStringValue(QuoteCharacter));
                 if (IsSetAllowQuotedRecordDelimiter())
-                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", S3Transforms.ToXmlStringValue(AllowQuotedRecordDelimiter));
+                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", S3Transforms.ToXmlStringValue(AllowQuotedRecordDelimiter.Value));
             }
             xmlWriter.WriteEndElement();
         }
