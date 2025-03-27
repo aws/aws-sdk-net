@@ -54,6 +54,12 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
+            
+            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Member.EventInputStreamSuffix));
+            
+            #line default
+            #line hidden
             this.Write(" : EventInputStream\r\n    {\r\n        /// <summary>\r\n        /// Construct an insta" +
                     "nce of ");
             
@@ -68,6 +74,12 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
+            
+            #line default
+            #line hidden
+            
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Member.EventInputStreamSuffix));
             
             #line default
             #line hidden

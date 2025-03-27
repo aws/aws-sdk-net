@@ -995,7 +995,6 @@ namespace ServiceClientGenerator
 
                     this.ExecuteGenerator(generator, definition.Name + ".cs", "Model");
                     this._processedStructures.Add(definition.Name);
-
                 }
             }
         }
