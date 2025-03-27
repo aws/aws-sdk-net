@@ -31,10 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A set of instructions that define the set of server processes to run on computes in
-    /// a fleet. Server processes run either an executable in a custom game build or a Realtime
-    /// Servers script. Amazon GameLift launches the processes, manages their life cycle,
-    /// and replaces them as needed. Computes check regularly for an updated runtime configuration.
-    /// 
+    /// a fleet. Server processes run either an executable in a custom game build or a Amazon
+    /// GameLift Realtime script. Amazon GameLift launches the processes, manages their life
+    /// cycle, and replaces them as needed. Computes check regularly for an updated runtime
+    /// configuration. 
     /// 
     ///  
     /// <para>

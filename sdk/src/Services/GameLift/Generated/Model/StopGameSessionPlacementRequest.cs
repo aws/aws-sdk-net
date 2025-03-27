@@ -31,9 +31,24 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StopGameSessionPlacement operation.
-    /// Cancels a game session placement that is in <c>PENDING</c> status. To stop a placement,
-    /// provide the placement ID values. If successful, the placement is moved to <c>CANCELLED</c>
-    /// status.
+    /// Cancels a game session placement that's in <c>PENDING</c> status. To stop a placement,
+    /// provide the placement ID value. 
+    /// 
+    ///  
+    /// <para>
+    /// Results
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation removes the placement request from the queue and moves
+    /// the <c>GameSessionPlacement</c> to <c>CANCELLED</c> status.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation results in an <c>InvalidRequestExecption</c> (400) error if a game
+    /// session has already been created for this placement. You can clean up an unneeded
+    /// game session by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession">TerminateGameSession</a>.
+    /// </para>
     /// </summary>
     public partial class StopGameSessionPlacementRequest : AmazonGameLiftRequest
     {
