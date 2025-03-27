@@ -73,6 +73,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.ResourceScanId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ScanType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StartTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

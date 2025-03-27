@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private ScanType _scanTypeFilter;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -76,6 +77,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanTypeFilter. 
+        /// <para>
+        /// The scan type that you want to get summary information about. The default is <c>FULL</c>.
+        /// </para>
+        /// </summary>
+        public ScanType ScanTypeFilter
+        {
+            get { return this._scanTypeFilter; }
+            set { this._scanTypeFilter = value; }
+        }
+
+        // Check to see if ScanTypeFilter property is set
+        internal bool IsSetScanTypeFilter()
+        {
+            return this._scanTypeFilter != null;
         }
 
     }

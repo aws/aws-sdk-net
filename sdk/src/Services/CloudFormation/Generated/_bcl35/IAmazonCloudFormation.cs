@@ -3358,10 +3358,10 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Returns the summary information for stacks whose status matches the specified <c>StackStatusFilter</c>.
         /// Summary information for stacks that have been deleted is kept for 90 days after the
-        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
-        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// stack is deleted. If no <c>StackStatusFilter</c> is specified, summary information
+        /// for all stacks is returned (including existing stacks and stacks that have been deleted).
         /// </summary>
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
@@ -3369,10 +3369,10 @@ namespace Amazon.CloudFormation
         ListStacksResponse ListStacks();
 
         /// <summary>
-        /// Returns the summary information for stacks whose status matches the specified StackStatusFilter.
+        /// Returns the summary information for stacks whose status matches the specified <c>StackStatusFilter</c>.
         /// Summary information for stacks that have been deleted is kept for 90 days after the
-        /// stack is deleted. If no StackStatusFilter is specified, summary information for all
-        /// stacks is returned (including existing stacks and stacks that have been deleted).
+        /// stack is deleted. If no <c>StackStatusFilter</c> is specified, summary information
+        /// for all stacks is returned (including existing stacks and stacks that have been deleted).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStacks service method.</param>
         /// 
@@ -4659,7 +4659,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Updates the stack set, and associated stack instances in the specified accounts and
+        /// Updates the stack set and associated stack instances in the specified accounts and
         /// Amazon Web Services Regions.
         /// 
         ///  

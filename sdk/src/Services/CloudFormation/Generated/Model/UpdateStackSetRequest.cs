@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStackSet operation.
-    /// Updates the stack set, and associated stack instances in the specified accounts and
+    /// Updates the stack set and associated stack instances in the specified accounts and
     /// Amazon Web Services Regions.
     /// 
     ///  
@@ -102,14 +102,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
+        /// [Self-managed permissions] The Amazon Resource Name (ARN) of the IAM role to use to
+        /// update this stack set.
         /// </para>
         ///  
         /// <para>
         /// Specify an IAM role only if you are using customized administrator roles to control
         /// which users or groups can manage specific stack sets within the same administrator
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
-        /// for using CloudFormation StackSets</a> in the <i>CloudFormation User Guide</i>.
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// self-managed permissions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -136,7 +137,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// [Service-managed permissions] Describes whether StackSets automatically deploys to
         /// Organizations accounts that are added to a target organization or organizational unit
-        /// (OU).
+        /// (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage
+        /// automatic deployments for CloudFormation StackSets that use service-managed permissions</a>
+        /// in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -366,8 +369,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// The name of the IAM execution role to use to update the stack set. If you do not specify
-        /// an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
+        /// [Self-managed permissions] The name of the IAM execution role to use to update the
+        /// stack set. If you do not specify an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
         /// role for the stack set operation.
         /// </para>
         ///  
@@ -663,7 +666,7 @@ namespace Amazon.CloudFormation.Model
         /// or <c>TemplateURL</c>—or set <c>UsePreviousTemplate</c> to true.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

@@ -201,7 +201,7 @@ namespace Amazon.CloudFormation.Model
         /// <c>StackSetName</c>, <c>TemplateBody</c>, or <c>TemplateURL</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=5120)]
         public string TemplateURL
         {
             get { return this._templateURL; }

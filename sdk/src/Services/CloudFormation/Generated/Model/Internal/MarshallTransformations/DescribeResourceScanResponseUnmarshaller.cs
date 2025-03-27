@@ -123,6 +123,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.ResourceTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ScanFilters/member", targetDepth))
+                    {
+                        var unmarshaller = ScanFilterUnmarshaller.Instance;
+                        if (response.ScanFilters == null)
+                        {
+                            response.ScanFilters = new List<ScanFilter>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ScanFilters.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("StartTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

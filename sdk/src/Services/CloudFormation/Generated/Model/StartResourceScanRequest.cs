@@ -37,6 +37,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StartResourceScanRequest : AmazonCloudFormationRequest
     {
         private string _clientRequestToken;
+        private List<ScanFilter> _scanFilters = AWSConfigs.InitializeCollections ? new List<ScanFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -57,6 +58,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanFilters. 
+        /// <para>
+        /// The scan filters to use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ScanFilter> ScanFilters
+        {
+            get { return this._scanFilters; }
+            set { this._scanFilters = value; }
+        }
+
+        // Check to see if ScanFilters property is set
+        internal bool IsSetScanFilters()
+        {
+            return this._scanFilters != null && (this._scanFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
