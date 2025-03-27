@@ -51,23 +51,6 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
-    /// streaming is not supported for the following steps: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>Pre-processing</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Post-processing</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
     /// End a conversation by setting <c>endSession</c> to <c>true</c>.
     /// </para>
     ///  </li> <li> 

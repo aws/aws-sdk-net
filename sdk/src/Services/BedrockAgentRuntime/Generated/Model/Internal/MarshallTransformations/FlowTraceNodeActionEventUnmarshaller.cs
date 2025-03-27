@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FlowTrace Object
+    /// Response Unmarshaller for FlowTraceNodeActionEvent Object
     /// </summary>  
-    public class FlowTraceUnmarshaller : IUnmarshaller<FlowTrace, XmlUnmarshallerContext>, IUnmarshaller<FlowTrace, JsonUnmarshallerContext>
+    public class FlowTraceNodeActionEventUnmarshaller : IUnmarshaller<FlowTraceNodeActionEvent, XmlUnmarshallerContext>, IUnmarshaller<FlowTraceNodeActionEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FlowTrace IUnmarshaller<FlowTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FlowTraceNodeActionEvent IUnmarshaller<FlowTraceNodeActionEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FlowTrace Unmarshall(JsonUnmarshallerContext context)
+        public FlowTraceNodeActionEvent Unmarshall(JsonUnmarshallerContext context)
         {
-            FlowTrace unmarshalledObject = new FlowTrace();
+            FlowTraceNodeActionEvent unmarshalledObject = new FlowTraceNodeActionEvent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,34 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conditionNodeResultTrace", targetDepth))
+                if (context.TestExpression("nodeName", targetDepth))
                 {
-                    var unmarshaller = FlowTraceConditionNodeResultEventUnmarshaller.Instance;
-                    unmarshalledObject.ConditionNodeResultTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nodeActionTrace", targetDepth))
+                if (context.TestExpression("operationName", targetDepth))
                 {
-                    var unmarshaller = FlowTraceNodeActionEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeActionTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nodeInputTrace", targetDepth))
+                if (context.TestExpression("requestId", targetDepth))
                 {
-                    var unmarshaller = FlowTraceNodeInputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeInputTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("nodeOutputTrace", targetDepth))
+                if (context.TestExpression("serviceName", targetDepth))
                 {
-                    var unmarshaller = FlowTraceNodeOutputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeOutputTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +101,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static FlowTraceUnmarshaller _instance = new FlowTraceUnmarshaller();        
+        private static FlowTraceNodeActionEventUnmarshaller _instance = new FlowTraceNodeActionEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FlowTraceUnmarshaller Instance
+        public static FlowTraceNodeActionEventUnmarshaller Instance
         {
             get
             {
