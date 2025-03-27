@@ -237,18 +237,13 @@ namespace Amazon.Runtime.Internal
             var eventInputStreamResponse = response as IEventInputStreamResponse;
             if (eventInputStreamResponse != null)
             {
-                string signature = null;
-                var authorizationHeader = requestContext.Request.GetHeaderValue(HeaderKeys.AuthorizationHeader);
-                if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.IndexOf("Signature=") != -1)
-                    signature = authorizationHeader.Substring(authorizationHeader.IndexOf("Signature=") + 10, 64);
-
                 eventInputStreamResponse.InitializeEventInputStream(new EventInputStreamContext
                 {
                     ClientConfig = requestContext.ClientConfig,
                     Credentials = requestContext.Identity as AWSCredentials,
                     OriginalRequest = requestContext.OriginalRequest,
                     RequestStreamWriter = requestContext.RequestStreamWriter,
-                    InitialSignature = signature,
+                    InitialSignature = requestContext.Request.AWS4SignerResult?.Signature,
                     AuthenticationRegion = requestContext.Request.DeterminedSigningRegion
                 });
             }
