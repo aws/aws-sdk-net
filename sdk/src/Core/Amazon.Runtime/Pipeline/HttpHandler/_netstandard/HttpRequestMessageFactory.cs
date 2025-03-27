@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Pipeline.HttpHandler;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
@@ -456,13 +457,6 @@ namespace Amazon.Runtime
             set
             {
                 _request.Version = value;
-
-#if NET8_0_OR_GREATER
-                if (_request.Version == HttpVersion.Version20)
-                {
-                    _request.VersionPolicy = HttpVersionPolicy.RequestVersionExact;
-                }
-#endif
             }
         }
 
@@ -671,6 +665,19 @@ namespace Amazon.Runtime
 
             WriteContentHeaders(contentHeaders);
         }
+
+
+        public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+        {
+#if NET8_0_OR_GREATER
+            var writer = new HttpContentRequestStreamWriter(_request);
+            WriteContentHeaders(contentHeaders);
+            return writer;
+#else
+            throw new NotImplementedException();
+#endif
+        }
+
 
         /// <summary>
         /// Writes a byte array to the request body.

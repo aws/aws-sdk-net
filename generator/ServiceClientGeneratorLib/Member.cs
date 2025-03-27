@@ -113,6 +113,14 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// When a member is a event the unaltered member name is used as the event type sent over the wire.
+        /// </summary>
+        public string EventTypeName
+        {
+            get { return _name; }
+        }
+
+        /// <summary>
         /// The name of the member with the first character lower and begins with an underscore: _nameHere.
         /// This doesn't include the backward compatibility suffix.
         /// </summary>

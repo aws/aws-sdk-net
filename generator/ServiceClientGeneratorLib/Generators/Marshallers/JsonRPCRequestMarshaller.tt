@@ -48,6 +48,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #endif
 <#
 	}
+	if (this.Operation.IsEventStreamInput)
+	{
+#>
+            request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
+            request.IsEventInputContentStream = true;
+<#
+	}
 
    SetCompressionAlgorithmEncoding(this.Operation);
 

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 
@@ -19,6 +20,7 @@ using Amazon.Runtime.Internal;
 <#
 bool structureIsNotEventStream = this.Structure != null && !this.Structure.IsEventStream;
 bool structureIsEventStream = this.Structure != null && this.Structure.IsEventStream;
+bool structureIsEventInputStream = structureIsEventStream && string.Equals(this.Structure.Name, this.Operation.RequestEventStreamingMember?.Shape?.Name);
 bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
 #>
 <#
@@ -74,9 +76,9 @@ namespace <#=this.Config.Namespace#>.Model
     if(this.Structure != null && this.Structure.IsEventStream)
     {
         string eventStreamContent;
-        if (this.Operation.ResponseStructure.Members.FirstOrDefault(m => m.ModelShape.Name == this.Structure.Name) != null)
+        if (structureIsEventInputStream)
         {
-            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamInputGenerator()
             {
               Structure = this.Structure,
               Operation = this.Operation,
@@ -85,7 +87,7 @@ namespace <#=this.Config.Namespace#>.Model
         }
         else
         {
-            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamInputGenerator()
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
             {
               Structure = this.Structure,
               Operation = this.Operation,
@@ -117,7 +119,16 @@ namespace <#=this.Config.Namespace#>.Model
     {
 #>
 <#
-        if( (this.Structure == null) || (structureIsNotEventStream))
+        // If this is a response and the operation has an input event stream then IEventInputStreamResponse
+        // So that the SDK's unmarshaller's can pass in the event context for users to send events.
+        if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamInput)
+        {
+#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, Amazon.Runtime.EventStreams.IEventInputStreamResponse
+    {
+<#
+        }
+        else if( (this.Structure == null) || (structureIsNotEventStream))
         {
 #>
     public partial class <#=this.ClassName#><#=this.BaseClassString#>
@@ -436,6 +447,17 @@ namespace <#=this.Config.Namespace#>.Model
         {
 #>
 
+<#
+        }
+        if (this.StructureType == StructureType.Response && this.Operation.IsEventStreamInput) 
+        {
+#>
+#pragma warning disable CA1033
+        void Amazon.Runtime.EventStreams.IEventInputStreamResponse.InitializeEventInputStream(Amazon.Runtime.EventStreams.EventInputStreamContext context)
+        {
+            <#=this.Operation.RequestEventStreamingMember.VariableName#> = new <#=this.Operation.RequestEventStreamingMember.DetermineType()#>(context);
+        }
+#pragma warning restore CA1033
 <#
         }
         if (this.StructureType == StructureType.Response && hasStreamingMember) 

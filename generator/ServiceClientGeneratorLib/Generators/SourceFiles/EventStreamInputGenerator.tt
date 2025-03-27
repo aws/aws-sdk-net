@@ -9,5 +9,63 @@
 #>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<#=this.Structure.Name#>Collection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-    public sealed class <#=this.Structure.Name#>
+    public sealed partial class <#=this.Structure.Name#> : EventInputStream
     {
+        /// <summary>
+        /// Construct an instance of <#=this.Structure.Name#>.
+        /// </summary>
+        /// <param name="context">The context created by the initial request for the event stream and used for sending events.</param>
+        public <#=this.Structure.Name#>(EventInputStreamContext context)
+            : base(context)
+        {
+        }
+
+<#
+        foreach(var member in this.Structure.Members)
+        {
+            if(member.ModelShape.IsEvent)
+            {
+#>
+
+        /// <summary>
+        /// Write an <#=member.ModelShape.Name#> event through the request stream to the AWS service.
+        /// </summary>
+        /// <param name="evnt"></param>
+        public async Task Write<#=member.ModelShape.Name#>(<#=member.ModelShape.Name#> evnt)
+        {
+            var memoryStream = new MemoryStream();
+            var context = CreateJsonMarshallerContext(memoryStream);
+            <#=member.ModelShape.Name#>Marshaller.Instance.Marshall(evnt, context);
+<#
+            if (member.ModelShape.GetExplicitEventPayloadMember() != null)
+            {
+                if (member.ModelShape.GetExplicitEventPayloadMember().IsMemoryStream)
+                {
+#>
+            var contentType = "application/octet-stream";
+            var eventPayload = context.Request.Content;
+<#
+                }
+                else
+                {
+#>
+            var contentType = "text/plain";
+            var eventPayload = context.Request.Content;
+<#
+                }
+            }
+            else
+            {
+#>
+            var contentType = "application/json";
+            var eventPayload = memoryStream.ToArray();
+<#
+            }
+#>
+
+            await WriteEvent("<#=member.EventTypeName#>", contentType, null, eventPayload).ConfigureAwait(false);
+        }
+<#
+            }
+        }
+#>

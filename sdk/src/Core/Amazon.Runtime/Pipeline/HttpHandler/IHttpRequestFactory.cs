@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System;
@@ -91,6 +92,14 @@ namespace Amazon.Runtime
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
         void WriteToRequestBody(TRequestContent requestContent, byte[] content, IDictionary<string,string> contentHeaders);
+
+        /// <summary>
+        /// Configures the HttpRequest to for request streaming where events will be written
+        /// after the initial request has been made.
+        /// </summary>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <returns></returns>
+        IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders);
 
         /// <summary>
         /// Sets up the progress listeners

@@ -14,6 +14,7 @@
  */
 
 using System;
+using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
@@ -198,6 +199,7 @@ namespace Amazon.Runtime.Internal
                 using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.DeserializationDurationMetricName))
                 {
                     response = unmarshaller.UnmarshallResponse(context);
+                    InitializeEventInputStream(response, requestContext);
                 }
 
                 requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
@@ -228,6 +230,28 @@ namespace Amazon.Runtime.Internal
         {
             return supportsResponseLogging &&
                 (requestContext.ClientConfig.LogResponse || AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
+        }
+
+        private void InitializeEventInputStream(AmazonWebServiceResponse response, IRequestContext requestContext)
+        {
+            var eventInputStreamResponse = response as IEventInputStreamResponse;
+            if (eventInputStreamResponse != null)
+            {
+                string signature = null;
+                var authorizationHeader = requestContext.Request.GetHeaderValue(HeaderKeys.AuthorizationHeader);
+                if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.IndexOf("Signature=") != -1)
+                    signature = authorizationHeader.Substring(authorizationHeader.IndexOf("Signature=") + 10, 64);
+
+                eventInputStreamResponse.InitializeEventInputStream(new EventInputStreamContext
+                {
+                    ClientConfig = requestContext.ClientConfig,
+                    Credentials = requestContext.Identity as AWSCredentials,
+                    OriginalRequest = requestContext.OriginalRequest,
+                    RequestStreamWriter = requestContext.RequestStreamWriter,
+                    InitialSignature = signature,
+                    AuthenticationRegion = requestContext.Request.DeterminedSigningRegion
+                });
+            }
         }
     }
 }

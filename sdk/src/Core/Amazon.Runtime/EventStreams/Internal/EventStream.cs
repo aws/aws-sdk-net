@@ -296,36 +296,6 @@ namespace Amazon.Runtime.EventStreams.Internal
 #endif
 
         /// <summary>
-        /// The background thread main loop. It will constantly read from the network stream until IsProcessing is false, or an error occurs.
-        /// </summary>
-        /// <param name="state">Needed for 3.5 support. Not used.</param>
-        [SuppressMessage("Microsoft.Usage", "CA1801", Justification = "Needed for .NET 3.5 (ThreadPool.QueueUserWorkItem)")]
-        private void ProcessLoop(object state)
-        {
-            var buffer = new byte[BufferSize];
-
-            try
-            {
-                while (IsProcessing)
-                {
-                    ReadFromStream(buffer);
-                }
-            }
-            // These exceptions are raised on the background thread. They are fired as events for visibility.
-            catch (Exception ex)
-            {
-                IsProcessing = false;
-
-                // surfaceException means what is surfaced to the user. For example, in S3Select, that would be a S3EventStreamException.
-                var surfaceException = WrapException(ex);
-                
-                // Raise the exception as an event.
-                ExceptionReceived?.Invoke(this,
-                    new EventStreamExceptionReceivedArgs<TE>(surfaceException));
-            }
-        }
-
-        /// <summary>
         /// Reads from the stream into the buffer. It then passes the buffer to the decoder, which raises an event for
         /// each message it decodes.
         /// </summary>

@@ -47,14 +47,137 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write(@"Collection is not descriptive"")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage(""Microsoft.Design"", ""CA1063"", Justification = ""IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose."")]
-    public sealed class ");
+    public sealed partial class ");
             
             #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n    {\r\n");
+            this.Write(" : EventInputStream\r\n    {\r\n        /// <summary>\r\n        /// Construct an insta" +
+                    "nce of ");
+            
+            #line 15 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
+            
+            #line default
+            #line hidden
+            this.Write(".\r\n        /// </summary>\r\n        /// <param name=\"context\">The context created " +
+                    "by the initial request for the event stream and used for sending events.</param>" +
+                    "\r\n        public ");
+            
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
+            
+            #line default
+            #line hidden
+            this.Write("(EventInputStreamContext context)\r\n            : base(context)\r\n        {\r\n      " +
+                    "  }\r\n\r\n");
+            
+            #line 23 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+        foreach(var member in this.Structure.Members)
+        {
+            if(member.ModelShape.IsEvent)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// <summary>\r\n        /// Write an ");
+            
+            #line 31 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" event through the request stream to the AWS service.\r\n        /// </summary>\r\n  " +
+                    "      /// <param name=\"evnt\"></param>\r\n        public async Task Write");
+            
+            #line 34 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write("(");
+            
+            #line 34 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" evnt)\r\n        {\r\n            var memoryStream = new MemoryStream();\r\n          " +
+                    "  var context = CreateJsonMarshallerContext(memoryStream);\r\n            ");
+            
+            #line 38 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Marshaller.Instance.Marshall(evnt, context);\r\n");
+            
+            #line 39 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+            if (member.ModelShape.GetExplicitEventPayloadMember() != null)
+            {
+                if (member.ModelShape.GetExplicitEventPayloadMember().IsMemoryStream)
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("            var contentType = \"application/octet-stream\";\r\n            var eventP" +
+                    "ayload = context.Request.Content;\r\n");
+            
+            #line 47 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+                }
+                else
+                {
+
+            
+            #line default
+            #line hidden
+            this.Write("            var contentType = \"text/plain\";\r\n            var eventPayload = conte" +
+                    "xt.Request.Content;\r\n");
+            
+            #line 54 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+                }
+            }
+            else
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("            var contentType = \"application/json\";\r\n            var eventPayload =" +
+                    " memoryStream.ToArray();\r\n");
+            
+            #line 62 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+            }
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            await WriteEvent(\"");
+            
+            #line 66 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.EventTypeName));
+            
+            #line default
+            #line hidden
+            this.Write("\", contentType, null, eventPayload).ConfigureAwait(false);\r\n        }\r\n");
+            
+            #line 68 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamInputGenerator.tt"
+
+            }
+        }
+
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
     }

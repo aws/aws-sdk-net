@@ -15,14 +15,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Net;
 
-using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
-using Amazon.Runtime.Endpoints;
 
 namespace Amazon.Runtime.Internal
 {
@@ -317,6 +315,15 @@ namespace Amazon.Runtime.Internal
                         OriginalStreamPosition = baseStream.Position;
                 }
             }
+        }
+
+        /// <summary>
+        /// If true the content stream for the request is for event input stream.
+        /// </summary>
+        public bool IsEventInputContentStream
+        {
+            get;
+            set;
         }
 
         /// <summary>

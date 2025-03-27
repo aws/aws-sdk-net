@@ -231,7 +231,7 @@ namespace Amazon.Runtime.Internal
             }            
             finally
             {
-                if (httpRequest != null)
+                if (httpRequest != null && !executionContext.RequestContext.Request.IsEventInputContentStream)
                     httpRequest.Dispose();
             }
         }
@@ -275,10 +275,14 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
+            if (wrappedRequest.IsEventInputContentStream)
+            {
+                requestContext.RequestStreamWriter = httpRequest.SetupHttpRequestStreamWriter(requestContext.Request.Headers);
+            }
             // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
             // the StreamContent code path.
-            if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
+            else if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
                 requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);

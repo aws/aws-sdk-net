@@ -226,6 +226,8 @@ namespace AWSSDK.UnitTests
             public Action GetResponseAction { get; set; }
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
+            public Version HttpProtocolVersion { get; set; }
+
             public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
             {
                 this.RequestUri = requestUri;

@@ -49,8 +49,32 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 <#=new string(' ', level * 4)#>            if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#=new string(' ', level * 4)#>            {
+<#+
+			if (member.IsEventPayload)
+			{
+				if (member.IsMemoryStream)
+				{
+#>
+<#=new string(' ', level * 4)#>                context.Request.Content = requestObject.<#=member.PropertyName#>.ToArray();
+<#+
+				}
+				else
+				{
+#>
+<#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>));
+<#+
+				}
+#>
+<#=new string(' ', level * 4)#>            }
+<#+
+				continue;
+			}
+			else
+			{
+#>
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
+			}
 			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
