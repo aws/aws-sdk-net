@@ -91,6 +91,17 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStandaloneAccountRateTypeSelections())
+                {
+                    context.Writer.WritePropertyName("standaloneAccountRateTypeSelections");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
+                    {
+                            context.Writer.Write(publicRequestStandaloneAccountRateTypeSelectionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

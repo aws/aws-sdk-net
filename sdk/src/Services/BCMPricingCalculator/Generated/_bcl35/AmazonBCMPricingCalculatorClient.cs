@@ -1697,7 +1697,7 @@ namespace Amazon.BCMPricingCalculator
         #region  GetPreferences
 
         /// <summary>
-        /// Retrieves the current preferences for the Amazon Web Services Cost Explorer service.
+        /// Retrieves the current preferences for Pricing Calculator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPreferences service method.</param>
         /// 
@@ -2945,7 +2945,7 @@ namespace Amazon.BCMPricingCalculator
         #region  UpdatePreferences
 
         /// <summary>
-        /// Updates the preferences for the Amazon Web Services Cost Explorer service.
+        /// Updates the preferences for Pricing Calculator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePreferences service method.</param>
         /// 
