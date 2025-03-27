@@ -16,7 +16,6 @@ using ServiceClientGenerator.Generators.Endpoints;
 using ServiceClientGenerator.Endpoints.Partitions;
 using EventStreamExceptionGenerator = ServiceClientGenerator.Generators.SourceFiles.Exceptions.EventStreamExceptions;
 using ServiceClientGenerator.Generators.AuthResolvers;
-
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -198,7 +197,28 @@ namespace ServiceClientGenerator
                 ExecuteProjectFileGenerators();
                 // The AmazonS3RetryPolicy simply populates the static list of requests to retry for a status code of 200 which returns an exception.
                 ExecuteGenerator(new AmazonS3RetryPolicy(), "AmazonS3RetryPolicy.cs");
-                return;
+                //string url = "https://raw.githubusercontent.com/aws/aws-sdk-net/refs/heads/main/generator/ServiceModels/s3/s3-2006-03-01.normal.json";
+                //string outputFile = "temp-s3.json";
+                //var outputDirectory = Path.Join(Path.GetTempPath(), outputFile);
+
+
+                //using HttpClient client = new HttpClient();
+                //try
+                //{
+                //    string content = await client.GetStringAsync(url);
+                //    await File.WriteAllTextAsync(outputFile, content);
+                //    Console.WriteLine($"File downloaded successfully to '{outputFile}'.");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine($"Error downloading file: {ex.Message}");
+                //}
+                //var shapes = this.Configuration.ServiceModel.Shapes;
+
+                ////grab S3 models from github repo, compare with current models
+
+
+                //return;
             }
             // The top level request that all operation requests are children of
             ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.ClassName + "Request.cs", "Model");

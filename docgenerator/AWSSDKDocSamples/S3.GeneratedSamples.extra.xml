@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.AbortMultipartUpload(Amazon.S3.Model.AbortMultipartUploadRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.AbortMultipartUpload(Amazon.S3.Model.AbortMultipartUploadRequest)" />
+            <member name="T:Amazon.S3.Model.AbortMultipartUploadRequest" />
+            <member name="T:Amazon.S3.Model.AbortMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example aborts a multipart upload.
+                </para>
+                <code
+                    title="To abort a multipart upload"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-abort-a-multipart-upload-1481853354987" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.CompleteMultipartUpload(Amazon.S3.Model.CompleteMultipartUploadRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.CompleteMultipartUpload(Amazon.S3.Model.CompleteMultipartUploadRequest)" />
+            <member name="T:Amazon.S3.Model.CompleteMultipartUploadRequest" />
+            <member name="T:Amazon.S3.Model.CompleteMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example completes a multipart upload.
+                </para>
+                <code
+                    title="To complete multipart upload"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-complete-multipart-upload-1481851590483" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.CopyObject(Amazon.S3.Model.CopyObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.CopyObject(Amazon.S3.Model.CopyObjectRequest)" />
+            <member name="T:Amazon.S3.Model.CopyObjectRequest" />
+            <member name="T:Amazon.S3.Model.CopyObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example copies an object from one bucket to another.
+                </para>
+                <code
+                    title="To copy an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-copy-an-object-1481823186878" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.CopyPart(Amazon.S3.Model.CopyPartRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.CopyPart(Amazon.S3.Model.CopyPartRequest)" />
+            <member name="T:Amazon.S3.Model.CopyPartRequest" />
+            <member name="T:Amazon.S3.Model.CopyPartResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads a part of a multipart upload by copying a specified byte range from an existing object as data source.
+                </para>
+                <code
+                    title="To upload a part by copying byte range from an existing object as data source"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-a-part-by-copying-byte-range-from-an-existing-object-as-data-source-1483048068594" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.CopyPart(Amazon.S3.Model.CopyPartRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.CopyPart(Amazon.S3.Model.CopyPartRequest)" />
+            <member name="T:Amazon.S3.Model.CopyPartRequest" />
+            <member name="T:Amazon.S3.Model.CopyPartResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads a part of a multipart upload by copying data from an existing object as data source.
+                </para>
+                <code
+                    title="To upload a part by copying data from an existing object as data source"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-a-part-by-copying-data-from-an-existing-object-as-data-source-1483046746348" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteBucket(Amazon.S3.Model.DeleteBucketRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteBucket(Amazon.S3.Model.DeleteBucketRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteBucketRequest" />
+            <member name="T:Amazon.S3.Model.DeleteBucketResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified bucket.
+                </para>
+                <code
+                    title="To delete a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-a-bucket-1473108514262" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteBucketPolicy(Amazon.S3.Model.DeleteBucketPolicyRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketPolicy(Amazon.S3.Model.DeleteBucketPolicyRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteBucketPolicyRequest" />
+            <member name="T:Amazon.S3.Model.DeleteBucketPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes bucket policy on the specified bucket.
+                </para>
+                <code
+                    title="To delete bucket policy"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-bucket-policy-1483043406577" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteBucketReplication(Amazon.S3.Model.DeleteBucketReplicationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketReplication(Amazon.S3.Model.DeleteBucketReplicationRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteBucketReplicationRequest" />
+            <member name="T:Amazon.S3.Model.DeleteBucketReplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes replication configuration set on bucket.
+                </para>
+                <code
+                    title="To delete bucket replication configuration"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-bucket-replication-configuration-1483043684668" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteBucketTagging(Amazon.S3.Model.DeleteBucketTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketTagging(Amazon.S3.Model.DeleteBucketTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteBucketTaggingRequest" />
+            <member name="T:Amazon.S3.Model.DeleteBucketTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes bucket tags.
+                </para>
+                <code
+                    title="To delete bucket tags"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-bucket-tags-1483043846509" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteBucketWebsite(Amazon.S3.Model.DeleteBucketWebsiteRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketWebsite(Amazon.S3.Model.DeleteBucketWebsiteRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteBucketWebsiteRequest" />
+            <member name="T:Amazon.S3.Model.DeleteBucketWebsiteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes bucket website configuration.
+                </para>
+                <code
+                    title="To delete bucket website configuration"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-bucket-website-configuration-1483043937825" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteCORSConfiguration(Amazon.S3.Model.DeleteCORSConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteCORSConfiguration(Amazon.S3.Model.DeleteCORSConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteCORSConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.DeleteCORSConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes CORS configuration on a bucket.
+                </para>
+                <code
+                    title="To delete cors configuration on a bucket."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-cors-configuration-on-a-bucket-1483042856112" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteLifecycleConfiguration(Amazon.S3.Model.DeleteLifecycleConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteLifecycleConfiguration(Amazon.S3.Model.DeleteLifecycleConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteLifecycleConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.DeleteLifecycleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes lifecycle configuration on a bucket.
+                </para>
+                <code
+                    title="To delete lifecycle configuration on a bucket."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-lifecycle-configuration-on-a-bucket-1483043310583" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an object from an S3 bucket.
+                </para>
+                <code
+                    title="To delete an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-an-object-1472850136595" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObject(Amazon.S3.Model.DeleteObjectRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an object from a non-versioned bucket.
+                </para>
+                <code
+                    title="To delete an object (from a non-versioned bucket)"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-an-object-from-a-non-versioned-bucket-1481588533089" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectsRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes objects from a bucket. The request specifies object versions. S3 deletes specific object versions and returns the key and versions of deleted objects in the response.
+                </para>
+                <code
+                    title="To delete multiple object versions from a versioned bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-multiple-object-versions-from-a-versioned-bucket-1483147087737" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObjects(Amazon.S3.Model.DeleteObjectsRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectsRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes objects from a bucket. The bucket is versioned, and the request does not specify the object version to delete. In this case, all versions remain in the bucket and S3 adds a delete marker.
+                </para>
+                <code
+                    title="To delete multiple objects from a versioned bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-delete-multiple-objects-from-a-versioned-bucket-1483146248805" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObjectTagging(Amazon.S3.Model.DeleteObjectTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObjectTagging(Amazon.S3.Model.DeleteObjectTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectTaggingRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes tag set associated with the specified object. If the bucket is versioning enabled, the operation removes tag set from the latest object version.
+                </para>
+                <code
+                    title="To remove tag set from an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-remove-tag-set-from-an-object-1483145342862" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.DeleteObjectTagging(Amazon.S3.Model.DeleteObjectTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.DeleteObjectTagging(Amazon.S3.Model.DeleteObjectTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.DeleteObjectTaggingRequest" />
+            <member name="T:Amazon.S3.Model.DeleteObjectTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes tag set associated with the specified object version. The request specifies both the object key and object version.
+                </para>
+                <code
+                    title="To remove tag set from an object version"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-remove-tag-set-from-an-object-version-1483145285913" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketLocation(Amazon.S3.Model.GetBucketLocationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketLocation(Amazon.S3.Model.GetBucketLocationRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketLocationRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketLocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns bucket location.
+                </para>
+                <code
+                    title="To get bucket location"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-bucket-location-1481594573609" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketPolicy(Amazon.S3.Model.GetBucketPolicyRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketPolicy(Amazon.S3.Model.GetBucketPolicyRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketPolicyRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns bucket policy associated with a bucket.
+                </para>
+                <code
+                    title="To get bucket policy"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-bucket-policy-1481595098424" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketReplication(Amazon.S3.Model.GetBucketReplicationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketReplication(Amazon.S3.Model.GetBucketReplicationRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketReplicationRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketReplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns replication configuration set on a bucket.
+                </para>
+                <code
+                    title="To get replication configuration set on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-replication-configuration-set-on-a-bucket-1481593597175" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketRequestPayment(Amazon.S3.Model.GetBucketRequestPaymentRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketRequestPayment(Amazon.S3.Model.GetBucketRequestPaymentRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketRequestPaymentRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketRequestPaymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves bucket versioning configuration.
+                </para>
+                <code
+                    title="To get bucket versioning configuration"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-bucket-versioning-configuration-1483037183929" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketTagging(Amazon.S3.Model.GetBucketTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketTagging(Amazon.S3.Model.GetBucketTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketTaggingRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns tag set associated with a bucket
+                </para>
+                <code
+                    title="To get tag set associated with a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-tag-set-associated-with-a-bucket-1481593232107" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketVersioning(Amazon.S3.Model.GetBucketVersioningRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketVersioning(Amazon.S3.Model.GetBucketVersioningRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketVersioningRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketVersioningResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves bucket versioning configuration.
+                </para>
+                <code
+                    title="To get bucket versioning configuration"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-bucket-versioning-configuration-1483037183929" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetBucketWebsite(Amazon.S3.Model.GetBucketWebsiteRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetBucketWebsite(Amazon.S3.Model.GetBucketWebsiteRequest)" />
+            <member name="T:Amazon.S3.Model.GetBucketWebsiteRequest" />
+            <member name="T:Amazon.S3.Model.GetBucketWebsiteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves website configuration of a bucket.
+                </para>
+                <code
+                    title="To get bucket website configuration"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-bucket-website-configuration-1483037016926" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetCORSConfiguration(Amazon.S3.Model.GetCORSConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetCORSConfiguration(Amazon.S3.Model.GetCORSConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.GetCORSConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.GetCORSConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns cross-origin resource sharing (CORS) configuration set on a bucket.
+                </para>
+                <code
+                    title="To get cors configuration set on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-cors-configuration-set-on-a-bucket-1481596855475" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetLifecycleConfiguration(Amazon.S3.Model.GetLifecycleConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetLifecycleConfiguration(Amazon.S3.Model.GetLifecycleConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.GetLifecycleConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.GetLifecycleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves lifecycle configuration on set on a bucket. 
+                </para>
+                <code
+                    title="To get lifecycle configuration on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-lifecycle-configuration-on-a-bucket-1481666063200" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an object for an S3 bucket.
+                </para>
+                <code
+                    title="To retrieve an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-an-object-1481827837012" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an object for an S3 bucket. The request specifies the range header to retrieve a specific byte range.
+                </para>
+                <code
+                    title="To retrieve a byte range of an object "
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-a-byte-range-of-an-object--1481832674603" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObjectAcl(Amazon.S3.Model.GetObjectAclRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObjectAcl(Amazon.S3.Model.GetObjectAclRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectAclRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectAclResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves access control list (ACL) of an object.
+                </para>
+                <code
+                    title="To retrieve object ACL"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-object-acl-1481833557740" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObjectMetadata(Amazon.S3.Model.GetObjectMetadataRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObjectMetadata(Amazon.S3.Model.GetObjectMetadataRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectMetadataRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an object metadata.
+                </para>
+                <code
+                    title="To retrieve metadata of an object without returning the object itself"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-metadata-of-an-object-without-returning-the-object-itself-1481834820480" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObjectTagging(Amazon.S3.Model.GetObjectTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObjectTagging(Amazon.S3.Model.GetObjectTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectTaggingRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves tag set of an object. The request specifies object version.
+                </para>
+                <code
+                    title="To retrieve tag set of a specific object version"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-tag-set-of-a-specific-object-version-1483400283663" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObjectTagging(Amazon.S3.Model.GetObjectTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObjectTagging(Amazon.S3.Model.GetObjectTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectTaggingRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves tag set of an object.
+                </para>
+                <code
+                    title="To retrieve tag set of an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-tag-set-of-an-object-1481833847896" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.GetObjectTorrent(Amazon.S3.Model.GetObjectTorrentRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.GetObjectTorrent(Amazon.S3.Model.GetObjectTorrentRequest)" />
+            <member name="T:Amazon.S3.Model.GetObjectTorrentRequest" />
+            <member name="T:Amazon.S3.Model.GetObjectTorrentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves torrent files of an object.
+                </para>
+                <code
+                    title="To retrieve torrent files for an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-retrieve-torrent-files-for-an-object-1481834115959" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.HeadBucket(Amazon.S3.Model.HeadBucketRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.HeadBucket(Amazon.S3.Model.HeadBucketRequest)" />
+            <member name="T:Amazon.S3.Model.HeadBucketRequest" />
+            <member name="T:Amazon.S3.Model.HeadBucketResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation checks to see if a bucket exists.
+                </para>
+                <code
+                    title="To determine if bucket exists"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-determine-if-bucket-exists-1473110292262" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.InitiateMultipartUpload(Amazon.S3.Model.InitiateMultipartUploadRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.InitiateMultipartUpload(Amazon.S3.Model.InitiateMultipartUploadRequest)" />
+            <member name="T:Amazon.S3.Model.InitiateMultipartUploadRequest" />
+            <member name="T:Amazon.S3.Model.InitiateMultipartUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example initiates a multipart upload.
+                </para>
+                <code
+                    title="To initiate a multipart upload"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-initiate-a-multipart-upload-1481836794513" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListBuckets(Amazon.S3.Model.ListBucketsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListBuckets(Amazon.S3.Model.ListBucketsRequest)" />
+            <member name="T:Amazon.S3.Model.ListBucketsRequest" />
+            <member name="T:Amazon.S3.Model.ListBucketsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns all the buckets owned by the sender of this request.
+                </para>
+                <code
+                    title="To list all buckets"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-list-buckets-1481910996058" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListMultipartUploads(Amazon.S3.Model.ListMultipartUploadsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListMultipartUploads(Amazon.S3.Model.ListMultipartUploadsRequest)" />
+            <member name="T:Amazon.S3.Model.ListMultipartUploadsRequest" />
+            <member name="T:Amazon.S3.Model.ListMultipartUploadsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists in-progress multipart uploads on a specific bucket.
+                </para>
+                <code
+                    title="To list in-progress multipart uploads on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-list-in-progress-multipart-uploads-on-a-bucket-1481852775260" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListMultipartUploads(Amazon.S3.Model.ListMultipartUploadsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListMultipartUploads(Amazon.S3.Model.ListMultipartUploadsRequest)" />
+            <member name="T:Amazon.S3.Model.ListMultipartUploadsRequest" />
+            <member name="T:Amazon.S3.Model.ListMultipartUploadsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example specifies the upload-id-marker and key-marker from previous truncated response to retrieve next setup of multipart uploads.
+                </para>
+                <code
+                    title="List next set of multipart uploads when previous result is truncated"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="list-next-set-of-multipart-uploads-when-previous-result-is-truncated-1482428106748" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListObjects(Amazon.S3.Model.ListObjectsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListObjects(Amazon.S3.Model.ListObjectsRequest)" />
+            <member name="T:Amazon.S3.Model.ListObjectsRequest" />
+            <member name="T:Amazon.S3.Model.ListObjectsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example list two objects in a bucket.
+                </para>
+                <code
+                    title="To list objects in a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-list-objects-in-a-bucket-1473447646507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListObjectsV2(Amazon.S3.Model.ListObjectsV2Request)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListObjectsV2(Amazon.S3.Model.ListObjectsV2Request)" />
+            <member name="T:Amazon.S3.Model.ListObjectsV2Request" />
+            <member name="T:Amazon.S3.Model.ListObjectsV2Response" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves object list. The request specifies max keys to limit response to include only 2 object keys. 
+                </para>
+                <code
+                    title="To get object list"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-get-object-list" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListParts(Amazon.S3.Model.ListPartsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListParts(Amazon.S3.Model.ListPartsRequest)" />
+            <member name="T:Amazon.S3.Model.ListPartsRequest" />
+            <member name="T:Amazon.S3.Model.ListPartsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists parts uploaded for a specific multipart upload.
+                </para>
+                <code
+                    title="To list parts of a multipart upload."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-list-parts-of-a-multipart-upload-1481852006923" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.ListVersions(Amazon.S3.Model.ListVersionsRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.ListVersions(Amazon.S3.Model.ListVersionsRequest)" />
+            <member name="T:Amazon.S3.Model.ListVersionsRequest" />
+            <member name="T:Amazon.S3.Model.ListVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns versions of an object with specific key name prefix.
+                </para>
+                <code
+                    title="To list object versions"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-list-object-versions-1481910996058" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a bucket.
+                </para>
+                <code
+                    title="To create a bucket "
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-create-a-bucket--1472851826060" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucket(Amazon.S3.Model.PutBucketRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a bucket. The request specifies an AWS region where to create the bucket.
+                </para>
+                <code
+                    title="To create a bucket in a specific region"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-create-a-bucket-in-a-specific-region-1483399072992" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketAcl(Amazon.S3.Model.PutBucketAclRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketAcl(Amazon.S3.Model.PutBucketAclRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketAclRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketAclResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces existing ACL on a bucket. The ACL grants the bucket owner (specified using the owner ID) and write permission to the LogDelivery group. Because this is a replace operation, you must specify all the grants in your request. To incrementally add or remove ACL grants, you might use the console.
+                </para>
+                <code
+                    title="Put bucket acl"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="put-bucket-acl-1482260397033" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketLogging(Amazon.S3.Model.PutBucketLoggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketLogging(Amazon.S3.Model.PutBucketLoggingRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketLoggingRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketLoggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets logging policy on a bucket. For the Log Delivery group to deliver logs to the destination bucket, it needs permission for the READ_ACP action which the policy grants.
+                </para>
+                <code
+                    title="Set logging configuration for a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-logging-configuration-for-a-bucket-1482269119909" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketNotification(Amazon.S3.Model.PutBucketNotificationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketNotification(Amazon.S3.Model.PutBucketNotificationRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketNotificationRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketNotificationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets notification configuration on a bucket to publish the object created events to an SNS topic.
+                </para>
+                <code
+                    title="Set notification configuration for a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-notification-configuration-for-a-bucket-1482270296426" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketPolicy(Amazon.S3.Model.PutBucketPolicyRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketPolicy(Amazon.S3.Model.PutBucketPolicyRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketPolicyRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets a permission policy on a bucket.
+                </para>
+                <code
+                    title="Set bucket policy"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-bucket-policy-1482448903302" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketReplication(Amazon.S3.Model.PutBucketReplicationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketReplication(Amazon.S3.Model.PutBucketReplicationRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketReplicationRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketReplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets replication configuration on a bucket.
+                </para>
+                <code
+                    title="Set replication configuration on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="id-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketRequestPayment(Amazon.S3.Model.PutBucketRequestPaymentRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketRequestPayment(Amazon.S3.Model.PutBucketRequestPaymentRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketRequestPaymentRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketRequestPaymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets request payment configuration on a bucket so that person requesting the download is charged.
+                </para>
+                <code
+                    title="Set request payment configuration on a bucket."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-request-payment-configuration-on-a-bucket-1482343596680" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketTagging(Amazon.S3.Model.PutBucketTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketTagging(Amazon.S3.Model.PutBucketTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketTaggingRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets tags on a bucket. Any existing tags are replaced.
+                </para>
+                <code
+                    title="Set tags on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-tags-on-a-bucket-1482346269066" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketVersioning(Amazon.S3.Model.PutBucketVersioningRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketVersioning(Amazon.S3.Model.PutBucketVersioningRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketVersioningRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketVersioningResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets versioning configuration on bucket. The configuration enables versioning on the bucket.
+                </para>
+                <code
+                    title="Set versioning configuration on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-versioning-configuration-on-a-bucket-1482344186279" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutBucketWebsite(Amazon.S3.Model.PutBucketWebsiteRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutBucketWebsite(Amazon.S3.Model.PutBucketWebsiteRequest)" />
+            <member name="T:Amazon.S3.Model.PutBucketWebsiteRequest" />
+            <member name="T:Amazon.S3.Model.PutBucketWebsiteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds website configuration to a bucket.
+                </para>
+                <code
+                    title="Set website configuration on a bucket"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="set-website-configuration-on-a-bucket-1482346836261" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutCORSConfiguration(Amazon.S3.Model.PutCORSConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutCORSConfiguration(Amazon.S3.Model.PutCORSConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.PutCORSConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.PutCORSConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables PUT, POST, and DELETE requests from www.example.com, and enables GET requests from any domain.
+                </para>
+                <code
+                    title="To set cors configuration on a bucket."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-set-cors-configuration-on-a-bucket-1483037818805" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutLifecycleConfiguration(Amazon.S3.Model.PutLifecycleConfigurationRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutLifecycleConfiguration(Amazon.S3.Model.PutLifecycleConfigurationRequest)" />
+            <member name="T:Amazon.S3.Model.PutLifecycleConfigurationRequest" />
+            <member name="T:Amazon.S3.Model.PutLifecycleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces existing lifecycle configuration, if any, on the specified bucket. 
+                </para>
+                <code
+                    title="Put bucket lifecycle"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="put-bucket-lifecycle-1482264533092" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads an object to a versioning-enabled bucket. The source file is specified using Windows file syntax. S3 returns VersionId of the newly created object.
+                </para>
+                <code
+                    title="To upload an object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-an-object-1481760101010" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads an object. The request specifies optional request headers to directs S3 to use specific storage class and use server-side encryption.
+                </para>
+                <code
+                    title="To upload an object (specify optional headers)"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-an-object-(specify-optional-headers)" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an object. If the bucket is versioning enabled, S3 returns version ID in response.
+                </para>
+                <code
+                    title="To create an object."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-create-an-object-1483147613675" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads an object. The request specifies optional object tags. The bucket is versioned, therefore S3 returns version ID of the newly created object.
+                </para>
+                <code
+                    title="To upload an object and specify optional tags"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-an-object-and-specify-optional-tags-1481762310955" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads an object. The request specifies the optional server-side encryption option. The request also specifies optional object tags. If the bucket is versioning enabled, S3 returns version ID in response.
+                </para>
+                <code
+                    title="To upload an object and specify server-side encryption and object tags"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-an-object-and-specify-server-side-encryption-and-object-tags-1483398331831" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an object. The request also specifies optional metadata. If the bucket is versioning enabled, S3 returns version ID in response.
+                </para>
+                <code
+                    title="To upload object and specify user-defined metadata"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-object-and-specify-user-defined-metadata-1483396974757" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads and object. The request specifies optional canned ACL (access control list) to all READ access to authenticated users. If the bucket is versioning enabled, S3 returns version ID in response.
+                </para>
+                <code
+                    title="To upload an object and specify canned ACL."
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-an-object-and-specify-canned-acl-1483397779571" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObjectAcl(Amazon.S3.Model.PutObjectAclRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObjectAcl(Amazon.S3.Model.PutObjectAclRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectAclRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectAclResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds grants to an object ACL. The first permission grants user1 and user2 FULL_CONTROL and the AllUsers group READ permission.
+                </para>
+                <code
+                    title="To grant permissions using object ACL"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-grant-permissions-using-object-acl-1481835549285" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.PutObjectTagging(Amazon.S3.Model.PutObjectTaggingRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.PutObjectTagging(Amazon.S3.Model.PutObjectTaggingRequest)" />
+            <member name="T:Amazon.S3.Model.PutObjectTaggingRequest" />
+            <member name="T:Amazon.S3.Model.PutObjectTaggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds tags to an existing object.
+                </para>
+                <code
+                    title="To add tags to an existing object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-add-tags-to-an-existing-object-1481764668793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.RestoreObject(Amazon.S3.Model.RestoreObjectRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.RestoreObject(Amazon.S3.Model.RestoreObjectRequest)" />
+            <member name="T:Amazon.S3.Model.RestoreObjectRequest" />
+            <member name="T:Amazon.S3.Model.RestoreObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores for one day an archived copy of an object back into Amazon S3 bucket.
+                </para>
+                <code
+                    title="To restore an archived object"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-restore-an-archived-object-1483049329953" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.S3.IAmazonS3.UploadPart(Amazon.S3.Model.UploadPartRequest)" />
+            <member name="M:Amazon.S3.AmazonS3Client.UploadPart(Amazon.S3.Model.UploadPartRequest)" />
+            <member name="T:Amazon.S3.Model.UploadPartRequest" />
+            <member name="T:Amazon.S3.Model.UploadPartResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uploads part 1 of a multipart upload. The example specifies a file name for the part data. The Upload ID is same that is returned by the initiate multipart upload.
+                </para>
+                <code
+                    title="To upload a part"
+                    source=".\AWSSDKDocSamples\S3\S3.GeneratedSamples.cs"
+                    region="to-upload-a-part-1481847914943" />
+            </example>
+        </value>
+    </doc>
+</docs>

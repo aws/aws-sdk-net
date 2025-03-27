@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EventCollectionInterface : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 6 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
 
     AddLicenseHeader();
 
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nnamespace ");
             
-            #line 10 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 10 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(".Model\r\n{\r\n#pragma warning disable CA1040\r\n    /// <summary>\r\n    /// Interface u" +
                     "sed to distinguish the events that can be sent to the service using the ");
             
-            #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 14 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.OperationName));
             
             #line default
@@ -54,7 +54,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" service operation.\r\n    /// The types that implement this interface are:\r\n    //" +
                     "/ <list type=\"bullet\">\r\n");
             
-            #line 17 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 17 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
 
     foreach(var evntType in this.EvntTypes)
     {
@@ -64,14 +64,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("    ///   <item><term><see cref=\"");
             
-            #line 21 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 21 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(evntType));
             
             #line default
             #line hidden
             this.Write("\"/></term></item>\r\n");
             
-            #line 22 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 22 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
 
     }
 
@@ -80,7 +80,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("    /// </list>\r\n    /// </summary>\r\n    public interface ");
             
-            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+            #line 27 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.InterfaceName));
             
             #line default
@@ -89,7 +89,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 32 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
+        #line 32 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionInterface.tt"
 
     public string InterfaceName { get; set; }
     public string OperationName { get; set; }

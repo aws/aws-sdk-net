@@ -111,7 +111,7 @@ namespace ServiceClientGenerator
             {
                 string message = this.model.Customizations.GetOperationModifiers(this.name)?.DeprecatedMessage ??
                                  data[ServiceModel.DeprecatedMessageKey].CastToString();
-                if (message == null)
+                if (!string.Equals(this.model.ServiceId, "s3", StringComparison.OrdinalIgnoreCase) &&  message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for operation {0}.\nFor example: \"OperationName\":{{\"name\":\"OperationName\", ... \"deprecated\":true, \"deprecatedMessage\":\"This operation is deprecated\"}}", this.name));          
 
                 return message;
@@ -301,6 +301,25 @@ namespace ServiceClientGenerator
                 if (this.RequestStructure != null)
                 {
                     var payload = this.RequestStructure.PayloadMemberName;
+                    // check if PayloadMemberName was removed and something else was injected
+                    if (this.model.Customizations.ShapeModifiers.ContainsKey(this.RequestStructure.Name))
+                    {
+                        var customization = this.model.Customizations.ShapeModifiers[this.RequestStructure.Name];
+                        if (customization.IsExcludedProperty(payload))
+                        {
+                            foreach (var injectedProperty in customization.InjectedPropertyNames)
+                            {
+                                var propertyInjector = customization.InjectedPropertyData(injectedProperty);
+                                if (string.Equals(propertyInjector.Data[CustomizationsModel.OriginalMemberKey].ToString(), payload, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    payload = injectedProperty;
+                                    break;
+                                }
+                                    
+                            }
+                        }
+                        
+                    }
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
                         return this.RequestStructure.Members.Single(m => 

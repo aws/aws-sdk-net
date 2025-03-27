@@ -11,6 +11,7 @@ namespace ServiceClientGenerator
     /// </summary>
     public enum ChecksumAlgorithm
     {
+        CRC64NVME,//just to get code-gen to work
         CRC32C,
         CRC32,
         SHA256,

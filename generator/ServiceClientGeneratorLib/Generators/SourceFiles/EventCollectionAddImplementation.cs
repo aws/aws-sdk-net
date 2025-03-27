@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+    #line 1 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EventCollectionAddImplementation : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+            #line 6 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
 
     AddLicenseHeader();
 
@@ -38,21 +38,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nnamespace ");
             
-            #line 10 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+            #line 10 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    public partial class ");
             
-            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             this.Write(" : ");
             
-            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+            #line 12 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.InterfaceName));
             
             #line default
@@ -61,7 +61,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
+        #line 16 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventCollectionAddImplementation.tt"
 
     public string InterfaceName { get; set; }
     public string ClassName { get; set; }

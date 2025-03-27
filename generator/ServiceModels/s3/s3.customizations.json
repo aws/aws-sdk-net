@@ -222,6 +222,13 @@
                     }
                 }
             ]
+        },
+        "PutObjectRequest":{
+            "modify":[
+                {
+                    "SSECustomerKey" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKey"}
+                }
+            ]
         }
     },
     "operationModifiers": {
