@@ -32,7 +32,7 @@ namespace Amazon.ConnectCases
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectCases", "3.7.401.32");
+            InternalSDKUtils.BuildUserAgentString("ConnectCases", "3.7.401.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>

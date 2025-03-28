@@ -1,3 +1,28 @@
+### 3.7.1012.0 (2025-03-28 18:26 UTC)
+* APIGateway (3.7.402.0)
+	* Adds support for setting the IP address type to allow dual-stack or IPv4 address types to invoke your APIs or domain names.
+* ApiGatewayV2 (3.7.402.0)
+	* Adds support for setting the IP address type to allow dual-stack or IPv4 address types to invoke your APIs or domain names.
+* AWSMarketplaceMetering (3.7.402.0)
+	* Add support for Marketplace Metering Service dual-stack endpoints.
+* BedrockRuntime (3.7.415.0)
+	* Launching Multi-modality Content Filter for Amazon Bedrock Guardrails.
+* CodeBuild (3.7.414.0)
+	* This release adds support for cacheNamespace in ProjectCache
+* ECS (3.7.408.59)
+	* This is an Amazon ECS documentation only release that addresses tickets.
+* NetworkManager (3.7.402.0)
+	* Add support for NetworkManager Dualstack endpoints.
+* PaymentCryptography (3.7.403.0)
+	* The service adds support for transferring AES-256 and other keys between the service and other service providers and HSMs. This feature uses ECDH to derive a one-time key transport key to enable these secure key exchanges.
+* QuickSight (3.7.414.0)
+	* RLS permission dataset with userAs: RLS_RULES flag, Q in QuickSight/Threshold Alerts/Schedules/Snapshots in QS embedding, toggle dataset refresh email alerts via API, transposed table with options: column width, type and index, toggle Q&A on dashboards, Oracle Service Name when creating data source.
+* SageMaker (3.7.433.0)
+	* TransformAmiVersion for Batch Transform and SageMaker Search Service Aggregate Search API Extension
+* Core 3.7.402.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1011.0 (2025-03-27 18:32 UTC)
 * Batch (3.7.406.0)
 	* This release will enable two features: Firelens log driver, and Execute Command on Batch jobs on ECS. Both features will be passed through to ECS.

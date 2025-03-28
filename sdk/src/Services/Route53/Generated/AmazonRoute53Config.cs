@@ -32,7 +32,7 @@ namespace Amazon.Route53
     public partial class AmazonRoute53Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route 53", "3.7.406.7");
+            InternalSDKUtils.BuildUserAgentString("Route 53", "3.7.406.8");
 
         private string _userAgent = UserAgentString;
         ///<summary>
