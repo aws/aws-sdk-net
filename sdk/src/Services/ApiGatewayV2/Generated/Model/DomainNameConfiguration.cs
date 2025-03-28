@@ -42,6 +42,7 @@ namespace Amazon.ApiGatewayV2.Model
         private string _domainNameStatusMessage;
         private EndpointType _endpointType;
         private string _hostedZoneId;
+        private IpAddressType _ipAddressType;
         private string _ownershipVerificationCertificateArn;
         private SecurityPolicy _securityPolicy;
 
@@ -194,6 +195,26 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4
+        /// addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6
+        /// addresses to invoke your domain name.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

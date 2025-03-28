@@ -96,6 +96,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostedZoneId);
             }
 
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.Write(requestObject.IpAddressType);
+            }
+
             if(requestObject.IsSetOwnershipVerificationCertificateArn())
             {
                 context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
