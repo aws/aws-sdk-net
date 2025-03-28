@@ -34,9 +34,30 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ProjectCache
     {
+        private string _cacheNamespace;
         private string _location;
         private List<string> _modes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CacheType _type;
+
+        /// <summary>
+        /// Gets and sets the property CacheNamespace. 
+        /// <para>
+        /// Defines the scope of the cache. You can use this namespace to share a cache across
+        /// multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache
+        /// sharing between projects</a> in the <i>CodeBuild User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string CacheNamespace
+        {
+            get { return this._cacheNamespace; }
+            set { this._cacheNamespace = value; }
+        }
+
+        // Check to see if CacheNamespace property is set
+        internal bool IsSetCacheNamespace()
+        {
+            return this._cacheNamespace != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 
