@@ -487,9 +487,10 @@ namespace Amazon.Runtime.Internal
             return originalStream;
         }
 
-        private static void SetUserAgentHeader(IRequestContext requestContext)
+        private void SetUserAgentHeader(IRequestContext requestContext)
         {
             var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
+            Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
 
             if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
             {

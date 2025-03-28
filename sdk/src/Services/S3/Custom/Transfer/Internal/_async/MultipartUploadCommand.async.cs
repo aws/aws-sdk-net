@@ -17,6 +17,7 @@ using Amazon.Runtime;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
+using Amazon.Runtime.Internal.UserAgent;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -194,7 +195,8 @@ namespace Amazon.S3.Transfer.Internal
                 WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
                 if (wsArgs != null)
                 {
-                    ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("ft/s3-transfer md/UploadNonSeekableStream");
+                    ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
+                    ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("md/UploadNonSeekableStream");
                 }
             };
 
