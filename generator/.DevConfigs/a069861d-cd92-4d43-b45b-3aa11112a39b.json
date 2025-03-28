@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Update the AWS SDK for .NET to include encoded metrics in the `User-Agent` header to track which features were used for a given request (for example, which retry behavior and how credentials were resolved)"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

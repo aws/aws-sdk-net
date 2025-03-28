@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.Runtime.Internal.UserAgent;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Amazon.Runtime.Internal
 
         Dictionary<string, object> RequestState { get; }
 
-
         SignatureVersion SignatureVersion { get; set; }
+        UserAgentDetails UserAgentDetails { get; }
     }
 }
