@@ -30,7 +30,7 @@ namespace Amazon.Runtime
         string RequestName { get; }
         IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; }
         ResponseUnmarshaller Unmarshaller { get; }
-        InvokeOptionsBase Options { get; }        
+        InvokeOptionsBase Options { get; }
         RequestMetrics Metrics { get; }
         ISigner Signer { get; set; }
         BaseIdentity Identity { get; set; }
@@ -55,6 +55,8 @@ namespace Amazon.Runtime
         Guid InvocationId { get; }
 
         IDictionary<string, object> ContextAttributes { get; }
+
+        IHttpRequestStreamWriter RequestStreamWriter {get;set;}
     }
 
     public interface IResponseContext
@@ -172,6 +174,8 @@ namespace Amazon.Runtime.Internal
                 return _contextAttributes;
             }
         }
+
+        public IHttpRequestStreamWriter RequestStreamWriter { get; set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

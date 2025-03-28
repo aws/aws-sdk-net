@@ -25,33 +25,30 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading;
-
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.EventStreams.Internal
 {
     /// <summary>
-    /// The contract for the <see cref="EnumerableEventStream{T,TE}"/>.
+    /// The contract for the <see cref="EnumerableEventOutputStream{T,TE}"/>.
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "IEventStreamCollection is not descriptive.")]
-    public interface IEnumerableEventStream<T, TE> : IEventStream<T, TE>, IEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
+    public interface IEnumerableEventOutputStream<T, TE> : IEventOutputStream<T, TE>, IEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
     {
     }
 
     /// <summary>
-    /// A subclass of <see cref="EventStream{T,TE}" /> that enables an enumerable interface for interacting with Events.
+    /// A subclass of <see cref="EventOutputStream{T,TE}" /> that enables an enumerable interface for interacting with Events.
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "EventStreamCollection is not descriptive.")]
     [SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-    public abstract class EnumerableEventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE>, IAsyncEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
+    public abstract class EnumerableEventOutputStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : EventOutputStream<T, TE>, IEnumerableEventOutputStream<T, TE>, IAsyncEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
     {
         private const string MutuallyExclusiveExceptionMessage = "Stream has already begun processing. Event-driven and Enumerable traversals of the stream are mutually exclusive. " +
                                                                  "You can either use the event driven or enumerable interface, but not both.";
@@ -70,7 +67,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// <para></para>
         /// These options should be treated as mutually exclusive.
         /// </summary>
-        protected EnumerableEventStream(Stream stream) : this(stream, null)
+        protected EnumerableEventOutputStream(Stream stream) : this(stream, null)
         {
         }
 
@@ -83,7 +80,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// <para></para>
         /// These options should be treated as mutually exclusive.
         /// </summary>
-        protected EnumerableEventStream(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
+        protected EnumerableEventOutputStream(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
         {
         }
 
@@ -226,7 +223,6 @@ namespace Amazon.Runtime.EventStreams.Internal
             base.StartProcessing();
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Starts the background thread to start reading events from the network stream.
         /// 
@@ -239,6 +235,5 @@ namespace Amazon.Runtime.EventStreams.Internal
 
             await base.StartProcessingAsync().ConfigureAwait(false);
         }
-#endif
     }
 }

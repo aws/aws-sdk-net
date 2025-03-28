@@ -38,6 +38,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
 <#
+	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+	{
+#>
+#if NET8_0_OR_GREATER
+            request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
+#endif
+<#
+	}
+
 	// Assign HttpMethod if present or default to POST
 	if(!string.IsNullOrWhiteSpace(this.Operation.HttpMethod)){		
 #>

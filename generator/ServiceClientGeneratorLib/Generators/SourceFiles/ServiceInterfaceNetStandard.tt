@@ -47,11 +47,15 @@ namespace <#=this.Config.Namespace#>
 		#region  <#=operation.Name#>
 
 <#
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+        {
+#>
+#if NET8_0_OR_GREATER
+<#
+        }
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
         {
-#>
-<#
 		this.FormatOperationDocumentationAsync(operation, false);
 		if(operation.IsDeprecated)
 		{
@@ -79,6 +83,14 @@ namespace <#=this.Config.Namespace#>
 #>
         Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
+<#
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+        {
+#>
+#endif
+<#
+        }
+#>
 		#endregion
 		<#
 		}

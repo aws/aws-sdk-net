@@ -334,6 +334,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Generators\SourceFiles\EventStreamInputGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamInputGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\EventStreamOutputGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamOutputGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\ServiceClientsNetFramework.cs">
       <DependentUpon>ServiceClientsNetFramework.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -391,11 +401,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Nuspec.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators/SourceFiles/EventStreamGenerator.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EventStreamGenerator.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\AmazonS3RetryPolicy.cs">
       <DesignTime>True</DesignTime>
@@ -604,6 +609,10 @@
       <LastGenOutput>NullCollectionInitializerAnalyzer.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
+    <None Update="Generators\SourceFiles\EventStreamInputGenerator.tt">
+      <LastGenOutput>EventStreamInputGenerator.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
     <None Update="Generators\SourceFiles\ServiceClientsNetFramework.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceClientsNetFramework.cs</LastGenOutput>
@@ -699,9 +708,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SolutionFileBclAndNetStandard.cs</LastGenOutput>
     </None>
-    <None Update="Generators/SourceFiles/EventStreamGenerator.tt">
+    <None Update="Generators/SourceFiles/EventStreamOutputGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EventStreamGenerator.cs</LastGenOutput>
+      <LastGenOutput>EventStreamOutputGenerator.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\AmazonS3RetryPolicy.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

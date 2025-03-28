@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System;
@@ -93,6 +94,14 @@ namespace Amazon.Runtime
         void WriteToRequestBody(TRequestContent requestContent, byte[] content, IDictionary<string,string> contentHeaders);
 
         /// <summary>
+        /// Configures the HttpRequest to for request streaming where events will be written
+        /// after the initial request has been made.
+        /// </summary>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <returns></returns>
+        IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders);
+
+        /// <summary>
         /// Sets up the progress listeners
         /// </summary>
         /// <param name="originalStream">The content stream</param>
@@ -106,6 +115,11 @@ namespace Amazon.Runtime
         /// Aborts the HTTP request.
         /// </summary>
         void Abort();
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        Version HttpProtocolVersion { get; set; }
 
 #if AWS_ASYNC_API
         /// <summary>

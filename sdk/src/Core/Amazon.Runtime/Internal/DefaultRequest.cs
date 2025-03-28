@@ -15,14 +15,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Net;
 
-using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
-using Amazon.Runtime.Endpoints;
 
 namespace Amazon.Runtime.Internal
 {
@@ -320,6 +318,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// If true the content stream for the request is for event input stream.
+        /// </summary>
+        public bool IsEventInputContentStream
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets and sets the original stream position.
         /// If ContentStream is null or does not support seek, this propery
         /// should be equal to -1.
@@ -558,5 +565,10 @@ namespace Amazon.Runtime.Internal
         /// Custom endpoint attributes
         /// </summary>
         public IPropertyBag EndpointAttributes { get; set; }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion { get; set; } = HttpVersion.Version11;
     }
 }

@@ -139,12 +139,6 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            if (Configuration.ServiceModel.H2Support == H2SupportDegree.Required)
-            {
-                Console.WriteLine("This service requires HTTP2 for all operations. The AWS SDK for .NET does not yet support this functionality. Not generating service.");
-                return;
-            }
-
             ValidateServiceModel();
 
             this.FilesWrittenToGeneratorFolder.Clear();
@@ -545,7 +539,7 @@ namespace ServiceClientGenerator
                     if (nestedStructure.IsDocument)
                         continue;
 
-                    if (!this._processedMarshallers.Contains(nestedStructure.Name))
+                    if (!this._processedMarshallers.Contains(nestedStructure.Name) && !nestedStructure.IsEventStream)
                     {
                         var structureGenerator = GetStructureMarshaller();
                         structureGenerator.Structure = nestedStructure;
@@ -734,7 +728,7 @@ namespace ServiceClientGenerator
         private void GenerateExceptions(Operation operation)
         {
             //Generate a special EventStreamException class that extends EventStreamException
-            //We need a parameterless constructor to use it in EnumerableEventStream. Only once per service
+            //We need a parameterless constructor to use it in EnumerableEventOutputStream. Only once per service
             if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
             {
                 var eventStreamExceptionGenerator = new EventStreamExceptionGenerator();
@@ -1001,7 +995,6 @@ namespace ServiceClientGenerator
 
                     this.ExecuteGenerator(generator, definition.Name + ".cs", "Model");
                     this._processedStructures.Add(definition.Name);
-
                 }
             }
         }

@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Add core support for bi directional HTTP 2 service operations. Support is only available in .NET 8 and later."
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}

@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Pipeline.HttpHandler;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
@@ -245,8 +246,14 @@ namespace Amazon.Runtime
          /// <returns></returns>
         private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
         {
+#if NET8_0_OR_GREATER
+            var httpMessageHandler = new SocketsHttpHandler()
+            {
+                EnableMultipleHttp2Connections = true
+            };
+#else
             var httpMessageHandler = new HttpClientHandler();
-
+#endif
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
 
@@ -439,6 +446,18 @@ namespace Amazon.Runtime
         public Uri RequestUri
         {
             get { return _request.RequestUri; }
+        }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion
+        {
+            get { return _request.Version; }
+            set
+            {
+                _request.Version = value;
+            }
         }
 
         /// <summary>
@@ -646,6 +665,19 @@ namespace Amazon.Runtime
 
             WriteContentHeaders(contentHeaders);
         }
+
+
+        public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+        {
+#if NET8_0_OR_GREATER
+            var writer = new HttpContentRequestStreamWriter(_request);
+            WriteContentHeaders(contentHeaders);
+            return writer;
+#else
+            throw new NotImplementedException();
+#endif
+        }
+
 
         /// <summary>
         /// Writes a byte array to the request body.

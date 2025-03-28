@@ -129,7 +129,8 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signingResult = SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
-            request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;            
+            request.AWS4SignerResult = signingResult;
+            request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
         }
 
         /// <summary>

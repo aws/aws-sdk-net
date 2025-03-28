@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal;
 <#
 bool structureIsNotEventStream = this.Structure != null && !this.Structure.IsEventStream;
 bool structureIsEventStream = this.Structure != null && this.Structure.IsEventStream;
+bool structureIsEventInputStream = structureIsEventStream && string.Equals(this.Structure.Name, this.Operation.RequestEventStreamingMember?.Shape?.Name);
 bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
 #>
 <#
@@ -73,38 +74,66 @@ namespace <#=this.Config.Namespace#>.Model
 
     if(this.Structure != null && this.Structure.IsEventStream)
     {
-        string EventStreamOutput = new ServiceClientGenerator.Generators.SourceFiles.EventStreamGenerator()
+        string eventStreamContent;
+        if (structureIsEventInputStream)
         {
-          Structure = this.Structure,
-          Operation = this.Operation,
-          Config = this.Config
-        }.TransformText();
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamInputGenerator()
+            {
+              Structure = this.Structure,
+              Operation = this.Operation,
+              Config = this.Config
+            }.TransformText();
+        }
+        else
+        {
+            eventStreamContent = new ServiceClientGenerator.Generators.SourceFiles.EventStreamOutputGenerator()
+            {
+              Structure = this.Structure,
+              Operation = this.Operation,
+              Config = this.Config
+            }.TransformText();
+        }
 #>
-    <#=EventStreamOutput#>
+    <#=eventStreamContent#>
 <#
     }
 #>
 <#
-    bool hasStreamingMember = this.Structure?.Members.Any(member => member.Shape.IsStreaming) ?? false;
-        
     bool structureContainsEventPayload = this.Structure?.Members.Any(member => member.IsEventPayload) ?? false;
     Member payloadMember = this.Structure?.GetExplicitEventPayloadMember();
     if(structureContainsEventPayload)
     {
         payloadMember = this.Structure?.Members.Single(member => member.IsEventPayload);
     }
-    if (structureIsNotEventStream && this.StructureType == StructureType.Response && hasStreamingMember) 
+
+    if (structureIsNotEventStream && this.StructureType == StructureType.Response && this.Structure.Members.Any(member => member.Shape.IsStreaming)) 
+    {
+#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, IDisposable
+    {
+<#
+    }
+    else 
+    {
+#>
+<#
+        // If this is a response and the operation has an input event stream then IEventInputStreamResponse
+        // So that the SDK's unmarshaller's can pass in the event context for users to send events.
+        if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamInput)
+        {
+#>
+    public partial class <#=this.ClassName#><#=this.BaseClassString#>, Amazon.Runtime.EventStreams.IEventInputStreamResponse, IDisposable
+    {
+<#
+        }
+        else if( this.StructureType == StructureType.Response && this.Operation.IsEventStreamOutput)
         {
 #>
     public partial class <#=this.ClassName#><#=this.BaseClassString#>, IDisposable
     {
 <#
         }
-    else 
-    {
-#>
-<#
-        if( (this.Structure == null) || (structureIsNotEventStream))
+        else if( (this.Structure == null) || (structureIsNotEventStream))
         {
 #>
     public partial class <#=this.ClassName#><#=this.BaseClassString#>
@@ -145,7 +174,7 @@ namespace <#=this.Config.Namespace#>.Model
             {
                 foreach(var member in this.Structure.Members)
                 {
-                    if (member.IsExcluded)
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
@@ -157,6 +186,16 @@ namespace <#=this.Config.Namespace#>.Model
                         continue;
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+<#
+                }
+
+                if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
+                {
+                    var member = this.Operation.RequestEventStreamingMember;
+#>
+
+        // Input event stream
+        private <#=member.DetermineType()#> <#=member.VariableName#>;
 <#
                 }
 #>
@@ -181,9 +220,16 @@ namespace <#=this.Config.Namespace#>.Model
 <#@ include file=".\Exceptions\ExceptionSerialization.t4" once="true" #>
 <#
                 }
-                foreach(var member in this.Structure.Members)
+
+                var structureMembers = this.Structure.Members;
+                if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
                 {
-                    if (member.IsExcluded)
+                    structureMembers = structureMembers.Concat(new Member[]{this.Operation.RequestEventStreamingMember}).ToList();
+                }
+
+                foreach(var member in structureMembers)
+                {
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.
@@ -408,7 +454,18 @@ namespace <#=this.Config.Namespace#>.Model
 
 <#
         }
-        if (this.StructureType == StructureType.Response && hasStreamingMember) 
+        if (this.StructureType == StructureType.Response && this.Operation.IsEventStreamInput) 
+        {
+#>
+#pragma warning disable CA1033
+        void Amazon.Runtime.EventStreams.IEventInputStreamResponse.InitializeEventInputStream(Amazon.Runtime.EventStreams.EventInputStreamContext context)
+        {
+            <#=this.Operation.RequestEventStreamingMember.VariableName#> = new <#=this.Operation.RequestEventStreamingMember.DetermineType()#>(context);
+        }
+#pragma warning restore CA1033
+<#
+        }
+        if (this.Structure != null && this.StructureType == StructureType.Response && this.Structure.Members.Any(member => member.Shape.IsStreaming || member.Shape.IsEventStream)) 
         {
 #>
         #region Dispose Pattern
@@ -437,9 +494,14 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                 if (this.Structure != null) 
                 {
-                    foreach (var member in this.Structure.Members) 
+                    var structureMembers = this.Structure.Members;
+                    if (this.StructureType == StructureType.Response && this.Operation.RequestEventStreamingMember != null)
                     {
-                        if (member.Shape.IsStreaming) 
+                        structureMembers = structureMembers.Concat(new Member[]{this.Operation.RequestEventStreamingMember}).ToList();
+                    }
+                    foreach (var member in structureMembers) 
+                    {
+                        if (member.Shape.IsStreaming || member.Shape.IsEventStream) 
                         {
 #>
                 this.<#=member.VariableName#>?.Dispose();

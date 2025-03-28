@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
     /// The contract for the SelectObjectContentEventStream.
     /// </summary>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "ISelectObjectContentEventStreamCollection is not descriptive.")]
-    public interface ISelectObjectContentEventStream : IEnumerableEventStream<IS3Event, S3EventStreamException>
+    public interface ISelectObjectContentEventStream : IEnumerableEventOutputStream<IS3Event, S3EventStreamException>
     {
         /// <summary>
         /// Event that encompasses all IS3Events.
@@ -81,7 +81,7 @@ namespace Amazon.S3.Model
     /// </summary>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "SelectObjectContentEventStreamCollection is not descriptive.")]
     [SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
-    public sealed class SelectObjectContentEventStream : EnumerableEventStream<IS3Event, S3EventStreamException>,
+    public sealed class SelectObjectContentEventStream : EnumerableEventOutputStream<IS3Event, S3EventStreamException>,
         ISelectObjectContentEventStream
     {
         /// <summary>

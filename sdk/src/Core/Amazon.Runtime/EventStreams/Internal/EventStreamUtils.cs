@@ -13,14 +13,8 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Amazon.Runtime.EventStreams.Utils
 {

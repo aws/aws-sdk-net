@@ -174,6 +174,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// If true the content stream for the request is for event input stream.
+        /// </summary>
+        bool IsEventInputContentStream
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets and sets the original stream position.
         /// If ContentStream is null or does not support seek, this propery
         /// should be equal to -1.
@@ -384,5 +393,10 @@ namespace Amazon.Runtime.Internal
         /// The time which the request was signed at.
         /// </summary>
         DateTime? SignedAt { get; set; }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        Version HttpProtocolVersion { get; set; }
     }
 }

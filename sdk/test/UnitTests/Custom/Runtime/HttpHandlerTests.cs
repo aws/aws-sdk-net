@@ -226,6 +226,8 @@ namespace AWSSDK.UnitTests
             public Action GetResponseAction { get; set; }
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
+            public Version HttpProtocolVersion { get; set; }
+
             public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
             {
                 this.RequestUri = requestUri;
@@ -280,6 +282,17 @@ namespace AWSSDK.UnitTests
 #else
                 throw new NotImplementedException();
 #endif
+            }
+
+            /// <summary>
+            /// Configures the HttpRequest to for request streaming where events will be written
+            /// after the initial request has been made.
+            /// </summary>
+            /// <param name="contentHeaders">HTTP content headers.</param>
+            /// <returns></returns>
+            public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+            {
+                throw new NotImplementedException();
             }
 
             public void WriteToRequestBody(Stream requestContent, Stream contentStream, 

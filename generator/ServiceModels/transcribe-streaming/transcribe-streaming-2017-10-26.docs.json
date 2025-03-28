@@ -1,0 +1,980 @@
+{
+  "version": "2.0",
+  "service": "<p>Amazon Transcribe streaming offers four main types of real-time transcription: <b>Standard</b>, <b>Medical</b>, <b>Call Analytics</b>, and <b>Health Scribe</b>.</p> <ul> <li> <p> <b>Standard transcriptions</b> are the most common option. Refer to for details.</p> </li> <li> <p> <b>Medical transcriptions</b> are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue in real time, so doctors can focus on their patient instead of taking notes. Refer to for details.</p> </li> <li> <p> <b>Call Analytics transcriptions</b> are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.</p> </li> <li> <p> <b>HealthScribe transcriptions</b> are designed to automatically create clinical notes from patient-clinician conversations using generative AI. Refer to [here] for details.</p> </li> </ul>",
+  "operations": {
+    "GetMedicalScribeStream": "<p>Provides details about the specified Amazon Web Services HealthScribe streaming session. To view the status of the streaming session, check the <code>StreamStatus</code> field in the response. To get the details of post-stream analytics, including its status, check the <code>PostStreamAnalyticsResult</code> field in the response. </p>",
+    "StartCallAnalyticsStreamTranscription": "<p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application. Use this operation for <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html\">Call Analytics</a> transcriptions.</p> <p>The following parameters are required:</p> <ul> <li> <p> <code>language-code</code> </p> </li> <li> <p> <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p> </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>",
+    "StartMedicalScribeStream": "<p>Starts a bidirectional HTTP/2 stream, where audio is streamed to Amazon Web Services HealthScribe and the transcription results are streamed to your application.</p> <p>When you start a stream, you first specify the stream configuration in a <code>MedicalScribeConfigurationEvent</code>. This event includes channel definitions, encryption settings, and post-stream analytics settings, such as the output configuration for aggregated transcript and clinical note generation. These are additional streaming session configurations beyond those provided in your initial start request headers. Whether you are starting a new session or resuming an existing session, your first event must be a <code>MedicalScribeConfigurationEvent</code>. </p> <p> After you send a <code>MedicalScribeConfigurationEvent</code>, you start <code>AudioEvents</code> and Amazon Web Services HealthScribe responds with real-time transcription results. When you are finished, to start processing the results with the post-stream analytics, send a <code>MedicalScribeSessionControlEvent</code> with a <code>Type</code> of <code>END_OF_SESSION</code> and Amazon Web Services HealthScribe starts the analytics. </p> <p>You can pause or resume streaming. To pause streaming, complete the input stream without sending the <code>MedicalScribeSessionControlEvent</code>. To resume streaming, call the <code>StartMedicalScribeStream</code> and specify the same SessionId you used to start the stream. </p> <p>The following parameters are required:</p> <ul> <li> <p> <code>language-code</code> </p> </li> <li> <p> <code>media-encoding</code> </p> </li> <li> <p> <code>media-sample-rate-hertz</code> </p> </li> </ul> <p/> <p>For more information on streaming with Amazon Web Services HealthScribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe-streaming.html\">Amazon Web Services HealthScribe</a>. </p>",
+    "StartMedicalStreamTranscription": "<p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p> <p>The following parameters are required:</p> <ul> <li> <p> <code>language-code</code> </p> </li> <li> <p> <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p> </li> </ul> <p>For more information on streaming with Amazon Transcribe Medical, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>",
+    "StartStreamTranscription": "<p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p> <p>The following parameters are required:</p> <ul> <li> <p> <code>language-code</code> or <code>identify-language</code> or <code>identify-multiple-language</code> </p> </li> <li> <p> <code>media-encoding</code> </p> </li> <li> <p> <code>sample-rate</code> </p> </li> </ul> <p>For more information on streaming with Amazon Transcribe, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>"
+  },
+  "shapes": {
+    "Alternative": {
+      "base": "<p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>",
+      "refs": {
+        "AlternativeList$member": null
+      }
+    },
+    "AlternativeList": {
+      "base": null,
+      "refs": {
+        "Result$Alternatives": "<p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>"
+      }
+    },
+    "AudioChunk": {
+      "base": null,
+      "refs": {
+        "AudioEvent$AudioChunk": "<p> An audio blob containing the next segment of audio from your application, with a maximum duration of 1 second. The maximum size in bytes varies based on audio properties. </p> <p>Find recommended size in <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#best-practices\">Transcribing streaming best practices</a>. </p> <p> Size calculation: <code>Duration (s) * Sample Rate (Hz) * Number of Channels * 2 (Bytes per Sample)</code> </p> <p> For example, a 1-second chunk of 16 kHz, 2-channel, 16-bit audio would be <code>1 * 16000 * 2 * 2 = 64000 bytes</code>. </p> <p> For 8 kHz, 1-channel, 16-bit audio, a 1-second chunk would be <code>1 * 8000 * 1 * 2 = 16000 bytes</code>. </p>",
+        "MedicalScribeAudioEvent$AudioChunk": "<p> An audio blob containing the next segment of audio from your application, with a maximum duration of 1 second. The maximum size in bytes varies based on audio properties. </p> <p>Find recommended size in <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#best-practices\">Transcribing streaming best practices</a>. </p> <p> Size calculation: <code>Duration (s) * Sample Rate (Hz) * Number of Channels * 2 (Bytes per Sample)</code> </p> <p> For example, a 1-second chunk of 16 kHz, 2-channel, 16-bit audio would be <code>1 * 16000 * 2 * 2 = 64000 bytes</code>. </p> <p> For 8 kHz, 1-channel, 16-bit audio, a 1-second chunk would be <code>1 * 8000 * 1 * 2 = 16000 bytes</code>. </p>"
+      }
+    },
+    "AudioEvent": {
+      "base": "<p>A wrapper for your audio chunks. Your audio stream consists of one or more audio events, which consist of one or more audio chunks.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html\">Event stream encoding</a>.</p>",
+      "refs": {
+        "AudioStream$AudioEvent": "<p>A blob of audio from your application. Your audio stream consists of one or more audio events.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html\">Event stream encoding</a>.</p>"
+      }
+    },
+    "AudioStream": {
+      "base": "<p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>",
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$AudioStream": "<p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>",
+        "StartMedicalStreamTranscriptionRequest$AudioStream": null,
+        "StartStreamTranscriptionRequest$AudioStream": "<p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html\">Transcribing streaming audio</a>.</p>"
+      }
+    },
+    "BadRequestException": {
+      "base": "<p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$BadRequestException": null,
+        "MedicalScribeResultStream$BadRequestException": null,
+        "MedicalTranscriptResultStream$BadRequestException": null,
+        "TranscriptResultStream$BadRequestException": "<p>A client error occurred when the stream was created. Check the parameters of the request and try your request again.</p>"
+      }
+    },
+    "Boolean": {
+      "base": null,
+      "refs": {
+        "CallAnalyticsItem$VocabularyFilterMatch": "<p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>",
+        "Item$VocabularyFilterMatch": "<p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>",
+        "MedicalResult$IsPartial": "<p>Indicates if the segment is complete.</p> <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>",
+        "MedicalScribeTranscriptSegment$IsPartial": "<p>Indicates if the segment is complete.</p> <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete. </p>",
+        "Result$IsPartial": "<p>Indicates if the segment is complete.</p> <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>",
+        "StartCallAnalyticsStreamTranscriptionRequest$EnablePartialResultsStabilization": "<p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization\">Partial-result stabilization</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$EnablePartialResultsStabilization": "<p>Shows whether partial results stabilization was enabled for your Call Analytics transcription.</p>",
+        "StartMedicalStreamTranscriptionRequest$ShowSpeakerLabel": "<p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html\">Partitioning speakers (diarization)</a>.</p>",
+        "StartMedicalStreamTranscriptionRequest$EnableChannelIdentification": "<p>Enables channel identification in multi-channel audio.</p> <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p> <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p> <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html\">Transcribing multi-channel audio</a>.</p>",
+        "StartMedicalStreamTranscriptionResponse$ShowSpeakerLabel": "<p>Shows whether speaker partitioning was enabled for your transcription.</p>",
+        "StartMedicalStreamTranscriptionResponse$EnableChannelIdentification": "<p>Shows whether channel identification was enabled for your transcription.</p>",
+        "StartStreamTranscriptionRequest$ShowSpeakerLabel": "<p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html\">Partitioning speakers (diarization)</a>.</p>",
+        "StartStreamTranscriptionRequest$EnableChannelIdentification": "<p>Enables channel identification in multi-channel audio.</p> <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p> <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p> <p>If you include <code>EnableChannelIdentification</code> in your request, you must also include <code>NumberOfChannels</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html\">Transcribing multi-channel audio</a>.</p>",
+        "StartStreamTranscriptionRequest$EnablePartialResultsStabilization": "<p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization\">Partial-result stabilization</a>.</p>",
+        "StartStreamTranscriptionRequest$IdentifyLanguage": "<p>Enables automatic language identification for your transcription.</p> <p>If you include <code>IdentifyLanguage</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your audio stream. </p> <p>You can also include a preferred language using <code>PreferredLanguage</code>. Adding a preferred language can help Amazon Transcribe identify the language faster than if you omit this parameter.</p> <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p> <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p> <p>Streaming language identification can't be combined with custom language models or redaction.</p>",
+        "StartStreamTranscriptionRequest$IdentifyMultipleLanguages": "<p>Enables automatic multi-language identification in your transcription job request. Use this parameter if your stream contains more than one language. If your stream contains only one language, use IdentifyLanguage instead.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you must include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your stream.</p> <p>If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic multiple language identification request, include <code>VocabularyNames</code> or <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>",
+        "StartStreamTranscriptionResponse$ShowSpeakerLabel": "<p>Shows whether speaker partitioning was enabled for your transcription.</p>",
+        "StartStreamTranscriptionResponse$EnableChannelIdentification": "<p>Shows whether channel identification was enabled for your transcription.</p>",
+        "StartStreamTranscriptionResponse$EnablePartialResultsStabilization": "<p>Shows whether partial results stabilization was enabled for your transcription.</p>",
+        "StartStreamTranscriptionResponse$IdentifyLanguage": "<p>Shows whether automatic language identification was enabled for your transcription.</p>",
+        "StartStreamTranscriptionResponse$IdentifyMultipleLanguages": "<p>Shows whether automatic multi-language identification was enabled for your transcription.</p>",
+        "UtteranceEvent$IsPartial": "<p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>"
+      }
+    },
+    "BucketName": {
+      "base": null,
+      "refs": {
+        "ClinicalNoteGenerationSettings$OutputBucketName": "<p>The name of the Amazon S3 bucket where you want the output of Amazon Web Services HealthScribe post-stream analytics stored. Don't include the <code>S3://</code> prefix of the specified bucket. </p> <p>HealthScribe outputs transcript and clinical note files under the prefix: <code>S3://$output-bucket-name/healthscribe-streaming/session-id/post-stream-analytics/clinical-notes</code> </p> <p>The role <code>ResourceAccessRoleArn</code> specified in the <code>MedicalScribeConfigurationEvent</code> must have permission to use the specified location. You can change Amazon S3 permissions using the <a href=\"https://console.aws.amazon.com/s3\"> Amazon Web Services Management Console </a>. See also <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user\">Permissions Required for IAM User Roles </a> . </p>"
+      }
+    },
+    "CallAnalyticsEntity": {
+      "base": "<p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, content, type, and start and end times.</p>",
+      "refs": {
+        "CallAnalyticsEntityList$member": null
+      }
+    },
+    "CallAnalyticsEntityList": {
+      "base": null,
+      "refs": {
+        "UtteranceEvent$Entities": "<p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>"
+      }
+    },
+    "CallAnalyticsItem": {
+      "base": "<p>A word, phrase, or punctuation mark in your Call Analytics transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>",
+      "refs": {
+        "CallAnalyticsItemList$member": null
+      }
+    },
+    "CallAnalyticsItemList": {
+      "base": null,
+      "refs": {
+        "UtteranceEvent$Items": "<p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>"
+      }
+    },
+    "CallAnalyticsLanguageCode": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$LanguageCode": "<p>Specify the language code that represents the language spoken in your audio.</p> <p>For a list of languages supported with real-time Call Analytics, refer to the <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html\">Supported languages</a> table.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$LanguageCode": "<p>Provides the language code that you specified in your Call Analytics request.</p>"
+      }
+    },
+    "CallAnalyticsTranscriptResultStream": {
+      "base": "<p>Contains detailed information about your real-time Call Analytics session. These details are provided in the <code>UtteranceEvent</code> and <code>CategoryEvent</code> objects.</p>",
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionResponse$CallAnalyticsTranscriptResultStream": "<p>Provides detailed information about your real-time Call Analytics session.</p>"
+      }
+    },
+    "CategoryEvent": {
+      "base": "<p>Provides information on any <code>TranscriptFilterType</code> categories that matched your transcription output. Matches are identified for each segment upon completion of that segment.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$CategoryEvent": "<p>Provides information on matched categories that were used to generate real-time supervisor alerts.</p>"
+      }
+    },
+    "ChannelDefinition": {
+      "base": "<p>Makes it possible to specify which speaker is on which audio channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>",
+      "refs": {
+        "ChannelDefinitions$member": null
+      }
+    },
+    "ChannelDefinitions": {
+      "base": null,
+      "refs": {
+        "ConfigurationEvent$ChannelDefinitions": "<p>Indicates which speaker is on which audio channel.</p>"
+      }
+    },
+    "ChannelId": {
+      "base": null,
+      "refs": {
+        "ChannelDefinition$ChannelId": "<p>Specify the audio channel you want to define.</p>"
+      }
+    },
+    "CharacterOffsets": {
+      "base": "<p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>",
+      "refs": {
+        "IssueDetected$CharacterOffsets": "<p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>"
+      }
+    },
+    "ClinicalNoteGenerationResult": {
+      "base": "<p>The details for clinical note generation, including status, and output locations for clinical note and aggregated transcript if the analytics completed, or failure reason if the analytics failed. </p>",
+      "refs": {
+        "MedicalScribePostStreamAnalyticsResult$ClinicalNoteGenerationResult": "<p>Provides the Clinical Note Generation result for post-stream analytics.</p>"
+      }
+    },
+    "ClinicalNoteGenerationSettings": {
+      "base": "<p>The output configuration for aggregated transcript and clinical note generation.</p>",
+      "refs": {
+        "MedicalScribePostStreamAnalyticsSettings$ClinicalNoteGenerationSettings": "<p>Specify settings for the post-stream clinical note generation.</p>"
+      }
+    },
+    "ClinicalNoteGenerationStatus": {
+      "base": null,
+      "refs": {
+        "ClinicalNoteGenerationResult$Status": "<p>The status of the clinical note generation.</p> <p>Possible Values:</p> <ul> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p> <code>COMPLETED</code> </p> </li> </ul> <p> After audio streaming finishes, and you send a <code>MedicalScribeSessionControlEvent</code> event (with END_OF_SESSION as the Type), the status is set to <code>IN_PROGRESS</code>. If the status is <code>COMPLETED</code>, the analytics completed successfully, and you can find the results at the locations specified in <code>ClinicalNoteOutputLocation</code> and <code>TranscriptOutputLocation</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details about the failure. </p>"
+      }
+    },
+    "Confidence": {
+      "base": null,
+      "refs": {
+        "CallAnalyticsEntity$Confidence": "<p>The confidence score associated with the identification of an entity in your transcript.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>",
+        "CallAnalyticsItem$Confidence": "<p>The confidence score associated with a word or phrase in your transcript.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>",
+        "Entity$Confidence": "<p>The confidence score associated with the identified PII entity in your audio.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>",
+        "Item$Confidence": "<p>The confidence score associated with a word or phrase in your transcript.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>",
+        "MedicalEntity$Confidence": "<p>The confidence score associated with the identified PHI entity in your audio.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>",
+        "MedicalItem$Confidence": "<p>The confidence score associated with a word or phrase in your transcript.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>",
+        "MedicalScribeTranscriptItem$Confidence": "<p>The confidence score associated with a word or phrase in your transcript.</p> <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media. </p>"
+      }
+    },
+    "ConfigurationEvent": {
+      "base": "<p>Allows you to set audio channel definitions and post-call analytics settings.</p>",
+      "refs": {
+        "AudioStream$ConfigurationEvent": "<p>Contains audio channel definitions and post-call analytics settings.</p>"
+      }
+    },
+    "ConflictException": {
+      "base": "<p>A new stream started with the same session ID. The current stream has been terminated.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$ConflictException": null,
+        "MedicalScribeResultStream$ConflictException": null,
+        "MedicalTranscriptResultStream$ConflictException": null,
+        "TranscriptResultStream$ConflictException": "<p>A new stream started with the same session ID. The current stream has been terminated.</p>"
+      }
+    },
+    "ContentIdentificationType": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$ContentIdentificationType": "<p>Labels all personally identifiable information (PII) identified in your transcript.</p> <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html\">Redacting or identifying personally identifiable information</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$ContentIdentificationType": "<p>Shows whether content identification was enabled for your Call Analytics transcription.</p>",
+        "StartStreamTranscriptionRequest$ContentIdentificationType": "<p>Labels all personally identifiable information (PII) identified in your transcript.</p> <p>Content identification is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is flagged upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html\">Redacting or identifying personally identifiable information</a>.</p>",
+        "StartStreamTranscriptionResponse$ContentIdentificationType": "<p>Shows whether content identification was enabled for your transcription.</p>"
+      }
+    },
+    "ContentRedactionOutput": {
+      "base": null,
+      "refs": {
+        "PostCallAnalyticsSettings$ContentRedactionOutput": "<p>Specify whether you want only a redacted transcript or both a redacted and an unredacted transcript. If you choose redacted and unredacted, two JSON files are generated and stored in the Amazon S3 output location you specify.</p> <p>Note that to include <code>ContentRedactionOutput</code> in your request, you must enable content redaction (<code>ContentRedactionType</code>).</p>"
+      }
+    },
+    "ContentRedactionType": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$ContentRedactionType": "<p>Redacts all personally identifiable information (PII) identified in your transcript.</p> <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p> <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html\">Redacting or identifying personally identifiable information</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$ContentRedactionType": "<p>Shows whether content redaction was enabled for your Call Analytics transcription.</p>",
+        "StartStreamTranscriptionRequest$ContentRedactionType": "<p>Redacts all personally identifiable information (PII) identified in your transcript.</p> <p>Content redaction is performed at the segment level; PII specified in <code>PiiEntityTypes</code> is redacted upon complete transcription of an audio segment. If you don't include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p> <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html\">Redacting or identifying personally identifiable information</a>.</p>",
+        "StartStreamTranscriptionResponse$ContentRedactionType": "<p>Shows whether content redaction was enabled for your transcription.</p>"
+      }
+    },
+    "DateTime": {
+      "base": null,
+      "refs": {
+        "MedicalScribeStreamDetails$StreamCreatedAt": "<p>The date and time when the HealthScribe streaming session was created.</p>",
+        "MedicalScribeStreamDetails$StreamEndedAt": "<p>The date and time when the HealthScribe streaming session was ended.</p>"
+      }
+    },
+    "Double": {
+      "base": null,
+      "refs": {
+        "Entity$StartTime": "<p>The start time, in milliseconds, of the utterance that was identified as PII.</p>",
+        "Entity$EndTime": "<p>The end time, in milliseconds, of the utterance that was identified as PII.</p>",
+        "Item$StartTime": "<p>The start time, in milliseconds, of the transcribed item.</p>",
+        "Item$EndTime": "<p>The end time, in milliseconds, of the transcribed item.</p>",
+        "LanguageWithScore$Score": "<p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>",
+        "MedicalEntity$StartTime": "<p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>",
+        "MedicalEntity$EndTime": "<p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>",
+        "MedicalItem$StartTime": "<p>The start time, in milliseconds, of the transcribed item.</p>",
+        "MedicalItem$EndTime": "<p>The end time, in milliseconds, of the transcribed item.</p>",
+        "MedicalResult$StartTime": "<p>The start time, in milliseconds, of the <code>Result</code>.</p>",
+        "MedicalResult$EndTime": "<p>The end time, in milliseconds, of the <code>Result</code>.</p>",
+        "MedicalScribeTranscriptItem$BeginAudioTime": "<p>The start time, in milliseconds, of the transcribed item.</p>",
+        "MedicalScribeTranscriptItem$EndAudioTime": "<p>The end time, in milliseconds, of the transcribed item.</p>",
+        "MedicalScribeTranscriptSegment$BeginAudioTime": "<p>The start time, in milliseconds, of the segment.</p>",
+        "MedicalScribeTranscriptSegment$EndAudioTime": "<p>The end time, in milliseconds, of the segment.</p>",
+        "Result$StartTime": "<p>The start time, in milliseconds, of the <code>Result</code>.</p>",
+        "Result$EndTime": "<p>The end time, in milliseconds, of the <code>Result</code>.</p>"
+      }
+    },
+    "Entity": {
+      "base": "<p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>",
+      "refs": {
+        "EntityList$member": null
+      }
+    },
+    "EntityList": {
+      "base": null,
+      "refs": {
+        "Alternative$Entities": "<p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>"
+      }
+    },
+    "GetMedicalScribeStreamRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetMedicalScribeStreamResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "IamRoleArn": {
+      "base": null,
+      "refs": {
+        "MedicalScribeConfigurationEvent$ResourceAccessRoleArn": "<p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 output bucket you specified, and use your KMS key if supplied. If the role that you specify doesn’t have the appropriate permissions, your request fails. </p> <p> IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe-streaming.html\">Amazon Web Services HealthScribe</a>.</p>",
+        "MedicalScribeStreamDetails$ResourceAccessRoleArn": "<p>The Amazon Resource Name (ARN) of the role used in the HealthScribe streaming session.</p>"
+      }
+    },
+    "Integer": {
+      "base": null,
+      "refs": {
+        "CharacterOffsets$Begin": "<p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>",
+        "CharacterOffsets$End": "<p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>"
+      }
+    },
+    "InternalFailureException": {
+      "base": "<p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$InternalFailureException": null,
+        "MedicalScribeResultStream$InternalFailureException": null,
+        "MedicalTranscriptResultStream$InternalFailureException": null,
+        "TranscriptResultStream$InternalFailureException": "<p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>"
+      }
+    },
+    "IssueDetected": {
+      "base": "<p>Lists the issues that were identified in your audio segment.</p>",
+      "refs": {
+        "IssuesDetected$member": null
+      }
+    },
+    "IssuesDetected": {
+      "base": null,
+      "refs": {
+        "UtteranceEvent$IssuesDetected": "<p>Provides the issue that was detected in the specified segment.</p>"
+      }
+    },
+    "Item": {
+      "base": "<p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>",
+      "refs": {
+        "ItemList$member": null
+      }
+    },
+    "ItemList": {
+      "base": null,
+      "refs": {
+        "Alternative$Items": "<p>Contains words, phrases, or punctuation marks in your transcription output.</p>"
+      }
+    },
+    "ItemType": {
+      "base": null,
+      "refs": {
+        "CallAnalyticsItem$Type": "<p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>",
+        "Item$Type": "<p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>",
+        "MedicalItem$Type": "<p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>"
+      }
+    },
+    "KMSEncryptionContextMap": {
+      "base": null,
+      "refs": {
+        "MedicalScribeEncryptionSettings$KmsEncryptionContext": "<p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context\">KMSencryption context </a> and <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html\">Asymmetric keys in KMS </a>. </p>"
+      }
+    },
+    "KMSKeyId": {
+      "base": null,
+      "refs": {
+        "MedicalScribeEncryptionSettings$KmsKeyId": "<p>The ID of the KMS key you want to use for your streaming session. You can specify its KMS key ID, key Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>\"alias/\"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p> Alias name: alias/ExampleAlias</p> </li> <li> <p> Alias ARN: arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias </p> </li> </ul> <p> To get the key ID and key ARN for a KMS key, use the <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html\">ListKeys</a> or <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html\">DescribeKey</a> KMS API operations. To get the alias name and alias ARN, use <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_ListAliases.html\">ListKeys</a> API operation. </p>"
+      }
+    },
+    "LanguageCode": {
+      "base": null,
+      "refs": {
+        "LanguageWithScore$LanguageCode": "<p>The language code of the identified language.</p>",
+        "Result$LanguageCode": "<p>The language code that represents the language spoken in your audio stream.</p>",
+        "StartMedicalStreamTranscriptionRequest$LanguageCode": "<p>Specify the language code that represents the language spoken in your audio.</p> <important> <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p> </important>",
+        "StartMedicalStreamTranscriptionResponse$LanguageCode": "<p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>",
+        "StartStreamTranscriptionRequest$LanguageCode": "<p>Specify the language code that represents the language spoken in your audio.</p> <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p> <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html\">Supported languages</a> table.</p>",
+        "StartStreamTranscriptionRequest$PreferredLanguage": "<p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p> <p>You can only use this parameter if you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code> in your request.</p>",
+        "StartStreamTranscriptionResponse$LanguageCode": "<p>Provides the language code that you specified in your request.</p>",
+        "StartStreamTranscriptionResponse$PreferredLanguage": "<p>Provides the preferred language that you specified in your request.</p>"
+      }
+    },
+    "LanguageIdentification": {
+      "base": null,
+      "refs": {
+        "Result$LanguageIdentification": "<p>The language code of the dominant language identified in your stream.</p> <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>"
+      }
+    },
+    "LanguageOptions": {
+      "base": null,
+      "refs": {
+        "StartStreamTranscriptionRequest$LanguageOptions": "<p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended.</p> <p>Including language options can improve the accuracy of language identification.</p> <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code>.</p> <p>For a list of languages supported with Amazon Transcribe streaming, refer to the <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html\">Supported languages</a> table.</p> <important> <p>You can only include one language dialect per language per stream. For example, you cannot include <code>en-US</code> and <code>en-AU</code> in the same request.</p> </important>",
+        "StartStreamTranscriptionResponse$LanguageOptions": "<p>Provides the language codes that you specified in your request.</p>"
+      }
+    },
+    "LanguageWithScore": {
+      "base": "<p>The language code that represents the language identified in your audio, including the associated confidence score. If you enabled channel identification in your request and each channel contained a different language, you will have more than one <code>LanguageWithScore</code> result.</p>",
+      "refs": {
+        "LanguageIdentification$member": null
+      }
+    },
+    "LimitExceededException": {
+      "base": "<p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$LimitExceededException": null,
+        "MedicalScribeResultStream$LimitExceededException": null,
+        "MedicalTranscriptResultStream$LimitExceededException": null,
+        "TranscriptResultStream$LimitExceededException": "<p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>"
+      }
+    },
+    "Long": {
+      "base": null,
+      "refs": {
+        "CallAnalyticsEntity$BeginOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>",
+        "CallAnalyticsEntity$EndOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>",
+        "CallAnalyticsItem$BeginOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>",
+        "CallAnalyticsItem$EndOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>",
+        "TimestampRange$BeginOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>",
+        "TimestampRange$EndOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>",
+        "UtteranceEvent$BeginOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>",
+        "UtteranceEvent$EndOffsetMillis": "<p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>"
+      }
+    },
+    "MatchedCategoryDetails": {
+      "base": null,
+      "refs": {
+        "CategoryEvent$MatchedDetails": "<p>Contains information about the matched categories, including category names and timestamps.</p>"
+      }
+    },
+    "MediaEncoding": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$MediaEncoding": "<p>Specify the encoding of your input audio. Supported formats are:</p> <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio\">Media formats</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$MediaEncoding": "<p>Provides the media encoding you specified in your Call Analytics request.</p>",
+        "StartMedicalStreamTranscriptionRequest$MediaEncoding": "<p>Specify the encoding used for the input audio. Supported formats are:</p> <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio\">Media formats</a>.</p>",
+        "StartMedicalStreamTranscriptionResponse$MediaEncoding": "<p>Provides the media encoding you specified in your request.</p>",
+        "StartStreamTranscriptionRequest$MediaEncoding": "<p>Specify the encoding of your input audio. Supported formats are:</p> <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio\">Media formats</a>.</p>",
+        "StartStreamTranscriptionResponse$MediaEncoding": "<p>Provides the media encoding you specified in your request.</p>"
+      }
+    },
+    "MediaSampleRateHertz": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$MediaSampleRateHertz": "<p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$MediaSampleRateHertz": "<p>Provides the sample rate that you specified in your Call Analytics request.</p>",
+        "StartMedicalStreamTranscriptionRequest$MediaSampleRateHertz": "<p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>",
+        "StartMedicalStreamTranscriptionResponse$MediaSampleRateHertz": "<p>Provides the sample rate that you specified in your request.</p>",
+        "StartStreamTranscriptionRequest$MediaSampleRateHertz": "<p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>",
+        "StartStreamTranscriptionResponse$MediaSampleRateHertz": "<p>Provides the sample rate that you specified in your request.</p>"
+      }
+    },
+    "MedicalAlternative": {
+      "base": "<p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>",
+      "refs": {
+        "MedicalAlternativeList$member": null
+      }
+    },
+    "MedicalAlternativeList": {
+      "base": null,
+      "refs": {
+        "MedicalResult$Alternatives": "<p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>"
+      }
+    },
+    "MedicalContentIdentificationType": {
+      "base": null,
+      "refs": {
+        "StartMedicalStreamTranscriptionRequest$ContentIdentificationType": "<p>Labels all personal health information (PHI) identified in your transcript.</p> <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html\">Identifying personal health information (PHI) in a transcription</a>.</p>",
+        "StartMedicalStreamTranscriptionResponse$ContentIdentificationType": "<p>Shows whether content identification was enabled for your transcription.</p>"
+      }
+    },
+    "MedicalEntity": {
+      "base": "<p>Contains entities identified as personal health information (PHI) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>",
+      "refs": {
+        "MedicalEntityList$member": null
+      }
+    },
+    "MedicalEntityList": {
+      "base": null,
+      "refs": {
+        "MedicalAlternative$Entities": "<p>Contains entities identified as personal health information (PHI) in your transcription output.</p>"
+      }
+    },
+    "MedicalItem": {
+      "base": "<p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>",
+      "refs": {
+        "MedicalItemList$member": null
+      }
+    },
+    "MedicalItemList": {
+      "base": null,
+      "refs": {
+        "MedicalAlternative$Items": "<p>Contains words, phrases, or punctuation marks in your transcription output.</p>"
+      }
+    },
+    "MedicalResult": {
+      "base": "<p>The <code>Result</code> associated with a <code/>.</p> <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>",
+      "refs": {
+        "MedicalResultList$member": null
+      }
+    },
+    "MedicalResultList": {
+      "base": null,
+      "refs": {
+        "MedicalTranscript$Results": "<p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>"
+      }
+    },
+    "MedicalScribeAudioEvent": {
+      "base": "<p>A wrapper for your audio chunks</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html\">Event stream encoding</a>. </p>",
+      "refs": {
+        "MedicalScribeInputStream$AudioEvent": null
+      }
+    },
+    "MedicalScribeChannelDefinition": {
+      "base": "<p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set the <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking). </p> <p>If you don't specify a channel definition, HealthScribe will diarize the transcription and identify speaker roles for each speaker.</p>",
+      "refs": {
+        "MedicalScribeChannelDefinitions$member": null
+      }
+    },
+    "MedicalScribeChannelDefinitions": {
+      "base": null,
+      "refs": {
+        "MedicalScribeConfigurationEvent$ChannelDefinitions": "<p>Specify which speaker is on which audio channel.</p>",
+        "MedicalScribeStreamDetails$ChannelDefinitions": "<p>The Channel Definitions of the HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalScribeChannelId": {
+      "base": null,
+      "refs": {
+        "MedicalScribeChannelDefinition$ChannelId": "<p>Specify the audio channel you want to define.</p>"
+      }
+    },
+    "MedicalScribeConfigurationEvent": {
+      "base": "<p>Specify details to configure the streaming session, including channel definitions, encryption settings, post-stream analytics settings, resource access role ARN and vocabulary settings. </p> <p>Whether you are starting a new session or resuming an existing session, your first event must be a <code>MedicalScribeConfigurationEvent</code>. If you are resuming a session, then this event must have the same configurations that you provided to start the session. </p>",
+      "refs": {
+        "MedicalScribeInputStream$ConfigurationEvent": "<p>Specify additional streaming session configurations beyond those provided in your initial start request headers. For example, specify channel definitions, encryption settings, and post-stream analytics settings. </p> <p>Whether you are starting a new session or resuming an existing session, your first event must be a <code>MedicalScribeConfigurationEvent</code>. </p>"
+      }
+    },
+    "MedicalScribeEncryptionSettings": {
+      "base": "<p>Contains encryption related settings to be used for data encryption with Key Management Service, including KmsEncryptionContext and KmsKeyId. The KmsKeyId is required, while KmsEncryptionContext is optional for additional layer of security. </p> <p>By default, Amazon Web Services HealthScribe provides encryption at rest to protect sensitive customer data using Amazon S3-managed keys. HealthScribe uses the KMS key you specify as a second layer of encryption.</p> <p> Your <code>ResourceAccessRoleArn</code> must permission to use your KMS key. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe-encryption.html\">Data Encryption at rest for Amazon Web Services HealthScribe</a>. </p>",
+      "refs": {
+        "MedicalScribeConfigurationEvent$EncryptionSettings": "<p>Specify the encryption settings for your streaming session.</p>",
+        "MedicalScribeStreamDetails$EncryptionSettings": "<p>The Encryption Settings of the HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalScribeInputStream": {
+      "base": "<p>An encoded stream of events. The stream is encoded as HTTP/2 data frames.</p> <p>An input stream consists of the following types of events. The first element of the input stream must be the <code>MedicalScribeConfigurationEvent</code> event type.</p> <ul> <li> <p> <code>MedicalScribeConfigurationEvent</code> </p> </li> <li> <p> <code>MedicalScribeAudioEvent</code> </p> </li> <li> <p> <code>MedicalScribeSessionControlEvent</code> </p> </li> </ul>",
+      "refs": {
+        "StartMedicalScribeStreamRequest$InputStream": "<p>Specify the input stream where you will send events in real time.</p> <p>The first element of the input stream must be a <code>MedicalScribeConfigurationEvent</code>. </p>"
+      }
+    },
+    "MedicalScribeLanguageCode": {
+      "base": null,
+      "refs": {
+        "MedicalScribeStreamDetails$LanguageCode": "<p>The Language Code of the HealthScribe streaming session.</p>",
+        "StartMedicalScribeStreamRequest$LanguageCode": "<p>Specify the language code for your HealthScribe streaming session.</p>",
+        "StartMedicalScribeStreamResponse$LanguageCode": "<p>The Language Code that you specified in your request. Same as provided in the <code>StartMedicalScribeStreamRequest</code>. </p>"
+      }
+    },
+    "MedicalScribeMediaEncoding": {
+      "base": null,
+      "refs": {
+        "MedicalScribeStreamDetails$MediaEncoding": "<p>The Media Encoding of the HealthScribe streaming session.</p>",
+        "StartMedicalScribeStreamRequest$MediaEncoding": "<p>Specify the encoding used for the input audio.</p> <p>Supported formats are:</p> <ul> <li> <p>FLAC</p> </li> <li> <p>OPUS-encoded audio in an Ogg container</p> </li> <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV) </p> </li> </ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio\">Media formats</a>. </p>",
+        "StartMedicalScribeStreamResponse$MediaEncoding": "<p>The Media Encoding you specified in your request. Same as provided in the <code>StartMedicalScribeStreamRequest</code> </p>"
+      }
+    },
+    "MedicalScribeMediaSampleRateHertz": {
+      "base": null,
+      "refs": {
+        "MedicalScribeStreamDetails$MediaSampleRateHertz": "<p>The sample rate (in hertz) of the HealthScribe streaming session.</p>",
+        "StartMedicalScribeStreamRequest$MediaSampleRateHertz": "<p>Specify the sample rate of the input audio (in hertz). Amazon Web Services HealthScribe supports a range from 16,000 Hz to 48,000 Hz. The sample rate you specify must match that of your audio. </p>",
+        "StartMedicalScribeStreamResponse$MediaSampleRateHertz": "<p>The sample rate (in hertz) that you specified in your request. Same as provided in the <code>StartMedicalScribeStreamRequest</code> </p>"
+      }
+    },
+    "MedicalScribeNoteTemplate": {
+      "base": null,
+      "refs": {
+        "ClinicalNoteGenerationSettings$NoteTemplate": "<p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p> <ul> <li> <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p> </li> <li> <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p> </li> </ul>"
+      }
+    },
+    "MedicalScribeParticipantRole": {
+      "base": null,
+      "refs": {
+        "MedicalScribeChannelDefinition$ParticipantRole": "<p>Specify the participant that you want to flag. The allowed options are <code>CLINICIAN</code> and <code>PATIENT</code>. </p>"
+      }
+    },
+    "MedicalScribePostStreamAnalyticsResult": {
+      "base": "<p>Contains details for the result of post-stream analytics. </p>",
+      "refs": {
+        "MedicalScribeStreamDetails$PostStreamAnalyticsResult": "<p>The result of post-stream analytics for the HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalScribePostStreamAnalyticsSettings": {
+      "base": "<p>The settings for post-stream analytics. </p>",
+      "refs": {
+        "MedicalScribeConfigurationEvent$PostStreamAnalyticsSettings": "<p>Specify settings for post-stream analytics.</p>",
+        "MedicalScribeStreamDetails$PostStreamAnalyticsSettings": "<p>The post-stream analytics settings of the HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalScribeResultStream": {
+      "base": "<p>Result stream where you will receive the output events. The details are provided in the <code>MedicalScribeTranscriptEvent</code> object. </p>",
+      "refs": {
+        "StartMedicalScribeStreamResponse$ResultStream": "<p>The result stream where you will receive the output events. </p>"
+      }
+    },
+    "MedicalScribeSessionControlEvent": {
+      "base": "<p>Specify the lifecycle of your streaming session.</p>",
+      "refs": {
+        "MedicalScribeInputStream$SessionControlEvent": "<p>Specify the lifecycle of your streaming session, such as ending the session.</p>"
+      }
+    },
+    "MedicalScribeSessionControlEventType": {
+      "base": null,
+      "refs": {
+        "MedicalScribeSessionControlEvent$Type": "<p>The type of <code>MedicalScribeSessionControlEvent</code>. </p> <p>Possible Values:</p> <ul> <li> <p> <code>END_OF_SESSION</code> - Indicates the audio streaming is complete. After you send an END_OF_SESSION event, Amazon Web Services HealthScribe starts the post-stream analytics. The session can't be resumed after this event is sent. After Amazon Web Services HealthScribe processes the event, the real-time <code>StreamStatus</code> is <code>COMPLETED</code>. You get the <code>StreamStatus</code> and other stream details with the <a href=\"https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_GetMedicalScribeStream.html\">GetMedicalScribeStream</a> API operation. For more information about different streaming statuses, see the <code>StreamStatus</code> description in the <a href=\"https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_MedicalScribeStreamDetails.html\">MedicalScribeStreamDetails</a>. </p> </li> </ul>"
+      }
+    },
+    "MedicalScribeStreamDetails": {
+      "base": "<p>Contains details about a Amazon Web Services HealthScribe streaming session.</p>",
+      "refs": {
+        "GetMedicalScribeStreamResponse$MedicalScribeStreamDetails": "<p>Provides details about a HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalScribeStreamStatus": {
+      "base": null,
+      "refs": {
+        "MedicalScribeStreamDetails$StreamStatus": "<p>The streaming status of the HealthScribe streaming session.</p> <p>Possible Values:</p> <ul> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p> <code>PAUSED</code> </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p> <code>COMPLETED</code> </p> </li> </ul> <note> <p>This status is specific to real-time streaming. A <code>COMPLETED</code> status doesn't mean that the post-stream analytics is complete. To get status of an analytics result, check the <code>Status</code> field for the analytics result within the <code>MedicalScribePostStreamAnalyticsResult</code>. For example, you can view the status of the <code>ClinicalNoteGenerationResult</code>. </p> </note>"
+      }
+    },
+    "MedicalScribeTranscriptEvent": {
+      "base": "<p>The event associated with <code>MedicalScribeResultStream</code>. </p> <p>Contains <code>MedicalScribeTranscriptSegment</code>, which contains segment related information. </p>",
+      "refs": {
+        "MedicalScribeResultStream$TranscriptEvent": "<p>The transcript event that contains real-time transcription results. </p>"
+      }
+    },
+    "MedicalScribeTranscriptItem": {
+      "base": "<p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times. </p>",
+      "refs": {
+        "MedicalScribeTranscriptItemList$member": null
+      }
+    },
+    "MedicalScribeTranscriptItemList": {
+      "base": null,
+      "refs": {
+        "MedicalScribeTranscriptSegment$Items": "<p>Contains words, phrases, or punctuation marks in your segment.</p>"
+      }
+    },
+    "MedicalScribeTranscriptItemType": {
+      "base": null,
+      "refs": {
+        "MedicalScribeTranscriptItem$Type": "<p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>. </p>"
+      }
+    },
+    "MedicalScribeTranscriptSegment": {
+      "base": "<p>Contains a set of transcription results, along with additional information of the segment.</p>",
+      "refs": {
+        "MedicalScribeTranscriptEvent$TranscriptSegment": "<p>The <code>TranscriptSegment</code> associated with a <code>MedicalScribeTranscriptEvent</code>. </p>"
+      }
+    },
+    "MedicalScribeVocabularyFilterMethod": {
+      "base": null,
+      "refs": {
+        "MedicalScribeConfigurationEvent$VocabularyFilterMethod": "<p>Specify how you want your custom vocabulary filter applied to the streaming session.</p> <p>To replace words with <code>***</code>, specify <code>mask</code>. </p> <p>To delete words, specify <code>remove</code>. </p> <p>To flag words without changing them, specify <code>tag</code>. </p>",
+        "MedicalScribeStreamDetails$VocabularyFilterMethod": "<p>The method of the vocabulary filter for the HealthScribe streaming session.</p>"
+      }
+    },
+    "MedicalTranscript": {
+      "base": "<p>The <code>MedicalTranscript</code> associated with a <code/>.</p> <p> <code>MedicalTranscript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>",
+      "refs": {
+        "MedicalTranscriptEvent$Transcript": "<p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>"
+      }
+    },
+    "MedicalTranscriptEvent": {
+      "base": "<p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>",
+      "refs": {
+        "MedicalTranscriptResultStream$TranscriptEvent": "<p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>"
+      }
+    },
+    "MedicalTranscriptResultStream": {
+      "base": "<p>Contains detailed information about your streaming session.</p>",
+      "refs": {
+        "StartMedicalStreamTranscriptionResponse$TranscriptResultStream": "<p>Provides detailed information about your streaming session.</p>"
+      }
+    },
+    "ModelName": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$LanguageModelName": "<p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p> <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html\">Custom language models</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$LanguageModelName": "<p>Provides the name of the custom language model that you specified in your Call Analytics request.</p>",
+        "StartStreamTranscriptionRequest$LanguageModelName": "<p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p> <p>The language of the specified language model must match the language code you specify in your transcription request. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html\">Custom language models</a>.</p>",
+        "StartStreamTranscriptionResponse$LanguageModelName": "<p>Provides the name of the custom language model that you specified in your request.</p>"
+      }
+    },
+    "NonEmptyString": {
+      "base": null,
+      "refs": {
+        "KMSEncryptionContextMap$key": null,
+        "KMSEncryptionContextMap$value": null
+      }
+    },
+    "NullableBoolean": {
+      "base": null,
+      "refs": {
+        "MedicalScribeTranscriptItem$VocabularyFilterMatch": "<p>Indicates whether the specified item matches a word in the vocabulary filter included in your configuration event. If <code>true</code>, there is a vocabulary filter match. </p>"
+      }
+    },
+    "NumberOfChannels": {
+      "base": null,
+      "refs": {
+        "StartMedicalStreamTranscriptionRequest$NumberOfChannels": "<p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p> <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>",
+        "StartMedicalStreamTranscriptionResponse$NumberOfChannels": "<p>Provides the number of channels that you specified in your request.</p>",
+        "StartStreamTranscriptionRequest$NumberOfChannels": "<p>Specify the number of channels in your audio stream. This value must be <code>2</code>, as only two channels are supported. If your audio doesn't contain multiple channels, do not include this parameter in your request.</p> <p>If you include <code>NumberOfChannels</code> in your request, you must also include <code>EnableChannelIdentification</code>.</p>",
+        "StartStreamTranscriptionResponse$NumberOfChannels": "<p>Provides the number of channels that you specified in your request.</p>"
+      }
+    },
+    "PartialResultsStability": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$PartialResultsStability": "<p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p> <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization\">Partial-result stabilization</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$PartialResultsStability": "<p>Provides the stabilization level used for your transcription.</p>",
+        "StartStreamTranscriptionRequest$PartialResultsStability": "<p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p> <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization\">Partial-result stabilization</a>.</p>",
+        "StartStreamTranscriptionResponse$PartialResultsStability": "<p>Provides the stabilization level used for your transcription.</p>"
+      }
+    },
+    "ParticipantRole": {
+      "base": null,
+      "refs": {
+        "ChannelDefinition$ParticipantRole": "<p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>",
+        "UtteranceEvent$ParticipantRole": "<p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>"
+      }
+    },
+    "PiiEntityTypes": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$PiiEntityTypes": "<p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p> <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p> <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$PiiEntityTypes": "<p>Lists the PII entity types you specified in your Call Analytics request.</p>",
+        "StartStreamTranscriptionRequest$PiiEntityTypes": "<p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p> <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p> <p>Note that if you include <code>PiiEntityTypes</code> in your request, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p> <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in your request, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>",
+        "StartStreamTranscriptionResponse$PiiEntityTypes": "<p>Lists the PII entity types you specified in your request.</p>"
+      }
+    },
+    "PointsOfInterest": {
+      "base": "<p>Contains the timestamps of matched categories.</p>",
+      "refs": {
+        "MatchedCategoryDetails$value": null
+      }
+    },
+    "PostCallAnalyticsSettings": {
+      "base": "<p>Allows you to specify additional settings for your Call Analytics post-call request, including output locations for your redacted transcript, which IAM role to use, and which encryption key to use.</p> <p> <code>DataAccessRoleArn</code> and <code>OutputLocation</code> are required fields.</p> <p> <code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html\">Post-call analytics</a> for more information on this feature.</p>",
+      "refs": {
+        "ConfigurationEvent$PostCallAnalyticsSettings": "<p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted transcript.</p> <p> <code>PostCallAnalyticsSettings</code> provides you with the same insights as a Call Analytics post-call transcription. Refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html\">Post-call analytics</a> for more information on this feature.</p>"
+      }
+    },
+    "RequestId": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionResponse$RequestId": "<p>Provides the identifier for your real-time Call Analytics request.</p>",
+        "StartMedicalScribeStreamResponse$RequestId": "<p>The unique identifier for your streaming request. </p>",
+        "StartMedicalStreamTranscriptionResponse$RequestId": "<p>Provides the identifier for your streaming request.</p>",
+        "StartStreamTranscriptionResponse$RequestId": "<p>Provides the identifier for your streaming request.</p>"
+      }
+    },
+    "ResourceNotFoundException": {
+      "base": "<p>The request references a resource which doesn't exist.</p>",
+      "refs": {
+      }
+    },
+    "Result": {
+      "base": "<p>The <code>Result</code> associated with a <code/>.</p> <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>",
+      "refs": {
+        "ResultList$member": null
+      }
+    },
+    "ResultList": {
+      "base": null,
+      "refs": {
+        "Transcript$Results": "<p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>"
+      }
+    },
+    "Sentiment": {
+      "base": null,
+      "refs": {
+        "UtteranceEvent$Sentiment": "<p>Provides the sentiment that was detected in the specified segment.</p>"
+      }
+    },
+    "ServiceUnavailableException": {
+      "base": "<p>The service is currently unavailable. Try your request later.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$ServiceUnavailableException": null,
+        "MedicalScribeResultStream$ServiceUnavailableException": null,
+        "MedicalTranscriptResultStream$ServiceUnavailableException": null,
+        "TranscriptResultStream$ServiceUnavailableException": "<p>The service is currently unavailable. Try your request later.</p>"
+      }
+    },
+    "SessionId": {
+      "base": null,
+      "refs": {
+        "GetMedicalScribeStreamRequest$SessionId": "<p>The identifier of the HealthScribe streaming session you want information about.</p>",
+        "MedicalScribeStreamDetails$SessionId": "<p>The identifier of the HealthScribe streaming session.</p>",
+        "StartCallAnalyticsStreamTranscriptionRequest$SessionId": "<p>Specify a name for your Call Analytics transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$SessionId": "<p>Provides the identifier for your Call Analytics transcription session.</p>",
+        "StartMedicalScribeStreamRequest$SessionId": "<p>Specify an identifier for your streaming session (in UUID format). If you don't include a SessionId in your request, Amazon Web Services HealthScribe generates an ID and returns it in the response. </p>",
+        "StartMedicalScribeStreamResponse$SessionId": "<p>The identifier (in UUID format) for your streaming session.</p> <p>If you already started streaming, this is same ID as the one you specified in your initial <code>StartMedicalScribeStreamRequest</code>. </p>",
+        "StartMedicalStreamTranscriptionRequest$SessionId": "<p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>",
+        "StartMedicalStreamTranscriptionResponse$SessionId": "<p>Provides the identifier for your transcription session.</p>",
+        "StartStreamTranscriptionRequest$SessionId": "<p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe generates an ID and returns it in the response.</p>",
+        "StartStreamTranscriptionResponse$SessionId": "<p>Provides the identifier for your transcription session.</p>"
+      }
+    },
+    "Specialty": {
+      "base": null,
+      "refs": {
+        "StartMedicalStreamTranscriptionRequest$Specialty": "<p>Specify the medical specialty contained in your audio.</p>",
+        "StartMedicalStreamTranscriptionResponse$Specialty": "<p>Provides the medical specialty that you specified in your request.</p>"
+      }
+    },
+    "Stable": {
+      "base": null,
+      "refs": {
+        "CallAnalyticsItem$Stable": "<p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>",
+        "Item$Stable": "<p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>"
+      }
+    },
+    "StartCallAnalyticsStreamTranscriptionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartCallAnalyticsStreamTranscriptionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartMedicalScribeStreamRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartMedicalScribeStreamResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartMedicalStreamTranscriptionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartMedicalStreamTranscriptionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartStreamTranscriptionRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "StartStreamTranscriptionResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "String": {
+      "base": null,
+      "refs": {
+        "Alternative$Transcript": "<p>Contains transcribed text.</p>",
+        "BadRequestException$Message": null,
+        "CallAnalyticsEntity$Category": "<p>The category of information identified. For example, <code>PII</code>.</p>",
+        "CallAnalyticsEntity$Type": "<p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>",
+        "CallAnalyticsEntity$Content": "<p>The word or words that represent the identified entity.</p>",
+        "CallAnalyticsItem$Content": "<p>The word or punctuation that was transcribed.</p>",
+        "ClinicalNoteGenerationResult$FailureReason": "<p>If <code>ClinicalNoteGenerationResult</code> is <code>FAILED</code>, information about why it failed. </p>",
+        "ConflictException$Message": null,
+        "Entity$Category": "<p>The category of information identified. The only category is <code>PII</code>.</p>",
+        "Entity$Type": "<p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>",
+        "Entity$Content": "<p>The word or words identified as PII.</p>",
+        "InternalFailureException$Message": null,
+        "Item$Content": "<p>The word or punctuation that was transcribed.</p>",
+        "Item$Speaker": "<p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>",
+        "LimitExceededException$Message": null,
+        "MatchedCategoryDetails$key": null,
+        "MedicalAlternative$Transcript": "<p>Contains transcribed text.</p>",
+        "MedicalEntity$Category": "<p>The category of information identified. The only category is <code>PHI</code>.</p>",
+        "MedicalEntity$Content": "<p>The word or words identified as PHI.</p>",
+        "MedicalItem$Content": "<p>The word or punctuation that was transcribed.</p>",
+        "MedicalItem$Speaker": "<p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>",
+        "MedicalResult$ResultId": "<p>Provides a unique identifier for the <code>Result</code>.</p>",
+        "MedicalResult$ChannelId": "<p>Indicates the channel identified for the <code>Result</code>.</p>",
+        "MedicalScribeTranscriptItem$Content": "<p>The word, phrase or punctuation mark that was transcribed.</p>",
+        "MedicalScribeTranscriptSegment$SegmentId": "<p>The identifier of the segment.</p>",
+        "MedicalScribeTranscriptSegment$Content": "<p>Contains transcribed text of the segment.</p>",
+        "MedicalScribeTranscriptSegment$ChannelId": "<p>Indicates which audio channel is associated with the <code>MedicalScribeTranscriptSegment</code>. </p> <p>If <code>MedicalScribeChannelDefinition</code> is not provided in the <code>MedicalScribeConfigurationEvent</code>, then this field will not be included. </p>",
+        "PostCallAnalyticsSettings$OutputLocation": "<p>The Amazon S3 location where you want your Call Analytics post-call transcription output stored. You can use any of the following formats to specify the output location:</p> <ol> <li> <p>s3://DOC-EXAMPLE-BUCKET</p> </li> <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/</p> </li> <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li> </ol>",
+        "PostCallAnalyticsSettings$DataAccessRoleArn": "<p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p> <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns\">IAM ARNs</a>.</p>",
+        "PostCallAnalyticsSettings$OutputEncryptionKMSKeyId": "<p>The KMS key you want to use to encrypt your Call Analytics post-call output.</p> <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p> <ol> <li> <p>Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.</p> </li> <li> <p>Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol> <p>If using a key located in a <b>different</b> Amazon Web Services account than the current Amazon Web Services account, you can specify your KMS key in one of two ways:</p> <ol> <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol> <p>Note that the role making the request must have permission to use the specified KMS key.</p>",
+        "ResourceNotFoundException$Message": null,
+        "Result$ResultId": "<p>Provides a unique identifier for the <code>Result</code>.</p>",
+        "Result$ChannelId": "<p>Indicates which audio channel is associated with the <code>Result</code>.</p>",
+        "ServiceUnavailableException$Message": null,
+        "StringList$member": null,
+        "UtteranceEvent$UtteranceId": "<p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>",
+        "UtteranceEvent$Transcript": "<p>Contains transcribed text.</p>"
+      }
+    },
+    "StringList": {
+      "base": null,
+      "refs": {
+        "CategoryEvent$MatchedCategories": "<p>Lists the categories that were matched in your audio segment.</p>"
+      }
+    },
+    "TimestampRange": {
+      "base": "<p>Contains the timestamp range (start time through end time) of a matched category.</p>",
+      "refs": {
+        "TimestampRanges$member": null
+      }
+    },
+    "TimestampRanges": {
+      "base": null,
+      "refs": {
+        "PointsOfInterest$TimestampRanges": "<p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>"
+      }
+    },
+    "Transcript": {
+      "base": "<p>The <code>Transcript</code> associated with a <code/>.</p> <p> <code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>",
+      "refs": {
+        "TranscriptEvent$Transcript": "<p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>"
+      }
+    },
+    "TranscriptEvent": {
+      "base": "<p>The <code>TranscriptEvent</code> associated with a <code>TranscriptResultStream</code>.</p> <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>",
+      "refs": {
+        "TranscriptResultStream$TranscriptEvent": "<p>Contains <code>Transcript</code>, which contains <code>Results</code>. The <code/> object contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>"
+      }
+    },
+    "TranscriptResultStream": {
+      "base": "<p>Contains detailed information about your streaming session.</p>",
+      "refs": {
+        "StartStreamTranscriptionResponse$TranscriptResultStream": "<p>Provides detailed information about your streaming session.</p>"
+      }
+    },
+    "Type": {
+      "base": null,
+      "refs": {
+        "StartMedicalStreamTranscriptionRequest$Type": "<p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>",
+        "StartMedicalStreamTranscriptionResponse$Type": "<p>Provides the type of audio you specified in your request.</p>"
+      }
+    },
+    "Uri": {
+      "base": null,
+      "refs": {
+        "ClinicalNoteGenerationResult$ClinicalNoteOutputLocation": "<p>Holds the Amazon S3 URI for the output Clinical Note. </p>",
+        "ClinicalNoteGenerationResult$TranscriptOutputLocation": "<p>Holds the Amazon S3 URI for the output Transcript. </p>"
+      }
+    },
+    "UtteranceEvent": {
+      "base": "<p>Contains set of transcription results from one or more audio segments, along with additional information about the parameters included in your request. For example, channel definitions, partial result stabilization, sentiment, and issue detection.</p>",
+      "refs": {
+        "CallAnalyticsTranscriptResultStream$UtteranceEvent": "<p>Contains set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to channel definitions, partial result stabilization, sentiment, issue detection, and other transcription-related data.</p>"
+      }
+    },
+    "VocabularyFilterMethod": {
+      "base": null,
+      "refs": {
+        "StartCallAnalyticsStreamTranscriptionRequest$VocabularyFilterMethod": "<p>Specify how you want your vocabulary filter applied to your transcript.</p> <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To flag words without changing them, choose <code>tag</code>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$VocabularyFilterMethod": "<p>Provides the vocabulary filtering method used in your Call Analytics transcription.</p>",
+        "StartStreamTranscriptionRequest$VocabularyFilterMethod": "<p>Specify how you want your vocabulary filter applied to your transcript.</p> <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To flag words without changing them, choose <code>tag</code>.</p>",
+        "StartStreamTranscriptionResponse$VocabularyFilterMethod": "<p>Provides the vocabulary filtering method used in your transcription.</p>"
+      }
+    },
+    "VocabularyFilterName": {
+      "base": null,
+      "refs": {
+        "MedicalScribeConfigurationEvent$VocabularyFilterName": "<p>Specify the name of the custom vocabulary filter you want to include in your streaming session. Custom vocabulary filter names are case-sensitive. </p> <p>If you include <code>VocabularyFilterName</code> in the <code>MedicalScribeConfigurationEvent</code>, you must also include <code>VocabularyFilterMethod</code>. </p>",
+        "MedicalScribeStreamDetails$VocabularyFilterName": "<p>The name of the vocabulary filter used for the HealthScribe streaming session .</p>",
+        "StartCallAnalyticsStreamTranscriptionRequest$VocabularyFilterName": "<p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p> <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html\">Using vocabulary filtering with unwanted words</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$VocabularyFilterName": "<p>Provides the name of the custom vocabulary filter that you specified in your Call Analytics request.</p>",
+        "StartStreamTranscriptionRequest$VocabularyFilterName": "<p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p> <p>If the language of the specified custom vocabulary filter doesn't match the language identified in your media, the vocabulary filter is not applied to your transcription.</p> <important> <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html\">Using vocabulary filtering with unwanted words</a>.</p>",
+        "StartStreamTranscriptionResponse$VocabularyFilterName": "<p>Provides the name of the custom vocabulary filter that you specified in your request.</p>"
+      }
+    },
+    "VocabularyFilterNames": {
+      "base": null,
+      "refs": {
+        "StartStreamTranscriptionRequest$VocabularyFilterNames": "<p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p> <p>If none of the languages of the specified custom vocabulary filters match the language identified in your media, your job fails.</p> <important> <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html\">Using vocabulary filtering with unwanted words</a>.</p>",
+        "StartStreamTranscriptionResponse$VocabularyFilterNames": "<p>Provides the names of the custom vocabulary filters that you specified in your request.</p>"
+      }
+    },
+    "VocabularyName": {
+      "base": null,
+      "refs": {
+        "MedicalScribeConfigurationEvent$VocabularyName": "<p>Specify the name of the custom vocabulary you want to use for your streaming session. Custom vocabulary names are case-sensitive. </p>",
+        "MedicalScribeStreamDetails$VocabularyName": "<p>The vocabulary name of the HealthScribe streaming session.</p>",
+        "StartCallAnalyticsStreamTranscriptionRequest$VocabularyName": "<p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p> <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html\">Custom vocabularies</a>.</p>",
+        "StartCallAnalyticsStreamTranscriptionResponse$VocabularyName": "<p>Provides the name of the custom vocabulary that you specified in your Call Analytics request.</p>",
+        "StartMedicalStreamTranscriptionRequest$VocabularyName": "<p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>",
+        "StartMedicalStreamTranscriptionResponse$VocabularyName": "<p>Provides the name of the custom vocabulary that you specified in your request.</p>",
+        "StartStreamTranscriptionRequest$VocabularyName": "<p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p> <p>If the language of the specified custom vocabulary doesn't match the language identified in your media, the custom vocabulary is not applied to your transcription.</p> <important> <p>This parameter is <b>not</b> intended for use with the <code>IdentifyLanguage</code> parameter. If you're including <code>IdentifyLanguage</code> in your request and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html\">Custom vocabularies</a>.</p>",
+        "StartStreamTranscriptionResponse$VocabularyName": "<p>Provides the name of the custom vocabulary that you specified in your request.</p>"
+      }
+    },
+    "VocabularyNames": {
+      "base": null,
+      "refs": {
+        "StartStreamTranscriptionRequest$VocabularyNames": "<p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p> <p>If none of the languages of the specified custom vocabularies match the language identified in your media, your job fails.</p> <important> <p>This parameter is only intended for use <b>with</b> the <code>IdentifyLanguage</code> parameter. If you're <b>not</b> including <code>IdentifyLanguage</code> in your request and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p> </important> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html\">Custom vocabularies</a>.</p>",
+        "StartStreamTranscriptionResponse$VocabularyNames": "<p>Provides the names of the custom vocabularies that you specified in your request.</p>"
+      }
+    }
+  }
+}

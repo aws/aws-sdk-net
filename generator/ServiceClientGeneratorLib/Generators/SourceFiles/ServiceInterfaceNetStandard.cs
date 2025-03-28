@@ -117,16 +117,20 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 49 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 
-        // Creates a parameterless definition of the operation if specified in the customizations file
-        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
         {
 
             
             #line default
             #line hidden
+            this.Write("#if NET8_0_OR_GREATER\r\n");
             
             #line 54 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 
+        }
+        // Creates a parameterless definition of the operation if specified in the customizations file
+        if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
+        {
 		this.FormatOperationDocumentationAsync(operation, false);
 		if(operation.IsDeprecated)
 		{
@@ -136,14 +140,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 59 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 63 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 60 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 		
 		}
 
@@ -152,14 +156,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        Task<");
             
-            #line 63 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 67 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 63 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 67 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -167,7 +171,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token));\r\n\r\n");
             
-            #line 65 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 69 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 
         }
 
@@ -178,7 +182,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n");
             
-            #line 71 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 75 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
         
         this.FormatOperationDocumentationAsync(operation, true);
 		if(operation.IsDeprecated)
@@ -189,14 +193,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 76 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 80 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 77 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 81 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 		
 		}
 
@@ -205,29 +209,48 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        Task<");
             
-            #line 80 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 80 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 80 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
-                    "ancellationToken));\r\n\r\n\t\t#endregion\r\n\t\t");
+                    "ancellationToken));\r\n\r\n");
             
-            #line 83 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 86 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+
+        if (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+        {
+
+            
+            #line default
+            #line hidden
+            this.Write("#endif\r\n");
+            
+            #line 91 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+
+        }
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t#endregion\r\n\t\t");
+            
+            #line 95 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
 
 		}
 		
@@ -235,7 +258,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 86 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 98 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
  if (this.Config.EndpointsRuleSet != null) { 
             
             #line default
@@ -253,7 +276,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         #endregion
 ");
             
-            #line 98 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 110 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
  } 
             
             #line default
@@ -268,7 +291,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(Amazon");
             
-            #line 107 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 119 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -276,7 +299,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config))]\r\n        static ClientConfig IAmazonService.CreateDefaultClientConfig()" +
                     " => new Amazon");
             
-            #line 108 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 120 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -290,7 +313,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         {
             var serviceClientConfig = clientConfig as Amazon");
             
-            #line 115 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 127 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -298,14 +321,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Config;\r\n            if (serviceClientConfig == null)\r\n            {\r\n           " +
                     "     throw new AmazonClientException(\"ClientConfig is not of type Amazon");
             
-            #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 130 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Config to create Amazon");
             
-            #line 118 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 130 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -313,14 +336,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Client\");\r\n            }\r\n\r\n            return awsCredentials == null ? \r\n       " +
                     "             new Amazon");
             
-            #line 122 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 134 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(serviceClientConfig) :\r\n                    new Amazon");
             
-            #line 123 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
+            #line 135 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetStandard.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
