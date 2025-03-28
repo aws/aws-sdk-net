@@ -149,8 +149,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
-        /// The endpoint configuration of this RestApi showing the endpoint types of the API.
-        /// 
+        /// The endpoint configuration of this RestApi showing the endpoint types and IP address
+        /// types of the API. 
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration

@@ -48,6 +48,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.Write(requestObject.IpAddressType);
+            }
+
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("types");
