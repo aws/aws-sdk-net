@@ -28,6 +28,7 @@
     <Compile Include="Runtime/MockClientConfig.cs" />
     <Compile Include="Runtime/MockFileSystem.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
+    <Compile Include="Runtime\UserAgentTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />

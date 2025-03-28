@@ -102,7 +102,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 SetRecursionDetectionHeader(requestContext.Request.Headers);
-                SetUserAgentHeader(requestContext);
+                UpdateUserAgentDetails(requestContext);
             }
         }
 
@@ -124,51 +124,19 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private static void SetUserAgentHeader(IRequestContext requestContext)
+        private static void UpdateUserAgentDetails(IRequestContext requestContext)
         {
             var sb = new StringBuilder(256);
 
-            sb.Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(requestContext.ClientConfig.UserAgent));
+            requestContext.UserAgentDetails.AddUserAgentComponent(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(requestContext.ClientConfig.UserAgent));
 
             var clientAppId = requestContext.ClientConfig.ClientAppId;
             if (!string.IsNullOrEmpty(clientAppId))
-                sb.Append(" app/").Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId));
+                requestContext.UserAgentDetails.AddUserAgentComponent($"app/{InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId)}");
 
-            sb.Append(" cfg/retry-mode#").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
+            requestContext.UserAgentDetails.AddUserAgentComponent($"md/{(requestContext.IsAsync ? "ClientAsync" : "ClientSync")}");
 
-            sb.Append(" md/").Append(requestContext.IsAsync ? "ClientAsync" : "ClientSync");
-
-            sb.Append(" cfg/init-coll#").Append(AWSConfigs.InitializeCollections ? '1' : '0');
-
-            var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
-            if (!string.IsNullOrEmpty(userAgentAddition))
-            {
-                sb.Append(' ').Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(userAgentAddition));
-            }
-
-            var userAgent = sb.ToString();
-
-            if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
-            {
-                requestContext.Request.Headers[HeaderKeys.XAmzUserAgentHeader] = userAgent;
-            }
-            else
-            {
-                requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = userAgent;
-            }
-        }
-
-        private static string ToUserAgentHeaderString(RequestRetryMode requestRetryMode)
-        {
-            switch (requestRetryMode)
-            {
-                case RequestRetryMode.Standard:
-                    return "standard";
-                case RequestRetryMode.Adaptive:
-                    return "adaptive";
-                default:
-                    return requestRetryMode.ToString().ToLowerInvariant();
-            }
+            requestContext.UserAgentDetails.AddUserAgentComponent($"cfg/init-coll#{(AWSConfigs.InitializeCollections ? '1' : '0')}");
         }
     }
 }

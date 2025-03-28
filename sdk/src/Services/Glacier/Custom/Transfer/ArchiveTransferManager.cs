@@ -170,8 +170,7 @@ namespace Amazon.Glacier.Transfer
                 WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
                 if (wsArgs != null)
                 {
-                    string currentUserAgent = wsArgs.Headers[AWSSDKUtils.UserAgentHeader];
-                    wsArgs.Headers[AWSSDKUtils.UserAgentHeader] = currentUserAgent + " ft/ArchiveTransferManager md/" + this.operation;
+                    ((Runtime.Internal.IAmazonWebServiceRequest)wsArgs.Request).UserAgentDetails.AddUserAgentComponent("ft/ArchiveTransferManager md/" + this.operation);
                 }
             }
         }

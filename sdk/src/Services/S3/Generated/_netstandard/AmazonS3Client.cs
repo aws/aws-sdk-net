@@ -239,7 +239,6 @@ namespace Amazon.S3
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Signer>(new Amazon.S3.Internal.S3Express.S3ExpressPreSigner());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.EndpointResolver>(new Amazon.S3.Internal.AmazonS3PostMarshallHandler());
-            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ChecksumHandler>(new Amazon.S3.Internal.AmazonS3UserAgentHandler());
             if(this.Config.RetryMode == RequestRetryMode.Standard)
             {
                 pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3StandardRetryPolicy(this.Config)));
