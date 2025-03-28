@@ -2268,16 +2268,6 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// You can also import a <i>root public key certificate</i>, used to sign other public
-        /// key certificates, or a <i>trusted public key certificate</i> under an already established
-        /// root public key certificate.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>To import a public root key certificate</b> 
-        /// </para>
-        ///  
-        /// <para>
         /// Using this operation, you can import the public component (in PEM cerificate format)
         /// of your private root key. You can use the imported public root key certificate for
         /// digital signatures, for example signing wrapping key or signing key in TR-34, within
@@ -2531,16 +2521,6 @@ namespace Amazon.PaymentCryptography
         /// Exportability) are contained within the key block. With RSA wrap and unwrap, you can
         /// exchange both 3DES and AES-128 keys. The keys are imported in a WrappedKeyCryptogram
         /// format and you will need to specify the key attributes during import. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also import a <i>root public key certificate</i>, used to sign other public
-        /// key certificates, or a <i>trusted public key certificate</i> under an already established
-        /// root public key certificate.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>To import a public root key certificate</b> 
         /// </para>
         ///  
         /// <para>

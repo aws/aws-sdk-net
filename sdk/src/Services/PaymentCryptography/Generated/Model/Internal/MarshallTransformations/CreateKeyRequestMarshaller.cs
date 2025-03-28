@@ -69,6 +69,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeriveKeyUsage())
+                {
+                    context.Writer.WritePropertyName("DeriveKeyUsage");
+                    context.Writer.Write(publicRequest.DeriveKeyUsage);
+                }
+
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");

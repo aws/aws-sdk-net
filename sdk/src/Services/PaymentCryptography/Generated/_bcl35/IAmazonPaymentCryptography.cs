@@ -1279,16 +1279,6 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// You can also import a <i>root public key certificate</i>, used to sign other public
-        /// key certificates, or a <i>trusted public key certificate</i> under an already established
-        /// root public key certificate.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>To import a public root key certificate</b> 
-        /// </para>
-        ///  
-        /// <para>
         /// Using this operation, you can import the public component (in PEM cerificate format)
         /// of your private root key. You can use the imported public root key certificate for
         /// digital signatures, for example signing wrapping key or signing key in TR-34, within

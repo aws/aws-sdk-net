@@ -37,6 +37,7 @@ namespace Amazon.PaymentCryptography.Model
         private DateTime? _createTimestamp;
         private DateTime? _deletePendingTimestamp;
         private DateTime? _deleteTimestamp;
+        private DeriveKeyUsage _deriveKeyUsage;
         private bool? _enabled;
         private bool? _exportable;
         private string _keyArn;
@@ -105,6 +106,25 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetDeleteTimestamp()
         {
             return this._deleteTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeriveKeyUsage. 
+        /// <para>
+        /// The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31
+        /// spec.
+        /// </para>
+        /// </summary>
+        public DeriveKeyUsage DeriveKeyUsage
+        {
+            get { return this._deriveKeyUsage; }
+            set { this._deriveKeyUsage = value; }
+        }
+
+        // Check to see if DeriveKeyUsage property is set
+        internal bool IsSetDeriveKeyUsage()
+        {
+            return this._deriveKeyUsage != null;
         }
 
         /// <summary>
