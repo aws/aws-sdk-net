@@ -76,13 +76,6 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>fargateFIPSMode</c> - When turned on, you can run Fargate workloads in a manner
-        /// that is compliant with Federal Information Processing Standard (FIPS-140). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html">Fargate
-        /// Federal Information Processing Standard (FIPS-140)</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>containerInstanceLongArnFormat</c> - When modified, the Amazon Resource Name (ARN)
         /// and resource ID format of the resource type for a specified user, role, or the root
         /// user for an account is affected. The opt-in and opt-out account setting must be set
