@@ -923,8 +923,8 @@ namespace Amazon.QuickSight
         /// in other namespaces. You can create a namespace after your Amazon Web Services account
         /// is subscribed to Amazon QuickSight. The namespace must be unique within the Amazon
         /// Web Services account. By default, there is a limit of 100 namespaces per Amazon Web
-        /// Services account. To increase your limit, create a ticket with Amazon Web Services
-        /// Support. 
+        /// Services account. To increase your limit, create a ticket with Amazon Web ServicesSupport.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
@@ -6771,6 +6771,25 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Predicts existing visuals or generates new visuals to answer a given query.
+        /// 
+        ///  
+        /// <para>
+        /// This API uses <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation.html">trusted
+        /// identity propagation</a> to ensure that an end user is authenticated and receives
+        /// the embed URL that is specific to that user. The IAM Identity Center application that
+        /// the user has logged into needs to have <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-using-customermanagedapps-specify-trusted-apps.html">trusted
+        /// Identity Propagation enabled for Amazon QuickSight</a> with the scope value set to
+        /// <c>quicksight:read</c>. Before you use this action, make sure that you have configured
+        /// the relevant Amazon QuickSight resource and permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend enabling the <c>QSearchStatus</c> API to unlock the full potential of
+        /// <c>PredictQnA</c>. When <c>QSearchStatus</c> is enabled, it first checks the specified
+        /// dashboard for any existing visuals that match the question. If no matching visuals
+        /// are found, <c>PredictQnA</c> uses generative Q&amp;A to provide an answer. To update
+        /// the <c>QSearchStatus</c>, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateQuickSightQSearchConfiguration.html">UpdateQuickSightQSearchConfiguration</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PredictQAResults service method.</param>
         /// <param name="cancellationToken">

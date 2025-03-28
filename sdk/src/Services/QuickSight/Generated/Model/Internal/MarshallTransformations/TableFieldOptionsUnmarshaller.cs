@@ -84,6 +84,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SelectedFieldOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransposedTableOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TransposedTableOption, TransposedTableOptionUnmarshaller>(TransposedTableOptionUnmarshaller.Instance);
+                    unmarshalledObject.TransposedTableOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

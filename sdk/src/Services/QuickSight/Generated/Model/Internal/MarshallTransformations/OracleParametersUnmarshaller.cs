@@ -84,6 +84,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UseServiceName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private string _name;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private bool? _rowLevelPermissionTagConfigurationApplied;
+        private DataSetUseAs _useAs;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -205,6 +206,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionTagConfigurationApplied()
         {
             return this._rowLevelPermissionTagConfigurationApplied.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAs. 
+        /// <para>
+        /// The usage of the dataset.
+        /// </para>
+        /// </summary>
+        public DataSetUseAs UseAs
+        {
+            get { return this._useAs; }
+            set { this._useAs = value; }
+        }
+
+        // Check to see if UseAs property is set
+        internal bool IsSetUseAs()
+        {
+            return this._useAs != null;
         }
 
     }

@@ -52,6 +52,7 @@ namespace Amazon.QuickSight.Model
         private Dictionary<string, PhysicalTable> _physicalTableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, PhysicalTable>() : null;
         private RowLevelPermissionDataSet _rowLevelPermissionDataSet;
         private RowLevelPermissionTagConfiguration _rowLevelPermissionTagConfiguration;
+        private DataSetUseAs _useAs;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -386,6 +387,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionTagConfiguration()
         {
             return this._rowLevelPermissionTagConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAs. 
+        /// <para>
+        /// The usage of the dataset.
+        /// </para>
+        /// </summary>
+        public DataSetUseAs UseAs
+        {
+            get { return this._useAs; }
+            set { this._useAs = value; }
+        }
+
+        // Check to see if UseAs property is set
+        internal bool IsSetUseAs()
+        {
+            return this._useAs != null;
         }
 
     }

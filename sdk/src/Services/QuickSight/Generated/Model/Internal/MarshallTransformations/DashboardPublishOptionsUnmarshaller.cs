@@ -90,6 +90,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataPointTooltipOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataQAEnabledOption", targetDepth))
+                {
+                    var unmarshaller = DataQAEnabledOptionUnmarshaller.Instance;
+                    unmarshalledObject.DataQAEnabledOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExportToCSVOption", targetDepth))
                 {
                     var unmarshaller = ExportToCSVOptionUnmarshaller.Instance;

@@ -120,6 +120,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.RowLevelPermissionTagConfigurationApplied = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UseAs", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UseAs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

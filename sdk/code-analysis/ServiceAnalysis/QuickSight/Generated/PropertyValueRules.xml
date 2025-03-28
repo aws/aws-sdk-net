@@ -6300,6 +6300,11 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.TransposedTableOption.ColumnIndex</property>
+    <min>0</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.TreeMapVisual.VisualContentAltText</property>
     <min>1</min>
     <max>1024</max>

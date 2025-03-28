@@ -280,6 +280,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUseAs())
+                {
+                    context.Writer.WritePropertyName("UseAs");
+                    context.Writer.Write(publicRequest.UseAs);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

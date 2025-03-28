@@ -66,6 +66,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ExcludedDataSetArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludedDataSetArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QBusinessInsightsStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QBusinessInsightsStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

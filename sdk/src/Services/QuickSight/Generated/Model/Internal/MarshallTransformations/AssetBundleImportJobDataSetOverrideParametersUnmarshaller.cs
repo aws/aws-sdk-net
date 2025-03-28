@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataSetRefreshProperties", targetDepth))
+                {
+                    var unmarshaller = DataSetRefreshPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.DataSetRefreshProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
