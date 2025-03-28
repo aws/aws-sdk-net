@@ -47,7 +47,6 @@ namespace Amazon.Runtime
         public const string WebIdentityTokenFileEnvVariable = "AWS_WEB_IDENTITY_TOKEN_FILE";
         public const string RoleArnEnvVariable = "AWS_ROLE_ARN";
         public const string RoleSessionNameEnvVariable = "AWS_ROLE_SESSION_NAME";
-
         private const string RoleSessionNameRegexPattern = @"^[\w+=,.@-]{2,64}$";
 
 #if NET8_0_OR_GREATER

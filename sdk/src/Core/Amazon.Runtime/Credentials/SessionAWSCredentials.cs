@@ -31,13 +31,27 @@ namespace Amazon.Runtime
         /// <param name="awsAccessKeyId"></param>
         /// <param name="awsSecretAccessKey"></param>
         /// <param name="token"></param>
-        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token)
+        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token) : this(awsAccessKeyId, awsSecretAccessKey, token, null)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a SessionAWSCredentials object for the specified accessKey, secretKey, and account id.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://<paramref name="accountId"/>.ddb.region.amazonaws.com
+        /// </summary>
+        /// <param name="awsAccessKeyId"></param>
+        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="token"></param>
+        /// <param name="accountId">The account id for the credentials. The account id is your 12 digit account number with no hyphens. For example: 123456789012.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public SessionAWSCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, string accountId)
         {
             if (string.IsNullOrEmpty(awsAccessKeyId)) throw new ArgumentNullException("awsAccessKeyId");
             if (string.IsNullOrEmpty(awsSecretAccessKey)) throw new ArgumentNullException("awsSecretAccessKey");
             if (string.IsNullOrEmpty(token)) throw new ArgumentNullException("token");
-
-            _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token);
+            _lastCredentials = new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, token, accountId);
         }
 
         #endregion

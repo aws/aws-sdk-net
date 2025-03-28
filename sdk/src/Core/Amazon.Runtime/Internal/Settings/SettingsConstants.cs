@@ -56,6 +56,7 @@ namespace Amazon.Runtime.Internal.Settings
         public const string WebIdentityTokenFile = "WebIdentityTokenFile";
         public const string Services = "services";
         public const string EndpointUrl = "endpoint_url";
+        public const string AwsAccountId = "aws_account_id";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

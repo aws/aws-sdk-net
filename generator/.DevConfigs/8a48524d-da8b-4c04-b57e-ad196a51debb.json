@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Support Account ID based endpoints. Account-based endpoints help ensure high performance and scalability by using your AWS account ID to route requests for services that support this feature. For more information visit [account id based endpoints on our docs](https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html)."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

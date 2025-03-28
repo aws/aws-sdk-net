@@ -23,6 +23,8 @@ using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.SAML;
 using Amazon.Util.Internal;
+using Amazon.Util;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using System.Threading.Tasks;
 
 namespace Amazon.SecurityToken
@@ -148,7 +150,7 @@ namespace Amazon.SecurityToken
             {
                 var response = AssumeRoleWithWebIdentity(request);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault(), response.AssumedRoleUser != null ? Arn.Parse(response.AssumedRoleUser.Arn).AccountId : null);
             }
             catch (Exception e)
             {
@@ -175,7 +177,7 @@ namespace Amazon.SecurityToken
             {
                 var response = await AssumeRoleWithWebIdentityAsync(request).ConfigureAwait(false);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault(), response.AssumedRoleUser != null ? Arn.Parse(response.AssumedRoleUser.Arn).AccountId : null);
             }
             catch (Exception e)
             {
@@ -202,7 +204,7 @@ namespace Amazon.SecurityToken
 
                 var response = AssumeRole(request);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault(), response.AssumedRoleUser != null ? Arn.Parse(response.AssumedRoleUser.Arn).AccountId : null);
             }
             catch (Exception e)
             {

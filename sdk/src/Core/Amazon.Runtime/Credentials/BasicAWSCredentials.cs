@@ -36,13 +36,27 @@ namespace Amazon.Runtime
         /// <summary>
         /// Constructs a BasicAWSCredentials object for the specified accessKey and secretKey.
         /// </summary>
-        /// <param name="accessKey"></param>
-        /// <param name="secretKey"></param>
-        public BasicAWSCredentials(string accessKey, string secretKey)
+        /// <param name="accessKey">The access key for the credentials.</param>
+        /// <param name="secretKey">The secret key for the credentials.</param>
+        public BasicAWSCredentials(string accessKey, string secretKey) : this (accessKey, secretKey, null)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a BasicAWSCredentials object for the specified accessKey, secretKey, and accountId.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://<paramref name="accountId"/>.ddb.region.amazonaws.com
+        /// the request to 
+        /// </summary>
+        /// <param name="accessKey">The access key for the credentials.</param>
+        /// <param name="secretKey">The secret key for the credentials.</param>
+        /// <param name="accountId">The account id for the credentials. The account id is your 12 digit account number with no hyphens. For example: 123456789012</param>
+        public BasicAWSCredentials(string accessKey, string secretKey, string accountId)
         {
             if (!string.IsNullOrEmpty(accessKey))
             {
-                _credentials = new ImmutableCredentials(accessKey, secretKey, null);
+                _credentials = new ImmutableCredentials(accessKey, secretKey, null, accountId);
             }
         }
 

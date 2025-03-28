@@ -71,6 +71,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
         private const string RequestChecksumCalculationField = "request_checksum_calculation";
         private const string ResponseChecksumValidationField = "response_checksum_validation";
+        private const string AwsAccountIdField = "aws_account_id";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -105,6 +106,7 @@ namespace Amazon.Runtime.CredentialManagement
             AccountIdEndpointModeField,
             RequestChecksumCalculationField,
             ResponseChecksumValidationField,
+            AwsAccountIdField,
         };
 
         /// <summary>
@@ -115,62 +117,20 @@ namespace Amazon.Runtime.CredentialManagement
             new HashSet<CredentialProfileType>()
             {
                 CredentialProfileType.AssumeRole,
-                CredentialProfileType.AssumeRoleWithServices,
-                CredentialProfileType.AssumeRoleWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleCredentialSource,
-                CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleCredentialSourceWithServices,
-                CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternal,
-                CredentialProfileType.AssumeRoleExternalWithServices,
-                CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalMFA,
-                CredentialProfileType.AssumeRoleExternalMFAWithServices,
-                CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleMFA,
-                CredentialProfileType.AssumeRoleMFAWithServices,
-                CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleWithWebIdentity,
-                CredentialProfileType.AssumeRoleWithWebIdentityWithServices,
-                CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleWithWebIdentitySessionName,
-                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices,
-                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.Basic,
                 CredentialProfileType.Session,
-                CredentialProfileType.SessionWithServices,
-                CredentialProfileType.SessionWithGlobalEndpoint,
-                CredentialProfileType.SessionWithServicesAndGlobalEndpoint,
                 CredentialProfileType.CredentialProcess,
                 CredentialProfileType.AssumeRoleSessionName,
-                CredentialProfileType.AssumeRoleSessionNameWithServices,
-                CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleCredentialSourceSessionName,
-                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices,
-                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalSessionName,
-                CredentialProfileType.AssumeRoleExternalSessionNameWithServices,
-                CredentialProfileType.AssumeRoleExternalSessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalMFASessionName,
-                CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices,
-                CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleMFASessionName,
-                CredentialProfileType.AssumeRoleMFASessionNameWithServices,
-                CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint,
-                CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint,
-                CredentialProfileType.BasicWithGlobalEndpoint,
-                CredentialProfileType.BasicWithServices,
-                CredentialProfileType.BasicWithServicesAndGlobalEndpoint,
                 CredentialProfileType.SSO,
             };
 
@@ -191,8 +151,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { "UserIdentity", null },
                     { "CredentialProcess" , "credential_process" },
                     { "WebIdentityTokenFile", "web_identity_token_file" },
-                    { "Services", "services" },
-                    { "EndpointUrl", "endpoint_url" },
+                    { "AwsAccountId", "aws_account_id" },
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
@@ -439,8 +398,12 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.ClientAppId != null)
                 reservedProperties[ClientAppIdField] = profile.ClientAppId;
+
             if (profile.AccountIdEndpointMode != null)
                 reservedProperties[AccountIdEndpointModeField] = profile.AccountIdEndpointMode.ToString().ToLowerInvariant();
+
+            if (profile.Services != null)
+                reservedProperties[ServicesField] = profile.Services.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -857,6 +820,10 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                 }
 
+                string servicesSection = null;
+                reservedProperties.TryGetValue(ServicesField, out servicesSection);
+
+
                 AccountIdEndpointMode? accountIdEndpointMode = null;
                 if (reservedProperties.TryGetValue(AccountIdEndpointModeField, out var accountIdEndpointModeString))
                 {
@@ -958,7 +925,8 @@ namespace Amazon.Runtime.CredentialManagement
                     AccountIdEndpointMode = accountIdEndpointMode,
                     RequestChecksumCalculation = requestChecksumCalculation,
                     ResponseChecksumValidation = responseChecksumValidation,
-                };
+                    Services = servicesSection
+                    };
 
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {

@@ -55,5 +55,10 @@ namespace Amazon.Runtime.Internal
         /// ISO8601 formatted timestamp till when the credential is valid.
         /// </summary>
         public DateTime Expiration { get; set; } = DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc);
+
+        /// <summary>
+        /// The AccountId used for AccountId based endpoints.
+        /// </summary>
+        public string AccountId { get; set; }
     }
 }

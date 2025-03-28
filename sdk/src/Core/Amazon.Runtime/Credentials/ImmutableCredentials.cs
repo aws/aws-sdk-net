@@ -49,6 +49,10 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Gets the AccountId property for the current credentials.
+        /// The account id is your 12 digit account number with no hypens. For example: 123456789012.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://accountid.ddb.region.amazonaws.com
         /// </summary>
         public string AccountId { get; private set; }
         #endregion
@@ -76,11 +80,15 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Constructs an ImmutableCredentials object with supplied accessKey, secretKey, and aws account id.
+        /// When the account id is set and the service supports account id based endpoints, AWS will send the request 
+        /// using the account-based endpoint rather than the regional endpount. 
+        /// Account-based endpoints take the form https://<paramref name="accountId"/>.ddb.region.amazonaws.com
         /// </summary>
-        /// <param name="awsAccessKeyId"></param>
-        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="awsAccessKeyId">The access key for the credentials.</param>
+        /// <param name="awsSecretAccessKey">The secret access key for the credentials.</param>
         /// <param name="token">Optional. Can be set to null or empty for non-session credentials.</param>
-        /// <param name="accountId">Optional. If <see cref="AccountIdEndpointMode"/> is set to preferred or required, the account id will be used in endpoint resolution.</param>
+        /// <param name="accountId">Optional. If <see cref="AccountIdEndpointMode"/> is set to preferred or required, the account id will be used in endpoint resolution.
+        /// The account id is your 12 digit account number with no hyphens. For example: 123456789012.</param>
         public ImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, string accountId) : this(awsAccessKeyId, awsSecretAccessKey, token)
         {
             AccountId = accountId;
@@ -104,6 +112,7 @@ namespace Amazon.Runtime
                 AccessKey = this.AccessKey,
                 SecretKey = this.SecretKey,
                 Token = this.Token,
+                AccountId = this.AccountId
             };
             return credentials;
         }
