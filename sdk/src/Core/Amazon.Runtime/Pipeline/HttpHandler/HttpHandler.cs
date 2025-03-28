@@ -178,6 +178,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>A task that represents the asynchronous operation.</returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
+            bool _exceptionBeingThrown = false;
             IHttpRequest<TRequestContent> httpRequest = null;
             try
             {
@@ -185,7 +186,7 @@ namespace Amazon.Runtime.Internal
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
-                
+
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                 using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
@@ -228,10 +229,15 @@ namespace Amazon.Runtime.Internal
                 }
                 // The response is not unmarshalled yet.
                 return null;
-            }            
+            }
+            catch
+            {
+                _exceptionBeingThrown = true;
+                throw;
+            }
             finally
             {
-                if (httpRequest != null && !executionContext.RequestContext.Request.IsEventInputContentStream)
+                if (httpRequest != null && (_exceptionBeingThrown || !executionContext.RequestContext.Request.IsEventInputContentStream))
                     httpRequest.Dispose();
             }
         }
