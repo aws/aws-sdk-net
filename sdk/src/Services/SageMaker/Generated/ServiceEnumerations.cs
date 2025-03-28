@@ -15551,6 +15551,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type Relation.
+    /// </summary>
+    public class Relation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EqualTo for Relation
+        /// </summary>
+        public static readonly Relation EqualTo = new Relation("EqualTo");
+        /// <summary>
+        /// Constant GreaterThanOrEqualTo for Relation
+        /// </summary>
+        public static readonly Relation GreaterThanOrEqualTo = new Relation("GreaterThanOrEqualTo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Relation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Relation FindValue(string value)
+        {
+            return FindValue<Relation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Relation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RepositoryAccessMode.
     /// </summary>
     public class RepositoryAccessMode : ConstantClass

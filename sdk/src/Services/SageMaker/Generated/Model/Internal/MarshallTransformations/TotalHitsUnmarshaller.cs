@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TransformResources Object
+    /// Response Unmarshaller for TotalHits Object
     /// </summary>  
-    public class TransformResourcesUnmarshaller : IUnmarshaller<TransformResources, XmlUnmarshallerContext>, IUnmarshaller<TransformResources, JsonUnmarshallerContext>
+    public class TotalHitsUnmarshaller : IUnmarshaller<TotalHits, XmlUnmarshallerContext>, IUnmarshaller<TotalHits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TransformResources IUnmarshaller<TransformResources, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TotalHits IUnmarshaller<TotalHits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TransformResources Unmarshall(JsonUnmarshallerContext context)
+        public TotalHits Unmarshall(JsonUnmarshallerContext context)
         {
-            TransformResources unmarshalledObject = new TransformResources();
+            TotalHits unmarshalledObject = new TotalHits();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("Relation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Relation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TransformAmiVersion", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransformAmiVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static TransformResourcesUnmarshaller _instance = new TransformResourcesUnmarshaller();        
+        private static TotalHitsUnmarshaller _instance = new TotalHitsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TransformResourcesUnmarshaller Instance
+        public static TotalHitsUnmarshaller Instance
         {
             get
             {

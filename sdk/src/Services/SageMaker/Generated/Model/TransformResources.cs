@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _instanceCount;
         private TransformInstanceType _instanceType;
+        private string _transformAmiVersion;
         private string _volumeKmsKeyId;
 
         /// <summary>
@@ -79,6 +80,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransformAmiVersion. 
+        /// <para>
+        /// Specifies an option from a collection of preconfigured Amazon Machine Image (AMI)
+        /// images. Each image is configured by Amazon Web Services with a set of software and
+        /// driver versions.
+        /// </para>
+        ///  <dl> <dt>al2-ami-sagemaker-batch-gpu-470</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 470
+        /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-batch-gpu-535</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 535
+        /// </para>
+        ///  </li> </ul> </dd> </dl>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string TransformAmiVersion
+        {
+            get { return this._transformAmiVersion; }
+            set { this._transformAmiVersion = value; }
+        }
+
+        // Check to see if TransformAmiVersion property is set
+        internal bool IsSetTransformAmiVersion()
+        {
+            return this._transformAmiVersion != null;
         }
 
         /// <summary>
