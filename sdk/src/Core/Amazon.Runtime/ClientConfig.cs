@@ -273,7 +273,7 @@ namespace Amazon.Runtime
             {
                 if (!string.IsNullOrEmpty(this.serviceURL))
                     Logger.GetLogger(GetType()).InfoFormat($"RegionEndpoint and ServiceURL are mutually exclusive. Since " +
-                        $"RegionEndpoint was set last, RegionEndpoint: {value} will be used to make the request.");
+                        $"RegionEndpoint was set last, RegionEndpoint: {value} will be used to make the request and ServiceUrl: {this.serviceURL} has been set to null.");
                 this.defaultConfigurationBackingField = null;
                 this.serviceURL = null;
                 this.regionEndpoint = value;
@@ -378,7 +378,7 @@ namespace Amazon.Runtime
             {
                 if (regionEndpoint != null)
                     Logger.GetLogger(GetType()).InfoFormat($"RegionEndpoint and ServiceURL are mutually exclusive. Since " +
-                        $"ServiceUrl was set last, ServiceUrl: {value} will be used to make the request.");
+                        $"ServiceUrl was set last, ServiceUrl: {value} will be used to make the request and RegionEndpoint: {this.regionEndpoint} has been set to null.");
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
                 
