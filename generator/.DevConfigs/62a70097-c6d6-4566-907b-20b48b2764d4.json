@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Log a warning when ServiceUrl and Region Endpoint are set at the same time. The SDK will log whichever of the two is used."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
