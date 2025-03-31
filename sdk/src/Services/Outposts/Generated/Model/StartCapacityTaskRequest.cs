@@ -36,12 +36,33 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class StartCapacityTaskRequest : AmazonOutpostsRequest
     {
+        private string _assetId;
         private bool? _dryRun;
         private List<InstanceTypeCapacity> _instancePools = AWSConfigs.InitializeCollections ? new List<InstanceTypeCapacity>() : null;
         private InstancesToExclude _instancesToExclude;
         private string _orderId;
         private string _outpostIdentifier;
         private TaskActionOnBlockingInstances _taskActionOnBlockingInstances;
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts
+        /// rack or an Outposts server configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=10)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DryRun. 

@@ -70,6 +70,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssetId())
+                {
+                    context.Writer.WritePropertyName("AssetId");
+                    context.Writer.Write(publicRequest.AssetId);
+                }
+
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
