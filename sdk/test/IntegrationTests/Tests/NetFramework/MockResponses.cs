@@ -284,7 +284,7 @@ namespace AWSSDK_DotNet.IntegrationTests
 
             public Version HttpProtocolVersion { get; set; }
 
-            public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+            public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher requestStreamPublisher)
             {
                 throw new NotImplementedException();
             }
