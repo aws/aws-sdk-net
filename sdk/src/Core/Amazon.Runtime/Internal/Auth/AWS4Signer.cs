@@ -56,7 +56,7 @@ namespace Amazon.Runtime.Internal.Auth
         public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
         public const string UnsignedPayloadWithTrailer = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 
-        const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
+        internal const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
         // If this list is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
         // be updated as well.
@@ -131,6 +131,17 @@ namespace Amazon.Runtime.Internal.Auth
             var signingResult = SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             request.AWS4SignerResult = signingResult;
             request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
+        }
+
+        /// <inheritdoc/>
+        public override IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature)
+        {
+            if (identity is not AWSCredentials credentials)
+            {
+                throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(AWS4Signer)}.");
+            }
+
+            return new AWS4EventSigner(credentials, region, service, requestSignature);
         }
 
         /// <summary>

@@ -284,13 +284,8 @@ namespace AWSSDK.UnitTests
 #endif
             }
 
-            /// <summary>
-            /// Configures the HttpRequest to for request streaming where events will be written
-            /// after the initial request has been made.
-            /// </summary>
-            /// <param name="contentHeaders">HTTP content headers.</param>
-            /// <returns></returns>
-            public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+            /// <inheritdoc/>
+            public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher publisher)
             {
                 throw new NotImplementedException();
             }

@@ -94,12 +94,13 @@ namespace Amazon.Runtime
         void WriteToRequestBody(TRequestContent requestContent, byte[] content, IDictionary<string,string> contentHeaders);
 
         /// <summary>
-        /// Configures the HttpRequest to for request streaming where events will be written
-        /// after the initial request has been made.
+        /// Configures the HttpRequest for streaming data to the service after the initial request is complete. Data is pulled from
+        /// publisher which eventually connects back to the consumer of the SDK and streamed to the service.
         /// </summary>
         /// <param name="contentHeaders">HTTP content headers.</param>
-        /// <returns></returns>
-        IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders);
+        /// <param name="publisher"></param>
+        /// <returns>Handle to the request stream so that the request can be disposed once streaming operations are complete.</returns>
+        IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher publisher);
 
         /// <summary>
         /// Sets up the progress listeners

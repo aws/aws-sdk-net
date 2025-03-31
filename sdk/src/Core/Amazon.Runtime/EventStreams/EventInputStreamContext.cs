@@ -1,8 +1,20 @@
-﻿using Amazon.Runtime.Internal;
+﻿/*  
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using Amazon.Runtime.Internal;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace Amazon.Runtime.EventStreams
 {
@@ -11,37 +23,35 @@ namespace Amazon.Runtime.EventStreams
     /// for by the response object to allow writing events to the
     /// request stream.
     /// </summary>
-    public class EventInputStreamContext
+    public class EventInputStreamContext : IDisposable
     {
-        /// <summary>
-        /// The AWS credentials used for making the initial request.
-        /// </summary>
-        public AWSCredentials Credentials { get; set; }
+        private bool _disposedValue;
 
         /// <summary>
-        /// The original service request object to make the request.
+        /// The IHttpRequestStreamHandle that the can be used to dispose of the initiating HTTP request once streaming is complete.
         /// </summary>
-        public AmazonWebServiceRequest OriginalRequest { get; set; }
+        public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
 
-        /// <summary>
-        /// The service client config for the service client that made the request.
-        /// </summary>
-        public IClientConfig ClientConfig { get; set; }
+        /// <inheritdoc/>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    RequestStreamHandle?.Dispose();
+                    RequestStreamHandle = null;
+                }
 
-        /// <summary>
-        /// The IHttpRequestStreamWriter initialized by the underlying HttpHandler that 
-        /// provides access to writing bytes to the request stream.
-        /// </summary>
-        public IHttpRequestStreamWriter RequestStreamWriter { get; set; }
+                _disposedValue = true;
+            }
+        }
 
-        /// <summary>
-        /// The signature computed for the initial request. This is used for signing the first event sent.
-        /// </summary>
-        public string InitialSignature { get; set; }
-
-        /// <summary>
-        /// The region to sign the event with.
-        /// </summary>
-        public string AuthenticationRegion { get; set; }
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

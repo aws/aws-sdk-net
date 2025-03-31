@@ -242,6 +242,7 @@ namespace ServiceClientGenerator
                 GenerateEndpointDiscoveryMarshaller(operation);
                 GenerateExceptions(operation);
                 GenerateStructures(operation);
+                GenerateEventStreamPublisher(operation);
             }
 
             if (Configuration.ServiceModel.Customizations.GenerateCustomUnmarshaller)
@@ -292,6 +293,45 @@ namespace ServiceClientGenerator
 
             if (operation.RequestStructure != null)
                 this.DetermineStructuresToProcess(operation.RequestStructure, false);
+        }
+
+        void GenerateEventStreamPublisher(Operation operation)
+        {
+            var eventStreamStructure = operation.RequestEventStreamingMember?.Shape;
+            if (eventStreamStructure == null)
+                return;
+
+            var publisherMarshaller = new EventStreamPublisherMarshaller
+            {
+                ClassName = eventStreamStructure.Name + "PublisherMarshaller",
+                Structure = eventStreamStructure
+            };
+
+            this.ExecuteGenerator(publisherMarshaller, publisherMarshaller.ClassName + ".cs", "Model.Internal.MarshallTransformations");
+
+            var evntTypes = new List<string>();
+            foreach (var member in eventStreamStructure.Members)
+            {
+                if (member.Shape.IsEvent)
+                {
+                    evntTypes.Add(member.Shape.Name);
+                    var addIntefaceImpementationGenerator = new EventCollectionAddImplementation
+                    {
+                        InterfaceName = "I" + eventStreamStructure.Name + "Event",
+                        ClassName = member.Shape.Name
+                    };
+                    this.ExecuteGenerator(addIntefaceImpementationGenerator, member.Shape.Name + "." + addIntefaceImpementationGenerator.InterfaceName + ".cs", "Model");
+                }
+            }
+
+            var eventCollectionInterface = new EventCollectionInterface()
+            {
+                InterfaceName = "I" + eventStreamStructure.Name + "Event",
+                OperationName = operation.Name,
+                EvntTypes = evntTypes
+            };
+
+            this.ExecuteGenerator(eventCollectionInterface, eventCollectionInterface.InterfaceName + ".cs", "Model");
         }
 
         private void ValidateServiceModel()
@@ -956,6 +996,10 @@ namespace ServiceClientGenerator
             {
                 // Skip structures that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, definition.Name))
+                    continue;
+
+                // Skip structures that are only used as input event streams. Those structures are handled separately as part of the GenerateEventStreamPublisher method.
+                if (definition.IsEventStream && !Configuration.ServiceModel.Operations.Any(x => string.Equals(x.ResponseEventStreamingMember?.Shape.Name, definition.Name)))
                     continue;
 
                 if (!this._processedStructures.Contains(definition.Name))

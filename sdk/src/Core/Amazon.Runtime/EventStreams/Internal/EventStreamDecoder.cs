@@ -281,7 +281,11 @@ namespace Amazon.Runtime.EventStreams.Internal
             {
                 if (disposing)
                 {
-                    _runningChecksumStream.Dispose();
+                    if (_runningChecksumStream != null)
+                    {
+                        _runningChecksumStream.Dispose();
+                        _runningChecksumStream = null;
+                    }
                     _workingMessage = null;
                 }
                 disposedValue = true;

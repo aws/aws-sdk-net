@@ -12,7 +12,7 @@ namespace ServiceClientGenerator
     /// </summary>
     public class Member : BaseModel
     {
-        public const string EventInputStreamSuffix = "Writer";
+        public const string EventInputStreamSuffix = "Publisher";
 
         public const string Locationkey = "location";
         public const string MemberKey = "member";

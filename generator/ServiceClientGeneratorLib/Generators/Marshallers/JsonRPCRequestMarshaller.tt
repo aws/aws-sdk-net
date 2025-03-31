@@ -50,9 +50,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
 	if (this.Operation.IsEventStreamInput)
 	{
+		var eventStreamMember = this.Operation.RequestEventStreamingMember;
 #>
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.IsEventInputContentStream = true;
+            request.EventStreamPublisher = new <#=eventStreamMember.Shape.Name#>PublisherMarshaller(publicRequest.<#=eventStreamMember.PropertyName#>);
+
 <#
 	}
 

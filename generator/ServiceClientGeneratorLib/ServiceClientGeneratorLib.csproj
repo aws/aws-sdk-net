@@ -334,10 +334,20 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Generators\SourceFiles\EventStreamInputGenerator.cs">
+    <Compile Update="Generators\Marshallers\EventStreamPublisherMarshaller.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>EventStreamInputGenerator.tt</DependentUpon>
+      <DependentUpon>EventStreamPublisherMarshaller.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\EventCollectionAddImplementation.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventCollectionAddImplementation.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\EventCollectionInterface.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventCollectionInterface.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\EventStreamOutputGenerator.cs">
       <DesignTime>True</DesignTime>
@@ -609,9 +619,17 @@
       <LastGenOutput>NullCollectionInitializerAnalyzer.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
-    <None Update="Generators\SourceFiles\EventStreamInputGenerator.tt">
-      <LastGenOutput>EventStreamInputGenerator.cs</LastGenOutput>
+    <None Update="Generators\Marshallers\EventStreamPublisherMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamPublisherMarshaller.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\EventCollectionAddImplementation.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventCollectionAddImplementation.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\EventCollectionInterface.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventCollectionInterface.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\ServiceClientsNetFramework.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

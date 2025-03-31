@@ -139,7 +139,7 @@
     }
 
     // Adds documentation to the members of a structure
-    public void FormatPropertyDocumentation(Member member, string documentationPreface = "")
+    public void FormatPropertyDocumentation(Member member, string documentationPreface = "", string evenPublisherDocumentation = "")
     {
         if (documentationPreface != null && documentationPreface != "")
         {
@@ -155,6 +155,10 @@
         /// <summary>
 <#+
         WriteCommentBlock("        ", documentation);
+        if (!string.IsNullOrEmpty(evenPublisherDocumentation))
+        {
+            WriteCommentBlock("        ", evenPublisherDocumentation);
+        }
 #>
         /// </summary>
 <#+

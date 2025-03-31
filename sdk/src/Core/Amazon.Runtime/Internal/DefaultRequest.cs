@@ -21,6 +21,7 @@ using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
+using Amazon.Runtime.EventStreams;
 
 namespace Amazon.Runtime.Internal
 {
@@ -75,6 +76,13 @@ namespace Amazon.Runtime.Internal
             parametersCollection = new ParameterCollection();
             parametersFacade = new ParametersDictionaryFacade(parametersCollection);
         }
+
+        /// <inheritdoc/>
+        public IEventStreamPublisher EventStreamPublisher { get; set; }
+
+        /// <inheritdoc/>
+        public IHttpRequestStreamPublisher HttpRequestStreamPublisher { get; set; }
+
         /// <summary>
         /// The time which the request was signed at.
         /// </summary>

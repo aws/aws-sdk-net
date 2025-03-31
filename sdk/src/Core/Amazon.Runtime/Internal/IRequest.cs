@@ -15,11 +15,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Amazon.Runtime.Endpoints;
-using Amazon.Runtime.Internal.Compression;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.EventStreams;
 
 namespace Amazon.Runtime.Internal
 {
@@ -34,6 +33,19 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public interface IRequest
     {
+        /// <summary>
+        /// A publisher provided by consumers of the SDK to provide events that the SDK will pull from to stream to the service.
+        /// </summary>
+        IEventStreamPublisher EventStreamPublisher { get; set; }
+
+        /// <summary>
+        /// If set the HTTP handler will use the IHttpRequestStreamPublisher to pull binary data and stream to the AWS service. This is
+        /// set during the request pipeline. The main use case is the request pipeline assigning a publisher
+        /// that will read from the EventStreamPublisher and convert the incoming event messages to signed bytes
+        /// to stream to the service.
+        /// </summary>
+        IHttpRequestStreamPublisher HttpRequestStreamPublisher { get; set; }
+
         /// <summary>
         /// The name of the request
         /// </summary>

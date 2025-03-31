@@ -283,7 +283,7 @@ namespace Amazon.Runtime.Internal
 
             if (wrappedRequest.IsEventInputContentStream)
             {
-                requestContext.RequestStreamWriter = httpRequest.SetupHttpRequestStreamWriter(requestContext.Request.Headers);
+                requestContext.RequestStreamHandle = httpRequest.SetupHttpRequestStreamPublisher(requestContext.Request.Headers, requestContext.Request.HttpRequestStreamPublisher);
             }
             // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use

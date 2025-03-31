@@ -20,7 +20,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace Amazon.Runtime
 {
@@ -41,10 +40,7 @@ namespace Amazon.Runtime
         int Retries { get; set; }
         CapacityManager.CapacityType LastCapacityType { get; set; }
         int EndpointDiscoveryRetries { get; set; }
-
-#if AWS_ASYNC_API
         System.Threading.CancellationToken CancellationToken { get; }
-#endif
         MonitoringAPICallAttempt CSMCallAttempt { get; set; }
         MonitoringAPICallEvent CSMCallEvent { get; set; }
         IServiceMetadata ServiceMetaData { get; }
@@ -56,7 +52,7 @@ namespace Amazon.Runtime
 
         IDictionary<string, object> ContextAttributes { get; }
 
-        IHttpRequestStreamWriter RequestStreamWriter {get;set;}
+        IHttpRequestStreamHandle RequestStreamHandle {get;set;}
     }
 
     public interface IResponseContext
@@ -175,7 +171,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        public IHttpRequestStreamWriter RequestStreamWriter { get; set; }
+        public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

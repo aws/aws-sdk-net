@@ -234,17 +234,12 @@ namespace Amazon.Runtime.Internal
 
         private static void InitializeEventInputStream(AmazonWebServiceResponse response, IRequestContext requestContext)
         {
-            var eventInputStreamResponse = response as IEventInputStreamResponse;
+            var eventInputStreamResponse = response as IEventInputStreamContextOwner;
             if (eventInputStreamResponse != null)
             {
-                eventInputStreamResponse.InitializeEventInputStream(new EventInputStreamContext
+                eventInputStreamResponse.SetEventInputStreamContext(new EventInputStreamContext
                 {
-                    ClientConfig = requestContext.ClientConfig,
-                    Credentials = requestContext.Identity as AWSCredentials,
-                    OriginalRequest = requestContext.OriginalRequest,
-                    RequestStreamWriter = requestContext.RequestStreamWriter,
-                    InitialSignature = requestContext.Request.AWS4SignerResult?.Signature,
-                    AuthenticationRegion = requestContext.Request.DeterminedSigningRegion
+                    RequestStreamHandle = requestContext.RequestStreamHandle,
                 });
             }
         }

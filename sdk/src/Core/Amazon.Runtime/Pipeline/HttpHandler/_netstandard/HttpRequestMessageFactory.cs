@@ -667,12 +667,12 @@ namespace Amazon.Runtime
         }
 
 
-        public IHttpRequestStreamWriter SetupHttpRequestStreamWriter(IDictionary<string, string> contentHeaders)
+        public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher requestStreamPublisher)
         {
 #if NET8_0_OR_GREATER
-            var writer = new HttpContentRequestStreamWriter(_request);
+            var handle = new HttpContentRequestStreamHandle(_request, requestStreamPublisher);
             WriteContentHeaders(contentHeaders);
-            return writer;
+            return handle;
 #else
             throw new NotImplementedException();
 #endif

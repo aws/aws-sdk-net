@@ -13,17 +13,15 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Util;
-using System;
 using System.IO;
-#if AWS_ASYNC_API 
 using System.Threading.Tasks;
-#endif
+
 
 namespace Amazon.Runtime.Internal
 {
@@ -44,7 +42,6 @@ namespace Amazon.Runtime.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -58,7 +55,6 @@ namespace Amazon.Runtime.Internal
             await PreInvokeAsync(executionContext).ConfigureAwait(false);
             return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
-#endif
 
         /// <summary>
         /// Signs the request before invoking the next handler.
@@ -75,7 +71,6 @@ namespace Amazon.Runtime.Internal
             } 
         }
 
-#if AWS_ASYNC_API
         protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
         {
             if (ShouldSign(executionContext.RequestContext))
@@ -84,7 +79,6 @@ namespace Amazon.Runtime.Internal
                 executionContext.RequestContext.IsSigned = true;
             }
         }
-#endif
 
         /// <summary>
         /// Determines if the request should be signed.
@@ -144,10 +138,22 @@ namespace Amazon.Runtime.Internal
                     requestContext.Metrics,
                     requestContext.Identity
                 );
+
+                if (requestContext.Request.EventStreamPublisher != null)
+                {
+                    var eventSigner = requestContext.Signer.CreateEventSigner(
+                                            requestContext.Identity, 
+                                            region: requestContext.Request.DeterminedSigningRegion, 
+                                            service: requestContext.ClientConfig.AuthenticationServiceName, 
+                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+
+                    requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
+                        requestContext.Request.EventStreamPublisher,
+                        eventSigner);
+                }
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Signs the request.
         /// </summary>
@@ -200,8 +206,56 @@ namespace Amazon.Runtime.Internal
                         requestContext.Metrics,
                         requestContext.Identity)
                     .ConfigureAwait(false);
+
+                if (requestContext.Request.EventStreamPublisher != null)
+                {
+                    var eventSigner = requestContext.Signer.CreateEventSigner(
+                                            requestContext.Identity,
+                                            region: requestContext.Request.DeterminedSigningRegion,
+                                            service: requestContext.ClientConfig.AuthenticationServiceName,
+                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+                    
+                    requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
+                        requestContext.Request.EventStreamPublisher,
+                        eventSigner);
+                }
             }
         }
-#endif
+    }
+
+    /// <summary>
+    /// This class is used when a request is streaming events to a service. The IRequest will have EventStreamPublisher
+    /// assigned to it. The class will read the events from the EventStreamPublisher and format the message
+    /// for sending to the service. Formatting includes signing the event and converting the event message
+    /// to a byte array.
+    /// </summary>
+    internal class EventSignerHttpRequestStreamPublisher : IHttpRequestStreamPublisher
+    {
+        private readonly IEventStreamPublisher _eventPublisher;
+        private readonly IEventSigner _eventSigner;
+
+        /// <summary>
+        /// Create an instance of EventSignerHttpRequestStreamPublisher
+        /// </summary>
+        /// <param name="eventPublisher">The event publisher to pull events from.</param>
+        /// <param name="eventSigner">The event signer used to sign the events.</param>
+        public EventSignerHttpRequestStreamPublisher(IEventStreamPublisher eventPublisher, IEventSigner eventSigner)
+        {
+            _eventPublisher = eventPublisher;
+            _eventSigner = eventSigner;
+        }
+
+        /// <inheritdoc/>
+        public async Task<byte[]> NextBytesAsync()
+        {
+            var evnt = await _eventPublisher.NextEventAsync().ConfigureAwait(false);
+            if ( evnt == null)
+            {
+                return null;
+            }
+
+            var signedBytes = await _eventSigner.SignEventAsync(evnt.ToByteArray()).ConfigureAwait(false);
+            return signedBytes;
+        }
     }
 }
