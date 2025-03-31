@@ -63,7 +63,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property FaviconFile. 
         /// <para>
-        /// Returns a icon file data string (in base64 encoding).
+        /// Returns an icon file data string (in base64 encoding).
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=20960)]

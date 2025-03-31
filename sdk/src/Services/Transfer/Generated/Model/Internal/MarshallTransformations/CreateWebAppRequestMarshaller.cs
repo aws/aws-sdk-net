@@ -102,6 +102,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetWebAppEndpointPolicy())
+                {
+                    context.Writer.WritePropertyName("WebAppEndpointPolicy");
+                    context.Writer.Write(publicRequest.WebAppEndpointPolicy);
+                }
+
                 if(publicRequest.IsSetWebAppUnits())
                 {
                     context.Writer.WritePropertyName("WebAppUnits");
