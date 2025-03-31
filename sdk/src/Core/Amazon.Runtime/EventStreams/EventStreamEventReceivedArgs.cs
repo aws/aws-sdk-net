@@ -21,7 +21,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Amazon.Runtime.EventStreams.Internal;
 
 namespace Amazon.Runtime.EventStreams
 {

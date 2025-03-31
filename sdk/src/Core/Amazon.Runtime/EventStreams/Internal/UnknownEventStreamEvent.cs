@@ -13,8 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Runtime.EventStreams;
-
 namespace Amazon.Runtime.EventStreams.Internal
 {
     /// <summary>

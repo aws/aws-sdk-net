@@ -15,7 +15,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-namespace Amazon.Runtime.EventStreams.Internal
+namespace Amazon.Runtime.EventStreams
 {
     /// <summary>
     /// The contract for EventStream events.
