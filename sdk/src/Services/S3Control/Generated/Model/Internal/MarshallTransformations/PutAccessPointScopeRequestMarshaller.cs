@@ -34,9 +34,9 @@ using System.Xml;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAccessPoint Request Marshaller
+    /// PutAccessPointScope Request Marshaller
     /// </summary>       
-    public class CreateAccessPointRequestMarshaller : IMarshaller<IRequest, CreateAccessPointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutAccessPointScopeRequestMarshaller : IMarshaller<IRequest, PutAccessPointScopeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateAccessPointRequest)input);
+            return this.Marshall((PutAccessPointScopeRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateAccessPointRequest publicRequest)
+        public IRequest Marshall(PutAccessPointScopeRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "PUT";
@@ -65,35 +65,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetName())
                 throw new AmazonS3ControlException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            request.ResourcePath = "/v20180820/accesspoint/{name}";
+            request.ResourcePath = "/v20180820/accesspoint/{name}/scope";
 
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
-                if(publicRequest.IsSetBucket())
-                    xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Bucket));
-
-                if(publicRequest.IsSetBucketAccountId())
-                    xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequest.BucketAccountId));
-
-                if (publicRequest.PublicAccessBlockConfiguration != null)
-                {
-                    xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
-                    if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
-                        xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls));                 
-
-                    if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
-                        xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy));                 
-
-                    if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
-                        xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls));                 
-
-                    if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
-                        xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets));                 
-
-                    xmlWriter.WriteEndElement();
-                }
+                xmlWriter.WriteStartElement("PutAccessPointScopeRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if (publicRequest.Scope != null)
                 {
                     xmlWriter.WriteStartElement("Scope");
@@ -123,14 +100,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     xmlWriter.WriteEndElement();
                 }
-                if (publicRequest.VpcConfiguration != null)
-                {
-                    xmlWriter.WriteStartElement("VpcConfiguration");
-                    if(publicRequest.VpcConfiguration.IsSetVpcId())
-                        xmlWriter.WriteElementString("VpcId", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));                 
-
-                    xmlWriter.WriteEndElement();
-                }
 
                 xmlWriter.WriteEndElement();
             }
@@ -148,9 +117,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateAccessPointRequestMarshaller _instance = new CreateAccessPointRequestMarshaller();        
+        private static PutAccessPointScopeRequestMarshaller _instance = new PutAccessPointScopeRequestMarshaller();        
 
-        internal static CreateAccessPointRequestMarshaller GetInstance()
+        internal static PutAccessPointScopeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +127,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAccessPointRequestMarshaller Instance
+        public static PutAccessPointScopeRequestMarshaller Instance
         {
             get
             {

@@ -31,16 +31,10 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccessPointPolicy operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported by directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Associates an access policy with the specified access point. Each access point can
     /// have only one policy, so a request made to this API replaces any existing policy associated
     /// with the specified access point.
-    /// </para>
+    /// 
     ///   
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -131,7 +125,10 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The policy that you want to apply to the specified access point. For more information
         /// about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-        /// data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// access to shared datasets in general purpose buckets with access points</a> or <a
+        /// href="AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing access
+        /// to shared datasets in directory bucekts with access points</a> in the <i>Amazon S3
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

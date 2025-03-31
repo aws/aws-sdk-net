@@ -575,16 +575,13 @@ namespace Amazon.S3Control
         #region  CreateAccessPoint
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Creates an access point and associates it with the specified bucket. For more information,
+        /// Creates an access point and associates it to a specified bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-        /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
+        /// access to shared datasets in general purpose buckets with access points</a> or <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+        /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
+        /// S3 User Guide</i>.
+        /// 
         ///   <note> 
         /// <para>
         /// S3 on Outposts only supports VPC-style access points. 
@@ -622,6 +619,11 @@ namespace Amazon.S3Control
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1435,14 +1437,8 @@ namespace Amazon.S3Control
         #region  DeleteAccessPoint
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the specified access point.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -1607,14 +1603,8 @@ namespace Amazon.S3Control
         #region  DeleteAccessPointPolicy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the access point policy for the specified access point.
-        /// </para>
+        /// 
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -1762,6 +1752,75 @@ namespace Amazon.S3Control
         public virtual DeleteAccessPointPolicyForObjectLambdaResponse EndDeleteAccessPointPolicyForObjectLambda(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAccessPointPolicyForObjectLambdaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessPointScope
+
+        /// <summary>
+        /// Deletes an existing access point scope for a directory bucket.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you delete the scope of an access point, all prefixes and permissions are deleted.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <c>s3express:DeleteAccessPointScope</c>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+        /// error responses</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointScope service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessPointScope service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
+        public virtual DeleteAccessPointScopeResponse DeleteAccessPointScope(DeleteAccessPointScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessPointScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointScope operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessPointScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessPointScope(DeleteAccessPointScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessPointScope.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessPointScopeResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
+        public virtual DeleteAccessPointScopeResponse EndDeleteAccessPointScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessPointScopeResponse>(asyncResult);
         }
 
         #endregion
@@ -3330,14 +3389,8 @@ namespace Amazon.S3Control
         #region  GetAccessPoint
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns configuration information about the specified access point.
-        /// </para>
+        /// 
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -3573,14 +3626,8 @@ namespace Amazon.S3Control
         #region  GetAccessPointPolicy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the access point policy associated with the specified access point.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// The following actions are related to <c>GetAccessPointPolicy</c>:
@@ -3843,6 +3890,71 @@ namespace Amazon.S3Control
         public virtual GetAccessPointPolicyStatusForObjectLambdaResponse EndGetAccessPointPolicyStatusForObjectLambda(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccessPointPolicyStatusForObjectLambdaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccessPointScope
+
+        /// <summary>
+        /// Returns the access point scope for a directory bucket.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <c>s3express:GetAccessPointScope</c>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+        /// error responses</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointScope service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessPointScope service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
+        public virtual GetAccessPointScopeResponse GetAccessPointScope(GetAccessPointScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessPointScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessPointScope operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessPointScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
+        public virtual IAsyncResult BeginGetAccessPointScope(GetAccessPointScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessPointScope.</param>
+        /// 
+        /// <returns>Returns a  GetAccessPointScopeResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
+        public virtual GetAccessPointScopeResponse EndGetAccessPointScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccessPointScopeResponse>(asyncResult);
         }
 
         #endregion
@@ -5594,6 +5706,76 @@ namespace Amazon.S3Control
 
         #endregion
         
+        #region  ListAccessPointsForDirectoryBuckets
+
+        /// <summary>
+        /// Returns a list of the access points that are owned by the Amazon Web Services account
+        /// and that are associated with the specified directory bucket.
+        /// 
+        ///  
+        /// <para>
+        /// To list access points for general purpose buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccesspoints</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <c>s3express:ListAccessPointsForDirectoryBuckets</c>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+        /// error responses</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForDirectoryBuckets service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessPointsForDirectoryBuckets service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
+        public virtual ListAccessPointsForDirectoryBucketsResponse ListAccessPointsForDirectoryBuckets(ListAccessPointsForDirectoryBucketsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessPointsForDirectoryBucketsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessPointsForDirectoryBuckets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForDirectoryBuckets operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessPointsForDirectoryBuckets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
+        public virtual IAsyncResult BeginListAccessPointsForDirectoryBuckets(ListAccessPointsForDirectoryBucketsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessPointsForDirectoryBuckets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessPointsForDirectoryBuckets.</param>
+        /// 
+        /// <returns>Returns a  ListAccessPointsForDirectoryBucketsResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
+        public virtual ListAccessPointsForDirectoryBucketsResponse EndListAccessPointsForDirectoryBuckets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessPointsForDirectoryBucketsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccessPointsForObjectLambda
 
         /// <summary>
@@ -6363,16 +6545,10 @@ namespace Amazon.S3Control
         #region  PutAccessPointPolicy
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Associates an access policy with the specified access point. Each access point can
         /// have only one policy, so a request made to this API replaces any existing policy associated
         /// with the specified access point.
-        /// </para>
+        /// 
         ///   
         /// <para>
         /// All Amazon S3 on Outposts REST API requests for this action require an additional
@@ -6522,6 +6698,114 @@ namespace Amazon.S3Control
         public virtual PutAccessPointPolicyForObjectLambdaResponse EndPutAccessPointPolicyForObjectLambda(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccessPointPolicyForObjectLambdaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAccessPointScope
+
+        /// <summary>
+        /// Creates or replaces the access point scope for a directory bucket. You can use the
+        /// access point scope to restrict access to specific prefixes, API operations, or a combination
+        /// of both.
+        /// 
+        ///  
+        /// <para>
+        /// You can include one or more of the following API operations as permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PutObjet</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GetObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteObject</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListBucket</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GetObjectAttributes</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AbortMultipartUpload</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListBucketMultipartUpload</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListMultiPartUploadParts</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can specify any amount of prefixes, but the total length of characters of all
+        /// prefixes must be less than 512 KB in size.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// To use this operation, you must have the permission to perform the <c>s3express:PutAccessPointScope</c>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+        /// error responses</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointScope service method.</param>
+        /// 
+        /// <returns>The response from the PutAccessPointScope service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
+        public virtual PutAccessPointScopeResponse PutAccessPointScope(PutAccessPointScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccessPointScopeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccessPointScope operation on AmazonS3ControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccessPointScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
+        public virtual IAsyncResult BeginPutAccessPointScope(PutAccessPointScopeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccessPointScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccessPointScope.</param>
+        /// 
+        /// <returns>Returns a  PutAccessPointScopeResult from S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
+        public virtual PutAccessPointScopeResponse EndPutAccessPointScope(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccessPointScopeResponse>(asyncResult);
         }
 
         #endregion

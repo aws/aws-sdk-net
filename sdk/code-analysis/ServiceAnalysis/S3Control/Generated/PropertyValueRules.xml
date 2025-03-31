@@ -329,6 +329,16 @@
     <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointScopeRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.DeleteAccessPointScopeRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.DeleteBucketRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -721,6 +731,16 @@
     <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointScopeRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetAccessPointScopeRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetBucketRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -971,6 +991,31 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForDirectoryBucketsRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForDirectoryBucketsRequest.DirectoryBucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForDirectoryBucketsRequest.MaxResults</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForDirectoryBucketsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.ListAccessPointsForDirectoryBucketsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.ListAccessPointsForObjectLambdaRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -1151,6 +1196,16 @@
     <min>3</min>
     <max>45</max>
     <pattern>^[a-z0-9]([a-z0-9\-]*[a-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointScopeRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutAccessPointScopeRequest.Name</property>
+    <min>3</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutBucketLifecycleConfigurationRequest.AccountId</property>

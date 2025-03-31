@@ -115,6 +115,7 @@ namespace Amazon.S3Control.Internal
                 var request = (CreateAccessPointRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 result.Bucket = request.Bucket;
+                result.AccessPointName = request.Name;
                 return result;
             }
             if (requestContext.RequestName == "CreateAccessPointForObjectLambdaRequest") {
@@ -195,6 +196,14 @@ namespace Amazon.S3Control.Internal
                 result.RequiresAccountId = true;
                 var request = (DeleteAccessPointPolicyForObjectLambdaRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAccessPointScopeRequest") {
+                result.RequiresAccountId = true;
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (DeleteAccessPointScopeRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.AccessPointName = request.Name;
                 return result;
             }
             if (requestContext.RequestName == "DeleteBucketRequest") {
@@ -361,6 +370,14 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "GetAccessPointScopeRequest") {
+                result.RequiresAccountId = true;
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetAccessPointScopeRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.AccessPointName = request.Name;
+                return result;
+            }
             if (requestContext.RequestName == "GetBucketRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetBucketRequest)requestContext.OriginalRequest;
@@ -488,6 +505,13 @@ namespace Amazon.S3Control.Internal
                 result.Bucket = request.Bucket;
                 return result;
             }
+            if (requestContext.RequestName == "ListAccessPointsForDirectoryBucketsRequest") {
+                result.RequiresAccountId = true;
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (ListAccessPointsForDirectoryBucketsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "ListAccessPointsForObjectLambdaRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListAccessPointsForObjectLambdaRequest)requestContext.OriginalRequest;
@@ -560,6 +584,14 @@ namespace Amazon.S3Control.Internal
                 result.RequiresAccountId = true;
                 var request = (PutAccessPointPolicyForObjectLambdaRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
+                return result;
+            }
+            if (requestContext.RequestName == "PutAccessPointScopeRequest") {
+                result.RequiresAccountId = true;
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (PutAccessPointScopeRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.AccessPointName = request.Name;
                 return result;
             }
             if (requestContext.RequestName == "PutBucketLifecycleConfigurationRequest") {

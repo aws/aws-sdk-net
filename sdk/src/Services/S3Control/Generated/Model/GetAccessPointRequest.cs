@@ -31,14 +31,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccessPoint operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported by directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Returns configuration information about the specified access point.
-    /// </para>
+    /// 
     ///   
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional

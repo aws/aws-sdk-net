@@ -30,26 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAccessPointPolicy operation.
-    /// Returns the access point policy associated with the specified access point.
+    /// Container for the parameters to the DeleteAccessPointScope operation.
+    /// Deletes an existing access point scope for a directory bucket.
     /// 
+    ///  <note> 
+    /// <para>
+    /// When you delete the scope of an access point, all prefixes and permissions are deleted.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// To use this operation, you must have the permission to perform the <c>s3express:DeleteAccessPointScope</c>
+    /// action.
+    /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <c>GetAccessPointPolicy</c>:
+    /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
+    /// error responses</a>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">PutAccessPointPolicy</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">DeleteAccessPointPolicy</a>
-    /// 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
-    public partial class GetAccessPointPolicyRequest : AmazonS3ControlRequest
+    public partial class DeleteAccessPointScopeRequest : AmazonS3ControlRequest
     {
         private string _accountId;
         private string _name;
@@ -57,7 +56,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the account that owns the specified access point.
+        ///  The Amazon Web Services account ID that owns the access point with the scope that
+        /// you want to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -76,21 +76,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the access point whose policy you want to retrieve.
-        /// </para>
-        ///  
-        /// <para>
-        /// For using this parameter with Amazon S3 on Outposts with the REST API, you must specify
-        /// the name and the x-amz-outpost-id as well.
-        /// </para>
-        ///  
-        /// <para>
-        /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the access point accessed in the format <c>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</c>.
-        /// For example, to access the access point <c>reports-ap</c> through Outpost <c>my-outpost</c>
-        /// owned by account <c>123456789012</c> in Region <c>us-west-2</c>, use the URL encoding
-        /// of <c>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</c>.
-        /// The value must be URL encoded. 
+        ///  The name of the access point with the scope that you want to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

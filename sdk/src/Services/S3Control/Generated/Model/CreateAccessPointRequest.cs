@@ -31,16 +31,13 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessPoint operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported by directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Creates an access point and associates it with the specified bucket. For more information,
+    /// Creates an access point and associates it to a specified bucket. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-    /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
+    /// access to shared datasets in general purpose buckets with access points</a> or <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+    /// access to shared datasets in directory buckets with access points</a> in the <i>Amazon
+    /// S3 User Guide</i>.
+    /// 
     ///   <note> 
     /// <para>
     /// S3 on Outposts only supports VPC-style access points. 
@@ -80,6 +77,11 @@ namespace Amazon.S3Control.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
+    /// 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class CreateAccessPointRequest : AmazonS3ControlRequest
@@ -89,6 +91,7 @@ namespace Amazon.S3Control.Model
         private string _bucketAccountId;
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlockConfiguration;
+        private Scope _scope;
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -176,6 +179,15 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The name you want to assign to this access point.
         /// </para>
+        ///  
+        /// <para>
+        /// For directory buckets, the access point name must consist of a base name that you
+        /// provide and suffix that includes the <c>ZoneID</c> (Amazon Web Services Availability
+        /// Zone or Local Zone) of your bucket location, followed by <c>--xa-s3</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+        /// access to shared datasets in directory buckets with access points</a> in the Amazon
+        /// S3 User Guide.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
         public string Name
@@ -207,6 +219,32 @@ namespace Amazon.S3Control.Model
         internal bool IsSetPublicAccessBlockConfiguration()
         {
             return this._publicAccessBlockConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// For directory buckets, you can filter access control to specific prefixes, API operations,
+        /// or a combination of both. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html">Managing
+        /// access to shared datasets in directory buckets with access points</a> in the Amazon
+        /// S3 User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Scope is not supported for access points for general purpose buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>
