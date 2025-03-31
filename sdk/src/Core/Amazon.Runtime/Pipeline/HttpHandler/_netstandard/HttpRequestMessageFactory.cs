@@ -249,6 +249,10 @@ namespace Amazon.Runtime
 #if NET8_0_OR_GREATER
             var httpMessageHandler = new SocketsHttpHandler()
             {
+                // By default HttpClient will only allow a single H2 connection per server. That 
+                // makes more sense from a client device to a server but since our SDK is likely
+                // used from an application server we can expect more then a single connection
+                // is going to be required.
                 EnableMultipleHttp2Connections = true
             };
 #else
