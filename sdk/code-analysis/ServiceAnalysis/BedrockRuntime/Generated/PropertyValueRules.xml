@@ -309,6 +309,14 @@
     <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.TokenUsage.CacheReadInputTokens</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.TokenUsage.CacheWriteInputTokens</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.TokenUsage.InputTokens</property>
     <min>0</min>
   </property-value-rule>

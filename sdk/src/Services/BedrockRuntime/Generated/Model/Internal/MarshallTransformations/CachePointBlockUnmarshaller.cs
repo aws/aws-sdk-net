@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TokenUsage Object
+    /// Response Unmarshaller for CachePointBlock Object
     /// </summary>  
-    public class TokenUsageUnmarshaller : IUnmarshaller<TokenUsage, XmlUnmarshallerContext>, IUnmarshaller<TokenUsage, JsonUnmarshallerContext>
+    public class CachePointBlockUnmarshaller : IUnmarshaller<CachePointBlock, XmlUnmarshallerContext>, IUnmarshaller<CachePointBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TokenUsage IUnmarshaller<TokenUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CachePointBlock IUnmarshaller<CachePointBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TokenUsage Unmarshall(JsonUnmarshallerContext context)
+        public CachePointBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            TokenUsage unmarshalledObject = new TokenUsage();
+            CachePointBlock unmarshalledObject = new CachePointBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cacheReadInputTokens", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.CacheReadInputTokens = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cacheWriteInputTokens", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.CacheWriteInputTokens = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputTokens", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.InputTokens = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputTokens", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.OutputTokens = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalTokens", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalTokens = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static TokenUsageUnmarshaller _instance = new TokenUsageUnmarshaller();        
+        private static CachePointBlockUnmarshaller _instance = new CachePointBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TokenUsageUnmarshaller Instance
+        public static CachePointBlockUnmarshaller Instance
         {
             get
             {
