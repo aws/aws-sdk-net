@@ -1390,6 +1390,58 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateRouteServer
+
+
+        /// <summary>
+        /// Associates a route server with a VPC to enable dynamic route updates.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC. This is a fundamental configuration step that enables the route server to work
+        /// with appliances in your VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateRouteServer service method.</param>
+        /// 
+        /// <returns>The response from the AssociateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
+        AssociateRouteServerResponse AssociateRouteServer(AssociateRouteServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateRouteServer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateRouteServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
+        IAsyncResult BeginAssociateRouteServer(AssociateRouteServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateRouteServer.</param>
+        /// 
+        /// <returns>Returns a  AssociateRouteServerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
+        AssociateRouteServerResponse EndAssociateRouteServer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateRouteTable
 
 
@@ -5549,6 +5601,190 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateRouteServer
+
+
+        /// <summary>
+        /// Creates a new route server to manage dynamic routing in a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServer service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
+        CreateRouteServerResponse CreateRouteServer(CreateRouteServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
+        IAsyncResult BeginCreateRouteServer(CreateRouteServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteServer.</param>
+        /// 
+        /// <returns>Returns a  CreateRouteServerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
+        CreateRouteServerResponse EndCreateRouteServer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateRouteServerEndpoint
+
+
+        /// <summary>
+        /// Creates a new endpoint for a route server in a specified subnet.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates BGP (Border Gateway Protocol) connections between your route server
+        /// and your BGP peers. Create two endpoints per subnet for redundancy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouteServerEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
+        CreateRouteServerEndpointResponse CreateRouteServerEndpoint(CreateRouteServerEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRouteServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteServerEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
+        IAsyncResult BeginCreateRouteServerEndpoint(CreateRouteServerEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRouteServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteServerEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateRouteServerEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
+        CreateRouteServerEndpointResponse EndCreateRouteServerEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateRouteServerPeer
+
+
+        /// <summary>
+        /// Creates a new BGP peer for a specified route server endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a network appliance or function deployed in Amazon Web Services,
+        /// such as firewall appliances and other network security functions, that meet these
+        /// requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouteServerPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
+        CreateRouteServerPeerResponse CreateRouteServerPeer(CreateRouteServerPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRouteServerPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteServerPeer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteServerPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
+        IAsyncResult BeginCreateRouteServerPeer(CreateRouteServerPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRouteServerPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteServerPeer.</param>
+        /// 
+        /// <returns>Returns a  CreateRouteServerPeerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
+        CreateRouteServerPeerResponse EndCreateRouteServerPeer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateRouteTable
 
 
@@ -9276,6 +9512,190 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteRouteResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         DeleteRouteResponse EndDeleteRoute(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRouteServer
+
+
+        /// <summary>
+        /// Deletes the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
+        DeleteRouteServerResponse DeleteRouteServer(DeleteRouteServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
+        IAsyncResult BeginDeleteRouteServer(DeleteRouteServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteServer.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteServerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
+        DeleteRouteServerResponse EndDeleteRouteServer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRouteServerEndpoint
+
+
+        /// <summary>
+        /// Deletes the specified route server endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates BGP (Border Gateway Protocol) connections between your route server
+        /// and your BGP peers. Create two endpoints per subnet for redundancy.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteServerEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
+        DeleteRouteServerEndpointResponse DeleteRouteServerEndpoint(DeleteRouteServerEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteServerEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
+        IAsyncResult BeginDeleteRouteServerEndpoint(DeleteRouteServerEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteServerEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteServerEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteServerEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
+        DeleteRouteServerEndpointResponse EndDeleteRouteServerEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRouteServerPeer
+
+
+        /// <summary>
+        /// Deletes the specified BGP peer from a route server.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a network appliance or function deployed in Amazon Web Services,
+        /// such as firewall appliances and other network security functions, that meet these
+        /// requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouteServerPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
+        DeleteRouteServerPeerResponse DeleteRouteServerPeer(DeleteRouteServerPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRouteServerPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteServerPeer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteServerPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
+        IAsyncResult BeginDeleteRouteServerPeer(DeleteRouteServerPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRouteServerPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteServerPeer.</param>
+        /// 
+        /// <returns>Returns a  DeleteRouteServerPeerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
+        DeleteRouteServerPeerResponse EndDeleteRouteServerPeer(IAsyncResult asyncResult);
 
         #endregion
         
@@ -16495,6 +16915,199 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeRouteServerEndpoints
+
+
+        /// <summary>
+        /// Describes one or more route server endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// A route server endpoint is an Amazon Web Services-managed component inside a subnet
+        /// that facilitates BGP (Border Gateway Protocol) connections between your route server
+        /// and your BGP peers. Create two endpoints per subnet for redundancy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRouteServerEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
+        DescribeRouteServerEndpointsResponse DescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRouteServerEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRouteServerEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
+        IAsyncResult BeginDescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRouteServerEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRouteServerEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeRouteServerEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
+        DescribeRouteServerEndpointsResponse EndDescribeRouteServerEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRouteServerPeers
+
+
+        /// <summary>
+        /// Describes one or more route server peers.
+        /// 
+        ///  
+        /// <para>
+        /// A route server peer is a network appliance or function deployed in Amazon Web Services,
+        /// such as firewall appliances and other network security functions, that meet these
+        /// requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Have an elastic network interface in the VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Support BGP (Border Gateway Protocol)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can initiate BGP sessions
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerPeers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRouteServerPeers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
+        DescribeRouteServerPeersResponse DescribeRouteServerPeers(DescribeRouteServerPeersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRouteServerPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServerPeers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRouteServerPeers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
+        IAsyncResult BeginDescribeRouteServerPeers(DescribeRouteServerPeersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRouteServerPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRouteServerPeers.</param>
+        /// 
+        /// <returns>Returns a  DescribeRouteServerPeersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
+        DescribeRouteServerPeersResponse EndDescribeRouteServerPeers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRouteServers
+
+
+        /// <summary>
+        /// Describes one or more route servers.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRouteServers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
+        DescribeRouteServersResponse DescribeRouteServers(DescribeRouteServersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRouteServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteServers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRouteServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
+        IAsyncResult BeginDescribeRouteServers(DescribeRouteServersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRouteServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRouteServers.</param>
+        /// 
+        /// <returns>Returns a  DescribeRouteServersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
+        DescribeRouteServersResponse EndDescribeRouteServers(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeRouteTables
 
 
@@ -20445,6 +21058,88 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableRouteServerPropagation
+
+
+        /// <summary>
+        /// Disables route propagation from a route server to a specified route table.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableRouteServerPropagation service method.</param>
+        /// 
+        /// <returns>The response from the DisableRouteServerPropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
+        DisableRouteServerPropagationResponse DisableRouteServerPropagation(DisableRouteServerPropagationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableRouteServerPropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableRouteServerPropagation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableRouteServerPropagation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
+        IAsyncResult BeginDisableRouteServerPropagation(DisableRouteServerPropagationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableRouteServerPropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableRouteServerPropagation.</param>
+        /// 
+        /// <returns>Returns a  DisableRouteServerPropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
+        DisableRouteServerPropagationResponse EndDisableRouteServerPropagation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableSerialConsoleAccess
 
 
@@ -21155,6 +21850,58 @@ namespace Amazon.EC2
         /// <returns>Returns a  DisassociateNatGatewayAddressResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
         DisassociateNatGatewayAddressResponse EndDisassociateNatGatewayAddress(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateRouteServer
+
+
+        /// <summary>
+        /// Disassociates a route server from a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC. This is a fundamental configuration step that enables the route server to work
+        /// with appliances in your VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteServer service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
+        DisassociateRouteServerResponse DisassociateRouteServer(DisassociateRouteServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteServer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateRouteServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
+        IAsyncResult BeginDisassociateRouteServer(DisassociateRouteServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateRouteServer.</param>
+        /// 
+        /// <returns>Returns a  DisassociateRouteServerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
+        DisassociateRouteServerResponse EndDisassociateRouteServer(IAsyncResult asyncResult);
 
         #endregion
         
@@ -22118,6 +22865,57 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableReachabilityAnalyzerOrganizationSharingResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
         EnableReachabilityAnalyzerOrganizationSharingResponse EndEnableReachabilityAnalyzerOrganizationSharing(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableRouteServerPropagation
+
+
+        /// <summary>
+        /// Defines which route tables the route server can update with routes.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableRouteServerPropagation service method.</param>
+        /// 
+        /// <returns>The response from the EnableRouteServerPropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
+        EnableRouteServerPropagationResponse EnableRouteServerPropagation(EnableRouteServerPropagationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableRouteServerPropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableRouteServerPropagation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableRouteServerPropagation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
+        IAsyncResult BeginEnableRouteServerPropagation(EnableRouteServerPropagationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableRouteServerPropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableRouteServerPropagation.</param>
+        /// 
+        /// <returns>Returns a  EnableRouteServerPropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
+        EnableRouteServerPropagationResponse EndEnableRouteServerPropagation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -24251,6 +25049,212 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetReservedInstancesExchangeQuoteResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         GetReservedInstancesExchangeQuoteResponse EndGetReservedInstancesExchangeQuote(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRouteServerAssociations
+
+
+        /// <summary>
+        /// Gets information about the associations for the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// A route server association is the connection established between a route server and
+        /// a VPC. This is a fundamental configuration step that enables the route server to work
+        /// with appliances in your VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetRouteServerAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
+        GetRouteServerAssociationsResponse GetRouteServerAssociations(GetRouteServerAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRouteServerAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteServerAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
+        IAsyncResult BeginGetRouteServerAssociations(GetRouteServerAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRouteServerAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteServerAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetRouteServerAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
+        GetRouteServerAssociationsResponse EndGetRouteServerAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRouteServerPropagations
+
+
+        /// <summary>
+        /// Gets information about the route propagations for the specified route server.
+        /// 
+        ///  
+        /// <para>
+        /// When enabled, route server propagation installs the routes in the FIB on the route
+        /// table you've specified. Route server supports IPv4 and IPv6 route propagation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerPropagations service method.</param>
+        /// 
+        /// <returns>The response from the GetRouteServerPropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
+        GetRouteServerPropagationsResponse GetRouteServerPropagations(GetRouteServerPropagationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRouteServerPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerPropagations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteServerPropagations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
+        IAsyncResult BeginGetRouteServerPropagations(GetRouteServerPropagationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRouteServerPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteServerPropagations.</param>
+        /// 
+        /// <returns>Returns a  GetRouteServerPropagationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
+        GetRouteServerPropagationsResponse EndGetRouteServerPropagations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRouteServerRoutingDatabase
+
+
+        /// <summary>
+        /// Gets the routing database for the specified route server. The <a href="https://en.wikipedia.org/wiki/Routing_table">Routing
+        /// Information Base (RIB)</a> serves as a database that stores all the routing information
+        /// and network topology data collected by a router or routing system, such as routes
+        /// learned from BGP peers. The RIB is constantly updated as new routing information is
+        /// received or existing routes change. This ensures that the route server always has
+        /// the most current view of the network topology and can make optimal routing decisions.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerRoutingDatabase service method.</param>
+        /// 
+        /// <returns>The response from the GetRouteServerRoutingDatabase service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
+        GetRouteServerRoutingDatabaseResponse GetRouteServerRoutingDatabase(GetRouteServerRoutingDatabaseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRouteServerRoutingDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteServerRoutingDatabase operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteServerRoutingDatabase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
+        IAsyncResult BeginGetRouteServerRoutingDatabase(GetRouteServerRoutingDatabaseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRouteServerRoutingDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteServerRoutingDatabase.</param>
+        /// 
+        /// <returns>Returns a  GetRouteServerRoutingDatabaseResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
+        GetRouteServerRoutingDatabaseResponse EndGetRouteServerRoutingDatabase(IAsyncResult asyncResult);
 
         #endregion
         
@@ -27243,6 +28247,83 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyReservedInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         ModifyReservedInstancesResponse EndModifyReservedInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyRouteServer
+
+
+        /// <summary>
+        /// Modifies the configuration of an existing route server.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon VPC Route Server simplifies routing for traffic between workloads that are
+        /// deployed within a VPC and its internet gateways. With this feature, VPC Route Server
+        /// dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6
+        /// routes to achieve routing fault tolerance for those workloads. This enables you to
+        /// automatically reroute traffic within a VPC, which increases the manageability of VPC
+        /// routing and interoperability with third-party workloads.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route server supports the follow route table types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VPC route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet route tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Internet gateway route tables
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Route server does not support route tables associated with virtual private gateways.
+        /// To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit
+        /// Gateway Connect</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+        /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRouteServer service method.</param>
+        /// 
+        /// <returns>The response from the ModifyRouteServer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
+        ModifyRouteServerResponse ModifyRouteServer(ModifyRouteServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyRouteServer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyRouteServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
+        IAsyncResult BeginModifyRouteServer(ModifyRouteServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyRouteServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyRouteServer.</param>
+        /// 
+        /// <returns>Returns a  ModifyRouteServerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
+        ModifyRouteServerResponse EndModifyRouteServer(IAsyncResult asyncResult);
 
         #endregion
         

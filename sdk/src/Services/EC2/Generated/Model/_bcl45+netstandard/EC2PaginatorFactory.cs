@@ -629,6 +629,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeRouteServerEndpoints operation
+        ///</summary>
+        public IDescribeRouteServerEndpointsPaginator DescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request) 
+        {
+            return new DescribeRouteServerEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRouteServerPeers operation
+        ///</summary>
+        public IDescribeRouteServerPeersPaginator DescribeRouteServerPeers(DescribeRouteServerPeersRequest request) 
+        {
+            return new DescribeRouteServerPeersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRouteServers operation
+        ///</summary>
+        public IDescribeRouteServersPaginator DescribeRouteServers(DescribeRouteServersRequest request) 
+        {
+            return new DescribeRouteServersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRouteTables operation
         ///</summary>
         public IDescribeRouteTablesPaginator DescribeRouteTables(DescribeRouteTablesRequest request) 
