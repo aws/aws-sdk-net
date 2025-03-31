@@ -62,12 +62,18 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
                 }
             }
 
-            // Even if the user has ended input streaming via returning null from the publisher
-            // we need to block the return here till the full operation is complete. Otherwise
-            // HttpClient will end the streaming session before the response has been completed streaming.
-            // This can cause trigger an error with the service. The TaskCompletionSource, _tcs, 
-            // is completed as part of disposing this class.
-            await _tcs.Task.ConfigureAwait(false);
+            // Capture the _tcs as local variable before awaiting to avoid the member variable
+            // being set to null between the null check and the await.
+            var tcs = _tcs; 
+            if (tcs != null)
+            {
+                // Even if the user has ended input streaming via returning null from the publisher
+                // we need to block the return here till the full operation is complete. Otherwise
+                // HttpClient will end the streaming session before the response has been completed streaming.
+                // This can cause trigger an error with the service. The TaskCompletionSource, _tcs, 
+                // is completed as part of disposing this class.
+                await tcs.Task.ConfigureAwait(false);
+            }
         }
 
         /// <summary>
