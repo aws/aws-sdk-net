@@ -326,15 +326,6 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// If true the content stream for the request is for event input stream.
-        /// </summary>
-        public bool IsEventInputContentStream
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Gets and sets the original stream position.
         /// If ContentStream is null or does not support seek, this propery
         /// should be equal to -1.

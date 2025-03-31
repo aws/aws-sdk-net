@@ -237,7 +237,7 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                if (httpRequest != null && (_exceptionBeingThrown || !executionContext.RequestContext.Request.IsEventInputContentStream))
+                if (httpRequest != null && (_exceptionBeingThrown || executionContext.RequestContext.Request.HttpRequestStreamPublisher == null))
                     httpRequest.Dispose();
             }
         }
@@ -281,7 +281,7 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
-            if (wrappedRequest.IsEventInputContentStream)
+            if (requestContext.Request.HttpRequestStreamPublisher != null)
             {
                 requestContext.RequestStreamHandle = httpRequest.SetupHttpRequestStreamPublisher(requestContext.Request.Headers, requestContext.Request.HttpRequestStreamPublisher);
             }
