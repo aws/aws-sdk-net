@@ -1993,6 +1993,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ReleaseVersion = new UpdateParamType("ReleaseVersion");
         /// <summary>
+        /// Constant RemoteNetworkConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RemoteNetworkConfig = new UpdateParamType("RemoteNetworkConfig");
+        /// <summary>
         /// Constant ResolveConflicts for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
@@ -2172,6 +2176,10 @@ namespace Amazon.EKS
         /// Constant LoggingUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType LoggingUpdate = new UpdateType("LoggingUpdate");
+        /// <summary>
+        /// Constant RemoteNetworkConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType RemoteNetworkConfigUpdate = new UpdateType("RemoteNetworkConfigUpdate");
         /// <summary>
         /// Constant UpgradePolicyUpdate for UpdateType
         /// </summary>

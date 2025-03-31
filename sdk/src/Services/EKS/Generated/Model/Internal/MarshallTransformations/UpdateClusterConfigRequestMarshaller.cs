@@ -125,6 +125,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRemoteNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("remoteNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RemoteNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RemoteNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourcesVpcConfig())
                 {
                     context.Writer.WritePropertyName("resourcesVpcConfig");

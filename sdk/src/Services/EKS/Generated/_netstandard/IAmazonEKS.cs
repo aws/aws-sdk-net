@@ -2213,9 +2213,13 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster configuration. Your cluster continues to function during
         /// the update. The response output includes an update ID that you can use to track the
-        /// status of your cluster update with <c>DescribeUpdate</c>"/&gt;.
+        /// status of your cluster update with <c>DescribeUpdate</c>.
         /// 
         ///  
+        /// <para>
+        /// You can use this operation to do the following actions:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// You can use this API operation to enable or disable exporting the Kubernetes control
         /// plane logs for your cluster to CloudWatch Logs. By default, cluster control plane
@@ -2228,14 +2232,14 @@ namespace Amazon.EKS
         /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch
         /// Pricing</a>.
         /// </para>
-        ///  </note> 
+        ///  </note> </li> <li> 
         /// <para>
         /// You can also use this API operation to enable or disable public and private access
         /// to your cluster's Kubernetes API server endpoint. By default, public access is enabled,
         /// and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// You can also use this API operation to choose different subnets and security groups
         /// for the cluster. You must specify at least two subnets that are in different Availability
@@ -2244,12 +2248,20 @@ namespace Amazon.EKS
         /// the VPC requirements, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a>
         /// in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
         /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// You can also use this API operation to add, change, or remove the configuration in
+        /// the cluster for EKS Hybrid Nodes. To remove the configuration, use the <c>remoteNetworkConfig</c>
+        /// key with an object containing both subkeys with empty arrays for each. Here is an
+        /// inline example: <c>"remoteNetworkConfig": { "remoteNodeNetworks": [], "remotePodNetworks":
+        /// [] }</c>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
         /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
