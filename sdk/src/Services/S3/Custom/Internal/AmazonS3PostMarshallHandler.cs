@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using Amazon.S3.Util;
 using Amazon.S3.Model;
+using Amazon.Runtime.Internal.UserAgent;
 
 #pragma warning disable 1591
 
@@ -66,6 +67,9 @@ namespace Amazon.S3.Internal
 
         private static void ProcessPreRequestHandlers(IExecutionContext executionContext)
         {
+            if (executionContext.RequestContext.Request.IsDirectoryBucket())
+                executionContext.RequestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.S3_EXPRESS_BUCKET);
+
             var originalRequest = executionContext.RequestContext.OriginalRequest;
             if (SetStreamChecksum(originalRequest, executionContext.RequestContext.Request))
                 return;

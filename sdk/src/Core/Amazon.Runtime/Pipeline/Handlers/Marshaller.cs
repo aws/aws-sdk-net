@@ -126,7 +126,13 @@ namespace Amazon.Runtime.Internal
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)
         {
-            var sb = new StringBuilder(256);
+            var accountIdMode = requestContext.ClientConfig.AccountIdEndpointMode;
+            if (accountIdMode == AccountIdEndpointMode.DISABLED)
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_DISABLED);
+            else if (accountIdMode == AccountIdEndpointMode.PREFERRED)
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_PREFERRED);
+            else if (accountIdMode == AccountIdEndpointMode.REQUIRED)
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_REQUIRED);
 
             requestContext.UserAgentDetails.AddUserAgentComponent(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(requestContext.ClientConfig.UserAgent));
 
