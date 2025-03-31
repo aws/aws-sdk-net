@@ -1,3 +1,29 @@
+### 3.7.1013.0 (2025-03-31 18:45 UTC)
+* BedrockRuntime (3.7.416.0)
+	* Add Prompt Caching support to Converse and ConverseStream APIs
+* Deadline (3.7.405.0)
+	* With this release you can use a new field to specify the search term match type. Search term match types currently support fuzzy and contains matching.
+* EC2 (3.7.437.0)
+	* Release VPC Route Server, a new feature allowing dynamic routing in VPCs.
+* EKS (3.7.414.0)
+	* Add support for updating RemoteNetworkConfig for hybrid nodes on EKS UpdateClusterConfig API
+* MarketplaceEntitlementService (3.7.402.0)
+	* Add support for Marketplace Entitlement Service dual-stack endpoints.
+* Outposts (3.7.406.0)
+	* Enabling Asset Level Capacity Management feature, which allows customers to create a Capacity Task for a single Asset on their active Outpost.
+* S3 (3.7.416.0)
+	* Amazon S3 adds support for S3 Access Points for directory buckets in AWS Dedicated Local Zones
+* S3Control (3.7.407.0)
+	* Amazon S3 adds support for S3 Access Points for directory buckets in AWS Dedicated Local Zones
+* SimpleEmailV2 (3.7.409.0)
+	* Add dual-stack support to global endpoints.
+* Transfer (3.7.405.0)
+	* Add WebAppEndpointPolicy support for WebApps
+* Core 3.7.402.30
+	* Fixed an issue where property keys in credentials/config file were incorrectly considered as case-sensitive.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1012.0 (2025-03-28 18:26 UTC)
 * APIGateway (3.7.402.0)
 	* Adds support for setting the IP address type to allow dual-stack or IPv4 address types to invoke your APIs or domain names.

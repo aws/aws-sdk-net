@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed an issue where property keys in credentials/config file were incorrectly considered as case-sensitive."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

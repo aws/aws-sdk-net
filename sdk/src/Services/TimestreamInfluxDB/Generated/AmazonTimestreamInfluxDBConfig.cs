@@ -32,7 +32,7 @@ namespace Amazon.TimestreamInfluxDB
     public partial class AmazonTimestreamInfluxDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Timestream InfluxDB", "3.7.406.27");
+            InternalSDKUtils.BuildUserAgentString("Timestream InfluxDB", "3.7.406.28");
 
         private string _userAgent = UserAgentString;
         ///<summary>
