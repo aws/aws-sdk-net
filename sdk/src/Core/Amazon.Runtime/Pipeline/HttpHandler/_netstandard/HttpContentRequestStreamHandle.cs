@@ -28,14 +28,16 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
 {
 #if NET8_0_OR_GREATER
     /// <summary>
-    /// Grabs a hold of the stream opened by the HttpClient for sending requests and makes the stream
-    /// available for writing by higher level points of the SDK via the IHttpRequestStreamWriter interface.
+    /// This class is set as the Content for the HttpRequestMessage when a request is going
+    /// to use a IHttpRequestStreamPublisher to stream data to the service.
+    /// 
+    /// This is typically done for bi-directional event streaming operations that 
+    /// need to stream events from the consumer code to the service.
     /// </summary>
     public class HttpContentRequestStreamHandle : HttpContent, IHttpRequestStreamHandle
     {
         private Logger _logger = Logger.GetLogger(typeof(HttpContentRequestStreamHandle));
         private HttpRequestMessage _httpRequest;
-        private Stream _stream;
         private bool _disposed;
         private TaskCompletionSource _tcs = new TaskCompletionSource();
         private IHttpRequestStreamPublisher _publisher;
@@ -50,23 +52,21 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
 
         protected override async Task SerializeToStreamAsync( Stream stream, TransportContext context)
         {
-            // Hold on to the stream opened by the HttpClient for talking to the service.
-            _stream = stream;
-
             if(_publisher != null)
             {
                 Byte[] bytes;
                 while((bytes = await _publisher.NextBytesAsync().ConfigureAwait(false)) != null)
                 {
-                    await _stream.WriteAsync(bytes, 0, bytes.Length).ConfigureAwait(false);
-                    await _stream.FlushAsync().ConfigureAwait(false);
+                    await stream.WriteAsync(bytes, 0, bytes.Length).ConfigureAwait(false);
+                    await stream.FlushAsync().ConfigureAwait(false);
                 }
             }
 
             // Even if the user has ended input streaming via returning null from the publisher
             // we need to block the return here till the full operation is complete. Otherwise
             // HttpClient will end the streaming session before the response has been completed streaming.
-            // This can cause trigger an error with the service.
+            // This can cause trigger an error with the service. The TaskCompletionSource, _tcs, 
+            // is completed as part of disposing this class.
             await _tcs.Task.ConfigureAwait(false);
         }
 
