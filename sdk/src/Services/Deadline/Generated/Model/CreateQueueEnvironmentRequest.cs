@@ -84,8 +84,8 @@ namespace Amazon.Deadline.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the
-        /// highest priority. If two environments share the same priority value, the environment
-        /// created first takes higher priority.
+        /// highest priority (activated first and deactivated last). If two environments share
+        /// the same priority value, the environment created first takes higher priority.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]

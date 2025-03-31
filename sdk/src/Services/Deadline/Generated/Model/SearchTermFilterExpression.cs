@@ -34,7 +34,36 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class SearchTermFilterExpression
     {
+        private SearchTermMatchingType _matchType;
         private string _searchTerm;
+
+        /// <summary>
+        /// Gets and sets the property MatchType. 
+        /// <para>
+        /// Specifies how Deadline Cloud matches your search term in the results. If you don't
+        /// specify a <c>matchType</c> the default is <c>FUZZY_MATCH</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FUZZY_MATCH</c> - Matches if a portion of the search term is found in the result.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONTAINS</c> - Matches if the exact search term is contained in the result.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SearchTermMatchingType MatchType
+        {
+            get { return this._matchType; }
+            set { this._matchType = value; }
+        }
+
+        // Check to see if MatchType property is set
+        internal bool IsSetMatchType()
+        {
+            return this._matchType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SearchTerm. 
