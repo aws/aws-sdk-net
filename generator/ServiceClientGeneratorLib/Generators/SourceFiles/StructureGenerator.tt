@@ -481,7 +481,6 @@ namespace <#=this.Config.Namespace#>.Model
 
             if (disposing)
             {
-                // TODO: Dispose request stream if it still exists.
 <#
                 if (this.Structure != null) 
                 {

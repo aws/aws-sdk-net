@@ -27,7 +27,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             docs.Append("The Func set for this property by the consumer of the SDK is used to stream events into the service. Consumers\n");
             docs.Append("provide a Func that the SDK will continue to call to get events to send. When the consumer is done streaming\n");
             docs.Append("events to the service the Func can return null to stop the SDK calling the Func for new events. The Func must\n");
-            docs.Append("be return an event known by the service which can be identified by implementing the IInvokeModelWithBidirectionalStreamInputEvent\n");
+            docs.Append($"return an event known by the service which can be identified by implementing the I{member.ModelShape.Name}Event\n");
             docs.Append("interface. The known implementatons in the SDK for this interface are:\n");
 
             docs.Append("<list type=\"bullet\">\n");
