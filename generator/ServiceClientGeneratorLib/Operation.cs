@@ -525,10 +525,35 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Determines if any of the ResponseStructure (Output) shapes are marked with "eventstream":true.
+        /// </summary>
         public bool IsEventStreamOutput => ResponseStructure?.Members?.Any(
                                                member => member.Shape?.IsEventStream ?? false)
                                            ?? false;
+
+        /// <summary>
+        /// Determines if any of the RequestStructure (Input) shapes are marked with "eventstream":true.
+        /// </summary>
+        public bool IsEventStreamInput => RequestStructure?.Members?.Any(
+                                               member => member.Shape?.IsEventStream ?? false)
+                                           ?? false;
+
+        /// <summary>
+        /// Determines if both the RequestStructure (Input) and ResponseStructure (Output) shapes contain shapes 
+        /// marked with "eventstream":true. When true, the operation is a bi-directional event stream operation
+        /// which requires H2 support when "protocolSettings":{"h2":"eventstreams"}, "protocolSettings":{"h2":"optional"},
+        /// or "protocolSettings":{"h2":"required"} is modeled for the service.
+        /// </summary>
+        public bool IsEventStreamBidi
+        {
+            get
+            {
+                return IsEventStreamInput && IsEventStreamOutput;
+            }
+        }
         
+
         /// <summary>
         /// Determines if the request structure will have members in the header
         /// </summary>

@@ -442,12 +442,18 @@ namespace ServiceClientGenerator
                     {
                         operation = new Operation(this, kvp.Key, kvp.Value);
                     }
+
                     if (operation.IsExcluded)
                     {
                         ExcludedOperations.Add(operation.Name);
                     }
-                    // Event Streams are not supported (yet)
+                    // H2 event streams are not yet supported
                     else if (H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+                    {
+                        ExcludedOperations.Add(operation.Name);
+                    }
+                    // H2 bi-directional (bidi) event streams are not yet supported
+                    else if (H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi)
                     {
                         ExcludedOperations.Add(operation.Name);
                     }
