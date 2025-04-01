@@ -32,7 +32,7 @@ namespace Amazon.AutoScalingPlans
     public partial class AmazonAutoScalingPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Auto Scaling Plans", "3.7.400.124");
+            InternalSDKUtils.BuildUserAgentString("Auto Scaling Plans", "3.7.400.125");
 
         private string _userAgent = UserAgentString;
         ///<summary>

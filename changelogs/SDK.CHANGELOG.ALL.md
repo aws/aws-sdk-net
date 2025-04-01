@@ -1,3 +1,12 @@
+### 3.7.1014.0 (2025-04-01 18:25 UTC)
+* CleanRooms (3.7.405.0)
+	* This release adds support for updating the analytics engine of a collaboration.
+* SageMaker (3.7.434.0)
+	* Added tagging support for SageMaker notebook instance lifecycle configurations
+* Core 3.7.402.31
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1013.0 (2025-03-31 18:45 UTC)
 * BedrockRuntime (3.7.416.0)
 	* Add Prompt Caching support to Converse and ConverseStream APIs
