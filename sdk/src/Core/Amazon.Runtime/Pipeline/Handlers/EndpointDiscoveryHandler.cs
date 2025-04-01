@@ -38,7 +38,12 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
-            var immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
+            
+            ImmutableCredentials immutableCredentials = null;
+            if (requestContext.Identity is AWSCredentials credentials)
+            {
+                immutableCredentials = credentials.GetCredentials();
+            }
 
             PreInvoke(executionContext, immutableCredentials);
 
@@ -71,7 +76,12 @@ namespace Amazon.Runtime.Internal
         {
             var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
-            var immutableCredentials = await ((requestContext.Identity as AWSCredentials)?.GetCredentialsAsync()).ConfigureAwait(false);
+
+            ImmutableCredentials immutableCredentials = null;
+            if (requestContext.Identity is AWSCredentials credentials)
+            {
+                immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            }
 
             PreInvoke(executionContext, immutableCredentials);
 

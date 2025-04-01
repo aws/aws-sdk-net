@@ -105,7 +105,10 @@ namespace Amazon.Runtime.Internal
             requestContext.CSMCallAttempt.Api = CSMUtilities.
                 GetApiNameFromRequest(requestContext.Request.RequestName, requestContext.ServiceMetaData.OperationNameMapping, requestContext.CSMCallAttempt.Service);
 
-            requestContext.CSMCallAttempt.AccessKey = (requestContext.Identity as AWSCredentials)?.GetCredentials()?.AccessKey;
+            if (requestContext.Identity is AWSCredentials credentials)
+            {
+                requestContext.CSMCallAttempt.AccessKey = credentials.GetCredentials().AccessKey;
+            }
 
             requestContext.CSMCallAttempt.AttemptLatency = (long)requestContext
                 .Metrics.StopEvent(Metric.CSMAttemptLatency)

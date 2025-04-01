@@ -106,12 +106,14 @@ namespace Amazon.Runtime.Internal
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
                 ImmutableCredentials immutableCredentials = null;
-
-                using (TracingUtilities.CreateSpan(requestContext, TelemetryConstants.CredentialsRetrievalSpanName))
-                using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
-                using (requestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
+                if (requestContext.Identity is AWSCredentials awsCredentials)
                 {
-                    immutableCredentials = (requestContext.Identity as AWSCredentials)?.GetCredentials();
+                    using (TracingUtilities.CreateSpan(requestContext, TelemetryConstants.CredentialsRetrievalSpanName))
+                    using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
+                    using (requestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
+                    {
+                        immutableCredentials = awsCredentials.GetCredentials();
+                    }
                 }
 
                 if (immutableCredentials?.UseToken == true && 
@@ -168,10 +170,8 @@ namespace Amazon.Runtime.Internal
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
-                var awsCredentials = requestContext.Identity as AWSCredentials;
                 ImmutableCredentials immutableCredentials = null;
-
-                if (awsCredentials != null)
+                if (requestContext.Identity is AWSCredentials awsCredentials)
                 {
                     using (TracingUtilities.CreateSpan(requestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                     using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.ResolveIdentityDurationMetricName))

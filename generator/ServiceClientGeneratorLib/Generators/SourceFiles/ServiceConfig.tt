@@ -20,7 +20,6 @@ namespace <#=this.Config.Namespace#>
     /// <summary>
     /// Configuration for accessing Amazon <#=this.Config.ClassName#> service
     /// </summary>
-    [AWSSignerType("<#=Config.ServiceModel.SignatureVersion#>")]
     public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
     {
         private static readonly string UserAgentString =
