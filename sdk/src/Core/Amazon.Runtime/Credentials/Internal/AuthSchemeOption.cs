@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Credentials.Internal
         };
 
         /// <summary>
-        /// Default auth scheme options for services / operations that that only support SigV4A.
+        /// Default auth scheme options for services / operations that that only support bearer authentication.
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_BEARER = new()
         {

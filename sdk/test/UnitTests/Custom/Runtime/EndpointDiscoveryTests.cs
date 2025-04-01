@@ -64,7 +64,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config, baseUrl: endpoint);
             var executionContext = CreateExecutionContext(client, config, true, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual(expectedEndpoint,
@@ -84,7 +84,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, true, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
@@ -115,7 +115,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig();
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, true, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/",
@@ -156,7 +156,7 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
@@ -178,7 +178,7 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             Assert.AreEqual("https://test123.amazonaws.com/shared/CreateTable",
@@ -208,7 +208,7 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, true, identifiers);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             Utils.AssertExceptionExpected(
                 () => { EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials); },
@@ -227,7 +227,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY);
@@ -247,7 +247,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, false, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY);
@@ -268,7 +268,7 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, false, identifiers);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
             var endpoints = client.WaitForCachedValue(CACHEKEY_IDENTIFIERS);
@@ -287,7 +287,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config, true);
             var executionContext = CreateExecutionContext(client, config, false, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
@@ -303,7 +303,7 @@ namespace AWSSDK.UnitTests
             var config = SetupConfig(true);
             var client = new EndpointDiscoveryTestClient(config);
             var executionContext = CreateExecutionContext(client, config, false, null);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
@@ -321,7 +321,7 @@ namespace AWSSDK.UnitTests
             SortedDictionary<string, string> identifiers = new SortedDictionary<string, string>();
             identifiers.Add(IDENTIFIER_NAME, "test");
             var executionContext = CreateExecutionContext(client, config, false, identifiers);
-            var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+            var immutableCredentials = GetCredentialsFromContext(executionContext);
 
             EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
@@ -343,7 +343,7 @@ namespace AWSSDK.UnitTests
                 var config = SetupConfig();
                 var client = new EndpointDiscoveryTestClient(config);
                 var executionContext = CreateExecutionContext(client, config, true, null);
-                var immutableCredentials = (executionContext.RequestContext.Identity as AWSCredentials)?.GetCredentials();
+                var immutableCredentials = GetCredentialsFromContext(executionContext);
                 EndpointDiscoveryHandler.DiscoverEndpoints(executionContext.RequestContext, false, immutableCredentials);
 
                 Assert.AreEqual(1, client.CacheCount);
@@ -429,6 +429,16 @@ namespace AWSSDK.UnitTests
         {
             return endpoints.Any(endpoint =>
                 string.Equals(endpoint?.Address, address, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private ImmutableCredentials GetCredentialsFromContext(ExecutionContext executionContext)
+        {
+            if (executionContext.RequestContext.Identity is AWSCredentials credentials)
+            {
+                return credentials.GetCredentials();
+            }
+
+            return null;
         }
     }
 
