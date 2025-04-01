@@ -1,15 +1,20 @@
-﻿using Amazon.Runtime;
+﻿#if NET8_0_OR_GREATER
+using Amazon.Runtime;
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Pipeline.HttpHandler;
 using Moq;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace UnitTests.NetStandard.Core
 {
+
     public class RequestEventStreamTests
     {
         [Fact]
@@ -162,6 +167,97 @@ namespace UnitTests.NetStandard.Core
             Assert.Equal(eventPayload, innerEventMessage.Payload);
         }
 
+        [Fact]
+        public async Task HttpContentStreamAllData()
+        {
+            var publisher = new TestHttpContentRequestStreamHandle.TestPublisher();
+            publisher.AddData(new byte[] { 1 });
+            publisher.AddData(new byte[] { 2, 3 });
+
+            Assert.Equal(2, publisher.Count);
+
+            var content = new TestHttpContentRequestStreamHandle(publisher);
+
+            var memoryStream = new MemoryStream();
+            Task task = content.InvokeSerializeToStreamAsync(memoryStream);
+
+            await Task.Delay(2000);
+            // After the delay the HttpContentRequestStreamHandle Task should still be running till it is disposed
+            Assert.False(task.IsCompletedSuccessfully);
+
+            content.Dispose();
+            await Task.Delay(2000);
+            Assert.True(task.IsCompletedSuccessfully);
+
+            // Should be 3 bytes. 1 byte for the first data and 2 bytes for the second data.
+            Assert.Equal(3, memoryStream.Length);
+        }
+
+        [Fact]
+        public void HttpContentEnsureEarlierDisposeDoesnotCauseNPE()
+        {
+            var publisher = new TestHttpContentRequestStreamHandle.TestPublisher(shouldDiposeAfterWrite: true);
+            publisher.AddData(new byte[] { 1 });
+            publisher.AddData(new byte[] { 2, 3 });
+
+            var content = new TestHttpContentRequestStreamHandle(publisher);
+
+            var memoryStream = new MemoryStream();
+            Task task = content.InvokeSerializeToStreamAsync(memoryStream);
+
+            Assert.True(task.IsCompletedSuccessfully);
+        }
+
+        public class TestHttpContentRequestStreamHandle : HttpContentRequestStreamHandle
+        {
+            public TestHttpContentRequestStreamHandle(TestPublisher publisher)
+                : base(new HttpRequestMessage(), publisher) 
+            {
+                publisher.Parent = this;
+            }
+
+            public async Task InvokeSerializeToStreamAsync(Stream stream)
+            {
+                await SerializeToStreamAsync(stream, null);
+            }
+
+            public class TestPublisher : IHttpRequestStreamPublisher
+            {
+                public TestHttpContentRequestStreamHandle Parent { get; set; }
+
+                bool _shouldDiposeAfterWrite = false;
+                Queue<byte[]> _data = new Queue<byte[]>();
+
+                public TestPublisher(bool shouldDiposeAfterWrite = false)
+                {
+                    _shouldDiposeAfterWrite = shouldDiposeAfterWrite;
+                }
+
+                public void AddData(byte[] data)
+                {
+                    _data.Enqueue(data);
+                }
+
+                public Task<byte[]> NextBytesAsync()
+                {
+                    if (_data.TryDequeue(out var item))
+                    {
+                        if (_shouldDiposeAfterWrite)
+                        {
+                            Parent.Dispose();
+                            _shouldDiposeAfterWrite = false;
+                        }
+
+                        return Task.FromResult(item);
+                    }
+
+                    return Task.FromResult((byte[])null);
+                }
+
+                public int Count => _data.Count;
+            }
+        }
+
         public class FakeEventStreamPublisher : EventStreamPublisher
         {
             Queue<Item> _events = new Queue<Item>();
@@ -190,8 +286,12 @@ namespace UnitTests.NetStandard.Core
 
             public override Task<IEventStreamMessage> NextEventAsync()
             {
-                var item = _events.Dequeue();
-                return Task.FromResult(CreateEventStreamMessage(item.EventType, item.ContentType, item.MarshalledEventHeaders, item.EventPayload));
+                if (_events.TryDequeue(out var item))
+                {
+                    return Task.FromResult(CreateEventStreamMessage(item.EventType, item.ContentType, item.MarshalledEventHeaders, item.EventPayload));
+                }
+
+                return Task.FromResult((IEventStreamMessage)null);
             }
 
             class Item
@@ -204,3 +304,4 @@ namespace UnitTests.NetStandard.Core
         }
     }
 }
+#endif
