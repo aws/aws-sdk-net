@@ -387,6 +387,13 @@ namespace Amazon.Runtime
         /// </summary>
         ResponseChecksumValidation ResponseChecksumValidation { get; }
 
+        /// <summary>
+        /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
+        /// to the cell responsible for a given account, which avoids the additional latency of extra backend hops and reduces
+        /// complexity in the routing layer.
+        /// </summary>
+        public AccountIdEndpointMode AccountIdEndpointMode { get; }
+
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

@@ -68,10 +68,12 @@ namespace AWSSDK.UnitTests
                 ServiceURL = serviceURL,
                 UseHttp = true
             };
+            var originalRequest = new MockAmazonWebServiceRequest();
             var requestContext = new RequestContext(false, new NullSigner())
             {
                 ClientConfig = config,
-                Request = new DefaultRequest(new MockAmazonWebServiceRequest(), "test-service")
+                Request = new DefaultRequest(originalRequest, "test-service"),
+                OriginalRequest = originalRequest,
             };
 
             var executionContext = new ExecutionContext(requestContext, null);

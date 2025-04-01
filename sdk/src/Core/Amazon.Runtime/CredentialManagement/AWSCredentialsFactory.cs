@@ -199,14 +199,16 @@ namespace Amazon.Runtime.CredentialManagement
         {
             if (profileType.HasValue)
             {
+                AWSCredentials awsCredentials = null;
                 switch (profileType)
                 {
                     case CredentialProfileType.Basic:
-                        var basicCredentials = new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
-                        basicCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE);
-                        return basicCredentials;
+                        awsCredentials = new BasicAWSCredentials(options.AccessKey, options.SecretKey, options.AwsAccountId);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE);
+                        break;
                     case CredentialProfileType.Session:
-                        return new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId);
+                        awsCredentials = new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token, options.AwsAccountId);
+                        break;
                     case CredentialProfileType.AssumeRole:
                     case CredentialProfileType.AssumeRoleExternal:
                     case CredentialProfileType.AssumeRoleMFA:
@@ -252,10 +254,10 @@ namespace Amazon.Runtime.CredentialManagement
                             MfaSerialNumber = options.MfaSerial
                         };
 
-                        var assumeRoleCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
-                        assumeRoleCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_SOURCE_PROFILE);
-                        return assumeRoleCredentials;
-                    
+                        awsCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_SOURCE_PROFILE);
+                        break;
+
                     case CredentialProfileType.AssumeRoleCredentialSource:
                     case CredentialProfileType.AssumeRoleCredentialSourceSessionName:
                         // get credentials specified by credentialSource
@@ -276,34 +278,30 @@ namespace Amazon.Runtime.CredentialManagement
                         roleSessionName = options.RoleSessionName ?? RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
                         assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
 
-                        var assumeRoleSourceCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
-                        assumeRoleSourceCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_NAMED_PROVIDER);
-                        return assumeRoleSourceCredentials;
-                    
+                        awsCredentials = new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_NAMED_PROVIDER);
+                        break;
+
                     case CredentialProfileType.AssumeRoleWithWebIdentity:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
-                        var assumeRoleWebIdentityCredentials = new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
-                        assumeRoleWebIdentityCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN);
-                        return assumeRoleWebIdentityCredentials;
-                    
+                        awsCredentials = new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_STS_WEB_ID_TOKEN);
+                        break;
+
                     case CredentialProfileType.SSO:
-                    {
-                        var ssoCredentialsOptions = new SSOAWSCredentialsOptions 
-                        { 
+                        var ssoCredentialsOptions = new SSOAWSCredentialsOptions
+                        {
                             SessionName = options.SsoSession,
                             Scopes = options.SsoRegistrationScopes?.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()).ToList()
                         };
 
                         var isLegacyFormat = string.IsNullOrEmpty(options.SsoSession);
-                        var ssoCredentials = new SSOAWSCredentials(options.SsoAccountId, options.SsoRegion, options.SsoRoleName, options.SsoStartUrl, ssoCredentialsOptions);
-                        ssoCredentials.FeatureIdSources.Add(isLegacyFormat ? UserAgentFeatureId.CREDENTIALS_PROFILE_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_PROFILE_SSO);
+                        awsCredentials = new SSOAWSCredentials(options.SsoAccountId, options.SsoRegion, options.SsoRoleName, options.SsoStartUrl, ssoCredentialsOptions);
+                        awsCredentials.FeatureIdSources.Add(isLegacyFormat ? UserAgentFeatureId.CREDENTIALS_PROFILE_SSO_LEGACY : UserAgentFeatureId.CREDENTIALS_PROFILE_SSO);
+                        break;
 
-                        return ssoCredentials;
-                    }
-      
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
-
                         if (UserCrypto.IsUserCryptAvailable)
                         {
                             var federatedOptions = new FederatedAWSCredentialsOptions()
@@ -312,17 +310,18 @@ namespace Amazon.Runtime.CredentialManagement
                                 UserIdentity = options.UserIdentity,
                                 ProfileName = profileName
                             };
-                            return new FederatedAWSCredentials(new SAMLEndpointManager().GetEndpoint(options.EndpointName),
+                            awsCredentials = new FederatedAWSCredentials(new SAMLEndpointManager().GetEndpoint(options.EndpointName),
                                 options.RoleArn, federatedOptions);
+                            break;
                         }
                         else
                         {
                             return ThrowOrReturnNull("Federated credentials are not available on this platform.", null, throwIfInvalid);
                         }
                     case CredentialProfileType.CredentialProcess:
-                        var processCredentials = new ProcessAWSCredentials(options.CredentialProcess, options.AwsAccountId);
-                        processCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_PROCESS);
-                        return processCredentials;
+                        awsCredentials = new ProcessAWSCredentials(options.CredentialProcess, options.AwsAccountId);
+                        awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_PROFILE_PROCESS);
+                        break;
 
                     default:
                         var defaultMessage = profileName == null
@@ -333,6 +332,11 @@ namespace Amazon.Runtime.CredentialManagement
 
                         return ThrowOrReturnNull(defaultMessage, null, throwIfInvalid);
                 }
+
+                if (profileSource is NetSDKCredentialsFile)
+                    awsCredentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_AWS_SDK_STORE);
+
+                return awsCredentials;
             }
             else
             {
