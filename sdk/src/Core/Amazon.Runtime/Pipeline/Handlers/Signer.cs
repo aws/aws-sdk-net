@@ -15,6 +15,8 @@
 
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.UserAgent;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Tracing;
@@ -133,6 +135,10 @@ namespace Amazon.Runtime.Internal
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
+                if (!string.IsNullOrEmpty(immutableCredentials?.AccountId))
+                {
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RESOLVED_ACCOUNT_ID);
+                }
 
                 requestContext.Signer.Sign(
                     requestContext.Request,
@@ -197,6 +203,10 @@ namespace Amazon.Runtime.Internal
                         default:
                             throw new InvalidDataException("Cannot determine protocol");
                     }
+                }
+                if (!string.IsNullOrEmpty(immutableCredentials?.AccountId))
+                {
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.RESOLVED_ACCOUNT_ID);
                 }
 
                 await requestContext.Signer

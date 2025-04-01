@@ -26,6 +26,7 @@ using System.Globalization;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.Runtime.Internal
 {
@@ -503,6 +504,9 @@ namespace Amazon.Runtime.Internal
 
         private void SetUserAgentHeader(IRequestContext requestContext)
         {
+            if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
+
             var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
             Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);
 

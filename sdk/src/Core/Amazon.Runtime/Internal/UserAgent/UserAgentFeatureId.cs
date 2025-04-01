@@ -156,9 +156,9 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId CREDENTIALS_STS_ASSUME_ROLE_WEB_ID = new UserAgentFeatureId("k");
 
         /// <summary>
-        /// An operation called using credentials resolved from STS using a federation token.
+        /// An operation called using credentials resolved from STS using assume role with SAML.
         /// </summary>
-        public static readonly UserAgentFeatureId CREDENTIALS_STS_FEDERATION_TOKEN = new UserAgentFeatureId("l");
+        public static readonly UserAgentFeatureId CREDENTIALS_STS_ASSUME_ROLE_SAML = new UserAgentFeatureId("j");
 
         /// <summary>
         /// An operation called using credentials resolved from STS using a session token.
