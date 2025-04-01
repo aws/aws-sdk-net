@@ -248,8 +248,6 @@ namespace Microsoft.Extensions.DependencyInjection
                 collection.Add(serviceDescriptor);
             }
 
-            collection.TryAddTransient<AWSCredentials>(sp => sp.GetRequiredService<IAWSCredentialsFactory>().Create());
-
             return collection;
         }
 
