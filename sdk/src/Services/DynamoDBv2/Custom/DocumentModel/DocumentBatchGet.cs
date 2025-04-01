@@ -464,7 +464,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     break;
 
                 BatchGetItemRequest request = CreateRequest(nextSet);
-                targetTable.AddRequestHandler(request, isAsync: true);
+                targetTable.UpdateRequestUserAgentDetails(request, isAsync: true);
 
                 await CallUntilCompletionAsync(clientToUse, request, results, cancellationToken).ConfigureAwait(false);
             }
@@ -492,7 +492,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     break;
 
                 BatchGetItemRequest request = CreateRequest(nextSet);
-                targetTable.AddRequestHandler(request, isAsync: false);
+                targetTable.UpdateRequestUserAgentDetails(request, isAsync: false);
 
                 CallUntilCompletion(clientToUse, request, results);
             }
