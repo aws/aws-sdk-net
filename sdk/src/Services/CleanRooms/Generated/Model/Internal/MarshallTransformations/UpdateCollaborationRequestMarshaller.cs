@@ -70,6 +70,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnalyticsEngine())
+                {
+                    context.Writer.WritePropertyName("analyticsEngine");
+                    context.Writer.Write(publicRequest.AnalyticsEngine);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
