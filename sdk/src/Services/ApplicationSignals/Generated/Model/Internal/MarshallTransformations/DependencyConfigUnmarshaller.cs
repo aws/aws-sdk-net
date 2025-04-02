@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RequestBasedServiceLevelIndicatorMetric Object
+    /// Response Unmarshaller for DependencyConfig Object
     /// </summary>  
-    public class RequestBasedServiceLevelIndicatorMetricUnmarshaller : IUnmarshaller<RequestBasedServiceLevelIndicatorMetric, XmlUnmarshallerContext>, IUnmarshaller<RequestBasedServiceLevelIndicatorMetric, JsonUnmarshallerContext>
+    public class DependencyConfigUnmarshaller : IUnmarshaller<DependencyConfig, XmlUnmarshallerContext>, IUnmarshaller<DependencyConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RequestBasedServiceLevelIndicatorMetric IUnmarshaller<RequestBasedServiceLevelIndicatorMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DependencyConfig IUnmarshaller<DependencyConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RequestBasedServiceLevelIndicatorMetric Unmarshall(JsonUnmarshallerContext context)
+        public DependencyConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            RequestBasedServiceLevelIndicatorMetric unmarshalledObject = new RequestBasedServiceLevelIndicatorMetric();
+            DependencyConfig unmarshalledObject = new DependencyConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DependencyConfig", targetDepth))
-                {
-                    var unmarshaller = DependencyConfigUnmarshaller.Instance;
-                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("DependencyKeyAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DependencyKeyAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MetricType", targetDepth))
+                if (context.TestExpression("DependencyOperationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MonitoredRequestCountMetric", targetDepth))
-                {
-                    var unmarshaller = MonitoredRequestCountMetricDataQueriesUnmarshaller.Instance;
-                    unmarshalledObject.MonitoredRequestCountMetric = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OperationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TotalRequestCountMetric", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
-                    unmarshalledObject.TotalRequestCountMetric = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DependencyOperationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         }
 
 
-        private static RequestBasedServiceLevelIndicatorMetricUnmarshaller _instance = new RequestBasedServiceLevelIndicatorMetricUnmarshaller();        
+        private static DependencyConfigUnmarshaller _instance = new DependencyConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RequestBasedServiceLevelIndicatorMetricUnmarshaller Instance
+        public static DependencyConfigUnmarshaller Instance
         {
             get
             {

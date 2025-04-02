@@ -37,7 +37,10 @@ namespace Amazon.ApplicationSignals.Model
     {
         private string _arn;
         private DateTime? _createdTime;
+        private DependencyConfig _dependencyConfig;
+        private EvaluationType _evaluationType;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private MetricSourceType _metricSourceType;
         private string _name;
         private string _operationName;
 
@@ -77,6 +80,43 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DependencyConfig. 
+        /// <para>
+        /// Identifies the dependency using the <c>DependencyKeyAttributes</c> and <c>DependencyOperationName</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        public DependencyConfig DependencyConfig
+        {
+            get { return this._dependencyConfig; }
+            set { this._dependencyConfig = value; }
+        }
+
+        // Check to see if DependencyConfig property is set
+        internal bool IsSetDependencyConfig()
+        {
+            return this._dependencyConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Displays whether this is a period-based SLO or a request-based SLO.
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
         }
 
         /// <summary>
@@ -121,6 +161,37 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetKeyAttributes()
         {
             return this._keyAttributes != null && (this._keyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricSourceType. 
+        /// <para>
+        /// Displays the SLI metric source type for this SLO. Supported types are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service operation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Service dependency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CloudWatch metric
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MetricSourceType MetricSourceType
+        {
+            get { return this._metricSourceType; }
+            set { this._metricSourceType = value; }
+        }
+
+        // Check to see if MetricSourceType property is set
+        internal bool IsSetMetricSourceType()
+        {
+            return this._metricSourceType != null;
         }
 
         /// <summary>

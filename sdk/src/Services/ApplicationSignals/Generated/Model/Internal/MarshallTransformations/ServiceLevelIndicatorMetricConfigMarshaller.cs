@@ -48,6 +48,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDependencyConfig())
+            {
+                context.Writer.WritePropertyName("DependencyConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DependencyConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DependencyConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");

@@ -35,12 +35,33 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ListServiceLevelObjectivesRequest : AmazonApplicationSignalsRequest
     {
+        private DependencyConfig _dependencyConfig;
         private bool? _includeLinkedAccounts;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _maxResults;
+        private List<string> _metricSourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _operationName;
         private string _sloOwnerAwsAccountId;
+
+        /// <summary>
+        /// Gets and sets the property DependencyConfig. 
+        /// <para>
+        /// Identifies the dependency using the <c>DependencyKeyAttributes</c> and <c>DependencyOperationName</c>.
+        /// 
+        /// </para>
+        /// </summary>
+        public DependencyConfig DependencyConfig
+        {
+            get { return this._dependencyConfig; }
+            set { this._dependencyConfig = value; }
+        }
+
+        // Check to see if DependencyConfig property is set
+        internal bool IsSetDependencyConfig()
+        {
+            return this._dependencyConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
@@ -131,6 +152,39 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricSourceTypes. 
+        /// <para>
+        /// Use this optional field to only include SLOs with the specified metric source types
+        /// in the output. Supported types are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service operation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Service dependency
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CloudWatch metric
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> MetricSourceTypes
+        {
+            get { return this._metricSourceTypes; }
+            set { this._metricSourceTypes = value; }
+        }
+
+        // Check to see if MetricSourceTypes property is set
+        internal bool IsSetMetricSourceTypes()
+        {
+            return this._metricSourceTypes != null && (this._metricSourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
