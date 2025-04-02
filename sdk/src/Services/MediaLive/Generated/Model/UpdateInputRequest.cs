@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private MulticastSettingsUpdateRequest _multicastSettings;
         private string _name;
         private string _roleArn;
+        private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
         private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
         private SrtSettingsRequest _srtSettings;
 
@@ -171,6 +172,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Smpte2110ReceiverGroupSettings. Include this parameter
+        /// if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+        /// </summary>
+        public Smpte2110ReceiverGroupSettings Smpte2110ReceiverGroupSettings
+        {
+            get { return this._smpte2110ReceiverGroupSettings; }
+            set { this._smpte2110ReceiverGroupSettings = value; }
+        }
+
+        // Check to see if Smpte2110ReceiverGroupSettings property is set
+        internal bool IsSetSmpte2110ReceiverGroupSettings()
+        {
+            return this._smpte2110ReceiverGroupSettings != null;
         }
 
         /// <summary>

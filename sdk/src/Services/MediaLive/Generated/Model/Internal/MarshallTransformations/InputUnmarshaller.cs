@@ -150,6 +150,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("smpte2110ReceiverGroupSettings", targetDepth))
+                {
+                    var unmarshaller = Smpte2110ReceiverGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Smpte2110ReceiverGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InputSource, InputSourceUnmarshaller>(InputSourceUnmarshaller.Instance);

@@ -166,6 +166,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetSmpte2110ReceiverGroupSettings())
+                {
+                    context.Writer.WritePropertyName("smpte2110ReceiverGroupSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = Smpte2110ReceiverGroupSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Smpte2110ReceiverGroupSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSources())
                 {
                     context.Writer.WritePropertyName("sources");

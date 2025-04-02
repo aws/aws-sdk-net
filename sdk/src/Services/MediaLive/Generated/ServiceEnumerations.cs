@@ -11463,6 +11463,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputType RTP_PUSH = new InputType("RTP_PUSH");
         /// <summary>
+        /// Constant SMPTE_2110_RECEIVER_GROUP for InputType
+        /// </summary>
+        public static readonly InputType SMPTE_2110_RECEIVER_GROUP = new InputType("SMPTE_2110_RECEIVER_GROUP");
+        /// <summary>
         /// Constant SRT_CALLER for InputType
         /// </summary>
         public static readonly InputType SRT_CALLER = new InputType("SRT_CALLER");

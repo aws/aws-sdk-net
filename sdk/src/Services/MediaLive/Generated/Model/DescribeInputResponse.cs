@@ -48,6 +48,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private string _roleArn;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Smpte2110ReceiverGroupSettings _smpte2110ReceiverGroupSettings;
         private List<InputSource> _sources = AWSConfigs.InitializeCollections ? new List<InputSource>() : null;
         private SrtSettings _srtSettings;
         private InputState _state;
@@ -277,6 +278,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Smpte2110ReceiverGroupSettings. Include this parameter
+        /// if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+        /// </summary>
+        public Smpte2110ReceiverGroupSettings Smpte2110ReceiverGroupSettings
+        {
+            get { return this._smpte2110ReceiverGroupSettings; }
+            set { this._smpte2110ReceiverGroupSettings = value; }
+        }
+
+        // Check to see if Smpte2110ReceiverGroupSettings property is set
+        internal bool IsSetSmpte2110ReceiverGroupSettings()
+        {
+            return this._smpte2110ReceiverGroupSettings != null;
         }
 
         /// <summary>
