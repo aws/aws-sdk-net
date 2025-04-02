@@ -50,6 +50,7 @@ namespace Amazon.LexModelsV2.Model
         private string _localeId;
         private List<OutputContext> _outputContexts = AWSConfigs.InitializeCollections ? new List<OutputContext>() : null;
         private string _parentIntentSignature;
+        private QInConnectIntentConfiguration _qInConnectIntentConfiguration;
         private QnAIntentConfiguration _qnaIntentConfiguration;
         private List<SampleUtterance> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<SampleUtterance>() : null;
 
@@ -347,6 +348,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetParentIntentSignature()
         {
             return this._parentIntentSignature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QInConnectIntentConfiguration. 
+        /// <para>
+        /// Qinconnect intent configuration details for the create intent response.
+        /// </para>
+        /// </summary>
+        public QInConnectIntentConfiguration QInConnectIntentConfiguration
+        {
+            get { return this._qInConnectIntentConfiguration; }
+            set { this._qInConnectIntentConfiguration = value; }
+        }
+
+        // Check to see if QInConnectIntentConfiguration property is set
+        internal bool IsSetQInConnectIntentConfiguration()
+        {
+            return this._qInConnectIntentConfiguration != null;
         }
 
         /// <summary>

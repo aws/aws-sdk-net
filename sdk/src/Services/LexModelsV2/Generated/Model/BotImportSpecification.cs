@@ -37,6 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botName;
         private Dictionary<string, string> _botTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataPrivacy _dataPrivacy;
+        private ErrorLogSettings _errorLogSettings;
         private int? _idleSessionTTLInSeconds;
         private string _roleArn;
         private Dictionary<string, string> _testBotAliasTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -95,6 +96,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDataPrivacy()
         {
             return this._dataPrivacy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorLogSettings. 
+        /// <para>
+        /// Allows you to configure destinations where error logs will be published during the
+        /// bot import process.
+        /// </para>
+        /// </summary>
+        public ErrorLogSettings ErrorLogSettings
+        {
+            get { return this._errorLogSettings; }
+            set { this._errorLogSettings = value; }
+        }
+
+        // Check to see if ErrorLogSettings property is set
+        internal bool IsSetErrorLogSettings()
+        {
+            return this._errorLogSettings != null;
         }
 
         /// <summary>

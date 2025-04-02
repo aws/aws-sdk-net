@@ -148,6 +148,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.ParentIntentSignature = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("qInConnectIntentConfiguration", targetDepth))
+                {
+                    var unmarshaller = QInConnectIntentConfigurationUnmarshaller.Instance;
+                    response.QInConnectIntentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("qnAIntentConfiguration", targetDepth))
                 {
                     var unmarshaller = QnAIntentConfigurationUnmarshaller.Instance;

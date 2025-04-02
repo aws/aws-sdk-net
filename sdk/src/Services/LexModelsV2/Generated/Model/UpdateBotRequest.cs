@@ -41,6 +41,7 @@ namespace Amazon.LexModelsV2.Model
         private BotType _botType;
         private DataPrivacy _dataPrivacy;
         private string _description;
+        private ErrorLogSettings _errorLogSettings;
         private int? _idleSessionTTLInSeconds;
         private string _roleArn;
 
@@ -158,6 +159,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorLogSettings. 
+        /// <para>
+        /// Allows you to modify how Amazon Lex logs errors during bot interactions, including
+        /// destinations for error logs and the types of errors to be captured.
+        /// </para>
+        /// </summary>
+        public ErrorLogSettings ErrorLogSettings
+        {
+            get { return this._errorLogSettings; }
+            set { this._errorLogSettings = value; }
+        }
+
+        // Check to see if ErrorLogSettings property is set
+        internal bool IsSetErrorLogSettings()
+        {
+            return this._errorLogSettings != null;
         }
 
         /// <summary>

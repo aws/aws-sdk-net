@@ -42,6 +42,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
+        private ErrorLogSettings _errorLogSettings;
         private int? _idleSessionTTLInSeconds;
         private DateTime? _lastUpdatedDateTime;
         private string _roleArn;
@@ -194,6 +195,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorLogSettings. 
+        /// <para>
+        /// Settings for managing error logs within the response of an update bot operation.
+        /// </para>
+        /// </summary>
+        public ErrorLogSettings ErrorLogSettings
+        {
+            get { return this._errorLogSettings; }
+            set { this._errorLogSettings = value; }
+        }
+
+        // Check to see if ErrorLogSettings property is set
+        internal bool IsSetErrorLogSettings()
+        {
+            return this._errorLogSettings != null;
         }
 
         /// <summary>

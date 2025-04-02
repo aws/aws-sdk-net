@@ -106,6 +106,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("errorLogSettings", targetDepth))
+                {
+                    var unmarshaller = ErrorLogSettingsUnmarshaller.Instance;
+                    response.ErrorLogSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
