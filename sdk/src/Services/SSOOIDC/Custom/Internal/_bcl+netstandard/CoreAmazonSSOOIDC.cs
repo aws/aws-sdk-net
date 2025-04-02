@@ -21,6 +21,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SSOOIDC.Model;
@@ -70,6 +72,7 @@ namespace Amazon.SSOOIDC.Internal
         {
             // PkceFlowOptions is a newer property that must be specified when using the PKCE flow. If it's null, we'll default to the device code flow.
             var useDeviceCodeFlow = request.PkceFlowOptions == null;
+            var featureId = useDeviceCodeFlow ? UserAgentFeatureId.SSO_LOGIN_DEVICE : UserAgentFeatureId.SSO_LOGIN_AUTH;
 
             // Identity Center supports using the start URL as the issuer URL (if one was not provided).
             var issuerUrl = request.PkceFlowOptions?.IssuerUrl ?? request.StartUrl;
@@ -102,6 +105,7 @@ namespace Amazon.SSOOIDC.Internal
             }
 
             InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
+            ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(featureId);
             var registerClientResponse = client.RegisterClient(registerClientRequest);
 
             if (useDeviceCodeFlow)
@@ -113,6 +117,7 @@ namespace Amazon.SSOOIDC.Internal
                     StartUrl = request.StartUrl,
                 };
                 InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(featureId);
 
                 var startDeviceAuthorizationResponse = client.StartDeviceAuthorization(startDeviceAuthorizationRequest);
 
@@ -135,6 +140,7 @@ namespace Amazon.SSOOIDC.Internal
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
 
                 createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval.Value, deviceCodeExpiration, context);
             }
@@ -158,6 +164,7 @@ namespace Amazon.SSOOIDC.Internal
                     CodeVerifier = codeVerifier,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
 
                 createTokenResponse = client.CreateToken(createTokenRequest);
             }
@@ -225,6 +232,7 @@ namespace Amazon.SSOOIDC.Internal
         {
             // PkceFlowOptions is a newer property that must be specified when using the PKCE flow. If it's null, we'll default to the device code flow.
             var useDeviceCodeFlow = request.PkceFlowOptions == null;
+            var featureId = useDeviceCodeFlow ? UserAgentFeatureId.SSO_LOGIN_DEVICE : UserAgentFeatureId.SSO_LOGIN_AUTH;
 
             // Identity Center supports using the start URL as the issuer URL (if one was not provided).
             var issuerUrl = request.PkceFlowOptions?.IssuerUrl ?? request.StartUrl;
@@ -257,6 +265,7 @@ namespace Amazon.SSOOIDC.Internal
             }
 
             InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
+            ((IAmazonWebServiceRequest)registerClientRequest).UserAgentDetails.AddFeature(featureId);
             var registerClientResponse = await client.RegisterClientAsync(registerClientRequest, cancellationToken).ConfigureAwait(false);
 
             if (useDeviceCodeFlow)
@@ -268,6 +277,7 @@ namespace Amazon.SSOOIDC.Internal
                     StartUrl = request.StartUrl,
                 };
                 InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)startDeviceAuthorizationRequest).UserAgentDetails.AddFeature(featureId);
 
                 var startDeviceAuthorizationResponse =
                     await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
@@ -291,6 +301,7 @@ namespace Amazon.SSOOIDC.Internal
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
 
                 createTokenResponse = await PollForSsoTokenAsync(
                     client,
@@ -324,6 +335,7 @@ namespace Amazon.SSOOIDC.Internal
                     CodeVerifier = codeVerifier,
                 };
                 InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
+                ((IAmazonWebServiceRequest)createTokenRequest).UserAgentDetails.AddFeature(featureId);
 
                 createTokenResponse = await client.CreateTokenAsync(createTokenRequest, cancellationToken).ConfigureAwait(false);
             }
