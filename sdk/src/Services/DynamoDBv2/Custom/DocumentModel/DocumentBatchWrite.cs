@@ -498,7 +498,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            targetTable.AddRequestHandler(request, isAsync);
+            targetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }
 

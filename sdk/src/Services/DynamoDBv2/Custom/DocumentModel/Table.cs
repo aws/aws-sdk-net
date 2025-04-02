@@ -28,6 +28,7 @@ using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Internal.UserAgent;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -499,39 +500,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return converted;
         }
 
-        internal void UserAgentRequestEventHandlerSync(object sender, RequestEventArgs args)
+        internal void UpdateRequestUserAgentDetails(AmazonDynamoDBRequest request, bool isAsync)
         {
-            UserAgentRequestEventHandler(sender, args, false);
-        }
-        internal void UserAgentRequestEventHandlerAsync(object sender, RequestEventArgs args)
-        {
-            UserAgentRequestEventHandler(sender, args, true);
-        }
+            if (request == null) return;
 
-        internal void AddRequestHandler(AmazonDynamoDBRequest request, bool isAsync)
-        {
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(this.UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(this.UserAgentRequestEventHandlerSync)
-                );
-        }
+            var userAgentDetails = ((Runtime.Internal.IAmazonWebServiceRequest)request).UserAgentDetails;
 
-        private void UserAgentRequestEventHandler(object sender, RequestEventArgs args, bool isAsync)
-        {
-            WebServiceRequestEventArgs wsArgs = args as WebServiceRequestEventArgs;
-            if (wsArgs != null)
+            userAgentDetails.AddUserAgentComponent("ft/ddb-hll");
+            userAgentDetails.AddUserAgentComponent($"md/{(isAsync ? "TableAsync" : "TableSync")}");
+
+            if (this.TableConsumer == DynamoDBConsumer.DataModel)
             {
-                var feature = string.Format(" ft/ddb-hll md/{0} md/{1}", this.TableConsumer, (isAsync ? "TableAsync" : "TableSync"));
-                if (wsArgs.Headers.Keys.Contains(HeaderKeys.UserAgentHeader))
-                {
-                    string currentUserAgent = wsArgs.Headers[HeaderKeys.UserAgentHeader];
-                    wsArgs.Headers[HeaderKeys.UserAgentHeader] = currentUserAgent + feature;
-                }
-                else if (wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
-                {
-                    string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
-                    wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] = currentUserAgent + feature;
-                }
+                userAgentDetails.AddFeature(UserAgentFeatureId.DDB_MAPPER);
+            }
+            else
+            {
+                userAgentDetails.AddUserAgentComponent($"md/{this.TableConsumer}");
             }
         }
 
@@ -572,7 +556,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 TableName = TableName
             };
-            this.AddRequestHandler(req, isAsync: false);
+            this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
 #if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
@@ -1191,7 +1175,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Item = this.ToAttributeMap(doc)
             };
-            this.AddRequestHandler(req, isAsync: false);
+            this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -1249,7 +1233,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Item = this.ToAttributeMap(doc)
             };
-            this.AddRequestHandler(req, isAsync: true);
+            this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -1301,7 +1285,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConsistentRead = currentConfig.ConsistentRead
             };
 
-            this.AddRequestHandler(request, isAsync: false);
+            this.UpdateRequestUserAgentDetails(request, isAsync: false);
 
 #if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
@@ -1336,7 +1320,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConsistentRead = currentConfig.ConsistentRead
             };
 
-            this.AddRequestHandler(request, isAsync: true);
+            this.UpdateRequestUserAgentDetails(request, isAsync: true);
 
             if (currentConfig.AttributesToGet != null)
                 request.AttributesToGet = currentConfig.AttributesToGet;
@@ -1390,7 +1374,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
             };
 
-            this.AddRequestHandler(req, isAsync: false);
+            this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
             ValidateConditional(currentConfig);
 
@@ -1481,7 +1465,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
             };
 
-            this.AddRequestHandler(req, isAsync: true);
+            this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
             ValidateConditional(currentConfig);
 
@@ -1564,7 +1548,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Key = key
             };
-            this.AddRequestHandler(req, isAsync: false);
+            this.UpdateRequestUserAgentDetails(req, isAsync: false);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -1620,7 +1604,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Key = key
             };
-            this.AddRequestHandler(req, isAsync: true);
+            this.UpdateRequestUserAgentDetails(req, isAsync: true);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);

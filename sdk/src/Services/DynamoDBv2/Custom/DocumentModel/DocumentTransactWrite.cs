@@ -764,7 +764,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
             var request = new TransactWriteItemsRequest { TransactItems = transactItems };
-            Items[0].TransactionPart.TargetTable.AddRequestHandler(request, isAsync);
+            Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }
 
