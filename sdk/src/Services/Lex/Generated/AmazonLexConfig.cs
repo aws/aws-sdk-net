@@ -32,7 +32,7 @@ namespace Amazon.Lex
     public partial class AmazonLexConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lex Runtime Service", "3.7.400.125");
+            InternalSDKUtils.BuildUserAgentString("Lex Runtime Service", "3.7.400.126");
 
         private string _userAgent = UserAgentString;
         ///<summary>

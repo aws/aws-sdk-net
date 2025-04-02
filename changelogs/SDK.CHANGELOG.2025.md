@@ -1,3 +1,20 @@
+### 3.7.1015.0 (2025-04-02 18:31 UTC)
+* ApplicationSignals (3.7.406.0)
+	* Application Signals now supports creating Service Level Objectives on service dependencies. Users can now create or update SLOs on discovered service dependencies to monitor their standard application metrics.
+* CodeBuild (3.7.415.0)
+	* This release adds support for environment type WINDOWS_SERVER_2022_CONTAINER in ProjectEnvironment
+* ECR (3.7.410.15)
+	* Fix for customer issues related to AWS account ID and size limitation for token.
+* ECS (3.7.408.62)
+	* This is an Amazon ECS documentation only update to address various tickets.
+* LexModelsV2 (3.7.403.0)
+	* Release feature of errorlogging for lex bot, customer can config this feature in bot version to generate log for error exception which helps debug
+* MediaLive (3.7.414.0)
+	* Added support for SMPTE 2110 inputs when running a channel in a MediaLive Anywhere cluster. This feature enables ingestion of SMPTE 2110-compliant video, audio, and ancillary streams by reading SDP files that AWS Elemental MediaLive can retrieve from a network source.
+* Core 3.7.402.32
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1014.0 (2025-04-01 18:25 UTC)
 * CleanRooms (3.7.405.0)
 	* This release adds support for updating the analytics engine of a collaboration.
