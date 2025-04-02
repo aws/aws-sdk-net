@@ -328,7 +328,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
-                        SourceTable.AddRequestHandler(scanReq, isAsync: false);
+                        SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                         var scanResult = internalClient.Scan(scanReq);
                         foreach (var item in scanResult.Items)
@@ -378,7 +378,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                        SourceTable.AddRequestHandler(queryReq, isAsync: false);
+                        SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                         var queryResult = internalClient.Query(queryReq);
                         foreach (var item in queryResult.Items)
@@ -442,7 +442,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
-                        SourceTable.AddRequestHandler(scanReq, isAsync: true);
+                        SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: true);
 
                         var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken).ConfigureAwait(false);
                         foreach (var item in scanResult.Items)
@@ -484,7 +484,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                        SourceTable.AddRequestHandler(queryReq, isAsync: true);
+                        SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: true);
 
                         var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken).ConfigureAwait(false);
                         foreach (var item in queryResult.Items)
@@ -644,7 +644,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 scanReq.Segment = this.Segment;
                             }
 
-                            SourceTable.AddRequestHandler(scanReq, isAsync: false);
+                            SourceTable.UpdateRequestUserAgentDetails(scanReq, isAsync: false);
 
                             var scanResult = internalClient.Scan(scanReq);
                             count = Matches.Count + scanResult.Count.GetValueOrDefault();
@@ -669,7 +669,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                                 queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                            SourceTable.AddRequestHandler(queryReq, isAsync: false);
+                            SourceTable.UpdateRequestUserAgentDetails(queryReq, isAsync: false);
 
                             var queryResult = internalClient.Query(queryReq);
                             count = Matches.Count + queryResult.Count.GetValueOrDefault();
