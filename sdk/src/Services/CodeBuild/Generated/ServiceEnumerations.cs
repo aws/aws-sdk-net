@@ -790,6 +790,10 @@ namespace Amazon.CodeBuild
         /// Constant WINDOWS_SERVER_2019_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType WINDOWS_SERVER_2019_CONTAINER = new EnvironmentType("WINDOWS_SERVER_2019_CONTAINER");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2022_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType WINDOWS_SERVER_2022_CONTAINER = new EnvironmentType("WINDOWS_SERVER_2022_CONTAINER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
