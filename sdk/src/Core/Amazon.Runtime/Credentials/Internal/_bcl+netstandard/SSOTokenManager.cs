@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -220,7 +221,8 @@ namespace Amazon.Runtime.Credentials.Internal
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error(ex, $"Refreshing SSOToken for [{options.StartUrl}] failed: {ex.Message}");
+                        // Exception message from SSOIDC client has text along with HTTP Body as JSON string.
+                        _logger.Error(ex, $"Refreshing SSOToken for [{options.StartUrl}] failed: {ex.Message.Replace("{", "{{").Replace("}", "}}")}");
                         //if refreshing the token failed that means the refresh token was expired.
                         //if the refresh token is expired and access token is expired and if the user specifies a callback with 
                         //option.SupportsGettingNewToken is true then we will generate a new token.
@@ -484,7 +486,8 @@ namespace Amazon.Runtime.Credentials.Internal
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error(ex, $"Refreshing SSOToken for [{options.Session}] failed: {ex.Message}");
+                        // Exception message from SSOIDC client has text along with HTTP Body as JSON string.
+                        _logger.Error(ex, $"Refreshing SSOToken for [{options.Session}] failed: {ex.Message.Replace("{", "{{").Replace("}", "}}")}");
                         if (ssoToken.IsExpired() && options.SupportsGettingNewToken)
                         {
                             return await GenerateNewTokenAsync(options, cancellationToken).ConfigureAwait(false);
@@ -612,24 +615,11 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private async Task<SsoToken> GenerateNewTokenAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default)
         {
-            if (string.IsNullOrEmpty(options.ClientName))
-            {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
-            }
+            var emptyProperties = GetEmptySSOTokenOptions(options);
 
-            if (options.PkceFlowOptions == null)
+            if (emptyProperties.Count > 0)
             {
-                if (options.SsoVerificationCallback == null)
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
-                }
-            }
-            else
-            {
-                if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync == null)
-                {
-                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync)}");
-                }
+                throw new AmazonClientException($"Error generating new SSO token. Options properties cannot be empty: {string.Join(", ", emptyProperties)}");
             }
 
             var request = new GetSsoTokenRequest
@@ -663,6 +653,33 @@ namespace Amazon.Runtime.Credentials.Internal
             await _ssoTokenFileCache.SaveSsoTokenAsync(token, options.CacheFolderLocation, cancellationToken).ConfigureAwait(false);
 
             return token;
+        }
+
+        private static List<string> GetEmptySSOTokenOptions(SSOTokenManagerGetTokenOptions options)
+        {
+            var emptyProperties = new List<string>();
+
+            if (string.IsNullOrEmpty(options.ClientName))
+            {
+                emptyProperties.Add(nameof(options.ClientName));
+            }
+
+            if (options.PkceFlowOptions == null)
+            {
+                if (options.SsoVerificationCallback == null)
+                {
+                    emptyProperties.Add(nameof(options.SsoVerificationCallback));
+                }
+            }
+            else
+            {
+                if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync == null)
+                {
+                    emptyProperties.Add(nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync));
+                }
+            }
+
+            return emptyProperties;
         }
 #endif
 

@@ -94,7 +94,7 @@ namespace Amazon.Runtime
         /// NOTE: If setting to <c>true</c>, either <see cref="SsoVerificationCallback"/> or <see cref="PkceFlowOptions"/> must 
         /// also be set for authorization flow to succeed.
         /// </summary>
-        public bool SupportsGettingNewToken { get; set; } = true;
+        public bool SupportsGettingNewToken { get; set; } = false;
 
         /// <summary>
         /// The proxy settings to use when calling SSOOIDC and SSO Services.

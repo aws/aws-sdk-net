@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Changed the default value of SSOAWSCredentialsOptions.SupportsGettingNewToken as false and improved error messaging if required SSO options are missing while generating new credentials."
+      ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}
