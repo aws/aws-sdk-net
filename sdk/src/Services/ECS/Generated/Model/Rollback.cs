@@ -62,19 +62,6 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The ARN of the service revision deployed as part of the rollback.
         /// </para>
-        ///  
-        /// <para>
-        /// When the type is <c>GPU</c>, the value is the number of physical <c>GPUs</c> the Amazon
-        /// ECS container agent reserves for the container. The number of GPUs that's reserved
-        /// for all containers in a task can't exceed the number of available GPUs on the container
-        /// instance that the task is launched on.
-        /// </para>
-        ///  
-        /// <para>
-        /// When the type is <c>InferenceAccelerator</c>, the <c>value</c> matches the <c>deviceName</c>
-        /// for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
-        /// specified in a task definition.
-        /// </para>
         /// </summary>
         public string ServiceRevisionArn
         {
