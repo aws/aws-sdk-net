@@ -1,3 +1,8 @@
+### 3.7.1015.1 (2025-04-03 00:38 UTC)
+* Core 3.7.402.33
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1015.0 (2025-04-02 18:31 UTC)
 * ApplicationSignals (3.7.406.0)
 	* Application Signals now supports creating Service Level Objectives on service dependencies. Users can now create or update SLOs on discovered service dependencies to monitor their standard application metrics.
