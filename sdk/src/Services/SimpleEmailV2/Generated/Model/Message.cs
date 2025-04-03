@@ -35,9 +35,29 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class Message
     {
+        private List<Attachment> _attachments = AWSConfigs.InitializeCollections ? new List<Attachment>() : null;
         private Body _body;
         private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private Content _subject;
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        ///  The List of attachments to include in your email. All recipients will receive the
+        /// same attachments.
+        /// </para>
+        /// </summary>
+        public List<Attachment> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Body. 
