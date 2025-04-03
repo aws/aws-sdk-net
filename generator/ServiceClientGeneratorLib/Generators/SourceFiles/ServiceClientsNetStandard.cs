@@ -891,7 +891,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 387 "C:\Dev\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsNetStandard.tt"
 
-        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput))
+        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
         {
 
             
@@ -1237,7 +1237,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 485 "C:\Dev\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsNetStandard.tt"
 
-        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput))
+        if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
         {
 
             

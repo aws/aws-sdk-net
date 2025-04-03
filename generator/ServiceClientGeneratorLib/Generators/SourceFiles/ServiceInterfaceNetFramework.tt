@@ -42,7 +42,8 @@ if (this.Config.ServiceModel.HasPaginators)
 		{
             if(operation.IsInternal || 
 				((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) ||
-				(this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput))
+				(this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || 
+				this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 			)
                 continue;
 		#>
