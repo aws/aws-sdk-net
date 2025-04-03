@@ -578,7 +578,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Creates an OpenSearch Application.
+        /// Creates an OpenSearch UI application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+        /// the OpenSearch user interface in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -877,7 +878,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Deletes an existing OpenSearch Application.
+        /// Deletes a specified OpenSearch application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -2246,7 +2247,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Check the configuration and status of an existing OpenSearch Application.
+        /// Retrieves the configuration and status of an existing OpenSearch application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
         /// 
@@ -2700,7 +2701,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// List all OpenSearch Applications under your account.
+        /// Lists all OpenSearch applications under your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -3789,7 +3790,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Update the OpenSearch Application.
+        /// Updates the configuration and settings of an existing OpenSearch application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 

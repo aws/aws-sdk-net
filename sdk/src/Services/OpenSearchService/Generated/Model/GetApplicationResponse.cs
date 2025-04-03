@@ -48,7 +48,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AppConfigs. 
         /// <para>
-        /// App configurations of the checked OpenSearch Application.
+        /// The configuration settings of the OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp at which the checked OpenSearch Application was created.
+        /// The timestamp when the OpenSearch application was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -101,7 +101,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// Associated data sources to the checked OpenSearch Application.
+        /// The data sources associated with the OpenSearch application.
         /// </para>
         /// </summary>
         public List<DataSource> DataSources
@@ -119,7 +119,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// Endpoint URL of the checked OpenSearch Application.
+        /// The endpoint URL of the OpenSearch application.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -137,7 +137,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IamIdentityCenterOptions. 
         /// <para>
-        /// IAM Identity Center settings for the checked OpenSearch Application.
+        /// The IAM Identity Center settings configured for the OpenSearch application.
         /// </para>
         /// </summary>
         public IamIdentityCenterOptions IamIdentityCenterOptions
@@ -155,7 +155,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier of the checked OpenSearch Application.
+        /// The unique identifier of the OpenSearch application.
         /// </para>
         /// </summary>
         public string Id
@@ -173,7 +173,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// Timestamp at which the checked OpenSearch Application was last updated.
+        /// The timestamp of the last update to the OpenSearch application.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -191,7 +191,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the checked OpenSearch Application.
+        /// The name of the OpenSearch application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=30)]
@@ -210,7 +210,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the checked OpenSearch Application. Possible values are <c>CREATING</c>,
+        /// The current status of the OpenSearch application. Possible values: <c>CREATING</c>,
         /// <c>UPDATING</c>, <c>DELETING</c>, <c>FAILED</c>, <c>ACTIVE</c>, and <c>DELETED</c>.
         /// </para>
         /// </summary>

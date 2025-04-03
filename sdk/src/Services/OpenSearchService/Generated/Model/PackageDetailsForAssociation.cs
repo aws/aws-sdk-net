@@ -78,8 +78,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PrerequisitePackageIDList. 
         /// <para>
-        /// List of package IDs that must be associated with the domain with or before the package
-        /// can be associated.
+        /// List of package IDs that must be linked to the domain before or simultaneously with
+        /// the package association.
         /// </para>
         /// </summary>
         public List<string> PrerequisitePackageIDList

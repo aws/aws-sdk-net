@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EncryptionEnabled. 
         /// <para>
-        /// This indicates whether encryption is enabled for the package.
+        /// Whether encryption is enabled for the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        ///  KMS key ID for encrypting the package.
+        /// KMS key ID for encrypting the package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for IAM Identity Center Options settings.
+    /// Settings container for integrating IAM Identity Center with OpenSearch UI applications,
+    /// which enables enabling secure user authentication and access control across multiple
+    /// data sources. This setup supports single sign-on (SSO) through IAM Identity Center,
+    /// allowing centralized user management.
     /// </summary>
     public partial class IdentityCenterOptions
     {
@@ -44,7 +47,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EnabledAPIAccess. 
         /// <para>
-        /// True to enable IAM Identity Center for API access in Amazon OpenSearch Service.
+        /// Indicates whether IAM Identity Center is enabled for the application.
         /// </para>
         /// </summary>
         public bool EnabledAPIAccess
@@ -62,7 +65,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterApplicationARN. 
         /// <para>
-        /// The ARN for IAM Identity Center Application which will integrate with Amazon OpenSearch
+        /// The ARN of the IAM Identity Center application that integrates with Amazon OpenSearch
         /// Service.
         /// </para>
         /// </summary>
@@ -82,7 +85,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceARN. 
         /// <para>
-        /// The ARN for IAM Identity Center Instance.
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -101,7 +104,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
         /// <para>
-        /// The ID of IAM Identity Store.
+        /// The identifier of the IAM Identity Store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -120,8 +123,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RolesKey. 
         /// <para>
-        /// Specify the attribute that contains the backend role (groupName, groupID) of IAM Identity
-        /// Center
+        /// Specifies the attribute that contains the backend role identifier (such as group name
+        /// or group ID) in IAM Identity Center.
         /// </para>
         /// </summary>
         public RolesKeyIdCOption RolesKey
@@ -139,8 +142,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubjectKey. 
         /// <para>
-        /// Specify the attribute that contains the subject (username, userID, email) of IAM Identity
-        /// Center.
+        /// Specifies the attribute that contains the subject identifier (such as username, user
+        /// ID, or email) in IAM Identity Center.
         /// </para>
         /// </summary>
         public SubjectKeyIdCOption SubjectKey

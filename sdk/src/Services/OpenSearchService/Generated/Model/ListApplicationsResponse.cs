@@ -40,8 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ApplicationSummaries. 
         /// <para>
-        /// Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status,
-        /// create time and last update time.
+        /// Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation
+        /// time, and last update time.
         /// </para>
         /// </summary>
         public List<ApplicationSummary> ApplicationSummaries
