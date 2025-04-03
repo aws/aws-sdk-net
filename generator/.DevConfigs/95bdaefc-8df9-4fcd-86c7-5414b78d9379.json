@@ -1,0 +1,13 @@
+{
+    "services" : null,
+    "core" : {
+        "updateMinimum" : true,
+        "backwardIncompatibilitiesToIgnore" : [
+        ],
+        "type" : "Patch",
+        "changeLogMessages" : [
+            "Updating endpoints.json file."
+        ]
+    },
+    "overrideVersion" : null
+}

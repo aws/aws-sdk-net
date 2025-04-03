@@ -48696,6 +48696,21 @@
         ],
         "variants": [
           {
+            "dnsSuffix": "api.aws.ic.gov",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack",
+              "fips"
+            ]
+          },
+          {
+            "dnsSuffix": "api.aws.ic.gov",
+            "hostname": "{service}.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack"
+            ]
+          },
+          {
             "dnsSuffix": "c2s.ic.gov",
             "hostname": "{service}-fips.{region}.{dnsSuffix}",
             "tags": [
@@ -50212,6 +50227,21 @@
         ],
         "variants": [
           {
+            "dnsSuffix": "api.aws.scloud",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack",
+              "fips"
+            ]
+          },
+          {
+            "dnsSuffix": "api.aws.scloud",
+            "hostname": "{service}.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack"
+            ]
+          },
+          {
             "dnsSuffix": "sc2s.sgov.gov",
             "hostname": "{service}-fips.{region}.{dnsSuffix}",
             "tags": [
@@ -51155,6 +51185,21 @@
         ],
         "variants": [
           {
+            "dnsSuffix": "api.cloud-aws.adc-e.uk",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack",
+              "fips"
+            ]
+          },
+          {
+            "dnsSuffix": "api.cloud-aws.adc-e.uk",
+            "hostname": "{service}.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack"
+            ]
+          },
+          {
             "dnsSuffix": "cloud.adc-e.uk",
             "hostname": "{service}-fips.{region}.{dnsSuffix}",
             "tags": [
@@ -51184,6 +51229,21 @@
           "v4"
         ],
         "variants": [
+          {
+            "dnsSuffix": "api.aws.hci.ic.gov",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack",
+              "fips"
+            ]
+          },
+          {
+            "dnsSuffix": "api.aws.hci.ic.gov",
+            "hostname": "{service}.{region}.{dnsSuffix}",
+            "tags": [
+              "dualstack"
+            ]
+          },
           {
             "dnsSuffix": "csp.hci.ic.gov",
             "hostname": "{service}-fips.{region}.{dnsSuffix}",
