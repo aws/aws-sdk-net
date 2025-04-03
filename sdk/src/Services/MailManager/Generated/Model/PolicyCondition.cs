@@ -36,6 +36,7 @@ namespace Amazon.MailManager.Model
     {
         private IngressBooleanExpression _booleanExpression;
         private IngressIpv4Expression _ipExpression;
+        private IngressIpv6Expression _ipv6Expression;
         private IngressStringExpression _stringExpression;
         private IngressTlsProtocolExpression _tlsExpression;
 
@@ -77,6 +78,26 @@ namespace Amazon.MailManager.Model
         internal bool IsSetIpExpression()
         {
             return this._ipExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Expression. 
+        /// <para>
+        /// This represents an IPv6 based condition matching on the incoming mail. It performs
+        /// the operation configured in 'Operator' and evaluates the 'Protocol' object against
+        /// the 'Value'.
+        /// </para>
+        /// </summary>
+        public IngressIpv6Expression Ipv6Expression
+        {
+            get { return this._ipv6Expression; }
+            set { this._ipv6Expression = value; }
+        }
+
+        // Check to see if Ipv6Expression property is set
+        internal bool IsSetIpv6Expression()
+        {
+            return this._ipv6Expression != null;
         }
 
         /// <summary>

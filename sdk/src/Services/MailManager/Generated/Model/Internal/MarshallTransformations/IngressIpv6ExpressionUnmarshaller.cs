@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyCondition Object
+    /// Response Unmarshaller for IngressIpv6Expression Object
     /// </summary>  
-    public class PolicyConditionUnmarshaller : IUnmarshaller<PolicyCondition, XmlUnmarshallerContext>, IUnmarshaller<PolicyCondition, JsonUnmarshallerContext>
+    public class IngressIpv6ExpressionUnmarshaller : IUnmarshaller<IngressIpv6Expression, XmlUnmarshallerContext>, IUnmarshaller<IngressIpv6Expression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyCondition IUnmarshaller<PolicyCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IngressIpv6Expression IUnmarshaller<IngressIpv6Expression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyCondition Unmarshall(JsonUnmarshallerContext context)
+        public IngressIpv6Expression Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyCondition unmarshalledObject = new PolicyCondition();
+            IngressIpv6Expression unmarshalledObject = new IngressIpv6Expression();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BooleanExpression", targetDepth))
+                if (context.TestExpression("Evaluate", targetDepth))
                 {
-                    var unmarshaller = IngressBooleanExpressionUnmarshaller.Instance;
-                    unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IngressIpv6ToEvaluateUnmarshaller.Instance;
+                    unmarshalledObject.Evaluate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IpExpression", targetDepth))
+                if (context.TestExpression("Operator", targetDepth))
                 {
-                    var unmarshaller = IngressIpv4ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Ipv6Expression", targetDepth))
+                if (context.TestExpression("Values", targetDepth))
                 {
-                    var unmarshaller = IngressIpv6ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6Expression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StringExpression", targetDepth))
-                {
-                    var unmarshaller = IngressStringExpressionUnmarshaller.Instance;
-                    unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TlsExpression", targetDepth))
-                {
-                    var unmarshaller = IngressTlsProtocolExpressionUnmarshaller.Instance;
-                    unmarshalledObject.TlsExpression = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyConditionUnmarshaller _instance = new PolicyConditionUnmarshaller();        
+        private static IngressIpv6ExpressionUnmarshaller _instance = new IngressIpv6ExpressionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyConditionUnmarshaller Instance
+        public static IngressIpv6ExpressionUnmarshaller Instance
         {
             get
             {

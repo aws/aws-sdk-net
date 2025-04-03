@@ -41,6 +41,7 @@ namespace Amazon.MailManager.Model
         private string _ingressPointId;
         private string _ingressPointName;
         private DateTime? _lastUpdatedTimestamp;
+        private NetworkConfiguration _networkConfiguration;
         private string _ruleSetId;
         private IngressPointStatus _status;
         private string _trafficPolicyId;
@@ -173,6 +174,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetLastUpdatedTimestamp()
         {
             return this._lastUpdatedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for the ingress point.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>
