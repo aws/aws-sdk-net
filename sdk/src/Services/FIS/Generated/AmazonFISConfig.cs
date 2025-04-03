@@ -32,7 +32,7 @@ namespace Amazon.FIS
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("fis", "3.7.404.32");
+            InternalSDKUtils.BuildUserAgentString("fis", "3.7.404.33");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -32,7 +32,7 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "3.7.400.128");
+            InternalSDKUtils.BuildUserAgentString("CloudDirectory", "3.7.400.129");
 
         private string _userAgent = UserAgentString;
         ///<summary>

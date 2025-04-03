@@ -1,3 +1,25 @@
+### 3.7.1016.0 (2025-04-03 18:28 UTC)
+* BedrockAgent (3.7.424.0)
+	* Added optional "customMetadataField" for Amazon Aurora knowledge bases, allowing single-column metadata. Also added optional "textIndexName" for MongoDB Atlas knowledge bases, enabling hybrid search support.
+* ChimeSDKVoice (3.7.402.0)
+	* Added FOC date as an attribute of PhoneNumberOrder, added AccessDeniedException as a possible return type of ValidateE911Address
+* MailManager (3.7.407.0)
+	* Add support for Dual_Stack and PrivateLink types of IngressPoint. For configuration requests, SES Mail Manager will now accept both IPv4/IPv6 dual-stack endpoints and AWS PrivateLink VPC endpoints for email receiving.
+* OpenSearchService (3.7.404.70)
+	* Improve descriptions for various API commands and data types.
+* Route53 (3.7.407.0)
+	* Added us-gov-east-1 and us-gov-west-1 as valid Latency Based Routing regions for change-resource-record-sets.
+* SageMaker (3.7.435.0)
+	* Adds support for i3en, m7i, r7i instance types for SageMaker Hyperpod
+* SimpleEmailV2 (3.7.410.0)
+	* This release enables customers to provide attachments in the SESv2 SendEmail and SendBulkEmail APIs.
+* TranscribeService (3.7.403.0)
+	* This Feature Adds Support for the "zh-HK" Locale for Batch Operations
+* Core 3.7.402.34
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1015.1 (2025-04-03 00:38 UTC)
 * Core 3.7.402.33
 	* Updating endpoints.json file.
