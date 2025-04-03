@@ -153,6 +153,18 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("us-isof-east-1", aws_iso_f);
             _partitionsByRegionName.Add("us-isof-south-1", aws_iso_f);
 
+            var aws_eusc = new PartitionAttributesShape
+            {
+                name = "aws-eusc",
+                dnsSuffix = "amazonaws.eu",
+                dualStackDnsSuffix = "amazonaws.eu",
+                supportsFIPS = true,
+                supportsDualStack = false,
+                implicitGlobalRegion = "eusc-de-east-1"
+            };
+            _partitionsByRegex.Add(@"^eusc\-(de)\-\w+\-\d+$", aws_eusc);
+            _partitionsByRegionName.Add("eusc-de-east-1", aws_eusc);
+
             _defaultPartition = aws;
         }
     }
