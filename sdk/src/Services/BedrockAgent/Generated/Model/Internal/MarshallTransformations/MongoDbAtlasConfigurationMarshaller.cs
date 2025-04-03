@@ -89,6 +89,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTextIndexName())
+            {
+                context.Writer.WritePropertyName("textIndexName");
+                context.Writer.Write(requestObject.TextIndexName);
+            }
+
             if(requestObject.IsSetVectorIndexName())
             {
                 context.Writer.WritePropertyName("vectorIndexName");

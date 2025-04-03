@@ -48,6 +48,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomMetadataField())
+            {
+                context.Writer.WritePropertyName("customMetadataField");
+                context.Writer.Write(requestObject.CustomMetadataField);
+            }
+
             if(requestObject.IsSetMetadataField())
             {
                 context.Writer.WritePropertyName("metadataField");

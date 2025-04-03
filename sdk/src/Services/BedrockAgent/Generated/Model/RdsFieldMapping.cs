@@ -34,10 +34,31 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class RdsFieldMapping
     {
+        private string _customMetadataField;
         private string _metadataField;
         private string _primaryKeyField;
         private string _textField;
         private string _vectorField;
+
+        /// <summary>
+        /// Gets and sets the property CustomMetadataField. 
+        /// <para>
+        /// Provide a name for the universal metadata field where Amazon Bedrock will store any
+        /// custom metadata from your data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=63)]
+        public string CustomMetadataField
+        {
+            get { return this._customMetadataField; }
+            set { this._customMetadataField = value; }
+        }
+
+        // Check to see if CustomMetadataField property is set
+        internal bool IsSetCustomMetadataField()
+        {
+            return this._customMetadataField != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetadataField. 
