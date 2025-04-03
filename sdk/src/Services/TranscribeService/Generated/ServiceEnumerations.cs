@@ -759,6 +759,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode ZhCN = new LanguageCode("zh-CN");
         /// <summary>
+        /// Constant ZhHK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhHK = new LanguageCode("zh-HK");
+        /// <summary>
         /// Constant ZhTW for LanguageCode
         /// </summary>
         public static readonly LanguageCode ZhTW = new LanguageCode("zh-TW");
