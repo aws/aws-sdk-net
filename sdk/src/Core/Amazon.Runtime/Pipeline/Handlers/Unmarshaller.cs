@@ -14,6 +14,7 @@
  */
 
 using System;
+using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
@@ -198,6 +199,7 @@ namespace Amazon.Runtime.Internal
                 using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.DeserializationDurationMetricName))
                 {
                     response = unmarshaller.UnmarshallResponse(context);
+                    InitializeEventInputStream(response, requestContext);
                 }
 
                 requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
@@ -228,6 +230,18 @@ namespace Amazon.Runtime.Internal
         {
             return supportsResponseLogging &&
                 (requestContext.ClientConfig.LogResponse || AWSConfigs.LoggingConfig.LogResponses == ResponseLoggingOption.Always);
+        }
+
+        private static void InitializeEventInputStream(AmazonWebServiceResponse response, IRequestContext requestContext)
+        {
+            var eventInputStreamResponse = response as IEventInputStreamContextOwner;
+            if (eventInputStreamResponse != null)
+            {
+                eventInputStreamResponse.SetEventInputStreamContext(new EventInputStreamContext
+                {
+                    RequestStreamHandle = requestContext.RequestStreamHandle,
+                });
+            }
         }
     }
 }

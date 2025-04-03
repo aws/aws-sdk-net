@@ -43,7 +43,6 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="identity">The identity to be used for signing</param> 
         void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity);
 
-#if AWS_ASYNC_API
         /// <summary> 
         /// Asynchronously signs the provided HTTP request using the provided identity. Throws an exception if the 
         /// identity is not compatible with this signer. 
@@ -60,7 +59,6 @@ namespace Amazon.Runtime.Internal.Auth
         RequestMetrics metrics,
         BaseIdentity identity,
         CancellationToken token = default);
-#endif
 
         /// <summary> 
         /// Gets the client protocol used by this signer. 
@@ -73,5 +71,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,BaseIdentity)"/>.
         /// </summary> 
         bool RequiresCredentials { get; }
+
+        /// <summary>
+        /// Creates an event signer based on the signer used to sign the request.
+        /// </summary>
+        /// <param name="identity">The identity to sign the request with.</param>
+        /// <param name="region">The region to authenticate for.</param>
+        /// <param name="service">The service to authenticate for.</param>
+        /// <param name="requestSignature">The signature computed for the original request.</param>
+        /// <returns></returns>
+        IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature);
     }
 }

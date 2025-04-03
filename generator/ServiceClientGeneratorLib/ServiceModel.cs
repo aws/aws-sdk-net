@@ -450,11 +450,6 @@ namespace ServiceClientGenerator
                     {
                         ExcludedOperations.Add(operation.Name);
                     }
-                    // Event Streams are not supported (yet)
-                    else if (H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
-                    {
-                        ExcludedOperations.Add(operation.Name);
-                    }
                     else
                     {
                         list.Add(operation);

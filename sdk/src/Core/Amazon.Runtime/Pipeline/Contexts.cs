@@ -20,7 +20,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace Amazon.Runtime
 {
@@ -30,7 +29,7 @@ namespace Amazon.Runtime
         string RequestName { get; }
         IMarshaller<IRequest, AmazonWebServiceRequest> Marshaller { get; }
         ResponseUnmarshaller Unmarshaller { get; }
-        InvokeOptionsBase Options { get; }        
+        InvokeOptionsBase Options { get; }
         RequestMetrics Metrics { get; }
         ISigner Signer { get; set; }
         BaseIdentity Identity { get; set; }
@@ -41,10 +40,7 @@ namespace Amazon.Runtime
         int Retries { get; set; }
         CapacityManager.CapacityType LastCapacityType { get; set; }
         int EndpointDiscoveryRetries { get; set; }
-
-#if AWS_ASYNC_API
         System.Threading.CancellationToken CancellationToken { get; }
-#endif
         MonitoringAPICallAttempt CSMCallAttempt { get; set; }
         MonitoringAPICallEvent CSMCallEvent { get; set; }
         IServiceMetadata ServiceMetaData { get; }
@@ -55,6 +51,8 @@ namespace Amazon.Runtime
         Guid InvocationId { get; }
 
         IDictionary<string, object> ContextAttributes { get; }
+
+        IHttpRequestStreamHandle RequestStreamHandle {get;set;}
     }
 
     public interface IResponseContext
@@ -172,6 +170,8 @@ namespace Amazon.Runtime.Internal
                 return _contextAttributes;
             }
         }
+
+        public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

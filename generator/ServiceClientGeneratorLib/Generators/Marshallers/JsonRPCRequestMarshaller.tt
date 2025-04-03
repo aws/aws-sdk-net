@@ -40,6 +40,24 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		{
 			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace #>");
 <#
+	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+	{
+#>
+#if NET8_0_OR_GREATER
+            request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
+#endif
+<#
+	}
+	if (this.Operation.IsEventStreamInput)
+	{
+		var eventStreamMember = this.Operation.RequestEventStreamingMember;
+#>
+            request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
+            request.EventStreamPublisher = new <#=eventStreamMember.Shape.Name#>PublisherMarshaller(publicRequest.<#=eventStreamMember.PropertyName#>);
+
+<#
+	}
+
    SetCompressionAlgorithmEncoding(this.Operation);
 
    if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
@@ -98,7 +116,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
 <#  
 
-    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
+    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString && !payload.Shape.IsEventStream);
 	// Process any members which are marshalled as part of the request body
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{

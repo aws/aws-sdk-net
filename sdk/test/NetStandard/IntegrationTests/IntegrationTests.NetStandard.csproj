@@ -26,4 +26,14 @@
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IntegrationTests\TranscribeStreaming\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="IntegrationTests\this-is-a-test.flac">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

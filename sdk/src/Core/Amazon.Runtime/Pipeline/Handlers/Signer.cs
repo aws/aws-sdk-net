@@ -13,17 +13,15 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Runtime.Telemetry.Tracing;
 using Amazon.Util;
-using System;
 using System.IO;
-#if AWS_ASYNC_API 
 using System.Threading.Tasks;
-#endif
+
 
 namespace Amazon.Runtime.Internal
 {
@@ -44,7 +42,6 @@ namespace Amazon.Runtime.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -58,7 +55,6 @@ namespace Amazon.Runtime.Internal
             await PreInvokeAsync(executionContext).ConfigureAwait(false);
             return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
-#endif
 
         /// <summary>
         /// Signs the request before invoking the next handler.
@@ -75,7 +71,6 @@ namespace Amazon.Runtime.Internal
             } 
         }
 
-#if AWS_ASYNC_API
         protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
         {
             if (ShouldSign(executionContext.RequestContext))
@@ -84,7 +79,6 @@ namespace Amazon.Runtime.Internal
                 executionContext.RequestContext.IsSigned = true;
             }
         }
-#endif
 
         /// <summary>
         /// Determines if the request should be signed.
@@ -144,10 +138,22 @@ namespace Amazon.Runtime.Internal
                     requestContext.Metrics,
                     requestContext.Identity
                 );
+
+                if (requestContext.Request.EventStreamPublisher != null)
+                {
+                    var eventSigner = requestContext.Signer.CreateEventSigner(
+                                            requestContext.Identity, 
+                                            region: requestContext.Request.DeterminedSigningRegion, 
+                                            service: requestContext.ClientConfig.AuthenticationServiceName, 
+                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+
+                    requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
+                        requestContext.Request.EventStreamPublisher,
+                        eventSigner);
+                }
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Signs the request.
         /// </summary>
@@ -200,8 +206,20 @@ namespace Amazon.Runtime.Internal
                         requestContext.Metrics,
                         requestContext.Identity)
                     .ConfigureAwait(false);
+
+                if (requestContext.Request.EventStreamPublisher != null)
+                {
+                    var eventSigner = requestContext.Signer.CreateEventSigner(
+                                            requestContext.Identity,
+                                            region: requestContext.Request.DeterminedSigningRegion,
+                                            service: requestContext.ClientConfig.AuthenticationServiceName,
+                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+                    
+                    requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
+                        requestContext.Request.EventStreamPublisher,
+                        eventSigner);
+                }
             }
         }
-#endif
     }
 }

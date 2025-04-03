@@ -20,7 +20,7 @@
 //  */
 
 using System.Diagnostics.CodeAnalysis;
-using Amazon.Runtime.EventStreams.Internal;
+using Amazon.Runtime.EventStreams;
 
 namespace Amazon.S3.Model
 {

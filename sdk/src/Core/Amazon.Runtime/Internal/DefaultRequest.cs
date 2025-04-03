@@ -15,14 +15,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Net;
 
-using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
-using Amazon.Runtime.Endpoints;
+using Amazon.Runtime.EventStreams;
 
 namespace Amazon.Runtime.Internal
 {
@@ -77,6 +76,13 @@ namespace Amazon.Runtime.Internal
             parametersCollection = new ParameterCollection();
             parametersFacade = new ParametersDictionaryFacade(parametersCollection);
         }
+
+        /// <inheritdoc/>
+        public IEventStreamPublisher EventStreamPublisher { get; set; }
+
+        /// <inheritdoc/>
+        public IHttpRequestStreamPublisher HttpRequestStreamPublisher { get; set; }
+
         /// <summary>
         /// The time which the request was signed at.
         /// </summary>
@@ -558,5 +564,10 @@ namespace Amazon.Runtime.Internal
         /// Custom endpoint attributes
         /// </summary>
         public IPropertyBag EndpointAttributes { get; set; }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion { get; set; } = HttpVersion.Version11;
     }
 }

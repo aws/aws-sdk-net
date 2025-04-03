@@ -1,13 +1,9 @@
-﻿using System.Reflection;
-using Json.LitJson;
+﻿using Json.LitJson;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
 using ServiceClientGenerator.Endpoints;
-using System.Data.SqlTypes;
 
 namespace ServiceClientGenerator
 {
@@ -16,6 +12,8 @@ namespace ServiceClientGenerator
     /// </summary>
     public class Member : BaseModel
     {
+        public const string EventInputStreamSuffix = "Publisher";
+
         public const string Locationkey = "location";
         public const string MemberKey = "member";
         public const string FlattenedKey = "flattened";
@@ -108,8 +106,21 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return BaseVariableName;
+                var name = BaseVariableName;
+                if (IsEventInputStream)
+                {
+                    name += EventInputStreamSuffix;
+                }
+                return name;
             }
+        }
+
+        /// <summary>
+        /// When a member is a event the unaltered member name is used as the event type sent over the wire.
+        /// </summary>
+        public string EventTypeName
+        {
+            get { return _name; }
         }
 
         /// <summary>
@@ -196,7 +207,12 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return BasePropertyName;
+                var name = BasePropertyName;
+                if (IsEventInputStream)
+                {
+                    name += EventInputStreamSuffix;
+                }
+                return name;
             }
         }
 
@@ -536,7 +552,12 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return $"DateTime{nullable}";
                 case "structure":
-                    return emitAsShapeName ?? renameShape ?? extendsNode.ToString();
+                    var typeName = emitAsShapeName ?? renameShape ?? extendsNode.ToString();
+                    if (IsEventInputStream)
+                    {
+                        typeName += EventInputStreamSuffix;
+                    }
+                    return typeName;
                 case "map":
                     var keyType = DetermineType(memberShape["key"], true, false);
                     var valueType = DetermineType(memberShape["value"], true, false);
@@ -550,6 +571,22 @@ namespace ServiceClientGenerator
 
                 default:
                     throw new Exception("Unknown type " + typeNode.ToString());
+            }
+        }
+
+        /// <summary>
+        /// True if the shape the member is pointing to is an event stream on a request object.
+        /// </summary>
+        public bool IsEventInputStream
+        {
+            get
+            {
+                if (this.ModelShape.IsEventStream && this.model.Operations.FirstOrDefault(x => string.Equals(this.OwningShape.Name, x.RequestStructure.Name)) != null)
+                {
+                    return true;
+                }
+
+                return false;
             }
         }
 

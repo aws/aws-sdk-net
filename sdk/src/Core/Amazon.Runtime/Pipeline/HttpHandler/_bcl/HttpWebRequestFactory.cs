@@ -101,6 +101,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// The version of the HTTP protocol to use. For .NET Framework the version is always HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion 
+        {
+            get { return HttpVersion.Version11; }
+            set { } 
+        }
+
+        /// <summary>
         /// Returns the HTTP response.
         /// </summary>
         /// <returns>The HTTP response.</returns>
@@ -205,6 +214,13 @@ namespace Amazon.Runtime.Internal
                 _request.Abort();
                 _isAborted = true;
             }
+        }
+
+        /// <inheritdoc/>
+        public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher publisher)
+        {
+            // Only .NET 8+ will ever call this method.
+            throw new NotImplementedException();
         }
 
 #if AWS_ASYNC_API

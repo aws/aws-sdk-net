@@ -226,6 +226,8 @@ namespace AWSSDK.UnitTests
             public Action GetResponseAction { get; set; }
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
+            public Version HttpProtocolVersion { get; set; }
+
             public MockHttpRequest(Uri requestUri, Action action, Func<MockHttpRequest, HttpWebResponse> responseCreator = null)
             {
                 this.RequestUri = requestUri;
@@ -280,6 +282,12 @@ namespace AWSSDK.UnitTests
 #else
                 throw new NotImplementedException();
 #endif
+            }
+
+            /// <inheritdoc/>
+            public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher publisher)
+            {
+                throw new NotImplementedException();
             }
 
             public void WriteToRequestBody(Stream requestContent, Stream contentStream, 

@@ -1,0 +1,41 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Add core support for bi directional HTTP 2 service operations. Support is only available in .NET 8 and later.",
+			"[Breaking Change] Move IEventStreamEvent to Amazon.Runtime.EventStreams namespace from Amazon.Runtime.EventStreams.Internal",
+			"[Breaking Change] Renamed IEventStream to IEventOutputStream and IEnumerableEventStream to IEnumerableEventOutputStream"
+        ],
+        "type": "minor",
+        "updateMinimum": true
+    },
+	"services": [
+        {
+            "serviceName": "TranscribeStreaming",
+            "type": "minor",
+            "changeLogMessages": [
+                "Initial release of the TranscribeStreaming service package."
+            ]
+        },	
+        {
+            "serviceName": "Kinesis",
+            "type": "minor",
+            "changeLogMessages": [
+                "Add the bi-directional streaming operation SubscribeToShard."
+            ]
+        },
+        {
+            "serviceName": "QBusiness",
+            "type": "minor",
+            "changeLogMessages": [
+                "Add the bi-directional streaming operation Chat."
+            ]
+        },
+        {
+            "serviceName": "LexRuntimeV2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Add the bi-directional streaming operation StartConversation."
+            ]
+        }			
+    ]
+}

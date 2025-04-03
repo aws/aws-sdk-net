@@ -178,6 +178,7 @@ namespace Amazon.Runtime.Internal
         /// <returns>A task that represents the asynchronous operation.</returns>
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
+            bool _exceptionBeingThrown = false;
             IHttpRequest<TRequestContent> httpRequest = null;
             try
             {
@@ -185,7 +186,7 @@ namespace Amazon.Runtime.Internal
                 IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
-                
+
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                 using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
@@ -228,10 +229,15 @@ namespace Amazon.Runtime.Internal
                 }
                 // The response is not unmarshalled yet.
                 return null;
-            }            
+            }
+            catch
+            {
+                _exceptionBeingThrown = true;
+                throw;
+            }
             finally
             {
-                if (httpRequest != null)
+                if (httpRequest != null && (_exceptionBeingThrown || executionContext.RequestContext.Request.HttpRequestStreamPublisher == null))
                     httpRequest.Dispose();
             }
         }
@@ -275,10 +281,14 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
+            if (requestContext.Request.HttpRequestStreamPublisher != null)
+            {
+                requestContext.RequestStreamHandle = httpRequest.SetupHttpRequestStreamPublisher(requestContext.Request.Headers, requestContext.Request.HttpRequestStreamPublisher);
+            }
             // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
             // the StreamContent code path.
-            if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
+            else if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
                 requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
@@ -367,6 +377,10 @@ namespace Amazon.Runtime.Internal
             Uri url = AmazonServiceClient.ComposeUrl(request);
             var httpRequest = _requestFactory.CreateHttpRequest(url);
             httpRequest.ConfigureRequest(requestContext);
+
+#if NET8_0_OR_GREATER
+            httpRequest.HttpProtocolVersion = request.HttpProtocolVersion;
+#endif
 
             httpRequest.Method = request.HttpMethod;
             if (request.MayContainRequestBody())

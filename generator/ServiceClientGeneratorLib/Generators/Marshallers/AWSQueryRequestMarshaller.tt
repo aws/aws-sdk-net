@@ -35,6 +35,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
 <#
+	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
+	{
+#>
+#if NET8_0_OR_GREATER
+            request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
+#endif
+<#
+	}
+
     SetCompressionAlgorithmEncoding(this.Operation);
 #>
             request.Parameters.Add("Action", "<#=this.Operation.Name #>");

@@ -21,7 +21,7 @@ namespace ServiceClientGenerator.Generators
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class BaseGenerator : BaseGeneratorBase
     {
@@ -35,7 +35,7 @@ namespace ServiceClientGenerator.Generators
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 10 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 10 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 	
     // An object that contains all the information about a service
 	public ServiceConfiguration Config { get; set; }
@@ -54,7 +54,7 @@ namespace ServiceClientGenerator.Generators
         #line default
         #line hidden
         
-        #line 23 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 23 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -77,21 +77,21 @@ this.Write(@"/*
         #line default
         #line hidden
         
-        #line 40 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 40 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 40 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service model.\r\n */\r\n");
 
         
         #line default
         #line hidden
         
-        #line 42 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 42 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -103,21 +103,21 @@ this.Write(" service model.\r\n */\r\n");
         #line default
         #line hidden
         
-        #line 48 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 48 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Initiates the asynchronous execution of the ");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 50 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 50 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"reque" +
         "st\">Container for the necessary parameters to execute the ");
 
@@ -125,28 +125,28 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 53 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 53 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation on Amazon");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 53 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 53 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(@"Client.</param>
         /// <param name=""callback"">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name=""state"">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -158,21 +158,21 @@ this.Write(@"Client.</param>
         #line default
         #line hidden
         
-        #line 58 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 58 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 58 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 58 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        ///         operation.</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 60 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 60 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
         {
@@ -181,42 +181,42 @@ this.Write("\r\n        ///         operation.</returns>\r\n");
         #line default
         #line hidden
         
-        #line 63 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 63 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <seealso href=\"");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RestAPIDocUrl));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">REST API Reference for ");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 64 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" Operation</seealso>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 65 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -229,21 +229,21 @@ this.Write(" Operation</seealso>\r\n");
         #line default
         #line hidden
         
-        #line 72 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 72 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Finishes the asynchronous execution of the  ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 74 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 74 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        /// <param name=\"async" +
         "Result\">The IAsyncResult returned by the call to Begin");
 
@@ -251,49 +251,49 @@ this.Write(" operation.\r\n        /// </summary>\r\n        /// \r\n        ///
         #line default
         #line hidden
         
-        #line 77 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 77 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</param>\r\n        /// \r\n        /// <returns>Returns a  ");
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 79 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 79 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Result from ");
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 79 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 79 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 79 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 80 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
         {
@@ -302,42 +302,42 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 83 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 83 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <seealso href=\"");
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RestAPIDocUrl));
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">REST API Reference for ");
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" Operation</seealso>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 85 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -351,28 +351,28 @@ this.Write(" Operation</seealso>\r\n");
         #line default
         #line hidden
         
-        #line 93 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 93 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// <para>Implementation for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 95 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 95 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</para>\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 97 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -380,14 +380,14 @@ this.Write("</para>\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 99 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 99 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 101 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 101 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -400,28 +400,28 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 108 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 108 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n    /// <para>Interface for accessing ");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 110 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 110 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</para>\r\n    ///\r\n");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 112 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -429,14 +429,14 @@ this.Write("</para>\r\n    ///\r\n");
         #line default
         #line hidden
         
-        #line 114 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 114 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 116 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -450,7 +450,7 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 124 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 124 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n    /// </summary>\r" +
         "\n");
 
@@ -458,7 +458,7 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 128 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 128 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             return;
 		}
@@ -468,14 +468,14 @@ this.Write("    /// <summary>\r\n\t/// Empty class reserved for future use.\r\n 
         #line default
         #line hidden
         
-        #line 132 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 132 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 134 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("    ", documentation);
 
@@ -483,19 +483,19 @@ this.Write("    /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 136 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 136 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("    /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 138 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
     // Adds documentation to the members of a structure
-    public void FormatPropertyDocumentation(Member member, string documentationPreface = "")
+    public void FormatPropertyDocumentation(Member member, string documentationPreface = "", string evenPublisherDocumentation = "")
     {
         if (documentationPreface != null && documentationPreface != "")
         {
@@ -512,29 +512,33 @@ this.Write("    /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 154 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 154 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 156 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 156 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
+        if (!string.IsNullOrEmpty(evenPublisherDocumentation))
+        {
+            WriteCommentBlock("        ", evenPublisherDocumentation);
+        }
 
         
         #line default
         #line hidden
         
-        #line 158 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 162 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 164 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -558,14 +562,14 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 178 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 182 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 185 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -573,14 +577,14 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 183 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 187 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 185 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 189 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     if (includeRequest)
     {
@@ -589,7 +593,7 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 188 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 192 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"request\">Container for the necessary parameters to execu" +
         "te the ");
 
@@ -597,21 +601,21 @@ this.Write("        /// <param name=\"request\">Container for the necessary para
         #line default
         #line hidden
         
-        #line 189 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 193 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 193 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method.</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 190 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 194 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
     if (isAsync)
@@ -623,7 +627,7 @@ this.Write(" service method.</param>\r\n");
         #line default
         #line hidden
         
-        #line 196 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 200 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A cancellation toke" +
         "n that can be used by other objects or threads to receive notice of cancellation" +
         ".\r\n        /// </param>\r\n");
@@ -632,7 +636,7 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 200 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 204 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -640,42 +644,42 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 202 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 206 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 208 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 209 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -693,42 +697,42 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 217 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 221 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <seealso href=\"");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 222 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RestAPIDocUrl));
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 222 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">REST API Reference for ");
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 222 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 218 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 222 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" Operation</seealso>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 219 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 223 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -743,14 +747,14 @@ this.Write(" Operation</seealso>\r\n");
         #line default
         #line hidden
         
-        #line 228 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 232 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\r\n        /// <summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 231 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 235 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -758,14 +762,14 @@ this.Write("\r\n        /// <summary>\r\n");
         #line default
         #line hidden
         
-        #line 233 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 237 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 235 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 239 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
   foreach(var item in members)
     {
 
@@ -773,42 +777,42 @@ this.Write("        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 237 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 241 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 238 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 242 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(item.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 238 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 242 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 238 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 242 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(item.GetParamDocumentationForOperation(operation.Name)));
 
         
         #line default
         #line hidden
         
-        #line 238 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 242 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 239 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 243 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
     if (!isSync)
@@ -818,7 +822,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 243 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 247 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A cancellation toke" +
         "n that can be used by other objects or threads to receive notice of cancellation" +
         ".\r\n        /// </param>\r\n");
@@ -827,7 +831,7 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 247 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 251 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -835,42 +839,42 @@ this.Write("        /// <param name=\"cancellationToken\">\r\n        ///     A 
         #line default
         #line hidden
         
-        #line 249 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 253 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// \r\n        /// <returns>The response from the ");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" service method, as returned by ");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 255 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".</returns>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 252 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 256 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{
@@ -887,42 +891,42 @@ this.Write(".</returns>\r\n");
         #line default
         #line hidden
         
-        #line 263 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 267 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <seealso href=\"");
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 268 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RestAPIDocUrl));
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 268 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">REST API Reference for ");
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 268 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 264 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 268 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" Operation</seealso>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 265 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 269 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -935,28 +939,28 @@ this.Write(" Operation</seealso>\r\n");
         #line default
         #line hidden
         
-        #line 272 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 276 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t/// Container for the parameters to the ");
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 278 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 274 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 278 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation.\r\n");
 
         
         #line default
         #line hidden
         
-        #line 275 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 279 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     WriteCommentBlock("	", documentation);
 
@@ -964,14 +968,14 @@ this.Write(" operation.\r\n");
         #line default
         #line hidden
         
-        #line 277 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 281 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 279 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 283 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -985,42 +989,42 @@ this.Write("\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 287 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 291 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <exception cref=\"");
 
         
         #line default
         #line hidden
         
-        #line 288 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 288 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(".Model.");
 
         
         #line default
         #line hidden
         
-        #line 288 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(exceptionShape.Name));
 
         
         #line default
         #line hidden
         
-        #line 288 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 292 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">\r\n");
 
         
         #line default
         #line hidden
         
-        #line 289 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 293 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         WriteCommentBlock("        ", documentation);
 
@@ -1028,14 +1032,14 @@ this.Write("\">\r\n");
         #line default
         #line hidden
         
-        #line 291 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 295 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// </exception>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 293 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 297 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     }
 
@@ -1047,42 +1051,42 @@ this.Write("        /// </exception>\r\n");
         #line default
         #line hidden
         
-        #line 299 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 303 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t/// <summary>\r\n\t///\tReturns information about the ");
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 305 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 301 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 305 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" response metadata.\r\n\t///\tThe ");
 
         
         #line default
         #line hidden
         
-        #line 302 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 306 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operationName));
 
         
         #line default
         #line hidden
         
-        #line 302 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 306 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 304 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 308 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 	}
 
@@ -1209,28 +1213,28 @@ this.Write(" operation has a void result type.\r\n\t/// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 425 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 429 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Instantiates ");
 
         
         #line default
         #line hidden
         
-        #line 427 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 431 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 427 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 431 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 429 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 433 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         foreach (var member in members)
         {
@@ -1239,42 +1243,42 @@ this.Write(" with the parameterized properties\r\n        /// </summary>\r\n");
         #line default
         #line hidden
         
-        #line 432 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 436 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <param name=\"");
 
         
         #line default
         #line hidden
         
-        #line 433 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 437 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 433 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 437 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\">");
 
         
         #line default
         #line hidden
         
-        #line 433 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 437 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetParamDocumentationForConstructor(className)));
 
         
         #line default
         #line hidden
         
-        #line 433 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 437 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("</param>\r\n");
 
         
         #line default
         #line hidden
         
-        #line 434 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 438 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
     }
@@ -1283,7 +1287,7 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 439 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 443 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the client that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1309,28 +1313,28 @@ this.Write("</param>\r\n");
         #line default
         #line hidden
         
-        #line 459 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 463 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 460 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 464 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 460 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 464 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 461 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 465 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1338,56 +1342,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 463 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 467 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public virtual ");
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 464 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 468 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 465 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 469 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1401,28 +1405,28 @@ this.Write(")\r\n");
         #line default
         #line hidden
         
-        #line 473 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 477 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 474 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 478 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 474 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 478 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 475 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 479 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 			}
 
@@ -1430,49 +1434,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 477 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 481 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public virtual Task<");
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 478 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 482 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ")\r\n");
 
@@ -1480,7 +1484,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 479 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 483 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1488,28 +1492,28 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 481 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 485 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        {\r\n            var request = new ");
 
         
         #line default
         #line hidden
         
-        #line 483 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 487 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 483 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 487 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Request();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 484 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 488 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1518,42 +1522,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 487 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 491 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            request.");
 
         
         #line default
         #line hidden
         
-        #line 488 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 492 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 488 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 492 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 488 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 492 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 488 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 492 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 489 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 493 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1564,28 +1568,28 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 494 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 498 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 495 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 499 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 495 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 499 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(request);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 496 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 500 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1595,28 +1599,28 @@ this.Write("(request);\r\n");
         #line default
         #line hidden
         
-        #line 500 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 504 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            return ");
 
         
         #line default
         #line hidden
         
-        #line 501 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 505 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 501 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 505 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(request, cancellationToken);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 502 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 506 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
 
@@ -1624,14 +1628,14 @@ this.Write("Async(request, cancellationToken);\r\n");
         #line default
         #line hidden
         
-        #line 504 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 508 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 507 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 511 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
         }
@@ -1641,7 +1645,7 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 512 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 516 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates methods for the interface that have request members as parameters for easy calls to the operation
     // Only generates them if they are specified in the customizations of the service
@@ -1667,28 +1671,28 @@ this.Write("        }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 532 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 536 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 533 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 537 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 533 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 537 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 534 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 538 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 					}
 
@@ -1696,56 +1700,56 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 536 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 540 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        ");
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response ");
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 537 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 541 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 538 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 542 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         }
         else
@@ -1759,28 +1763,28 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 546 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 550 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\t\t[Obsolete(\"");
 
         
         #line default
         #line hidden
         
-        #line 547 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 551 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
 
         
         #line default
         #line hidden
         
-        #line 547 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 551 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("\")]\r\n");
 
         
         #line default
         #line hidden
         
-        #line 548 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 552 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 		
 				}
 
@@ -1788,49 +1792,49 @@ this.Write("\")]\r\n");
         #line default
         #line hidden
         
-        #line 550 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 554 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        Task<");
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Response> ");
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("Async(");
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 551 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 555 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("System.Threading.CancellationToken cancellationToken = default(CancellationToken)" +
         ");\r\n");
 
@@ -1838,7 +1842,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 552 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 556 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
           }
                 }
@@ -1849,7 +1853,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 559 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 563 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
     // Generates constructors for operation requests that have request members in the parameters for easy creation of requests
     // Only generates them if they are specified in the customizations of the service
@@ -1864,7 +1868,7 @@ this.Write("System.Threading.CancellationToken cancellationToken = default(Cance
         #line default
         #line hidden
         
-        #line 568 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 572 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        /// <summary>\r\n        /// Empty constructor used to set  properties inde" +
         "pendently even when a simple constructor is available\r\n        /// </summary>\r\n " +
         "       public ");
@@ -1873,21 +1877,21 @@ this.Write("        /// <summary>\r\n        /// Empty constructor used to set  
         #line default
         #line hidden
         
-        #line 571 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 575 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 571 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 575 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("() { }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 573 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 577 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             foreach (var form in forms)
             {
@@ -1898,48 +1902,48 @@ this.Write("() { }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 579 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 583 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
  FormatSimpleConstructorDocumentation(className, docMembers); 
         
         #line default
         #line hidden
         
-        #line 579 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 583 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 580 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 584 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(className));
 
         
         #line default
         #line hidden
         
-        #line 580 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 584 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 580 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 584 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(currentParams));
 
         
         #line default
         #line hidden
         
-        #line 580 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 584 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(")\r\n        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 582 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 586 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
 foreach (var member in docMembers)
 {
@@ -1948,42 +1952,42 @@ foreach (var member in docMembers)
         #line default
         #line hidden
         
-        #line 585 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 589 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("            ");
 
         
         #line default
         #line hidden
         
-        #line 586 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 590 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
 
         
         #line default
         #line hidden
         
-        #line 586 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 590 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 586 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 590 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.CamelCaseParam(member.PropertyName)));
 
         
         #line default
         #line hidden
         
-        #line 586 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 590 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 587 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 591 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
         
 }
@@ -1992,14 +1996,14 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 590 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 594 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 this.Write("        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 593 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+        #line 597 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
 
             }
         }

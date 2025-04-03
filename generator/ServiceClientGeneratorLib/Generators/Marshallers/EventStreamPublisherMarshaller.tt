@@ -1,0 +1,103 @@
+﻿<#@ template language="C#" inherits="BaseMarshaller" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Amazon.Runtime.EventStreams;
+#pragma warning disable CS0612,CS0618
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
+    /// </summary>
+    public partial class <#=this.Structure.Name #>PublisherMarshaller : EventStreamPublisher
+    {
+        Func< Task<I<#=this.Structure.Name #>Event>> _publisher;
+
+        /// <summary>
+        /// Creates instance of <#=this.Structure.Name #>PublisherMarshaller
+        /// </summary>
+        /// <param name="publisher">The service event publisher provided by the consumer of the SDK.</param>
+        public <#=this.Structure.Name #>PublisherMarshaller(Func<Task<I<#=this.Structure.Name #>Event>> publisher)
+        {
+            _publisher = publisher;
+        }
+
+        /// <summary>
+        /// Gets the next service event provided by the consumer of the SDK and converts it to a IEventStreamMessage.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Amazon.Runtime.AmazonClientException">If the type of the event is unknown.</exception>
+        public override async Task<IEventStreamMessage> NextEventAsync()
+        {
+            var evnt = await _publisher().ConfigureAwait(false);
+            if (evnt == null)
+                return null;
+
+            byte[] eventPayload;
+            string contentType;
+            string eventType;
+<#
+    for (var i = 0; i < this.Structure.Members.Count; i++)
+    {
+        var member = this.Structure.Members[i];
+#>
+            <#= i > 0 ? "else " : ""#>if (evnt is <#=member.ModelShape.Name#>)
+            {
+                var memoryStream = new MemoryStream();
+                var context = CreateJsonMarshallerContext(memoryStream);
+                context.Writer.WriteStartObject();
+                <#=member.ModelShape.Name#>Marshaller.Instance.Marshall((<#=member.ModelShape.Name#>)evnt, context);
+                context.Writer.WriteEndObject();
+                context.Writer.Flush();
+
+                eventType = "<#=member.EventTypeName#>";
+<#
+            if (member.ModelShape.GetExplicitEventPayloadMember() != null)
+            {
+                if (member.ModelShape.GetExplicitEventPayloadMember().IsMemoryStream)
+                {
+#>
+                contentType = "application/octet-stream";
+                eventPayload = context.Request.Content;
+<#
+                }
+                else
+                {
+#>
+                contentType = "text/plain";
+                eventPayload = context.Request.Content;
+<#
+                }
+            }
+            else
+            {
+#>
+                contentType = "application/json";
+                eventPayload = memoryStream.ToArray();
+<#
+            }
+#>
+            }
+<#
+    }
+#>
+            else
+            {
+                throw new Amazon.Runtime.AmazonClientException($"Type {evnt.GetType().FullName} is not a known event type for this streaming operation");
+            }
+
+            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: null, eventPayload: eventPayload);
+        }
+    }
+}
+<#+
+    public string ClassName { get; set; }
+    public Shape Structure { get; set; }
+#>

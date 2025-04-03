@@ -427,6 +427,19 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// A member in the response streams events from the service to the SDK consumer.
+        /// </summary>
+        public Member ResponseEventStreamingMember
+        {
+            get
+            {
+                return this.ResponseStructure == null ?
+                    null :
+                    this.ResponseStructure.Members.SingleOrDefault(m => m.Shape.IsEventStream);
+            }
+        }
+
+        /// <summary>
         /// Members that are part of the URI for the request, empty if none
         /// </summary>
         public IList<Member> RequestUriMembers
@@ -464,6 +477,19 @@ namespace ServiceClientGenerator
                 return this.RequestStructure == null ?
                     null :
                     this.RequestStructure.Members.SingleOrDefault(m => m.Shape.IsStreaming);
+            }
+        }
+
+        /// <summary>
+        /// A member in the request that is used to stream events to the service.
+        /// </summary>
+        public Member RequestEventStreamingMember
+        {
+            get
+            {
+                return this.RequestStructure == null ?
+                    null :
+                    this.RequestStructure.Members.SingleOrDefault(m => m.Shape.IsEventStream);
             }
         }
 
@@ -528,7 +554,11 @@ namespace ServiceClientGenerator
         public bool IsEventStreamOutput => ResponseStructure?.Members?.Any(
                                                member => member.Shape?.IsEventStream ?? false)
                                            ?? false;
-        
+
+        public bool IsEventStreamInput => RequestStructure?.Members?.Any(
+                                               member => member.Shape?.IsEventStream ?? false)
+                                           ?? false;
+
         /// <summary>
         /// Determines if the request structure will have members in the header
         /// </summary>

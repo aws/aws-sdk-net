@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Pipeline.HttpHandler;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
@@ -245,8 +246,18 @@ namespace Amazon.Runtime
          /// <returns></returns>
         private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
         {
+#if NET8_0_OR_GREATER
+            var httpMessageHandler = new SocketsHttpHandler()
+            {
+                // By default HttpClient will only allow a single H2 connection per server. That 
+                // makes more sense from a client device to a server but since our SDK is likely
+                // used from an application server we can expect more then a single connection
+                // is going to be required.
+                EnableMultipleHttp2Connections = true
+            };
+#else
             var httpMessageHandler = new HttpClientHandler();
-
+#endif
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
 
@@ -439,6 +450,18 @@ namespace Amazon.Runtime
         public Uri RequestUri
         {
             get { return _request.RequestUri; }
+        }
+
+        /// <summary>
+        /// The version of the HTTP protocol to use. The default is HTTP 1.1.
+        /// </summary>
+        public Version HttpProtocolVersion
+        {
+            get { return _request.Version; }
+            set
+            {
+                _request.Version = value;
+            }
         }
 
         /// <summary>
@@ -646,6 +669,19 @@ namespace Amazon.Runtime
 
             WriteContentHeaders(contentHeaders);
         }
+
+
+        public IHttpRequestStreamHandle SetupHttpRequestStreamPublisher(IDictionary<string, string> contentHeaders, IHttpRequestStreamPublisher requestStreamPublisher)
+        {
+#if NET8_0_OR_GREATER
+            var handle = new HttpContentRequestStreamHandle(_request, requestStreamPublisher);
+            WriteContentHeaders(contentHeaders);
+            return handle;
+#else
+            throw new NotImplementedException();
+#endif
+        }
+
 
         /// <summary>
         /// Writes a byte array to the request body.

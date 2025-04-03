@@ -179,5 +179,11 @@ namespace Amazon.Runtime.Internal.Auth
             else
                 return defaultSigner;
         }
+
+        /// <inheritdoc/>
+        public virtual IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
