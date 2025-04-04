@@ -453,7 +453,7 @@ namespace ServiceClientGenerator
                         ExcludedOperations.Add(operation.Name);
                     }
                     // H2 bi-directional (bidi) event streams are not yet supported
-                    else if (H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi)
+                    else if (operation.IsEventStreamBidi)
                     {
                         ExcludedOperations.Add(operation.Name);
                     }
