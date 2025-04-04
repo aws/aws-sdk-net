@@ -118,13 +118,12 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property InvocationConnectivityParameters. 
         /// <para>
-        /// For connections to private resource endpoints, the parameters to use for invoking
-        /// the resource endpoint.
+        /// For connections to private APIs, the parameters to use for invoking the API.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
-        /// to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting
+        /// to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
         /// </para>
         /// </summary>
         public ConnectivityResourceParameters InvocationConnectivityParameters

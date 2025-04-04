@@ -41,6 +41,7 @@ namespace Amazon.EventBridge.Model
         private long? _eventCount;
         private string _eventPattern;
         private string _eventSourceArn;
+        private string _kmsKeyIdentifier;
         private int? _retentionDays;
         private long? _sizeBytes;
         private ArchiveState _state;
@@ -175,6 +176,31 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetEventSourceArn()
         {
             return this._eventSourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The identifier of the KMS customer managed key for EventBridge to use to encrypt this
+        /// archive, if one has been specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting
+        /// archives</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

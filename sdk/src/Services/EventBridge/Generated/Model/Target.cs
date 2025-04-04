@@ -374,13 +374,13 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property SageMakerPipelineParameters. 
         /// <para>
-        /// Contains the SageMaker Model Building Pipeline parameters to start execution of a
-        /// SageMaker Model Building Pipeline.
+        /// Contains the SageMaker AI Model Building Pipeline parameters to start execution of
+        /// a SageMaker AI Model Building Pipeline.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a SageMaker Model Building Pipeline as a target, you can use this to
-        /// specify parameters to start a pipeline execution based on EventBridge events.
+        /// If you specify a SageMaker AI Model Building Pipeline as a target, you can use this
+        /// to specify parameters to start a pipeline execution based on EventBridge events.
         /// </para>
         /// </summary>
         public SageMakerPipelineParameters SageMakerPipelineParameters
