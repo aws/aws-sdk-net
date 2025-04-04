@@ -201,8 +201,8 @@ namespace Amazon.DirectoryServiceData.Model
         /// Gets and sets the property UserPrincipalName. 
         /// <para>
         ///  The UPN that is an internet-style login name for a user and based on the internet
-        /// standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter
-        /// than the distinguished name and easier to remember. 
+        /// standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN
+        /// is shorter than the distinguished name and easier to remember. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
