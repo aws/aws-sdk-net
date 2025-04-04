@@ -432,7 +432,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
             bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? true;
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
-            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
+            DynamoDBEntryConversion conversion = contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;
 
             // These properties can only be set at the operation level
@@ -463,7 +463,8 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = indexName;
             QueryFilter = queryFilter;
             ConditionalOperator = conditionalOperator;
-            Conversion = conversion;
+            ContextConversion = conversion;
+            OperationConversion = operationConfig.Conversion;
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
@@ -471,7 +472,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             State = new OperationState();
         }
-
+        
         /// <summary>
         /// Property that directs DynamoDBContext to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.
@@ -552,10 +553,29 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
-        /// Conversion specification which controls how conversion between
+        /// Entity Conversion specification which controls how conversion between
         /// .NET and DynamoDB types happens.
         /// </summary>
-        public DynamoDBEntryConversion Conversion { get; set; }
+        public DynamoDBEntryConversion ItemConversion { get; set; }
+
+        
+        /// <summary>
+        /// Operation Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        private DynamoDBEntryConversion OperationConversion { get; }
+
+        /// <summary>
+        /// Context Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        public DynamoDBEntryConversion Conversion => OperationConversion ?? ItemConversion ?? ContextConversion;
+
+        /// <summary>
+        /// Context Conversion specification which controls how conversion between
+        /// .NET and DynamoDB types happens.
+        /// </summary>
+        private DynamoDBEntryConversion ContextConversion { get; }
 
         /// <inheritdoc cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
         public bool DisableFetchingTableMetadata { get; set; }
@@ -564,7 +584,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool RetrieveDateTimeInUtc { get; set; }
 
         // Checks if the IndexName is set on the config
-        internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
+        internal bool IsIndexOperation => !string.IsNullOrEmpty(IndexName);
 
         // State of the operation using this config
         internal OperationState State { get; private set; }
@@ -583,6 +603,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// conflicts with existing attributes.
         /// </remarks>
         public string DerivedTypeAttributeName { get; set; }
+
 
         public class OperationState
         {

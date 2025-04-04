@@ -30,11 +30,17 @@ using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DynamoDBv2
 {
+
     /// <summary>
     /// Available conversion schemas.
     /// </summary>
-    internal enum ConversionSchema
+    public enum ConversionSchema
     {
+        /// <summary>
+        /// No schema set.
+        /// </summary>
+        Unset = -1,
+
         /// <summary>
         /// Default schema before 2014 L, M, BOOL, NULL support
         /// 

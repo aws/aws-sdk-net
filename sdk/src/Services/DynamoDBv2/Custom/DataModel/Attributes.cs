@@ -53,11 +53,18 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool LowerCamelCaseProperties { get; set; }
 
         /// <summary>
+        /// Gets and sets the Conversion Schema property.
+        /// </summary>
+        public ConversionSchema Conversion { get; }
+
+        /// <summary>
         /// Construct an instance of DynamoDBTableAttribute
         /// </summary>
         /// <param name="tableName"></param>
         public DynamoDBTableAttribute(string tableName)
-            : this(tableName, false) { }
+            : this(tableName, false, ConversionSchema.Unset)
+        {
+        }
 
         /// <summary>
         /// Construct an instance of DynamoDBTableAttribute
@@ -65,9 +72,21 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="tableName"></param>
         /// <param name="lowerCamelCaseProperties"></param>
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties)
+            : this(tableName, lowerCamelCaseProperties, ConversionSchema.Unset)
+        {
+        }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="lowerCamelCaseProperties"></param>
+        /// <param name="conversion"></param>
+        public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties, ConversionSchema conversion)
         {
             TableName = tableName;
             LowerCamelCaseProperties = lowerCamelCaseProperties;
+            Conversion = conversion;
         }
     }
 
