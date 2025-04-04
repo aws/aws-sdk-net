@@ -6603,46 +6603,10 @@ namespace Amazon.S3Control
         /// access point scope to restrict access to specific prefixes, API operations, or a combination
         /// of both.
         /// 
-        ///  
-        /// <para>
-        /// You can include one or more of the following API operations as permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>PutObjet</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>GetObject</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DeleteObject</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListBucket</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>GetObjectAttributes</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AbortMultipartUpload</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListBucketMultipartUpload</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListMultiPartUploadParts</c> 
-        /// </para>
-        ///  </li> </ul> <note> 
+        ///  <note> 
         /// <para>
         /// You can specify any amount of prefixes, but the total length of characters of all
-        /// prefixes must be less than 512 KB in size.
+        /// prefixes must be less than 256 bytes in size.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6668,46 +6632,10 @@ namespace Amazon.S3Control
         /// access point scope to restrict access to specific prefixes, API operations, or a combination
         /// of both.
         /// 
-        ///  
-        /// <para>
-        /// You can include one or more of the following API operations as permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>PutObjet</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>GetObject</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DeleteObject</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListBucket</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>GetObjectAttributes</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AbortMultipartUpload</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListBucketMultipartUpload</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ListMultiPartUploadParts</c> 
-        /// </para>
-        ///  </li> </ul> <note> 
+        ///  <note> 
         /// <para>
         /// You can specify any amount of prefixes, but the total length of characters of all
-        /// prefixes must be less than 512 KB in size.
+        /// prefixes must be less than 256 bytes in size.
         /// </para>
         ///  </note> 
         /// <para>

@@ -66,7 +66,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Prefixes. 
         /// <para>
         /// You can specify any amount of prefixes, but the total length of characters of all
-        /// prefixes must be less than 512 KB in size.
+        /// prefixes must be less than 256 bytes in size.
         /// </para>
         /// </summary>
         public List<string> Prefixes
