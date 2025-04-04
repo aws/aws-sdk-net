@@ -101,7 +101,7 @@ if (this.Config.ServiceModel.HasPaginators)
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
             if(operation.IsInternal || 
-				((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && operation.IsEventStreamBidi) ||
+				(operation.IsEventStreamBidi ||
 				(this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput) || 
 				this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
 			)
