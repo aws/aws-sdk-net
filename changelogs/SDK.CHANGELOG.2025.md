@@ -13,7 +13,7 @@
 	* [Breaking Change] Move IEventStreamEvent to Amazon.Runtime.EventStreams namespace from Amazon.Runtime.EventStreams.Internal
 	* [Breaking Change] Renamed IEventStream to IEventOutputStream and IEnumerableEventStream to IEnumerableEventOutputStream
 	* Add core support for bi directional HTTP 2 service operations. Support is only available in .NET 8 and later.
-	* Changed the default value of SSOAWSCredentialsOptions.SupportsGettingNewToken as false and improved error messaging if required SSO options are missing while generating new credentials.
+	* [Breaking Change] Changed the default value of SSOAWSCredentialsOptions.SupportsGettingNewToken as false and improved error messaging if required SSO options are missing while generating new credentials.
 	* Fix `EndpointDiscoveryHandler` not to fail when a request contains bearer token credentials.
 	* Log a warning when `ServiceUrl` and `RegionEndpoint` are set at the same time. The SDK will log whichever of the two is used.
 	* Remove redundant `AWSSignerType` attribute from service configuration classes.
