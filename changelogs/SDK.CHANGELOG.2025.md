@@ -1,3 +1,16 @@
+### 3.7.1017.0 (2025-04-04 18:38 UTC)
+* DirectoryServiceData (3.7.400.108)
+	* Doc only update - fixed broken links.
+* EC2 (3.7.437.5)
+	* Doc-only updates for Amazon EC2
+* EventBridge (3.7.403.0)
+	* Amazon EventBridge adds support for customer-managed keys on Archives and validations for two fields: eventSourceArn and kmsKeyIdentifier.
+* S3Control (3.7.407.5)
+	* Updated max size of Prefixes parameter of Scope data type.
+* Core 3.7.402.35
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1016.0 (2025-04-03 18:28 UTC)
 * BedrockAgent (3.7.424.0)
 	* Added optional "customMetadataField" for Amazon Aurora knowledge bases, allowing single-column metadata. Also added optional "textIndexName" for MongoDB Atlas knowledge bases, enabling hybrid search support.
