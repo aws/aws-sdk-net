@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The name of the attribute to modify. <important> You can modify the following attributes only: <c>disableApiTermination</c> | <c>instanceType</c> | <c>kernel</c> | <c>ramdisk</c> | <c>instanceInitiatedShutdownBehavior</c> | <c>blockDeviceMapping</c> | <c>userData</c> | <c>sourceDestCheck</c> | <c>groupSet</c> | <c>ebsOptimized</c> | <c>sriovNetSupport</c> | <c>enaSupport</c> | <c>nvmeSupport</c> | <c>disableApiStop</c> | <c>enclaveOptions</c>  </important></param>
+        /// <param name="attribute">The name of the attribute to modify. <note> When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <c>default</c> using the <a>ModifyInstanceNetworkPerformanceOptions</a> operation. </note> <important> You can modify the following attributes only: <c>disableApiTermination</c> | <c>instanceType</c> | <c>kernel</c> | <c>ramdisk</c> | <c>instanceInitiatedShutdownBehavior</c> | <c>blockDeviceMapping</c> | <c>userData</c> | <c>sourceDestCheck</c> | <c>groupSet</c> | <c>ebsOptimized</c> | <c>sriovNetSupport</c> | <c>enaSupport</c> | <c>nvmeSupport</c> | <c>disableApiStop</c> | <c>enclaveOptions</c>  </important></param>
         public ModifyInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -89,7 +89,14 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The name of the attribute to modify.
         /// </para>
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// When changing the instance type: If the original instance type is configured for configurable
+        /// bandwidth, and the desired instance type doesn't support configurable bandwidth, first
+        /// set the existing bandwidth configuration to <c>default</c> using the <a>ModifyInstanceNetworkPerformanceOptions</a>
+        /// operation.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// You can modify the following attributes only: <c>disableApiTermination</c> | <c>instanceType</c>
         /// | <c>kernel</c> | <c>ramdisk</c> | <c>instanceInitiatedShutdownBehavior</c> | <c>blockDeviceMapping</c>

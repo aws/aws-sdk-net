@@ -35,9 +35,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// A route server peer is a network appliance or function deployed in Amazon Web Services,
-    /// such as firewall appliances and other network security functions, that meet these
-    /// requirements:
+    /// A route server peer is a session between a route server endpoint and the device deployed
+    /// in Amazon Web Services (such as a firewall appliance or other network security function
+    /// running on an EC2 instance). The device must meet these requirements:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+    /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
     /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>

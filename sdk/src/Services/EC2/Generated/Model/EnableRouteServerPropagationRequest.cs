@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic
+    /// For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic
     /// routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>

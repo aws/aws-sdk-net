@@ -35,8 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// A route server association is the connection established between a route server and
-    /// a VPC. This is a fundamental configuration step that enables the route server to work
-    /// with appliances in your VPC.
+    /// a VPC.
     /// </para>
     /// </summary>
     public partial class RouteServerAssociation
